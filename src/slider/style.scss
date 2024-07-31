@@ -3,6 +3,10 @@
 @import 'swiper/css/effect-cards';
 @import 'swiper/css/effect-cube';
 @import 'swiper/css/grid';
+@import "swiper/css/effect-fade";
+@import "swiper/css/effect-flip";
+@import "swiper/css/effect-coverflow";
+@import "swiper/css/effect-creative";
 
 /*
 .swiper {
@@ -95,6 +99,60 @@
 	align-items: flex-end;
   }
 }
+
+.wp-block-cocoblocks-slider {
+	--swiper-theme-color: var(--wp--preset--color--accent, var(--wp--preset--color--primary));
+	--swiper-navigation-size: var(--size-nav);
+	--swiper-navigation-top-offset: var(--offset-top-nav);
+	--swiper-navigation-sides-offset: var(--offset-sides-nav);
+	--swiper-pagination-bullet-vertical-gap: 0.25rem;	
+	--swiper-scrollbar-left: auto;
+	--swiper-scrollbar-right: 4px;
+	--swiper-scrollbar-sides-offset: 1%;
+	/*max-height: 400px!important;*/
+}
+
+.swiper-pagination-bullet{
+	border-radius: var(--swiper-radius-bullet);
+}
+.swiper-pagination-fraction{
+	font-size: var(--swiper-font-size-fraction);
+}
+
+.swiper-pagination-bullet-active{
+	width:var(--swiper-pagination-bullet-width-active) ;
+	height:var(--swiper-pagination-bullet-height-active) ;
+}
+
+.swiper-button-next svg,.swiper-button-prev svg {
+    font-size: var(--size-nav);
+	height: var(--size-nav);
+	width: var(--size-nav);
+}
+.swiper-button-next span,.swiper-button-prev span{
+	font-size: var(--size-nav);
+}
+.swiper-button-next,.swiper-button-prev {
+	background-color: var(--background-color-nav);
+	padding: var(--padding-nav);
+	border-radius: var(--border-radius-nav);
+	border: var(--border-size-nav) solid var(--border-color-nav);
+	width: auto!important;
+}
+.swiper-button-next:hover,.swiper-button-prev:hover{
+	color: var(--color-nav-hover)!important;
+	background-color: var(--background-color-nav-hover)!important ;
+	border: var(--border-size-nav) solid var(--border-color-nav-hover)!important;
+}
+.swiper-button-next:hover svg,.swiper-button-prev:hover svg,.swiper-button-next:hover path,.swiper-button-prev:hover path,.swiper-button-next:hover span,.swiper-button-prev:hover span{
+	fill: var(--color-nav-hover)!important;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+	content: none!important;
+}
+
+
+
 
 /* Font size Title Responsive */
 

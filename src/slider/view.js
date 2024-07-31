@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             new Swiper('.swiper', {
                 direction: swiperConfig.directionSlider,
-                effect: swiperConfig.effect, // Aggiungi l'effetto qui
+                effect: swiperConfig.effect, 
                 pagination: {
                     el: '.swiper-pagination',
                 },
@@ -39,7 +39,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 grabCursor: swiperConfig.grabCursor,
                 loop: swiperConfig.loopMode === 'enable',
                 rewind: swiperConfig.loopMode === 'rewind',
-               
+                speed: swiperConfig.speed,
+                fadeEffect: {
+                    crossFade: swiperConfig.crossFade,
+                },
+                cubeEffect: {
+                    slideShadows: swiperConfig.slideShadows,
+                    shadow: swiperConfig.shadow,
+                    shadowOffset: swiperConfig.shadowOffset,
+                    shadowScale: swiperConfig.shadowScale,
+                },
+                coverflowEffect:{
+                    rotate: swiperConfig.rotate,
+                    stretch: swiperConfig.stretch,
+                    depth: swiperConfig.depth,
+                    modifier: swiperConfig.modifier,
+                    slideShadows: swiperConfig.slideShadows,
+                },
+                cardsEffect:{
+                    slideShadows: swiperConfig.slideShadows,
+                    rotate: swiperConfig.rotateCards,
+                },
+                creativeEffect:{
+                    prev: {
+                        shadow: true,
+                        translate: [swiperConfig.translateX+'%', swiperConfig.translateY+'%', swiperConfig.translateZ+'px'],
+                        rotate: [ swiperConfig.rotateX, swiperConfig.rotateY, swiperConfig.rotateZ],
+                        scale: swiperConfig.scale,
+                        opacity: swiperConfig.opacity,
+                      },
+                      next: {
+                        shadow: true,
+                        translate: [swiperConfig.nextTranslateX+'%', swiperConfig.nextTranslateY+'%', swiperConfig.nextTranslateZ+'px'],
+                        rotate: [ swiperConfig.nextRotateX, swiperConfig.nextRotateY, swiperConfig.nextRotateZ ],
+                        scale: swiperConfig.nextScale,
+                        opacity: swiperConfig.nextOpacity,
+                      },
+                    
+                },
                 breakpoints:{
                     640: {
                         slidesPerView: swiperConfig.perViewSliderMobile,

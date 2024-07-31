@@ -101,6 +101,386 @@
 		"loopMode":{
 			"type":"string",
 			"default":"disable"
+		},
+		"speed":{
+			"type":"number",
+			"default": 300
+		},
+		"crossFade":{
+			"type":"boolean",
+			"default":true
+		},
+		"shadow":{
+			"type":"boolean",
+			"default":true
+		},
+		"slideShadows":{
+			"type":"boolean",
+			"default":true
+		},
+		"shadowOffset":{
+			"type":"number",
+			"default":20
+		},
+		"shadowScale":{
+			"type":"number",
+			"default":0.9
+		},
+		"depth":{
+			"type":"number",
+			"default":100
+		},
+		"rotate":{
+			"type":"number",
+			"default":80
+		},
+		"stretch":{
+			"type":"number",
+			"default":0
+		},
+		"translateX":{
+			"type":"number",
+			"default": -120
+		},
+		"translateY":{
+			"type":"number",
+			"default": 0
+		},
+		"translateZ":{
+			"type":"number",
+			"default": -500
+		},
+		"rotateX":{
+			"type":"number",
+			"default": 0
+		},
+		"rotateY":{
+			"type":"number",
+			"default": 0
+		},
+		"rotateZ":{
+			"type":"number",
+			"default": 0
+		},
+		"scale":{
+			"type":"number",
+			"default": 1
+		},
+		"opacity":{
+			"type":"number",
+			"default": 1
+		},
+		"nextTranslateX":{
+			"type":"number",
+			"default": 120
+		},
+		"nextTranslateY":{
+			"type":"number",
+			"default": 0
+		},
+		"nextTranslateZ":{
+			"type":"number",
+			"default": -500
+		},
+		"nextRotateX":{
+			"type":"number",
+			"default": 0
+		},
+		"nextRotateY":{
+			"type":"number",
+			"default": 0
+		},
+		"nextRotateZ":{
+			"type":"number",
+			"default": 0
+		},
+		"nextScale":{
+			"type":"number",
+			"default": 1
+		},
+		"nextOpacity":{
+			"type":"number",
+			"default": 1
+		},
+		"modifier":{
+			"type":"number",
+			"default": 1
+		},
+		"rotateCards":{
+			"type":"boolean",
+			"default": true
+		},
+		"hideNavigation":{
+			"type":"boolean",
+			"default": false
+		},
+		"bulletColor":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"bulletInactivityColor":{
+			"type":"string",
+			"default":"#cccccc"
+		},
+		"positionPagination":{
+			"type":"string",
+			"default":"bottom"
+		},
+		"hidePagination":{
+			"type":"boolean",
+			"default": false
+		},
+		"typePagination":{
+			"type":"string",
+			"default":"bullets"
+		},
+		"clickPagination":{
+			"type":"boolean",
+			"default": false
+		},
+		"dynamicPagination":{
+			"type":"boolean",
+			"default": false
+		},
+		"dynamicMainPagination":{
+			"type":"number",
+			"default":1
+		},
+		"paginationEnable":{
+			"type":"boolean",
+			"default": false
+		},
+		"opacityPagination":{
+			"type":"number",
+			"default":1
+		},
+		"opacityInactivePagination":{
+			"type":"number",
+			"default":0.2
+		},
+		"widthPagination":{
+			"type":"number",
+			"default":8
+		},
+		"heightPagination":{
+			"type":"number",
+			"default":8
+		},
+		"widthPaginationActive":{
+			"type":"number",
+			"default":8
+		},
+		"heightPaginationActive":{
+			"type":"number",
+			"default":8
+		},
+		"radiusPagination":{
+			"type":"number",
+			"default":0
+		},
+		"gapPagination":{
+			"type":"number",
+			"default":3
+		},
+		"fontSizePagination":{
+			"type":"number",
+			"default":16
+		},
+		"heightBarPagination":{
+			"type":"number",
+			"default": 4
+		},
+		"progressbarOpposite":{
+			"type":"boolean",
+			"default":false
+		},
+		"disableOnInteraction":{
+			"type":"boolean",
+			"default":true
+		},
+		"pauseOnMouseEnter":{
+			"type":"boolean",
+			"default":false
+		},
+		"reverseDirection":{
+			"type":"boolean",
+			"default":false
+		},
+		"stopOnLastSlide":{
+			"type":"boolean",
+			"default":false
+		},
+		"scrollbar":{
+			"type":"boolean",
+			"default":false
+		},
+		"scrollBarColor":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"thumbColor":{
+			"type":"string",
+			"default":"#CCCCCC"
+		},
+		"positionScrollbar":{
+			"type":"string",
+			"default":"bottom"
+		},
+		"dragScrollbar":{
+			"type":"boolean",
+			"default":false
+		},
+		"hideScrollbar":{
+			"type":"boolean",
+			"default":false
+		},
+		"releaseScrollbar":{
+			"type":"boolean",
+			"default":false
+		},
+		"heightScrollbar":{
+			"type":"number",
+			"default":4
+		},
+		"radiusScrollbar":{
+			"type":"number",
+			"default":10
+		},
+		"freeMode":{
+			"type":"boolean",
+			"default":false
+		},
+		"stickyFreeMode":{
+			"type":"boolean",
+			"default":false
+		},
+		"momentumFreeMode":{
+			"type":"boolean",
+			"default":true
+		},
+		"momentumBounceFreeMode":{
+			"type":"boolean",
+			"default":true
+		},
+		"momentumBounceRatioFreeMode":{
+			"type":"number",
+			"default":1
+		},
+		"momentumRatioFreeMode":{
+			"type":"number",
+			"default":1
+		},
+		"momentumVelocityRatioFreeMode":{
+			"type":"number",
+			"default":1
+		},
+		"keyboard":{
+			"type":"boolean",
+			"default":false
+		},
+		"viewPortKeyboard":{
+			"type":"boolean",
+			"default":true
+		},
+		"upKeyboard":{
+			"type":"boolean",
+			"default":true
+		},
+		"mousewheel":{
+			"type":"boolean",
+			"default":false
+		},
+		"forceToAxis":{
+			"type":"boolean",
+			"default":false
+		},
+		"invert":{
+			"type":"boolean",
+			"default":false
+		},
+		"releaseOnEdges":{
+			"type":"boolean",
+			"default":false
+		},
+		"sensitivity":{
+			"type":"number",
+			"default":1
+		},
+		"autoHeightSlider":{
+			"type":"boolean",
+			"default":false
+		},
+		"maxHeightSlider":{
+			"type":"number",
+			"default":400
+		},
+		"navigation": {
+			"type": "boolean",
+			"default": false
+		},
+        "navigationIcons": {
+            "type": "string",
+            "default": "default"
+        },
+		"autoplaySpeed":{
+			"type":"number",
+			"default":1500
+		},
+		"navColor":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"navBackgroundColor":{
+			"type":"string",
+			"default":"#ffffff00"
+		},
+		"navBorderColor":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"navColorHover":{
+			"type":"string",
+			"default":"#333333"
+		},
+		"navBackgroundColorHover":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"navBorderColorHover":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"sizeNav":{
+			"type":"number",
+			"default": 32
+		},
+		"sizeBorderNav":{
+			"type":"number",
+			"default": 1
+		},
+		"radiusBorderNav":{
+			"type":"number",
+			"default": 100
+		},
+		"paddingNav":{
+			"type":"number",
+			"default": 8
+		},
+		"offSetTopNav":{
+			"type":"number",
+			"default": 50
+		},
+		"offSetSidesNav":{
+			"type":"number",
+			"default": 10
+		},
+		"navigationTablet":{
+			"type":"boolean",
+			"default":true
+		},
+		"navigationMobile":{
+			"type":"boolean",
+			"default":false
 		}
 	  }
 }

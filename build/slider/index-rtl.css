@@ -407,6 +407,7 @@
 }
 .cocoblocks-panel .components-range-control input {
   color: var(--light-color) !important;
+  background-color: var(--background-color) !important;
 }
 .cocoblocks-panel .components-range-control__wrapper {
   color: var(--primary-color);
@@ -707,7 +708,7 @@
 .cocoblocks-modal {
   background-color: var(--background-color);
   border-radius: 10px;
-  height: 81vh;
+  height: 90vh;
   max-height: 100% !important;
   /* Cube Effect Modal */
 }
@@ -853,6 +854,31 @@
 .cocoblocks-modal .modal-content.content-cube-effect .components-form-toggle.is-checked .components-form-toggle__track {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+}
+
+/* Modale */
+.cocoblocks-modal .swiper {
+  height: 160px;
+  width: 285px;
+  margin: 0;
+}
+.cocoblocks-modal .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--light-color);
+  border-radius: 8px;
+}
+.cocoblocks-modal .swiper-slide:nth-child(1n) {
+  background-color: var(--dark-color);
+}
+.cocoblocks-modal .swiper-slide:nth-child(2n) {
+  background-color: var(--primary-color);
+}
+.cocoblocks-modal .swiper-slide:nth-child(3n) {
+  background-color: var(--dark-color);
 }
 
 /* Reset Button */
