@@ -11,7 +11,7 @@ const ColorOptionsPanelGradient = ({ buttonTitle, buttonIcon, gradient, setGradi
     };
 
     return (
-        <div className="color-options-panel">
+        <div className="color-options-panel color-gradient">
             <Button
                 onClick={toggleColorPalette}
                 className="color-options-button"

@@ -289,7 +289,12 @@ const SliderControls = ({
     perViewSliderMobile,
     spaceBetweenMobile,
     slidesPerGroupMobile,
-    loopMode
+    loopMode,
+    centeredSlides,
+    initialSlide,
+    autoHeight,
+    slideHeight,
+    grabCursor
   } = attributes;
   const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
@@ -366,6 +371,39 @@ const SliderControls = ({
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('10', 'cocoblocks'),
     value: '10'
+  }];
+
+  // Initial slide options
+  const optionsInitialSlide = [{
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('0', 'slide'),
+    value: '0'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('1', 'slide'),
+    value: '1'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('2', 'cocoblocks'),
+    value: '2'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('3', 'cocoblocks'),
+    value: '3'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('4', 'cocoblocks'),
+    value: '4'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('5', 'cocoblocks'),
+    value: '5'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('6', 'cocoblocks'),
+    value: '6'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('7', 'cocoblocks'),
+    value: '7'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('8', 'cocoblocks'),
+    value: '8'
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('9', 'cocoblocks'),
+    value: '9'
   }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     className: "cocoblocks-panel",
@@ -556,7 +594,8 @@ const SliderControls = ({
     className: "notice components-base-control__help"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Please note that this choice influences how the slider is displayed in responsive mode. Specifically, it may impact the functionality of "per view" controls on responsive devices. Due to the nature of the row layout, some responsive "per view" settings may not have the expected effect. It\'s recommended to test your slider across different screen sizes to ensure the desired display and functionality.', 'cocoblocks')), showGridNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
     status: "warning",
-    isDismissible: false
+    isDismissible: false,
+    className: "notice-warning-margin-top"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grid mode with more than 1 row is not compatible with loop mode.Please disable loop mode or set Slides per Row to 1.', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -734,6 +773,216 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      width: "28",
+      height: "28",
+      viewBox: "0 0 28 28",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "currentColor"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+      "clip-path": "url(#clip0_1298_12)"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
+      id: "path-1-inside-1_1298_12"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M1.21289 9.13964V17.5684C0.421875 17.5068 0 17.041 0 16.1885V10.5195C0 9.66699 0.421875 9.20117 1.21289 9.13964Z"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M4.31836 7.66308V19.0977C3.4834 18.9746 3 18.5527 3 17.6123V9.15722C3 8.208 3.4834 7.78613 4.31836 7.66308Z"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M26.7871 17.6211V9.19238C27.5781 9.25391 28 9.71973 28 10.5723V16.2412C28 17.0938 27.5781 17.5596 26.7871 17.6211Z"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M23.6816 19.0977V7.66309C24.5166 7.78613 25 8.20801 25 9.14844V17.6035C25 18.5527 24.5166 18.9746 23.6816 19.0977Z"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M19.1309 21.8115H8.8916C6.99316 21.8115 6 20.8271 6 18.9463V8.86523C6 6.98438 6.99316 6 8.8916 6H18.9111C20.8096 6 21.8027 6.98438 21.8027 8.86523V18.9463C21.8027 20.8271 20.8184 21.8115 19.1309 21.8115Z"
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M1.21289 17.5684L1.0578 19.5623L3.21289 19.73V17.5684H1.21289ZM1.21289 9.13964H3.21289V6.97805L1.0578 7.14567L1.21289 9.13964ZM0 16.1885H-2H0ZM4.31836 19.0977L4.02677 21.0763L6.31836 21.414V19.0977H4.31836ZM4.31836 7.66308H6.31836V5.34674L4.02677 5.68445L4.31836 7.66308ZM3 17.6123H1H3ZM26.7871 9.19238L26.9422 7.19841L24.7871 7.03079V9.19238H26.7871ZM26.7871 17.6211H24.7871V19.7827L26.9422 19.6151L26.7871 17.6211ZM23.6816 7.66309L23.9732 5.68446L21.6816 5.34675V7.66309H23.6816ZM23.6816 19.0977H21.6816V21.414L23.9732 21.0763L23.6816 19.0977ZM3.21289 17.5684V9.13964H-0.787109V17.5684H3.21289ZM1.0578 7.14567C0.301257 7.20451 -0.547778 7.48477 -1.18736 8.20688C-1.81496 8.91547 -2 9.77867 -2 10.5195H2C2 10.4078 2.0259 10.6119 1.80699 10.859C1.5761 11.1197 1.33351 11.1363 1.36798 11.1336L1.0578 7.14567ZM-2 10.5195V16.1885H2V10.5195H-2ZM-2 16.1885C-2 16.9293 -1.81496 17.7925 -1.18736 18.5011C-0.547778 19.2232 0.301256 19.5035 1.0578 19.5623L1.36798 15.5744C1.33351 15.5717 1.5761 15.5883 1.80699 15.849C2.0259 16.0961 2 16.3002 2 16.1885H-2ZM6.31836 19.0977V7.66308H2.31836V19.0977H6.31836ZM4.02677 5.68445C3.36601 5.78183 2.53901 6.03909 1.88908 6.73023C1.21393 7.4482 1 8.34322 1 9.15722H5C5 9.08583 5.0095 9.10245 4.98579 9.17352C4.959 9.25384 4.90239 9.3648 4.80306 9.47044C4.60357 9.68258 4.43575 9.66738 4.60995 9.64171L4.02677 5.68445ZM1 9.15722V17.6123H5V9.15722H1ZM1 17.6123C1 18.4267 1.2165 19.3197 1.89223 20.0349C2.54133 20.722 3.36609 20.9789 4.02677 21.0763L4.60995 17.119C4.43567 17.0933 4.60125 17.0778 4.79991 17.2881C4.89919 17.3932 4.95674 17.5044 4.98444 17.5869C5.00906 17.6601 5 17.6797 5 17.6123H1ZM24.7871 9.19238V17.6211H28.7871V9.19238H24.7871ZM26.9422 19.6151C27.6987 19.5562 28.5478 19.276 29.1874 18.5539C29.815 17.8453 30 16.9821 30 16.2412H26C26 16.3529 25.9741 16.1489 26.193 15.9017C26.4239 15.641 26.6665 15.6244 26.632 15.6271L26.9422 19.6151ZM30 16.2412V10.5723H26V16.2412H30ZM30 10.5723C30 9.83141 29.815 8.96821 29.1874 8.25962C28.5478 7.53751 27.6987 7.25725 26.9422 7.19841L26.632 11.1864C26.6665 11.189 26.4239 11.1724 26.193 10.9118C25.9741 10.6646 26 10.4606 26 10.5723H30ZM21.6816 7.66309V19.0977H25.6816V7.66309H21.6816ZM23.9732 21.0763C24.634 20.9789 25.461 20.7217 26.1109 20.0305C26.7861 19.3125 27 18.4175 27 17.6035H23C23 17.6749 22.9905 17.6583 23.0142 17.5872C23.041 17.5069 23.0976 17.3959 23.1969 17.2903C23.3964 17.0782 23.5642 17.0934 23.3901 17.119L23.9732 21.0763ZM27 17.6035V9.14844H23V17.6035H27ZM27 9.14844C27 8.33406 26.7835 7.44109 26.1078 6.7258C25.4587 6.0387 24.6339 5.78182 23.9732 5.68446L23.3901 9.64172C23.5643 9.6674 23.3988 9.68298 23.2001 9.47269C23.1008 9.36759 23.0433 9.2563 23.0156 9.17386C22.9909 9.10059 23 9.081 23 9.14844H27ZM8.8916 23.8115H19.1309V19.8115H8.8916V23.8115ZM4 18.9463C4 20.2228 4.34111 21.5288 5.32612 22.5049C6.30803 23.4779 7.61575 23.8115 8.8916 23.8115V19.8115C8.58493 19.8115 8.39055 19.7712 8.27914 19.7336C8.17592 19.6987 8.14546 19.6674 8.14166 19.6636C8.1382 19.6602 8.10909 19.6328 8.07601 19.5367C8.03999 19.432 8 19.2453 8 18.9463H4ZM4 8.86523V18.9463H8V8.86523H4ZM8.8916 4C7.61575 4 6.30803 4.33364 5.32612 5.30667C4.34111 6.28276 4 7.5887 4 8.86523H8C8 8.56627 8.03999 8.37949 8.07601 8.27482C8.10909 8.17868 8.1382 8.15135 8.14166 8.14792C8.14546 8.14416 8.17592 8.11282 8.27914 8.07795C8.39055 8.0403 8.58493 8 8.8916 8V4ZM18.9111 4H8.8916V8H18.9111V4ZM23.8027 8.86523C23.8027 7.5887 23.4616 6.28276 22.4766 5.30667C21.4947 4.33364 20.187 4 18.9111 4V8C19.2178 8 19.4122 8.0403 19.5236 8.07795C19.6268 8.11282 19.6573 8.14416 19.6611 8.14792C19.6645 8.15135 19.6936 8.17868 19.7267 8.27482C19.7627 8.37949 19.8027 8.56627 19.8027 8.86523H23.8027ZM23.8027 18.9463V8.86523H19.8027V18.9463H23.8027ZM19.1309 23.8115C20.3632 23.8115 21.6177 23.4429 22.5498 22.4616C23.4674 21.4954 23.8027 20.2183 23.8027 18.9463H19.8027C19.8027 19.246 19.7631 19.441 19.7248 19.5563C19.6884 19.6656 19.6544 19.7017 19.6494 19.7069C19.646 19.7106 19.6296 19.7292 19.5676 19.7521C19.4983 19.7777 19.3613 19.8115 19.1309 19.8115V23.8115Z",
+      mask: "url(#path-1-inside-1_1298_12)"
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("defs", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("clipPath", {
+      id: "clip0_1298_12"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+      width: "28",
+      height: "28",
+      fill: "white"
+    })))), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered slides', 'cocoblocks')),
+    checked: centeredSlides,
+    onChange: value => setAttributes({
+      centeredSlides: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enabled, then active slide will be centered, not always on the left side.', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    className: "tooltip-icon",
+    style: {
+      top: '12px'
+    }
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+      icon: "ellipsis",
+      style: {
+        marginRight: '5px',
+        width: '16px',
+        height: '16px',
+        fontSize: '16px'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Initial slide', 'cocoblocks')),
+    value: initialSlide,
+    onChange: val => setAttributes({
+      initialSlide: val
+    }),
+    options: optionsInitialSlide
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Index number of initial slide.(Starts from 0)', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    className: "tooltip-icon"
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      fill: "currentcolor",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "28px",
+      height: "28px",
+      viewBox: "0 0 56 56"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Auto height', 'cocoblocks')),
+    checked: autoHeight,
+    onChange: value => setAttributes({
+      autoHeight: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable and slider wrapper will adapt its height to the height of the currently active slide', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    className: "tooltip-icon",
+    style: {
+      top: '12px'
+    }
+  }))), !autoHeight && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "currentColor"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80v-80h640v80H160Zm320-120L320-360l56-56 64 62v-252l-64 62-56-56 160-160 160 160-56 56-64-62v252l64-62 56 56-160 160ZM160-800v-80h640v80H160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Height', 'cocoblocks')),
+    value: slideHeight,
+    onChange: val => setAttributes({
+      slideHeight: val
+    }),
+    min: 10,
+    max: 1200,
+    step: 1
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      fill: "currentcolor",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "1em",
+      height: "1em",
+      viewBox: "0 0 56 56"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M 9.1211 36.2500 C 9.1211 47.8047 15.5195 52.9844 24.4492 52.9844 C 30.1211 52.9844 34.3398 51.1094 37.7148 47.5703 C 42.4023 42.6016 43.9492 35.0782 44.8398 32.125 C 45.5430 29.8047 46.8789 26.8282 46.8789 25.2578 C 46.8789 24.2500 45.5430 23.3594 44.6523 23.3594 C 42.6367 23.3594 41.8867 24.2734 40.6914 26.8047 C 39.3789 29.5938 37.7852 34.7969 36.5195 34.7969 C 35.7930 34.7969 35.5352 33.5078 35.5352 31.0469 L 35.5352 8.4297 C 35.5352 7.1875 34.7852 6.0625 33.1914 6.0625 C 31.6211 6.0625 30.8476 7.1875 30.8476 8.4297 L 30.8476 26.9453 C 30.0976 26.7344 29.2305 26.5703 28.2930 26.4297 L 28.2930 5.3594 C 28.2930 4.1172 27.5195 3.0156 25.9492 3.0156 C 24.3789 3.0156 23.6055 4.1172 23.6055 5.3594 L 23.6055 26.2656 C 22.7383 26.3125 21.8945 26.4063 21.0508 26.5469 L 21.0508 7.1641 C 21.0508 5.9219 20.2539 4.7969 18.7070 4.7969 C 17.1601 4.7969 16.3633 5.9219 16.3633 7.1641 L 16.3633 27.8594 C 15.4492 28.2344 14.5820 28.6797 13.8086 29.1719 L 13.8086 14.4531 C 13.8086 13.2109 13.0820 12.0860 11.5117 12.0860 C 9.8945 12.0860 9.1211 13.2109 9.1211 14.4531 Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grab Cursor', 'cocoblocks')),
+    checked: grabCursor,
+    onChange: value => setAttributes({
+      grabCursor: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    className: "tooltip-icon",
+    style: {
+      top: '12px'
+    }
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+      icon: "update",
+      style: {
+        marginRight: '5px',
+        width: '16px',
+        height: '16px',
+        fontSize: '16px'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop Mode', 'cocoblocks')),
+    value: loopMode,
+    onChange: val => {
+      setAttributes({
+        loopMode: val
+      });
+    },
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Disable', 'cocoblocks'),
+      value: 'disable'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable', 'cocoblocks'),
+      value: 'enable'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rewind', 'cocoblocks'),
+      value: 'rewind'
+    }]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables continuous loop mode', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    className: "tooltip-icon"
+  }))), showLoopNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
+    status: "warning",
+    isDismissible: false
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop mode is not compatible with grid.fill = "row".  ', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select svg-select"
@@ -1016,7 +1265,7 @@ const ColorOptionsPanelGradient = ({
     setColorPaletteOpen(!colorPaletteOpen);
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "color-options-panel"
+    className: "color-options-panel color-gradient"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: toggleColorPalette,
     className: "color-options-button",
@@ -1128,7 +1377,12 @@ function Edit({
     perViewSliderMobile,
     spaceBetweenMobile,
     slidesPerGroupMobile,
-    loopMode
+    centeredSlides,
+    loopMode,
+    initialSlide,
+    autoHeight,
+    slideHeight,
+    grabCursor
   } = attributes;
 
   // Move Element Up
@@ -1659,7 +1913,7 @@ function Edit({
   };
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}`;
   // Nessun movimento della slider
   const isGutenbergEditor = typeof wp !== 'undefined' && wp.data && wp.data.select('core/editor');
 
@@ -2427,6 +2681,12 @@ function Edit({
     direction: directionSlider,
     effect: effect,
     simulateTouch: !isGutenbergEditor,
+    centeredSlides: centeredSlides,
+    initialSlide: initialSlide,
+    autoHeight: autoHeight,
+    grabCursor: grabCursor,
+    loop: loopMode === 'enable',
+    rewind: loopMode === 'rewind',
     grid: {
       rows: slidesPerRow,
       fill: 'row'
@@ -2463,7 +2723,7 @@ function Edit({
       background: slide.backgroundType === 'color' ? slide.backgroundColor : slide.backgroundType === 'gradient' ? slide.backgroundGradient : 'transparent',
       backgroundSize: slide.fit ? slide.fit : 'cover',
       backgroundPosition: slide.focalPoint ? `${slide.focalPoint.x * 100}% ${slide.focalPoint.y * 100}%` : 'center',
-      height: '300px',
+      height: autoHeight ? 'auto' : `${slideHeight}px`,
       display: 'flex',
       flexDirection: slide.layout === 'horizontal' ? 'row' : 'column',
       textAlign: 'center',
@@ -15216,7 +15476,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"}}}');
 
 /***/ })
 

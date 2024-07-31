@@ -77,6 +77,30 @@
 		"device": {
 			"type": "string",
 			"default": "desktop"
+		},
+		"centeredSlides":{
+			"type":"boolean",
+			"default":false
+		},
+		"initialSlide":{
+			"type":"string",
+			"default":"0"
+		},
+		"autoHeight":{
+			"type":"boolean",
+			"default":false
+		},
+		"slideHeight":{
+			"type":"number",
+			"default": 300
+		},
+		"grabCursor":{
+			"type":"boolean",
+			"default":false
+		},
+		"loopMode":{
+			"type":"string",
+			"default":"disable"
 		}
 	  }
 }

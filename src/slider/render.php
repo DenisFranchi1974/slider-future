@@ -15,6 +15,12 @@ $slidesPerGroupDesktop = !empty($attributes['slidesPerGroupDesktop']) ? $attribu
 $slidesPerGroupTablet = !empty($attributes['slidesPerGroupTablet']) ? $attributes['slidesPerGroupTablet'] : 1;
 $slidesPerGroupMobile = !empty($attributes['slidesPerGroupMobile']) ? $attributes['slidesPerGroupMobile'] : 1;
 $slidesPerRow = !empty($attributes['slidesPerRow']) ? $attributes['slidesPerRow'] : 1;
+$centeredSlides = !empty($attributes['centeredSlides']) ? $attributes['centeredSlides'] : false;
+$initialSlide = !empty($attributes['initialSlide']) ? $attributes['initialSlide'] : 0;
+$autoHeight = !empty($attributes['autoHeight']) ? $attributes['autoHeight'] : false;
+$slideHeight = !empty($attributes['slideHeight']) ? $attributes['slideHeight'] : 300;
+$grabCursor = !empty($attributes['grabCursor']) ? $attributes['grabCursor'] : false;
+$loopMode = !empty($attributes['loopMode']) ? $attributes['loopMode'] : 'disable';
 
 
 // Recupera le slide dai tuoi attributi (adatta questo in base alla struttura dei tuoi attributi)
@@ -34,6 +40,12 @@ $swiper_attr = array(
     'slidesPerGroupTablet' => $slidesPerGroupTablet,
     'slidesPerGroupMobile' => $slidesPerGroupMobile,
     'slidesPerRow' => $slidesPerRow,
+    'centeredSlides' => $centeredSlides,
+    'initialSlide' => $initialSlide,
+    'autoHeight' => $autoHeight,
+    'slideHeight' => $slideHeight,
+    'grabCursor' => $grabCursor,
+    'loopMode' => $loopMode,
 );
 
 $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
@@ -43,6 +55,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
         'class' => 'swiper ' . $slider_unique_class,
     )
 );
+
 ?>
 
 <div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>">
@@ -64,7 +77,17 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             echo 'background-image: ' . esc_attr($slide['backgroundGradient']) . ';';
                         }
                     }
-                ?> height: 300px; display: flex; text-align: center; width: 100%; position: relative; gap: <?php echo esc_attr($slide['gapItems']); ?>px; flex-direction: <?php echo esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column'); ?>;">
+                    // Gestisci l'altezza
+                    echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
+                    
+                    // Altri stili
+                    echo 'display: flex; ';
+                    echo 'text-align: center; ';
+                    echo 'width: 100%; ';
+                    echo 'position: relative; ';
+                    echo 'gap: ' . esc_attr($slide['gapItems']) . 'px; ';
+                    echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . ';';
+                ?>">
                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
                     <video src="<?php echo esc_url($slide['backgroundVideo']); ?>" autoplay muted loop style="width: 100%; object-position: <?php echo esc_attr( $background_position )?>; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; z-index: 0;"></video>
                 <?php endif; ?>

@@ -1,5 +1,3 @@
-import { grid } from "@wordpress/icons";
-
 document.addEventListener('DOMContentLoaded', () => {
     const swiperElement = document.querySelector('.swiper');
 
@@ -8,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (swiperData) {
             const swiperConfig = JSON.parse(swiperData);
+
+             // Aggiungi il controllo per la compatibilità
+             const loopMode = swiperConfig.loopMode ?? 'disable';
+             const slidesPerRow = swiperConfig.slidesPerRow ?? 1;
+             const gridEnabled = slidesPerRow > 1;
+ 
+             if (loopMode === 'enable' && gridEnabled) {
+                 console.warn("Swiper Loop Warning: Loop mode is not compatible with grid.fill = 'row'.");
+             }
 
             new Swiper('.swiper', {
                 direction: swiperConfig.directionSlider,
@@ -26,6 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     rows: swiperConfig.slidesPerRow,
                     fill: 'row',
                 },
+                centeredSlides: swiperConfig.centeredSlides,
+                initialSlide: swiperConfig.initialSlide,
+                autoHeight: swiperConfig.autoHeight,
+                grabCursor: swiperConfig.grabCursor,
+                loop: swiperConfig.loopMode === 'enable',
+                rewind: swiperConfig.loopMode === 'rewind',
+               
                 breakpoints:{
                     640: {
                         slidesPerView: swiperConfig.perViewSliderMobile,

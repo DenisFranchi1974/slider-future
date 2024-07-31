@@ -1,33 +1,23 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
 var __webpack_exports__ = {};
 /*!****************************!*\
   !*** ./src/slider/view.js ***!
   \****************************/
-__webpack_require__.r(__webpack_exports__);
-
 document.addEventListener('DOMContentLoaded', () => {
   const swiperElement = document.querySelector('.swiper');
   if (swiperElement) {
     const swiperData = swiperElement.getAttribute('data-swiper');
     if (swiperData) {
+      var _swiperConfig$loopMod, _swiperConfig$slidesP;
       const swiperConfig = JSON.parse(swiperData);
+
+      // Aggiungi il controllo per la compatibilità
+      const loopMode = (_swiperConfig$loopMod = swiperConfig.loopMode) !== null && _swiperConfig$loopMod !== void 0 ? _swiperConfig$loopMod : 'disable';
+      const slidesPerRow = (_swiperConfig$slidesP = swiperConfig.slidesPerRow) !== null && _swiperConfig$slidesP !== void 0 ? _swiperConfig$slidesP : 1;
+      const gridEnabled = slidesPerRow > 1;
+      if (loopMode === 'enable' && gridEnabled) {
+        console.warn("Swiper Loop Warning: Loop mode is not compatible with grid.fill = 'row'.");
+      }
       new Swiper('.swiper', {
         direction: swiperConfig.directionSlider,
         effect: swiperConfig.effect,
@@ -46,6 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
           rows: swiperConfig.slidesPerRow,
           fill: 'row'
         },
+        centeredSlides: swiperConfig.centeredSlides,
+        initialSlide: swiperConfig.initialSlide,
+        autoHeight: swiperConfig.autoHeight,
+        grabCursor: swiperConfig.grabCursor,
+        loop: swiperConfig.loopMode === 'enable',
+        rewind: swiperConfig.loopMode === 'rewind',
         breakpoints: {
           640: {
             slidesPerView: swiperConfig.perViewSliderMobile,

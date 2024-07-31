@@ -50,7 +50,12 @@ export default function Edit({ attributes, setAttributes }) {
 		perViewSliderMobile,
 		spaceBetweenMobile,
 		slidesPerGroupMobile, 
-        loopMode
+		centeredSlides,
+        loopMode,
+		initialSlide,
+		autoHeight,
+		slideHeight,
+		grabCursor,
 	} = attributes;
 
 	// Move Element Up
@@ -633,7 +638,7 @@ export default function Edit({ attributes, setAttributes }) {
 	};
 
 	// Update Effect
-	const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}`;
+	const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}`;
 	// Nessun movimento della slider
 	const isGutenbergEditor =
 		typeof wp !== 'undefined' && wp.data && wp.data.select('core/editor');
@@ -1812,6 +1817,12 @@ export default function Edit({ attributes, setAttributes }) {
 					direction={directionSlider}
 					effect={effect}
 					simulateTouch={!isGutenbergEditor}
+					centeredSlides={centeredSlides}
+					initialSlide={initialSlide}
+					autoHeight={autoHeight}
+					grabCursor={grabCursor}
+					loop={loopMode === 'enable'}
+					rewind={loopMode === 'rewind'}
 					grid={{
 						rows: slidesPerRow,
 						fill: 'row',
@@ -1860,7 +1871,7 @@ export default function Edit({ attributes, setAttributes }) {
 									backgroundPosition: slide.focalPoint
 									? `${slide.focalPoint.x * 100}% ${slide.focalPoint.y * 100}%`
 									: 'center',
-									height: '300px',
+									height: autoHeight ? 'auto' : `${slideHeight}px`,
 									display: 'flex',
 									flexDirection:
 										slide.layout === 'horizontal' ? 'row' : 'column',

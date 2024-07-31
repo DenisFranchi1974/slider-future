@@ -455,6 +455,43 @@
 .cocoblocks-panel .components-input-control__container .components-input-control__suffix svg {
   fill: var(--light-color) !important;
 }
+.cocoblocks-panel .color-options-panel.color-gradient .components-select-control {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-select-control .components-select-control__input {
+  background-color: var(--background-color);
+  min-height: auto;
+  height: 32px;
+  padding-right: 10px;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-select-control label {
+  font-size: 12px !important;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-flex.components-custom-gradient-picker__ui-line {
+  align-items: flex-start !important;
+}
+.cocoblocks-panel .custom-select.color .color-options-panel.color-gradient .components-input-base {
+  background-color: transparent !important;
+}
+.cocoblocks-panel .color-options-panel.color-gradient input {
+  padding: 0 !important;
+  width: auto !important;
+  height: 16px !important;
+  min-height: auto !important;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-angle-picker-control__angle-circle-indicator {
+  background-color: var(--primary-color) !important;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-circular-option-picker__custom-clear-wrapper .components-button.is-tertiary {
+  color: var(--light-color) !important;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-custom-gradient-picker__gradient-bar.has-gradient {
+  border-radius: 14px;
+}
+.cocoblocks-panel .color-options-panel.color-gradient .components-custom-gradient-picker__gradient-bar-background {
+  border-radius: 12px 12px 0 0;
+}
 .cocoblocks-panel .focal-point-picker {
   padding: 0 !important;
 }
@@ -885,4 +922,9 @@
 }
 .tab-2.tab2 {
   display: block;
+}
+
+/* Notice Wrning margin top */
+.notice-warning-margin-top {
+  margin-top: 12px;
 }
