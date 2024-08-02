@@ -411,14 +411,6 @@
 			"type":"number",
 			"default":1
 		},
-		"autoHeightSlider":{
-			"type":"boolean",
-			"default":false
-		},
-		"maxHeightSlider":{
-			"type":"number",
-			"default":400
-		},
 		"navigation": {
 			"type": "boolean",
 			"default": false
@@ -488,6 +480,22 @@
 			"default":true
 		},
 		"navigationMobile":{
+			"type":"boolean",
+			"default":false
+		},
+		"autoplayProgress":{
+			"type":"boolean",
+			"default":false
+		},
+		"autoplayProgressColor":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"autoplayProgressPosition":{
+			"type":"string",
+			"default":"bottom-right"
+		},
+		"parallax":{
 			"type":"boolean",
 			"default":false
 		}

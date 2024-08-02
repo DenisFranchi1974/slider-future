@@ -19,6 +19,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCreative, Autoplay} from 'swiper/modules';
 import { help } from '@wordpress/icons';
 import ColorOptionsPanel from './colorPanel';
+import AlignmentControlTwo from './aligncontrol-two';
 
 const SliderControls = ({ attributes, setAttributes }) => {
 	const {
@@ -136,8 +137,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 		invert,
 		releaseOnEdges,
 		sensitivity,
-		autoHeightSlider,
-		maxHeightSlider,
+		autoplayProgress,
+		autoplayProgressColor,
+		autoplayProgressPosition,
+		parallax
 	} = attributes;
 
 
@@ -511,7 +514,6 @@ const SliderControls = ({ attributes, setAttributes }) => {
 	};
 
 	const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
-
 
 	return (
 		<>
@@ -1843,6 +1845,34 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							<Icon icon={help} className="tooltip-icon" />
 						</Tooltip>
 					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Autoplay progress', 'cocoblocks')}
+							checked={ autoplayProgress}
+							onChange={ ( value ) =>
+								setAttributes( { autoplayProgress : value } )
+							}
+						/>
+					</div>
+					{autoplayProgress == true  &&
+					<>
+					<div className='custom-select color'>
+						<ColorOptionsPanel
+							buttonTitle={__('Color','cocoblocks')}
+							colorNormal={autoplayProgressColor}
+							setColorNormal={(color) => setAttributes({ autoplayProgressColor: color })}
+						/>
+					</div>
+					<div className="custom-select">
+                        <AlignmentControlTwo
+                          value={autoplayProgressPosition}
+						  onChange={ ( newPosition ) =>
+							setAttributes( { autoplayProgressPosition : newPosition } )
+						}
+                        />
+                    </div>
+					</>
+                   }
 					</>
                     }
 					</div>
@@ -1961,7 +1991,295 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					</>
 					}
 				</div>
-				</PanelBody>
+				<div className='content-section-panel'>
+					<div className='custom-select svg-select'>
+						<ToggleControl
+						    label={ <><svg width="1em" height="1em" viewBox="0 0 51 57" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M2.21558478,34.733889 C2.86274571,34.733889 3.4077387,34.5129143 3.85056375,34.070965 C4.2933888,33.6290157 4.51480132,33.102267 4.51480132,32.4907189 L4.51480132,23.5092811 C4.51480132,22.897733 4.2933888,22.3662408 3.85056375,21.9148044 C3.4077387,21.4633681 2.86274571,21.2376499 2.21558478,21.2376499 C1.58681408,21.2376499 1.06035728,21.4633681 0.636214365,21.9148044 C0.212071455,22.3662408 0,22.897733 0,23.5092811 L0,32.4907189 C0,33.102267 0.212071455,33.6290157 0.636214365,34.070965 C1.06035728,34.5129143 1.58681408,34.733889 2.21558478,34.733889 Z M11.2631398,45.4978654 C11.89337,45.4978654 12.4298977,45.2811234 12.8727227,44.8476395 C13.3155478,44.4141555 13.5369603,43.8831741 13.5369603,43.2546953 L13.5369603,12.7453047 C13.5369603,12.1168259 13.3155478,11.581174 12.8727227,11.1383489 C12.4298977,10.6955239 11.89337,10.4741114 11.2631398,10.4741114 C10.6194818,10.4741114 10.0850704,10.6955239 9.65990586,11.1383489 C9.23474127,11.581174 9.02215898,12.1168259 9.02215898,12.7453047 L9.02215898,43.2546953 C9.02215898,43.8831741 9.23474127,44.4141555 9.65990586,44.8476395 C10.0850704,45.2811234 10.6194818,45.4978654 11.2631398,45.4978654 Z M20.2879259,56 C20.9333354,56 21.473293,55.7794632 21.9077986,55.3383896 C22.3423043,54.897316 22.5595571,54.3615181 22.5595571,53.730996 L22.5595571,2.27163119 C22.5595571,1.64110904 22.3423043,1.10487331 21.9077986,0.662923984 C21.473293,0.220974661 20.9333354,0 20.2879259,0 C19.6594471,0 19.1289036,0.220974661 18.6962954,0.662923984 C18.2636871,1.10487331 18.047383,1.64110904 18.047383,2.27163119 L18.047383,53.730996 C18.047383,54.3615181 18.2636871,54.897316 18.6962954,55.3383896 C19.1289036,55.7794632 19.6594471,56 20.2879259,56 Z M29.3354809,42.1617902 C29.9639597,42.1617902 30.495452,41.9454131 30.9299576,41.5126589 C31.3644633,41.0799047 31.5817161,40.5568778 31.5817161,39.9435783 L31.5817161,16.0564217 C31.5817161,15.4431222 31.3644633,14.9149869 30.9299576,14.4720159 C30.495452,14.0290449 29.9639597,13.8075594 29.3354809,13.8075594 C28.6900715,13.8075594 28.1552953,14.0290449 27.7311524,14.4720159 C27.3070095,14.9149869 27.094938,15.4431222 27.094938,16.0564217 L27.094938,39.9435783 C27.094938,40.5568778 27.3070095,41.0799047 27.7311524,41.5126589 C28.1552953,41.9454131 28.6900715,42.1617902 29.3354809,42.1617902 Z M38.3580778,50.1339547 C38.988308,50.1339547 39.5201651,49.91298 39.9536491,49.4710307 C40.3871331,49.0290814 40.6038751,48.5021867 40.6038751,47.8903467 L40.6038751,8.11228048 C40.6038751,7.50044047 40.3871331,6.96887527 39.9536491,6.51758487 C39.5201651,6.06629448 38.988308,5.84064929 38.3580778,5.84064929 C37.7126683,5.84064929 37.1778191,6.06629448 36.7535303,6.51758487 C36.3292414,6.96887527 36.117097,7.50044047 36.117097,8.11228048 L36.117097,47.8903467 C36.117097,48.5021867 36.3292414,49.0290814 36.7535303,49.4710307 C37.1778191,49.91298 37.7126683,50.1339547 38.3580778,50.1339547 Z M47.3802368,36.9236399 C48.010467,36.9236399 48.5423971,36.7026652 48.976027,36.2607159 C49.409657,35.8187666 49.6264719,35.2911421 49.6264719,34.6778426 L49.6264719,21.3221574 C49.6264719,20.7088579 49.409657,20.1765629 48.976027,19.7252725 C48.5423971,19.2739821 48.010467,19.0483369 47.3802368,19.0483369 C46.7348273,19.0483369 46.2000511,19.2739821 45.7759082,19.7252725 C45.3517653,20.1765629 45.1396938,20.7088579 45.1396938,21.3221574 L45.1396938,34.6778426 C45.1396938,35.2911421 45.3517653,35.8187666 45.7759082,36.2607159 C46.2000511,36.7026652 46.7348273,36.9236399 47.3802368,36.9236399 Z" transform="translate(.647 .504)"></path></svg>{__('Free mode', 'cocoblocks')}</>}
+							checked={ freeMode }
+							onChange={ ( value ) =>
+								setAttributes( { freeMode: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Doesn\'t work in the editor!', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{top:'12px'}}/>
+						</Tooltip>
+					</div>
+					{freeMode == true  &&
+					<>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Sticky', 'cocoblocks')}
+							checked={ stickyFreeMode}
+							onChange={ ( value ) =>
+								setAttributes( { stickyFreeMode : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Enables Snap to slides positions in free mode', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Momentum', 'cocoblocks')}
+							checked={ momentumFreeMode}
+							onChange={ ( value ) =>
+								setAttributes( { momentumFreeMode : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('If enabled, then slide will keep moving for a while you release it after', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Momentum bounce', 'cocoblocks')}
+							checked={ momentumBounceFreeMode}
+							onChange={ ( value ) =>
+								setAttributes( { momentumBounceFreeMode : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Enables momentum bounce in free mode', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+						<RangeControl
+							label={__('Momentum bounce ratio', 'cocobocks')}
+							value={momentumBounceRatioFreeMode}
+							onChange={value => setAttributes({ momentumBounceRatioFreeMode: value })}
+							min={.1}
+							max={3}
+							step={.1}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Higher value produces larger momentum bounce effect', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon"  style={{left:'75%'}} />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+						<RangeControl
+							label={__('Momentum ratio', 'cocobocks')}
+							value={momentumRatioFreeMode}
+							onChange={value => setAttributes({ momentumRatioFreeMode: value })}
+							min={.1}
+							max={3}
+							step={.1}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Higher value produces larger momentum distance after you release sldier', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{left:'75%'}}/>
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+						<RangeControl
+							label={__('Momentum velocity ratio', 'cocobocks')}
+							value={momentumVelocityRatioFreeMode}
+							onChange={value => setAttributes({ momentumVelocityRatioFreeMode: value })}
+							min={.1}
+							max={3}
+							step={.1}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Higher value produces larger momentum velocity after you release sldier', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{left:'75%'}}/>
+						</Tooltip>
+					</div>
+					</>
+					}
+				</div>
+				<div className='content-section-panel'>
+					<div className='custom-select svg-select'>
+						<ToggleControl
+						    label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 6.1959 44.0907 L 49.8239 44.0907 C 53.9281 44.0907 56 42.0386 56 37.9935 L 56 19.0308 C 56 14.9659 53.9281 12.9138 49.8239 12.9138 L 6.1959 12.9138 C 2.0719 12.9138 0 14.9659 0 19.0308 L 0 37.9935 C 0 42.0583 2.0719 44.0907 6.1959 44.0907 Z M 6.2551 40.9138 C 4.2819 40.9138 3.1769 39.8680 3.1769 37.8159 L 3.1769 19.2084 C 3.1769 17.1562 4.2819 16.0906 6.2551 16.0906 L 49.7649 16.0906 C 51.7184 16.0906 52.8232 17.1562 52.8232 19.2084 L 52.8232 37.8159 C 52.8232 39.8680 51.7184 40.9138 49.7649 40.9138 Z M 46.3117 23.6678 L 47.7128 23.6678 C 48.2850 23.6678 48.5412 23.4113 48.5412 22.8391 L 48.5412 21.4381 C 48.5412 20.8856 48.2850 20.6094 47.7128 20.6094 L 46.3117 20.6094 C 45.7395 20.6094 45.4829 20.8856 45.4829 21.4381 L 45.4829 22.8391 C 45.4829 23.4113 45.7395 23.6678 46.3117 23.6678 Z M 39.9578 23.6678 L 41.3588 23.6678 C 41.9311 23.6678 42.2075 23.4113 42.2075 22.8391 L 42.2075 21.4381 C 42.2075 20.8856 41.9311 20.6094 41.3588 20.6094 L 39.9578 20.6094 C 39.4053 20.6094 39.1289 20.8856 39.1289 21.4381 L 39.1289 22.8391 C 39.1289 23.4113 39.4053 23.6678 39.9578 23.6678 Z M 33.6040 23.6678 L 35.0248 23.6678 C 35.5771 23.6678 35.8536 23.4113 35.8536 22.8391 L 35.8536 21.4381 C 35.8536 20.8856 35.5771 20.6094 35.0248 20.6094 L 33.6040 20.6094 C 33.0515 20.6094 32.7753 20.8856 32.7753 21.4381 L 32.7753 22.8391 C 32.7753 23.4113 33.0515 23.6678 33.6040 23.6678 Z M 27.2700 23.6678 L 28.6710 23.6678 C 29.2432 23.6678 29.4997 23.4113 29.4997 22.8391 L 29.4997 21.4381 C 29.4997 20.8856 29.2432 20.6094 28.6710 20.6094 L 27.2700 20.6094 C 26.6977 20.6094 26.4412 20.8856 26.4412 21.4381 L 26.4412 22.8391 C 26.4412 23.4113 26.6977 23.6678 27.2700 23.6678 Z M 20.9162 23.6678 L 22.3369 23.6678 C 22.8894 23.6678 23.1657 23.4113 23.1657 22.8391 L 23.1657 21.4381 C 23.1657 20.8856 22.8894 20.6094 22.3369 20.6094 L 20.9162 20.6094 C 20.3637 20.6094 20.0874 20.8856 20.0874 21.4381 L 20.0874 22.8391 C 20.0874 23.4113 20.3637 23.6678 20.9162 23.6678 Z M 14.5624 23.6678 L 15.9831 23.6678 C 16.5356 23.6678 16.8119 23.4113 16.8119 22.8391 L 16.8119 21.4381 C 16.8119 20.8856 16.5356 20.6094 15.9831 20.6094 L 14.5624 20.6094 C 14.0099 20.6094 13.7336 20.8856 13.7336 21.4381 L 13.7336 22.8391 C 13.7336 23.4113 14.0099 23.6678 14.5624 23.6678 Z M 8.2283 23.6678 L 9.6293 23.6678 C 10.2016 23.6678 10.4581 23.4113 10.4581 22.8391 L 10.4581 21.4381 C 10.4581 20.8856 10.2016 20.6094 9.6293 20.6094 L 8.2283 20.6094 C 7.6561 20.6094 7.3996 20.8856 7.3996 21.4381 L 7.3996 22.8391 C 7.3996 23.4113 7.6561 23.6678 8.2283 23.6678 Z M 20.9162 30.0216 L 22.3369 30.0216 C 22.8894 30.0216 23.1657 29.7454 23.1657 29.1929 L 23.1657 27.7919 C 23.1657 27.2197 22.8894 26.9631 22.3369 26.9631 L 20.9162 26.9631 C 20.3637 26.9631 20.0874 27.2197 20.0874 27.7919 L 20.0874 29.1929 C 20.0874 29.7454 20.3637 30.0216 20.9162 30.0216 Z M 27.2700 30.0216 L 28.6710 30.0216 C 29.2432 30.0216 29.4997 29.7454 29.4997 29.1929 L 29.4997 27.7919 C 29.4997 27.2197 29.2432 26.9631 28.6710 26.9631 L 27.2700 26.9631 C 26.6977 26.9631 26.4412 27.2197 26.4412 27.7919 L 26.4412 29.1929 C 26.4412 29.7454 26.6977 30.0216 27.2700 30.0216 Z M 33.6040 30.0216 L 35.0248 30.0216 C 35.5771 30.0216 35.8536 29.7454 35.8536 29.1929 L 35.8536 27.7919 C 35.8536 27.2197 35.5771 26.9631 35.0248 26.9631 L 33.6040 26.9631 C 33.0515 26.9631 32.7753 27.2197 32.7753 27.7919 L 32.7753 29.1929 C 32.7753 29.7454 33.0515 30.0216 33.6040 30.0216 Z M 39.9578 30.0216 L 41.3588 30.0216 C 41.9311 30.0216 42.2075 29.7454 42.2075 29.1929 L 42.2075 27.7919 C 42.2075 27.2197 41.9311 26.9631 41.3588 26.9631 L 39.9578 26.9631 C 39.4053 26.9631 39.1289 27.2197 39.1289 27.7919 L 39.1289 29.1929 C 39.1289 29.7454 39.4053 30.0216 39.9578 30.0216 Z M 14.5624 30.0216 L 15.9831 30.0216 C 16.5356 30.0216 16.8119 29.7454 16.8119 29.1929 L 16.8119 27.7919 C 16.8119 27.2197 16.5356 26.9631 15.9831 26.9631 L 14.5624 26.9631 C 14.0099 26.9631 13.7336 27.2197 13.7336 27.7919 L 13.7336 29.1929 C 13.7336 29.7454 14.0099 30.0216 14.5624 30.0216 Z M 46.3117 30.0216 L 47.7128 30.0216 C 48.2850 30.0216 48.5412 29.7454 48.5412 29.1929 L 48.5412 27.7919 C 48.5412 27.2197 48.2850 26.9631 47.7128 26.9631 L 46.3117 26.9631 C 45.7395 26.9631 45.4829 27.2197 45.4829 27.7919 L 45.4829 29.1929 C 45.4829 29.7454 45.7395 30.0216 46.3117 30.0216 Z M 8.2283 30.0216 L 9.6293 30.0216 C 10.2016 30.0216 10.4581 29.7454 10.4581 29.1929 L 10.4581 27.7919 C 10.4581 27.2197 10.2016 26.9631 9.6293 26.9631 L 8.2283 26.9631 C 7.6561 26.9631 7.3996 27.2197 7.3996 27.7919 L 7.3996 29.1929 C 7.3996 29.7454 7.6561 30.0216 8.2283 30.0216 Z M 14.5624 36.3754 L 41.3588 36.3754 C 41.9311 36.3754 42.2075 36.0992 42.2075 35.5467 L 42.2075 34.1259 C 42.2075 33.5735 41.9311 33.2972 41.3588 33.2972 L 14.5624 33.2972 C 14.0099 33.2972 13.7336 33.5735 13.7336 34.1259 L 13.7336 35.5467 C 13.7336 36.0992 14.0099 36.3754 14.5624 36.3754 Z M 46.3117 36.3754 L 47.7128 36.3754 C 48.2850 36.3754 48.5412 36.0992 48.5412 35.5467 L 48.5412 34.1259 C 48.5412 33.5735 48.2850 33.2972 47.7128 33.2972 L 46.3117 33.2972 C 45.7395 33.2972 45.4829 33.5735 45.4829 34.1259 L 45.4829 35.5467 C 45.4829 36.0992 45.7395 36.3754 46.3117 36.3754 Z M 8.2283 36.3754 L 9.6293 36.3754 C 10.2016 36.3754 10.4581 36.0992 10.4581 35.5467 L 10.4581 34.1259 C 10.4581 33.5735 10.2016 33.2972 9.6293 33.2972 L 8.2283 33.2972 C 7.6561 33.2972 7.3996 33.5735 7.3996 34.1259 L 7.3996 35.5467 C 7.3996 36.0992 7.6561 36.3754 8.2283 36.3754 Z"></path></svg>{__('Keyboard control', 'cocoblocks')}</>}
+							checked={ keyboard }
+							onChange={ ( value ) =>
+								setAttributes( { keyboard: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Enable keyboard control. Doesn\'t work in the editor!', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{top:'13px'}}/>
+						</Tooltip>
+					</div>
+					{keyboard == true  &&
+					<>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Only in viewport', 'cocoblocks')}
+							checked={ viewPortKeyboard}
+							onChange={ ( value ) =>
+								setAttributes( { viewPortKeyboard : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('When enabled it will control sliders that are currently in viewport', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Page Up/Down keys', 'cocoblocks')}
+							checked={ upKeyboard}
+							onChange={ ( value ) =>
+								setAttributes( { upKeyboard : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('When enabled it will enabled keyword navigation by Page Up and Page Down keys', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					</>
+                    }
+				</div>
+				<div className='content-section-panel'>
+					<div className='custom-select svg-select'>
+						<ToggleControl
+						    label={ <><svg width="1em" height="1em" viewBox="0 0 37 57" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M0.739837823,15.7972712 L16.095128,15.7972712 L16.095128,0 C12.7831945,0.159581055 10.0615437,0.805424801 7.93017583,1.93753124 C5.79880792,3.06963768 4.15711433,4.76863283 3.00509508,7.03451671 C1.85307582,9.30040059 1.09799007,12.2213188 0.739837823,15.7972712 Z M19.8519668,15.7972712 L35.2043327,15.7972712 C34.8461804,12.2374718 34.0991712,9.32504793 32.963305,7.05999955 C31.8274388,4.79495118 30.1946573,3.0923355 28.0649604,1.95215254 C25.9352634,0.811969574 23.1975989,0.162087564 19.8519668,0.00250650872 L19.8519668,15.7972712 Z M17.9842,56 C23.8739385,56 28.3392838,54.2813705 31.3802359,50.8441116 C34.421188,47.4068526 35.941664,42.3591618 35.941664,35.7010392 C35.941664,32.6715056 35.9023954,29.7888813 35.8238581,27.0531663 C35.7453208,24.3174513 35.6284897,21.8248676 35.4733646,19.5754153 L0.470805887,19.5754153 C0.314009842,21.8248676 0.196343183,24.3174513 0.11780591,27.0531663 C0.0392686366,29.7888813 0,32.6715056 0,35.7010392 C0,42.3591618 1.52089379,47.4068526 4.56268137,50.8441116 C7.60446895,54.2813705 12.0783085,56 17.9842,56 Z" transform="translate(.647 .19)"></path></svg>{__('Mousewheel control', 'cocoblocks')}</>}
+							checked={ mousewheel}
+							onChange={ ( value ) =>
+								setAttributes( { mousewheel: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Enable or disable mouse wheel control for swiping.', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{left:'65%',top:'13px'}}/>
+						</Tooltip>
+					</div>
+					{mousewheel == true  &&
+					<>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Force to axis', 'cocoblocks')}
+							checked={ forceToAxis}
+							onChange={ ( value ) =>
+								setAttributes( { forceToAxis : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Invert scrolling', 'cocoblocks')}
+							checked={ invert}
+							onChange={ ( value ) =>
+								setAttributes( { invert : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Set to true to invert sliding direction', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Release on edges', 'cocoblocks')}
+							checked={ releaseOnEdges}
+							onChange={ ( value ) =>
+								setAttributes( { releaseOnEdges : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+						<RangeControl
+							label={__('Sensitivity', 'cocobocks')}
+							value={sensitivity}
+							onChange={value => setAttributes({ sensitivity: value })}
+							min={.1}
+							max={3}
+							step={.1}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon"  style={{left:'75%'}} />
+						</Tooltip>
+					</div>
+					</>
+                   }
+				</div>
+				<div className='content-section-panel'>
+					<div className='custom-select svg-select'>
+						<ToggleControl
+						    label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax', 'cocoblocks')}</>}
+							checked={ parallax}
+							onChange={ ( value ) =>
+								setAttributes( { parallax: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Enables parallax transition effects', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{left:'65%',top:'13px'}}/>
+						</Tooltip>
+					</div>
+					{parallax == true && (
+						<p className="notice components-base-control__help" style={{borderRadius:0,marginTop:0}}>
+							{__(
+								'By enabling this effect you will have additional controls available for the various elements of the Slides to adjust the Parallax effect!',
+								'cocoblocks'
+							)}
+						</p>
+					)}
+				</div>
+			</PanelBody>
 			 {/* Modal Creative Effect */}
 			 {isOpen && (
 				<Modal

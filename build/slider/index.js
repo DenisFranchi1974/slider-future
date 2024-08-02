@@ -34,6 +34,186 @@ const addTemplate = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1
 
 /***/ }),
 
+/***/ "./node_modules/@wordpress/icons/build-module/library/align-center.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/align-center.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const alignCenter = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M7.5 5.5h9V4h-9v1.5Zm-3.5 7h16V11H4v1.5Zm3.5 7h9V18h-9v1.5Z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (alignCenter);
+//# sourceMappingURL=align-center.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/align-left.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/align-left.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const alignLeft = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M13 5.5H4V4h9v1.5Zm7 7H4V11h16v1.5Zm-7 7H4V18h9v1.5Z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (alignLeft);
+//# sourceMappingURL=align-left.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/align-right.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/align-right.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const alignRight = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M11.111 5.5H20V4h-8.889v1.5ZM4 12.5h16V11H4v1.5Zm7.111 7H20V18h-8.889v1.5Z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (alignRight);
+//# sourceMappingURL=align-right.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/format-bold.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/format-bold.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const formatBold = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M14.7 11.3c1-.6 1.5-1.6 1.5-3 0-2.3-1.3-3.4-4-3.4H7v14h5.8c1.4 0 2.5-.3 3.3-1 .8-.7 1.2-1.7 1.2-2.9.1-1.9-.8-3.1-2.6-3.7zm-5.1-4h2.3c.6 0 1.1.1 1.4.4.3.3.5.7.5 1.2s-.2 1-.5 1.2c-.3.3-.8.4-1.4.4H9.6V7.3zm4.6 9c-.4.3-1 .4-1.7.4H9.6v-3.9h2.9c.7 0 1.3.2 1.7.5.4.3.6.8.6 1.5s-.2 1.2-.6 1.5z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatBold);
+//# sourceMappingURL=format-bold.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/format-italic.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/format-italic.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const formatItalic = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M12.5 5L10 19h1.9l2.5-14z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatItalic);
+//# sourceMappingURL=format-italic.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/format-underline.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/format-underline.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const formatUnderline = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M7 18v1h10v-1H7zm5-2c1.5 0 2.6-.4 3.4-1.2.8-.8 1.1-2 1.1-3.5V5H15v5.8c0 1.2-.2 2.1-.6 2.8-.4.7-1.2 1-2.4 1s-2-.3-2.4-1c-.4-.7-.6-1.6-.6-2.8V5H7.5v6.2c0 1.5.4 2.7 1.1 3.5.8.9 1.9 1.3 3.4 1.3z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatUnderline);
+//# sourceMappingURL=format-underline.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@wordpress/icons/build-module/library/help.js":
 /*!********************************************************************!*\
   !*** ./node_modules/@wordpress/icons/build-module/library/help.js ***!
@@ -266,8 +446,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/help.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/help.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _aligncontrol_two__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./aligncontrol-two */ "./src/components/aligncontrol-two.js");
 
 // SliderControls.js
 
@@ -276,6 +457,7 @@ __webpack_require__.r(__webpack_exports__);
 // Import Swiper React components
 
 // import required modules
+
 
 
 
@@ -398,8 +580,10 @@ const SliderControls = ({
     invert,
     releaseOnEdges,
     sensitivity,
-    autoHeightSlider,
-    maxHeightSlider
+    autoplayProgress,
+    autoplayProgressColor,
+    autoplayProgressPosition,
+    parallax
   } = attributes;
   const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
@@ -824,7 +1008,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), perViewSlider == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
@@ -875,7 +1059,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The number of slides that should be grouped together for navigation.(Desktop)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select",
@@ -907,7 +1091,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Number of slider rows, for multirow layout.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), slidesPerRow !== '1' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -953,7 +1137,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Number of slides per view in Tablet (768px). Slides visible at the same time on slider\'s container.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), perViewSliderTablet == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -1001,7 +1185,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The number of slides that should be grouped together for navigation.(Tablet)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1041,7 +1225,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Number of slides per view in Mobile (640px). Slides visible at the same time on slider\'s container.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), perViewSliderMobile == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -1089,7 +1273,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The number of slides that should be grouped together for navigation.(Mobile)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1139,7 +1323,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enabled, then active slide will be centered, not always on the left side.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '12px'
@@ -1172,7 +1356,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Index number of initial slide.(Starts from 0)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1201,7 +1385,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable and slider wrapper will adapt its height to the height of the currently active slide', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '12px'
@@ -1252,7 +1436,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '12px'
@@ -1296,7 +1480,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables continuous loop mode', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), showLoopNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
     status: "warning",
@@ -1368,7 +1552,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1387,7 +1571,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (shadow || slideShadows) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1428,7 +1612,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables slides shadows.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1450,7 +1634,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Depth offset in px(slides translate in Z axis)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '8px'
@@ -1475,7 +1659,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide rotate in degrees', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '8px'
@@ -1500,7 +1684,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Stretch space between slides (in px)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '8px'
@@ -1533,7 +1717,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables slides shadows.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1552,7 +1736,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables cards rotation', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })))), effect == 'creative' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: openModal,
@@ -1581,7 +1765,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current slide fades out while the new slide appears simultaneously.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })), crossFade == false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
@@ -1592,7 +1776,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current slide completely disappears before the new slide starts to appear.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1621,7 +1805,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Duration of transition between slides (in ms).', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       left: '66%',
@@ -1658,7 +1842,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '9px'
@@ -1837,7 +2021,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Toggle navigation buttons visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1970,7 +2154,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Toggle (hide/show) pagination container visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), typePagination == 'fraction' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2011,7 +2195,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Makes pagination progressbar opposite to Swiper\'s direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })))), typePagination == 'bullets' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2030,7 +2214,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enable then clicking on pagination button will cause transition to appropriate slide. Only for "bullets" pagination type', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2049,7 +2233,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), dynamicPagination == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2188,7 +2372,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '12px',
@@ -2230,7 +2414,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sets the delay time in milliseconds between each slide transition.', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '12px',
@@ -2253,7 +2437,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '9px',
@@ -2276,7 +2460,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled autoplay will be paused on mouse enter over Swiper container. If "Disabled on interaction" is also enabled, it will stop autoplay instead of pause', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: '9px',
@@ -2299,7 +2483,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables autoplay in reverse direction', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2318,8 +2502,31 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Autoplay progress', 'cocoblocks'),
+    checked: autoplayProgress,
+    onChange: value => setAttributes({
+      autoplayProgress: value
+    })
+  })), autoplayProgress == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color', 'cocoblocks'),
+    colorNormal: autoplayProgressColor,
+    setColorNormal: color => setAttributes({
+      autoplayProgressColor: color
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol_two__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: autoplayProgressPosition,
+    onChange: newPosition => setAttributes({
+      autoplayProgressPosition: newPosition
+    })
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -2389,7 +2596,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Makes scrollbar draggable that allowyou to control slider position', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2408,7 +2615,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hide scrollbar automatically after user interaction', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2427,7 +2634,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Snap slider position to slides when you release scrollbar', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2451,7 +2658,397 @@ const SliderControls = ({
     min: 0,
     max: 25,
     step: 1
-  }))))), isOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      width: "1em",
+      height: "1em",
+      viewBox: "0 0 51 57",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "currentColor"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M2.21558478,34.733889 C2.86274571,34.733889 3.4077387,34.5129143 3.85056375,34.070965 C4.2933888,33.6290157 4.51480132,33.102267 4.51480132,32.4907189 L4.51480132,23.5092811 C4.51480132,22.897733 4.2933888,22.3662408 3.85056375,21.9148044 C3.4077387,21.4633681 2.86274571,21.2376499 2.21558478,21.2376499 C1.58681408,21.2376499 1.06035728,21.4633681 0.636214365,21.9148044 C0.212071455,22.3662408 0,22.897733 0,23.5092811 L0,32.4907189 C0,33.102267 0.212071455,33.6290157 0.636214365,34.070965 C1.06035728,34.5129143 1.58681408,34.733889 2.21558478,34.733889 Z M11.2631398,45.4978654 C11.89337,45.4978654 12.4298977,45.2811234 12.8727227,44.8476395 C13.3155478,44.4141555 13.5369603,43.8831741 13.5369603,43.2546953 L13.5369603,12.7453047 C13.5369603,12.1168259 13.3155478,11.581174 12.8727227,11.1383489 C12.4298977,10.6955239 11.89337,10.4741114 11.2631398,10.4741114 C10.6194818,10.4741114 10.0850704,10.6955239 9.65990586,11.1383489 C9.23474127,11.581174 9.02215898,12.1168259 9.02215898,12.7453047 L9.02215898,43.2546953 C9.02215898,43.8831741 9.23474127,44.4141555 9.65990586,44.8476395 C10.0850704,45.2811234 10.6194818,45.4978654 11.2631398,45.4978654 Z M20.2879259,56 C20.9333354,56 21.473293,55.7794632 21.9077986,55.3383896 C22.3423043,54.897316 22.5595571,54.3615181 22.5595571,53.730996 L22.5595571,2.27163119 C22.5595571,1.64110904 22.3423043,1.10487331 21.9077986,0.662923984 C21.473293,0.220974661 20.9333354,0 20.2879259,0 C19.6594471,0 19.1289036,0.220974661 18.6962954,0.662923984 C18.2636871,1.10487331 18.047383,1.64110904 18.047383,2.27163119 L18.047383,53.730996 C18.047383,54.3615181 18.2636871,54.897316 18.6962954,55.3383896 C19.1289036,55.7794632 19.6594471,56 20.2879259,56 Z M29.3354809,42.1617902 C29.9639597,42.1617902 30.495452,41.9454131 30.9299576,41.5126589 C31.3644633,41.0799047 31.5817161,40.5568778 31.5817161,39.9435783 L31.5817161,16.0564217 C31.5817161,15.4431222 31.3644633,14.9149869 30.9299576,14.4720159 C30.495452,14.0290449 29.9639597,13.8075594 29.3354809,13.8075594 C28.6900715,13.8075594 28.1552953,14.0290449 27.7311524,14.4720159 C27.3070095,14.9149869 27.094938,15.4431222 27.094938,16.0564217 L27.094938,39.9435783 C27.094938,40.5568778 27.3070095,41.0799047 27.7311524,41.5126589 C28.1552953,41.9454131 28.6900715,42.1617902 29.3354809,42.1617902 Z M38.3580778,50.1339547 C38.988308,50.1339547 39.5201651,49.91298 39.9536491,49.4710307 C40.3871331,49.0290814 40.6038751,48.5021867 40.6038751,47.8903467 L40.6038751,8.11228048 C40.6038751,7.50044047 40.3871331,6.96887527 39.9536491,6.51758487 C39.5201651,6.06629448 38.988308,5.84064929 38.3580778,5.84064929 C37.7126683,5.84064929 37.1778191,6.06629448 36.7535303,6.51758487 C36.3292414,6.96887527 36.117097,7.50044047 36.117097,8.11228048 L36.117097,47.8903467 C36.117097,48.5021867 36.3292414,49.0290814 36.7535303,49.4710307 C37.1778191,49.91298 37.7126683,50.1339547 38.3580778,50.1339547 Z M47.3802368,36.9236399 C48.010467,36.9236399 48.5423971,36.7026652 48.976027,36.2607159 C49.409657,35.8187666 49.6264719,35.2911421 49.6264719,34.6778426 L49.6264719,21.3221574 C49.6264719,20.7088579 49.409657,20.1765629 48.976027,19.7252725 C48.5423971,19.2739821 48.010467,19.0483369 47.3802368,19.0483369 C46.7348273,19.0483369 46.2000511,19.2739821 45.7759082,19.7252725 C45.3517653,20.1765629 45.1396938,20.7088579 45.1396938,21.3221574 L45.1396938,34.6778426 C45.1396938,35.2911421 45.3517653,35.8187666 45.7759082,36.2607159 C46.2000511,36.7026652 46.7348273,36.9236399 47.3802368,36.9236399 Z",
+      transform: "translate(.647 .504)"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Free mode', 'cocoblocks')),
+    checked: freeMode,
+    onChange: value => setAttributes({
+      freeMode: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Doesn\'t work in the editor!', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      top: '12px'
+    }
+  }))), freeMode == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sticky', 'cocoblocks'),
+    checked: stickyFreeMode,
+    onChange: value => setAttributes({
+      stickyFreeMode: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables Snap to slides positions in free mode', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum', 'cocoblocks'),
+    checked: momentumFreeMode,
+    onChange: value => setAttributes({
+      momentumFreeMode: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enabled, then slide will keep moving for a while you release it after', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum bounce', 'cocoblocks'),
+    checked: momentumBounceFreeMode,
+    onChange: value => setAttributes({
+      momentumBounceFreeMode: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables momentum bounce in free mode', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum bounce ratio', 'cocobocks'),
+    value: momentumBounceRatioFreeMode,
+    onChange: value => setAttributes({
+      momentumBounceRatioFreeMode: value
+    }),
+    min: .1,
+    max: 3,
+    step: .1
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Higher value produces larger momentum bounce effect', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      left: '75%'
+    }
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum ratio', 'cocobocks'),
+    value: momentumRatioFreeMode,
+    onChange: value => setAttributes({
+      momentumRatioFreeMode: value
+    }),
+    min: .1,
+    max: 3,
+    step: .1
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Higher value produces larger momentum distance after you release sldier', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      left: '75%'
+    }
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum velocity ratio', 'cocobocks'),
+    value: momentumVelocityRatioFreeMode,
+    onChange: value => setAttributes({
+      momentumVelocityRatioFreeMode: value
+    }),
+    min: .1,
+    max: 3,
+    step: .1
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Higher value produces larger momentum velocity after you release sldier', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      left: '75%'
+    }
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      fill: "currentcolor",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "1em",
+      height: "1em",
+      viewBox: "0 0 56 56"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M 6.1959 44.0907 L 49.8239 44.0907 C 53.9281 44.0907 56 42.0386 56 37.9935 L 56 19.0308 C 56 14.9659 53.9281 12.9138 49.8239 12.9138 L 6.1959 12.9138 C 2.0719 12.9138 0 14.9659 0 19.0308 L 0 37.9935 C 0 42.0583 2.0719 44.0907 6.1959 44.0907 Z M 6.2551 40.9138 C 4.2819 40.9138 3.1769 39.8680 3.1769 37.8159 L 3.1769 19.2084 C 3.1769 17.1562 4.2819 16.0906 6.2551 16.0906 L 49.7649 16.0906 C 51.7184 16.0906 52.8232 17.1562 52.8232 19.2084 L 52.8232 37.8159 C 52.8232 39.8680 51.7184 40.9138 49.7649 40.9138 Z M 46.3117 23.6678 L 47.7128 23.6678 C 48.2850 23.6678 48.5412 23.4113 48.5412 22.8391 L 48.5412 21.4381 C 48.5412 20.8856 48.2850 20.6094 47.7128 20.6094 L 46.3117 20.6094 C 45.7395 20.6094 45.4829 20.8856 45.4829 21.4381 L 45.4829 22.8391 C 45.4829 23.4113 45.7395 23.6678 46.3117 23.6678 Z M 39.9578 23.6678 L 41.3588 23.6678 C 41.9311 23.6678 42.2075 23.4113 42.2075 22.8391 L 42.2075 21.4381 C 42.2075 20.8856 41.9311 20.6094 41.3588 20.6094 L 39.9578 20.6094 C 39.4053 20.6094 39.1289 20.8856 39.1289 21.4381 L 39.1289 22.8391 C 39.1289 23.4113 39.4053 23.6678 39.9578 23.6678 Z M 33.6040 23.6678 L 35.0248 23.6678 C 35.5771 23.6678 35.8536 23.4113 35.8536 22.8391 L 35.8536 21.4381 C 35.8536 20.8856 35.5771 20.6094 35.0248 20.6094 L 33.6040 20.6094 C 33.0515 20.6094 32.7753 20.8856 32.7753 21.4381 L 32.7753 22.8391 C 32.7753 23.4113 33.0515 23.6678 33.6040 23.6678 Z M 27.2700 23.6678 L 28.6710 23.6678 C 29.2432 23.6678 29.4997 23.4113 29.4997 22.8391 L 29.4997 21.4381 C 29.4997 20.8856 29.2432 20.6094 28.6710 20.6094 L 27.2700 20.6094 C 26.6977 20.6094 26.4412 20.8856 26.4412 21.4381 L 26.4412 22.8391 C 26.4412 23.4113 26.6977 23.6678 27.2700 23.6678 Z M 20.9162 23.6678 L 22.3369 23.6678 C 22.8894 23.6678 23.1657 23.4113 23.1657 22.8391 L 23.1657 21.4381 C 23.1657 20.8856 22.8894 20.6094 22.3369 20.6094 L 20.9162 20.6094 C 20.3637 20.6094 20.0874 20.8856 20.0874 21.4381 L 20.0874 22.8391 C 20.0874 23.4113 20.3637 23.6678 20.9162 23.6678 Z M 14.5624 23.6678 L 15.9831 23.6678 C 16.5356 23.6678 16.8119 23.4113 16.8119 22.8391 L 16.8119 21.4381 C 16.8119 20.8856 16.5356 20.6094 15.9831 20.6094 L 14.5624 20.6094 C 14.0099 20.6094 13.7336 20.8856 13.7336 21.4381 L 13.7336 22.8391 C 13.7336 23.4113 14.0099 23.6678 14.5624 23.6678 Z M 8.2283 23.6678 L 9.6293 23.6678 C 10.2016 23.6678 10.4581 23.4113 10.4581 22.8391 L 10.4581 21.4381 C 10.4581 20.8856 10.2016 20.6094 9.6293 20.6094 L 8.2283 20.6094 C 7.6561 20.6094 7.3996 20.8856 7.3996 21.4381 L 7.3996 22.8391 C 7.3996 23.4113 7.6561 23.6678 8.2283 23.6678 Z M 20.9162 30.0216 L 22.3369 30.0216 C 22.8894 30.0216 23.1657 29.7454 23.1657 29.1929 L 23.1657 27.7919 C 23.1657 27.2197 22.8894 26.9631 22.3369 26.9631 L 20.9162 26.9631 C 20.3637 26.9631 20.0874 27.2197 20.0874 27.7919 L 20.0874 29.1929 C 20.0874 29.7454 20.3637 30.0216 20.9162 30.0216 Z M 27.2700 30.0216 L 28.6710 30.0216 C 29.2432 30.0216 29.4997 29.7454 29.4997 29.1929 L 29.4997 27.7919 C 29.4997 27.2197 29.2432 26.9631 28.6710 26.9631 L 27.2700 26.9631 C 26.6977 26.9631 26.4412 27.2197 26.4412 27.7919 L 26.4412 29.1929 C 26.4412 29.7454 26.6977 30.0216 27.2700 30.0216 Z M 33.6040 30.0216 L 35.0248 30.0216 C 35.5771 30.0216 35.8536 29.7454 35.8536 29.1929 L 35.8536 27.7919 C 35.8536 27.2197 35.5771 26.9631 35.0248 26.9631 L 33.6040 26.9631 C 33.0515 26.9631 32.7753 27.2197 32.7753 27.7919 L 32.7753 29.1929 C 32.7753 29.7454 33.0515 30.0216 33.6040 30.0216 Z M 39.9578 30.0216 L 41.3588 30.0216 C 41.9311 30.0216 42.2075 29.7454 42.2075 29.1929 L 42.2075 27.7919 C 42.2075 27.2197 41.9311 26.9631 41.3588 26.9631 L 39.9578 26.9631 C 39.4053 26.9631 39.1289 27.2197 39.1289 27.7919 L 39.1289 29.1929 C 39.1289 29.7454 39.4053 30.0216 39.9578 30.0216 Z M 14.5624 30.0216 L 15.9831 30.0216 C 16.5356 30.0216 16.8119 29.7454 16.8119 29.1929 L 16.8119 27.7919 C 16.8119 27.2197 16.5356 26.9631 15.9831 26.9631 L 14.5624 26.9631 C 14.0099 26.9631 13.7336 27.2197 13.7336 27.7919 L 13.7336 29.1929 C 13.7336 29.7454 14.0099 30.0216 14.5624 30.0216 Z M 46.3117 30.0216 L 47.7128 30.0216 C 48.2850 30.0216 48.5412 29.7454 48.5412 29.1929 L 48.5412 27.7919 C 48.5412 27.2197 48.2850 26.9631 47.7128 26.9631 L 46.3117 26.9631 C 45.7395 26.9631 45.4829 27.2197 45.4829 27.7919 L 45.4829 29.1929 C 45.4829 29.7454 45.7395 30.0216 46.3117 30.0216 Z M 8.2283 30.0216 L 9.6293 30.0216 C 10.2016 30.0216 10.4581 29.7454 10.4581 29.1929 L 10.4581 27.7919 C 10.4581 27.2197 10.2016 26.9631 9.6293 26.9631 L 8.2283 26.9631 C 7.6561 26.9631 7.3996 27.2197 7.3996 27.7919 L 7.3996 29.1929 C 7.3996 29.7454 7.6561 30.0216 8.2283 30.0216 Z M 14.5624 36.3754 L 41.3588 36.3754 C 41.9311 36.3754 42.2075 36.0992 42.2075 35.5467 L 42.2075 34.1259 C 42.2075 33.5735 41.9311 33.2972 41.3588 33.2972 L 14.5624 33.2972 C 14.0099 33.2972 13.7336 33.5735 13.7336 34.1259 L 13.7336 35.5467 C 13.7336 36.0992 14.0099 36.3754 14.5624 36.3754 Z M 46.3117 36.3754 L 47.7128 36.3754 C 48.2850 36.3754 48.5412 36.0992 48.5412 35.5467 L 48.5412 34.1259 C 48.5412 33.5735 48.2850 33.2972 47.7128 33.2972 L 46.3117 33.2972 C 45.7395 33.2972 45.4829 33.5735 45.4829 34.1259 L 45.4829 35.5467 C 45.4829 36.0992 45.7395 36.3754 46.3117 36.3754 Z M 8.2283 36.3754 L 9.6293 36.3754 C 10.2016 36.3754 10.4581 36.0992 10.4581 35.5467 L 10.4581 34.1259 C 10.4581 33.5735 10.2016 33.2972 9.6293 33.2972 L 8.2283 33.2972 C 7.6561 33.2972 7.3996 33.5735 7.3996 34.1259 L 7.3996 35.5467 C 7.3996 36.0992 7.6561 36.3754 8.2283 36.3754 Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Keyboard control', 'cocoblocks')),
+    checked: keyboard,
+    onChange: value => setAttributes({
+      keyboard: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable keyboard control. Doesn\'t work in the editor!', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      top: '13px'
+    }
+  }))), keyboard == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Only in viewport', 'cocoblocks'),
+    checked: viewPortKeyboard,
+    onChange: value => setAttributes({
+      viewPortKeyboard: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled it will control sliders that are currently in viewport', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Page Up/Down keys', 'cocoblocks'),
+    checked: upKeyboard,
+    onChange: value => setAttributes({
+      upKeyboard: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled it will enabled keyword navigation by Page Up and Page Down keys', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      width: "1em",
+      height: "1em",
+      viewBox: "0 0 37 57",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "currentColor"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M0.739837823,15.7972712 L16.095128,15.7972712 L16.095128,0 C12.7831945,0.159581055 10.0615437,0.805424801 7.93017583,1.93753124 C5.79880792,3.06963768 4.15711433,4.76863283 3.00509508,7.03451671 C1.85307582,9.30040059 1.09799007,12.2213188 0.739837823,15.7972712 Z M19.8519668,15.7972712 L35.2043327,15.7972712 C34.8461804,12.2374718 34.0991712,9.32504793 32.963305,7.05999955 C31.8274388,4.79495118 30.1946573,3.0923355 28.0649604,1.95215254 C25.9352634,0.811969574 23.1975989,0.162087564 19.8519668,0.00250650872 L19.8519668,15.7972712 Z M17.9842,56 C23.8739385,56 28.3392838,54.2813705 31.3802359,50.8441116 C34.421188,47.4068526 35.941664,42.3591618 35.941664,35.7010392 C35.941664,32.6715056 35.9023954,29.7888813 35.8238581,27.0531663 C35.7453208,24.3174513 35.6284897,21.8248676 35.4733646,19.5754153 L0.470805887,19.5754153 C0.314009842,21.8248676 0.196343183,24.3174513 0.11780591,27.0531663 C0.0392686366,29.7888813 0,32.6715056 0,35.7010392 C0,42.3591618 1.52089379,47.4068526 4.56268137,50.8441116 C7.60446895,54.2813705 12.0783085,56 17.9842,56 Z",
+      transform: "translate(.647 .19)"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Mousewheel control', 'cocoblocks')),
+    checked: mousewheel,
+    onChange: value => setAttributes({
+      mousewheel: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable or disable mouse wheel control for swiping.', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      left: '65%',
+      top: '13px'
+    }
+  }))), mousewheel == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Force to axis', 'cocoblocks'),
+    checked: forceToAxis,
+    onChange: value => setAttributes({
+      forceToAxis: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Invert scrolling', 'cocoblocks'),
+    checked: invert,
+    onChange: value => setAttributes({
+      invert: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set to true to invert sliding direction', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Release on edges', 'cocoblocks'),
+    checked: releaseOnEdges,
+    onChange: value => setAttributes({
+      releaseOnEdges: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sensitivity', 'cocobocks'),
+    value: sensitivity,
+    onChange: value => setAttributes({
+      sensitivity: value
+    }),
+    min: .1,
+    max: 3,
+    step: .1
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      left: '75%'
+    }
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select svg-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      fill: "currentcolor",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "1em",
+      height: "1em",
+      viewBox: "0 0 56 56"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Parallax', 'cocoblocks')),
+    checked: parallax,
+    onChange: value => setAttributes({
+      parallax: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: '10px',
+      maxWidth: '300px',
+      borderRadius: '4px'
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables parallax transition effects', 'cocoblocks')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "tooltip-icon",
+    style: {
+      left: '65%',
+      top: '13px'
+    }
+  }))), parallax == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: 0,
+      marginTop: 0
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('By enabling this effect you will have additional controls available for the various elements of the Slides to adjust the Parallax effect!', 'cocoblocks')))), isOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Creative effect configuration', 'cocoblocks'),
     onRequestClose: closeModal,
     className: "cocoblocks-modal"
@@ -2814,6 +3411,183 @@ const SliderControls = ({
 
 /***/ }),
 
+/***/ "./src/components/aligncontrol-three.js":
+/*!**********************************************!*\
+  !*** ./src/components/aligncontrol-three.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/align-left.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/align-center.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/align-right.js");
+
+
+
+
+
+const AlignmentControlThree = ({
+  value,
+  onChange
+}) => {
+  const [isPopoverOpen, setIsPopoverOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [selectedPosition, setSelectedPosition] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const handlePositionChange = position => {
+    onChange(position);
+    setSelectedPosition(position);
+    setIsPopoverOpen(false);
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setSelectedPosition(value);
+  }, [value]);
+  const positionOptions = [{
+    value: 'left',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Left', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    value: 'center',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Center', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    value: 'right',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Right', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }];
+  const selectedIcon = positionOptions.find(option => option.value === selectedPosition)?.icon;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "postion-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => setIsPopoverOpen(!isPopoverOpen),
+    "aria-expanded": isPopoverOpen,
+    "aria-haspopup": "true",
+    icon: 'editor-alignleft' // Mostra l'icona selezionata o un'icona di default
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "postion-slide__label"
+  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text align', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: selectedIcon || "editor-alignleft",
+    style: {
+      right: '-50px'
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "ico-align-content dashicons dashicons-arrow-down-alt2"
+  }))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
+    position: "bottom left",
+    onClickOutside: () => setIsPopoverOpen(false),
+    className: "popow-content-ico"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "popow-content-ico-position"
+  }, positionOptions.map(option => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    key: option.value,
+    onClick: () => handlePositionChange(option.value),
+    label: option.label,
+    className: selectedPosition === option.value ? 'selected' : ''
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: option.icon
+  })))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AlignmentControlThree);
+
+/***/ }),
+
+/***/ "./src/components/aligncontrol-two.js":
+/*!********************************************!*\
+  !*** ./src/components/aligncontrol-two.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-left.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-right.js");
+
+
+
+
+
+const AlignmentControlTwo = ({
+  value,
+  onChange
+}) => {
+  const [isPopoverOpen, setIsPopoverOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [selectedPosition, setSelectedPosition] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const handlePositionChange = position => {
+    onChange(position);
+    setSelectedPosition(position);
+    setIsPopoverOpen(false);
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setSelectedPosition(value);
+  }, [value]);
+  const positionOptions = [{
+    value: 'top-left',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Top Left', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    value: 'top-right',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Top Right', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    value: 'bottom-left',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bottom Left', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    value: 'bottom-right',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bottom Right', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }];
+  const selectedIcon = positionOptions.find(option => option.value === selectedPosition)?.icon;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "postion-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => setIsPopoverOpen(!isPopoverOpen),
+    "aria-expanded": isPopoverOpen,
+    "aria-haspopup": "true",
+    icon: 'screenoptions' // Mostra l'icona selezionata o un'icona di default
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "postion-slide__label"
+  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Position', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: selectedIcon || "screenoptions",
+    style: {
+      right: '-50px'
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "ico-align-content dashicons dashicons-arrow-down-alt2"
+  }))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
+    position: "bottom left",
+    onClickOutside: () => setIsPopoverOpen(false),
+    className: "popow-content-ico"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "popow-content-ico-position"
+  }, positionOptions.map(option => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    key: option.value,
+    onClick: () => handlePositionChange(option.value),
+    label: option.label,
+    className: selectedPosition === option.value ? 'selected' : ''
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: option.icon
+  })))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AlignmentControlTwo);
+
+/***/ }),
+
 /***/ "./src/components/aligncontrol.js":
 /*!****************************************!*\
   !*** ./src/components/aligncontrol.js ***!
@@ -3098,6 +3872,99 @@ const ColorOptionsPanelGradient = ({
 
 /***/ }),
 
+/***/ "./src/components/font-style.js":
+/*!**************************************!*\
+  !*** ./src/components/font-style.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/format-bold.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/format-italic.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/format-underline.js");
+
+
+
+
+
+const FontStyle = ({
+  value,
+  onChange
+}) => {
+  const [isPopoverOpen, setIsPopoverOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const handleStyleChange = (styleType, styleValue) => {
+    const currentValue = value[styleType];
+    const newValue = currentValue === styleValue ? undefined : styleValue; // Toggle the value
+    onChange(styleType, newValue);
+    setIsPopoverOpen(false);
+  };
+  const styleOptions = [{
+    type: 'fontWeight',
+    value: 'bold',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bold', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    type: 'fontStyle',
+    value: 'italic',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Italic', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    type: 'textDecoration',
+    value: 'underline',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Underline', 'cocoblocks'),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }];
+  const selectedIcons = styleOptions.filter(option => value[option.type] === option.value).map(option => option.icon);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "postion-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => setIsPopoverOpen(!isPopoverOpen),
+    "aria-expanded": isPopoverOpen,
+    "aria-haspopup": "true",
+    icon: 'editor-spellcheck' // Mostra un'icona di default se nessuna icona è selezionata
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "postion-slide__label"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Font style', 'cocoblocks')), selectedIcons.length > 0 ? selectedIcons.map((icon, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    key: index,
+    icon: icon,
+    style: {
+      right: '-50px'
+    }
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: "editor-spellcheck",
+    style: {
+      right: '-50px'
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "ico-align-content dashicons dashicons-arrow-down-alt2"
+  }))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
+    position: "bottom left",
+    onClickOutside: () => setIsPopoverOpen(false),
+    className: "popow-content-ico"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "popow-content-ico-position"
+  }, styleOptions.map(option => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    key: option.type,
+    onClick: () => handleStyleChange(option.type, option.value),
+    label: option.label,
+    className: value[option.type] === option.value ? 'selected' : ''
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: option.icon
+  })))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FontStyle);
+
+/***/ }),
+
 /***/ "./src/slider/edit.js":
 /*!****************************!*\
   !*** ./src/slider/edit.js ***!
@@ -3123,12 +3990,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/slider/editor.scss");
 /* harmony import */ var _components_editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/editor.scss */ "./src/components/editor.scss");
 /* harmony import */ var _components_colorPanel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/colorPanel */ "./src/components/colorPanel.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
-/* harmony import */ var _components_aligncontrol__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/aligncontrol */ "./src/components/aligncontrol.js");
-/* harmony import */ var _components_SliderControls__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/SliderControls */ "./src/components/SliderControls.js");
-/* harmony import */ var _components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/colorPanelGradient */ "./src/components/colorPanelGradient.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/aligncontrol */ "./src/components/aligncontrol.js");
+/* harmony import */ var _components_SliderControls__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/SliderControls */ "./src/components/SliderControls.js");
+/* harmony import */ var _components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/colorPanelGradient */ "./src/components/colorPanelGradient.js");
+/* harmony import */ var _components_aligncontrol_three__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/aligncontrol-three */ "./src/components/aligncontrol-three.js");
+/* harmony import */ var _components_font_style__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/font-style */ "./src/components/font-style.js");
+
+
+
 
 
 
@@ -3265,9 +4139,58 @@ function Edit({
     invert,
     releaseOnEdges,
     sensitivity,
-    autoHeightSlider,
-    maxHeightSlider
+    autoplayProgress,
+    autoplayProgressColor,
+    autoplayProgressPosition,
+    parallax
   } = attributes;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // Funzione per aggiungere una classe personalizzata al pannello "Advanced"
+    const addCustomClassToAdvancedPanel = () => {
+      const advancedPanels = document.querySelectorAll('.block-editor-block-inspector__advanced');
+      advancedPanels.forEach(panel => {
+        const parentPanel = panel.closest('.components-panel__body');
+        if (parentPanel) {
+          // Controlla se il blocco corrente è del tipo specificato
+          const block = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_10__.select)('core/block-editor').getSelectedBlock();
+          if (block && block.name === 'slider-builder/slider') {
+            parentPanel.classList.add('cocoblocks-custom-advanced-panel');
+          }
+        }
+      });
+    };
+
+    // Funzione per aggiungere una classe personalizzata al block-editor-block-card
+    const addCustomClassToBlockCard = () => {
+      const blockCards = document.querySelectorAll('.block-editor-block-card');
+      blockCards.forEach(card => {
+        // Controlla se il blocco corrente è del tipo specificato
+        const block = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_10__.select)('core/block-editor').getSelectedBlock();
+        if (block && block.name === 'slider-builder/slider') {
+          card.classList.add('cocoblocks-custom-block-card');
+        }
+      });
+    };
+
+    // Aggiunge le classi all'inizio
+    addCustomClassToAdvancedPanel();
+    addCustomClassToBlockCard();
+
+    // Osserva il DOM per i cambiamenti e aggiunge nuovamente le classi se necessario
+    const observer = new MutationObserver(() => {
+      addCustomClassToAdvancedPanel();
+      addCustomClassToBlockCard();
+    });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Pulisce l'observer quando il componente viene smontato
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   // Move Element Up
   const moveElementUp = (slideId, index) => {
@@ -3330,6 +4253,67 @@ function Edit({
     });
   };
 
+  // Stato per memorizzare le impostazioni correnti
+  const [currentSettings, setCurrentSettings] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)({
+    layout: 'vertical',
+    gapItems: 5,
+    position: 'center',
+    backgroundBorderColor: '#000000',
+    backgroundBorderSize: 1,
+    backgroundBorderRadius: 0,
+    backgroundVerticalPadding: 0,
+    backgroundHorizontalPadding: 0
+  });
+
+  // Stato per gestire la visibilità del dialogo di conferma
+  const [isDialogOpen, setIsDialogOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
+  const [selectedSlide, setSelectedSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(null);
+
+  // Funzione per aggiornare le impostazioni correnti
+  const updateSlideSettings = (key, value) => {
+    setCurrentSettings(prev => ({
+      ...prev,
+      [key]: value
+    }));
+  };
+
+  // Funzione per applicare le impostazioni a tutte le slide esistenti
+  const applySettingsToExistingSlides = slideSettings => {
+    // Aggiorna currentSettings con i valori della slide corrente
+    setCurrentSettings(slideSettings);
+    const updatedSlides = slides.map(slide => ({
+      ...slide,
+      layout: slideSettings.layout,
+      gapItems: slideSettings.gapItems,
+      position: slideSettings.position,
+      backgroundBorderColor: slideSettings.backgroundBorderColor,
+      backgroundBorderSize: slideSettings.backgroundBorderSize,
+      backgroundBorderRadius: slideSettings.backgroundBorderRadius,
+      backgroundVerticalPadding: slideSettings.backgroundVerticalPadding,
+      backgroundHorizontalPadding: slideSettings.backgroundHorizontalPadding
+    }));
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Funzione per aprire il dialogo di conferma
+  const openConfirmationDialog = slide => {
+    setSelectedSlide(slide);
+    setIsDialogOpen(true);
+  };
+
+  // Funzione per confermare l'applicazione delle impostazioni
+  const confirmApplySettings = () => {
+    applySettingsToExistingSlides(selectedSlide);
+    setIsDialogOpen(false);
+  };
+
+  // Funzione per annullare l'applicazione delle impostazioni
+  const cancelApplySettings = () => {
+    setIsDialogOpen(false);
+  };
+
   // Update Fit Image
   const updateSlideFit = (slideId, newFit) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -3387,6 +4371,50 @@ function Edit({
     const updatedSlides = slides.map(slide => slide.id === id ? {
       ...slide,
       backgroundBorderColor: color
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border size
+  const updateSlideBackgroundBorderSize = (slideId, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      backgroundBorderSize: newSize
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border radius
+  const updateSlideBackgroundBorderRadius = (slideId, newRadius) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      backgroundBorderRadius: newRadius
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update vertical padding
+  const updateSlideBackgroundVerticalPadding = (slideId, newVerticalPadding) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      backgroundVerticalPadding: newVerticalPadding
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update horizontal padding
+  const updateSlideBackgroundHorizontalPadding = (slideId, newHorizontalPadding) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      backgroundHorizontalPadding: newHorizontalPadding
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -3629,6 +4657,57 @@ function Edit({
     });
   };
 
+  // Update Text color
+  const updateSlideTextColor = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textColor: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text align
+  const updateTextAlign = (slideId, index, align) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textAlign: align
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Style
+  const updateFontStyle = (slideId, index, styleType, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "title" && i === index) {
+          const updatedFontStyle = {
+            ...element.fontStyle,
+            [styleType]: value
+          };
+          return {
+            ...element,
+            fontStyle: updatedFontStyle
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Size
   const updateFontSize = (slideId, index, newSize) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -3797,13 +4876,15 @@ function Edit({
   };
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}`;
   // Nessun movimento della slider
   const isGutenbergEditor = typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
 
   // Panel Slide
   const [selectedPanel, setSelectedPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(null);
   const [primaryColor, setPrimaryColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("");
+  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // Riferimento a Swiper
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     // Recupera il valore della variabile CSS --primary-color
     const root = document.querySelector(":root");
@@ -3812,6 +4893,11 @@ function Edit({
   }, []);
   const handlePanelSelect = panelId => {
     setSelectedPanel(prevPanel => prevPanel === panelId ? null : panelId);
+    // Trova l'indice della slide corrispondente
+    const slideIndex = slides.findIndex(slide => slide.id === panelId);
+    if (swiperRef.current && slideIndex !== -1) {
+      swiperRef.current.swiper.slideTo(slideIndex); // Naviga alla slide
+    }
   };
   const renderCircle = panelId => {
     const isSelected = selectedPanel === panelId;
@@ -3887,7 +4973,6 @@ function Edit({
   const swiperButtonPrevClasses = `swiper-button-prev ${!navigationTablet ? "nav-tablet" : ""} ${!navigationMobile ? "nav-mobile" : ""}`;
 
   // Pagination  
-
   const stylesPagination = {
     '--swiper-pagination-color': bulletColor,
     '--swiper-pagination-fraction-color': bulletColor,
@@ -3910,7 +4995,9 @@ function Edit({
     '--swiper-scrollbar-top': positionScrollbar === 'top' ? '4px' : 'auto',
     '--swiper-scrollbar-bottom': positionScrollbar === 'bottom' ? '4px' : 'auto',
     '--swiper-scrollbar-size': heightScrollbar + 'px',
-    '--swiper-scrollbar-border-radius': radiusScrollbar + 'px'
+    '--swiper-scrollbar-border-radius': radiusScrollbar + 'px',
+    /* Autoplay Progress */
+    '--swiper-autoplay-progress-color': autoplayProgressColor
   };
 
   // Autoplay
@@ -3923,8 +5010,12 @@ function Edit({
     stopOnLastSlide: stopOnLastSlide
   } : false;
   // Progress Circle
-  const progressCircle = document.querySelector('.progress-circle circle');
-  const progressContent = document.querySelector('.progress-content');
+  const progressCircle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const progressContent = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
   // Scrollbar
   const isScrollbarEnabled = scrollbar;
@@ -3933,6 +5024,15 @@ function Edit({
     hide: hideScrollbar,
     snapOnRelease: releaseScrollbar
   } : false;
+
+  // Responsive
+  const [showOtherButtons, setShowOtherButtons] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
+  const handleDesktopClick = () => {
+    setAttributes({
+      device: 'desktop'
+    });
+    setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     className: "tab-general",
     activeClass: "active-tab",
@@ -3947,7 +5047,7 @@ function Edit({
     }]
   }, tab => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-1 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControls__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControls__WEBPACK_IMPORTED_MODULE_12__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -4026,7 +5126,7 @@ function Edit({
     buttonIcon: "admin-customizer"
   })), tab.name === "gradient" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__["default"], {
     gradient: slide.backgroundGradient,
     setGradient: gradient => updateSlideBackgroundGradient(slide.id, gradient),
     buttonIcon: "admin-customizer"
@@ -4097,13 +5197,13 @@ function Edit({
         top: "-2px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Image", "cocoblocks")
     })))
   })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => updateSlideBackgroundImage(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Image", "wp-kube")
   })), tab.name === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-img-upload"
@@ -4156,13 +5256,13 @@ function Edit({
       style: {
         marginLeft: "2px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Video", "cocoblocks")
     })))
   })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => updateSlideBackgroundVideo(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Video", "wp-kube")
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -4204,7 +5304,7 @@ function Edit({
     step: 1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__["default"], {
     value: slide.position,
     onChange: newPosition => updateSlidePosition(slide.id, newPosition)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -4213,8 +5313,129 @@ function Edit({
     colorNormal: slide.backgroundBorderColor,
     setColorNormal: color => updateSlideBackgroundBorderColor(slide.id, color),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border Color", "cocoblocks"),
-    buttonIcon: "button"
-  })), slide.elements && slide.elements.map((element, elementIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '3px',
+        height: '16px',
+        width: '16px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '4px',
+        marginLeft: '-2px',
+        marginBottom: '-4px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
+    value: slide.backgroundBorderSize,
+    onChange: newSize => updateSlideBackgroundBorderSize(slide.id, newSize),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '4px',
+        marginLeft: '-2px',
+        marginBottom: '-4px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
+    value: slide.backgroundBorderRadius,
+    onChange: newRadius => updateSlideBackgroundBorderRadius(slide.id, newRadius),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '4px',
+        marginLeft: '-2px',
+        marginBottom: '-4px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content vertical padding", "cocoblocks")),
+    value: slide.backgroundVerticalPadding,
+    onChange: newVerticalPadding => updateSlideBackgroundVerticalPadding(slide.id, newVerticalPadding),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '4px',
+        marginLeft: '-2px',
+        marginBottom: '-4px',
+        transform: 'rotate(90deg)'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content horizontal padding", "cocoblocks")),
+    value: slide.backgroundHorizontalPadding,
+    onChange: newHorizontalPadding => updateSlideBackgroundHorizontalPadding(slide.id, newHorizontalPadding),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-apply-style"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "dashicons dashicons-update"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Apply same styles to all slides", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => openConfirmationDialog(slide)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Apply", "cocoblocks"))), isDialogOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "confirmation-dialog"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: 0
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Are you sure you want to apply same styles to all slides?', 'slider-builder')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "confirmation-buttons"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: cancelApplySettings
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Cancel', 'slider-builder')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: confirmApplySettings
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Confirm', 'slider-builder'))))), slide.elements && slide.elements.map((element, elementIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: elementIndex,
     style: {
       marginBottom: "10px",
@@ -4257,7 +5478,7 @@ function Edit({
       top: "2px"
     },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Text", "cocoblocks"),
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "dashicons dashicons-media-text",
@@ -4268,24 +5489,61 @@ function Edit({
     value: element.text,
     onChange: newTitle => updateSlideTitle(slide.id, elementIndex, newTitle),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add text content...", "cocoblocks")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    colorNormal: element.textColor,
+    setColorNormal: color => updateSlideTextColor(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: '-10px',
+        height: '26px',
+        width: '26px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol_three__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    value: element.textAlign,
+    onChange: align => updateTextAlign(slide.id, elementIndex, align)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_font_style__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    value: element.fontStyle || {} // Inizializza con un oggetto vuoto se undefined
+    ,
+    onChange: (styleType, value) => updateFontStyle(slide.id, elementIndex, styleType, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
     className: "device-switcher"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     size: "small",
     isPressed: device === "desktop",
-    onClick: () => setAttributes({
-      device: "desktop"
-    })
+    onClick: handleDesktopClick
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-desktop"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    className: "dashicons dashicons-desktop",
+    style: {
+      height: '16px',
+      width: '16px',
+      fontSize: '16px'
+    }
+  })), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     size: "small",
     isPressed: device === "tablet",
     onClick: () => setAttributes({
       device: "tablet"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-tablet"
+    className: "dashicons dashicons-tablet",
+    style: {
+      height: '16px',
+      width: '16px',
+      fontSize: '16px'
+    }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     size: "small",
     isPressed: device === "mobile",
@@ -4293,8 +5551,13 @@ function Edit({
       device: "mobile"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-smartphone"
-  }))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    className: "dashicons dashicons-smartphone",
+    style: {
+      height: '16px',
+      width: '16px',
+      fontSize: '16px'
+    }
+  })))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks"),
     beforeIcon: "desktop",
     value: element.fontSize || 16,
@@ -4337,7 +5600,7 @@ function Edit({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeSlideDiv(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove block", "cocoblocks"),
     className: "button-remove-element"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
@@ -4402,13 +5665,13 @@ function Edit({
       style: {
         marginLeft: "2px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
   })), slide.elements[elementIndex].imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeDivImage(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
     style: {
       marginTop: "10px"
@@ -4422,7 +5685,7 @@ function Edit({
     onClick: () => addInnerDiv(slide.id, elementIndex),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"]
   }))), element.innerDivs && element.innerDivs.map((innerDiv, innerIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: innerIndex
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -4445,7 +5708,7 @@ function Edit({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Inner block", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeInnerDiv(slide.id, elementIndex, innerIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove inner block", "cocoblocks"),
     className: "button-remove-element"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
@@ -4510,13 +5773,13 @@ function Edit({
       style: {
         marginLeft: "2px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
   })), innerDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeInnerDivImage(slide.id, elementIndex, innerIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
     style: {
       marginTop: "10px"
@@ -4542,7 +5805,7 @@ function Edit({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeSlideImage(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
     className: "button-remove-element"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
@@ -4587,7 +5850,7 @@ function Edit({
         top: "-2px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
   })), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
@@ -4619,7 +5882,7 @@ function Edit({
     onClick: () => addSlideDiv(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"]
   })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "controls",
     className: "button-add-slide"
@@ -4638,8 +5901,9 @@ function Edit({
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Slide", "slider")))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.Swiper, {
+    ref: swiperRef,
     key: key,
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCards, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCube, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectFlip, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Scrollbar],
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCards, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCube, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectFlip, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Keyboard, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Mousewheel, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Parallax],
     navigation: navigationConfig,
     pagination: {
       enabled: paginationEnable,
@@ -4650,16 +5914,20 @@ function Edit({
       dynamicMainBullets: dynamicMainPagination,
       progressbarOpposite: progressbarOpposite
     },
-    autoplay: autoplayConfig,
-    on: {
-      autoplayTimeLeft: (s, time, progress) => {
-        // Calcola l'offset del cerchio in base al progresso
-        const totalLength = 126; // Dovrebbe corrispondere a stroke-dasharray nel CSS
-        const offset = totalLength * progress; // Invertire il progresso
-        progressCircle.style.strokeDashoffset = offset;
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-      }
+    keyboard: {
+      enabled: keyboard,
+      onlyInViewport: viewPortKeyboard,
+      pageUpDown: upKeyboard
     },
+    mousewheel: {
+      enabled: mousewheel,
+      forceToAxis: forceToAxis,
+      invert: invert,
+      releaseOnEdges: releaseOnEdges,
+      sensitivity: sensitivity
+    },
+    autoplay: autoplayConfig,
+    onAutoplayTimeLeft: autoplayProgress ? onAutoplayTimeLeft : undefined,
     className: "slider-builder",
     dir: languageSlider,
     direction: directionSlider,
@@ -4713,6 +5981,16 @@ function Edit({
         opacity: nextOpacity
       }
     },
+    freeMode: {
+      enabled: freeMode,
+      sticky: stickyFreeMode,
+      momentum: momentumFreeMode,
+      momentumBounce: momentumBounceFreeMode,
+      momentumBounceRatio: momentumBounceRatioFreeMode,
+      momentumRatio: momentumRatioFreeMode,
+      momentumVelocityRatio: momentumVelocityRatioFreeMode
+    },
+    parallax: parallax,
     breakpoints: {
       640: {
         slidesPerView: perViewSliderMobile,
@@ -4759,7 +6037,12 @@ function Edit({
       position: "relative",
       visibility: "visible",
       gap: slide.gapItems + "px",
-      border: slide.backgroundBorderColor ? `3px solid ${slide.backgroundBorderColor}` : "none"
+      borderRadius: slide.backgroundBorderRadius + "px",
+      paddingTop: slide.backgroundVerticalPadding + "px",
+      paddingBottom: slide.backgroundVerticalPadding + "px",
+      paddingLeft: slide.backgroundHorizontalPadding + "px",
+      paddingRight: slide.backgroundHorizontalPadding + "px",
+      border: slide.backgroundBorderColor ? `${slide.backgroundBorderSize}px solid ${slide.backgroundBorderColor}` : "none"
     }
   }, slide.backgroundType === "video" && slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
     src: slide.backgroundVideo,
@@ -4781,12 +6064,25 @@ function Edit({
     const stylesTitle = {
       fontSize: element.fontSize + "px",
       "--font-size-tablet": element.fontSizeTablet + "px",
-      "--font-size-mobile": element.fontSizeMobile + "px"
+      "--font-size-mobile": element.fontSizeMobile + "px",
+      color: element.textColor,
+      textAlign: element.textAlign,
+      fontStyle: element.fontStyle?.fontStyle || 'normal',
+      // Valore di default
+      fontWeight: element.fontStyle?.fontWeight || 'normal',
+      // Valore di default
+      textDecoration: element.fontStyle?.textDecoration || 'none' // Valore di default
     };
     switch (element.type) {
       case "title":
         return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          key: index
+          key: index,
+          "data-swiper-parallax-y": "-300",
+          "data-swiper-parallax-duration": "600",
+          "data-swiper-parallax-opacity": "0.5",
+          style: {
+            width: '100%'
+          }
         }, element.text ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
           className: "title-slide",
           style: stylesTitle
@@ -4827,18 +6123,19 @@ function Edit({
       default:
         return null;
     }
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "autoplay-progress"
+  })))), autoplayProgress && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: 'autoplay-progress ' + autoplayProgressPosition,
+    slot: "container-end"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     viewBox: "0 0 48 48",
-    class: "progress-circle"
+    ref: progressCircle
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
     cx: "24",
     cy: "24",
     r: "20"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    class: "progress-content"
-  }, "0s"))), navigation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ref: progressContent
+  }))), navigation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ref: nextRef,
     className: swiperButtonNextClasses,
     style: stylesNavigation
@@ -6486,6 +7783,16 @@ module.exports = window["wp"]["blocks"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["data"];
 
 /***/ }),
 
@@ -17698,7 +19005,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"autoHeightSlider":{"type":"boolean","default":false},"maxHeightSlider":{"type":"number","default":400},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"parallax":{"type":"boolean","default":false}}}');
 
 /***/ })
 

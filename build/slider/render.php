@@ -101,9 +101,25 @@ $scrollbar = isset($attributes['scrollbar']) ? $attributes['scrollbar'] : null;
 $hideScrollbar= isset($attributes['hideScrollbar']) ? $attributes['hideScrollbar'] : null;
 $dragScrollbar = isset($attributes['dragScrollbar']) ? $attributes['dragScrollbar'] : null;
 $releaseScrollbar = isset($attributes['releaseScrollbar']) ? $attributes['releaseScrollbar'] : null;
-
-
-
+$autoplayProgress = isset($attributes['autoplayProgress']) ? $attributes['autoplayProgress'] : null;
+$autoplayProgressColor = isset($attributes['autoplayProgressColor']) ? $attributes['autoplayProgressColor'] : null;
+$autoplayProgressPosition = isset($attributes['autoplayProgressPosition']) ? $attributes['autoplayProgressPosition'] : null;
+$freeMode = isset($attributes['freeMode']) ? $attributes['freeMode'] : null;
+$stickyFreeMode = isset($attributes['stickyFreeMode']) ? $attributes['stickyFreeMode'] : null;
+$momentumFreeMode = isset($attributes['momentumFreeMode']) ? $attributes['momentumFreeMode'] : null;
+$momentumBounceFreeMode = isset($attributes['momentumBounceFreeMode']) ? $attributes['momentumBounceFreeMode'] : null;
+$momentumBounceRatioFreeMode = isset($attributes['momentumBounceRatioFreeMode']) ? $attributes['momentumBounceRatioFreeMode'] : null;
+$momentumRatioFreeMode = isset($attributes['momentumRatioFreeMode']) ? $attributes['momentumRatioFreeMode'] : null;
+$momentumVelocityRatioFreeMode = isset($attributes['momentumVelocityRatioFreeMode']) ? $attributes['momentumVelocityRatioFreeMode'] : null;
+$keyboard = isset($attributes['keyboard']) ? $attributes['keyboard'] : null;
+$viewPortKeyboard = isset($attributes['viewPortKeyboard']) ? $attributes['viewPortKeyboard'] : null;
+$upKeyboard = isset($attributes['upKeyboard']) ? $attributes['upKeyboard'] : null;
+$mousewheel = isset($attributes['mousewheel']) ? $attributes['mousewheel'] : null;
+$forceToAxis = isset($attributes['forceToAxis']) ? $attributes['forceToAxis'] : null;
+$invert = isset($attributes['invert']) ? $attributes['invert'] : null;
+$releaseOnEdges = isset($attributes['releaseOnEdges']) ? $attributes['releaseOnEdges'] : null;
+$sensitivity = isset($attributes['sensitivity']) ? $attributes['sensitivity'] : null;
+$parallax = isset($attributes['parallax']) ? $attributes['parallax'] : null;
 
 // Recupera le slide dai tuoi attributi (adatta questo in base alla struttura dei tuoi attributi)
 $slides = !empty($attributes['slides']) ? $attributes['slides'] : [];
@@ -212,6 +228,25 @@ $swiper_attr = array(
     'hideScrollbar' => $hideScrollbar,
     'dragScrollbar' => $dragScrollbar,
     'releaseScrollbar' => $releaseScrollbar,
+    'autoplayProgress' => $autoplayProgress,
+    'autoplayProgressColor' => $autoplayProgressColor,
+    'autoplayProgressPosition' => $autoplayProgressPosition,
+    'freeMode' => $freeMode,
+    'stickyFreeMode' => $stickyFreeMode,
+    'momentumFreeMode' => $momentumFreeMode,
+    'momentumBounceFreeMode' => $momentumBounceFreeMode,
+    'momentumBounceRatioFreeMode' => $momentumBounceRatioFreeMode,
+    'momentumRatioFreeMode' => $momentumRatioFreeMode,
+    'momentumVelocityRatioFreeMode' => $momentumVelocityRatioFreeMode,
+    'keyboard' => $keyboard,
+    'viewPortKeyboard' => $viewPortKeyboard,
+    'upKeyboard' => $upKeyboard,
+    'mousewheel' => $mousewheel,
+    'forceToAxis' => $forceToAxis,
+    'invert' => $invert,
+    'releaseOnEdges' => $releaseOnEdges,
+    'sensitivity' => $sensitivity,
+    'parallax' => $parallax,
 );
 
 $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
@@ -232,7 +267,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
             $focal_point = !empty($slide['focalPoint']) ? $slide['focalPoint'] : array('x' => 0.5, 'y' => 0.5);
             $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
         ?>
-           <div class="swiper-slide <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?>" 
+           <div class="swiper-slide <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?>"
                 style="<?php 
                     if (!empty($slide['backgroundType'])) {
                         if ($slide['backgroundType'] === 'image' && !empty($slide['backgroundImage'])) {
@@ -245,13 +280,18 @@ $wrapper_attributes = get_block_wrapper_attributes(
                     }
                     // Gestisci l'altezza
                     echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
-                    
                     // Altri stili
                     echo 'display: flex; ';
                     echo 'text-align: center; ';
                     echo 'width: 100%; ';
                     echo 'position: relative; ';
                     echo 'gap: ' . esc_attr($slide['gapItems']) . 'px; ';
+                    echo 'border-radius: ' . esc_attr($slide['backgroundBorderRadius']) . 'px; ';
+                    echo 'padding-top: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
+                    echo 'padding-bottom: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
+                    echo 'padding-left: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
+                    echo 'padding-right: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
+                    echo 'border: ' . esc_attr($slide['backgroundBorderSize']) . 'px solid ' . esc_attr($slide['backgroundBorderColor']) . '; ';
                     echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . ';';
                 ?>">
                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
@@ -263,7 +303,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <?php if ($element['type'] === 'title' && !empty($element['text'])): 
                             $stylesTitle = 'font-size: ' . esc_attr($element['fontSize']) . 'px; --font-size-tablet: ' . esc_attr($element['fontSizeTablet']) . 'px; --font-size-mobile: ' . esc_attr($element['fontSizeMobile']) . 'px;';
                         ?>
-                            <h3 style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide">
+                            <h3 style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide" data-swiper-parallax-y="-300" data-swiper-parallax-duration="600" data-swiper-parallax-opacity="0.5">
                                 <?php echo esc_html($element['text']); ?>
                             </h3>
                         <?php endif; ?>
@@ -302,7 +342,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
     <?php if ($navigation) : ?>
         <!-- Pulsante Avanti -->
         <div
-           
             class="<?php echo esc_attr('swiper-button-next ' . (!$navigationTablet ? 'nav-tablet' : '') . ' ' . (!$navigationMobile ? 'nav-mobile' : '')); ?>"
         >
             <?php if ($navigationIcons === 'default') : ?>
@@ -353,7 +392,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
         <!-- Pulsante Precedente -->
         <div
-           
             class="<?php echo esc_attr('swiper-button-prev ' . (!$navigationTablet ? 'nav-tablet' : '') . ' ' . (!$navigationMobile ? 'nav-mobile' : '')); ?>"
         >
             <?php if ($navigationIcons === 'default') : ?>
@@ -403,12 +441,14 @@ $wrapper_attributes = get_block_wrapper_attributes(
         </div>
     <?php endif; ?>
     <div class="swiper-scrollbar"></div>
-    <div class="autoplay-progress">
+    <?php if ($autoplayProgress) : ?>
+    <div class="autoplay-progress <?php echo esc_attr( $autoplayProgressPosition )?>">
         <svg viewBox="0 0 48 48" class="progress-circle">
             <circle cx="24" cy="24" r="20"></circle>
         </svg>
-        <span class="progress-content">0s</span>
+        <span class="progress-content"><?php echo esc_html__('0s','slider-builder')?></span>
     </div>
+    <?php endif; ?>
     <style>  
         /* Stili specifici per ciascun slider utilizzando le variabili CSS dinamiche */
         .<?php echo esc_attr($slider_unique_class); ?> {
@@ -447,8 +487,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	        --swiper-scrollbar-bottom: <?php echo esc_attr($scrollbarBottom); ?>;
             --swiper-scrollbar-size: <?php echo esc_attr($heightScrollbar); ?>px;
 	        --swiper-scrollbar-border-radius: <?php echo esc_attr($radiusScrollbar); ?>px;
+            --swiper-autoplay-progress-color: <?php echo esc_attr($autoplayProgressColor); ?>;
         }
     </style>
-
 </div>
-

@@ -1,22 +1,6 @@
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/slider/editor.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************/
-/*
-.swiper{
-	width: 100%;
-}
-*/
-/*
-.swiper-wrapper{
-	pointer-events: none!important; 
-}
-*/
-/*
-.editor-post-preview.tablet {
-    width: 768px;
-}
-
-  */
 /* Navigation */
 .swiper-button-next, .swiper-button-prev {
   top: var(--offset-top-nav);
@@ -33,7 +17,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/editor.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************/
 :root {
-  --primary-color: #AB0052;
+  --primary-color: #ab0052;
   --secondary-color: #007cba;
   --success-color: #28a745;
   --danger-color: #dc3545;
@@ -45,14 +29,14 @@
   --white-color: #ffffff;
   --black-color: #000000;
   --panel-color: #f6f9fc;
-  --select-hovercolor:#e7f6ff;
+  --select-hovercolor: #e7f6ff;
   --hover-color: #007cba;
   --label-color: #535960;
-  --background-color:#18191c;
-  --dark-color:#21242b;
-  --dark-color-hover:#2e323c;
-  --dark-button:#3c4556;
-  --notice-background:#e7dfe2;
+  --background-color: #18191c;
+  --dark-color: #21242b;
+  --dark-color-hover: #2e323c;
+  --dark-button: #3c4556;
+  --notice-background: #e7dfe2;
 }
 
 /* Color Input */
@@ -378,13 +362,6 @@
   /* Help */
   /* Range Control */
   /* Select Control */
-  /*
-  .components-base-control{
-      background-color: var(--dark-color);
-      padding: 0px 10px;
-      border-radius: 8px;
-  }
-  */
   /* Toogle */
   /* Button Creaative */
   /* Panel Color */
@@ -429,7 +406,8 @@
 .cocoblocks-panel .components-range-control__wrapper {
   color: var(--primary-color);
 }
-.cocoblocks-panel .components-range-control__thumb-wrapper span, .cocoblocks-panel .components-range-control__thumb-wrapper span::before {
+.cocoblocks-panel .components-range-control__thumb-wrapper span,
+.cocoblocks-panel .components-range-control__thumb-wrapper span::before {
   background-color: var(--primary-color);
 }
 .cocoblocks-panel .range-mark .components-range-control__wrapper {
@@ -513,7 +491,8 @@
 .cocoblocks-panel .focal-point-picker {
   padding: 0 !important;
 }
-.cocoblocks-panel .focal-point-picker img, .cocoblocks-panel .focal-point-picker video {
+.cocoblocks-panel .focal-point-picker img,
+.cocoblocks-panel .focal-point-picker video {
   border-radius: 8px;
 }
 .cocoblocks-panel .focal-point-picker .components-input-control__container {
@@ -700,12 +679,15 @@
   height: 30px;
   border-radius: 0 0 8px 8px;
 }
-.cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__saturation-pointer, .cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__hue-pointer, .cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__alpha-pointer {
+.cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__saturation-pointer,
+.cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__hue-pointer,
+.cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__alpha-pointer {
   width: 28px !important;
   height: 28px !important;
 }
 
-.cocoblocks-panel .components-panel__body-toggle:hover, .cocoblocks-panel:hover {
+.cocoblocks-panel .components-panel__body-toggle:hover,
+.cocoblocks-panel:hover {
   background-color: var(--background-color) !important;
 }
 
@@ -818,7 +800,8 @@
 .cocoblocks-modal .components-range-control__wrapper {
   color: var(--primary-color);
 }
-.cocoblocks-modal .components-range-control__thumb-wrapper span, .cocoblocks-modal .components-range-control__thumb-wrapper span::before {
+.cocoblocks-modal .components-range-control__thumb-wrapper span,
+.cocoblocks-modal .components-range-control__thumb-wrapper span::before {
   background-color: var(--primary-color);
 }
 .cocoblocks-modal .border-bottmo-modal {
@@ -970,4 +953,58 @@
 /* Notice Wrning margin top */
 .notice-warning-margin-top {
   margin-top: 12px;
+}
+
+/* Button apply style slide */
+.button-apply-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 9px;
+}
+.button-apply-style p {
+  margin: 0;
+  color: var(--light-color);
+}
+.button-apply-style span {
+  color: var(--light-color);
+}
+.button-apply-style button {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  color: var(--light-color);
+  border: 1px solid var(--light-color) !important;
+}
+.button-apply-style button:selected {
+  border: 1px solid var(--light-color) !important;
+}
+.button-apply-style button:focus {
+  border: 1px solid var(--light-color) !important;
+}
+.button-apply-style button:active {
+  border: 1px solid var(--light-color) !important;
+}
+.button-apply-style:hover button {
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+}
+
+.confirmation-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  gap: 12px;
+}
+.confirmation-buttons button {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  color: var(--white-color);
+  border: 1px solid var(--white-color) !important;
 }

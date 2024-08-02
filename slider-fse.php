@@ -24,9 +24,7 @@ function create_block_slider_fse_block_init() {
 }
 add_action( 'init', 'create_block_slider_fse_block_init' );
 
-
-
-
+/*
 function wp_kube_load_script() {
     wp_enqueue_script(
         'swiper',
@@ -39,3 +37,4 @@ function wp_kube_load_script() {
 add_action( 'wp_enqueue_scripts', 'wp_kube_load_script' );
 
 
+*/

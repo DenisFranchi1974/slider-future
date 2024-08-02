@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Seleziona tutti gli elementi con la classe 'swiper'
     const swiperElements = document.querySelectorAll('.swiper');
    
-
     swiperElements.forEach(swiperElement => {
         // Ottieni la configurazione specifica per questo slider
         const swiperData = swiperElement.getAttribute('data-swiper');
@@ -21,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.warn("Swiper Loop Warning: Loop mode is not compatible with grid.fill = 'row'.");
             }
 
-             // Configura l'autoplay
-             const autoplayConfig = swiperConfig.autoplay ? {
+            // Configura l'autoplay
+            const autoplayConfig = swiperConfig.autoplay ? {
                 delay: swiperConfig.autoplaySpeed,  // Imposta un valore predefinito se autoplaySpeed non è specificato
                 disableOnInteraction: swiperConfig.disableOnInteraction,
                 pauseOnMouseEnter: swiperConfig.pauseOnMouseEnter,
@@ -107,6 +106,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         opacity: swiperConfig.nextOpacity,
                     },
                 },
+                freeMode:{
+                    enabled: swiperConfig.freeMode,
+                    sticky: swiperConfig.stickyFreeMode,
+                    momentum: swiperConfig.momentumFreeMode,
+                    momentumBounce: swiperConfig.momentumBounceFreeMode,
+                    momentumBounceRatio: swiperConfig.momentumBounceRatioFreeMode,
+                    momentumRatio: swiperConfig.momentumRatioFreeMode,
+                    momentumVelocityRatio: swiperConfig.momentumVelocityRatioFreeMode,
+                },
+                mousewheel:{
+                    enabled: swiperConfig.mousewheel,
+                    forceToAxis: swiperConfig.forceToAxis,
+                    invert: swiperConfig.invert,
+                    releaseOnEdges: swiperConfig.releaseOnEdges,
+                    sensitivity: swiperConfig.sensitivity,
+                },
+                keyboard:{
+                    enabled: swiperConfig.keyboard,
+                    onlyInViewport: swiperConfig.viewPortKeyboard,
+                    pageUpDown:swiperConfig.upKeyboard,
+                },
+                parallax: swiperConfig.parallax,
                 breakpoints: {
                     640: {
                         slidesPerView: swiperConfig.perViewSliderMobile,
@@ -125,13 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                 },
                 on: {
-                    autoplayTimeLeft: (s, time, progress) => {
+                    autoplayTimeLeft: swiperConfig.autoplayProgress ? (s, time, progress) => {
                         // Calcola l'offset del cerchio in base al progresso
                         const totalLength = 126; // Dovrebbe corrispondere a stroke-dasharray nel CSS
                         const offset = totalLength * progress; // Invertire il progresso
-                        progressCircle.style.strokeDashoffset = offset;
-                        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-                    }
+                        if (progressCircle && progressContent) {
+                            progressCircle.style.strokeDashoffset = offset;
+                            progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+                        }
+                    } : undefined
                 },
             });
         }

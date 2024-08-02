@@ -33,19 +33,25 @@ import {
   Grid,
   Autoplay,
   Scrollbar,
+  FreeMode,
+  Keyboard,
+  Mousewheel,
+  Parallax
 } from "swiper/modules";
 import { useState } from "@wordpress/element";
 import "./editor.scss";
 import "../components/editor.scss";
 import ColorOptionsPanel from "../components/colorPanel";
-import { trash, replace, addTemplate } from "@wordpress/icons";
-
+import { trash, replace, addTemplate, textColor, color } from "@wordpress/icons";
+import { select } from '@wordpress/data';
 import AlignmentControl from "../components/aligncontrol";
 import SliderControls from "../components/SliderControls";
 import ColorOptionsPanelGradient from "../components/colorPanelGradient";
 import React, { useRef, useEffect } from "react";
+import AlignmentControlThree from "../components/aligncontrol-three";
+import FontStyle from "../components/font-style";
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes}) {
   const {
     directionSlider,
     effect,
@@ -163,9 +169,60 @@ export default function Edit({ attributes, setAttributes }) {
     invert,
     releaseOnEdges,
     sensitivity,
-    autoHeightSlider,
-    maxHeightSlider,
+    autoplayProgress,
+    autoplayProgressColor,
+    autoplayProgressPosition,
+    parallax,
   } = attributes;
+
+  useEffect(() => {
+		// Funzione per aggiungere una classe personalizzata al pannello "Advanced"
+		const addCustomClassToAdvancedPanel = () => {
+			const advancedPanels = document.querySelectorAll('.block-editor-block-inspector__advanced');
+			advancedPanels.forEach(panel => {
+				const parentPanel = panel.closest('.components-panel__body');
+				if (parentPanel) {
+					// Controlla se il blocco corrente è del tipo specificato
+					const block = select('core/block-editor').getSelectedBlock();
+					if (block && block.name === 'slider-builder/slider') {
+						parentPanel.classList.add('cocoblocks-custom-advanced-panel');
+					}
+				}
+			});
+		};
+	
+		// Funzione per aggiungere una classe personalizzata al block-editor-block-card
+		const addCustomClassToBlockCard = () => {
+			const blockCards = document.querySelectorAll('.block-editor-block-card');
+			blockCards.forEach(card => {
+				// Controlla se il blocco corrente è del tipo specificato
+				const block = select('core/block-editor').getSelectedBlock();
+				if (block && block.name === 'slider-builder/slider') {
+					card.classList.add('cocoblocks-custom-block-card');
+				}
+			});
+		};
+	
+		// Aggiunge le classi all'inizio
+		addCustomClassToAdvancedPanel();
+		addCustomClassToBlockCard();
+	
+		// Osserva il DOM per i cambiamenti e aggiunge nuovamente le classi se necessario
+		const observer = new MutationObserver(() => {
+			addCustomClassToAdvancedPanel();
+			addCustomClassToBlockCard();
+		});
+	
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true,
+		});
+	
+		// Pulisce l'observer quando il componente viene smontato
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
 
   // Move Element Up
   const moveElementUp = (slideId, index) => {
@@ -216,6 +273,64 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slides: updatedSlides });
   };
 
+  // Stato per memorizzare le impostazioni correnti
+  const [currentSettings, setCurrentSettings] = useState({
+    layout: 'vertical',
+    gapItems: 5,
+    position: 'center',
+    backgroundBorderColor: '#000000',
+    backgroundBorderSize: 1,
+    backgroundBorderRadius: 0,
+    backgroundVerticalPadding: 0,
+    backgroundHorizontalPadding: 0,
+  });
+
+  // Stato per gestire la visibilità del dialogo di conferma
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedSlide, setSelectedSlide] = useState(null);
+
+  // Funzione per aggiornare le impostazioni correnti
+  const updateSlideSettings = (key, value) => {
+    setCurrentSettings(prev => ({ ...prev, [key]: value }));
+  };
+
+  // Funzione per applicare le impostazioni a tutte le slide esistenti
+  const applySettingsToExistingSlides = (slideSettings) => {
+    // Aggiorna currentSettings con i valori della slide corrente
+    setCurrentSettings(slideSettings);
+
+    const updatedSlides = slides.map((slide) => ({
+      ...slide,
+      layout: slideSettings.layout,
+      gapItems: slideSettings.gapItems,
+      position: slideSettings.position,
+      backgroundBorderColor: slideSettings.backgroundBorderColor,
+      backgroundBorderSize: slideSettings.backgroundBorderSize,
+      backgroundBorderRadius: slideSettings.backgroundBorderRadius,
+      backgroundVerticalPadding: slideSettings.backgroundVerticalPadding,
+      backgroundHorizontalPadding: slideSettings.backgroundHorizontalPadding,
+    }));
+
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Funzione per aprire il dialogo di conferma
+  const openConfirmationDialog = (slide) => {
+    setSelectedSlide(slide);
+    setIsDialogOpen(true);
+  };
+
+  // Funzione per confermare l'applicazione delle impostazioni
+  const confirmApplySettings = () => {
+    applySettingsToExistingSlides(selectedSlide);
+    setIsDialogOpen(false);
+  };
+
+  // Funzione per annullare l'applicazione delle impostazioni
+  const cancelApplySettings = () => {
+    setIsDialogOpen(false);
+  };
+
   // Update Fit Image
   const updateSlideFit = (slideId, newFit) => {
     const updatedSlides = slides.map((slide) =>
@@ -259,6 +374,38 @@ export default function Edit({ attributes, setAttributes }) {
   const updateSlideBackgroundBorderColor = (id, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === id ? { ...slide, backgroundBorderColor: color } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update border size
+  const updateSlideBackgroundBorderSize = (slideId, newSize) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundBorderSize: newSize } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update border radius
+  const updateSlideBackgroundBorderRadius = (slideId, newRadius) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundBorderRadius: newRadius } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update vertical padding
+  const updateSlideBackgroundVerticalPadding = (slideId, newVerticalPadding) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundVerticalPadding: newVerticalPadding } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update horizontal padding
+  const updateSlideBackgroundHorizontalPadding = (slideId, newHorizontalPadding) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundHorizontalPadding: newHorizontalPadding } : slide
     );
     setAttributes({ slides: updatedSlides });
   };
@@ -577,6 +724,65 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update Text color
+  const updateSlideTextColor = (slideId, index, color) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, textColor: color }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Text align
+  const updateTextAlign = (slideId, index, align) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, textAlign: align }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Font Style
+  const updateFontStyle = (slideId, index, styleType, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "title" && i === index) {
+                const updatedFontStyle = {
+                  ...element.fontStyle,
+                  [styleType]: value,
+                };
+                return {
+                  ...element,
+                  fontStyle: updatedFontStyle,
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Size
   const updateFontSize = (slideId, index, newSize) => {
     const updatedSlides = slides.map((slide) =>
@@ -746,7 +952,7 @@ export default function Edit({ attributes, setAttributes }) {
   };
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}`;
   // Nessun movimento della slider
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
@@ -754,6 +960,7 @@ export default function Edit({ attributes, setAttributes }) {
   // Panel Slide
   const [selectedPanel, setSelectedPanel] = useState(null);
   const [primaryColor, setPrimaryColor] = useState("");
+  const swiperRef = useRef(null); // Riferimento a Swiper
 
   useEffect(() => {
     // Recupera il valore della variabile CSS --primary-color
@@ -764,9 +971,14 @@ export default function Edit({ attributes, setAttributes }) {
 
   const handlePanelSelect = (panelId) => {
     setSelectedPanel((prevPanel) => (prevPanel === panelId ? null : panelId));
+    // Trova l'indice della slide corrispondente
+    const slideIndex = slides.findIndex(slide => slide.id === panelId);
+    if (swiperRef.current && slideIndex !== -1) {
+      swiperRef.current.swiper.slideTo(slideIndex); // Naviga alla slide
+    }
   };
 
-  const renderCircle = (panelId) => {
+    const renderCircle = (panelId) => {
     const isSelected = selectedPanel === panelId;
     const circleStyle = {
       display: "inline-block",
@@ -818,7 +1030,7 @@ export default function Edit({ attributes, setAttributes }) {
     "--border-size-nav": sizeBorderNav + "px",
     "--border-radius-nav": radiusBorderNav + "%",
     "--padding-nav": paddingNav + "px",
-	"--padding-nav-left": paddingNavLeft + "px",
+	  "--padding-nav-left": paddingNavLeft + "px",
     "--offset-top-nav": offSetTopNav + "%",
     "--offset-sides-nav": offSetSidesNav + "px",
   };
@@ -842,7 +1054,6 @@ export default function Edit({ attributes, setAttributes }) {
   const swiperButtonPrevClasses = `swiper-button-prev ${!navigationTablet ? "nav-tablet" : ""} ${!navigationMobile ? "nav-mobile" : ""}`;
 
   // Pagination  
-
   const stylesPagination = {
     '--swiper-pagination-color':bulletColor ,
     '--swiper-pagination-fraction-color':bulletColor,
@@ -866,6 +1077,8 @@ export default function Edit({ attributes, setAttributes }) {
     '--swiper-scrollbar-bottom': positionScrollbar === 'bottom' ? '4px' : 'auto',
     '--swiper-scrollbar-size': heightScrollbar + 'px',
     '--swiper-scrollbar-border-radius': radiusScrollbar + 'px',
+    /* Autoplay Progress */
+    '--swiper-autoplay-progress-color': autoplayProgressColor,
   }
 
   // Autoplay
@@ -878,8 +1091,12 @@ export default function Edit({ attributes, setAttributes }) {
     stopOnLastSlide: stopOnLastSlide,
   } : false;
   // Progress Circle
-  const progressCircle = document.querySelector('.progress-circle circle');
-  const progressContent = document.querySelector('.progress-content');
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
   // Scrollbar
   const isScrollbarEnabled = scrollbar;
@@ -888,6 +1105,14 @@ export default function Edit({ attributes, setAttributes }) {
     hide: hideScrollbar ,
     snapOnRelease: releaseScrollbar,
   } : false;
+
+  // Responsive
+  const [showOtherButtons, setShowOtherButtons] = useState(false);
+
+  const handleDesktopClick = () => {
+    setAttributes({ device: 'desktop' });
+    setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+  };
 
   return (
     <>
@@ -1367,9 +1592,96 @@ export default function Edit({ attributes, setAttributes }) {
                             updateSlideBackgroundBorderColor(slide.id, color)
                           }
                           buttonTitle={__("Border Color", "cocoblocks")}
-                          buttonIcon="button"
+                          buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginRight:'3px',height:'16px',width:'16px'}}><path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/></svg>}
                         />
                       </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
+                              {__("Border width", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundBorderSize}
+                          onChange={(newSize) =>
+                            updateSlideBackgroundBorderSize(slide.id, newSize)
+                          }
+                          min={0}
+                          max={20}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
+                              {__("Border radius", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundBorderRadius}
+                          onChange={(newRadius) =>
+                            updateSlideBackgroundBorderRadius(slide.id, newRadius)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
+                              {__("Content vertical padding", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundVerticalPadding}
+                          onChange={(newVerticalPadding) =>
+                            updateSlideBackgroundVerticalPadding(slide.id, newVerticalPadding)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px',transform: 'rotate(90deg)'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
+                              {__("Content horizontal padding", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundHorizontalPadding}
+                          onChange={(newHorizontalPadding) =>
+                            updateSlideBackgroundHorizontalPadding(slide.id, newHorizontalPadding)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <div className="button-apply-style">
+                          <span class="dashicons dashicons-update"></span>
+                          <p> {__("Apply same styles to all slides", "cocoblocks")}</p>
+                          <button onClick={() => openConfirmationDialog(slide)}>
+                          {__("Apply", "cocoblocks")}
+                          </button>
+                        </div>
+                       {/* Dialogo di conferma */}
+                        {isDialogOpen && (
+                          <div className="confirmation-dialog">
+                            <p className="notice components-base-control__help" style={{borderRadius:0}}>{__('Are you sure you want to apply same styles to all slides?','slider-builder')}</p>
+                            <div className="confirmation-buttons">
+                              <button onClick={cancelApplySettings}>{__('Cancel','slider-builder')}</button>
+                              <button onClick={confirmApplySettings}>{__('Confirm','slider-builder')}</button>
+                            </div>
+                          </div>
+                        )}
+                        </div>
                       {/* Elements */}
                       {slide.elements &&
                         slide.elements.map((element, elementIndex) => (
@@ -1458,40 +1770,62 @@ export default function Edit({ attributes, setAttributes }) {
                                       "cocoblocks"
                                     )}
                                   />
+                                  <div className="custom-select color">
+                                    <ColorOptionsPanel
+                                      colorNormal={element.textColor}
+                                      setColorNormal={(color) =>
+                                        updateSlideTextColor(slide.id, elementIndex, color)
+                                      }
+                                      buttonTitle={__("Text Color", "cocoblocks")}
+                                      buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginBottom:'-10px',height:'26px',width:'26px'}}><path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"/></svg>}
+                                    />
+                                  </div>
+                                  <div className="custom-select">
+                                        <AlignmentControlThree
+                                            value={element.textAlign}
+                                              onChange={(align) =>
+                                                updateTextAlign(
+                                                  slide.id,
+                                                  elementIndex,
+                                                  align
+                                                )
+                                              }
+                                        />
+                                  </div>
+                                  <div className="custom-select">
+                                  <FontStyle
+                                    value={element.fontStyle || {}}  // Inizializza con un oggetto vuoto se undefined
+                                    onChange={(styleType, value) =>
+                                      updateFontStyle(slide.id, elementIndex, styleType, value)
+                                    }
+                                  />
+                                  </div>
                                   <ButtonGroup className="device-switcher">
                                     <Button
                                       size="small"
                                       isPressed={device === "desktop"}
-                                      onClick={() =>
-                                        setAttributes({
-                                          device: "desktop",
-                                        })
-                                      }
+                                      onClick={handleDesktopClick}
                                     >
-                                      <span className="dashicons dashicons-desktop"></span>
+                                      <span className="dashicons dashicons-desktop" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
                                     </Button>
-                                    <Button
-                                      size="small"
-                                      isPressed={device === "tablet"}
-                                      onClick={() =>
-                                        setAttributes({
-                                          device: "tablet",
-                                        })
-                                      }
-                                    >
-                                      <span className="dashicons dashicons-tablet"></span>
-                                    </Button>
-                                    <Button
-                                      size="small"
-                                      isPressed={device === "mobile"}
-                                      onClick={() =>
-                                        setAttributes({
-                                          device: "mobile",
-                                        })
-                                      }
-                                    >
-                                      <span className="dashicons dashicons-smartphone"></span>
-                                    </Button>
+                                    {showOtherButtons && (
+                                      <>
+                                        <Button
+                                          size="small"
+                                          isPressed={device === "tablet"}
+                                          onClick={() => setAttributes({ device: "tablet" })}
+                                        >
+                                          <span className="dashicons dashicons-tablet" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                        </Button>
+                                        <Button
+                                          size="small"
+                                          isPressed={device === "mobile"}
+                                          onClick={() => setAttributes({ device: "mobile" })}
+                                        >
+                                          <span className="dashicons dashicons-smartphone" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                        </Button>
+                                      </>
+                                    )}
                                   </ButtonGroup>
                                   {device === "desktop" && (
                                     <RangeControl
@@ -2129,6 +2463,7 @@ export default function Edit({ attributes, setAttributes }) {
 
       <div {...blockProps}>
         <Swiper
+          ref={swiperRef}
           key={key}
           modules={[
             Navigation,
@@ -2142,6 +2477,10 @@ export default function Edit({ attributes, setAttributes }) {
             Grid,
             Autoplay,
             Scrollbar,
+            FreeMode,
+            Keyboard,
+            Mousewheel,
+            Parallax
           ]}
           navigation={navigationConfig}
 		      pagination={{
@@ -2153,16 +2492,20 @@ export default function Edit({ attributes, setAttributes }) {
             dynamicMainBullets: dynamicMainPagination,
             progressbarOpposite: progressbarOpposite,
           }}
-          autoplay={autoplayConfig}
-          on= {{
-            autoplayTimeLeft: (s, time, progress) => {
-                // Calcola l'offset del cerchio in base al progresso
-                const totalLength = 126; // Dovrebbe corrispondere a stroke-dasharray nel CSS
-                const offset = totalLength * progress; // Invertire il progresso
-                progressCircle.style.strokeDashoffset = offset;
-                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-            }
+          keyboard={{
+            enabled: keyboard,
+            onlyInViewport: viewPortKeyboard,
+            pageUpDown: upKeyboard,
           }}
+          mousewheel= {{
+            enabled: mousewheel,
+            forceToAxis: forceToAxis,
+            invert: invert,
+            releaseOnEdges: releaseOnEdges,
+            sensitivity: sensitivity,
+          }}
+          autoplay={autoplayConfig}
+          onAutoplayTimeLeft={autoplayProgress ? onAutoplayTimeLeft : undefined}
           className="slider-builder"
           dir={languageSlider}
           direction={directionSlider}
@@ -2224,6 +2567,16 @@ export default function Edit({ attributes, setAttributes }) {
               opacity: nextOpacity,
             },
           }}
+          freeMode={{
+            enabled: freeMode,
+            sticky: stickyFreeMode,
+            momentum: momentumFreeMode,
+            momentumBounce: momentumBounceFreeMode,
+            momentumBounceRatio: momentumBounceRatioFreeMode,
+            momentumRatio: momentumRatioFreeMode,
+            momentumVelocityRatio: momentumVelocityRatioFreeMode,
+          }}
+          parallax={parallax}
           breakpoints={{
             640: {
               slidesPerView: perViewSliderMobile,
@@ -2282,8 +2635,13 @@ export default function Edit({ attributes, setAttributes }) {
                   position: "relative",
                   visibility: "visible",
                   gap: slide.gapItems + "px",
+                  borderRadius: slide.backgroundBorderRadius + "px",
+                  paddingTop: slide.backgroundVerticalPadding + "px",
+                  paddingBottom: slide.backgroundVerticalPadding + "px",
+                  paddingLeft: slide.backgroundHorizontalPadding + "px",
+                  paddingRight: slide.backgroundHorizontalPadding + "px",
                   border: slide.backgroundBorderColor
-                    ? `3px solid ${slide.backgroundBorderColor}`
+                    ? `${slide.backgroundBorderSize}px solid ${slide.backgroundBorderColor}`
                     : "none",
                 }}
               >
@@ -2315,11 +2673,16 @@ export default function Edit({ attributes, setAttributes }) {
                     fontSize: element.fontSize + "px",
                     "--font-size-tablet": element.fontSizeTablet + "px",
                     "--font-size-mobile": element.fontSizeMobile + "px",
+                    color: element.textColor,
+                    textAlign: element.textAlign,
+                    fontStyle: element.fontStyle?.fontStyle || 'normal',  // Valore di default
+                    fontWeight: element.fontStyle?.fontWeight || 'normal',  // Valore di default
+                    textDecoration: element.fontStyle?.textDecoration || 'none',  // Valore di default
                   };
                   switch (element.type) {
                     case "title":
                       return (
-                        <div key={index}>
+                        <div key={index}  data-swiper-parallax-y="-300" data-swiper-parallax-duration="600" data-swiper-parallax-opacity="0.5" style={{width:'100%'}}>
                           {element.text ? (
                             <h3 className="title-slide" style={stylesTitle}>
                               {element.text}
@@ -2381,16 +2744,19 @@ export default function Edit({ attributes, setAttributes }) {
                     default:
                       return null;
                   }
+
                 })}
               </div>
             </SwiperSlide>
           ))}
-          <div class="autoplay-progress">
-              <svg viewBox="0 0 48 48" class="progress-circle">
-                  <circle cx="24" cy="24" r="20"></circle>
-              </svg>
-              <span class="progress-content">0s</span>
+          {autoplayProgress && (  
+          <div className={'autoplay-progress ' +autoplayProgressPosition} slot="container-end">
+            <svg viewBox="0 0 48 48" ref={progressCircle}>
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref={progressContent}></span>
           </div>
+          )}
         </Swiper>
        
         {navigation && (

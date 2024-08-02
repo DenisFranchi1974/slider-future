@@ -713,12 +713,11 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
-/*
-.swiper {
-	width: 600px;
-	height: 300px;
+.swiper-free-mode > .swiper-wrapper {
+  transition-timing-function: ease-out;
+  margin: 0 auto;
 }
-*/
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -805,7 +804,10 @@ button.swiper-pagination-bullet {
 }
 
 .wp-block-slider-builder-slider {
-  --swiper-theme-color: var(--wp--preset--color--accent, var(--wp--preset--color--primary));
+  --swiper-theme-color: var(
+    --wp--preset--color--accent,
+    var(--wp--preset--color--primary)
+  );
   --swiper-navigation-size: var(--size-nav);
   --swiper-navigation-top-offset: var(--offset-top-nav);
   --swiper-navigation-sides-offset: var(--offset-sides-nav);
@@ -829,17 +831,20 @@ button.swiper-pagination-bullet {
   height: var(--swiper-pagination-bullet-height-active);
 }
 
-.swiper-button-next svg, .swiper-button-prev svg {
+.swiper-button-next svg,
+.swiper-button-prev svg {
   font-size: var(--size-nav);
   height: var(--size-nav);
   width: var(--size-nav);
 }
 
-.swiper-button-next span, .swiper-button-prev span {
+.swiper-button-next span,
+.swiper-button-prev span {
   font-size: var(--size-nav);
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   background-color: var(--background-color-nav);
   padding-top: var(--padding-nav);
   padding-bottom: var(--padding-nav);
@@ -850,31 +855,30 @@ button.swiper-pagination-bullet {
   width: auto !important;
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
   color: var(--color-nav-hover) !important;
   background-color: var(--background-color-nav-hover) !important;
   border: var(--border-size-nav) solid var(--border-color-nav-hover) !important;
 }
 
-.swiper-button-next:hover svg, .swiper-button-prev:hover svg, .swiper-button-next:hover path, .swiper-button-prev:hover path, .swiper-button-next:hover span, .swiper-button-prev:hover span {
+.swiper-button-next:hover svg,
+.swiper-button-prev:hover svg,
+.swiper-button-next:hover path,
+.swiper-button-prev:hover path,
+.swiper-button-next:hover span,
+.swiper-button-prev:hover span {
   fill: var(--color-nav-hover) !important;
 }
 
-.swiper-button-next::after, .swiper-button-prev::after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   content: none !important;
 }
 
-/* Scrollbar 
-.swiper-scrollbar{
-	position: relative!important;
-    bottom: 7px!important;
-}
-*/
 /* Autoplay  Progrss bar */
 .autoplay-progress {
   position: absolute;
-  left: 16px;
-  bottom: 16px;
   z-index: 10;
   width: 48px;
   height: 48px;
@@ -882,7 +886,23 @@ button.swiper-pagination-bullet {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: red;
+  color: var(--swiper-autoplay-progress-color);
+}
+.autoplay-progress.top-left {
+  top: 16px;
+  right: 16px;
+}
+.autoplay-progress.top-right {
+  top: 16px;
+  left: 16px;
+}
+.autoplay-progress.bottom-left {
+  bottom: 16px;
+  right: 16px;
+}
+.autoplay-progress.bottom-right {
+  bottom: 16px;
+  left: 16px;
 }
 
 .autoplay-progress svg {
@@ -894,7 +914,7 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 100%;
   stroke-width: 4px;
-  stroke: red;
+  stroke: var(--swiper-autoplay-progress-color);
   fill: none;
   stroke-dashoffset: calc(126px * (1 - var(--progress)));
   stroke-dasharray: 126;
@@ -914,12 +934,14 @@ button.swiper-pagination-bullet {
 }
 /* Responsive Navigation */
 @media screen and (max-width: 780px) {
-  .swiper-button-next.nav-tablet, .swiper-button-prev.nav-tablet {
+  .swiper-button-next.nav-tablet,
+  .swiper-button-prev.nav-tablet {
     display: none;
   }
 }
 @media screen and (max-width: 360px) {
-  .swiper-button-next.nav-mobile, .swiper-button-prev.nav-mobile {
+  .swiper-button-next.nav-mobile,
+  .swiper-button-prev.nav-mobile {
     display: none;
   }
 }
