@@ -1,10 +1,27 @@
+
+/*
 .swiper{
 	width: 100%;
 }
+*/
+/*
 .swiper-wrapper{
 	pointer-events: none!important; 
 }
-
+*/
+/*
 .editor-post-preview.tablet {
     width: 768px;
+}
+
+  */
+/* Navigation */
+.swiper-button-next,.swiper-button-prev {
+    top: var(--offset-top-nav)
+}
+.swiper-button-next{
+	right: var(--offset-sides-nav);
+}
+.swiper-button-prev {
+    left: var(--offset-sides-nav)
 }

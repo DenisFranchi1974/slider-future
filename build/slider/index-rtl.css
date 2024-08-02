@@ -1,16 +1,33 @@
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/slider/editor.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************/
-.swiper {
-  width: 100%;
+/*
+.swiper{
+	width: 100%;
 }
-
-.swiper-wrapper {
-  pointer-events: none !important;
+*/
+/*
+.swiper-wrapper{
+	pointer-events: none!important; 
 }
-
+*/
+/*
 .editor-post-preview.tablet {
-  width: 768px;
+    width: 768px;
+}
+
+  */
+/* Navigation */
+.swiper-button-next, .swiper-button-prev {
+  top: var(--offset-top-nav);
+}
+
+.swiper-button-next {
+  left: var(--offset-sides-nav);
+}
+
+.swiper-button-prev {
+  right: var(--offset-sides-nav);
 }
 /*!***************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/editor.scss ***!

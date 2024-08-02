@@ -48,10 +48,69 @@ $nextRotateY = isset($attributes['nextRotateY']) ? $attributes['nextRotateY'] : 
 $nextRotateZ = isset($attributes['nextRotateZ']) ? $attributes['nextRotateZ'] : null;
 $nextScale = isset($attributes['nextScale']) ? $attributes['nextScale'] : null;
 $nextOpacity = isset($attributes['nextOpacity']) ? $attributes['nextOpacity'] : null;
+$navigation = isset($attributes['navigation']) ? $attributes['navigation'] : null;
+$navigationIcons = isset($attributes['navigationIcons']) ? $attributes['navigationIcons'] : null;
+$navColor = isset($attributes['navColor']) ? $attributes['navColor'] : null;
+$navColorHover = isset($attributes['navColorHover']) ? $attributes['navColorHover'] : null;
+$navBackgroundColor = isset($attributes['navBackgroundColor']) ? $attributes['navBackgroundColor'] : null;
+$navBackgroundColorHover = isset($attributes['navBackgroundColorHover']) ? $attributes['navBackgroundColorHover'] : null;
+$navBorderColor = isset($attributes['navBorderColor']) ? $attributes['navBorderColor'] : null;
+$navBorderColorHover = isset($attributes['navBorderColorHover']) ? $attributes['navBorderColorHover'] : null;
+$sizeNav = isset($attributes['sizeNav']) ? $attributes['sizeNav'] : null;
+$paddingNav = isset($attributes['paddingNav']) ? $attributes['paddingNav'] : null;
+$paddingNavLeft = isset($attributes['paddingNavLeft']) ? $attributes['paddingNavLeft'] : null;
+$sizeBorderNav = isset($attributes['sizeBorderNav']) ? $attributes['sizeBorderNav'] : null;
+$radiusBorderNav = isset($attributes['radiusBorderNav']) ? $attributes['radiusBorderNav'] : null;
+$offSetTopNav = isset($attributes['offSetTopNav']) ? $attributes['offSetTopNav'] : null;    
+$offSetSidesNav = isset($attributes['offSetSidesNav']) ? $attributes['offSetSidesNav'] : null;
+$hideNavigation = isset($attributes['hideNavigation']) ? $attributes['hideNavigation'] : null;
+$navigationTablet = isset($attributes['navigationTablet']) ? $attributes['navigationTablet'] : null;
+$navigationMobile = isset($attributes['navigationMobile']) ? $attributes['navigationMobile'] : null;
+$paginationEnable = isset($attributes['paginationEnable']) ? $attributes['paginationEnable'] : null;
+$bulletInactivityColor = isset($attributes['bulletInactivityColor']) ? $attributes['bulletInactivityColor'] : null;
+$bulletColor = isset($attributes['bulletColor']) ? $attributes['bulletColor'] : null;
+$positionPagination = isset($attributes['positionPagination']) ? $attributes['positionPagination'] : null;
+$opacityPagination = isset($attributes['opacityPagination']) ? $attributes['opacityPagination'] : null;
+$opacityInactivePagination = isset($attributes['opacityInactivePagination']) ? $attributes['opacityInactivePagination'] : null;
+$widthPagination = isset($attributes['widthPagination']) ? $attributes['widthPagination'] : null;
+$heightPagination = isset($attributes['heightPagination']) ? $attributes['heightPagination'] : null;
+$widthPaginationActive = isset($attributes['widthPaginationActive']) ? $attributes['widthPaginationActive'] : null;
+$heightPaginationActive = isset($attributes['heightPaginationActive']) ? $attributes['heightPaginationActive'] : null;
+$radiusPagination = isset($attributes['radiusPagination']) ? $attributes['radiusPagination'] : null;
+$gapPagination = isset($attributes['gapPagination']) ? $attributes['gapPagination'] : null;
+$fontSizePagination = isset($attributes['fontSizePagination']) ? $attributes['fontSizePagination'] : null;
+$heightBarPagination = isset($attributes['heightBarPagination']) ? $attributes['heightBarPagination'] : null;
+$scrollBarColor = isset($attributes['scrollBarColor']) ? $attributes['scrollBarColor'] : null;
+$thumbColor = isset($attributes['thumbColor']) ? $attributes['thumbColor'] : null;
+$positionScrollbar = isset($attributes['positionScrollbar']) ? $attributes['positionScrollbar'] : null;
+$heightScrollbar = isset($attributes['heightScrollbar']) ? $attributes['heightScrollbar'] : null;
+$radiusScrollbar = isset($attributes['radiusScrollbar']) ? $attributes['radiusScrollbar'] : null;
+$typePagination = isset($attributes['typePagination']) ? $attributes['typePagination'] : null;
+$clickPagination = isset($attributes['clickPagination']) ? $attributes['clickPagination'] : null;
+$hidePagination = isset($attributes['hidePagination']) ? $attributes['hidePagination'] : null;
+$dynamicPagination = isset($attributes['dynamicPagination']) ? $attributes['dynamicPagination'] : null;
+$dynamicMainPagination = isset($attributes['dynamicMainPagination']) ? $attributes['dynamicMainPagination'] : null;
+$progressbarOpposite = isset($attributes['progressbarOpposite']) ? $attributes['progressbarOpposite'] : null;
+$autoplay = isset($attributes['autoplay']) ? $attributes['autoplay'] : null;
+$autoplaySpeed = isset($attributes['autoplaySpeed']) ? $attributes['autoplaySpeed'] : null;
+$disableOnInteraction = isset($attributes['disableOnInteraction']) ? $attributes['disableOnInteraction'] : null;
+$pauseOnMouseEnter = isset($attributes['pauseOnMouseEnter']) ? $attributes['pauseOnMouseEnter'] : null;
+$reverseDirection = isset($attributes['reverseDirection']) ? $attributes['reverseDirection'] : null;
+$stopOnLastSlide = isset($attributes['stopOnLastSlide']) ? $attributes['stopOnLastSlide'] : null;
+$scrollbar = isset($attributes['scrollbar']) ? $attributes['scrollbar'] : null;
+$hideScrollbar= isset($attributes['hideScrollbar']) ? $attributes['hideScrollbar'] : null;
+$dragScrollbar = isset($attributes['dragScrollbar']) ? $attributes['dragScrollbar'] : null;
+$releaseScrollbar = isset($attributes['releaseScrollbar']) ? $attributes['releaseScrollbar'] : null;
+
+
 
 
 // Recupera le slide dai tuoi attributi (adatta questo in base alla struttura dei tuoi attributi)
 $slides = !empty($attributes['slides']) ? $attributes['slides'] : [];
+
+  // Determina la posizione della scrollbar
+  $scrollbarTop = $positionScrollbar === 'top' ? '4px' : 'auto';
+  $scrollbarBottom = $positionScrollbar === 'bottom' ? '4px' : 'auto';
 
 $swiper_attr = array(
     'directionSlider' => $directionSlider,
@@ -100,13 +159,66 @@ $swiper_attr = array(
     'nextRotateZ' => $nextRotateZ,
     'nextScale' => $nextScale,
     'nextOpacity' => $nextOpacity,
+    'navigation' => $navigation,
+    'navigationIcons' => $navigationIcons,
+    'navColor' => $navColor,
+    'navColorHover' => $navColorHover,
+    'navBackgroundColor' => $navBackgroundColor,
+    'navBackgroundColorHover' => $navBackgroundColorHover,
+    'navBorderColor' => $navBorderColor,
+    'navBorderColorHover' => $navBorderColorHover,
+    'sizeNav' => $sizeNav,
+    'paddingNav' => $paddingNav,
+    'paddingNavLeft' => $paddingNavLeft,
+    'sizeBorderNav' => $sizeBorderNav,
+    'radiusBorderNav' => $radiusBorderNav,
+    'offSetTopNav' => $offSetTopNav,
+    'offSetSidesNav' => $offSetSidesNav,
+    'hideNavigation' => $hideNavigation,
+    'navigationTablet' => $navigationTablet,
+    'navigationMobile' => $navigationMobile,
+    'paginationEnable' => $paginationEnable,
+    'bulletInactivityColor' => $bulletInactivityColor,
+    'bulletColor' => $bulletColor,
+    'positionPagination' => $positionPagination,
+    'opacityPagination' => $opacityPagination,
+    'opacityInactivePagination' => $opacityInactivePagination,
+    'widthPagination' => $widthPagination,
+    'heightPagination' => $heightPagination,
+    'widthPaginationActive' => $widthPaginationActive,
+    'heightPaginationActive' => $heightPaginationActive,
+    'radiusPagination' => $radiusPagination,
+    'gapPagination' => $gapPagination,
+    'fontSizePagination' => $fontSizePagination,
+    'heightBarPagination' => $heightBarPagination,
+    'scrollBarColor' => $scrollBarColor,
+    'thumbColor' => $thumbColor,
+    'positionScrollbar' => $positionScrollbar,
+    'heightScrollbar' => $heightScrollbar,
+    'radiusScrollbar' => $radiusScrollbar,
+    'typePagination' => $typePagination,
+    'clickPagination' => $clickPagination,
+    'hidePagination' => $hidePagination,
+    'dynamicPagination' => $dynamicPagination,
+    'dynamicMainPagination' => $dynamicMainPagination,
+    'progressbarOpposite' => $progressbarOpposite,
+    'autoplay' => $autoplay,
+    'autoplaySpeed' => $autoplaySpeed,
+    'disableOnInteraction' => $disableOnInteraction,
+    'pauseOnMouseEnter' => $pauseOnMouseEnter,
+    'reverseDirection' => $reverseDirection,
+    'stopOnLastSlide' => $stopOnLastSlide,
+    'scrollbar' => $scrollbar,
+    'hideScrollbar' => $hideScrollbar,
+    'dragScrollbar' => $dragScrollbar,
+    'releaseScrollbar' => $releaseScrollbar,
 );
 
 $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
 
 $wrapper_attributes = get_block_wrapper_attributes(
     array(
-        'class' => 'swiper ' . $slider_unique_class,
+        'class' => 'swiper ' . $slider_unique_class . ' slider-builder swiper-container ',
     )
 );
 
@@ -186,9 +298,157 @@ $wrapper_attributes = get_block_wrapper_attributes(
             </div>
         <?php endforeach; ?>
     </div>
-    
     <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <?php if ($navigation) : ?>
+        <!-- Pulsante Avanti -->
+        <div
+           
+            class="<?php echo esc_attr('swiper-button-next ' . (!$navigationTablet ? 'nav-tablet' : '') . ' ' . (!$navigationMobile ? 'nav-mobile' : '')); ?>"
+        >
+            <?php if ($navigationIcons === 'default') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 0 24 24" fill="currentColor">
+                    <mask id="a" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" x="0" y="0" maskUnits="userSpaceOnUse">
+                        <path fill="<?php echo esc_attr($navColor); ?>" d="M0 0h24v24H0z"/>
+                    </mask>
+                    <g mask="url(#a)">
+                        <path fill="<?php echo esc_attr($navColor); ?>" d="M9.4 17.654 8.346 16.6l4.6-4.6-4.6-4.6L9.4 6.346 15.054 12 9.4 17.654Z"/>
+                    </g>
+                </svg>
+            <?php elseif ($navigationIcons === 'one') : ?>
+                <svg width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_7_1879" maskUnits="userSpaceOnUse" x="0" y="0" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>">
+                        <rect width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </mask>
+                    <g mask="url(#mask0_7_1879)">
+                        <path d="M14.05 17.65L13 16.575L16.825 12.75H4.29999V11.25H16.825L13 7.42501L14.05 6.35001L19.7 12L14.05 17.65Z" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </g>
+                </svg>
+            <?php elseif ($navigationIcons === 'two') : ?>
+                <svg width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_315_300" maskUnits="userSpaceOnUse" x="0" y="0" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>">
+                        <rect width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </mask>
+                    <g mask="url(#mask0_315_300)">
+                        <path d="M17.5 16.1538L16.4308 15.1L18.7808 12.75H3.25003V11.25H18.7808L16.4462 8.89999L17.5154 7.84616L21.6538 12L17.5 16.1538Z" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </g>
+                </svg>
+            <?php elseif ($navigationIcons === 'three') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 -960 960 960" width="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>">
+                    <path d="M383-480 200-664l56-56 240 240-240 240-56-56 183-184Zm264 0L464-664l56-56 240 240-240 240-56-56 183-184Z"/>
+                </svg>
+            <?php elseif ($navigationIcons === 'four') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 -960 960 960" width="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>">
+                    <path d="M400-280v-400l200 200-200 200Z"/>
+                </svg>
+            <?php elseif ($navigationIcons === 'five') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 -960 960 960" width="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                </svg>
+            <?php elseif ($navigationIcons === 'text') : ?>
+                <span style="color: <?php echo esc_attr($navColor); ?>; font-size: <?php echo esc_attr($sizeNav . 'px'); ?>;">
+                    <?php echo esc_html(__('Next', 'cocoblocks')); ?>
+                </span>
+            <?php endif; ?>
+        </div>
+
+        <!-- Pulsante Precedente -->
+        <div
+           
+            class="<?php echo esc_attr('swiper-button-prev ' . (!$navigationTablet ? 'nav-tablet' : '') . ' ' . (!$navigationMobile ? 'nav-mobile' : '')); ?>"
+        >
+            <?php if ($navigationIcons === 'default') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 0 24 24" fill="currentColor">
+                    <mask id="mask0_7_1873" maskUnits="userSpaceOnUse" x="0" y="0" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>">
+                        <rect width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </mask>
+                    <g mask="url(#mask0_7_1873)">
+                        <path fill="<?php echo esc_attr($navColor); ?>" d="M14 17.6538L8.34619 12L14 6.34616L15.0538 7.39999L10.4538 12L15.0538 16.6L14 17.6538Z"/>
+                    </g>
+                </svg>
+            <?php elseif ($navigationIcons === 'one') : ?>
+                <svg width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_7_1868" maskUnits="userSpaceOnUse" x="0" y="0" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>">
+                        <rect width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </mask>
+                    <g mask="url(#mask0_7_1868)">
+                        <path d="M9.40001 17.65L8.34667 16.6L12.75 12L8.34667 7.40001L9.40001 6.34667L15.054 12L9.40001 17.65Z" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </g>
+                </svg>
+            <?php elseif ($navigationIcons === 'two') : ?>
+                <svg width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_315_294" maskUnits="userSpaceOnUse" x="0" y="0" width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>">
+                        <rect width="<?php echo esc_attr($sizeNav . 'px'); ?>" height="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </mask>
+                    <g mask="url(#mask0_315_294)">
+                        <path d="M9.40001 16.1538L8.34667 15.1L12.75 12.75H3.25001V11.25H12.75L8.34667 7.425L9.40001 6.35001L15.054 12L9.40001 16.1538Z" fill="<?php echo esc_attr($navColor); ?>"/>
+                    </g>
+                </svg>
+            <?php elseif ($navigationIcons === 'three') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 -960 960 960" width="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>">
+                    <path d="M560-480L760-280l-56 56-240-240 240-240 56 56-183 184Zm-264 0L184-280l-56-56 240-240 240 240-56 56-183-184Z"/>
+                </svg>
+            <?php elseif ($navigationIcons === 'four') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 -960 960 960" width="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>">
+                    <path d="M560-280v-400l-200 200 200 200Z"/>
+                </svg>
+            <?php elseif ($navigationIcons === 'five') : ?>
+                <svg xmlns="http://www.w3.org/2000/svg" height="<?php echo esc_attr($sizeNav . 'px'); ?>" viewBox="0 -960 960 960" width="<?php echo esc_attr($sizeNav . 'px'); ?>" fill="<?php echo esc_attr($navColor); ?>">
+                    <path d="M520-280v-400h-80v400h-240v80h240v240h80v-240h240v-80h-240Z"/>
+                </svg>
+            <?php elseif ($navigationIcons === 'text') : ?>
+                <span style="color: <?php echo esc_attr($navColor); ?>; font-size: <?php echo esc_attr($sizeNav . 'px'); ?>;">
+                    <?php echo esc_html(__('Prev', 'cocoblocks')); ?>
+                </span>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
     <div class="swiper-scrollbar"></div>
+    <div class="autoplay-progress">
+        <svg viewBox="0 0 48 48" class="progress-circle">
+            <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span class="progress-content">0s</span>
+    </div>
+    <style>  
+        /* Stili specifici per ciascun slider utilizzando le variabili CSS dinamiche */
+        .<?php echo esc_attr($slider_unique_class); ?> {
+
+            --background-color-nav: <?php echo esc_attr($navBackgroundColor); ?>;
+            --border-color-nav:<?php echo esc_attr($navBorderColor); ?>;
+            --color-nav-hover:<?php echo esc_attr($navColorHover); ?>!important;
+	        --background-color-nav-hover:<?php echo esc_attr($navBackgroundColorHover); ?>!important ;
+	        --border-color-nav-hover:<?php echo esc_attr($navBorderColorHover); ?>!important;
+            --size-nav:<?php echo esc_attr($sizeNav); ?>px;
+		    --border-size-nav: <?php echo esc_attr($sizeBorderNav); ?>px;
+		    --border-radius-nav: <?php echo esc_attr($radiusBorderNav); ?>%;
+            --padding-nav: <?php echo esc_attr($paddingNav); ?>px;
+            --padding-nav-left: <?php echo esc_attr($paddingNavLeft); ?>px;
+            --offset-top-nav: <?php echo esc_attr($offSetTopNav); ?>%;
+		    --offset-sides-nav: <?php echo esc_attr($offSetSidesNav); ?>px;
+            --swiper-pagination-bullet-inactive-color: <?php echo esc_attr( $bulletInactivityColor );?>;
+            --swiper-pagination-progressbar-bg-color: <?php echo esc_attr( $bulletInactivityColor );?>;
+	        --swiper-pagination-color:<?php echo esc_attr(  $bulletColor  );?>;
+            --swiper-pagination-fraction-color:<?php echo esc_attr(  $bulletColor  );?>;
+            --swiper-pagination-bottom: <?php echo esc_attr($positionPagination === 'bottom' ? '8px' : 'auto'); ?>;
+            --swiper-pagination-top:  <?php echo esc_attr($positionPagination === 'top' ? '8px' : 'auto'); ?>;
+            --swiper-pagination-bullet-opacity: <?php echo esc_attr($opacityPagination); ?>;
+	        --swiper-pagination-bullet-inactive-opacity:  <?php echo esc_attr($opacityInactivePagination); ?>;
+            --swiper-pagination-bullet-width:<?php echo esc_attr($widthPagination); ?>px;
+	        --swiper-pagination-bullet-height: <?php echo esc_attr($heightPagination); ?>px;
+            --swiper-pagination-bullet-width-active: <?php echo esc_attr($widthPaginationActive); ?>px;
+	        --swiper-pagination-bullet-height-active:<?php echo esc_attr($heightPaginationActive); ?>px;
+            --swiper-radius-bullet: <?php echo esc_attr($radiusPagination); ?>%;
+            --swiper-pagination-bullet-horizontal-gap: <?php echo esc_attr($gapPagination); ?>px;
+            --swiper-font-size-fraction:<?php echo esc_attr($fontSizePagination); ?>px;
+            --swiper-pagination-progressbar-size: <?php echo esc_attr($heightBarPagination); ?>px;
+            --swiper-scrollbar-bg-color:<?php echo esc_attr($scrollBarColor); ?>; 
+	        --swiper-scrollbar-drag-bg-color:<?php echo esc_attr($thumbColor); ?>;  
+            --swiper-scrollbar-top:<?php echo esc_attr($scrollbarTop); ?>;
+	        --swiper-scrollbar-bottom: <?php echo esc_attr($scrollbarBottom); ?>;
+            --swiper-scrollbar-size: <?php echo esc_attr($heightScrollbar); ?>px;
+	        --swiper-scrollbar-border-radius: <?php echo esc_attr($radiusScrollbar); ?>px;
+        }
+    </style>
+
 </div>
+

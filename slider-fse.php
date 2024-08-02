@@ -30,7 +30,7 @@ add_action( 'init', 'create_block_slider_fse_block_init' );
 function wp_kube_load_script() {
     wp_enqueue_script(
         'swiper',
-        plugins_url( 'swiper-bundle.min.js', __FILE__ ),
+       //plugins_url( 'swiper-bundle.min.js', __FILE__ ),
         [], // Dipendenze, se necessarie. Puoi anche lasciare vuoto []
         '', // Versione, se necessario
         true // Caricare nello footer (true) o nell'header (false)

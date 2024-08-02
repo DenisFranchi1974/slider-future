@@ -71,6 +71,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 		hideNavigation,
 		navigation, 
 		navigationIcons, 
+		autoplay,
 		autoplaySpeed,
 		navColor,
 		navBackgroundColor,
@@ -82,6 +83,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 		sizeBorderNav,
 		radiusBorderNav,
 		paddingNav,
+		paddingNavLeft,
 		offSetTopNav,
 		offSetSidesNav,
 		navigationTablet,
@@ -431,6 +433,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 		navBackgroundColorHover:'#FFFFFF',
 		navBorderColorHover:'#FFFFFF',
 		paddingNav: 8,
+		paddingNavLeft: 8,
 		offSetTopNav:50,
 		offSetSidesNav:10,
 		navigationTablet:true,
@@ -451,6 +454,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 			navBackgroundColorHover:defaultAttributes.navBackgroundColorHover,
 			navBorderColorHover:defaultAttributes.navBorderColorHover,
 			paddingNav: defaultAttributes.paddingNav,
+			paddingNavLeft: defaultAttributes.paddingNavLeft,
 			offSetTopNav:defaultAttributes.offSetTopNav,
 			offSetSidesNav:defaultAttributes.offSetSidesNav,
 			navigationTablet:defaultAttributes.navigationTablet,
@@ -1258,7 +1262,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							<Tooltip 
 								placement="top"
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
-								text={__('Will display arrows so user can navigate forward/backward.', 'cocoblocks')}
+								text={__('Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!', 'cocoblocks')}
 							>
 								<Icon icon={help} className="tooltip-icon" style={{top:'9px'}}/>
 							</Tooltip>
@@ -1304,42 +1308,42 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						</div>
 						<div className='custom-select color'>
 							<ColorOptionsPanel
-								title={__('Color','cocoblocks')}
+								buttonTitle={__('Color','cocoblocks')}
 								colorNormal={navColor}
 								setColorNormal={(color) => setAttributes({ navColor: color })}
 							/>
 						</div>
 						<div className='custom-select color'>
 							<ColorOptionsPanel
-								title={__('Color Hover','cocoblocks')}
+								buttonTitle={__('Color Hover','cocoblocks')}
 								colorNormal={navColorHover}
 								setColorNormal={(color) => setAttributes({ navColorHover: color })}
 							/>
 						</div>
 						<div className='custom-select color'>
 							<ColorOptionsPanel
-								title={__('Background Color','cocoblocks')}
+								buttonTitle={__('Background Color','cocoblocks')}
 								colorNormal={navBackgroundColor}
 								setColorNormal={(color) => setAttributes({ navBackgroundColor: color })}
 							/>
 						</div>
 						<div className='custom-select color'>
 							<ColorOptionsPanel
-								title={__('Background Color Hover','cocoblocks')}
+								buttonTitle={__('Background Color Hover','cocoblocks')}
 								colorNormal={ navBackgroundColorHover}
 								setColorNormal={(color) => setAttributes({ navBackgroundColorHover: color })}
 							/>
 						</div>
 						<div className='custom-select color'>
 							<ColorOptionsPanel
-								title={__('Border Color','cocoblocks')}
+								buttonTitle={__('Border Color','cocoblocks')}
 								colorNormal={ navBorderColor}
 								setColorNormal={(color) => setAttributes({ navBorderColor: color })}
 							/>
 						</div>
 						<div className='custom-select color'>
 							<ColorOptionsPanel
-								title={__('Border Color Hover','cocoblocks')}
+								buttonTitle={__('Border Color Hover','cocoblocks')}
 								colorNormal={ navBorderColorHover}
 								setColorNormal={(color) => setAttributes({ navBorderColorHover: color })}
 							/>
@@ -1356,9 +1360,19 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						</div>
 						<div className='custom-select'>
 							<RangeControl
-								label={__('Padding (px)', 'cocobocks')}
+								label={__('Padding Top/Bottom (px)', 'cocobocks')}
 								value={paddingNav}
 								onChange={value => setAttributes({ paddingNav: value })}
+								min={0}
+								max={50}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Padding Left/Right (px)', 'cocobocks')}
+								value={paddingNavLeft}
+								onChange={value => setAttributes({ paddingNavLeft: value })}
 								min={0}
 								max={50}
 								step={1}
@@ -1415,7 +1429,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						    <Tooltip 
 								placement="top"
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
-								text={__('Toggle navigation buttons visibility after click on Slider\'s container.', 'cocoblocks')}
+								text={__('Toggle navigation buttons visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')}
 							>
 								<Icon icon={help} className="tooltip-icon" />
 							</Tooltip>
@@ -1445,6 +1459,508 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						</>
 						}
 					</div>
+					<div className='content-section-panel'>
+					    <div className='custom-select'>
+					    <ToggleControl
+						    label={ <><Icon icon="ellipsis" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Pagination', 'cocoblocks')}</>}
+							checked={ paginationEnable}
+							onChange={ ( value ) =>
+								setAttributes( { paginationEnable: value } )
+							}
+						/>
+						</div>
+						{paginationEnable == true &&
+						<>
+					    <div className='custom-select'>
+							<SelectControl
+								label={__('Type', 'cocoblocks')}
+								value={typePagination}
+								onChange={(val) => { setAttributes({typePagination: val})}}
+								options={ [
+									
+									{
+										label: __( 'Bullets', 'cocoblocks'),
+										value: 'bullets',
+									},
+									{
+										label: __( 'Fraction', 'cocoblocks'),
+										value: 'fraction',
+									},
+									{
+										label: __( 'Progressbar', 'cocoblocks'),
+										value: 'progressbar',
+									},
+								] }
+							/>
+						</div>
+						<div className='custom-select color'>
+							<ColorOptionsPanel
+								buttonTitle={__('Color','cocoblocks')}
+								colorNormal={bulletColor}
+								setColorNormal={(color) => setAttributes({ bulletColor: color })}
+							/>
+						</div>
+						{(typePagination == 'bullets' || typePagination == 'progressbar') &&
+						<div className='custom-select color'>
+							<ColorOptionsPanel
+								buttonTitle={__('Color Inactivity','cocoblocks')}
+								colorNormal={bulletInactivityColor}
+								setColorNormal={(color) => setAttributes({ bulletInactivityColor: color })}
+							/>
+						</div>
+                        }
+						{typePagination !== 'progressbar' &&
+						<div className='custom-select'>
+							<SelectControl
+								label= {__('Position', 'cocoblocks')}
+								value={positionPagination}
+								onChange={(val) => { setAttributes({positionPagination: val})}}
+								options={ [
+									{
+										label: __( 'Top', 'cocoblocks'),
+										value: 'top',
+									},
+									{
+										label: __( 'Bottom', 'cocoblocks'),
+										value: 'bottom',
+									},
+								] }
+							/>
+						</div>
+                        }
+						<div className='custom-select'>
+							<ToggleControl
+								label={ __( 'Hide on click', 'cocoblocks' ) }
+								checked={ hidePagination}
+								onChange={ ( value ) =>
+									setAttributes( { hidePagination: value } )
+								}
+							/>
+						    <Tooltip 
+								placement="top"
+								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+								text={__('Toggle (hide/show) pagination container visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')}
+							>
+								<Icon icon={help} className="tooltip-icon" />
+							</Tooltip>
+						</div>
+						{typePagination == 'fraction' &&
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Font size', 'cocobocks')}
+								value={fontSizePagination}
+								onChange={value => setAttributes({ fontSizePagination: value })}
+								min={1}
+								max={50}
+								step={1}
+							/>
+						</div>
+                        }
+						{typePagination == 'progressbar' &&
+						<>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Height', 'cocobocks')}
+								value={heightBarPagination}
+								onChange={value => setAttributes({ heightBarPagination: value })}
+								min={1}
+								max={50}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+						    <ToggleControl
+								label={ __( 'Progressbar opposite', 'cocoblocks' ) }
+								checked={ progressbarOpposite}
+								onChange={ ( value ) =>
+									setAttributes( { progressbarOpposite: value } )
+								}
+							/>
+						    <Tooltip 
+								placement="top"
+								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+								text={__('Makes pagination progressbar opposite to Swiper\'s direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction', 'cocoblocks')}
+							>
+								<Icon icon={help} className="tooltip-icon" />
+							</Tooltip>
+						</div>
+						</>
+                        }
+						{typePagination == 'bullets' &&
+						<>
+						<div className='custom-select'>
+							<ToggleControl
+								label={ __( 'Clickable', 'cocoblocks' ) }
+								checked={ clickPagination}
+								onChange={ ( value ) =>
+									setAttributes( { clickPagination: value } )
+								}
+							/>
+						    <Tooltip 
+								placement="top"
+								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+								text={__('If enable then clicking on pagination button will cause transition to appropriate slide. Only for "bullets" pagination type', 'cocoblocks')}
+							>
+								<Icon icon={help} className="tooltip-icon" />
+							</Tooltip>
+						</div>
+						<div className='custom-select'>
+							<ToggleControl
+								label={ __( 'Dynamic bullets', 'cocoblocks' ) }
+								checked={ dynamicPagination}
+								onChange={ ( value ) =>
+									setAttributes( { dynamicPagination: value } )
+								}
+							/>
+						    <Tooltip 
+								placement="top"
+								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+								text={__('Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time', 'cocoblocks')}
+							>
+								<Icon icon={help} className="tooltip-icon" />
+							</Tooltip>
+						</div>
+						{dynamicPagination == true &&
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Dynamic main bullets', 'cocobocks')}
+								value={dynamicMainPagination}
+								onChange={value => setAttributes({ dynamicMainPagination: value })}
+								min={1}
+								max={10}
+								step={1}
+							/>
+						</div>
+                        }
+                        <div className='custom-select'>
+							<RangeControl
+								label={__('Active Opacity', 'cocobocks')}
+								value={opacityPagination}
+								onChange={value => setAttributes({ opacityPagination: value })}
+								min={.1}
+								max={1}
+								step={.1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Inactive Opacity', 'cocobocks')}
+								value={opacityInactivePagination}
+								onChange={value => setAttributes({ opacityInactivePagination: value })}
+								min={.1}
+								max={1}
+								step={.1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Width', 'cocobocks')}
+								value={widthPagination}
+								onChange={value => setAttributes({ widthPagination: value })}
+								min={1}
+								max={50}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Height', 'cocobocks')}
+								value={heightPagination}
+								onChange={value => setAttributes({ heightPagination: value })}
+								min={1}
+								max={50}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Active Width', 'cocobocks')}
+								value={widthPaginationActive}
+								onChange={value => setAttributes({ widthPaginationActive: value })}
+								min={1}
+								max={50}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Active Height', 'cocobocks')}
+								value={heightPaginationActive}
+								onChange={value => setAttributes({ heightPaginationActive: value })}
+								min={1}
+								max={50}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Border Radius', 'cocobocks')}
+								value={radiusPagination}
+								onChange={value => setAttributes({ radiusPagination: value })}
+								min={0}
+								max={100}
+								step={1}
+							/>
+						</div>
+						<div className='custom-select'>
+							<RangeControl
+								label={__('Gap', 'cocobocks')}
+								value={gapPagination}
+								onChange={value => setAttributes({ gapPagination: value })}
+								min={1}
+								max={20}
+								step={1}
+							/>
+						</div>
+						</>
+                        } 
+						<Button onClick={resetPaginationAttributes} className='button-reset'>
+						    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg>
+						    {__('Reset Pagination', 'cocoblocks')}
+					    </Button>
+			          </>
+                      }
+					</div>
+					<div className='content-section-panel'>
+					<div className='custom-select svg-select'>
+						<ToggleControl
+						    label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 27.9999 51.9063 C 41.0546 51.9063 51.9063 41.0781 51.9063 28 C 51.9063 14.9453 41.0780 4.0937 28.0234 4.0937 C 26.7812 4.0937 26.1718 4.8437 26.1718 6.0625 L 26.1718 15.1563 C 26.1718 16.1641 26.8514 16.9844 27.8827 16.9844 C 28.9140 16.9844 29.6171 16.1641 29.6171 15.1563 L 29.6171 8.1484 C 39.9296 8.9688 47.8983 17.5 47.8983 28 C 47.8983 39.0625 39.0390 47.9219 27.9999 47.9219 C 16.9374 47.9219 8.0546 39.0625 8.0780 28 C 8.1014 23.0781 9.8593 18.6016 12.7890 15.1563 C 13.5155 14.2422 13.5624 13.1406 12.7890 12.3203 C 12.0155 11.4766 10.7030 11.5469 9.8593 12.6016 C 6.2733 16.7734 4.0937 22.1641 4.0937 28 C 4.0937 41.0781 14.9218 51.9063 27.9999 51.9063 Z M 31.7499 31.6094 C 33.6014 29.6875 33.2265 27.0625 30.9999 25.5156 L 18.6014 16.8672 C 17.4296 16.0469 16.2109 17.2656 17.0312 18.4375 L 25.6796 30.8359 C 27.2265 33.0625 29.8514 33.4609 31.7499 31.6094 Z"></path></svg>{__('Autoplay', 'cocoblocks')}</>}
+							checked={ autoplay }
+							onChange={ ( value ) =>
+								setAttributes( { autoplay: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{top:'12px',left:'67%'}}/>
+						</Tooltip>
+					</div>
+					{autoplay === true &&
+					<>
+			        <div className='custom-select range-mark'>
+						<RangeControl
+							label={__('Delay', 'cocobocks')}
+							value={autoplaySpeed}
+							onChange={value => setAttributes({ autoplaySpeed: value })}
+							min={0}
+							max={10000}
+							step={10}
+							marks={[
+								{
+									label: '0s',
+									value: 0
+								},
+								{
+									label: '2.5s',
+									value: 2500
+								},
+								{
+									label: '5s',
+									value: 5000
+								},
+								{
+									label: '7.5s',
+									value: 7500
+								},
+								{
+									label: '10s',
+									value: 10000
+								}
+							]}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Sets the delay time in milliseconds between each slide transition.', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{top:'12px',left:'67%'}}/>
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Disable on interaction', 'cocoblocks')}
+							checked={ disableOnInteraction }
+							onChange={ ( value ) =>
+								setAttributes( { disableOnInteraction: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{top:'9px',left:'65%'}}/>
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Pause on pointer enter', 'cocoblocks')}
+							checked={ pauseOnMouseEnter }
+							onChange={ ( value ) =>
+								setAttributes( { pauseOnMouseEnter: value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('When enabled autoplay will be paused on mouse enter over Swiper container. If "Disabled on interaction" is also enabled, it will stop autoplay instead of pause', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" style={{top:'9px',left:'65%'}} />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Reverse direction', 'cocoblocks')}
+							checked={ reverseDirection }
+							onChange={ ( value ) =>
+								setAttributes( { reverseDirection : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Enables autoplay in reverse direction', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Stop on last slide', 'cocoblocks')}
+							checked={ stopOnLastSlide}
+							onChange={ ( value ) =>
+								setAttributes( { stopOnLastSlide : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					</>
+                    }
+					</div>
+					<div className='content-section-panel'>
+					<div className='custom-select svg-select'>
+						<ToggleControl
+						    label={ <><svg width="57" height="26" viewBox="0 0 57 26" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M43.0735759,0 C45.4678234,0 47.6419651,0.52506869 49.5960012,1.57520607 C51.5500372,2.62534345 53.1058794,4.09782356 54.2635276,5.99264641 C55.4211759,7.88746926 56,10.0810497 56,12.5733877 C56,15.0848653 55.4211759,17.2880156 54.2635276,19.1828384 C53.1058794,21.0776613 51.5500372,22.5501414 49.5960012,23.6002788 C47.7640924,24.5847826 45.7387313,25.1078002 43.519918,25.1693317 L43.0735759,25.1754848 L12.9546849,25.1754848 C10.5589422,25.1754848 8.38016507,24.6504161 6.41835353,23.6002788 C4.456542,22.5501414 2.89636352,21.0776613 1.73781811,19.1828384 C0.579272705,17.2880156 0,15.0848653 0,12.5733877 C0,10.0810497 0.579272705,7.88746926 1.73781811,5.99264641 C2.89636352,4.09782356 4.456542,2.62534345 6.41835353,1.57520607 C8.25755185,0.590702276 10.2874426,0.0676846358 12.5080257,0.00615314871 L12.9546849,0 L43.0735759,0 Z M43.0735759,4.52128776 L12.9546849,4.52128776 C11.4477385,4.52128776 10.0548822,4.85795077 8.77611606,5.53127678 C7.49734988,6.2046028 6.46852028,7.14715456 5.68962727,8.35893205 C4.91073426,9.57070954 4.52128776,10.9755281 4.52128776,12.5733877 C4.52128776,14.1730416 4.91073426,15.5787574 5.68962727,16.7905349 C6.46852028,18.0023123 7.49734988,18.9492004 8.77611606,19.6311991 C9.94831838,20.2563645 11.2163881,20.5949958 12.5803252,20.6470929 L12.9546849,20.6541971 L43.0735759,20.6541971 C44.5634761,20.6541971 45.9473607,20.3131977 47.2252297,19.6311991 C48.5030987,18.9492004 49.5314797,18.0023123 50.3103727,16.7905349 C51.0892657,15.5787574 51.4787122,14.1730416 51.4787122,12.5733877 C51.4787122,10.9755281 51.0892657,9.57070954 50.3103727,8.35893205 C49.5314797,7.14715456 48.5030987,6.2046028 47.2252297,5.53127678 C46.0538498,4.91406127 44.7933873,4.5797362 43.4438423,4.52830157 L43.0735759,4.52128776 Z M30.8525391,5.87597656 C34.4423899,5.87597656 37.3525391,8.78612569 37.3525391,12.3759766 C37.3525391,15.9658274 34.4423899,18.8759766 30.8525391,18.8759766 L12.8525391,18.8759766 C9.26268819,18.8759766 6.35253906,15.9658274 6.35253906,12.3759766 C6.35253906,8.78612569 9.26268819,5.87597656 12.8525391,5.87597656 L30.8525391,5.87597656 Z" transform="translate(.647 .124)"></path></svg>{__('Scrollbar', 'cocoblocks')}</>}
+							checked={ scrollbar }
+							onChange={ ( value ) =>
+								setAttributes( { scrollbar: value } )
+							}
+						/>
+					</div>
+					{scrollbar == true  &&
+					<>
+					<div className='custom-select color'>
+						<ColorOptionsPanel
+							buttonTitle={__('Track color','cocoblocks')}
+							colorNormal={scrollBarColor}
+							setColorNormal={(color) => setAttributes({ scrollBarColor: color })}
+						/>
+					</div>
+					
+					<div className='custom-select color'>
+						<ColorOptionsPanel
+							buttonTitle={__('Thumb color','cocoblocks')}
+							colorNormal={thumbColor}
+							setColorNormal={(color) => setAttributes({ thumbColor: color })}
+						/>
+					</div>
+					<div className='custom-select'>
+						<SelectControl
+							label= {__('Position', 'cocoblocks')}
+							value={positionScrollbar}
+							onChange={(val) => { setAttributes({positionScrollbar: val})}}
+							options={ [
+								{
+									label: __( 'Top', 'cocoblocks'),
+									value: 'top',
+								},
+								{
+									label: __( 'Bottom', 'cocoblocks'),
+									value: 'bottom',
+								},
+							] }
+						/>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Draggable', 'cocoblocks')}
+							checked={ dragScrollbar}
+							onChange={ ( value ) =>
+								setAttributes( { dragScrollbar : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Makes scrollbar draggable that allowyou to control slider position', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Hide after interaction', 'cocoblocks')}
+							checked={ hideScrollbar}
+							onChange={ ( value ) =>
+								setAttributes( { hideScrollbar : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Hide scrollbar automatically after user interaction', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+					<ToggleControl
+						    label={__('Snap on release', 'cocoblocks')}
+							checked={ releaseScrollbar}
+							onChange={ ( value ) =>
+								setAttributes( {releaseScrollbar : value } )
+							}
+						/>
+						<Tooltip 
+							placement="top"
+							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
+							text={__('Snap slider position to slides when you release scrollbar', 'cocoblocks')}
+						>
+							<Icon icon={help} className="tooltip-icon" />
+						</Tooltip>
+					</div>
+					<div className='custom-select'>
+						<RangeControl
+							label={__('Height', 'cocobocks')}
+							value={heightScrollbar}
+							onChange={value => setAttributes({ heightScrollbar: value })}
+							min={1}
+							max={50}
+							step={1}
+						/>
+					</div>
+					<div className='custom-select'>
+						<RangeControl
+							label={__('Border Radius', 'cocobocks')}
+							value={radiusScrollbar}
+							onChange={value => setAttributes({ radiusScrollbar: value })}
+							min={0}
+							max={25}
+							step={1}
+						/>
+					</div>
+					</>
+					}
+				</div>
 				</PanelBody>
 			 {/* Modal Creative Effect */}
 			 {isOpen && (
