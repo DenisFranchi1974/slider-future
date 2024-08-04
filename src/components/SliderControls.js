@@ -589,7 +589,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 				</div>
 				<div className="content-section-panel">
 					<div
-						className="custom-select"
+						className="custom-select select-control-label-right"
 						style={{
 							borderTopLeftRadius: '8px',
 							borderTopRightRadius: '8px',
@@ -665,7 +665,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							max={100}
 						/>
 					</div>
-					<div className="custom-select">
+					<div className="custom-select select-control-label-right">
 						<SelectControl
 							label={
 								<>
@@ -703,7 +703,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						</Tooltip>
 					</div>
 					<div
-						className="custom-select"
+						className="custom-select select-control-label-right"
 						style={{
 							borderBottomLeftRadius: '8px',
 							borderBottomRightRadius: '8px',
@@ -763,7 +763,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					)}
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select' style={{borderTopLeftRadius:'8px',borderTopRightRadius:'8px',...(perViewSliderTablet == '1' && {borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'})}}>
+					<div className='custom-select select-control-label-right' style={{borderTopLeftRadius:'8px',borderTopRightRadius:'8px',...(perViewSliderTablet == '1' && {borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'})}}>
 					<SelectControl
 						label={ <><Icon icon="tablet" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slide per view', 'cocoblocks')}</>}
 						value={perViewSliderTablet}
@@ -790,7 +790,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							max={100}
 						/>
 					</div>
-					<div className='custom-select'>
+					<div className='custom-select select-control-label-right'>
 						<SelectControl
 							label={ <><Icon icon="tablet" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slides per group', 'cocoblocks')}</>}
 							value={ slidesPerGroupTablet }
@@ -807,7 +807,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					</div>
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select' style={{borderTopLeftRadius:'8px',borderTopRightRadius:'8px',...(perViewSliderMobile == '1' && {borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'})}}>
+					<div className='custom-select select-control-label-right' style={{borderTopLeftRadius:'8px',borderTopRightRadius:'8px',...(perViewSliderMobile == '1' && {borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'})}}>
 						<SelectControl
 							label={ <><Icon icon="smartphone" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slides per view', 'cocoblocks')}</>}
 							value={perViewSliderMobile}
@@ -834,7 +834,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						max={100}
 					/>
 					</div>
-					<div className='custom-select'>
+					<div className='custom-select select-control-label-right'>
 					<SelectControl
 						label={ <><Icon icon="smartphone" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slides per group', 'cocoblocks')}</>}
 						value={ slidesPerGroupMobile }

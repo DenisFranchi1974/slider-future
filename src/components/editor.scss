@@ -163,6 +163,16 @@
       transparent
     );
   }
+  .divider-controls-inner {
+    margin: 20px 0; 
+    height: 4px; 
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--background-color),
+      transparent
+    );
+  }
   .title-tab-background {
     display: flex;
     align-items: center;
@@ -227,6 +237,8 @@
   right: -35px;
   button {
     color: var(--light-color);
+    border-color: none!important;
+    box-shadow: none!important;
   }
   button:hover {
     color: var(--primary-color);
@@ -335,7 +347,7 @@
   }
   /* Label */
   label {
-    font-size: 13px !important;
+    font-size: 12px !important;
     font-weight: 500 !important;
     line-height: 1.4em !important;
     text-transform: none !important;
@@ -357,6 +369,14 @@
     background-color: var(--notice-background);
     margin-left: 0;
     margin-right: 0;
+  }
+  /* Box control */
+  #custom-margin-control .components-range-control{
+    padding: 0!important;
+  }
+  #custom-margin-control #custom-margin-control-heading{
+    text-transform: capitalize;
+    font-size: 12px;
   }
   /* Range Control */
   .components-range-control {
@@ -522,7 +542,7 @@
       right: -24px;
     }
   }
-  .custom-select {
+  .custom-select{
     cursor: pointer;
     position: relative;
     .tooltip-icon {
@@ -542,6 +562,43 @@
     }
     ::placeholder {
       color: var(--label-color);
+    }
+    /* Box control */
+    &.box-control .components-grid{
+      margin-right: 7px;
+      margin-left: 10px;
+      color: var(--light-color);
+      align-items: center;
+      margin-top: 12px;
+        .components-input-control__container{
+          background-color: var(--background-color)!important;
+            input{
+              color: var(--light-color)!important;
+            }
+            .components-unit-control__unit-label{
+              color: var(--light-color);
+            }
+        }
+        .component-box-control__linked-button{
+          color: var(--light-color);
+        }
+        .component-box-control__reset-button.is-secondary{
+          color: var(--primary-color);
+          border: none!important;
+          box-shadow: none!important;
+        }
+        .component-box-control__reset-button.is-secondary:selected{
+          border: none!important;
+          box-shadow: none!important;
+        }
+        .component-box-control__reset-button.is-secondary:focus{
+          border: none!important;
+          box-shadow: none!important;
+        }
+    }
+    /* Selector label right */
+    &.select-control-label-right .components-select-control__input{
+      text-align: right;
     }
   }
   .svg-select svg {
@@ -621,6 +678,7 @@
       width: 100%;
       border-radius: 12px;
       margin-top: 12px;
+      margin-bottom: 12px;
     }
     .react-colorful {
       width: 100%;
@@ -985,3 +1043,10 @@
       border: 1px solid var(--white-color)!important;
     }
 }
+
+
+
+
+
+
+

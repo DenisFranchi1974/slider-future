@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Popover, Icon, PanelBody } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { formatBold, formatItalic, formatUnderline } from '@wordpress/icons';
@@ -23,6 +23,13 @@ const FontStyle = ({ value, onChange }) => {
     .filter(option => value[option.type] === option.value)
     .map(option => option.icon);
 
+  // Calcola il margine a destra basato sul numero di icone
+  const calculateMargin = (numIcons) => {
+    return numIcons * 14 + 'px'; // 5px per ogni icona
+  };
+
+  const iconMargin = selectedIcons.length > 0 ? calculateMargin(selectedIcons.length) : '0';
+
   return (
     <div className='postion-slide'>
       <Button
@@ -30,16 +37,19 @@ const FontStyle = ({ value, onChange }) => {
         aria-expanded={isPopoverOpen}
         aria-haspopup="true"
         icon={'editor-spellcheck'} // Mostra un'icona di default se nessuna icona è selezionata
+       
       >
         <div className='postion-slide__label'>
           <h2>{__('Font style', 'cocoblocks')}</h2>
-          {selectedIcons.length > 0 ? (
-            selectedIcons.map((icon, index) => (
-              <Icon key={index} icon={icon} style={{ right: '-50px' }} />
-            ))
-          ) : (
-            <Icon icon="editor-spellcheck" style={{ right: '-50px' }} />
-          )}
+          <div className='postion-slide__label-icons' style={{ marginRight: iconMargin }}>
+            {selectedIcons.length > 0 ? (
+              selectedIcons.map((icon, index) => (
+                <Icon key={index} icon={icon} style={{right:'-57px', fill: 'var(--primary-color)' }} />
+              ))
+            ) : (
+              <></>
+            )}
+          </div>
           <span className="ico-align-content dashicons dashicons-arrow-down-alt2"></span>
         </div>
       </Button>

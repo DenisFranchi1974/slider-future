@@ -301,11 +301,24 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 <?php if (!empty($slide['elements']) && is_array($slide['elements'])): ?>
                     <?php foreach ($slide['elements'] as $element): ?>
                         <?php if ($element['type'] === 'title' && !empty($element['text'])): 
-                            $stylesTitle = 'font-size: ' . esc_attr($element['fontSize']) . 'px; --font-size-tablet: ' . esc_attr($element['fontSizeTablet']) . 'px; --font-size-mobile: ' . esc_attr($element['fontSizeMobile']) . 'px;';
+                            $fontStyle = isset($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal';
+                            $fontWeight = isset($element['fontStyle']['fontWeight']) ? esc_attr($element['fontStyle']['fontWeight']) : 'normal';
+                            $textDecoration = isset($element['fontStyle']['textDecoration']) ? esc_attr($element['fontStyle']['textDecoration']) : 'none';
+                            $marginTop = isset($element['marginTitle']['top']) ? esc_attr($element['marginTitle']['top']) : '0px';
+                            $marginRight = isset($element['marginTitle']['right']) ? esc_attr($element['marginTitle']['right']) : '0px';
+                            $marginBottom = isset($element['marginTitle']['bottom']) ? esc_attr($element['marginTitle']['bottom']) : '0px';
+                            $marginLeft = isset($element['marginTitle']['left']) ? esc_attr($element['marginTitle']['left']) : '0px';
+                            // Combina i margini
+                            $margin = "$marginTop $marginRight $marginBottom $marginLeft";
+
+                            $stylesTitle = 'font-size: ' . esc_attr($element['fontSize']) . 'px; --font-size-tablet: ' . esc_attr($element['fontSizeTablet']) . 'px; --font-size-mobile: ' . esc_attr($element['fontSizeMobile']) . 'px; text-align: ' . esc_attr($element['textAlign']) . '; color: ' . esc_attr($element['textColor']) . '; font-weight: ' . $fontWeight . '; font-style: ' . $fontStyle . '; text-decoration: ' . $textDecoration . '; line-height: ' . esc_attr($element['lineHeight']) . '; width: 100%; margin: ' . $margin . ';';
+
+                            // Recupera il tag HTML
+                            $tag = isset($element['elementTitle']) ? esc_attr($element['elementTitle']) : 'h3';
                         ?>
-                            <h3 style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide" data-swiper-parallax-y="-300" data-swiper-parallax-duration="600" data-swiper-parallax-opacity="0.5">
+                            <<?php echo $tag; ?> style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxTitle']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxTitleY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxTitleScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>">
                                 <?php echo esc_html($element['text']); ?>
-                            </h3>
+                            </<?php echo $tag; ?>>
                         <?php endif; ?>
 
                         <?php if ($element['type'] === 'div'): ?>
@@ -327,11 +340,41 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             </div>
                         <?php endif; ?>
 
-                        <?php if ($element['type'] === 'image' && !empty($element['url'])): ?>
-                            <div style="max-width: 100%;">
-                                <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" />
-                            </div>
+                        <?php if ($element['type'] === 'image' && !empty($element['url'])): 
+                            $marginTop = isset($element['marginImage']['top']) ? esc_attr($element['marginImage']['top']) : '0px';
+                            $marginRight = isset($element['marginImage']['right']) ? esc_attr($element['marginImage']['right']) : '0px';
+                            $marginBottom = isset($element['marginImage']['bottom']) ? esc_attr($element['marginImage']['bottom']) : '0px';
+                            $marginLeft = isset($element['marginImage']['left']) ? esc_attr($element['marginImage']['left']) : '0px';
+                            $margin = "$marginTop $marginRight $marginBottom $marginLeft";
+                            $style = "max-width: 100%; min-width: 0; 
+                                      max-height: 100%; min-height: 0;
+                                      border: " . esc_attr($element['backgroundBorderSizeImage']) . "px solid " . esc_attr($element['backgroundBorderColorImage']) . ";
+                                      border-radius: " . esc_attr($element['backgroundBorderRadiusImage']) . "px;
+                                      padding: " . esc_attr($element['paddingImage']) . "px;
+                                      background-color: " . esc_attr($element['backgroundColorImage']) .";
+                                      margin: " . $margin . ";
+                                    "; // Stile di base per 'auto'
+
+                            if ($element['widthImage'] === 'relative') {
+                                $style .= " width: " . esc_attr($element['customWidthImage']) . "%;";
+                            } elseif ($element['widthImage'] === 'fixed') {
+                                $style .= " width: " . esc_attr($element['customWidthImagePx']) . "px;";
+                            }
+
+                            if ($element['heightImage'] === 'relative') {
+                                $style .= " height: " . esc_attr($element['customHeightImage']) . "%;";
+                            } elseif ($element['heightImage'] === 'fixed') {
+                                $style .= " height: " . esc_attr($element['customHeightImagePx']) . "px;";
+                            }
+
+                            // Applica object-fit solo se width o height sono relative o fixed
+                            if ($element['widthImage'] !== 'auto' || $element['heightImage'] !== 'auto') {
+                                $style .= " object-fit: " . esc_attr($element['fit']) . ";"; 
+                            }
+                        ?>
+                            <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-with-mask <?php echo esc_attr( $element['blobMask'])?>" style="<?php echo $style; ?>" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxImage']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxImageY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxImageScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxImageDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxImageOpacity']); ?>"/>
                         <?php endif; ?>
+
                     <?php endforeach; ?>
                 <?php endif; ?>
                 

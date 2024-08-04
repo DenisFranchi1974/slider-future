@@ -19,6 +19,7 @@ import {
   RangeControl,
   FocalPointPicker,
   Tooltip,
+  __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -268,6 +269,12 @@ export default function Edit({ attributes, setAttributes}) {
       elements: [], // Inizializza elements come un array vuoto
       layout: "vertical",
       gapItems: 5,
+      position: "center-center",
+      backgroundBorderColor: "#000000",
+      backgroundBorderSize: 0,
+      backgroundBorderRadius: 0,
+      backgroundVerticalPadding: 0,
+      backgroundHorizontalPadding: 0,
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -445,6 +452,69 @@ export default function Edit({ attributes, setAttributes}) {
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update Layout
+  const updateSlideLayoutDiv = (slideId, newLayoutDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, layoutDiv: newLayoutDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  // Update Position
+  const updateSlidePositionDiv = (slideId, newPositionDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, positionDiv: newPositionDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Gap Items
+  const updateSlideGapItemsDiv = (slideId, newGapItemsDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, gapItemsDiv: newGapItemsDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Border Color
+  const updateSlideBackgroundBorderColorDiv = (id, colorDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === id ? { ...slide, backgroundBorderColorDiv: colorDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update border size
+  const updateSlideBackgroundBorderSizeDiv = (slideId, newSizeDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundBorderSizeDiv: newSizeDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update border radius
+  const updateSlideBackgroundBorderRadiusDiv = (slideId, newRadiusDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundBorderRadiusDiv: newRadiusDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update vertical padding
+  const updateSlideBackgroundVerticalPaddingDiv = (slideId, newVerticalPaddingDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundVerticalPaddingDiv: newVerticalPaddingDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update horizontal padding
+  const updateSlideBackgroundHorizontalPaddingDiv = (slideId, newHorizontalPaddingDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, backgroundHorizontalPaddingDiv: newHorizontalPaddingDiv } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Update Content
   const updateSlideDiv = (slideId, index, newContent) => {
     const updatedSlides = slides.map((slide) =>
@@ -458,6 +528,183 @@ export default function Edit({ attributes, setAttributes}) {
                     : element
                 )
               : [], // Se elements non è definito, inizializzalo come array vuoto
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Text color
+  const updateSlideTextColorDiv = (slideId, index, colorDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, textColorDiv: colorDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Text align
+  const updateTextAlignDiv = (slideId, index, alignDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, textAlignDiv: alignDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Font Style
+  const updateFontStyleDiv = (slideId, index, styleTypeDiv, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "div" && i === index) {
+                const updatedFontStyleDiv = {
+                  ...element.fontStyleDiv,
+                  [styleTypeDiv]: value,
+                };
+                return {
+                  ...element,
+                  fontStyleDiv: updatedFontStyleDiv,
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Element
+  const updateElementTitleDiv = (slideId, index, newElementTitleDiv) => {
+  const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, elementTitleDiv: newElementTitleDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
+  // Size
+  const updateFontSizeDiv = (slideId, index, newSizeDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, fontSizeDiv: newSizeDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  // Size Tablet
+  const updateFontSizeTabletDiv = (slideId, index, newSizeTabletDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, fontSizeTabletDiv: newSizeTabletDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  // Size Mobile
+  const updateFontSizeMobileDiv = (slideId, index, newSizeMobileDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, fontSizeMobileDiv: newSizeMobileDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Line height
+   const updateLineHeightDiv = (slideId, index, newLineHeightDiv) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, lineHeightDiv: newLineHeightDiv }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Margin title
+  const updatenewMargintitleDiv = (slideId, index, newMargintitleDiv) => {
+ 
+     const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === 'string' && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+  
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "div" && i === index) {
+                return {
+                  ...element,
+                  marginTitleDiv: {
+                    top: addUnit(newMargintitleDiv.top || '0', newMargintitleDiv.unit || 'px'),
+                    right: addUnit(newMargintitleDiv.right || '0', newMargintitleDiv.unit || 'px'),
+                    bottom: addUnit(newMargintitleDiv.bottom || '0', newMargintitleDiv.unit || 'px'),
+                    left: addUnit(newMargintitleDiv.left || '0', newMargintitleDiv.unit || 'px'),
+                  }
+                };
+              }
+              return element;
+            }),
           }
         : slide
     );
@@ -695,10 +942,29 @@ export default function Edit({ attributes, setAttributes}) {
               {
                 type: "title",
                 text: "",
-                fontSize: 16,
+                textAlign: "center",
+                fontStyle: {  
+                  italic: false,
+                  underline: false,
+                  bold: false,
+                },
+                fontSize: 22,
                 fontSizeTablet: 16,
                 fontSizeMobile: 16,
-                position: "",
+                lineHeight: 1.5,
+                textColor: "#000000",
+                marginTitle: {
+                  top: 0, 
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                parallaxTitle: 0,
+                parallaxTitleY: 0,
+                parallaxTitleScale: 1,
+                parallaxTitleOpacity: 1,
+                parallaxTitleDuration: 100,
+                elementTitle: 'h3'
               },
             ],
           }
@@ -783,6 +1049,23 @@ export default function Edit({ attributes, setAttributes}) {
     setAttributes({ slides: updatedSlides });
   };
 
+  // Element
+  const updateElementTitle = (slideId, index, newElementTitle) => {
+  const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, elementTitle: newElementTitle }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
   // Size
   const updateFontSize = (slideId, index, newSize) => {
     const updatedSlides = slides.map((slide) =>
@@ -832,6 +1115,145 @@ export default function Edit({ attributes, setAttributes}) {
     setAttributes({ slides: updatedSlides });
   };
 
+   // Line height
+   const updateLineHeight = (slideId, index, newLineHeight) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, lineHeight: newLineHeight }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Margin title
+  const updatenewMargintitle = (slideId, index, newMargintitle) => {
+    console.log("Updating margin with:", newMargintitle); // Log per debug
+  
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === 'string' && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+  
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "title" && i === index) {
+                return {
+                  ...element,
+                  marginTitle: {
+                    top: addUnit(newMargintitle.top || '0', newMargintitle.unit || 'px'),
+                    right: addUnit(newMargintitle.right || '0', newMargintitle.unit || 'px'),
+                    bottom: addUnit(newMargintitle.bottom || '0', newMargintitle.unit || 'px'),
+                    left: addUnit(newMargintitle.left || '0', newMargintitle.unit || 'px'),
+                  }
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
+  // Parallax text x
+  const  updateParallaxTitle = (slideId, index, newParallaxTitle) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, parallaxTitle: newParallaxTitle }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax text y
+  const  updateParallaxTitleY = (slideId, index, newParallaxTitleY) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, parallaxTitleY: newParallaxTitleY }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax text scale
+  const  updateParallaxTitleScale = (slideId, index, newParallaxTitleScale) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, parallaxTitleScale: newParallaxTitleScale }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax text opacity
+  const  updateParallaxTitleOpacity = (slideId, index, newParallaxTitleOpacity) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, parallaxTitleOpacity: newParallaxTitleOpacity }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax text duration
+  const  updateParallaxTitleDuration = (slideId, index, newParallaxTitleDuration) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, parallaxTitleDuration: newParallaxTitleDuration }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+
   // Remove Text
   const removeSlideTitle = (slideId, index) => {
     const updatedSlides = slides.map((slide) =>
@@ -872,6 +1294,347 @@ export default function Edit({ attributes, setAttributes}) {
             elements: slide.elements.map((element, i) =>
               element.type === "image" && i === index
                 ? { ...element, url: newUrl, alt: newAlt }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update fit image
+  const updateSlideImageFit = (slideId, index, newFit) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, fit: newFit }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update width image
+  const updateWidthImage = (slideId, index, newWidthImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, widthImage: newWidthImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update custom width image
+  const updateCustomWidthImage = (slideId, index, newCustomWidthImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, customWidthImage: newCustomWidthImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update custom width image px
+  const updateCustomWidthImagePx = (slideId, index, newCustomWidthImagePx) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, customWidthImagePx: newCustomWidthImagePx }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Update height image
+   const updateHeightImage = (slideId, index, newHeightImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, heightImage: newHeightImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update custom height image
+  const updateCustomHeightImage = (slideId, index, newCustomHeightImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, customHeightImage: newCustomHeightImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update custom height image px
+  const updateCustomHeightImagePx = (slideId, index, newCustomHeightImagePx) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, customHeightImagePx: newCustomHeightImagePx }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update border color image
+  const updateSlideBackgroundBorderColorImage = (slideId, index, borderColor) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, backgroundBorderColorImage: borderColor }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Update border size image
+   const updateSlideBackgroundBorderSizeImage = (slideId, index, newSizeBorderImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, backgroundBorderSizeImage: newSizeBorderImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update border radius image
+  const updateSlideBackgroundBorderRadiusImage = (slideId, index, newRadiusImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "image" && i === index
+              ? { ...element, backgroundBorderRadiusImage: newRadiusImage }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+  // Update padding image
+  const updatePaddingImage = (slideId, index, newPaddingImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, paddingImage: newPaddingImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update background color image
+    const updateSlideBackgroundColorImage = (slideId, index, backgroundColorImage) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "image" && i === index
+                  ? { ...element, backgroundColorImage: backgroundColorImage }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+  // Margin image
+  const updatenewMarginImage = (slideId, index, newMarginImage) => {
+   
+      const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === 'string' && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+  
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "image" && i === index) {
+                return {
+                  ...element,
+                  marginImage: {
+                    top: addUnit(newMarginImage.top || '0', newMarginImage.unit || 'px'),
+                    right: addUnit(newMarginImage.right || '0', newMarginImage.unit || 'px'),
+                    bottom: addUnit(newMarginImage.bottom || '0', newMarginImage.unit || 'px'),
+                    left: addUnit(newMarginImage.left || '0', newMarginImage.unit || 'px'),
+                  }
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update blob image
+  const updateBlobMask = (slideId, index, newBlobMask) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, blobMask: newBlobMask }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax image x
+  const  updateParallaxImage = (slideId, index, newParallaxImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, parallaxImage: newParallaxImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax image y
+  const  updateParallaxImageY = (slideId, index, newParallaxImageY) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, parallaxImageY: newParallaxImageY }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax image scale
+  const  updateParallaxImageScale = (slideId, index, newParallaxImageScale) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, parallaxImageScale: newParallaxImageScale }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax image opacity
+  const  updateParallaxImageOpacity = (slideId, index, newParallaxImageOpacity) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, parallaxImageOpacity: newParallaxImageOpacity }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Parallax image duration
+  const  updateParallaxImageDuration = (slideId, index, newParallaxImageDuration) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, parallaxImageDuration: newParallaxImageDuration }
                 : element
             ),
           }
@@ -952,7 +1715,7 @@ export default function Edit({ attributes, setAttributes}) {
   };
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${parallax}`;
   // Nessun movimento della slider
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
@@ -1363,7 +2126,7 @@ export default function Edit({ attributes, setAttributes}) {
                                                     },
                                                     {
                                                       label: __(
-                                                        "auto",
+                                                        "Auto",
                                                         "slider"
                                                       ),
                                                       value: "auto",
@@ -1777,7 +2540,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         updateSlideTextColor(slide.id, elementIndex, color)
                                       }
                                       buttonTitle={__("Text Color", "cocoblocks")}
-                                      buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginBottom:'-10px',height:'26px',width:'26px'}}><path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"/></svg>}
+                                      buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginBottom:'-10px',height:'24px',width:'24px',marginLeft:'-3px',marginRight:'-5px'}}><path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"/></svg>}
                                     />
                                   </div>
                                   <div className="custom-select">
@@ -1799,6 +2562,33 @@ export default function Edit({ attributes, setAttributes}) {
                                       updateFontStyle(slide.id, elementIndex, styleType, value)
                                     }
                                   />
+                                  </div>
+                                  <div className="custom-select svg-select">
+                                    <SelectControl
+                                      label={
+                                        <>
+                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"/></svg>
+                                          {__('Element html', 'cocoblocks')}
+                                        </>
+                                      }
+                                      value={element.elementTitle}
+                                      onChange={(newElementTitle) =>
+                                        updateElementTitle(
+                                          slide.id,
+                                          elementIndex,
+                                          newElementTitle
+                                        )
+                                      }
+                                      options={[
+                                        { label: __('P', 'cocoblocks'), value: 'p' },
+                                        { label: __('H6', 'cocoblocks'), value: 'h6' },
+                                        { label: __('H5', 'cocoblocks'), value: 'h5' },
+                                        { label: __('H4', 'cocoblocks'), value: 'h4' },
+                                        { label: __('H3', 'cocoblocks'), value: 'h3' },
+                                        { label: __('H2', 'cocoblocks'), value: 'h2' },
+                                        { label: __('H1', 'cocoblocks'), value: 'h1' },
+                                      ]}
+                                    />
                                   </div>
                                   <ButtonGroup className="device-switcher">
                                     <Button
@@ -1829,9 +2619,9 @@ export default function Edit({ attributes, setAttributes}) {
                                   </ButtonGroup>
                                   {device === "desktop" && (
                                     <RangeControl
-                                      label={__("Font Size", "cocoblocks")}
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
                                       beforeIcon="desktop"
-                                      value={element.fontSize || 16}
+                                      value={element.fontSize}
                                       onChange={(newSize) =>
                                         updateFontSize(
                                           slide.id,
@@ -1846,9 +2636,9 @@ export default function Edit({ attributes, setAttributes}) {
                                   )}
                                   {device === "tablet" && (
                                     <RangeControl
-                                      label={__("Font Size", "cocoblocks")}
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
                                       beforeIcon="tablet"
-                                      value={element.fontSizeTablet || 16}
+                                      value={element.fontSizeTablet}
                                       onChange={(newSizeTablet) =>
                                         updateFontSizeTablet(
                                           slide.id,
@@ -1863,9 +2653,9 @@ export default function Edit({ attributes, setAttributes}) {
                                   )}
                                   {device === "mobile" && (
                                     <RangeControl
-                                      label={__("Font Size", "cocoblocks")}
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
                                       beforeIcon="smartphone"
-                                      value={element.fontSizeMobile || 16}
+                                      value={element.fontSizeMobile}
                                       onChange={(newSizeMobile) =>
                                         updateFontSizeMobile(
                                           slide.id,
@@ -1878,6 +2668,122 @@ export default function Edit({ attributes, setAttributes}) {
                                       step={1}
                                     />
                                   )}
+                                  <div className="custom-select">
+                                    <RangeControl
+                                        label={
+                                          <>
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"/></svg>
+                                            {__("Line height", "cocoblocks")}
+                                          </>
+                                        }
+                                        value={element.lineHeight}
+                                        onChange={(newLineHeight) =>
+                                          updateLineHeight(
+                                            slide.id,
+                                            elementIndex,
+                                            newLineHeight
+                                          )
+                                        }
+                                        min={.5}
+                                        max={2.5}
+                                        step={.1}
+                                      />
+                                    </div>
+                                    <div className="custom-select box-control">
+                                    <BoxControl
+                                        id="custom-margin-control"
+                                        label={ <><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-5px'}}><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"/></svg>{__('Margin', 'cocoblocks')}</>}
+                                        values={element.marginTitle} 
+                                        units={{}}
+                                        onChange={(newMargintitle) =>
+                                          updatenewMargintitle(slide.id, elementIndex, newMargintitle)
+                                        }
+                                      />
+                                    </div>
+                                    {parallax && (
+                                    <>
+                                    <div className="custom-select">
+                                      <RangeControl
+                                           label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset X', 'cocoblocks')}</>}
+                                          value={element.parallaxTitle}
+                                          onChange={(newParallaxTitle) =>
+                                            updateParallaxTitle(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxTitle
+                                            )
+                                          }
+                                          min={-500}
+                                          max={500}
+                                          step={1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset Y', 'cocoblocks')}</>}
+                                          value={element.parallaxTitleY}
+                                          onChange={(newParallaxTitleY) =>
+                                            updateParallaxTitleY(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxTitleY
+                                            )
+                                          }
+                                          min={-500}
+                                          max={500}
+                                          step={1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax scale', 'cocoblocks')}</>}
+                                          value={element.parallaxTitleScale}
+                                          onChange={(newParallaxTitleScale) =>
+                                            updateParallaxTitleScale(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxTitleScale
+                                            )
+                                          }
+                                          min={0}
+                                          max={2}
+                                          step={.1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax opacity', 'cocoblocks')}</>}
+                                          value={element.parallaxTitleOpacity}
+                                          onChange={(newParallaxTitleOpacity) =>
+                                            updateParallaxTitleOpacity(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxTitleOpacity
+                                            )
+                                          }
+                                          min={0}
+                                          max={1}
+                                          step={.1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax duration', 'cocoblocks')}</>}
+                                          value={element.parallaxTitleDuration}
+                                          onChange={(newParallaxTitleDuration) =>
+                                            updateParallaxTitleDuration(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxTitleDuration
+                                            )
+                                          }
+                                          min={100}
+                                          max={2000}
+                                          step={10}
+                                        />
+                                      </div>
+                                    </>
+                                    )}
                                 </div>
                               </>
                             )}
@@ -1908,21 +2814,6 @@ export default function Edit({ attributes, setAttributes}) {
                                       className="button-remove-element"
                                     />
                                   </div>
-                                  <TextareaControl
-                                    label={__("Text", "cocoblocks")}
-                                    value={element.content}
-                                    onChange={(newContent) =>
-                                      updateSlideDiv(
-                                        slide.id,
-                                        elementIndex,
-                                        newContent
-                                      )
-                                    }
-                                    placeholder={__(
-                                      "Add text block...",
-                                      "cocoblocks"
-                                    )}
-                                  />
                                   <div className="custom-select color">
                                     <ColorOptionsPanel
                                       colorNormal={element.backgroundColor}
@@ -1940,6 +2831,342 @@ export default function Edit({ attributes, setAttributes}) {
                                       buttonIcon="admin-customizer"
                                     />
                                   </div>
+                      <div className="custom-select">
+                        <SelectControl
+                          label={
+                            <>
+                              <Icon
+                                icon="screenoptions"
+                                style={{
+                                  marginRight: "5px",
+                                  width: "16px",
+                                  height: "16px",
+                                  fontSize: "16px",
+                                }}
+                              />
+                              {__("Content direction", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.layoutDiv}
+                          options={[
+                            {
+                              label: __("Column", "slider"),
+                              value: "vertical",
+                            },
+                            { label: __("Row", "slider"), value: "horizontal" },
+                          ]}
+                          onChange={(newLayoutDiv) =>
+                            updateSlideLayoutDiv(slide.id, newLayoutDiv)
+                          }
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <Icon
+                                icon="image-flip-horizontal"
+                                style={{
+                                  marginRight: "5px",
+                                  width: "16px",
+                                  height: "16px",
+                                  fontSize: "16px",
+                                }}
+                              />
+                              {__("Gap between items", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.gapItemsDiv}
+                          onChange={(newGapItemsDiv) =>
+                            updateSlideGapItemsDiv(slide.id, newGapItemsDiv)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <AlignmentControl
+                          value={slide.positionDiv}
+                          onChange={(newPositionDiv) =>
+                            updateSlidePositionDiv(slide.id, newPositionDiv)
+                          }
+                        />
+                      </div>
+                      <div className="custom-select color">
+                        <ColorOptionsPanel
+                          colorNormal={slide.backgroundBorderColorDiv}
+                          setColorNormal={(colorDiv) =>
+                            updateSlideBackgroundBorderColorDiv(slide.id, colorDiv)
+                          }
+                          buttonTitle={__("Border Color", "cocoblocks")}
+                          buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginRight:'3px',height:'16px',width:'16px'}}><path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/></svg>}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
+                              {__("Border width", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundBorderSizeDiv}
+                          onChange={(newSizeDiv) =>
+                            updateSlideBackgroundBorderSizeDiv(slide.id, newSizeDiv)
+                          }
+                          min={0}
+                          max={20}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
+                              {__("Border radius", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundBorderRadiusDiv}
+                          onChange={(newRadiusDiv) =>
+                            updateSlideBackgroundBorderRadiusDiv(slide.id, newRadiusDiv)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
+                              {__("Content vertical padding", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundVerticalPaddingDiv}
+                          onChange={(newVerticalPaddingDiv) =>
+                            updateSlideBackgroundVerticalPaddingDiv(slide.id, newVerticalPaddingDiv)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+                      <div className="custom-select">
+                        <RangeControl
+                          label={
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px',transform: 'rotate(90deg)'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
+                              {__("Content horizontal padding", "cocoblocks")}
+                            </>
+                          }
+                          value={slide.backgroundHorizontalPaddingDiv}
+                          onChange={(newHorizontalPaddingDiv) =>
+                            updateSlideBackgroundHorizontalPaddingDiv(slide.id, newHorizontalPaddingDiv)
+                          }
+                          min={0}
+                          max={256}
+                          step={1}
+                        />
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                  <div className="divider-controls-inner"></div>
+                                  <TextareaControl
+                                    label={__("Text", "cocoblocks")}
+                                    value={element.content}
+                                    onChange={(newContent) =>
+                                      updateSlideDiv(
+                                        slide.id,
+                                        elementIndex,
+                                        newContent
+                                      )
+                                    }
+                                    placeholder={__(
+                                      "Add text block...",
+                                      "cocoblocks"
+                                    )}
+                                  />  
+                                  <div className="custom-select color">
+                                    <ColorOptionsPanel
+                                      colorNormal={element.textColorDiv}
+                                      setColorNormal={(colorDiv) =>
+                                        updateSlideTextColorDiv(slide.id, elementIndex, colorDiv)
+                                      }
+                                      buttonTitle={__("Text Color", "cocoblocks")}
+                                      buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginBottom:'-10px',height:'24px',width:'24px',marginLeft:'-3px',marginRight:'-5px'}}><path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"/></svg>}
+                                    />
+                                  </div>
+                                  <div className="custom-select">
+                                      <AlignmentControlThree
+                                          value={element.textAlignDiv}
+                                            onChange={(alignDiv) =>
+                                              updateTextAlignDiv(
+                                                slide.id,
+                                                elementIndex,
+                                                alignDiv
+                                              )
+                                            }
+                                      />
+                                  </div>
+                                  <div className="custom-select">
+                                  <FontStyle
+                                    value={element.fontStyleDiv || {}}  // Inizializza con un oggetto vuoto se undefined
+                                    onChange={(styleTypeDiv, value) =>
+                                      updateFontStyleDiv(slide.id, elementIndex, styleTypeDiv, value)
+                                    }
+                                  />
+                                  </div>
+                                  <div className="custom-select svg-select">
+                                    <SelectControl
+                                      label={
+                                        <>
+                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"/></svg>
+                                          {__('Element html', 'cocoblocks')}
+                                        </>
+                                      }
+                                      value={element.elementTitleDiv}
+                                      onChange={(newElementTitleDiv) =>
+                                        updateElementTitleDiv(
+                                          slide.id,
+                                          elementIndex,
+                                          newElementTitleDiv
+                                        )
+                                      }
+                                      options={[
+                                        { label: __('P', 'cocoblocks'), value: 'p' },
+                                        { label: __('H6', 'cocoblocks'), value: 'h6' },
+                                        { label: __('H5', 'cocoblocks'), value: 'h5' },
+                                        { label: __('H4', 'cocoblocks'), value: 'h4' },
+                                        { label: __('H3', 'cocoblocks'), value: 'h3' },
+                                        { label: __('H2', 'cocoblocks'), value: 'h2' },
+                                        { label: __('H1', 'cocoblocks'), value: 'h1' },
+                                      ]}
+                                    />
+                                  </div>
+                                  <ButtonGroup className="device-switcher">
+                                    <Button
+                                      size="small"
+                                      isPressed={device === "desktop"}
+                                      onClick={handleDesktopClick}
+                                    >
+                                      <span className="dashicons dashicons-desktop" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                    </Button>
+                                    {showOtherButtons && (
+                                      <>
+                                        <Button
+                                          size="small"
+                                          isPressed={device === "tablet"}
+                                          onClick={() => setAttributes({ device: "tablet" })}
+                                        >
+                                          <span className="dashicons dashicons-tablet" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                        </Button>
+                                        <Button
+                                          size="small"
+                                          isPressed={device === "mobile"}
+                                          onClick={() => setAttributes({ device: "mobile" })}
+                                        >
+                                          <span className="dashicons dashicons-smartphone" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                        </Button>
+                                      </>
+                                    )}
+                                  </ButtonGroup>
+                                  {device === "desktop" && (
+                                    <RangeControl
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
+                                      beforeIcon="desktop"
+                                      value={element.fontSizeDiv}
+                                      onChange={(newSizeDiv) =>
+                                        updateFontSizeDiv(
+                                          slide.id,
+                                          elementIndex,
+                                          newSizeDiv
+                                        )
+                                      }
+                                      min={4}
+                                      max={128}
+                                      step={1}
+                                    />
+                                  )}
+                                  {device === "tablet" && (
+                                    <RangeControl
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
+                                      beforeIcon="tablet"
+                                      value={element.fontSizeTabletDiv}
+                                      onChange={(newSizeTabletDiv) =>
+                                        updateFontSizeTabletDiv(
+                                          slide.id,
+                                          elementIndex,
+                                          newSizeTabletDiv
+                                        )
+                                      }
+                                      min={4}
+                                      max={128}
+                                      step={1}
+                                    />
+                                  )}
+                                  {device === "mobile" && (
+                                    <RangeControl
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
+                                      beforeIcon="smartphone"
+                                      value={element.fontSizeMobileDiv}
+                                      onChange={(newSizeMobileDiv) =>
+                                        updateFontSizeMobileDiv(
+                                          slide.id,
+                                          elementIndex,
+                                          newSizeMobileDiv
+                                        )
+                                      }
+                                      min={4}
+                                      max={128}
+                                      step={1}
+                                    />
+                                  )}
+                                  <div className="custom-select">
+                                    <RangeControl
+                                        label={
+                                          <>
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"/></svg>
+                                            {__("Line height", "cocoblocks")}
+                                          </>
+                                        }
+                                        value={element.lineHeightDiv}
+                                        onChange={(newLineHeightDiv) =>
+                                          updateLineHeightDiv(
+                                            slide.id,
+                                            elementIndex,
+                                            newLineHeightDiv
+                                          )
+                                        }
+                                        min={.5}
+                                        max={2.5}
+                                        step={.1}
+                                      />
+                                    </div>
+                                    <div className="custom-select box-control">
+                                    <BoxControl
+                                        id="custom-margin-control"
+                                        label={ <><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-5px'}}><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"/></svg>{__('Margin', 'cocoblocks')}</>}
+                                        values={element.marginTitleDiv} 
+                                        units={{}}
+                                        onChange={(newMargintitleDiv) =>
+                                          updatenewMargintitleDiv(slide.id, elementIndex, newMargintitleDiv)
+                                        }
+                                      />
+                                    </div>
+                                  <div className="divider-controls-inner"></div>
                                   <div className="content-img-upload">
                                     <MediaUploadCheck>
                                       <MediaUpload
@@ -2383,7 +3610,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     {element.url && (
                                       <>
                                         <TextareaControl
-                                          label={__("Alt Text", "cocoblocks")}
+                                          label={<><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px'}}><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>{__("Alt Text", "cocoblocks")}</>}
                                           value={element.alt || ""}
                                           onChange={(newAlt) =>
                                             updateSlideImage(
@@ -2398,7 +3625,359 @@ export default function Edit({ attributes, setAttributes}) {
                                             "cocoblocks"
                                           )}
                                         />
-                                      </>
+                                        <div className="custom-select">
+                                          <SelectControl
+                                            label={
+                                              <>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px'}}><path d="M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/></svg>
+                                                {__(
+                                                "Image fit",
+                                                "cocoblocks"
+                                              )}
+                                              </>
+                                            }
+                                            value={element.fit}
+                                            options={[
+                                              {
+                                                label: __(
+                                                  "Cover",
+                                                  "slider"
+                                                ),
+                                                value: "cover",
+                                              },
+                                              {
+                                                label: __(
+                                                  "Contain",
+                                                  "slider"
+                                                ),
+                                                value: "contain",
+                                              },
+                                            ]}
+                                            onChange={(newFit) =>
+                                              updateSlideImageFit(
+                                                slide.id,
+                                                elementIndex,
+                                                newFit
+                                              )
+                                            }
+                                          />
+                                        </div>
+                                        <div className="custom-select">
+                                          <SelectControl
+                                            label={
+                                              <>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px'}}><path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"/></svg>
+                                                {__('Width', 'cocoblocks')}
+                                              </>
+                                            }
+                                            value={element.widthImage}
+                                            onChange={(newWidthImage) =>
+                                              updateWidthImage(
+                                                slide.id,
+                                                elementIndex,
+                                                newWidthImage
+                                              )
+                                            }
+                                            options={[
+                                              { label: __('Auto', 'slide'), value: 'auto' },
+                                              { label: __('Relative', 'cocoblocks'), value: 'relative' },
+                                              { label: __('Fixed', 'cocoblocks'), value: 'fixed' },
+                                            ]}
+                                          />
+                                        </div>
+                                        {element.widthImage === 'relative' && (
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={__('Custom width (%)', 'cocoblocks')}
+                                            value={element.customWidthImage}
+                                            onChange={(newCustomWidthImage) =>
+                                              updateCustomWidthImage(
+                                                slide.id,
+                                                elementIndex,
+                                                newCustomWidthImage
+                                              )
+                                            }
+                                            min={0}
+                                            max={100}
+                                            step={1}
+                                          />
+                                        </div>
+                                        )}
+                                        {element.widthImage === 'fixed' && (
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={__('Custom width (px)', 'cocoblocks')}
+                                            value={element.customWidthImagePx}
+                                            onChange={(newCustomWidthImagePx) =>
+                                              updateCustomWidthImagePx(
+                                                slide.id,
+                                                elementIndex,
+                                                newCustomWidthImagePx
+                                              )
+                                            }
+                                            min={0}
+                                            max={1920}
+                                            step={1}
+                                          />
+                                        </div>
+                                        )}
+                                        <div className="custom-select">
+                                          <SelectControl
+                                            label={
+                                              <>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px',transform: 'rotate(90deg)'}}><path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"/></svg>
+                                                {__('Height', 'cocoblocks')}
+                                              </>
+                                            }
+                                            value={element.heightImage}
+                                            onChange={(newHeightImage) =>
+                                              updateHeightImage(
+                                                slide.id,
+                                                elementIndex,
+                                                newHeightImage
+                                              )
+                                            }
+                                            options={[
+                                              { label: __('Auto', 'slide'), value: 'auto' },
+                                              { label: __('Relative', 'cocoblocks'), value: 'relative' },
+                                              { label: __('Fixed', 'cocoblocks'), value: 'fixed' },
+                                            ]}
+                                          />
+                                        </div>
+                                        {element.heightImage === 'relative' && (
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={__('Custom height (%)', 'cocoblocks')}
+                                            value={element.customHeightImage}
+                                            onChange={(newCustomHeightImage) =>
+                                              updateCustomHeightImage(
+                                                slide.id,
+                                                elementIndex,
+                                                newCustomHeightImage
+                                              )
+                                            }
+                                            min={0}
+                                            max={100}
+                                            step={1}
+                                          />
+                                        </div>
+                                        )}
+                                        {element.heightImage === 'fixed' && (
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={__('Custom height (px)', 'cocoblocks')}
+                                            value={element.customHeightImagePx}
+                                            onChange={(newCustomHeightImagePx) =>
+                                              updateCustomHeightImagePx(
+                                                slide.id,
+                                                elementIndex,
+                                                newCustomHeightImagePx
+                                              )
+                                            }
+                                            min={0}
+                                            max={1920}
+                                            step={1}
+                                          />
+                                        </div>
+                                        )}
+                                        {element.fit == 'contain' && (
+                                            <p className="notice components-base-control__help" style={{borderRadius:0}}>
+                                              {__(
+                                                'The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.',
+                                                'cocoblocks'
+                                              )}
+                                            </p>
+                                          )}
+                                        <div className="custom-select color">
+                                          <ColorOptionsPanel
+                                            colorNormal={element.backgroundBorderColorImage}
+                                            setColorNormal={(borderColor) =>
+                                              updateSlideBackgroundBorderColorImage(slide.id, elementIndex, borderColor)
+                                            }
+                                            buttonTitle={__("Border Color", "cocoblocks")}
+                                            buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginRight:'3px',height:'16px',width:'16px'}}><path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/></svg>}
+                                          />
+                                        </div>
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={
+                                              <>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
+                                                {__("Border width", "cocoblocks")}
+                                              </>
+                                            }
+                                            value={element.backgroundBorderSizeImage}
+                                            onChange={(newSizeBorderImage) =>
+                                              updateSlideBackgroundBorderSizeImage(slide.id, elementIndex, newSizeBorderImage)
+                                            }
+                                            min={0}
+                                            max={20}
+                                            step={1}
+                                          />
+                                        </div>
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={
+                                              <>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
+                                                {__("Border radius", "cocoblocks")}
+                                              </>
+                                            }
+                                            value={element.backgroundBorderRadiusImage}
+                                            onChange={(newRadiusImage) =>
+                                              updateSlideBackgroundBorderRadiusImage(slide.id, elementIndex, newRadiusImage)
+                                            }
+                                            min={0}
+                                            max={256}
+                                            step={1}
+                                          />
+                                        </div>
+                                        <div className="custom-select">
+                                          <RangeControl
+                                            label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'3px',marginBottom:'-5px'}}><path d="M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
+                                            {__('Padding', 'cocoblocks')}
+                                            </>}
+                                            value={element.paddingImage}
+                                            onChange={(newPaddingImage) =>
+                                              updatePaddingImage(
+                                                slide.id,
+                                                elementIndex,
+                                                newPaddingImage
+                                              )
+                                            }
+                                            min={0}
+                                            max={50}
+                                            step={1}
+                                          />
+                                        </div>
+                                        {element.paddingImage > 0 && ( 
+                                        <div className="custom-select color">
+                                          <ColorOptionsPanel
+                                            colorNormal={element.backgroundColorImage}
+                                            setColorNormal={(backgroundColorImage) =>
+                                              updateSlideBackgroundColorImage(slide.id, elementIndex, backgroundColorImage)
+                                            }
+                                            buttonTitle={__("Background Color", "cocoblocks")}
+                                            buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#e8eaed" style={{marginBottom:'-5px',width:'20px',height:'20px'}}><path d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"/></svg>}
+                                          />
+                                        </div>
+                                        )}
+                                        <div className="custom-select box-control">
+                                          <BoxControl
+                                              id="custom-margin-control"
+                                              label={ <><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-5px'}}><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"/></svg>{__('Margin', 'cocoblocks')}</>}
+                                              values={element.marginImage} 
+                                              units={{}}
+                                              onChange={(newMarginImage) =>
+                                                updatenewMarginImage(slide.id, elementIndex, newMarginImage)
+                                              }
+                                            />
+                                          </div>
+                                          <div className="custom-select">
+                                            <SelectControl
+                                                label={__("Blob Mask", "cocoblocks")}
+                                                value={element.blobMask}
+                                                onChange={(newBlobMask) =>
+                                                    updateBlobMask(
+                                                        slide.id,
+                                                        elementIndex,
+                                                        newBlobMask
+                                                    )
+                                                }
+                                                options={[
+                                                    { label: __("None", "cocoblocks"), value: '' },
+                                                    { label: __("Blob 1", "cocoblocks"), value: 'blob1' },
+                                                    { label: __("Blob 2", "cocoblocks"), value: 'blob2' },
+                                                    { label: __("Blob 3", "cocoblocks"), value: 'blob3' },
+                                                    { label: __("Blob 4", "cocoblocks"), value: 'blob4' },
+                                                ]}
+                                            />
+                                        </div>
+                                        {parallax && (
+                                    <>
+                                    <div className="custom-select">
+                                      <RangeControl
+                                           label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset X', 'cocoblocks')}</>}
+                                          value={element.parallaxImage}
+                                          onChange={(newParallaxImage) =>
+                                            updateParallaxImage(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxImage
+                                            )
+                                          }
+                                          min={-500}
+                                          max={500}
+                                          step={1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset Y', 'cocoblocks')}</>}
+                                          value={element.parallaxImageY}
+                                          onChange={(newParallaxImageY) =>
+                                            updateParallaxImageY(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxImageY
+                                            )
+                                          }
+                                          min={-500}
+                                          max={500}
+                                          step={1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax scale', 'cocoblocks')}</>}
+                                          value={element.parallaxImageScale}
+                                          onChange={(newParallaxImageScale) =>
+                                            updateParallaxImageScale(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxImageScale
+                                            )
+                                          }
+                                          min={0}
+                                          max={2}
+                                          step={.1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax opacity', 'cocoblocks')}</>}
+                                          value={element.parallaxImageOpacity}
+                                          onChange={(newParallaxImageOpacity) =>
+                                            updateParallaxImageOpacity(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxImageOpacity
+                                            )
+                                          }
+                                          min={0}
+                                          max={1}
+                                          step={.1}
+                                        />
+                                      </div>
+                                      <div className="custom-select">
+                                      <RangeControl
+                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax duration', 'cocoblocks')}</>}
+                                          value={element.parallaxImageDuration}
+                                          onChange={(newParallaxImageDuration) =>
+                                            updateParallaxImageDuration(
+                                              slide.id,
+                                              elementIndex,
+                                              newParallaxImageDuration
+                                            )
+                                          }
+                                          min={100}
+                                          max={2000}
+                                          step={10}
+                                        />
+                                      </div>
+                                    </>
+                                    )}
+                                    </>
                                     )}
                                   </div>
                                 </div>
@@ -2599,7 +4178,7 @@ export default function Edit({ attributes, setAttributes}) {
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div
-                className={"swiper-slide " + slide.position}
+                className={"swiper-slide " + slide.position + " " + slide.layout+'-layout'}
                 style={{
                   // Gestione dell'immagine di sfondo
                   ...(slide.backgroundType === "image" && slide.backgroundImage
@@ -2678,36 +4257,77 @@ export default function Edit({ attributes, setAttributes}) {
                     fontStyle: element.fontStyle?.fontStyle || 'normal',  // Valore di default
                     fontWeight: element.fontStyle?.fontWeight || 'normal',  // Valore di default
                     textDecoration: element.fontStyle?.textDecoration || 'none',  // Valore di default
+                    lineHeight: element.lineHeight,
+                    width: "100%",
+                    margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`, // Usa i valori aggi
                   };
+                  const Tag = element.elementTitle || 'h3';
+
+                  // Styles Title div
+                  const stylesTitleDiv = {
+                    fontSize: element.fontSizeDiv + "px",
+                    "--font-size-tablet": element.fontSizeTabletDiv + "px",
+                    "--font-size-mobile": element.fontSizeMobileDiv + "px",
+                    color: element.textColorDiv,
+                    textAlign: element.textAlignDiv,
+                    fontStyle: element.fontStyleDiv?.fontStyle || 'normal',  // Valore di default
+                    fontWeight: element.fontStyleDiv?.fontWeight || 'normal',  // Valore di default
+                    textDecoration: element.fontStyleDiv?.textDecoration || 'none',  // Valore di default
+                    lineHeight: element.lineHeightDiv,
+                    width: "100%",
+                    margin: `${element.marginTitleDiv?.top} ${element.marginTitleDiv?.right} ${element.marginTitleDiv?.bottom} ${element.marginTitleDiv?.left}`, // Usa i valori aggi
+                  };
+                  const TagDiv = element.elementTitleDiv || 'h3';
+
                   switch (element.type) {
                     case "title":
                       return (
-                        <div key={index}  data-swiper-parallax-y="-300" data-swiper-parallax-duration="600" data-swiper-parallax-opacity="0.5" style={{width:'100%'}}>
-                          {element.text ? (
-                            <h3 className="title-slide" style={stylesTitle}>
-                              {element.text}
-                            </h3>
-                          ) : (
-                            <p>No title</p>
-                          )}
-                        </div>
+                        <Tag
+                          key={index}
+                          className="title-slide"
+                          style={stylesTitle}
+                          data-swiper-parallax-x={element.parallaxTitle}
+                          data-swiper-parallax-y={element.parallaxTitleY}
+                          data-swiper-parallax-scale={element.parallaxTitleScale}
+                          data-swiper-parallax-duration={element.parallaxTitleDuration}
+                          data-swiper-parallax-opacity={element.parallaxTitleOpacity}
+                        >
+                        {element.text}
+                      </Tag>
                       );
                     case "div":
                       return (
                         <div
+                          className={"div-slide " + slide.positionDiv + " " + slide.layoutDiv+'-layout'}
                           key={index}
                           style={{
                             backgroundColor:
                               element.backgroundColor || "transparent",
+                              width: "100%",
+                              display: "flex",
+                              flexDirection: slide.layoutDiv === "horizontal" ? "row" : "column",
+                              textAlign: "center",
+                              width: "100%",
+                              position: "relative",
+                              visibility: "visible",
+                              gap: slide.gapItemsDiv + "px",
+                              borderRadius: slide.backgroundBorderRadiusDiv + "px",
+                              paddingTop: slide.backgroundVerticalPaddingDiv + "px",
+                              paddingBottom: slide.backgroundVerticalPaddingDiv + "px",
+                              paddingLeft: slide.backgroundHorizontalPaddingDiv + "px",
+                              paddingRight: slide.backgroundHorizontalPaddingDiv + "px",
+                              border: slide.backgroundBorderColorDiv
+                                ? `${slide.backgroundBorderSizeDiv}px solid ${slide.backgroundBorderColorDiv}`
+                                : "none",
                           }}
                         >
                           {element.content ? (
-                            <div style={{ maxWidth: "100%" }}>
+                            <TagDiv style={stylesTitleDiv}>
                               {element.content}
-                            </div>
+                            </TagDiv>
                           ) : null}
                           {element.imageUrl && (
-                            <img src={element.imageUrl} alt="" />
+                            <img src={element.imageUrl} alt='' style={{width:'150px'}}/>
                           )}
                           {element.innerDivs && element.innerDivs.length > 0
                             ? element.innerDivs.map((innerDiv, innerIndex) => (
@@ -2731,20 +4351,55 @@ export default function Edit({ attributes, setAttributes}) {
                         </div>
                       );
                     case "image":
+                      const getImageStyle = () => {
+                        let style = {
+                            maxWidth: '100%',
+                            minWidth: '0',
+                            maxHeight: '100%',
+                            minHeight: '0',
+                            border: element.backgroundBorderSizeImage + 'px solid' + element.backgroundBorderColorImage,
+                            borderRadius: element.backgroundBorderRadiusImage + 'px',
+                            padding: element.paddingImage + 'px',
+                            backgroundColor: element.backgroundColorImage,
+                            margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`, // Usa i valori aggi
+                        };
+                    
+                        if (element.widthImage === 'relative') {
+                            style.width = `${element.customWidthImage}%`;
+                        } else if (element.widthImage === 'fixed') {
+                            style.width = `${element.customWidthImagePx}px`;
+                        }
+                    
+                        if (element.heightImage === 'relative') {
+                            style.height = `${element.customHeightImage}%`;
+                        } else if (element.heightImage === 'fixed') {
+                            style.height = `${element.customHeightImagePx}px`;
+                        }
+                    
+                        // Applica object-fit solo se width o height sono relative o fixed
+                        if (element.widthImage !== 'auto' || element.heightImage !== 'auto') {
+                            style.objectFit = element.fit;
+                        }
+                    
+                        return style;
+                    };
                       return (
-                        <div
-                          key={index}
-                          style={{
-                            maxWidth: "100%",
-                          }}
-                        >
-                          <img src={element.url} alt={element.alt} />
-                        </div>
+                           <img 
+                              key={index} 
+                              src={element.url} 
+                              alt={element.alt} 
+                              style={getImageStyle()} 
+                              className={`image-with-mask ${element.blobMask}`}
+                              data-swiper-parallax-x={element.parallaxImage}
+                              data-swiper-parallax-y={element.parallaxImageY}
+                              data-swiper-parallax-scale={element.parallaxImageScale}
+                              data-swiper-parallax-duration={element.parallaxImageDuration}
+                              data-swiper-parallax-opacity={element.parallaxImageOpacity}
+                            />
                       );
                     default:
                       return null;
                   }
-
                 })}
               </div>
             </SwiperSlide>

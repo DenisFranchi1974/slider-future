@@ -180,6 +180,11 @@
   height: 4px;
   background: linear-gradient(to right, transparent, var(--light-color), transparent);
 }
+.cocoblocks-panel.panel-slide .divider-controls-inner {
+  margin: 20px 0;
+  height: 4px;
+  background: linear-gradient(to right, transparent, var(--background-color), transparent);
+}
 .cocoblocks-panel.panel-slide .title-tab-background {
   display: flex;
   align-items: center;
@@ -241,6 +246,8 @@
 }
 .slide-popover-class button {
   color: var(--light-color);
+  border-color: none !important;
+  box-shadow: none !important;
 }
 .slide-popover-class button:hover {
   color: var(--primary-color);
@@ -360,6 +367,7 @@
   /* Svg Panel */
   /* Label */
   /* Help */
+  /* Box control */
   /* Range Control */
   /* Select Control */
   /* Toogle */
@@ -371,7 +379,7 @@
   fill: var(--dark-color) !important;
 }
 .cocoblocks-panel label {
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 500 !important;
   line-height: 1.4em !important;
   text-transform: none !important;
@@ -392,6 +400,13 @@
   background-color: var(--notice-background);
   margin-left: 0;
   margin-right: 0;
+}
+.cocoblocks-panel #custom-margin-control .components-range-control {
+  padding: 0 !important;
+}
+.cocoblocks-panel #custom-margin-control #custom-margin-control-heading {
+  text-transform: capitalize;
+  font-size: 12px;
 }
 .cocoblocks-panel .components-range-control {
   padding: 10px !important;
@@ -551,6 +566,8 @@
 .cocoblocks-panel .custom-select {
   cursor: pointer;
   position: relative;
+  /* Box control */
+  /* Selector label right */
 }
 .cocoblocks-panel .custom-select .tooltip-icon {
   display: none;
@@ -572,6 +589,41 @@
 }
 .cocoblocks-panel .custom-select ::placeholder {
   color: var(--label-color);
+}
+.cocoblocks-panel .custom-select.box-control .components-grid {
+  margin-right: 7px;
+  margin-left: 10px;
+  color: var(--light-color);
+  align-items: center;
+  margin-top: 12px;
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .components-input-control__container {
+  background-color: var(--background-color) !important;
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .components-input-control__container input {
+  color: var(--light-color) !important;
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .components-input-control__container .components-unit-control__unit-label {
+  color: var(--light-color);
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .component-box-control__linked-button {
+  color: var(--light-color);
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .component-box-control__reset-button.is-secondary {
+  color: var(--primary-color);
+  border: none !important;
+  box-shadow: none !important;
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .component-box-control__reset-button.is-secondary:selected {
+  border: none !important;
+  box-shadow: none !important;
+}
+.cocoblocks-panel .custom-select.box-control .components-grid .component-box-control__reset-button.is-secondary:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+.cocoblocks-panel .custom-select.select-control-label-right .components-select-control__input {
+  text-align: right;
 }
 .cocoblocks-panel .svg-select svg {
   margin-right: 5px;
@@ -643,6 +695,7 @@
   width: 100%;
   border-radius: 12px;
   margin-top: 12px;
+  margin-bottom: 12px;
 }
 .cocoblocks-panel .custom-select.color .react-colorful {
   width: 100%;
