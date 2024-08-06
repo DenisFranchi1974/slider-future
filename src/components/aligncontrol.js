@@ -42,7 +42,7 @@ const AlignmentControl = ({ value, onChange }) => {
         aria-haspopup="true"
         icon={'editor-alignleft'} // Mostra l'icona selezionata o un'icona di default
       >
-        <div className='postion-slide__label'> <h2>{__('Content position', 'cocoblocks')}</h2><Icon icon={selectedIcon || "editor-alignleft"} /><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div>
+        <div className='postion-slide__label'> <h2>{__('Content position', 'cocoblocks')}</h2><div className='group-icon-position'><Icon icon={selectedIcon || "editor-alignleft"} /><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div></div>
       </Button>
       {isPopoverOpen && (
         <Popover

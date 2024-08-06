@@ -39,71 +39,68 @@ add_action( 'wp_enqueue_scripts', 'wp_kube_load_script' );
 
 
 
-function my_plugin_enqueue_admin_scripts() {
-    // Registra e carica lo script principale di React
-    wp_enqueue_script(
-        'my-plugin-admin-script',
-        plugins_url('admin.js', __FILE__), // Assicurati che il percorso del file JavaScript sia corretto
-        array('wp-element', 'wp-components'), // Dipendenze: React e ReactDOM sono già inclusi in WordPress
-        '1.0',
-        true
-    );
-    
-    // Passa variabili PHP a JavaScript
-    wp_localize_script(
-        'my-plugin-admin-script',
-        'myPluginData',
-        array(
-            'apiUrl' => esc_url(rest_url('my-plugin/v1/options')),
-            'nonce'  => wp_create_nonce('wp_rest')
-        )
-    );
-}
+add_action('admin_menu', 'my_plugin_admin_menu');
 
 function my_plugin_admin_menu() {
     add_menu_page(
-        'My Plugin Settings',
-        'My Plugin',
-        'manage_options',
-        'my-plugin-settings',
-        'my_plugin_settings_page',
-        'dashicons-admin-generic',
-        20
+        'My Plugin Settings', // Titolo della pagina
+        'My Plugin', // Testo del menu
+        'manage_options', // Capacità necessaria
+        'my-plugin', // Slug della pagina
+        'my_plugin_render_admin_page', // Funzione di callback
+        'dashicons-admin-generic', // Icona del menu (opzionale)
+        20 // Posizione nel menu
     );
 }
 
-function my_plugin_settings_page() {
-    ?>
-    <div id="my-plugin-admin-app"></div>
-    <?php
+function my_plugin_render_admin_page() {
+    echo '<div id="my-plugin-admin-page"></div>';
 }
 
-add_action('admin_enqueue_scripts', 'my_plugin_enqueue_admin_scripts');
-add_action('admin_menu', 'my_plugin_admin_menu');
-
-
-
-function my_plugin_register_rest_routes() {
-    register_rest_route('my-plugin/v1', '/options', array(
-        'methods' => 'POST',
-        'callback' => 'my_plugin_save_options',
-        'permission_callback' => function () {
-            return current_user_can('manage_options');
-        }
-    ));
-}
-
-function my_plugin_save_options(WP_REST_Request $request) {
-    $options = $request->get_json_params();
-    
-    if (isset($options['color'])) {
-        update_option('my_plugin_color', sanitize_hex_color($options['color']));
-    }
-    if (isset($options['text'])) {
-        update_option('my_plugin_text', sanitize_text_field($options['text']));
+function my_plugin_enqueue_scripts($hook) {
+    if ($hook !== 'toplevel_page_my-plugin') {
+        return;
     }
 
-    return new WP_REST_Response('Settings saved', 200);
+    $dev_mode = true; // Imposta a true durante lo sviluppo poi a false per la produzione
+
+    if ($dev_mode) {
+        // Carica i file direttamente dal server di sviluppo di React
+        wp_enqueue_script(
+            'my-plugin-admin-js',
+            'http://localhost:3000/static/js/bundle.js', // URL del bundle di sviluppo
+            ['wp-element', 'wp-components', 'wp-api-fetch','wp-api'],
+            null,
+            true // Carica nel footer
+        );
+
+       
+    } else {
+        // Carica i file dalla build di produzione
+        wp_enqueue_script(
+            'my-plugin-admin-js',
+            plugin_dir_url(__FILE__) . 'build/static/js/main.js',
+            ['wp-element', 'wp-components', 'wp-api-fetch','wp-api'],
+            filemtime(plugin_dir_path(__FILE__) . 'build/static/js/main.js'),
+            true
+        );
+
+       
+    }
+
+    wp_localize_script('my-plugin-admin-js', 'MyPluginSettings', [
+        'nonce' => wp_create_nonce('my_plugin_nonce'),
+        'settings' => get_option('my_plugin_settings')
+    ]);
 }
 
-add_action('rest_api_init', 'my_plugin_register_rest_routes');
+add_action('admin_enqueue_scripts', 'my_plugin_enqueue_scripts');
+
+
+
+
+
+
+
+
+

@@ -17,7 +17,7 @@ import { memo, useEffect, useState, useRef } from '@wordpress/element';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
 import { EffectCreative, Autoplay} from 'swiper/modules';
-import { help } from '@wordpress/icons';
+import { info } from '@wordpress/icons';
 import ColorOptionsPanel from './colorPanel';
 import AlignmentControlTwo from './aligncontrol-two';
 
@@ -519,22 +519,14 @@ const SliderControls = ({ attributes, setAttributes }) => {
 		<>
 			<PanelBody
 				className="cocoblocks-panel"
-				title={__('Slider', 'cocoblocks')}
+				title={__('Methods', 'cocoblocks')}
 			>
 				<div className="content-section-panel">
-					<div className="custom-select" style={{ borderRadius: '8px' }}>
+					<div className="custom-select">
 						<SelectControl
 							label={
 								<>
-									<Icon
-										icon="admin-site-alt3"
-										style={{
-											marginRight: '5px',
-											width: '16px',
-											height: '16px',
-											fontSize: '16px',
-										}}
-									/>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
 									{__('Language direction', 'cocoblocks')}
 								</>
 							}
@@ -558,16 +550,8 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						<SelectControl
 							label={
 								<>
-									<Icon
-										icon="move"
-										style={{
-											marginRight: '5px',
-											width: '16px',
-											height: '16px',
-											fontSize: '16px',
-										}}
-									/>
-									{__('Slide direction', 'cocoblocks')}
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"/></svg>
+									{__('Slider direction', 'cocoblocks')}
 								</>
 							}
 							value={directionSlider}
@@ -602,16 +586,8 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						<SelectControl
 							label={
 								<>
-									<Icon
-										icon="desktop"
-										style={{
-											marginRight: '5px',
-											width: '16px',
-											height: '16px',
-											fontSize: '16px',
-										}}
-									/>
-									{__('Slide per view', 'cocoblocks')}
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+									{__('Slides per view', 'cocoblocks')}
 								</>
 							}
 							value={perViewSlider}
@@ -632,11 +608,11 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								'cocoblocks'
 							)}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					{perViewSlider == 'auto' && (
-						<p className="notice components-base-control__help" style={{borderRadius:0}}>
+						<p className="notice components-base-control__help" style={{borderRadius:0, margin: '0'}}>
 							{__(
 								'The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.',
 								'cocoblocks'
@@ -647,15 +623,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						<RangeControl
 							label={
 								<>
-									<Icon
-										icon="image-flip-horizontal"
-										style={{
-											marginRight: '5px',
-											width: '16px',
-											height: '16px',
-											fontSize: '16px',
-										}}
-									/>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"/></svg>
 									{__('Space Between Slides', 'cocoblocks')}
 								</>
 							}
@@ -669,15 +637,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						<SelectControl
 							label={
 								<>
-									<Icon
-										icon="desktop"
-										style={{
-											marginRight: '5px',
-											width: '16px',
-											height: '16px',
-											fontSize: '16px',
-										}}
-									/>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
 									{__('Slides per group', 'cocoblocks')}
 								</>
 							}
@@ -699,7 +659,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								'cocoblocks'
 							)}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div
@@ -712,15 +672,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						<SelectControl
 							label={
 								<>
-									<Icon
-										icon="screenoptions"
-										style={{
-											marginRight: '5px',
-											width: '16px',
-											height: '16px',
-											fontSize: '16px',
-										}}
-									/>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M760-200v-120H200v120h560Zm0-200v-160H200v160h560Zm0-240v-120H200v120h560ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"/></svg>
 									{__('Slides rows', 'cocoblocks')}
 								</>
 							}
@@ -740,7 +692,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								'cocoblocks'
 							)}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					{slidesPerRow !== '1' && (
@@ -765,7 +717,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 				<div className='content-section-panel'>
 					<div className='custom-select select-control-label-right' style={{borderTopLeftRadius:'8px',borderTopRightRadius:'8px',...(perViewSliderTablet == '1' && {borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'})}}>
 					<SelectControl
-						label={ <><Icon icon="tablet" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slide per view', 'cocoblocks')}</>}
+						label={ <>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"/></svg>
+								{__('Slide per view', 'cocoblocks')}
+							  </>}
 						value={perViewSliderTablet}
 						onChange={(val) => { setAttributes({perViewSliderTablet: val})}}
 						options={ optionsPerView }
@@ -775,7 +730,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 						style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 						text={__('Number of slides per view in Tablet (768px). Slides visible at the same time on slider\'s container.', 'cocoblocks')}
 					>
-						<Icon icon={help} className="tooltip-icon" />
+						<Icon icon={info} className="tooltip-icon" />
 					</Tooltip>
 					</div>
 					{perViewSliderTablet == 'auto' &&
@@ -783,7 +738,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					}
 					<div className='custom-select'>
 						<RangeControl
-							label={ <><Icon icon="image-flip-horizontal" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Space Between Slides', 'cocoblocks')}</>}
+							label={ <>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"/></svg>
+									{__('Space Between Slides', 'cocoblocks')}
+									</>}
 							value={spaceBetweenTablet}
 							onChange={(val) => setAttributes({spaceBetweenTablet: val})}
 							min={0}
@@ -792,7 +750,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					</div>
 					<div className='custom-select select-control-label-right'>
 						<SelectControl
-							label={ <><Icon icon="tablet" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slides per group', 'cocoblocks')}</>}
+							label={ <>
+							        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"/></svg>
+									{__('Slides per group', 'cocoblocks')}
+									</>}
 							value={ slidesPerGroupTablet }
 							onChange={ ( val ) => setAttributes({ slidesPerGroupTablet: val }) }
 							options={ optionsPerGroup }
@@ -802,14 +763,17 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('The number of slides that should be grouped together for navigation.(Tablet)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 				</div>
 				<div className='content-section-panel'>
 					<div className='custom-select select-control-label-right' style={{borderTopLeftRadius:'8px',borderTopRightRadius:'8px',...(perViewSliderMobile == '1' && {borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'})}}>
 						<SelectControl
-							label={ <><Icon icon="smartphone" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slides per view', 'cocoblocks')}</>}
+							label={ <>
+							    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"/></svg>
+								{__('Slides per view', 'cocoblocks')}
+								</>}
 							value={perViewSliderMobile}
 							onChange={(val) => { setAttributes({perViewSliderMobile: val})}}
 							options={ optionsPerView }
@@ -819,7 +783,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Number of slides per view in Mobile (640px). Slides visible at the same time on slider\'s container.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					{perViewSliderMobile == 'auto' &&
@@ -827,7 +791,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					}
 					<div className='custom-select'>
 					<RangeControl
-						label={ <><Icon icon="image-flip-horizontal" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Space Between Slides', 'cocoblocks')}</>}
+						label={ <>
+						    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"/></svg>
+							{__('Space Between Slides', 'cocoblocks')}
+							</>}
 						value={spaceBetweenMobile}
 						onChange={(val) => setAttributes({spaceBetweenMobile: val})}
 						min={0}
@@ -836,7 +803,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					</div>
 					<div className='custom-select select-control-label-right'>
 					<SelectControl
-						label={ <><Icon icon="smartphone" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Slides per group', 'cocoblocks')}</>}
+						label={ <>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"/></svg>
+								{__('Slides per group', 'cocoblocks')}
+							</>}
 						value={ slidesPerGroupMobile }
 						onChange={ ( val ) => setAttributes({ slidesPerGroupMobile: val }) }
 						options={ optionsPerGroup }
@@ -846,14 +816,16 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('The number of slides that should be grouped together for navigation.(Mobile)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 					</Tooltip>
 					</div>
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-							label={<><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g clip-path="url(#clip0_1298_12)"><mask id="path-1-inside-1_1298_12"><path d="M1.21289 9.13964V17.5684C0.421875 17.5068 0 17.041 0 16.1885V10.5195C0 9.66699 0.421875 9.20117 1.21289 9.13964Z"></path><path d="M4.31836 7.66308V19.0977C3.4834 18.9746 3 18.5527 3 17.6123V9.15722C3 8.208 3.4834 7.78613 4.31836 7.66308Z"></path><path d="M26.7871 17.6211V9.19238C27.5781 9.25391 28 9.71973 28 10.5723V16.2412C28 17.0938 27.5781 17.5596 26.7871 17.6211Z"></path><path d="M23.6816 19.0977V7.66309C24.5166 7.78613 25 8.20801 25 9.14844V17.6035C25 18.5527 24.5166 18.9746 23.6816 19.0977Z"></path><path d="M19.1309 21.8115H8.8916C6.99316 21.8115 6 20.8271 6 18.9463V8.86523C6 6.98438 6.99316 6 8.8916 6H18.9111C20.8096 6 21.8027 6.98438 21.8027 8.86523V18.9463C21.8027 20.8271 20.8184 21.8115 19.1309 21.8115Z"></path></mask><path d="M1.21289 17.5684L1.0578 19.5623L3.21289 19.73V17.5684H1.21289ZM1.21289 9.13964H3.21289V6.97805L1.0578 7.14567L1.21289 9.13964ZM0 16.1885H-2H0ZM4.31836 19.0977L4.02677 21.0763L6.31836 21.414V19.0977H4.31836ZM4.31836 7.66308H6.31836V5.34674L4.02677 5.68445L4.31836 7.66308ZM3 17.6123H1H3ZM26.7871 9.19238L26.9422 7.19841L24.7871 7.03079V9.19238H26.7871ZM26.7871 17.6211H24.7871V19.7827L26.9422 19.6151L26.7871 17.6211ZM23.6816 7.66309L23.9732 5.68446L21.6816 5.34675V7.66309H23.6816ZM23.6816 19.0977H21.6816V21.414L23.9732 21.0763L23.6816 19.0977ZM3.21289 17.5684V9.13964H-0.787109V17.5684H3.21289ZM1.0578 7.14567C0.301257 7.20451 -0.547778 7.48477 -1.18736 8.20688C-1.81496 8.91547 -2 9.77867 -2 10.5195H2C2 10.4078 2.0259 10.6119 1.80699 10.859C1.5761 11.1197 1.33351 11.1363 1.36798 11.1336L1.0578 7.14567ZM-2 10.5195V16.1885H2V10.5195H-2ZM-2 16.1885C-2 16.9293 -1.81496 17.7925 -1.18736 18.5011C-0.547778 19.2232 0.301256 19.5035 1.0578 19.5623L1.36798 15.5744C1.33351 15.5717 1.5761 15.5883 1.80699 15.849C2.0259 16.0961 2 16.3002 2 16.1885H-2ZM6.31836 19.0977V7.66308H2.31836V19.0977H6.31836ZM4.02677 5.68445C3.36601 5.78183 2.53901 6.03909 1.88908 6.73023C1.21393 7.4482 1 8.34322 1 9.15722H5C5 9.08583 5.0095 9.10245 4.98579 9.17352C4.959 9.25384 4.90239 9.3648 4.80306 9.47044C4.60357 9.68258 4.43575 9.66738 4.60995 9.64171L4.02677 5.68445ZM1 9.15722V17.6123H5V9.15722H1ZM1 17.6123C1 18.4267 1.2165 19.3197 1.89223 20.0349C2.54133 20.722 3.36609 20.9789 4.02677 21.0763L4.60995 17.119C4.43567 17.0933 4.60125 17.0778 4.79991 17.2881C4.89919 17.3932 4.95674 17.5044 4.98444 17.5869C5.00906 17.6601 5 17.6797 5 17.6123H1ZM24.7871 9.19238V17.6211H28.7871V9.19238H24.7871ZM26.9422 19.6151C27.6987 19.5562 28.5478 19.276 29.1874 18.5539C29.815 17.8453 30 16.9821 30 16.2412H26C26 16.3529 25.9741 16.1489 26.193 15.9017C26.4239 15.641 26.6665 15.6244 26.632 15.6271L26.9422 19.6151ZM30 16.2412V10.5723H26V16.2412H30ZM30 10.5723C30 9.83141 29.815 8.96821 29.1874 8.25962C28.5478 7.53751 27.6987 7.25725 26.9422 7.19841L26.632 11.1864C26.6665 11.189 26.4239 11.1724 26.193 10.9118C25.9741 10.6646 26 10.4606 26 10.5723H30ZM21.6816 7.66309V19.0977H25.6816V7.66309H21.6816ZM23.9732 21.0763C24.634 20.9789 25.461 20.7217 26.1109 20.0305C26.7861 19.3125 27 18.4175 27 17.6035H23C23 17.6749 22.9905 17.6583 23.0142 17.5872C23.041 17.5069 23.0976 17.3959 23.1969 17.2903C23.3964 17.0782 23.5642 17.0934 23.3901 17.119L23.9732 21.0763ZM27 17.6035V9.14844H23V17.6035H27ZM27 9.14844C27 8.33406 26.7835 7.44109 26.1078 6.7258C25.4587 6.0387 24.6339 5.78182 23.9732 5.68446L23.3901 9.64172C23.5643 9.6674 23.3988 9.68298 23.2001 9.47269C23.1008 9.36759 23.0433 9.2563 23.0156 9.17386C22.9909 9.10059 23 9.081 23 9.14844H27ZM8.8916 23.8115H19.1309V19.8115H8.8916V23.8115ZM4 18.9463C4 20.2228 4.34111 21.5288 5.32612 22.5049C6.30803 23.4779 7.61575 23.8115 8.8916 23.8115V19.8115C8.58493 19.8115 8.39055 19.7712 8.27914 19.7336C8.17592 19.6987 8.14546 19.6674 8.14166 19.6636C8.1382 19.6602 8.10909 19.6328 8.07601 19.5367C8.03999 19.432 8 19.2453 8 18.9463H4ZM4 8.86523V18.9463H8V8.86523H4ZM8.8916 4C7.61575 4 6.30803 4.33364 5.32612 5.30667C4.34111 6.28276 4 7.5887 4 8.86523H8C8 8.56627 8.03999 8.37949 8.07601 8.27482C8.10909 8.17868 8.1382 8.15135 8.14166 8.14792C8.14546 8.14416 8.17592 8.11282 8.27914 8.07795C8.39055 8.0403 8.58493 8 8.8916 8V4ZM18.9111 4H8.8916V8H18.9111V4ZM23.8027 8.86523C23.8027 7.5887 23.4616 6.28276 22.4766 5.30667C21.4947 4.33364 20.187 4 18.9111 4V8C19.2178 8 19.4122 8.0403 19.5236 8.07795C19.6268 8.11282 19.6573 8.14416 19.6611 8.14792C19.6645 8.15135 19.6936 8.17868 19.7267 8.27482C19.7627 8.37949 19.8027 8.56627 19.8027 8.86523H23.8027ZM23.8027 18.9463V8.86523H19.8027V18.9463H23.8027ZM19.1309 23.8115C20.3632 23.8115 21.6177 23.4429 22.5498 22.4616C23.4674 21.4954 23.8027 20.2183 23.8027 18.9463H19.8027C19.8027 19.246 19.7631 19.441 19.7248 19.5563C19.6884 19.6656 19.6544 19.7017 19.6494 19.7069C19.646 19.7106 19.6296 19.7292 19.5676 19.7521C19.4983 19.7777 19.3613 19.8115 19.1309 19.8115V23.8115Z" mask="url(#path-1-inside-1_1298_12)"></path></g><defs><clipPath id="clip0_1298_12"><rect width="28" height="28" fill="white"></rect></clipPath></defs></svg>{__('Centered slides', 'cocoblocks')}</>}
+							label={<>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-80v-800h80v800h-80Zm160-200v-400h120v400H600Zm-360 0v-400h120v400H240Z"/></svg>
+								{__('Centered slides', 'cocoblocks')}</>}
 							checked={ centeredSlides}
 							onChange={ ( value ) =>
 								setAttributes( { centeredSlides: value } )
@@ -864,14 +836,17 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('If enabled, then active slide will be centered, not always on the left side.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'12px'}} />
+							<Icon icon={info} className="tooltip-icon" style={{top:'12px'}} />
 						</Tooltip>
 					</div>
 				</div>
 				<div className='content-section-panel'>
 					<div className='custom-select'>
 					<SelectControl
-						label={ <><Icon icon="ellipsis" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Initial slide', 'cocoblocks')}</>}
+						label={ <>
+						    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+							{__('Initial slide', 'cocoblocks')}
+							</>}
 						value={ initialSlide }
 						onChange={ ( val ) => setAttributes({initialSlide: val }) }
 						options={ optionsInitialSlide }
@@ -881,14 +856,17 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Index number of initial slide.(Starts from 0)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 					</Tooltip>
 					</div>
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-							label={<><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 0 56 56"><path d="M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"></path></svg>{__('Auto height', 'cocoblocks')}</>}
+							label={<>
+							    <svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 56 56"><path d="M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"></path></svg>
+								{__('Auto height', 'cocoblocks')}
+								</>}
 							checked={ autoHeight}
 							onChange={ ( value ) =>
 								setAttributes( { autoHeight: value } )
@@ -899,14 +877,17 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enable and slider wrapper will adapt its height to the height of the currently active slide', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'12px'}} />
+							<Icon icon={info} className="tooltip-icon" style={{top:'12px'}} />
 						</Tooltip>
 					</div>
 					{!autoHeight && (
 						<>
-						<div className='custom-select svg-select'>
+						<div className='custom-select'>
 						<RangeControl
-								label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-80v-80h640v80H160Zm320-120L320-360l56-56 64 62v-252l-64 62-56-56 160-160 160 160-56 56-64-62v252l64-62 56 56-160 160ZM160-800v-80h640v80H160Z"/></svg>{__('Custom Height', 'cocoblocks')}</>}
+								label={<>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-80v-80h640v80H160Zm320-120L320-360l56-56 64 62v-252l-64 62-56-56 160-160 160 160-56 56-64-62v252l64-62 56 56-160 160ZM160-800v-80h640v80H160Z"/></svg>
+									{__('Custom Height', 'cocoblocks')}
+									</>}
 							value={slideHeight}
 							onChange={(val) => setAttributes({slideHeight: val})}
 							min={10}
@@ -918,9 +899,12 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					)}
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-							label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 9.1211 36.2500 C 9.1211 47.8047 15.5195 52.9844 24.4492 52.9844 C 30.1211 52.9844 34.3398 51.1094 37.7148 47.5703 C 42.4023 42.6016 43.9492 35.0782 44.8398 32.125 C 45.5430 29.8047 46.8789 26.8282 46.8789 25.2578 C 46.8789 24.2500 45.5430 23.3594 44.6523 23.3594 C 42.6367 23.3594 41.8867 24.2734 40.6914 26.8047 C 39.3789 29.5938 37.7852 34.7969 36.5195 34.7969 C 35.7930 34.7969 35.5352 33.5078 35.5352 31.0469 L 35.5352 8.4297 C 35.5352 7.1875 34.7852 6.0625 33.1914 6.0625 C 31.6211 6.0625 30.8476 7.1875 30.8476 8.4297 L 30.8476 26.9453 C 30.0976 26.7344 29.2305 26.5703 28.2930 26.4297 L 28.2930 5.3594 C 28.2930 4.1172 27.5195 3.0156 25.9492 3.0156 C 24.3789 3.0156 23.6055 4.1172 23.6055 5.3594 L 23.6055 26.2656 C 22.7383 26.3125 21.8945 26.4063 21.0508 26.5469 L 21.0508 7.1641 C 21.0508 5.9219 20.2539 4.7969 18.7070 4.7969 C 17.1601 4.7969 16.3633 5.9219 16.3633 7.1641 L 16.3633 27.8594 C 15.4492 28.2344 14.5820 28.6797 13.8086 29.1719 L 13.8086 14.4531 C 13.8086 13.2109 13.0820 12.0860 11.5117 12.0860 C 9.8945 12.0860 9.1211 13.2109 9.1211 14.4531 Z"></path></svg>{__('Grab Cursor', 'cocoblocks')}</>}
+							label={ <>
+							    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M473-80q-24 0-46-9t-39-26L184-320l30-31q16-16 37.5-21.5t42.5.5l66 19v-327q0-17 11.5-28.5T400-720q17 0 28.5 11.5T440-680v433l-97-27 102 102q5 5 12.5 8.5T473-160h167q33 0 56.5-23.5T720-240v-160q0-17 11.5-28.5T760-440q17 0 28.5 11.5T800-400v160q0 66-47 113T640-80H473Zm7-280v-160q0-17 11.5-28.5T520-560q17 0 28.5 11.5T560-520v160h-80Zm120 0v-120q0-17 11.5-28.5T640-520q17 0 28.5 11.5T680-480v120h-80Zm-20 80Zm300-400H680v-60h116q-66-58-147-89t-169-31q-88 0-169 31t-147 89h116v60H80v-200h60v81q72-59 159-90t181-31q94 0 181 31t159 90v-81h60v200Z"/></svg>
+								{__('Grab Cursor', 'cocoblocks')}
+								</>}
 							checked={ grabCursor }
 							onChange={ ( value ) =>
 								setAttributes( { grabCursor: value } )
@@ -931,14 +915,17 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'12px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'12px'}}/>
 						</Tooltip>
 					</div>
 				</div>
 				<div className='content-section-panel'>
 					<div className='custom-select'>
 						<SelectControl
-							label={ <><Icon icon="update" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Loop Mode', 'cocoblocks')}</>}
+							label={ <>
+							    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"/></svg>
+								{__('Loop Mode', 'cocoblocks')}
+								</>}
 							value={loopMode}
 							onChange={(val) => { setAttributes({loopMode: val})}}
 							options={ [
@@ -961,7 +948,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables continuous loop mode', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					{showLoopNotice && (
@@ -980,20 +967,16 @@ const SliderControls = ({ attributes, setAttributes }) => {
 				initialOpen={true}
 			>
 				<div className="content-section-panel">
-					<div className="custom-select svg-select">
+					<div className="custom-select">
 						<SelectControl
 							label={
 								<>
-									<svg
-										fill="currentcolor"
-										xmlns="http://www.w3.org/2000/svg"
-										width="1em"
-										height="1em"
-										viewBox="0 0 56 56"
-									>
-										<path d="M 21.8712 15.5664 C 22.1524 15.5664 22.2930 15.4024 22.3399 15.1445 C 23.1368 11.3945 23.0899 11.2539 27.0040 10.4570 C 27.2852 10.4102 27.4493 10.2461 27.4493 9.9883 C 27.4493 9.7070 27.2852 9.5429 27.0040 9.4961 C 23.0899 8.6992 23.1368 8.5586 22.3399 4.8320 C 22.2930 4.5742 22.1524 4.3867 21.8712 4.3867 C 21.5899 4.3867 21.4493 4.5742 21.3790 4.8320 C 20.6055 8.5586 20.6524 8.6992 16.7149 9.4961 C 16.4571 9.5429 16.2696 9.7070 16.2696 9.9883 C 16.2696 10.2461 16.4571 10.4102 16.7149 10.4570 C 20.6524 11.2539 20.6055 11.3945 21.3790 15.1445 C 21.4493 15.4024 21.5899 15.5664 21.8712 15.5664 Z M 41.2306 23.8398 C 41.5587 23.8398 41.7462 23.6289 41.7930 23.3242 C 42.6134 18.8711 42.6368 18.5898 47.3475 17.7695 C 47.6523 17.7227 47.8866 17.5117 47.8866 17.1836 C 47.8866 16.8555 47.6523 16.6680 47.3475 16.5976 C 42.6368 15.8008 42.6134 15.5195 41.7930 11.0664 C 41.7462 10.7617 41.5587 10.5273 41.2306 10.5273 C 40.9024 10.5273 40.6915 10.7617 40.6446 11.0664 C 39.8477 15.5195 39.8243 15.8008 35.1134 16.5976 C 34.7852 16.6680 34.5743 16.8555 34.5743 17.1836 C 34.5743 17.5117 34.7852 17.7227 35.1134 17.7695 C 39.8243 18.5898 39.8477 18.8711 40.6446 23.3242 C 40.6915 23.6289 40.9024 23.8398 41.2306 23.8398 Z M 9.0274 30.5664 C 9.3555 30.5664 9.5430 30.3320 9.5899 30.0273 C 10.4102 25.5742 10.4337 25.2929 15.1446 24.4961 C 15.4493 24.4258 15.6837 24.2383 15.6837 23.9102 C 15.6837 23.5820 15.4493 23.3711 15.1446 23.3242 C 10.4337 22.5039 10.4102 22.2227 9.5899 17.7695 C 9.5430 17.4649 9.3555 17.2539 9.0274 17.2539 C 8.6993 17.2539 8.4884 17.4649 8.4415 17.7695 C 7.6212 22.2227 7.6212 22.5039 2.9102 23.3242 C 2.5821 23.3711 2.3712 23.5820 2.3712 23.9102 C 2.3712 24.2383 2.5821 24.4258 2.9102 24.4961 C 7.6212 25.2929 7.6212 25.5742 8.4415 30.0273 C 8.4884 30.3320 8.6993 30.5664 9.0274 30.5664 Z M 49.0352 50.6055 C 50.0432 51.6133 51.7304 51.6133 52.6448 50.6055 C 53.6288 49.5742 53.6288 47.9805 52.6448 46.9961 L 30.3790 24.6367 C 29.3946 23.6524 27.7071 23.6524 26.7696 24.6367 C 25.7852 25.6680 25.8087 27.2851 26.7696 28.2695 Z M 35.4181 34.5039 L 28.5508 27.6133 C 28.1290 27.1914 28.0118 26.7461 28.4102 26.3242 C 28.8087 25.9492 29.2540 26.0429 29.6993 26.4883 L 36.5899 33.3789 Z M 20.1602 50.9805 C 20.5821 50.9805 20.8868 50.6758 20.9337 50.2305 C 21.7071 43.9727 22.0118 43.8086 28.3634 42.7773 C 28.8790 42.6836 29.1837 42.4492 29.1837 41.9805 C 29.1837 41.5352 28.8790 41.2539 28.4571 41.1836 C 22.0587 39.9649 21.7071 39.9883 20.9337 33.7305 C 20.8868 33.2851 20.5821 32.9805 20.1602 32.9805 C 19.7149 32.9805 19.4102 33.2851 19.3634 33.7070 C 18.5430 40.0586 18.3087 40.2695 11.8399 41.1836 C 11.4181 41.2305 11.1134 41.5352 11.1134 41.9805 C 11.1134 42.4258 11.4181 42.6836 11.8399 42.7773 C 18.3087 44.0195 18.5196 44.0195 19.3634 50.2773 C 19.4102 50.6758 19.7149 50.9805 20.1602 50.9805 Z"></path>
-									</svg>
-									{__('Effect', 'cocoblocks')}
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 2L13.09 8.26L19.5 8.54L14.25 12.14L16.36 18.48L12 14.8L7.64 18.48L9.75 12.14L4.5 8.54L10.91 8.26L12 2Z" fill="currentColor"/>
+									<path d="M2 5L2.5 7.5L4 8L2.5 8.5L2 11L1.5 8.5L0 8L1.5 7.5L2 5Z" fill="currentColor"/>
+									<path d="M6 9L6.5 11.5L8 12L6.5 12.5L6 15L5.5 12.5L4 12L5.5 11.5L6 9Z" fill="currentColor"/>
+								</svg>
+								{__('Effect', 'cocoblocks')}
 								</>
 							}
 							value={effect}
@@ -1012,7 +995,6 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					{effect == 'cube' &&
 					<>
 					    <p className='notice components-base-control__help' style={{marginTop:'0',borderRadius:'0'}}>{__('Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!','cocoblocks')}</p>
-						
 						<div className='custom-select'>
 							<ToggleControl
 								label={__('Shadow', 'cocoblocks')}
@@ -1026,7 +1008,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						<div className='custom-select'>
@@ -1042,7 +1024,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						
@@ -1089,7 +1071,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables slides shadows.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1106,7 +1088,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Depth offset in px(slides translate in Z axis)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'8px'}} />
+							<Icon icon={info} className="tooltip-icon" style={{top:'8px'}} />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1123,7 +1105,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Slide rotate in degrees', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'8px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'8px'}}/>
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1140,7 +1122,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Stretch space between slides (in px)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'8px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'8px'}}/>
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1170,7 +1152,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables slides shadows.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1186,7 +1168,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables cards rotation', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					</>
@@ -1215,7 +1197,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('The current slide fades out while the new slide appears simultaneously.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
                         }
 						{crossFade== false &&
@@ -1224,14 +1206,17 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('The current slide completely disappears before the new slide starts to appear.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
                         }
 					</div>
                     }
 					<div className='custom-select'>
 						<RangeControl
-							label={ <><Icon icon="hourglass" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Transition duration', 'cocoblocks')}</>}
+							label={ <>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"/></svg>
+								{__('Transition duration', 'cocoblocks')}
+								</>}
 							value={speed}
 							onChange={(val) => setAttributes({speed: val})}
 							min={0}
@@ -1242,20 +1227,23 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Duration of transition between slides (in ms).', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{left:'66%',top:'8px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{left:'66%',top:'4px'}}/>
 						</Tooltip>
 					</div>
 				</div>
 			</PanelBody>
 			<PanelBody 
 					title={ __( 'MODULES', 'cocobocks' ) }
-					className='cocoblocks-panel margin-top-negative'
+					className='cocoblocks-panel'
 					initialOpen={true}
 				>
 					<div className='content-section-panel'>
 						<div className='custom-select'>
 							<ToggleControl
-								label={ <><Icon icon="leftright" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Navigation', 'cocoblocks')}</>}
+								label={ <>
+								    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-200 120-480l280-280v560Zm-60-145v-270L205-480l135 135Zm220 145v-560l280 280-280 280Z"/></svg>
+									{__('Navigation', 'cocoblocks')}
+									</>}
 								checked={ navigation }
 								onChange={ ( value ) =>
 									setAttributes( { navigation: value } )
@@ -1266,7 +1254,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" style={{top:'9px'}}/>
+								<Icon icon={info} className="tooltip-icon" style={{top:'12px'}}/>
 							</Tooltip>
 						</div>
 						{navigation === true &&
@@ -1433,7 +1421,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('Toggle navigation buttons visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						<div className='custom-select'>
@@ -1464,7 +1452,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					<div className='content-section-panel'>
 					    <div className='custom-select'>
 					    <ToggleControl
-						    label={ <><Icon icon="ellipsis" style={{marginRight:'5px',width:'16px',height:'16px',fontSize:'16px'}}/>{__('Pagination', 'cocoblocks')}</>}
+						    label={ <>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+								{__('Pagination', 'cocoblocks')}
+								</>}
 							checked={ paginationEnable}
 							onChange={ ( value ) =>
 								setAttributes( { paginationEnable: value } )
@@ -1543,7 +1534,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('Toggle (hide/show) pagination container visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						{typePagination == 'fraction' &&
@@ -1583,7 +1574,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('Makes pagination progressbar opposite to Swiper\'s direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						</>
@@ -1603,7 +1594,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('If enable then clicking on pagination button will cause transition to appropriate slide. Only for "bullets" pagination type', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						<div className='custom-select'>
@@ -1619,7 +1610,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 								style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 								text={__('Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time', 'cocoblocks')}
 							>
-								<Icon icon={help} className="tooltip-icon" />
+								<Icon icon={info} className="tooltip-icon" />
 							</Tooltip>
 						</div>
 						{dynamicPagination == true &&
@@ -1724,9 +1715,12 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       }
 					</div>
 					<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-						    label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 27.9999 51.9063 C 41.0546 51.9063 51.9063 41.0781 51.9063 28 C 51.9063 14.9453 41.0780 4.0937 28.0234 4.0937 C 26.7812 4.0937 26.1718 4.8437 26.1718 6.0625 L 26.1718 15.1563 C 26.1718 16.1641 26.8514 16.9844 27.8827 16.9844 C 28.9140 16.9844 29.6171 16.1641 29.6171 15.1563 L 29.6171 8.1484 C 39.9296 8.9688 47.8983 17.5 47.8983 28 C 47.8983 39.0625 39.0390 47.9219 27.9999 47.9219 C 16.9374 47.9219 8.0546 39.0625 8.0780 28 C 8.1014 23.0781 9.8593 18.6016 12.7890 15.1563 C 13.5155 14.2422 13.5624 13.1406 12.7890 12.3203 C 12.0155 11.4766 10.7030 11.5469 9.8593 12.6016 C 6.2733 16.7734 4.0937 22.1641 4.0937 28 C 4.0937 41.0781 14.9218 51.9063 27.9999 51.9063 Z M 31.7499 31.6094 C 33.6014 29.6875 33.2265 27.0625 30.9999 25.5156 L 18.6014 16.8672 C 17.4296 16.0469 16.2109 17.2656 17.0312 18.4375 L 25.6796 30.8359 C 27.2265 33.0625 29.8514 33.4609 31.7499 31.6094 Z"></path></svg>{__('Autoplay', 'cocoblocks')}</>}
+						    label={ <>
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M380-300v-360l280 180-280 180ZM480-40q-108 0-202.5-49.5T120-228v108H40v-240h240v80h-98q51 75 129.5 117.5T480-120q115 0 208.5-66T820-361l78 18q-45 136-160 219.5T480-40ZM42-520q7-67 32-128.5T143-762l57 57q-32 41-52 87.5T123-520H42Zm214-241-57-57q53-44 114-69.5T440-918v80q-51 5-97 25t-87 52Zm449 0q-41-32-87.5-52T520-838v-80q67 6 128.5 31T762-818l-57 57Zm133 241q-5-51-25-97.5T761-705l57-57q44 52 69 113.5T918-520h-80Z"/></svg>
+								{__('Autoplay', 'cocoblocks')}
+								</>}
 							checked={ autoplay }
 							onChange={ ( value ) =>
 								setAttributes( { autoplay: value } )
@@ -1737,7 +1731,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'12px',left:'67%'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'12px',left:'67%'}}/>
 						</Tooltip>
 					</div>
 					{autoplay === true &&
@@ -1778,7 +1772,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Sets the delay time in milliseconds between each slide transition.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'12px',left:'67%'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'4px',left:'67%'}}/>
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1794,7 +1788,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'9px',left:'65%'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'9px',left:'65%'}}/>
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1810,7 +1804,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('When enabled autoplay will be paused on mouse enter over Swiper container. If "Disabled on interaction" is also enabled, it will stop autoplay instead of pause', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'9px',left:'65%'}} />
+							<Icon icon={info} className="tooltip-icon" style={{top:'11px',left:'65%'}} />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1826,7 +1820,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables autoplay in reverse direction', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1842,7 +1836,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1877,9 +1871,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
                     }
 					</div>
 					<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-						    label={ <><svg width="57" height="26" viewBox="0 0 57 26" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M43.0735759,0 C45.4678234,0 47.6419651,0.52506869 49.5960012,1.57520607 C51.5500372,2.62534345 53.1058794,4.09782356 54.2635276,5.99264641 C55.4211759,7.88746926 56,10.0810497 56,12.5733877 C56,15.0848653 55.4211759,17.2880156 54.2635276,19.1828384 C53.1058794,21.0776613 51.5500372,22.5501414 49.5960012,23.6002788 C47.7640924,24.5847826 45.7387313,25.1078002 43.519918,25.1693317 L43.0735759,25.1754848 L12.9546849,25.1754848 C10.5589422,25.1754848 8.38016507,24.6504161 6.41835353,23.6002788 C4.456542,22.5501414 2.89636352,21.0776613 1.73781811,19.1828384 C0.579272705,17.2880156 0,15.0848653 0,12.5733877 C0,10.0810497 0.579272705,7.88746926 1.73781811,5.99264641 C2.89636352,4.09782356 4.456542,2.62534345 6.41835353,1.57520607 C8.25755185,0.590702276 10.2874426,0.0676846358 12.5080257,0.00615314871 L12.9546849,0 L43.0735759,0 Z M43.0735759,4.52128776 L12.9546849,4.52128776 C11.4477385,4.52128776 10.0548822,4.85795077 8.77611606,5.53127678 C7.49734988,6.2046028 6.46852028,7.14715456 5.68962727,8.35893205 C4.91073426,9.57070954 4.52128776,10.9755281 4.52128776,12.5733877 C4.52128776,14.1730416 4.91073426,15.5787574 5.68962727,16.7905349 C6.46852028,18.0023123 7.49734988,18.9492004 8.77611606,19.6311991 C9.94831838,20.2563645 11.2163881,20.5949958 12.5803252,20.6470929 L12.9546849,20.6541971 L43.0735759,20.6541971 C44.5634761,20.6541971 45.9473607,20.3131977 47.2252297,19.6311991 C48.5030987,18.9492004 49.5314797,18.0023123 50.3103727,16.7905349 C51.0892657,15.5787574 51.4787122,14.1730416 51.4787122,12.5733877 C51.4787122,10.9755281 51.0892657,9.57070954 50.3103727,8.35893205 C49.5314797,7.14715456 48.5030987,6.2046028 47.2252297,5.53127678 C46.0538498,4.91406127 44.7933873,4.5797362 43.4438423,4.52830157 L43.0735759,4.52128776 Z M30.8525391,5.87597656 C34.4423899,5.87597656 37.3525391,8.78612569 37.3525391,12.3759766 C37.3525391,15.9658274 34.4423899,18.8759766 30.8525391,18.8759766 L12.8525391,18.8759766 C9.26268819,18.8759766 6.35253906,15.9658274 6.35253906,12.3759766 C6.35253906,8.78612569 9.26268819,5.87597656 12.8525391,5.87597656 L30.8525391,5.87597656 Z" transform="translate(.647 .124)"></path></svg>{__('Scrollbar', 'cocoblocks')}</>}
+						    label={ <>
+							    <svg width="57" height="26" viewBox="0 0 57 26" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M43.0735759,0 C45.4678234,0 47.6419651,0.52506869 49.5960012,1.57520607 C51.5500372,2.62534345 53.1058794,4.09782356 54.2635276,5.99264641 C55.4211759,7.88746926 56,10.0810497 56,12.5733877 C56,15.0848653 55.4211759,17.2880156 54.2635276,19.1828384 C53.1058794,21.0776613 51.5500372,22.5501414 49.5960012,23.6002788 C47.7640924,24.5847826 45.7387313,25.1078002 43.519918,25.1693317 L43.0735759,25.1754848 L12.9546849,25.1754848 C10.5589422,25.1754848 8.38016507,24.6504161 6.41835353,23.6002788 C4.456542,22.5501414 2.89636352,21.0776613 1.73781811,19.1828384 C0.579272705,17.2880156 0,15.0848653 0,12.5733877 C0,10.0810497 0.579272705,7.88746926 1.73781811,5.99264641 C2.89636352,4.09782356 4.456542,2.62534345 6.41835353,1.57520607 C8.25755185,0.590702276 10.2874426,0.0676846358 12.5080257,0.00615314871 L12.9546849,0 L43.0735759,0 Z M43.0735759,4.52128776 L12.9546849,4.52128776 C11.4477385,4.52128776 10.0548822,4.85795077 8.77611606,5.53127678 C7.49734988,6.2046028 6.46852028,7.14715456 5.68962727,8.35893205 C4.91073426,9.57070954 4.52128776,10.9755281 4.52128776,12.5733877 C4.52128776,14.1730416 4.91073426,15.5787574 5.68962727,16.7905349 C6.46852028,18.0023123 7.49734988,18.9492004 8.77611606,19.6311991 C9.94831838,20.2563645 11.2163881,20.5949958 12.5803252,20.6470929 L12.9546849,20.6541971 L43.0735759,20.6541971 C44.5634761,20.6541971 45.9473607,20.3131977 47.2252297,19.6311991 C48.5030987,18.9492004 49.5314797,18.0023123 50.3103727,16.7905349 C51.0892657,15.5787574 51.4787122,14.1730416 51.4787122,12.5733877 C51.4787122,10.9755281 51.0892657,9.57070954 50.3103727,8.35893205 C49.5314797,7.14715456 48.5030987,6.2046028 47.2252297,5.53127678 C46.0538498,4.91406127 44.7933873,4.5797362 43.4438423,4.52830157 L43.0735759,4.52128776 Z M30.8525391,5.87597656 C34.4423899,5.87597656 37.3525391,8.78612569 37.3525391,12.3759766 C37.3525391,15.9658274 34.4423899,18.8759766 30.8525391,18.8759766 L12.8525391,18.8759766 C9.26268819,18.8759766 6.35253906,15.9658274 6.35253906,12.3759766 C6.35253906,8.78612569 9.26268819,5.87597656 12.8525391,5.87597656 L30.8525391,5.87597656 Z" transform="translate(.647 .124)"></path></svg>{__('Scrollbar', 'cocoblocks')}</>}
 							checked={ scrollbar }
 							onChange={ ( value ) =>
 								setAttributes( { scrollbar: value } )
@@ -1933,7 +1928,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Makes scrollbar draggable that allowyou to control slider position', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1949,7 +1944,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Hide scrollbar automatically after user interaction', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1965,7 +1960,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Snap slider position to slides when you release scrollbar', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -1992,9 +1987,12 @@ const SliderControls = ({ attributes, setAttributes }) => {
 					}
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-						    label={ <><svg width="1em" height="1em" viewBox="0 0 51 57" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M2.21558478,34.733889 C2.86274571,34.733889 3.4077387,34.5129143 3.85056375,34.070965 C4.2933888,33.6290157 4.51480132,33.102267 4.51480132,32.4907189 L4.51480132,23.5092811 C4.51480132,22.897733 4.2933888,22.3662408 3.85056375,21.9148044 C3.4077387,21.4633681 2.86274571,21.2376499 2.21558478,21.2376499 C1.58681408,21.2376499 1.06035728,21.4633681 0.636214365,21.9148044 C0.212071455,22.3662408 0,22.897733 0,23.5092811 L0,32.4907189 C0,33.102267 0.212071455,33.6290157 0.636214365,34.070965 C1.06035728,34.5129143 1.58681408,34.733889 2.21558478,34.733889 Z M11.2631398,45.4978654 C11.89337,45.4978654 12.4298977,45.2811234 12.8727227,44.8476395 C13.3155478,44.4141555 13.5369603,43.8831741 13.5369603,43.2546953 L13.5369603,12.7453047 C13.5369603,12.1168259 13.3155478,11.581174 12.8727227,11.1383489 C12.4298977,10.6955239 11.89337,10.4741114 11.2631398,10.4741114 C10.6194818,10.4741114 10.0850704,10.6955239 9.65990586,11.1383489 C9.23474127,11.581174 9.02215898,12.1168259 9.02215898,12.7453047 L9.02215898,43.2546953 C9.02215898,43.8831741 9.23474127,44.4141555 9.65990586,44.8476395 C10.0850704,45.2811234 10.6194818,45.4978654 11.2631398,45.4978654 Z M20.2879259,56 C20.9333354,56 21.473293,55.7794632 21.9077986,55.3383896 C22.3423043,54.897316 22.5595571,54.3615181 22.5595571,53.730996 L22.5595571,2.27163119 C22.5595571,1.64110904 22.3423043,1.10487331 21.9077986,0.662923984 C21.473293,0.220974661 20.9333354,0 20.2879259,0 C19.6594471,0 19.1289036,0.220974661 18.6962954,0.662923984 C18.2636871,1.10487331 18.047383,1.64110904 18.047383,2.27163119 L18.047383,53.730996 C18.047383,54.3615181 18.2636871,54.897316 18.6962954,55.3383896 C19.1289036,55.7794632 19.6594471,56 20.2879259,56 Z M29.3354809,42.1617902 C29.9639597,42.1617902 30.495452,41.9454131 30.9299576,41.5126589 C31.3644633,41.0799047 31.5817161,40.5568778 31.5817161,39.9435783 L31.5817161,16.0564217 C31.5817161,15.4431222 31.3644633,14.9149869 30.9299576,14.4720159 C30.495452,14.0290449 29.9639597,13.8075594 29.3354809,13.8075594 C28.6900715,13.8075594 28.1552953,14.0290449 27.7311524,14.4720159 C27.3070095,14.9149869 27.094938,15.4431222 27.094938,16.0564217 L27.094938,39.9435783 C27.094938,40.5568778 27.3070095,41.0799047 27.7311524,41.5126589 C28.1552953,41.9454131 28.6900715,42.1617902 29.3354809,42.1617902 Z M38.3580778,50.1339547 C38.988308,50.1339547 39.5201651,49.91298 39.9536491,49.4710307 C40.3871331,49.0290814 40.6038751,48.5021867 40.6038751,47.8903467 L40.6038751,8.11228048 C40.6038751,7.50044047 40.3871331,6.96887527 39.9536491,6.51758487 C39.5201651,6.06629448 38.988308,5.84064929 38.3580778,5.84064929 C37.7126683,5.84064929 37.1778191,6.06629448 36.7535303,6.51758487 C36.3292414,6.96887527 36.117097,7.50044047 36.117097,8.11228048 L36.117097,47.8903467 C36.117097,48.5021867 36.3292414,49.0290814 36.7535303,49.4710307 C37.1778191,49.91298 37.7126683,50.1339547 38.3580778,50.1339547 Z M47.3802368,36.9236399 C48.010467,36.9236399 48.5423971,36.7026652 48.976027,36.2607159 C49.409657,35.8187666 49.6264719,35.2911421 49.6264719,34.6778426 L49.6264719,21.3221574 C49.6264719,20.7088579 49.409657,20.1765629 48.976027,19.7252725 C48.5423971,19.2739821 48.010467,19.0483369 47.3802368,19.0483369 C46.7348273,19.0483369 46.2000511,19.2739821 45.7759082,19.7252725 C45.3517653,20.1765629 45.1396938,20.7088579 45.1396938,21.3221574 L45.1396938,34.6778426 C45.1396938,35.2911421 45.3517653,35.8187666 45.7759082,36.2607159 C46.2000511,36.7026652 46.7348273,36.9236399 47.3802368,36.9236399 Z" transform="translate(.647 .504)"></path></svg>{__('Free mode', 'cocoblocks')}</>}
+						    label={ <>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-240v-480h80v480h-80ZM440-80v-800h80v800h-80ZM120-400v-160h80v160h-80Zm480 160v-480h80v480h-80Zm160-160v-160h80v160h-80Z"/></svg>
+									{__('Free mode', 'cocoblocks')}
+								</>}
 							checked={ freeMode }
 							onChange={ ( value ) =>
 								setAttributes( { freeMode: value } )
@@ -2005,7 +2003,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Doesn\'t work in the editor!', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'12px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'12px'}}/>
 						</Tooltip>
 					</div>
 					{freeMode == true  &&
@@ -2023,7 +2021,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables Snap to slides positions in free mode', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2039,7 +2037,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('If enabled, then slide will keep moving for a while you release it after', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2055,7 +2053,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables momentum bounce in free mode', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2072,7 +2070,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Higher value produces larger momentum bounce effect', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon"  style={{left:'75%'}} />
+							<Icon icon={info} className="tooltip-icon"  style={{left:'75%',top:'2px'}} />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2089,7 +2087,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Higher value produces larger momentum distance after you release sldier', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{left:'75%'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{left:'75%',top:'2px'}}/>
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2106,16 +2104,19 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Higher value produces larger momentum velocity after you release sldier', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{left:'75%'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{left:'75%',top:'2px'}}/>
 						</Tooltip>
 					</div>
 					</>
 					}
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-						    label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 6.1959 44.0907 L 49.8239 44.0907 C 53.9281 44.0907 56 42.0386 56 37.9935 L 56 19.0308 C 56 14.9659 53.9281 12.9138 49.8239 12.9138 L 6.1959 12.9138 C 2.0719 12.9138 0 14.9659 0 19.0308 L 0 37.9935 C 0 42.0583 2.0719 44.0907 6.1959 44.0907 Z M 6.2551 40.9138 C 4.2819 40.9138 3.1769 39.8680 3.1769 37.8159 L 3.1769 19.2084 C 3.1769 17.1562 4.2819 16.0906 6.2551 16.0906 L 49.7649 16.0906 C 51.7184 16.0906 52.8232 17.1562 52.8232 19.2084 L 52.8232 37.8159 C 52.8232 39.8680 51.7184 40.9138 49.7649 40.9138 Z M 46.3117 23.6678 L 47.7128 23.6678 C 48.2850 23.6678 48.5412 23.4113 48.5412 22.8391 L 48.5412 21.4381 C 48.5412 20.8856 48.2850 20.6094 47.7128 20.6094 L 46.3117 20.6094 C 45.7395 20.6094 45.4829 20.8856 45.4829 21.4381 L 45.4829 22.8391 C 45.4829 23.4113 45.7395 23.6678 46.3117 23.6678 Z M 39.9578 23.6678 L 41.3588 23.6678 C 41.9311 23.6678 42.2075 23.4113 42.2075 22.8391 L 42.2075 21.4381 C 42.2075 20.8856 41.9311 20.6094 41.3588 20.6094 L 39.9578 20.6094 C 39.4053 20.6094 39.1289 20.8856 39.1289 21.4381 L 39.1289 22.8391 C 39.1289 23.4113 39.4053 23.6678 39.9578 23.6678 Z M 33.6040 23.6678 L 35.0248 23.6678 C 35.5771 23.6678 35.8536 23.4113 35.8536 22.8391 L 35.8536 21.4381 C 35.8536 20.8856 35.5771 20.6094 35.0248 20.6094 L 33.6040 20.6094 C 33.0515 20.6094 32.7753 20.8856 32.7753 21.4381 L 32.7753 22.8391 C 32.7753 23.4113 33.0515 23.6678 33.6040 23.6678 Z M 27.2700 23.6678 L 28.6710 23.6678 C 29.2432 23.6678 29.4997 23.4113 29.4997 22.8391 L 29.4997 21.4381 C 29.4997 20.8856 29.2432 20.6094 28.6710 20.6094 L 27.2700 20.6094 C 26.6977 20.6094 26.4412 20.8856 26.4412 21.4381 L 26.4412 22.8391 C 26.4412 23.4113 26.6977 23.6678 27.2700 23.6678 Z M 20.9162 23.6678 L 22.3369 23.6678 C 22.8894 23.6678 23.1657 23.4113 23.1657 22.8391 L 23.1657 21.4381 C 23.1657 20.8856 22.8894 20.6094 22.3369 20.6094 L 20.9162 20.6094 C 20.3637 20.6094 20.0874 20.8856 20.0874 21.4381 L 20.0874 22.8391 C 20.0874 23.4113 20.3637 23.6678 20.9162 23.6678 Z M 14.5624 23.6678 L 15.9831 23.6678 C 16.5356 23.6678 16.8119 23.4113 16.8119 22.8391 L 16.8119 21.4381 C 16.8119 20.8856 16.5356 20.6094 15.9831 20.6094 L 14.5624 20.6094 C 14.0099 20.6094 13.7336 20.8856 13.7336 21.4381 L 13.7336 22.8391 C 13.7336 23.4113 14.0099 23.6678 14.5624 23.6678 Z M 8.2283 23.6678 L 9.6293 23.6678 C 10.2016 23.6678 10.4581 23.4113 10.4581 22.8391 L 10.4581 21.4381 C 10.4581 20.8856 10.2016 20.6094 9.6293 20.6094 L 8.2283 20.6094 C 7.6561 20.6094 7.3996 20.8856 7.3996 21.4381 L 7.3996 22.8391 C 7.3996 23.4113 7.6561 23.6678 8.2283 23.6678 Z M 20.9162 30.0216 L 22.3369 30.0216 C 22.8894 30.0216 23.1657 29.7454 23.1657 29.1929 L 23.1657 27.7919 C 23.1657 27.2197 22.8894 26.9631 22.3369 26.9631 L 20.9162 26.9631 C 20.3637 26.9631 20.0874 27.2197 20.0874 27.7919 L 20.0874 29.1929 C 20.0874 29.7454 20.3637 30.0216 20.9162 30.0216 Z M 27.2700 30.0216 L 28.6710 30.0216 C 29.2432 30.0216 29.4997 29.7454 29.4997 29.1929 L 29.4997 27.7919 C 29.4997 27.2197 29.2432 26.9631 28.6710 26.9631 L 27.2700 26.9631 C 26.6977 26.9631 26.4412 27.2197 26.4412 27.7919 L 26.4412 29.1929 C 26.4412 29.7454 26.6977 30.0216 27.2700 30.0216 Z M 33.6040 30.0216 L 35.0248 30.0216 C 35.5771 30.0216 35.8536 29.7454 35.8536 29.1929 L 35.8536 27.7919 C 35.8536 27.2197 35.5771 26.9631 35.0248 26.9631 L 33.6040 26.9631 C 33.0515 26.9631 32.7753 27.2197 32.7753 27.7919 L 32.7753 29.1929 C 32.7753 29.7454 33.0515 30.0216 33.6040 30.0216 Z M 39.9578 30.0216 L 41.3588 30.0216 C 41.9311 30.0216 42.2075 29.7454 42.2075 29.1929 L 42.2075 27.7919 C 42.2075 27.2197 41.9311 26.9631 41.3588 26.9631 L 39.9578 26.9631 C 39.4053 26.9631 39.1289 27.2197 39.1289 27.7919 L 39.1289 29.1929 C 39.1289 29.7454 39.4053 30.0216 39.9578 30.0216 Z M 14.5624 30.0216 L 15.9831 30.0216 C 16.5356 30.0216 16.8119 29.7454 16.8119 29.1929 L 16.8119 27.7919 C 16.8119 27.2197 16.5356 26.9631 15.9831 26.9631 L 14.5624 26.9631 C 14.0099 26.9631 13.7336 27.2197 13.7336 27.7919 L 13.7336 29.1929 C 13.7336 29.7454 14.0099 30.0216 14.5624 30.0216 Z M 46.3117 30.0216 L 47.7128 30.0216 C 48.2850 30.0216 48.5412 29.7454 48.5412 29.1929 L 48.5412 27.7919 C 48.5412 27.2197 48.2850 26.9631 47.7128 26.9631 L 46.3117 26.9631 C 45.7395 26.9631 45.4829 27.2197 45.4829 27.7919 L 45.4829 29.1929 C 45.4829 29.7454 45.7395 30.0216 46.3117 30.0216 Z M 8.2283 30.0216 L 9.6293 30.0216 C 10.2016 30.0216 10.4581 29.7454 10.4581 29.1929 L 10.4581 27.7919 C 10.4581 27.2197 10.2016 26.9631 9.6293 26.9631 L 8.2283 26.9631 C 7.6561 26.9631 7.3996 27.2197 7.3996 27.7919 L 7.3996 29.1929 C 7.3996 29.7454 7.6561 30.0216 8.2283 30.0216 Z M 14.5624 36.3754 L 41.3588 36.3754 C 41.9311 36.3754 42.2075 36.0992 42.2075 35.5467 L 42.2075 34.1259 C 42.2075 33.5735 41.9311 33.2972 41.3588 33.2972 L 14.5624 33.2972 C 14.0099 33.2972 13.7336 33.5735 13.7336 34.1259 L 13.7336 35.5467 C 13.7336 36.0992 14.0099 36.3754 14.5624 36.3754 Z M 46.3117 36.3754 L 47.7128 36.3754 C 48.2850 36.3754 48.5412 36.0992 48.5412 35.5467 L 48.5412 34.1259 C 48.5412 33.5735 48.2850 33.2972 47.7128 33.2972 L 46.3117 33.2972 C 45.7395 33.2972 45.4829 33.5735 45.4829 34.1259 L 45.4829 35.5467 C 45.4829 36.0992 45.7395 36.3754 46.3117 36.3754 Z M 8.2283 36.3754 L 9.6293 36.3754 C 10.2016 36.3754 10.4581 36.0992 10.4581 35.5467 L 10.4581 34.1259 C 10.4581 33.5735 10.2016 33.2972 9.6293 33.2972 L 8.2283 33.2972 C 7.6561 33.2972 7.3996 33.5735 7.3996 34.1259 L 7.3996 35.5467 C 7.3996 36.0992 7.6561 36.3754 8.2283 36.3754 Z"></path></svg>{__('Keyboard control', 'cocoblocks')}</>}
+						    label={ <>
+							    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z"/></svg>
+								{__('Keyboard control', 'cocoblocks')}
+								</>}
 							checked={ keyboard }
 							onChange={ ( value ) =>
 								setAttributes( { keyboard: value } )
@@ -2126,7 +2127,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enable keyboard control. Doesn\'t work in the editor!', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{top:'13px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{top:'12px'}}/>
 						</Tooltip>
 					</div>
 					{keyboard == true  &&
@@ -2144,7 +2145,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('When enabled it will control sliders that are currently in viewport', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2160,16 +2161,19 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('When enabled it will enabled keyword navigation by Page Up and Page Down keys', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					</>
                     }
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-						    label={ <><svg width="1em" height="1em" viewBox="0 0 37 57" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M0.739837823,15.7972712 L16.095128,15.7972712 L16.095128,0 C12.7831945,0.159581055 10.0615437,0.805424801 7.93017583,1.93753124 C5.79880792,3.06963768 4.15711433,4.76863283 3.00509508,7.03451671 C1.85307582,9.30040059 1.09799007,12.2213188 0.739837823,15.7972712 Z M19.8519668,15.7972712 L35.2043327,15.7972712 C34.8461804,12.2374718 34.0991712,9.32504793 32.963305,7.05999955 C31.8274388,4.79495118 30.1946573,3.0923355 28.0649604,1.95215254 C25.9352634,0.811969574 23.1975989,0.162087564 19.8519668,0.00250650872 L19.8519668,15.7972712 Z M17.9842,56 C23.8739385,56 28.3392838,54.2813705 31.3802359,50.8441116 C34.421188,47.4068526 35.941664,42.3591618 35.941664,35.7010392 C35.941664,32.6715056 35.9023954,29.7888813 35.8238581,27.0531663 C35.7453208,24.3174513 35.6284897,21.8248676 35.4733646,19.5754153 L0.470805887,19.5754153 C0.314009842,21.8248676 0.196343183,24.3174513 0.11780591,27.0531663 C0.0392686366,29.7888813 0,32.6715056 0,35.7010392 C0,42.3591618 1.52089379,47.4068526 4.56268137,50.8441116 C7.60446895,54.2813705 12.0783085,56 17.9842,56 Z" transform="translate(.647 .19)"></path></svg>{__('Mousewheel control', 'cocoblocks')}</>}
+						    label={ <>
+							   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"/></svg>
+								{__('Mousewheel control', 'cocoblocks')}
+								</>}
 							checked={ mousewheel}
 							onChange={ ( value ) =>
 								setAttributes( { mousewheel: value } )
@@ -2180,7 +2184,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enable or disable mouse wheel control for swiping.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{left:'65%',top:'13px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{left:'65%',top:'13px'}}/>
 						</Tooltip>
 					</div>
 					{mousewheel == true  &&
@@ -2198,7 +2202,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2214,7 +2218,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Set to true to invert sliding direction', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2230,7 +2234,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" />
+							<Icon icon={info} className="tooltip-icon" />
 						</Tooltip>
 					</div>
 					<div className='custom-select'>
@@ -2247,16 +2251,18 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon"  style={{left:'75%'}} />
+							<Icon icon={info} className="tooltip-icon"  style={{left:'75%',top:'2px'}} />
 						</Tooltip>
 					</div>
 					</>
                    }
 				</div>
 				<div className='content-section-panel'>
-					<div className='custom-select svg-select'>
+					<div className='custom-select'>
 						<ToggleControl
-						    label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56"><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax', 'cocoblocks')}</>}
+						    label={ <>
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>
+							{__('Parallax', 'cocoblocks')}</>}
 							checked={ parallax}
 							onChange={ ( value ) =>
 								setAttributes( { parallax: value } )
@@ -2267,7 +2273,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							style={{ padding: '10px',maxWidth:'300px',borderRadius:'4px' }}
 							text={__('Enables parallax transition effects', 'cocoblocks')}
 						>
-							<Icon icon={help} className="tooltip-icon" style={{left:'65%',top:'13px'}}/>
+							<Icon icon={info} className="tooltip-icon" style={{left:'65%',top:'13px'}}/>
 						</Tooltip>
 					</div>
 					{parallax == true && (
@@ -2299,6 +2305,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
 									delay: 1200,
 								}}
 								speed= {'1000'}
+								loop={true}
 								effect={'creative'}
 								creativeEffect={{
 								prev: {

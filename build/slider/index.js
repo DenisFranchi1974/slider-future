@@ -214,9 +214,9 @@ const formatUnderline = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ "./node_modules/@wordpress/icons/build-module/library/help.js":
+/***/ "./node_modules/@wordpress/icons/build-module/library/info.js":
 /*!********************************************************************!*\
-  !*** ./node_modules/@wordpress/icons/build-module/library/help.js ***!
+  !*** ./node_modules/@wordpress/icons/build-module/library/info.js ***!
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -232,15 +232,15 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-const help = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+const info = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
-    d: "M12 4.75a7.25 7.25 0 100 14.5 7.25 7.25 0 000-14.5zM3.25 12a8.75 8.75 0 1117.5 0 8.75 8.75 0 01-17.5 0zM12 8.75a1.5 1.5 0 01.167 2.99c-.465.052-.917.44-.917 1.01V14h1.5v-.845A3 3 0 109 10.25h1.5a1.5 1.5 0 011.5-1.5zM11.25 15v1.5h1.5V15h-1.5z"
+    d: "M12 3.2c-4.8 0-8.8 3.9-8.8 8.8 0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8 0-4.8-4-8.8-8.8-8.8zm0 16c-4 0-7.2-3.3-7.2-7.2C4.8 8 8 4.8 12 4.8s7.2 3.3 7.2 7.2c0 4-3.2 7.2-7.2 7.2zM11 17h2v-6h-2v6zm0-8h2V7h-2v2z"
   })
 });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (help);
-//# sourceMappingURL=help.js.map
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (info);
+//# sourceMappingURL=info.js.map
 
 /***/ }),
 
@@ -446,7 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/help.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 /* harmony import */ var _aligncontrol_two__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./aligncontrol-two */ "./src/components/aligncontrol-two.js");
 
@@ -910,24 +910,21 @@ const SliderControls = ({
   const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     className: "cocoblocks-panel",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slider', 'cocoblocks')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Methods', 'cocoblocks')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select",
-    style: {
-      borderRadius: '8px'
-    }
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "admin-site-alt3",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Language direction', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Language direction', 'cocoblocks')),
     value: languageSlider,
     onChange: val => setAttributes({
       languageSlider: val
@@ -948,15 +945,15 @@ const SliderControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "move",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide direction', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slider direction', 'cocoblocks')),
     value: directionSlider,
     onChange: val => setAttributes({
       directionSlider: val
@@ -983,15 +980,15 @@ const SliderControls = ({
       })
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "desktop",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide per view', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per view', 'cocoblocks')),
     value: perViewSlider,
     onChange: val => {
       setAttributes({
@@ -1013,20 +1010,21 @@ const SliderControls = ({
   }))), perViewSlider == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
     style: {
-      borderRadius: 0
+      borderRadius: 0,
+      margin: '0'
     }
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "image-flip-horizontal",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
     value: spaceBetween,
     onChange: val => setAttributes({
       spaceBetween: val
@@ -1036,15 +1034,15 @@ const SliderControls = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "desktop",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
     value: slidesPerGroupDesktop,
     onChange: val => setAttributes({
       slidesPerGroupDesktop: val
@@ -1068,15 +1066,15 @@ const SliderControls = ({
       borderBottomRightRadius: '8px'
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "screenoptions",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides rows', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M760-200v-120H200v120h560Zm0-200v-160H200v160h560Zm0-240v-120H200v120h560ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides rows', 'cocoblocks')),
     value: slidesPerRow,
     onChange: val => setAttributes({
       slidesPerRow: val
@@ -1112,15 +1110,15 @@ const SliderControls = ({
       })
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "tablet",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide per view', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide per view', 'cocoblocks')),
     value: perViewSliderTablet,
     onChange: val => {
       setAttributes({
@@ -1144,15 +1142,15 @@ const SliderControls = ({
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "image-flip-horizontal",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
     value: spaceBetweenTablet,
     onChange: val => setAttributes({
       spaceBetweenTablet: val
@@ -1162,15 +1160,15 @@ const SliderControls = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "tablet",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
     value: slidesPerGroupTablet,
     onChange: val => setAttributes({
       slidesPerGroupTablet: val
@@ -1200,15 +1198,15 @@ const SliderControls = ({
       })
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "smartphone",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per view', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per view', 'cocoblocks')),
     value: perViewSliderMobile,
     onChange: val => {
       setAttributes({
@@ -1232,15 +1230,15 @@ const SliderControls = ({
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "image-flip-horizontal",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
     value: spaceBetweenMobile,
     onChange: val => setAttributes({
       spaceBetweenMobile: val
@@ -1250,15 +1248,15 @@ const SliderControls = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "smartphone",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
     value: slidesPerGroupMobile,
     onChange: val => setAttributes({
       slidesPerGroupMobile: val
@@ -1278,38 +1276,17 @@ const SliderControls = ({
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 28 28",
       xmlns: "http://www.w3.org/2000/svg",
-      fill: "currentColor"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
-      "clip-path": "url(#clip0_1298_12)"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
-      id: "path-1-inside-1_1298_12"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M1.21289 9.13964V17.5684C0.421875 17.5068 0 17.041 0 16.1885V10.5195C0 9.66699 0.421875 9.20117 1.21289 9.13964Z"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M4.31836 7.66308V19.0977C3.4834 18.9746 3 18.5527 3 17.6123V9.15722C3 8.208 3.4834 7.78613 4.31836 7.66308Z"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M26.7871 17.6211V9.19238C27.5781 9.25391 28 9.71973 28 10.5723V16.2412C28 17.0938 27.5781 17.5596 26.7871 17.6211Z"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M23.6816 19.0977V7.66309C24.5166 7.78613 25 8.20801 25 9.14844V17.6035C25 18.5527 24.5166 18.9746 23.6816 19.0977Z"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M19.1309 21.8115H8.8916C6.99316 21.8115 6 20.8271 6 18.9463V8.86523C6 6.98438 6.99316 6 8.8916 6H18.9111C20.8096 6 21.8027 6.98438 21.8027 8.86523V18.9463C21.8027 20.8271 20.8184 21.8115 19.1309 21.8115Z"
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M1.21289 17.5684L1.0578 19.5623L3.21289 19.73V17.5684H1.21289ZM1.21289 9.13964H3.21289V6.97805L1.0578 7.14567L1.21289 9.13964ZM0 16.1885H-2H0ZM4.31836 19.0977L4.02677 21.0763L6.31836 21.414V19.0977H4.31836ZM4.31836 7.66308H6.31836V5.34674L4.02677 5.68445L4.31836 7.66308ZM3 17.6123H1H3ZM26.7871 9.19238L26.9422 7.19841L24.7871 7.03079V9.19238H26.7871ZM26.7871 17.6211H24.7871V19.7827L26.9422 19.6151L26.7871 17.6211ZM23.6816 7.66309L23.9732 5.68446L21.6816 5.34675V7.66309H23.6816ZM23.6816 19.0977H21.6816V21.414L23.9732 21.0763L23.6816 19.0977ZM3.21289 17.5684V9.13964H-0.787109V17.5684H3.21289ZM1.0578 7.14567C0.301257 7.20451 -0.547778 7.48477 -1.18736 8.20688C-1.81496 8.91547 -2 9.77867 -2 10.5195H2C2 10.4078 2.0259 10.6119 1.80699 10.859C1.5761 11.1197 1.33351 11.1363 1.36798 11.1336L1.0578 7.14567ZM-2 10.5195V16.1885H2V10.5195H-2ZM-2 16.1885C-2 16.9293 -1.81496 17.7925 -1.18736 18.5011C-0.547778 19.2232 0.301256 19.5035 1.0578 19.5623L1.36798 15.5744C1.33351 15.5717 1.5761 15.5883 1.80699 15.849C2.0259 16.0961 2 16.3002 2 16.1885H-2ZM6.31836 19.0977V7.66308H2.31836V19.0977H6.31836ZM4.02677 5.68445C3.36601 5.78183 2.53901 6.03909 1.88908 6.73023C1.21393 7.4482 1 8.34322 1 9.15722H5C5 9.08583 5.0095 9.10245 4.98579 9.17352C4.959 9.25384 4.90239 9.3648 4.80306 9.47044C4.60357 9.68258 4.43575 9.66738 4.60995 9.64171L4.02677 5.68445ZM1 9.15722V17.6123H5V9.15722H1ZM1 17.6123C1 18.4267 1.2165 19.3197 1.89223 20.0349C2.54133 20.722 3.36609 20.9789 4.02677 21.0763L4.60995 17.119C4.43567 17.0933 4.60125 17.0778 4.79991 17.2881C4.89919 17.3932 4.95674 17.5044 4.98444 17.5869C5.00906 17.6601 5 17.6797 5 17.6123H1ZM24.7871 9.19238V17.6211H28.7871V9.19238H24.7871ZM26.9422 19.6151C27.6987 19.5562 28.5478 19.276 29.1874 18.5539C29.815 17.8453 30 16.9821 30 16.2412H26C26 16.3529 25.9741 16.1489 26.193 15.9017C26.4239 15.641 26.6665 15.6244 26.632 15.6271L26.9422 19.6151ZM30 16.2412V10.5723H26V16.2412H30ZM30 10.5723C30 9.83141 29.815 8.96821 29.1874 8.25962C28.5478 7.53751 27.6987 7.25725 26.9422 7.19841L26.632 11.1864C26.6665 11.189 26.4239 11.1724 26.193 10.9118C25.9741 10.6646 26 10.4606 26 10.5723H30ZM21.6816 7.66309V19.0977H25.6816V7.66309H21.6816ZM23.9732 21.0763C24.634 20.9789 25.461 20.7217 26.1109 20.0305C26.7861 19.3125 27 18.4175 27 17.6035H23C23 17.6749 22.9905 17.6583 23.0142 17.5872C23.041 17.5069 23.0976 17.3959 23.1969 17.2903C23.3964 17.0782 23.5642 17.0934 23.3901 17.119L23.9732 21.0763ZM27 17.6035V9.14844H23V17.6035H27ZM27 9.14844C27 8.33406 26.7835 7.44109 26.1078 6.7258C25.4587 6.0387 24.6339 5.78182 23.9732 5.68446L23.3901 9.64172C23.5643 9.6674 23.3988 9.68298 23.2001 9.47269C23.1008 9.36759 23.0433 9.2563 23.0156 9.17386C22.9909 9.10059 23 9.081 23 9.14844H27ZM8.8916 23.8115H19.1309V19.8115H8.8916V23.8115ZM4 18.9463C4 20.2228 4.34111 21.5288 5.32612 22.5049C6.30803 23.4779 7.61575 23.8115 8.8916 23.8115V19.8115C8.58493 19.8115 8.39055 19.7712 8.27914 19.7336C8.17592 19.6987 8.14546 19.6674 8.14166 19.6636C8.1382 19.6602 8.10909 19.6328 8.07601 19.5367C8.03999 19.432 8 19.2453 8 18.9463H4ZM4 8.86523V18.9463H8V8.86523H4ZM8.8916 4C7.61575 4 6.30803 4.33364 5.32612 5.30667C4.34111 6.28276 4 7.5887 4 8.86523H8C8 8.56627 8.03999 8.37949 8.07601 8.27482C8.10909 8.17868 8.1382 8.15135 8.14166 8.14792C8.14546 8.14416 8.17592 8.11282 8.27914 8.07795C8.39055 8.0403 8.58493 8 8.8916 8V4ZM18.9111 4H8.8916V8H18.9111V4ZM23.8027 8.86523C23.8027 7.5887 23.4616 6.28276 22.4766 5.30667C21.4947 4.33364 20.187 4 18.9111 4V8C19.2178 8 19.4122 8.0403 19.5236 8.07795C19.6268 8.11282 19.6573 8.14416 19.6611 8.14792C19.6645 8.15135 19.6936 8.17868 19.7267 8.27482C19.7627 8.37949 19.8027 8.56627 19.8027 8.86523H23.8027ZM23.8027 18.9463V8.86523H19.8027V18.9463H23.8027ZM19.1309 23.8115C20.3632 23.8115 21.6177 23.4429 22.5498 22.4616C23.4674 21.4954 23.8027 20.2183 23.8027 18.9463H19.8027C19.8027 19.246 19.7631 19.441 19.7248 19.5563C19.6884 19.6656 19.6544 19.7017 19.6494 19.7069C19.646 19.7106 19.6296 19.7292 19.5676 19.7521C19.4983 19.7777 19.3613 19.8115 19.1309 19.8115V23.8115Z",
-      mask: "url(#path-1-inside-1_1298_12)"
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("defs", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("clipPath", {
-      id: "clip0_1298_12"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-      width: "28",
-      height: "28",
-      fill: "white"
-    })))), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered slides', 'cocoblocks')),
+      d: "M440-80v-800h80v800h-80Zm160-200v-400h120v400H600Zm-360 0v-400h120v400H240Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered slides', 'cocoblocks')),
     checked: centeredSlides,
     onChange: value => setAttributes({
       centeredSlides: value
@@ -1333,15 +1310,15 @@ const SliderControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "ellipsis",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Initial slide', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Initial slide', 'cocoblocks')),
     value: initialSlide,
     onChange: val => setAttributes({
       initialSlide: val
@@ -1361,13 +1338,13 @@ const SliderControls = ({
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "28px",
-      height: "28px",
+      width: "24px",
+      height: "24px",
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"
@@ -1391,7 +1368,7 @@ const SliderControls = ({
       top: '12px'
     }
   }))), !autoHeight && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -1412,16 +1389,16 @@ const SliderControls = ({
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 9.1211 36.2500 C 9.1211 47.8047 15.5195 52.9844 24.4492 52.9844 C 30.1211 52.9844 34.3398 51.1094 37.7148 47.5703 C 42.4023 42.6016 43.9492 35.0782 44.8398 32.125 C 45.5430 29.8047 46.8789 26.8282 46.8789 25.2578 C 46.8789 24.2500 45.5430 23.3594 44.6523 23.3594 C 42.6367 23.3594 41.8867 24.2734 40.6914 26.8047 C 39.3789 29.5938 37.7852 34.7969 36.5195 34.7969 C 35.7930 34.7969 35.5352 33.5078 35.5352 31.0469 L 35.5352 8.4297 C 35.5352 7.1875 34.7852 6.0625 33.1914 6.0625 C 31.6211 6.0625 30.8476 7.1875 30.8476 8.4297 L 30.8476 26.9453 C 30.0976 26.7344 29.2305 26.5703 28.2930 26.4297 L 28.2930 5.3594 C 28.2930 4.1172 27.5195 3.0156 25.9492 3.0156 C 24.3789 3.0156 23.6055 4.1172 23.6055 5.3594 L 23.6055 26.2656 C 22.7383 26.3125 21.8945 26.4063 21.0508 26.5469 L 21.0508 7.1641 C 21.0508 5.9219 20.2539 4.7969 18.7070 4.7969 C 17.1601 4.7969 16.3633 5.9219 16.3633 7.1641 L 16.3633 27.8594 C 15.4492 28.2344 14.5820 28.6797 13.8086 29.1719 L 13.8086 14.4531 C 13.8086 13.2109 13.0820 12.0860 11.5117 12.0860 C 9.8945 12.0860 9.1211 13.2109 9.1211 14.4531 Z"
+      d: "M473-80q-24 0-46-9t-39-26L184-320l30-31q16-16 37.5-21.5t42.5.5l66 19v-327q0-17 11.5-28.5T400-720q17 0 28.5 11.5T440-680v433l-97-27 102 102q5 5 12.5 8.5T473-160h167q33 0 56.5-23.5T720-240v-160q0-17 11.5-28.5T760-440q17 0 28.5 11.5T800-400v160q0 66-47 113T640-80H473Zm7-280v-160q0-17 11.5-28.5T520-560q17 0 28.5 11.5T560-520v160h-80Zm120 0v-120q0-17 11.5-28.5T640-520q17 0 28.5 11.5T680-480v120h-80Zm-20 80Zm300-400H680v-60h116q-66-58-147-89t-169-31q-88 0-169 31t-147 89h116v60H80v-200h60v81q72-59 159-90t181-31q94 0 181 31t159 90v-81h60v200Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grab Cursor', 'cocoblocks')),
     checked: grabCursor,
     onChange: value => setAttributes({
@@ -1446,15 +1423,15 @@ const SliderControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "update",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop Mode', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop Mode', 'cocoblocks')),
     value: loopMode,
     onChange: val => {
       setAttributes({
@@ -1492,16 +1469,23 @@ const SliderControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
-      xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56"
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 21.8712 15.5664 C 22.1524 15.5664 22.2930 15.4024 22.3399 15.1445 C 23.1368 11.3945 23.0899 11.2539 27.0040 10.4570 C 27.2852 10.4102 27.4493 10.2461 27.4493 9.9883 C 27.4493 9.7070 27.2852 9.5429 27.0040 9.4961 C 23.0899 8.6992 23.1368 8.5586 22.3399 4.8320 C 22.2930 4.5742 22.1524 4.3867 21.8712 4.3867 C 21.5899 4.3867 21.4493 4.5742 21.3790 4.8320 C 20.6055 8.5586 20.6524 8.6992 16.7149 9.4961 C 16.4571 9.5429 16.2696 9.7070 16.2696 9.9883 C 16.2696 10.2461 16.4571 10.4102 16.7149 10.4570 C 20.6524 11.2539 20.6055 11.3945 21.3790 15.1445 C 21.4493 15.4024 21.5899 15.5664 21.8712 15.5664 Z M 41.2306 23.8398 C 41.5587 23.8398 41.7462 23.6289 41.7930 23.3242 C 42.6134 18.8711 42.6368 18.5898 47.3475 17.7695 C 47.6523 17.7227 47.8866 17.5117 47.8866 17.1836 C 47.8866 16.8555 47.6523 16.6680 47.3475 16.5976 C 42.6368 15.8008 42.6134 15.5195 41.7930 11.0664 C 41.7462 10.7617 41.5587 10.5273 41.2306 10.5273 C 40.9024 10.5273 40.6915 10.7617 40.6446 11.0664 C 39.8477 15.5195 39.8243 15.8008 35.1134 16.5976 C 34.7852 16.6680 34.5743 16.8555 34.5743 17.1836 C 34.5743 17.5117 34.7852 17.7227 35.1134 17.7695 C 39.8243 18.5898 39.8477 18.8711 40.6446 23.3242 C 40.6915 23.6289 40.9024 23.8398 41.2306 23.8398 Z M 9.0274 30.5664 C 9.3555 30.5664 9.5430 30.3320 9.5899 30.0273 C 10.4102 25.5742 10.4337 25.2929 15.1446 24.4961 C 15.4493 24.4258 15.6837 24.2383 15.6837 23.9102 C 15.6837 23.5820 15.4493 23.3711 15.1446 23.3242 C 10.4337 22.5039 10.4102 22.2227 9.5899 17.7695 C 9.5430 17.4649 9.3555 17.2539 9.0274 17.2539 C 8.6993 17.2539 8.4884 17.4649 8.4415 17.7695 C 7.6212 22.2227 7.6212 22.5039 2.9102 23.3242 C 2.5821 23.3711 2.3712 23.5820 2.3712 23.9102 C 2.3712 24.2383 2.5821 24.4258 2.9102 24.4961 C 7.6212 25.2929 7.6212 25.5742 8.4415 30.0273 C 8.4884 30.3320 8.6993 30.5664 9.0274 30.5664 Z M 49.0352 50.6055 C 50.0432 51.6133 51.7304 51.6133 52.6448 50.6055 C 53.6288 49.5742 53.6288 47.9805 52.6448 46.9961 L 30.3790 24.6367 C 29.3946 23.6524 27.7071 23.6524 26.7696 24.6367 C 25.7852 25.6680 25.8087 27.2851 26.7696 28.2695 Z M 35.4181 34.5039 L 28.5508 27.6133 C 28.1290 27.1914 28.0118 26.7461 28.4102 26.3242 C 28.8087 25.9492 29.2540 26.0429 29.6993 26.4883 L 36.5899 33.3789 Z M 20.1602 50.9805 C 20.5821 50.9805 20.8868 50.6758 20.9337 50.2305 C 21.7071 43.9727 22.0118 43.8086 28.3634 42.7773 C 28.8790 42.6836 29.1837 42.4492 29.1837 41.9805 C 29.1837 41.5352 28.8790 41.2539 28.4571 41.1836 C 22.0587 39.9649 21.7071 39.9883 20.9337 33.7305 C 20.8868 33.2851 20.5821 32.9805 20.1602 32.9805 C 19.7149 32.9805 19.4102 33.2851 19.3634 33.7070 C 18.5430 40.0586 18.3087 40.2695 11.8399 41.1836 C 11.4181 41.2305 11.1134 41.5352 11.1134 41.9805 C 11.1134 42.4258 11.4181 42.6836 11.8399 42.7773 C 18.3087 44.0195 18.5196 44.0195 19.3634 50.2773 C 19.4102 50.6758 19.7149 50.9805 20.1602 50.9805 Z"
+      d: "M12 2L13.09 8.26L19.5 8.54L14.25 12.14L16.36 18.48L12 14.8L7.64 18.48L9.75 12.14L4.5 8.54L10.91 8.26L12 2Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M2 5L2.5 7.5L4 8L2.5 8.5L2 11L1.5 8.5L0 8L1.5 7.5L2 5Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M6 9L6.5 11.5L8 12L6.5 12.5L6 15L5.5 12.5L4 12L5.5 11.5L6 9Z",
+      fill: "currentColor"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Effect', 'cocoblocks')),
     value: effect,
     onChange: val => setAttributes({
@@ -1781,15 +1765,15 @@ const SliderControls = ({
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "hourglass",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Transition duration', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Transition duration', 'cocoblocks')),
     value: speed,
     onChange: val => setAttributes({
       speed: val
@@ -1809,26 +1793,26 @@ const SliderControls = ({
     className: "tooltip-icon",
     style: {
       left: '66%',
-      top: '8px'
+      top: '4px'
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('MODULES', 'cocobocks'),
-    className: "cocoblocks-panel margin-top-negative",
+    className: "cocoblocks-panel",
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "leftright",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Navigation', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M400-200 120-480l280-280v560Zm-60-145v-270L205-480l135 135Zm220 145v-560l280 280-280 280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Navigation', 'cocoblocks')),
     checked: navigation,
     onChange: value => setAttributes({
       navigation: value
@@ -1845,7 +1829,7 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      top: '9px'
+      top: '12px'
     }
   }))), navigation === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2071,15 +2055,15 @@ const SliderControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-      icon: "ellipsis",
-      style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Pagination', 'cocoblocks')),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Pagination', 'cocoblocks')),
     checked: paginationEnable,
     onChange: value => setAttributes({
       paginationEnable: value
@@ -2348,16 +2332,16 @@ const SliderControls = ({
   })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Reset Pagination', 'cocoblocks')))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 27.9999 51.9063 C 41.0546 51.9063 51.9063 41.0781 51.9063 28 C 51.9063 14.9453 41.0780 4.0937 28.0234 4.0937 C 26.7812 4.0937 26.1718 4.8437 26.1718 6.0625 L 26.1718 15.1563 C 26.1718 16.1641 26.8514 16.9844 27.8827 16.9844 C 28.9140 16.9844 29.6171 16.1641 29.6171 15.1563 L 29.6171 8.1484 C 39.9296 8.9688 47.8983 17.5 47.8983 28 C 47.8983 39.0625 39.0390 47.9219 27.9999 47.9219 C 16.9374 47.9219 8.0546 39.0625 8.0780 28 C 8.1014 23.0781 9.8593 18.6016 12.7890 15.1563 C 13.5155 14.2422 13.5624 13.1406 12.7890 12.3203 C 12.0155 11.4766 10.7030 11.5469 9.8593 12.6016 C 6.2733 16.7734 4.0937 22.1641 4.0937 28 C 4.0937 41.0781 14.9218 51.9063 27.9999 51.9063 Z M 31.7499 31.6094 C 33.6014 29.6875 33.2265 27.0625 30.9999 25.5156 L 18.6014 16.8672 C 17.4296 16.0469 16.2109 17.2656 17.0312 18.4375 L 25.6796 30.8359 C 27.2265 33.0625 29.8514 33.4609 31.7499 31.6094 Z"
+      d: "M380-300v-360l280 180-280 180ZM480-40q-108 0-202.5-49.5T120-228v108H40v-240h240v80h-98q51 75 129.5 117.5T480-120q115 0 208.5-66T820-361l78 18q-45 136-160 219.5T480-40ZM42-520q7-67 32-128.5T143-762l57 57q-32 41-52 87.5T123-520H42Zm214-241-57-57q53-44 114-69.5T440-918v80q-51 5-97 25t-87 52Zm449 0q-41-32-87.5-52T520-838v-80q67 6 128.5 31T762-818l-57 57Zm133 241q-5-51-25-97.5T761-705l57-57q44 52 69 113.5T918-520h-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Autoplay', 'cocoblocks')),
     checked: autoplay,
     onChange: value => setAttributes({
@@ -2417,7 +2401,7 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px',
+      top: '4px',
       left: '67%'
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -2463,7 +2447,7 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      top: '9px',
+      top: '11px',
       left: '65%'
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -2530,7 +2514,7 @@ const SliderControls = ({
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       width: "57",
@@ -2661,17 +2645,16 @@ const SliderControls = ({
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 51 57",
       xmlns: "http://www.w3.org/2000/svg",
-      fill: "currentColor"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M2.21558478,34.733889 C2.86274571,34.733889 3.4077387,34.5129143 3.85056375,34.070965 C4.2933888,33.6290157 4.51480132,33.102267 4.51480132,32.4907189 L4.51480132,23.5092811 C4.51480132,22.897733 4.2933888,22.3662408 3.85056375,21.9148044 C3.4077387,21.4633681 2.86274571,21.2376499 2.21558478,21.2376499 C1.58681408,21.2376499 1.06035728,21.4633681 0.636214365,21.9148044 C0.212071455,22.3662408 0,22.897733 0,23.5092811 L0,32.4907189 C0,33.102267 0.212071455,33.6290157 0.636214365,34.070965 C1.06035728,34.5129143 1.58681408,34.733889 2.21558478,34.733889 Z M11.2631398,45.4978654 C11.89337,45.4978654 12.4298977,45.2811234 12.8727227,44.8476395 C13.3155478,44.4141555 13.5369603,43.8831741 13.5369603,43.2546953 L13.5369603,12.7453047 C13.5369603,12.1168259 13.3155478,11.581174 12.8727227,11.1383489 C12.4298977,10.6955239 11.89337,10.4741114 11.2631398,10.4741114 C10.6194818,10.4741114 10.0850704,10.6955239 9.65990586,11.1383489 C9.23474127,11.581174 9.02215898,12.1168259 9.02215898,12.7453047 L9.02215898,43.2546953 C9.02215898,43.8831741 9.23474127,44.4141555 9.65990586,44.8476395 C10.0850704,45.2811234 10.6194818,45.4978654 11.2631398,45.4978654 Z M20.2879259,56 C20.9333354,56 21.473293,55.7794632 21.9077986,55.3383896 C22.3423043,54.897316 22.5595571,54.3615181 22.5595571,53.730996 L22.5595571,2.27163119 C22.5595571,1.64110904 22.3423043,1.10487331 21.9077986,0.662923984 C21.473293,0.220974661 20.9333354,0 20.2879259,0 C19.6594471,0 19.1289036,0.220974661 18.6962954,0.662923984 C18.2636871,1.10487331 18.047383,1.64110904 18.047383,2.27163119 L18.047383,53.730996 C18.047383,54.3615181 18.2636871,54.897316 18.6962954,55.3383896 C19.1289036,55.7794632 19.6594471,56 20.2879259,56 Z M29.3354809,42.1617902 C29.9639597,42.1617902 30.495452,41.9454131 30.9299576,41.5126589 C31.3644633,41.0799047 31.5817161,40.5568778 31.5817161,39.9435783 L31.5817161,16.0564217 C31.5817161,15.4431222 31.3644633,14.9149869 30.9299576,14.4720159 C30.495452,14.0290449 29.9639597,13.8075594 29.3354809,13.8075594 C28.6900715,13.8075594 28.1552953,14.0290449 27.7311524,14.4720159 C27.3070095,14.9149869 27.094938,15.4431222 27.094938,16.0564217 L27.094938,39.9435783 C27.094938,40.5568778 27.3070095,41.0799047 27.7311524,41.5126589 C28.1552953,41.9454131 28.6900715,42.1617902 29.3354809,42.1617902 Z M38.3580778,50.1339547 C38.988308,50.1339547 39.5201651,49.91298 39.9536491,49.4710307 C40.3871331,49.0290814 40.6038751,48.5021867 40.6038751,47.8903467 L40.6038751,8.11228048 C40.6038751,7.50044047 40.3871331,6.96887527 39.9536491,6.51758487 C39.5201651,6.06629448 38.988308,5.84064929 38.3580778,5.84064929 C37.7126683,5.84064929 37.1778191,6.06629448 36.7535303,6.51758487 C36.3292414,6.96887527 36.117097,7.50044047 36.117097,8.11228048 L36.117097,47.8903467 C36.117097,48.5021867 36.3292414,49.0290814 36.7535303,49.4710307 C37.1778191,49.91298 37.7126683,50.1339547 38.3580778,50.1339547 Z M47.3802368,36.9236399 C48.010467,36.9236399 48.5423971,36.7026652 48.976027,36.2607159 C49.409657,35.8187666 49.6264719,35.2911421 49.6264719,34.6778426 L49.6264719,21.3221574 C49.6264719,20.7088579 49.409657,20.1765629 48.976027,19.7252725 C48.5423971,19.2739821 48.010467,19.0483369 47.3802368,19.0483369 C46.7348273,19.0483369 46.2000511,19.2739821 45.7759082,19.7252725 C45.3517653,20.1765629 45.1396938,20.7088579 45.1396938,21.3221574 L45.1396938,34.6778426 C45.1396938,35.2911421 45.3517653,35.8187666 45.7759082,36.2607159 C46.2000511,36.7026652 46.7348273,36.9236399 47.3802368,36.9236399 Z",
-      transform: "translate(.647 .504)"
+      d: "M280-240v-480h80v480h-80ZM440-80v-800h80v800h-80ZM120-400v-160h80v160h-80Zm480 160v-480h80v480h-80Zm160-160v-160h80v160h-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Free mode', 'cocoblocks')),
     checked: freeMode,
     onChange: value => setAttributes({
@@ -2771,7 +2754,8 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%'
+      left: '75%',
+      top: '2px'
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2796,7 +2780,8 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%'
+      left: '75%',
+      top: '2px'
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2821,21 +2806,22 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%'
+      left: '75%',
+      top: '2px'
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 6.1959 44.0907 L 49.8239 44.0907 C 53.9281 44.0907 56 42.0386 56 37.9935 L 56 19.0308 C 56 14.9659 53.9281 12.9138 49.8239 12.9138 L 6.1959 12.9138 C 2.0719 12.9138 0 14.9659 0 19.0308 L 0 37.9935 C 0 42.0583 2.0719 44.0907 6.1959 44.0907 Z M 6.2551 40.9138 C 4.2819 40.9138 3.1769 39.8680 3.1769 37.8159 L 3.1769 19.2084 C 3.1769 17.1562 4.2819 16.0906 6.2551 16.0906 L 49.7649 16.0906 C 51.7184 16.0906 52.8232 17.1562 52.8232 19.2084 L 52.8232 37.8159 C 52.8232 39.8680 51.7184 40.9138 49.7649 40.9138 Z M 46.3117 23.6678 L 47.7128 23.6678 C 48.2850 23.6678 48.5412 23.4113 48.5412 22.8391 L 48.5412 21.4381 C 48.5412 20.8856 48.2850 20.6094 47.7128 20.6094 L 46.3117 20.6094 C 45.7395 20.6094 45.4829 20.8856 45.4829 21.4381 L 45.4829 22.8391 C 45.4829 23.4113 45.7395 23.6678 46.3117 23.6678 Z M 39.9578 23.6678 L 41.3588 23.6678 C 41.9311 23.6678 42.2075 23.4113 42.2075 22.8391 L 42.2075 21.4381 C 42.2075 20.8856 41.9311 20.6094 41.3588 20.6094 L 39.9578 20.6094 C 39.4053 20.6094 39.1289 20.8856 39.1289 21.4381 L 39.1289 22.8391 C 39.1289 23.4113 39.4053 23.6678 39.9578 23.6678 Z M 33.6040 23.6678 L 35.0248 23.6678 C 35.5771 23.6678 35.8536 23.4113 35.8536 22.8391 L 35.8536 21.4381 C 35.8536 20.8856 35.5771 20.6094 35.0248 20.6094 L 33.6040 20.6094 C 33.0515 20.6094 32.7753 20.8856 32.7753 21.4381 L 32.7753 22.8391 C 32.7753 23.4113 33.0515 23.6678 33.6040 23.6678 Z M 27.2700 23.6678 L 28.6710 23.6678 C 29.2432 23.6678 29.4997 23.4113 29.4997 22.8391 L 29.4997 21.4381 C 29.4997 20.8856 29.2432 20.6094 28.6710 20.6094 L 27.2700 20.6094 C 26.6977 20.6094 26.4412 20.8856 26.4412 21.4381 L 26.4412 22.8391 C 26.4412 23.4113 26.6977 23.6678 27.2700 23.6678 Z M 20.9162 23.6678 L 22.3369 23.6678 C 22.8894 23.6678 23.1657 23.4113 23.1657 22.8391 L 23.1657 21.4381 C 23.1657 20.8856 22.8894 20.6094 22.3369 20.6094 L 20.9162 20.6094 C 20.3637 20.6094 20.0874 20.8856 20.0874 21.4381 L 20.0874 22.8391 C 20.0874 23.4113 20.3637 23.6678 20.9162 23.6678 Z M 14.5624 23.6678 L 15.9831 23.6678 C 16.5356 23.6678 16.8119 23.4113 16.8119 22.8391 L 16.8119 21.4381 C 16.8119 20.8856 16.5356 20.6094 15.9831 20.6094 L 14.5624 20.6094 C 14.0099 20.6094 13.7336 20.8856 13.7336 21.4381 L 13.7336 22.8391 C 13.7336 23.4113 14.0099 23.6678 14.5624 23.6678 Z M 8.2283 23.6678 L 9.6293 23.6678 C 10.2016 23.6678 10.4581 23.4113 10.4581 22.8391 L 10.4581 21.4381 C 10.4581 20.8856 10.2016 20.6094 9.6293 20.6094 L 8.2283 20.6094 C 7.6561 20.6094 7.3996 20.8856 7.3996 21.4381 L 7.3996 22.8391 C 7.3996 23.4113 7.6561 23.6678 8.2283 23.6678 Z M 20.9162 30.0216 L 22.3369 30.0216 C 22.8894 30.0216 23.1657 29.7454 23.1657 29.1929 L 23.1657 27.7919 C 23.1657 27.2197 22.8894 26.9631 22.3369 26.9631 L 20.9162 26.9631 C 20.3637 26.9631 20.0874 27.2197 20.0874 27.7919 L 20.0874 29.1929 C 20.0874 29.7454 20.3637 30.0216 20.9162 30.0216 Z M 27.2700 30.0216 L 28.6710 30.0216 C 29.2432 30.0216 29.4997 29.7454 29.4997 29.1929 L 29.4997 27.7919 C 29.4997 27.2197 29.2432 26.9631 28.6710 26.9631 L 27.2700 26.9631 C 26.6977 26.9631 26.4412 27.2197 26.4412 27.7919 L 26.4412 29.1929 C 26.4412 29.7454 26.6977 30.0216 27.2700 30.0216 Z M 33.6040 30.0216 L 35.0248 30.0216 C 35.5771 30.0216 35.8536 29.7454 35.8536 29.1929 L 35.8536 27.7919 C 35.8536 27.2197 35.5771 26.9631 35.0248 26.9631 L 33.6040 26.9631 C 33.0515 26.9631 32.7753 27.2197 32.7753 27.7919 L 32.7753 29.1929 C 32.7753 29.7454 33.0515 30.0216 33.6040 30.0216 Z M 39.9578 30.0216 L 41.3588 30.0216 C 41.9311 30.0216 42.2075 29.7454 42.2075 29.1929 L 42.2075 27.7919 C 42.2075 27.2197 41.9311 26.9631 41.3588 26.9631 L 39.9578 26.9631 C 39.4053 26.9631 39.1289 27.2197 39.1289 27.7919 L 39.1289 29.1929 C 39.1289 29.7454 39.4053 30.0216 39.9578 30.0216 Z M 14.5624 30.0216 L 15.9831 30.0216 C 16.5356 30.0216 16.8119 29.7454 16.8119 29.1929 L 16.8119 27.7919 C 16.8119 27.2197 16.5356 26.9631 15.9831 26.9631 L 14.5624 26.9631 C 14.0099 26.9631 13.7336 27.2197 13.7336 27.7919 L 13.7336 29.1929 C 13.7336 29.7454 14.0099 30.0216 14.5624 30.0216 Z M 46.3117 30.0216 L 47.7128 30.0216 C 48.2850 30.0216 48.5412 29.7454 48.5412 29.1929 L 48.5412 27.7919 C 48.5412 27.2197 48.2850 26.9631 47.7128 26.9631 L 46.3117 26.9631 C 45.7395 26.9631 45.4829 27.2197 45.4829 27.7919 L 45.4829 29.1929 C 45.4829 29.7454 45.7395 30.0216 46.3117 30.0216 Z M 8.2283 30.0216 L 9.6293 30.0216 C 10.2016 30.0216 10.4581 29.7454 10.4581 29.1929 L 10.4581 27.7919 C 10.4581 27.2197 10.2016 26.9631 9.6293 26.9631 L 8.2283 26.9631 C 7.6561 26.9631 7.3996 27.2197 7.3996 27.7919 L 7.3996 29.1929 C 7.3996 29.7454 7.6561 30.0216 8.2283 30.0216 Z M 14.5624 36.3754 L 41.3588 36.3754 C 41.9311 36.3754 42.2075 36.0992 42.2075 35.5467 L 42.2075 34.1259 C 42.2075 33.5735 41.9311 33.2972 41.3588 33.2972 L 14.5624 33.2972 C 14.0099 33.2972 13.7336 33.5735 13.7336 34.1259 L 13.7336 35.5467 C 13.7336 36.0992 14.0099 36.3754 14.5624 36.3754 Z M 46.3117 36.3754 L 47.7128 36.3754 C 48.2850 36.3754 48.5412 36.0992 48.5412 35.5467 L 48.5412 34.1259 C 48.5412 33.5735 48.2850 33.2972 47.7128 33.2972 L 46.3117 33.2972 C 45.7395 33.2972 45.4829 33.5735 45.4829 34.1259 L 45.4829 35.5467 C 45.4829 36.0992 45.7395 36.3754 46.3117 36.3754 Z M 8.2283 36.3754 L 9.6293 36.3754 C 10.2016 36.3754 10.4581 36.0992 10.4581 35.5467 L 10.4581 34.1259 C 10.4581 33.5735 10.2016 33.2972 9.6293 33.2972 L 8.2283 33.2972 C 7.6561 33.2972 7.3996 33.5735 7.3996 34.1259 L 7.3996 35.5467 C 7.3996 36.0992 7.6561 36.3754 8.2283 36.3754 Z"
+      d: "M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Keyboard control', 'cocoblocks')),
     checked: keyboard,
     onChange: value => setAttributes({
@@ -2853,7 +2839,7 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      top: '13px'
+      top: '12px'
     }
   }))), keyboard == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2896,17 +2882,16 @@ const SliderControls = ({
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 37 57",
       xmlns: "http://www.w3.org/2000/svg",
-      fill: "currentColor"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M0.739837823,15.7972712 L16.095128,15.7972712 L16.095128,0 C12.7831945,0.159581055 10.0615437,0.805424801 7.93017583,1.93753124 C5.79880792,3.06963768 4.15711433,4.76863283 3.00509508,7.03451671 C1.85307582,9.30040059 1.09799007,12.2213188 0.739837823,15.7972712 Z M19.8519668,15.7972712 L35.2043327,15.7972712 C34.8461804,12.2374718 34.0991712,9.32504793 32.963305,7.05999955 C31.8274388,4.79495118 30.1946573,3.0923355 28.0649604,1.95215254 C25.9352634,0.811969574 23.1975989,0.162087564 19.8519668,0.00250650872 L19.8519668,15.7972712 Z M17.9842,56 C23.8739385,56 28.3392838,54.2813705 31.3802359,50.8441116 C34.421188,47.4068526 35.941664,42.3591618 35.941664,35.7010392 C35.941664,32.6715056 35.9023954,29.7888813 35.8238581,27.0531663 C35.7453208,24.3174513 35.6284897,21.8248676 35.4733646,19.5754153 L0.470805887,19.5754153 C0.314009842,21.8248676 0.196343183,24.3174513 0.11780591,27.0531663 C0.0392686366,29.7888813 0,32.6715056 0,35.7010392 C0,42.3591618 1.52089379,47.4068526 4.56268137,50.8441116 C7.60446895,54.2813705 12.0783085,56 17.9842,56 Z",
-      transform: "translate(.647 .19)"
+      d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Mousewheel control', 'cocoblocks')),
     checked: mousewheel,
     onChange: value => setAttributes({
@@ -3007,21 +2992,22 @@ const SliderControls = ({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%'
+      left: '75%',
+      top: '2px'
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56"
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Parallax', 'cocoblocks')),
     checked: parallax,
     onChange: value => setAttributes({
@@ -3066,6 +3052,7 @@ const SliderControls = ({
       delay: 1200
     },
     speed: '1000',
+    loop: true,
     effect: 'creative',
     creativeEffect: {
       prev: {
@@ -3469,7 +3456,15 @@ const AlignmentControlThree = ({
     onClick: () => setIsPopoverOpen(!isPopoverOpen),
     "aria-expanded": isPopoverOpen,
     "aria-haspopup": "true",
-    icon: 'editor-alignleft' // Mostra l'icona selezionata o un'icona di default
+    icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-80h720v80H120Zm0-160v-80h480v80H120Zm0-160v-80h720v80H120Zm0-160v-80h480v80H120Zm0-160v-80h720v80H120Z"
+    })) // Mostra l'icona selezionata o un'icona di default
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide__label"
   }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text align', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
@@ -3558,18 +3553,16 @@ const AlignmentControlTwo = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: () => setIsPopoverOpen(!isPopoverOpen),
     "aria-expanded": isPopoverOpen,
-    "aria-haspopup": "true",
-    icon: 'screenoptions' // Mostra l'icona selezionata o un'icona di default
+    "aria-haspopup": "true"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide__label"
-  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Position', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: selectedIcon || "screenoptions",
-    style: {
-      right: '-50px'
-    }
+  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Position', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "group-icon-position"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+    icon: selectedIcon || "screenoptions"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     class: "ico-align-content dashicons dashicons-arrow-down-alt2"
-  }))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
+  })))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
     position: "bottom left",
     onClickOutside: () => setIsPopoverOpen(false),
     className: "popow-content-ico"
@@ -3686,11 +3679,13 @@ const AlignmentControl = ({
     icon: 'editor-alignleft' // Mostra l'icona selezionata o un'icona di default
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide__label"
-  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content position', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  }, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content position', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "group-icon-position"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: selectedIcon || "editor-alignleft"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     class: "ico-align-content dashicons dashicons-arrow-down-alt2"
-  }))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
+  })))), isPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
     position: "bottom left",
     onClickOutside: () => setIsPopoverOpen(false),
     className: "popow-content-ico"
@@ -3770,13 +3765,14 @@ const ColorOptionsPanel = ({
       height: '20px',
       borderRadius: '24%',
       backgroundColor: colorNormal,
-      border: '1px solid var(--light-color)'
+      border: '1px solid var(--light-color)',
+      marginRight: '-6px'
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "dashicons dashicons-arrow-down-alt2",
     style: {
       position: 'absolute',
-      right: '12px',
+      right: '6px',
       top: '12px',
       fontSize: '12px'
     }
@@ -3851,13 +3847,14 @@ const ColorOptionsPanelGradient = ({
       height: '20px',
       borderRadius: '24%',
       background: gradient,
-      border: '1px solid var(--light-color)'
+      border: '1px solid var(--light-color)',
+      marginRight: '-6px'
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "dashicons dashicons-arrow-down-alt2",
     style: {
       position: 'absolute',
-      right: '12px',
+      right: '6px',
       top: '12px',
       fontSize: '12px'
     }
@@ -3936,7 +3933,15 @@ const FontStyle = ({
     onClick: () => setIsPopoverOpen(!isPopoverOpen),
     "aria-expanded": isPopoverOpen,
     "aria-haspopup": "true",
-    icon: 'editor-spellcheck' // Mostra un'icona di default se nessuna icona è selezionata
+    icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M40-199v-200h80v120h720v-120h80v200H40Zm342-161v-34h-3q-13 20-35 31.5T294-351q-49 0-77-25.5T189-446q0-42 32.5-68.5T305-541q23 0 42.5 3.5T381-526v-14q0-27-18.5-43T312-599q-21 0-39.5 9T241-564l-43-32q19-27 48-41t67-14q62 0 95 29.5t33 85.5v176h-59Zm-66-134q-32 0-49 12.5T250-446q0 20 15 32.5t39 12.5q32 0 54.5-22.5T381-478q-14-8-32-12t-33-4Zm185 134v-401h62v113l-3 40h3q3-5 24-25.5t66-20.5q64 0 101 46t37 106q0 60-36.5 105.5T653-351q-41 0-62.5-18T563-397h-3v37h-59Zm143-238q-40 0-62 29.5T560-503q0 37 22 66t62 29q40 0 62.5-29t22.5-66q0-37-22.5-66T644-598Z"
+    })) // Mostra un'icona di default se nessuna icona è selezionata
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide__label"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Font style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5586,12 +5591,14 @@ function Edit({
     const isSelected = selectedPanel === panelId;
     const circleStyle = {
       display: "inline-block",
-      width: "10px",
-      height: "10px",
-      borderRadius: "50%",
+      width: "12px",
+      height: "12px",
+      borderRadius: "3px",
       border: `2px solid ${primaryColor}`,
       backgroundColor: isSelected ? primaryColor : "transparent",
-      marginRight: "8px"
+      marginRight: "8px",
+      transition: "transform 0.3s, background-color 0.3s",
+      transform: isSelected ? "scale(1.2)" : "scale(1)"
     };
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       style: circleStyle
@@ -5723,7 +5730,7 @@ function Edit({
     onSelect: onSelect,
     tabs: [{
       name: "tab1",
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parameters", "wp-kube")
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Configurations", "wp-kube")
     }, {
       name: "tab2",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content", "wp-kube")
@@ -5769,9 +5776,9 @@ function Edit({
     className: "title-tab-background"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    height: "18px",
+    height: "24px",
     viewBox: "0 -960 960 960",
-    width: "18px",
+    width: "24px",
     fill: "#5f6368"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
@@ -5802,19 +5809,54 @@ function Edit({
       title: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Video", "your-text-domain"))
     }]
   }, tab => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, tab.name === "color" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
+    className: "custom-select color",
+    style: {
+      marginTop: '6px',
+      paddingLeft: '6px',
+      marginRight: '-6px'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
     colorNormal: slide.backgroundColor,
     setColorNormal: color => updateSlideBackgroundColor(slide.id, color),
-    buttonIcon: "admin-customizer"
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: '-4px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
+    }))
   })), tab.name === "gradient" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
+    className: "custom-select color",
+    style: {
+      marginTop: '6px',
+      paddingLeft: '6px',
+      marginRight: '-6px'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__["default"], {
     gradient: slide.backgroundGradient,
     setGradient: gradient => updateSlideBackgroundGradient(slide.id, gradient),
-    buttonIcon: "admin-customizer"
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: '-4px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
+    }))
   })), tab.name === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-img-upload"
+    className: "content-img-upload",
+    style: {
+      marginTop: '6px'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => updateSlideBackgroundImage(slide.id, media.url),
     allowedTypes: ["image"],
@@ -5826,29 +5868,38 @@ function Edit({
         width: "100%",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        paddingLeft: "1px",
+        paddingRight: "0px"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-format-image",
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
-        fontSize: "16px",
-        width: "16px",
-        height: "16px",
-        marginLeft: "-2px",
-        marginRight: "5px"
+        display: 'flex',
+        alignItems: 'center'
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '5px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
-        right: "2px",
-        top: "6px",
+        right: "0px",
+        top: "4px",
         fontSize: "12px"
       }
     })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         position: "relative",
-        padding: "0px 10px",
+        padding: "0px 4px",
         marginTop: "12px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FocalPointPicker, {
@@ -5889,7 +5940,10 @@ function Edit({
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Image", "wp-kube")
   })), tab.name === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-img-upload"
+    className: "content-img-upload",
+    style: {
+      marginTop: '6px'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => updateSlideBackgroundVideo(slide.id, media.url),
     allowedTypes: ["video"],
@@ -5901,29 +5955,38 @@ function Edit({
         width: "100%",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        paddingLeft: "1px",
+        paddingRight: "0px"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-format-video",
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
-        fontSize: "16px",
-        width: "16px",
-        height: "16px",
-        marginLeft: "-2px",
-        marginRight: "5px"
+        display: 'flex',
+        alignItems: 'center'
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Video", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: '5px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m380-300 280-180-280-180v360ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Video", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
-        right: "2px",
-        top: "6px",
+        right: "0px",
+        top: "4px",
         fontSize: "12px"
       }
     })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         position: "relative",
-        padding: "0px 10px",
+        padding: "0px 4px",
         marginTop: "12px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FocalPointPicker, {
@@ -5950,15 +6013,15 @@ function Edit({
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-      icon: "screenoptions",
-      style: {
-        marginRight: "5px",
-        width: "16px",
-        height: "16px",
-        fontSize: "16px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content direction", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160Zm-400 0h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content direction", "cocoblocks")),
     value: slide.layout,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column", "slider"),
@@ -5971,15 +6034,15 @@ function Edit({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-      icon: "image-flip-horizontal",
-      style: {
-        marginRight: "5px",
-        width: "16px",
-        height: "16px",
-        fontSize: "16px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between items", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between items", "cocoblocks")),
     value: slide.gapItems,
     onChange: newGapItems => updateSlideGapItems(slide.id, newGapItems),
     min: 0,
@@ -6018,9 +6081,7 @@ function Edit({
       width: "18px",
       fill: "#e8eaed",
       style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px'
+        marginRight: '2px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
@@ -6040,9 +6101,7 @@ function Edit({
       width: "18px",
       fill: "#e8eaed",
       style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px'
+        marginRight: '2px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
@@ -6062,9 +6121,7 @@ function Edit({
       width: "18px",
       fill: "#e8eaed",
       style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px'
+        marginRight: '2px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
@@ -6084,9 +6141,7 @@ function Edit({
       width: "18px",
       fill: "#e8eaed",
       style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px',
+        marginRight: '2px',
         transform: 'rotate(90deg)'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
@@ -6127,7 +6182,7 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-move",
     style: {
-      marginTop: "6px",
+      marginTop: "2px",
       marginBottom: "10px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
@@ -6144,12 +6199,14 @@ function Edit({
     size: "small",
     disabled: elementIndex === slide.elements.length - 1,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move after", "cocoblocks")
-  }, "\u2193"))), element.type === "title" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "\u2193"))), element.type === "title" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select",
     style: {
-      paddingTop: "6px"
+      paddingTop: "8px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     isDestructive: true,
@@ -6158,21 +6215,24 @@ function Edit({
     style: {
       position: "absolute",
       right: "70px",
-      top: "2px"
+      top: "-2px"
     },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Text", "cocoblocks"),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-media-text",
-      style: {
-        marginRight: "5px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text", "cocoblocks")),
     value: element.text,
     onChange: newTitle => updateSlideTitle(slide.id, elementIndex, newTitle),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add text content...", "cocoblocks")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
     colorNormal: element.textColor,
@@ -6183,11 +6243,11 @@ function Edit({
       viewBox: "0 -960 960 960",
       fill: "#e8eaed",
       style: {
-        marginBottom: '-10px',
+        marginBottom: '-9px',
         height: '24px',
         width: '24px',
-        marginLeft: '-3px',
-        marginRight: '-5px'
+        marginLeft: '-4px',
+        marginRight: '-4px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
@@ -6204,7 +6264,7 @@ function Edit({
     ,
     onChange: (styleType, value) => updateFontStyle(slide.id, elementIndex, styleType, value)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -6239,60 +6299,85 @@ function Edit({
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H1', 'cocoblocks'),
       value: 'h1'
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
     className: "device-switcher"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     size: "small",
     isPressed: device === "desktop",
     onClick: handleDesktopClick
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-desktop",
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
     style: {
-      height: '16px',
       width: '16px',
-      fontSize: '16px'
+      height: '16px'
     }
-  })), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+  }))), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     size: "small",
     isPressed: device === "tablet",
     onClick: () => setAttributes({
       device: "tablet"
     })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-tablet",
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
     style: {
-      height: '16px',
       width: '16px',
-      fontSize: '16px'
+      height: '16px'
     }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     size: "small",
     isPressed: device === "mobile",
     onClick: () => setAttributes({
       device: "mobile"
     })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-smartphone",
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
     style: {
-      height: '16px',
       width: '16px',
-      fontSize: '16px'
+      height: '16px'
     }
-  })))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+  }))))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
+      height: "24px",
       viewBox: "0 -960 960 960",
-      width: "18px",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
       fill: "#e8eaed",
       style: {
-        marginBottom: '-5px',
-        marginRight: '5px'
+        width: '16px',
+        height: '16px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: "desktop",
+      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+    })),
     value: element.fontSize,
     onChange: newSize => updateFontSize(slide.id, elementIndex, newSize),
     min: 4,
@@ -6301,18 +6386,26 @@ function Edit({
   }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
+      height: "24px",
       viewBox: "0 -960 960 960",
-      width: "18px",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
       fill: "#e8eaed",
       style: {
-        marginBottom: '-5px',
-        marginRight: '5px'
+        width: '16px',
+        height: '16px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: "tablet",
+      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+    })),
     value: element.fontSizeTablet,
     onChange: newSizeTablet => updateFontSizeTablet(slide.id, elementIndex, newSizeTablet),
     min: 4,
@@ -6321,24 +6414,32 @@ function Edit({
   }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
+      height: "24px",
       viewBox: "0 -960 960 960",
-      width: "18px",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
       fill: "#e8eaed",
       style: {
-        marginBottom: '-5px',
-        marginRight: '5px'
+        width: '16px',
+        height: '16px'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: "smartphone",
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+    })),
     value: element.fontSizeMobile,
     onChange: newSizeMobile => updateFontSizeMobile(slide.id, elementIndex, newSizeMobile),
     min: 4,
     max: 128,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -6346,12 +6447,7 @@ function Edit({
       height: "18px",
       viewBox: "0 -960 960 960",
       width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px'
-      }
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Line height", "cocoblocks")),
@@ -6384,17 +6480,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax offset X', 'cocoblocks')),
     value: element.parallaxTitle,
     onChange: newParallaxTitle => updateParallaxTitle(slide.id, elementIndex, newParallaxTitle),
@@ -6405,17 +6497,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax offset Y', 'cocoblocks')),
     value: element.parallaxTitleY,
     onChange: newParallaxTitleY => updateParallaxTitleY(slide.id, elementIndex, newParallaxTitleY),
@@ -6426,17 +6514,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax scale', 'cocoblocks')),
     value: element.parallaxTitleScale,
     onChange: newParallaxTitleScale => updateParallaxTitleScale(slide.id, elementIndex, newParallaxTitleScale),
@@ -6447,17 +6531,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax opacity', 'cocoblocks')),
     value: element.parallaxTitleOpacity,
     onChange: newParallaxTitleOpacity => updateParallaxTitleOpacity(slide.id, elementIndex, newParallaxTitleOpacity),
@@ -6468,24 +6548,20 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax duration', 'cocoblocks')),
     value: element.parallaxTitleDuration,
     onChange: newParallaxTitleDuration => updateParallaxTitleDuration(slide.id, elementIndex, newParallaxTitleDuration),
     min: 100,
     max: 2000,
     step: 10
-  }))))), element.type === "div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))), element.type === "div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -6703,7 +6779,7 @@ function Edit({
     ,
     onChange: (styleTypeDiv, value) => updateFontStyleDiv(slide.id, elementIndex, styleTypeDiv, value)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select svg-select"
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -7053,22 +7129,32 @@ function Edit({
   })))))), element.type === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select",
+    style: {
+      paddingTop: "15px",
+      marginTop: '-20px'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-img-upload"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "label-image-element"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-label-image"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-format-image",
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
     style: {
-      fontSize: "16px",
-      width: "16px",
-      marginRight: "10px",
-      color: "var(--light-color)"
+      marginTop: '-5px',
+      marginRight: '5px'
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeSlideImage(slide.id, elementIndex),
     isDestructive: true,
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
@@ -7119,24 +7205,22 @@ function Edit({
       icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
-  })), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
+  })))), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       height: "20px",
       viewBox: "0 -960 960 960",
       width: "20px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: '5px',
-        marginBottom: '-6px'
-      }
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alt Text", "cocoblocks")),
     value: element.alt || "",
     onChange: newAlt => updateSlideImage(slide.id, elementIndex, element.url, newAlt),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add alt text...", "cocoblocks")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7144,11 +7228,7 @@ function Edit({
       height: "20px",
       viewBox: "0 -960 960 960",
       width: "20px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: '5px',
-        marginBottom: '-6px'
-      }
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image fit", "cocoblocks")),
@@ -7169,11 +7249,7 @@ function Edit({
       height: "20px",
       viewBox: "0 -960 960 960",
       width: "20px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: '5px',
-        marginBottom: '-6px'
-      }
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Width', 'cocoblocks')),
@@ -7217,8 +7293,6 @@ function Edit({
       width: "20px",
       fill: "#e8eaed",
       style: {
-        marginRight: '5px',
-        marginBottom: '-6px',
         transform: 'rotate(90deg)'
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
@@ -7285,12 +7359,7 @@ function Edit({
       height: "18px",
       viewBox: "0 -960 960 960",
       width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px'
-      }
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
@@ -7307,12 +7376,7 @@ function Edit({
       height: "18px",
       viewBox: "0 -960 960 960",
       width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: '4px',
-        marginLeft: '-2px',
-        marginBottom: '-4px'
-      }
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
@@ -7385,7 +7449,22 @@ function Edit({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob Mask", "cocoblocks"),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M12 2C8.686 2 6 4.686 6 8C6 11.314 8.686 14 12 14C15.314 14 18 11.314 18 8C18 4.686 15.314 2 12 2Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M6 8C3.79 8 2 9.79 2 12C2 14.21 3.79 16 6 16C8.21 16 10 14.21 10 12C10 9.79 8.21 8 6 8Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M18 8C16.14 8 14.5 9.64 14.5 11.5C14.5 13.36 16.14 15 18 15C19.86 15 21.5 13.36 21.5 11.5C21.5 9.64 19.86 8 18 8Z",
+      fill: "currentColor"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob Mask", "cocoblocks")),
     value: element.blobMask,
     onChange: newBlobMask => updateBlobMask(slide.id, elementIndex, newBlobMask),
     options: [{
@@ -7408,17 +7487,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax offset X', 'cocoblocks')),
     value: element.parallaxImage,
     onChange: newParallaxImage => updateParallaxImage(slide.id, elementIndex, newParallaxImage),
@@ -7429,17 +7504,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax offset Y', 'cocoblocks')),
     value: element.parallaxImageY,
     onChange: newParallaxImageY => updateParallaxImageY(slide.id, elementIndex, newParallaxImageY),
@@ -7450,17 +7521,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax scale', 'cocoblocks')),
     value: element.parallaxImageScale,
     onChange: newParallaxImageScale => updateParallaxImageScale(slide.id, elementIndex, newParallaxImageScale),
@@ -7471,17 +7538,13 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax opacity', 'cocoblocks')),
     value: element.parallaxImageOpacity,
     onChange: newParallaxImageOpacity => updateParallaxImageOpacity(slide.id, elementIndex, newParallaxImageOpacity),
@@ -7492,24 +7555,20 @@ function Edit({
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      fill: "currentcolor",
       xmlns: "http://www.w3.org/2000/svg",
-      width: "1em",
-      height: "1em",
-      viewBox: "0 0 56 56",
-      style: {
-        marginRight: '7px',
-        marginBottom: '-2px'
-      }
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Parallax duration', 'cocoblocks')),
     value: element.parallaxImageDuration,
     onChange: newParallaxImageDuration => updateParallaxImageDuration(slide.id, elementIndex, newParallaxImageDuration),
     min: 100,
     max: 2000,
     step: 10
-  }))))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-add-element"

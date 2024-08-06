@@ -70,16 +70,15 @@
   border-top: 1px dashed var(--light-color);
 }
 
+.cocoblocks-panel .components-range-control .components-input-control__container {
+  margin-right: 0 !important;
+}
+
 /* No Focus */
 .cocoblocks-panel button:focus {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
-}
-
-/* Margin Negative */
-.cocoblocks-panel.margin-top-negative {
-  margin-top: -24px !important;
 }
 
 /* Svg panel slide */
@@ -121,9 +120,6 @@
 .cocoblocks-panel.panel-slide .content-img-upload button {
   color: var(--light-color) !important;
 }
-.cocoblocks-panel.panel-slide .background-selector {
-  border-bottom: 1px solid var(--dark-button);
-}
 .cocoblocks-panel.panel-slide .button-move button {
   color: var(--primary-color);
 }
@@ -145,8 +141,6 @@
 }
 .cocoblocks-panel.panel-slide .device-switcher {
   float: right;
-  margin-top: 7px;
-  margin-right: 10px;
 }
 .cocoblocks-panel.panel-slide .device-switcher button {
   color: var(--light-color);
@@ -188,10 +182,16 @@
 .cocoblocks-panel.panel-slide .title-tab-background {
   display: flex;
   align-items: center;
-  padding-left: 10px;
 }
 .cocoblocks-panel.panel-slide .title-tab-background svg {
   fill: var(--light-color);
+  width: 18px;
+  height: 18px;
+}
+.cocoblocks-panel.panel-slide .content-img-upload svg {
+  fill: var(--light-color);
+  width: 18px;
+  height: 18px;
 }
 .cocoblocks-panel.panel-slide .components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link).button-remove-element {
   color: var(--light-color);
@@ -227,7 +227,6 @@
 .cocoblocks-panel.panel-slide .label-image-element .content-label-image {
   display: flex;
   align-items: center;
-  margin-left: 12px;
   width: 100%;
 }
 .cocoblocks-panel.panel-slide .label-image-element h2 {
@@ -411,15 +410,13 @@
 .cocoblocks-panel .components-range-control {
   padding: 10px !important;
 }
-.cocoblocks-panel .components-range-control .components-input-control__container {
-  margin-right: -10px;
-}
 .cocoblocks-panel .components-range-control input {
   color: var(--light-color) !important;
   background-color: var(--background-color) !important;
 }
 .cocoblocks-panel .components-range-control__wrapper {
   color: var(--primary-color);
+  margin-left: 6px;
 }
 .cocoblocks-panel .components-range-control__thumb-wrapper span,
 .cocoblocks-panel .components-range-control__thumb-wrapper span::before {
@@ -465,6 +462,7 @@
 }
 .cocoblocks-panel .components-input-control__container .components-input-control__suffix svg {
   fill: var(--light-color) !important;
+  margin-right: -6px !important;
 }
 .cocoblocks-panel .color-options-panel.color-gradient .components-select-control {
   flex-direction: column !important;
@@ -530,24 +528,26 @@
 }
 .cocoblocks-panel .components-base-control {
   margin-bottom: 0 !important;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0 !important;
 }
 .cocoblocks-panel .postion-slide h2 {
   color: var(--light-color);
   font-size: 12px;
   margin: 0;
-  margin-left: 2px;
+  margin-left: 6px;
 }
 .cocoblocks-panel .postion-slide button {
   width: 100%;
+  padding: 0;
+}
+.cocoblocks-panel .postion-slide svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--light-color);
 }
 .cocoblocks-panel .postion-slide .ico-align-content {
   font-size: 12px;
   color: var(--light-color);
-  right: 7px;
   top: 4px;
   position: relative;
 }
@@ -557,22 +557,40 @@
   align-items: center;
   justify-content: space-between;
 }
+.cocoblocks-panel .postion-slide__label .group-icon-position {
+  display: flex;
+  align-items: center;
+}
 .cocoblocks-panel .postion-slide__label svg {
   fill: var(--light-color);
   width: 1.2rem;
   position: relative;
-  right: -24px;
+  right: 6px;
 }
 .cocoblocks-panel .custom-select {
+  padding: 6px;
   cursor: pointer;
   position: relative;
   /* Box control */
   /* Selector label right */
 }
+.cocoblocks-panel .custom-select label {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+}
+.cocoblocks-panel .custom-select label svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--light-color);
+}
+.cocoblocks-panel .custom-select .components-select-control__input {
+  font-size: 12px !important;
+}
 .cocoblocks-panel .custom-select .tooltip-icon {
   display: none;
   position: absolute;
-  top: 7px;
+  top: 10px;
   left: 57%;
   fill: var(--light-color);
   width: 18px;
@@ -591,11 +609,7 @@
   color: var(--label-color);
 }
 .cocoblocks-panel .custom-select.box-control .components-grid {
-  margin-right: 7px;
-  margin-left: 10px;
   color: var(--light-color);
-  align-items: center;
-  margin-top: 12px;
 }
 .cocoblocks-panel .custom-select.box-control .components-grid .components-input-control__container {
   background-color: var(--background-color) !important;
@@ -625,11 +639,12 @@
 .cocoblocks-panel .custom-select.select-control-label-right .components-select-control__input {
   text-align: right;
 }
-.cocoblocks-panel .svg-select svg {
-  margin-right: 5px;
-  width: 17px;
-  height: 17px;
-  margin-bottom: -5px;
+.cocoblocks-panel .custom-block-added {
+  margin-bottom: -22px;
+  padding-bottom: 22px;
+}
+.cocoblocks-panel .custom-block-added:hover {
+  background-color: var(--dark-color-hover);
 }
 .cocoblocks-panel .components-toggle-control .components-h-stack {
   flex-direction: row-reverse !important;
@@ -706,12 +721,15 @@
 }
 .cocoblocks-panel .custom-select.color span {
   color: var(--light-color);
+  font-size: 12px;
 }
 .cocoblocks-panel .custom-select.color input {
   color: var(--light-color);
 }
 .cocoblocks-panel .custom-select.color svg {
   color: var(--light-color);
+  width: 18px;
+  height: 18px;
 }
 .cocoblocks-panel .custom-select.color .components-input-base.components-select-control {
   background-color: transparent;
@@ -735,8 +753,8 @@
 .cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__saturation-pointer,
 .cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__hue-pointer,
 .cocoblocks-panel .custom-select.color .react-colorful__pointer.react-colorful__alpha-pointer {
-  width: 28px !important;
-  height: 28px !important;
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .cocoblocks-panel .components-panel__body-toggle:hover,

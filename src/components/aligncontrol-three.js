@@ -31,7 +31,7 @@ const AlignmentControlThree = ({ value, onChange }) => {
         onClick={() => setIsPopoverOpen(!isPopoverOpen)}
         aria-expanded={isPopoverOpen}
         aria-haspopup="true"
-        icon={'editor-alignleft'} // Mostra l'icona selezionata o un'icona di default
+        icon={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-80h720v80H120Zm0-160v-80h480v80H120Zm0-160v-80h720v80H120Zm0-160v-80h480v80H120Zm0-160v-80h720v80H120Z"/></svg>} // Mostra l'icona selezionata o un'icona di default
       >
         <div className='postion-slide__label'> <h2>{__('Text align', 'cocoblocks')}</h2><Icon icon={selectedIcon || "editor-alignleft"} style={{right:'-50px'}}/><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div>
       </Button>

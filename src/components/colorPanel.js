@@ -40,9 +40,10 @@ const ColorOptionsPanel = ({ colorNormal, setColorNormal, buttonTitle, buttonIco
                         borderRadius: '24%', 
                         backgroundColor: colorNormal, 
                         border: '1px solid var(--light-color)', 
+                        marginRight: '-6px'
                     }}
                 />
-                <span className="dashicons dashicons-arrow-down-alt2" style={{ position: 'absolute', right: '12px', top: '12px', fontSize: '12px' }}></span>
+                <span className="dashicons dashicons-arrow-down-alt2" style={{ position: 'absolute', right: '6px', top: '12px', fontSize: '12px' }}></span>
             </Button>
             {colorPaletteOpen && (
                 <>

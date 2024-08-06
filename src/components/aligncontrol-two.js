@@ -32,9 +32,8 @@ const AlignmentControlTwo = ({ value, onChange }) => {
         onClick={() => setIsPopoverOpen(!isPopoverOpen)}
         aria-expanded={isPopoverOpen}
         aria-haspopup="true"
-        icon={'screenoptions'} // Mostra l'icona selezionata o un'icona di default
       >
-        <div className='postion-slide__label'> <h2>{__('Position', 'cocoblocks')}</h2><Icon icon={selectedIcon || "screenoptions"} style={{right:'-50px'}}/><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div>
+        <div className='postion-slide__label'> <h2>{__('Position', 'cocoblocks')}</h2><div className='group-icon-position'><Icon icon={selectedIcon || "screenoptions"} /><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div></div>
       </Button>
       {isPopoverOpen && (
         <Popover

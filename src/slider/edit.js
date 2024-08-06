@@ -1745,12 +1745,14 @@ export default function Edit({ attributes, setAttributes}) {
     const isSelected = selectedPanel === panelId;
     const circleStyle = {
       display: "inline-block",
-      width: "10px",
-      height: "10px",
-      borderRadius: "50%",
+      width: "12px",
+      height: "12px",
+      borderRadius: "3px",
       border: `2px solid ${primaryColor}`,
       backgroundColor: isSelected ? primaryColor : "transparent",
       marginRight: "8px",
+      transition: "transform 0.3s, background-color 0.3s",
+      transform: isSelected ? "scale(1.2)" : "scale(1)"
     };
 
     return <span style={circleStyle}></span>;
@@ -1888,7 +1890,7 @@ export default function Edit({ attributes, setAttributes}) {
           tabs={[
             {
               name: "tab1",
-              title: __("Parameters", "wp-kube"),
+              title: __("Configurations", "wp-kube"),
             },
             {
               name: "tab2",
@@ -1951,9 +1953,9 @@ export default function Edit({ attributes, setAttributes}) {
                         <div className="title-tab-background">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            height="18px"
+                            height="24px"
                             viewBox="0 -960 960 960"
-                            width="18px"
+                            width="24px"
                             fill="#5f6368"
                           >
                             <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z" />
@@ -2005,7 +2007,7 @@ export default function Edit({ attributes, setAttributes}) {
                           {(tab) => (
                             <>
                               {tab.name === "color" && (
-                                <div className="custom-select color">
+                                <div className="custom-select color" style={{marginTop:'6px',paddingLeft:'6px',marginRight:'-6px'}}>
                                   <ColorOptionsPanel
                                     colorNormal={slide.backgroundColor}
                                     setColorNormal={(color) =>
@@ -2014,12 +2016,12 @@ export default function Edit({ attributes, setAttributes}) {
                                         color
                                       )
                                     }
-                                    buttonIcon="admin-customizer"
+                                    buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginBottom:'-4px'}}><path d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"/></svg>}
                                   />
                                 </div>
                               )}
                               {tab.name === "gradient" && (
-                                <div className="custom-select color">
+                                <div className="custom-select color" style={{marginTop:'6px',paddingLeft:'6px',marginRight:'-6px'}}>
                                   <ColorOptionsPanelGradient
                                     gradient={slide.backgroundGradient}
                                     setGradient={(gradient) =>
@@ -2028,13 +2030,13 @@ export default function Edit({ attributes, setAttributes}) {
                                         gradient
                                       )
                                     }
-                                    buttonIcon="admin-customizer"
+                                    buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginBottom:'-4px'}}><path d="M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"/></svg>}
                                   />
                                 </div>
                               )}
 
                               {tab.name === "image" && (
-                                <div className="content-img-upload">
+                                <div className="content-img-upload" style={{marginTop:'6px'}}>
                                   <MediaUploadCheck>
                                     <MediaUpload
                                       onSelect={(media) =>
@@ -2054,19 +2056,12 @@ export default function Edit({ attributes, setAttributes}) {
                                                 display: "flex",
                                                 alignItems: "center",
                                                 justifyContent: "space-between",
+                                                paddingLeft: "1px",
+                                                paddingRight: "0px",
                                               }}
                                             >
-                                              <div>
-                                                <span
-                                                  class="dashicons dashicons-format-image"
-                                                  style={{
-                                                    fontSize: "16px",
-                                                    width: "16px",
-                                                    height: "16px",
-                                                    marginLeft: "-2px",
-                                                    marginRight: "5px",
-                                                  }}
-                                                ></span>
+                                              <div style={{display:'flex',alignItems:'center'}}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginRight:'5px'}}><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
                                                 {__(
                                                   "Select Background Image",
                                                   "cocoblocks"
@@ -2076,8 +2071,8 @@ export default function Edit({ attributes, setAttributes}) {
                                                 class="dashicons dashicons-arrow-down-alt2"
                                                 style={{
                                                   position: "relative",
-                                                  right: "2px",
-                                                  top: "6px",
+                                                  right: "0px",
+                                                  top: "4px",
                                                   fontSize: "12px",
                                                 }}
                                               ></span>
@@ -2088,7 +2083,7 @@ export default function Edit({ attributes, setAttributes}) {
                                               <div
                                                 style={{
                                                   position: "relative",
-                                                  padding: "0px 10px",
+                                                  padding: "0px 4px",
                                                   marginTop: "12px",
                                                 }}
                                               >
@@ -2177,7 +2172,7 @@ export default function Edit({ attributes, setAttributes}) {
                               )}
 
                               {tab.name === "video" && (
-                                <div className="content-img-upload">
+                                <div className="content-img-upload" style={{marginTop:'6px'}}>
                                   <MediaUploadCheck>
                                     <MediaUpload
                                       onSelect={(media) =>
@@ -2197,19 +2192,12 @@ export default function Edit({ attributes, setAttributes}) {
                                                 display: "flex",
                                                 alignItems: "center",
                                                 justifyContent: "space-between",
+                                                paddingLeft: "1px",
+                                                paddingRight: "0px",
                                               }}
                                             >
-                                              <div>
-                                                <span
-                                                  class="dashicons dashicons-format-video"
-                                                  style={{
-                                                    fontSize: "16px",
-                                                    width: "16px",
-                                                    height: "16px",
-                                                    marginLeft: "-2px",
-                                                    marginRight: "5px",
-                                                  }}
-                                                ></span>
+                                              <div style={{display:'flex',alignItems:'center'}}>
+                                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginRight:'5px'}}><path d="m380-300 280-180-280-180v360ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/></svg>
                                                 {__(
                                                   "Select Background Video",
                                                   "cocoblocks"
@@ -2219,8 +2207,8 @@ export default function Edit({ attributes, setAttributes}) {
                                                 class="dashicons dashicons-arrow-down-alt2"
                                                 style={{
                                                   position: "relative",
-                                                  right: "2px",
-                                                  top: "6px",
+                                                  right: "0px",
+                                                  top: "4px",
                                                   fontSize: "12px",
                                                 }}
                                               ></span>
@@ -2231,7 +2219,7 @@ export default function Edit({ attributes, setAttributes}) {
                                               <div
                                                 style={{
                                                   position: "relative",
-                                                  padding: "0px 10px",
+                                                  padding: "0px 4px",
                                                   marginTop: "12px",
                                                 }}
                                               >
@@ -2290,15 +2278,7 @@ export default function Edit({ attributes, setAttributes}) {
                         <SelectControl
                           label={
                             <>
-                              <Icon
-                                icon="screenoptions"
-                                style={{
-                                  marginRight: "5px",
-                                  width: "16px",
-                                  height: "16px",
-                                  fontSize: "16px",
-                                }}
-                              />
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160Zm-400 0h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z"/></svg>
                               {__("Content direction", "cocoblocks")}
                             </>
                           }
@@ -2319,15 +2299,7 @@ export default function Edit({ attributes, setAttributes}) {
                         <RangeControl
                           label={
                             <>
-                              <Icon
-                                icon="image-flip-horizontal"
-                                style={{
-                                  marginRight: "5px",
-                                  width: "16px",
-                                  height: "16px",
-                                  fontSize: "16px",
-                                }}
-                              />
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"/></svg>
                               {__("Gap between items", "cocoblocks")}
                             </>
                           }
@@ -2362,7 +2334,7 @@ export default function Edit({ attributes, setAttributes}) {
                         <RangeControl
                           label={
                             <>
-                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'2px'}}><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
                               {__("Border width", "cocoblocks")}
                             </>
                           }
@@ -2379,7 +2351,7 @@ export default function Edit({ attributes, setAttributes}) {
                         <RangeControl
                           label={
                             <>
-                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'2px'}}><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
                               {__("Border radius", "cocoblocks")}
                             </>
                           }
@@ -2396,7 +2368,7 @@ export default function Edit({ attributes, setAttributes}) {
                         <RangeControl
                           label={
                             <>
-                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'2px'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
                               {__("Content vertical padding", "cocoblocks")}
                             </>
                           }
@@ -2413,7 +2385,7 @@ export default function Edit({ attributes, setAttributes}) {
                         <RangeControl
                           label={
                             <>
-                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px',transform: 'rotate(90deg)'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'2px',transform: 'rotate(90deg)'}}><path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"/></svg>
                               {__("Content horizontal padding", "cocoblocks")}
                             </>
                           }
@@ -2458,7 +2430,7 @@ export default function Edit({ attributes, setAttributes}) {
                             <div
                               className="button-move"
                               style={{
-                                marginTop: "6px",
+                                marginTop: "2px",
                                 marginBottom: "10px",
                               }}
                             >
@@ -2490,11 +2462,11 @@ export default function Edit({ attributes, setAttributes}) {
                               </Tooltip>
                             </div>
                             {element.type === "title" && (
-                              <>
+                              <div className="custom-block-added">
                                 <div className="divider-controls"></div>
                                 <div
                                   className="custom-select"
-                                  style={{ paddingTop: "6px" }}
+                                  style={{ paddingTop: "8px" }}
                                 >
                                   <Button
                                     isDestructive
@@ -2505,7 +2477,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     style={{
                                       position: "absolute",
                                       right: "70px",
-                                      top: "2px",
+                                      top: "-2px",
                                     }}
                                     label={__("Remove Text", "cocoblocks")}
                                     icon={trash}
@@ -2513,10 +2485,7 @@ export default function Edit({ attributes, setAttributes}) {
                                   <TextareaControl
                                     label={
                                       <>
-                                        <span
-                                          class="dashicons dashicons-media-text"
-                                          style={{ marginRight: "5px" }}
-                                        ></span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
                                         {__("Text", "cocoblocks")}
                                       </>
                                     }
@@ -2533,6 +2502,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       "cocoblocks"
                                     )}
                                   />
+                                  </div>
                                   <div className="custom-select color">
                                     <ColorOptionsPanel
                                       colorNormal={element.textColor}
@@ -2540,7 +2510,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         updateSlideTextColor(slide.id, elementIndex, color)
                                       }
                                       buttonTitle={__("Text Color", "cocoblocks")}
-                                      buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginBottom:'-10px',height:'24px',width:'24px',marginLeft:'-3px',marginRight:'-5px'}}><path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"/></svg>}
+                                      buttonIcon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed" style={{marginBottom:'-9px',height:'24px',width:'24px',marginLeft:'-4px',marginRight:'-4px'}}><path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"/></svg>}
                                     />
                                   </div>
                                   <div className="custom-select">
@@ -2563,7 +2533,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     }
                                   />
                                   </div>
-                                  <div className="custom-select svg-select">
+                                  <div className="custom-select">
                                     <SelectControl
                                       label={
                                         <>
@@ -2590,13 +2560,14 @@ export default function Edit({ attributes, setAttributes}) {
                                       ]}
                                     />
                                   </div>
+                                  <div className="custom-select">
                                   <ButtonGroup className="device-switcher">
                                     <Button
                                       size="small"
                                       isPressed={device === "desktop"}
                                       onClick={handleDesktopClick}
                                     >
-                                      <span className="dashicons dashicons-desktop" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{width:'16px',height:'16px'}}><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
                                     </Button>
                                     {showOtherButtons && (
                                       <>
@@ -2605,22 +2576,24 @@ export default function Edit({ attributes, setAttributes}) {
                                           isPressed={device === "tablet"}
                                           onClick={() => setAttributes({ device: "tablet" })}
                                         >
-                                          <span className="dashicons dashicons-tablet" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{width:'16px',height:'16px'}}><path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"/></svg>
                                         </Button>
                                         <Button
                                           size="small"
                                           isPressed={device === "mobile"}
                                           onClick={() => setAttributes({ device: "mobile" })}
                                         >
-                                          <span className="dashicons dashicons-smartphone" style={{height:'16px',width:'16px',fontSize:'16px'}}></span>
+                                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{width:'16px',height:'16px'}}><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"/></svg>
                                         </Button>
                                       </>
                                     )}
                                   </ButtonGroup>
                                   {device === "desktop" && (
                                     <RangeControl
-                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
-                                      beforeIcon="desktop"
+                                      label={<>
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"/></svg>
+                                     {__("Font Size", "cocoblocks")}</>}
+                                      beforeIcon={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{width:'16px',height:'16px'}}><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>}
                                       value={element.fontSize}
                                       onChange={(newSize) =>
                                         updateFontSize(
@@ -2636,8 +2609,8 @@ export default function Edit({ attributes, setAttributes}) {
                                   )}
                                   {device === "tablet" && (
                                     <RangeControl
-                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
-                                      beforeIcon="tablet"
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"/></svg>{__("Font Size", "cocoblocks")}</>}
+                                      beforeIcon={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{width:'16px',height:'16px'}}><path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"/></svg>}
                                       value={element.fontSizeTablet}
                                       onChange={(newSizeTablet) =>
                                         updateFontSizeTablet(
@@ -2653,8 +2626,8 @@ export default function Edit({ attributes, setAttributes}) {
                                   )}
                                   {device === "mobile" && (
                                     <RangeControl
-                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginBottom:'-5px',marginRight:'5px'}}><path d="m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>{__("Font Size", "cocoblocks")}</>}
-                                      beforeIcon="smartphone"
+                                      label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"/></svg>{__("Font Size", "cocoblocks")}</>}
+                                      beforeIcon={ <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{width:'16px',height:'16px'}}><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"/></svg>}
                                       value={element.fontSizeMobile}
                                       onChange={(newSizeMobile) =>
                                         updateFontSizeMobile(
@@ -2668,11 +2641,12 @@ export default function Edit({ attributes, setAttributes}) {
                                       step={1}
                                     />
                                   )}
+                                  </div>
                                   <div className="custom-select">
                                     <RangeControl
                                         label={
                                           <>
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"/></svg>
                                             {__("Line height", "cocoblocks")}
                                           </>
                                         }
@@ -2704,7 +2678,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     <>
                                     <div className="custom-select">
                                       <RangeControl
-                                           label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset X', 'cocoblocks')}</>}
+                                           label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax offset X', 'cocoblocks')}</>}
                                           value={element.parallaxTitle}
                                           onChange={(newParallaxTitle) =>
                                             updateParallaxTitle(
@@ -2720,7 +2694,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset Y', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax offset Y', 'cocoblocks')}</>}
                                           value={element.parallaxTitleY}
                                           onChange={(newParallaxTitleY) =>
                                             updateParallaxTitleY(
@@ -2736,7 +2710,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax scale', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax scale', 'cocoblocks')}</>}
                                           value={element.parallaxTitleScale}
                                           onChange={(newParallaxTitleScale) =>
                                             updateParallaxTitleScale(
@@ -2752,7 +2726,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax opacity', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax opacity', 'cocoblocks')}</>}
                                           value={element.parallaxTitleOpacity}
                                           onChange={(newParallaxTitleOpacity) =>
                                             updateParallaxTitleOpacity(
@@ -2768,7 +2742,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax duration', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax duration', 'cocoblocks')}</>}
                                           value={element.parallaxTitleDuration}
                                           onChange={(newParallaxTitleDuration) =>
                                             updateParallaxTitleDuration(
@@ -2784,8 +2758,8 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                     </>
                                     )}
-                                </div>
-                              </>
+                                
+                              </div>
                             )}
                             {element.type === "div" && (
                               <>
@@ -2971,18 +2945,6 @@ export default function Edit({ attributes, setAttributes}) {
                           step={1}
                         />
                       </div>
-
-
-
-
-
-
-
-
-
-
-
-
                                   <div className="divider-controls-inner"></div>
                                   <TextareaControl
                                     label={__("Text", "cocoblocks")}
@@ -3029,7 +2991,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     }
                                   />
                                   </div>
-                                  <div className="custom-select svg-select">
+                                  <div className="custom-select">
                                     <SelectControl
                                       label={
                                         <>
@@ -3494,19 +3456,15 @@ export default function Edit({ attributes, setAttributes}) {
                             {element.type === "image" && (
                               <>
                                 <div className="divider-controls"></div>
-                                <div className="custom-select">
+                                <div className="custom-block-added">
+                                <div
+                                  className="custom-select"
+                                  style={{ paddingTop: "15px",marginTop:'-20px' }}
+                                >
                                   <div className="content-img-upload">
                                     <div className="label-image-element">
                                       <div className="content-label-image">
-                                        <span
-                                          className="dashicons dashicons-format-image"
-                                          style={{
-                                            fontSize: "16px",
-                                            width: "16px",
-                                            marginRight: "10px",
-                                            color: "var(--light-color)",
-                                          }}
-                                        ></span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'-5px',marginRight:'5px'}}><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
                                         <h2>{__("Image", "slider")}</h2>
                                       </div>
                                       <Button
@@ -3606,11 +3564,13 @@ export default function Edit({ attributes, setAttributes}) {
                                         )}
                                       />
                                     </MediaUploadCheck>
-
+                                    </div>
+                                    </div>
                                     {element.url && (
                                       <>
+                                       <div className="custom-select">
                                         <TextareaControl
-                                          label={<><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px'}}><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>{__("Alt Text", "cocoblocks")}</>}
+                                          label={<><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>{__("Alt Text", "cocoblocks")}</>}
                                           value={element.alt || ""}
                                           onChange={(newAlt) =>
                                             updateSlideImage(
@@ -3625,11 +3585,12 @@ export default function Edit({ attributes, setAttributes}) {
                                             "cocoblocks"
                                           )}
                                         />
+                                        </div>
                                         <div className="custom-select">
                                           <SelectControl
                                             label={
                                               <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px'}}><path d="M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/></svg>
                                                 {__(
                                                 "Image fit",
                                                 "cocoblocks"
@@ -3666,7 +3627,7 @@ export default function Edit({ attributes, setAttributes}) {
                                           <SelectControl
                                             label={
                                               <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px'}}><path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"/></svg>
                                                 {__('Width', 'cocoblocks')}
                                               </>
                                             }
@@ -3725,7 +3686,7 @@ export default function Edit({ attributes, setAttributes}) {
                                           <SelectControl
                                             label={
                                               <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{marginRight:'5px',marginBottom:'-6px',transform: 'rotate(90deg)'}}><path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed" style={{transform: 'rotate(90deg)'}}><path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"/></svg>
                                                 {__('Height', 'cocoblocks')}
                                               </>
                                             }
@@ -3802,7 +3763,7 @@ export default function Edit({ attributes, setAttributes}) {
                                           <RangeControl
                                             label={
                                               <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"/></svg>
                                                 {__("Border width", "cocoblocks")}
                                               </>
                                             }
@@ -3819,7 +3780,7 @@ export default function Edit({ attributes, setAttributes}) {
                                           <RangeControl
                                             label={
                                               <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed" style={{marginRight:'4px',marginLeft:'-2px',marginBottom:'-4px'}}><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed"><path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"/></svg>
                                                 {__("Border radius", "cocoblocks")}
                                               </>
                                             }
@@ -3875,7 +3836,14 @@ export default function Edit({ attributes, setAttributes}) {
                                           </div>
                                           <div className="custom-select">
                                             <SelectControl
-                                                label={__("Blob Mask", "cocoblocks")}
+                                                label={<>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 2C8.686 2 6 4.686 6 8C6 11.314 8.686 14 12 14C15.314 14 18 11.314 18 8C18 4.686 15.314 2 12 2Z" fill="currentColor"/>
+                                                    <path d="M6 8C3.79 8 2 9.79 2 12C2 14.21 3.79 16 6 16C8.21 16 10 14.21 10 12C10 9.79 8.21 8 6 8Z" fill="currentColor"/>
+                                                    <path d="M18 8C16.14 8 14.5 9.64 14.5 11.5C14.5 13.36 16.14 15 18 15C19.86 15 21.5 13.36 21.5 11.5C21.5 9.64 19.86 8 18 8Z" fill="currentColor"/>
+                                                </svg>
+                                                {__("Blob Mask", "cocoblocks")}
+                                                </>}
                                                 value={element.blobMask}
                                                 onChange={(newBlobMask) =>
                                                     updateBlobMask(
@@ -3897,7 +3865,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     <>
                                     <div className="custom-select">
                                       <RangeControl
-                                           label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset X', 'cocoblocks')}</>}
+                                           label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax offset X', 'cocoblocks')}</>}
                                           value={element.parallaxImage}
                                           onChange={(newParallaxImage) =>
                                             updateParallaxImage(
@@ -3913,7 +3881,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax offset Y', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax offset Y', 'cocoblocks')}</>}
                                           value={element.parallaxImageY}
                                           onChange={(newParallaxImageY) =>
                                             updateParallaxImageY(
@@ -3929,7 +3897,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax scale', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax scale', 'cocoblocks')}</>}
                                           value={element.parallaxImageScale}
                                           onChange={(newParallaxImageScale) =>
                                             updateParallaxImageScale(
@@ -3945,7 +3913,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax opacity', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax opacity', 'cocoblocks')}</>}
                                           value={element.parallaxImageOpacity}
                                           onChange={(newParallaxImageOpacity) =>
                                             updateParallaxImageOpacity(
@@ -3961,7 +3929,7 @@ export default function Edit({ attributes, setAttributes}) {
                                       </div>
                                       <div className="custom-select">
                                       <RangeControl
-                                          label={ <><svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56" style={{marginRight:'7px',marginBottom:'-2px'}}><path d="M 7.3280 43.5039 C 7.7733 43.5039 8.2421 43.3633 8.7108 43.0352 L 8.7108 17.9570 C 8.7108 17.1133 8.8749 16.7852 9.6249 16.3867 L 31.3515 3.8711 C 31.4218 2.3242 30.4374 1.3633 29.1015 1.3633 C 28.4921 1.3633 27.8358 1.5274 27.1327 1.9492 L 7.4921 13.2461 C 5.1952 14.5820 4.9140 15.0039 4.9140 17.6758 L 4.9140 40.1055 C 4.9140 42.1211 5.8749 43.5039 7.3280 43.5039 Z M 16.7030 48.9180 C 17.1249 48.9180 17.5936 48.7773 18.0858 48.4492 L 18.0858 23.3711 C 18.0858 22.4570 18.2030 22.2226 18.9764 21.8008 L 40.7030 9.2617 C 40.7733 7.7383 39.8124 6.7539 38.4530 6.7539 C 37.8671 6.7539 37.1874 6.9414 36.5077 7.3164 L 16.8202 18.6367 C 14.5233 19.9492 14.2655 20.4414 14.2655 23.0664 L 14.2655 45.5195 C 14.2655 47.5352 15.2733 48.9180 16.7030 48.9180 Z M 26.7343 54.6367 C 27.5546 54.6367 28.5389 54.3086 29.7108 53.6523 L 48.0860 43.1055 C 50.2422 41.8633 51.0860 40.5742 51.0860 37.9492 L 51.0390 16.7148 C 51.0390 13.9023 50.0310 12.4726 48.2732 12.4726 C 47.5000 12.4726 46.5155 12.7774 45.4140 13.4101 L 26.9921 24.0274 C 24.7889 25.3164 24.0155 26.6289 24.0155 29.1836 L 24.0155 50.4179 C 24.0155 53.1367 24.9764 54.6367 26.7343 54.6367 Z"></path></svg>{__('Parallax duration', 'cocoblocks')}</>}
+                                          label={ <><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"/></svg>{__('Parallax duration', 'cocoblocks')}</>}
                                           value={element.parallaxImageDuration}
                                           onChange={(newParallaxImageDuration) =>
                                             updateParallaxImageDuration(
@@ -3979,7 +3947,7 @@ export default function Edit({ attributes, setAttributes}) {
                                     )}
                                     </>
                                     )}
-                                  </div>
+                                  
                                 </div>
                               </>
                             )}
