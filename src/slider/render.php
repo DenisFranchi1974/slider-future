@@ -311,14 +311,16 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             // Combina i margini
                             $margin = "$marginTop $marginRight $marginBottom $marginLeft";
 
-                            $stylesTitle = 'font-size: ' . esc_attr($element['fontSize']) . 'px; --font-size-tablet: ' . esc_attr($element['fontSizeTablet']) . 'px; --font-size-mobile: ' . esc_attr($element['fontSizeMobile']) . 'px; text-align: ' . esc_attr($element['textAlign']) . '; color: ' . esc_attr($element['textColor']) . '; font-weight: ' . $fontWeight . '; font-style: ' . $fontStyle . '; text-decoration: ' . $textDecoration . '; line-height: ' . esc_attr($element['lineHeight']) . '; width: 100%; margin: ' . $margin . ';';
+                            $stylesTitle = 'font-size: ' . esc_attr($element['fontSize']) . 'px; --font-size-tablet: ' . esc_attr($element['fontSizeTablet']) . 'px; --font-size-mobile: ' . esc_attr($element['fontSizeMobile']) . 'px; text-align: ' . esc_attr($element['textAlign']) . '; color: ' . esc_attr($element['textColor']) . '; font-weight: ' . $fontWeight . '; font-style: ' . $fontStyle . '; text-decoration: ' . $textDecoration . '; line-height: ' . esc_attr($element['lineHeight']) . '; width: 100%; margin: ' . $margin . '; font-family: ' . esc_attr($element['fontFamily']) . ';';
 
                             // Recupera il tag HTML
                             $tag = isset($element['elementTitle']) ? esc_attr($element['elementTitle']) : 'h3';
                         ?>
+                         <div style="transform:rotate(<?php echo esc_attr($element['rotate'])?>deg);opacity:<?php echo esc_attr($element['opacity'])?>;">
                             <<?php echo $tag; ?> style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxTitle']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxTitleY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxTitleScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>">
                                 <?php echo esc_html($element['text']); ?>
                             </<?php echo $tag; ?>>
+                        </div>
                         <?php endif; ?>
 
                         <?php if ($element['type'] === 'div'): ?>
@@ -372,8 +374,10 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                 $style .= " object-fit: " . esc_attr($element['fit']) . ";"; 
                             }
                         ?>
+                        <div style="transform:rotate(<?php echo esc_attr($element['rotateImage'])?>deg);opacity:<?php echo esc_attr($element['opacityImage'])?>;" class="bounce">
                             <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-with-mask <?php echo esc_attr( $element['blobMask'])?>" style="<?php echo $style; ?>" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxImage']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxImageY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxImageScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxImageDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxImageOpacity']); ?>"/>
-                        <?php endif; ?>
+                        </div>
+                            <?php endif; ?>
 
                     <?php endforeach; ?>
                 <?php endif; ?>

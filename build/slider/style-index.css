@@ -1145,6 +1145,108 @@ button.swiper-pagination-bullet {
   transform: rotate(-90deg);
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-30px);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes letterBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+.letter.bounce {
+  display: inline-block;
+  animation: letterBounce 0.6s infinite;
+}
+
+.letter.bounce:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.letter.bounce:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+@keyframes stretchText {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.5); /* Allunga il testo */
+  }
+  100% {
+    transform: scaleX(1); /* Torna alla dimensione originale */
+  }
+}
+.letter.stretch {
+  display: inline-block;
+  animation: stretchText 1s ease-in-out infinite; /* Ripete l'animazione in modo continuo */
+}
+
+@keyframes focusInOut {
+  0%, 100% {
+    transform: perspective(600px) translate3d(0, 0, 0) scale(0.9988, 1);
+    filter: blur(3px);
+    opacity: 1;
+    letter-spacing: normal;
+  }
+  50% {
+    transform: perspective(600px) translate3d(0, 0, 0) scale(1.2, 1.2);
+    filter: blur(0);
+    opacity: 1;
+    letter-spacing: 6px;
+  }
+}
+.letter.focus {
+  display: inline-block;
+  transform-origin: 50% 50%;
+  animation: focusInOut 5s ease-in-out infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px); /* Movimento verso destra */
+  }
+  100% {
+    transform: translateX(0); /* Torna alla posizione iniziale */
+  }
+}
+.moving-background {
+  animation: moveBackground 10s linear infinite; /* Regola la durata in base alle tue esigenze */
+}
+
 /* Font size Title Responsive */
 @media screen and (max-width: 780px) {
   .title-slide {

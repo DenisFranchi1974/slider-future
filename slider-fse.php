@@ -13,31 +13,14 @@
  * @package CreateBlock
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 function create_block_slider_fse_block_init() {
-	register_block_type( __DIR__ . '/build/slider' );
+    register_block_type(__DIR__ . '/build/slider');
 }
-add_action( 'init', 'create_block_slider_fse_block_init' );
-
-/*
-function wp_kube_load_script() {
-    wp_enqueue_script(
-        'swiper',
-       //plugins_url( 'swiper-bundle.min.js', __FILE__ ),
-        [], // Dipendenze, se necessarie. Puoi anche lasciare vuoto []
-        '', // Versione, se necessario
-        true // Caricare nello footer (true) o nell'header (false)
-    );
-}
-add_action( 'wp_enqueue_scripts', 'wp_kube_load_script' );
-
-
-*/
-
-
+add_action('init', 'create_block_slider_fse_block_init');
 
 add_action('admin_menu', 'my_plugin_admin_menu');
 
@@ -62,45 +45,93 @@ function my_plugin_enqueue_scripts($hook) {
         return;
     }
 
-    $dev_mode = true; // Imposta a true durante lo sviluppo poi a false per la produzione
+    $dev_mode = true; // Imposta a false per la produzione
 
     if ($dev_mode) {
-        // Carica i file direttamente dal server di sviluppo di React
         wp_enqueue_script(
             'my-plugin-admin-js',
             'http://localhost:3000/static/js/bundle.js', // URL del bundle di sviluppo
-            ['wp-element', 'wp-components', 'wp-api-fetch','wp-api'],
+            ['wp-element', 'wp-components', 'wp-api-fetch', 'wp-api', 'wp-i18n'],
             null,
             true // Carica nel footer
         );
-
-       
     } else {
-        // Carica i file dalla build di produzione
+        $manifest_path = plugin_dir_path(__FILE__) . 'admin-dashboard/build/asset-manifest.json';
+        $manifest = json_decode(file_get_contents($manifest_path), true);
+        $main_js = ltrim($manifest['files']['main.js'], '/');
+    
+
         wp_enqueue_script(
             'my-plugin-admin-js',
-            plugin_dir_url(__FILE__) . 'build/static/js/main.js',
-            ['wp-element', 'wp-components', 'wp-api-fetch','wp-api'],
-            filemtime(plugin_dir_path(__FILE__) . 'build/static/js/main.js'),
+            plugin_dir_url(__FILE__) . 'admin-dashboard/build/' . $main_js,
+            ['wp-element', 'wp-components', 'wp-api-fetch', 'wp-api', 'wp-i18n'],
+            filemtime(plugin_dir_path(__FILE__) . 'admin-dashboard/build/' . $main_js),
             true
         );
-
-       
     }
 
-    wp_localize_script('my-plugin-admin-js', 'MyPluginSettings', [
-        'nonce' => wp_create_nonce('my_plugin_nonce'),
-        'settings' => get_option('my_plugin_settings')
-    ]);
+    // Recupera il colore iniziale dal database
+    $initialColor = get_option('my_plugin_color', '#fff');
+
+
+    wp_localize_script(
+        'my-plugin-admin-js', // Usa lo stesso handle dello script registrato
+        'myPluginData',
+        array(
+            'rest_url' => esc_url_raw(rest_url('my-plugin/v1/save-color')),
+            'nonce' => wp_create_nonce('wp_rest'),
+            'initialColor' => $initialColor, // Passa il colore iniziale al client
+            'pluginUrl' => plugin_dir_url(__FILE__)
+        )
+    );
 }
 
 add_action('admin_enqueue_scripts', 'my_plugin_enqueue_scripts');
 
+function my_plugin_register_rest_routes() {
+    register_rest_route('my-plugin/v1', '/save-color', array(
+        'methods' => 'POST',
+        'callback' => 'my_plugin_save_color',
+        'permission_callback' => function () {
+            return current_user_can('manage_options');
+        }
+    ));
+}
+
+add_action('rest_api_init', 'my_plugin_register_rest_routes');
 
 
 
+function my_plugin_save_color(WP_REST_Request $request) {
+    $color = sanitize_text_field($request->get_param('color'));
 
+    if (empty($color)) {
+        return new WP_Error('no_color', 'Colore non fornito', array('status' => 400));
+    }
 
+    update_option('my_plugin_color', $color);
 
+    // Log per verificare il valore salvato
+    error_log('Colore salvato: ' . $color);
 
+    return rest_ensure_response(array('success' => true));
+}
 
+function my_plugin_enqueue_block_editor_assets() {
+    $primary_color = get_option('my_plugin_color', '#ab0052'); // Colore di default se non impostato
+
+    // Carica il file CSS del blocco
+    wp_enqueue_style(
+        'slider-fse-editor-style', // Handle del file CSS del blocco editor
+        plugins_url(), // Percorso al file CSS del blocco
+        array(), // Dipendenze
+       
+    );
+
+    // Aggiungi gli stili inline
+    wp_add_inline_style(
+        'slider-fse-editor-style', // Usa lo stesso handle dello stile
+        ":root { --primary-color: {$primary_color}; }"
+    );
+}
+add_action('enqueue_block_editor_assets', 'my_plugin_enqueue_block_editor_assets');

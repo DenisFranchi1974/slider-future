@@ -959,6 +959,7 @@ export default function Edit({ attributes, setAttributes}) {
                   bottom: 0,
                   left: 0,
                 },
+                fontFamily: "Arial",
                 parallaxTitle: 0,
                 parallaxTitleY: 0,
                 parallaxTitleScale: 1,
@@ -1048,6 +1049,58 @@ export default function Edit({ attributes, setAttributes}) {
     );
     setAttributes({ slides: updatedSlides });
   };
+
+  // Update Font Family
+  const  updateTextFamily = (slideId, index, family) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, fontFamily: family }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update Rotate
+  const  updateRotate = (slideId, index, rotate) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, rotate: rotate }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update Opacity
+    const  updateOpacity = (slideId, index, opacity) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "title" && i === index
+                  ? { ...element, opacity: opacity }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
 
   // Element
   const updateElementTitle = (slideId, index, newElementTitle) => {
@@ -1277,7 +1330,35 @@ export default function Edit({ attributes, setAttributes}) {
             ...slide,
             elements: [
               ...(slide.elements || []),
-              { type: "image", url: "", alt: "" },
+              { type: "image", 
+                url: "", 
+                alt: "" ,
+                fit: "cover",
+                widthImage: "fixed",
+                customWidthImage: false,
+                customWidthImagePx: 200,
+                heightImage: "fixed",
+                customHeightImage: false,
+                customHeightImagePx: 200,
+                backgroundBorderColorImage: "",
+                backgroundBorderSizeImage: 0,
+                backgroundBorderRadiusImage: 0,
+                backgroundColorImage: "",
+                paddingImage:0,
+                rotateImage:0,
+                opacityImage:1,
+                parallaxImage: 0,
+                parallaxImageY: 0,
+                parallaxImageScale: 1,
+                parallaxImageOpacity: 1,
+                marginImage: {
+                  top: 0, 
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                blobMask: false,
+              },
             ],
           }
         : slide
@@ -1498,6 +1579,40 @@ export default function Edit({ attributes, setAttributes}) {
               elements: slide.elements.map((element, i) =>
                 element.type === "image" && i === index
                   ? { ...element, backgroundColorImage: backgroundColorImage }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+  // Update Rotate
+  const  updateRotateImage = (slideId, index, rotateImage) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, rotateImage: rotateImage }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update Opacity
+    const  updateOpacityImage = (slideId, index, opacityImage) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "image" && i === index
+                  ? { ...element, opacityImage: opacityImage }
                   : element
               ),
             }
@@ -1878,6 +1993,62 @@ export default function Edit({ attributes, setAttributes}) {
     setAttributes({ device: 'desktop' });
     setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
   };
+
+  // Font Family 
+  const fontOptions = [
+    { label: __('Arial','cocoblock'), value: 'Arial' },
+    { label: __('Georgia','cocoblock'), value: 'Georgia' },
+    { label: __('Courier New','cocoblock'), value: 'Courier New' },
+    { label: __('Roboto','cocoblock'), value: 'Roboto' },
+    { label: __('Open Sans','cocoblock'), value: 'Open Sans' },
+    // Aggiungi altri font se necessario
+  ];
+  useEffect(() => {
+    slides.forEach(slide => {
+        slide.elements.forEach(element => {
+            if (element.type === 'title' && !['Arial', 'Georgia', 'Courier New', 'Roboto', 'Open Sans'].includes(element.fontFamily)) {
+                loadGoogleFont(element.fontFamily);
+            }
+        });
+    });
+  }, [slides]);
+
+  const loadGoogleFont = (fontFamily) => {
+    if (!fontFamily) return;
+
+    // Verifica se il font è già caricato
+    if (document.querySelector(`link[href*="${fontFamily.replace(' ', '+')}"]`)) {
+        return;
+    }
+
+    const link = document.createElement('link');
+    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(' ', '+')}:wght@400;700&display=swap`;
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  };
+
+
+
+
+  
+
+
+  const updateTextAnimation = (slideId, index, animation) => {
+    const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+            ? {
+                ...slide,
+                elements: slide.elements.map((element, i) =>
+                    element.type === "title" && i === index
+                        ? { ...element, animation: animation }
+                        : element
+                ),
+            }
+            : slide
+    );
+    setAttributes({ slides: updatedSlides });
+};
+
 
   return (
     <>
@@ -2535,6 +2706,61 @@ export default function Edit({ attributes, setAttributes}) {
                                   </div>
                                   <div className="custom-select">
                                     <SelectControl
+                                        label={
+                                          <>
+                                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M186-80q-54 0-80-22t-26-66q0-58 49-74t116-16h21v-56q0-34-1-55.5t-6-35.5q-5-14-11.5-19.5T230-430q-9 0-16.5 3t-12.5 8q-4 5-5 10.5t1 11.5q6 11 14 21.5t8 24.5q0 25-17.5 42.5T159-291q-25 0-42.5-17.5T99-351q0-27 12-44t32.5-27q20.5-10 47.5-14t58-4q85 0 118 30.5T400-302v147q0 19 4.5 28t15.5 9q12 0 19.5-18t9.5-56h11q-3 62-23.5 87T368-80q-43 0-67.5-13.5T269-134q-10 29-29.5 41.5T186-80Zm373 0q-20 0-32.5-16.5T522-132l102-269q7-17 22-28t34-11q19 0 34 11t22 28l102 269q8 19-4.5 35.5T801-80q-12 0-22-7t-15-19l-20-58H616l-20 58q-4 11-14 18.5T559-80Zm-324-29q13 0 22-20.5t9-49.5v-67q-26 0-38 15.5T216-180v11q0 36 4 48t15 12Zm407-125h77l-39-114-38 114Zm-37-285q-48 0-76.5-33.5T500-643q0-104 66-170.5T735-880q42 0 68 9.5t26 24.5q0 6-2 12t-7 11q-5 7-12.5 10t-15.5 1q-14-4-32-7t-33-3q-71 0-114 48t-43 127q0 22 8 46t36 24q11 0 21.5-5t18.5-14q17-18 31.5-60T712-758q2-13 10.5-18.5T746-782q18 0 27.5 9.5T779-749q-12 43-17.5 75t-5.5 58q0 20 5.5 29t16.5 9q11 0 21.5-8t29.5-30q2-3 15-7 8 0 12 6t4 17q0 28-32 54t-67 26q-26 0-44.5-14T691-574q-15 26-37 40.5T605-519Zm-485-1v-220q0-58 41-99t99-41q58 0 99 41t41 99v220h-80v-80H200v80h-80Zm80-160h120v-60q0-25-17.5-42.5T260-800q-25 0-42.5 17.5T200-740v60Z"/></svg>
+                                            {__("Font family", "cocoblocks")}
+                                          </>
+                                        }
+                                        value={element.fontFamily}
+                                        options={fontOptions}
+                                        onChange={(family) =>
+                                          updateTextFamily(
+                                            slide.id,
+                                            elementIndex,
+                                            family
+                                          )
+                                        }
+                                    />
+                                  </div>
+                                  <div className="custom-select">
+                                    <RangeControl
+                                        label={<>
+                                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"/></svg>
+                                      {__("Rotate", "cocoblocks")}</>}
+                                        value={element.rotate}
+                                        onChange={(rotate) =>
+                                          updateRotate(
+                                            slide.id,
+                                            elementIndex,
+                                            rotate
+                                          )
+                                        }
+                                        min={0}
+                                        max={360}
+                                        step={1}
+                                      />
+                                  </div>  
+                                  <div className="custom-select">
+                                    <RangeControl
+                                        label={<>
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"/></svg>
+                                      {__("Opacity", "cocoblocks")}</>}
+                                        value={element.opacity}
+                                        onChange={(opacity) =>
+                                          updateOpacity(
+                                            slide.id,
+                                            elementIndex,
+                                            opacity
+                                          )
+                                        }
+                                        min={0}
+                                        max={1}
+                                        step={.1}
+                                      />
+                                  </div>  
+                                  <div className="custom-select">
+                                    <SelectControl
                                       label={
                                         <>
                                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"/></svg>
@@ -2560,6 +2786,21 @@ export default function Edit({ attributes, setAttributes}) {
                                       ]}
                                     />
                                   </div>
+
+                                  <SelectControl
+                                label="Choose an Animation"
+                                value={element.animation}
+                                options={[
+                                    { label: 'None', value: '' },
+                                    { label: 'Letter Bounce', value: 'bounce' },
+                                    { label: 'Stretch', value: 'stretch' },
+                                    { label: 'Focus', value: 'focus' },
+                                ]}
+                                onChange={(animation) =>
+                                    updateTextAnimation(slide.id, elementIndex, animation)
+                                }
+                            />
+
                                   <div className="custom-select">
                                   <ButtonGroup className="device-switcher">
                                     <Button
@@ -3823,6 +4064,42 @@ export default function Edit({ attributes, setAttributes}) {
                                           />
                                         </div>
                                         )}
+                                         <div className="custom-select">
+                                    <RangeControl
+                                        label={<>
+                                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"/></svg>
+                                      {__("Rotate", "cocoblocks")}</>}
+                                        value={element.rotateImage}
+                                        onChange={(rotateImage) =>
+                                          updateRotateImage(
+                                            slide.id,
+                                            elementIndex,
+                                            rotateImage
+                                          )
+                                        }
+                                        min={0}
+                                        max={360}
+                                        step={1}
+                                      />
+                                  </div>  
+                                  <div className="custom-select">
+                                    <RangeControl
+                                        label={<>
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"/></svg>
+                                      {__("Opacity", "cocoblocks")}</>}
+                                        value={element.opacityImage}
+                                        onChange={(opacityImage) =>
+                                          updateOpacityImage(
+                                            slide.id,
+                                            elementIndex,
+                                            opacityImage
+                                          )
+                                        }
+                                        min={0}
+                                        max={1}
+                                        step={.1}
+                                      />
+                                  </div>  
                                         <div className="custom-select box-control">
                                           <BoxControl
                                               id="custom-margin-control"
@@ -4227,6 +4504,7 @@ export default function Edit({ attributes, setAttributes}) {
                     textDecoration: element.fontStyle?.textDecoration || 'none',  // Valore di default
                     lineHeight: element.lineHeight,
                     width: "100%",
+                    fontFamily: element.fontFamily,
                     margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`, // Usa i valori aggi
                   };
                   const Tag = element.elementTitle || 'h3';
@@ -4247,9 +4525,17 @@ export default function Edit({ attributes, setAttributes}) {
                   };
                   const TagDiv = element.elementTitleDiv || 'h3';
 
+                  const splitTextIntoLetters = (text = '') => {
+                    return text.split('').map((letter, index) => (
+                        <span key={index} className={`letter ${element.animation}`}>
+                            {letter}
+                        </span>
+                    ));
+                };
                   switch (element.type) {
                     case "title":
                       return (
+                        <div style={{transform: `rotate(${element.rotate}deg)`,opacity:element.opacity}}>
                         <Tag
                           key={index}
                           className="title-slide"
@@ -4260,8 +4546,10 @@ export default function Edit({ attributes, setAttributes}) {
                           data-swiper-parallax-duration={element.parallaxTitleDuration}
                           data-swiper-parallax-opacity={element.parallaxTitleOpacity}
                         >
-                        {element.text}
+                          
+                        {splitTextIntoLetters(element.text, element.animation)}
                       </Tag>
+                      </div>
                       );
                     case "div":
                       return (
@@ -4352,6 +4640,7 @@ export default function Edit({ attributes, setAttributes}) {
                         return style;
                     };
                       return (
+                        <div style={{transform: `rotate(${element.rotateImage}deg)`,opacity:element.opacityImage}} className="moving-background">
                            <img 
                               key={index} 
                               src={element.url} 
@@ -4364,6 +4653,7 @@ export default function Edit({ attributes, setAttributes}) {
                               data-swiper-parallax-duration={element.parallaxImageDuration}
                               data-swiper-parallax-opacity={element.parallaxImageOpacity}
                             />
+                      </div>
                       );
                     default:
                       return null;

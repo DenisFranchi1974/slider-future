@@ -119,6 +119,7 @@
 }
 .cocoblocks-panel.panel-slide .content-img-upload button {
   color: var(--light-color) !important;
+  padding: 3px;
 }
 .cocoblocks-panel.panel-slide .button-move button {
   color: var(--primary-color);
@@ -586,6 +587,7 @@
 }
 .cocoblocks-panel .custom-select .components-select-control__input {
   font-size: 12px !important;
+  text-align: right;
 }
 .cocoblocks-panel .custom-select .tooltip-icon {
   display: none;

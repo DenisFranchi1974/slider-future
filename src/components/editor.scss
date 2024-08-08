@@ -98,6 +98,7 @@
   }
   .content-img-upload button {
     color: var(--light-color) !important;
+    padding: 3px;
   }
   .button-move button {
     color: var(--primary-color);
@@ -564,6 +565,7 @@
       }
       .components-select-control__input{
         font-size: 12px!important;
+        text-align: right;
       }
       .tooltip-icon {
         display: none;
