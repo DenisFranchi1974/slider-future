@@ -17,6 +17,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+
 function create_block_slider_fse_block_init() {
     register_block_type(__DIR__ . '/build/slider');
 }
@@ -183,94 +184,19 @@ function cocoblocks_register_rest_routes() {
     register_rest_route('cocoblocks/v1', '/get-posts/', array(
         'methods' => 'GET',
         'callback' => function() {
-            $content = cocoblocks_get_content('post');
-            if (is_wp_error($content)) {
-                return rest_ensure_response(array(
-                    'error' => true,
-                    'message' => $content->get_error_message()
-                ));
-            }
-            return rest_ensure_response($content);
+            return cocoblocks_get_content('post');
         },
+        'permission_callback' => '__return_true', // Aggiungi questa linea
     ));
 
     // Rotta per i prodotti di WooCommerce
     register_rest_route('cocoblocks/v1', '/get-products/', array(
         'methods' => 'GET',
         'callback' => function() {
-            $content = cocoblocks_get_content('product');
-            if (is_wp_error($content)) {
-                return rest_ensure_response(array(
-                    'error' => true,
-                    'message' => $content->get_error_message()
-                ));
-            }
-            return rest_ensure_response($content);
+            return cocoblocks_get_content('product');
         },
+        'permission_callback' => '__return_true', // Aggiungi questa linea
     ));
 }
 
 add_action('rest_api_init', 'cocoblocks_register_rest_routes');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function cocoblocks_slider_shortcode($atts) {
-    // Estrai gli attributi dallo shortcode
-    $atts = shortcode_atts(array(
-        'content_type' => 'post-based', // Default value
-    ), $atts, 'cocoblocks_slider');
-
-    // Recupera i contenuti in base al tipo specificato
-    $content = cocoblocks_get_content($atts['content_type']);
-
-    if (is_wp_error($content)) {
-        return '<p>' . esc_html($content->get_error_message()) . '</p>';
-    }
-
-    if (empty($content)) {
-        return '<p>' . __('Nessun contenuto trovato.', 'cocoblocks') . '</p>';
-    }
-
-    // Iniziamo a costruire il markup HTML della slider
-    ob_start();
-    ?>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <?php foreach ($content as $item): ?>
-                <div class="swiper-slide">
-                    <?php if (!empty($item['image'])) : ?>
-                        <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title']); ?>" />
-                    <?php endif; ?>
-                    <?php if (!empty($item['title'])) : ?>
-                        <h3><?php echo esc_html($item['title']); ?></h3>
-                    <?php endif; ?>
-                    <?php if (!empty($item['excerpt']) && $atts['content_type'] === 'post-based') : ?>
-                        <p><?php echo esc_html($item['excerpt']); ?></p>
-                    <?php endif; ?>
-                    <?php if (!empty($item['link'])) : ?>
-                        <a href="<?php echo esc_url($item['link']); ?>">
-                            <?php echo $atts['content_type'] === 'woocommerce-based' ? __('View Product', 'cocoblocks') : __('Read More', 'cocoblocks'); ?>
-                        </a>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <!-- Aggiungi i pulsanti di navigazione e la paginazione di Swiper se necessario -->
-    </div>
-    <?php
-    return ob_get_clean();
-}
-
-// Registra lo shortcode
-add_shortcode('cocoblocks_slider', 'cocoblocks_slider_shortcode');
