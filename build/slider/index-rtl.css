@@ -618,6 +618,9 @@
 }
 .cocoblocks-panel .custom-select.box-control .components-grid .components-input-control__container input {
   color: var(--light-color) !important;
+  width: 100%;
+  padding: 0;
+  text-align: center;
 }
 .cocoblocks-panel .custom-select.box-control .components-grid .components-input-control__container .components-unit-control__unit-label {
   color: var(--light-color);
@@ -979,7 +982,6 @@
   display: flex;
   justify-content: space-around;
   background-color: var(--background-color);
-  border-top: 1px solid var(--dark-button);
   border-bottom: 1px solid var(--dark-button);
 }
 .tab-general .components-tab-panel__tabs .active-tab {
@@ -989,16 +991,9 @@
 .tab-general .components-tab-panel__tabs .active-tab:hover {
   color: var(--white-color);
 }
-.tab-general .components-tab-panel__tabs #tab-panel-0-tab1 {
-  border-left: 1px solid var(--dark-button);
-}
 .tab-general .components-tab-panel__tabs button {
-  border-left: 1px solid var(--dark-button);
   height: 36px;
   padding: 0;
-}
-.tab-general .components-tab-panel__tabs #tab-panel-1-color {
-  border-right: 1px solid var(--dark-button);
 }
 .tab-general .components-tab-panel__tabs-item {
   width: 100%;
@@ -1080,4 +1075,38 @@
   background-color: var(--background-color);
   color: var(--white-color);
   border: 1px solid var(--white-color) !important;
+}
+
+/* Selector Section */
+.section-selector {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: 1px solid var(--label-color);
+  border-bottom: 1px solid var(--label-color);
+  background-color: var(--dark-color);
+}
+.section-selector .section-selector-button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: auto;
+  flex: 1 1 calc(33.33% - 10px);
+  font-size: 12px;
+  box-shadow: none !important;
+  color: var(--label-color);
+}
+.section-selector .section-selector-button.is-primary {
+  background-color: transparent !important;
+  color: var(--white-color);
+}
+.section-selector .section-selector-button.is-primary svg {
+  fill: var(--primary-color);
+}
+.section-selector svg {
+  width: 20px;
+  height: 20px;
 }

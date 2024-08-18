@@ -51,6 +51,7 @@ import ColorOptionsPanelGradient from "../components/colorPanelGradient";
 import React, { useRef, useEffect } from "react";
 import AlignmentControlThree from "../components/aligncontrol-three";
 import FontStyle from "../components/font-style";
+import SectionSelector from "../components/sectionSelector";
 
 export default function Edit({ attributes, setAttributes}) {
   const {
@@ -2030,8 +2031,6 @@ export default function Edit({ attributes, setAttributes}) {
 
 
 
-  
-
 
   const updateTextAnimation = (slideId, index, animation) => {
     const updatedSlides = slides.map((slide) =>
@@ -2048,6 +2047,10 @@ export default function Edit({ attributes, setAttributes}) {
     );
     setAttributes({ slides: updatedSlides });
 };
+
+
+// Section slide
+const [activeSection, setActiveSection] = useState('content');
 
 
   return (
@@ -2653,6 +2656,9 @@ export default function Edit({ attributes, setAttributes}) {
                                     label={__("Remove Text", "cocoblocks")}
                                     icon={trash}
                                   ></Button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                                    {__("Text", "cocoblocks")}
+                                    <SectionSelector onSectionChange={setActiveSection} />
                                   <TextareaControl
                                     label={
                                       <>
@@ -2723,6 +2729,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         }
                                     />
                                   </div>
+                                  {activeSection === 'content' && (
                                   <div className="custom-select">
                                     <RangeControl
                                         label={<>
@@ -2741,6 +2748,8 @@ export default function Edit({ attributes, setAttributes}) {
                                         step={1}
                                       />
                                   </div>  
+                                  )}
+                                   {activeSection === 'opacity' && (
                                   <div className="custom-select">
                                     <RangeControl
                                         label={<>
@@ -2759,6 +2768,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         step={.1}
                                       />
                                   </div>  
+                                   )}
                                   <div className="custom-select">
                                     <SelectControl
                                       label={
@@ -2788,18 +2798,18 @@ export default function Edit({ attributes, setAttributes}) {
                                   </div>
 
                                   <SelectControl
-                                label="Choose an Animation"
-                                value={element.animation}
-                                options={[
-                                    { label: 'None', value: '' },
-                                    { label: 'Letter Bounce', value: 'bounce' },
-                                    { label: 'Stretch', value: 'stretch' },
-                                    { label: 'Focus', value: 'focus' },
-                                ]}
-                                onChange={(animation) =>
-                                    updateTextAnimation(slide.id, elementIndex, animation)
-                                }
-                            />
+                                      label="Choose an Animation"
+                                      value={element.animation}
+                                      options={[
+                                          { label: 'None', value: '' },
+                                          { label: 'Letter Bounce', value: 'bounce' },
+                                          { label: 'Stretch', value: 'stretch' },
+                                          { label: 'Focus', value: 'focus' },
+                                      ]}
+                                      onChange={(animation) =>
+                                          updateTextAnimation(slide.id, elementIndex, animation)
+                                      }
+                                  />
 
                                   <div className="custom-select">
                                   <ButtonGroup className="device-switcher">
@@ -2844,7 +2854,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         )
                                       }
                                       min={4}
-                                      max={128}
+                                      max={500}
                                       step={1}
                                     />
                                   )}
@@ -2861,7 +2871,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         )
                                       }
                                       min={4}
-                                      max={128}
+                                      max={500}
                                       step={1}
                                     />
                                   )}
@@ -2878,7 +2888,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         )
                                       }
                                       min={4}
-                                      max={128}
+                                      max={500}
                                       step={1}
                                     />
                                   )}
@@ -3299,7 +3309,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         )
                                       }
                                       min={4}
-                                      max={128}
+                                      max={500}
                                       step={1}
                                     />
                                   )}
@@ -3316,7 +3326,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         )
                                       }
                                       min={4}
-                                      max={128}
+                                      max={500}
                                       step={1}
                                     />
                                   )}
@@ -3333,7 +3343,7 @@ export default function Edit({ attributes, setAttributes}) {
                                         )
                                       }
                                       min={4}
-                                      max={128}
+                                      max={500}
                                       step={1}
                                     />
                                   )}
@@ -4420,7 +4430,39 @@ export default function Edit({ attributes, setAttributes}) {
           }}
           style={stylesPagination}
         >
-          {slides.map((slide) => (
+
+
+{attributes.contentType === 'post-based' && attributes.posts && Array.isArray(attributes.posts) && attributes.posts.length > 0 ? (
+    attributes.posts.map((post, index) => (
+        <SwiperSlide key={index}>
+            <div className="swiper-slide">
+                {post.image && <img src={post.image} alt={post.title} />}
+                {post.title && <h3>{post.title}</h3>}
+                {post.excerpt && <p>{post.excerpt}</p>}
+                {post.link && <a href={post.link}>Read More</a>}
+            </div>
+        </SwiperSlide>
+    ))
+) : null}
+
+{attributes.contentType === 'woocommerce-based' && attributes.posts && Array.isArray(attributes.posts) && attributes.posts.length > 0 ? (
+    attributes.posts.map((product, index) => (
+        <SwiperSlide key={index}>
+            <div className="swiper-slide">
+                {product.image && <img src={product.image} alt={product.title} />}
+                {product.title && <h3>{product.title}</h3>}
+                {product.excerpt && <p>{product.excerpt}</p>}
+                {product.link && <a href={product.link}>View Product</a>}
+            </div>
+        </SwiperSlide>
+    ))
+) : null}
+
+{attributes.contentType === 'custom' && Array.isArray(slides) && slides.length > 0 ? (
+
+
+          
+          slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div
                 className={"swiper-slide " + slide.position + " " + slide.layout+'-layout'}
@@ -4525,20 +4567,27 @@ export default function Edit({ attributes, setAttributes}) {
                   };
                   const TagDiv = element.elementTitleDiv || 'h3';
 
-                  const splitTextIntoLetters = (text = '') => {
-                    return text.split('').map((letter, index) => (
-                        <span key={index} className={`letter ${element.animation}`}>
-                            {letter}
-                        </span>
-                    ));
+                  const splitTextIntoLetters = (text = '', animation = '') => {
+                    // Se l'animazione è "bounce", suddividi il testo in lettere
+                    if (animation === 'bounce') {
+                        return text.split('').map((letter, index) => (
+                            <span key={index} className={`letter ${animation}`}>
+                                {letter}
+                            </span>
+                        ));
+                    }
+                
+                    // Se l'animazione non è "bounce", restituisci il testo intero
+                    return text;
                 };
+                
                   switch (element.type) {
                     case "title":
                       return (
-                        <div style={{transform: `rotate(${element.rotate}deg)`,opacity:element.opacity}}>
+                        <div style={{transform: `rotate(${element.rotate}deg)`,opacity:element.opacity}} className="underline-effect">
                         <Tag
                           key={index}
-                          className="title-slide"
+                          className={`title-slide letter ${element.animation}`}
                           style={stylesTitle}
                           data-swiper-parallax-x={element.parallaxTitle}
                           data-swiper-parallax-y={element.parallaxTitleY}
@@ -4661,7 +4710,8 @@ export default function Edit({ attributes, setAttributes}) {
                 })}
               </div>
             </SwiperSlide>
-          ))}
+          ))
+        ) : null}
           {autoplayProgress && (  
           <div className={'autoplay-progress ' +autoplayProgressPosition} slot="container-end">
             <svg viewBox="0 0 48 48" ref={progressCircle}>

@@ -9,7 +9,8 @@ import {
 	Button,
 	ButtonGroup,
 	ToggleControl,
-	Modal
+	Modal,
+	TextControl
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { memo, useEffect, useState, useRef } from '@wordpress/element';
@@ -514,6 +515,48 @@ const SliderControls = ({ attributes, setAttributes }) => {
 	};
 
 	const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
+	
+
+	
+	useEffect(() => {
+		// Resetta la notifica e i post all'inizio quando cambia il contentType
+		setAttributes({ notice: null, posts: [] });
+	
+		if (attributes.contentType !== 'custom') {
+			const apiUrl = attributes.contentType === 'woocommerce-based'
+				? `${window.wpApiSettings.root}cocoblocks/v1/get-products/`
+				: `${window.wpApiSettings.root}cocoblocks/v1/get-posts/`;
+			
+			console.log('Fetching from API:', apiUrl);
+		
+			fetch(apiUrl)
+				.then(response => response.json())
+				.then(data => {
+					if (Array.isArray(data) && data.length > 0) {
+						setAttributes({ posts: data, notice: null });
+					} else {
+						// Mostra un avviso se non ci sono contenuti
+						const message = attributes.contentType === 'woocommerce-based'
+							? 'Devi avere installato il plugin WooCommerce e avere creato dei prodotti per utilizzare questa funzione.'
+							: 'Nessun contenuto trovato.';
+						
+						setAttributes({ posts: [], notice: message });
+					}
+				})
+				.catch(error => {
+					console.error('Errore nel recuperare i dati:', error);
+					const message = attributes.contentType === 'woocommerce-based'
+						? 'Errore nel recuperare i prodotti. Assicurati che WooCommerce sia installato e attivo.'
+						: 'Errore nel recuperare i post.';
+					
+					setAttributes({ posts: [], notice: message });
+				});
+		}
+	}, [attributes.contentType]);
+	
+
+
+	const shortcode = `[cocoblocks_slider content_type="${attributes.contentType}"]`;
 
 	return (
 		<>
@@ -570,6 +613,32 @@ const SliderControls = ({ attributes, setAttributes }) => {
 							)}
 						</p>
 					)}
+
+
+					<SelectControl
+					label={__("Content Type", "cocoblocks")}
+					value={attributes.contentType}
+					onChange={(value) => setAttributes({ contentType: value })}
+					options={[
+						{ label: __("Custom", "cocoblocks"), value: "custom" },
+						{ label: __("Post Based", "cocoblocks"), value: "post-based" },
+						{ label: __("Woocomemrce", "cocoblocks"), value: "woocommerce-based" },
+
+					]}
+					/>
+
+<TextControl
+                        label={__("Shortcode da copiare", "cocoblocks")}
+                        value={shortcode}
+                        readOnly
+                    />
+
+{attributes.notice && (
+            <div className="notice notice-warning">
+                <p>{attributes.notice}</p>
+            </div>
+        )}
+
 				</div>
 				<div className="content-section-panel">
 					<div

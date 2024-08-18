@@ -592,6 +592,9 @@
           background-color: var(--background-color)!important;
             input{
               color: var(--light-color)!important;
+              width: 100%;
+              padding: 0;
+              text-align: center;
             }
             .components-unit-control__unit-label{
               color: var(--light-color);
@@ -965,7 +968,6 @@
     display: flex;
     justify-content: space-around;
     background-color: var(--background-color);
-    border-top: 1px solid var(--dark-button);
     border-bottom: 1px solid var(--dark-button);
     .active-tab {
       background-color: var(--dark-color);
@@ -974,17 +976,13 @@
     .active-tab:hover {
       color: var(--white-color);
     }
-    #tab-panel-0-tab1 {
-      border-right: 1px solid var(--dark-button);
-    }
+    
     button {
-      border-right: 1px solid var(--dark-button);
+     
       height: 36px;
       padding: 0;
     }
-    #tab-panel-1-color {
-      border-left: 1px solid var(--dark-button);
-    }
+   
   }
   .components-tab-panel__tabs-item {
     width: 100%;
@@ -1067,7 +1065,40 @@
     }
 }
 
+/* Selector Section */
+.section-selector{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: 1px solid var(--label-color);
+  border-bottom: 1px solid var(--label-color);
+  background-color: var(--dark-color);
+    .section-selector-button{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      height: auto;
+      flex: 1 1 calc(33.33% - 10px);
+      font-size: 12px;
+      box-shadow: none!important;
+      color: var(--label-color);
+        &.is-primary{
+          background-color: transparent!important;
+          color: var(--white-color);
+          svg{
+            fill: var(--primary-color);
+          }
+        }
 
+    }
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+}
 
 
 

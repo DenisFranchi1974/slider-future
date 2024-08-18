@@ -498,6 +498,14 @@
 		"parallax":{
 			"type":"boolean",
 			"default":false
+		},
+		"contentType":{
+			"type":"string",
+			"default":"custom"
+		},
+		"posts": {
+			"type": "array",
+			"default": []
 		}
 	  }
 }

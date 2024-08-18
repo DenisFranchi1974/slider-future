@@ -259,6 +259,30 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
 ?>
 
+        <?php 
+       if (!function_exists('splitTextIntoLetters')) {
+        function splitTextIntoLetters($text = '', $animation = '') {
+            // Se l'animazione è "bounce", esegui lo split del testo in lettere
+            if ($animation === 'bounce') {
+                $letters = str_split($text);
+                $result = '';
+    
+                foreach ($letters as $index => $letter) {
+                    $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
+                }
+    
+                return $result;
+            }
+    
+            // Per tutte le altre animazioni, avvolgi il testo intero in un solo span con la classe "letter" e la classe dell'animazione
+            return   esc_html($text) ;
+        }
+    }
+    
+    
+
+        ?>         
+
 <div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>">
     <div class="swiper-wrapper">
         <?php foreach ($slides as $slide) : 
@@ -267,6 +291,29 @@ $wrapper_attributes = get_block_wrapper_attributes(
             $focal_point = !empty($slide['focalPoint']) ? $slide['focalPoint'] : array('x' => 0.5, 'y' => 0.5);
             $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
         ?>
+
+<?php if (($attributes['contentType'] === 'post-based' || $attributes['contentType'] === 'woocommerce-based') && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
+    <?php foreach ($attributes['posts'] as $post) : ?>
+        <div class="swiper-slide">
+            <?php if (!empty($post['image']) && $post['image'] !== false) : ?>
+                <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
+            <?php endif; ?>
+            <?php if (!empty($post['title'])) : ?>
+                <h3><?php echo esc_html($post['title']); ?></h3>
+            <?php endif; ?>
+            <?php if (!empty($post['excerpt']) && $attributes['contentType'] === 'post-based') : ?>
+                <p><?php echo esc_html($post['excerpt']); ?></p>
+            <?php endif; ?>
+            <?php if (!empty($post['link'])) : ?>
+                <a href="<?php echo esc_url($post['link']); ?>">
+                    <?php echo $attributes['contentType'] === 'woocommerce-based' ? __('View Product', 'cocoblocks') : __('Read More', 'cocoblocks'); ?>
+                </a>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+<?php elseif ($attributes['contentType'] === 'custom' && !empty($attributes['slides']) && is_array($attributes['slides'])) : ?>
+    
+    <!-- Custom content rendering starts here -->
            <div class="swiper-slide <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?>"
                 style="<?php 
                     if (!empty($slide['backgroundType'])) {
@@ -297,8 +344,8 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
                     <video src="<?php echo esc_url($slide['backgroundVideo']); ?>" autoplay muted loop style="width: 100%; object-position: <?php echo esc_attr( $background_position )?>; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; z-index: 0;"></video>
                 <?php endif; ?>
-
-                <?php if (!empty($slide['elements']) && is_array($slide['elements'])): ?>
+                           
+                    <?php if (!empty($slide['elements']) && is_array($slide['elements'])): ?>
                     <?php foreach ($slide['elements'] as $element): ?>
                         <?php if ($element['type'] === 'title' && !empty($element['text'])): 
                             $fontStyle = isset($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal';
@@ -315,10 +362,15 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
                             // Recupera il tag HTML
                             $tag = isset($element['elementTitle']) ? esc_attr($element['elementTitle']) : 'h3';
+                           
+                            
                         ?>
-                         <div style="transform:rotate(<?php echo esc_attr($element['rotate'])?>deg);opacity:<?php echo esc_attr($element['opacity'])?>;">
-                            <<?php echo $tag; ?> style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxTitle']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxTitleY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxTitleScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>">
-                                <?php echo esc_html($element['text']); ?>
+                         <div style="transform:rotate(<?php echo esc_attr($element['rotate'])?>deg);opacity:<?php echo esc_attr($element['opacity'])?>;" class="underline-effect">
+                            <<?php echo $tag; ?> class="letter <?php echo esc_attr($element['animation'])?>" style="<?php echo esc_attr($stylesTitle); ?>" class="title-slide" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxTitle']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxTitleY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxTitleScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>">
+                            <?php 
+                                // Genera il testo con lettere animate solo se c'è un'animazione
+                                echo splitTextIntoLetters($element['text'], $element['animation']); 
+                                ?>
                             </<?php echo $tag; ?>>
                         </div>
                         <?php endif; ?>
@@ -383,6 +435,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 <?php endif; ?>
                 
             </div>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
     <div class="swiper-pagination"></div>

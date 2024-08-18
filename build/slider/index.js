@@ -908,6 +908,40 @@ const SliderControls = ({
     });
   };
   const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+    // Resetta la notifica e i post all'inizio quando cambia il contentType
+    setAttributes({
+      notice: null,
+      posts: []
+    });
+    if (attributes.contentType !== 'custom') {
+      const apiUrl = attributes.contentType === 'woocommerce-based' ? `${window.wpApiSettings.root}cocoblocks/v1/get-products/` : `${window.wpApiSettings.root}cocoblocks/v1/get-posts/`;
+      console.log('Fetching from API:', apiUrl);
+      fetch(apiUrl).then(response => response.json()).then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setAttributes({
+            posts: data,
+            notice: null
+          });
+        } else {
+          // Mostra un avviso se non ci sono contenuti
+          const message = attributes.contentType === 'woocommerce-based' ? 'Devi avere installato il plugin WooCommerce e avere creato dei prodotti per utilizzare questa funzione.' : 'Nessun contenuto trovato.';
+          setAttributes({
+            posts: [],
+            notice: message
+          });
+        }
+      }).catch(error => {
+        console.error('Errore nel recuperare i dati:', error);
+        const message = attributes.contentType === 'woocommerce-based' ? 'Errore nel recuperare i prodotti. Assicurati che WooCommerce sia installato e attivo.' : 'Errore nel recuperare i post.';
+        setAttributes({
+          posts: [],
+          notice: message
+        });
+      });
+    }
+  }, [attributes.contentType]);
+  const shortcode = `[cocoblocks_slider content_type="${attributes.contentType}"]`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     className: "cocoblocks-panel",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Methods', 'cocoblocks')
@@ -967,7 +1001,29 @@ const SliderControls = ({
     }]
   })), directionSlider === 'vertical' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You have to adjust a maximum height of the Slider!', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You have to adjust a maximum height of the Slider!', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content Type", "cocoblocks"),
+    value: attributes.contentType,
+    onChange: value => setAttributes({
+      contentType: value
+    }),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom", "cocoblocks"),
+      value: "custom"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Post Based", "cocoblocks"),
+      value: "post-based"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Woocomemrce", "cocoblocks"),
+      value: "woocommerce-based"
+    }]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Shortcode da copiare", "cocoblocks"),
+    value: shortcode,
+    readOnly: true
+  }), attributes.notice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "notice notice-warning"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, attributes.notice))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
@@ -3977,6 +4033,150 @@ const FontStyle = ({
 
 /***/ }),
 
+/***/ "./src/components/sectionSelector.js":
+/*!*******************************************!*\
+  !*** ./src/components/sectionSelector.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+const SectionSelector = ({
+  onSectionChange
+}) => {
+  const [activeSection, setActiveSection] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('content');
+  const handleSectionChange = section => {
+    setActiveSection(section);
+    onSectionChange(section);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+    className: "section-selector"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'content' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('content')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'style' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('style')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'size' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('size')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Size & Pos', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'adv-size' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('adv-style')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Adv.Style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'animation' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('animation')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m400-320 240-160-240-160v320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-43 9-84.5t26-80.5l62 62q-8 26-12.5 51.5T160-480q0 134 93 227t227 93q134 0 227-93t93-227q0-134-93-227t-227-93q-27 0-52.5 4.5T377-783l-61-61q40-18 80-27t84-9q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM220-680q-25 0-42.5-17.5T160-740q0-25 17.5-42.5T220-800q25 0 42.5 17.5T280-740q0 25-17.5 42.5T220-680Zm260 200Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Animation', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'hover' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('hover')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Hover', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'actions' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('actions')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Actions', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'visibility' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('visibility')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M520-120H200q-33 0-56.5-23.5T120-200v-320h400v400Zm-360-80h320L376-340l-76 100-56-74-84 114Zm40-560h-80q0-33 23.5-56.5T200-840v80Zm80 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0 640v-80h80v80h-80Zm160-640v-80q33 0 56.5 23.5T840-760h-80ZM120-600v-80h80v80h-80Zm640 400h80q0 33-23.5 56.5T760-120v-80Zm0-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Visibility', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSection === 'parallax' ? 'primary' : 'secondary',
+    onClick: () => handleSectionChange('parallax')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Parallax', 'cocoblocks')));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSelector);
+
+/***/ }),
+
 /***/ "./src/slider/edit.js":
 /*!****************************!*\
   !*** ./src/slider/edit.js ***!
@@ -4002,9 +4202,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/slider/editor.scss");
 /* harmony import */ var _components_editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/editor.scss */ "./src/components/editor.scss");
 /* harmony import */ var _components_colorPanel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/colorPanel */ "./src/components/colorPanel.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/aligncontrol */ "./src/components/aligncontrol.js");
@@ -4012,6 +4212,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/colorPanelGradient */ "./src/components/colorPanelGradient.js");
 /* harmony import */ var _components_aligncontrol_three__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/aligncontrol-three */ "./src/components/aligncontrol-three.js");
 /* harmony import */ var _components_font_style__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/font-style */ "./src/components/font-style.js");
+/* harmony import */ var _components_sectionSelector__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/sectionSelector */ "./src/components/sectionSelector.js");
+
 
 
 
@@ -5872,6 +6074,9 @@ function Edit({
       slides: updatedSlides
     });
   };
+
+  // Section slide
+  const [activeSection, setActiveSection] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)('content');
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     className: "tab-general",
     activeClass: "active-tab",
@@ -6080,13 +6285,13 @@ function Edit({
         top: "-2px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Image", "cocoblocks")
     })))
   })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => updateSlideBackgroundImage(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Image", "wp-kube")
   })), tab.name === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-img-upload",
@@ -6151,13 +6356,13 @@ function Edit({
       style: {
         marginLeft: "2px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Video", "cocoblocks")
     })))
   })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => updateSlideBackgroundVideo(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Video", "wp-kube")
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -6367,7 +6572,17 @@ function Edit({
       top: "-2px"
     },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Text", "cocoblocks"),
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelector__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    onSectionChange: setActiveSection
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -6427,7 +6642,7 @@ function Edit({
     value: element.fontFamily,
     options: fontOptions,
     onChange: family => updateTextFamily(slide.id, elementIndex, family)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), activeSection === 'content' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -6444,7 +6659,7 @@ function Edit({
     min: 0,
     max: 360,
     step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), activeSection === 'opacity' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -6596,7 +6811,7 @@ function Edit({
     value: element.fontSize,
     onChange: newSize => updateFontSize(slide.id, elementIndex, newSize),
     min: 4,
-    max: 128,
+    max: 500,
     step: 1
   }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -6624,7 +6839,7 @@ function Edit({
     value: element.fontSizeTablet,
     onChange: newSizeTablet => updateFontSizeTablet(slide.id, elementIndex, newSizeTablet),
     min: 4,
-    max: 128,
+    max: 500,
     step: 1
   }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -6652,7 +6867,7 @@ function Edit({
     value: element.fontSizeMobile,
     onChange: newSizeMobile => updateFontSizeMobile(slide.id, elementIndex, newSizeMobile),
     min: 4,
-    max: 128,
+    max: 500,
     step: 1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -6795,7 +7010,7 @@ function Edit({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeSlideDiv(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove block", "cocoblocks"),
     className: "button-remove-element"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -7086,7 +7301,7 @@ function Edit({
     value: element.fontSizeDiv,
     onChange: newSizeDiv => updateFontSizeDiv(slide.id, elementIndex, newSizeDiv),
     min: 4,
-    max: 128,
+    max: 500,
     step: 1
   }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7106,7 +7321,7 @@ function Edit({
     value: element.fontSizeTabletDiv,
     onChange: newSizeTabletDiv => updateFontSizeTabletDiv(slide.id, elementIndex, newSizeTabletDiv),
     min: 4,
-    max: 128,
+    max: 500,
     step: 1
   }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7126,7 +7341,7 @@ function Edit({
     value: element.fontSizeMobileDiv,
     onChange: newSizeMobileDiv => updateFontSizeMobileDiv(slide.id, elementIndex, newSizeMobileDiv),
     min: 4,
-    max: 128,
+    max: 500,
     step: 1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -7222,13 +7437,13 @@ function Edit({
       style: {
         marginLeft: "2px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
   })), slide.elements[elementIndex].imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeDivImage(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
     style: {
       marginTop: "10px"
@@ -7242,7 +7457,7 @@ function Edit({
     onClick: () => addInnerDiv(slide.id, elementIndex),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__["default"]
   }))), element.innerDivs && element.innerDivs.map((innerDiv, innerIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: innerIndex
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -7265,7 +7480,7 @@ function Edit({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Inner block", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeInnerDiv(slide.id, elementIndex, innerIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove inner block", "cocoblocks"),
     className: "button-remove-element"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
@@ -7330,13 +7545,13 @@ function Edit({
       style: {
         marginLeft: "2px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
   })), innerDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeInnerDivImage(slide.id, elementIndex, innerIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
     style: {
       marginTop: "10px"
@@ -7372,7 +7587,7 @@ function Edit({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => removeSlideImage(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
     className: "button-remove-element"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
@@ -7417,7 +7632,7 @@ function Edit({
         top: "-2px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
     })))
   })))), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -7841,7 +8056,7 @@ function Edit({
     onClick: () => addSlideDiv(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__["default"]
   })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "controls",
     className: "button-add-slide"
@@ -7968,7 +8183,25 @@ function Edit({
       }
     },
     style: stylesPagination
-  }, slides.map(slide => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
+  }, attributes.contentType === 'post-based' && attributes.posts && Array.isArray(attributes.posts) && attributes.posts.length > 0 ? attributes.posts.map((post, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
+    key: index
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-slide"
+  }, post.image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: post.image,
+    alt: post.title
+  }), post.title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, post.title), post.excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, post.excerpt), post.link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: post.link
+  }, "Read More")))) : null, attributes.contentType === 'woocommerce-based' && attributes.posts && Array.isArray(attributes.posts) && attributes.posts.length > 0 ? attributes.posts.map((product, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
+    key: index
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "swiper-slide"
+  }, product.image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: product.image,
+    alt: product.title
+  }), product.title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, product.title), product.excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, product.excerpt), product.link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: product.link
+  }, "View Product")))) : null, attributes.contentType === 'custom' && Array.isArray(slides) && slides.length > 0 ? slides.map(slide => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
     key: slide.id
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "swiper-slide " + slide.position + " " + slide.layout + '-layout',
@@ -8057,11 +8290,17 @@ function Edit({
       margin: `${element.marginTitleDiv?.top} ${element.marginTitleDiv?.right} ${element.marginTitleDiv?.bottom} ${element.marginTitleDiv?.left}` // Usa i valori aggi
     };
     const TagDiv = element.elementTitleDiv || 'h3';
-    const splitTextIntoLetters = (text = '') => {
-      return text.split('').map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        key: index,
-        className: `letter ${element.animation}`
-      }, letter));
+    const splitTextIntoLetters = (text = '', animation = '') => {
+      // Se l'animazione è "bounce", suddividi il testo in lettere
+      if (animation === 'bounce') {
+        return text.split('').map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+          key: index,
+          className: `letter ${animation}`
+        }, letter));
+      }
+
+      // Se l'animazione non è "bounce", restituisci il testo intero
+      return text;
     };
     switch (element.type) {
       case "title":
@@ -8069,10 +8308,11 @@ function Edit({
           style: {
             transform: `rotate(${element.rotate}deg)`,
             opacity: element.opacity
-          }
+          },
+          className: "underline-effect"
         }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Tag, {
           key: index,
-          className: "title-slide",
+          className: `title-slide letter ${element.animation}`,
           style: stylesTitle,
           "data-swiper-parallax-x": element.parallaxTitle,
           "data-swiper-parallax-y": element.parallaxTitleY,
@@ -8170,7 +8410,7 @@ function Edit({
       default:
         return null;
     }
-  })))), autoplayProgress && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))) : null, autoplayProgress && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: 'autoplay-progress ' + autoplayProgressPosition,
     slot: "container-end"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -21052,7 +21292,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"parallax":{"type":"boolean","default":false}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"parallax":{"type":"boolean","default":false},"contentType":{"type":"string","default":"custom"},"posts":{"type":"array","default":[]}}}');
 
 /***/ })
 
