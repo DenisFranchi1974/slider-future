@@ -483,7 +483,7 @@ const SliderControls = ({
   const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
-    if (loopMode === 'enable' && slidesPerRow > 1) {
+    if (loopMode === "enable" && slidesPerRow > 1) {
       setShowLoopNotice(true);
       setShowGridNotice(true);
     } else {
@@ -492,102 +492,102 @@ const SliderControls = ({
     }
   }, [loopMode, slidesPerRow]);
   const optionsPerView = [{
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('1', 'slide'),
-    value: '1'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "slide"),
+    value: "1"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('2', 'cocoblocks'),
-    value: '2'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("2", "cocoblocks"),
+    value: "2"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('3', 'cocoblocks'),
-    value: '3'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("3", "cocoblocks"),
+    value: "3"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('4', 'cocoblocks'),
-    value: '4'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("4", "cocoblocks"),
+    value: "4"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('5', 'cocoblocks'),
-    value: '5'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("5", "cocoblocks"),
+    value: "5"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('6', 'cocoblocks'),
-    value: '6'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("6", "cocoblocks"),
+    value: "6"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('7', 'cocoblocks'),
-    value: '7'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("7", "cocoblocks"),
+    value: "7"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('8', 'cocoblocks'),
-    value: '8'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("8", "cocoblocks"),
+    value: "8"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('9', 'cocoblocks'),
-    value: '9'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("9", "cocoblocks"),
+    value: "9"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('10', 'cocoblocks'),
-    value: '10'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("10", "cocoblocks"),
+    value: "10"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Auto', 'cocoblocks'),
-    value: 'auto'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Auto", "cocoblocks"),
+    value: "auto"
   }];
   const optionsPerGroup = [{
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('1', 'slide'),
-    value: '1'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "slide"),
+    value: "1"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('2', 'cocoblocks'),
-    value: '2'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("2", "cocoblocks"),
+    value: "2"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('3', 'cocoblocks'),
-    value: '3'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("3", "cocoblocks"),
+    value: "3"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('4', 'cocoblocks'),
-    value: '4'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("4", "cocoblocks"),
+    value: "4"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('5', 'cocoblocks'),
-    value: '5'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("5", "cocoblocks"),
+    value: "5"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('6', 'cocoblocks'),
-    value: '6'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("6", "cocoblocks"),
+    value: "6"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('7', 'cocoblocks'),
-    value: '7'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("7", "cocoblocks"),
+    value: "7"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('8', 'cocoblocks'),
-    value: '8'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("8", "cocoblocks"),
+    value: "8"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('9', 'cocoblocks'),
-    value: '9'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("9", "cocoblocks"),
+    value: "9"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('10', 'cocoblocks'),
-    value: '10'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("10", "cocoblocks"),
+    value: "10"
   }];
 
   // Initial slide options
   const optionsInitialSlide = [{
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('0', 'slide'),
-    value: '0'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0", "slide"),
+    value: "0"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('1', 'slide'),
-    value: '1'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "slide"),
+    value: "1"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('2', 'cocoblocks'),
-    value: '2'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("2", "cocoblocks"),
+    value: "2"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('3', 'cocoblocks'),
-    value: '3'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("3", "cocoblocks"),
+    value: "3"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('4', 'cocoblocks'),
-    value: '4'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("4", "cocoblocks"),
+    value: "4"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('5', 'cocoblocks'),
-    value: '5'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("5", "cocoblocks"),
+    value: "5"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('6', 'cocoblocks'),
-    value: '6'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("6", "cocoblocks"),
+    value: "6"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('7', 'cocoblocks'),
-    value: '7'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("7", "cocoblocks"),
+    value: "7"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('8', 'cocoblocks'),
-    value: '8'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("8", "cocoblocks"),
+    value: "8"
   }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('9', 'cocoblocks'),
-    value: '9'
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("9", "cocoblocks"),
+    value: "9"
   }];
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     // Resetta la notifica e i post all'inizio quando cambia il contentType
@@ -595,9 +595,9 @@ const SliderControls = ({
       notice: null,
       posts: []
     });
-    if (attributes.contentType !== 'custom') {
-      const apiUrl = attributes.contentType === 'woocommerce-based' ? `${window.wpApiSettings.root}cocoblocks/v1/get-products/` : `${window.wpApiSettings.root}cocoblocks/v1/get-posts/`;
-      console.log('Fetching from API:', apiUrl);
+    if (attributes.contentType !== "custom") {
+      const apiUrl = attributes.contentType === "woocommerce-based" ? `${window.wpApiSettings.root}cocoblocks/v1/get-products/` : `${window.wpApiSettings.root}cocoblocks/v1/get-posts/`;
+      console.log("Fetching from API:", apiUrl);
       fetch(apiUrl).then(response => response.json()).then(data => {
         if (Array.isArray(data) && data.length > 0) {
           setAttributes({
@@ -606,15 +606,15 @@ const SliderControls = ({
           });
         } else {
           // Mostra un avviso se non ci sono contenuti
-          const message = attributes.contentType === 'woocommerce-based' ? 'Devi avere installato il plugin WooCommerce e avere creato dei prodotti per utilizzare questa funzione.' : 'Nessun contenuto trovato.';
+          const message = attributes.contentType === "woocommerce-based" ? "Devi avere installato il plugin WooCommerce e avere creato dei prodotti per utilizzare questa funzione." : "Nessun contenuto trovato.";
           setAttributes({
             posts: [],
             notice: message
           });
         }
       }).catch(error => {
-        console.error('Errore nel recuperare i dati:', error);
-        const message = attributes.contentType === 'woocommerce-based' ? 'Errore nel recuperare i prodotti. Assicurati che WooCommerce sia installato e attivo.' : 'Errore nel recuperare i post.';
+        console.error("Errore nel recuperare i dati:", error);
+        const message = attributes.contentType === "woocommerce-based" ? "Errore nel recuperare i prodotti. Assicurati che WooCommerce sia installato e attivo." : "Errore nel recuperare i post.";
         setAttributes({
           posts: [],
           notice: message
@@ -624,16 +624,16 @@ const SliderControls = ({
   }, [attributes.contentType]);
 
   // Section slider
-  const [activeSection, setActiveSectionSlider] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)('layout');
+  const [activeSection, setActiveSectionSlider] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("layout");
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-subdescription-section-slider"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('General Options'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("General Options"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onSectionChange: setActiveSectionSlider
-  }), activeSection === 'layout' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), activeSection === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Layout Area', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout Area", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "svg-devices"
@@ -645,13 +645,13 @@ const SliderControls = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Desktop', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Desktop", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
     style: {
-      borderTopLeftRadius: '8px',
-      borderTopRightRadius: '8px'
+      borderTopLeftRadius: "8px",
+      borderTopRightRadius: "8px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -662,7 +662,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M520-320h200v-320H520v320Zm-280 0h200v-320H240v320Zm-80 160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-560H160v480h640v-480Zm-640 0v480-480Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per view', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per view", "cocoblocks")),
     value: perViewSlider,
     onChange: val => {
       setAttributes({
@@ -673,21 +673,21 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
-  }))), perViewSlider == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }))), perViewSlider == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
     style: {
       borderRadius: 0,
-      margin: '0'
+      margin: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -698,7 +698,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Space Between Slides", "cocoblocks")),
     value: spaceBetween,
     onChange: val => setAttributes({
       spaceBetween: val
@@ -716,7 +716,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M160-240h160v-480H160v480Zm240 0h160v-480H400v480Zm240 0h160v-480H640v480Zm-480 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per group", "cocoblocks")),
     value: slidesPerGroupDesktop,
     onChange: val => setAttributes({
       slidesPerGroupDesktop: val
@@ -725,19 +725,19 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The number of slides that should be grouped together for navigation.(Desktop)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Desktop)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
     style: {
-      borderBottomLeftRadius: '8px',
-      borderBottomRightRadius: '8px'
+      borderBottomLeftRadius: "8px",
+      borderBottomRightRadius: "8px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -748,7 +748,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M760-200v-120H200v120h560Zm0-200v-160H200v160h560Zm0-240v-120H200v120h560ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides rows', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides rows", "cocoblocks")),
     value: slidesPerRow,
     onChange: val => setAttributes({
       slidesPerRow: val
@@ -757,21 +757,21 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Number of slider rows, for multirow layout.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slider rows, for multirow layout.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
-  }))), slidesPerRow !== '1' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }))), slidesPerRow !== "1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Please note that this choice influences how the slider is displayed in responsive mode. Specifically, it may impact the functionality of "per view" controls on responsive devices. Due to the nature of the row layout, some responsive "per view" settings may not have the expected effect. It\'s recommended to test your slider across different screen sizes to ensure the desired display and functionality.', 'cocoblocks')), showGridNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Please note that this choice influences how the slider is displayed in responsive mode. Specifically, it may impact the functionality of "per view" controls on responsive devices. Due to the nature of the row layout, some responsive "per view" settings may not have the expected effect. It\'s recommended to test your slider across different screen sizes to ensure the desired display and functionality.', "cocoblocks")), showGridNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
     status: "warning",
     isDismissible: false,
     className: "notice-warning-margin-top"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grid mode with more than 1 row is not compatible with loop mode.Please disable loop mode or set Slides per Row to 1.', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Grid mode with more than 1 row is not compatible with loop mode.Please disable loop mode or set Slides per Row to 1.", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "svg-devices"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -781,13 +781,13 @@ const SliderControls = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Tablet', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Tablet", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
     style: {
-      borderTopLeftRadius: '8px',
-      borderTopRightRadius: '8px'
+      borderTopLeftRadius: "8px",
+      borderTopRightRadius: "8px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -798,7 +798,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M520-320h200v-320H520v320Zm-280 0h200v-320H240v320Zm-80 160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-560H160v480h640v-480Zm-640 0v480-480Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide per view', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide per view", "cocoblocks")),
     value: perViewSliderTablet,
     onChange: val => {
       setAttributes({
@@ -809,17 +809,17 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Number of slides per view in Tablet (768px). Slides visible at the same time on slider\'s container.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
-  }))), perViewSliderTablet == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }))), perViewSliderTablet == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -830,7 +830,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Space Between Slides", "cocoblocks")),
     value: spaceBetweenTablet,
     onChange: val => setAttributes({
       spaceBetweenTablet: val
@@ -848,7 +848,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M160-240h160v-480H160v480Zm240 0h160v-480H400v480Zm240 0h160v-480H640v480Zm-480 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per group", "cocoblocks")),
     value: slidesPerGroupTablet,
     onChange: val => setAttributes({
       slidesPerGroupTablet: val
@@ -857,11 +857,11 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The number of slides that should be grouped together for navigation.(Tablet)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Tablet)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
@@ -875,13 +875,13 @@ const SliderControls = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Mobile', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mobile", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
     style: {
-      borderTopLeftRadius: '8px',
-      borderTopRightRadius: '8px'
+      borderTopLeftRadius: "8px",
+      borderTopRightRadius: "8px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -892,7 +892,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M520-320h200v-320H520v320Zm-280 0h200v-320H240v320Zm-80 160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-560H160v480h640v-480Zm-640 0v480-480Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per view', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per view", "cocoblocks")),
     value: perViewSliderMobile,
     onChange: val => {
       setAttributes({
@@ -903,17 +903,17 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Number of slides per view in Mobile (640px). Slides visible at the same time on slider\'s container.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
-  }))), perViewSliderMobile == 'auto' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }))), perViewSliderMobile == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -924,7 +924,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Space Between Slides', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Space Between Slides", "cocoblocks")),
     value: spaceBetweenMobile,
     onChange: val => setAttributes({
       spaceBetweenMobile: val
@@ -942,7 +942,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M160-240h160v-480H160v480Zm240 0h160v-480H400v480Zm240 0h160v-480H640v480Zm-480 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slides per group', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per group", "cocoblocks")),
     value: slidesPerGroupMobile,
     onChange: val => setAttributes({
       slidesPerGroupMobile: val
@@ -951,11 +951,11 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The number of slides that should be grouped together for navigation.(Mobile)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Mobile)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
@@ -963,7 +963,7 @@ const SliderControls = ({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Layout Size', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout Size", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -976,7 +976,7 @@ const SliderControls = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Auto height', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Auto height", "cocoblocks")),
     checked: autoHeight,
     onChange: value => setAttributes({
       autoHeight: value
@@ -984,16 +984,16 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable and slider wrapper will adapt its height to the height of the currently active slide', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable and slider wrapper will adapt its height to the height of the currently active slide", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px'
+      top: "12px"
     }
   }))), !autoHeight && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1006,7 +1006,7 @@ const SliderControls = ({
       fill: "currentColor"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M160-80v-80h640v80H160Zm320-120L320-360l56-56 64 62v-252l-64 62-56-56 160-160 160 160-56 56-64-62v252l64-62 56 56-160 160ZM160-800v-80h640v80H160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Height', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom Height", "cocoblocks")),
     value: slideHeight,
     onChange: val => setAttributes({
       slideHeight: val
@@ -1018,7 +1018,7 @@ const SliderControls = ({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Advanced Settings', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Advanced Settings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1031,7 +1031,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M440-80v-800h80v800h-80Zm160-200v-400h120v400H600Zm-360 0v-400h120v400H240Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered slides', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Centered slides", "cocoblocks")),
     checked: centeredSlides,
     onChange: value => setAttributes({
       centeredSlides: value
@@ -1039,22 +1039,22 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enabled, then active slide will be centered, not always on the left side.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px'
+      top: "12px"
     }
-  })))))), activeSection === 'general' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))))), activeSection === "general" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('General', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("General", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1069,7 +1069,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Initial slide', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Initial slide", "cocoblocks")),
     value: initialSlide,
     onChange: val => setAttributes({
       initialSlide: val
@@ -1078,11 +1078,11 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Index number of initial slide.(Starts from 0)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Index number of initial slide.(Starts from 0)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
@@ -1099,7 +1099,7 @@ const SliderControls = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M280-240v-480h80v480h-80ZM440-80v-800h80v800h-80ZM120-400v-160h80v160h-80Zm480 160v-480h80v480h-80Zm160-160v-160h80v160h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Free mode', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Free mode", "cocoblocks")),
     checked: freeMode,
     onChange: value => setAttributes({
       freeMode: value
@@ -1107,23 +1107,23 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Doesn\'t work in the editor!', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Doesn't work in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px'
+      top: "12px"
     }
   }))), freeMode == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sticky', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sticky", "cocoblocks"),
     checked: stickyFreeMode,
     onChange: value => setAttributes({
       stickyFreeMode: value
@@ -1131,18 +1131,18 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables Snap to slides positions in free mode', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables Snap to slides positions in free mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum", "cocoblocks"),
     checked: momentumFreeMode,
     onChange: value => setAttributes({
       momentumFreeMode: value
@@ -1150,18 +1150,18 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enabled, then slide will keep moving for a while you release it after', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then slide will keep moving for a while you release it after", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum bounce', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum bounce", "cocoblocks"),
     checked: momentumBounceFreeMode,
     onChange: value => setAttributes({
       momentumBounceFreeMode: value
@@ -1169,97 +1169,97 @@ const SliderControls = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables momentum bounce in free mode', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables momentum bounce in free mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum bounce ratio', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum bounce ratio", "cocobocks"),
     value: momentumBounceRatioFreeMode,
     onChange: value => setAttributes({
       momentumBounceRatioFreeMode: value
     }),
-    min: .1,
+    min: 0.1,
     max: 3,
-    step: .1
+    step: 0.1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Higher value produces larger momentum bounce effect', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum bounce effect", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%',
-      top: '2px'
+      left: "75%",
+      top: "2px"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum ratio', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum ratio", "cocobocks"),
     value: momentumRatioFreeMode,
     onChange: value => setAttributes({
       momentumRatioFreeMode: value
     }),
-    min: .1,
+    min: 0.1,
     max: 3,
-    step: .1
+    step: 0.1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Higher value produces larger momentum distance after you release sldier', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum distance after you release sldier", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%',
-      top: '2px'
+      left: "75%",
+      top: "2px"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Momentum velocity ratio', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum velocity ratio", "cocobocks"),
     value: momentumVelocityRatioFreeMode,
     onChange: value => setAttributes({
       momentumVelocityRatioFreeMode: value
     }),
-    min: .1,
+    min: 0.1,
     max: 3,
-    step: .1
+    step: 0.1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Higher value produces larger momentum velocity after you release sldier', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum velocity after you release sldier", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%',
-      top: '2px'
+      left: "75%",
+      top: "2px"
     }
-  })))))))), activeSection === 'content' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))))))), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1295,9 +1295,9 @@ const SliderControls = ({
     className: "notice components-base-control__help",
     style: {
       borderRadius: 0,
-      marginTop: '18px'
+      marginTop: "18px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('No further source settings needed. Content is created manually.', 'cocoblocks')))))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("No further source settings needed. Content is created manually.", "cocoblocks")))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SliderControls);
 
@@ -1405,18 +1405,18 @@ const SliderControlsNaqvigation = ({
     autoplayProgressPosition
   } = attributes;
 
-  // Navigation Default 
+  // Navigation Default
   const defaultAttributes = {
     sizeNav: 32,
     sizeBorderNav: 1,
     radiusBorderNav: 100,
-    navigationIcons: 'default',
-    navColor: '#FFFFFF',
-    navBackgroundColor: '#ffffff00',
-    navBorderColor: '#FFFFFF',
-    navColorHover: '#333333',
-    navBackgroundColorHover: '#FFFFFF',
-    navBorderColorHover: '#FFFFFF',
+    navigationIcons: "default",
+    navColor: "#FFFFFF",
+    navBackgroundColor: "#ffffff00",
+    navBorderColor: "#FFFFFF",
+    navColorHover: "#333333",
+    navBackgroundColorHover: "#FFFFFF",
+    navBorderColorHover: "#FFFFFF",
     paddingNav: 8,
     paddingNavLeft: 8,
     offSetTopNav: 50,
@@ -1494,16 +1494,16 @@ const SliderControlsNaqvigation = ({
   };
 
   // Section slider
-  const [activeSectionNavigation, setActiveSectionSliderNavigation] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)('progress');
+  const [activeSectionNavigation, setActiveSectionSliderNavigation] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("progress");
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-subdescription-section-slider"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Navigation Options'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelectorNavigation__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Navigation Options"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelectorNavigation__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onSectionChange: setActiveSectionSliderNavigation
-  }), activeSectionNavigation === 'progress' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), activeSectionNavigation === "progress" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Progress', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Progress", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1519,7 +1519,7 @@ const SliderControlsNaqvigation = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M43.0735759,0 C45.4678234,0 47.6419651,0.52506869 49.5960012,1.57520607 C51.5500372,2.62534345 53.1058794,4.09782356 54.2635276,5.99264641 C55.4211759,7.88746926 56,10.0810497 56,12.5733877 C56,15.0848653 55.4211759,17.2880156 54.2635276,19.1828384 C53.1058794,21.0776613 51.5500372,22.5501414 49.5960012,23.6002788 C47.7640924,24.5847826 45.7387313,25.1078002 43.519918,25.1693317 L43.0735759,25.1754848 L12.9546849,25.1754848 C10.5589422,25.1754848 8.38016507,24.6504161 6.41835353,23.6002788 C4.456542,22.5501414 2.89636352,21.0776613 1.73781811,19.1828384 C0.579272705,17.2880156 0,15.0848653 0,12.5733877 C0,10.0810497 0.579272705,7.88746926 1.73781811,5.99264641 C2.89636352,4.09782356 4.456542,2.62534345 6.41835353,1.57520607 C8.25755185,0.590702276 10.2874426,0.0676846358 12.5080257,0.00615314871 L12.9546849,0 L43.0735759,0 Z M43.0735759,4.52128776 L12.9546849,4.52128776 C11.4477385,4.52128776 10.0548822,4.85795077 8.77611606,5.53127678 C7.49734988,6.2046028 6.46852028,7.14715456 5.68962727,8.35893205 C4.91073426,9.57070954 4.52128776,10.9755281 4.52128776,12.5733877 C4.52128776,14.1730416 4.91073426,15.5787574 5.68962727,16.7905349 C6.46852028,18.0023123 7.49734988,18.9492004 8.77611606,19.6311991 C9.94831838,20.2563645 11.2163881,20.5949958 12.5803252,20.6470929 L12.9546849,20.6541971 L43.0735759,20.6541971 C44.5634761,20.6541971 45.9473607,20.3131977 47.2252297,19.6311991 C48.5030987,18.9492004 49.5314797,18.0023123 50.3103727,16.7905349 C51.0892657,15.5787574 51.4787122,14.1730416 51.4787122,12.5733877 C51.4787122,10.9755281 51.0892657,9.57070954 50.3103727,8.35893205 C49.5314797,7.14715456 48.5030987,6.2046028 47.2252297,5.53127678 C46.0538498,4.91406127 44.7933873,4.5797362 43.4438423,4.52830157 L43.0735759,4.52128776 Z M30.8525391,5.87597656 C34.4423899,5.87597656 37.3525391,8.78612569 37.3525391,12.3759766 C37.3525391,15.9658274 34.4423899,18.8759766 30.8525391,18.8759766 L12.8525391,18.8759766 C9.26268819,18.8759766 6.35253906,15.9658274 6.35253906,12.3759766 C6.35253906,8.78612569 9.26268819,5.87597656 12.8525391,5.87597656 L30.8525391,5.87597656 Z",
       transform: "translate(.647 .124)"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Scrollbar', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Scrollbar", "cocoblocks")),
     checked: scrollbar,
     onChange: value => setAttributes({
       scrollbar: value
@@ -1527,7 +1527,7 @@ const SliderControlsNaqvigation = ({
   })), scrollbar == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Track color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Track color", "cocoblocks"),
     colorNormal: scrollBarColor,
     setColorNormal: color => setAttributes({
       scrollBarColor: color
@@ -1535,7 +1535,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Thumb color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Thumb color", "cocoblocks"),
     colorNormal: thumbColor,
     setColorNormal: color => setAttributes({
       thumbColor: color
@@ -1543,7 +1543,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Position', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Position", "cocoblocks"),
     value: positionScrollbar,
     onChange: val => {
       setAttributes({
@@ -1551,16 +1551,16 @@ const SliderControlsNaqvigation = ({
       });
     },
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Top', 'cocoblocks'),
-      value: 'top'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Top", "cocoblocks"),
+      value: "top"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bottom', 'cocoblocks'),
-      value: 'bottom'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bottom", "cocoblocks"),
+      value: "bottom"
     }]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Draggable', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Draggable", "cocoblocks"),
     checked: dragScrollbar,
     onChange: value => setAttributes({
       dragScrollbar: value
@@ -1568,18 +1568,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Makes scrollbar draggable that allowyou to control slider position', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Makes scrollbar draggable that allowyou to control slider position", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hide after interaction', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hide after interaction", "cocoblocks"),
     checked: hideScrollbar,
     onChange: value => setAttributes({
       hideScrollbar: value
@@ -1587,18 +1587,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hide scrollbar automatically after user interaction', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hide scrollbar automatically after user interaction", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Snap on release', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Snap on release", "cocoblocks"),
     checked: releaseScrollbar,
     onChange: value => setAttributes({
       releaseScrollbar: value
@@ -1606,18 +1606,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Snap slider position to slides when you release scrollbar', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Snap slider position to slides when you release scrollbar", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Height', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Height", "cocobocks"),
     value: heightScrollbar,
     onChange: value => setAttributes({
       heightScrollbar: value
@@ -1628,7 +1628,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Radius', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Radius", "cocobocks"),
     value: radiusScrollbar,
     onChange: value => setAttributes({
       radiusScrollbar: value
@@ -1649,7 +1649,7 @@ const SliderControlsNaqvigation = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M380-300v-360l280 180-280 180ZM480-40q-108 0-202.5-49.5T120-228v108H40v-240h240v80h-98q51 75 129.5 117.5T480-120q115 0 208.5-66T820-361l78 18q-45 136-160 219.5T480-40ZM42-520q7-67 32-128.5T143-762l57 57q-32 41-52 87.5T123-520H42Zm214-241-57-57q53-44 114-69.5T440-918v80q-51 5-97 25t-87 52Zm449 0q-41-32-87.5-52T520-838v-80q67 6 128.5 31T762-818l-57 57Zm133 241q-5-51-25-97.5T761-705l57-57q44 52 69 113.5T918-520h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Autoplay', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Autoplay", "cocoblocks")),
     checked: autoplay,
     onChange: value => setAttributes({
       autoplay: value
@@ -1657,22 +1657,22 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px',
-      left: '67%'
+      top: "12px",
+      left: "67%"
     }
   }))), autoplay === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select range-mark"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Delay', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Delay", "cocobocks"),
     value: autoplaySpeed,
     onChange: value => setAttributes({
       autoplaySpeed: value
@@ -1681,40 +1681,40 @@ const SliderControlsNaqvigation = ({
     max: 10000,
     step: 10,
     marks: [{
-      label: '0s',
+      label: "0s",
       value: 0
     }, {
-      label: '2.5s',
+      label: "2.5s",
       value: 2500
     }, {
-      label: '5s',
+      label: "5s",
       value: 5000
     }, {
-      label: '7.5s',
+      label: "7.5s",
       value: 7500
     }, {
-      label: '10s',
+      label: "10s",
       value: 10000
     }]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sets the delay time in milliseconds between each slide transition.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sets the delay time in milliseconds between each slide transition.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '4px',
-      left: '67%'
+      top: "4px",
+      left: "67%"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Disable on interaction', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Disable on interaction", "cocoblocks"),
     checked: disableOnInteraction,
     onChange: value => setAttributes({
       disableOnInteraction: value
@@ -1722,22 +1722,22 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '9px',
-      left: '65%'
+      top: "9px",
+      left: "65%"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Pause on pointer enter', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Pause on pointer enter", "cocoblocks"),
     checked: pauseOnMouseEnter,
     onChange: value => setAttributes({
       pauseOnMouseEnter: value
@@ -1745,22 +1745,22 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled autoplay will be paused on mouse enter over Swiper container. If "Disabled on interaction" is also enabled, it will stop autoplay instead of pause', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled autoplay will be paused on mouse enter over Swiper container. If "Disabled on interaction" is also enabled, it will stop autoplay instead of pause', "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '11px',
-      left: '65%'
+      top: "11px",
+      left: "65%"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Reverse direction', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Reverse direction", "cocoblocks"),
     checked: reverseDirection,
     onChange: value => setAttributes({
       reverseDirection: value
@@ -1768,18 +1768,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables autoplay in reverse direction', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables autoplay in reverse direction", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Stop on last slide', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Stop on last slide", "cocoblocks"),
     checked: stopOnLastSlide,
     onChange: value => setAttributes({
       stopOnLastSlide: value
@@ -1787,18 +1787,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Autoplay progress', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Autoplay progress", "cocoblocks"),
     checked: autoplayProgress,
     onChange: value => setAttributes({
       autoplayProgress: value
@@ -1806,7 +1806,7 @@ const SliderControlsNaqvigation = ({
   })), autoplayProgress == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
     colorNormal: autoplayProgressColor,
     setColorNormal: color => setAttributes({
       autoplayProgressColor: color
@@ -1818,11 +1818,11 @@ const SliderControlsNaqvigation = ({
     onChange: newPosition => setAttributes({
       autoplayProgressPosition: newPosition
     })
-  }))))))), activeSectionNavigation === 'arrow' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))))), activeSectionNavigation === "arrow" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Arrow', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arrow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1837,7 +1837,7 @@ const SliderControlsNaqvigation = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M400-200 120-480l280-280v560Zm-60-145v-270L205-480l135 135Zm220 145v-560l280 280-280 280Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Navigation', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Navigation", "cocoblocks")),
     checked: navigation,
     onChange: value => setAttributes({
       navigation: value
@@ -1845,21 +1845,21 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px'
+      top: "12px"
     }
   }))), navigation === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Type', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Type", "cocoblocks"),
     value: navigationIcons,
     onChange: val => {
       setAttributes({
@@ -1867,31 +1867,31 @@ const SliderControlsNaqvigation = ({
       });
     },
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Classic', 'cocoblocks'),
-      value: 'default'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Classic", "cocoblocks"),
+      value: "default"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sleek', 'cocoblocks'),
-      value: 'one'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sleek", "cocoblocks"),
+      value: "one"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Minimal', 'cocoblocks'),
-      value: 'two'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Minimal", "cocoblocks"),
+      value: "two"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bold', 'cocoblocks'),
-      value: 'three'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bold", "cocoblocks"),
+      value: "three"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Elegant', 'cocoblocks'),
-      value: 'four'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Elegant", "cocoblocks"),
+      value: "four"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Toggle', 'cocoblocks'),
-      value: 'five'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Toggle", "cocoblocks"),
+      value: "five"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text', 'cocoblocks'),
-      value: 'text'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text", "cocoblocks"),
+      value: "text"
     }]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
     colorNormal: navColor,
     setColorNormal: color => setAttributes({
       navColor: color
@@ -1899,7 +1899,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color Hover', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color Hover", "cocoblocks"),
     colorNormal: navColorHover,
     setColorNormal: color => setAttributes({
       navColorHover: color
@@ -1907,7 +1907,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
     colorNormal: navBackgroundColor,
     setColorNormal: color => setAttributes({
       navBackgroundColor: color
@@ -1915,7 +1915,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color Hover', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color Hover", "cocoblocks"),
     colorNormal: navBackgroundColorHover,
     setColorNormal: color => setAttributes({
       navBackgroundColorHover: color
@@ -1923,7 +1923,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
     colorNormal: navBorderColor,
     setColorNormal: color => setAttributes({
       navBorderColor: color
@@ -1931,7 +1931,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Color Hover', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color Hover", "cocoblocks"),
     colorNormal: navBorderColorHover,
     setColorNormal: color => setAttributes({
       navBorderColorHover: color
@@ -1939,7 +1939,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Size (px)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Size (px)", "cocobocks"),
     value: sizeNav,
     onChange: value => setAttributes({
       sizeNav: value
@@ -1950,7 +1950,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Padding Top/Bottom (px)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Padding Top/Bottom (px)", "cocobocks"),
     value: paddingNav,
     onChange: value => setAttributes({
       paddingNav: value
@@ -1961,7 +1961,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Padding Left/Right (px)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Padding Left/Right (px)", "cocobocks"),
     value: paddingNavLeft,
     onChange: value => setAttributes({
       paddingNavLeft: value
@@ -1972,7 +1972,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Size (px)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Size (px)", "cocobocks"),
     value: sizeBorderNav,
     onChange: value => setAttributes({
       sizeBorderNav: value
@@ -1983,7 +1983,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Radius (%)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Radius (%)", "cocobocks"),
     value: radiusBorderNav,
     onChange: value => setAttributes({
       radiusBorderNav: value
@@ -1994,7 +1994,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Top Offset (%)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Top Offset (%)", "cocobocks"),
     value: offSetTopNav,
     onChange: value => setAttributes({
       offSetTopNav: value
@@ -2005,7 +2005,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sides Offset (px)', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sides Offset (px)", "cocobocks"),
     value: offSetSidesNav,
     onChange: value => setAttributes({
       offSetSidesNav: value
@@ -2016,7 +2016,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hide on click', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hide on click", "cocoblocks"),
     checked: hideNavigation,
     onChange: value => setAttributes({
       hideNavigation: value
@@ -2024,11 +2024,11 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Toggle navigation buttons visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Toggle navigation buttons visibility after click on Slider's container.It is intentionally disabled in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
@@ -2038,12 +2038,12 @@ const SliderControlsNaqvigation = ({
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
       icon: "tablet",
       style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
+        marginRight: "5px",
+        width: "16px",
+        height: "16px",
+        fontSize: "16px"
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable in Tablet', 'cocoblocks')),
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable in Tablet", "cocoblocks")),
     checked: navigationTablet,
     onChange: value => setAttributes({
       navigationTablet: value
@@ -2054,12 +2054,12 @@ const SliderControlsNaqvigation = ({
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
       icon: "smartphone",
       style: {
-        marginRight: '5px',
-        width: '16px',
-        height: '16px',
-        fontSize: '16px'
+        marginRight: "5px",
+        width: "16px",
+        height: "16px",
+        fontSize: "16px"
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable in Mobile', 'cocoblocks')),
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable in Mobile", "cocoblocks")),
     checked: navigationMobile,
     onChange: value => setAttributes({
       navigationMobile: value
@@ -2075,11 +2075,11 @@ const SliderControlsNaqvigation = ({
     fill: "#5f6368"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Reset Navigation', 'cocoblocks')))))), activeSectionNavigation === 'bullet' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Reset Navigation", "cocoblocks")))))), activeSectionNavigation === "bullet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bullets', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bullets", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -2094,7 +2094,7 @@ const SliderControlsNaqvigation = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Pagination', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Pagination", "cocoblocks")),
     checked: paginationEnable,
     onChange: value => setAttributes({
       paginationEnable: value
@@ -2102,7 +2102,7 @@ const SliderControlsNaqvigation = ({
   })), paginationEnable == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Type', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Type", "cocoblocks"),
     value: typePagination,
     onChange: val => {
       setAttributes({
@@ -2110,35 +2110,35 @@ const SliderControlsNaqvigation = ({
       });
     },
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bullets', 'cocoblocks'),
-      value: 'bullets'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bullets", "cocoblocks"),
+      value: "bullets"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Fraction', 'cocoblocks'),
-      value: 'fraction'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Fraction", "cocoblocks"),
+      value: "fraction"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Progressbar', 'cocoblocks'),
-      value: 'progressbar'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Progressbar", "cocoblocks"),
+      value: "progressbar"
     }]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
     colorNormal: bulletColor,
     setColorNormal: color => setAttributes({
       bulletColor: color
     })
-  })), (typePagination == 'bullets' || typePagination == 'progressbar') && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (typePagination == "bullets" || typePagination == "progressbar") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color Inactivity', 'cocoblocks'),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color Inactivity", "cocoblocks"),
     colorNormal: bulletInactivityColor,
     setColorNormal: color => setAttributes({
       bulletInactivityColor: color
     })
-  })), typePagination !== 'progressbar' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), typePagination !== "progressbar" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Position', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Position", "cocoblocks"),
     value: positionPagination,
     onChange: val => {
       setAttributes({
@@ -2146,16 +2146,16 @@ const SliderControlsNaqvigation = ({
       });
     },
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Top', 'cocoblocks'),
-      value: 'top'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Top", "cocoblocks"),
+      value: "top"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bottom', 'cocoblocks'),
-      value: 'bottom'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bottom", "cocoblocks"),
+      value: "bottom"
     }]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hide on click', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hide on click", "cocoblocks"),
     checked: hidePagination,
     onChange: value => setAttributes({
       hidePagination: value
@@ -2163,18 +2163,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Toggle (hide/show) pagination container visibility after click on Slider\'s container.It is intentionally disabled in the editor!', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Toggle (hide/show) pagination container visibility after click on Slider's container.It is intentionally disabled in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
-  }))), typePagination == 'fraction' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), typePagination == "fraction" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Font size', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font size", "cocobocks"),
     value: fontSizePagination,
     onChange: value => setAttributes({
       fontSizePagination: value
@@ -2182,10 +2182,10 @@ const SliderControlsNaqvigation = ({
     min: 1,
     max: 50,
     step: 1
-  })), typePagination == 'progressbar' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), typePagination == "progressbar" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Height', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Height", "cocobocks"),
     value: heightBarPagination,
     onChange: value => setAttributes({
       heightBarPagination: value
@@ -2196,7 +2196,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Progressbar opposite', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Progressbar opposite", "cocoblocks"),
     checked: progressbarOpposite,
     onChange: value => setAttributes({
       progressbarOpposite: value
@@ -2204,18 +2204,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Makes pagination progressbar opposite to Swiper\'s direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Makes pagination progressbar opposite to Swiper's direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
-  })))), typePagination == 'bullets' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))), typePagination == "bullets" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Clickable', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Clickable", "cocoblocks"),
     checked: clickPagination,
     onChange: value => setAttributes({
       clickPagination: value
@@ -2223,18 +2223,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enable then clicking on pagination button will cause transition to appropriate slide. Only for "bullets" pagination type', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('If enable then clicking on pagination button will cause transition to appropriate slide. Only for "bullets" pagination type', "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dynamic bullets', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dynamic bullets", "cocoblocks"),
     checked: dynamicPagination,
     onChange: value => setAttributes({
       dynamicPagination: value
@@ -2242,18 +2242,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), dynamicPagination == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dynamic main bullets', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dynamic main bullets", "cocobocks"),
     value: dynamicMainPagination,
     onChange: value => setAttributes({
       dynamicMainPagination: value
@@ -2264,29 +2264,29 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Active Opacity', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Active Opacity", "cocobocks"),
     value: opacityPagination,
     onChange: value => setAttributes({
       opacityPagination: value
     }),
-    min: .1,
+    min: 0.1,
     max: 1,
-    step: .1
+    step: 0.1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Inactive Opacity', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inactive Opacity", "cocobocks"),
     value: opacityInactivePagination,
     onChange: value => setAttributes({
       opacityInactivePagination: value
     }),
-    min: .1,
+    min: 0.1,
     max: 1,
-    step: .1
+    step: 0.1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Width', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Width", "cocobocks"),
     value: widthPagination,
     onChange: value => setAttributes({
       widthPagination: value
@@ -2297,7 +2297,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Height', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Height", "cocobocks"),
     value: heightPagination,
     onChange: value => setAttributes({
       heightPagination: value
@@ -2308,7 +2308,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Active Width', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Active Width", "cocobocks"),
     value: widthPaginationActive,
     onChange: value => setAttributes({
       widthPaginationActive: value
@@ -2319,7 +2319,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Active Height', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Active Height", "cocobocks"),
     value: heightPaginationActive,
     onChange: value => setAttributes({
       heightPaginationActive: value
@@ -2330,7 +2330,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Radius', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Radius", "cocobocks"),
     value: radiusPagination,
     onChange: value => setAttributes({
       radiusPagination: value
@@ -2341,7 +2341,7 @@ const SliderControlsNaqvigation = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Gap', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Gap", "cocobocks"),
     value: gapPagination,
     onChange: value => setAttributes({
       gapPagination: value
@@ -2360,11 +2360,11 @@ const SliderControlsNaqvigation = ({
     fill: "#5f6368"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Reset Pagination', 'cocoblocks')))))), activeSectionNavigation === 'keyboard' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Reset Pagination", "cocoblocks")))))), activeSectionNavigation === "keyboard" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Keyboard', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Keyboard", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -2379,7 +2379,7 @@ const SliderControlsNaqvigation = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Keyboard control', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Keyboard control", "cocoblocks")),
     checked: keyboard,
     onChange: value => setAttributes({
       keyboard: value
@@ -2387,21 +2387,21 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable keyboard control. Doesn\'t work in the editor!', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable keyboard control. Doesn't work in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px'
+      top: "12px"
     }
   }))), keyboard == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Only in viewport', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Only in viewport", "cocoblocks"),
     checked: viewPortKeyboard,
     onChange: value => setAttributes({
       viewPortKeyboard: value
@@ -2409,18 +2409,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled it will control sliders that are currently in viewport', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("When enabled it will control sliders that are currently in viewport", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Page Up/Down keys', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Page Up/Down keys", "cocoblocks"),
     checked: upKeyboard,
     onChange: value => setAttributes({
       upKeyboard: value
@@ -2428,19 +2428,19 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('When enabled it will enabled keyword navigation by Page Up and Page Down keys', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("When enabled it will enabled keyword navigation by Page Up and Page Down keys", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
-  }))))))), activeSectionNavigation === 'mouse' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))))), activeSectionNavigation === "mouse" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Mouse', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mouse", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -2455,7 +2455,7 @@ const SliderControlsNaqvigation = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Mousewheel control', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mousewheel control", "cocoblocks")),
     checked: mousewheel,
     onChange: value => setAttributes({
       mousewheel: value
@@ -2463,22 +2463,22 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable or disable mouse wheel control for swiping.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable or disable mouse wheel control for swiping.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      left: '65%',
-      top: '13px'
+      left: "65%",
+      top: "13px"
     }
   }))), mousewheel == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Force to axis', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Force to axis", "cocoblocks"),
     checked: forceToAxis,
     onChange: value => setAttributes({
       forceToAxis: value
@@ -2486,18 +2486,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Invert scrolling', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Invert scrolling", "cocoblocks"),
     checked: invert,
     onChange: value => setAttributes({
       invert: value
@@ -2505,18 +2505,18 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set to true to invert sliding direction', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Set to true to invert sliding direction", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Release on edges', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Release on edges", "cocoblocks"),
     checked: releaseOnEdges,
     onChange: value => setAttributes({
       releaseOnEdges: value
@@ -2524,45 +2524,45 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sensitivity', 'cocobocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sensitivity", "cocobocks"),
     value: sensitivity,
     onChange: value => setAttributes({
       sensitivity: value
     }),
-    min: .1,
+    min: 0.1,
     max: 3,
-    step: .1
+    step: 0.1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      left: '75%',
-      top: '2px'
+      left: "75%",
+      top: "2px"
     }
-  }))))))), activeSectionNavigation === 'grap' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))))), activeSectionNavigation === "grap" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grab', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Grab", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -2577,7 +2577,7 @@ const SliderControlsNaqvigation = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M473-80q-24 0-46-9t-39-26L184-320l30-31q16-16 37.5-21.5t42.5.5l66 19v-327q0-17 11.5-28.5T400-720q17 0 28.5 11.5T440-680v433l-97-27 102 102q5 5 12.5 8.5T473-160h167q33 0 56.5-23.5T720-240v-160q0-17 11.5-28.5T760-440q17 0 28.5 11.5T800-400v160q0 66-47 113T640-80H473Zm7-280v-160q0-17 11.5-28.5T520-560q17 0 28.5 11.5T560-520v160h-80Zm120 0v-120q0-17 11.5-28.5T640-520q17 0 28.5 11.5T680-480v120h-80Zm-20 80Zm300-400H680v-60h116q-66-58-147-89t-169-31q-88 0-169 31t-147 89h116v60H80v-200h60v81q72-59 159-90t181-31q94 0 181 31t159 90v-81h60v200Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grab Cursor', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Grab Cursor", "cocoblocks")),
     checked: grabCursor,
     onChange: value => setAttributes({
       grabCursor: value
@@ -2585,16 +2585,16 @@ const SliderControlsNaqvigation = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '12px'
+      top: "12px"
     }
   })))))));
 };
@@ -2677,7 +2677,7 @@ const SliderControlsOptions = ({
   const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
-    if (loopMode === 'enable' && slidesPerRow > 1) {
+    if (loopMode === "enable" && slidesPerRow > 1) {
       setShowLoopNotice(true);
       setShowGridNotice(true);
     } else {
@@ -2813,22 +2813,22 @@ const SliderControlsOptions = ({
   const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
 
   // Section slider
-  const [activeSectionOptions, setActiveSectionSliderOptions] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)('background');
+  const [activeSectionOptions, setActiveSectionSliderOptions] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("background");
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-subdescription-section-slider"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide Options'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelectorOptions__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide Options"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelectorOptions__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onSectionChange: setActiveSectionSliderOptions
-  }), activeSectionOptions === 'background' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), activeSectionOptions === "background" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
-  })), activeSectionOptions === 'animation' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), activeSectionOptions === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Animation', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -2850,43 +2850,43 @@ const SliderControlsOptions = ({
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M6 9L6.5 11.5L8 12L6.5 12.5L6 15L5.5 12.5L4 12L5.5 11.5L6 9Z",
       fill: "currentColor"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Effect', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effect", "cocoblocks")),
     value: effect,
     onChange: val => setAttributes({
       effect: val
     }),
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide', 'cocoblocks'),
-      value: 'slide'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide", "cocoblocks"),
+      value: "slide"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Fade', 'cocoblocks'),
-      value: 'fade'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Fade", "cocoblocks"),
+      value: "fade"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Cube', 'cocoblocks'),
-      value: 'cube'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Cube", "cocoblocks"),
+      value: "cube"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Flip', 'cocoblocks'),
-      value: 'flip'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Flip", "cocoblocks"),
+      value: "flip"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Coverflow', 'cocoblocks'),
-      value: 'coverflow'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Coverflow", "cocoblocks"),
+      value: "coverflow"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Cards', 'cocoblocks'),
-      value: 'cards'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Cards", "cocoblocks"),
+      value: "cards"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Creative', 'cocoblocks'),
-      value: 'creative'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Creative", "cocoblocks"),
+      value: "creative"
     }]
-  })), effect == 'cube' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  })), effect == "cube" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
     style: {
-      marginTop: '0',
-      borderRadius: '0'
+      marginTop: "0",
+      borderRadius: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Shadow', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Shadow", "cocoblocks"),
     checked: shadow,
     onChange: value => setAttributes({
       shadow: value
@@ -2894,18 +2894,18 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slideshadow', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slideshadow", "cocoblocks"),
     checked: slideShadows,
     onChange: value => setAttributes({
       slideShadows: value
@@ -2913,18 +2913,18 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (shadow || slideShadows) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Shadow offset (px)', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Shadow offset (px)", "cocoblocks"),
     value: shadowOffset,
     onChange: val => setAttributes({
       shadowOffset: val
@@ -2935,18 +2935,18 @@ const SliderControlsOptions = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Shadow scale (ratio)', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Shadow scale (ratio)", "cocoblocks"),
     value: shadowScale,
     onChange: val => setAttributes({
       shadowScale: val
     }),
     min: 0,
     max: 2,
-    step: .1
-  })))), effect == 'coverflow' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  })))), effect == "coverflow" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slideshadow', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slideshadow", "cocoblocks"),
     checked: slideShadows,
     onChange: value => setAttributes({
       slideShadows: value
@@ -2954,18 +2954,18 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables slides shadows.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables slides shadows.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Depth', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Depth", "cocoblocks"),
     value: depth,
     onChange: val => setAttributes({
       depth: val
@@ -2976,21 +2976,21 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Depth offset in px(slides translate in Z axis)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Depth offset in px(slides translate in Z axis)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '8px'
+      top: "8px"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks"),
     value: rotate,
     onChange: val => setAttributes({
       rotate: val
@@ -3001,21 +3001,21 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide rotate in degrees', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide rotate in degrees", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '8px'
+      top: "8px"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Stretch', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Stretch", "cocoblocks"),
     value: stretch,
     onChange: val => setAttributes({
       stretch: val
@@ -3026,32 +3026,32 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Stretch space between slides (in px)', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Stretch space between slides (in px)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      top: '8px'
+      top: "8px"
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Effect multiplier', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effect multiplier", "cocoblocks"),
     value: modifier,
     onChange: val => setAttributes({
       modifier: val
     }),
     min: 0,
     max: 3,
-    step: .1
-  }))), effect == 'cards' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  }))), effect == "cards" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slideshadow', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slideshadow", "cocoblocks"),
     checked: slideShadows,
     onChange: value => setAttributes({
       slideShadows: value
@@ -3059,18 +3059,18 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables slides shadows.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables slides shadows.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks"),
     checked: rotateCards,
     onChange: value => setAttributes({
       rotateCards: value
@@ -3078,28 +3078,28 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables cards rotation', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables cards rotation", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
-  })))), effect == 'creative' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })))), effect == "creative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: openModal,
     className: "button-creative"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Creative effect configuration', 'cocoblocks'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Creative effect configuration", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     height: "16px",
     viewBox: "0 -960 960 960",
     width: "16px",
     xmlns: "http://www.w3.org/2000/svg"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"
-  }))), effect == 'fade' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), effect == "fade" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Crossfade', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Crossfade", "cocoblocks"),
     checked: crossFade,
     onChange: value => setAttributes({
       crossFade: value
@@ -3107,22 +3107,22 @@ const SliderControlsOptions = ({
   }), crossFade == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current slide fades out while the new slide appears simultaneously.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The current slide fades out while the new slide appears simultaneously.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   })), crossFade == false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current slide completely disappears before the new slide starts to appear.', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The current slide completely disappears before the new slide starts to appear.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
@@ -3137,7 +3137,7 @@ const SliderControlsOptions = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Transition duration', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition duration", "cocoblocks")),
     value: speed,
     onChange: val => setAttributes({
       speed: val
@@ -3147,17 +3147,17 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Duration of transition between slides (in ms).', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration of transition between slides (in ms).", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      left: '66%',
-      top: '4px'
+      left: "66%",
+      top: "4px"
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -3172,7 +3172,7 @@ const SliderControlsOptions = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Parallax', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax", "cocoblocks")),
     checked: parallax,
     onChange: value => setAttributes({
       parallax: value
@@ -3180,17 +3180,17 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables parallax transition effects', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables parallax transition effects", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
-      left: '65%',
-      top: '13px'
+      left: "65%",
+      top: "13px"
     }
   }))), parallax == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
@@ -3198,17 +3198,17 @@ const SliderControlsOptions = ({
       borderRadius: 0,
       marginTop: 0
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('By enabling this effect you will have additional controls available for the various elements of the Slides to adjust the Parallax effect!', 'cocoblocks'))))), activeSectionOptions === 'filter' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("By enabling this effect you will have additional controls available for the various elements of the Slides to adjust the Parallax effect!", "cocoblocks"))))), activeSectionOptions === "filter" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Filters', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Filters", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
-  })), activeSectionOptions === 'loop' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), activeSectionOptions === "loop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop Layers', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Loop Layers", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -3223,7 +3223,7 @@ const SliderControlsOptions = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop Mode', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Loop Mode", "cocoblocks")),
     value: loopMode,
     onChange: val => {
       setAttributes({
@@ -3231,34 +3231,34 @@ const SliderControlsOptions = ({
       });
     },
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Disable', 'cocoblocks'),
-      value: 'disable'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Disable", "cocoblocks"),
+      value: "disable"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable', 'cocoblocks'),
-      value: 'enable'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable", "cocoblocks"),
+      value: "enable"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rewind', 'cocoblocks'),
-      value: 'rewind'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rewind", "cocoblocks"),
+      value: "rewind"
     }]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
     style: {
-      padding: '10px',
-      maxWidth: '300px',
-      borderRadius: '4px'
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
     },
-    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enables continuous loop mode', 'cocoblocks')
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables continuous loop mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), showLoopNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
     status: "warning",
     isDismissible: false
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop mode is not compatible with grid.fill = "row".  ', 'cocoblocks'))))), activeSectionOptions === 'language' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop mode is not compatible with grid.fill = "row".  ', "cocoblocks"))))), activeSectionOptions === "language" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Language', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Language", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -3273,23 +3273,23 @@ const SliderControlsOptions = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Language direction', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Language direction", "cocoblocks")),
     value: languageSlider,
     onChange: val => setAttributes({
       languageSlider: val
     }),
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('LTR', 'slide'),
-      value: 'ltr'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("LTR", "slide"),
+      value: "ltr"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('RTL', 'cocoblocks'),
-      value: 'rtl'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("RTL", "cocoblocks"),
+      value: "rtl"
     }]
-  }))))), activeSectionOptions === 'direction' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))), activeSectionOptions === "direction" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Direction', 'cocoblocks'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Direction", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -3304,22 +3304,22 @@ const SliderControlsOptions = ({
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slider direction', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slider direction", "cocoblocks")),
     value: directionSlider,
     onChange: val => setAttributes({
       directionSlider: val
     }),
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Horizontal', 'slide'),
-      value: 'horizontal'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Horizontal", "slide"),
+      value: "horizontal"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Vertical', 'cocoblocks'),
-      value: 'vertical'
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Vertical", "cocoblocks"),
+      value: "vertical"
     }]
-  })), directionSlider === 'vertical' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  })), directionSlider === "vertical" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You have to adjust a maximum height of the Slider!', 'cocoblocks'))))), isOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Creative effect configuration', 'cocoblocks'),
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("You have to adjust a maximum height of the Slider!", "cocoblocks"))))), isOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Creative effect configuration", "cocoblocks"),
     onRequestClose: closeModal,
     className: "cocoblocks-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -3330,58 +3330,58 @@ const SliderControlsOptions = ({
     className: "column left"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "preview-slider"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('PREVIEW', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.Swiper, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("PREVIEW", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.Swiper, {
     key: key,
     autoplay: {
       delay: 1200
     },
-    speed: '1000',
+    speed: "1000",
     loop: true,
-    effect: 'creative',
+    effect: "creative",
     creativeEffect: {
       prev: {
         shadow: true,
-        translate: [translateX + '%', translateY + '%', translateZ + 'px'],
+        translate: [translateX + "%", translateY + "%", translateZ + "px"],
         rotate: [rotateX, rotateY, rotateZ],
         scale: scale,
         opacity: opacity
       },
       next: {
         shadow: true,
-        translate: [nextTranslateX + '%', nextTranslateY + '%', nextTranslateZ + 'px'],
+        translate: [nextTranslateX + "%", nextTranslateY + "%", nextTranslateZ + "px"],
         rotate: [nextRotateX, nextRotateY, nextRotateZ],
         scale: nextScale,
         opacity: nextOpacity
       }
     },
     modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Autoplay]
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide 1', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide 2', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slide 3', 'cocoblocks'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide 1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide 2", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide 3", "cocoblocks"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "column right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('PRESETS', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("PRESETS", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-preset"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     variant: "primary",
     onClick: applyPreset1
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Preset 1', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Preset 1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     variant: "primary",
     onClick: applyPreset2
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Preset 2', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Preset 2", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     variant: "primary",
     onClick: applyPreset3
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Preset 3', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Preset 3", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     variant: "primary",
     onClick: applyPreset4
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Preset 4', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Preset 4", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     variant: "primary",
     onClick: applyPreset5
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Preset 5', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Preset 5", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     variant: "primary",
     onClick: applyPreset6
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Preset 6', 'cocoblocks'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Preset 6", "cocoblocks"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "column left"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('PREVIOUS SLIDE', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("PREVIOUS SLIDE", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-select-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-modal"
@@ -3394,7 +3394,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 4.9140 28.0000 C 4.9140 28.5860 5.1484 29.1250 5.6171 29.5703 L 19.2811 42.9766 C 19.6796 43.3750 20.2889 43.6094 20.7811 43.6094 C 22.0233 43.6094 22.8671 42.7656 22.8671 41.5469 C 22.8671 40.9375 22.6562 40.4922 22.2811 40.1172 L 15.6718 33.6484 L 11.2889 29.8750 L 16.7264 30.1094 L 39.2968 30.1094 L 44.7343 29.8750 L 40.3515 33.6484 L 33.7186 40.1172 C 33.3436 40.4922 33.1562 40.9375 33.1562 41.5469 C 33.1562 42.7656 33.9764 43.6094 35.2186 43.6094 C 35.7343 43.6094 36.3436 43.3750 36.7421 42.9766 L 50.4064 29.5703 C 50.8748 29.1250 51.0860 28.5860 51.0860 28.0000 C 51.0860 27.4375 50.8748 26.8984 50.4064 26.4297 L 36.7421 13.0469 C 36.3436 12.6484 35.7343 12.3906 35.2186 12.3906 C 33.9764 12.3906 33.1562 13.2578 33.1562 14.4766 C 33.1562 15.0625 33.3436 15.5313 33.7186 15.9062 L 40.3515 22.3516 L 44.7343 26.1484 L 39.2968 25.9141 L 16.7264 25.9141 L 11.2889 26.1484 L 15.6718 22.3516 L 22.3046 15.9062 C 22.6562 15.5313 22.8671 15.0625 22.8671 14.4766 C 22.8671 13.2578 22.0233 12.3906 20.7811 12.3906 C 20.2889 12.3906 19.6796 12.6484 19.2811 13.0469 L 5.6171 26.4297 C 5.1484 26.8984 4.9140 27.4375 4.9140 28.0000 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Translate X (%)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate X (%)", "cocoblocks")),
     value: translateX,
     onChange: val => setAttributes({
       translateX: val
@@ -3413,7 +3413,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Translate Y (%)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate Y (%)", "cocoblocks")),
     value: translateY,
     onChange: val => setAttributes({
       translateY: val
@@ -3432,7 +3432,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 7.8436 24.6016 C 9.0624 24.6016 9.9764 23.6641 9.9764 22.4219 L 9.9764 20.4531 L 9.4843 12.2734 L 15.6718 18.7656 L 22.8671 26.0312 C 23.2655 26.4531 23.7811 26.6406 24.3671 26.6406 C 25.6796 26.6406 26.6874 25.7734 26.6874 24.4609 C 26.6874 23.8281 26.4530 23.2656 26.0311 22.8437 L 18.8124 15.6250 L 12.2968 9.4609 L 20.4999 9.9297 L 22.4686 9.9297 C 23.7108 9.9297 24.6718 9.0625 24.6718 7.7968 C 24.6718 6.5312 23.7108 5.6406 22.4686 5.6406 L 9.4374 5.6406 C 7.0468 5.6406 5.6640 7.0234 5.6640 9.4141 L 5.6640 22.4219 C 5.6640 23.6406 6.5780 24.6016 7.8436 24.6016 Z M 33.5311 50.3594 L 46.5624 50.3594 C 48.9532 50.3594 50.3360 48.9766 50.3360 46.5859 L 50.3360 33.5781 C 50.3360 32.3594 49.4216 31.3984 48.1564 31.3984 C 46.9374 31.3984 46.0468 32.3359 46.0468 33.5781 L 46.0468 35.5469 L 46.5155 43.7266 L 40.3280 37.2344 L 33.1327 29.9688 C 32.7343 29.5469 32.2186 29.3594 31.6327 29.3594 C 30.3202 29.3594 29.3358 30.2266 29.3358 31.5390 C 29.3358 32.1719 29.5468 32.7344 29.9686 33.1563 L 37.2108 40.3750 L 43.7030 46.5391 L 35.4999 46.0703 L 33.5311 46.0703 C 32.2889 46.0703 31.3515 46.9375 31.3280 48.2031 C 31.3280 49.4687 32.2889 50.3594 33.5311 50.3594 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Translate Z (px)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate Z (px)", "cocoblocks")),
     value: translateZ,
     onChange: val => setAttributes({
       translateZ: val
@@ -3454,7 +3454,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 53.9490 26.3032 L 50.8619 26.3032 C 49.6223 14.8328 39.7520 5.7061 27.9886 5.7061 C 21.1380 5.7061 14.9183 8.8159 10.6817 13.7061 C 9.8253 14.6751 9.9605 15.8694 10.8394 16.5004 C 11.7408 17.1314 12.7999 16.9286 13.5436 16.0948 C 17.0365 12.0836 22.2196 9.5371 27.9886 9.5371 C 37.8140 9.5371 45.8138 16.8159 46.9856 26.3032 L 43.6280 26.3032 C 42.0280 26.3032 41.5999 27.3849 42.4787 28.6243 L 47.5039 35.8130 C 48.2252 36.8497 49.3070 36.8722 50.0506 35.8130 L 55.0982 28.6468 C 56 27.3849 55.5717 26.3032 53.9490 26.3032 Z M 2.0507 31.1032 L 5.1380 31.1032 C 6.3774 42.5736 16.2479 51.6778 27.9886 51.6778 C 34.8844 51.6778 41.1041 48.5454 45.3407 43.6778 C 46.1521 42.7088 46.0395 41.4919 45.1829 40.8609 C 44.2816 40.2299 43.2224 40.4553 42.4787 41.2891 C 39.0083 45.3229 33.8252 47.8468 27.9886 47.8468 C 18.1859 47.8468 10.1859 40.5905 9.0140 31.1032 L 12.3718 31.1032 C 13.9718 31.1032 14.3999 29.9990 13.5211 28.7821 L 8.4732 21.5933 C 7.7521 20.5567 6.6929 20.5342 5.9493 21.5933 L .9014 28.7595 C 0 29.9990 .4282 31.1032 2.0507 31.1032 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate X (deg)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate X (deg)", "cocoblocks")),
     value: rotateX,
     onChange: val => setAttributes({
       rotateX: val
@@ -3474,7 +3474,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 53.9490 26.3032 L 50.8619 26.3032 C 49.6223 14.8328 39.7520 5.7061 27.9886 5.7061 C 21.1380 5.7061 14.9183 8.8159 10.6817 13.7061 C 9.8253 14.6751 9.9605 15.8694 10.8394 16.5004 C 11.7408 17.1314 12.7999 16.9286 13.5436 16.0948 C 17.0365 12.0836 22.2196 9.5371 27.9886 9.5371 C 37.8140 9.5371 45.8138 16.8159 46.9856 26.3032 L 43.6280 26.3032 C 42.0280 26.3032 41.5999 27.3849 42.4787 28.6243 L 47.5039 35.8130 C 48.2252 36.8497 49.3070 36.8722 50.0506 35.8130 L 55.0982 28.6468 C 56 27.3849 55.5717 26.3032 53.9490 26.3032 Z M 2.0507 31.1032 L 5.1380 31.1032 C 6.3774 42.5736 16.2479 51.6778 27.9886 51.6778 C 34.8844 51.6778 41.1041 48.5454 45.3407 43.6778 C 46.1521 42.7088 46.0395 41.4919 45.1829 40.8609 C 44.2816 40.2299 43.2224 40.4553 42.4787 41.2891 C 39.0083 45.3229 33.8252 47.8468 27.9886 47.8468 C 18.1859 47.8468 10.1859 40.5905 9.0140 31.1032 L 12.3718 31.1032 C 13.9718 31.1032 14.3999 29.9990 13.5211 28.7821 L 8.4732 21.5933 C 7.7521 20.5567 6.6929 20.5342 5.9493 21.5933 L .9014 28.7595 C 0 29.9990 .4282 31.1032 2.0507 31.1032 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate Y (deg)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate Y (deg)", "cocoblocks")),
     value: rotateY,
     onChange: val => setAttributes({
       rotateY: val
@@ -3493,7 +3493,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 53.9490 26.3032 L 50.8619 26.3032 C 49.6223 14.8328 39.7520 5.7061 27.9886 5.7061 C 21.1380 5.7061 14.9183 8.8159 10.6817 13.7061 C 9.8253 14.6751 9.9605 15.8694 10.8394 16.5004 C 11.7408 17.1314 12.7999 16.9286 13.5436 16.0948 C 17.0365 12.0836 22.2196 9.5371 27.9886 9.5371 C 37.8140 9.5371 45.8138 16.8159 46.9856 26.3032 L 43.6280 26.3032 C 42.0280 26.3032 41.5999 27.3849 42.4787 28.6243 L 47.5039 35.8130 C 48.2252 36.8497 49.3070 36.8722 50.0506 35.8130 L 55.0982 28.6468 C 56 27.3849 55.5717 26.3032 53.9490 26.3032 Z M 2.0507 31.1032 L 5.1380 31.1032 C 6.3774 42.5736 16.2479 51.6778 27.9886 51.6778 C 34.8844 51.6778 41.1041 48.5454 45.3407 43.6778 C 46.1521 42.7088 46.0395 41.4919 45.1829 40.8609 C 44.2816 40.2299 43.2224 40.4553 42.4787 41.2891 C 39.0083 45.3229 33.8252 47.8468 27.9886 47.8468 C 18.1859 47.8468 10.1859 40.5905 9.0140 31.1032 L 12.3718 31.1032 C 13.9718 31.1032 14.3999 29.9990 13.5211 28.7821 L 8.4732 21.5933 C 7.7521 20.5567 6.6929 20.5342 5.9493 21.5933 L .9014 28.7595 C 0 29.9990 .4282 31.1032 2.0507 31.1032 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate Z (deg)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate Z (deg)", "cocoblocks")),
     value: rotateZ,
     onChange: val => setAttributes({
       rotateZ: val
@@ -3506,7 +3506,7 @@ const SliderControlsOptions = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Scale', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Scale", "cocoblocks"),
     value: scale,
     onChange: val => setAttributes({
       scale: val
@@ -3517,7 +3517,7 @@ const SliderControlsOptions = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Opacity', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks"),
     value: opacity,
     onChange: val => setAttributes({
       opacity: val
@@ -3527,7 +3527,7 @@ const SliderControlsOptions = ({
     step: 0.1
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "column right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('NEXT SLIDE', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("NEXT SLIDE", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-select-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-modal"
@@ -3540,7 +3540,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 4.9140 28.0000 C 4.9140 28.5860 5.1484 29.1250 5.6171 29.5703 L 19.2811 42.9766 C 19.6796 43.3750 20.2889 43.6094 20.7811 43.6094 C 22.0233 43.6094 22.8671 42.7656 22.8671 41.5469 C 22.8671 40.9375 22.6562 40.4922 22.2811 40.1172 L 15.6718 33.6484 L 11.2889 29.8750 L 16.7264 30.1094 L 39.2968 30.1094 L 44.7343 29.8750 L 40.3515 33.6484 L 33.7186 40.1172 C 33.3436 40.4922 33.1562 40.9375 33.1562 41.5469 C 33.1562 42.7656 33.9764 43.6094 35.2186 43.6094 C 35.7343 43.6094 36.3436 43.3750 36.7421 42.9766 L 50.4064 29.5703 C 50.8748 29.1250 51.0860 28.5860 51.0860 28.0000 C 51.0860 27.4375 50.8748 26.8984 50.4064 26.4297 L 36.7421 13.0469 C 36.3436 12.6484 35.7343 12.3906 35.2186 12.3906 C 33.9764 12.3906 33.1562 13.2578 33.1562 14.4766 C 33.1562 15.0625 33.3436 15.5313 33.7186 15.9062 L 40.3515 22.3516 L 44.7343 26.1484 L 39.2968 25.9141 L 16.7264 25.9141 L 11.2889 26.1484 L 15.6718 22.3516 L 22.3046 15.9062 C 22.6562 15.5313 22.8671 15.0625 22.8671 14.4766 C 22.8671 13.2578 22.0233 12.3906 20.7811 12.3906 C 20.2889 12.3906 19.6796 12.6484 19.2811 13.0469 L 5.6171 26.4297 C 5.1484 26.8984 4.9140 27.4375 4.9140 28.0000 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Translate X (%)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate X (%)", "cocoblocks")),
     value: nextTranslateX,
     onChange: val => setAttributes({
       nextTranslateX: val
@@ -3559,7 +3559,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 28 51.0742 C 28.5859 51.0742 29.1250 50.8633 29.5703 50.3945 L 42.9766 36.7305 C 43.3750 36.3320 43.6094 35.7227 43.6094 35.2071 C 43.6094 33.9649 42.7656 33.1445 41.5469 33.1445 C 40.9375 33.1445 40.4922 33.3555 40.1172 33.7071 L 33.6484 40.3398 L 29.8750 44.7227 L 30.1094 39.2851 L 30.1094 16.7149 L 29.8750 11.2773 L 33.6484 15.6602 L 40.1172 22.2930 C 40.4922 22.6445 40.9375 22.8555 41.5469 22.8555 C 42.7656 22.8555 43.6094 22.0352 43.6094 20.7930 C 43.6094 20.2773 43.3750 19.6680 42.9766 19.2695 L 29.5703 5.6055 C 29.1250 5.1367 28.5859 4.9258 28 4.9258 C 27.4375 4.9258 26.8984 5.1367 26.4297 5.6055 L 13.0469 19.2695 C 12.6484 19.6680 12.3906 20.2773 12.3906 20.7930 C 12.3906 22.0352 13.2578 22.8555 14.4531 22.8555 C 15.0625 22.8555 15.5312 22.6445 15.9063 22.2930 L 22.3516 15.6602 L 26.1484 11.2773 L 25.9141 16.7149 L 25.9141 39.2851 L 26.1484 44.7227 L 22.3516 40.3398 L 15.9063 33.7071 C 15.5312 33.3555 15.0625 33.1445 14.4531 33.1445 C 13.2578 33.1445 12.3906 33.9649 12.3906 35.2071 C 12.3906 35.7227 12.6484 36.3320 13.0469 36.7305 L 26.4297 50.3945 C 26.8984 50.8633 27.4375 51.0742 28 51.0742 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Translate Y (%)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate Y (%)", "cocoblocks")),
     value: nextTranslateY,
     onChange: val => setAttributes({
       nextTranslateY: val
@@ -3578,7 +3578,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 7.8436 24.6016 C 9.0624 24.6016 9.9764 23.6641 9.9764 22.4219 L 9.9764 20.4531 L 9.4843 12.2734 L 15.6718 18.7656 L 22.8671 26.0312 C 23.2655 26.4531 23.7811 26.6406 24.3671 26.6406 C 25.6796 26.6406 26.6874 25.7734 26.6874 24.4609 C 26.6874 23.8281 26.4530 23.2656 26.0311 22.8437 L 18.8124 15.6250 L 12.2968 9.4609 L 20.4999 9.9297 L 22.4686 9.9297 C 23.7108 9.9297 24.6718 9.0625 24.6718 7.7968 C 24.6718 6.5312 23.7108 5.6406 22.4686 5.6406 L 9.4374 5.6406 C 7.0468 5.6406 5.6640 7.0234 5.6640 9.4141 L 5.6640 22.4219 C 5.6640 23.6406 6.5780 24.6016 7.8436 24.6016 Z M 33.5311 50.3594 L 46.5624 50.3594 C 48.9532 50.3594 50.3360 48.9766 50.3360 46.5859 L 50.3360 33.5781 C 50.3360 32.3594 49.4216 31.3984 48.1564 31.3984 C 46.9374 31.3984 46.0468 32.3359 46.0468 33.5781 L 46.0468 35.5469 L 46.5155 43.7266 L 40.3280 37.2344 L 33.1327 29.9688 C 32.7343 29.5469 32.2186 29.3594 31.6327 29.3594 C 30.3202 29.3594 29.3358 30.2266 29.3358 31.5390 C 29.3358 32.1719 29.5468 32.7344 29.9686 33.1563 L 37.2108 40.3750 L 43.7030 46.5391 L 35.4999 46.0703 L 33.5311 46.0703 C 32.2889 46.0703 31.3515 46.9375 31.3280 48.2031 C 31.3280 49.4687 32.2889 50.3594 33.5311 50.3594 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Translate Z (px)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate Z (px)", "cocoblocks")),
     value: nextTranslateZ,
     onChange: val => setAttributes({
       nextTranslateZ: val
@@ -3600,7 +3600,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 53.9490 26.3032 L 50.8619 26.3032 C 49.6223 14.8328 39.7520 5.7061 27.9886 5.7061 C 21.1380 5.7061 14.9183 8.8159 10.6817 13.7061 C 9.8253 14.6751 9.9605 15.8694 10.8394 16.5004 C 11.7408 17.1314 12.7999 16.9286 13.5436 16.0948 C 17.0365 12.0836 22.2196 9.5371 27.9886 9.5371 C 37.8140 9.5371 45.8138 16.8159 46.9856 26.3032 L 43.6280 26.3032 C 42.0280 26.3032 41.5999 27.3849 42.4787 28.6243 L 47.5039 35.8130 C 48.2252 36.8497 49.3070 36.8722 50.0506 35.8130 L 55.0982 28.6468 C 56 27.3849 55.5717 26.3032 53.9490 26.3032 Z M 2.0507 31.1032 L 5.1380 31.1032 C 6.3774 42.5736 16.2479 51.6778 27.9886 51.6778 C 34.8844 51.6778 41.1041 48.5454 45.3407 43.6778 C 46.1521 42.7088 46.0395 41.4919 45.1829 40.8609 C 44.2816 40.2299 43.2224 40.4553 42.4787 41.2891 C 39.0083 45.3229 33.8252 47.8468 27.9886 47.8468 C 18.1859 47.8468 10.1859 40.5905 9.0140 31.1032 L 12.3718 31.1032 C 13.9718 31.1032 14.3999 29.9990 13.5211 28.7821 L 8.4732 21.5933 C 7.7521 20.5567 6.6929 20.5342 5.9493 21.5933 L .9014 28.7595 C 0 29.9990 .4282 31.1032 2.0507 31.1032 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate X (deg)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate X (deg)", "cocoblocks")),
     value: nextRotateX,
     onChange: val => setAttributes({
       nextRotateX: val
@@ -3620,7 +3620,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 53.9490 26.3032 L 50.8619 26.3032 C 49.6223 14.8328 39.7520 5.7061 27.9886 5.7061 C 21.1380 5.7061 14.9183 8.8159 10.6817 13.7061 C 9.8253 14.6751 9.9605 15.8694 10.8394 16.5004 C 11.7408 17.1314 12.7999 16.9286 13.5436 16.0948 C 17.0365 12.0836 22.2196 9.5371 27.9886 9.5371 C 37.8140 9.5371 45.8138 16.8159 46.9856 26.3032 L 43.6280 26.3032 C 42.0280 26.3032 41.5999 27.3849 42.4787 28.6243 L 47.5039 35.8130 C 48.2252 36.8497 49.3070 36.8722 50.0506 35.8130 L 55.0982 28.6468 C 56 27.3849 55.5717 26.3032 53.9490 26.3032 Z M 2.0507 31.1032 L 5.1380 31.1032 C 6.3774 42.5736 16.2479 51.6778 27.9886 51.6778 C 34.8844 51.6778 41.1041 48.5454 45.3407 43.6778 C 46.1521 42.7088 46.0395 41.4919 45.1829 40.8609 C 44.2816 40.2299 43.2224 40.4553 42.4787 41.2891 C 39.0083 45.3229 33.8252 47.8468 27.9886 47.8468 C 18.1859 47.8468 10.1859 40.5905 9.0140 31.1032 L 12.3718 31.1032 C 13.9718 31.1032 14.3999 29.9990 13.5211 28.7821 L 8.4732 21.5933 C 7.7521 20.5567 6.6929 20.5342 5.9493 21.5933 L .9014 28.7595 C 0 29.9990 .4282 31.1032 2.0507 31.1032 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate Y (deg)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate Y (deg)", "cocoblocks")),
     value: nextRotateY,
     onChange: val => setAttributes({
       nextRotateY: val
@@ -3639,7 +3639,7 @@ const SliderControlsOptions = ({
       viewBox: "0 0 56 56"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M 53.9490 26.3032 L 50.8619 26.3032 C 49.6223 14.8328 39.7520 5.7061 27.9886 5.7061 C 21.1380 5.7061 14.9183 8.8159 10.6817 13.7061 C 9.8253 14.6751 9.9605 15.8694 10.8394 16.5004 C 11.7408 17.1314 12.7999 16.9286 13.5436 16.0948 C 17.0365 12.0836 22.2196 9.5371 27.9886 9.5371 C 37.8140 9.5371 45.8138 16.8159 46.9856 26.3032 L 43.6280 26.3032 C 42.0280 26.3032 41.5999 27.3849 42.4787 28.6243 L 47.5039 35.8130 C 48.2252 36.8497 49.3070 36.8722 50.0506 35.8130 L 55.0982 28.6468 C 56 27.3849 55.5717 26.3032 53.9490 26.3032 Z M 2.0507 31.1032 L 5.1380 31.1032 C 6.3774 42.5736 16.2479 51.6778 27.9886 51.6778 C 34.8844 51.6778 41.1041 48.5454 45.3407 43.6778 C 46.1521 42.7088 46.0395 41.4919 45.1829 40.8609 C 44.2816 40.2299 43.2224 40.4553 42.4787 41.2891 C 39.0083 45.3229 33.8252 47.8468 27.9886 47.8468 C 18.1859 47.8468 10.1859 40.5905 9.0140 31.1032 L 12.3718 31.1032 C 13.9718 31.1032 14.3999 29.9990 13.5211 28.7821 L 8.4732 21.5933 C 7.7521 20.5567 6.6929 20.5342 5.9493 21.5933 L .9014 28.7595 C 0 29.9990 .4282 31.1032 2.0507 31.1032 Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Rotate Z (deg)', 'cocoblocks')),
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate Z (deg)", "cocoblocks")),
     value: nextRotateZ,
     onChange: val => setAttributes({
       nextRotateZ: val
@@ -3652,7 +3652,7 @@ const SliderControlsOptions = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Scale', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Scale", "cocoblocks"),
     value: nextScale,
     onChange: val => setAttributes({
       nextScale: val
@@ -3663,7 +3663,7 @@ const SliderControlsOptions = ({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Opacity', 'cocoblocks'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks"),
     value: nextOpacity,
     onChange: val => setAttributes({
       nextOpacity: val
@@ -3676,9 +3676,1840 @@ const SliderControlsOptions = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "button-save-modal",
     onClick: closeModal
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Save', 'cocoblocks'))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Save", "cocoblocks"))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SliderControlsOptions);
+
+/***/ }),
+
+/***/ "./src/components/TextControls.js":
+/*!****************************************!*\
+  !*** ./src/components/TextControls.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aligncontrol-three */ "./src/components/aligncontrol-three.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _font_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./font-style */ "./src/components/font-style.js");
+/* harmony import */ var _sectionSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSelector */ "./src/components/sectionSelector.js");
+
+
+
+
+
+
+
+
+
+const TextControls = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes,
+  setActiveSection,
+  activeSection,
+  parallax,
+  device,
+  handleDesktopClick,
+  handleTabletClick,
+  handleMobileClick,
+  showOtherButtons
+}) => {
+  // Remove Text
+  const removeSlideTitle = (slideId, index) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.filter((element, i) => !(element.type === "title" && i === index))
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Update Text
+  const updateSlideTitle = (slideId, index, newTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        text: newTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text align
+  const updateTextAlign = (slideId, index, align) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textAlign: align
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text color
+  const updateSlideTextColor = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textColor: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Style
+  const updateFontStyle = (slideId, index, styleType, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "title" && i === index) {
+          const updatedFontStyle = {
+            ...element.fontStyle,
+            [styleType]: value
+          };
+          return {
+            ...element,
+            fontStyle: updatedFontStyle
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Family
+  const updateTextFamily = (slideId, index, family) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        fontFamily: family
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotate = (slideId, index, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        rotate: rotate
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacity = (slideId, index, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        opacity: opacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Element
+  const updateElementTitle = (slideId, index, newElementTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        elementTitle: newElementTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Size
+  const updateFontSize = (slideId, index, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        fontSize: newSize
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Size Tablet
+  const updateFontSizeTablet = (slideId, index, newSizeTablet) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        fontSizeTablet: newSizeTablet
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Size Mobile
+  const updateFontSizeMobile = (slideId, index, newSizeMobile) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        fontSizeMobile: newSizeMobile
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Line height
+  const updateLineHeight = (slideId, index, newLineHeight) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        lineHeight: newLineHeight
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Margin title
+  const updatenewMargintitle = (slideId, index, newMargintitle) => {
+    console.log("Updating margin with:", newMargintitle); // Log per debug
+
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "title" && i === index) {
+          return {
+            ...element,
+            marginTitle: {
+              top: addUnit(newMargintitle.top || "0", newMargintitle.unit || "px"),
+              right: addUnit(newMargintitle.right || "0", newMargintitle.unit || "px"),
+              bottom: addUnit(newMargintitle.bottom || "0", newMargintitle.unit || "px"),
+              left: addUnit(newMargintitle.left || "0", newMargintitle.unit || "px")
+            }
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text x
+  const updateParallaxTitle = (slideId, index, newParallaxTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        parallaxTitle: newParallaxTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text y
+  const updateParallaxTitleY = (slideId, index, newParallaxTitleY) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        parallaxTitleY: newParallaxTitleY
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text scale
+  const updateParallaxTitleScale = (slideId, index, newParallaxTitleScale) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        parallaxTitleScale: newParallaxTitleScale
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text opacity
+  const updateParallaxTitleOpacity = (slideId, index, newParallaxTitleOpacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        parallaxTitleOpacity: newParallaxTitleOpacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text duration
+  const updateParallaxTitleDuration = (slideId, index, newParallaxTitleDuration) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        parallaxTitleDuration: newParallaxTitleDuration
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Text Split
+  const updateTextAnimation = (slideId, index, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        animation: animation
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Font Family Options
+  const fontOptions = [{
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arial", "cocoblock"),
+    value: "Arial"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Georgia", "cocoblock"),
+    value: "Georgia"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Courier New", "cocoblock"),
+    value: "Courier New"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Roboto", "cocoblock"),
+    value: "Roboto"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open Sans", "cocoblock"),
+    value: "Open Sans"
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-controls"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-element"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isDestructive: true,
+    onClick: () => removeSlideTitle(slide.id, elementIndex),
+    className: "button-remove-element",
+    style: {
+      position: "absolute",
+      right: "80px",
+      top: "10px"
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Text", "cocoblocks"),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onSectionChange: setActiveSection
+  }), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    value: element.text,
+    onChange: newTitle => updateSlideTitle(slide.id, elementIndex, newTitle),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add text content...", "cocoblocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    value: element.textAlign,
+    onChange: align => updateTextAlign(slide.id, elementIndex, align)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Element html", "cocoblocks")),
+    value: element.elementTitle,
+    onChange: newElementTitle => updateElementTitle(slide.id, elementIndex, newElementTitle),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("P", "cocoblocks"),
+      value: "p"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H6", "cocoblocks"),
+      value: "h6"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H5", "cocoblocks"),
+      value: "h5"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H4", "cocoblocks"),
+      value: "h4"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H3", "cocoblocks"),
+      value: "h3"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H2", "cocoblocks"),
+      value: "h2"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H1", "cocoblocks"),
+      value: "h1"
+    }]
+  })))), activeSection === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+    className: "device-switcher"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "desktop",
+    onClick: handleDesktopClick
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+  }))), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "tablet",
+    onClick: handleTabletClick
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "mobile",
+    onClick: handleMobileClick
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+  }))))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+    })),
+    value: element.fontSize,
+    onChange: newSize => updateFontSize(slide.id, elementIndex, newSize),
+    min: 4,
+    max: 500,
+    step: 1
+  }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+    })),
+    value: element.fontSizeTablet,
+    onChange: newSizeTablet => updateFontSizeTablet(slide.id, elementIndex, newSizeTablet),
+    min: 4,
+    max: 500,
+    step: 1
+  }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+    })),
+    value: element.fontSizeMobile,
+    onChange: newSizeMobile => updateFontSizeMobile(slide.id, elementIndex, newSizeMobile),
+    min: 4,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_font_style__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    value: element.fontStyle || {} // Inizializza con un oggetto vuoto se undefined
+    ,
+    onChange: (styleType, value) => updateFontStyle(slide.id, elementIndex, styleType, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M186-80q-54 0-80-22t-26-66q0-58 49-74t116-16h21v-56q0-34-1-55.5t-6-35.5q-5-14-11.5-19.5T230-430q-9 0-16.5 3t-12.5 8q-4 5-5 10.5t1 11.5q6 11 14 21.5t8 24.5q0 25-17.5 42.5T159-291q-25 0-42.5-17.5T99-351q0-27 12-44t32.5-27q20.5-10 47.5-14t58-4q85 0 118 30.5T400-302v147q0 19 4.5 28t15.5 9q12 0 19.5-18t9.5-56h11q-3 62-23.5 87T368-80q-43 0-67.5-13.5T269-134q-10 29-29.5 41.5T186-80Zm373 0q-20 0-32.5-16.5T522-132l102-269q7-17 22-28t34-11q19 0 34 11t22 28l102 269q8 19-4.5 35.5T801-80q-12 0-22-7t-15-19l-20-58H616l-20 58q-4 11-14 18.5T559-80Zm-324-29q13 0 22-20.5t9-49.5v-67q-26 0-38 15.5T216-180v11q0 36 4 48t15 12Zm407-125h77l-39-114-38 114Zm-37-285q-48 0-76.5-33.5T500-643q0-104 66-170.5T735-880q42 0 68 9.5t26 24.5q0 6-2 12t-7 11q-5 7-12.5 10t-15.5 1q-14-4-32-7t-33-3q-71 0-114 48t-43 127q0 22 8 46t36 24q11 0 21.5-5t18.5-14q17-18 31.5-60T712-758q2-13 10.5-18.5T746-782q18 0 27.5 9.5T779-749q-12 43-17.5 75t-5.5 58q0 20 5.5 29t16.5 9q11 0 21.5-8t29.5-30q2-3 15-7 8 0 12 6t4 17q0 28-32 54t-67 26q-26 0-44.5-14T691-574q-15 26-37 40.5T605-519Zm-485-1v-220q0-58 41-99t99-41q58 0 99 41t41 99v220h-80v-80H200v80h-80Zm80-160h120v-60q0-25-17.5-42.5T260-800q-25 0-42.5 17.5T200-740v60Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font family", "cocoblocks")),
+    value: element.fontFamily,
+    options: fontOptions,
+    onChange: family => updateTextFamily(slide.id, elementIndex, family)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Line height", "cocoblocks")),
+    value: element.lineHeight,
+    onChange: newLineHeight => updateLineHeight(slide.id, elementIndex, newLineHeight),
+    min: 0.5,
+    max: 2.5,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.textColor,
+    setColorNormal: color => updateSlideTextColor(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin", "cocoblocks")),
+    values: element.marginTitle,
+    units: {},
+    onChange: newMargintitle => updatenewMargintitle(slide.id, elementIndex, newMargintitle)
+  })))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: element.rotate,
+    onChange: rotate => updateRotate(slide.id, elementIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transparency Setting", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: element.opacity,
+    onChange: opacity => updateOpacity(slide.id, elementIndex, opacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })))), activeSection === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: element.animation,
+    options: [{
+      label: "None",
+      value: ""
+    }, {
+      label: "Letter Bounce",
+      value: "bounce"
+    }, {
+      label: "Stretch",
+      value: "stretch"
+    }, {
+      label: "Focus",
+      value: "focus"
+    }],
+    onChange: animation => updateTextAnimation(slide.id, elementIndex, animation)
+  })))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax offset X", "cocoblocks")),
+    value: element.parallaxTitle,
+    onChange: newParallaxTitle => updateParallaxTitle(slide.id, elementIndex, newParallaxTitle),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax offset Y", "cocoblocks")),
+    value: element.parallaxTitleY,
+    onChange: newParallaxTitleY => updateParallaxTitleY(slide.id, elementIndex, newParallaxTitleY),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax scale", "cocoblocks")),
+    value: element.parallaxTitleScale,
+    onChange: newParallaxTitleScale => updateParallaxTitleScale(slide.id, elementIndex, newParallaxTitleScale),
+    min: 0,
+    max: 2,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax opacity", "cocoblocks")),
+    value: element.parallaxTitleOpacity,
+    onChange: newParallaxTitleOpacity => updateParallaxTitleOpacity(slide.id, elementIndex, newParallaxTitleOpacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax duration", "cocoblocks")),
+    value: element.parallaxTitleDuration,
+    onChange: newParallaxTitleDuration => updateParallaxTitleDuration(slide.id, elementIndex, newParallaxTitleDuration),
+    min: 100,
+    max: 2000,
+    step: 10
+  })))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "8px",
+      marginTop: "18px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextControls);
+
+/***/ }),
+
+/***/ "./src/components/TextControlsBlock.js":
+/*!*********************************************!*\
+  !*** ./src/components/TextControlsBlock.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aligncontrol-three */ "./src/components/aligncontrol-three.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _font_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./font-style */ "./src/components/font-style.js");
+/* harmony import */ var _sectionSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSelector */ "./src/components/sectionSelector.js");
+
+
+
+
+
+
+
+
+
+const TextControlsBlock = ({
+  slide,
+  textDiv,
+  textIndex,
+  element,
+  elementIndex,
+  slides,
+  setAttributes,
+  setActiveSection,
+  activeSection,
+  parallax,
+  device,
+  handleDesktopClick,
+  handleTabletClick,
+  handleMobileClick,
+  showOtherButtons
+}) => {
+  // Remove Text
+  const removeSlideTitleBlock = (slideId, divIndex, textIndex) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.filter((textDiv, tIndex) => tIndex !== textIndex)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text
+  const updateSlideTitleBlock = (slideId, divIndex, textIndex, newTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          content: newTitle
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text align
+  const updateTextAlign = (slideId, divIndex, textIndex, align) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          textAlign: align
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text color
+  const updateSlideTextColor = (slideId, divIndex, textIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          textColor: color
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Style
+  const updateFontStyle = (slideId, divIndex, textIndex, styleType, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          fontStyle: {
+            ...textDiv.fontStyle,
+            [styleType]: value
+          }
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Family
+  const updateTextFamily = (slideId, divIndex, textIndex, family) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          fontFamily: family
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotate = (slideId, divIndex, textIndex, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          rotate: rotate
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacity = (slideId, divIndex, textIndex, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          opacity: opacity
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Element Title
+  const updateElementTitle = (slideId, divIndex, textIndex, newElementTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          elementTitle: newElementTitle
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Size
+  const updateFontSize = (slideId, divIndex, textIndex, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          fontSize: newSize
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Size for Tablet
+  const updateFontSizeTablet = (slideId, divIndex, textIndex, newSizeTablet) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          fontSizeTablet: newSizeTablet
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Size for Mobile
+  const updateFontSizeMobile = (slideId, divIndex, textIndex, newSizeMobile) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          fontSizeMobile: newSizeMobile
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Line Height
+  const updateLineHeight = (slideId, divIndex, textIndex, newLineHeight) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          lineHeight: newLineHeight
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Margin Title
+  const updatenewMargintitle = (slideId, divIndex, textIndex, newMargintitle) => {
+    const addUnit = (value, unit) => {
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          marginTitle: {
+            top: addUnit(newMargintitle.top || "0", "px"),
+            right: addUnit(newMargintitle.right || "0", "px"),
+            bottom: addUnit(newMargintitle.bottom || "0", "px"),
+            left: addUnit(newMargintitle.left || "0", "px")
+          }
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Parallax Title X
+  const updateParallaxTitle = (slideId, divIndex, textIndex, newParallaxTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          parallaxTitle: newParallaxTitle
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Parallax Title Y
+  const updateParallaxTitleY = (slideId, divIndex, textIndex, newParallaxTitleY) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          parallaxTitleY: newParallaxTitleY
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Parallax Title Scale
+  const updateParallaxTitleScale = (slideId, divIndex, textIndex, newParallaxTitleScale) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          parallaxTitleScale: newParallaxTitleScale
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Parallax Title Opacity
+  const updateParallaxTitleOpacity = (slideId, divIndex, textIndex, newParallaxTitleOpacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          parallaxTitleOpacity: newParallaxTitleOpacity
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Parallax Title Duration
+  const updateParallaxTitleDuration = (slideId, divIndex, textIndex, newParallaxTitleDuration) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          parallaxTitleDuration: newParallaxTitleDuration
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Text Animation
+  const updateTextAnimation = (slideId, divIndex, textIndex, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          animation: animation
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Font Family Options
+  const fontOptions = [{
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arial", "cocoblock"),
+    value: "Arial"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Georgia", "cocoblock"),
+    value: "Georgia"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Courier New", "cocoblock"),
+    value: "Courier New"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Roboto", "cocoblock"),
+    value: "Roboto"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open Sans", "cocoblock"),
+    value: "Open Sans"
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-controls-inner"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-element"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isDestructive: true,
+    onClick: () => removeSlideTitleBlock(slide.id, elementIndex, textIndex),
+    className: "button-remove-element",
+    style: {
+      position: "absolute",
+      right: "12px",
+      top: "10px"
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Text", "cocoblocks"),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inner Text", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onSectionChange: setActiveSection
+  }), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    value: textDiv.content,
+    onChange: newTitle => updateSlideTitleBlock(slide.id, elementIndex, textIndex, newTitle),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add text content...", "cocoblocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    value: textDiv.textAlign,
+    onChange: align => updateTextAlign(slide.id, elementIndex, textIndex, align)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Element html", "cocoblocks")),
+    value: textDiv.elementTitle,
+    onChange: newElementTitle => updateElementTitle(slide.id, elementIndex, textIndex, newElementTitle),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("P", "cocoblocks"),
+      value: "p"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H6", "cocoblocks"),
+      value: "h6"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H5", "cocoblocks"),
+      value: "h5"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H4", "cocoblocks"),
+      value: "h4"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H3", "cocoblocks"),
+      value: "h3"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H2", "cocoblocks"),
+      value: "h2"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("H1", "cocoblocks"),
+      value: "h1"
+    }]
+  })))), activeSection === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+    className: "device-switcher"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "desktop",
+    onClick: handleDesktopClick
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+  }))), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "tablet",
+    onClick: handleTabletClick
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "mobile",
+    onClick: handleMobileClick
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+  }))))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+    })),
+    value: textDiv.fontSize,
+    onChange: newSize => updateFontSize(slide.id, elementIndex, textIndex, newSize),
+    min: 4,
+    max: 500,
+    step: 1
+  }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+    })),
+    value: textDiv.fontSizeTablet,
+    onChange: newSizeTablet => updateFontSizeTablet(slide.id, elementIndex, textIndex, newSizeTablet),
+    min: 4,
+    max: 500,
+    step: 1
+  }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+    })),
+    value: textDiv.fontSizeMobile,
+    onChange: newSizeMobile => updateFontSizeMobile(slide.id, elementIndex, textIndex, newSizeMobile),
+    min: 4,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_font_style__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    value: textDiv.fontStyle || {} // Inizializza con un oggetto vuoto se undefined
+    ,
+    onChange: (styleType, value) => updateFontStyle(slide.id, elementIndex, textIndex, styleType, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M186-80q-54 0-80-22t-26-66q0-58 49-74t116-16h21v-56q0-34-1-55.5t-6-35.5q-5-14-11.5-19.5T230-430q-9 0-16.5 3t-12.5 8q-4 5-5 10.5t1 11.5q6 11 14 21.5t8 24.5q0 25-17.5 42.5T159-291q-25 0-42.5-17.5T99-351q0-27 12-44t32.5-27q20.5-10 47.5-14t58-4q85 0 118 30.5T400-302v147q0 19 4.5 28t15.5 9q12 0 19.5-18t9.5-56h11q-3 62-23.5 87T368-80q-43 0-67.5-13.5T269-134q-10 29-29.5 41.5T186-80Zm373 0q-20 0-32.5-16.5T522-132l102-269q7-17 22-28t34-11q19 0 34 11t22 28l102 269q8 19-4.5 35.5T801-80q-12 0-22-7t-15-19l-20-58H616l-20 58q-4 11-14 18.5T559-80Zm-324-29q13 0 22-20.5t9-49.5v-67q-26 0-38 15.5T216-180v11q0 36 4 48t15 12Zm407-125h77l-39-114-38 114Zm-37-285q-48 0-76.5-33.5T500-643q0-104 66-170.5T735-880q42 0 68 9.5t26 24.5q0 6-2 12t-7 11q-5 7-12.5 10t-15.5 1q-14-4-32-7t-33-3q-71 0-114 48t-43 127q0 22 8 46t36 24q11 0 21.5-5t18.5-14q17-18 31.5-60T712-758q2-13 10.5-18.5T746-782q18 0 27.5 9.5T779-749q-12 43-17.5 75t-5.5 58q0 20 5.5 29t16.5 9q11 0 21.5-8t29.5-30q2-3 15-7 8 0 12 6t4 17q0 28-32 54t-67 26q-26 0-44.5-14T691-574q-15 26-37 40.5T605-519Zm-485-1v-220q0-58 41-99t99-41q58 0 99 41t41 99v220h-80v-80H200v80h-80Zm80-160h120v-60q0-25-17.5-42.5T260-800q-25 0-42.5 17.5T200-740v60Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font family", "cocoblocks")),
+    value: textDiv.fontFamily,
+    options: fontOptions,
+    onChange: family => updateTextFamily(slide.id, elementIndex, textIndex, family)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Line height", "cocoblocks")),
+    value: textDiv.lineHeight,
+    onChange: newLineHeight => updateLineHeight(slide.id, elementIndex, textIndex, newLineHeight),
+    min: 0.5,
+    max: 2.5,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: textDiv.textColor,
+    setColorNormal: color => updateSlideTextColor(slide.id, elementIndex, textIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin", "cocoblocks")),
+    values: textDiv.marginTitle,
+    units: {},
+    onChange: newMargintitle => updatenewMargintitle(slide.id, elementIndex, textIndex, newMargintitle)
+  })))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: textDiv.rotate,
+    onChange: rotate => updateRotate(slide.id, elementIndex, textIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transparency Setting", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: textDiv.opacity,
+    onChange: opacity => updateOpacity(slide.id, elementIndex, textIndex, opacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })))), activeSection === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: textDiv.animation,
+    options: [{
+      label: "None",
+      value: ""
+    }, {
+      label: "Letter Bounce",
+      value: "bounce"
+    }, {
+      label: "Stretch",
+      value: "stretch"
+    }, {
+      label: "Focus",
+      value: "focus"
+    }],
+    onChange: animation => updateTextAnimation(slide.id, elementIndex, textIndex, animation)
+  })))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax offset X", "cocoblocks")),
+    value: textDiv.parallaxTitle,
+    onChange: newParallaxTitle => updateParallaxTitle(slide.id, elementIndex, textIndex, newParallaxTitle),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax offset Y", "cocoblocks")),
+    value: textDiv.parallaxTitleY,
+    onChange: newParallaxTitleY => updateParallaxTitleY(slide.id, elementIndex, textIndex, newParallaxTitleY),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax scale", "cocoblocks")),
+    value: textDiv.parallaxTitleScale,
+    onChange: newParallaxTitleScale => updateParallaxTitleScale(slide.id, elementIndex, textIndex, newParallaxTitleScale),
+    min: 0,
+    max: 2,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax opacity", "cocoblocks")),
+    value: textDiv.parallaxTitleOpacity,
+    onChange: newParallaxTitleOpacity => updateParallaxTitleOpacity(slide.id, elementIndex, textIndex, newParallaxTitleOpacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax duration", "cocoblocks")),
+    value: textDiv.parallaxTitleDuration,
+    onChange: newParallaxTitleDuration => updateParallaxTitleDuration(slide.id, elementIndex, textIndex, newParallaxTitleDuration),
+    min: 100,
+    max: 2000,
+    step: 10
+  })))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "8px",
+      marginTop: "18px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextControlsBlock);
 
 /***/ }),
 
@@ -4261,6 +6092,1991 @@ const FontStyle = ({
 
 /***/ }),
 
+/***/ "./src/components/imageControls.js":
+/*!*****************************************!*\
+  !*** ./src/components/imageControls.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _sectionSelectorImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sectionSelectorImage */ "./src/components/sectionSelectorImage.js");
+
+
+
+
+
+
+
+
+const ImageControls = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes,
+  setActiveSectionImage,
+  activeSectionImage,
+  parallax
+}) => {
+  // Remove Image
+  const removeSlideImage = (slideId, index) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.filter((element, i) => !(element.type === "image" && i === index))
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Update Image
+  const updateSlideImage = (slideId, index, newUrl, newAlt) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        url: newUrl,
+        alt: newAlt
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update fit image
+  const updateSlideImageFit = (slideId, index, newFit) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        fit: newFit
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update width image
+  const updateWidthImage = (slideId, index, newWidthImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        widthImage: newWidthImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom width image
+  const updateCustomWidthImage = (slideId, index, newCustomWidthImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        customWidthImage: newCustomWidthImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom width image px
+  const updateCustomWidthImagePx = (slideId, index, newCustomWidthImagePx) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        customWidthImagePx: newCustomWidthImagePx
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update height image
+  const updateHeightImage = (slideId, index, newHeightImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        heightImage: newHeightImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom height image
+  const updateCustomHeightImage = (slideId, index, newCustomHeightImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        customHeightImage: newCustomHeightImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom height image px
+  const updateCustomHeightImagePx = (slideId, index, newCustomHeightImagePx) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        customHeightImagePx: newCustomHeightImagePx
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border color image
+  const updateSlideBackgroundBorderColorImage = (slideId, index, borderColor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        backgroundBorderColorImage: borderColor
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border size image
+  const updateSlideBackgroundBorderSizeImage = (slideId, index, newSizeBorderImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        backgroundBorderSizeImage: newSizeBorderImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border radius image
+  const updateSlideBackgroundBorderRadiusImage = (slideId, index, newRadiusImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        backgroundBorderRadiusImage: newRadiusImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update padding image
+  const updatePaddingImage = (slideId, index, newPaddingImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        paddingImage: newPaddingImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update background color image
+  const updateSlideBackgroundColorImage = (slideId, index, backgroundColorImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        backgroundColorImage: backgroundColorImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateImage = (slideId, index, rotateImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        rotateImage: rotateImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityImage = (slideId, index, opacityImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        opacityImage: opacityImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Margin image
+  const updatenewMarginImage = (slideId, index, newMarginImage) => {
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "image" && i === index) {
+          return {
+            ...element,
+            marginImage: {
+              top: addUnit(newMarginImage.top || "0", newMarginImage.unit || "px"),
+              right: addUnit(newMarginImage.right || "0", newMarginImage.unit || "px"),
+              bottom: addUnit(newMarginImage.bottom || "0", newMarginImage.unit || "px"),
+              left: addUnit(newMarginImage.left || "0", newMarginImage.unit || "px")
+            }
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update blob image
+  const updateBlobMask = (slideId, index, newBlobMask) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        blobMask: newBlobMask
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image x
+  const updateParallaxImage = (slideId, index, newParallaxImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        parallaxImage: newParallaxImage
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image y
+  const updateParallaxImageY = (slideId, index, newParallaxImageY) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        parallaxImageY: newParallaxImageY
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image scale
+  const updateParallaxImageScale = (slideId, index, newParallaxImageScale) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        parallaxImageScale: newParallaxImageScale
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image opacity
+  const updateParallaxImageOpacity = (slideId, index, newParallaxImageOpacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        parallaxImageOpacity: newParallaxImageOpacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image duration
+  const updateParallaxImageDuration = (slideId, index, newParallaxImageDuration) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        parallaxImageDuration: newParallaxImageDuration
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-controls"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-element"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => removeSlideImage(slide.id, elementIndex),
+    isDestructive: true,
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Remove Image", "cocoblocks"),
+    className: "button-remove-element",
+    style: {
+      position: "absolute",
+      right: "80px",
+      top: "10px"
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelectorImage__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    onSectionChange: setActiveSectionImage
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-img-upload"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-label-image"
+  }, activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => updateSlideImage(slide.id, elementIndex, media.url, media.alt),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !element.url ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "content-section-panel",
+      style: {
+        padding: "0"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "custom-select"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: open,
+      style: {
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        color: " var(--light-color)",
+        padding: "0"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Upload Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "dashicons dashicons-arrow-down-alt2",
+      style: {
+        position: "relative",
+        right: "2px",
+        top: "6px",
+        fontSize: "12px"
+      }
+    })))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        position: "relative",
+        padding: "0px 10px",
+        marginTop: "12px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: element.url,
+      alt: element.alt || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Uploaded Image", "cocoblocks"),
+      style: {
+        width: "100%",
+        borderRadius: "8px"
+      }
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: open,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px"
+      },
+      className: "button-replace",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image", "cocoblocks")
+    })))
+  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Alt Text", "cocoblocks")),
+    value: element.alt || "",
+    onChange: newAlt => updateSlideImage(slide.id, elementIndex, element.url, newAlt),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Add alt text...", "cocoblocks")
+  }))))), activeSectionImage === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background", "cocoblocks"))), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image fit", "cocoblocks")),
+    value: element.fit,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Cover", "slider"),
+      value: "cover"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contain", "slider"),
+      value: "contain"
+    }],
+    onChange: newFit => updateSlideImageFit(slide.id, elementIndex, newFit)
+  })), element.paddingImage > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.backgroundColorImage,
+    setColorNormal: backgroundColorImage => updateSlideBackgroundColorImage(slide.id, elementIndex, backgroundColorImage),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "16px",
+      viewBox: "0 -960 960 960",
+      width: "16px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        width: "20px",
+        height: "20px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Width & Height", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Width", "cocoblocks")),
+    value: element.widthImage,
+    onChange: newWidthImage => updateWidthImage(slide.id, elementIndex, newWidthImage),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "slide"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Relative", "cocoblocks"),
+      value: "relative"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Fixed", "cocoblocks"),
+      value: "fixed"
+    }]
+  })), element.widthImage === "relative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom width (%)", "cocoblocks"),
+    value: element.customWidthImage,
+    onChange: newCustomWidthImage => updateCustomWidthImage(slide.id, elementIndex, newCustomWidthImage),
+    min: 0,
+    max: 100,
+    step: 1
+  })), element.widthImage === "fixed" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom width (px)", "cocoblocks"),
+    value: element.customWidthImagePx,
+    onChange: newCustomWidthImagePx => updateCustomWidthImagePx(slide.id, elementIndex, newCustomWidthImagePx),
+    min: 0,
+    max: 1920,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed",
+      style: {
+        transform: "rotate(90deg)"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Height", "cocoblocks")),
+    value: element.heightImage,
+    onChange: newHeightImage => updateHeightImage(slide.id, elementIndex, newHeightImage),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "slide"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Relative", "cocoblocks"),
+      value: "relative"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Fixed", "cocoblocks"),
+      value: "fixed"
+    }]
+  })), element.heightImage === "relative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom height (%)", "cocoblocks"),
+    value: element.customHeightImage,
+    onChange: newCustomHeightImage => updateCustomHeightImage(slide.id, elementIndex, newCustomHeightImage),
+    min: 0,
+    max: 100,
+    step: 1
+  })), element.heightImage === "fixed" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom height (px)", "cocoblocks"),
+    value: element.customHeightImagePx,
+    onChange: newCustomHeightImagePx => updateCustomHeightImagePx(slide.id, elementIndex, newCustomHeightImagePx),
+    min: 0,
+    max: 1920,
+    step: 1
+  })), element.fit == "contain" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: 0
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.', "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Padding", "cocoblocks")),
+    value: element.paddingImage,
+    onChange: newPaddingImage => updatePaddingImage(slide.id, elementIndex, newPaddingImage),
+    min: 0,
+    max: 50,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Margin", "cocoblocks")),
+    values: element.marginImage,
+    units: {},
+    onChange: newMarginImage => updatenewMarginImage(slide.id, elementIndex, newMarginImage)
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.backgroundBorderColorImage,
+    setColorNormal: borderColor => updateSlideBackgroundBorderColorImage(slide.id, elementIndex, borderColor),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSizeImage,
+    onChange: newSizeBorderImage => updateSlideBackgroundBorderSizeImage(slide.id, elementIndex, newSizeBorderImage),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border radius", "cocoblocks")),
+    value: element.backgroundBorderRadiusImage,
+    onChange: newRadiusImage => updateSlideBackgroundBorderRadiusImage(slide.id, elementIndex, newRadiusImage),
+    min: 0,
+    max: 256,
+    step: 1
+  })))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Rotate", "cocoblocks")),
+    value: element.rotateImage,
+    onChange: rotateImage => updateRotateImage(slide.id, elementIndex, rotateImage),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("TRANSPARENCY SETTING", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Opacity", "cocoblocks")),
+    value: element.opacityImage,
+    onChange: opacityImage => updateOpacityImage(slide.id, elementIndex, opacityImage),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })))), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M12 2C8.686 2 6 4.686 6 8C6 11.314 8.686 14 12 14C15.314 14 18 11.314 18 8C18 4.686 15.314 2 12 2Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M6 8C3.79 8 2 9.79 2 12C2 14.21 3.79 16 6 16C8.21 16 10 14.21 10 12C10 9.79 8.21 8 6 8Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M18 8C16.14 8 14.5 9.64 14.5 11.5C14.5 13.36 16.14 15 18 15C19.86 15 21.5 13.36 21.5 11.5C21.5 9.64 19.86 8 18 8Z",
+      fill: "currentColor"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob Mask", "cocoblocks")),
+    value: element.blobMask,
+    onChange: newBlobMask => updateBlobMask(slide.id, elementIndex, newBlobMask),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: ""
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 1", "cocoblocks"),
+      value: "blob1"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 2", "cocoblocks"),
+      value: "blob2"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 3", "cocoblocks"),
+      value: "blob3"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 4", "cocoblocks"),
+      value: "blob4"
+    }]
+  })))), activeSectionImage === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Effects", "cocoblocks"))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "8px",
+      marginTop: "18px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks")), parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax offset X", "cocoblocks")),
+    value: element.parallaxImage,
+    onChange: newParallaxImage => updateParallaxImage(slide.id, elementIndex, newParallaxImage),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax offset Y", "cocoblocks")),
+    value: element.parallaxImageY,
+    onChange: newParallaxImageY => updateParallaxImageY(slide.id, elementIndex, newParallaxImageY),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax scale", "cocoblocks")),
+    value: element.parallaxImageScale,
+    onChange: newParallaxImageScale => updateParallaxImageScale(slide.id, elementIndex, newParallaxImageScale),
+    min: 0,
+    max: 2,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax opacity", "cocoblocks")),
+    value: element.parallaxImageOpacity,
+    onChange: newParallaxImageOpacity => updateParallaxImageOpacity(slide.id, elementIndex, newParallaxImageOpacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax duration", "cocoblocks")),
+    value: element.parallaxImageDuration,
+    onChange: newParallaxImageDuration => updateParallaxImageDuration(slide.id, elementIndex, newParallaxImageDuration),
+    min: 100,
+    max: 2000,
+    step: 10
+  }))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageControls);
+
+/***/ }),
+
+/***/ "./src/components/imageControlsBlock.js":
+/*!**********************************************!*\
+  !*** ./src/components/imageControlsBlock.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _sectionSelectorImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sectionSelectorImage */ "./src/components/sectionSelectorImage.js");
+
+
+
+
+
+
+
+
+const ImageControlsBlock = ({
+  slide,
+  element,
+  elementIndex,
+  innerElement,
+  slides,
+  imageDiv,
+  innerIndex,
+  imageIndex,
+  divIndex,
+  setAttributes,
+  setActiveSectionImage,
+  activeSectionImage,
+  parallax
+}) => {
+  // Remove Image
+  const removeSlideImageBlock = (slideId, divIndex, imageIndex) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.filter((imageDiv, imgIndex) => imgIndex !== imageIndex)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Image inside block
+  const updateSlideImageBlock = (slideId, divIndex, imageIndex, newImageUrl, newAltText) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          imageUrl: newImageUrl,
+          alt: newAltText
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update fit image
+  const updateSlideImageFitBlock = (slideId, divIndex, imageIndex, newFit) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          fit: newFit
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update width image
+  const updateWidthImageBlock = (slideId, divIndex, imageIndex, newWidthImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          widthImage: newWidthImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom width image
+  const updateCustomWidthImageBlock = (slideId, divIndex, imageIndex, newCustomWidthImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          customWidthImage: newCustomWidthImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom width image px
+  const updateCustomWidthImagePxBlock = (slideId, divIndex, imageIndex, newCustomWidthImagePx) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          customWidthImagePx: newCustomWidthImagePx
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update height image
+  const updateHeightImageBlock = (slideId, divIndex, imageIndex, newHeightImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          heightImage: newHeightImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom height image
+  const updateCustomHeightImageBlock = (slideId, divIndex, imageIndex, newCustomHeightImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          customHeightImage: newCustomHeightImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom height image px
+  const updateCustomHeightImagePxBlock = (slideId, divIndex, imageIndex, newCustomHeightImagePx) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          customHeightImagePx: newCustomHeightImagePx
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border color image
+  const updateSlideBackgroundBorderColorImageBlock = (slideId, divIndex, imageIndex, borderColor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          backgroundBorderColorImage: borderColor
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border size image
+  const updateSlideBackgroundBorderSizeImageBlock = (slideId, divIndex, imageIndex, newSizeBorderImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          backgroundBorderSizeImage: newSizeBorderImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border radius image
+  const updateSlideBackgroundBorderRadiusImageBlock = (slideId, divIndex, imageIndex, newRadiusImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          backgroundBorderRadiusImage: newRadiusImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update padding image
+  const updatePaddingImageBlock = (slideId, divIndex, imageIndex, newPaddingImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          paddingImage: newPaddingImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update background color image
+  const updateSlideBackgroundColorImageBlock = (slideId, divIndex, imageIndex, backgroundColorImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          backgroundColorImage: backgroundColorImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateImageBlock = (slideId, divIndex, imageIndex, rotateImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          rotateImage: rotateImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityImageBlock = (slideId, divIndex, imageIndex, opacityImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          opacityImage: opacityImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Margin image
+  const updatenewMarginImageBlock = (slideId, divIndex, imageIndex, newMarginImage) => {
+    const addUnit = (value, unit) => {
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "div" && i === divIndex) {
+          return {
+            ...element,
+            innerImageDivs: element.innerImageDivs.map((imageDiv, j) => {
+              if (j === imageIndex) {
+                return {
+                  ...imageDiv,
+                  marginImage: {
+                    top: addUnit(newMarginImage.top || "0", newMarginImage.unit || "px"),
+                    right: addUnit(newMarginImage.right || "0", newMarginImage.unit || "px"),
+                    bottom: addUnit(newMarginImage.bottom || "0", newMarginImage.unit || "px"),
+                    left: addUnit(newMarginImage.left || "0", newMarginImage.unit || "px")
+                  }
+                };
+              }
+              return imageDiv;
+            })
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update blob image
+  const updateBlobMaskBlock = (slideId, divIndex, imageIndex, newBlobMask) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          blobMask: newBlobMask
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image x
+  const updateParallaxImageBlock = (slideId, divIndex, imageIndex, newParallaxImage) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          parallaxImage: newParallaxImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image y
+  const updateParallaxImageYBlock = (slideId, divIndex, imageIndex, newParallaxImageY) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          parallaxImageY: newParallaxImageY
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image scale
+  const updateParallaxImageScaleBlock = (slideId, divIndex, imageIndex, newParallaxImageScale) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          parallaxImageScale: newParallaxImageScale
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image opacity
+  const updateParallaxImageOpacityBlock = (slideId, divIndex, imageIndex, newParallaxImageOpacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          parallaxImageOpacity: newParallaxImageOpacity
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax image duration
+  const updateParallaxImageDurationBlock = (slideId, divIndex, imageIndex, newParallaxImageDuration) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          parallaxImageDuration: newParallaxImageDuration
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-controls-inner"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-element"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => removeSlideImageBlock(slide.id, divIndex, imageIndex),
+    isDestructive: true,
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Remove Image", "cocoblocks"),
+    className: "button-remove-element",
+    style: {
+      position: "absolute",
+      right: "12px",
+      top: "10px"
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Inner Image", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelectorImage__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    onSectionChange: setActiveSectionImage
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-img-upload"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-label-image"
+  }, activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => updateSlideImageBlock(slide.id, elementIndex, imageIndex, media.url, media.alt),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !imageDiv.imageUrl ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "content-section-panel",
+      style: {
+        padding: "0"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "custom-select"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: open,
+      style: {
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        color: " var(--light-color)",
+        padding: "0"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Upload Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "dashicons dashicons-arrow-down-alt2",
+      style: {
+        position: "relative",
+        right: "2px",
+        top: "6px",
+        fontSize: "12px"
+      }
+    })))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        position: "relative",
+        padding: "0px 10px",
+        marginTop: "12px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: imageDiv.imageUrl,
+      alt: imageDiv.alt || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Uploaded Image", "cocoblocks"),
+      style: {
+        width: "100%",
+        borderRadius: "8px"
+      }
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: open,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px"
+      },
+      className: "button-replace",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image", "cocoblocks")
+    })))
+  }))))), activeSectionImage === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background", "cocoblocks"))), imageDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image fit", "cocoblocks")),
+    value: imageDiv.fit,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Cover", "slider"),
+      value: "cover"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contain", "slider"),
+      value: "contain"
+    }],
+    onChange: newFit => updateSlideImageFitBlock(slide.id, elementIndex, imageIndex, newFit)
+  })), imageDiv.paddingImage > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: imageDiv.backgroundColorImage,
+    setColorNormal: backgroundColorImage => updateSlideBackgroundColorImageBlock(slide.id, elementIndex, imageIndex, backgroundColorImage),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "16px",
+      viewBox: "0 -960 960 960",
+      width: "16px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        width: "20px",
+        height: "20px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Width & Height", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Width", "cocoblocks")),
+    value: imageDiv.widthImage,
+    onChange: newWidthImage => updateWidthImageBlock(slide.id, elementIndex, imageIndex, newWidthImage),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "slide"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Relative", "cocoblocks"),
+      value: "relative"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Fixed", "cocoblocks"),
+      value: "fixed"
+    }]
+  })), imageDiv.widthImage === "relative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom width (%)", "cocoblocks"),
+    value: imageDiv.customWidthImage,
+    onChange: newCustomWidthImage => updateCustomWidthImageBlock(slide.id, elementIndex, imageIndex, newCustomWidthImage),
+    min: 0,
+    max: 100,
+    step: 1
+  })), imageDiv.widthImage === "fixed" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom width (px)", "cocoblocks"),
+    value: imageDiv.customWidthImagePx,
+    onChange: newCustomWidthImagePx => updateCustomWidthImagePxBlock(slide.id, elementIndex, imageIndex, newCustomWidthImagePx),
+    min: 0,
+    max: 1920,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed",
+      style: {
+        transform: "rotate(90deg)"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Height", "cocoblocks")),
+    value: imageDiv.heightImage,
+    onChange: newHeightImage => updateHeightImageBlock(slide.id, elementIndex, imageIndex, newHeightImage),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "slide"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Relative", "cocoblocks"),
+      value: "relative"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Fixed", "cocoblocks"),
+      value: "fixed"
+    }]
+  })), imageDiv.heightImage === "relative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom height (%)", "cocoblocks"),
+    value: imageDiv.customHeightImage,
+    onChange: newCustomHeightImage => updateCustomHeightImageBlock(slide.id, elementIndex, imageIndex, newCustomHeightImage),
+    min: 0,
+    max: 100,
+    step: 1
+  })), imageDiv.heightImage === "fixed" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom height (px)", "cocoblocks"),
+    value: imageDiv.customHeightImagePx,
+    onChange: newCustomHeightImagePx => updateCustomHeightImagePxBlock(slide.id, elementIndex, imageIndex, newCustomHeightImagePx),
+    min: 0,
+    max: 1920,
+    step: 1
+  })), imageDiv.fit == "contain" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: 0
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.', "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Padding", "cocoblocks")),
+    value: imageDiv.paddingImage,
+    onChange: newPaddingImage => updatePaddingImageBlock(slide.id, elementIndex, imageIndex, newPaddingImage),
+    min: 0,
+    max: 50,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Margin", "cocoblocks")),
+    values: imageDiv.marginImage,
+    units: {},
+    onChange: newMarginImage => updatenewMarginImageBlock(slide.id, elementIndex, imageIndex, newMarginImage)
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: imageDiv.backgroundBorderColorImage,
+    setColorNormal: borderColor => updateSlideBackgroundBorderColorImageBlock(slide.id, elementIndex, imageIndex, borderColor),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border width", "cocoblocks")),
+    value: imageDiv.backgroundBorderSizeImage,
+    onChange: newSizeBorderImage => updateSlideBackgroundBorderSizeImageBlock(slide.id, elementIndex, imageIndex, newSizeBorderImage),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border radius", "cocoblocks")),
+    value: imageDiv.backgroundBorderRadiusImage,
+    onChange: newRadiusImage => updateSlideBackgroundBorderRadiusImageBlock(slide.id, elementIndex, imageIndex, newRadiusImage),
+    min: 0,
+    max: 256,
+    step: 1
+  })))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Rotate", "cocoblocks")),
+    value: imageDiv.rotateImage,
+    onChange: rotateImage => updateRotateImageBlock(slide.id, elementIndex, imageIndex, rotateImage),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("TRANSPARENCY SETTING", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Opacity", "cocoblocks")),
+    value: imageDiv.opacityImage,
+    onChange: opacityImage => updateOpacityImageBlock(slide.id, elementIndex, imageIndex, opacityImage),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })))), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M12 2C8.686 2 6 4.686 6 8C6 11.314 8.686 14 12 14C15.314 14 18 11.314 18 8C18 4.686 15.314 2 12 2Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M6 8C3.79 8 2 9.79 2 12C2 14.21 3.79 16 6 16C8.21 16 10 14.21 10 12C10 9.79 8.21 8 6 8Z",
+      fill: "currentColor"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M18 8C16.14 8 14.5 9.64 14.5 11.5C14.5 13.36 16.14 15 18 15C19.86 15 21.5 13.36 21.5 11.5C21.5 9.64 19.86 8 18 8Z",
+      fill: "currentColor"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob Mask", "cocoblocks")),
+    value: imageDiv.blobMask,
+    onChange: newBlobMask => updateBlobMaskBlock(slide.id, elementIndex, imageIndex, newBlobMask),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: ""
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 1", "cocoblocks"),
+      value: "blob1"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 2", "cocoblocks"),
+      value: "blob2"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 3", "cocoblocks"),
+      value: "blob3"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 4", "cocoblocks"),
+      value: "blob4"
+    }]
+  })))), activeSectionImage === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Effects", "cocoblocks"))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "8px",
+      marginTop: "18px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks")), parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax offset X", "cocoblocks")),
+    value: imageDiv.parallaxImage,
+    onChange: newParallaxImage => updateParallaxImageBlock(slide.id, elementIndex, imageIndex, newParallaxImage),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax offset Y", "cocoblocks")),
+    value: imageDiv.parallaxImageY,
+    onChange: newParallaxImageY => updateParallaxImageYBlock(slide.id, elementIndex, imageIndex, newParallaxImageY),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax scale", "cocoblocks")),
+    value: imageDiv.parallaxImageScale,
+    onChange: newParallaxImageScale => updateParallaxImageScaleBlock(slide.id, elementIndex, imageIndex, newParallaxImageScale),
+    min: 0,
+    max: 2,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax opacity", "cocoblocks")),
+    value: imageDiv.parallaxImageOpacity,
+    onChange: newParallaxImageOpacity => updateParallaxImageOpacityBlock(slide.id, elementIndex, imageIndex, newParallaxImageOpacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax duration", "cocoblocks")),
+    value: imageDiv.parallaxImageDuration,
+    onChange: newParallaxImageDuration => updateParallaxImageDurationBlock(slide.id, elementIndex, imageIndex, newParallaxImageDuration),
+    min: 100,
+    max: 2000,
+    step: 10
+  }))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageControlsBlock);
+
+/***/ }),
+
 /***/ "./src/components/sectionSelector.js":
 /*!*******************************************!*\
   !*** ./src/components/sectionSelector.js ***!
@@ -4284,7 +8100,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSelector = ({
   onSectionChange
 }) => {
-  const [activeSection, setActiveSection] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('content');
+  const [activeSection, setActiveSection] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("content");
   const handleSectionChange = section => {
     setActiveSection(section);
     onSectionChange(section);
@@ -4292,14 +8108,14 @@ const SectionSelector = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
     className: "section-selector",
     style: {
-      marginLeft: '-6px',
-      marginRight: '-6px',
-      marginBottom: '18px'
+      marginLeft: "-16px",
+      marginRight: "-16px",
+      marginBottom: "18px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'content' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('content')
+    variant: activeSection === "content" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("content")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4308,10 +8124,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'style' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('style')
+    variant: activeSection === "style" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("style")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4320,10 +8136,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'adv-style' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('adv-style')
+    variant: activeSection === "adv-style" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("adv-style")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4332,10 +8148,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Adv.Style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Adv.Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'animation' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('animation')
+    variant: activeSection === "animation" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("animation")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4344,10 +8160,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "m400-320 240-160-240-160v320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-43 9-84.5t26-80.5l62 62q-8 26-12.5 51.5T160-480q0 134 93 227t227 93q134 0 227-93t93-227q0-134-93-227t-227-93q-27 0-52.5 4.5T377-783l-61-61q40-18 80-27t84-9q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM220-680q-25 0-42.5-17.5T160-740q0-25 17.5-42.5T220-800q25 0 42.5 17.5T280-740q0 25-17.5 42.5T220-680Zm260 200Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Animation', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Animation", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'hover' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('hover')
+    variant: activeSection === "hover" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("hover")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4356,10 +8172,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Hover', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Hover", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'actions' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('actions')
+    variant: activeSection === "actions" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("actions")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4368,10 +8184,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Actions', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Actions", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'visibility' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('visibility')
+    variant: activeSection === "visibility" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("visibility")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4380,10 +8196,10 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M520-120H200q-33 0-56.5-23.5T120-200v-320h400v400Zm-360-80h320L376-340l-76 100-56-74-84 114Zm40-560h-80q0-33 23.5-56.5T200-840v80Zm80 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0 640v-80h80v80h-80Zm160-640v-80q33 0 56.5 23.5T840-760h-80ZM120-600v-80h80v80h-80Zm640 400h80q0 33-23.5 56.5T760-120v-80Zm0-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Visibility', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Visibility", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSection === 'parallax' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('parallax')
+    variant: activeSection === "parallax" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("parallax")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4392,11 +8208,150 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Parallax', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Parallax", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button"
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSelector);
+
+/***/ }),
+
+/***/ "./src/components/sectionSelectorBlock.js":
+/*!************************************************!*\
+  !*** ./src/components/sectionSelectorBlock.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+const SectionSelectorBlock = ({
+  onSectionChange
+}) => {
+  const [activeSectionBlock, setActiveSectionBlock] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("content");
+  const handleSectionChangeBlock = section => {
+    setActiveSectionBlock(section);
+    onSectionChange(section);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+    className: "section-selector",
+    style: {
+      marginLeft: "-16px",
+      marginRight: "-16px",
+      marginBottom: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "content" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("content")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "style" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("style")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "adv-style" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("adv-style")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Adv.Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "animation" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("animation")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m400-320 240-160-240-160v320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-43 9-84.5t26-80.5l62 62q-8 26-12.5 51.5T160-480q0 134 93 227t227 93q134 0 227-93t93-227q0-134-93-227t-227-93q-27 0-52.5 4.5T377-783l-61-61q40-18 80-27t84-9q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM220-680q-25 0-42.5-17.5T160-740q0-25 17.5-42.5T220-800q25 0 42.5 17.5T280-740q0 25-17.5 42.5T220-680Zm260 200Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Animation", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "hover" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("hover")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Hover", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "actions" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("actions")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Actions", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "visibility" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("visibility")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M520-120H200q-33 0-56.5-23.5T120-200v-320h400v400Zm-360-80h320L376-340l-76 100-56-74-84 114Zm40-560h-80q0-33 23.5-56.5T200-840v80Zm80 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0 640v-80h80v80h-80Zm160-640v-80q33 0 56.5 23.5T840-760h-80ZM120-600v-80h80v80h-80Zm640 400h80q0 33-23.5 56.5T760-120v-80Zm0-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Visibility", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionBlock === "parallax" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeBlock("parallax")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Parallax", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button"
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSelectorBlock);
 
 /***/ }),
 
@@ -4423,7 +8378,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSelectorImage = ({
   onSectionChange
 }) => {
-  const [activeSectionImage, setActiveSectionImage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('content');
+  const [activeSectionImage, setActiveSectionImage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("content");
   const handleSectionChange = section => {
     setActiveSectionImage(section);
     onSectionChange(section);
@@ -4431,22 +8386,22 @@ const SectionSelectorImage = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
     className: "section-selector",
     style: {
-      marginLeft: '-18px',
-      marginRight: '-18px',
-      marginBottom: '18px'
+      marginLeft: "-16px",
+      marginRight: "-16px",
+      marginBottom: "18px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'content' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('content')
+    variant: activeSectionImage === "content" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("content")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4454,18 +8409,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'style' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('style')
+    variant: activeSectionImage === "style" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("style")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4473,18 +8428,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'adv-style' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('adv-style')
+    variant: activeSectionImage === "adv-style" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("adv-style")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4492,18 +8447,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Adv.Style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Adv.Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'animation' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('animation')
+    variant: activeSectionImage === "animation" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("animation")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4511,18 +8466,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "m400-320 240-160-240-160v320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-43 9-84.5t26-80.5l62 62q-8 26-12.5 51.5T160-480q0 134 93 227t227 93q134 0 227-93t93-227q0-134-93-227t-227-93q-27 0-52.5 4.5T377-783l-61-61q40-18 80-27t84-9q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM220-680q-25 0-42.5-17.5T160-740q0-25 17.5-42.5T220-800q25 0 42.5 17.5T280-740q0 25-17.5 42.5T220-680Zm260 200Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Animation', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Animation", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'hover' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('hover')
+    variant: activeSectionImage === "hover" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("hover")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4530,18 +8485,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Hover', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Hover", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'actions' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('actions')
+    variant: activeSectionImage === "actions" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("actions")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4549,18 +8504,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Actions', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Actions", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'visibility' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('visibility')
+    variant: activeSectionImage === "visibility" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("visibility")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4568,18 +8523,18 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M520-120H200q-33 0-56.5-23.5T120-200v-320h400v400Zm-360-80h320L376-340l-76 100-56-74-84 114Zm40-560h-80q0-33 23.5-56.5T200-840v80Zm80 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0 640v-80h80v80h-80Zm160-640v-80q33 0 56.5 23.5T840-760h-80ZM120-600v-80h80v80h-80Zm640 400h80q0 33-23.5 56.5T760-120v-80Zm0-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Visibility', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Visibility", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     },
-    variant: activeSectionImage === 'parallax' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('parallax')
+    variant: activeSectionImage === "parallax" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("parallax")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     style: {
-      width: '20px',
-      height: '20px'
+      width: "20px",
+      height: "20px"
     },
     height: "24px",
     viewBox: "0 -960 960 960",
@@ -4587,10 +8542,10 @@ const SectionSelectorImage = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Parallax', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Parallax", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     style: {
-      padding: '6px 12px'
+      padding: "6px 12px"
     }
   }));
 };
@@ -4621,7 +8576,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSelectorSlide = ({
   onSectionChange
 }) => {
-  const [activeSectionSlide, setActiveSectionSlide] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('background');
+  const [activeSectionSlide, setActiveSectionSlide] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("background");
   const handleSectionChangeSlide = section => {
     setActiveSectionSlide(section);
     onSectionChange(section);
@@ -4629,14 +8584,14 @@ const SectionSelectorSlide = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
     className: "section-selector",
     style: {
-      marginLeft: '-16px',
-      marginRight: '-16px',
-      marginBottom: '-16px'
+      marginLeft: "-16px",
+      marginRight: "-16px",
+      marginBottom: "-16px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSlide === 'background' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeSlide('background')
+    variant: activeSectionSlide === "background" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeSlide("background")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4645,10 +8600,10 @@ const SectionSelectorSlide = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M200-120q-33 0-56.5-23.5T120-200v-240h80v240h240v80H200Zm320 0v-80h240v-240h80v240q0 33-23.5 56.5T760-120H520ZM240-280l120-160 90 120 120-160 150 200H240ZM120-520v-240q0-33 23.5-56.5T200-840h240v80H200v240h-80Zm640 0v-240H520v-80h240q33 0 56.5 23.5T840-760v240h-80Zm-140-40q-26 0-43-17t-17-43q0-26 17-43t43-17q26 0 43 17t17 43q0 26-17 43t-43 17Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSlide === 'layout' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeSlide('layout')
+    variant: activeSectionSlide === "layout" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeSlide("layout")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4657,10 +8612,10 @@ const SectionSelectorSlide = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h240v-560H200v560Zm320 0h240v-280H520v280Zm0-360h240v-200H520v200Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Layout', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSlide === 'style' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeSlide('style')
+    variant: activeSectionSlide === "style" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeSlide("style")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4669,7 +8624,7 @@ const SectionSelectorSlide = ({
     fill: "#5f6368"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Style', 'cocoblocks')));
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSelectorSlide);
 
@@ -4698,7 +8653,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSliderSelector = ({
   onSectionChange
 }) => {
-  const [activeSectionSlider, setActiveSectionSlider] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('layout');
+  const [activeSectionSlider, setActiveSectionSlider] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("layout");
   const handleSectionChange = section => {
     setActiveSectionSlider(section);
     onSectionChange(section);
@@ -4707,8 +8662,8 @@ const SectionSliderSelector = ({
     className: "section-selector"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSlider === 'layout' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('layout')
+    variant: activeSectionSlider === "layout" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("layout")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4717,10 +8672,10 @@ const SectionSliderSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M80-160v-120h80v-440q0-33 23.5-56.5T240-800h600v80H240v440h240v120H80Zm520 0q-17 0-28.5-11.5T560-200v-400q0-17 11.5-28.5T600-640h240q17 0 28.5 11.5T880-600v400q0 17-11.5 28.5T840-160H600Zm40-120h160v-280H640v280Zm0 0h160-160Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Layout', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSlider === 'general' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('general')
+    variant: activeSectionSlider === "general" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("general")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4729,10 +8684,10 @@ const SectionSliderSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M686-132 444-376q-20 8-40.5 12t-43.5 4q-100 0-170-70t-70-170q0-36 10-68.5t28-61.5l146 146 72-72-146-146q29-18 61.5-28t68.5-10q100 0 170 70t70 170q0 23-4 43.5T584-516l244 242q12 12 12 29t-12 29l-84 84q-12 12-29 12t-29-12Zm29-85 27-27-256-256q18-20 26-46.5t8-53.5q0-60-38.5-104.5T386-758l74 74q12 12 12 28t-12 28L332-500q-12 12-28 12t-28-12l-74-74q9 57 53.5 95.5T360-440q26 0 52-8t47-25l256 256ZM472-488Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('General', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("General", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSlider === 'content' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChange('content')
+    variant: activeSectionSlider === "content" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("content")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4741,7 +8696,7 @@ const SectionSliderSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content', 'cocoblocks')));
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSliderSelector);
 
@@ -4770,7 +8725,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSliderSelectorNavigation = ({
   onSectionChange
 }) => {
-  const [activeSectionSliderNavigation, setActiveSectionSliderNavigation] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('progress');
+  const [activeSectionSliderNavigation, setActiveSectionSliderNavigation] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("progress");
   const handleSectionChangeNavigation = section => {
     setActiveSectionSliderNavigation(section);
     onSectionChange(section);
@@ -4779,8 +8734,8 @@ const SectionSliderSelectorNavigation = ({
     className: "section-selector"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderNavigation === 'progress' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeNavigation('progress')
+    variant: activeSectionSliderNavigation === "progress" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeNavigation("progress")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4789,10 +8744,10 @@ const SectionSliderSelectorNavigation = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM253-253l227-227v-320q-134 0-227 93t-93 227q0 64 24 123t69 104Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Progress', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Progress", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderNavigation === 'arrow' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeNavigation('arrow')
+    variant: activeSectionSliderNavigation === "arrow" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeNavigation("arrow")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4801,10 +8756,10 @@ const SectionSliderSelectorNavigation = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Arrow', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arrow", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderNavigation === 'bullet' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeNavigation('bullet')
+    variant: activeSectionSliderNavigation === "bullet" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeNavigation("bullet")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4813,10 +8768,10 @@ const SectionSliderSelectorNavigation = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M160-400q-33 0-56.5-23.5T80-480q0-33 23.5-56.5T160-560q33 0 56.5 23.5T240-480q0 33-23.5 56.5T160-400Zm0-54q11 0 18.5-7.5T186-480q0-11-7.5-18.5T160-506q-11 0-18.5 7.5T134-480q0 11 7.5 18.5T160-454Zm214 54q-33 0-56.5-23.5T294-480q0-33 23.5-56.5T374-560q33 0 56.5 23.5T454-480q0 33-23.5 56.5T374-400Zm0-54q11 0 18.5-7.5T400-480q0-11-7.5-18.5T374-506q-11 0-18.5 7.5T348-480q0 11 7.5 18.5T374-454Zm212 54q-33 0-56.5-23.5T506-480q0-33 23.5-56.5T586-560q33 0 56.5 23.5T666-480q0 33-23.5 56.5T586-400Zm0-54q11 0 18.5-7.5T612-480q0-11-7.5-18.5T586-506q-11 0-18.5 7.5T560-480q0 11 7.5 18.5T586-454Zm214 54q-33 0-56.5-23.5T720-480q0-33 23.5-56.5T800-560q33 0 56.5 23.5T880-480q0 33-23.5 56.5T800-400Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bullets', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bullets", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderNavigation === 'keyboard' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeNavigation('keyboard')
+    variant: activeSectionSliderNavigation === "keyboard" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeNavigation("keyboard")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4825,10 +8780,10 @@ const SectionSliderSelectorNavigation = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Keyboard', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Keyboard", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderNavigation === 'mouse' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeNavigation('mouse')
+    variant: activeSectionSliderNavigation === "mouse" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeNavigation("mouse")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4837,10 +8792,10 @@ const SectionSliderSelectorNavigation = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Mouse', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mouse", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderNavigation === 'grap' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeNavigation('grap')
+    variant: activeSectionSliderNavigation === "grap" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeNavigation("grap")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4849,7 +8804,7 @@ const SectionSliderSelectorNavigation = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M402-40q-30 0-56-13.5T303-92L48-465l24-23q19-19 45-22t47 12l116 81v-383q0-17 11.5-28.5T320-840q17 0 28.5 11.5T360-800v537L212-367l157 229q5 8 14 13t19 5h278q33 0 56.5-23.5T760-200v-560q0-17 11.5-28.5T800-800q17 0 28.5 11.5T840-760v560q0 66-47 113T680-40H402Zm38-440v-400q0-17 11.5-28.5T480-920q17 0 28.5 11.5T520-880v400h-80Zm160 0v-360q0-17 11.5-28.5T640-880q17 0 28.5 11.5T680-840v360h-80ZM486-300Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Grab', 'cocoblocks')));
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Grab", "cocoblocks")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSliderSelectorNavigation);
 
@@ -4878,7 +8833,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSliderSelectorOptions = ({
   onSectionChange
 }) => {
-  const [activeSectionSliderOptions, setActiveSectionSliderOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('background');
+  const [activeSectionSliderOptions, setActiveSectionSliderOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("background");
   const handleSectionChangeOptions = section => {
     setActiveSectionSliderOptions(section);
     onSectionChange(section);
@@ -4887,8 +8842,8 @@ const SectionSliderSelectorOptions = ({
     className: "section-selector"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderOptions === 'background' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeOptions('background')
+    variant: activeSectionSliderOptions === "background" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeOptions("background")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4897,10 +8852,10 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M200-120q-33 0-56.5-23.5T120-200v-240h80v240h240v80H200Zm320 0v-80h240v-240h80v240q0 33-23.5 56.5T760-120H520ZM240-280l120-160 90 120 120-160 150 200H240ZM120-520v-240q0-33 23.5-56.5T200-840h240v80H200v240h-80Zm640 0v-240H520v-80h240q33 0 56.5 23.5T840-760v240h-80Zm-140-40q-26 0-43-17t-17-43q0-26 17-43t43-17q26 0 43 17t17 43q0 26-17 43t-43 17Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderOptions === 'animation' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeOptions('animation')
+    variant: activeSectionSliderOptions === "animation" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeOptions("animation")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4909,10 +8864,10 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Animation', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderOptions === 'filter' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeOptions('filter')
+    variant: activeSectionSliderOptions === "filter" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeOptions("filter")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4921,10 +8876,10 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Filters', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Filters", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderOptions === 'loop' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeOptions('loop')
+    variant: activeSectionSliderOptions === "loop" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeOptions("loop")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4933,10 +8888,10 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M460-360v-180h-60v-60h120v240h-60ZM280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Loop Layers', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Loop Layers", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderOptions === 'language' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeOptions('language')
+    variant: activeSectionSliderOptions === "language" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeOptions("language")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4945,10 +8900,10 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Language', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Language", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
-    variant: activeSectionSliderOptions === 'direction' ? 'primary' : 'secondary',
-    onClick: () => handleSectionChangeOptions('direction')
+    variant: activeSectionSliderOptions === "direction" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeOptions("direction")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4957,7 +8912,7 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Direction', 'cocoblocks')));
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Direction", "cocoblocks")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSliderSelectorOptions);
 
@@ -4988,21 +8943,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/slider/editor.scss");
 /* harmony import */ var _components_editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/editor.scss */ "./src/components/editor.scss");
 /* harmony import */ var _components_colorPanel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/colorPanel */ "./src/components/colorPanel.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/aligncontrol */ "./src/components/aligncontrol.js");
 /* harmony import */ var _components_SliderControls__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/SliderControls */ "./src/components/SliderControls.js");
 /* harmony import */ var _components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/colorPanelGradient */ "./src/components/colorPanelGradient.js");
-/* harmony import */ var _components_aligncontrol_three__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/aligncontrol-three */ "./src/components/aligncontrol-three.js");
-/* harmony import */ var _components_font_style__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/font-style */ "./src/components/font-style.js");
-/* harmony import */ var _components_sectionSelector__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/sectionSelector */ "./src/components/sectionSelector.js");
-/* harmony import */ var _components_sectionSelectorImage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/sectionSelectorImage */ "./src/components/sectionSelectorImage.js");
-/* harmony import */ var _components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/SliderControlsNavigation */ "./src/components/SliderControlsNavigation.js");
-/* harmony import */ var _components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/SliderControlsOptions */ "./src/components/SliderControlsOptions.js");
-/* harmony import */ var _components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/sectionSelectorSlide */ "./src/components/sectionSelectorSlide.js");
+/* harmony import */ var _components_sectionSelectorBlock__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/sectionSelectorBlock */ "./src/components/sectionSelectorBlock.js");
+/* harmony import */ var _components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/SliderControlsNavigation */ "./src/components/SliderControlsNavigation.js");
+/* harmony import */ var _components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/SliderControlsOptions */ "./src/components/SliderControlsOptions.js");
+/* harmony import */ var _components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/sectionSelectorSlide */ "./src/components/sectionSelectorSlide.js");
+/* harmony import */ var _components_TextControls__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/TextControls */ "./src/components/TextControls.js");
+/* harmony import */ var _components_imageControls__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/imageControls */ "./src/components/imageControls.js");
+/* harmony import */ var _components_TextControlsBlock__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/TextControlsBlock */ "./src/components/TextControlsBlock.js");
+/* harmony import */ var _components_imageControlsBlock__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/imageControlsBlock */ "./src/components/imageControlsBlock.js");
+
 
 
 
@@ -5152,6 +9109,8 @@ function Edit({
     autoplayProgressPosition,
     parallax
   } = attributes;
+
+  /* Classi personalizzate per il blocco */
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     // Funzione per rimuovere le classi personalizzate
     const removeCustomClasses = () => {
@@ -5571,27 +9530,15 @@ function Edit({
     });
   };
 
-  // Update Content
-  const updateSlideDiv = (slideId, index, newContent) => {
+  // Add Text inside block
+  const addSlideTitleDiv = (slideId, divIndex) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
-      elements: slide.elements ? slide.elements.map((element, i) => element.type === "div" && i === index ? {
+      elements: slide.elements.map((element, index) => index === divIndex ? {
         ...element,
-        content: newContent
-      } : element) : [] // Se elements non è definito, inizializzalo come array vuoto
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Text color
-  const updateSlideTextColorDiv = (slideId, index, colorDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        textColorDiv: colorDiv
+        innerTextDivs: [...(element.innerTextDivs || []), {
+          content: ""
+        }]
       } : element)
     } : slide);
     setAttributes({
@@ -5599,136 +9546,17 @@ function Edit({
     });
   };
 
-  // Update Text align
-  const updateTextAlignDiv = (slideId, index, alignDiv) => {
+  // Add Image inside block
+  const addSlideImageDiv = (slideId, divIndex) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+      elements: slide.elements.map((element, index) => index === divIndex ? {
         ...element,
-        textAlignDiv: alignDiv
+        innerImageDivs: [...(element.innerImageDivs || []), {
+          imageUrl: "",
+          alt: ""
+        }]
       } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Font Style
-  const updateFontStyleDiv = (slideId, index, styleTypeDiv, value) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => {
-        if (element.type === "div" && i === index) {
-          const updatedFontStyleDiv = {
-            ...element.fontStyleDiv,
-            [styleTypeDiv]: value
-          };
-          return {
-            ...element,
-            fontStyleDiv: updatedFontStyleDiv
-          };
-        }
-        return element;
-      })
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Element
-  const updateElementTitleDiv = (slideId, index, newElementTitleDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        elementTitleDiv: newElementTitleDiv
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Size
-  const updateFontSizeDiv = (slideId, index, newSizeDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        fontSizeDiv: newSizeDiv
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-  // Size Tablet
-  const updateFontSizeTabletDiv = (slideId, index, newSizeTabletDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        fontSizeTabletDiv: newSizeTabletDiv
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-  // Size Mobile
-  const updateFontSizeMobileDiv = (slideId, index, newSizeMobileDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        fontSizeMobileDiv: newSizeMobileDiv
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Line height
-  const updateLineHeightDiv = (slideId, index, newLineHeightDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        lineHeightDiv: newLineHeightDiv
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Margin title
-  const updatenewMargintitleDiv = (slideId, index, newMargintitleDiv) => {
-    const addUnit = (value, unit) => {
-      // Verifica se il valore termina già con l'unità
-      if (typeof value === "string" && value.endsWith(unit)) {
-        return value;
-      }
-      return `${value}${unit}`;
-    };
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => {
-        if (element.type === "div" && i === index) {
-          return {
-            ...element,
-            marginTitleDiv: {
-              top: addUnit(newMargintitleDiv.top || "0", newMargintitleDiv.unit || "px"),
-              right: addUnit(newMargintitleDiv.right || "0", newMargintitleDiv.unit || "px"),
-              bottom: addUnit(newMargintitleDiv.bottom || "0", newMargintitleDiv.unit || "px"),
-              left: addUnit(newMargintitleDiv.left || "0", newMargintitleDiv.unit || "px")
-            }
-          };
-        }
-        return element;
-      })
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -5749,139 +9577,11 @@ function Edit({
     });
   };
 
-  // Image Content
-  const updateDivImage = (slideId, index, imageUrl) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements ? slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        imageUrl
-      } : element) : [] // Se elements non è definito, inizializzalo come array vuoto
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Remove image content
-  const removeDivImage = (slideId, divIndex) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        imageUrl: null // Rimuove solo l'immagine
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Remove image inner content
-  const removeInnerDivImage = (slideId, divIndex, innerIndex) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        innerDivs: element.innerDivs.map((innerDiv, innerIdx) => innerIdx === innerIndex ? {
-          ...innerDiv,
-          imageUrl: null // Rimuove solo l'immagine dall'innerDiv
-        } : innerDiv)
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
   // Remove Content
   const removeSlideDiv = (slideId, index) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
       elements: slide.elements.filter((element, i) => element.type !== "div" || i !== index)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Add Inner Content
-  const addInnerDiv = (slideId, divIndex) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        innerDivs: [...(element.innerDivs || []), {
-          content: "",
-          backgroundColor: "",
-          imageUrl: ""
-        }]
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Innder Div
-  const updateInnerDivContent = (slideId, divIndex, innerIndex, newContent) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        innerDivs: element.innerDivs.map((innerDiv, i) => i === innerIndex ? {
-          ...innerDiv,
-          content: newContent
-        } : innerDiv)
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Background
-  const updateInnerDivBackgroundColor = (slideId, divIndex, innerIndex, newColor) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        innerDivs: element.innerDivs.map((innerDiv, i) => i === innerIndex ? {
-          ...innerDiv,
-          backgroundColor: newColor
-        } : innerDiv)
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Image Inner Content
-  const updateInnerDivImage = (slideId, divIndex, innerIndex, imageUrl) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        innerDivs: element.innerDivs.map((innerDiv, i) => i === innerIndex ? {
-          ...innerDiv,
-          imageUrl
-        } : innerDiv)
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Remove Inner Content
-  const removeInnerDiv = (slideId, divIndex, innerIndex) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => element.type === "div" && index === divIndex ? {
-        ...element,
-        innerDivs: element.innerDivs.filter((_, i) => i !== innerIndex)
-      } : element)
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -5929,295 +9629,6 @@ function Edit({
     });
   };
 
-  // Update Text
-  const updateSlideTitle = (slideId, index, newTitle) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        text: newTitle
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Text color
-  const updateSlideTextColor = (slideId, index, color) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        textColor: color
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Text align
-  const updateTextAlign = (slideId, index, align) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        textAlign: align
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Font Style
-  const updateFontStyle = (slideId, index, styleType, value) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => {
-        if (element.type === "title" && i === index) {
-          const updatedFontStyle = {
-            ...element.fontStyle,
-            [styleType]: value
-          };
-          return {
-            ...element,
-            fontStyle: updatedFontStyle
-          };
-        }
-        return element;
-      })
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Font Family
-  const updateTextFamily = (slideId, index, family) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        fontFamily: family
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Rotate
-  const updateRotate = (slideId, index, rotate) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        rotate: rotate
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Opacity
-  const updateOpacity = (slideId, index, opacity) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        opacity: opacity
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Element
-  const updateElementTitle = (slideId, index, newElementTitle) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        elementTitle: newElementTitle
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Size
-  const updateFontSize = (slideId, index, newSize) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        fontSize: newSize
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-  // Size Tablet
-  const updateFontSizeTablet = (slideId, index, newSizeTablet) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        fontSizeTablet: newSizeTablet
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-  // Size Mobile
-  const updateFontSizeMobile = (slideId, index, newSizeMobile) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        fontSizeMobile: newSizeMobile
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Line height
-  const updateLineHeight = (slideId, index, newLineHeight) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        lineHeight: newLineHeight
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Margin title
-  const updatenewMargintitle = (slideId, index, newMargintitle) => {
-    console.log("Updating margin with:", newMargintitle); // Log per debug
-
-    const addUnit = (value, unit) => {
-      // Verifica se il valore termina già con l'unità
-      if (typeof value === "string" && value.endsWith(unit)) {
-        return value;
-      }
-      return `${value}${unit}`;
-    };
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => {
-        if (element.type === "title" && i === index) {
-          return {
-            ...element,
-            marginTitle: {
-              top: addUnit(newMargintitle.top || "0", newMargintitle.unit || "px"),
-              right: addUnit(newMargintitle.right || "0", newMargintitle.unit || "px"),
-              bottom: addUnit(newMargintitle.bottom || "0", newMargintitle.unit || "px"),
-              left: addUnit(newMargintitle.left || "0", newMargintitle.unit || "px")
-            }
-          };
-        }
-        return element;
-      })
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax text x
-  const updateParallaxTitle = (slideId, index, newParallaxTitle) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        parallaxTitle: newParallaxTitle
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax text y
-  const updateParallaxTitleY = (slideId, index, newParallaxTitleY) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        parallaxTitleY: newParallaxTitleY
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax text scale
-  const updateParallaxTitleScale = (slideId, index, newParallaxTitleScale) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        parallaxTitleScale: newParallaxTitleScale
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax text opacity
-  const updateParallaxTitleOpacity = (slideId, index, newParallaxTitleOpacity) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        parallaxTitleOpacity: newParallaxTitleOpacity
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax text duration
-  const updateParallaxTitleDuration = (slideId, index, newParallaxTitleDuration) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        parallaxTitleDuration: newParallaxTitleDuration
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Remove Text
-  const removeSlideTitle = (slideId, index) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.filter((element, i) => !(element.type === "title" && i === index))
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
   // Add Image
   const addSlideImage = slideId => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -6258,343 +9669,6 @@ function Edit({
     });
   };
 
-  // Update Image
-  const updateSlideImage = (slideId, index, newUrl, newAlt) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        url: newUrl,
-        alt: newAlt
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update fit image
-  const updateSlideImageFit = (slideId, index, newFit) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        fit: newFit
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update width image
-  const updateWidthImage = (slideId, index, newWidthImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        widthImage: newWidthImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update custom width image
-  const updateCustomWidthImage = (slideId, index, newCustomWidthImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        customWidthImage: newCustomWidthImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update custom width image px
-  const updateCustomWidthImagePx = (slideId, index, newCustomWidthImagePx) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        customWidthImagePx: newCustomWidthImagePx
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update height image
-  const updateHeightImage = (slideId, index, newHeightImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        heightImage: newHeightImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update custom height image
-  const updateCustomHeightImage = (slideId, index, newCustomHeightImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        customHeightImage: newCustomHeightImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update custom height image px
-  const updateCustomHeightImagePx = (slideId, index, newCustomHeightImagePx) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        customHeightImagePx: newCustomHeightImagePx
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update border color image
-  const updateSlideBackgroundBorderColorImage = (slideId, index, borderColor) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        backgroundBorderColorImage: borderColor
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update border size image
-  const updateSlideBackgroundBorderSizeImage = (slideId, index, newSizeBorderImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        backgroundBorderSizeImage: newSizeBorderImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update border radius image
-  const updateSlideBackgroundBorderRadiusImage = (slideId, index, newRadiusImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        backgroundBorderRadiusImage: newRadiusImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update padding image
-  const updatePaddingImage = (slideId, index, newPaddingImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        paddingImage: newPaddingImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update background color image
-  const updateSlideBackgroundColorImage = (slideId, index, backgroundColorImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        backgroundColorImage: backgroundColorImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Rotate
-  const updateRotateImage = (slideId, index, rotateImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        rotateImage: rotateImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Opacity
-  const updateOpacityImage = (slideId, index, opacityImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        opacityImage: opacityImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Margin image
-  const updatenewMarginImage = (slideId, index, newMarginImage) => {
-    const addUnit = (value, unit) => {
-      // Verifica se il valore termina già con l'unità
-      if (typeof value === "string" && value.endsWith(unit)) {
-        return value;
-      }
-      return `${value}${unit}`;
-    };
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => {
-        if (element.type === "image" && i === index) {
-          return {
-            ...element,
-            marginImage: {
-              top: addUnit(newMarginImage.top || "0", newMarginImage.unit || "px"),
-              right: addUnit(newMarginImage.right || "0", newMarginImage.unit || "px"),
-              bottom: addUnit(newMarginImage.bottom || "0", newMarginImage.unit || "px"),
-              left: addUnit(newMarginImage.left || "0", newMarginImage.unit || "px")
-            }
-          };
-        }
-        return element;
-      })
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update blob image
-  const updateBlobMask = (slideId, index, newBlobMask) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        blobMask: newBlobMask
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax image x
-  const updateParallaxImage = (slideId, index, newParallaxImage) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        parallaxImage: newParallaxImage
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax image y
-  const updateParallaxImageY = (slideId, index, newParallaxImageY) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        parallaxImageY: newParallaxImageY
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax image scale
-  const updateParallaxImageScale = (slideId, index, newParallaxImageScale) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        parallaxImageScale: newParallaxImageScale
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax image opacity
-  const updateParallaxImageOpacity = (slideId, index, newParallaxImageOpacity) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        parallaxImageOpacity: newParallaxImageOpacity
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Parallax image duration
-  const updateParallaxImageDuration = (slideId, index, newParallaxImageDuration) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
-        ...element,
-        parallaxImageDuration: newParallaxImageDuration
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Remove Image
-  const removeSlideImage = (slideId, index) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.filter((element, i) => !(element.type === "image" && i === index))
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
   // Image
   const updateSlideBackgroundImage = (id, newImage) => {
     const updatedSlides = slides.map(slide => slide.id === id ? {
@@ -6606,16 +9680,6 @@ function Edit({
     });
   };
 
-  // Remove image
-  const removeSlideBackgroundImage = id => {
-    const updatedSlides = slides.map(slide => slide.id === id ? {
-      ...slide,
-      backgroundImage: null
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
   // Funzione per aggiornare il colore di sfondo
   const updateSlideBackgroundColor = (id, color) => {
     const updatedSlides = slides.map(slide => slide.id === id ? {
@@ -6645,16 +9709,6 @@ function Edit({
     const updatedSlides = slides.map(slide => slide.id === id ? {
       ...slide,
       backgroundVideo: videoUrl
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-  // Remove video
-  const removeSlideBackgroundVideo = id => {
-    const updatedSlides = slides.map(slide => slide.id === id ? {
-      ...slide,
-      backgroundVideo: null
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -6830,26 +9884,18 @@ function Edit({
     });
     setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
   };
-
-  // Font Family
-  const fontOptions = [{
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arial", "cocoblock"),
-    value: "Arial"
-  }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Georgia", "cocoblock"),
-    value: "Georgia"
-  }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Courier New", "cocoblock"),
-    value: "Courier New"
-  }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Roboto", "cocoblock"),
-    value: "Roboto"
-  }, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Open Sans", "cocoblock"),
-    value: "Open Sans"
-  }
-  // Aggiungi altri font se necessario
-  ];
+  const handleTabletClick = () => {
+    setAttributes({
+      device: "tablet"
+    });
+    setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+  };
+  const handleMobileClick = () => {
+    setAttributes({
+      device: "mobile"
+    });
+    setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+  };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     slides.forEach(slide => {
       slide.elements.forEach(element => {
@@ -6871,19 +9917,6 @@ function Edit({
     link.rel = "stylesheet";
     document.head.appendChild(link);
   };
-  // Effect Text Split
-  const updateTextAnimation = (slideId, index, animation) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        animation: animation
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
 
   // Section slide
   const [activeSection, setActiveSection] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("content");
@@ -6891,6 +9924,8 @@ function Edit({
   const [activeSectionSlide, setActiveSectionSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("background");
   // Section Image
   const [activeSectionImage, setActiveSectionImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("content");
+  // Section Block
+  const [activeSectionBlock, setActiveSectionBlock] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("content");
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     className: "tab-general",
     activeClass: "active-tab",
@@ -6948,12 +9983,12 @@ function Edit({
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-3 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_18__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_15__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-4 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_19__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_16__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6983,17 +10018,22 @@ function Edit({
     }))),
     onToggle: () => handlePanelSelect(slide.id),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_20__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_17__["default"], {
     onSectionChange: setActiveSectionSlide
   }), activeSectionSlide === "background" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-section-panel",
+    className: "content_slide",
     style: {
       paddingTop: "0",
       paddingBottom: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -7096,8 +10136,8 @@ function Edit({
         justifyContent: "space-between",
         paddingLeft: "1px",
         paddingRight: "0px",
-        color: ' var(--light-color)',
-        padding: '3px'
+        color: " var(--light-color)",
+        padding: "3px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
@@ -7112,9 +10152,9 @@ function Edit({
       fill: "#e8eaed",
       style: {
         marginRight: "5px",
-        fill: ' var(--light-color)',
-        width: '18px',
-        height: '18px'
+        fill: " var(--light-color)",
+        width: "18px",
+        height: "18px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
@@ -7159,18 +10199,18 @@ function Edit({
         marginLeft: "2px",
         position: "relative",
         top: "-2px",
-        color: ' var(--light-color)',
-        padding: '3px'
+        color: " var(--light-color)",
+        padding: "3px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Image", "cocoblocks")
     })))
   })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-delete",
     onClick: () => updateSlideBackgroundImage(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Image", "wp-kube")
   })), tab.name === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-img-upload",
@@ -7191,8 +10231,8 @@ function Edit({
         justifyContent: "space-between",
         paddingLeft: "1px",
         paddingRight: "0px",
-        color: ' var(--light-color)',
-        padding: '3px'
+        color: " var(--light-color)",
+        padding: "3px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
@@ -7207,9 +10247,9 @@ function Edit({
       fill: "#e8eaed",
       style: {
         marginRight: "5px",
-        fill: ' var(--light-color)',
-        width: '18px',
-        height: '18px'
+        fill: " var(--light-color)",
+        width: "18px",
+        height: "18px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "m380-300 280-180-280-180v360ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
@@ -7239,19 +10279,19 @@ function Edit({
       onClick: open,
       style: {
         marginLeft: "2px",
-        color: ' var(--light-color)',
-        padding: '3px'
+        color: " var(--light-color)",
+        padding: "3px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Video", "cocoblocks")
     })))
   })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-delete",
     onClick: () => updateSlideBackgroundVideo(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Video", "wp-kube")
-  }))))))), activeSectionSlide === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))))))), activeSectionSlide === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -7308,7 +10348,7 @@ function Edit({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Style", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       paddingTop: "0",
@@ -7372,7 +10412,16 @@ function Edit({
     min: 0,
     max: 256,
     step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Spacing", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7434,23 +10483,14 @@ function Edit({
     onClick: cancelApplySettings
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Cancel", "slider-builder")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     onClick: confirmApplySettings
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Confirm", "slider-builder"))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-section-panel",
-    style: {
-      paddingTop: "0"
-    }
-  }, slide.elements && slide.elements.map((element, elementIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Confirm", "slider-builder"))))))), slide.elements && slide.elements.map((element, elementIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: elementIndex,
     style: {
       marginBottom: "10px",
       alignItems: "center"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "button-move",
-    style: {
-      marginTop: "2px",
-      marginBottom: "10px"
-    }
+    className: "button-move"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move before", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -7465,31 +10505,39 @@ function Edit({
     size: "small",
     disabled: elementIndex === slide.elements.length - 1,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move after", "cocoblocks")
-  }, "\u2193"))), element.type === "title" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "\u2193"))), element.type === "title" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TextControls__WEBPACK_IMPORTED_MODULE_18__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes,
+    setActiveSection: setActiveSection,
+    activeSection: activeSection,
+    parallax: parallax,
+    device: device,
+    handleDesktopClick: handleDesktopClick,
+    handleTabletClick: handleTabletClick,
+    handleMobileClick: handleMobileClick,
+    showOtherButtons: showOtherButtons
+  })), element.type === "div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-block-added"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls",
-    style: {
-      marginTop: "0"
-    }
+    className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select",
-    style: {
-      paddingTop: "8px"
-    }
+    className: "title-block-added"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "title-element"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    isDestructive: true,
-    onClick: () => removeSlideTitle(slide.id, elementIndex),
-    className: "button-remove-element",
+    onClick: () => removeSlideDiv(slide.id, elementIndex),
     style: {
       position: "absolute",
-      right: "70px",
-      top: "-2px"
+      right: "80px",
+      top: "10px"
     },
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Text", "cocoblocks"),
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"]
+    isDestructive: true,
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove block", "cocoblocks"),
+    className: "button-remove-element"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -7497,519 +10545,38 @@ function Edit({
     width: "24px",
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelector__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    onSectionChange: setActiveSection
-  }), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    d: "M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorBlock__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    onSectionChange: setActiveSectionBlock
+  }), activeSectionBlock === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
-      marginTop: "-18px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
+      marginTop: "-18px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
-    value: element.text,
-    onChange: newTitle => updateSlideTitle(slide.id, elementIndex, newTitle),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add text content...", "cocoblocks")
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol_three__WEBPACK_IMPORTED_MODULE_14__["default"], {
-    value: element.textAlign,
-    onChange: align => updateTextAlign(slide.id, elementIndex, align)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select select-control-label-right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Element html", "cocoblocks")),
-    value: element.elementTitle,
-    onChange: newElementTitle => updateElementTitle(slide.id, elementIndex, newElementTitle),
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("P", "cocoblocks"),
-      value: "p"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H6", "cocoblocks"),
-      value: "h6"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H5", "cocoblocks"),
-      value: "h5"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H4", "cocoblocks"),
-      value: "h4"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H3", "cocoblocks"),
-      value: "h3"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H2", "cocoblocks"),
-      value: "h2"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H1", "cocoblocks"),
-      value: "h1"
-    }]
-  }))), activeSection === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
     style: {
-      marginTop: "-18px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
+      padding: "0"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
-    className: "device-switcher"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    size: "small",
-    isPressed: device === "desktop",
-    onClick: handleDesktopClick
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
-    viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#e8eaed",
-    style: {
-      width: "16px",
-      height: "16px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
-  }))), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    size: "small",
-    isPressed: device === "tablet",
-    onClick: () => setAttributes({
-      device: "tablet"
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
-    viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#e8eaed",
-    style: {
-      width: "16px",
-      height: "16px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    size: "small",
-    isPressed: device === "mobile",
-    onClick: () => setAttributes({
-      device: "mobile"
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
-    viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#e8eaed",
-    style: {
-      width: "16px",
-      height: "16px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
-  }))))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed",
-      style: {
-        width: "16px",
-        height: "16px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
-    })),
-    value: element.fontSize,
-    onChange: newSize => updateFontSize(slide.id, elementIndex, newSize),
-    min: 4,
-    max: 500,
-    step: 1
-  }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed",
-      style: {
-        width: "16px",
-        height: "16px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
-    })),
-    value: element.fontSizeTablet,
-    onChange: newSizeTablet => updateFontSizeTablet(slide.id, elementIndex, newSizeTablet),
-    min: 4,
-    max: 500,
-    step: 1
-  }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed",
-      style: {
-        width: "16px",
-        height: "16px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
-    })),
-    value: element.fontSizeMobile,
-    onChange: newSizeMobile => updateFontSizeMobile(slide.id, elementIndex, newSizeMobile),
-    min: 4,
-    max: 500,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_font_style__WEBPACK_IMPORTED_MODULE_15__["default"], {
-    value: element.fontStyle || {} // Inizializza con un oggetto vuoto se undefined
-    ,
-    onChange: (styleType, value) => updateFontStyle(slide.id, elementIndex, styleType, value)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select select-control-label-right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M186-80q-54 0-80-22t-26-66q0-58 49-74t116-16h21v-56q0-34-1-55.5t-6-35.5q-5-14-11.5-19.5T230-430q-9 0-16.5 3t-12.5 8q-4 5-5 10.5t1 11.5q6 11 14 21.5t8 24.5q0 25-17.5 42.5T159-291q-25 0-42.5-17.5T99-351q0-27 12-44t32.5-27q20.5-10 47.5-14t58-4q85 0 118 30.5T400-302v147q0 19 4.5 28t15.5 9q12 0 19.5-18t9.5-56h11q-3 62-23.5 87T368-80q-43 0-67.5-13.5T269-134q-10 29-29.5 41.5T186-80Zm373 0q-20 0-32.5-16.5T522-132l102-269q7-17 22-28t34-11q19 0 34 11t22 28l102 269q8 19-4.5 35.5T801-80q-12 0-22-7t-15-19l-20-58H616l-20 58q-4 11-14 18.5T559-80Zm-324-29q13 0 22-20.5t9-49.5v-67q-26 0-38 15.5T216-180v11q0 36 4 48t15 12Zm407-125h77l-39-114-38 114Zm-37-285q-48 0-76.5-33.5T500-643q0-104 66-170.5T735-880q42 0 68 9.5t26 24.5q0 6-2 12t-7 11q-5 7-12.5 10t-15.5 1q-14-4-32-7t-33-3q-71 0-114 48t-43 127q0 22 8 46t36 24q11 0 21.5-5t18.5-14q17-18 31.5-60T712-758q2-13 10.5-18.5T746-782q18 0 27.5 9.5T779-749q-12 43-17.5 75t-5.5 58q0 20 5.5 29t16.5 9q11 0 21.5-8t29.5-30q2-3 15-7 8 0 12 6t4 17q0 28-32 54t-67 26q-26 0-44.5-14T691-574q-15 26-37 40.5T605-519Zm-485-1v-220q0-58 41-99t99-41q58 0 99 41t41 99v220h-80v-80H200v80h-80Zm80-160h120v-60q0-25-17.5-42.5T260-800q-25 0-42.5 17.5T200-740v60Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font family", "cocoblocks")),
-    value: element.fontFamily,
-    options: fontOptions,
-    onChange: family => updateTextFamily(slide.id, elementIndex, family)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Line height", "cocoblocks")),
-    value: element.lineHeight,
-    onChange: newLineHeight => updateLineHeight(slide.id, elementIndex, newLineHeight),
-    min: 0.5,
-    max: 2.5,
-    step: 0.1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: element.textColor,
-    setColorNormal: color => updateSlideTextColor(slide.id, elementIndex, color),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 -960 960 960",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-9px",
-        height: "24px",
-        width: "24px",
-        marginLeft: "-4px",
-        marginRight: "-4px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "0px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select box-control"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBoxControl, {
-    id: "custom-margin-control",
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "5px",
-        marginBottom: "-5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Margin", "cocoblocks")),
-    values: element.marginTitle,
-    units: {},
-    onChange: newMargintitle => updatenewMargintitle(slide.id, elementIndex, newMargintitle)
-  }))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-18px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Rotate", "cocoblocks")),
-    value: element.rotate,
-    onChange: rotate => updateRotate(slide.id, elementIndex, rotate),
-    min: 0,
-    max: 360,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "0px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Transparency Setting", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Opacity", "cocoblocks")),
-    value: element.opacity,
-    onChange: opacity => updateOpacity(slide.id, elementIndex, opacity),
-    min: 0,
-    max: 1,
-    step: 0.1
-  }))), activeSection === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-18px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select select-control-label-right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Animation", "cocoblocks")),
-    value: element.animation,
-    options: [{
-      label: "None",
-      value: ""
-    }, {
-      label: "Letter Bounce",
-      value: "bounce"
-    }, {
-      label: "Stretch",
-      value: "stretch"
-    }, {
-      label: "Focus",
-      value: "focus"
-    }],
-    onChange: animation => updateTextAnimation(slide.id, elementIndex, animation)
-  }))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax offset X", "cocoblocks")),
-    value: element.parallaxTitle,
-    onChange: newParallaxTitle => updateParallaxTitle(slide.id, elementIndex, newParallaxTitle),
-    min: -500,
-    max: 500,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax offset Y", "cocoblocks")),
-    value: element.parallaxTitleY,
-    onChange: newParallaxTitleY => updateParallaxTitleY(slide.id, elementIndex, newParallaxTitleY),
-    min: -500,
-    max: 500,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax scale", "cocoblocks")),
-    value: element.parallaxTitleScale,
-    onChange: newParallaxTitleScale => updateParallaxTitleScale(slide.id, elementIndex, newParallaxTitleScale),
-    min: 0,
-    max: 2,
-    step: 0.1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax opacity", "cocoblocks")),
-    value: element.parallaxTitleOpacity,
-    onChange: newParallaxTitleOpacity => updateParallaxTitleOpacity(slide.id, elementIndex, newParallaxTitleOpacity),
-    min: 0,
-    max: 1,
-    step: 0.1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax duration", "cocoblocks")),
-    value: element.parallaxTitleDuration,
-    onChange: newParallaxTitleDuration => updateParallaxTitleDuration(slide.id, elementIndex, newParallaxTitleDuration),
-    min: 100,
-    max: 2000,
-    step: 10
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-18px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Effects", "cocoblocks"))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "notice components-base-control__help",
-    style: {
-      borderRadius: 0,
-      marginTop: "18px"
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks")))), element.type === "div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "label-image-element"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-label-image"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-format-image",
-    style: {
-      fontSize: "16px",
-      width: "16px",
-      marginRight: "10px",
-      color: "var(--light-color)"
-    }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => removeSlideDiv(slide.id, elementIndex),
-    isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove block", "cocoblocks"),
-    className: "button-remove-element"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
     colorNormal: element.backgroundColor,
     setColorNormal: newColor => updateDivBackgroundColor(slide.id, elementIndex, newColor),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "cocoblocks"),
     buttonIcon: "admin-customizer"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Layout", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
@@ -8052,6 +10619,37 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__["default"], {
     value: slide.positionDiv,
     onChange: newPositionDiv => updateSlidePositionDiv(slide.id, newPositionDiv)
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "4px",
+        marginLeft: "-2px",
+        marginBottom: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
+    value: slide.backgroundBorderSizeDiv,
+    onChange: newSizeDiv => updateSlideBackgroundBorderSizeDiv(slide.id, newSizeDiv),
+    min: 0,
+    max: 20,
+    step: 1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -8085,28 +10683,6 @@ function Edit({
         marginBottom: "-4px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
-    value: slide.backgroundBorderSizeDiv,
-    onChange: newSizeDiv => updateSlideBackgroundBorderSizeDiv(slide.id, newSizeDiv),
-    min: 0,
-    max: 20,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "4px",
-        marginLeft: "-2px",
-        marginBottom: "-4px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
     value: slide.backgroundBorderRadiusDiv,
@@ -8114,7 +10690,16 @@ function Edit({
     min: 0,
     max: 256,
     step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -8159,969 +10744,70 @@ function Edit({
     min: 0,
     max: 256,
     step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls-inner"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text", "cocoblocks"),
-    value: element.content,
-    onChange: newContent => updateSlideDiv(slide.id, elementIndex, newContent),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add text block...", "cocoblocks")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: element.textColorDiv,
-    setColorNormal: colorDiv => updateSlideTextColorDiv(slide.id, elementIndex, colorDiv),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 -960 960 960",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-10px",
-        height: "24px",
-        width: "24px",
-        marginLeft: "-3px",
-        marginRight: "-5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol_three__WEBPACK_IMPORTED_MODULE_14__["default"], {
-    value: element.textAlignDiv,
-    onChange: alignDiv => updateTextAlignDiv(slide.id, elementIndex, alignDiv)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_font_style__WEBPACK_IMPORTED_MODULE_15__["default"], {
-    value: element.fontStyleDiv || {} // Inizializza con un oggetto vuoto se undefined
-    ,
-    onChange: (styleTypeDiv, value) => updateFontStyleDiv(slide.id, elementIndex, styleTypeDiv, value)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Element html", "cocoblocks")),
-    value: element.elementTitleDiv,
-    onChange: newElementTitleDiv => updateElementTitleDiv(slide.id, elementIndex, newElementTitleDiv),
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("P", "cocoblocks"),
-      value: "p"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H6", "cocoblocks"),
-      value: "h6"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H5", "cocoblocks"),
-      value: "h5"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H4", "cocoblocks"),
-      value: "h4"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H3", "cocoblocks"),
-      value: "h3"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H2", "cocoblocks"),
-      value: "h2"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H1", "cocoblocks"),
-      value: "h1"
-    }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
-    className: "device-switcher"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    size: "small",
-    isPressed: device === "desktop",
-    onClick: handleDesktopClick
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-desktop",
-    style: {
-      height: "16px",
-      width: "16px",
-      fontSize: "16px"
-    }
-  })), showOtherButtons && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    size: "small",
-    isPressed: device === "tablet",
-    onClick: () => setAttributes({
-      device: "tablet"
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-tablet",
-    style: {
-      height: "16px",
-      width: "16px",
-      fontSize: "16px"
-    }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    size: "small",
-    isPressed: device === "mobile",
-    onClick: () => setAttributes({
-      device: "mobile"
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-smartphone",
-    style: {
-      height: "16px",
-      width: "16px",
-      fontSize: "16px"
-    }
-  })))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-5px",
-        marginRight: "5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: "desktop",
-    value: element.fontSizeDiv,
-    onChange: newSizeDiv => updateFontSizeDiv(slide.id, elementIndex, newSizeDiv),
-    min: 4,
-    max: 500,
-    step: 1
-  }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-5px",
-        marginRight: "5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: "tablet",
-    value: element.fontSizeTabletDiv,
-    onChange: newSizeTabletDiv => updateFontSizeTabletDiv(slide.id, elementIndex, newSizeTabletDiv),
-    min: 4,
-    max: 500,
-    step: 1
-  }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-5px",
-        marginRight: "5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m40-200 210-560h100l210 560h-96l-51-143H187l-51 143H40Zm176-224h168l-82-232h-4l-82 232Zm504 104v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Size", "cocoblocks")),
-    beforeIcon: "smartphone",
-    value: element.fontSizeMobileDiv,
-    onChange: newSizeMobileDiv => updateFontSizeMobileDiv(slide.id, elementIndex, newSizeMobileDiv),
-    min: 4,
-    max: 500,
-    step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "4px",
-        marginLeft: "-2px",
-        marginBottom: "-4px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Line height", "cocoblocks")),
-    value: element.lineHeightDiv,
-    onChange: newLineHeightDiv => updateLineHeightDiv(slide.id, elementIndex, newLineHeightDiv),
-    min: 0.5,
-    max: 2.5,
-    step: 0.1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select box-control"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBoxControl, {
-    id: "custom-margin-control",
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "5px",
-        marginBottom: "-5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Margin", "cocoblocks")),
-    values: element.marginTitleDiv,
-    units: {},
-    onChange: newMargintitleDiv => updatenewMargintitleDiv(slide.id, elementIndex, newMargintitleDiv)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls-inner"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-img-upload"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    onSelect: media => updateDivImage(slide.id, elementIndex, media.url, media.alt),
-    allowedTypes: ["image"],
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !slide.elements[elementIndex].imageUrl ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      style: {
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        color: ' var(--light-color)',
-        padding: '3px'
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "dashicons dashicons-format-image",
-      style: {
-        fontSize: "16px",
-        width: "16px",
-        height: "16px",
-        marginLeft: "-2px",
-        marginRight: "5px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "dashicons dashicons-arrow-down-alt2",
-      style: {
-        position: "relative",
-        right: "2px",
-        top: "6px",
-        fontSize: "12px"
-      }
-    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        position: "relative",
-        padding: "0px 10px",
-        marginTop: "12px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: slide.elements[elementIndex].imageUrl,
-      alt: slide.elements[elementIndex].alt || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Uploaded Image", "cocoblocks"),
-      style: {
-        width: "100%",
-        borderRadius: "8px"
-      }
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      style: {
-        marginLeft: "2px"
-      },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
-    })))
-  })), slide.elements[elementIndex].imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => removeDivImage(slide.id, elementIndex),
-    isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
-    style: {
-      marginTop: "10px",
-      color: ' var(--light-color)',
-      padding: '3px'
-    }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))), element.innerTextDivs && element.innerTextDivs.map((textDiv, textIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: textIndex
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TextControlsBlock__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    slide: slide,
+    slides: slides,
+    textDiv: textDiv,
+    element: element,
+    textIndex: textIndex,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes,
+    setActiveSection: setActiveSection,
+    activeSection: activeSection,
+    parallax: parallax,
+    device: device,
+    handleDesktopClick: handleDesktopClick,
+    handleTabletClick: handleTabletClick,
+    handleMobileClick: handleMobileClick,
+    showOtherButtons: showOtherButtons
+  }))), element.innerImageDivs && element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: imageIndex
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_imageControlsBlock__WEBPACK_IMPORTED_MODULE_21__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    divIndex: elementIndex,
+    elementIndex: elementIndex,
+    imageDiv: imageDiv,
+    imageIndex: imageIndex,
+    setAttributes: setAttributes,
+    setActiveSectionImage: setActiveSectionImage,
+    activeSectionImage: activeSectionImage,
+    parallax: parallax
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-add-element",
     style: {
       paddingBottom: "12px"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => addInnerDiv(slide.id, elementIndex),
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner block", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"]
-  }))), element.innerDivs && element.innerDivs.map((innerDiv, innerIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: innerIndex
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls",
-    style: {
-      height: "2px"
-    }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "label-image-element"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-label-image"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "dashicons dashicons-format-image",
-    style: {
-      fontSize: "16px",
-      width: "16px",
-      marginRight: "10px",
-      color: "var(--light-color)"
-    }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Inner block", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => removeInnerDiv(slide.id, elementIndex, innerIndex),
-    isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove inner block", "cocoblocks"),
-    className: "button-remove-element"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text", "cocoblocks"),
-    value: innerDiv.content,
-    onChange: newContent => updateInnerDivContent(slide.id, elementIndex, innerIndex, newContent),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner block content...", "cocoblocks")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: innerDiv.backgroundColor,
-    setColorNormal: newColor => updateInnerDivBackgroundColor(slide.id, elementIndex, innerIndex, newColor),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "cocoblocks"),
-    buttonIcon: "admin-customizer"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-img-upload"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    onSelect: media => updateInnerDivImage(slide.id, elementIndex, innerIndex, media.url, media.alt),
-    allowedTypes: ["image"],
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !innerDiv.imageUrl ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      style: {
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        color: ' var(--light-color)',
-        padding: '3px'
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "dashicons dashicons-format-image",
-      style: {
-        fontSize: "16px",
-        width: "16px",
-        height: "16px",
-        marginLeft: "-2px",
-        marginRight: "5px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "dashicons dashicons-arrow-down-alt2",
-      style: {
-        position: "relative",
-        right: "2px",
-        top: "6px",
-        fontSize: "12px"
-      }
-    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        position: "relative",
-        padding: "0px 10px",
-        marginTop: "12px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: innerDiv.imageUrl,
-      alt: innerDiv.alt || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Uploaded Image", "cocoblocks"),
-      style: {
-        width: "100%",
-        borderRadius: "8px"
-      }
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      style: {
-        marginLeft: "2px"
-      },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
-    })))
-  })), innerDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => removeInnerDivImage(slide.id, elementIndex, innerIndex),
-    isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
-    style: {
-      marginTop: "10px"
-    }
-  })))))), element.type === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-block-added"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select",
-    style: {
-      paddingTop: "15px",
-      marginTop: "-20px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-img-upload"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "label-image-element"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-label-image"
+    onClick: () => addSlideTitleDiv(slide.id, elementIndex),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner text", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    fill: "currentcolor",
     xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
-    viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#e8eaed",
-    style: {
-      marginTop: "-5px",
-      marginRight: "5px",
-      fill: ' var(--light-color)',
-      width: '18px',
-      height: '18px'
-    }
+    width: "20px",
+    height: "20px",
+    viewBox: "0 0 56 56"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => removeSlideImage(slide.id, elementIndex),
-    isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "cocoblocks"),
-    className: "button-remove-element",
-    style: {
-      marginTop: "-1px",
-      color: ' var(--light-color)',
-      padding: '3px'
-    }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorImage__WEBPACK_IMPORTED_MODULE_17__["default"], {
-    onSectionChange: setActiveSectionImage
-  }), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-18px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    onSelect: media => updateSlideImage(slide.id, elementIndex, media.url, media.alt),
-    allowedTypes: ["image"],
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !element.url ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      style: {
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        color: ' var(--light-color)'
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "dashicons dashicons-arrow-down-alt2",
-      style: {
-        position: "relative",
-        right: "2px",
-        top: "6px",
-        fontSize: "12px"
-      }
-    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        position: "relative",
-        padding: "0px 10px",
-        marginTop: "12px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: element.url,
-      alt: element.alt || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Uploaded Image", "cocoblocks"),
-      style: {
-        width: "100%",
-        borderRadius: "8px"
-      }
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      style: {
-        marginLeft: "2px",
-        position: "relative",
-        top: "-2px"
-      },
-      className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image", "cocoblocks")
-    })))
-  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "20px",
-      viewBox: "0 -960 960 960",
-      width: "20px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alt Text", "cocoblocks")),
-    value: element.alt || "",
-    onChange: newAlt => updateSlideImage(slide.id, elementIndex, element.url, newAlt),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add alt text...", "cocoblocks")
-  })))), activeSectionImage === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-24px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background", "cocoblocks"))), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "20px",
-      viewBox: "0 -960 960 960",
-      width: "20px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M560-280h200v-200h-80v120H560v80ZM200-480h80v-120h120v-80H200v200Zm-40 320q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image fit", "cocoblocks")),
-    value: element.fit,
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Cover", "slider"),
-      value: "cover"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Contain", "slider"),
-      value: "contain"
-    }],
-    onChange: newFit => updateSlideImageFit(slide.id, elementIndex, newFit)
-  })), element.paddingImage > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: element.backgroundColorImage,
-    setColorNormal: backgroundColorImage => updateSlideBackgroundColorImage(slide.id, elementIndex, backgroundColorImage),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "16px",
-      viewBox: "0 -960 960 960",
-      width: "16px",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-5px",
-        width: "20px",
-        height: "20px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "12px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Width & Height", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "20px",
-      viewBox: "0 -960 960 960",
-      width: "20px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Width", "cocoblocks")),
-    value: element.widthImage,
-    onChange: newWidthImage => updateWidthImage(slide.id, elementIndex, newWidthImage),
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Auto", "slide"),
-      value: "auto"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Relative", "cocoblocks"),
-      value: "relative"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Fixed", "cocoblocks"),
-      value: "fixed"
-    }]
-  })), element.widthImage === "relative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom width (%)", "cocoblocks"),
-    value: element.customWidthImage,
-    onChange: newCustomWidthImage => updateCustomWidthImage(slide.id, elementIndex, newCustomWidthImage),
-    min: 0,
-    max: 100,
-    step: 1
-  })), element.widthImage === "fixed" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom width (px)", "cocoblocks"),
-    value: element.customWidthImagePx,
-    onChange: newCustomWidthImagePx => updateCustomWidthImagePx(slide.id, elementIndex, newCustomWidthImagePx),
-    min: 0,
-    max: 1920,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "20px",
-      viewBox: "0 -960 960 960",
-      width: "20px",
-      fill: "#e8eaed",
-      style: {
-        transform: "rotate(90deg)"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Height", "cocoblocks")),
-    value: element.heightImage,
-    onChange: newHeightImage => updateHeightImage(slide.id, elementIndex, newHeightImage),
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Auto", "slide"),
-      value: "auto"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Relative", "cocoblocks"),
-      value: "relative"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Fixed", "cocoblocks"),
-      value: "fixed"
-    }]
-  })), element.heightImage === "relative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom height (%)", "cocoblocks"),
-    value: element.customHeightImage,
-    onChange: newCustomHeightImage => updateCustomHeightImage(slide.id, elementIndex, newCustomHeightImage),
-    min: 0,
-    max: 100,
-    step: 1
-  })), element.heightImage === "fixed" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom height (px)", "cocoblocks"),
-    value: element.customHeightImagePx,
-    onChange: newCustomHeightImagePx => updateCustomHeightImagePx(slide.id, elementIndex, newCustomHeightImagePx),
-    min: 0,
-    max: 1920,
-    step: 1
-  })), element.fit == "contain" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "notice components-base-control__help",
-    style: {
-      borderRadius: 0
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.', "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "12px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding", "cocoblocks")),
-    value: element.paddingImage,
-    onChange: newPaddingImage => updatePaddingImage(slide.id, elementIndex, newPaddingImage),
-    min: 0,
-    max: 50,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select box-control"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBoxControl, {
-    id: "custom-margin-control",
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "5px",
-        marginBottom: "-5px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Margin", "cocoblocks")),
-    values: element.marginImage,
-    units: {},
-    onChange: newMarginImage => updatenewMarginImage(slide.id, elementIndex, newMarginImage)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "12px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: element.backgroundBorderColorImage,
-    setColorNormal: borderColor => updateSlideBackgroundBorderColorImage(slide.id, elementIndex, borderColor),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 -960 960 960",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "3px",
-        height: "16px",
-        width: "16px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
-    value: element.backgroundBorderSizeImage,
-    onChange: newSizeBorderImage => updateSlideBackgroundBorderSizeImage(slide.id, elementIndex, newSizeBorderImage),
-    min: 0,
-    max: 20,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
-    value: element.backgroundBorderRadiusImage,
-    onChange: newRadiusImage => updateSlideBackgroundBorderRadiusImage(slide.id, elementIndex, newRadiusImage),
-    min: 0,
-    max: 256,
-    step: 1
-  }))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-24px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Rotate", "cocoblocks")),
-    value: element.rotateImage,
-    onChange: rotateImage => updateRotateImage(slide.id, elementIndex, rotateImage),
-    min: 0,
-    max: 360,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "12px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("TRANSPARENCY SETTING", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Opacity", "cocoblocks")),
-    value: element.opacityImage,
-    onChange: opacityImage => updateOpacityImage(slide.id, elementIndex, opacityImage),
-    min: 0,
-    max: 1,
-    step: 0.1
-  }))), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-24px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      width: "24",
-      height: "24",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      xmlns: "http://www.w3.org/2000/svg"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M12 2C8.686 2 6 4.686 6 8C6 11.314 8.686 14 12 14C15.314 14 18 11.314 18 8C18 4.686 15.314 2 12 2Z",
-      fill: "currentColor"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M6 8C3.79 8 2 9.79 2 12C2 14.21 3.79 16 6 16C8.21 16 10 14.21 10 12C10 9.79 8.21 8 6 8Z",
-      fill: "currentColor"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M18 8C16.14 8 14.5 9.64 14.5 11.5C14.5 13.36 16.14 15 18 15C19.86 15 21.5 13.36 21.5 11.5C21.5 9.64 19.86 8 18 8Z",
-      fill: "currentColor"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob Mask", "cocoblocks")),
-    value: element.blobMask,
-    onChange: newBlobMask => updateBlobMask(slide.id, elementIndex, newBlobMask),
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("None", "cocoblocks"),
-      value: ""
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob 1", "cocoblocks"),
-      value: "blob1"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob 2", "cocoblocks"),
-      value: "blob2"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob 3", "cocoblocks"),
-      value: "blob3"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Blob 4", "cocoblocks"),
-      value: "blob4"
-    }]
-  }))), activeSectionImage === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-24px",
-      backgroundColor: "var(--dark-intermedy)",
-      marginBottom: "10px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Effects", "cocoblocks"))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "notice components-base-control__help",
-    style: {
-      borderRadius: 0,
-      marginTop: "18px"
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks")), parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax offset X", "cocoblocks")),
-    value: element.parallaxImage,
-    onChange: newParallaxImage => updateParallaxImage(slide.id, elementIndex, newParallaxImage),
-    min: -500,
-    max: 500,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax offset Y", "cocoblocks")),
-    value: element.parallaxImageY,
-    onChange: newParallaxImageY => updateParallaxImageY(slide.id, elementIndex, newParallaxImageY),
-    min: -500,
-    max: 500,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax scale", "cocoblocks")),
-    value: element.parallaxImageScale,
-    onChange: newParallaxImageScale => updateParallaxImageScale(slide.id, elementIndex, newParallaxImageScale),
-    min: 0,
-    max: 2,
-    step: 0.1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax opacity", "cocoblocks")),
-    value: element.parallaxImageOpacity,
-    onChange: newParallaxImageOpacity => updateParallaxImageOpacity(slide.id, elementIndex, newParallaxImageOpacity),
-    min: 0,
-    max: 1,
-    step: 0.1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Parallax duration", "cocoblocks")),
-    value: element.parallaxImageDuration,
-    onChange: newParallaxImageDuration => updateParallaxImageDuration(slide.id, elementIndex, newParallaxImageDuration),
-    min: 100,
-    max: 2000,
-    step: 10
-  })))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    d: "M 16.2929 29.6406 C 22.7617 29.6406 28.1992 24.2266 28.1992 17.7109 C 28.1992 11.1953 22.8320 5.8047 16.2929 5.8047 C 9.7773 5.8047 4.3867 11.1953 4.3867 17.7109 C 4.3867 24.2734 9.7773 29.6406 16.2929 29.6406 Z M 33.8008 13.3750 L 49.8085 13.3750 C 50.8165 13.3750 51.6133 12.6015 51.6133 11.5937 C 51.6133 10.6094 50.8165 9.8359 49.8085 9.8359 L 33.8008 9.8359 C 32.7929 9.8359 32.0195 10.6094 32.0195 11.5937 C 32.0195 12.6015 32.7929 13.3750 33.8008 13.3750 Z M 16.3164 25.4453 C 15.4960 25.4453 14.7695 24.8828 14.7695 24.0156 L 14.7695 19.1406 L 10.2929 19.1406 C 9.4960 19.1406 8.8398 18.4844 8.8398 17.7109 C 8.8398 16.9375 9.4960 16.2812 10.2929 16.2812 L 14.7695 16.2812 L 14.7695 11.4297 C 14.7695 10.5390 15.4960 10.0000 16.3164 10.0000 C 17.1367 10.0000 17.8398 10.5390 17.8398 11.4297 L 17.8398 16.2812 L 22.3164 16.2812 C 23.1132 16.2812 23.7695 16.9375 23.7695 17.7109 C 23.7695 18.4844 23.1132 19.1406 22.3164 19.1406 L 17.8398 19.1406 L 17.8398 24.0156 C 17.8398 24.8828 17.1367 25.4453 16.3164 25.4453 Z M 33.8008 25.6563 L 49.8085 25.6563 C 50.8165 25.6563 51.6133 24.8828 51.6133 23.8750 C 51.6133 22.8906 50.8165 22.1172 49.8085 22.1172 L 33.8008 22.1172 C 32.7929 22.1172 32.0195 22.8906 32.0195 23.8750 C 32.0195 24.8828 32.7929 25.6563 33.8008 25.6563 Z M 6.1679 37.9375 L 49.8085 37.9375 C 50.8165 37.9375 51.6133 37.1406 51.6133 36.1563 C 51.6133 35.1719 50.8165 34.3984 49.8085 34.3984 L 6.1679 34.3984 C 5.1601 34.3984 4.3867 35.1719 4.3867 36.1563 C 4.3867 37.1406 5.1601 37.9375 6.1679 37.9375 Z M 6.1679 50.1953 L 49.8085 50.1953 C 50.8165 50.1953 51.6133 49.4219 51.6133 48.4375 C 51.6133 47.4531 50.8165 46.6562 49.8085 46.6562 L 6.1679 46.6562 C 5.1601 46.6562 4.3867 47.4531 4.3867 48.4375 C 4.3867 49.4219 5.1601 50.1953 6.1679 50.1953 Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    onClick: () => addSlideImageDiv(slide.id, elementIndex) // Assicurati di passare elementIndex o divIndex
+    ,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner image", "slide")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "dashicons dashicons-format-image"
+  }))))), element.type === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_imageControls__WEBPACK_IMPORTED_MODULE_19__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes,
+    setActiveSectionImage: setActiveSectionImage,
+    activeSectionImage: activeSectionImage,
+    parallax: parallax
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-add-element"
@@ -9145,8 +10831,8 @@ function Edit({
     onClick: () => addSlideDiv(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"]
-  })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__["default"]
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "controls",
     className: "button-add-slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -9360,25 +11046,52 @@ function Edit({
       margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}` // Usa i valori aggi
     };
     const Tag = element.elementTitle || "h3";
-
-    // Styles Title div
-    const stylesTitleDiv = {
-      fontSize: element.fontSizeDiv + "px",
-      "--font-size-tablet": element.fontSizeTabletDiv + "px",
-      "--font-size-mobile": element.fontSizeMobileDiv + "px",
-      color: element.textColorDiv,
-      textAlign: element.textAlignDiv,
-      fontStyle: element.fontStyleDiv?.fontStyle || "normal",
-      // Valore di default
-      fontWeight: element.fontStyleDiv?.fontWeight || "normal",
-      // Valore di default
-      textDecoration: element.fontStyleDiv?.textDecoration || "none",
-      // Valore di default
-      lineHeight: element.lineHeightDiv,
+    const getStylesTitleBlock = textDiv => ({
+      fontSize: textDiv.fontSize ? `${textDiv.fontSize}px` : "16px",
+      "--font-size-block-tablet": textDiv.fontSizeTablet ? `${textDiv.fontSizeTablet}px` : "14px",
+      "--font-size-block-mobile": textDiv.fontSizeMobile ? `${textDiv.fontSizeMobile}px` : "12px",
+      color: textDiv.textColor || "#000000",
+      textAlign: textDiv.textAlign || "left",
+      fontStyle: textDiv.fontStyle?.fontStyle || "normal",
+      fontWeight: textDiv.fontStyle?.fontWeight || "normal",
+      textDecoration: textDiv.fontStyle?.textDecoration || "none",
+      lineHeight: textDiv.lineHeight ? `${textDiv.lineHeight}` : "1.5",
       width: "100%",
-      margin: `${element.marginTitleDiv?.top} ${element.marginTitleDiv?.right} ${element.marginTitleDiv?.bottom} ${element.marginTitleDiv?.left}` // Usa i valori aggi
+      // Mantiene la larghezza al 100%
+      fontFamily: textDiv.fontFamily || "inherit",
+      // Inherit se non specificato
+      margin: textDiv.marginTitle ? `${textDiv.marginTitle.top} ${textDiv.marginTitle.right} ${textDiv.marginTitle.bottom} ${textDiv.marginTitle.left}` : "0",
+      padding: textDiv.padding || "0" // Mantiene il padding come nell'originale
+    });
+
+    // Definizione della funzione getImageStyleBlock
+    const getImageStyleBlock = imageDiv => {
+      let style = {
+        maxWidth: "100%",
+        minWidth: "0",
+        maxHeight: "100%",
+        minHeight: "0",
+        border: imageDiv.backgroundBorderSizeImage + "px solid" + imageDiv.backgroundBorderColorImage,
+        borderRadius: imageDiv.backgroundBorderRadiusImage + "px",
+        padding: imageDiv.paddingImage + "px",
+        backgroundColor: imageDiv.backgroundColorImage,
+        margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`
+      };
+      if (imageDiv.widthImage === "relative") {
+        style.width = `${imageDiv.customWidthImage}%`;
+      } else if (imageDiv.widthImage === "fixed") {
+        style.width = `${imageDiv.customWidthImagePx}px`;
+      }
+      if (imageDiv.heightImage === "relative") {
+        style.height = `${imageDiv.customHeightImage}%`;
+      } else if (imageDiv.heightImage === "fixed") {
+        style.height = `${imageDiv.customHeightImagePx}px`;
+      }
+      if (imageDiv.widthImage !== "auto" || imageDiv.heightImage !== "auto") {
+        style.objectFit = imageDiv.fit;
+      }
+      return style;
     };
-    const TagDiv = element.elementTitleDiv || "h3";
     const splitTextIntoLetters = (text = "", animation = "") => {
       // Se l'animazione è "bounce", suddividi il testo in lettere
       if (animation === "bounce") {
@@ -9430,23 +11143,42 @@ function Edit({
             paddingRight: slide.backgroundHorizontalPaddingDiv + "px",
             border: slide.backgroundBorderColorDiv ? `${slide.backgroundBorderSizeDiv}px solid ${slide.backgroundBorderColorDiv}` : "none"
           }
-        }, element.content ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TagDiv, {
-          style: stylesTitleDiv
-        }, element.content) : null, element.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-          src: element.imageUrl,
-          alt: "",
+        }, element.innerTextDivs && element.innerTextDivs.length > 0 ? element.innerTextDivs.map((textDiv, textIndex) => {
+          // Definisci il tag dinamico
+          const TagBlock = textDiv.elementTitle || "h3";
+          return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+            style: {
+              transform: `rotate(${textDiv.rotate}deg)`,
+              opacity: textDiv.opacity
+            },
+            className: "underline-effect"
+          }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TagBlock, {
+            key: textIndex,
+            className: `title-slide letter ${textDiv.animation}`,
+            style: getStylesTitleBlock(textDiv),
+            "data-swiper-parallax-x": textDiv.parallaxTitle,
+            "data-swiper-parallax-y": textDiv.parallaxTitleY,
+            "data-swiper-parallax-scale": textDiv.parallaxTitleScale,
+            "data-swiper-parallax-duration": textDiv.parallaxTitleDuration,
+            "data-swiper-parallax-opacity": textDiv.parallaxTitleOpacity
+          }, splitTextIntoLetters(textDiv.content, textDiv.animation)));
+        }) : null, element.innerImageDivs && element.innerImageDivs.length > 0 ? element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
           style: {
-            width: "150px"
-          }
-        }), element.innerDivs && element.innerDivs.length > 0 ? element.innerDivs.map((innerDiv, innerIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          key: innerIndex,
-          style: {
-            backgroundColor: innerDiv.backgroundColor || "transparent",
-            maxWidth: "100%"
-          }
-        }, innerDiv.content ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, innerDiv.content) : null, innerDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-          src: innerDiv.imageUrl,
-          alt: ""
+            transform: `rotate(${imageDiv.rotateImage}deg)`,
+            opacity: imageDiv.opacityImage
+          },
+          className: "moving-background"
+        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+          key: imageIndex,
+          src: imageDiv.imageUrl,
+          alt: imageDiv.alt,
+          style: getImageStyleBlock(imageDiv),
+          className: `image-with-mask ${imageDiv.blobMask}`,
+          "data-swiper-parallax-x": imageDiv.parallaxImage,
+          "data-swiper-parallax-y": imageDiv.parallaxImageY,
+          "data-swiper-parallax-scale": imageDiv.parallaxImageScale,
+          "data-swiper-parallax-duration": imageDiv.parallaxImageDuration,
+          "data-swiper-parallax-opacity": imageDiv.parallaxImageOpacity
         }))) : null);
       case "image":
         const getImageStyle = () => {

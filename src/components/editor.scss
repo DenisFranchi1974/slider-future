@@ -91,7 +91,6 @@
     }
 }
 
-
 /* Color Input */
 .cocoblocks-panel .components-input-control__backdrop {
   box-shadow: none !important;
@@ -119,7 +118,6 @@
   margin-bottom: 20px;
   border-top: 1px dashed var(--light-color);
 }
-
 .cocoblocks-panel .components-range-control .components-input-control__container{
   margin-right: 0!important;
 }
@@ -153,7 +151,6 @@
     border-radius: 8px;
     background-color: var(--background-color);
     color: var(--light-color);
-    margin-bottom: 6px;
   }
   .components-textarea-control__input:focus {
     box-shadow: 0 0 0 1px var(--primary-color);
@@ -206,11 +203,9 @@
     }
   }
   .button-move {
-    margin-top: 6px;
-    margin-bottom: 10px;
     position: relative;
-    right: 12px;
-    top: 26px;
+    right: 0;
+    top: 44px;
     float: right;
     z-index: 9;
     display: flex;
@@ -221,7 +216,10 @@
     }
   }
   .divider-controls {
-    margin: 20px 0;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-left: -14px;
+    margin-right: -14px;
     height: 4px;
     background: linear-gradient(
       to right,
@@ -231,12 +229,11 @@
     );
   }
   .divider-controls-inner {
-    margin: 20px 0; 
-    height: 4px; 
+    height: 1px; 
     background: linear-gradient(
       to right,
       transparent,
-      var(--background-color),
+      var(--light-color),
       transparent
     );
   }
@@ -575,7 +572,6 @@
     margin-bottom: 10px;
     overflow: hidden;
   }
-  
   .components-base-control {
     margin-bottom: 0 !important;
     padding: 0 !important;
@@ -696,14 +692,7 @@
       right: 8px;
     }
   }
-  // Block added hover
-  .custom-block-added{
-    margin-bottom: -22px;
-    padding-bottom: 22px;
-  } 
-  .custom-block-added:hover{
-    background-color: var(--dark-color-hover);
-  }
+ 
   /* Toogle */
   .components-toggle-control .components-h-stack {
     flex-direction: row-reverse !important;
@@ -1265,8 +1254,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding-bottom: 18px;
-  margin-top: -4px;
   h2{
     color: var(--light-color);
     margin: 0;
@@ -1274,8 +1261,12 @@
     text-transform: uppercase;
   }
 }
-
-
-
-
-
+.title-block-added{
+  position: relative;
+  margin-left: -14px;
+  margin-right: -14px;
+  background: var(--dark-color);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}

@@ -125,9 +125,9 @@ $contentType = isset($attributes['contentType']) ? $attributes['contentType'] : 
 // Recupera le slide dai tuoi attributi (adatta questo in base alla struttura dei tuoi attributi)
 $slides = !empty($attributes['slides']) ? $attributes['slides'] : [];
 
-  // Determina la posizione della scrollbar
-  $scrollbarTop = $positionScrollbar === 'top' ? '4px' : 'auto';
-  $scrollbarBottom = $positionScrollbar === 'bottom' ? '4px' : 'auto';
+// Determina la posizione della scrollbar
+$scrollbarTop = $positionScrollbar === 'top' ? '4px' : 'auto';
+$scrollbarBottom = $positionScrollbar === 'bottom' ? '4px' : 'auto';
 
 $swiper_attr = array(
     'directionSlider' => $directionSlider,
@@ -259,90 +259,74 @@ $wrapper_attributes = get_block_wrapper_attributes(
     )
 );
 
-?>
+// Funzione per dividere il testo in lettere
+if (!function_exists('splitTextIntoLetters')) {
+    function splitTextIntoLetters($text = '', $animation = '') {
+        // Se l'animazione è "bounce", esegui lo split del testo in lettere
+        if ($animation === 'bounce') {
+            $letters = str_split($text);
+            $result = '';
 
-        <?php 
-
-
-
-
-
-       if (!function_exists('splitTextIntoLetters')) {
-        function splitTextIntoLetters($text = '', $animation = '') {
-            // Se l'animazione è "bounce", esegui lo split del testo in lettere
-            if ($animation === 'bounce') {
-                $letters = str_split($text);
-                $result = '';
-    
-                foreach ($letters as $index => $letter) {
-                    $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
-                }
-    
-                return $result;
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
             }
-    
-            // Per tutte le altre animazioni, avvolgi il testo intero in un solo span con la classe "letter" e la classe dell'animazione
-            return   esc_html($text) ;
-        }
-    }
-    
-    
 
-        ?>         
+            return $result;
+        }
+
+        // Per tutte le altre animazioni, avvolgi il testo intero in un solo span con la classe "letter" e la classe dell'animazione
+        return   esc_html($text) ;
+    }
+}
+?>         
 
 <div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>">
     <div class="swiper-wrapper">
-
-
-
     <?php if ($attributes['contentType'] === 'post-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
-    <?php foreach ($attributes['posts'] as $post) : ?>
-        <div class="swiper-slide">
-            <?php if (!empty($post['image'])) : ?>
-                <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
-            <?php endif; ?>
-            <?php if (!empty($post['title'])) : ?>
-                <h3><?php echo esc_html($post['title']); ?></h3>
-            <?php endif; ?>
-            <?php if (!empty($post['excerpt'])) : ?>
-                <p><?php echo esc_html($post['excerpt']); ?></p>
-            <?php endif; ?>
-            <?php if (!empty($post['link'])) : ?>
-                <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
-            <?php endif; ?>
-        </div>
-    <?php endforeach; ?>
+        <?php foreach ($attributes['posts'] as $post) : ?>
+            <div class="swiper-slide">
+                <?php if (!empty($post['image'])) : ?>
+                    <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
+                <?php endif; ?>
+                <?php if (!empty($post['title'])) : ?>
+                    <h3><?php echo esc_html($post['title']); ?></h3>
+                <?php endif; ?>
+                <?php if (!empty($post['excerpt'])) : ?>
+                    <p><?php echo esc_html($post['excerpt']); ?></p>
+                <?php endif; ?>
+                <?php if (!empty($post['link'])) : ?>
+                    <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
 
-<?php elseif ($attributes['contentType'] === 'woocommerce-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
-    <?php foreach ($attributes['posts'] as $product) : ?>
-        <div class="swiper-slide">
-            <?php if (!empty($product['image'])) : ?>
-                <img src="<?php echo esc_url($product['image']); ?>" alt="<?php echo esc_attr($product['title']); ?>" />
-            <?php endif; ?>
-            <?php if (!empty($product['title'])) : ?>
-                <h3><?php echo esc_html($product['title']); ?></h3>
-            <?php endif; ?>
-            <?php if (!empty($product['excerpt'])) : ?>
-                <p><?php echo esc_html($product['excerpt']); ?></p>
-            <?php endif; ?>
-            <?php if (!empty($product['link'])) : ?>
-                <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'cocoblocks'); ?></a>
-            <?php endif; ?>
-        </div>
-    <?php endforeach; ?>
+    <?php elseif ($attributes['contentType'] === 'woocommerce-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
+        <?php foreach ($attributes['posts'] as $product) : ?>
+            <div class="swiper-slide">
+                <?php if (!empty($product['image'])) : ?>
+                    <img src="<?php echo esc_url($product['image']); ?>" alt="<?php echo esc_attr($product['title']); ?>" />
+                <?php endif; ?>
+                <?php if (!empty($product['title'])) : ?>
+                    <h3><?php echo esc_html($product['title']); ?></h3>
+                <?php endif; ?>
+                <?php if (!empty($product['excerpt'])) : ?>
+                    <p><?php echo esc_html($product['excerpt']); ?></p>
+                <?php endif; ?>
+                <?php if (!empty($product['link'])) : ?>
+                    <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'cocoblocks'); ?></a>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
 
-<?php elseif ($attributes['contentType'] === 'custom' && !empty($attributes['slides']) && is_array($attributes['slides'])) : ?>
-
-
-        <?php foreach ($slides as $slide) : 
-            $layout_class = !empty($slide['layout']) && $slide['layout'] === 'horizontal' ? 'horizontal-layout' : 'vertical-layout';
-            $background_size = !empty($slide['fit']) ? esc_attr($slide['fit']) : 'cover';
-            $focal_point = !empty($slide['focalPoint']) ? $slide['focalPoint'] : array('x' => 0.5, 'y' => 0.5);
-            $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
-        ?>
-    
-    <!-- Custom content rendering starts here -->
-           <div class="swiper-slide <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?>"
+        <?php elseif ($attributes['contentType'] === 'custom' && !empty($attributes['slides']) && is_array($attributes['slides'])) : ?>
+            <?php foreach ($slides as $slide) : 
+                $layout_class = !empty($slide['layout']) && $slide['layout'] === 'horizontal' ? 'horizontal-layout' : 'vertical-layout';
+                $background_size = !empty($slide['fit']) ? esc_attr($slide['fit']) : 'cover';
+                $focal_point = !empty($slide['focalPoint']) ? $slide['focalPoint'] : array('x' => 0.5, 'y' => 0.5);
+                $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
+            ?>
+            <!-- Custom content rendering starts here -->
+            <div class="swiper-slide <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?>"
                 style="<?php 
                     if (!empty($slide['backgroundType'])) {
                         if ($slide['backgroundType'] === 'image' && !empty($slide['backgroundImage'])) {
@@ -411,20 +395,135 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         </div>
 
                         <?php endif; ?>
+                        <?php
+                         if (!function_exists('getStylesTitleBlock')) {
+                            function getStylesTitleBlock($textDiv) {
+                                $styles = [
+                                    'font-size' => !empty($textDiv['fontSize']) ? $textDiv['fontSize'] . 'px' : '16px',
+                                    '--font-size-block-tablet' => !empty($textDiv['fontSizeTablet']) ? $textDiv['fontSizeTablet'] . 'px' : '14px',
+                                    '--font-size-block-mobile' => !empty($textDiv['fontSizeMobile']) ? $textDiv['fontSizeMobile'] . 'px' : '12px',
+                                    'color' => !empty($textDiv['textColor']) ? $textDiv['textColor'] : '#000000',
+                                    'text-align' => !empty($textDiv['textAlign']) ? $textDiv['textAlign'] : 'left',
+                                    'font-style' => !empty($textDiv['fontStyle']['fontStyle']) ? $textDiv['fontStyle']['fontStyle'] : 'normal',
+                                    'font-weight' => !empty($textDiv['fontStyle']['fontWeight']) ? $textDiv['fontStyle']['fontWeight'] : 'normal',
+                                    'text-decoration' => !empty($textDiv['fontStyle']['textDecoration']) ? $textDiv['fontStyle']['textDecoration'] : 'none',
+                                    'line-height' => !empty($textDiv['lineHeight']) ? $textDiv['lineHeight'] : '1.5',
+                                    'width' => '100%', // Mantiene la larghezza al 100%
+                                    'font-family' => !empty($textDiv['fontFamily']) ? $textDiv['fontFamily'] : 'inherit', // Inherit se non specificato
+                                    'margin' => !empty($textDiv['marginTitle']) ? $textDiv['marginTitle']['top'] . ' ' . $textDiv['marginTitle']['right'] . ' ' . $textDiv['marginTitle']['bottom'] . ' ' . $textDiv['marginTitle']['left'] : '0',
+                                    'padding' => !empty($textDiv['padding']) ? $textDiv['padding'] : '0', // Mantiene il padding come nell'originale
+                                ];
 
-                        <?php if ($element['type'] === 'div'): ?>
-                            <div style="<?php echo !empty($element['backgroundColor']) ? 'background-color: ' . esc_attr($element['backgroundColor']) . '; max-width: 100%;' : ''; ?>">
-                                <?php if (!empty($element['imageUrl'])): ?>
-                                    <img src="<?php echo esc_url($element['imageUrl']); ?>" alt="" />
+                                $styleString = '';
+                                foreach ($styles as $key => $value) {
+                                    $styleString .= $key . ': ' . esc_attr($value) . '; ';
+                                }
+
+                                return $styleString;
+                            }
+                            }
+                            ?>
+                            <?php
+                                // Definizione della funzione get_image_style_block
+                                if (!function_exists('get_image_style_block')) {
+                                function get_image_style_block($imageDiv) {
+                                    $style = [
+                                        'max-width' => '100%',
+                                        'min-width' => '0',
+                                        'max-height' => '100%',
+                                        'min-height' => '0',
+                                        'border' => esc_attr($imageDiv['backgroundBorderSizeImage']) . 'px solid ' . esc_attr($imageDiv['backgroundBorderColorImage']),
+                                        'border-radius' => esc_attr($imageDiv['backgroundBorderRadiusImage']) . 'px',
+                                        'padding' => esc_attr($imageDiv['paddingImage']) . 'px',
+                                        'background-color' => esc_attr($imageDiv['backgroundColorImage']),
+                                        'margin' => esc_attr($imageDiv['marginImage']['top']) . ' ' . esc_attr($imageDiv['marginImage']['right']) . ' ' . esc_attr($imageDiv['marginImage']['bottom']) . ' ' . esc_attr($imageDiv['marginImage']['left']),
+                                    ];
+
+                                    if ($imageDiv['widthImage'] === 'relative') {
+                                        $style['width'] = esc_attr($imageDiv['customWidthImage']) . '%';
+                                    } elseif ($imageDiv['widthImage'] === 'fixed') {
+                                        $style['width'] = esc_attr($imageDiv['customWidthImagePx']) . 'px';
+                                    }
+
+                                    if ($imageDiv['heightImage'] === 'relative') {
+                                        $style['height'] = esc_attr($imageDiv['customHeightImage']) . '%';
+                                    } elseif ($imageDiv['heightImage'] === 'fixed') {
+                                        $style['height'] = esc_attr($imageDiv['customHeightImagePx']) . 'px';
+                                    }
+
+                                    if ($imageDiv['widthImage'] !== 'auto' || $imageDiv['heightImage'] !== 'auto') {
+                                        $style['object-fit'] = esc_attr($imageDiv['fit']);
+                                    }
+
+                                    // Convertire l'array di stili in una stringa CSS
+                                    $styleString = '';
+                                    foreach ($style as $key => $value) {
+                                        $styleString .= $key . ': ' . $value . '; ';
+                                    }
+
+                                    return $styleString;
+                                }
+                                }
+                                ?>
+                            <?php if ($element['type'] === 'div'): ?>
+                            <div
+                                class="div-slide <?php echo esc_attr($slide['positionDiv'] . ' ' . $slide['layoutDiv'] . '-layout'); ?>"
+                                style="
+                                    background-color: <?php echo esc_attr($element['backgroundColor'] ?? 'transparent'); ?>;
+                                    width: 100%;
+                                    display: flex;
+                                    flex-direction: <?php echo $slide['layoutDiv'] === 'horizontal' ? 'row' : 'column'; ?>;
+                                    text-align: center;
+                                    position: relative;
+                                    visibility: visible;
+                                    gap: <?php echo esc_attr($slide['gapItemsDiv']); ?>px;
+                                    border-radius: <?php echo esc_attr($slide['backgroundBorderRadiusDiv']); ?>px;
+                                    padding-top: <?php echo esc_attr($slide['backgroundVerticalPaddingDiv']); ?>px;
+                                    padding-bottom: <?php echo esc_attr($slide['backgroundVerticalPaddingDiv']); ?>px;
+                                    padding-left: <?php echo esc_attr($slide['backgroundHorizontalPaddingDiv']); ?>px;
+                                    padding-right: <?php echo esc_attr($slide['backgroundHorizontalPaddingDiv']); ?>px;
+                                    border: <?php echo !empty($slide['backgroundBorderColorDiv']) ? esc_attr($slide['backgroundBorderSizeDiv']) . 'px solid ' . esc_attr($slide['backgroundBorderColorDiv']) : 'none'; ?>;
+                                "
+                            >
+                                <?php if (!empty($element['innerTextDivs']) && is_array($element['innerTextDivs'])): ?>
+                                    <?php foreach ($element['innerTextDivs'] as $textIndex => $textDiv): ?>
+                                        <?php $TagBlock = !empty($textDiv['elementTitle']) ? $textDiv['elementTitle'] : 'h3'; ?>
+                                        <div
+                                            style="transform: rotate(<?php echo esc_attr($textDiv['rotate']); ?>deg); opacity: <?php echo esc_attr($textDiv['opacity']); ?>;"
+                                            class="underline-effect"
+                                        >
+                                            <<?php echo esc_attr($TagBlock); ?>
+                                                class="title-slide letter <?php echo esc_attr($textDiv['animation']); ?>"
+                                                style="<?php echo esc_attr(getStylesTitleBlock($textDiv)); ?>"
+                                                data-swiper-parallax-x="<?php echo esc_attr($textDiv['parallaxTitle']); ?>"
+                                                data-swiper-parallax-y="<?php echo esc_attr($textDiv['parallaxTitleY']); ?>"
+                                                data-swiper-parallax-scale="<?php echo esc_attr($textDiv['parallaxTitleScale']); ?>"
+                                                data-swiper-parallax-duration="<?php echo esc_attr($textDiv['parallaxTitleDuration']); ?>"
+                                                data-swiper-parallax-opacity="<?php echo esc_attr($textDiv['parallaxTitleOpacity']); ?>"
+                                            >
+                                                <?php echo wp_kses_post(splitTextIntoLetters($textDiv['content'], $textDiv['animation'])); ?>
+                                            </<?php echo esc_attr($TagBlock); ?>>
+                                        </div>
+                                    <?php endforeach; ?>
                                 <?php endif; ?>
-                                <?php echo wp_kses_post($element['content']); ?>
-                                <?php if (!empty($element['innerDivs']) && is_array($element['innerDivs'])): ?>
-                                    <?php foreach ($element['innerDivs'] as $innerDiv): ?>
-                                        <div style="<?php echo !empty($innerDiv['backgroundColor']) ? 'background-color: ' . esc_attr($innerDiv['backgroundColor']) . '; max-width: 100%;' : ''; ?>">
-                                            <?php if (!empty($innerDiv['imageUrl'])): ?>
-                                                <img src="<?php echo esc_url($innerDiv['imageUrl']); ?>" alt="" />
-                                            <?php endif; ?>
-                                            <?php echo wp_kses_post($innerDiv['content']); ?>
+ 
+                                <?php if (!empty($element['innerImageDivs']) && is_array($element['innerImageDivs'])): ?>
+                                    <?php foreach ($element['innerImageDivs'] as $imageIndex => $imageDiv): ?>
+                                        <div 
+                                            style="transform: rotate(<?php echo esc_attr($imageDiv['rotateImage']); ?>deg); opacity: <?php echo esc_attr($imageDiv['opacityImage']); ?>;"
+                                            class="moving-background"
+                                        >
+                                            <img
+                                                src="<?php echo esc_url($imageDiv['imageUrl']); ?>"
+                                                alt="<?php echo esc_attr($imageDiv['alt']); ?>"
+                                                style="<?php echo get_image_style_block($imageDiv); ?>"
+                                                class="image-with-mask <?php echo esc_attr($imageDiv['blobMask']); ?>"
+                                                data-swiper-parallax-x="<?php echo esc_attr($imageDiv['parallaxImage']); ?>"
+                                                data-swiper-parallax-y="<?php echo esc_attr($imageDiv['parallaxImageY']); ?>"
+                                                data-swiper-parallax-scale="<?php echo esc_attr($imageDiv['parallaxImageScale']); ?>"
+                                                data-swiper-parallax-duration="<?php echo esc_attr($imageDiv['parallaxImageDuration']); ?>"
+                                                data-swiper-parallax-opacity="<?php echo esc_attr($imageDiv['parallaxImageOpacity']); ?>"
+                                            />
                                         </div>
                                     <?php endforeach; ?>
                                 <?php endif; ?>

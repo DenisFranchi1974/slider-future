@@ -174,7 +174,6 @@
   border-radius: 8px;
   background-color: var(--background-color);
   color: var(--light-color);
-  margin-bottom: 6px;
 }
 .cocoblocks-panel.panel-slide .components-textarea-control__input:focus {
   box-shadow: 0 0 0 1px var(--primary-color);
@@ -226,11 +225,9 @@
   color: var(--white-color);
 }
 .cocoblocks-panel.panel-slide .button-move {
-  margin-top: 6px;
-  margin-bottom: 10px;
   position: relative;
-  left: 12px;
-  top: 26px;
+  left: 0;
+  top: 44px;
   float: left;
   z-index: 9;
   display: flex;
@@ -241,14 +238,16 @@
   background-color: var(--background-color);
 }
 .cocoblocks-panel.panel-slide .divider-controls {
-  margin: 20px 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-right: -14px;
+  margin-left: -14px;
   height: 4px;
   background: linear-gradient(to left, transparent, var(--light-color), transparent);
 }
 .cocoblocks-panel.panel-slide .divider-controls-inner {
-  margin: 20px 0;
-  height: 4px;
-  background: linear-gradient(to left, transparent, var(--background-color), transparent);
+  height: 1px;
+  background: linear-gradient(to left, transparent, var(--light-color), transparent);
 }
 .cocoblocks-panel.panel-slide .title-tab-background {
   display: flex;
@@ -715,13 +714,6 @@
 .cocoblocks-panel .custom-select .components-input-control__suffix {
   position: relative;
   left: 8px;
-}
-.cocoblocks-panel .custom-block-added {
-  margin-bottom: -22px;
-  padding-bottom: 22px;
-}
-.cocoblocks-panel .custom-block-added:hover {
-  background-color: var(--dark-color-hover);
 }
 .cocoblocks-panel .components-toggle-control .components-h-stack {
   flex-direction: row-reverse !important;
@@ -1278,12 +1270,20 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding-bottom: 18px;
-  margin-top: -4px;
 }
 .title-element h2 {
   color: var(--light-color);
   margin: 0;
   font-size: 12px;
   text-transform: uppercase;
+}
+
+.title-block-added {
+  position: relative;
+  margin-right: -14px;
+  margin-left: -14px;
+  background: var(--dark-color);
+  padding: 16px;
+  display: flex;
+  align-items: center;
 }

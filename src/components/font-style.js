@@ -80,5 +80,3 @@ const FontStyle = ({ value, onChange }) => {
 };
 
 export default FontStyle;
-
-

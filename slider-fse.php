@@ -17,14 +17,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-
+// Block
 function create_block_slider_fse_block_init() {
     register_block_type(__DIR__ . '/build/slider');
 }
 add_action('init', 'create_block_slider_fse_block_init');
 
-add_action('admin_menu', 'my_plugin_admin_menu');
-
+// Admin Dashboard
 function my_plugin_admin_menu() {
     add_menu_page(
         'My Plugin Settings', // Titolo della pagina
@@ -37,10 +36,13 @@ function my_plugin_admin_menu() {
     );
 }
 
+add_action('admin_menu', 'my_plugin_admin_menu');
+
 function my_plugin_render_admin_page() {
     echo '<div id="my-plugin-admin-page"></div>';
 }
 
+// Carica gli script e gli stili per la pagina di amministrazione
 function my_plugin_enqueue_scripts($hook) {
     if ($hook !== 'toplevel_page_my-plugin') {
         return;
@@ -89,6 +91,7 @@ function my_plugin_enqueue_scripts($hook) {
 
 add_action('admin_enqueue_scripts', 'my_plugin_enqueue_scripts');
 
+// Registra la rotta REST per salvare il colore
 function my_plugin_register_rest_routes() {
     register_rest_route('my-plugin/v1', '/save-color', array(
         'methods' => 'POST',
@@ -101,8 +104,7 @@ function my_plugin_register_rest_routes() {
 
 add_action('rest_api_init', 'my_plugin_register_rest_routes');
 
-
-
+// Funzione per salvare il colore
 function my_plugin_save_color(WP_REST_Request $request) {
     $color = sanitize_text_field($request->get_param('color'));
 
@@ -118,6 +120,7 @@ function my_plugin_save_color(WP_REST_Request $request) {
     return rest_ensure_response(array('success' => true));
 }
 
+// Carica gli stili per il blocco
 function my_plugin_enqueue_block_editor_assets() {
     $primary_color = get_option('my_plugin_color', '#ab0052'); // Colore di default se non impostato
 
@@ -136,8 +139,6 @@ function my_plugin_enqueue_block_editor_assets() {
     );
 }
 add_action('enqueue_block_assets', 'my_plugin_enqueue_block_editor_assets');
-
-
 
 
 // Funzione per vedere se WooCommerce è attivo
@@ -179,6 +180,7 @@ function cocoblocks_get_content($content_type = 'post') {
     return $post_data;
 }
 
+// Registra le rotte REST per i post e i prodotti
 function cocoblocks_register_rest_routes() {
     // Rotta per i post
     register_rest_route('cocoblocks/v1', '/get-posts/', array(

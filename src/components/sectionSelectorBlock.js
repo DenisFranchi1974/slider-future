@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Button, ButtonGroup, Icon } from "@wordpress/components";
+import { Button, ButtonGroup } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 
-const SectionSelector = ({ onSectionChange }) => {
-  const [activeSection, setActiveSection] = useState("content");
+const SectionSelectorBlock = ({ onSectionChange }) => {
+  const [activeSectionBlock, setActiveSectionBlock] = useState("content");
 
-  const handleSectionChange = (section) => {
-    setActiveSection(section);
+  const handleSectionChangeBlock = (section) => {
+    setActiveSectionBlock(section);
     onSectionChange(section);
   };
 
@@ -21,8 +21,8 @@ const SectionSelector = ({ onSectionChange }) => {
     >
       <Button
         className="section-selector-button"
-        variant={activeSection === "content" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("content")}
+        variant={activeSectionBlock === "content" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("content")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +37,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "style" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("style")}
+        variant={activeSectionBlock === "style" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("style")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +53,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "adv-style" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("adv-style")}
+        variant={activeSectionBlock === "adv-style" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("adv-style")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,8 +69,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "animation" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("animation")}
+        variant={activeSectionBlock === "animation" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("animation")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +85,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "hover" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("hover")}
+        variant={activeSectionBlock === "hover" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("hover")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +101,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "actions" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("actions")}
+        variant={activeSectionBlock === "actions" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("actions")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -117,8 +117,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "visibility" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("visibility")}
+        variant={activeSectionBlock === "visibility" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("visibility")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +133,8 @@ const SectionSelector = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
-        variant={activeSection === "parallax" ? "primary" : "secondary"}
-        onClick={() => handleSectionChange("parallax")}
+        variant={activeSectionBlock === "parallax" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeBlock("parallax")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -152,4 +152,4 @@ const SectionSelector = ({ onSectionChange }) => {
   );
 };
 
-export default SectionSelector;
+export default SectionSelectorBlock;

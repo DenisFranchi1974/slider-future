@@ -1042,6 +1042,7 @@ button.swiper-pagination-bullet {
   /*max-height: 400px!important;*/
 }
 
+/* Pagination */
 .swiper-pagination-bullet {
   border-radius: var(--swiper-radius-bullet);
 }
@@ -1055,6 +1056,7 @@ button.swiper-pagination-bullet {
   height: var(--swiper-pagination-bullet-height-active);
 }
 
+/* Navigation */
 .swiper-button-next svg,
 .swiper-button-prev svg {
   font-size: var(--size-nav);
@@ -1145,6 +1147,7 @@ button.swiper-pagination-bullet {
   transform: rotate(90deg);
 }
 
+/* Effect Text */
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -1283,6 +1286,17 @@ button.swiper-pagination-bullet {
 @media screen and (max-width: 360px) {
   .title-slide {
     font-size: var(--font-size-mobile) !important;
+  }
+}
+/* Font size Title inside block Responsive */
+@media screen and (max-width: 780px) {
+  .title-slide {
+    font-size: var(--font-size-block-tablet) !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .title-slide {
+    font-size: var(--font-size-block-mobile) !important;
   }
 }
 /* Responsive Navigation */
