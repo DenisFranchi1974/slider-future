@@ -1197,10 +1197,10 @@
   background-color: var(--background-color);
   padding: 16px;
   padding-top: 6px;
-  /* Tooltip rangecontrol */
-    .components-simple-tooltip.components-range-control__tooltip{
-      display: none!important;
-    }
+}
+ /* Tooltip rangecontrol */
+.cocoblocks-panel .components-simple-tooltip.components-range-control__tooltip{
+  display: none!important;
 }
 
 .content-title-custom-panel{
@@ -1269,4 +1269,194 @@
   padding: 16px;
   display: flex;
   align-items: center;
+}
+
+/* Nascondi advanced panel */
+.cocoblocks-custom-advanced-panel.hidden {
+  display: none;
+}
+/* Button Reply effect */
+.button-reply-effect{
+  text-align: center;
+  background-color: var(--dark-color);
+  &:hover{
+    background-color: var(--dark-color-hover);
+  }
+  button{
+    color: var(--primary-color)!important;
+  }
+}
+
+/* Input text control link */
+.custom-select.select-text-control{
+  input{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    &:focus{
+     border-color: var(--primary-color)!important; 
+     box-shadow: none!important;  
+    }
+  }
+}
+
+/* Modal image */
+
+.modal-image-slider{
+  background-color: var(--background-color);
+  min-width: 62%;
+    .components-modal__header-heading{
+      color: var(--light-color);
+    }
+    .components-modal__header button svg{
+      color: var(--light-color);
+    }
+    .components-modal__content{
+      padding-left: 0!important;
+      margin: 0!important;
+      padding-bottom: 0!important;
+    }
+    .logo-modal{
+      width: 50px;
+      height: 50px;
+        img{
+          max-width: 100%;
+          height: auto;
+        }
+    }
+    .components-modal__content > div:nth-child(2) {
+      height: 100%;
+    }
+}
+
+.modal-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.category-navigator{
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+    button{
+      color: var(--light-color)!important;
+      border: none;
+      box-shadow: none!important;
+      padding: 0;
+      height: 25px!important;
+    }
+}
+
+.image-selection-modal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adatta il numero di colonne */
+  gap: 20px; /* Spazio tra le immagini */
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100;
+  height: 180px;
+  position: relative; /* Assicura che il button sia posizionato rispetto a .image-item */
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button {
+    position: absolute;
+    background-color: var(--dark-color)!important;
+    color: var(--light-color)!important;
+    border: 1px solid var(--light-color)!important;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+    box-shadow: none!important;
+  }
+
+  &:hover button {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 224px;
+    top: -31px;
+    left: 0;
+    background-color:var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover.image-item::after {
+    opacity: 0.4;
+  }
+  h4{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    width: 100%;
+    padding: 14px 5px;
+    margin-top: 0;
+  }
+}
+
+/* Copyright */
+.copy-right-modal{
+  position: absolute;
+  bottom: 30px;
+  button{
+    color: var(--label-color);
+    box-shadow: none!important;
+    transition: color 0.3s ease;
+    &:hover{
+      color: var(--white-color)!important;
+    }
+  }
+}
+
+
+
+/* Stile per l'overlay di caricamento */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.loading-message {
+  background: rgba(255, 255, 255, 0.44);
+  padding: 20px;
+  border-radius: 0px;
+  text-align: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  p{
+    font-size: 52px;
+    color: var(--dark-color);
+  }
 }

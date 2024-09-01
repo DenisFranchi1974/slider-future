@@ -4,7 +4,7 @@ import { __ } from "@wordpress/i18n";
 
 const SectionSliderSelectorOptions = ({ onSectionChange }) => {
   const [activeSectionSliderOptions, setActiveSectionSliderOptions] =
-    useState("background");
+    useState("animation");
 
   const handleSectionChangeOptions = (section) => {
     setActiveSectionSliderOptions(section);
@@ -13,24 +13,6 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
 
   return (
     <ButtonGroup className="section-selector">
-      <Button
-        className="section-selector-button"
-        variant={
-          activeSectionSliderOptions === "background" ? "primary" : "secondary"
-        }
-        onClick={() => handleSectionChangeOptions("background")}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-          fill="#e8eaed"
-        >
-          <path d="M200-120q-33 0-56.5-23.5T120-200v-240h80v240h240v80H200Zm320 0v-80h240v-240h80v240q0 33-23.5 56.5T760-120H520ZM240-280l120-160 90 120 120-160 150 200H240ZM120-520v-240q0-33 23.5-56.5T200-840h240v80H200v240h-80Zm640 0v-240H520v-80h240q33 0 56.5 23.5T840-760v240h-80Zm-140-40q-26 0-43-17t-17-43q0-26 17-43t43-17q26 0 43 17t17 43q0 26-17 43t-43 17Z" />
-        </svg>
-        {__("Background", "cocoblocks")}
-      </Button>
       <Button
         className="section-selector-button"
         variant={
@@ -121,6 +103,10 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
           <path d="M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z" />
         </svg>
         {__("Direction", "cocoblocks")}
+      </Button>
+      <Button
+        className="section-selector-button"
+      >
       </Button>
     </ButtonGroup>
   );

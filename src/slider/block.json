@@ -506,6 +506,66 @@
 		"posts": {
 			"type": "array",
 			"default": []
+		},
+		"overflow":{
+			"type":"string",
+			"default":"visible"
+		},
+		"backgroundBorderColor":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"backgroundBorderSize":{
+			"type":"number",
+			"default":0
+		},
+		"backgroundBorderRadius":{
+			"type":"number",
+			"default":0
+		},
+		"backgroundVerticalPadding":{
+			"type":"number",
+			"default":0
+		},
+		"backgroundHorizontalPadding":{
+			"type":"number",
+			"default":0  
+		},
+		"backgroundColor":{
+			"type":"string",
+			"default":"#81D1FF"
+		},
+		"textColorDefault":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"backgroundColorSlideDefault":{
+			"type":"string",
+			"default":"#81D1FF"
+		},
+		"backgroundColorBlockDefault":{
+			"type":"string",
+			"default":"#FFFFFF"
+		},
+		"innerTextColorDefault":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"filter":{
+			"type":"string",
+			"default":" "
+		},
+		"colorOneEffect":{
+			"type":"string",
+			"default":"rgba(243, 106, 188, 0.5)"
+		},
+		"colorTwoEffect":{
+			"type":"string",
+			"default":"rgba(243, 106, 188, 0)"
+		},
+		"colorThreeEffect":{
+			"type":"string",
+			"default":"rgba(243, 106, 188, 0.7)"
 		}
-	  }
+	}
 }

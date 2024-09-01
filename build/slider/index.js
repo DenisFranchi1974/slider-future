@@ -426,6 +426,948 @@ const trash = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx
 
 /***/ }),
 
+/***/ "./src/components/ImageComponent.js":
+/*!******************************************!*\
+  !*** ./src/components/ImageComponent.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ImageComponent = ({
+  element,
+  index
+}) => {
+  const getImageStyle = () => {
+    let style = {
+      maxWidth: "100%",
+      minWidth: "0",
+      maxHeight: "100%",
+      minHeight: "0",
+      borderStyle: element.borderStyleImage || "none",
+      borderColor: element.backgroundBorderColorImage || "#000000",
+      borderWidth: element.backgroundBorderSizeImage + "px",
+      borderRadius: element.backgroundBorderRadiusImage + "px",
+      padding: element.paddingImage + "px",
+      backgroundColor: element.backgroundColorImage,
+      "--box-shadow-x-image": element.boxShadowXImage + "px" || 0,
+      "--box-shadow-y-image": element.boxShadowYImage + "px" || 0,
+      "--box-shadow-blur-image": element.boxShadowBlurImage + "px" || 0,
+      "--box-shadow-color-image": element.colorShadowImage || "#000000",
+      "--box-shadow-spread-image": element.boxShadowSpreadImage + "px" || 0,
+      "--spike-width": element.spikeLeftWidth + '%' || 0,
+      "--spike-width-right": element.spikeRightWidth + '%' || 0,
+      "--duration-effect-image": element.durationEffectImage + "s",
+      "--color-hover-image": element.imageColorHover,
+      "--border-color-hover-image": element.backgroundBorderColorHoverImage || "#000000",
+      "--opacity-hover-image": element.opacityHoverImage || 1,
+      "--border-style-hover-image": element.borderStyleHoverImage || "none",
+      "--transition-hover-image": element.durationEffectHoverImage + 's' || 0,
+      "--translate-hover-image": element.translateEffectHoverImage + 'px' || 0,
+      "--color-effect-hover-image": element.effectHoverColorHoverImage || "#000000",
+      margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`,
+      // Usa i valori aggi
+      "--interation-image": element.interationImage || "forwards"
+    };
+    if (element.widthImage === "relative") {
+      style.width = `${element.customWidthImage}%`;
+    } else if (element.widthImage === "fixed") {
+      style.width = `${element.customWidthImagePx}px`;
+    }
+    if (element.heightImage === "relative") {
+      style.height = `${element.customHeightImage}%`;
+    } else if (element.heightImage === "fixed") {
+      style.height = `${element.customHeightImagePx}px`;
+    }
+
+    // Applica object-fit solo se width o height sono relative o fixed
+    if (element.widthImage !== "auto" || element.heightImage !== "auto") {
+      style.objectFit = element.fit;
+    }
+    return style;
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      transform: `rotate(${element.rotateImage}deg)`,
+      opacity: element.opacityImage,
+      "--duration-effect-moving-image": element.durationEffectImageMoving + "s",
+      "--translate-effect-moving-image": element.translateEffectImageMoving + "px",
+      "--duration-effect-moving-image-hover": element.durationEffectImageMovingHover + "s",
+      "--translate-effect-moving-image-hover": element.translateEffectImageMovingHover + "px",
+      "--rotate-hover-image": element.rotateHoverImage + "deg" || 0,
+      "--transition-hover-image": element.durationEffectHoverImage + 's' || 0,
+      width: element.widthImageContent
+    },
+    className: "content-img-first " + element.animationImageMoving + " " + element.animationImageMovingHover
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    key: index,
+    src: element.url,
+    alt: element.alt,
+    style: getImageStyle(),
+    className: `image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight} ${element.animationImage}${element.playStateImage} ${element.imageFilter} ${element.animationHoverImage}`,
+    "data-swiper-parallax-x": element.parallaxImage,
+    "data-swiper-parallax-y": element.parallaxImageY,
+    "data-swiper-parallax-scale": element.parallaxImageScale,
+    "data-swiper-parallax-duration": element.parallaxImageDuration,
+    "data-swiper-parallax-opacity": element.parallaxImageOpacity
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageComponent);
+
+/***/ }),
+
+/***/ "./src/components/ImageControlsHover.js":
+/*!**********************************************!*\
+  !*** ./src/components/ImageControlsHover.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
+
+
+
+
+
+const ImageControlsHover = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes
+}) => {
+  // Update background color
+  const updateSlideImageColorHover = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        imageColorHover: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateHoverImage = (slideId, index, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        rotateHoverImage: rotate
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style
+  const updateBorderStyleHoverImage = (slideId, index, newBorderStyle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        borderStyleHoverImage: newBorderStyle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityHoverImage = (slideId, index, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        opacityHoverImage: opacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect 
+  const updateDurationEffectHoverImage = (slideId, index, newDurationEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        durationEffectHoverImage: newDurationEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border color
+  const updateImageBackgroundBorderColorHover = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        backgroundBorderColorHoverImage: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Annimation
+  const updateImageAnimationHover = (slideId, index, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        animationHoverImage: animation
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Effect color
+  const updateSlideEffectColorHoverImage = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        effectHoverColorHoverImage: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Translate effect 
+  const updateTranslateEffectHoverImage = (slideId, index, newEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        translateEffectHoverImage: newEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving trnaslate
+  const updateTranslateEffectImageMovingHover = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        translateEffectImageMovingHover: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving
+  const updateAnimationImageMovingHover = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        animationImageMovingHover: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Effect Image Animation Moving duration
+  const updateDurationEffectImageMovingHover = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        durationEffectImageMovingHover: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  const isAnimationNone = element.animationHoverImage === " ";
+  const showColorOptionsPanel = ["hover-effect-3-image-", "hover-effect-3-image", "hover-effect-4-image"].includes(element.animationHoverImage);
+  const showTranslateRangeControl = ["hover-effect-2-image",
+  // Translate Y
+  "hover-effect-5-image" // Translate X
+  ].includes(element.animationHoverImage);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.imageColorHover,
+    setColorNormal: color => updateSlideImageColorHover(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: element.borderStyleHoverImage,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: newBorderStyle => updateBorderStyleHoverImage(slide.id, elementIndex, newBorderStyle)
+  })), element.borderStyleHoverImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.backgroundBorderColorHoverImage,
+    setColorNormal: color => updateImageBackgroundBorderColorHover(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: element.opacityHoverImage,
+    onChange: opacity => updateOpacityHoverImage(slide.id, elementIndex, opacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: element.rotateHoverImage,
+    onChange: rotate => updateRotateHoverImage(slide.id, elementIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0",
+      marginTop: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Movimentation", "cocoblocks")),
+    value: element.animationImageMovingHover,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Moving background X",
+      value: "moving-background-hover"
+    }, {
+      label: "Moving background Y",
+      value: "moving-background-y-hover"
+    }],
+    onChange: value => updateAnimationImageMovingHover(slide.id, elementIndex, value)
+  })), element.animationImageMovingHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
+    value: element.durationEffectImageMovingHover,
+    onChange: value => updateDurationEffectImageMovingHover(slide.id, elementIndex, value),
+    min: .1,
+    max: 30,
+    step: .1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate", "cocoblocks")),
+    value: element.translateEffectImageMovingHover,
+    onChange: value => updateTranslateEffectImageMovingHover(slide.id, elementIndex, value),
+    min: -300,
+    max: 300,
+    step: 1
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0",
+      marginTop: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: element.animationHoverImage,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Scale",
+      value: "hover-effect-1-image"
+    }, {
+      label: "Translate Y",
+      value: "hover-effect-2-image"
+    }, {
+      label: "Translate X",
+      value: "hover-effect-5-image"
+    }, {
+      label: "Shadow",
+      value: "hover-effect-3-image-"
+    }, {
+      label: "Shadow Two",
+      value: "hover-effect-3-image"
+    }, {
+      label: "Shadow Three",
+      value: "hover-effect-4-image"
+    }],
+    onChange: animation => updateImageAnimationHover(slide.id, elementIndex, animation)
+  })), !isAnimationNone && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
+    value: element.durationEffectHoverImage,
+    onChange: newDurationEffect => updateDurationEffectHoverImage(slide.id, elementIndex, newDurationEffect),
+    min: .1,
+    max: 10,
+    step: .1
+  })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.effectHoverColorHoverImage,
+    setColorNormal: color => updateSlideEffectColorHoverImage(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effect Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        height: "20px",
+        width: "20px",
+        marginLeft: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"
+    }))
+  })), showTranslateRangeControl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate", "cocoblocks")),
+    value: element.translateEffectHoverImage,
+    onChange: newEffect => updateTranslateEffectHoverImage(slide.id, elementIndex, newEffect),
+    min: -70,
+    max: 70,
+    step: 1
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageControlsHover);
+
+/***/ }),
+
+/***/ "./src/components/ImageSelectionModal.js":
+/*!***********************************************!*\
+  !*** ./src/components/ImageSelectionModal.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_1_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./images/1.jpg */ "./src/components/images/1.jpg");
+/* harmony import */ var _images_2_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./images/2.jpg */ "./src/components/images/2.jpg");
+/* harmony import */ var _images_3_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/3.jpg */ "./src/components/images/3.jpg");
+
+
+
+
+
+
+
+
+
+const ImageSelectionModal = ({
+  onClose,
+  onSelect
+}) => {
+  const [isLoading, setIsLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [categories] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["Tutte", "Categoria 1", "Categoria 2"]);
+  const [selectedCategory, setSelectedCategory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("Tutte");
+  const [images] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+    url: _images_1_jpg__WEBPACK_IMPORTED_MODULE_3__,
+    alt: "Immagine 1",
+    title: "Titolo 1",
+    category: "Categoria 1"
+  }, {
+    url: _images_2_jpg__WEBPACK_IMPORTED_MODULE_4__,
+    alt: "Immagine 2",
+    title: "Titolo 2",
+    category: "Categoria 2"
+  }, {
+    url: _images_3_jpg__WEBPACK_IMPORTED_MODULE_5__,
+    alt: "Immagine 3",
+    title: "Titolo 3",
+    category: "Categoria 1"
+  }, {
+    url: _images_3_jpg__WEBPACK_IMPORTED_MODULE_5__,
+    alt: "Immagine 4",
+    title: "Titolo 4",
+    category: "Categoria 1"
+  }]);
+  const [isLicenseModalOpen, setIsLicenseModalOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const filteredImages = selectedCategory === "Tutte" ? images : images.filter(image => image.category === selectedCategory);
+  const handleSelect = async image => {
+    setIsLoading(true);
+    try {
+      await onSelect(image); // Supponendo che onSelect gestisca l'operazione asincrona
+    } catch (error) {
+      console.error('Errore durante la selezione dell\'immagine:', error);
+    } finally {
+      setIsLoading(false);
+      onClose(); // Chiudi il modale dopo la selezione
+    }
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+    onRequestClose: onClose,
+    className: "modal-image-slider",
+    isFullScreen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "modal-body"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "category-navigator"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "logo-modal"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: _images_1_jpg__WEBPACK_IMPORTED_MODULE_3__,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slider', 'cocoblocks')
+  })), categories.map((category, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    key: index,
+    isSecondary: true,
+    onClick: () => setSelectedCategory(category),
+    className: selectedCategory === category ? "active" : ""
+  }, category))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-selection-modal"
+  }, filteredImages.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: index,
+    className: "image-item"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: image.url,
+    alt: image.alt
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isSecondary: true,
+    onClick: () => handleSelect(image)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Select", "text-domain")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, image.title))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "copy-right-modal"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isSecondary: true,
+    onClick: () => setIsLicenseModalOpen(true),
+    style: {
+      textAlign: 'left',
+      background: 'none',
+      border: 'none',
+      color: 'inherit',
+      padding: 0
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('© Copyright & License Info', 'cocoblocks'))))), isLoading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "loading-overlay"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "loading-message"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Please wait a moment...', 'text-domain')))), isLicenseModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('License Information', 'text-domain'),
+    onRequestClose: () => setIsLicenseModalOpen(false),
+    className: "license-modal"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "license-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Here you can put the detailed information about licenses.', 'text-domain')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isSecondary: true,
+    onClick: () => setIsLicenseModalOpen(false)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Close', 'text-domain')))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageSelectionModal);
+
+/***/ }),
+
+/***/ "./src/components/NavigationButtons.js":
+/*!*********************************************!*\
+  !*** ./src/components/NavigationButtons.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const NavigationButtons = ({
+  navigation,
+  nextRef,
+  prevRef,
+  swiperButtonNextClasses,
+  swiperButtonPrevClasses,
+  stylesNavigation,
+  navigationIcons,
+  navColor,
+  sizeNav
+}) => {
+  if (!navigation) return null;
+  if (window.Swiper) {
+    const swiper = new window.Swiper('.swiper-container', {
+      navigation: {
+        nextEl: nextRef.current,
+        prevEl: prevRef.current
+      }
+      // Altre opzioni di configurazione di Swiper
+    });
+    swiper.update();
+  }
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ref: nextRef,
+    className: swiperButtonNextClasses,
+    style: stylesNavigation
+  }, navigationIcons === "default" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
+    id: "a",
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    x: "0",
+    y: "0",
+    maskUnits: "userSpaceOnUse"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    fill: navColor,
+    d: "M0 0h24v24H0z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    mask: "url(#a)"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    fill: navColor,
+    d: "M9.4 17.654 8.346 16.6l4.6-4.6-4.6-4.6L9.4 6.346 15.054 12 9.4 17.654Z"
+  }))), navigationIcons === "one" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
+    id: "mask0_7_1879",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: sizeNav + "px",
+    height: sizeNav + "px"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    fill: navColor
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    mask: "url(#mask0_7_1879)"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M14.05 17.65L13 16.575L16.825 12.75H4.29999V11.25H16.825L13 7.42501L14.05 6.35001L19.7 12L14.05 17.65Z",
+    fill: navColor
+  }))), navigationIcons === "two" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
+    id: "mask0_315_300",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: sizeNav + "px",
+    height: sizeNav + "px"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    fill: navColor
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    mask: "url(#mask0_315_300)"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M17.5 16.1538L16.4308 15.1L18.7808 12.75H3.25003V11.25H18.7808L16.4462 8.89999L17.5154 7.84616L21.6538 12L17.5 16.1538Z",
+    fill: navColor
+  }))), navigationIcons === "three" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: sizeNav + "px",
+    viewBox: "0 -960 960 960",
+    width: sizeNav + "px",
+    fill: navColor
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M383-480 200-664l56-56 240 240-240 240-56-56 183-184Zm264 0L464-664l56-56 240 240-240 240-56-56 183-184Z"
+  })), navigationIcons === "four" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: sizeNav + "px",
+    viewBox: "0 -960 960 960",
+    width: sizeNav + "px",
+    fill: navColor
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M400-280v-400l200 200-200 200Z"
+  })), navigationIcons === "five" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: sizeNav + "px",
+    viewBox: "0 -960 960 960",
+    width: sizeNav + "px",
+    fill: navColor
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+  })), navigationIcons === "text" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      color: navColor,
+      fontSize: sizeNav + "px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Next", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ref: prevRef,
+    className: swiperButtonPrevClasses,
+    style: stylesNavigation
+  }, navigationIcons === "default" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
+    id: "mask0_7_1873",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: sizeNav + "px",
+    height: sizeNav + "px"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    fill: navColor
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    mask: "url(#mask0_7_1873)"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M14 17.6538L8.34619 12L14 6.34616L15.0538 7.39999L10.4538 12L15.0538 16.6L14 17.6538Z",
+    fill: navColor
+  }))), navigationIcons === "one" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: sizeNav + "px",
+    viewBox: "0 -960 960 960",
+    width: sizeNav + "px",
+    fill: navColor
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z"
+  })), navigationIcons === "two" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    viewBox: "0 0 26 26",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
+    id: "mask0_433_1472",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: sizeNav + "px",
+    height: sizeNav + "px"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M0.97765 24.9757L24.9776 25.0244L25.0263 1.02446L1.02632 0.975799L0.97765 24.9757Z",
+    fill: navColor
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    mask: "url(#mask0_433_1472)"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M7.51041 8.83536L8.57747 9.89132L6.22271 12.2366L21.7534 12.268L21.7504 13.768L6.21966 13.7365L8.5495 16.0913L7.47816 17.1429L3.34819 12.9807L7.51041 8.83536Z",
+    fill: navColor
+  }))), navigationIcons === "three" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: sizeNav + "px",
+    viewBox: "0 -960 960 960",
+    width: sizeNav + "px",
+    fill: navColor
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"
+  })), navigationIcons === "four" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    width: sizeNav + "px",
+    height: sizeNav + "px",
+    viewBox: "0 0 26 26",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M14.9723 7.98892L15.0277 17.9888L10.0001 13.0166L14.9723 7.98892Z",
+    fill: navColor
+  })), navigationIcons === "five" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: sizeNav + "px",
+    viewBox: "0 -960 960 960",
+    width: sizeNav + "px",
+    fill: navColor
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M200-440v-80h560v80H200Z"
+  })), navigationIcons === "text" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      color: navColor,
+      fontSize: sizeNav + "px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Prev", "cocoblocks"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavigationButtons);
+
+/***/ }),
+
 /***/ "./src/components/SliderControls.js":
 /*!******************************************!*\
   !*** ./src/components/SliderControls.js ***!
@@ -444,8 +1386,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
 /* harmony import */ var _sectionSliderSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sectionSliderSelector */ "./src/components/sectionSliderSelector.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
 
 
 
@@ -478,7 +1422,18 @@ const SliderControls = ({
     momentumBounceFreeMode,
     momentumBounceRatioFreeMode,
     momentumRatioFreeMode,
-    momentumVelocityRatioFreeMode
+    momentumVelocityRatioFreeMode,
+    overflow,
+    backgroundBorderColor,
+    backgroundBorderSize,
+    backgroundBorderRadius,
+    backgroundVerticalPadding,
+    backgroundHorizontalPadding,
+    backgroundColor,
+    backgroundColorSlideDefault,
+    backgroundColorBlockDefault,
+    textColorDefault,
+    innerTextColorDefault
   } = attributes;
   const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
@@ -679,7 +1634,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), perViewSlider == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
@@ -731,7 +1686,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Desktop)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
@@ -763,7 +1718,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slider rows, for multirow layout.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), slidesPerRow !== "1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -815,7 +1770,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), perViewSliderTablet == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -863,7 +1818,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Tablet)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "svg-devices"
@@ -909,7 +1864,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), perViewSliderMobile == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -957,7 +1912,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Mobile)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
@@ -990,7 +1945,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable and slider wrapper will adapt its height to the height of the currently active slide", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -1045,7 +2000,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -1084,7 +2039,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Index number of initial slide.(Starts from 0)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -1113,7 +2068,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Doesn't work in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -1137,7 +2092,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables Snap to slides positions in free mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1156,7 +2111,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then slide will keep moving for a while you release it after", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1175,7 +2130,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables momentum bounce in free mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -1197,7 +2152,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum bounce effect", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon",
     style: {
       left: "75%",
@@ -1223,7 +2178,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum distance after you release sldier", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon",
     style: {
       left: "75%",
@@ -1249,13 +2204,298 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum velocity after you release sldier", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "tooltip-icon",
     style: {
       left: "75%",
       top: "2px"
     }
-  })))))))), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))))))), activeSection === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cocoblocks-panel content-section-custom-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    colorNormal: backgroundColor,
+    setColorNormal: color => setAttributes({
+      backgroundColor: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Overflow", "cocoblocks")),
+    value: overflow,
+    onChange: val => setAttributes({
+      overflow: val
+    }),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Visible", "cocoblock"),
+      value: "visible"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hidden", "slider"),
+      value: "hidden"
+    }]
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      paddingTop: "0",
+      paddingBottom: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    colorNormal: backgroundBorderColor,
+    setColorNormal: color => setAttributes({
+      backgroundBorderColor: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: backgroundBorderSize,
+    onChange: value => setAttributes({
+      backgroundBorderSize: value
+    }),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border radius", "cocoblocks")),
+    value: backgroundBorderRadius,
+    onChange: value => setAttributes({
+      backgroundBorderRadius: value
+    }),
+    min: 0,
+    max: 256,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spacing", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content vertical padding", "cocoblocks")),
+    value: backgroundVerticalPadding,
+    onChange: value => setAttributes({
+      backgroundVerticalPadding: value
+    }),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px",
+        transform: "rotate(90deg)"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content horizontal padding", "cocoblocks")),
+    value: backgroundHorizontalPadding,
+    onChange: value => setAttributes({
+      backgroundHorizontalPadding: value
+    }),
+    min: 0,
+    max: 256,
+    step: 1
+  }), backgroundHorizontalPadding > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: if you set space here you also need to adjust "Space between slides"!', "cocoblocks")))))), activeSection === "skin" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Global color skin", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cocoblocks-panel content-section-custom-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    colorNormal: backgroundColorSlideDefault,
+    setColorNormal: color => setAttributes({
+      backgroundColorSlideDefault: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color Slide", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    colorNormal: backgroundColorBlockDefault,
+    setColorNormal: color => setAttributes({
+      backgroundColorBlockDefault: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color Block", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    colorNormal: textColorDefault,
+    setColorNormal: color => setAttributes({
+      textColorDefault: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    colorNormal: innerTextColorDefault,
+    setColorNormal: color => setAttributes({
+      innerTextColorDefault: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inner Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"
+    }))
+  }))))), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -1856,7 +3096,13 @@ const SliderControlsNaqvigation = ({
     style: {
       top: "12px"
     }
-  }))), navigation === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), navigation === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0",
+      margin: "0"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: In order for the carousel navigation to work in the editor, you need to change the carousel type below! Just move it once and choose the type you want!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Type", "cocoblocks"),
@@ -2622,8 +3868,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
 /* harmony import */ var _sectionSliderSelectorOptions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSliderSelectorOptions */ "./src/components/sectionSliderSelectorOptions.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 
 // SliderControls.js
 
@@ -2632,6 +3879,7 @@ __webpack_require__.r(__webpack_exports__);
 // Import Swiper React components
 
 // import required modules
+
 
 
 
@@ -2672,8 +3920,26 @@ const SliderControlsOptions = ({
     nextOpacity,
     modifier,
     rotateCards,
-    parallax
+    parallax,
+    filter,
+    colorOneEffect,
+    colorTwoEffect,
+    colorThreeEffect
   } = attributes;
+
+  // Effect Color Default
+  const defaultAttributes = {
+    colorOneEffect: "rgba(243, 106, 188, 0.5)",
+    colorTwoEffect: "rgba(243, 106, 188, 0)",
+    colorThreeEffect: "rgba(243, 106, 188, 0.7)"
+  };
+  const resetEffect = () => {
+    setAttributes({
+      colorOneEffect: defaultAttributes.colorOneEffect,
+      colorTwoEffect: defaultAttributes.colorTwoEffect,
+      colorThreeEffect: defaultAttributes.colorThreeEffect
+    });
+  };
   const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
@@ -2813,18 +4079,16 @@ const SliderControlsOptions = ({
   const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
 
   // Section slider
-  const [activeSectionOptions, setActiveSectionSliderOptions] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("background");
+  const [activeSectionOptions, setActiveSectionSliderOptions] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("animation");
+  const showThirdColor = ["filter-glitch", "filter-prism", "filter-inverse"].includes(filter);
+
+  // Determina se mostrare i colori
+  const showColors = filter !== " ";
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-subdescription-section-slider"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide Options"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSliderSelectorOptions__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onSectionChange: setActiveSectionSliderOptions
-  }), activeSectionOptions === "background" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cocoblocks-panel content-section-custom-panel"
-  })), activeSectionOptions === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), activeSectionOptions === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -2877,13 +4141,18 @@ const SliderControlsOptions = ({
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Creative", "cocoblocks"),
       value: "creative"
     }]
-  })), effect == "cube" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  })), effect == "flip" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!', "cocoblocks"))), effect == "cube" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
     style: {
       marginTop: "0",
       borderRadius: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: With this effect, it\'s better to set the slide with `overflow: hidden`!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Shadow", "cocoblocks"),
@@ -2900,7 +4169,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2919,7 +4188,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (shadow || slideShadows) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2960,7 +4229,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables slides shadows.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2982,7 +4251,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Depth offset in px(slides translate in Z axis)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: "8px"
@@ -3007,7 +4276,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slide rotate in degrees", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: "8px"
@@ -3032,7 +4301,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Stretch space between slides (in px)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       top: "8px"
@@ -3065,7 +4334,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables slides shadows.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -3084,7 +4353,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables cards rotation", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })))), effect == "creative" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: openModal,
@@ -3113,7 +4382,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The current slide fades out while the new slide appears simultaneously.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   })), crossFade == false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     placement: "top",
@@ -3124,7 +4393,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The current slide completely disappears before the new slide starts to appear.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -3153,7 +4422,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration of transition between slides (in ms).", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       left: "66%",
@@ -3186,7 +4455,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables parallax transition effects", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon",
     style: {
       left: "65%",
@@ -3204,7 +4473,144 @@ const SliderControlsOptions = ({
     className: "title-custom-panel"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Filters", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
-  })), activeSectionOptions === "loop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bg Filter", "cocoblocks")),
+    value: filter,
+    onChange: val => {
+      setAttributes({
+        filter: val
+      });
+    },
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: " "
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Lateral", "cocoblocks"),
+      value: "filter-lateral"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Central circle", "cocoblocks"),
+      value: "filter-central-circle"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border fade", "cocoblocks"),
+      value: "filter-border-fade"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Vignette", "cocoblocks"),
+      value: "filter-vignette"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spotlight", "cocoblocks"),
+      value: "filter-spotlight"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Diagonal", "cocoblocks"),
+      value: "filter-diagonal"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Nebula", "cocoblocks"),
+      value: "filter-nebula"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Glitch", "cocoblocks"),
+      value: "filter-glitch"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Prism", "cocoblocks"),
+      value: "filter-prism"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inverse", "cocoblocks"),
+      value: "filter-inverse"
+    }]
+  })), showColors && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    colorNormal: colorOneEffect,
+    setColorNormal: color => setAttributes({
+      colorOneEffect: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("First Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    colorNormal: colorTwoEffect,
+    setColorNormal: color => setAttributes({
+      colorTwoEffect: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Second Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"
+    }))
+  })), showThirdColor && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    colorNormal: colorThreeEffect,
+    setColorNormal: color => setAttributes({
+      colorThreeEffect: color
+    }),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Third Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px",
+        position: "relative",
+        top: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: resetEffect,
+    className: "button-reset"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#5f6368"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Reset Effect Color", "cocoblocks")))))), activeSectionOptions === "loop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -3249,7 +4655,7 @@ const SliderControlsOptions = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables continuous loop mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "tooltip-icon"
   }))), showLoopNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
     status: "warning",
@@ -3698,11 +5104,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
 /* harmony import */ var _aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aligncontrol-three */ "./src/components/aligncontrol-three.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 /* harmony import */ var _font_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./font-style */ "./src/components/font-style.js");
 /* harmony import */ var _sectionSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSelector */ "./src/components/sectionSelector.js");
+/* harmony import */ var _TextControlsHover__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TextControlsHover */ "./src/components/TextControlsHover.js");
+/* harmony import */ var _boxShadow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./boxShadow */ "./src/components/boxShadow.js");
+
+
+
 
 
 
@@ -3725,8 +5136,23 @@ const TextControls = ({
   handleDesktopClick,
   handleTabletClick,
   handleMobileClick,
-  showOtherButtons
+  showOtherButtons,
+  attributes
 }) => {
+  // Inizializza lo stato locale utilizzando element.playState
+  const [playState, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playState || '');
+
+  // Funzione per alternare il valore dello stato
+  const togglePlayState = () => {
+    const newState = playState === 'play' ? '' : 'play';
+    setPlayState(newState);
+    // Aggiorna element.playState piuttosto che attributes.playState
+    element.playState = newState;
+    setAttributes({
+      elements: [...slides]
+    }); // Oppure aggiorna la struttura dati appropriata
+  };
+
   // Remove Text
   const removeSlideTitle = (slideId, index) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -3816,6 +5242,34 @@ const TextControls = ({
     });
   };
 
+  // Update border style
+  const updateBorderStyle = (slideId, index, newBorderStyle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        borderStyle: newBorderStyle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Weight
+  const updateTextWeight = (slideId, index, weight) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        fontWeight: weight
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update Rotate
   const updateRotate = (slideId, index, rotate) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -3851,6 +5305,34 @@ const TextControls = ({
       elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
         ...element,
         elementTitle: newElementTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width
+  const updateWidthTitle = (slideId, index, newWidthTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        widthTitle: newWidthTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Custom width
+  const updateCustomWidthTitle = (slideId, index, customWidth) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        widthCustomTitle: customWidth
       } : element)
     } : slide);
     setAttributes({
@@ -3906,6 +5388,291 @@ const TextControls = ({
         ...element,
         lineHeight: newLineHeight
       } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Letter Spacing
+  const updateLetterSpacing = (slideId, index, newLetterSpacing) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        letterSpacing: newLetterSpacing
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect 
+  const updateDurationEffect = (slideId, index, newDurationEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        durationEffect: newDurationEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect odd
+  const updateDurationEffectOdd = (slideId, index, newDurationEffectOdd) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        durationEffectOdd: newDurationEffectOdd
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect even
+  const updateDurationEffectEven = (slideId, index, newDurationEffectEven) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        durationEffectEven: newDurationEffectEven
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Speed effect
+  const updateEffectSpeed = (slideId, index, newSpeedEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        speedEffect: newSpeedEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Pause effect
+  const updateEffectPause = (slideId, index, newPauseEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        pauseEffect: newPauseEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Delay effect 
+  const updateDelayEffect = (slideId, index, newDelayEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        delayEffect: newDelayEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width Cursor
+  const updateWidthCursor = (slideId, index, newWidthCursor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        widthCursor: newWidthCursor
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Animation Cursor
+  const updateAnimationCursor = (slideId, index, newAnimationCursor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        animationCursor: newAnimationCursor
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Cursor color
+  const updateCursorColor = (slideId, index, newCursorColor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        cursorColor: newCursorColor
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Gradient color one
+  const updateGradinetColorOne = (slideId, index, newGradinetColorOne) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        gradinetColorOne: newGradinetColorOne
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Gradient color two
+  const updateGradinetColorTwo = (slideId, index, newGradinetColorTwo) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        gradinetColorTwo: newGradinetColorTwo
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Gradient color three
+  const updateGradinetColorThree = (slideId, index, newGradinetColorThree) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        gradinetColorThree: newGradinetColorThree
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Gradient color four
+  const updateGradinetColorFour = (slideId, index, newGradinetColorFour) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        gradinetColorFour: newGradinetColorFour
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Gradient color five
+  const updateGradinetColorFive = (slideId, index, newGradinetColorFive) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        gradinetColorFive: newGradinetColorFive
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border color
+  const updateTitleBackgroundBorderColor = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        backgroundBorderColor: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width border
+  const updateTitleBackgroundBorderSize = (slideId, index, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        backgroundBorderSize: newSize
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Border radius
+  const updateTitleBackgroundBorderRadius = (slideId, index, newRadius) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        backgroundBorderRadius: newRadius
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Padding title
+  const updatenewPaddingtitle = (slideId, index, newPaddingtitle) => {
+    console.log("Updating margin with:", newPaddingtitle); // Log per debug
+
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "title" && i === index) {
+          return {
+            ...element,
+            paddingTitle: {
+              top: addUnit(newPaddingtitle.top || "0", newPaddingtitle.unit || "px"),
+              right: addUnit(newPaddingtitle.right || "0", newPaddingtitle.unit || "px"),
+              bottom: addUnit(newPaddingtitle.bottom || "0", newPaddingtitle.unit || "px"),
+              left: addUnit(newPaddingtitle.left || "0", newPaddingtitle.unit || "px")
+            }
+          };
+        }
+        return element;
+      })
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -4029,22 +5796,471 @@ const TextControls = ({
     });
   };
 
+  // Effect Text Split Count
+  const updateTextAnimationCount = (slideId, index, animationCount) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        animationCount: animationCount
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Text Write mode
+  const updateTextWriteMode = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textWriteMode: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Text Write direction
+  const updateTexOrientation = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textOrientation: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Selector link
+  const updateTextLink = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textLink: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Url
+  const updateLinkUrl = (slideId, index, url) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        linkUrl: url
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateScrollToId = (slideId, index, id) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        scrollToId: id
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateLinkTarget = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        linkTarget: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Rel
+  const updateLinkRel = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        linkRel: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration
+  const updateDecoration = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        decoration: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration color
+  const updateUnderlineColor = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineColor: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration padding
+  const updateUnderlinePadding = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlinePadding: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration vertical
+  const updateUnderlineVertical = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineVertical: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Horizontal
+  const updateUnderlineHorizontal = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineHorizontal: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Height
+  const updateUnderlineHeight = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineHeight: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Width
+  const updateUnderlineWidth = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineWidth: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Animation
+  const updateUnderlineAnimation = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineAnimation: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Animation From
+  const updateUnderlineAnimationFrom = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineAnimationFrom: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Animation To
+  const updateUnderlineAnimationTo = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineAnimationTo: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Animation From Size
+  const updateUnderlineFromSizeNew = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineFromSizeNew: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Animation To Size
+  const updateUnderlineToSizeNew = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineToSizeNew: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Decoration Animation Transition
+  const updateUnderlineAnimationTransition = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        underlineAnimationTransition: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // interaction animation
+  const updateInteration = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        interation: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Desktop
+  const updateEnableDesktopTitle = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        enableDesktopTitle: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Tablet
+  const updateEnableTabletTitle = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        enableTabletTitle: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Mobile
+  const updateEnableMobileTitle = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        enableMobileTitle: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Font Family Options
   const fontOptions = [{
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arial", "cocoblock"),
-    value: "Arial"
+    value: "Arial, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Helvetica", "cocoblock"),
+    value: "Helvetica, sans-serif"
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Georgia", "cocoblock"),
-    value: "Georgia"
+    value: "Georgia, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Times New Roman", "cocoblock"),
+    value: "Times New Roman, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Verdana", "cocoblock"),
+    value: "Verdana, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Tahoma", "cocoblock"),
+    value: "Tahoma, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Trebuchet MS", "cocoblock"),
+    value: "Trebuchet MS, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Gill Sans", "cocoblock"),
+    value: "Gill Sans, sans-serif"
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Courier New", "cocoblock"),
-    value: "Courier New"
+    value: "Courier New, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Lucida Console", "cocoblock"),
+    value: "Lucida Console, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Consolas", "cocoblock"),
+    value: "Consolas, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Monaco", "cocoblock"),
+    value: "Monaco, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Comic Sans MS", "cocoblock"),
+    value: "Comic Sans MS, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Brush Script MT", "cocoblock"),
+    value: "Brush Script MT, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Impact", "cocoblock"),
+    value: "Impact, fantasy"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Palatino Linotype", "cocoblock"),
+    value: "Palatino Linotype, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Book Antiqua", "cocoblock"),
+    value: "Book Antiqua, serif"
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Roboto", "cocoblock"),
-    value: "Roboto"
+    value: "Roboto, sans-serif"
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open Sans", "cocoblock"),
-    value: "Open Sans"
+    value: "Open Sans, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Ubuntu Mono", "cocoblock"),
+    value: "Ubuntu Mono, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inconsolata", "cocoblock"),
+    value: "Inconsolata, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bungee Tint", "cocoblock"),
+    value: "Bungee Tint, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Matemasie", "cocoblock"),
+    value: "Matemasie, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Anton", "cocoblock"),
+    value: "Anton, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Baskervville SC", "cocoblock"),
+    value: "Baskervville SC, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bodoni Moda SC", "cocoblock"),
+    value: "Bodoni Moda SC, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Ga Maamli", "cocoblock"),
+    value: "Ga Maamli, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Goldman", "cocoblock"),
+    value: "Goldman, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Kanit", "cocoblock"),
+    value: "Kanit, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Knewave", "cocoblock"),
+    value: "Knewave, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Londrina Outline", "cocoblock"),
+    value: "Londrina Outline, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Macondo", "cocoblock"),
+    value: "Macondo, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rampart One", "cocoblock"),
+    value: "Rampart One, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rubik Wet Paint", "cocoblock"),
+    value: "Rubik Wet Paint, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Ruslan Display", "cocoblock"),
+    value: "Ruslan Display, display"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Titan One", "cocoblock"),
+    value: "Titan One, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Vujahday Script", "cocoblock"),
+    value: "Vujahday Script, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Wallpoet", "cocoblock"),
+    value: "Wallpoet, cursive"
   }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-block-added"
@@ -4064,7 +6280,7 @@ const TextControls = ({
       top: "10px"
     },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Text", "cocoblocks"),
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -4094,6 +6310,54 @@ const TextControls = ({
     onChange: newTitle => updateSlideTitle(slide.id, elementIndex, newTitle),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add text content...", "cocoblocks")
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Width", "cocoblocks")),
+    value: element.widthTitle,
+    onChange: newElement => updateWidthTitle(slide.id, elementIndex, newElement),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Auto", "cocoblocks"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("100%", "cocoblocks"),
+      value: "100%"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom", "cocoblocks"),
+      value: "custom"
+    }]
+  })), element.widthTitle !== "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0",
+      marginTop: "6px",
+      marginBottom: "6px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Attention: Side transition effects will not work with this setting!', "cocoblocks")), element.widthTitle === "custom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom Width (%)", "cocoblocks")),
+    value: element.widthCustomTitle,
+    onChange: customWidth => updateCustomWidthTitle(slide.id, elementIndex, customWidth),
+    min: 1,
+    max: 100,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__["default"], {
     value: element.textAlign,
@@ -4304,6 +6568,39 @@ const TextControls = ({
     options: fontOptions,
     onChange: family => updateTextFamily(slide.id, elementIndex, family)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-200h480l-57-400H297l-57 400Zm240-480q17 0 28.5-11.5T520-720q0-17-11.5-28.5T480-760q-17 0-28.5 11.5T440-720q0 17 11.5 28.5T480-680Zm113 0h70q30 0 52 20t27 49l57 400q5 36-18.5 63.5T720-120H240q-37 0-60.5-27.5T161-211l57-400q5-29 27-49t52-20h70q-3-10-5-19.5t-2-20.5q0-50 35-85t85-35q50 0 85 35t35 85q0 11-2 20.5t-5 19.5ZM240-200h480-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font weight", "cocoblocks")),
+    value: element.fontWeight,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("100 Thin", "cocoblocks"),
+      value: "100"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("300 Light", "cocoblocks"),
+      value: "300"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("400 Regular", "cocoblocks"),
+      value: "400"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("500 Medium", "cocoblocks"),
+      value: "500"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("700 Bold", "cocoblocks"),
+      value: "700"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("900 Black", "cocoblocks"),
+      value: "900"
+    }],
+    onChange: weight => updateTextWeight(slide.id, elementIndex, weight)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -4321,6 +6618,30 @@ const TextControls = ({
     max: 2.5,
     step: 0.1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-160v-640h80v640h-80Zm560 0v-640h80v640h-80ZM294-280l150-400h72l150 400h-69l-36-102H399l-36 102h-69Zm126-160h120l-58-166h-4l-58 166Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Letter spacing", "cocoblocks")),
+    value: element.letterSpacing,
+    onChange: newLetterSpacing => updateLetterSpacing(slide.id, elementIndex, newLetterSpacing),
+    min: 0,
+    max: 100,
+    step: .5
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0",
+      marginTop: "6px",
+      marginBottom: "6px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: element.textColor,
@@ -4364,12 +6685,130 @@ const TextControls = ({
         marginBottom: "-5px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Padding", "cocoblocks")),
+    values: element.paddingTitle,
+    units: {},
+    onChange: newPaddingtitle => updatenewPaddingtitle(slide.id, elementIndex, newPaddingtitle)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin", "cocoblocks")),
     values: element.marginTitle,
     units: {},
     onChange: newMargintitle => updatenewMargintitle(slide.id, elementIndex, newMargintitle)
-  })))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      paddingTop: "0",
+      paddingBottom: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: element.borderStyle,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: newBorderStyle => updateBorderStyle(slide.id, elementIndex, newBorderStyle)
+  })), element.borderStyle !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.backgroundBorderColor,
+    setColorNormal: color => updateTitleBackgroundBorderColor(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSize,
+    onChange: newSize => updateTitleBackgroundBorderSize(slide.id, elementIndex, newSize),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border radius", "cocoblocks")),
+    value: element.backgroundBorderRadius,
+    onChange: newRadius => updateTitleBackgroundBorderRadius(slide.id, elementIndex, newRadius),
+    min: 0,
+    max: 256,
+    step: 1
+  }))))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -4398,6 +6837,51 @@ const TextControls = ({
     min: 0,
     max: 360,
     step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-360v-200q-66 0-113-47t-47-113q0-66 47-113t113-47h320v80h-80v440h-80v-440h-80v440h-80Zm0-280v-160q-33 0-56.5 23.5T280-720q0 33 23.5 56.5T360-640Zm0-80ZM680-80l-56-56 64-64H120v-80h568l-64-64 56-56 160 160L680-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Writing mode", "cocoblocks")),
+    value: element.textWriteMode,
+    options: [{
+      label: "Horizontal",
+      value: "initial"
+    }, {
+      label: "Vertical lr",
+      value: "vertical-lr"
+    }, {
+      label: "Vertical rl",
+      value: "vertical-rl"
+    }],
+    onChange: value => updateTextWriteMode(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-160v-640h80v640h-80Zm560 0v-640h80v640h-80Zm-296-98L282-400l142-141 56 56-45 45h85q33 0 56.5-23.5T600-520q0-33-23.5-56.5T520-600H280v-80h240q66 0 113 47t47 113q0 66-47 113t-113 47h-85l45 45-56 57Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Orientation", "cocoblocks")),
+    value: element.textOrientation,
+    options: [{
+      label: "Initial",
+      value: "initial"
+    }, {
+      label: "Upright",
+      value: "upright"
+    }],
+    onChange: value => updateTexOrientation(slide.id, elementIndex, value)
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -4424,7 +6908,13 @@ const TextControls = ({
     min: 0,
     max: 1,
     step: 0.1
-  })))), activeSection === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_boxShadow__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSection === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -4451,7 +6941,91 @@ const TextControls = ({
     value: element.animation,
     options: [{
       label: "None",
-      value: ""
+      value: "none"
+    }, {
+      label: "Fade In",
+      value: "fade-in"
+    }, {
+      label: "Fade In Left",
+      value: "fade-in-left"
+    }, {
+      label: "Fade In Right",
+      value: "fade-in-right"
+    }, {
+      label: "Fade In Top",
+      value: "fade-in-top"
+    }, {
+      label: "Fade In Bottom",
+      value: "fade-in-bottom"
+    }, {
+      label: "Slide In Left",
+      value: "slide-in-left"
+    }, {
+      label: "Slide In Right",
+      value: "slide-in-right"
+    }, {
+      label: "Slide In Top",
+      value: "slide-in-top"
+    }, {
+      label: "Slide In Bottom",
+      value: "slide-in-bottom"
+    }, {
+      label: "Zoom In",
+      value: "zoom-in"
+    }, {
+      label: "Zoom In Left",
+      value: "zoom-in-left"
+    }, {
+      label: "Zoom In Right",
+      value: "zoom-in-right"
+    }, {
+      label: "Zoom In Top",
+      value: "zoom-in-top"
+    }, {
+      label: "Zoom In Bottom",
+      value: "zoom-in-bottom"
+    }, {
+      label: "Rotate In Left",
+      value: "rotate-in-left"
+    }, {
+      label: "Rotate In Right",
+      value: "rotate-in-right"
+    }, {
+      label: "Rotate In Top",
+      value: "rotate-in-top"
+    }, {
+      label: "Rotate In Bottom",
+      value: "rotate-in-bottom"
+    }, {
+      label: "Rotate Continuos",
+      value: "rotate-continuous"
+    }, {
+      label: "Bounce in",
+      value: "bounce-effect"
+    }, {
+      label: "Bounce in Left",
+      value: "bounce-left-effect"
+    }, {
+      label: "Bounce in Right",
+      value: "bounce-right-effect"
+    }, {
+      label: "Bounce in Top",
+      value: "bounce-top-effect"
+    }, {
+      label: "Bounce in Bottom",
+      value: "bounce-bottom-effect"
+    }, {
+      label: "Wiggle",
+      value: "wiggle"
+    }, {
+      label: "Flip",
+      value: "flip"
+    }, {
+      label: "Swing",
+      value: "swing"
+    }, {
+      label: "Rubber band",
+      value: "rubber-band"
     }, {
       label: "Letter Bounce",
       value: "bounce"
@@ -4461,8 +7035,792 @@ const TextControls = ({
     }, {
       label: "Focus",
       value: "focus"
+    }, {
+      label: "Typing",
+      value: "typing-effect"
+    }, {
+      label: "Explosion",
+      value: "explode"
+    }, {
+      label: "Implode",
+      value: "implode"
+    }, {
+      label: "Letters Fly In From Left",
+      value: "letters-fly-in-from-left"
+    }, {
+      label: "Letters Fly In From Right",
+      value: "letters-fly-in-from-right"
+    }, {
+      label: "Letters Fly In From Top",
+      value: "letters-fly-in-from-top"
+    }, {
+      label: "Letters Fly In From Bottom",
+      value: "letters-fly-in-from-bottom"
+    }, {
+      label: "Letter Flip From Top",
+      value: "letter-flip-from-top"
+    }, {
+      label: "Letter Flip From Bottom",
+      value: "letter-flip-from-bottom"
+    }, {
+      label: "Letter Flip Cycle",
+      value: "letter-flip-cycle"
+    }, {
+      label: "Gradient Animation",
+      value: "gradient-animation"
+    }, {
+      label: "Text Shadow",
+      value: "text-shadow"
+    }, {
+      label: "Text Shadow Light",
+      value: "text-shadow-light"
+    }, {
+      label: "Text Shadow Heavy",
+      value: "text-shadow-heavy"
+    }, {
+      label: "Neon Effect",
+      value: "text-neon"
+    }, {
+      label: "Color Cycle",
+      value: "color-cycle"
     }],
     onChange: animation => updateTextAnimation(slide.id, elementIndex, animation)
+  })), element.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, ![" ", "typing-effect", "text-shadow", "text-shadow-light", "text-shadow-heavy", "text-neon"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
+    value: element.durationEffect,
+    onChange: newDurationEffect => updateDurationEffect(slide.id, elementIndex, newDurationEffect),
+    min: .1,
+    max: 15,
+    step: .1
+  }))), ["explode", "implode", "letters-fly-in-from-left", "letters-fly-in-from-right", "letters-fly-in-from-top", "letters-fly-in-from-bottom", "letter-flip-from-top", "letter-flip-from-bottom", "letter-flip-cycle"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Delay", "cocoblocks")),
+    value: element.delayEffect,
+    onChange: newDelayEffect => updateDelayEffect(slide.id, elementIndex, newDelayEffect),
+    min: 0,
+    max: 10,
+    step: .1
+  })), element.animation === "bounce" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration letter odd", "cocoblocks")),
+    value: element.durationEffectOdd,
+    onChange: newDurationEffectOdd => updateDurationEffectOdd(slide.id, elementIndex, newDurationEffectOdd),
+    min: .1,
+    max: 10,
+    step: .1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration letter even", "cocoblocks")),
+    value: element.durationEffectEven,
+    onChange: newDurationEffectEven => updateDurationEffectEven(slide.id, elementIndex, newDurationEffectEven),
+    min: .1,
+    max: 10,
+    step: .1
+  }))), ["bounce-effect", "bounce-left-effect", "bounce-right-effect", "bounce-top-effect", "bounce-bottom-effect", "wiggle", "flip", "swing", "rubber-band"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Iteration Mode", "cocoblocks")),
+    value: element.iteration,
+    options: [{
+      label: "Forwards",
+      value: "forwards"
+    }, {
+      label: "Infinite",
+      value: "infinite"
+    }],
+    onChange: value => updateInteration(slide.id, elementIndex, value)
+  })), element.animation === "typing-effect" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M418-340q24 24 62 23.5t56-27.5l224-336-336 224q-27 18-28.5 55t22.5 61Zm62-460q59 0 113.5 16.5T696-734l-76 48q-33-17-68.5-25.5T480-720q-133 0-226.5 93.5T160-400q0 42 11.5 83t32.5 77h552q23-38 33.5-79t10.5-85q0-36-8.5-70T766-540l48-76q30 47 47.5 100T880-406q1 57-13 109t-41 99q-11 18-30 28t-40 10H204q-21 0-40-10t-30-28q-26-45-40-95.5T80-400q0-83 31.5-155.5t86-127Q252-737 325-768.5T480-800Zm7 313Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Speed", "cocoblocks")),
+    value: element.speedEffect,
+    onChange: newSpeedEffect => updateEffectSpeed(slide.id, elementIndex, newSpeedEffect),
+    min: 10,
+    max: 500,
+    step: 10
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-360v-240h80v240h-80Zm160 0v-240h80v240h-80ZM480-40q-108 0-202.5-49.5T120-228v108H40v-240h240v80h-98q51 75 129.5 117.5T480-120q115 0 208.5-66T820-361l78 18q-45 136-160 219.5T480-40ZM42-520q7-67 32-128.5T143-762l57 57q-32 41-52 87.5T123-520H42Zm214-241-57-57q53-44 114-69.5T440-918v80q-51 5-97 25t-87 52Zm449 0q-41-32-87.5-52T520-838v-80q67 6 128.5 31T762-818l-57 57Zm133 241q-5-51-25-97.5T761-705l57-57q44 52 69 113.5T918-520h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Pause", "cocoblocks")),
+    value: element.pauseEffect,
+    onChange: newPauseEffect => updateEffectPause(slide.id, elementIndex, newPauseEffect),
+    min: 0,
+    max: 5000,
+    step: 100
+  }))), (element.animation === "explode" || element.animation === "implode") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80ZM380-320v-60h120v-40H380v-140h180v60H440v40h80q17 0 28.5 11.5T560-420v60q0 17-11.5 28.5T520-320H380Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Interation count", "cocoblocks")),
+    value: element.animationCount,
+    options: [{
+      label: "1",
+      value: "1"
+    }, {
+      label: "2",
+      value: "2"
+    }, {
+      label: "3",
+      value: "3"
+    }, {
+      label: "4",
+      value: "4"
+    }, {
+      label: "5",
+      value: "5"
+    }, {
+      label: "Infinite",
+      value: "infinite"
+    }],
+    onChange: animationCount => updateTextAnimationCount(slide.id, elementIndex, animationCount)
+  })), element.animation === "typing-effect" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM280-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM120-760v-80h80v80h-80Zm0 160v-80h80v80h-80Zm0 160v-80h80v80h-80Zm0 160v-80h80v80h-80Zm0 160v-80h80v80h-80Zm480 0v-80h80v-560h-80v-80h240v80h-80v560h80v80H600Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Width cursor", "cocoblocks")),
+    value: element.widthCursor,
+    onChange: newWidthCursor => updateWidthCursor(slide.id, elementIndex, newWidthCursor),
+    min: 1,
+    max: 15,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-120v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM120-120v-80h80v-560h-80v-80h240v80h-80v560h80v80H120Zm560-200-56-56 63-64H400v-80h287l-63-64 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation cursor", "cocoblocks")),
+    value: element.animationCursor,
+    onChange: newAnimationCursor => updateAnimationCursor(slide.id, elementIndex, newAnimationCursor),
+    min: .10,
+    max: 3,
+    step: .01
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.cursorColor,
+    setColorNormal: newCursorColor => updateCursorColor(slide.id, elementIndex, newCursorColor),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Cursor Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  }))), ["gradient-animation", "text-shadow", "text-shadow-light", "text-shadow-heavy", "text-neon", "color-cycle"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.gradinetColorOne,
+    setColorNormal: newGradinetColorOne => updateGradinetColorOne(slide.id, elementIndex, newGradinetColorOne),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("First Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
+    }))
+  })), ["gradient-animation", "color-cycle"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.gradinetColorTwo,
+    setColorNormal: newGradinetColorTwo => updateGradinetColorTwo(slide.id, elementIndex, newGradinetColorTwo),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Second Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.gradinetColorThree,
+    setColorNormal: newGradinetColorThree => updateGradinetColorThree(slide.id, elementIndex, newGradinetColorThree),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Third Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.gradinetColorFour,
+    setColorNormal: newGradinetColorFour => updateGradinetColorFour(slide.id, elementIndex, newGradinetColorFour),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Fourth Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
+    }))
+  }))), element.animation === "color-cycle" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.gradinetColorFive,
+    setColorNormal: newGradinetColorFive => updateGradinetColorFive(slide.id, elementIndex, newGradinetColorFive),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Fifth Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
+    }))
+  })), element.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-reply-effect"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    text: playState === 'play' ? 'Play' : 'Repeat'
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    variant: playState === 'play',
+    onClick: togglePlayState,
+    icon: playState === 'play' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M170-228q-38-44-61-98T80-440h82q6 44 22 83.5t42 72.5l-56 56ZM80-520q8-60 30-114t60-98l56 56q-26 33-42 72.5T162-520H80ZM438-82q-60-6-113.5-29T226-170l56-58q35 26 73.5 43t82.5 23v80ZM284-732l-58-58q45-36 98.5-59T440-878v80q-45 6-84 23t-72 43Zm96 432v-360l280 180-280 180ZM520-82v-80q121-17 200.5-107T800-480q0-121-79.5-211T520-798v-80q154 17 257 130t103 268q0 155-103 268T520-82Z"
+    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"
+    }))
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Advanced", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M293-120q-15 0-31.5-6T233-140q-8-5-16-12.5t-17-7.5h-40v-80h40q15 0 31.5 6t28.5 14q8 5 16 12.5t17 7.5q10 0 18-7.5t16-12.5q12-9 28.5-14.5T387-240q15 0 31.5 5.5T447-220q8 5 15.5 12.5T480-200q10 0 18-7.5t16-12.5q12-9 28.5-14.5T574-240q14 0 31 6t29 14q8 5 16 12.5t18 7.5q10 0 17.5-7.5T701-220q12-8 28.5-14t31.5-6h40v80h-40q-10 0-18 7.5T727-140q-12 8-29 14t-32 6q-14 0-30.5-6T607-140q-8-5-16-12.5t-18-7.5q-10 0-18 7.5T539-140q-12 9-28.5 14.5T479-120q-15 0-31.5-5.5T419-140q-8-5-15.5-12.5T386-160q-9 0-17.5 7.5T352-140q-11 9-28 14.5t-31 5.5Zm187-180q-101 0-170.5-69.5T240-540v-320h100v320q0 59 40.5 99.5T480-400q59 0 99.5-40.5T620-540v-320h100v320q0 101-69.5 170.5T480-300Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Decorative Divider", "cocoblocks")),
+    value: element.decoration,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Underline",
+      value: "underline-effect"
+    }, {
+      label: "Coming soon",
+      value: "none"
+    }],
+    onChange: value => updateDecoration(slide.id, elementIndex, value)
+  })), element.decoration === "underline-effect" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.underlineColor,
+    setColorNormal: value => updateUnderlineColor(slide.id, elementIndex, value),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      style: {
+        marginBottom: "-3px"
+      },
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m247-904 57-56 343 343q23 23 23 57t-23 57L457-313q-23 23-57 23t-57-23L153-503q-23-23-23-57t23-57l190-191-96-96Zm153 153L209-560h382L400-751Zm360 471q-33 0-56.5-23.5T680-360q0-21 12.5-45t27.5-45q9-12 19-25t21-25q11 12 21 25t19 25q15 21 27.5 45t12.5 45q0 33-23.5 56.5T760-280ZM80 0v-160h800V0H80Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Padding", "cocoblocks")),
+    value: element.underlinePadding,
+    onChange: value => updateUnderlinePadding(slide.id, elementIndex, value),
+    min: 0,
+    max: 50,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Vertical Position", "cocoblocks")),
+    value: element.underlineVertical,
+    onChange: value => updateUnderlineVertical(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Horizontal Position", "cocoblocks")),
+    value: element.underlineHorizontal,
+    onChange: value => updateUnderlineHorizontal(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120 320-280l56-56 64 63v-414l-64 63-56-56 160-160 160 160-56 57-64-64v414l64-63 56 56-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Height", "cocoblocks")),
+    value: element.underlineHeight,
+    onChange: value => updateUnderlineHeight(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Width", "cocoblocks")),
+    value: element.underlineWidth,
+    onChange: value => updateUnderlineWidth(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: element.underlineAnimation,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Bounce Y",
+      value: "bounceUnderline"
+    }, {
+      label: "Bounce X",
+      value: "bounceUnderlineHorizontal"
+    }],
+    onChange: value => updateUnderlineAnimation(slide.id, elementIndex, value)
+  })), element.underlineAnimation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80-240v-480h80v480H80Zm560 0-57-56 144-144H240v-80h487L584-664l56-56 240 240-240 240Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("From", "cocoblocks")),
+    value: element.underlineAnimationFrom,
+    onChange: value => updateUnderlineAnimationFrom(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM280-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM120-760v-80h80v80h-80Zm0 640v-80h80v80h-80Zm480 0v-80h80v-560h-80v-80h240v80h-80v560h80v80H600ZM280-320 120-480l160-160 56 56-63 64h287v80H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("To", "cocoblocks")),
+    value: element.underlineAnimationTo,
+    onChange: value => updateUnderlineAnimationTo(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m296-345-56-56 240-240 240 240-56 56-184-183-184 183Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Initial size", "cocoblocks")),
+    value: element.underlineFromSizeNew,
+    onChange: value => updateUnderlineFromSizeNew(slide.id, elementIndex, value),
+    min: 0,
+    max: 150,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m296-105-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Final size", "cocoblocks")),
+    value: element.underlineToSizeNew,
+    onChange: value => updateUnderlineToSizeNew(slide.id, elementIndex, value),
+    min: 0,
+    max: 150,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
+    value: element.underlineAnimationTransition,
+    onChange: value => updateUnderlineAnimationTransition(slide.id, elementIndex, value),
+    min: 0,
+    max: 10,
+    step: .1
+  })))))), activeSection === "hover" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_TextControlsHover__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSection === "actions" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Actions", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link actions", "cocoblocks")),
+    value: element.textLink,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Link",
+      value: "link"
+    }, {
+      label: "Scroll Below Slider",
+      value: "scroll-below"
+    }, {
+      label: "Scroll to ID Element",
+      value: "scroll-to-id"
+    }],
+    onChange: value => updateTextLink(slide.id, elementIndex, value)
+  })), element.textLink === "link" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter URL", "cocoblocks")),
+    value: element.linkUrl,
+    onChange: value => updateLinkUrl(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Target", "cocoblocks")),
+    value: element.linkTarget,
+    options: [{
+      label: "Same Window",
+      value: "_self"
+    }, {
+      label: "New Window",
+      value: "_blank"
+    }],
+    onChange: value => updateLinkTarget(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m791-55-91-91q-49 32-104.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-60 17-115.5T146-700l-91-91 57-57 736 736-57 57ZM480-160q43 0 83.5-11t78.5-33L204-642q-22 38-33 78.5T160-480q0 133 93.5 226.5T480-160Zm334-100-58-58q22-38 33-78.5t11-83.5q0-133-93.5-226.5T480-800q-43 0-83.5 11T318-756l-58-58q49-32 104.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 60-17 115.5T814-260ZM537-537ZM423-423Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link Behavior", "cocoblocks")),
+    value: element.linkRel,
+    options: [{
+      label: "Follow Link",
+      value: "follow"
+    }, {
+      label: "No Follow",
+      value: "nofollow"
+    }],
+    onChange: value => updateLinkRel(slide.id, elementIndex, value)
+  }))), element.textLink === "scroll-to-id" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-160q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v284q-10-2-19.5-3t-20.5-1h-40v-280H200v560h124q4 22 10.5 42t17.5 38H200Zm0-120v40-560 520Zm80-40h44q8-49 35-90.5t69-69.5H280v160Zm0-240h160v-160H280v160Zm280 440q-66 0-113-47t-47-113q0-66 47-113t113-47h80v80h-80q-33 0-56.5 23.5T480-280q0 33 23.5 56.5T560-200h80v80h-80Zm-40-440h160v-160H520v160Zm40 320v-80h240v80H560Zm160 120v-80h80q33 0 56.5-23.5T880-280q0-33-23.5-56.5T800-360h-80v-80h80q66 0 113 46.5T960-280q0 66-47 113t-113 47h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter ID", "cocoblocks")),
+    value: element.scrollToId,
+    onChange: value => updateScrollToId(slide.id, elementIndex, value)
+  })))), activeSection === "visibility" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Visibility", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80-160q-33 0-56.5-23.5T0-240h160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240h160q0 33-23.5 56.5T880-160H80Zm400-40q17 0 28.5-11.5T520-240q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240q0 17 11.5 28.5T480-200ZM160-320h640v-440H160v440Zm0 0v-440 440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Desktop", "cocoblocks")),
+    checked: element.enableDesktopTitle,
+    onChange: value => updateEnableDesktopTitle(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-140q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM200-40q-33 0-56.5-23.5T120-120v-720q0-33 23.5-56.5T200-920h560q33 0 56.5 23.5T840-840v720q0 33-23.5 56.5T760-40H200Zm0-200v120h560v-120H200Zm0-80h560v-400H200v400Zm0-480h560v-40H200v40Zm0 0v-40 40Zm0 560v120-120Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Tablet", "cocoblocks")),
+    checked: element.enableTabletTitle,
+    onChange: value => updateEnableTabletTitle(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mobile", "cocoblocks")),
+    checked: element.enableMobileTitle,
+    onChange: value => updateEnableMobileTitle(slide.id, elementIndex, value)
   })))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
@@ -5513,6 +8871,395 @@ const TextControlsBlock = ({
 
 /***/ }),
 
+/***/ "./src/components/TextControlsHover.js":
+/*!*********************************************!*\
+  !*** ./src/components/TextControlsHover.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
+
+
+
+
+
+const TextControlsHover = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes
+}) => {
+  // Update Text color
+  const updateSlideTextColorHover = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        textColorHover: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateHover = (slideId, index, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        rotateHover: rotate
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style
+  const updateBorderStyleHover = (slideId, index, newBorderStyle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        borderStyleHover: newBorderStyle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityHover = (slideId, index, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        opacityHover: opacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect 
+  const updateDurationEffectHover = (slideId, index, newDurationEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        durationEffectHover: newDurationEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border color
+  const updateTitleBackgroundBorderColorHover = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        backgroundBorderColorHover: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Annimation
+  const updateTextAnimationHover = (slideId, index, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        animationHover: animation
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Effect color
+  const updateSlideEffectColorHover = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        effectHoverColorHover: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Translate effect 
+  const updateTranslateEffectHover = (slideId, index, newEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        translateEffectHover: newEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  const isAnimationNone = element.animationHover === " ";
+  const showColorOptionsPanel = ["hover-effect-3-", "hover-effect-3", "hover-effect-4", "hover-light-effect"].includes(element.animationHover);
+  const showTranslateRangeControl = ["hover-effect-2",
+  // Translate Y
+  "hover-effect-5" // Translate X
+  ].includes(element.animationHover);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.textColorHover,
+    setColorNormal: color => updateSlideTextColorHover(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: element.borderStyleHover,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: newBorderStyle => updateBorderStyleHover(slide.id, elementIndex, newBorderStyle)
+  })), element.borderStyleHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.backgroundBorderColorHover,
+    setColorNormal: color => updateTitleBackgroundBorderColorHover(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: element.opacityHover,
+    onChange: opacity => updateOpacityHover(slide.id, elementIndex, opacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: element.rotateHover,
+    onChange: rotate => updateRotateHover(slide.id, elementIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: element.animationHover,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Scale",
+      value: "hover-effect-1"
+    }, {
+      label: "Translate Y",
+      value: "hover-effect-2"
+    }, {
+      label: "Translate X",
+      value: "hover-effect-5"
+    }, {
+      label: "Shadow",
+      value: "hover-effect-3-"
+    }, {
+      label: "Shadow Two",
+      value: "hover-effect-3"
+    }, {
+      label: "Shadow Three",
+      value: "hover-effect-4"
+    }, {
+      label: "Filter",
+      value: "hover-effect-6"
+    }, {
+      label: "Light",
+      value: "hover-light-effect"
+    }],
+    onChange: animation => updateTextAnimationHover(slide.id, elementIndex, animation)
+  })), !isAnimationNone && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
+    value: element.durationEffectHover,
+    onChange: newDurationEffect => updateDurationEffectHover(slide.id, elementIndex, newDurationEffect),
+    min: .1,
+    max: 10,
+    step: .1
+  })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.effectHoverColorHover,
+    setColorNormal: color => updateSlideEffectColorHover(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effect Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        height: "20px",
+        width: "20px",
+        marginLeft: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"
+    }))
+  })), showTranslateRangeControl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate", "cocoblocks")),
+    value: element.translateEffectHover,
+    onChange: newEffect => updateTranslateEffectHover(slide.id, elementIndex, newEffect),
+    min: -70,
+    max: 70,
+    step: 1
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextControlsHover);
+
+/***/ }),
+
 /***/ "./src/components/aligncontrol-three.js":
 /*!**********************************************!*\
   !*** ./src/components/aligncontrol-three.js ***!
@@ -5819,6 +9566,622 @@ const AlignmentControl = ({
 
 /***/ }),
 
+/***/ "./src/components/boxShadow.js":
+/*!*************************************!*\
+  !*** ./src/components/boxShadow.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/components/editor.scss");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
+
+
+
+ // Assicurati di avere il file CSS per lo stile del componente
+
+const BoxShadowControl = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes
+}) => {
+  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside"); // "outside" or "inside"
+
+  // Color Shadow
+  const updateColorShadow = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        colorShadow: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowX 
+  const updateBoxShadowX = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        boxShadowX: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowY 
+  const updateBoxShadowY = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        boxShadowY: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Blur
+  const updateBoxShadowBlur = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        boxShadowBlur: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Spread
+  const updateBoxShadowSpread = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        boxShadowSpread: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Box Shadow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.colorShadow,
+    setColorNormal: value => updateColorShadow(slide.id, elementIndex, value),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        width: "21px",
+        height: "21px",
+        marginLeft: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m389-347 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm338 70q29-35 47-76t23-86L547-189q8 3 16.5 7t16.5 6q44-14 81-40t66-61ZM160-480q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Zm317 247 315-314q-4-18-9-35t-13-33L432-278q11 13 21 23.5t24 21.5Zm3 153q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM363-525l247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm217 45Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("X Position", "cocoblocks")),
+    value: element.boxShadowX,
+    onChange: value => updateBoxShadowX(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Y Position", "cocoblocks")),
+    value: element.boxShadowY,
+    onChange: value => updateBoxShadowY(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Blur", "cocoblocks")),
+    value: element.boxShadowBlur,
+    onChange: value => updateBoxShadowBlur(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spread", "cocoblocks")),
+    value: element.boxShadowSpread,
+    onChange: value => updateBoxShadowSpread(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BoxShadowControl);
+
+/***/ }),
+
+/***/ "./src/components/boxShadowBlock.js":
+/*!******************************************!*\
+  !*** ./src/components/boxShadowBlock.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/components/editor.scss");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
+
+
+
+ // Assicurati di avere il file CSS per lo stile del componente
+
+const BoxShadowControlBlock = ({
+  slide,
+  slides,
+  element,
+  elementIndex,
+  setAttributes
+}) => {
+  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside"); // "outside" or "inside"
+
+  // Color Shadow
+  const updateColorShadow = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        colorShadow: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowX 
+  const updateBoxShadowX = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        boxShadowX: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowY 
+  const updateBoxShadowY = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        boxShadowY: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Blur
+  const updateBoxShadowBlur = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        boxShadowBlur: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Spread
+  const updateBoxShadowSpread = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        boxShadowSpread: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Box Shadow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.colorShadow,
+    setColorNormal: value => updateColorShadow(slide.id, elementIndex, value),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        width: "21px",
+        height: "21px",
+        marginLeft: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m389-347 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm338 70q29-35 47-76t23-86L547-189q8 3 16.5 7t16.5 6q44-14 81-40t66-61ZM160-480q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Zm317 247 315-314q-4-18-9-35t-13-33L432-278q11 13 21 23.5t24 21.5Zm3 153q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM363-525l247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm217 45Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("X Position", "cocoblocks")),
+    value: element.boxShadowX,
+    onChange: value => updateBoxShadowX(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Y Position", "cocoblocks")),
+    value: element.boxShadowY,
+    onChange: value => updateBoxShadowY(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Blur", "cocoblocks")),
+    value: element.boxShadowBlur,
+    onChange: value => updateBoxShadowBlur(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spread", "cocoblocks")),
+    value: element.boxShadowSpread,
+    onChange: value => updateBoxShadowSpread(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BoxShadowControlBlock);
+
+/***/ }),
+
+/***/ "./src/components/boxShadowImage.js":
+/*!******************************************!*\
+  !*** ./src/components/boxShadowImage.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/components/editor.scss");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
+
+
+
+ // Assicurati di avere il file CSS per lo stile del componente
+
+const BoxShadowControlImage = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes
+}) => {
+  // Color Shadow
+  const updateColorShadowImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        colorShadowImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowX 
+  const updateBoxShadowXImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        boxShadowXImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowY 
+  const updateBoxShadowYImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        boxShadowYImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Blur
+  const updateBoxShadowBlurImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        boxShadowBlurImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Spread
+  const updateBoxShadowSpreadImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        boxShadowSpreadImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Box Shadow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.colorShadowImage,
+    setColorNormal: value => updateColorShadowImage(slide.id, elementIndex, value),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        width: "21px",
+        height: "21px",
+        marginLeft: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m389-347 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm338 70q29-35 47-76t23-86L547-189q8 3 16.5 7t16.5 6q44-14 81-40t66-61ZM160-480q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Zm317 247 315-314q-4-18-9-35t-13-33L432-278q11 13 21 23.5t24 21.5Zm3 153q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM363-525l247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm217 45Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("X Position", "cocoblocks")),
+    value: element.boxShadowXImage,
+    onChange: value => updateBoxShadowXImage(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Y Position", "cocoblocks")),
+    value: element.boxShadowYImage,
+    onChange: value => updateBoxShadowYImage(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Blur", "cocoblocks")),
+    value: element.boxShadowBlurImage,
+    onChange: value => updateBoxShadowBlurImage(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spread", "cocoblocks")),
+    value: element.boxShadowSpreadImage,
+    onChange: value => updateBoxShadowSpreadImage(slide.id, elementIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BoxShadowControlImage);
+
+/***/ }),
+
 /***/ "./src/components/colorPanel.js":
 /*!**************************************!*\
   !*** ./src/components/colorPanel.js ***!
@@ -5984,6 +10347,1246 @@ const ColorOptionsPanelGradient = ({
 
 /***/ }),
 
+/***/ "./src/components/divComponent.js":
+/*!****************************************!*\
+  !*** ./src/components/divComponent.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const DivComponent = ({
+  element,
+  index
+}) => {
+  const getStylesTitleBlock = textDiv => ({
+    fontSize: textDiv.fontSize ? `${textDiv.fontSize}px` : "16px",
+    "--font-size-block-tablet": textDiv.fontSizeTablet ? `${textDiv.fontSizeTablet}px` : "14px",
+    "--font-size-block-mobile": textDiv.fontSizeMobile ? `${textDiv.fontSizeMobile}px` : "12px",
+    color: textDiv.textColor || "#000000",
+    textAlign: textDiv.textAlign || "left",
+    fontStyle: textDiv.fontStyle?.fontStyle || "normal",
+    fontWeight: textDiv.fontStyle?.fontWeight || "normal",
+    textDecoration: textDiv.fontStyle?.textDecoration || "none",
+    lineHeight: textDiv.lineHeight ? `${textDiv.lineHeight}` : "1.5",
+    width: "100%",
+    // Mantiene la larghezza al 100%
+    fontFamily: textDiv.fontFamily || "inherit",
+    // Inherit se non specificato
+    margin: textDiv.marginTitle ? `${textDiv.marginTitle.top} ${textDiv.marginTitle.right} ${textDiv.marginTitle.bottom} ${textDiv.marginTitle.left}` : "0",
+    padding: textDiv.padding || "0" // Mantiene il padding come nell'originale
+  });
+
+  // Definizione della funzione getImageStyleBlock
+  const getImageStyleBlock = imageDiv => {
+    let style = {
+      maxWidth: "100%",
+      minWidth: "0",
+      maxHeight: "100%",
+      minHeight: "0",
+      border: imageDiv.backgroundBorderSizeImage + "px solid" + imageDiv.backgroundBorderColorImage,
+      borderRadius: imageDiv.backgroundBorderRadiusImage + "px",
+      padding: imageDiv.paddingImage + "px",
+      backgroundColor: imageDiv.backgroundColorImage,
+      margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`
+    };
+    if (imageDiv.widthImage === "relative") {
+      style.width = `${imageDiv.customWidthImage}%`;
+    } else if (imageDiv.widthImage === "fixed") {
+      style.width = `${imageDiv.customWidthImagePx}px`;
+    }
+    if (imageDiv.heightImage === "relative") {
+      style.height = `${imageDiv.customHeightImage}%`;
+    } else if (imageDiv.heightImage === "fixed") {
+      style.height = `${imageDiv.customHeightImagePx}px`;
+    }
+    if (imageDiv.widthImage !== "auto" || imageDiv.heightImage !== "auto") {
+      style.objectFit = imageDiv.fit;
+    }
+    return style;
+  };
+  const DivBlock = element.elementDiv || "div";
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(DivBlock, {
+    className: "div-slide " + element.positionDiv + " " + element.layoutDiv + "-layout " + element.animationDiv + element.playStateDiv,
+    key: index,
+    style: {
+      backgroundColor: element.backgroundColor || "transparent",
+      width: "100%",
+      display: "flex",
+      flexDirection: element.layoutDiv === "horizontal" ? "row" : "column",
+      textAlign: "center",
+      width: "100%",
+      position: "relative",
+      visibility: "visible",
+      gap: element.gapItemsDiv + "px",
+      borderRadius: element.backgroundBorderRadiusDiv + "px",
+      paddingTop: element.backgroundVerticalPaddingDiv + "px",
+      paddingBottom: element.backgroundVerticalPaddingDiv + "px",
+      paddingLeft: element.backgroundHorizontalPaddingDiv + "px",
+      paddingRight: element.backgroundHorizontalPaddingDiv + "px",
+      borderStyle: element.borderStyleDiv || "none",
+      borderColor: element.backgroundBorderColorDiv,
+      borderWidth: `${element.backgroundBorderSizeDiv}px` || 0,
+      width: element.contentWidthDiv === 'custom' ? `${element.customContentWidthDiv}%` : element.contentWidthDiv,
+      height: element.contentHeightDiv === 'custom' ? `${element.customContentHeightDiv}%` : element.contentHeightDiv,
+      margin: `${element.marginDiv?.top} ${element.marginDiv?.right} ${element.marginDiv?.bottom} ${element.marginDiv?.left}`,
+      "--box-shadow-x-div": element.boxShadowX + "px" || 0,
+      "--box-shadow-y-div": element.boxShadowY + "px" || 0,
+      "--box-shadow-blur-div": element.boxShadowBlur + "px" || 0,
+      "--box-shadow-color-div": element.colorShadow || "#000000",
+      "--box-shadow-spread-div": element.boxShadowSpread + "px" || 0,
+      opacity: element.opacityDiv,
+      transform: `rotate(${element.rotateDiv}deg)`,
+      "--duration-effect-div": element.durationEffectDiv + "s",
+      "--interation-div": element.interationDiv || "forwards"
+    }
+  }, element.innerTextDivs && element.innerTextDivs.length > 0 ? element.innerTextDivs.map((textDiv, textIndex) => {
+    // Definisci il tag dinamico
+    const TagBlock = textDiv.elementTitle || "h3";
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        transform: `rotate(${textDiv.rotate}deg)`,
+        opacity: textDiv.opacity
+      },
+      className: element.decoration
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TagBlock, {
+      key: textIndex,
+      className: `title-slide letter ${textDiv.animation}`,
+      style: getStylesTitleBlock(textDiv),
+      "data-swiper-parallax-x": textDiv.parallaxTitle,
+      "data-swiper-parallax-y": textDiv.parallaxTitleY,
+      "data-swiper-parallax-scale": textDiv.parallaxTitleScale,
+      "data-swiper-parallax-duration": textDiv.parallaxTitleDuration,
+      "data-swiper-parallax-opacity": textDiv.parallaxTitleOpacity
+    }, splitTextIntoLetters(textDiv.content, textDiv.animation)));
+  }) : null, element.innerImageDivs && element.innerImageDivs.length > 0 ? element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      transform: `rotate(${imageDiv.rotateImage}deg)`,
+      opacity: imageDiv.opacityImage
+    },
+    className: "moving-background"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    key: imageIndex,
+    src: imageDiv.imageUrl,
+    alt: imageDiv.alt,
+    style: getImageStyleBlock(imageDiv),
+    className: `image-with-mask ${imageDiv.blobMask}`,
+    "data-swiper-parallax-x": imageDiv.parallaxImage,
+    "data-swiper-parallax-y": imageDiv.parallaxImageY,
+    "data-swiper-parallax-scale": imageDiv.parallaxImageScale,
+    "data-swiper-parallax-duration": imageDiv.parallaxImageDuration,
+    "data-swiper-parallax-opacity": imageDiv.parallaxImageOpacity
+  }))) : null);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DivComponent);
+
+/***/ }),
+
+/***/ "./src/components/divControls.js":
+/*!***************************************!*\
+  !*** ./src/components/divControls.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _TextControlsBlock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TextControlsBlock */ "./src/components/TextControlsBlock.js");
+/* harmony import */ var _imageControlsBlock__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./imageControlsBlock */ "./src/components/imageControlsBlock.js");
+/* harmony import */ var _sectionSelectorBlock__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSelectorBlock */ "./src/components/sectionSelectorBlock.js");
+/* harmony import */ var _aligncontrol__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./aligncontrol */ "./src/components/aligncontrol.js");
+/* harmony import */ var _boxShadowBlock__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./boxShadowBlock */ "./src/components/boxShadowBlock.js");
+
+
+
+
+
+
+
+
+
+
+
+
+const DivControls = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes,
+  setActiveSectionBlock,
+  activeSectionBlock,
+  parallax,
+  device,
+  handleDesktopClick,
+  handleTabletClick,
+  handleMobileClick,
+  showOtherButtons,
+  attributes
+}) => {
+  // Inizializza lo stato locale utilizzando element.playStateDiv
+  const [playStateDiv, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playStateDiv || '');
+
+  // Funzione per alternare il valore dello stato
+  const togglePlayState = () => {
+    const newState = playStateDiv === 'play' ? '' : 'play';
+    setPlayState(newState);
+    // Aggiorna element.playStateDiv piuttosto che attributes.playStateDiv
+    element.playStateDiv = newState;
+    setAttributes({
+      elements: [...slides]
+    }); // Oppure aggiorna la struttura dati appropriata
+  };
+  const {
+    innerTextColorDefault
+  } = attributes;
+
+  // Background color Content
+  const updateDivBackgroundColor = (slideId, index, newColor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundColor: newColor
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Layout
+  const updateSlideLayoutDiv = (slideId, index, newLayoutDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        layoutDiv: newLayoutDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Gap Items
+  const updateSlideGapItemsDiv = (slideId, index, newGapItemsDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        gapItemsDiv: newGapItemsDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Position
+  const updateSlidePositionDiv = (slideId, index, newPositionDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        positionDiv: newPositionDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border Color
+  const updateSlideBackgroundBorderColorDiv = (slideId, index, newColor) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundBorderColorDiv: newColor
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border size
+  const updateSlideBackgroundBorderSizeDiv = (slideId, index, newSizeDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundBorderSizeDiv: newSizeDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border radius
+  const updateSlideBackgroundBorderRadiusDiv = (slideId, index, newRadiusDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundBorderRadiusDiv: newRadiusDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update vertical padding
+  const updateSlideBackgroundVerticalPaddingDiv = (slideId, index, newVerticalPaddingDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundVerticalPaddingDiv: newVerticalPaddingDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update horizontal padding
+  const updateSlideBackgroundHorizontalPaddingDiv = (slideId, index, newHorizontalPaddingDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundHorizontalPaddingDiv: newHorizontalPaddingDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update content width
+  const updateContentWidthDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        contentWidthDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom content width
+  const updateCustomContentWidthDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        customContentWidthDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update content height
+  const updateContentHeightDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        contentHeightDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update custom content height
+  const updateCustomContentHeightDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        customContentHeightDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update element
+  const updateElementDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        elementDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style 
+  const updateBorderStyleDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        borderStyleDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update rotate
+  const updateRotateDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        rotateDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update opacity
+  const updateOpacityDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        opacityDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update animation
+  const updateAnimationDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        animationDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update animation duration
+  const updateDurationEffectDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        durationEffectDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update animation interation
+  const updateInterationDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        interationDiv: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Margin div
+  const updatenewMarginDiv = (slideId, index, newMarginDiv) => {
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "div" && i === index) {
+          return {
+            ...element,
+            marginDiv: {
+              top: addUnit(newMarginDiv.top || "0", newMarginDiv.unit || "px"),
+              right: addUnit(newMarginDiv.right || "0", newMarginDiv.unit || "px"),
+              bottom: addUnit(newMarginDiv.bottom || "0", newMarginDiv.unit || "px"),
+              left: addUnit(newMarginDiv.left || "0", newMarginDiv.unit || "px")
+            }
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Remove Div
+  const removeSlideDiv = (slideId, index) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.filter((element, i) => element.type !== "div" || i !== index)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Add Text inside block
+  const addSlideTitleDiv = (slideId, divIndex) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, index) => index === divIndex ? {
+        ...element,
+        innerTextDivs: [...(element.innerTextDivs || []), {
+          content: "",
+          textColor: innerTextColorDefault
+        }]
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  const [activeSection, setActiveSection] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("content");
+  const [activeSectionImage, setActiveSectionImage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("content");
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-controls"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-element"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => removeSlideDiv(slide.id, elementIndex),
+    style: {
+      position: "absolute",
+      right: "80px",
+      top: "10px"
+    },
+    isDestructive: true,
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove block", "cocoblocks"),
+    className: "button-remove-element"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Block", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelectorBlock__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onSectionChange: setActiveSectionBlock
+  }), activeSectionBlock === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-add-element",
+    style: {
+      paddingBottom: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => addSlideTitleDiv(slide.id, elementIndex),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add inner text", "slide")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    fill: "currentcolor",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "20px",
+    height: "20px",
+    viewBox: "0 0 56 56"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M 16.2929 29.6406 C 22.7617 29.6406 28.1992 24.2266 28.1992 17.7109 C 28.1992 11.1953 22.8320 5.8047 16.2929 5.8047 C 9.7773 5.8047 4.3867 11.1953 4.3867 17.7109 C 4.3867 24.2734 9.7773 29.6406 16.2929 29.6406 Z M 33.8008 13.3750 L 49.8085 13.3750 C 50.8165 13.3750 51.6133 12.6015 51.6133 11.5937 C 51.6133 10.6094 50.8165 9.8359 49.8085 9.8359 L 33.8008 9.8359 C 32.7929 9.8359 32.0195 10.6094 32.0195 11.5937 C 32.0195 12.6015 32.7929 13.3750 33.8008 13.3750 Z M 16.3164 25.4453 C 15.4960 25.4453 14.7695 24.8828 14.7695 24.0156 L 14.7695 19.1406 L 10.2929 19.1406 C 9.4960 19.1406 8.8398 18.4844 8.8398 17.7109 C 8.8398 16.9375 9.4960 16.2812 10.2929 16.2812 L 14.7695 16.2812 L 14.7695 11.4297 C 14.7695 10.5390 15.4960 10.0000 16.3164 10.0000 C 17.1367 10.0000 17.8398 10.5390 17.8398 11.4297 L 17.8398 16.2812 L 22.3164 16.2812 C 23.1132 16.2812 23.7695 16.9375 23.7695 17.7109 C 23.7695 18.4844 23.1132 19.1406 22.3164 19.1406 L 17.8398 19.1406 L 17.8398 24.0156 C 17.8398 24.8828 17.1367 25.4453 16.3164 25.4453 Z M 33.8008 25.6563 L 49.8085 25.6563 C 50.8165 25.6563 51.6133 24.8828 51.6133 23.8750 C 51.6133 22.8906 50.8165 22.1172 49.8085 22.1172 L 33.8008 22.1172 C 32.7929 22.1172 32.0195 22.8906 32.0195 23.8750 C 32.0195 24.8828 32.7929 25.6563 33.8008 25.6563 Z M 6.1679 37.9375 L 49.8085 37.9375 C 50.8165 37.9375 51.6133 37.1406 51.6133 36.1563 C 51.6133 35.1719 50.8165 34.3984 49.8085 34.3984 L 6.1679 34.3984 C 5.1601 34.3984 4.3867 35.1719 4.3867 36.1563 C 4.3867 37.1406 5.1601 37.9375 6.1679 37.9375 Z M 6.1679 50.1953 L 49.8085 50.1953 C 50.8165 50.1953 51.6133 49.4219 51.6133 48.4375 C 51.6133 47.4531 50.8165 46.6562 49.8085 46.6562 L 6.1679 46.6562 C 5.1601 46.6562 4.3867 47.4531 4.3867 48.4375 C 4.3867 49.4219 5.1601 50.1953 6.1679 50.1953 Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => addSlideImageDiv(slide.id, elementIndex) // Assicurati di passare elementIndex o divIndex
+    ,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add inner image", "slide")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "dashicons dashicons-format-image"
+  })))), activeSectionBlock === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.backgroundColor,
+    setColorNormal: newColor => updateDivBackgroundColor(slide.id, elementIndex, newColor),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
+    buttonIcon: "admin-customizer"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+      icon: "screenoptions",
+      style: {
+        marginRight: "5px",
+        width: "16px",
+        height: "16px",
+        fontSize: "16px"
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content direction", "cocoblocks")),
+    value: element.layoutDiv,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Column", "slider"),
+      value: "vertical"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Row", "slider"),
+      value: "horizontal"
+    }],
+    onChange: newLayoutDiv => updateSlideLayoutDiv(slide.id, elementIndex, newLayoutDiv)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+      icon: "image-flip-horizontal",
+      style: {
+        marginRight: "5px",
+        width: "16px",
+        height: "16px",
+        fontSize: "16px"
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Gap between items", "cocoblocks")),
+    value: element.gapItemsDiv,
+    onChange: newGapItemsDiv => updateSlideGapItemsDiv(slide.id, elementIndex, newGapItemsDiv),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: element.positionDiv,
+    onChange: newPositionDiv => updateSlidePositionDiv(slide.id, elementIndex, newPositionDiv)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content width", "cocoblocks")),
+    value: element.contentWidthDiv,
+    options: [{
+      label: "Auto",
+      value: "auto"
+    }, {
+      label: "100%",
+      value: "100%"
+    }, {
+      label: "Custom",
+      value: "custom"
+    }],
+    onChange: value => updateContentWidthDiv(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom width", "cocoblocks")),
+    value: element.customContentWidthDiv,
+    onChange: value => updateCustomContentWidthDiv(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120 320-280l56-56 64 63v-414l-64 63-56-56 160-160 160 160-56 57-64-64v414l64-63 56 56-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content height", "cocoblocks")),
+    value: element.contentHeightDiv,
+    options: [{
+      label: "Auto",
+      value: "auto"
+    }, {
+      label: "100%",
+      value: "100%"
+    }, {
+      label: "Custom",
+      value: "custom"
+    }],
+    onChange: value => updateContentHeightDiv(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120 320-280l56-56 64 63v-414l-64 63-56-56 160-160 160 160-56 57-64-64v414l64-63 56 56-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom height", "cocoblocks")),
+    value: element.customContentHeightDiv,
+    onChange: value => updateCustomContentHeightDiv(slide.id, elementIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-280v-400h720v160h-80v-80H200v240h360v80H120Zm80-80v-240 240Zm664 200L720-303v123h-80v-260h260v80H776l144 144-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Element html", "cocoblocks")),
+    value: element.elementDiv,
+    onChange: value => updateElementDiv(slide.id, elementIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("<div>", "cocoblocks"),
+      value: "div"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("<section>", "cocoblocks"),
+      value: "section"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("<main>", "cocoblocks"),
+      value: "main"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("<article>", "cocoblocks"),
+      value: "article"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("<aside>", "cocoblocks"),
+      value: "aside"
+    }]
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "4px",
+        marginLeft: "-2px",
+        marginBottom: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content vertical padding", "cocoblocks")),
+    value: element.backgroundVerticalPaddingDiv,
+    onChange: newVerticalPaddingDiv => updateSlideBackgroundVerticalPaddingDiv(slide.id, elementIndex, newVerticalPaddingDiv),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "4px",
+        marginLeft: "-2px",
+        marginBottom: "-4px",
+        transform: "rotate(90deg)"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content horizontal padding", "cocoblocks")),
+    value: element.backgroundHorizontalPaddingDiv,
+    onChange: newHorizontalPaddingDiv => updateSlideBackgroundHorizontalPaddingDiv(slide.id, elementIndex, newHorizontalPaddingDiv),
+    min: 0,
+    max: 256,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin", "cocoblocks")),
+    values: element.marginDiv,
+    units: {},
+    onChange: newMarginDiv => updatenewMarginDiv(slide.id, elementIndex, newMarginDiv)
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: element.borderStyleDiv,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: value => updateBorderStyleDiv(slide.id, elementIndex, value)
+  })), element.borderStyleDiv !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "4px",
+        marginLeft: "-2px",
+        marginBottom: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSizeDiv,
+    onChange: newSizeDiv => updateSlideBackgroundBorderSizeDiv(slide.id, elementIndex, newSizeDiv),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: element.backgroundBorderColorDiv,
+    setColorNormal: newColor => updateSlideBackgroundBorderColorDiv(slide.id, elementIndex, newColor),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "4px",
+        marginLeft: "-2px",
+        marginBottom: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border radius", "cocoblocks")),
+    value: element.backgroundBorderRadiusDiv,
+    onChange: newRadiusDiv => updateSlideBackgroundBorderRadiusDiv(slide.id, elementIndex, newRadiusDiv),
+    min: 0,
+    max: 256,
+    step: 1
+  }))))), activeSectionBlock === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: element.rotateDiv,
+    onChange: value => updateRotateDiv(slide.id, elementIndex, value),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transparency Setting", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: element.opacityDiv,
+    onChange: value => updateOpacityDiv(slide.id, elementIndex, value),
+    min: 0,
+    max: 1,
+    step: 0.1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_boxShadowBlock__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSectionBlock === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: element.animationDiv,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Fade In",
+      value: "fade-in-div"
+    }, {
+      label: "Fade In Left",
+      value: "fade-in-left-div"
+    }, {
+      label: "Fade In Right",
+      value: "fade-in-right-div"
+    }, {
+      label: "Fade In Top",
+      value: "fade-in-top-div"
+    }, {
+      label: "Fade In Bottom",
+      value: "fade-in-bottom-div"
+    }, {
+      label: "Slide In Left",
+      value: "slide-in-left-div"
+    }, {
+      label: "Slide In Right",
+      value: "slide-in-right-div"
+    }, {
+      label: "Slide In Top",
+      value: "slide-in-top-div"
+    }, {
+      label: "Slide In Bottom",
+      value: "slide-in-bottom-div"
+    }, {
+      label: "Zoom In",
+      value: "zoom-in-div"
+    }, {
+      label: "Zoom In Left",
+      value: "zoom-in-left-div"
+    }, {
+      label: "Zoom In Right",
+      value: "zoom-in-right-div"
+    }, {
+      label: "Zoom In Top",
+      value: "zoom-in-top-div"
+    }, {
+      label: "Zoom In Bottom",
+      value: "zoom-in-bottom-div"
+    }, {
+      label: "Rotate In Left",
+      value: "rotate-in-left-div"
+    }, {
+      label: "Rotate In Right",
+      value: "rotate-in-right-div"
+    }, {
+      label: "Rotate In Top",
+      value: "rotate-in-top-div"
+    }, {
+      label: "Rotate In Bottom",
+      value: "rotate-in-bottom-div"
+    }, {
+      label: "Rotate Continuos",
+      value: "rotate-continuous-div"
+    }, {
+      label: "Bounce in",
+      value: "bounce-effect-div"
+    }, {
+      label: "Bounce in Left",
+      value: "bounce-left-effect-div"
+    }, {
+      label: "Bounce in Right",
+      value: "bounce-right-effect-div"
+    }, {
+      label: "Bounce in Top",
+      value: "bounce-top-effect-div"
+    }, {
+      label: "Bounce in Bottom",
+      value: "bounce-bottom-effect-div"
+    }, {
+      label: "Swing",
+      value: "swing-div"
+    }, {
+      label: "Flip In",
+      value: "flip-div"
+    }, {
+      label: "Rubber Band",
+      value: "rubber-band-div"
+    }, {
+      label: "Wiggle",
+      value: "wiggle-div"
+    }],
+    onChange: value => updateAnimationDiv(slide.id, elementIndex, value)
+  })), element.animationDiv !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
+    value: element.durationEffectDiv,
+    onChange: value => updateDurationEffectDiv(slide.id, elementIndex, value),
+    min: .1,
+    max: 15,
+    step: .1
+  }))), ["bounce-effect-div", "bounce-left-effect-div", "bounce-right-effect-div", "bounce-top-effect-div", "bounce-bottom-effect-div", "wiggle-div", "flip-div", "swing-div", "rubber-band-div"].includes(element.animationDiv) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Iteration Mode", "cocoblocks")),
+    value: element.iterationDiv,
+    options: [{
+      label: "Forwards",
+      value: "forwards"
+    }, {
+      label: "Infinite",
+      value: "infinite"
+    }],
+    onChange: value => updateInterationDiv(slide.id, elementIndex, value)
+  })), element.animationDiv !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-reply-effect"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    text: playStateDiv === 'play' ? 'Play' : 'Repeat'
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    variant: playStateDiv === 'play',
+    onClick: togglePlayState,
+    icon: playStateDiv === 'play' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M170-228q-38-44-61-98T80-440h82q6 44 22 83.5t42 72.5l-56 56ZM80-520q8-60 30-114t60-98l56 56q-26 33-42 72.5T162-520H80ZM438-82q-60-6-113.5-29T226-170l56-58q35 26 73.5 43t82.5 23v80ZM284-732l-58-58q45-36 98.5-59T440-878v80q-45 6-84 23t-72 43Zm96 432v-360l280 180-280 180ZM520-82v-80q121-17 200.5-107T800-480q0-121-79.5-211T520-798v-80q154 17 257 130t103 268q0 155-103 268T520-82Z"
+    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"
+    }))
+  })))))), element.innerTextDivs && element.innerTextDivs.map((textDiv, textIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: textIndex
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_TextControlsBlock__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    slide: slide,
+    slides: slides,
+    textDiv: textDiv,
+    element: element,
+    textIndex: textIndex,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes,
+    setActiveSection: setActiveSection,
+    activeSection: activeSection,
+    parallax: parallax,
+    device: device,
+    handleDesktopClick: handleDesktopClick,
+    handleTabletClick: handleTabletClick,
+    handleMobileClick: handleMobileClick,
+    showOtherButtons: showOtherButtons
+  }))), element.innerImageDivs && element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: imageIndex
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_imageControlsBlock__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    divIndex: elementIndex,
+    elementIndex: elementIndex,
+    imageDiv: imageDiv,
+    imageIndex: imageIndex,
+    setAttributes: setAttributes,
+    setActiveSectionImage: setActiveSectionImage,
+    activeSectionImage: activeSectionImage,
+    parallax: parallax
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DivControls);
+
+/***/ }),
+
 /***/ "./src/components/font-style.js":
 /*!**************************************!*\
   !*** ./src/components/font-style.js ***!
@@ -6110,10 +11713,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 /* harmony import */ var _sectionSelectorImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sectionSelectorImage */ "./src/components/sectionSelectorImage.js");
+/* harmony import */ var _boxShadowImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./boxShadowImage */ "./src/components/boxShadowImage.js");
+/* harmony import */ var _ImageSelectionModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ImageSelectionModal */ "./src/components/ImageSelectionModal.js");
+/* harmony import */ var _ImageControlsHover__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ImageControlsHover */ "./src/components/ImageControlsHover.js");
 
 
 
@@ -6121,6 +11727,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+ // Importa il nuovo componente
 
 const ImageControls = ({
   slide,
@@ -6130,8 +11739,59 @@ const ImageControls = ({
   setAttributes,
   setActiveSectionImage,
   activeSectionImage,
-  parallax
+  parallax,
+  attributes
 }) => {
+  // Inizializza lo stato locale utilizzando element.playState
+  const [playStateImage, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playStateImage || "");
+
+  // Funzione per alternare il valore dello stato
+  const togglePlayState = () => {
+    const newState = playStateImage === "play" ? "" : "play";
+    setPlayState(newState);
+    // Aggiorna element.playState piuttosto che attributes.playState
+    element.playStateImage = newState;
+    setAttributes({
+      elements: [...slides]
+    }); // Oppure aggiorna la struttura dati appropriata
+  };
+  const [isModalOpen, setIsModalOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [selectedImages, setSelectedImages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [isLoading, setIsLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const handleImageSelect = async image => {
+    setIsLoading(true);
+    try {
+      // Chiamata all'endpoint REST API per caricare l'immagine
+      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          image_url: image.url
+        })
+      });
+      const data = await response.json();
+      if (data.url) {
+        // Aggiorna la slide con l'immagine appena caricata
+        updateSlideImage(slide.id, elementIndex, image.url, image.alt);
+      } else {
+        console.error("Errore durante il caricamento dell'immagine.");
+      }
+    } catch (error) {
+      console.error("Errore durante la chiamata all'API:", error);
+    } finally {
+      setIsLoading(false);
+    }
+    setIsModalOpen(false);
+  };
+
+  // Funzione per aprire il modale
+  const openModal = () => setIsModalOpen(true);
+
+  // Funzione per chiudere il modale
+  const closeModal = () => setIsModalOpen(false);
+
   // Remove Image
   const removeSlideImage = (slideId, index) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -6297,6 +11957,20 @@ const ImageControls = ({
     });
   };
 
+  // Update border style
+  const updateBorderStyleImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        borderStyleImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update padding image
   const updatePaddingImage = (slideId, index, newPaddingImage) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -6398,6 +12072,90 @@ const ImageControls = ({
     });
   };
 
+  // Update Skipe left image
+  const updateSpikeMask = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        spikeMask: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width spike left
+  const updateSpikeLeftWidth = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        spikeLeftWidth: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Skipe right image
+  const updateSpikeMaskRight = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        spikeMaskRight: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width spike right
+  const updateSpikeRightWidth = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        spikeRightWidth: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // duration effect
+  const updateDurationEffectImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        durationEffectImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // duration effect moving
+  const updateDurationEffectImageMoving = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        durationEffectImageMoving: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Parallax image x
   const updateParallaxImage = (slideId, index, newParallaxImage) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -6467,6 +12225,202 @@ const ImageControls = ({
       slides: updatedSlides
     });
   };
+
+  // Effect Image Animation
+  const updateAnimationImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        animationImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving
+  const updateAnimationImageMoving = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        animationImageMoving: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation
+  const updateImageFilter = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        imageFilter: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving trnaslate
+  const updateTranslateEffectImageMoving = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        translateEffectImageMoving: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving trnaslate
+  const updateWidthImageContent = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        widthImageContent: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Selector link
+  const updateImageLink = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        imageLink: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Url
+  const updateLinkUrlImage = (slideId, index, url) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        linkUrlImage: url
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateScrollToIdImage = (slideId, index, id) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        scrollToIdImage: id
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateLinkTargetImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        linkTargetImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Rel
+  const updateLinkRelImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        linkRelImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // interaction animation
+  const updateInterationImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        interationImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Desktop
+  const updateEnableDesktopImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        enableDesktopImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Tablet
+  const updateEnableTabletImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        enableTabletImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Mobile
+  const updateEnableMobileImage = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        enableMobileImage: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-block-added"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6478,7 +12432,7 @@ const ImageControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: () => removeSlideImage(slide.id, elementIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Remove Image", "cocoblocks"),
     className: "button-remove-element",
     style: {
@@ -6529,7 +12483,21 @@ const ImageControls = ({
         color: " var(--light-color)",
         padding: "0"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Upload Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: "5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-400h400L622-580l-92 120-62-80-108 140Zm-40 160q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Media Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
@@ -6558,10 +12526,62 @@ const ImageControls = ({
         top: "-2px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image", "cocoblocks")
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image form Media Library", "cocoblocks")
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: openModal,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px"
+      },
+      className: "button-replace",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image from Object Library", "cocoblocks")
     })))
-  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: openModal,
+    style: {
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: " var(--light-color)",
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "5px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "20px",
+    viewBox: "0 -960 960 960",
+    width: "20px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M440-440ZM120-120q-33 0-56.5-23.5T40-200v-480q0-33 23.5-56.5T120-760h126l74-80h240v80H355l-73 80H120v480h640v-360h80v360q0 33-23.5 56.5T760-120H120Zm640-560v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM440-260q75 0 127.5-52.5T620-440q0-75-52.5-127.5T440-620q-75 0-127.5 52.5T260-440q0 75 52.5 127.5T440-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Object Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-down-alt2",
+    style: {
+      position: "relative",
+      right: "2px",
+      top: "6px",
+      fontSize: "12px"
+    }
+  })))), isModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ImageSelectionModal__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onClose: closeModal,
+    onSelect: handleImageSelect
+  }), element.url && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       padding: "0"
@@ -6581,6 +12601,27 @@ const ImageControls = ({
     value: element.alt || "",
     onChange: newAlt => updateSlideImage(slide.id, elementIndex, element.url, newAlt),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Add alt text...", "cocoblocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Width content", "cocoblocks")),
+    value: element.widthImageContent,
+    onChange: value => updateWidthImageContent(slide.id, elementIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "cocoblocks"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("100%", "cocoblocks"),
+      value: "100%"
+    }]
   }))))), activeSectionImage === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
@@ -6791,6 +12832,36 @@ const ImageControls = ({
       padding: "0"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border style", "cocoblocks")),
+    value: element.borderStyleImage,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: value => updateBorderStyleImage(slide.id, elementIndex, value)
+  })), element.borderStyleImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: element.backgroundBorderColorImage,
@@ -6842,7 +12913,7 @@ const ImageControls = ({
     min: 0,
     max: 256,
     step: 1
-  })))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -6897,7 +12968,13 @@ const ImageControls = ({
     min: 0,
     max: 1,
     step: 0.1
-  })))), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_boxShadowImage__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -6905,6 +12982,246 @@ const ImageControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Animation", "cocoblocks")),
+    value: element.animationImage,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Fade In",
+      value: "fade-in-image"
+    }, {
+      label: "Fade In Left",
+      value: "fade-in-left-image"
+    }, {
+      label: "Fade In Right",
+      value: "fade-in-right-image"
+    }, {
+      label: "Fade In Top",
+      value: "fade-in-top-image"
+    }, {
+      label: "Fade In Bottom",
+      value: "fade-in-bottom-image"
+    }, {
+      label: "Slide In Left",
+      value: "slide-in-left-image"
+    }, {
+      label: "Slide In Right",
+      value: "slide-in-right-image"
+    }, {
+      label: "Slide In Top",
+      value: "slide-in-top-image"
+    }, {
+      label: "Slide In Bottom",
+      value: "slide-in-bottom-image"
+    }, {
+      label: "Zoom In",
+      value: "zoom-in-image"
+    }, {
+      label: "Zoom In Left",
+      value: "zoom-in-left-image"
+    }, {
+      label: "Zoom In Right",
+      value: "zoom-in-right-image"
+    }, {
+      label: "Zoom In Top",
+      value: "zoom-in-top-image"
+    }, {
+      label: "Zoom In Bottom",
+      value: "zoom-in-bottom-image"
+    }, {
+      label: "Rotate In Left",
+      value: "rotate-in-left-image"
+    }, {
+      label: "Rotate In Right",
+      value: "rotate-in-right-image"
+    }, {
+      label: "Rotate In Top",
+      value: "rotate-in-top-image"
+    }, {
+      label: "Rotate In Bottom",
+      value: "rotate-in-bottom-image"
+    }, {
+      label: "Rotate Continuos",
+      value: "rotate-continuous-image"
+    }, {
+      label: "Bounce in",
+      value: "bounce-effect-image"
+    }, {
+      label: "Bounce in Left",
+      value: "bounce-left-effect-image"
+    }, {
+      label: "Bounce in Right",
+      value: "bounce-right-effect-image"
+    }, {
+      label: "Bounce in Top",
+      value: "bounce-top-effect-image"
+    }, {
+      label: "Bounce in Bottom",
+      value: "bounce-bottom-effect-image"
+    }, {
+      label: "Flip In",
+      value: "flip-image"
+    }, {
+      label: "Rubber Band",
+      value: "rubber-band-image"
+    }, {
+      label: "Wiggle",
+      value: "wiggle-image"
+    }, {
+      label: "Swing",
+      value: "swing-image"
+    }, {
+      label: "Rubber band",
+      value: "rubber-band-image"
+    }],
+    onChange: value => updateAnimationImage(slide.id, elementIndex, value)
+  })), element.animationImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Duration", "cocoblocks")),
+    value: element.durationEffectImage,
+    onChange: value => updateDurationEffectImage(slide.id, elementIndex, value),
+    min: 0.1,
+    max: 15,
+    step: 0.1
+  }))), ["bounce-effect-image", "bounce-left-effect-image", "bounce-right-effect-image", "bounce-top-effect-image", "bounce-bottom-effect-image", "wiggle-image", "flip-image", "swing-image", "rubber-band-image"].includes(element.animationImage) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Iteration Mode", "cocoblocks")),
+    value: element.interationImage,
+    options: [{
+      label: "Forwards",
+      value: "forwards"
+    }, {
+      label: "Infinite",
+      value: "infinite"
+    }],
+    onChange: value => updateInterationImage(slide.id, elementIndex, value)
+  })), element.animationImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-reply-effect"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    text: playStateImage === "play" ? "Play" : "Repeat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    variant: playStateImage === "play",
+    onClick: togglePlayState,
+    icon: playStateImage === "play" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M170-228q-38-44-61-98T80-440h82q6 44 22 83.5t42 72.5l-56 56ZM80-520q8-60 30-114t60-98l56 56q-26 33-42 72.5T162-520H80ZM438-82q-60-6-113.5-29T226-170l56-58q35 26 73.5 43t82.5 23v80ZM284-732l-58-58q45-36 98.5-59T440-878v80q-45 6-84 23t-72 43Zm96 432v-360l280 180-280 180ZM520-82v-80q121-17 200.5-107T800-480q0-121-79.5-211T520-798v-80q154 17 257 130t103 268q0 155-103 268T520-82Z"
+    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"
+    }))
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0",
+      marginTop: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Movimentation", "cocoblocks")),
+    value: element.animationImageMoving,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Moving background X",
+      value: "moving-background"
+    }, {
+      label: "Moving background Y",
+      value: "moving-background-y"
+    }],
+    onChange: value => updateAnimationImageMoving(slide.id, elementIndex, value)
+  })), element.animationImageMoving !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Duration", "cocoblocks")),
+    value: element.durationEffectImageMoving,
+    onChange: value => updateDurationEffectImageMoving(slide.id, elementIndex, value),
+    min: 0.1,
+    max: 30,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Translate", "cocoblocks")),
+    value: element.translateEffectImageMoving,
+    onChange: value => updateTranslateEffectImageMoving(slide.id, elementIndex, value),
+    min: -300,
+    max: 300,
+    step: 1
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob Mask", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       padding: "0"
@@ -6932,7 +13249,7 @@ const ImageControls = ({
     onChange: newBlobMask => updateBlobMask(slide.id, elementIndex, newBlobMask),
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
-      value: ""
+      value: "none"
     }, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 1", "cocoblocks"),
       value: "blob1"
@@ -6946,6 +13263,354 @@ const ImageControls = ({
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 4", "cocoblocks"),
       value: "blob4"
     }]
+  })), element.blobMask !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Warning: The box shadow will not work with this effect active!", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spike Masks", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80v-200q0-50-35-85t-85-35H440v-80h200q83 0 141.5 58.5T840-640v200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Left Spike", "cocoblocks")),
+    value: element.spikeMask,
+    onChange: value => updateSpikeMask(slide.id, elementIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Top", "cocoblocks"),
+      value: "left-spike-1-top"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Middle", "cocoblocks"),
+      value: "left-spike-1-middle"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Bottom", "cocoblocks"),
+      value: "left-spike-1-bottom"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("2 Spikes", "cocoblocks"),
+      value: "left-spike-2"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("3 Spikes", "cocoblocks"),
+      value: "left-spike-3"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("4 Spikes", "cocoblocks"),
+      value: "left-spike-4"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("5 Spikes", "cocoblocks"),
+      value: "left-spike-5"
+    }]
+  })), element.spikeMask !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-40v-160H280q-33 0-56.5-23.5T200-280v-400H40v-80h160v-160h80v640h640v80H760v160h-80Zm0-320v-320H360v-80h320q33 0 56.5 23.5T760-680v320h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spike Width", "cocoblocks")),
+    value: element.spikeLeftWidth,
+    onChange: newParallaxImage => updateSpikeLeftWidth(slide.id, elementIndex, newParallaxImage),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80v-200q0-50-35-85t-85-35H440v-80h200q83 0 141.5 58.5T840-640v200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Right Spike", "cocoblocks")),
+    value: element.spikeMaskRight,
+    onChange: value => updateSpikeMaskRight(slide.id, elementIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Top", "cocoblocks"),
+      value: "right-spike-1-top"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Middle", "cocoblocks"),
+      value: "right-spike-1-middle"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Bottom", "cocoblocks"),
+      value: "right-spike-1-bottom"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("2 Spikes", "cocoblocks"),
+      value: "right-spike-2"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("3 Spikes", "cocoblocks"),
+      value: "right-spike-3"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("4 Spikes", "cocoblocks"),
+      value: "right-spike-4"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("5 Spikes", "cocoblocks"),
+      value: "right-spike-5"
+    }]
+  })), element.spikeMaskRight !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-40v-160H280q-33 0-56.5-23.5T200-280v-400H40v-80h160v-160h80v640h640v80H760v160h-80Zm0-320v-320H360v-80h320q33 0 56.5 23.5T760-680v320h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spike Width", "cocoblocks")),
+    value: element.spikeRightWidth,
+    onChange: newParallaxImage => updateSpikeRightWidth(slide.id, elementIndex, newParallaxImage),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (element.spikeMaskRight !== "none" || element.spikeMask !== "none") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Attention: Single Spikes do not work on both sides together! Warning: The box shadow will not work with this effect active!", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Filter", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80v-200q0-50-35-85t-85-35H440v-80h200q83 0 141.5 58.5T840-640v200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image Effects", "cocoblocks")),
+    value: element.imageFilter,
+    onChange: value => updateImageFilter(slide.id, elementIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Grayscale", "cocoblocks"),
+      value: "grayscale"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blur", "cocoblocks"),
+      value: "blur"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Sepia", "cocoblocks"),
+      value: "sepia"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contrast", "cocoblocks"),
+      value: "contrast"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Brightness", "cocoblocks"),
+      value: "brightness"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Invert", "cocoblocks"),
+      value: "invert"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Saturate", "cocoblocks"),
+      value: "saturate"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Opacity", "cocoblocks"),
+      value: "opacity"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Hue Rotate", "cocoblocks"),
+      value: "hue-rotate"
+    }]
+  })))), activeSectionImage === "hover" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ImageControlsHover__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSectionImage === "actions" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Actions", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Link actions", "cocoblocks")),
+    value: element.imageLink,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Link",
+      value: "link"
+    }, {
+      label: "Scroll Below Slider",
+      value: "scroll-below"
+    }, {
+      label: "Scroll to ID Element",
+      value: "scroll-to-id"
+    }],
+    onChange: value => updateImageLink(slide.id, elementIndex, value)
+  })), element.imageLink === "link" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enter URL", "cocoblocks")),
+    value: element.linkUrlImage,
+    onChange: value => updateLinkUrlImage(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Target", "cocoblocks")),
+    value: element.linkTargetImage,
+    options: [{
+      label: "Same Window",
+      value: "_self"
+    }, {
+      label: "New Window",
+      value: "_blank"
+    }],
+    onChange: value => updateLinkTargetImage(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m791-55-91-91q-49 32-104.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-60 17-115.5T146-700l-91-91 57-57 736 736-57 57ZM480-160q43 0 83.5-11t78.5-33L204-642q-22 38-33 78.5T160-480q0 133 93.5 226.5T480-160Zm334-100-58-58q22-38 33-78.5t11-83.5q0-133-93.5-226.5T480-800q-43 0-83.5 11T318-756l-58-58q49-32 104.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 60-17 115.5T814-260ZM537-537ZM423-423Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Link Behavior", "cocoblocks")),
+    value: element.linkRelImage,
+    options: [{
+      label: "Follow Link",
+      value: "follow"
+    }, {
+      label: "No Follow",
+      value: "nofollow"
+    }],
+    onChange: value => updateLinkRelImage(slide.id, elementIndex, value)
+  }))), element.imageLink === "scroll-to-id" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-160q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v284q-10-2-19.5-3t-20.5-1h-40v-280H200v560h124q4 22 10.5 42t17.5 38H200Zm0-120v40-560 520Zm80-40h44q8-49 35-90.5t69-69.5H280v160Zm0-240h160v-160H280v160Zm280 440q-66 0-113-47t-47-113q0-66 47-113t113-47h80v80h-80q-33 0-56.5 23.5T480-280q0 33 23.5 56.5T560-200h80v80h-80Zm-40-440h160v-160H520v160Zm40 320v-80h240v80H560Zm160 120v-80h80q33 0 56.5-23.5T880-280q0-33-23.5-56.5T800-360h-80v-80h80q66 0 113 46.5T960-280q0 66-47 113t-113 47h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enter ID", "cocoblocks")),
+    value: element.scrollToIdImage,
+    onChange: value => updateScrollToIdImage(slide.id, elementIndex, value)
+  })))), activeSectionImage === "visibility" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Visibility", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80-160q-33 0-56.5-23.5T0-240h160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240h160q0 33-23.5 56.5T880-160H80Zm400-40q17 0 28.5-11.5T520-240q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240q0 17 11.5 28.5T480-200ZM160-320h640v-440H160v440Zm0 0v-440 440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Desktop", "cocoblocks")),
+    checked: element.enableDesktopImage,
+    onChange: value => updateEnableDesktopImage(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-140q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM200-40q-33 0-56.5-23.5T120-120v-720q0-33 23.5-56.5T200-920h560q33 0 56.5 23.5T840-840v720q0 33-23.5 56.5T760-40H200Zm0-200v120h560v-120H200Zm0-80h560v-400H200v400Zm0-480h560v-40H200v40Zm0 0v-40 40Zm0 560v120-120Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Tablet", "cocoblocks")),
+    checked: element.enableTabletImage,
+    onChange: value => updateEnableTabletImage(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Mobile", "cocoblocks")),
+    checked: element.enableMobileImage,
+    onChange: value => updateEnableMobileImage(slide.id, elementIndex, value)
   })))), activeSectionImage === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
@@ -7603,6 +14268,26 @@ const ImageControlsBlock = ({
       icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image", "cocoblocks")
     })))
+  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, imageDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Alt Text", "cocoblocks")),
+    value: imageDiv.alt || "",
+    onChange: newAlt => updateSlideImageBlock(slide.id, elementIndex, imageIndex, imageDiv.imageUrl, newAlt),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Add alt text...", "cocoblocks")
   }))))), activeSectionImage === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
@@ -8184,7 +14869,7 @@ const SectionSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(" Actions", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Actions", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     variant: activeSection === "visibility" ? "primary" : "secondary",
     onClick: () => handleSectionChange("visibility")
@@ -8686,6 +15371,25 @@ const SectionSliderSelector = ({
     d: "M686-132 444-376q-20 8-40.5 12t-43.5 4q-100 0-170-70t-70-170q0-36 10-68.5t28-61.5l146 146 72-72-146-146q29-18 61.5-28t68.5-10q100 0 170 70t70 170q0 23-4 43.5T584-516l244 242q12 12 12 29t-12 29l-84 84q-12 12-29 12t-29-12Zm29-85 27-27-256-256q18-20 26-46.5t8-53.5q0-60-38.5-104.5T386-758l74 74q12 12 12 28t-12 28L332-500q-12 12-28 12t-28-12l-74-74q9 57 53.5 95.5T360-440q26 0 52-8t47-25l256 256ZM472-488Z"
   })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("General", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
+    style: {
+      padding: "6px 12px"
+    },
+    variant: activeSectionSlider === "style" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("style")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    style: {
+      width: "20px",
+      height: "20px"
+    },
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
     variant: activeSectionSlider === "content" ? "primary" : "secondary",
     onClick: () => handleSectionChange("content")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -8696,7 +15400,21 @@ const SectionSliderSelector = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks")));
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionSlider === "skin" ? "primary" : "secondary",
+    onClick: () => handleSectionChange("skin")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M600-40H440q-17 0-28.5-11.5T400-80v-240q0-17 11.5-28.5T440-360h40v-120H160q-33 0-56.5-23.5T80-560v-160q0-33 23.5-56.5T160-800h80v-40q0-17 11.5-28.5T280-880h480q17 0 28.5 11.5T800-840v160q0 17-11.5 28.5T760-640H280q-17 0-28.5-11.5T240-680v-40h-80v160h320q33 0 56.5 23.5T560-480v120h40q17 0 28.5 11.5T640-320v240q0 17-11.5 28.5T600-40Zm-120-80h80v-160h-80v160ZM320-720h400v-80H320v80Zm160 600h80-80ZM320-720v-80 80Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Skin", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button"
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSliderSelector);
 
@@ -8833,7 +15551,7 @@ __webpack_require__.r(__webpack_exports__);
 const SectionSliderSelectorOptions = ({
   onSectionChange
 }) => {
-  const [activeSectionSliderOptions, setActiveSectionSliderOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("background");
+  const [activeSectionSliderOptions, setActiveSectionSliderOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("animation");
   const handleSectionChangeOptions = section => {
     setActiveSectionSliderOptions(section);
     onSectionChange(section);
@@ -8841,18 +15559,6 @@ const SectionSliderSelectorOptions = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
     className: "section-selector"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-    className: "section-selector-button",
-    variant: activeSectionSliderOptions === "background" ? "primary" : "secondary",
-    onClick: () => handleSectionChangeOptions("background")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
-    viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#e8eaed"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M200-120q-33 0-56.5-23.5T120-200v-240h80v240h240v80H200Zm320 0v-80h240v-240h80v240q0 33-23.5 56.5T760-120H520ZM240-280l120-160 90 120 120-160 150 200H240ZM120-520v-240q0-33 23.5-56.5T200-840h240v80H200v240h-80Zm640 0v-240H520v-80h240q33 0 56.5 23.5T840-760v240h-80Zm-140-40q-26 0-43-17t-17-43q0-26 17-43t43-17q26 0 43 17t17 43q0 26-17 43t-43 17Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button",
     variant: activeSectionSliderOptions === "animation" ? "primary" : "secondary",
     onClick: () => handleSectionChangeOptions("animation")
@@ -8912,9 +15618,302 @@ const SectionSliderSelectorOptions = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
-  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Direction", "cocoblocks")));
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Direction", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button"
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSliderSelectorOptions);
+
+/***/ }),
+
+/***/ "./src/components/textComponent.js":
+/*!*****************************************!*\
+  !*** ./src/components/textComponent.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const TextComponent = ({
+  element,
+  index
+}) => {
+  const isBold = element.fontStyle?.fontWeight === "bold";
+  // Styles Title
+  const stylesTitle = {
+    fontSize: element.fontSize + "px",
+    "--font-size-tablet": element.fontSizeTablet + "px",
+    "--font-size-mobile": element.fontSizeMobile + "px",
+    color: element.textColor,
+    "--color-hover": element.textColorHover,
+    textAlign: element.textAlign,
+    letterSpacing: element.letterSpacing + "px",
+    fontStyle: element.fontStyle?.fontStyle || "normal",
+    // Valore di default
+    fontWeight: isBold ? "bold" : element.fontWeight || "normal",
+    textDecoration: element.fontStyle?.textDecoration || "none",
+    // Valore di default
+    lineHeight: element.lineHeight,
+    width: "100%",
+    fontFamily: element.fontFamily,
+    margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`,
+    // Usa i valori aggi
+    "--duration-effect": element.durationEffect + "s",
+    "--duration-effect-odd": element.durationEffectOdd + "s",
+    "--duration-effect-even": element.durationEffectEven + "s",
+    "--delay-effect": element.delayEffect + "s",
+    "--color-gradient-one": element.gradinetColorOne,
+    "--color-gradient-two": element.gradinetColorTwo,
+    "--color-gradient-three": element.gradinetColorThree,
+    "--color-gradient-four": element.gradinetColorFour,
+    "--color-gradient-five": element.gradinetColorFive,
+    padding: `${element.paddingTitle?.top} ${element.paddingTitle?.right} ${element.paddingTitle?.bottom} ${element.paddingTitle?.left}`,
+    // Usa i valori aggi
+    borderWidth: `${element.backgroundBorderSize}px` || 0,
+    borderColor: element.backgroundBorderColor || "#000000",
+    borderRadius: `${element.backgroundBorderRadius}px` || 0,
+    "--border-color-hover": element.backgroundBorderColorHover || "#000000",
+    "--opacity-hover": element.opacityHover || 1,
+    borderStyle: element.borderStyle || "none",
+    "--border-style-hover": element.borderStyleHover || "none",
+    "--transition-hover": element.durationEffectHover + 's' || 0,
+    "--translate-hover": element.translateEffectHover + 'px' || 0,
+    "--color-effect-hover": element.effectHoverColorHover || "#000000",
+    "--box-shadow-x": element.boxShadowX + "px" || 0,
+    "--box-shadow-y": element.boxShadowY + "px" || 0,
+    "--box-shadow-blur": element.boxShadowBlur + "px" || 0,
+    "--box-shadow-color": element.colorShadow || "#000000",
+    "--box-shadow-spread": element.boxShadowSpread + "px" || 0,
+    writingMode: element.textWriteMode || "initial",
+    textOrientation: element.textOrientation || "initial",
+    "--interation": element.interation || "forwards"
+  };
+  const Tag = element.elementTitle || "h3";
+  const stylesSpan = {
+    "--width-cursor": element.widthCursor + "px" || 0,
+    "--color-cursor": element.cursorColor || "#000000",
+    "--animation-cursor": element.animationCursor + "s" || 0
+  };
+  const splitTextIntoLetters = (text = "", animation = "", explosionDelay = element.delayEffect || 0, explosionDuration = element.durationEffect || 2, delay = element.delayEffect || 0, duration = element.durationEffect || 2, explosionInteration = element.animationCount || 1, implosionInteration = element.animationCount || 1) => {
+    // Se l'animazione è "bounce", suddividi il testo in lettere
+    if (animation === "bounce") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: `letter ${animation}`
+      }, letter));
+    }
+    if (animation === "explode") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "explode",
+        style: {
+          '--x': `${Math.random() * 200 - 100}px`,
+          // Posizione X casuale
+          '--y': `${Math.random() * 200 - 100}px`,
+          // Posizione Y casuale
+          '--rotation': `${Math.random() * 360}deg`,
+          // Rotazione casuale
+          '--explosion-delay': `${explosionDelay}s`,
+          // Ritardo prima dell'esplosione
+          '--explosion-duration': `${explosionDuration}s`,
+          // Durata dell'esplosione
+          '--explosion-interaction-count': `${explosionInteration}`
+        }
+      }, letter));
+    }
+    if (animation === "implode") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "implode",
+        style: {
+          '--x': `${Math.random() * 200 - 100}px`,
+          // Posizione X casuale
+          '--y': `${Math.random() * 200 - 100}px`,
+          // Posizione Y casuale
+          '--rotation': `${Math.random() * 360}deg`,
+          // Rotazione casuale
+          '--implosion-delay': `${delay}s`,
+          '--implosion-duration': `${duration}s`,
+          '--implosion-interaction-count': `${implosionInteration}`
+        }
+      }, letter));
+    }
+
+    // Se l'animazione è "typing-effect", usa il componente TypewriterEffect
+    if (animation === "typing-effect") {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TypewriterEffect, {
+        text: text
+      });
+    }
+    // Letter fly in from left
+    if (animation === "letters-fly-in-from-left") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letters-fly-in-from-left",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Letters fly in from right
+    if (animation === "letters-fly-in-from-right") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letters-fly-in-from-right",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Letters fly in from top
+    if (animation === "letters-fly-in-from-top") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letters-fly-in-from-top",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Letters fly in from bottom
+    if (animation === "letters-fly-in-from-bottom") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letters-fly-in-from-bottom",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Letter flip from top
+    if (animation === "letter-flip-from-top") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letter-flip-from-top",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Letter flip from bottom
+    if (animation === "letter-flip-from-bottom") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letter-flip-from-bottom",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Letter flip cycle
+    if (animation === "letter-flip-cycle") {
+      return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        key: index,
+        className: "letter-flip-cycle",
+        style: {
+          '--letter-index': index + 1
+        }
+      }, letter));
+    }
+
+    // Se l'animazione non è "bounce" o "typing-effect", restituisci il testo intero
+    return text;
+  };
+  const TypewriterEffect = ({
+    text,
+    speed = element.speedEffect,
+    pauseDuration = element.pauseEffect
+  }) => {
+    const [displayedText, setDisplayedText] = useState("");
+    const [index, setIndex] = useState(0);
+    useEffect(() => {
+      const typeWriter = () => {
+        if (index < text.length) {
+          setDisplayedText(prev => prev + text.charAt(index));
+          setIndex(index + 1);
+        } else {
+          setTimeout(() => {
+            setDisplayedText(""); // Resetta il testo visualizzato
+            setIndex(0); // Resetta l'indice per riavviare l'effetto
+          }, pauseDuration); // Pausa prima di riavviare
+        }
+      };
+      const timeoutId = setTimeout(typeWriter, speed);
+      return () => clearTimeout(timeoutId); // Pulizia del timeout
+    }, [index, text, speed, pauseDuration]);
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "typewriter-container"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "typewriter"
+    }, displayedText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "typewriter-cursor",
+      style: stylesSpan
+    }));
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      transform: `rotate(${element.rotate}deg)`,
+      opacity: element.opacity,
+      "--rotate-hover": element.rotateHover + "deg" || 0,
+      "--color-decoration": element.underlineColor || "#000000",
+      "--padding-decoration": element.underlinePadding + "px" || 0,
+      "--width-decoration": element.underlineWidth + "%" || 0,
+      "--vertical-decoration": element.underlineVertical + "px" || 0,
+      "--horizontal-decoration": element.underlineHorizontal + "px" || 0,
+      "--height-decoration": element.underlineHeight + "px" || 0,
+      "--animation-decoration": element.underlineAnimation || "none",
+      "--animation-decoration-from": element.underlineAnimationFrom + "%" || 0,
+      "--animation-decoration-to": element.underlineAnimationTo + "%" || 0,
+      "--animation-decoration-from-size": element.underlineFromSizeNew + "%" || 0,
+      "--animation-decoration-to-size": element.underlineToSizeNew + "%" || 0,
+      "--animation-decoration-transition": element.underlineAnimationTransition + "s" || 0,
+      width: element.widthTitle === 'custom' ? `${element.widthCustomTitle}%` : element.widthTitle
+    },
+    className: "content-title-slide " + element.decoration
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Tag, {
+    key: index,
+    className: `title-slide letter ${element.animationHover} ${element.animation}${element.playState}`,
+    style: stylesTitle,
+    "data-swiper-parallax-x": element.parallaxTitle,
+    "data-swiper-parallax-y": element.parallaxTitleY,
+    "data-swiper-parallax-scale": element.parallaxTitleScale,
+    "data-swiper-parallax-duration": element.parallaxTitleDuration,
+    "data-swiper-parallax-opacity": element.parallaxTitleOpacity,
+    "data-font-family": element.fontFamily,
+    "data-animation": element.animation,
+    onClick: () => {
+      if (element.textLink === "scroll-below") {
+        // Scroll down logic
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: "smooth"
+        });
+      } else if (element.textLink === "scroll-to-id") {
+        // Scroll to specific ID logic
+        const targetElement = document.getElementById(element.scrollToId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      }
+    },
+    href: element.textLink === "link" ? element.linkUrl : undefined
+  }, splitTextIntoLetters(element.text, element.animation)));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextComponent);
 
 /***/ }),
 
@@ -8943,22 +15942,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/slider/editor.scss");
 /* harmony import */ var _components_editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/editor.scss */ "./src/components/editor.scss");
 /* harmony import */ var _components_colorPanel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/colorPanel */ "./src/components/colorPanel.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/aligncontrol */ "./src/components/aligncontrol.js");
 /* harmony import */ var _components_SliderControls__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/SliderControls */ "./src/components/SliderControls.js");
 /* harmony import */ var _components_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/colorPanelGradient */ "./src/components/colorPanelGradient.js");
-/* harmony import */ var _components_sectionSelectorBlock__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/sectionSelectorBlock */ "./src/components/sectionSelectorBlock.js");
-/* harmony import */ var _components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/SliderControlsNavigation */ "./src/components/SliderControlsNavigation.js");
-/* harmony import */ var _components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/SliderControlsOptions */ "./src/components/SliderControlsOptions.js");
-/* harmony import */ var _components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/sectionSelectorSlide */ "./src/components/sectionSelectorSlide.js");
-/* harmony import */ var _components_TextControls__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/TextControls */ "./src/components/TextControls.js");
-/* harmony import */ var _components_imageControls__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/imageControls */ "./src/components/imageControls.js");
-/* harmony import */ var _components_TextControlsBlock__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/TextControlsBlock */ "./src/components/TextControlsBlock.js");
-/* harmony import */ var _components_imageControlsBlock__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/imageControlsBlock */ "./src/components/imageControlsBlock.js");
+/* harmony import */ var _components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/SliderControlsNavigation */ "./src/components/SliderControlsNavigation.js");
+/* harmony import */ var _components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/SliderControlsOptions */ "./src/components/SliderControlsOptions.js");
+/* harmony import */ var _components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/sectionSelectorSlide */ "./src/components/sectionSelectorSlide.js");
+/* harmony import */ var _components_TextControls__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/TextControls */ "./src/components/TextControls.js");
+/* harmony import */ var _components_imageControls__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/imageControls */ "./src/components/imageControls.js");
+/* harmony import */ var _components_divControls__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/divControls */ "./src/components/divControls.js");
+/* harmony import */ var _components_NavigationButtons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/NavigationButtons */ "./src/components/NavigationButtons.js");
+/* harmony import */ var _components_ImageComponent__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/ImageComponent */ "./src/components/ImageComponent.js");
+/* harmony import */ var _components_textComponent__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/textComponent */ "./src/components/textComponent.js");
+/* harmony import */ var _components_divComponent__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/divComponent */ "./src/components/divComponent.js");
+
+
 
 
 
@@ -9107,7 +16110,22 @@ function Edit({
     autoplayProgress,
     autoplayProgressColor,
     autoplayProgressPosition,
-    parallax
+    parallax,
+    overflow,
+    backgroundBorderColor,
+    backgroundBorderSize,
+    backgroundBorderRadius,
+    backgroundVerticalPadding,
+    backgroundHorizontalPadding,
+    backgroundColor,
+    backgroundColorSlideDefault,
+    backgroundColorBlockDefault,
+    textColorDefault,
+    innerTextColorDefault,
+    filter,
+    colorOneEffect,
+    colorTwoEffect,
+    colorThreeEffect
   } = attributes;
 
   /* Classi personalizzate per il blocco */
@@ -9171,6 +16189,59 @@ function Edit({
     };
   }, []);
 
+  /* Nascondi il pannello Advanced */
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const handleTabClick = event => {
+      const tabId = event.currentTarget.id;
+      const advancedPanel = document.querySelector('.cocoblocks-custom-advanced-panel');
+
+      // Lista dei tab che devono nascondere il pannello avanzato
+      const tabsToHideAdvancedPanel = ['tab-panel-0-tab2', 'tab-panel-0-tab3', 'tab-panel-0-tab4'];
+      if (tabsToHideAdvancedPanel.includes(tabId)) {
+        // Nascondi il pannello avanzato
+        if (advancedPanel) {
+          advancedPanel.classList.add('hidden');
+        }
+      } else {
+        // Mostra il pannello avanzato
+        if (advancedPanel) {
+          advancedPanel.classList.remove('hidden');
+        }
+      }
+    };
+    const initializeButtonListener = () => {
+      // Trova tutti i bottoni delle schede
+      const tabButtons = document.querySelectorAll('[role="tab"]');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', handleTabClick);
+      });
+    };
+
+    // Crea un osservatore per monitorare i cambiamenti nel DOM
+    const observer = new MutationObserver(() => {
+      initializeButtonListener(); // Prova a inizializzare l'ascoltatore ogni volta che il DOM cambia
+    });
+
+    // Inizia ad osservare il corpo del documento
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Esegui inizializzazione e pulizia
+    initializeButtonListener();
+    return () => {
+      // Pulizia: disattiva l'osservatore e rimuove gli ascoltatori
+      observer.disconnect();
+      const tabButtons = document.querySelectorAll('[role="tab"]');
+      tabButtons.forEach(button => {
+        button.removeEventListener('click', handleTabClick);
+      });
+    };
+  }, []);
+
+  // Movimentazione elementi
+
   // Move Element Up
   const moveElementUp = (slideId, index) => {
     const updatedSlides = slides.map(slide => {
@@ -9210,6 +16281,8 @@ function Edit({
     });
   };
 
+  // Tab Panel
+
   // General Tab
   const onSelect = tabName => {};
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
@@ -9217,26 +16290,73 @@ function Edit({
   // Background Slide
   const [backgroundType, setBackgroundType] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("");
 
-  // Add Slide
-  const addSlide = () => {
-    const newSlide = {
-      id: slides.length + 1,
-      elements: [],
-      // Inizializza elements come un array vuoto
-      layout: "vertical",
-      gapItems: 5,
-      position: "center-center",
-      backgroundBorderColor: "#000000",
-      backgroundBorderSize: 0,
-      backgroundBorderRadius: 0,
-      backgroundVerticalPadding: 0,
-      backgroundHorizontalPadding: 0
+  // Panel Slide
+  const [selectedPanel, setSelectedPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(null);
+  const [primaryColor, setPrimaryColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("");
+  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // Riferimento a Swiper
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // Recupera il valore della variabile CSS --primary-color
+    const root = document.querySelector(":root");
+    const color = getComputedStyle(root).getPropertyValue("--primary-color");
+    setPrimaryColor(color.trim());
+  }, []);
+  const handlePanelSelect = panelId => {
+    setSelectedPanel(prevPanel => prevPanel === panelId ? null : panelId);
+    // Trova l'indice della slide corrispondente
+    const slideIndex = slides.findIndex(slide => slide.id === panelId);
+    if (swiperRef.current && slideIndex !== -1) {
+      swiperRef.current.swiper.slideTo(slideIndex); // Naviga alla slide
+    }
+  };
+  const renderCircle = panelId => {
+    const isSelected = selectedPanel === panelId;
+    const circleStyle = {
+      display: "inline-block",
+      width: "12px",
+      height: "12px",
+      borderRadius: "3px",
+      border: `2px solid ${primaryColor}`,
+      backgroundColor: isSelected ? primaryColor : "transparent",
+      marginRight: "8px",
+      transition: "transform 0.3s, background-color 0.3s",
+      transform: isSelected ? "scale(1.2)" : "scale(1)"
     };
-    const updatedSlides = [...slides, newSlide];
-    setAttributes({
-      slides: updatedSlides
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      style: circleStyle
     });
   };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // Identificatore specifico del blocco, ad esempio un data-attribute
+    const blockContainer = document.querySelector('[data-type="slider-builder/slider"]');
+    if (!blockContainer) return; // Se il blocco non è presente, interrompi
+
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        // Cerca i popover solo all'interno del tuo blocco specifico
+        const popovers = blockContainer.querySelectorAll(".components-dropdown-menu__popover .components-popover__content");
+        popovers.forEach(popover => {
+          // Aggiungi la tua classe personalizzata solo ai popover del tuo blocco
+          if (!popover.classList.contains("slide-popover-class")) {
+            popover.classList.add("slide-popover-class");
+          }
+        });
+      });
+    });
+
+    // Osserva solo il tuo blocco specifico
+    observer.observe(blockContainer, {
+      childList: true,
+      subtree: true
+    });
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Default Slide
 
   // Stato per memorizzare le impostazioni correnti
   const [currentSettings, setCurrentSettings] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)({
@@ -9406,6 +16526,36 @@ function Edit({
     });
   };
 
+  // Inizializza lo stato delle slide con una slide predefinita se non ci sono slide
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (slides.length === 0) {
+      addSlide();
+    }
+  }, []);
+
+  // Add Slide
+  const addSlide = () => {
+    const newSlide = {
+      id: slides.length + 1,
+      elements: [],
+      // Inizializza elements come un array vuoto
+      layout: "vertical",
+      gapItems: 5,
+      position: "center-center",
+      backgroundType: "color",
+      backgroundColor: backgroundColorSlideDefault,
+      backgroundBorderColor: "#000000",
+      backgroundBorderSize: 0,
+      backgroundBorderRadius: 0,
+      backgroundVerticalPadding: 0,
+      backgroundHorizontalPadding: 0
+    };
+    const updatedSlides = [...slides, newSlide];
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Remove Slide
   const removeSlide = id => {
     const updatedSlides = slides.filter(slide => slide.id !== id);
@@ -9433,113 +16583,10 @@ function Edit({
       elements: [...slide.elements, {
         type: "div",
         content: "",
-        backgroundColor: "",
+        backgroundColor: backgroundColorBlockDefault,
         imageUrl: "",
         innerDivs: []
       }]
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Layout
-  const updateSlideLayoutDiv = (slideId, newLayoutDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      layoutDiv: newLayoutDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-  // Update Position
-  const updateSlidePositionDiv = (slideId, newPositionDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      positionDiv: newPositionDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Gap Items
-  const updateSlideGapItemsDiv = (slideId, newGapItemsDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      gapItemsDiv: newGapItemsDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Border Color
-  const updateSlideBackgroundBorderColorDiv = (id, colorDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === id ? {
-      ...slide,
-      backgroundBorderColorDiv: colorDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update border size
-  const updateSlideBackgroundBorderSizeDiv = (slideId, newSizeDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      backgroundBorderSizeDiv: newSizeDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update border radius
-  const updateSlideBackgroundBorderRadiusDiv = (slideId, newRadiusDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      backgroundBorderRadiusDiv: newRadiusDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update vertical padding
-  const updateSlideBackgroundVerticalPaddingDiv = (slideId, newVerticalPaddingDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      backgroundVerticalPaddingDiv: newVerticalPaddingDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update horizontal padding
-  const updateSlideBackgroundHorizontalPaddingDiv = (slideId, newHorizontalPaddingDiv) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      backgroundHorizontalPaddingDiv: newHorizontalPaddingDiv
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Add Text inside block
-  const addSlideTitleDiv = (slideId, divIndex) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, index) => index === divIndex ? {
-        ...element,
-        innerTextDivs: [...(element.innerTextDivs || []), {
-          content: ""
-        }]
-      } : element)
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -9563,55 +16610,41 @@ function Edit({
     });
   };
 
-  // Background color Content
-  const updateDivBackgroundColor = (slideId, index, newColor) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements ? slide.elements.map((element, i) => element.type === "div" && i === index ? {
-        ...element,
-        backgroundColor: newColor
-      } : element) : [] // Se elements non è definito, inizializzalo come array vuoto
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Remove Content
-  const removeSlideDiv = (slideId, index) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.filter((element, i) => element.type !== "div" || i !== index)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
   // Add Text
   const addSlideTitle = slideId => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
       elements: [...(slide.elements || []), {
         type: "title",
-        text: "",
+        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text Slide', 'cocoblocks'),
         textAlign: "center",
         fontStyle: {
           italic: false,
           underline: false,
           bold: false
         },
+        fontWeight: 400,
+        letterSpacing: 0,
+        widthTitle: "auto",
+        widthCustomTitle: 100,
         fontSize: 22,
         fontSizeTablet: 16,
         fontSizeMobile: 16,
         lineHeight: 1.5,
-        textColor: "#000000",
+        textColor: textColorDefault,
         marginTitle: {
           top: 0,
           right: 0,
           bottom: 0,
           left: 0
         },
+        paddingTitle: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0
+        },
+        borderStyle: "none",
         fontFamily: "Arial",
         parallaxTitle: 0,
         parallaxTitleY: 0,
@@ -9621,7 +16654,65 @@ function Edit({
         elementTitle: "h3",
         opacity: 1,
         rotate: 0,
-        animation: "none"
+        animation: "none",
+        width: "auto",
+        widthCustomTitle: 100,
+        backgroundBorderRadius: 0,
+        backgroundBorderSize: 0,
+        backgroundBorderColor: "",
+        textWriteMode: "initial",
+        textOrientation: "initial",
+        durationEffect: 1,
+        delayEffect: 0,
+        durationEffectOdd: 1,
+        durationEffectEven: 1,
+        speedEffect: 1,
+        pauseEffect: 0,
+        animationCount: 1,
+        widthCursor: 2,
+        animationCursor: "none",
+        colorCursor: "#000000",
+        gradinetColorOne: "#000000",
+        gradinetColorTwo: "#000000",
+        gradinetColorThree: "#000000",
+        gradinetColorFour: "#000000",
+        gradinetColorFive: "#000000",
+        decoration: "none",
+        underlineColor: "#000000",
+        underlinePadding: 0,
+        underlineVertical: 0,
+        underlineHorizontal: 0,
+        underlineWidth: 1,
+        underlineHeight: 1,
+        underlineAnimation: "none",
+        underlineAnimationFrom: 0,
+        underlineAnimationTo: 0,
+        underlineFromSizeNew: 0,
+        underlineToSizeNew: 0,
+        underlineAnimationTransition: 0,
+        textLink: "none",
+        linkUrl: "",
+        linkTarget: "_self",
+        linkRel: "",
+        scrollToId: "",
+        enableDesktopTitle: true,
+        enableTabletTitle: true,
+        enableMobileTitle: true,
+        textColorHover: textColorDefault,
+        borderStyleHover: "none",
+        backgroundBorderColorHover: "",
+        opacityHover: 1,
+        rotateHover: 0,
+        animationHover: "none",
+        durationEffectHover: 1,
+        effectHoverColorHover: textColorDefault,
+        translateEffectHover: 0,
+        colorShadow: "",
+        boxShadowX: 0,
+        boxShadowY: 0,
+        boxShadowBlur: 0,
+        boxShadowSpread: 0,
+        interation: "forwards"
       }]
     } : slide);
     setAttributes({
@@ -9640,6 +16731,7 @@ function Edit({
         fit: "cover",
         widthImage: "fixed",
         customWidthImage: false,
+        widthImageContent: "auto",
         customWidthImagePx: 200,
         heightImage: "fixed",
         customHeightImage: false,
@@ -9649,6 +16741,10 @@ function Edit({
         backgroundBorderRadiusImage: 0,
         backgroundColorImage: "",
         paddingImage: 0,
+        borderStyleImage: "none",
+        backgroundBorderColorImage: "",
+        backgroundBorderSizeImage: 0,
+        backgroundBorderRadiusImage: 0,
         rotateImage: 0,
         opacityImage: 1,
         parallaxImage: 0,
@@ -9661,7 +16757,48 @@ function Edit({
           bottom: 0,
           left: 0
         },
-        blobMask: false
+        blobMask: false,
+        animationImage: "none",
+        durationEffectImage: 1,
+        animationImageMoving: "none",
+        durationEffectImageMoving: 1,
+        translateEffectImageMoving: 0,
+        spikeMask: 0,
+        spikeLeftWidth: 0,
+        spikeMaskRight: "none",
+        spikeRightWidth: 0,
+        imageFilter: "none",
+        imageLink: "none",
+        linkUrlImage: "",
+        linkTargetImage: "_self",
+        linkRelImage: "",
+        scrollToIdImage: "",
+        enableDesktopImage: true,
+        enableTabletImage: true,
+        enableMobileImage: true,
+        imageColorHover: "",
+        borderStyleHoverImage: "none",
+        backgroundBorderColorHoverImage: "",
+        opacityHoverImage: 1,
+        rotateHoverImage: 0,
+        animationImageMovingHover: "none",
+        durationEffectImageMovingHover: 1,
+        translateEffectImageMovingHover: 0,
+        animationHoverImage: "none",
+        durationEffectHoverImage: 1,
+        effectHoverColorHoverImage: "",
+        translateEffectHoverImage: 0,
+        colorShadowImage: "",
+        boxShadowXImage: 0,
+        boxShadowYImage: 0,
+        boxShadowBlurImage: 0,
+        boxShadowSpreadImage: 0,
+        parallaxImage: 0,
+        parallaxImageY: 0,
+        parallaxImageScale: 1,
+        parallaxImageOpacity: 1,
+        parallaxImageDuration: 100,
+        interationImage: "forwards"
       }]
     } : slide);
     setAttributes({
@@ -9729,67 +16866,6 @@ function Edit({
   // Nessun movimento della slider
   const isGutenbergEditor = typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
 
-  // Panel Slide
-  const [selectedPanel, setSelectedPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(null);
-  const [primaryColor, setPrimaryColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)("");
-  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // Riferimento a Swiper
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    // Recupera il valore della variabile CSS --primary-color
-    const root = document.querySelector(":root");
-    const color = getComputedStyle(root).getPropertyValue("--primary-color");
-    setPrimaryColor(color.trim());
-  }, []);
-  const handlePanelSelect = panelId => {
-    setSelectedPanel(prevPanel => prevPanel === panelId ? null : panelId);
-    // Trova l'indice della slide corrispondente
-    const slideIndex = slides.findIndex(slide => slide.id === panelId);
-    if (swiperRef.current && slideIndex !== -1) {
-      swiperRef.current.swiper.slideTo(slideIndex); // Naviga alla slide
-    }
-  };
-  const renderCircle = panelId => {
-    const isSelected = selectedPanel === panelId;
-    const circleStyle = {
-      display: "inline-block",
-      width: "12px",
-      height: "12px",
-      borderRadius: "3px",
-      border: `2px solid ${primaryColor}`,
-      backgroundColor: isSelected ? primaryColor : "transparent",
-      marginRight: "8px",
-      transition: "transform 0.3s, background-color 0.3s",
-      transform: isSelected ? "scale(1.2)" : "scale(1)"
-    };
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      style: circleStyle
-    });
-  };
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        const popovers = document.querySelectorAll(".components-dropdown-menu__popover .components-popover__content");
-        popovers.forEach(popover => {
-          // Aggiungi la tua classe personalizzata
-          if (!popover.classList.contains("slide-popover-class")) {
-            popover.classList.add("slide-popover-class");
-          }
-        });
-      });
-    });
-
-    // Osserva il body per aggiungere la classe personalizzata ai nuovi popover
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
-    // Cleanup
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   // Navigation
   const stylesNavigation = {
     "--background-color-nav": navBackgroundColor,
@@ -9823,7 +16899,7 @@ function Edit({
   const swiperButtonNextClasses = `swiper-button-next ${!navigationTablet ? "nav-tablet" : ""} ${!navigationMobile ? "nav-mobile" : ""}`;
   const swiperButtonPrevClasses = `swiper-button-prev ${!navigationTablet ? "nav-tablet" : ""} ${!navigationMobile ? "nav-mobile" : ""}`;
 
-  // Pagination
+  // Pagination end other
   const stylesPagination = {
     "--swiper-pagination-color": bulletColor,
     "--swiper-pagination-fraction-color": bulletColor,
@@ -9848,7 +16924,14 @@ function Edit({
     "--swiper-scrollbar-size": heightScrollbar + "px",
     "--swiper-scrollbar-border-radius": radiusScrollbar + "px",
     /* Autoplay Progress */
-    "--swiper-autoplay-progress-color": autoplayProgressColor
+    "--swiper-autoplay-progress-color": autoplayProgressColor,
+    border: backgroundBorderSize + "px solid " + backgroundBorderColor,
+    borderRadius: backgroundBorderRadius + "px",
+    padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
+    backgroundColor: backgroundColor,
+    "--color-one-effect": colorOneEffect,
+    "--color-two-effect": colorTwoEffect,
+    "--color-three-effect": colorThreeEffect
   };
 
   // Autoplay
@@ -9895,27 +16978,6 @@ function Edit({
       device: "mobile"
     });
     setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
-  };
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    slides.forEach(slide => {
-      slide.elements.forEach(element => {
-        if (element.type === "title" && !["Arial", "Georgia", "Courier New", "Roboto", "Open Sans"].includes(element.fontFamily)) {
-          loadGoogleFont(element.fontFamily);
-        }
-      });
-    });
-  }, [slides]);
-  const loadGoogleFont = fontFamily => {
-    if (!fontFamily) return;
-
-    // Verifica se il font è già caricato
-    if (document.querySelector(`link[href*="${fontFamily.replace(" ", "+")}"]`)) {
-      return;
-    }
-    const link = document.createElement("link");
-    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(" ", "+")}:wght@400;700&display=swap`;
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
   };
 
   // Section slide
@@ -9983,12 +17045,12 @@ function Edit({
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-3 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_14__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-4 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_15__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -10018,7 +17080,7 @@ function Edit({
     }))),
     onToggle: () => handlePanelSelect(slide.id),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_17__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_16__["default"], {
     onSectionChange: setActiveSectionSlide
   }), activeSectionSlide === "background" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
@@ -10203,14 +17265,14 @@ function Edit({
         padding: "3px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Image", "cocoblocks")
     })))
   })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-delete",
     onClick: () => updateSlideBackgroundImage(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_25__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Image", "wp-kube")
   })), tab.name === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-img-upload",
@@ -10282,14 +17344,14 @@ function Edit({
         color: " var(--light-color)",
         padding: "3px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Video", "cocoblocks")
     })))
   })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-delete",
     onClick: () => updateSlideBackgroundVideo(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_25__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Video", "wp-kube")
   })))))))), activeSectionSlide === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
@@ -10505,7 +17567,7 @@ function Edit({
     size: "small",
     disabled: elementIndex === slide.elements.length - 1,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move after", "cocoblocks")
-  }, "\u2193"))), element.type === "title" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TextControls__WEBPACK_IMPORTED_MODULE_18__["default"], {
+  }, "\u2193"))), element.type === "title" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TextControls__WEBPACK_IMPORTED_MODULE_17__["default"], {
     slide: slide,
     slides: slides,
     element: element,
@@ -10518,296 +17580,29 @@ function Edit({
     handleDesktopClick: handleDesktopClick,
     handleTabletClick: handleTabletClick,
     handleMobileClick: handleMobileClick,
-    showOtherButtons: showOtherButtons
-  })), element.type === "div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-block-added"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "divider-controls"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "title-block-added"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "title-element"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => removeSlideDiv(slide.id, elementIndex),
-    style: {
-      position: "absolute",
-      right: "80px",
-      top: "10px"
-    },
-    isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_23__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove block", "cocoblocks"),
-    className: "button-remove-element"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24px",
-    viewBox: "0 -960 960 960",
-    width: "24px",
-    fill: "#e8eaed"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sectionSelectorBlock__WEBPACK_IMPORTED_MODULE_14__["default"], {
-    onSectionChange: setActiveSectionBlock
-  }), activeSectionBlock === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy",
-    style: {
-      marginTop: "-18px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-section-panel",
-    style: {
-      padding: "0"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: element.backgroundColor,
-    setColorNormal: newColor => updateDivBackgroundColor(slide.id, elementIndex, newColor),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "cocoblocks"),
-    buttonIcon: "admin-customizer"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Layout", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-section-panel",
-    style: {
-      padding: "0"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-      icon: "screenoptions",
-      style: {
-        marginRight: "5px",
-        width: "16px",
-        height: "16px",
-        fontSize: "16px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content direction", "cocoblocks")),
-    value: slide.layoutDiv,
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column", "slider"),
-      value: "vertical"
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Row", "slider"),
-      value: "horizontal"
-    }],
-    onChange: newLayoutDiv => updateSlideLayoutDiv(slide.id, newLayoutDiv)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-      icon: "image-flip-horizontal",
-      style: {
-        marginRight: "5px",
-        width: "16px",
-        height: "16px",
-        fontSize: "16px"
-      }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between items", "cocoblocks")),
-    value: slide.gapItemsDiv,
-    onChange: newGapItemsDiv => updateSlideGapItemsDiv(slide.id, newGapItemsDiv),
-    min: 0,
-    max: 256,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_aligncontrol__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    value: slide.positionDiv,
-    onChange: newPositionDiv => updateSlidePositionDiv(slide.id, newPositionDiv)
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-section-panel",
-    style: {
-      padding: "0"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "4px",
-        marginLeft: "-2px",
-        marginBottom: "-4px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
-    value: slide.backgroundBorderSizeDiv,
-    onChange: newSizeDiv => updateSlideBackgroundBorderSizeDiv(slide.id, newSizeDiv),
-    min: 0,
-    max: 20,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_colorPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    colorNormal: slide.backgroundBorderColorDiv,
-    setColorNormal: colorDiv => updateSlideBackgroundBorderColorDiv(slide.id, colorDiv),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "0 -960 960 960",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "3px",
-        height: "16px",
-        width: "16px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "4px",
-        marginLeft: "-2px",
-        marginBottom: "-4px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
-    value: slide.backgroundBorderRadiusDiv,
-    onChange: newRadiusDiv => updateSlideBackgroundBorderRadiusDiv(slide.id, newRadiusDiv),
-    min: 0,
-    max: 256,
-    step: 1
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-title-custom-panel intermedy"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-section-panel",
-    style: {
-      padding: "0"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "4px",
-        marginLeft: "-2px",
-        marginBottom: "-4px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content vertical padding", "cocoblocks")),
-    value: slide.backgroundVerticalPaddingDiv,
-    onChange: newVerticalPaddingDiv => updateSlideBackgroundVerticalPaddingDiv(slide.id, newVerticalPaddingDiv),
-    min: 0,
-    max: 256,
-    step: 1
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "18px",
-      viewBox: "0 -960 960 960",
-      width: "18px",
-      fill: "#e8eaed",
-      style: {
-        marginRight: "4px",
-        marginLeft: "-2px",
-        marginBottom: "-4px",
-        transform: "rotate(90deg)"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content horizontal padding", "cocoblocks")),
-    value: slide.backgroundHorizontalPaddingDiv,
-    onChange: newHorizontalPaddingDiv => updateSlideBackgroundHorizontalPaddingDiv(slide.id, newHorizontalPaddingDiv),
-    min: 0,
-    max: 256,
-    step: 1
-  })))), element.innerTextDivs && element.innerTextDivs.map((textDiv, textIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: textIndex
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TextControlsBlock__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    showOtherButtons: showOtherButtons,
+    attributes: attributes
+  })), element.type === "div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_divControls__WEBPACK_IMPORTED_MODULE_19__["default"], {
     slide: slide,
     slides: slides,
-    textDiv: textDiv,
     element: element,
-    textIndex: textIndex,
     elementIndex: elementIndex,
     setAttributes: setAttributes,
-    setActiveSection: setActiveSection,
-    activeSection: activeSection,
+    setActiveSectionBlock: setActiveSectionBlock,
+    activeSectionBlock: activeSectionBlock,
     parallax: parallax,
-    device: device,
-    handleDesktopClick: handleDesktopClick,
-    handleTabletClick: handleTabletClick,
-    handleMobileClick: handleMobileClick,
-    showOtherButtons: showOtherButtons
-  }))), element.innerImageDivs && element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: imageIndex
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_imageControlsBlock__WEBPACK_IMPORTED_MODULE_21__["default"], {
+    attributes: attributes
+  }), element.type === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_imageControls__WEBPACK_IMPORTED_MODULE_18__["default"], {
     slide: slide,
     slides: slides,
     element: element,
-    divIndex: elementIndex,
     elementIndex: elementIndex,
-    imageDiv: imageDiv,
-    imageIndex: imageIndex,
     setAttributes: setAttributes,
     setActiveSectionImage: setActiveSectionImage,
     activeSectionImage: activeSectionImage,
-    parallax: parallax
+    parallax: parallax,
+    attributes: attributes
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "button-add-element",
-    style: {
-      paddingBottom: "12px"
-    }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => addSlideTitleDiv(slide.id, elementIndex),
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner text", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    fill: "currentcolor",
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "20px",
-    height: "20px",
-    viewBox: "0 0 56 56"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M 16.2929 29.6406 C 22.7617 29.6406 28.1992 24.2266 28.1992 17.7109 C 28.1992 11.1953 22.8320 5.8047 16.2929 5.8047 C 9.7773 5.8047 4.3867 11.1953 4.3867 17.7109 C 4.3867 24.2734 9.7773 29.6406 16.2929 29.6406 Z M 33.8008 13.3750 L 49.8085 13.3750 C 50.8165 13.3750 51.6133 12.6015 51.6133 11.5937 C 51.6133 10.6094 50.8165 9.8359 49.8085 9.8359 L 33.8008 9.8359 C 32.7929 9.8359 32.0195 10.6094 32.0195 11.5937 C 32.0195 12.6015 32.7929 13.3750 33.8008 13.3750 Z M 16.3164 25.4453 C 15.4960 25.4453 14.7695 24.8828 14.7695 24.0156 L 14.7695 19.1406 L 10.2929 19.1406 C 9.4960 19.1406 8.8398 18.4844 8.8398 17.7109 C 8.8398 16.9375 9.4960 16.2812 10.2929 16.2812 L 14.7695 16.2812 L 14.7695 11.4297 C 14.7695 10.5390 15.4960 10.0000 16.3164 10.0000 C 17.1367 10.0000 17.8398 10.5390 17.8398 11.4297 L 17.8398 16.2812 L 22.3164 16.2812 C 23.1132 16.2812 23.7695 16.9375 23.7695 17.7109 C 23.7695 18.4844 23.1132 19.1406 22.3164 19.1406 L 17.8398 19.1406 L 17.8398 24.0156 C 17.8398 24.8828 17.1367 25.4453 16.3164 25.4453 Z M 33.8008 25.6563 L 49.8085 25.6563 C 50.8165 25.6563 51.6133 24.8828 51.6133 23.8750 C 51.6133 22.8906 50.8165 22.1172 49.8085 22.1172 L 33.8008 22.1172 C 32.7929 22.1172 32.0195 22.8906 32.0195 23.8750 C 32.0195 24.8828 32.7929 25.6563 33.8008 25.6563 Z M 6.1679 37.9375 L 49.8085 37.9375 C 50.8165 37.9375 51.6133 37.1406 51.6133 36.1563 C 51.6133 35.1719 50.8165 34.3984 49.8085 34.3984 L 6.1679 34.3984 C 5.1601 34.3984 4.3867 35.1719 4.3867 36.1563 C 4.3867 37.1406 5.1601 37.9375 6.1679 37.9375 Z M 6.1679 50.1953 L 49.8085 50.1953 C 50.8165 50.1953 51.6133 49.4219 51.6133 48.4375 C 51.6133 47.4531 50.8165 46.6562 49.8085 46.6562 L 6.1679 46.6562 C 5.1601 46.6562 4.3867 47.4531 4.3867 48.4375 C 4.3867 49.4219 5.1601 50.1953 6.1679 50.1953 Z"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    onClick: () => addSlideImageDiv(slide.id, elementIndex) // Assicurati di passare elementIndex o divIndex
-    ,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add inner image", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    class: "dashicons dashicons-format-image"
-  }))))), element.type === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_imageControls__WEBPACK_IMPORTED_MODULE_19__["default"], {
-    slide: slide,
-    slides: slides,
-    element: element,
-    elementIndex: elementIndex,
-    setAttributes: setAttributes,
-    setActiveSectionImage: setActiveSectionImage,
-    activeSectionImage: activeSectionImage,
-    parallax: parallax
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-add-element"
@@ -10831,7 +17626,7 @@ function Edit({
     onClick: () => addSlideDiv(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_24__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_26__["default"]
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "controls",
     className: "button-add-slide"
@@ -10877,7 +17672,7 @@ function Edit({
     },
     autoplay: autoplayConfig,
     onAutoplayTimeLeft: autoplayProgress ? onAutoplayTimeLeft : undefined,
-    className: "slider-builder",
+    className: "slider-builder " + filter,
     dir: languageSlider,
     direction: directionSlider,
     effect: effect,
@@ -10979,7 +17774,7 @@ function Edit({
   }, "View Product")))) : null, attributes.contentType === "custom" && Array.isArray(slides) && slides.length > 0 ? slides.map(slide => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
     key: slide.id
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-slide " + slide.position + " " + slide.layout + "-layout",
+    className: "swiper-slide " + slide.position + " " + overflow + " " + slide.layout + "-layout",
     style: {
       // Gestione dell'immagine di sfondo
       ...(slide.backgroundType === "image" && slide.backgroundImage ? {
@@ -11011,7 +17806,7 @@ function Edit({
       paddingRight: slide.backgroundHorizontalPadding + "px",
       border: slide.backgroundBorderColor ? `${slide.backgroundBorderSize}px solid ${slide.backgroundBorderColor}` : "none"
     }
-  }, slide.backgroundType === "video" && slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+  }, slide.backgroundType === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
     src: slide.backgroundVideo,
     autoPlay: true,
     muted: true,
@@ -11026,208 +17821,23 @@ function Edit({
       zIndex: 0,
       objectFit: "cover"
     }
-  }), slide.elements.map((element, index) => {
-    // Styles Title
-    const stylesTitle = {
-      fontSize: element.fontSize + "px",
-      "--font-size-tablet": element.fontSizeTablet + "px",
-      "--font-size-mobile": element.fontSizeMobile + "px",
-      color: element.textColor,
-      textAlign: element.textAlign,
-      fontStyle: element.fontStyle?.fontStyle || "normal",
-      // Valore di default
-      fontWeight: element.fontStyle?.fontWeight || "normal",
-      // Valore di default
-      textDecoration: element.fontStyle?.textDecoration || "none",
-      // Valore di default
-      lineHeight: element.lineHeight,
-      width: "100%",
-      fontFamily: element.fontFamily,
-      margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}` // Usa i valori aggi
-    };
-    const Tag = element.elementTitle || "h3";
-    const getStylesTitleBlock = textDiv => ({
-      fontSize: textDiv.fontSize ? `${textDiv.fontSize}px` : "16px",
-      "--font-size-block-tablet": textDiv.fontSizeTablet ? `${textDiv.fontSizeTablet}px` : "14px",
-      "--font-size-block-mobile": textDiv.fontSizeMobile ? `${textDiv.fontSizeMobile}px` : "12px",
-      color: textDiv.textColor || "#000000",
-      textAlign: textDiv.textAlign || "left",
-      fontStyle: textDiv.fontStyle?.fontStyle || "normal",
-      fontWeight: textDiv.fontStyle?.fontWeight || "normal",
-      textDecoration: textDiv.fontStyle?.textDecoration || "none",
-      lineHeight: textDiv.lineHeight ? `${textDiv.lineHeight}` : "1.5",
-      width: "100%",
-      // Mantiene la larghezza al 100%
-      fontFamily: textDiv.fontFamily || "inherit",
-      // Inherit se non specificato
-      margin: textDiv.marginTitle ? `${textDiv.marginTitle.top} ${textDiv.marginTitle.right} ${textDiv.marginTitle.bottom} ${textDiv.marginTitle.left}` : "0",
-      padding: textDiv.padding || "0" // Mantiene il padding come nell'originale
-    });
-
-    // Definizione della funzione getImageStyleBlock
-    const getImageStyleBlock = imageDiv => {
-      let style = {
-        maxWidth: "100%",
-        minWidth: "0",
-        maxHeight: "100%",
-        minHeight: "0",
-        border: imageDiv.backgroundBorderSizeImage + "px solid" + imageDiv.backgroundBorderColorImage,
-        borderRadius: imageDiv.backgroundBorderRadiusImage + "px",
-        padding: imageDiv.paddingImage + "px",
-        backgroundColor: imageDiv.backgroundColorImage,
-        margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`
-      };
-      if (imageDiv.widthImage === "relative") {
-        style.width = `${imageDiv.customWidthImage}%`;
-      } else if (imageDiv.widthImage === "fixed") {
-        style.width = `${imageDiv.customWidthImagePx}px`;
-      }
-      if (imageDiv.heightImage === "relative") {
-        style.height = `${imageDiv.customHeightImage}%`;
-      } else if (imageDiv.heightImage === "fixed") {
-        style.height = `${imageDiv.customHeightImagePx}px`;
-      }
-      if (imageDiv.widthImage !== "auto" || imageDiv.heightImage !== "auto") {
-        style.objectFit = imageDiv.fit;
-      }
-      return style;
-    };
-    const splitTextIntoLetters = (text = "", animation = "") => {
-      // Se l'animazione è "bounce", suddividi il testo in lettere
-      if (animation === "bounce") {
-        return text.split("").map((letter, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-          key: index,
-          className: `letter ${animation}`
-        }, letter));
-      }
-
-      // Se l'animazione non è "bounce", restituisci il testo intero
-      return text;
-    };
+  })), slide.elements.map((element, index) => {
     switch (element.type) {
       case "title":
-        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          style: {
-            transform: `rotate(${element.rotate}deg)`,
-            opacity: element.opacity
-          },
-          className: "underline-effect"
-        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Tag, {
-          key: index,
-          className: `title-slide letter ${element.animation}`,
-          style: stylesTitle,
-          "data-swiper-parallax-x": element.parallaxTitle,
-          "data-swiper-parallax-y": element.parallaxTitleY,
-          "data-swiper-parallax-scale": element.parallaxTitleScale,
-          "data-swiper-parallax-duration": element.parallaxTitleDuration,
-          "data-swiper-parallax-opacity": element.parallaxTitleOpacity
-        }, splitTextIntoLetters(element.text, element.animation)));
-      case "div":
-        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          className: "div-slide " + slide.positionDiv + " " + slide.layoutDiv + "-layout",
-          key: index,
-          style: {
-            backgroundColor: element.backgroundColor || "transparent",
-            width: "100%",
-            display: "flex",
-            flexDirection: slide.layoutDiv === "horizontal" ? "row" : "column",
-            textAlign: "center",
-            width: "100%",
-            position: "relative",
-            visibility: "visible",
-            gap: slide.gapItemsDiv + "px",
-            borderRadius: slide.backgroundBorderRadiusDiv + "px",
-            paddingTop: slide.backgroundVerticalPaddingDiv + "px",
-            paddingBottom: slide.backgroundVerticalPaddingDiv + "px",
-            paddingLeft: slide.backgroundHorizontalPaddingDiv + "px",
-            paddingRight: slide.backgroundHorizontalPaddingDiv + "px",
-            border: slide.backgroundBorderColorDiv ? `${slide.backgroundBorderSizeDiv}px solid ${slide.backgroundBorderColorDiv}` : "none"
-          }
-        }, element.innerTextDivs && element.innerTextDivs.length > 0 ? element.innerTextDivs.map((textDiv, textIndex) => {
-          // Definisci il tag dinamico
-          const TagBlock = textDiv.elementTitle || "h3";
-          return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-            style: {
-              transform: `rotate(${textDiv.rotate}deg)`,
-              opacity: textDiv.opacity
-            },
-            className: "underline-effect"
-          }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TagBlock, {
-            key: textIndex,
-            className: `title-slide letter ${textDiv.animation}`,
-            style: getStylesTitleBlock(textDiv),
-            "data-swiper-parallax-x": textDiv.parallaxTitle,
-            "data-swiper-parallax-y": textDiv.parallaxTitleY,
-            "data-swiper-parallax-scale": textDiv.parallaxTitleScale,
-            "data-swiper-parallax-duration": textDiv.parallaxTitleDuration,
-            "data-swiper-parallax-opacity": textDiv.parallaxTitleOpacity
-          }, splitTextIntoLetters(textDiv.content, textDiv.animation)));
-        }) : null, element.innerImageDivs && element.innerImageDivs.length > 0 ? element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          style: {
-            transform: `rotate(${imageDiv.rotateImage}deg)`,
-            opacity: imageDiv.opacityImage
-          },
-          className: "moving-background"
-        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-          key: imageIndex,
-          src: imageDiv.imageUrl,
-          alt: imageDiv.alt,
-          style: getImageStyleBlock(imageDiv),
-          className: `image-with-mask ${imageDiv.blobMask}`,
-          "data-swiper-parallax-x": imageDiv.parallaxImage,
-          "data-swiper-parallax-y": imageDiv.parallaxImageY,
-          "data-swiper-parallax-scale": imageDiv.parallaxImageScale,
-          "data-swiper-parallax-duration": imageDiv.parallaxImageDuration,
-          "data-swiper-parallax-opacity": imageDiv.parallaxImageOpacity
-        }))) : null);
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_textComponent__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          element: element,
+          index: index
+        });
       case "image":
-        const getImageStyle = () => {
-          let style = {
-            maxWidth: "100%",
-            minWidth: "0",
-            maxHeight: "100%",
-            minHeight: "0",
-            border: element.backgroundBorderSizeImage + "px solid" + element.backgroundBorderColorImage,
-            borderRadius: element.backgroundBorderRadiusImage + "px",
-            padding: element.paddingImage + "px",
-            backgroundColor: element.backgroundColorImage,
-            margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}` // Usa i valori aggi
-          };
-          if (element.widthImage === "relative") {
-            style.width = `${element.customWidthImage}%`;
-          } else if (element.widthImage === "fixed") {
-            style.width = `${element.customWidthImagePx}px`;
-          }
-          if (element.heightImage === "relative") {
-            style.height = `${element.customHeightImage}%`;
-          } else if (element.heightImage === "fixed") {
-            style.height = `${element.customHeightImagePx}px`;
-          }
-
-          // Applica object-fit solo se width o height sono relative o fixed
-          if (element.widthImage !== "auto" || element.heightImage !== "auto") {
-            style.objectFit = element.fit;
-          }
-          return style;
-        };
-        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          style: {
-            transform: `rotate(${element.rotateImage}deg)`,
-            opacity: element.opacityImage
-          },
-          className: "moving-background"
-        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-          key: index,
-          src: element.url,
-          alt: element.alt,
-          style: getImageStyle(),
-          className: `image-with-mask ${element.blobMask}`,
-          "data-swiper-parallax-x": element.parallaxImage,
-          "data-swiper-parallax-y": element.parallaxImageY,
-          "data-swiper-parallax-scale": element.parallaxImageScale,
-          "data-swiper-parallax-duration": element.parallaxImageDuration,
-          "data-swiper-parallax-opacity": element.parallaxImageOpacity
-        }));
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageComponent__WEBPACK_IMPORTED_MODULE_21__["default"], {
+          element: element,
+          index: index
+        });
+      case "div":
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_divComponent__WEBPACK_IMPORTED_MODULE_23__["default"], {
+          element: element,
+          index: index
+        });
       default:
         return null;
     }
@@ -11243,190 +17853,19 @@ function Edit({
     r: "20"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     ref: progressContent
-  }))), navigation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ref: nextRef,
-    className: swiperButtonNextClasses,
-    style: stylesNavigation
-  }, navigationIcons === "default" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    viewBox: "0 0 24 24",
-    fill: "currentColor"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
-    id: "a",
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    x: "0",
-    y: "0",
-    maskUnits: "userSpaceOnUse"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fill: navColor,
-    d: "M0 0h24v24H0z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
-    mask: "url(#a)"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fill: navColor,
-    d: "M9.4 17.654 8.346 16.6l4.6-4.6-4.6-4.6L9.4 6.346 15.054 12 9.4 17.654Z"
-  }))), navigationIcons === "one" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
-    id: "mask0_7_1879",
-    maskUnits: "userSpaceOnUse",
-    x: "0",
-    y: "0",
-    width: sizeNav + "px",
-    height: sizeNav + "px"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    fill: navColor
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
-    mask: "url(#mask0_7_1879)"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M14.05 17.65L13 16.575L16.825 12.75H4.29999V11.25H16.825L13 7.42501L14.05 6.35001L19.7 12L14.05 17.65Z",
-    fill: navColor
-  }))), navigationIcons === "two" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
-    id: "mask0_315_300",
-    maskUnits: "userSpaceOnUse",
-    x: "0",
-    y: "0",
-    width: sizeNav + "px",
-    height: sizeNav + "px"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    fill: navColor
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
-    mask: "url(#mask0_315_300)"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M17.5 16.1538L16.4308 15.1L18.7808 12.75H3.25003V11.25H18.7808L16.4462 8.89999L17.5154 7.84616L21.6538 12L17.5 16.1538Z",
-    fill: navColor
-  }))), navigationIcons === "three" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: sizeNav + "px",
-    viewBox: "0 -960 960 960",
-    width: sizeNav + "px",
-    fill: navColor
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M383-480 200-664l56-56 240 240-240 240-56-56 183-184Zm264 0L464-664l56-56 240 240-240 240-56-56 183-184Z"
-  })), navigationIcons === "four" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: sizeNav + "px",
-    viewBox: "0 -960 960 960",
-    width: sizeNav + "px",
-    fill: navColor
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M400-280v-400l200 200-200 200Z"
-  })), navigationIcons === "five" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: sizeNav + "px",
-    viewBox: "0 -960 960 960",
-    width: sizeNav + "px",
-    fill: navColor
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
-  })), navigationIcons === "text" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    style: {
-      color: navColor,
-      fontSize: sizeNav + "px"
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Next", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ref: prevRef,
-    className: swiperButtonPrevClasses,
-    style: stylesNavigation
-  }, navigationIcons === "default" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    viewBox: "0 0 24 24",
-    fill: "currentColor"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
-    id: "mask0_7_1873",
-    maskUnits: "userSpaceOnUse",
-    x: "0",
-    y: "0",
-    width: sizeNav + "px",
-    height: sizeNav + "px"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    fill: navColor
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
-    mask: "url(#mask0_7_1873)"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M14 17.6538L8.34619 12L14 6.34616L15.0538 7.39999L10.4538 12L15.0538 16.6L14 17.6538Z",
-    fill: navColor
-  }))), navigationIcons === "one" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: sizeNav + "px",
-    viewBox: "0 -960 960 960",
-    width: sizeNav + "px",
-    fill: navColor
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z"
-  })), navigationIcons === "two" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    viewBox: "0 0 26 26",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("mask", {
-    id: "mask0_433_1472",
-    maskUnits: "userSpaceOnUse",
-    x: "0",
-    y: "0",
-    width: sizeNav + "px",
-    height: sizeNav + "px"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M0.97765 24.9757L24.9776 25.0244L25.0263 1.02446L1.02632 0.975799L0.97765 24.9757Z",
-    fill: navColor
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
-    mask: "url(#mask0_433_1472)"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M7.51041 8.83536L8.57747 9.89132L6.22271 12.2366L21.7534 12.268L21.7504 13.768L6.21966 13.7365L8.5495 16.0913L7.47816 17.1429L3.34819 12.9807L7.51041 8.83536Z",
-    fill: navColor
-  }))), navigationIcons === "three" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: sizeNav + "px",
-    viewBox: "0 -960 960 960",
-    width: sizeNav + "px",
-    fill: navColor
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"
-  })), navigationIcons === "four" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: sizeNav + "px",
-    height: sizeNav + "px",
-    viewBox: "0 0 26 26",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M14.9723 7.98892L15.0277 17.9888L10.0001 13.0166L14.9723 7.98892Z",
-    fill: navColor
-  })), navigationIcons === "five" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: sizeNav + "px",
-    viewBox: "0 -960 960 960",
-    width: sizeNav + "px",
-    fill: navColor
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    d: "M200-440v-80h560v80H200Z"
-  })), navigationIcons === "text" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    style: {
-      color: navColor,
-      fontSize: sizeNav + "px"
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Prev", "cocoblocks"))))));
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "filter-slider"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_NavigationButtons__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    navigation: navigation,
+    nextRef: nextRef,
+    prevRef: prevRef,
+    swiperButtonNextClasses: swiperButtonNextClasses,
+    swiperButtonPrevClasses: swiperButtonPrevClasses,
+    stylesNavigation: stylesNavigation,
+    navigationIcons: navigationIcons,
+    navColor: navColor,
+    sizeNav: sizeNav
+  })));
 }
 
 /***/ }),
@@ -12851,6 +19290,36 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-jsx-runtime.development.js */ "./node_modules/react/cjs/react-jsx-runtime.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./src/components/images/1.jpg":
+/*!*************************************!*\
+  !*** ./src/components/images/1.jpg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/1.124bd6ff.jpg";
+
+/***/ }),
+
+/***/ "./src/components/images/2.jpg":
+/*!*************************************!*\
+  !*** ./src/components/images/2.jpg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/2.838485f9.jpg";
+
+/***/ }),
+
+/***/ "./src/components/images/3.jpg":
+/*!*************************************!*\
+  !*** ./src/components/images/3.jpg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/3.7506203b.jpg";
 
 /***/ }),
 
@@ -24113,7 +30582,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"parallax":{"type":"boolean","default":false},"contentType":{"type":"string","default":"custom"},"posts":{"type":"array","default":[]}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"parallax":{"type":"boolean","default":false},"contentType":{"type":"string","default":"custom"},"posts":{"type":"array","default":[]},"overflow":{"type":"string","default":"visible"},"backgroundBorderColor":{"type":"string","default":"#000000"},"backgroundBorderSize":{"type":"number","default":0},"backgroundBorderRadius":{"type":"number","default":0},"backgroundVerticalPadding":{"type":"number","default":0},"backgroundHorizontalPadding":{"type":"number","default":0},"backgroundColor":{"type":"string","default":"#81D1FF"},"textColorDefault":{"type":"string","default":"#000000"},"backgroundColorSlideDefault":{"type":"string","default":"#81D1FF"},"backgroundColorBlockDefault":{"type":"string","default":"#FFFFFF"},"innerTextColorDefault":{"type":"string","default":"#000000"},"filter":{"type":"string","default":" "},"colorOneEffect":{"type":"string","default":"rgba(243, 106, 188, 0.5)"},"colorTwoEffect":{"type":"string","default":"rgba(243, 106, 188, 0)"},"colorThreeEffect":{"type":"string","default":"rgba(243, 106, 188, 0.7)"}}}');
 
 /***/ })
 
@@ -24203,6 +30672,18 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -24217,6 +30698,29 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl + "../";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

@@ -18,10 +18,13 @@ if (!defined('ABSPATH')) {
 }
 
 // Block
+// Registra il blocco
 function create_block_slider_fse_block_init() {
     register_block_type(__DIR__ . '/build/slider');
 }
 add_action('init', 'create_block_slider_fse_block_init');
+
+
 
 // Admin Dashboard
 function my_plugin_admin_menu() {
@@ -202,3 +205,49 @@ function cocoblocks_register_rest_routes() {
 }
 
 add_action('rest_api_init', 'cocoblocks_register_rest_routes');
+
+
+
+
+
+// Registra l'endpoint REST API
+function register_custom_image_upload_endpoint() {
+    register_rest_route('custom-plugin/v1', '/upload-image/', array(
+        'methods' => 'POST',
+        'callback' => 'handle_image_upload',
+        'permission_callback' => '__return_true', // Assicurati di gestire la sicurezza correttamente
+    ));
+}
+add_action('rest_api_init', 'register_custom_image_upload_endpoint');
+
+// Gestisce il download e il salvataggio dell'immagine
+function handle_image_upload(WP_REST_Request $request) {
+    $image_url = $request->get_param('image_url');
+    $image_name = basename($image_url);
+
+    // Scarica l'immagine
+    $response = wp_remote_get($image_url);
+    $image_data = wp_remote_retrieve_body($response);
+
+    // Salva l'immagine nella directory uploads
+    $upload_dir = wp_upload_dir();
+    $image_path = $upload_dir['path'] . '/' . $image_name;
+    file_put_contents($image_path, $image_data);
+
+    // Inserisce l'immagine nella libreria media di WordPress
+    $attachment_id = wp_insert_attachment(array(
+        'guid'           => $upload_dir['url'] . '/' . $image_name,
+        'post_mime_type' => 'image/jpeg',
+        'post_title'     => sanitize_file_name($image_name),
+        'post_content'   => '',
+        'post_status'    => 'inherit'
+    ), $image_path);
+
+    // Genera i metadati
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+    $attach_data = wp_generate_attachment_metadata($attachment_id, $image_path);
+    wp_update_attachment_metadata($attachment_id, $attach_data);
+
+    return new WP_REST_Response(array('attachment_id' => $attachment_id, 'url' => wp_get_attachment_url($attachment_id)), 200);
+}
+

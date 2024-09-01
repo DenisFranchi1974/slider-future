@@ -10,6 +10,7 @@ import { __ } from "@wordpress/i18n";
 import { useEffect, useState } from "@wordpress/element";
 import { info } from "@wordpress/icons";
 import SectionSliderSelector from "./sectionSliderSelector";
+import ColorOptionsPanel from "./colorPanel";
 
 const SliderControls = ({ attributes, setAttributes }) => {
   const {
@@ -35,7 +36,19 @@ const SliderControls = ({ attributes, setAttributes }) => {
     momentumBounceRatioFreeMode,
     momentumRatioFreeMode,
     momentumVelocityRatioFreeMode,
-  } = attributes;
+    overflow,
+    backgroundBorderColor,
+    backgroundBorderSize,
+    backgroundBorderRadius,
+    backgroundVerticalPadding,
+    backgroundHorizontalPadding,
+    backgroundColor,
+    backgroundColorSlideDefault,
+    backgroundColorBlockDefault,
+    textColorDefault,
+    innerTextColorDefault
+   
+    } = attributes;
 
   const [showLoopNotice, setShowLoopNotice] = useState(false);
   const [showGridNotice, setShowGridNotice] = useState(false);
@@ -1049,6 +1062,342 @@ const SliderControls = ({ attributes, setAttributes }) => {
             </div>
           </div>
         </>
+      )}
+
+      {activeSection === "style" && (
+        <>
+          <div className="content-title-custom-panel">
+            <h2 className="title-custom-panel">{__("Background", "cocoblocks")}</h2>
+          </div>
+          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="content-section-panel">
+               <div className="custom-select color">
+                  <ColorOptionsPanel
+                    colorNormal={backgroundColor}
+                    setColorNormal={(color) =>
+                      setAttributes({ backgroundColor: color })
+                    }
+                    buttonTitle={__("Background Color", "cocoblocks")}
+                    buttonIcon={
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"/></svg>
+                    }
+                  />
+                </div>
+              <div className="custom-select select-control-label-right">
+                <SelectControl
+                  label={
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                      >
+                        <path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
+                      </svg>
+                      {__("Overflow", "cocoblocks")}
+                    </>
+                  }
+                  value={overflow}
+                  onChange={(val) => setAttributes({ overflow: val })}
+                  options={[
+                    {
+                      label: __("Visible", "cocoblock"),
+                      value: "visible",
+                    },
+                    {
+                      label: __("Hidden", "slider"),
+                      value: "hidden",
+                    },
+                  ]}
+                />
+              </div>
+              </div>
+              <div className="content-title-custom-panel intermedy">
+                <h2 className="title-custom-panel">
+                  {__("Border", "cocoblocks")}
+                </h2>
+              </div>
+              <div
+                className="content-section-panel"
+                style={{ paddingTop: "0", paddingBottom: "0" }}
+              >
+                <div className="custom-select color">
+                  <ColorOptionsPanel
+                    colorNormal={backgroundBorderColor}
+                    setColorNormal={(color) =>
+                      setAttributes({ backgroundBorderColor: color })
+                    }
+                    buttonTitle={__("Border Color", "cocoblocks")}
+                    buttonIcon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 -960 960 960"
+                        fill="#e8eaed"
+                        style={{
+                          marginRight: "3px",
+                          height: "16px",
+                          width: "16px",
+                        }}
+                      >
+                        <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z" />
+                      </svg>
+                    }
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="18px"
+                          viewBox="0 -960 960 960"
+                          width="18px"
+                          fill="#e8eaed"
+                          style={{ marginRight: "2px" }}
+                        >
+                          <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
+                        </svg>
+                        {__("Border width", "cocoblocks")}
+                      </>
+                    }
+                    value={backgroundBorderSize}
+                    onChange={(value) =>
+                      setAttributes({
+                        backgroundBorderSize: value,
+                      })
+                    }
+                    min={0}
+                    max={20}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="18px"
+                          viewBox="0 -960 960 960"
+                          width="18px"
+                          fill="#e8eaed"
+                          style={{ marginRight: "2px" }}
+                        >
+                          <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
+                        </svg>
+                        {__("Border radius", "cocoblocks")}
+                      </>
+                    }
+                    value={backgroundBorderRadius}
+                    onChange={(value) =>
+                      setAttributes({
+                        backgroundBorderRadius: value,
+                      })
+                    }
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+                </div>
+              </div>
+              <div className="content-title-custom-panel intermedy">
+                <h2 className="title-custom-panel">
+                  {__("Spacing", "cocoblocks")}
+                </h2>
+              </div>
+              <div className="content-section-panel" style={{ padding: "0" }}>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="18px"
+                          viewBox="0 -960 960 960"
+                          width="18px"
+                          fill="#e8eaed"
+                          style={{ marginRight: "2px" }}
+                        >
+                          <path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z" />
+                        </svg>
+                        {__("Content vertical padding", "cocoblocks")}
+                      </>
+                    }
+                    value={backgroundVerticalPadding}
+                    onChange={(value) =>
+                      setAttributes({
+                        backgroundVerticalPadding: value,
+                      })
+                    }
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="18px"
+                          viewBox="0 -960 960 960"
+                          width="18px"
+                          fill="#e8eaed"
+                          style={{
+                            marginRight: "2px",
+                            transform: "rotate(90deg)",
+                          }}
+                        >
+                          <path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z" />
+                        </svg>
+                        {__("Content horizontal padding", "cocoblocks")}
+                      </>
+                    }
+                    value={backgroundHorizontalPadding}
+                    onChange={(value) =>
+                      setAttributes({
+                        backgroundHorizontalPadding: value,
+                      })
+                    }
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+                   {backgroundHorizontalPadding > 0 && (
+                    <p
+                    className="notice components-base-control__help"
+                    style={{ borderRadius: "0" }}
+                    >
+                    {__(
+                      'Warning: if you set space here you also need to adjust "Space between slides"!',
+                      "cocoblocks"
+                    )}
+                  </p>
+                   )}
+                </div>
+              </div>
+           
+          </div>
+        </>
+      )}
+
+      {activeSection === "skin" && (
+      <>
+        <div className="content-title-custom-panel">
+          <h2 className="title-custom-panel">
+            {__("Global color skin", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="content-section-panel">
+            <div className="custom-select color">
+              <ColorOptionsPanel
+                colorNormal={backgroundColorSlideDefault}
+                setColorNormal={(color) =>
+                  setAttributes({ backgroundColorSlideDefault: color })
+                }
+                buttonTitle={__("Background Color Slide", "cocoblocks")}
+                buttonIcon={
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                  height="24px" 
+                  viewBox="0 -960 960 960" 
+                  width="24px" 
+                  fill="#e8eaed"
+                  style={{
+                    marginRight: "3px",
+                    height: "16px",
+                    width: "16px",
+                    position: "relative",
+                    top: "3px"
+                  }}
+                  >
+                    <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"/></svg>
+                }
+              />
+            </div> 
+            <div className="custom-select color">
+              <ColorOptionsPanel
+                colorNormal={backgroundColorBlockDefault}
+                setColorNormal={(color) =>
+                  setAttributes({ backgroundColorBlockDefault: color })
+                }
+                buttonTitle={__("Background Color Block", "cocoblocks")}
+                buttonIcon={
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                  height="24px" 
+                  viewBox="0 -960 960 960" 
+                  width="24px" 
+                  fill="#e8eaed"
+                  style={{
+                    marginRight: "3px",
+                    height: "16px",
+                    width: "16px",
+                    position: "relative",
+                    top: "3px"
+                  }}
+                  >
+                    <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"/></svg>
+                }
+              />
+            </div> 
+            <div className="custom-select color">
+              <ColorOptionsPanel
+                colorNormal={textColorDefault}
+                setColorNormal={(color) =>
+                  setAttributes({ textColorDefault: color })
+                }
+                buttonTitle={__("Text Color", "cocoblocks")}
+                buttonIcon={
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                  height="24px" 
+                  viewBox="0 -960 960 960" 
+                  width="24px" 
+                  fill="#e8eaed"
+                  style={{
+                    marginRight: "3px",
+                    height: "16px",
+                    width: "16px",
+                    position: "relative",
+                    top: "3px"
+                  }}
+                  >
+                    <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"/></svg>
+                }
+              />
+            </div>
+            <div className="custom-select color">
+              <ColorOptionsPanel
+                colorNormal={innerTextColorDefault}
+                setColorNormal={(color) =>
+                  setAttributes({ innerTextColorDefault: color })
+                }
+                buttonTitle={__("Inner Text Color", "cocoblocks")}
+                buttonIcon={
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                  height="24px" 
+                  viewBox="0 -960 960 960" 
+                  width="24px" 
+                  fill="#e8eaed"
+                  style={{
+                    marginRight: "3px",
+                    height: "16px",
+                    width: "16px",
+                    position: "relative",
+                    top: "3px"
+                  }}
+                  >
+                    <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"/></svg>
+                }
+              />
+            </div>
+
+          </div>
+        </div>
+      </> 
       )}
 
       {activeSection === "content" && (

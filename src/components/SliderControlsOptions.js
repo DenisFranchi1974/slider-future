@@ -17,6 +17,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Autoplay } from "swiper/modules";
 import { info } from "@wordpress/icons";
 import SectionSliderSelectorOptions from "./sectionSliderSelectorOptions";
+import ColorOptionsPanel from "./colorPanel";
 
 const SliderControlsOptions = ({ attributes, setAttributes }) => {
   const {
@@ -53,7 +54,26 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
     modifier,
     rotateCards,
     parallax,
+    filter,
+    colorOneEffect,
+    colorTwoEffect,
+    colorThreeEffect,
   } = attributes;
+
+    // Effect Color Default
+    const defaultAttributes = {
+      colorOneEffect: "rgba(243, 106, 188, 0.5)",
+      colorTwoEffect: "rgba(243, 106, 188, 0)",
+      colorThreeEffect: "rgba(243, 106, 188, 0.7)",
+    };
+  
+    const resetEffect = () => {
+      setAttributes({
+        colorOneEffect: defaultAttributes.colorOneEffect,
+        colorTwoEffect: defaultAttributes.colorTwoEffect,
+        colorThreeEffect: defaultAttributes.colorThreeEffect,
+      });
+    };
 
   const [showLoopNotice, setShowLoopNotice] = useState(false);
   const [showGridNotice, setShowGridNotice] = useState(false);
@@ -204,7 +224,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
 
   // Section slider
   const [activeSectionOptions, setActiveSectionSliderOptions] =
-    useState("background");
+    useState("animation");
+
+    const showThirdColor = [
+      "filter-glitch",
+      "filter-prism",
+      "filter-inverse"
+    ].includes(filter);
+  
+    // Determina se mostrare i colori
+    const showColors = filter !== " "
 
   return (
     <>
@@ -214,16 +243,6 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
       <SectionSliderSelectorOptions
         onSectionChange={setActiveSectionSliderOptions}
       />
-      {activeSectionOptions === "background" && (
-        <>
-          <div className="content-title-custom-panel">
-            <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
-            </h2>
-          </div>
-          <div className="cocoblocks-panel content-section-custom-panel"></div>
-        </>
-      )}
       {activeSectionOptions === "animation" && (
         <>
           <div className="content-title-custom-panel">
@@ -276,6 +295,19 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   ]}
                 />
               </div>
+              {effect == "flip" && (
+                <>
+                  <p
+                    className="notice components-base-control__help"
+                    style={{ borderRadius: "0" }}
+                  >
+                    {__(
+                      'Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!',
+                      "cocoblocks"
+                    )}
+                  </p>
+                  </>
+              )}
               {effect == "cube" && (
                 <>
                   <p
@@ -283,7 +315,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     style={{ marginTop: "0", borderRadius: "0" }}
                   >
                     {__(
-                      'Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!',
+                      'Warning: With this effect, it\'s better to set the slide with `overflow: hidden`!',
                       "cocoblocks"
                     )}
                   </p>
@@ -675,7 +707,171 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               {__("Filters", "cocoblocks")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel"></div>
+          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="content-section-panel">
+              <div className="custom-select select-control-label-right">
+                <SelectControl
+                  label={
+                    <>
+                       <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z" />
+                        </svg>
+                      {__("Bg Filter", "cocoblocks")}
+                    </>
+                  }
+                  value={filter}
+                  onChange={(val) => {
+                    setAttributes({ filter: val });
+                  }}
+                  options={[
+                    {
+                      label: __("None", "cocoblocks"),
+                      value: " ",
+                    },
+                    {
+                      label: __("Lateral", "cocoblocks"),
+                      value: "filter-lateral",
+                    },
+                    {
+                      label: __("Central circle", "cocoblocks"),
+                      value: "filter-central-circle",
+                    },
+                    {
+                      label: __("Border fade", "cocoblocks"),
+                      value: "filter-border-fade",
+                    },
+                    {
+                      label: __("Vignette", "cocoblocks"),
+                      value: "filter-vignette",
+                    },
+                    {
+                      label: __("Spotlight", "cocoblocks"),
+                      value: "filter-spotlight",
+                    },
+                    {
+                      label: __("Diagonal", "cocoblocks"),
+                      value: "filter-diagonal",
+                    },
+                    {
+                      label: __("Nebula", "cocoblocks"),
+                      value: "filter-nebula",
+                    },
+                    {
+                      label: __("Glitch", "cocoblocks"),
+                      value: "filter-glitch",
+                    },
+                    {
+                      label: __("Prism", "cocoblocks"),
+                      value: "filter-prism",
+                    },
+                    {
+                      label: __("Inverse", "cocoblocks"),
+                      value: "filter-inverse",
+                    },
+                  ]}
+                />
+              </div>
+              {showColors && (
+              <>
+              <div className="custom-select color">
+                  <ColorOptionsPanel
+                    colorNormal={colorOneEffect}
+                    setColorNormal={(color) =>
+                      setAttributes({ colorOneEffect: color })
+                    }
+                    buttonTitle={__("First Color", "cocoblocks")}
+                    buttonIcon={
+                      <svg xmlns="http://www.w3.org/2000/svg" 
+                        height="24px" 
+                        viewBox="0 -960 960 960" 
+                        width="24px" 
+                        fill="#e8eaed"
+                        style={{
+                          marginRight: "3px",
+                          height: "16px",
+                          width: "16px",
+                          position: "relative",
+                          top: "3px"
+                        }}
+                      >
+                        <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"/></svg>
+                    }
+                  />
+                  </div>
+                  <div className="custom-select color">
+                  <ColorOptionsPanel
+                    colorNormal={colorTwoEffect}
+                    setColorNormal={(color) =>
+                      setAttributes({ colorTwoEffect: color })
+                    }
+                    buttonTitle={__("Second Color", "cocoblocks")}
+                    buttonIcon={
+                      <svg xmlns="http://www.w3.org/2000/svg" 
+                        height="24px" 
+                        viewBox="0 -960 960 960" 
+                        width="24px" 
+                        fill="#e8eaed"
+                        style={{
+                          marginRight: "3px",
+                          height: "16px",
+                          width: "16px",
+                          position: "relative",
+                          top: "3px"
+                        }}
+                      >
+                        <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"/></svg>
+                    }
+                  />
+                </div>
+                {showThirdColor && (
+                <div className="custom-select color">
+                  <ColorOptionsPanel
+                    colorNormal={colorThreeEffect}
+                    setColorNormal={(color) =>
+                      setAttributes({ colorThreeEffect: color })
+                    }
+                    buttonTitle={__("Third Color", "cocoblocks")}
+                    buttonIcon={
+                      <svg xmlns="http://www.w3.org/2000/svg" 
+                        height="24px" 
+                        viewBox="0 -960 960 960" 
+                        width="24px" 
+                        fill="#e8eaed"
+                        style={{
+                          marginRight: "3px",
+                          height: "16px",
+                          width: "16px",
+                          position: "relative",
+                          top: "3px"
+                        }}
+                      >
+                        <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"/></svg>
+                    }
+                  />
+                </div>
+                )}
+                 <Button onClick={resetEffect} className="button-reset">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#5f6368"
+                    >
+                      <path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z" />
+                    </svg>
+                    {__("Reset Effect Color", "cocoblocks")}
+                  </Button>
+                </>
+                 )}
+              </div>
+          </div>
         </>
       )}
       {activeSectionOptions === "loop" && (

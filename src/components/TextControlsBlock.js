@@ -609,6 +609,8 @@ const TextControlsBlock = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  
+
   // Font Family Options
   const fontOptions = [
     { label: __("Arial", "cocoblock"), value: "Arial" },

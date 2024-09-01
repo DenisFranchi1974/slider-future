@@ -44,16 +44,19 @@ import AlignmentControl from "../components/aligncontrol";
 import SliderControls from "../components/SliderControls";
 import ColorOptionsPanelGradient from "../components/colorPanelGradient";
 import React, { useRef, useEffect } from "react";
-import SectionSelectorBlock from "../components/sectionSelectorBlock";
 import SliderControlsNavigation from "../components/SliderControlsNavigation";
 import SliderControlsOptions from "../components/SliderControlsOptions";
 import SectionSelectorSlide from "../components/sectionSelectorSlide";
 import TextControls from "../components/TextControls";
 import ImageControls from "../components/imageControls";
-import TextControlsBlock from "../components/TextControlsBlock";
-import ImageControlsBlock from "../components/imageControlsBlock";
+import DivControls from "../components/divControls";
+import NavigationButtons from "../components/NavigationButtons"; 
+import ImageComponent from "../components/ImageComponent";
+import TextComponent from "../components/textComponent";
+import DivComponent from "../components/divComponent";
 
 export default function Edit({ attributes, setAttributes }) {
+
   const {
     directionSlider,
     effect,
@@ -175,6 +178,21 @@ export default function Edit({ attributes, setAttributes }) {
     autoplayProgressColor,
     autoplayProgressPosition,
     parallax,
+    overflow,
+    backgroundBorderColor,
+    backgroundBorderSize,
+    backgroundBorderRadius,
+    backgroundVerticalPadding,
+    backgroundHorizontalPadding,
+    backgroundColor,
+    backgroundColorSlideDefault,
+    backgroundColorBlockDefault,
+    textColorDefault,
+    innerTextColorDefault,
+    filter,
+    colorOneEffect,
+    colorTwoEffect,
+    colorThreeEffect,
   } = attributes;
 
   /* Classi personalizzate per il blocco */
@@ -244,6 +262,63 @@ export default function Edit({ attributes, setAttributes }) {
     };
   }, []);
 
+  /* Nascondi il pannello Advanced */
+useEffect(() => {
+  const handleTabClick = (event) => {
+    const tabId = event.currentTarget.id;
+    const advancedPanel = document.querySelector('.cocoblocks-custom-advanced-panel');
+
+    // Lista dei tab che devono nascondere il pannello avanzato
+    const tabsToHideAdvancedPanel = [
+      'tab-panel-0-tab2',
+      'tab-panel-0-tab3',
+      'tab-panel-0-tab4'
+    ];
+
+    if (tabsToHideAdvancedPanel.includes(tabId)) {
+      // Nascondi il pannello avanzato
+      if (advancedPanel) {
+        advancedPanel.classList.add('hidden');
+      }
+    } else {
+      // Mostra il pannello avanzato
+      if (advancedPanel) {
+        advancedPanel.classList.remove('hidden');
+      }
+    }
+  };
+
+  const initializeButtonListener = () => {
+    // Trova tutti i bottoni delle schede
+    const tabButtons = document.querySelectorAll('[role="tab"]');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', handleTabClick);
+    });
+  };
+
+  // Crea un osservatore per monitorare i cambiamenti nel DOM
+  const observer = new MutationObserver(() => {
+    initializeButtonListener(); // Prova a inizializzare l'ascoltatore ogni volta che il DOM cambia
+  });
+
+  // Inizia ad osservare il corpo del documento
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Esegui inizializzazione e pulizia
+  initializeButtonListener();
+
+  return () => {
+    // Pulizia: disattiva l'osservatore e rimuove gli ascoltatori
+    observer.disconnect();
+    const tabButtons = document.querySelectorAll('[role="tab"]');
+    tabButtons.forEach(button => {
+      button.removeEventListener('click', handleTabClick);
+    });
+  };
+}, []);
+
+  // Movimentazione elementi
+
   // Move Element Up
   const moveElementUp = (slideId, index) => {
     const updatedSlides = slides.map((slide) => {
@@ -273,6 +348,8 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slides: updatedSlides });
   };
 
+  // Tab Panel
+
   // General Tab
   const onSelect = (tabName) => {};
 
@@ -281,23 +358,78 @@ export default function Edit({ attributes, setAttributes }) {
   // Background Slide
   const [backgroundType, setBackgroundType] = useState("");
 
-  // Add Slide
-  const addSlide = () => {
-    const newSlide = {
-      id: slides.length + 1,
-      elements: [], // Inizializza elements come un array vuoto
-      layout: "vertical",
-      gapItems: 5,
-      position: "center-center",
-      backgroundBorderColor: "#000000",
-      backgroundBorderSize: 0,
-      backgroundBorderRadius: 0,
-      backgroundVerticalPadding: 0,
-      backgroundHorizontalPadding: 0,
+    // Panel Slide
+    const [selectedPanel, setSelectedPanel] = useState(null);
+    const [primaryColor, setPrimaryColor] = useState("");
+    const swiperRef = useRef(null); // Riferimento a Swiper
+  
+    useEffect(() => {
+      // Recupera il valore della variabile CSS --primary-color
+      const root = document.querySelector(":root");
+      const color = getComputedStyle(root).getPropertyValue("--primary-color");
+      setPrimaryColor(color.trim());
+    }, []);
+  
+    const handlePanelSelect = (panelId) => {
+      setSelectedPanel((prevPanel) => (prevPanel === panelId ? null : panelId));
+      // Trova l'indice della slide corrispondente
+      const slideIndex = slides.findIndex((slide) => slide.id === panelId);
+      if (swiperRef.current && slideIndex !== -1) {
+        swiperRef.current.swiper.slideTo(slideIndex); // Naviga alla slide
+      }
     };
-    const updatedSlides = [...slides, newSlide];
-    setAttributes({ slides: updatedSlides });
-  };
+  
+    const renderCircle = (panelId) => {
+      const isSelected = selectedPanel === panelId;
+      const circleStyle = {
+        display: "inline-block",
+        width: "12px",
+        height: "12px",
+        borderRadius: "3px",
+        border: `2px solid ${primaryColor}`,
+        backgroundColor: isSelected ? primaryColor : "transparent",
+        marginRight: "8px",
+        transition: "transform 0.3s, background-color 0.3s",
+        transform: isSelected ? "scale(1.2)" : "scale(1)",
+      };
+  
+      return <span style={circleStyle}></span>;
+    };
+  
+    useEffect(() => {
+      // Identificatore specifico del blocco, ad esempio un data-attribute
+      const blockContainer = document.querySelector('[data-type="slider-builder/slider"]');
+  
+      if (!blockContainer) return; // Se il blocco non è presente, interrompi
+  
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          // Cerca i popover solo all'interno del tuo blocco specifico
+          const popovers = blockContainer.querySelectorAll(
+            ".components-dropdown-menu__popover .components-popover__content"
+          );
+          popovers.forEach((popover) => {
+            // Aggiungi la tua classe personalizzata solo ai popover del tuo blocco
+            if (!popover.classList.contains("slide-popover-class")) {
+              popover.classList.add("slide-popover-class");
+            }
+          });
+        });
+      });
+  
+      // Osserva solo il tuo blocco specifico
+      observer.observe(blockContainer, {
+        childList: true,
+        subtree: true,
+      });
+  
+      // Cleanup
+      return () => {
+        observer.disconnect();
+      };
+  }, []);
+
+// Default Slide
 
   // Stato per memorizzare le impostazioni correnti
   const [currentSettings, setCurrentSettings] = useState({
@@ -448,6 +580,33 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slides: updatedSlides });
   };
 
+     // Inizializza lo stato delle slide con una slide predefinita se non ci sono slide
+     useEffect(() => {
+      if (slides.length === 0) {
+        addSlide();
+      }
+    }, []);
+
+  // Add Slide
+  const addSlide = () => {
+    const newSlide = {
+      id: slides.length + 1,
+      elements: [], // Inizializza elements come un array vuoto
+      layout: "vertical",
+      gapItems: 5,
+      position: "center-center",
+      backgroundType: "color",
+      backgroundColor: backgroundColorSlideDefault,
+      backgroundBorderColor: "#000000",
+      backgroundBorderSize: 0,
+      backgroundBorderRadius: 0,
+      backgroundVerticalPadding: 0,
+      backgroundHorizontalPadding: 0,
+    };
+    const updatedSlides = [...slides, newSlide];
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Remove Slide
   const removeSlide = (id) => {
     const updatedSlides = slides.filter((slide) => slide.id !== id);
@@ -472,111 +631,11 @@ export default function Edit({ attributes, setAttributes }) {
               {
                 type: "div",
                 content: "",
-                backgroundColor: "",
+                backgroundColor: backgroundColorBlockDefault,
                 imageUrl: "",
                 innerDivs: [],
               },
             ],
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Layout
-  const updateSlideLayoutDiv = (slideId, newLayoutDiv) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId ? { ...slide, layoutDiv: newLayoutDiv } : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-  // Update Position
-  const updateSlidePositionDiv = (slideId, newPositionDiv) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId ? { ...slide, positionDiv: newPositionDiv } : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Gap Items
-  const updateSlideGapItemsDiv = (slideId, newGapItemsDiv) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId ? { ...slide, gapItemsDiv: newGapItemsDiv } : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Border Color
-  const updateSlideBackgroundBorderColorDiv = (id, colorDiv) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === id ? { ...slide, backgroundBorderColorDiv: colorDiv } : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update border size
-  const updateSlideBackgroundBorderSizeDiv = (slideId, newSizeDiv) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? { ...slide, backgroundBorderSizeDiv: newSizeDiv }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update border radius
-  const updateSlideBackgroundBorderRadiusDiv = (slideId, newRadiusDiv) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? { ...slide, backgroundBorderRadiusDiv: newRadiusDiv }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update vertical padding
-  const updateSlideBackgroundVerticalPaddingDiv = (
-    slideId,
-    newVerticalPaddingDiv
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? { ...slide, backgroundVerticalPaddingDiv: newVerticalPaddingDiv }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update horizontal padding
-  const updateSlideBackgroundHorizontalPaddingDiv = (
-    slideId,
-    newHorizontalPaddingDiv
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? { ...slide, backgroundHorizontalPaddingDiv: newHorizontalPaddingDiv }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Add Text inside block
-  const addSlideTitleDiv = (slideId, divIndex) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, index) =>
-              index === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: [
-                      ...(element.innerTextDivs || []),
-                      { content: "" },
-                    ],
-                  }
-                : element
-            ),
           }
         : slide
     );
@@ -606,40 +665,6 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slides: updatedSlides });
   };
 
-  // Background color Content
-  const updateDivBackgroundColor = (slideId, index, newColor) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements
-              ? slide.elements.map((element, i) =>
-                  element.type === "div" && i === index
-                    ? { ...element, backgroundColor: newColor }
-                    : element
-                )
-              : [], // Se elements non è definito, inizializzalo come array vuoto
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Remove Content
-  const removeSlideDiv = (slideId, index) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.filter(
-              (element, i) => element.type !== "div" || i !== index
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
   // Add Text
   const addSlideTitle = (slideId) => {
     const updatedSlides = slides.map((slide) =>
@@ -650,24 +675,35 @@ export default function Edit({ attributes, setAttributes }) {
               ...(slide.elements || []),
               {
                 type: "title",
-                text: "",
+                text: __('Text Slide','cocoblocks'),
                 textAlign: "center",
                 fontStyle: {
                   italic: false,
                   underline: false,
                   bold: false,
                 },
+                fontWeight: 400,
+                letterSpacing: 0,
+                widthTitle: "auto",
+                widthCustomTitle: 100,
                 fontSize: 22,
                 fontSizeTablet: 16,
                 fontSizeMobile: 16,
                 lineHeight: 1.5,
-                textColor: "#000000",
+                textColor: textColorDefault,
                 marginTitle: {
                   top: 0,
                   right: 0,
                   bottom: 0,
                   left: 0,
                 },
+                paddingTitle: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                borderStyle: "none",
                 fontFamily: "Arial",
                 parallaxTitle: 0,
                 parallaxTitleY: 0,
@@ -678,6 +714,64 @@ export default function Edit({ attributes, setAttributes }) {
                 opacity: 1,
                 rotate: 0,
                 animation: "none",
+                width: "auto",
+                widthCustomTitle: 100,
+                backgroundBorderRadius: 0,
+                backgroundBorderSize: 0,
+                backgroundBorderColor: "",
+                textWriteMode: "initial",
+                textOrientation: "initial",
+                durationEffect:1,
+                delayEffect:0,
+                durationEffectOdd:1,
+                durationEffectEven:1,
+                speedEffect:1,
+                pauseEffect:0,
+                animationCount:1,
+                widthCursor:2,
+                animationCursor:"none",
+                colorCursor:"#000000",
+                gradinetColorOne:"#000000",
+                gradinetColorTwo:"#000000",
+                gradinetColorThree:"#000000",
+                gradinetColorFour:"#000000",
+                gradinetColorFive:"#000000",
+                decoration:"none",
+                underlineColor:"#000000",
+                underlinePadding:0,
+                underlineVertical:0,
+                underlineHorizontal:0,
+                underlineWidth:1,
+                underlineHeight:1,
+                underlineAnimation:"none",
+                underlineAnimationFrom:0,
+                underlineAnimationTo:0,
+                underlineFromSizeNew:0,
+                underlineToSizeNew:0,
+                underlineAnimationTransition:0,
+                textLink:"none",
+                linkUrl:"",
+                linkTarget:"_self",
+                linkRel:"",
+                scrollToId:"",
+                enableDesktopTitle:true,
+                enableTabletTitle:true,
+                enableMobileTitle:true,
+                textColorHover:textColorDefault,
+                borderStyleHover:"none",
+                backgroundBorderColorHover:"",
+                opacityHover:1,
+                rotateHover:0,
+                animationHover:"none", 
+                durationEffectHover:1,
+                effectHoverColorHover:textColorDefault,
+                translateEffectHover:0,
+                colorShadow:"",
+                boxShadowX:0,
+                boxShadowY:0,
+                boxShadowBlur:0,
+                boxShadowSpread:0,
+                interation:"forwards"
               },
             ],
           }
@@ -701,6 +795,7 @@ export default function Edit({ attributes, setAttributes }) {
                 fit: "cover",
                 widthImage: "fixed",
                 customWidthImage: false,
+                widthImageContent: "auto",
                 customWidthImagePx: 200,
                 heightImage: "fixed",
                 customHeightImage: false,
@@ -710,6 +805,10 @@ export default function Edit({ attributes, setAttributes }) {
                 backgroundBorderRadiusImage: 0,
                 backgroundColorImage: "",
                 paddingImage: 0,
+                borderStyleImage: "none",
+                backgroundBorderColorImage: "",
+                backgroundBorderSizeImage: 0,
+                backgroundBorderRadiusImage: 0,
                 rotateImage: 0,
                 opacityImage: 1,
                 parallaxImage: 0,
@@ -723,6 +822,47 @@ export default function Edit({ attributes, setAttributes }) {
                   left: 0,
                 },
                 blobMask: false,
+                animationImage: "none",
+                durationEffectImage:1,
+                animationImageMoving:"none",
+                durationEffectImageMoving:1,
+                translateEffectImageMoving:0,
+                spikeMask:0,
+                spikeLeftWidth:0,
+                spikeMaskRight:"none",
+                spikeRightWidth:0,
+                imageFilter:"none",
+                imageLink:"none",
+                linkUrlImage:"",
+                linkTargetImage:"_self",
+                linkRelImage:"",
+                scrollToIdImage:"",
+                enableDesktopImage:true,
+                enableTabletImage:true,
+                enableMobileImage:true,
+                imageColorHover:"",
+                borderStyleHoverImage:"none",
+                backgroundBorderColorHoverImage:"",
+                opacityHoverImage:1,
+                rotateHoverImage:0,
+                animationImageMovingHover:"none",
+                durationEffectImageMovingHover:1,
+                translateEffectImageMovingHover:0,
+                animationHoverImage:"none",
+                durationEffectHoverImage:1,
+                effectHoverColorHoverImage:"",
+                translateEffectHoverImage:0,
+                colorShadowImage:"",
+                boxShadowXImage:0,
+                boxShadowYImage:0,
+                boxShadowBlurImage:0,
+                boxShadowSpreadImage:0,
+                parallaxImage: 0,
+                parallaxImageY: 0,
+                parallaxImageScale: 1,
+                parallaxImageOpacity: 1,
+                parallaxImageDuration: 100,
+                interationImage:"forwards"
               },
             ],
           }
@@ -780,71 +920,6 @@ export default function Edit({ attributes, setAttributes }) {
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
 
-  // Panel Slide
-  const [selectedPanel, setSelectedPanel] = useState(null);
-  const [primaryColor, setPrimaryColor] = useState("");
-  const swiperRef = useRef(null); // Riferimento a Swiper
-
-  useEffect(() => {
-    // Recupera il valore della variabile CSS --primary-color
-    const root = document.querySelector(":root");
-    const color = getComputedStyle(root).getPropertyValue("--primary-color");
-    setPrimaryColor(color.trim());
-  }, []);
-
-  const handlePanelSelect = (panelId) => {
-    setSelectedPanel((prevPanel) => (prevPanel === panelId ? null : panelId));
-    // Trova l'indice della slide corrispondente
-    const slideIndex = slides.findIndex((slide) => slide.id === panelId);
-    if (swiperRef.current && slideIndex !== -1) {
-      swiperRef.current.swiper.slideTo(slideIndex); // Naviga alla slide
-    }
-  };
-
-  const renderCircle = (panelId) => {
-    const isSelected = selectedPanel === panelId;
-    const circleStyle = {
-      display: "inline-block",
-      width: "12px",
-      height: "12px",
-      borderRadius: "3px",
-      border: `2px solid ${primaryColor}`,
-      backgroundColor: isSelected ? primaryColor : "transparent",
-      marginRight: "8px",
-      transition: "transform 0.3s, background-color 0.3s",
-      transform: isSelected ? "scale(1.2)" : "scale(1)",
-    };
-
-    return <span style={circleStyle}></span>;
-  };
-
-  useEffect(() => {
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        const popovers = document.querySelectorAll(
-          ".components-dropdown-menu__popover .components-popover__content"
-        );
-        popovers.forEach((popover) => {
-          // Aggiungi la tua classe personalizzata
-          if (!popover.classList.contains("slide-popover-class")) {
-            popover.classList.add("slide-popover-class");
-          }
-        });
-      });
-    });
-
-    // Osserva il body per aggiungere la classe personalizzata ai nuovi popover
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    // Cleanup
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   // Navigation
   const stylesNavigation = {
     "--background-color-nav": navBackgroundColor,
@@ -884,7 +959,7 @@ export default function Edit({ attributes, setAttributes }) {
     !navigationTablet ? "nav-tablet" : ""
   } ${!navigationMobile ? "nav-mobile" : ""}`;
 
-  // Pagination
+  // Pagination end other
   const stylesPagination = {
     "--swiper-pagination-color": bulletColor,
     "--swiper-pagination-fraction-color": bulletColor,
@@ -912,6 +987,13 @@ export default function Edit({ attributes, setAttributes }) {
     "--swiper-scrollbar-border-radius": radiusScrollbar + "px",
     /* Autoplay Progress */
     "--swiper-autoplay-progress-color": autoplayProgressColor,
+    border: backgroundBorderSize + "px solid " + backgroundBorderColor,
+    borderRadius: backgroundBorderRadius + "px",
+    padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
+    backgroundColor: backgroundColor,
+    "--color-one-effect": colorOneEffect,
+    "--color-two-effect": colorTwoEffect,
+    "--color-three-effect": colorThreeEffect,
   };
 
   // Autoplay
@@ -961,40 +1043,6 @@ export default function Edit({ attributes, setAttributes }) {
     setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
   };
 
-  useEffect(() => {
-    slides.forEach((slide) => {
-      slide.elements.forEach((element) => {
-        if (
-          element.type === "title" &&
-          !["Arial", "Georgia", "Courier New", "Roboto", "Open Sans"].includes(
-            element.fontFamily
-          )
-        ) {
-          loadGoogleFont(element.fontFamily);
-        }
-      });
-    });
-  }, [slides]);
-
-  const loadGoogleFont = (fontFamily) => {
-    if (!fontFamily) return;
-
-    // Verifica se il font è già caricato
-    if (
-      document.querySelector(`link[href*="${fontFamily.replace(" ", "+")}"]`)
-    ) {
-      return;
-    }
-
-    const link = document.createElement("link");
-    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(
-      " ",
-      "+"
-    )}:wght@400;700&display=swap`;
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-  };
-
   // Section slide
   const [activeSection, setActiveSection] = useState("content");
   // Section slides
@@ -1003,7 +1051,7 @@ export default function Edit({ attributes, setAttributes }) {
   const [activeSectionImage, setActiveSectionImage] = useState("content");
   // Section Block
   const [activeSectionBlock, setActiveSectionBlock] = useState("content");
-
+  
   return (
     <>
       <InspectorControls>
@@ -1945,454 +1993,25 @@ export default function Edit({ attributes, setAttributes }) {
                                 handleTabletClick={handleTabletClick}
                                 handleMobileClick={handleMobileClick}
                                 showOtherButtons={showOtherButtons}
+                               attributes={attributes}
                               />
+                              
                             </>
                           )}
                           {element.type === "div" && (
-                            <>
-                              <div className="custom-block-added">
-                                <div className="divider-controls"></div>
-                                <div className="title-block-added">
-                                  <div className="title-element">
-                                    <Button
-                                      onClick={() =>
-                                        removeSlideDiv(slide.id, elementIndex)
-                                      }
-                                      style={{
-                                        position: "absolute",
-                                        right: "80px",
-                                        top: "10px",
-                                      }}
-                                      isDestructive
-                                      icon={trash}
-                                      label={__("Remove block", "cocoblocks")}
-                                      className="button-remove-element"
-                                    />
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      height="24px"
-                                      viewBox="0 -960 960 960"
-                                      width="24px"
-                                      fill="#e8eaed"
-                                    >
-                                      <path d="M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
-                                    </svg>
-                                    <h2>{__("Block", "slider")}</h2>
-                                  </div>
-                                </div>
-                                <SectionSelectorBlock
-                                  onSectionChange={setActiveSectionBlock}
-                                />
-                                {activeSectionBlock === "style" && (
-                                  <>
-                                    <div
-                                      className="content-title-custom-panel intermedy"
-                                      style={{
-                                        marginTop: "-18px",
-                                      }}
-                                    >
-                                      <h2 className="title-custom-panel">
-                                        {__("Background", "cocoblocks")}
-                                      </h2>
-                                    </div>
-                                    <div
-                                      className="content-section-panel"
-                                      style={{ padding: "0" }}
-                                    >
-                                      <div className="custom-select color">
-                                        <ColorOptionsPanel
-                                          colorNormal={element.backgroundColor}
-                                          setColorNormal={(newColor) =>
-                                            updateDivBackgroundColor(
-                                              slide.id,
-                                              elementIndex,
-                                              newColor
-                                            )
-                                          }
-                                          buttonTitle={__(
-                                            "Background Color",
-                                            "cocoblocks"
-                                          )}
-                                          buttonIcon="admin-customizer"
-                                        />
-                                      </div>
-                                    </div>
-                                    <div className="content-title-custom-panel intermedy">
-                                      <h2 className="title-custom-panel">
-                                        {__("Layout", "cocoblocks")}
-                                      </h2>
-                                    </div>
-                                    <div
-                                      className="content-section-panel"
-                                      style={{ padding: "0" }}
-                                    >
-                                      <div className="custom-select">
-                                        <SelectControl
-                                          label={
-                                            <>
-                                              <Icon
-                                                icon="screenoptions"
-                                                style={{
-                                                  marginRight: "5px",
-                                                  width: "16px",
-                                                  height: "16px",
-                                                  fontSize: "16px",
-                                                }}
-                                              />
-                                              {__(
-                                                "Content direction",
-                                                "cocoblocks"
-                                              )}
-                                            </>
-                                          }
-                                          value={slide.layoutDiv}
-                                          options={[
-                                            {
-                                              label: __("Column", "slider"),
-                                              value: "vertical",
-                                            },
-                                            {
-                                              label: __("Row", "slider"),
-                                              value: "horizontal",
-                                            },
-                                          ]}
-                                          onChange={(newLayoutDiv) =>
-                                            updateSlideLayoutDiv(
-                                              slide.id,
-                                              newLayoutDiv
-                                            )
-                                          }
-                                        />
-                                      </div>
-                                      <div className="custom-select">
-                                        <RangeControl
-                                          label={
-                                            <>
-                                              <Icon
-                                                icon="image-flip-horizontal"
-                                                style={{
-                                                  marginRight: "5px",
-                                                  width: "16px",
-                                                  height: "16px",
-                                                  fontSize: "16px",
-                                                }}
-                                              />
-                                              {__(
-                                                "Gap between items",
-                                                "cocoblocks"
-                                              )}
-                                            </>
-                                          }
-                                          value={slide.gapItemsDiv}
-                                          onChange={(newGapItemsDiv) =>
-                                            updateSlideGapItemsDiv(
-                                              slide.id,
-                                              newGapItemsDiv
-                                            )
-                                          }
-                                          min={0}
-                                          max={256}
-                                          step={1}
-                                        />
-                                      </div>
-                                      <div className="custom-select">
-                                        <AlignmentControl
-                                          value={slide.positionDiv}
-                                          onChange={(newPositionDiv) =>
-                                            updateSlidePositionDiv(
-                                              slide.id,
-                                              newPositionDiv
-                                            )
-                                          }
-                                        />
-                                      </div>
-                                    </div>
-                                    <div className="content-title-custom-panel intermedy">
-                                      <h2 className="title-custom-panel">
-                                        {__("Border", "cocoblocks")}
-                                      </h2>
-                                    </div>
-                                    <div
-                                      className="content-section-panel"
-                                      style={{ padding: "0" }}
-                                    >
-                                      <div className="custom-select">
-                                        <RangeControl
-                                          label={
-                                            <>
-                                              <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                height="18px"
-                                                viewBox="0 -960 960 960"
-                                                width="18px"
-                                                fill="#e8eaed"
-                                                style={{
-                                                  marginRight: "4px",
-                                                  marginLeft: "-2px",
-                                                  marginBottom: "-4px",
-                                                }}
-                                              >
-                                                <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
-                                              </svg>
-                                              {__("Border width", "cocoblocks")}
-                                            </>
-                                          }
-                                          value={slide.backgroundBorderSizeDiv}
-                                          onChange={(newSizeDiv) =>
-                                            updateSlideBackgroundBorderSizeDiv(
-                                              slide.id,
-                                              newSizeDiv
-                                            )
-                                          }
-                                          min={0}
-                                          max={20}
-                                          step={1}
-                                        />
-                                      </div>
-                                      <div className="custom-select color">
-                                        <ColorOptionsPanel
-                                          colorNormal={
-                                            slide.backgroundBorderColorDiv
-                                          }
-                                          setColorNormal={(colorDiv) =>
-                                            updateSlideBackgroundBorderColorDiv(
-                                              slide.id,
-                                              colorDiv
-                                            )
-                                          }
-                                          buttonTitle={__(
-                                            "Border Color",
-                                            "cocoblocks"
-                                          )}
-                                          buttonIcon={
-                                            <svg
-                                              xmlns="http://www.w3.org/2000/svg"
-                                              viewBox="0 -960 960 960"
-                                              fill="#e8eaed"
-                                              style={{
-                                                marginRight: "3px",
-                                                height: "16px",
-                                                width: "16px",
-                                              }}
-                                            >
-                                              <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z" />
-                                            </svg>
-                                          }
-                                        />
-                                      </div>
-                                      <div className="custom-select">
-                                        <RangeControl
-                                          label={
-                                            <>
-                                              <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                height="18px"
-                                                viewBox="0 -960 960 960"
-                                                width="18px"
-                                                fill="#e8eaed"
-                                                style={{
-                                                  marginRight: "4px",
-                                                  marginLeft: "-2px",
-                                                  marginBottom: "-4px",
-                                                }}
-                                              >
-                                                <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
-                                              </svg>
-                                              {__(
-                                                "Border radius",
-                                                "cocoblocks"
-                                              )}
-                                            </>
-                                          }
-                                          value={
-                                            slide.backgroundBorderRadiusDiv
-                                          }
-                                          onChange={(newRadiusDiv) =>
-                                            updateSlideBackgroundBorderRadiusDiv(
-                                              slide.id,
-                                              newRadiusDiv
-                                            )
-                                          }
-                                          min={0}
-                                          max={256}
-                                          step={1}
-                                        />
-                                      </div>
-                                    </div>
-                                    <div className="content-title-custom-panel intermedy">
-                                      <h2 className="title-custom-panel">
-                                        {__("Spacings", "cocoblocks")}
-                                      </h2>
-                                    </div>
-                                    <div
-                                      className="content-section-panel"
-                                      style={{ padding: "0" }}
-                                    >
-                                      <div className="custom-select">
-                                        <RangeControl
-                                          label={
-                                            <>
-                                              <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                height="18px"
-                                                viewBox="0 -960 960 960"
-                                                width="18px"
-                                                fill="#e8eaed"
-                                                style={{
-                                                  marginRight: "4px",
-                                                  marginLeft: "-2px",
-                                                  marginBottom: "-4px",
-                                                }}
-                                              >
-                                                <path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z" />
-                                              </svg>
-                                              {__(
-                                                "Content vertical padding",
-                                                "cocoblocks"
-                                              )}
-                                            </>
-                                          }
-                                          value={
-                                            slide.backgroundVerticalPaddingDiv
-                                          }
-                                          onChange={(newVerticalPaddingDiv) =>
-                                            updateSlideBackgroundVerticalPaddingDiv(
-                                              slide.id,
-                                              newVerticalPaddingDiv
-                                            )
-                                          }
-                                          min={0}
-                                          max={256}
-                                          step={1}
-                                        />
-                                      </div>
-                                      <div className="custom-select">
-                                        <RangeControl
-                                          label={
-                                            <>
-                                              <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                height="18px"
-                                                viewBox="0 -960 960 960"
-                                                width="18px"
-                                                fill="#e8eaed"
-                                                style={{
-                                                  marginRight: "4px",
-                                                  marginLeft: "-2px",
-                                                  marginBottom: "-4px",
-                                                  transform: "rotate(90deg)",
-                                                }}
-                                              >
-                                                <path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z" />
-                                              </svg>
-                                              {__(
-                                                "Content horizontal padding",
-                                                "cocoblocks"
-                                              )}
-                                            </>
-                                          }
-                                          value={
-                                            slide.backgroundHorizontalPaddingDiv
-                                          }
-                                          onChange={(newHorizontalPaddingDiv) =>
-                                            updateSlideBackgroundHorizontalPaddingDiv(
-                                              slide.id,
-                                              newHorizontalPaddingDiv
-                                            )
-                                          }
-                                          min={0}
-                                          max={256}
-                                          step={1}
-                                        />
-                                      </div>
-                                    </div>
-                                  </>
-                                )}
-                                {element.innerTextDivs &&
-                                  element.innerTextDivs.map(
-                                    (textDiv, textIndex) => (
-                                      <div key={textIndex}>
-                                        <TextControlsBlock
-                                          slide={slide}
-                                          slides={slides}
-                                          textDiv={textDiv}
-                                          element={element}
-                                          textIndex={textIndex}
-                                          elementIndex={elementIndex}
-                                          setAttributes={setAttributes}
-                                          setActiveSection={setActiveSection}
-                                          activeSection={activeSection}
-                                          parallax={parallax}
-                                          device={device}
-                                          handleDesktopClick={
-                                            handleDesktopClick
-                                          }
-                                          handleTabletClick={handleTabletClick}
-                                          handleMobileClick={handleMobileClick}
-                                          showOtherButtons={showOtherButtons}
-                                        />
-                                      </div>
-                                    )
-                                  )}
-
-                                {element.innerImageDivs &&
-                                  element.innerImageDivs.map(
-                                    (imageDiv, imageIndex) => (
-                                      <div key={imageIndex}>
-                                        <ImageControlsBlock
-                                          slide={slide}
-                                          slides={slides}
-                                          element={element}
-                                          divIndex={elementIndex}
-                                          elementIndex={elementIndex}
-                                          imageDiv={imageDiv}
-                                          imageIndex={imageIndex}
-                                          setAttributes={setAttributes}
-                                          setActiveSectionImage={
-                                            setActiveSectionImage
-                                          }
-                                          activeSectionImage={
-                                            activeSectionImage
-                                          }
-                                          parallax={parallax}
-                                        />
-                                      </div>
-                                    )
-                                  )}
-                                <div
-                                  className="button-add-element"
-                                  style={{ paddingBottom: "12px" }}
-                                >
-                                  <Button
-                                    onClick={() =>
-                                      addSlideTitleDiv(slide.id, elementIndex)
-                                    }
-                                    label={__("Add inner text", "slide")}
-                                  >
-                                    <svg
-                                      fill="currentcolor"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="20px"
-                                      height="20px"
-                                      viewBox="0 0 56 56"
-                                    >
-                                      <path d="M 16.2929 29.6406 C 22.7617 29.6406 28.1992 24.2266 28.1992 17.7109 C 28.1992 11.1953 22.8320 5.8047 16.2929 5.8047 C 9.7773 5.8047 4.3867 11.1953 4.3867 17.7109 C 4.3867 24.2734 9.7773 29.6406 16.2929 29.6406 Z M 33.8008 13.3750 L 49.8085 13.3750 C 50.8165 13.3750 51.6133 12.6015 51.6133 11.5937 C 51.6133 10.6094 50.8165 9.8359 49.8085 9.8359 L 33.8008 9.8359 C 32.7929 9.8359 32.0195 10.6094 32.0195 11.5937 C 32.0195 12.6015 32.7929 13.3750 33.8008 13.3750 Z M 16.3164 25.4453 C 15.4960 25.4453 14.7695 24.8828 14.7695 24.0156 L 14.7695 19.1406 L 10.2929 19.1406 C 9.4960 19.1406 8.8398 18.4844 8.8398 17.7109 C 8.8398 16.9375 9.4960 16.2812 10.2929 16.2812 L 14.7695 16.2812 L 14.7695 11.4297 C 14.7695 10.5390 15.4960 10.0000 16.3164 10.0000 C 17.1367 10.0000 17.8398 10.5390 17.8398 11.4297 L 17.8398 16.2812 L 22.3164 16.2812 C 23.1132 16.2812 23.7695 16.9375 23.7695 17.7109 C 23.7695 18.4844 23.1132 19.1406 22.3164 19.1406 L 17.8398 19.1406 L 17.8398 24.0156 C 17.8398 24.8828 17.1367 25.4453 16.3164 25.4453 Z M 33.8008 25.6563 L 49.8085 25.6563 C 50.8165 25.6563 51.6133 24.8828 51.6133 23.8750 C 51.6133 22.8906 50.8165 22.1172 49.8085 22.1172 L 33.8008 22.1172 C 32.7929 22.1172 32.0195 22.8906 32.0195 23.8750 C 32.0195 24.8828 32.7929 25.6563 33.8008 25.6563 Z M 6.1679 37.9375 L 49.8085 37.9375 C 50.8165 37.9375 51.6133 37.1406 51.6133 36.1563 C 51.6133 35.1719 50.8165 34.3984 49.8085 34.3984 L 6.1679 34.3984 C 5.1601 34.3984 4.3867 35.1719 4.3867 36.1563 C 4.3867 37.1406 5.1601 37.9375 6.1679 37.9375 Z M 6.1679 50.1953 L 49.8085 50.1953 C 50.8165 50.1953 51.6133 49.4219 51.6133 48.4375 C 51.6133 47.4531 50.8165 46.6562 49.8085 46.6562 L 6.1679 46.6562 C 5.1601 46.6562 4.3867 47.4531 4.3867 48.4375 C 4.3867 49.4219 5.1601 50.1953 6.1679 50.1953 Z"></path>
-                                    </svg>
-                                  </Button>
-                                  <Button
-                                    onClick={() =>
-                                      addSlideImageDiv(slide.id, elementIndex)
-                                    } // Assicurati di passare elementIndex o divIndex
-                                    label={__("Add inner image", "slide")}
-                                  >
-                                    <span class="dashicons dashicons-format-image"></span>
-                                  </Button>
-                                </div>
-                              </div>
-                            </>
+                            <DivControls
+                              slide={slide}
+                              slides={slides}
+                              element={element}
+                              elementIndex={elementIndex}
+                              setAttributes={setAttributes}
+                              setActiveSectionBlock={setActiveSectionBlock}
+                              activeSectionBlock={activeSectionBlock}
+                              parallax={parallax}
+                              attributes={attributes}
+                            />
                           )}
                           {element.type === "image" && (
-                            <>
                               <ImageControls
                                 slide={slide}
                                 slides={slides}
@@ -2402,8 +2021,8 @@ export default function Edit({ attributes, setAttributes }) {
                                 setActiveSectionImage={setActiveSectionImage}
                                 activeSectionImage={activeSectionImage}
                                 parallax={parallax}
+                                attributes={attributes}
                               />
-                            </>
                           )}
                         </div>
                       ))}
@@ -2438,7 +2057,6 @@ export default function Edit({ attributes, setAttributes }) {
                     </div>
                   </PanelBody>
                 ))}
-
                 <div id="controls" className="button-add-slide">
                   <div className="content-button-slide">
                     <svg
@@ -2506,7 +2124,7 @@ export default function Edit({ attributes, setAttributes }) {
           }}
           autoplay={autoplayConfig}
           onAutoplayTimeLeft={autoplayProgress ? onAutoplayTimeLeft : undefined}
-          className="slider-builder"
+          className={"slider-builder "+filter}
           dir={languageSlider}
           direction={directionSlider}
           effect={effect}
@@ -2640,6 +2258,8 @@ export default function Edit({ attributes, setAttributes }) {
                       "swiper-slide " +
                       slide.position +
                       " " +
+                      overflow +
+                      " " +
                       slide.layout +
                       "-layout"
                     }
@@ -2692,8 +2312,9 @@ export default function Edit({ attributes, setAttributes }) {
                         : "none",
                     }}
                   >
-                    {slide.backgroundType === "video" &&
-                      slide.backgroundVideo && (
+                    {slide.backgroundType === "video" && (
+                    <>
+                      {slide.backgroundVideo && (
                         <video
                           src={slide.backgroundVideo}
                           autoPlay
@@ -2715,337 +2336,18 @@ export default function Edit({ attributes, setAttributes }) {
                           }}
                         />
                       )}
+                    </>
+                    )}
+                    
                     {slide.elements.map((element, index) => {
-                      // Styles Title
-                      const stylesTitle = {
-                        fontSize: element.fontSize + "px",
-                        "--font-size-tablet": element.fontSizeTablet + "px",
-                        "--font-size-mobile": element.fontSizeMobile + "px",
-                        color: element.textColor,
-                        textAlign: element.textAlign,
-                        fontStyle: element.fontStyle?.fontStyle || "normal", // Valore di default
-                        fontWeight: element.fontStyle?.fontWeight || "normal", // Valore di default
-                        textDecoration:
-                          element.fontStyle?.textDecoration || "none", // Valore di default
-                        lineHeight: element.lineHeight,
-                        width: "100%",
-                        fontFamily: element.fontFamily,
-                        margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`, // Usa i valori aggi
-                      };
-                      const Tag = element.elementTitle || "h3";
-
-                      const getStylesTitleBlock = (textDiv) => ({
-                        fontSize: textDiv.fontSize
-                          ? `${textDiv.fontSize}px`
-                          : "16px",
-                        "--font-size-block-tablet": textDiv.fontSizeTablet
-                          ? `${textDiv.fontSizeTablet}px`
-                          : "14px",
-                        "--font-size-block-mobile": textDiv.fontSizeMobile
-                          ? `${textDiv.fontSizeMobile}px`
-                          : "12px",
-                        color: textDiv.textColor || "#000000",
-                        textAlign: textDiv.textAlign || "left",
-                        fontStyle: textDiv.fontStyle?.fontStyle || "normal",
-                        fontWeight: textDiv.fontStyle?.fontWeight || "normal",
-                        textDecoration:
-                          textDiv.fontStyle?.textDecoration || "none",
-                        lineHeight: textDiv.lineHeight
-                          ? `${textDiv.lineHeight}`
-                          : "1.5",
-                        width: "100%", // Mantiene la larghezza al 100%
-                        fontFamily: textDiv.fontFamily || "inherit", // Inherit se non specificato
-                        margin: textDiv.marginTitle
-                          ? `${textDiv.marginTitle.top} ${textDiv.marginTitle.right} ${textDiv.marginTitle.bottom} ${textDiv.marginTitle.left}`
-                          : "0",
-                        padding: textDiv.padding || "0", // Mantiene il padding come nell'originale
-                      });
-
-                      // Definizione della funzione getImageStyleBlock
-                      const getImageStyleBlock = (imageDiv) => {
-                        let style = {
-                          maxWidth: "100%",
-                          minWidth: "0",
-                          maxHeight: "100%",
-                          minHeight: "0",
-                          border:
-                            imageDiv.backgroundBorderSizeImage +
-                            "px solid" +
-                            imageDiv.backgroundBorderColorImage,
-                          borderRadius:
-                            imageDiv.backgroundBorderRadiusImage + "px",
-                          padding: imageDiv.paddingImage + "px",
-                          backgroundColor: imageDiv.backgroundColorImage,
-                          margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`,
-                        };
-
-                        if (imageDiv.widthImage === "relative") {
-                          style.width = `${imageDiv.customWidthImage}%`;
-                        } else if (imageDiv.widthImage === "fixed") {
-                          style.width = `${imageDiv.customWidthImagePx}px`;
-                        }
-
-                        if (imageDiv.heightImage === "relative") {
-                          style.height = `${imageDiv.customHeightImage}%`;
-                        } else if (imageDiv.heightImage === "fixed") {
-                          style.height = `${imageDiv.customHeightImagePx}px`;
-                        }
-
-                        if (
-                          imageDiv.widthImage !== "auto" ||
-                          imageDiv.heightImage !== "auto"
-                        ) {
-                          style.objectFit = imageDiv.fit;
-                        }
-
-                        return style;
-                      };
-
-                      const splitTextIntoLetters = (
-                        text = "",
-                        animation = ""
-                      ) => {
-                        // Se l'animazione è "bounce", suddividi il testo in lettere
-                        if (animation === "bounce") {
-                          return text.split("").map((letter, index) => (
-                            <span key={index} className={`letter ${animation}`}>
-                              {letter}
-                            </span>
-                          ));
-                        }
-
-                        // Se l'animazione non è "bounce", restituisci il testo intero
-                        return text;
-                      };
-
+                 
                       switch (element.type) {
                         case "title":
-                          return (
-                            <div
-                              style={{
-                                transform: `rotate(${element.rotate}deg)`,
-                                opacity: element.opacity,
-                              }}
-                              className="underline-effect"
-                            >
-                              <Tag
-                                key={index}
-                                className={`title-slide letter ${element.animation}`}
-                                style={stylesTitle}
-                                data-swiper-parallax-x={element.parallaxTitle}
-                                data-swiper-parallax-y={element.parallaxTitleY}
-                                data-swiper-parallax-scale={
-                                  element.parallaxTitleScale
-                                }
-                                data-swiper-parallax-duration={
-                                  element.parallaxTitleDuration
-                                }
-                                data-swiper-parallax-opacity={
-                                  element.parallaxTitleOpacity
-                                }
-                              >
-                                {splitTextIntoLetters(
-                                  element.text,
-                                  element.animation
-                                )}
-                              </Tag>
-                            </div>
-                          );
-
-                        case "div":
-                          return (
-                            <div
-                              className={
-                                "div-slide " +
-                                slide.positionDiv +
-                                " " +
-                                slide.layoutDiv +
-                                "-layout"
-                              }
-                              key={index}
-                              style={{
-                                backgroundColor:
-                                  element.backgroundColor || "transparent",
-                                width: "100%",
-                                display: "flex",
-                                flexDirection:
-                                  slide.layoutDiv === "horizontal"
-                                    ? "row"
-                                    : "column",
-                                textAlign: "center",
-                                width: "100%",
-                                position: "relative",
-                                visibility: "visible",
-                                gap: slide.gapItemsDiv + "px",
-                                borderRadius:
-                                  slide.backgroundBorderRadiusDiv + "px",
-                                paddingTop:
-                                  slide.backgroundVerticalPaddingDiv + "px",
-                                paddingBottom:
-                                  slide.backgroundVerticalPaddingDiv + "px",
-                                paddingLeft:
-                                  slide.backgroundHorizontalPaddingDiv + "px",
-                                paddingRight:
-                                  slide.backgroundHorizontalPaddingDiv + "px",
-                                border: slide.backgroundBorderColorDiv
-                                  ? `${slide.backgroundBorderSizeDiv}px solid ${slide.backgroundBorderColorDiv}`
-                                  : "none",
-                              }}
-                            >
-                              {element.innerTextDivs &&
-                              element.innerTextDivs.length > 0
-                                ? element.innerTextDivs.map(
-                                    (textDiv, textIndex) => {
-                                      // Definisci il tag dinamico
-                                      const TagBlock =
-                                        textDiv.elementTitle || "h3";
-
-                                      return (
-                                        <div
-                                          style={{
-                                            transform: `rotate(${textDiv.rotate}deg)`,
-                                            opacity: textDiv.opacity,
-                                          }}
-                                          className="underline-effect"
-                                        >
-                                          <TagBlock
-                                            key={textIndex}
-                                            className={`title-slide letter ${textDiv.animation}`}
-                                            style={getStylesTitleBlock(textDiv)}
-                                            data-swiper-parallax-x={
-                                              textDiv.parallaxTitle
-                                            }
-                                            data-swiper-parallax-y={
-                                              textDiv.parallaxTitleY
-                                            }
-                                            data-swiper-parallax-scale={
-                                              textDiv.parallaxTitleScale
-                                            }
-                                            data-swiper-parallax-duration={
-                                              textDiv.parallaxTitleDuration
-                                            }
-                                            data-swiper-parallax-opacity={
-                                              textDiv.parallaxTitleOpacity
-                                            }
-                                          >
-                                            {splitTextIntoLetters(
-                                              textDiv.content,
-                                              textDiv.animation
-                                            )}
-                                          </TagBlock>
-                                        </div>
-                                      );
-                                    }
-                                  )
-                                : null}
-
-                              {element.innerImageDivs &&
-                              element.innerImageDivs.length > 0
-                                ? element.innerImageDivs.map(
-                                    (imageDiv, imageIndex) => (
-                                      <div 
-                                        style={{
-                                          transform: `rotate(${imageDiv.rotateImage}deg)`,
-                                          opacity: imageDiv.opacityImage,
-                                        }}
-                                        className="moving-background"
-                                      >
-                                        <img
-                                          key={imageIndex}
-                                          src={imageDiv.imageUrl}
-                                          alt={imageDiv.alt}
-                                          style={getImageStyleBlock(imageDiv)}
-                                          className={`image-with-mask ${imageDiv.blobMask}`}
-                                          data-swiper-parallax-x={
-                                            imageDiv.parallaxImage
-                                          }
-                                          data-swiper-parallax-y={
-                                            imageDiv.parallaxImageY
-                                          }
-                                          data-swiper-parallax-scale={
-                                            imageDiv.parallaxImageScale
-                                          }
-                                          data-swiper-parallax-duration={
-                                            imageDiv.parallaxImageDuration
-                                          }
-                                          data-swiper-parallax-opacity={
-                                            imageDiv.parallaxImageOpacity
-                                          }
-                                        />
-                                      </div>
-                                    )
-                                  )
-                                : null}
-                            </div>
-                          );
+                          return <TextComponent element={element} index={index} />;
                         case "image":
-                          const getImageStyle = () => {
-                            let style = {
-                              maxWidth: "100%",
-                              minWidth: "0",
-                              maxHeight: "100%",
-                              minHeight: "0",
-                              border:
-                                element.backgroundBorderSizeImage +
-                                "px solid" +
-                                element.backgroundBorderColorImage,
-                              borderRadius:
-                                element.backgroundBorderRadiusImage + "px",
-                              padding: element.paddingImage + "px",
-                              backgroundColor: element.backgroundColorImage,
-                              margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`, // Usa i valori aggi
-                            };
-
-                            if (element.widthImage === "relative") {
-                              style.width = `${element.customWidthImage}%`;
-                            } else if (element.widthImage === "fixed") {
-                              style.width = `${element.customWidthImagePx}px`;
-                            }
-
-                            if (element.heightImage === "relative") {
-                              style.height = `${element.customHeightImage}%`;
-                            } else if (element.heightImage === "fixed") {
-                              style.height = `${element.customHeightImagePx}px`;
-                            }
-
-                            // Applica object-fit solo se width o height sono relative o fixed
-                            if (
-                              element.widthImage !== "auto" ||
-                              element.heightImage !== "auto"
-                            ) {
-                              style.objectFit = element.fit;
-                            }
-
-                            return style;
-                          };
-                          return (
-                            <div
-                              style={{
-                                transform: `rotate(${element.rotateImage}deg)`,
-                                opacity: element.opacityImage,
-                              }}
-                              className="moving-background"
-                            >
-                              <img
-                                key={index}
-                                src={element.url}
-                                alt={element.alt}
-                                style={getImageStyle()}
-                                className={`image-with-mask ${element.blobMask}`}
-                                data-swiper-parallax-x={element.parallaxImage}
-                                data-swiper-parallax-y={element.parallaxImageY}
-                                data-swiper-parallax-scale={
-                                  element.parallaxImageScale
-                                }
-                                data-swiper-parallax-duration={
-                                  element.parallaxImageDuration
-                                }
-                                data-swiper-parallax-opacity={
-                                  element.parallaxImageOpacity
-                                }
-                              />
-                            </div>
-                          );
+                          return <ImageComponent element={element} index={index} />;
+                        case "div":
+                          return <DivComponent element={element} index={index} />;
                         default:
                           return null;
                       }
@@ -3066,262 +2368,19 @@ export default function Edit({ attributes, setAttributes }) {
               <span ref={progressContent}></span>
             </div>
           )}
+          <div className="filter-slider"></div>
         </Swiper>
-
-        {navigation && (
-          <>
-            {/* Pulsante Avanti */}
-            <div
-              ref={nextRef}
-              className={swiperButtonNextClasses}
-              style={stylesNavigation}
-            >
-              {navigationIcons === "default" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={sizeNav + "px"}
-                  height={sizeNav + "px"}
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <mask
-                    id="a"
-                    width={sizeNav + "px"}
-                    height={sizeNav + "px"}
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <path fill={navColor} d="M0 0h24v24H0z" />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path
-                      fill={navColor}
-                      d="M9.4 17.654 8.346 16.6l4.6-4.6-4.6-4.6L9.4 6.346 15.054 12 9.4 17.654Z"
-                    />
-                  </g>
-                </svg>
-              )}
-              {navigationIcons === "one" && (
-                <svg
-                  width={sizeNav + "px"}
-                  height={sizeNav + "px"}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_7_1879"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width={sizeNav + "px"}
-                    height={sizeNav + "px"}
-                  >
-                    <rect
-                      width={sizeNav + "px"}
-                      height={sizeNav + "px"}
-                      fill={navColor}
-                    />
-                  </mask>
-                  <g mask="url(#mask0_7_1879)">
-                    <path
-                      d="M14.05 17.65L13 16.575L16.825 12.75H4.29999V11.25H16.825L13 7.42501L14.05 6.35001L19.7 12L14.05 17.65Z"
-                      fill={navColor}
-                    />
-                  </g>
-                </svg>
-              )}
-              {navigationIcons === "two" && (
-                <svg
-                  width={sizeNav + "px"}
-                  height={sizeNav + "px"}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_315_300"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width={sizeNav + "px"}
-                    height={sizeNav + "px"}
-                  >
-                    <rect
-                      width={sizeNav + "px"}
-                      height={sizeNav + "px"}
-                      fill={navColor}
-                    />
-                  </mask>
-                  <g mask="url(#mask0_315_300)">
-                    <path
-                      d="M17.5 16.1538L16.4308 15.1L18.7808 12.75H3.25003V11.25H18.7808L16.4462 8.89999L17.5154 7.84616L21.6538 12L17.5 16.1538Z"
-                      fill={navColor}
-                    />
-                  </g>
-                </svg>
-              )}
-              {navigationIcons === "three" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height={sizeNav + "px"}
-                  viewBox="0 -960 960 960"
-                  width={sizeNav + "px"}
-                  fill={navColor}
-                >
-                  <path d="M383-480 200-664l56-56 240 240-240 240-56-56 183-184Zm264 0L464-664l56-56 240 240-240 240-56-56 183-184Z" />
-                </svg>
-              )}
-              {navigationIcons === "four" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height={sizeNav + "px"}
-                  viewBox="0 -960 960 960"
-                  width={sizeNav + "px"}
-                  fill={navColor}
-                >
-                  <path d="M400-280v-400l200 200-200 200Z" />
-                </svg>
-              )}
-              {navigationIcons === "five" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height={sizeNav + "px"}
-                  viewBox="0 -960 960 960"
-                  width={sizeNav + "px"}
-                  fill={navColor}
-                >
-                  <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-                </svg>
-              )}
-              {navigationIcons === "text" && (
-                <span style={{ color: navColor, fontSize: sizeNav + "px" }}>
-                  {__("Next", "cocoblocks")}
-                </span>
-              )}
-            </div>
-
-            {/* Pulsante Precedente */}
-            <div
-              ref={prevRef}
-              className={swiperButtonPrevClasses}
-              style={stylesNavigation}
-            >
-              {navigationIcons === "default" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={sizeNav + "px"}
-                  height={sizeNav + "px"}
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <mask
-                    id="mask0_7_1873"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width={sizeNav + "px"}
-                    height={sizeNav + "px"}
-                  >
-                    <rect
-                      width={sizeNav + "px"}
-                      height={sizeNav + "px"}
-                      fill={navColor}
-                    />
-                  </mask>
-                  <g mask="url(#mask0_7_1873)">
-                    <path
-                      d="M14 17.6538L8.34619 12L14 6.34616L15.0538 7.39999L10.4538 12L15.0538 16.6L14 17.6538Z"
-                      fill={navColor}
-                    />
-                  </g>
-                </svg>
-              )}
-              {navigationIcons === "one" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height={sizeNav + "px"}
-                  viewBox="0 -960 960 960"
-                  width={sizeNav + "px"}
-                  fill={navColor}
-                >
-                  <path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z" />
-                </svg>
-              )}
-              {navigationIcons === "two" && (
-                <svg
-                  width={sizeNav + "px"}
-                  height={sizeNav + "px"}
-                  viewBox="0 0 26 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_433_1472"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width={sizeNav + "px"}
-                    height={sizeNav + "px"}
-                  >
-                    <path
-                      d="M0.97765 24.9757L24.9776 25.0244L25.0263 1.02446L1.02632 0.975799L0.97765 24.9757Z"
-                      fill={navColor}
-                    />
-                  </mask>
-                  <g mask="url(#mask0_433_1472)">
-                    <path
-                      d="M7.51041 8.83536L8.57747 9.89132L6.22271 12.2366L21.7534 12.268L21.7504 13.768L6.21966 13.7365L8.5495 16.0913L7.47816 17.1429L3.34819 12.9807L7.51041 8.83536Z"
-                      fill={navColor}
-                    />
-                  </g>
-                </svg>
-              )}
-              {navigationIcons === "three" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height={sizeNav + "px"}
-                  viewBox="0 -960 960 960"
-                  width={sizeNav + "px"}
-                  fill={navColor}
-                >
-                  <path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z" />
-                </svg>
-              )}
-              {navigationIcons === "four" && (
-                <svg
-                  width={sizeNav + "px"}
-                  height={sizeNav + "px"}
-                  viewBox="0 0 26 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.9723 7.98892L15.0277 17.9888L10.0001 13.0166L14.9723 7.98892Z"
-                    fill={navColor}
-                  />
-                </svg>
-              )}
-              {navigationIcons === "five" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height={sizeNav + "px"}
-                  viewBox="0 -960 960 960"
-                  width={sizeNav + "px"}
-                  fill={navColor}
-                >
-                  <path d="M200-440v-80h560v80H200Z" />
-                </svg>
-              )}
-              {navigationIcons === "text" && (
-                <span style={{ color: navColor, fontSize: sizeNav + "px" }}>
-                  {__("Prev", "cocoblocks")}
-                </span>
-              )}
-            </div>
-          </>
-        )}
+        <NavigationButtons
+            navigation={navigation}
+            nextRef={nextRef}
+            prevRef={prevRef}
+            swiperButtonNextClasses={swiperButtonNextClasses}
+            swiperButtonPrevClasses={swiperButtonPrevClasses}
+            stylesNavigation={stylesNavigation}
+            navigationIcons={navigationIcons}
+            navColor={navColor}
+            sizeNav={sizeNav}
+          />
       </div>
     </>
   );
