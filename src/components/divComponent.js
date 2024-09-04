@@ -1,9 +1,12 @@
+import { box } from "@wordpress/icons";
 import React from "react";
+import { useState, useEffect } from 'react';
 
-const DivComponent = ({ element, index }) => {
+const DivComponent = ({ element, index}) => {
 
-
-    const getStylesTitleBlock = (textDiv) => ({
+    const getStylesTitleBlock = (textDiv) => {
+      const isBold = textDiv.fontStyle?.fontWeight === "bold";
+      return {
         fontSize: textDiv.fontSize
           ? `${textDiv.fontSize}px`
           : "16px",
@@ -15,20 +18,39 @@ const DivComponent = ({ element, index }) => {
           : "12px",
         color: textDiv.textColor || "#000000",
         textAlign: textDiv.textAlign || "left",
+        letterSpacing: textDiv.letterSpacingTitleBlock + "px",
         fontStyle: textDiv.fontStyle?.fontStyle || "normal",
-        fontWeight: textDiv.fontStyle?.fontWeight || "normal",
+        fontWeight: isBold ? "bold" : textDiv.fontWeightTitleBlock || "normal",
         textDecoration:
           textDiv.fontStyle?.textDecoration || "none",
         lineHeight: textDiv.lineHeight
           ? `${textDiv.lineHeight}`
           : "1.5",
         width: "100%", // Mantiene la larghezza al 100%
-        fontFamily: textDiv.fontFamily || "inherit", // Inherit se non specificato
+        fontFamily: textDiv.fontFamilyTitleBlock || "inherit", // Inherit se non specificato
         margin: textDiv.marginTitle
           ? `${textDiv.marginTitle.top} ${textDiv.marginTitle.right} ${textDiv.marginTitle.bottom} ${textDiv.marginTitle.left}`
           : "0",
-        padding: textDiv.padding || "0", // Mantiene il padding come nell'originale
-      });
+          padding: `${textDiv.paddingTitleBlock?.top} ${textDiv.paddingTitleBlock?.right} ${textDiv.paddingTitleBlock?.bottom} ${textDiv.paddingTitleBlock?.left}`, // Usa i valori aggi
+          borderStyle: textDiv.borderStyle || "none",
+          borderWidth: `${textDiv.backgroundBorderSize}px` || 0,
+          borderColor: textDiv.backgroundBorderColor || "#000000",
+          borderRadius: `${textDiv.backgroundBorderRadius}px` || 0,
+          boxShadow: `${textDiv.boxShadowX}px ${textDiv.boxShadowY}px ${textDiv.boxShadowBlur}px ${textDiv.boxShadowSpread}px ${textDiv.colorShadow}` || "0 0 0 0 #000000",
+          writingMode: textDiv.textWriteMode || "initial",
+          textOrientation: textDiv.textOrientation || "initial",
+          "--interation-title-block": textDiv.iteration || "forwards",
+          "--duration-effect-title-block": textDiv.durationEffect + "s",
+          "--delay-effect-title-block": textDiv.delayEffect + "s",
+          "--duration-effect-odd-title-block": textDiv.durationEffectOdd + "s",
+          "--duration-effect-even-title-block": textDiv.durationEffectEven + "s",
+          "--color-gradient-one-title-div": textDiv.gradinetColorOne,
+          "--color-gradient-two-title-div": textDiv.gradinetColorTwo,
+          "--color-gradient-three-title-div": textDiv.gradinetColorThree,
+          "--color-gradient-four-title-div": textDiv.gradinetColorFour,
+          "--color-gradient-five-title-div": textDiv.gradinetColorFive,
+      };
+    };
 
       // Definizione della funzione getImageStyleBlock
       const getImageStyleBlock = (imageDiv) => {
@@ -81,7 +103,20 @@ const DivComponent = ({ element, index }) => {
           " " +
           element.layoutDiv +
           "-layout " +
-          element.animationDiv + element.playStateDiv
+          element.animationDiv + element.playStateDiv +
+          " " +
+          element.animationHoverDiv 
+        }
+        data-swiper-parallax-x={element.parallaxDiv}
+        data-swiper-parallax-y={element.parallaxDivY}
+        data-swiper-parallax-scale={
+            element.parallaxDivScale
+        }
+        data-swiper-parallax-duration={
+            element.parallaxDivDuration
+        }
+        data-swiper-parallax-opacity={
+            element.parallaxDivOpacity
         }
         key={index}
         style={{
@@ -123,6 +158,15 @@ const DivComponent = ({ element, index }) => {
             transform: `rotate(${element.rotateDiv}deg)`,
             "--duration-effect-div": element.durationEffectDiv + "s",
             "--interation-div": element.interationDiv || "forwards",
+            "--color-hover-div": element.divColorHover,
+            "--border-color-hover-div": element.backgroundBorderColorHoverDiv || "#000000",
+            "--opacity-hover-div": element.opacityHoverDiv || 1,
+            "--border-style-hover-div": element.borderStyleHoverDiv || "none",
+            "--transition-hover-div": element.durationEffectHoverDiv + 's' || "0.3",
+            "--translate-hover-div": element.translateEffectHoverDiv +'px' || "-10",
+            "--color-effect-hover-div": element.effectHoverColorHoverDiv || "#000000",
+            "--rotate-hover-div": element.rotateHoverDiv + "deg" || "0",
+            "--transition-hover-div": element.durationEffectHoverDiv + 's' || "0.3",
         }}
       >
         {element.innerTextDivs &&
@@ -133,17 +177,238 @@ const DivComponent = ({ element, index }) => {
                 const TagBlock =
                   textDiv.elementTitle || "h3";
 
+
+                  const stylesSpan = {
+                    "--width-cursor-title-block": textDiv.widthCursor + "px"||"2px",
+                    "--color-cursor-title-block": textDiv.cursorColor || "#000000",
+                    "--animation-cursor-title-block": textDiv.animationCursor+"s" || "0.75s",
+                  }
+            
+                  const splitTextIntoLettersTitleDiv = (
+                    text = "",
+                    animation = "",
+                    explosionDelay = textDiv.delayEffect|| 0, 
+                    explosionDuration = textDiv.durationEffect|| 2,
+                    delay = textDiv.delayEffect||0,
+                    duration = textDiv.durationEffect || 2,
+                    explosionInteration = textDiv.animationCount || 1,
+                    implosionInteration = textDiv.animationCount || 1,
+                  ) => {
+                    // Se l'animazione è "bounce", suddividi il testo in lettere
+                    if (animation === "bounce-title-div") {
+                      return text.split("").map((letter, index) => (
+                        <span key={index} className={`letter ${animation}`} >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    if (animation === "explode-title-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="explode-title-div"
+                          style={{
+                            '--x-title-div': `${Math.random() * 200 - 100}px`,  // Posizione X casuale
+                            '--y-title-div': `${Math.random() * 200 - 100}px`,  // Posizione Y casuale
+                            '--rotation-title-div': `${Math.random() * 360}deg`,  // Rotazione casuale
+                            '--explosion-delay-title-div': `${explosionDelay}s`, // Ritardo prima dell'esplosione
+                            '--explosion-duration-title-div': `${explosionDuration}s`, // Durata dell'esplosione
+                            '--explosion-interaction-count-title-div':`${explosionInteration}`
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+                  
+                    if (animation === "implode-title-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="implode-title-div"
+                          style={{
+                            '--x-title-div': `${Math.random() * 200 - 100}px`,  // Posizione X casuale
+                            '--y-title-div': `${Math.random() * 200 - 100}px`,  // Posizione Y casuale
+                            '--rotation-title-div': `${Math.random() * 360}deg`,  // Rotazione casuale
+                            '--implosion-delay-title-div': `${delay}s`,
+                            '--implosion-duration-title-div': `${duration}s`,
+                            '--implosion-interaction-count-title-div':`${implosionInteration}`
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+                  
+                    // Se l'animazione è "typing-effect", usa il componente TypewriterEffect
+                    if (animation === "typing-effect") {
+                      return <TypewriterEffect text={text} />;
+                    }
+                    // Letter fly in from left
+                    if (animation === "letters-fly-in-from-left-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letters-fly-in-from-left-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    // Letters fly in from right
+                    if (animation === "letters-fly-in-from-right-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letters-fly-in-from-right-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    // Letters fly in from top
+                    if (animation === "letters-fly-in-from-top-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letters-fly-in-from-top-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    // Letters fly in from bottom
+                    if (animation === "letters-fly-in-from-bottom-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letters-fly-in-from-bottom-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    // Letter flip from top
+                    if (animation === "letter-flip-from-top-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letter-flip-from-top-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    // Letter flip from bottom
+                    if (animation === "letter-flip-from-bottom-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letter-flip-from-bottom-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+                    // Letter flip cycle
+                    if (animation === "letter-flip-cycle-div") {
+                      return text.split("").map((letter, index) => (
+                        <span
+                          key={index}
+                          className="letter-flip-cycle-div"
+                          style={{
+                            '--letter-index-div': index + 1
+                          }}
+                        >
+                          {letter}
+                        </span>
+                      ));
+                    }
+            
+            
+                    // Se l'animazione non è "bounce" o "typing-effect", restituisci il testo intero
+                    return text;
+                  };
+
+                  const TypewriterEffect = ({ text, speed = textDiv.speedEffect, pauseDuration = textDiv.pauseEffect }) => {
+                    const [displayedText, setDisplayedText] = useState("");
+                    const [index, setIndex] = useState(0);
+                  
+                    useEffect(() => {
+                      const typeWriter = () => {
+                        if (index < text.length) {
+                          setDisplayedText((prev) => prev + text.charAt(index));
+                          setIndex(index + 1);
+                        } else {
+                          setTimeout(() => {
+                            setDisplayedText("");  // Resetta il testo visualizzato
+                            setIndex(0);           // Resetta l'indice per riavviare l'effetto
+                          }, pauseDuration);        // Pausa prima di riavviare
+                        }
+                      };
+                  
+                      const timeoutId = setTimeout(typeWriter, speed);
+                      return () => clearTimeout(timeoutId);  // Pulizia del timeout
+                    }, [index, text, speed, pauseDuration]);
+                  
+                    return (
+                      <span className="typewriter-container-title-div">
+                        <span className="typewriter-title-div">{displayedText}</span>
+                        <span className="typewriter-cursor-title-div" style={stylesSpan}></span>
+                      </span>
+                    );
+                  };
+                  
+
                 return (
                   <div
                     style={{
                       transform: `rotate(${textDiv.rotate}deg)`,
                       opacity: textDiv.opacity,
+                      "--color-decoration-title-div" : textDiv.underlineColor || "#000000",
+                      "--padding-decoration-title-div" : textDiv.underlinePadding + "px" || "0",
+                      "--width-decoration-title-div" : textDiv.underlineWidth + "%" || "100%",
+                      "--vertical-decoration-title-div" : textDiv.underlineVertical + "px" || "0",
+                      "--horizontal-decoration-title-div" : textDiv.underlineHorizontal + "px" || "0",
+                      "--height-decoration-title-div" : textDiv.underlineHeight + "px" || "1",
+                      "--animation-decoration-title-div" : textDiv.underlineAnimation || "none",
+                      "--animation-decoration-from-title-div" : textDiv.underlineAnimationFrom + "%" || "0",
+                      "--animation-decoration-to-title-div" : textDiv.underlineAnimationTo +"%" || "-5",
+                      "--animation-decoration-from-size-title-div" : textDiv.underlineFromSizeNew + "%" || "0",
+                      "--animation-decoration-to-size-title-div" : textDiv.underlineToSizeNew + "%" || "0",
+                      "--animation-decoration-transition-title-div" : textDiv.underlineAnimationTransition + "s" || "0.5",
+                      width: textDiv.widthTitleBlock === 'custom' ? `${textDiv.widthCustomTitleBlock}%` : textDiv.widthTitleBlock,
                     }}
-                    className={element.decoration}
+                    className={textDiv.decoration}
                   >
                     <TagBlock
                       key={textIndex}
-                      className={`title-slide letter ${textDiv.animation}`}
+                      className={`title-slide letter ${textDiv.animation}${textDiv.playState}`}
                       style={getStylesTitleBlock(textDiv)}
                       data-swiper-parallax-x={
                         textDiv.parallaxTitle
@@ -161,7 +426,7 @@ const DivComponent = ({ element, index }) => {
                         textDiv.parallaxTitleOpacity
                       }
                     >
-                      {splitTextIntoLetters(
+                      {splitTextIntoLettersTitleDiv(
                         textDiv.content,
                         textDiv.animation
                       )}

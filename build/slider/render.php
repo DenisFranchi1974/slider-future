@@ -427,6 +427,163 @@ if (!function_exists('splitTextIntoLetters')) {
 }
 
 
+if (!function_exists('splitTextIntoLettersTitleDiv')) {
+    function splitTextIntoLettersTitleDiv($content = '', $animation = '', $textDiv = []) {
+
+        $speedEffect = isset($textDiv['speedEffect']) ? $textDiv['speedEffect'] : 200; // Valore predefinito: 100ms
+        $pauseEffect = isset($textDiv['pauseEffect']) ? $textDiv['pauseEffect'] : 2000; // Valore predefinito: 2000ms
+        $durationEffect = isset($textDiv['durationEffect']) ? $textDiv['durationEffect'] : 2; // Valore predefinito: Parametro passato
+        $delayEffect = isset($textDiv['delayEffect']) ? $textDiv['delayEffect'] : 0; // Valore predefinito: Parametro passato
+        $animationCount = isset($textDiv['animationCount']) ? $textDiv['animationCount'] : 1; // Valore predefinito: 1
+        // Se l'animazione è "bounce", esegui lo split del testo in lettere
+        if ($animation === 'bounce-title-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "explode"
+        if ($animation === 'explode-title-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $x = rand(-100, 100); // Posizione X casuale
+                $y = rand(-100, 100); // Posizione Y casuale
+                $rotation = rand(0, 360); // Rotazione casuale
+                $result .= '<span class="explode-title-div" data-explosion-delay="' . esc_attr($delayEffect) . '" data-explosion-duration="' . esc_attr($durationEffect) . '" style="--x-title-div:' . $x . 'px; --y-title-div:' . $y . 'px; --rotation-title-div:' . $rotation . 'deg;animation-delay:' . esc_attr($delayEffect) . 's;animation-iteration-count:' . esc_attr($animationCount) .'; animation-duration:'  . esc_attr($durationEffect) .'s;">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "implode"
+        if ($animation === 'implode-title-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $x = rand(-100, 100); // Posizione X casuale
+                $y = rand(-100, 100); // Posizione Y casuale
+                $rotation = rand(0, 360); // Rotazione casuale
+                $result .= '<span class="implode-title-div" style="--x-title-div:' . $x . 'px; --y-title-div:' . $y . 'px; --rotation-title-div:' . $rotation . 'deg;animation-iteration-count:' . esc_attr($animationCount) .'; animation-delay:' . esc_attr($delayEffect) . 's; animation-duration:' . esc_attr($durationEffect) . 's;">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        $stylesSpan = [
+            "--width-cursor-title-block" => isset($textDiv['widthCursor']) ? $textDiv['widthCursor'] . "px" : "2px",
+            "--color-cursor-title-block" => isset($textDiv['cursorColor']) ? $textDiv['cursorColor'] : "#000000",
+            "--animation-cursor-title-block" => isset($textDiv['animationCursor']) ? $textDiv['animationCursor'] . "s" : "0.75s",
+        ];
+        
+        $styleAttribute = '';
+        foreach ($stylesSpan as $property => $value) {
+            $styleAttribute .= $property . ':' . $value . '; ';
+        }
+        
+        if ($animation === 'typing-effect') {
+            return '<span class="typewriter-title-div" data-text-title-div="' . esc_attr($content) . '" data-speed-effect-title-div="' . esc_attr($speedEffect) . '"  data-pause-effect-title-div="' . esc_attr($pauseEffect) . '"></span>
+                    <span class="typewriter-cursor-title-div" style="' . esc_attr($styleAttribute) . '"></span>';
+        }
+        
+
+        // Se l'animazione è "letters-fly-in-from-left"
+        if ($animation === 'letters-fly-in-from-left-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letters-fly-in-from-left-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "letters-fly-in-from-right"
+        if ($animation === 'letters-fly-in-from-right-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letters-fly-in-from-right-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "letters-fly-in-from-top"
+        if ($animation === 'letters-fly-in-from-top-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letters-fly-in-from-top-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "letters-fly-in-from-bottom"
+        if ($animation === 'letters-fly-in-from-bottom-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letters-fly-in-from-bottom-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "letter-flip-from-top"
+        if ($animation === 'letter-flip-from-top-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letter-flip-from-top-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "letter-flip-from-bottom"
+        if ($animation === 'letter-flip-from-bottom-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letter-flip-from-bottom-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione è "letter-flip-cycle"
+        if ($animation === 'letter-flip-cycle-div') {
+            $letters = str_split($content);
+            $result = '';
+
+            foreach ($letters as $index => $letter) {
+                $result .= '<span class="letter-flip-cycle-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
+            }
+
+            return $result;
+        }
+
+        // Se l'animazione non è tra quelle gestite, restituisci il testo intero senza avvolgerlo in uno span
+        return $content;
+    }
+}
+
+
 
 ?>         
 
@@ -500,7 +657,9 @@ if (!function_exists('splitTextIntoLetters')) {
                     echo 'padding-bottom: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
                     echo 'padding-left: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
                     echo 'padding-right: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
-                    echo 'border: ' . esc_attr($slide['backgroundBorderSize']) . 'px solid ' . esc_attr($slide['backgroundBorderColor']) . '; ';
+                    echo 'border-style: ' . esc_attr($slide['borderStyleSlide']) . '; ';
+                    echo 'border-width: ' . esc_attr($slide['backgroundBorderSize']) . 'px; ';
+                    echo 'border-color: ' . esc_attr($slide['backgroundBorderColor']) . '; ';
                     echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . ';';
                 ?>">
                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
@@ -539,7 +698,6 @@ if (!function_exists('splitTextIntoLetters')) {
                             . 'font-weight: ' . $isBold . '; '
                             . 'text-decoration: ' . $textDecoration . '; '
                             . 'line-height: ' . esc_attr($element['lineHeight']) . '; '
-                            . 'width: 100%; '
                             . 'font-family: ' . esc_attr($element['fontFamily']) . '; '
                             . '--duration-effect: ' . esc_attr($element['durationEffect']) . 's;'
                             . '--duration-effect-odd: ' . esc_attr($element['durationEffectOdd']) . 's;'
@@ -672,20 +830,42 @@ if (!function_exists('splitTextIntoLetters')) {
                         <?php
                          if (!function_exists('getStylesTitleBlock')) {
                             function getStylesTitleBlock($textDiv) {
+                                $isBold = isset($textDiv['fontStyle']['fontWeight']) && $textDiv['fontStyle']['fontWeight'] === "bold";
                                 $styles = [
                                     'font-size' => !empty($textDiv['fontSize']) ? $textDiv['fontSize'] . 'px' : '16px',
                                     '--font-size-block-tablet' => !empty($textDiv['fontSizeTablet']) ? $textDiv['fontSizeTablet'] . 'px' : '14px',
                                     '--font-size-block-mobile' => !empty($textDiv['fontSizeMobile']) ? $textDiv['fontSizeMobile'] . 'px' : '12px',
                                     'color' => !empty($textDiv['textColor']) ? $textDiv['textColor'] : '#000000',
                                     'text-align' => !empty($textDiv['textAlign']) ? $textDiv['textAlign'] : 'left',
-                                    'font-style' => !empty($textDiv['fontStyle']['fontStyle']) ? $textDiv['fontStyle']['fontStyle'] : 'normal',
-                                    'font-weight' => !empty($textDiv['fontStyle']['fontWeight']) ? $textDiv['fontStyle']['fontWeight'] : 'normal',
-                                    'text-decoration' => !empty($textDiv['fontStyle']['textDecoration']) ? $textDiv['fontStyle']['textDecoration'] : 'none',
+                                    'letter-spacing' => isset($textDiv['letterSpacingTitleBlock']) ? $textDiv['letterSpacingTitleBlock'] . "px" : "0px",
+                                    'font-style' => isset($textDiv['fontStyle']['fontStyle']) ? $textDiv['fontStyle']['fontStyle'] : "normal",
+                                    'font-weight' => $isBold ? "bold" : (isset($textDiv['fontWeightTitleBlock']) ? $textDiv['fontWeightTitleBlock'] : "normal"),
+                                    'text-decoration' => isset($textDiv['fontStyle']['textDecoration']) ? $textDiv['fontStyle']['textDecoration'] : "none",
                                     'line-height' => !empty($textDiv['lineHeight']) ? $textDiv['lineHeight'] : '1.5',
-                                    'width' => '100%', // Mantiene la larghezza al 100%
-                                    'font-family' => !empty($textDiv['fontFamily']) ? $textDiv['fontFamily'] : 'inherit', // Inherit se non specificato
+                                    'font-family' => !empty($textDiv['fontFamilyTitleBlock']) ? $textDiv['fontFamilyTitleBlock'] : 'inherit', // Inherit se non specificato
                                     'margin' => !empty($textDiv['marginTitle']) ? $textDiv['marginTitle']['top'] . ' ' . $textDiv['marginTitle']['right'] . ' ' . $textDiv['marginTitle']['bottom'] . ' ' . $textDiv['marginTitle']['left'] : '0',
-                                    'padding' => !empty($textDiv['padding']) ? $textDiv['padding'] : '0', // Mantiene il padding come nell'originale
+                                    'padding' => !empty($textDiv['paddingTitleBlock']) ? $textDiv['paddingTitleBlock']['top'] . ' ' . $textDiv['paddingTitleBlock']['right'] . ' ' . $textDiv['paddingTitleBlock']['bottom'] . ' ' . $textDiv['paddingTitleBlock']['left'] : '0',
+                                    'border-style' => !empty($textDiv['borderStyle']) ? $textDiv['borderStyle'] : 'none',
+                                    'border-width' => !empty($textDiv['backgroundBorderSize']) ? $textDiv['backgroundBorderSize'] . 'px' : '0',
+                                    'border-color' => !empty($textDiv['backgroundBorderColor']) ? $textDiv['backgroundBorderColor'] : 'transparent',
+                                    'border-radius' => !empty($textDiv['backgroundBorderRadius']) ? $textDiv['backgroundBorderRadius'] . 'px' : '0',
+                                    'box-shadow' => isset($textDiv['boxShadowX']) && isset($textDiv['boxShadowY']) && isset($textDiv['boxShadowBlur']) && isset($textDiv['boxShadowSpread']) && isset($textDiv['colorShadow']) 
+                                        ? "{$textDiv['boxShadowX']}px {$textDiv['boxShadowY']}px {$textDiv['boxShadowBlur']}px {$textDiv['boxShadowSpread']}px {$textDiv['colorShadow']}" 
+                                        : "0 0 0 0 #000000",
+                                    'writing-mode' => isset($textDiv['textWriteMode']) ? $textDiv['textWriteMode'] : "initial",
+                                    'text-orientation' => isset($textDiv['textOrientation']) ? $textDiv['textOrientation'] : "initial",
+                                    '--interation-title-block' => isset($textDiv['iteration']) ? $textDiv['iteration'] : "forwards",
+                                    '--duration-effect-title-block' => isset($textDiv['durationEffect']) ? $textDiv['durationEffect'] . "s" : "0s",
+                                    '--delay-effect-title-block' => isset($textDiv['delayEffect']) ? $textDiv['delayEffect'] . "s" : "0s",
+                                    '--duration-effect-odd-title-block' => isset($textDiv['durationEffectOdd']) ? $textDiv['durationEffectOdd'] . "s" : "0s",
+                                    '--duration-effect-even-title-block' => isset($textDiv['durationEffectEven']) ? $textDiv['durationEffectEven'] . "s" : "0s",
+                                    '--color-gradient-one-title-div' => isset($textDiv['gradinetColorOne']) ? $textDiv['gradinetColorOne'] : "",
+                                    '--color-gradient-two-title-div' => isset($textDiv['gradinetColorTwo']) ? $textDiv['gradinetColorTwo'] : "",
+                                    '--color-gradient-three-title-div' => isset($textDiv['gradinetColorThree']) ? $textDiv['gradinetColorThree'] : "",
+                                    '--color-gradient-four-title-div' => isset($textDiv['gradinetColorFour']) ? $textDiv['gradinetColorFour'] : "",
+                                    '--color-gradient-five-title-div' => isset($textDiv['gradinetColorFive']) ? $textDiv['gradinetColorFive'] : "",
+
+                                    
                                 ];
 
                                 $styleString = '';
@@ -740,14 +920,56 @@ if (!function_exists('splitTextIntoLetters')) {
                                 }
                                 ?>
                             <?php if ($element['type'] === 'div'): ?>
-                            <div
-                                class="div-slide <?php echo esc_attr($element['positionDiv'] . ' ' . $element['layoutDiv'] . '-layout ' . $element['animationDiv']); ?>"  data-animation-div="<?php echo esc_attr($element['animationDiv']); ?>"
+                            <?php
+                             $link_url = '';
+                             $onclick = '';
+                             $target_div = '_self'; // Default
+                             $rel_div = 'follow'; // Default
+                             
+                             if ($element['textLinkDiv'] !== 'none') {
+                                 // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                 if ($element['textLinkDiv'] === 'link' && !empty($element['linkUrlDiv'])) {
+                                     $link_url = esc_url($element['linkUrlDiv']);
+                                     if (!empty($element['linkTargetDiv'])) {
+                                         $target_div = esc_attr($element['linkTargetDiv']);
+                                     }
+                                     if ($element['linkRelDiv'] === 'nofollow') {
+                                         $rel_div = 'nofollow';
+                                     }
+                                     $onclick = "window.open('{$link_url}', '{$target_div}', 'rel={$rel_div}');";
+                                 } elseif ($element['textLinkDiv'] === 'scroll-below') {
+                                     $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                 } elseif ($element['textLinkDiv'] === 'scroll-to-id' && !empty($element['scrollToId'])) {
+                                     $scroll_id = esc_attr($element['scrollToId']);
+                                     $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                 }
+                             }
+
+                             // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
+                             $desktopClassDiv = $element['enableDesktopDiv'] ? 'desktop-div-visible' : 'desktop-div-hidden';
+                             $tabletClassDiv = $element['enableTabletDiv'] ? 'tablet-div-visible' : 'tablet-div-hidden';
+                             $mobileClassDiv = $element['enableMobileDiv'] ? 'mobile-div-visible' : 'mobile-div-hidden';
+                             // Element Div
+                             $TagDiv = !empty($element['elementDiv']) ? $element['elementDiv'] : 'div';
+                            ?>
+                             <<?php echo esc_attr($TagDiv); ?>
+                                <?php if ($element['textLinkDiv'] !== 'none') : ?>
+                                    onclick="<?php echo $onclick; ?>"
+                                <?php endif; ?> 
+                                data-swiper-parallax-x="<?php echo esc_attr($element['parallaxDiv']); ?>"
+                                data-swiper-parallax-y="<?php echo esc_attr($element['parallaxDivY']); ?>"
+                                data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxDivScale']); ?>"
+                                data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxDivDuration']); ?>"
+                                data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxDivOpacity']); ?>"
+                                class="div-slide <?php echo esc_attr($element['positionDiv'] . ' ' . $element['layoutDiv'] . '-layout ' . $element['animationDiv']  . ' ' . $element['animationHoverDiv'] . ' ' . $desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv ); ?>"  data-animation-div="<?php echo esc_attr($element['animationDiv']); ?>"
                                 style="
                                     background-color: <?php echo esc_attr($element['backgroundColor'] ?? 'transparent'); ?>;
-                                    display: flex;
                                     flex-direction: <?php echo $element['layoutDiv'] === 'horizontal' ? 'row' : 'column'; ?>;
                                     text-align: center;
                                     position: relative;
+                                    <?php if ($element['textLinkDiv'] !== 'none') : ?>
+                                        cursor: pointer;
+                                    <?php endif; ?>
                                     visibility: visible;
                                     gap: <?php echo esc_attr($element['gapItemsDiv']); ?>px;
                                     border-radius: <?php echo esc_attr($element['backgroundBorderRadiusDiv']); ?>px;
@@ -771,14 +993,37 @@ if (!function_exists('splitTextIntoLetters')) {
                                     transform: rotate(<?php echo esc_attr($element['rotateDiv']) ?>deg);
                                     --duration-effect-div: <?php echo esc_attr($element['durationEffectDiv']) ?>s;
                                     --interation-div: <?php echo esc_attr($element['interationDiv']) ?>;
+                                    --color-hover-div:  <?php echo esc_attr($element['divColorHover']) ?>;
+                                    --border-color-hover-div: <?php echo esc_attr($element['backgroundBorderColorHoverDiv']) ?>;
+                                    --opacity-hover-div: <?php echo esc_attr($element['opacityHoverDiv']) ?>;
+                                    --border-style-hover-div: <?php echo esc_attr($element['borderStyleHoverDiv']) ?>;
+                                    --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;    
+                                    --translate-hover-div: <?php echo esc_attr($element['translateEffectHoverDiv']) ?>px;
+                                    --color-effect-hover-div: <?php echo esc_attr($element['effectHoverColorHoverDiv']) ?>;
+                                    --rotate-hover-div: <?php echo esc_attr($element['rotateHoverDiv']) ?>deg;
+                                    --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;
                                 "
                             >
                                 <?php if (!empty($element['innerTextDivs']) && is_array($element['innerTextDivs'])): ?>
                                     <?php foreach ($element['innerTextDivs'] as $textIndex => $textDiv): ?>
                                         <?php $TagBlock = !empty($textDiv['elementTitle']) ? $textDiv['elementTitle'] : 'h3'; ?>
                                         <div
-                                            style="transform: rotate(<?php echo esc_attr($textDiv['rotate']); ?>deg); opacity: <?php echo esc_attr($textDiv['opacity']); ?>;"
-                                            class="underline-effect"
+                                            style="transform: rotate(<?php echo esc_attr($textDiv['rotate']); ?>deg); 
+                                            opacity: <?php echo esc_attr($textDiv['opacity']); ?>;
+                                            --color-decoration-title-div: <?php echo esc_attr($textDiv['underlineColor']); ?>;
+                                            --padding-decoration-title-div: <?php echo esc_attr($textDiv['underlinePadding']); ?>px;
+                                            --width-decoration-title-div: <?php echo esc_attr($textDiv['underlineWidth']); ?>%;
+                                            --vertical-decoration-title-div: <?php echo esc_attr($textDiv['underlineVertical']); ?>px;
+                                            --horizontal-decoration-title-div: <?php echo esc_attr($textDiv['underlineHorizontal']); ?>px;
+                                            --height-decoration-title-div: <?php echo esc_attr($textDiv['underlineHeight']); ?>px;
+                                            --animation-decoration-title-div: <?php echo esc_attr($textDiv['underlineAnimation']); ?>;
+                                            --animation-decoration-from-title-div: <?php echo esc_attr($textDiv['underlineAnimationFrom']); ?>%;
+                                            --animation-decoration-to-title-div: <?php echo esc_attr($textDiv['underlineAnimationTo']); ?>%;
+                                            --animation-decoration-from-size-title-div: <?php echo esc_attr($textDiv['underlineFromSizeNew']); ?>%;
+                                            --animation-decoration-to-size-title-div: <?php echo esc_attr($textDiv['underlineToSizeNew']); ?>%;
+                                            --animation-decoration-transition-title-div: <?php echo esc_attr($textDiv['underlineAnimationTransition']); ?>s;
+                                            "
+                                            class="<?php echo esc_attr($textDiv['decoration']); ?>"
                                         >
                                             <<?php echo esc_attr($TagBlock); ?>
                                                 class="title-slide letter <?php echo esc_attr($textDiv['animation']); ?>"
@@ -789,7 +1034,8 @@ if (!function_exists('splitTextIntoLetters')) {
                                                 data-swiper-parallax-duration="<?php echo esc_attr($textDiv['parallaxTitleDuration']); ?>"
                                                 data-swiper-parallax-opacity="<?php echo esc_attr($textDiv['parallaxTitleOpacity']); ?>"
                                             >
-                                                <?php echo wp_kses_post(splitTextIntoLetters($textDiv['content'], $textDiv['animation'])); ?>
+                                 
+                                                <?php echo splitTextIntoLettersTitleDiv($textDiv['content'], $textDiv['animation'],$textDiv); ?>
                                             </<?php echo esc_attr($TagBlock); ?>>
                                         </div>
                                     <?php endforeach; ?>
@@ -815,7 +1061,7 @@ if (!function_exists('splitTextIntoLetters')) {
                                         </div>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
-                            </div>
+                            </<?php echo esc_attr($TagDiv); ?>>
                         <?php endif; ?>
 
                         <?php if ($element['type'] === 'image' && !empty($element['url'])): 

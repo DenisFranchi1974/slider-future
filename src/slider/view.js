@@ -164,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
 /*Text Effect */
 document.addEventListener('DOMContentLoaded', function() {
     const typewriters = document.querySelectorAll('.typewriter');
+    const typewritersDiv = document.querySelectorAll('.typewriter-title-div');
+
 
     typewriters.forEach(typewriter => {
         const text = typewriter.getAttribute('data-text');
@@ -199,6 +201,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
         typeWriter();
     });
+
+    typewritersDiv.forEach(typewriter => {
+        const text = typewriter.getAttribute('data-text-title-div');
+        const speedEffect = parseInt(typewriter.getAttribute('data-speed-effect-title-div'), 10) || 100; // Velocità di digitazione (default: 100ms)
+        const pauseEffect = parseInt(typewriter.getAttribute('data-pause-effect-title-div'), 10) || 2000; // Pausa prima di riavviare l'effetto (default: 2000ms)
+        let index = 0;
+
+        // Crea e aggiungi il cursore
+        const cursor = document.createElement('span');
+        cursor.classList.add('typewriter-cursor-title-div');
+
+        // Copia gli stili dal cursore PHP
+        const existingCursor = typewriter.nextElementSibling;
+        if (existingCursor && existingCursor.classList.contains('typewriter-cursor-title-div')) {
+            cursor.style.cssText = existingCursor.style.cssText;
+        }
+
+        typewriter.parentNode.insertBefore(cursor, typewriter.nextSibling);
+
+        const typeWriter = () => {
+            if (index < text.length) {
+                typewriter.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speedEffect); // Imposta la velocità della scrittura
+            } else {
+                setTimeout(() => {
+                    typewriter.textContent = '';  // Resetta il testo
+                    index = 0;                    // Resetta l'indice
+                    typeWriter();                 // Riavvia l'effetto
+                }, pauseEffect);                          // Pausa prima di riavviare l'effetto
+            }
+        };
+
+        typeWriter();
+    });
+
 
 
 

@@ -156,6 +156,14 @@
   box-shadow: var(--box-shadow-x-div) var(--box-shadow-y-div) var(--box-shadow-blur-div) var(--box-shadow-spread-div) var(--box-shadow-color-div);
 }
 
+.div-slide:hover{
+  background-color:var(--color-hover-div)!important;
+  border-color: var(--border-color-hover-div)!important;
+  border-style: var(--border-style-hover-div)!important;
+  opacity: var(--opacity-hover-div)!important;
+  rotate: var(--rotate-hover-div)!important;
+}
+
 /* Flex Direction for Layouts */
 .div-slide.vertical-layout {
   flex-direction: column;
@@ -426,6 +434,10 @@
 .bounce-effect-div {
   animation: bounce var(--duration-effect-div) var(--interation-div);
 }
+.bounce-effect-title-div {
+  animation: bounce var(--duration-effect-title-block) var(--interation-title-block);
+}
+
 
 @keyframes bounce-left {
   0% {
@@ -463,6 +475,9 @@
 }
 .bounce-left-effect-div {
   animation: bounce-left var(--duration-effect-div) var(--interation-div);
+}
+.bounce-left-effect-title-div {
+  animation: bounce-left var(--duration-effect-title-block) var(--interation-title-block);
 }
 
 
@@ -504,7 +519,9 @@
 .bounce-right-effect-div {
   animation: bounce-right var(--duration-effect-div) var(--interation-div);
 }
-
+.bounce-right-effect-title-div {
+  animation: bounce-right var(--duration-effect-title-block) var(--interation-title-block);
+}
 
 
 @keyframes bounce-top {
@@ -546,6 +563,11 @@
   animation: bounce-top var(--duration-effect-div) var(--interation-div);
 }
 
+.bounce-top-effect-title-div {
+  animation: bounce-top var(--duration-effect-title-block) var(--interation-title-block);
+}
+
+
 @keyframes bounce-bottom {
   0% {
     transform: translateY(0);
@@ -582,6 +604,10 @@
 .bounce-bottom-effect-div {
   animation: bounce-bottom var(--duration-effect-div) var(--interation-div);
 }
+.bounce-bottom-effect-title-div {
+  animation: bounce-bottom var(--duration-effect-title-block) var(--interation-title-block);
+}
+
 
 @keyframes letterBounce {
   0%, 100% {
@@ -603,6 +629,19 @@
 
 .letter.bounce:nth-child(even) {
   animation-delay: var(--duration-effect-even);
+}
+
+.letter.bounce-title-div {
+  display: inline-block;
+  animation: letterBounce var(--duration-effect-title-block) infinite;
+}
+
+.letter.bounce-title-div:nth-child(odd) {
+  animation-delay: var(--duration-effect-odd-title-block);
+}
+
+.letter.bounce-title-div:nth-child(even) {
+  animation-delay: var(--duration-effect-even-title-block);
 }
 
 @keyframes stretchText {
@@ -642,6 +681,12 @@
   display: inline-block;
   transform-origin: 50% 50%;
   animation: focusInOut var(--duration-effect) ease-in-out infinite
+}
+
+.letter.focus-title-div {
+  display: inline-block;
+  transform-origin: 50% 50%;
+  animation: focusInOut var(--duration-effect-title-block) ease-in-out infinite
 }
 
 /* Movimen to background */
@@ -700,6 +745,7 @@
 .moving-background-hover:hover .image-first-slide{
   animation: moveBackgroundHover var(--duration-effect-moving-image-hover) linear infinite; /* Regola la durata in base alle tue esigenze */
 }
+
 
 
 @keyframes moveBackgroundYHover {
@@ -764,6 +810,45 @@
   animation: var(--animation-decoration) var(--animation-decoration-transition) ease-in-out infinite;
 }
 
+@keyframes bounceUnderlineTitleDiv {
+  0%, 100% {
+      height: var(--animation-decoration-from-size-title-div);
+      transform: translateY(var(--animation-decoration-from-title-div));
+  }
+  50% {
+      height: var(--animation-decoration-to-size-title-div);
+      transform: translateY(var(--animation-decoration-to-title-div));
+  }
+}
+
+@keyframes bounceUnderlineHorizontalTitleDiv {
+  0%, 100% {
+      width: var(--animation-decoration-from-size-title-div);
+      transform: translateX(var(--animation-decoration-from-title-div));
+  }
+  50% {
+      width:var(--animation-decoration-to-size-title-div);
+      transform: translateX(var(--animation-decoration-to-title-div));
+  }
+}
+
+.underline-effect-title-div {
+  display: inline-block;
+  position: relative;
+  padding-bottom: var(--padding-decoration-title-div);
+}
+
+.underline-effect-title-div::after {
+  content: '';
+  position: absolute;
+  left: var(--horizontal-decoration-title-div);
+  bottom: var(--vertical-decoration-title-div);
+  height: var(--height-decoration-title-div);
+  width: var(--width-decoration-title-div);
+  background-color: var(--color-decoration-title-div); /* Colore dell'elemento sotto la scritta */
+  animation: var(--animation-decoration-title-div) var(--animation-decoration-transition-title-div) ease-in-out infinite;
+}
+
 .typewriter-container {
   display: inline-block;
   white-space: nowrap;
@@ -786,12 +871,32 @@
   top: 0.15em;
 }
 
+.typewriter-container-title-div {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden; 
+  position: relative; /* Necessario per posizionare il cursore */
+}
+
+.typewriter-title-div {
+  display: inline-block;
+}
+
+.typewriter-cursor-title-div {
+  display: inline-block;
+  background-color: var(--color-cursor-title-block);
+  width: var(--width-cursor-title-block);
+  height: 1em;
+  animation: blink-caret var(--animation-cursor-title-block) step-end infinite;
+  position: absolute;
+  right: 0;
+  top: 0.15em;
+}
+
 @keyframes blink-caret {
   from, to { opacity: 1; }
   50% { opacity: 0; }
 }
-
-
 
 /* Bounce */
 @keyframes bounce {
@@ -813,6 +918,10 @@
   animation: stretch var(--duration-effect) infinite;
 }
 
+.stretch-title-div {
+  animation: stretch var(--duration-effect-title-block) infinite;
+}
+
 /* Focus */
 @keyframes focus {
   0%, 100% { text-shadow: none; }
@@ -821,6 +930,10 @@
 
 .focus {
   animation: focus var(--duration-effect) infinite;
+}
+
+.focus-title-div {
+  animation: focus var(--duration-effect-title-block) infinite;
 }
 
 /* Fade In */
@@ -842,6 +955,10 @@
   animation: fadeIn var(--duration-effect-div) ease-in-out forwards;
 }
 
+.fade-in-title-div{
+  animation: fadeIn var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 @keyframes fadeInLeft {
   from { transform: translateX(-100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
@@ -857,6 +974,10 @@
 
 .fade-in-left-div {
   animation: fadeInLeft var(--duration-effect-div) ease-in-out forwards;
+}
+
+.fade-in-left-title-div {
+  animation: fadeInLeft var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 @keyframes fadeInRight {
@@ -876,6 +997,10 @@
   animation: fadeInRight var(--duration-effect-div) ease-in-out forwards;
 }
 
+.fade-in-right-title-div {
+  animation: fadeInRight var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 @keyframes fadeInTop {
   from { transform: translateY(-100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -893,6 +1018,11 @@
   animation: fadeInTop var(--duration-effect-div) ease-in-out forwards;
 }
 
+.fade-in-top-title-div {
+  animation: fadeInTop var(--duration-effect-title-block) ease-in-out forwards;
+}
+
+
 @keyframes fadeInBottom {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -907,6 +1037,10 @@
 
 .fade-in-bottom-div {
   animation: fadeInBottom var(--duration-effect-div) ease-in-out forwards;
+}
+
+.fade-in-bottom-title-div {
+  animation: fadeInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 /* Slide In */
@@ -925,6 +1059,10 @@
   animation: slideInLeft var(--duration-effect-div) ease-in-out forwards;
 }
 
+.slide-in-left-title-div {
+  animation: slideInLeft var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 @keyframes slideInRight {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
@@ -939,6 +1077,10 @@
 .slide-in-right-div {
   animation: slideInRight var(--duration-effect-div) ease-in-out forwards;
 }
+.slide-in-right-title-div {
+  animation: slideInRight var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 
 @keyframes slideInTop {
   from { transform: translateY(-100%); opacity: 0; }
@@ -954,6 +1096,9 @@
 .slide-in-top-div {
   animation: slideInTop var(--duration-effect-div) ease-in-out forwards;
 }
+.slide-in-top-title-div {
+  animation: slideInTop var(--duration-effect-title-block) ease-in-out forwards;
+}
 @keyframes slideInBottom {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -968,6 +1113,9 @@
 
 .slide-in-bottom-div {
   animation: slideInBottom var(--duration-effect-div) ease-in-out forwards;
+}
+.slide-in-bottom-title-div {
+  animation: slideInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 /* Zoom In */
@@ -986,6 +1134,10 @@
   animation: zoomIn var(--duration-effect-div) ease-in-out forwards;
 }
 
+.zoom-in-title-div {
+  animation: zoomIn var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 @keyframes zoomInLeft {
   from { transform: scale(0) translateX(-100%); opacity: 0; }
   to { transform: scale(1) translateX(0); opacity: 1; }
@@ -1000,6 +1152,10 @@
 
 .zoom-in-left-div {
   animation: zoomInLeft var(--duration-effect-div) ease-in-out forwards;
+}
+
+.zoom-in-left-title-div {
+  animation: zoomInLeft var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 @keyframes zoomInRight {
@@ -1018,6 +1174,10 @@
   animation: zoomInRight var(--duration-effect-div) ease-in-out forwards;
 }
 
+.zoom-in-right-title-div {
+  animation: zoomInRight var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 @keyframes zoomInTop {
   from { transform: scale(0) translateY(-100%); opacity: 0; }
   to { transform: scale(1) translateY(0); opacity: 1; }
@@ -1033,6 +1193,9 @@
 .zoom-in-top-div {
   animation: zoomInTop var(--duration-effect-div) ease-in-out forwards;
 }
+.zoom-in-top-title-div {
+  animation: zoomInTop var(--duration-effect-title-block) ease-in-out forwards;
+}
 @keyframes zoomInBottom {
   from { transform: scale(0) translateY(100%); opacity: 0; }
   to { transform: scale(1) translateY(0); opacity: 1; }
@@ -1047,6 +1210,10 @@
 
 .zoom-in-bottom-div {
   animation: zoomInBottom var(--duration-effect-div) ease-in-out forwards;
+}
+
+.zoom-in-bottom-title-div {
+  animation: zoomInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 /* Extra: Rotate In from Directions */
@@ -1066,6 +1233,10 @@
   animation: rotateInLeft var(--duration-effect-div) ease-in-out forwards;
 }
 
+.rotate-in-left-title-div {
+  animation: rotateInLeft var(--duration-effect-title-block) ease-in-out forwards;
+}
+
 @keyframes rotateInRight {
   from { transform: rotate(200deg) translateX(100%); opacity: 0; }
   to { transform: rotate(0deg) translateX(0); opacity: 1; }
@@ -1079,6 +1250,9 @@
 }
 .rotate-in-right-div {
   animation: rotateInRight var(--duration-effect-div) ease-in-out forwards;
+}
+.rotate-in-right-title-div {
+  animation: rotateInRight var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 @keyframes rotateInTop {
@@ -1095,6 +1269,9 @@
 .rotate-in-top-div{
   animation: rotateInTop var(--duration-effect-div) ease-in-out forwards;
 }
+.rotate-in-top-title-div{
+  animation: rotateInTop var(--duration-effect-title-block) ease-in-out forwards;
+}
 
 @keyframes rotateInBottom {
   from { transform: rotate(200deg) translateY(100%); opacity: 0; }
@@ -1109,6 +1286,9 @@
 }
 .rotate-in-bottom-div {
   animation: rotateInBottom var(--duration-effect-div) ease-in-out forwards;
+}
+.rotate-in-bottom-title-div {
+  animation: rotateInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
 
 
@@ -1134,6 +1314,12 @@
   animation: wiggle var(--duration-effect-div) ease-in-out var(--interation-div);
 }
 
+.wiggle-title-div {
+  display: inline-block;
+  animation: wiggle var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
+}
+
+
 /* Rotate In */
 @keyframes rotateIn {
   from { transform: rotate(-200deg); opacity: 0; }
@@ -1149,6 +1335,9 @@
 
 .rotate-in-div {
   animation: rotateIn var(--duration-effect-div) ease-in-out forwards;
+}
+.rotate-in-title-div {
+  animation: rotateIn var(--duration-effect-title-block) ease-in-out forwards;
 }
 /* Flip */
 @keyframes flip {
@@ -1168,6 +1357,11 @@
 .flip-div {
   display: inline-block;
   animation: flip var(--duration-effect-div) ease-in-out var(--interation-div);
+}
+
+.flip-title-div {
+  display: inline-block;
+  animation: flip var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
 }
 
 /* Swing */
@@ -1195,6 +1389,11 @@
   display: inline-block;
   transform-origin: top center;
   animation: swing var(--duration-effect) ease var(--interation);
+}
+.swing-title-div {
+  display: inline-block;
+  transform-origin: top center;
+  animation: swing var(--duration-effect-title-block) ease var(--interation-title-block);
 }
 
 /* Rubber Band */
@@ -1230,6 +1429,10 @@
 .rubber-band {
   animation: rubberBand var(--duration-effect) ease-in-out var(--interation);
 }
+.rubber-band-title-div {
+  animation: rubberBand var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
+}
+
 
 /* Explode */
 @keyframes explode {
@@ -1259,6 +1462,36 @@
   --x: calc(100px - 200px * random()); /* Posizione X casuale */
   --y: calc(100px - 200px * random()); /* Posizione Y casuale */
   --rotation: calc(360deg * random()); /* Rotazione casuale */
+}
+
+@keyframes explodeDiv {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translate(var(--x-title-div), var(--y-title-div)) rotate(var(--rotation-title-div));
+  }
+}
+
+
+.explode-title-div span {
+  display: inline-block;
+  animation-name: explodeDiv;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  animation-duration: var(--explosion-duration-title-div, 1s); /* Durata dell'esplosione */
+  animation-delay: var(--explosion-delay-title-div, 2s); /* Ritardo prima dell'esplosione */
+  animation-timing-function: ease; /* Tipo di easing */
+  animation-iteration-count: var(--explosion-interaction-count-title-div);
+}
+
+/* Calcoli dinamici per l'esplosione delle lettere */
+.explode-title-div span:nth-child(n) {
+  --x-title-div: calc(100px - 200px * random()); /* Posizione X casuale */
+  --y-title-div: calc(100px - 200px * random()); /* Posizione Y casuale */
+  --rotation-title-div: calc(360deg * random()); /* Rotazione casuale */
 }
 
 
@@ -1293,6 +1526,35 @@
   --rotation: calc(360deg * random()); /* Rotazione casuale */
 }
 
+@keyframes implodeDiv {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translate(var(--x-title-div), var(--y-title-div)) rotate(var(--rotation-title-div));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+}
+
+.implode-title-div span {
+  display: inline-block;
+  animation-name: implodeDiv;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  animation-delay: var(--implosion-delay-title-div, 2s); /* Ritardo prima dell'implosione */
+  animation-duration: var(--implosion-duration-title-div, 2s); /* Durata dell'implosione */
+  animation-timing-function: ease-in-out; /* Tipo di easing per una transizione più fluida */
+  animation-iteration-count: var(--implosion-interaction-count-title-div);
+}
+
+/* Calcoli dinamici per l'implosione delle lettere */
+.implode-title-div span:nth-child(n) {
+  --x-title-div: calc(100px - 200px * random()); /* Posizione X casuale */
+  --y-title-div: calc(100px - 200px * random()); /* Posizione Y casuale */
+  --rotation-title-div: calc(360deg * random()); /* Rotazione casuale */
+}
+
 /* Gradient Animation */
 .gradient-animation {
   background: linear-gradient(90deg, var(--color-gradient-one), var(--color-gradient-two), var(--color-gradient-three), var(--color-gradient-four));
@@ -1304,6 +1566,15 @@
  
 }
 
+.gradient-animation-title-div {
+  background: linear-gradient(90deg, var(--color-gradient-one-title-div), var(--color-gradient-two-title-div), var(--color-gradient-three-title-div), var(--color-gradient-four-title-div));
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; // Add the standard property
+  animation: gradient-animation var(--duration-effect-title-block) ease infinite;
+ 
+}
 
 @keyframes gradient-animation {
   0% {
@@ -1331,6 +1602,19 @@
 .text-shadow-heavy{
   text-shadow: 4px 4px 6px var(--color-gradient-one);
 }
+.text-shadow-title-div{
+  text-shadow: 2px 2px 4px var(--color-gradient-one-title-div);
+}
+
+/* Text Shadow Light */
+.text-shadow-light-title-div{
+  text-shadow: 1px 1px 2px var(--color-gradient-one-title-div);
+}
+
+/* Text Shadow Heavy */
+.text-shadow-heavy-title-div{
+  text-shadow: 4px 4px 6px var(--color-gradient-one-title-div);
+}
 
 /* Neon Effect */
 .text-neon {
@@ -1344,6 +1628,19 @@
     0 0 90px var(--color-gradient-one),
     0 0 100px var(--color-gradient-one),
     0 0 150px var(--color-gradient-one);
+}
+
+.text-neon-title-div {
+  color: #fff;
+  text-shadow:
+    0 0 5px var(--color-gradient-one-title-div),
+    0 0 10px var(--color-gradient-one-title-div),
+    0 0 20px var(--color-gradient-one-title-div),
+    0 0 40px var(--color-gradient-one-title-div),
+    0 0 80px var(--color-gradient-one-title-div),
+    0 0 90px var(--color-gradient-one-title-div),
+    0 0 100px var(--color-gradient-one-title-div),
+    0 0 150px var(--color-gradient-one-title-div);
 }
 
 /* Color Cycle */
@@ -1366,6 +1663,28 @@
   }
   100% {
     color: var(--color-gradient-five);
+  }
+}
+/* Color Cycle title div */
+.color-cycle-title-div {
+  animation: color-cycle var(--duration-effect-title-block) infinite;
+}
+
+@keyframes color-cycle {
+  0% {
+    color: var(--color-gradient-one-title-div);
+  }
+  25% {
+    color: var(--color-gradient-two-title-div);
+  }
+  50% {
+    color: var(--color-gradient-three-title-div);
+  }
+  75% {
+    color: var(--color-gradient-four-title-div);
+  }
+  100% {
+    color: var(--color-gradient-five-title-div);
   }
 }
 
@@ -1400,6 +1719,26 @@
   }
 }
 
+.letters-fly-in-from-left-div {
+  display: inline-block;
+  position: relative;
+  
+  span {
+    display: inline-block;
+    animation-name: fly-in-left;
+    animation-fill-mode: forwards;
+    animation-duration: var(--duration-effect-title-block, 1s);
+    animation-delay: var(--fly-in-delay-div, 0s);
+    animation-timing-function: ease;
+    opacity: 0;
+  }
+
+  span:nth-child(n) {
+    --fly-in-delay-div: calc(var(--letter-index-div) * var(--delay-effect-title-block)); /* Ritardo per ogni lettera */
+  }
+}
+
+
 /* Fly in right */
 @keyframes fly-in-right {
   from {
@@ -1426,6 +1765,22 @@
   animation-delay: calc(var(--letter-index) * var(--delay-effect));
   animation-timing-function: ease;
 }
+
+.letters-fly-in-from-right-div {
+  display: inline-block;
+  position: relative;
+}
+
+.letters-fly-in-from-right-div span {
+  display: inline-block;
+  opacity: 0;
+  animation-name: fly-in-right;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration-effect-title-block, 1s);
+  animation-delay: calc(var(--letter-index-div) * var(--delay-effect-title-block));
+  animation-timing-function: ease;
+}
+
 
 /* Fly in top */
 @keyframes fly-in-top {
@@ -1454,6 +1809,22 @@
   animation-timing-function: ease;
 }
 
+.letters-fly-in-from-top-div {
+  display: inline-block;
+  position: relative;
+}
+
+.letters-fly-in-from-top-div span {
+  display: inline-block;
+  opacity: 0;
+  animation-name: fly-in-top;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration-effect-title-block, 1s);
+  animation-delay: calc(var(--letter-index-div) *  var(--delay-effect-title-block));
+  animation-timing-function: ease;
+}
+
+
 /* Fly in bottom */
 @keyframes fly-in-bottom {
   from {
@@ -1478,6 +1849,21 @@
   animation-fill-mode: forwards;
   animation-duration: var(--duration-effect, 1s);
   animation-delay: calc(var(--letter-index) *  var(--delay-effect));
+  animation-timing-function: ease;
+}
+
+.letters-fly-in-from-bottom-div {
+  display: inline-block;
+  position: relative;
+}
+
+.letters-fly-in-from-bottom-div span {
+  display: inline-block;
+  opacity: 0;
+  animation-name: fly-in-bottom;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration-effect-title-block, 1s);
+  animation-delay: calc(var(--letter-index-div) *  var(--delay-effect-title-block));
   animation-timing-function: ease;
 }
 
@@ -1510,6 +1896,23 @@
   animation-timing-function: ease;
 }
 
+.letter-flip-from-top-div {
+  display: inline-block;
+  position: relative;
+  perspective: 1000px;
+}
+
+.letter-flip-from-top-div span {
+  display: inline-block;
+  opacity: 0;
+  transform-origin: top;
+  animation-name: flip-from-top;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration-effect-title-block, 1s);
+  animation-delay: calc(var(--letter-index-div) * var(--delay-effect-title-block));
+  animation-timing-function: ease;
+}
+
 /* Flip from bottom */
 @keyframes flip-from-bottom {
   from {
@@ -1539,6 +1942,24 @@
   animation-timing-function: ease;
 }
 
+.letter-flip-from-bottom-div {
+  display: inline-block;
+  position: relative;
+  perspective: 1000px;
+}
+
+.letter-flip-from-bottom-div span {
+  display: inline-block;
+  opacity: 0;
+  transform-origin: bottom;
+  animation-name: flip-from-bottom;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration-effect-title-block, 1s);
+  animation-delay: calc(var(--letter-index-div) * var(--delay-effect-title-block));
+  animation-timing-function: ease;
+}
+
+
 /* Flip circle */
 @keyframes flip-cycle {
   0%, 100% {
@@ -1567,6 +1988,22 @@
   animation-timing-function: ease;
 }
 
+.letter-flip-cycle-div {
+  display: inline-block;
+  position: relative;
+  perspective: 1000px;
+}
+
+.letter-flip-cycle-div span {
+  display: inline-block;
+  opacity: 0;
+  animation-name: flip-cycle;
+  animation-fill-mode: forwards;
+  animation-duration: var(--duration-effect-title-block, 1s);
+  animation-delay: calc(var(--letter-index-div) * var(--delay-effect-title-block));
+  animation-timing-function: ease;
+}
+
 /* Rotate continuos */
 @keyframes rotateContinuos {
   from {
@@ -1588,6 +2025,10 @@
   animation: rotateContinuos var(--duration-effect-div) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
 }
 
+.rotate-continuous-title-div {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect-title-block) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
 
 
 /* Filter */
@@ -1893,6 +2334,53 @@
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
+/* Hover Effect div */
+
+/* Scale */
+.hover-effect-1-div{
+  transition: transform var(--transition-hover-div) ease;
+}
+
+.hover-effect-1-div:hover{
+  transform: scale(1.1);
+}
+/* Translate Y */
+.hover-effect-2-div{
+  transition: transform var(--transition-hover-div) ease;
+}
+.hover-effect-2-div:hover {
+  transform: translateY(var(--translate-hover-div)); /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Translate X */
+.hover-effect-5-div{
+  transition: transform var(--transition-hover-div) ease;
+}
+.hover-effect-5-div:hover {
+  transform: translateX(var(--translate-hover-div)); /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Shadow */
+.hover-effect-3-div- {
+  transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
+}
+
+.hover-effect-3-div-:hover {
+  box-shadow: 0 2px 4px var(--color-effect-hover-div); /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Shadow */
+.hover-effect-3-div {
+  transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
+}
+
+.hover-effect-3-div:hover {
+  box-shadow: 0 4px 8px var(--color-effect-hover-div); /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+
 /* Image slide */
 .content-img-first:hover{
     transform: rotate(var(--rotate-hover-image))!important;
@@ -2018,6 +2506,43 @@ transition: transform var(--transition-hover-image) ease;
     display: block;
   }
   .mobile-image-hidden {
+    display: none;
+  }
+}
+
+/* Responsive div */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-div-visible, .tablet-div-visible, .mobile-div-visible {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-div-visible {
+    display: flex; /* Cambia da block a flex */
+  }
+  .desktop-div-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-div-visible {
+    display: flex; /* Cambia da block a flex */
+  }
+  .tablet-div-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-div-visible {
+    display: flex; /* Cambia da block a flex */
+  }
+  .mobile-div-hidden {
     display: none;
   }
 }

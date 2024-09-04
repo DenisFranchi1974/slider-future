@@ -20,7 +20,8 @@ import ImageControlsBlock from "./imageControlsBlock";
 import SectionSelectorBlock from "./sectionSelectorBlock";
 import AlignmentControl from "./aligncontrol";
 import BoxShadowControlBlock from "./boxShadowBlock";
-
+import DivControlsHover from "./DivControlsHover";
+import FontStyle from "./font-style";
 
 const DivControls = ({
   slide,
@@ -39,6 +40,9 @@ const DivControls = ({
   attributes
 
 }) => {
+
+
+
 
   // Inizializza lo stato locale utilizzando element.playStateDiv
   const [playStateDiv, setPlayState] = useState(element.playStateDiv || '');
@@ -449,6 +453,143 @@ const DivControls = ({
           setAttributes({ slides: updatedSlides });
         };
 
+        // Selector link
+    const updateTextLinkDiv = (slideId, index, value) => {   
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide, 
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, textLinkDiv: value }
+                  : element
+              ),  
+          }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+
+    };
+
+    // Link Url
+    const updateLinkUrlDiv = (slideId, index, url) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, linkUrlDiv: url }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+    // Link Target
+    const updateScrollToIdDiv = (slideId, index, id) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, scrollToIdDiv: id }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+    // Link Target
+    const updateLinkTargetDiv = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, linkTargetDiv: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Link Rel
+    const updateLinkRelDiv = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, linkRelDiv: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Enable Desktop
+    const updateEnableDesktopDiv = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, enableDesktopDiv: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+     // Enable Tablet
+     const updateEnableTabletDiv = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, enableTabletDiv: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+     // Enable Mobile
+     const updateEnableMobileDiv = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, enableMobileDiv: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
         
        // Margin div
        const updatenewMarginDiv= (slideId, index, newMarginDiv) => {
@@ -526,8 +667,195 @@ const DivControls = ({
                       ...(element.innerTextDivs || []),
                       { 
                         content: "" ,
+                        widthTitleBlock: "auto",
+                        widthCustomTitleBlock: 100,
+                        textAlign: "center",
+                        elementTitle: "h4",
+                        fontSize: 16,
+                        fontSizeTablet: 16,
+                        fontSizeMobile: 16,
+                        fontStyle: "",
+                        fontFamilyTitleBlock: "",
+                        fontWeightTitleBlock: "",
+                        lineHeight: 1.2,
+                        letterSpacingTitleBlock: 0,
                         textColor: innerTextColorDefault,
+                        paddingTitleBlock: {
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          left: "0",
+                        },
+                        marginTitle: {
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          left: "0",
+                        },
+                        borderStyle: "none",
+                        backgroundBorderSize: 0,
+                        backgroundBorderRadius: 0,
+                        backgroundBorderColor: "",
+                        rotate: 0,
+                        opacity: 1,
+                        textWriteMode: "horizontal-tb",
+                        textOrientation: "initial",
+                        animation: "none",
+                        durationEffect: 1,
+                        delayEffect: 0,
+                        durationEffectOdd: 1,
+                        durationEffectEven: 1,
+                        interation: 1,
+                        speedEffect:100,
+                        pauseEffect: 0,
+                        animationCount:"1",
+                        widthCursor:2,
+                        animationCursor:1,
+                        cursorColor: innerTextColorDefault,
+                        gradinetColorOne:"",
+                        gradinetColorTwo:"",
+                        gradinetColorThree:"",
+                        gradinetColorFour:"",
+                        gradinetColorFive:"",
+                        decoration: "none",
+                        underlineColor: innerTextColorDefault,
+                        underlinePadding: 0,
+                        underlineVertical: 0,
+                        underlineHorizontal: 0,
+                        underlineWidth: 20,
+                        underlineHeight: 3,
+                        underlineAnimation: "none",
+                        underlineAnimationFrom: 5,
+                        underlineAnimationTo: 50,
+                        underlineFromSizeNew: 5,
+                        underlineToSizeNew: 5,
+                        underlineAnimationTransition: 0.5,
+                        parallaxTitle: 0,
+                        parallaxTitleY: 0,
+                        parallaxTitleScale: 1,
+                        parallaxTitleOpacity: 1,
+                        parallaxTitleDuration: 100,
                       },
+                    ],
+                  }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Parallax  x
+    const updateParallaxDiv = (slideId, index, newParallaxDiv) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, parallaxDiv: newParallaxDiv }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+    // Parallax y
+    const updateParallaxDivY = (slideId, index, newParallaxDivY) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, parallaxDivY: newParallaxDivY }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+    // Parallax  scale
+    const updateParallaxDivScale = (slideId, index, newParallaxDivScale) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, parallaxDivScale: newParallaxDivScale }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+    // Parallax opacity
+    const updateParallaxDivOpacity = (
+      slideId,
+      index,
+      newParallaxDivOpacity
+    ) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, parallaxDivOpacity: newParallaxDivOpacity }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+    // Parallax duration
+    const updateParallaxDivDuration = (
+      slideId,
+      index,
+      newParallaxDivDuration
+    ) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? {
+                      ...element,
+                      parallaxDivDuration: newParallaxDivDuration,
+                    }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+
+    // Add Image inside block
+  const addSlideImageDiv = (slideId, divIndex) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, index) =>
+              index === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: [
+                      ...(element.innerImageDivs || []),
+                      { imageUrl: "", alt: "" },
                     ],
                   }
                 : element
@@ -1373,7 +1701,320 @@ const DivControls = ({
             </div>
             </>
           )}
-          
+           {activeSectionBlock === "hover" && (
+            <>
+              <DivControlsHover
+                slide={slide}
+                slides={slides}
+                element={element}
+                elementIndex={elementIndex}
+                setAttributes={setAttributes}
+              />
+            </>
+          )}
+        {activeSectionBlock === "actions" && (
+        <>
+        <div
+            className="content-title-custom-panel intermedy"
+            style={{
+              marginTop: "-18px",
+            }}
+          >
+            <h2 className="title-custom-panel">
+              {__("Actions", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+         <div className="custom-select select-control-label-right">
+              <SelectControl
+                label={
+                  <>
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"/></svg>
+                    {__("Link actions", "cocoblocks")}
+                  </>
+                }
+                value={element.textLinkDiv}
+                options={[
+                  { label: "None", value: "none" },
+                  { label: "Link", value: "link" },
+                  { label: "Scroll Below Slider", value: "scroll-below" },
+                  { label: "Scroll to ID Element", value: "scroll-to-id" },
+                ]}
+                onChange={(value) =>
+                  updateTextLinkDiv(slide.id, elementIndex, value)
+                }
+              />
+            </div>
+            {element.textLinkDiv === "link" && (
+              <>
+               <div className="custom-select select-text-control">
+              <TextControl
+                label={<> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"/></svg>
+                {__("Enter URL", "cocoblocks")}</>}
+                value={element.linkUrlDiv}
+                onChange={(value) => updateLinkUrlDiv(slide.id, elementIndex, value)}
+              />
+              </div>
+              <div className="custom-select select-control-label-right">
+              <SelectControl
+                  label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"/></svg>
+                  {__("Target", "cocoblocks")}</>}
+                  value={element.linkTargetDiv}
+                  options={[
+                      { label: "Same Window", value: "_self" },
+                      { label: "New Window", value: "_blank" },
+                  ]}
+                  onChange={(value) => updateLinkTargetDiv(slide.id, elementIndex, value)}
+              />
+              </div>
+              <div className="custom-select select-control-label-right">
+              <SelectControl
+                  label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m791-55-91-91q-49 32-104.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-60 17-115.5T146-700l-91-91 57-57 736 736-57 57ZM480-160q43 0 83.5-11t78.5-33L204-642q-22 38-33 78.5T160-480q0 133 93.5 226.5T480-160Zm334-100-58-58q22-38 33-78.5t11-83.5q0-133-93.5-226.5T480-800q-43 0-83.5 11T318-756l-58-58q49-32 104.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 60-17 115.5T814-260ZM537-537ZM423-423Z"/></svg>
+                    {__("Link Behavior", "cocoblocks")}</>}
+                  value={element.linkRelDiv}
+                  options={[
+                      { label: "Follow Link", value: "follow" },
+                      { label: "No Follow", value: "nofollow" },
+                  ]}
+                  onChange={(value) => updateLinkRelDiv(slide.id, elementIndex, value)}
+              />
+             </div>
+              </>
+            )}
+            {element.textLinkDiv === "scroll-to-id" && (
+              <div className="custom-select select-text-control">
+              <TextControl
+                label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-160q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v284q-10-2-19.5-3t-20.5-1h-40v-280H200v560h124q4 22 10.5 42t17.5 38H200Zm0-120v40-560 520Zm80-40h44q8-49 35-90.5t69-69.5H280v160Zm0-240h160v-160H280v160Zm280 440q-66 0-113-47t-47-113q0-66 47-113t113-47h80v80h-80q-33 0-56.5 23.5T480-280q0 33 23.5 56.5T560-200h80v80h-80Zm-40-440h160v-160H520v160Zm40 320v-80h240v80H560Zm160 120v-80h80q33 0 56.5-23.5T880-280q0-33-23.5-56.5T800-360h-80v-80h80q66 0 113 46.5T960-280q0 66-47 113t-113 47h-80Z"/></svg>
+                {__("Enter ID", "cocoblocks")}</>}
+                value={element.scrollToIdDiv}
+                onChange={(value) => updateScrollToIdDiv(slide.id, elementIndex, value)}
+              />
+              </div>
+            )}
+          </div>
+        </>
+        )}
+        {activeSectionBlock === "visibility" && (
+        <>
+         <div
+            className="content-title-custom-panel intermedy"
+            style={{
+              marginTop: "-18px",
+            }}
+          >
+            <h2 className="title-custom-panel">
+              {__("Visibility", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <ToggleControl
+                label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-160q-33 0-56.5-23.5T0-240h160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240h160q0 33-23.5 56.5T880-160H80Zm400-40q17 0 28.5-11.5T520-240q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240q0 17 11.5 28.5T480-200ZM160-320h640v-440H160v440Zm0 0v-440 440Z"/></svg>
+                {__("Desktop", "cocoblocks")}</>}
+                checked={element.enableDesktopDiv}
+                onChange={(value) => updateEnableDesktopDiv(slide.id, elementIndex, value)}
+              />
+            </div>
+            <div className="custom-select">
+              <ToggleControl
+                label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-140q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM200-40q-33 0-56.5-23.5T120-120v-720q0-33 23.5-56.5T200-920h560q33 0 56.5 23.5T840-840v720q0 33-23.5 56.5T760-40H200Zm0-200v120h560v-120H200Zm0-80h560v-400H200v400Zm0-480h560v-40H200v40Zm0 0v-40 40Zm0 560v120-120Z"/></svg>
+                {__("Tablet", "cocoblocks")}</>}
+                checked={element.enableTabletDiv}
+                onChange={(value) => updateEnableTabletDiv(slide.id, elementIndex, value)}
+              />
+            </div>
+            <div className="custom-select">
+              <ToggleControl
+                label={<><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"/></svg>
+                {__("Mobile", "cocoblocks")}</>}
+                checked={element.enableMobileDiv}
+                onChange={(value) => updateEnableMobileDiv(slide.id, elementIndex, value)}
+              />
+            </div>
+          </div>
+        </>
+        )}
+        {activeSectionBlock === "parallax" && (
+        <>
+          <div
+            className="content-title-custom-panel intermedy"
+            style={{
+              marginTop: "-18px",
+            }}
+          >
+            <h2 className="title-custom-panel">
+              {__("Effects", "cocoblocks")}
+            </h2>
+          </div>
+          {parallax && (
+            <>
+              <div className="content-section-panel" style={{ padding: "0" }}>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
+                        </svg>
+                        {__("Parallax offset X", "cocoblocks")}
+                      </>
+                    }
+                    value={element.parallaxDiv}
+                    onChange={(newParallaxDiv) =>
+                      updateParallaxDiv(
+                        slide.id,
+                        elementIndex,
+                        newParallaxDiv
+                      )
+                    }
+                    min={-500}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
+                        </svg>
+                        {__("Parallax offset Y", "cocoblocks")}
+                      </>
+                    }
+                    value={element.parallaxDivY}
+                    onChange={(newParallaxDivY) =>
+                      updateParallaxDivY(
+                        slide.id,
+                        elementIndex,
+                        newParallaxDivY
+                      )
+                    }
+                    min={-500}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
+                        </svg>
+                        {__("Parallax scale", "cocoblocks")}
+                      </>
+                    }
+                    value={element.parallaxDivScale}
+                    onChange={(newParallaxDivScale) =>
+                      updateParallaxDivScale(
+                        slide.id,
+                        elementIndex,
+                        newParallaxDivScale
+                      )
+                    }
+                    min={0}
+                    max={2}
+                    step={0.1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
+                        </svg>
+                        {__("Parallax opacity", "cocoblocks")}
+                      </>
+                    }
+                    value={element.parallaxDivOpacity}
+                    onChange={(newParallaxDivOpacity) =>
+                      updateParallaxDivOpacity(
+                        slide.id,
+                        elementIndex,
+                        newParallaxDivOpacity
+                      )
+                    }
+                    min={0}
+                    max={1}
+                    step={0.1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
+                        </svg>
+                        {__("Parallax duration", "cocoblocks")}
+                      </>
+                    }
+                    value={element.parallaxDivDuration}
+                    onChange={(newParallaxDivDuration) =>
+                      updateParallaxDivDuration(
+                        slide.id,
+                        elementIndex,
+                        newParallaxDivDuration
+                      )
+                    }
+                    min={100}
+                    max={2000}
+                    step={10}
+                  />
+                </div>
+              </div>
+            </>
+          )}
+          {!parallax && (
+            <p
+              className="notice components-base-control__help"
+              style={{
+                borderRadius: "8px",
+                marginTop: "18px",
+              }}
+            >
+              {__(
+                'For these effects, you need to enable "Parallax" from the Slider options under the Animation section!',
+                "cocoblocks"
+              )}
+            </p>
+          )}
+        </>
+      )}
+
+
       {element.innerTextDivs &&
         element.innerTextDivs.map(
           (textDiv, textIndex) => (
