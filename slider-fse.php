@@ -24,8 +24,6 @@ function create_block_slider_fse_block_init() {
 }
 add_action('init', 'create_block_slider_fse_block_init');
 
-
-
 // Admin Dashboard
 function my_plugin_admin_menu() {
     add_menu_page(
@@ -207,47 +205,69 @@ function cocoblocks_register_rest_routes() {
 add_action('rest_api_init', 'cocoblocks_register_rest_routes');
 
 
-
-
-
-// Registra l'endpoint REST API
+// Registra l'endpoint REST API for image upload
+// Registra l'endpoint REST API per il caricamento delle immagini
 function register_custom_image_upload_endpoint() {
     register_rest_route('custom-plugin/v1', '/upload-image/', array(
         'methods' => 'POST',
         'callback' => 'handle_image_upload',
-        'permission_callback' => '__return_true', // Assicurati di gestire la sicurezza correttamente
+        'permission_callback' => '__return_true', // Usa '__return_true' per testare; dovresti implementare controlli di autorizzazione
     ));
 }
 add_action('rest_api_init', 'register_custom_image_upload_endpoint');
 
 // Gestisce il download e il salvataggio dell'immagine
 function handle_image_upload(WP_REST_Request $request) {
-    $image_url = $request->get_param('image_url');
-    $image_name = basename($image_url);
+    $image_url = esc_url_raw( $request->get_param('image_url') );
+
+    // Verifica se l'URL dell'immagine è valido
+    if ( empty( $image_url ) || !filter_var( $image_url, FILTER_VALIDATE_URL ) ) {
+        return new WP_REST_Response( array( 'message' => 'URL immagine non valido.' ), 400 );
+    }
 
     // Scarica l'immagine
     $response = wp_remote_get($image_url);
+
+    if ( is_wp_error( $response ) ) {
+        return new WP_REST_Response( array( 'message' => 'Errore durante il download dell\'immagine.' ), 500 );
+    }
+
     $image_data = wp_remote_retrieve_body($response);
+
+    if ( empty( $image_data ) ) {
+        return new WP_REST_Response( array( 'message' => 'Immagine non valida.' ), 400 );
+    }
 
     // Salva l'immagine nella directory uploads
     $upload_dir = wp_upload_dir();
+    $image_name = basename($image_url);
     $image_path = $upload_dir['path'] . '/' . $image_name;
-    file_put_contents($image_path, $image_data);
+
+    $file_saved = file_put_contents($image_path, $image_data);
+
+    if ( false === $file_saved ) {
+        return new WP_REST_Response( array( 'message' => 'Errore durante il salvataggio dell\'immagine.' ), 500 );
+    }
 
     // Inserisce l'immagine nella libreria media di WordPress
     $attachment_id = wp_insert_attachment(array(
         'guid'           => $upload_dir['url'] . '/' . $image_name,
-        'post_mime_type' => 'image/jpeg',
+        'post_mime_type' => wp_check_filetype( $image_path )['type'],
         'post_title'     => sanitize_file_name($image_name),
         'post_content'   => '',
         'post_status'    => 'inherit'
     ), $image_path);
 
-    // Genera i metadati
+    if ( is_wp_error( $attachment_id ) ) {
+        return new WP_REST_Response( array( 'message' => 'Errore durante l\'inserimento nella libreria media.' ), 500 );
+    }
+
     require_once(ABSPATH . 'wp-admin/includes/image.php');
     $attach_data = wp_generate_attachment_metadata($attachment_id, $image_path);
     wp_update_attachment_metadata($attachment_id, $attach_data);
 
-    return new WP_REST_Response(array('attachment_id' => $attachment_id, 'url' => wp_get_attachment_url($attachment_id)), 200);
+    return new WP_REST_Response( array(
+        'attachment_id' => $attachment_id,
+        'url' => wp_get_attachment_url( $attachment_id ),
+    ), 200 );
 }
-

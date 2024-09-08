@@ -1,8 +1,5 @@
 import { __ } from "@wordpress/i18n";
-import {
-  MediaUpload,
-  MediaUploadCheck,
-} from "@wordpress/block-editor";
+import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 import {
   SelectControl,
   Button,
@@ -13,12 +10,13 @@ import {
   RangeControl,
   FocalPointPicker,
   Tooltip,
+  ToggleControl,
 } from "@wordpress/components";
-import { trash, replace, addTemplate, border } from "@wordpress/icons";
+import { trash, replace, addTemplate, button, info} from "@wordpress/icons";
 import React, { useRef, useEffect } from "react";
 import { useState } from "@wordpress/element";
 import "./editor.scss";
-import '../slider/editor.scss';
+import "../slider/editor.scss";
 import SectionSelectorSlide from "./sectionSelectorSlide";
 import TextControls from "./TextControls";
 import ImageControls from "./imageControls";
@@ -26,6 +24,9 @@ import DivControls from "./divControls";
 import ColorOptionsPanel from "./colorPanel";
 import ColorOptionsPanelGradient from "./colorPanelGradient";
 import AlignmentControl from "./aligncontrol";
+import ImageSelectionModal from "./ImageSelectionModal";
+import ButtonTypeSelectionModal from "./buttonModal";
+import ButtonControls from "./ButtonControls";
 
 const SlideControls = ({
   slide,
@@ -33,17 +34,72 @@ const SlideControls = ({
   elementIndex,
   slides,
   setAttributes,
-  setActiveSectionImage,
-  activeSectionImage,
   parallax,
   attributes,
+  swiperRef,
+ 
 }) => {
-  const { device, backgroundColorSlideDefault, textColorDefault, backgroundColorBlockDefault, } = attributes;
+  const {
+    device,
+    backgroundColorSlideDefault,
+    textColorDefault,
+    backgroundColorBlockDefault,
+  } = attributes;
+  
+
+  const [isModalOpenButton, setIsModalOpenButton] = useState(false);
+
+  const openModalButton = () => setIsModalOpenButton(true);
+  const closeModalButton = () => setIsModalOpenButton(false);
+
+  const handleButtonTypeSelect = (slideId, type) => {
+    addSlideButton(slideId, type); // Passa il tipo selezionato ("type1", "type2", "type3")
+  };
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleImageSelect = async (image) => {
+   
+    setIsLoading(true);
+    try {
+      // Chiamata all'endpoint REST API per caricare l'immagine
+      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ image_url: image.url }),
+      });
+  
+      const data = await response.json();
+  
+      if (data.url) {
+        // Aggiorna la slide con l'immagine appena caricata
+        updateSlideBackgroundImage(slides.length, image.url);
+      } else {
+        console.error("Errore durante il caricamento dell'immagine.");
+      }
+    } catch (error) {
+      console.error("Errore durante la chiamata all'API:", error);
+    } finally {
+      setIsLoading(false);
+      setIsModalOpen(false);
+    }
+  };
+  
+  // Funzione per aprire il modale
+  const openModal = () => setIsModalOpen(true);
+
+  // Funzione per chiudere il modale
+  const closeModal = () => setIsModalOpen(false);
+
 
   // Panel Slide
   const [selectedPanel, setSelectedPanel] = useState(null);
   const [primaryColor, setPrimaryColor] = useState("");
-  const swiperRef = useRef(null); // Riferimento a Swiper
+  //const swiperRef = useRef(null); // Riferimento a Swiper
 
   useEffect(() => {
     // Recupera il valore della variabile CSS --primary-color
@@ -85,6 +141,8 @@ const SlideControls = ({
 
   // Section Block
   const [activeSectionBlock, setActiveSectionBlock] = useState("content");
+  // Section Image
+  const [activeSectionImage, setActiveSectionImage] = useState("content");
 
   // Responsive
   const [showOtherButtons, setShowOtherButtons] = useState(false);
@@ -211,6 +269,9 @@ const SlideControls = ({
       backgroundVerticalPadding: 0,
       backgroundHorizontalPadding: 0,
       borderStyleSlide: "none",
+      enableContentWidth: true,
+      contentWidth:"",
+      layoutWrap: "wrap",
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -299,6 +360,23 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update Content width 
+  const updateSlideContentWidth = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, contentWidth: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update enable content width
+  const updateSlideEnableContentWidth = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, enableContentWidth: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
+
   // Update Layout
   const updateSlideLayout = (slideId, newLayout) => {
     const updatedSlides = slides.map((slide) =>
@@ -306,6 +384,14 @@ const SlideControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+  // Update layout wrap
+  const updateSlideLayoutWrap = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, layoutWrap: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
   // Update Position
   const updateSlidePosition = (slideId, newPosition) => {
     const updatedSlides = slides.map((slide) =>
@@ -322,7 +408,7 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-// Update border style
+  // Update border style
   const updateBorderStyleSlide = (slideId, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId ? { ...slide, borderStyleSlide: value } : slide
@@ -392,6 +478,9 @@ const SlideControls = ({
               ...(slide.elements || []),
               {
                 type: "title",
+                desktop: { x: 0, y: 0 },
+                tablet: { x: 0, y: 0 },
+                mobile: { x: 0, y: 0 },
                 text: __("Text Slide", "cocoblocks"),
                 textAlign: "center",
                 fontStyle: {
@@ -435,6 +524,7 @@ const SlideControls = ({
                 widthCustomTitle: 100,
                 backgroundBorderRadius: 0,
                 backgroundBorderSize: 0,
+                backgroundBorderSizeHover: 0,
                 backgroundBorderColor: "",
                 textWriteMode: "initial",
                 textOrientation: "initial",
@@ -452,7 +542,6 @@ const SlideControls = ({
                 gradinetColorTwo: "#000000",
                 gradinetColorThree: "#000000",
                 gradinetColorFour: "#000000",
-                gradinetColorFive: "#000000",
                 decoration: "none",
                 underlineColor: "#000000",
                 underlinePadding: 0,
@@ -477,6 +566,7 @@ const SlideControls = ({
                 textColorHover: textColorDefault,
                 borderStyleHover: "none",
                 backgroundBorderColorHover: "",
+                backgoroundBorderSizeHover: 0,
                 opacityHover: 1,
                 rotateHover: 0,
                 animationHover: "none",
@@ -507,6 +597,9 @@ const SlideControls = ({
               ...(slide.elements || []),
               {
                 type: "image",
+                desktop: { x: 0, y: 0 },
+                tablet: { x: 0, y: 0 },
+                mobile: { x: 0, y: 0 },
                 url: "",
                 alt: "",
                 fit: "cover",
@@ -525,6 +618,7 @@ const SlideControls = ({
                 borderStyleImage: "none",
                 backgroundBorderColorImage: "",
                 backgroundBorderSizeImage: 0,
+                backgroundBorderSizeImageHover: 0,
                 backgroundBorderRadiusImage: 0,
                 rotateImage: 0,
                 opacityImage: 1,
@@ -560,6 +654,7 @@ const SlideControls = ({
                 imageColorHover: "",
                 borderStyleHoverImage: "none",
                 backgroundBorderColorHoverImage: "",
+                backgoroundBorderSizeHoverImage: 0,
                 opacityHoverImage: 1,
                 rotateHoverImage: 0,
                 animationImageMovingHover: "none",
@@ -588,81 +683,107 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-    // Add Div
-    const addSlideDiv = (slideId) => {
-        const updatedSlides = slides.map((slide) =>
-          slide.id === slideId
-            ? {
-                ...slide,
-                elements: [
-                  ...slide.elements,
-                  {
-                    type: "div",
-                    content: "",
-                    layoutDiv: "vertical",
-                    gapItemsDiv: 5,
-                    positionDiv: "center-center",
-                    contentWidthDiv: "auto",
-                    customContentWidthDiv: 100,
-                    contentHeightDiv: "auto",
-                    customContentHeightDiv: 100,
-                    elementDiv: "div",
-                    backgroundVerticalPaddingDiv: 0,
-                    backgroundHorizontalPaddingDiv: 0,
-                    marginDiv: {
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0,
-                      },
-                    borderStyleDiv: "none",
-                    backgroundBorderColorDiv: "",
-                    backgroundBorderSizeDiv: 0,
-                    backgroundBorderRadiusDiv: 0,
-                    rotateDiv: 0,
-                    opacityDiv: 1,
-                    animationDiv: "none",
-                    durationEffectDiv: 1,
-                    interationDiv: "forwards",
-                    boxShadowX: 0,
-                    boxShadowY: 0,
-                    boxShadowBlur: 0,
-                    boxShadowSpread: 0,
-                    colorShadow: "",
-                    backgroundColor: backgroundColorBlockDefault,
-                    imageUrl: "",
-                    innerDivs: [],
-                    divColorHover: "#ffffff",
-                    borderStyleHoverDiv: "none",
-                    backgroundBorderColorHoverDiv: "",
-                    opacityHoverDiv: 1,
-                    rotateHoverDiv: 0,
-                    animationHoverDiv: "none",
-                    durationEffectHoverDiv: 1,
-                    effectHoverColorHoverDiv: "",
-                    translateEffectHoverDiv: 0,
-                    textLinkDiv: "none",
-                    linkUrlDiv: "",
-                    linkTargetDiv: "_self",
-                    linkRelDiv: "",
-                    scrollToIdDiv: "",
-                    enableDesktopDiv: true,
-                    enableTabletDiv: true,
-                    enableMobileDiv: true,
-                    parallaxDiv: 0,
-                    parallaxDivY: 0,
-                    parallaxDivScale: 1,
-                    parallaxDivOpacity: 1,
-                    parallaxDivDuration: 100,
-                  },
-                ],
-              }
-            : slide
-        );
-        setAttributes({ slides: updatedSlides });
-      };
-    
+  // Add Div
+  const addSlideDiv = (slideId) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: [
+              ...slide.elements,
+              {
+                type: "div",
+                desktop: { x: 0, y: 0 },
+                tablet: { x: 0, y: 0 },
+                mobile: { x: 0, y: 0 },
+                content: "",
+                layoutDiv: "vertical",
+                gapItemsDiv: 5,
+                positionDiv: "center-center",
+                contentWidthDiv: "auto",
+                customContentWidthDiv: 100,
+                contentHeightDiv: "auto",
+                customContentHeightDiv: 100,
+                elementDiv: "div",
+                backgroundVerticalPaddingDiv: 0,
+                backgroundHorizontalPaddingDiv: 0,
+                marginDiv: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                borderStyleDiv: "none",
+                backgroundBorderColorDiv: "",
+                backgroundBorderSizeDiv: 0,
+                backgroundBorderRadiusDiv: 0,
+                rotateDiv: 0,
+                opacityDiv: 1,
+                animationDiv: "none",
+                durationEffectDiv: 1,
+                interationDiv: "forwards",
+                boxShadowX: 0,
+                boxShadowY: 0,
+                boxShadowBlur: 0,
+                boxShadowSpread: 0,
+                colorShadow: "",
+                backgroundColor: backgroundColorBlockDefault,
+                imageUrl: "",
+                innerDivs: [],
+                divColorHover: "#ffffff",
+                borderStyleHoverDiv: "none",
+                backgroundBorderColorHoverDiv: "",
+                backgoroundBorderSizeHoverDiv: 0,
+                opacityHoverDiv: 1,
+                rotateHoverDiv: 0,
+                animationHoverDiv: "none",
+                durationEffectHoverDiv: 1,
+                effectHoverColorHoverDiv: "",
+                translateEffectHoverDiv: 0,
+                textLinkDiv: "none",
+                linkUrlDiv: "",
+                linkTargetDiv: "_self",
+                linkRelDiv: "",
+                scrollToIdDiv: "",
+                enableDesktopDiv: true,
+                enableTabletDiv: true,
+                enableMobileDiv: true,
+                parallaxDiv: 0,
+                parallaxDivY: 0,
+                parallaxDivScale: 1,
+                parallaxDivOpacity: 1,
+                parallaxDivDuration: 100,
+              },
+            ],
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
 
+  // Add Button
+    const addSlideButton = (slideId, buttonType) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: [
+                ...slide.elements,
+                {
+                  type: "button",
+                  desktop: { x: 0, y: 0 },
+                  tablet: { x: 0, y: 0 },
+                  mobile: { x: 0, y: 0 },
+                  buttonType: buttonType, // Aggiunge il tipo di bottone selezionato
+                },
+              ],
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+    
   return (
     <>
       <div className="content-subdescription-section-slider">
@@ -716,8 +837,8 @@ const SlideControls = ({
                 style={{ paddingTop: "0", paddingBottom: "0" }}
               >
                 <div className="content-section-panel" style={{ padding: "0" }}>
-                  <div className="custom-select">
-                    <div className="title-tab-background">
+                    <div className="custom-select">
+                      <div className="content-background-slide">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="24px"
@@ -729,10 +850,10 @@ const SlideControls = ({
                       </svg>
                       <h2
                         className="title-tab"
-                        style={{ marginBottom: "12px" }}
                       >
                         {__("Choose the backgrounds", "slider")}
                       </h2>
+                      </div>
                     </div>
                     <TabPanel
                       className="background-selector"
@@ -768,11 +889,6 @@ const SlideControls = ({
                           {tab.name === "color" && (
                             <div
                               className="custom-select color"
-                              style={{
-                                marginTop: "6px",
-                                paddingLeft: "6px",
-                                marginRight: "-6px",
-                              }}
                             >
                               <ColorOptionsPanel
                                 colorNormal={slide.backgroundColor}
@@ -797,11 +913,6 @@ const SlideControls = ({
                           {tab.name === "gradient" && (
                             <div
                               className="custom-select color"
-                              style={{
-                                marginTop: "6px",
-                                paddingLeft: "6px",
-                                marginRight: "-6px",
-                              }}
                             >
                               <ColorOptionsPanelGradient
                                 gradient={slide.backgroundGradient}
@@ -844,6 +955,8 @@ const SlideControls = ({
                                   render={({ open }) => (
                                     <>
                                       {!slide.backgroundImage && (
+                                        <>
+                                         <div className="custom-select">
                                         <Button
                                           onClick={open}
                                           style={{
@@ -879,7 +992,7 @@ const SlideControls = ({
                                               <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
                                             </svg>
                                             {__(
-                                              "Select Background Image",
+                                              "Media Library",
                                               "cocoblocks"
                                             )}
                                           </div>
@@ -893,6 +1006,55 @@ const SlideControls = ({
                                             }}
                                           ></span>
                                         </Button>
+                                        </div>
+                                        <div className="custom-select">
+                                      <Button
+                                        onClick={openModal}
+                                        style={{
+                                          width: "100%",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          justifyContent: "space-between",
+                                          color: " var(--light-color)",
+                                          padding: "0",
+                                        }}
+                                      >
+                                        <div
+                                          style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "5px",
+                                          }}
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            height="20px"
+                                            viewBox="0 -960 960 960"
+                                            width="20px"
+                                            fill="#e8eaed"
+                                            style={{
+                                              fill: " var(--light-color)",
+                                              width: "18px",
+                                              height: "18px",
+                                              marginLeft: "4px",
+                                            }}
+                                          >
+                                            <path d="M440-440ZM120-120q-33 0-56.5-23.5T40-200v-480q0-33 23.5-56.5T120-760h126l74-80h240v80H355l-73 80H120v480h640v-360h80v360q0 33-23.5 56.5T760-120H120Zm640-560v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM440-260q75 0 127.5-52.5T620-440q0-75-52.5-127.5T440-620q-75 0-127.5 52.5T260-440q0 75 52.5 127.5T440-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Z" />
+                                          </svg>
+                                          {__("Object Library", "cocoblocks")}
+                                        </div>
+                                        <span
+                                          className="dashicons dashicons-arrow-down-alt2"
+                                          style={{
+                                            position: "relative",
+                                            right: "2px",
+                                            top: "6px",
+                                            fontSize: "12px",
+                                          }}
+                                        ></span>
+                                      </Button>
+                                    </div>
+                                      </>
                                       )}
                                       {slide.backgroundImage && (
                                         <>
@@ -954,10 +1116,21 @@ const SlideControls = ({
                                             className="button-replace"
                                             icon={replace}
                                             label={__(
-                                              "Change Background Image",
+                                              "Change Image form Media Library",
                                               "cocoblocks"
                                             )}
                                           ></Button>
+                                          <Button
+                                            onClick={openModal}
+                                            style={{
+                                              marginLeft: "2px",
+                                              position: "relative",
+                                              top: "-2px",
+                                            }}
+                                            className="button-replace"
+                                            icon={replace}
+                                            label={__("Change Image from Object Library", "cocoblocks")}
+                                          />
                                         </>
                                       )}
                                     </>
@@ -975,13 +1148,18 @@ const SlideControls = ({
                                   label={__("Delete Image", "wp-kube")}
                                 ></Button>
                               )}
+                            {isModalOpen && (
+                              <ImageSelectionModal
+                                onClose={closeModal}
+                                onSelect={handleImageSelect}
+                              />
+                            )}
                             </div>
                           )}
 
                           {tab.name === "video" && (
                             <div
-                              className="content-img-upload"
-                              style={{ marginTop: "6px" }}
+                              className="custom-select"
                             >
                               <MediaUploadCheck>
                                 <MediaUpload
@@ -1106,7 +1284,6 @@ const SlideControls = ({
                         </>
                       )}
                     </TabPanel>
-                  </div>
                 </div>
               </div>
             </>
@@ -1184,6 +1361,82 @@ const SlideControls = ({
                     value={slide.position}
                     onChange={(newPosition) =>
                       updateSlidePosition(slide.id, newPosition)
+                    }
+                  />
+                </div>
+                <div className="custom-select">
+                <ToggleControl
+                  label={
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 320v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 320v-80h80v80h-80Z"/></svg>
+                      {__("Use content width", "cocoblocks")}
+                    </>
+                  }
+                  checked={slide.enableContentWidth}
+                  onChange={(value) =>  updateSlideEnableContentWidth(slide.id, value)
+
+                  }
+                />
+                <Tooltip
+                  placement="top"
+                  style={{
+                    padding: "10px",
+                    maxWidth: "300px",
+                    borderRadius: "4px",
+                  }}
+                  text={__(
+                    "Nested blocks will fill the width of this container. Toggle to constrain.",
+                    "cocoblocks"
+                  )}
+                >
+                  <Icon
+                    icon={info}
+                    className="tooltip-icon"
+                    style={{ top: "12px" }}
+                  />
+                </Tooltip>
+              </div>
+              {slide.enableContentWidth && (
+                <>
+              <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z"/></svg>
+                        {__("Content width", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.contentWidth}
+                    onChange={(value) =>
+                      updateSlideContentWidth(slide.id, value)
+                    }
+                    min={100}
+                    max={3200}
+                    step={1}
+                  />
+                </div>
+                </>)}
+                <div className="custom-select select-control-label-right">
+                  <SelectControl
+                    label={
+                      <>
+                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M40-80v-360h240v360H40Zm320 0v-360h240v360H360Zm320 0v-360h240v360H680Zm-240-80h80v-200h-80v200ZM40-520v-360h240v360H40Zm320 0v-360h240v360H360Zm320 0v-360h240v360H680Zm-560-80h80v-200h-80v200Zm640 0h80v-200h-80v200Z"/></svg>
+                        {__("Flex wrap", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.layoutWrap}
+                    options={[
+                      {
+                        label: __("Wrap", "slider"),
+                        value: "wrap",
+                      },
+                      {
+                        label: __("No Wrap", "slider"),
+                        value: "nowrap",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutWrap(slide.id, value)
                     }
                   />
                 </div>
@@ -1304,129 +1557,129 @@ const SlideControls = ({
                 className="content-section-panel"
                 style={{ paddingTop: "0", paddingBottom: "0" }}
               >
-                            <div className="custom-select select-control-label-right">
-              <SelectControl
-                label={
+                <div className="custom-select select-control-label-right">
+                  <SelectControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z" />
+                        </svg>
+                        {__("Border style", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.borderStyleSlide}
+                    options={[
+                      {
+                        label: __("None", "cocoblocks"),
+                        value: "none",
+                      },
+                      {
+                        label: __("Solid", "cocoblocks"),
+                        value: "solid",
+                      },
+                      {
+                        label: __("Dashed", "cocoblocks"),
+                        value: "dashed",
+                      },
+                      {
+                        label: __("Dotted", "cocoblocks"),
+                        value: "dotted",
+                      },
+                      {
+                        label: __("Double", "cocoblocks"),
+                        value: "double",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateBorderStyleSlide(slide.id, value)
+                    }
+                  />
+                </div>
+                {slide.borderStyleSlide !== "none" && (
                   <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z" />
-                    </svg>
-                    {__("Border style", "cocoblocks")}
+                    <div className="custom-select color">
+                      <ColorOptionsPanel
+                        colorNormal={slide.backgroundBorderColor}
+                        setColorNormal={(color) =>
+                          updateSlideBackgroundBorderColor(slide.id, color)
+                        }
+                        buttonTitle={__("Border Color", "cocoblocks")}
+                        buttonIcon={
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 -960 960 960"
+                            fill="#e8eaed"
+                            style={{
+                              marginRight: "3px",
+                              height: "16px",
+                              width: "16px",
+                            }}
+                          >
+                            <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z" />
+                          </svg>
+                        }
+                      />
+                    </div>
+                    <div className="custom-select">
+                      <RangeControl
+                        label={
+                          <>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              height="18px"
+                              viewBox="0 -960 960 960"
+                              width="18px"
+                              fill="#e8eaed"
+                              style={{ marginRight: "2px" }}
+                            >
+                              <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
+                            </svg>
+                            {__("Border width", "cocoblocks")}
+                          </>
+                        }
+                        value={slide.backgroundBorderSize}
+                        onChange={(newSize) =>
+                          updateSlideBackgroundBorderSize(slide.id, newSize)
+                        }
+                        min={0}
+                        max={20}
+                        step={1}
+                      />
+                    </div>
+                    <div className="custom-select">
+                      <RangeControl
+                        label={
+                          <>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              height="18px"
+                              viewBox="0 -960 960 960"
+                              width="18px"
+                              fill="#e8eaed"
+                              style={{ marginRight: "2px" }}
+                            >
+                              <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
+                            </svg>
+                            {__("Border radius", "cocoblocks")}
+                          </>
+                        }
+                        value={slide.backgroundBorderRadius}
+                        onChange={(newRadius) =>
+                          updateSlideBackgroundBorderRadius(slide.id, newRadius)
+                        }
+                        min={0}
+                        max={256}
+                        step={1}
+                      />
+                    </div>
                   </>
-                }
-                value={slide.borderStyleSlide}
-                options={[
-                  {
-                    label: __("None", "cocoblocks"),
-                    value: "none",
-                  },
-                  {
-                    label: __("Solid", "cocoblocks"),
-                    value: "solid",
-                  },
-                  {
-                    label: __("Dashed", "cocoblocks"),
-                    value: "dashed",
-                  },
-                  {
-                    label: __("Dotted", "cocoblocks"),
-                    value: "dotted",
-                  },
-                  {
-                    label: __("Double", "cocoblocks"),
-                    value: "double",
-                  },
-                ]}
-                onChange={(value) =>
-                  updateBorderStyleSlide(slide.id, value)
-                }
-              />
-            </div>
-            {slide.borderStyleSlide !== "none" && (
-                <>
-                <div className="custom-select color">
-                  <ColorOptionsPanel
-                    colorNormal={slide.backgroundBorderColor}
-                    setColorNormal={(color) =>
-                      updateSlideBackgroundBorderColor(slide.id, color)
-                    }
-                    buttonTitle={__("Border Color", "cocoblocks")}
-                    buttonIcon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 -960 960 960"
-                        fill="#e8eaed"
-                        style={{
-                          marginRight: "3px",
-                          height: "16px",
-                          width: "16px",
-                        }}
-                      >
-                        <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z" />
-                      </svg>
-                    }
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="18px"
-                          viewBox="0 -960 960 960"
-                          width="18px"
-                          fill="#e8eaed"
-                          style={{ marginRight: "2px" }}
-                        >
-                          <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
-                        </svg>
-                        {__("Border width", "cocoblocks")}
-                      </>
-                    }
-                    value={slide.backgroundBorderSize}
-                    onChange={(newSize) =>
-                      updateSlideBackgroundBorderSize(slide.id, newSize)
-                    }
-                    min={0}
-                    max={20}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="18px"
-                          viewBox="0 -960 960 960"
-                          width="18px"
-                          fill="#e8eaed"
-                          style={{ marginRight: "2px" }}
-                        >
-                          <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
-                        </svg>
-                        {__("Border radius", "cocoblocks")}
-                      </>
-                    }
-                    value={slide.backgroundBorderRadius}
-                    onChange={(newRadius) =>
-                      updateSlideBackgroundBorderRadius(slide.id, newRadius)
-                    }
-                    min={0}
-                    max={256}
-                    step={1}
-                  />
-                </div>
-                </>
-            )}
+                )}
               </div>
             </>
           )}
@@ -1513,6 +1766,26 @@ const SlideControls = ({
                     attributes={attributes}
                   />
                 )}
+                 {element.type === "button" && (
+                    <>
+                    <ButtonControls
+                      slide={slide}
+                      slides={slides}
+                      element={element}
+                      elementIndex={elementIndex}
+                      setAttributes={setAttributes}
+                      setActiveSection={setActiveSection}
+                      activeSection={activeSection}
+                      parallax={parallax}
+                      device={device}
+                      handleDesktopClick={handleDesktopClick}
+                      handleTabletClick={handleTabletClick}
+                      handleMobileClick={handleMobileClick}
+                      showOtherButtons={showOtherButtons}
+                      attributes={attributes}
+                    />
+                  </>              
+                  )}
               </div>
             ))}
           <div className="divider-controls"></div>
@@ -1543,6 +1816,16 @@ const SlideControls = ({
             >
               <Icon icon={addTemplate} />
             </Button>
+            <Button onClick={openModalButton} label="Add Button">
+              <Icon icon={button} />
+            </Button>
+            {isModalOpenButton && (
+              <ButtonTypeSelectionModal
+                slideId={slide.id} 
+                onClose={closeModalButton}
+                onSelect={handleButtonTypeSelect} 
+              />
+            )}
           </div>
         </PanelBody>
       ))}

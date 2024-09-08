@@ -282,26 +282,21 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'bounce') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
-
         // Se l'animazione è "explode"
         if ($animation === 'explode') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $x = rand(-100, 100); // Posizione X casuale
                 $y = rand(-100, 100); // Posizione Y casuale
                 $rotation = rand(0, 360); // Rotazione casuale
                 $result .= '<span class="explode" data-explosion-delay="' . esc_attr($delayEffect) . '" data-explosion-duration="' . esc_attr($durationEffect) . '" style="--x:' . $x . 'px; --y:' . $y . 'px; --rotation:' . $rotation . 'deg;animation-delay:' . esc_attr($delayEffect) . 's;animation-iteration-count:' . esc_attr($animationCount) .'; animation-duration:'  . esc_attr($durationEffect) .'s;">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -309,14 +304,12 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'implode') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $x = rand(-100, 100); // Posizione X casuale
                 $y = rand(-100, 100); // Posizione Y casuale
                 $rotation = rand(0, 360); // Rotazione casuale
                 $result .= '<span class="implode" style="--x:' . $x . 'px; --y:' . $y . 'px; --rotation:' . $rotation . 'deg;animation-iteration-count:' . esc_attr($animationCount) .'; animation-delay:' . esc_attr($delayEffect) . 's; animation-duration:' . esc_attr($durationEffect) . 's;">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -336,16 +329,13 @@ if (!function_exists('splitTextIntoLetters')) {
                     <span class="typewriter-cursor" style="' . esc_attr($styleAttribute) . '"></span>';
         }
         
-
         // Se l'animazione è "letters-fly-in-from-left"
         if ($animation === 'letters-fly-in-from-left') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-left" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -353,11 +343,9 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'letters-fly-in-from-right') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-right" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -365,11 +353,9 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'letters-fly-in-from-top') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-top" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -377,11 +363,9 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'letters-fly-in-from-bottom') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-bottom" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -389,11 +373,9 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'letter-flip-from-top') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter-flip-from-top" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -401,11 +383,9 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'letter-flip-from-bottom') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter-flip-from-bottom" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -413,11 +393,9 @@ if (!function_exists('splitTextIntoLetters')) {
         if ($animation === 'letter-flip-cycle') {
             $letters = str_split($text);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter-flip-cycle" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -425,7 +403,6 @@ if (!function_exists('splitTextIntoLetters')) {
         return $text;
     }
 }
-
 
 if (!function_exists('splitTextIntoLettersTitleDiv')) {
     function splitTextIntoLettersTitleDiv($content = '', $animation = '', $textDiv = []) {
@@ -439,11 +416,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'bounce-title-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -451,14 +426,12 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'explode-title-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $x = rand(-100, 100); // Posizione X casuale
                 $y = rand(-100, 100); // Posizione Y casuale
                 $rotation = rand(0, 360); // Rotazione casuale
                 $result .= '<span class="explode-title-div" data-explosion-delay="' . esc_attr($delayEffect) . '" data-explosion-duration="' . esc_attr($durationEffect) . '" style="--x-title-div:' . $x . 'px; --y-title-div:' . $y . 'px; --rotation-title-div:' . $rotation . 'deg;animation-delay:' . esc_attr($delayEffect) . 's;animation-iteration-count:' . esc_attr($animationCount) .'; animation-duration:'  . esc_attr($durationEffect) .'s;">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -466,14 +439,12 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'implode-title-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $x = rand(-100, 100); // Posizione X casuale
                 $y = rand(-100, 100); // Posizione Y casuale
                 $rotation = rand(0, 360); // Rotazione casuale
                 $result .= '<span class="implode-title-div" style="--x-title-div:' . $x . 'px; --y-title-div:' . $y . 'px; --rotation-title-div:' . $rotation . 'deg;animation-iteration-count:' . esc_attr($animationCount) .'; animation-delay:' . esc_attr($delayEffect) . 's; animation-duration:' . esc_attr($durationEffect) . 's;">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -498,11 +469,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letters-fly-in-from-left-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-left-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -510,11 +479,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letters-fly-in-from-right-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-right-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -522,11 +489,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letters-fly-in-from-top-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-top-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -534,11 +499,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letters-fly-in-from-bottom-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letters-fly-in-from-bottom-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -546,11 +509,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letter-flip-from-top-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter-flip-from-top-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -558,11 +519,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letter-flip-from-bottom-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter-flip-from-bottom-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -570,11 +529,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         if ($animation === 'letter-flip-cycle-div') {
             $letters = str_split($content);
             $result = '';
-
             foreach ($letters as $index => $letter) {
                 $result .= '<span class="letter-flip-cycle-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
             }
-
             return $result;
         }
 
@@ -582,8 +539,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         return $content;
     }
 }
-
-
 
 ?>         
 
@@ -633,7 +588,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                 $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
             ?>
             <!-- Custom content rendering starts here -->
-            <div class="swiper-slide <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?> <?php echo esc_attr($overflow); ?>"
+            <div class="swiper-slide"
                 style="<?php 
                     if (!empty($slide['backgroundType'])) {
                         if ($slide['backgroundType'] === 'image' && !empty($slide['backgroundImage'])) {
@@ -644,24 +599,33 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             echo 'background-image: ' . esc_attr($slide['backgroundGradient']) . ';';
                         }
                     }
-                    // Gestisci l'altezza
-                    echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
-                    // Altri stili
-                    echo 'display: flex; ';
-                    echo 'text-align: center; ';
-                    echo 'width: 100%; ';
-                    echo 'position: relative; ';
-                    echo 'gap: ' . esc_attr($slide['gapItems']) . 'px; ';
-                    echo 'border-radius: ' . esc_attr($slide['backgroundBorderRadius']) . 'px; ';
-                    echo 'padding-top: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
-                    echo 'padding-bottom: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
-                    echo 'padding-left: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
-                    echo 'padding-right: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
-                    echo 'border-style: ' . esc_attr($slide['borderStyleSlide']) . '; ';
-                    echo 'border-width: ' . esc_attr($slide['backgroundBorderSize']) . 'px; ';
-                    echo 'border-color: ' . esc_attr($slide['backgroundBorderColor']) . '; ';
-                    echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . ';';
                 ?>">
+
+                <?php $maxWidth = $slide['enableContentWidth'] ? $slide['contentWidth'] . 'px' : 'false';?>
+                <div data-effect="particle" class="content-slide-slider <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?> <?php echo esc_attr($overflow); ?>"
+                        style="<?php 
+                            // Gestisci l'altezza
+                            echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
+                            echo 'display: flex; ';
+                            echo 'text-align: center; ';
+                            echo 'width: 100%; ';
+                            echo 'position: relative; ';
+                            echo 'gap: ' . esc_attr($slide['gapItems']) . 'px; ';
+                            echo 'border-radius: ' . esc_attr($slide['backgroundBorderRadius']) . 'px; ';
+                            echo 'padding-top: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
+                            echo 'padding-bottom: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
+                            echo 'padding-left: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
+                            echo 'padding-right: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
+                            echo 'border-style: ' . esc_attr($slide['borderStyleSlide']) . '; ';
+                            echo 'border-width: ' . esc_attr($slide['backgroundBorderSize']) . 'px; ';
+                            echo 'border-color: ' . esc_attr($slide['backgroundBorderColor']) . '; ';
+                            echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . ';';
+                            echo 'margin: 0 auto;';
+                            echo 'max-width: ' . esc_attr($maxWidth) . ';';
+                            echo 'flex-wrap: ' . esc_attr($slide['layoutWrap']) . ';';
+                        ?>"
+                >
+               
                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
                     <video src="<?php echo esc_url($slide['backgroundVideo']); ?>" autoplay muted loop style="width: 100%; object-position: <?php echo esc_attr( $background_position )?>; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; z-index: 0;"></video>
                 <?php endif; ?>
@@ -687,7 +651,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             $padding = "$paddingTop $paddingRight $paddingBottom $paddingLeft";
                             // Calcola se il font deve essere in grassetto
                             $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === "bold" ? "bold" : (isset($element['fontWeight']) ? esc_attr($element['fontWeight']) : "normal");
-
                             $stylesTitle = 'font-size: ' . esc_attr($element['fontSize']) . 'px; '
                             . '--font-size-tablet: ' . esc_attr($element['fontSizeTablet']) . 'px; '
                             . '--font-size-mobile: ' . esc_attr($element['fontSizeMobile']) . 'px; '
@@ -699,7 +662,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             . 'text-decoration: ' . $textDecoration . '; '
                             . 'line-height: ' . esc_attr($element['lineHeight']) . '; '
                             . 'font-family: ' . esc_attr($element['fontFamily']) . '; '
-                            . '--duration-effect: ' . esc_attr($element['durationEffect']) . 's;'
                             . '--duration-effect-odd: ' . esc_attr($element['durationEffectOdd']) . 's;'
                             . '--duration-effect-even: ' . esc_attr($element['durationEffectEven']) . 's;'
                             . '--delay-effect :' . esc_attr($element['delayEffect']) . 's;'
@@ -707,7 +669,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             . '--color-gradient-two:' . esc_attr($element['gradinetColorTwo']) . ';'
                             . '--color-gradient-three:' . esc_attr($element['gradinetColorThree']) . ';'
                             . '--color-gradient-four:' . esc_attr($element['gradinetColorFour']) . ';'
-                            . '--color-gradient-five:' . esc_attr($element['gradinetColorFive']) . ';'
                             . 'margin: ' . $margin . ';'
                             . 'padding: ' . $padding . ';'
                             . 'border-width: ' . esc_attr($element['backgroundBorderSize']) . 'px ' . ';'
@@ -715,8 +676,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             . 'border-color: ' . esc_attr($element['backgroundBorderColor']) . ';'
                             . '--border-color-hover: ' . esc_attr($element['backgroundBorderColorHover']) . ';'
                             . '--opacity-hover: ' . esc_attr($element['opacityHover']) . ';'
-                            . 'color-hover: ' . esc_attr($element['textColorHover']) . ';'
+                            . '--color-hover: ' . esc_attr($element['textColorHover']) . ';'
                             . '--border-style-hover: ' . esc_attr($element['borderStyleHover']) . ';'
+                            . '--border-width-hover: ' . esc_attr($element['backgroundBorderSizeHover']) . 'px;'
                             . '--transition-hover: ' . esc_attr($element['durationEffectHover']) . 's;'
                             . '--translate-hover: ' . esc_attr($element['translateEffectHover']) . 'px;'
                             . '--color-effect-hover: ' . esc_attr($element['effectHoverColorHover']) . ';'
@@ -727,12 +689,12 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             . '--box-shadow-color: ' . esc_attr($element['colorShadow']) . ';'
                             . 'writing-mode: ' . esc_attr($element['textWriteMode']) . ';'
                             . 'text-orientation: ' . esc_attr($element['textOrientation']) . ';'
-                            . '--interation: ' . esc_attr($element['interation']) . ';'
-                            . 'border-radius: ' . esc_attr($element['backgroundBorderRadius']) . 'px;';
+                            . 'border-radius: ' . esc_attr($element['backgroundBorderRadius']) . 'px;'
+                            . 'opacity: ' . esc_attr($element['opacity']) . ';';
+                         
 
                             // Recupera il tag HTML
                             $tag = isset($element['elementTitle']) ? esc_attr($element['elementTitle']) : 'h3';
-                           
                         ?>
                         <?php
                             // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
@@ -740,10 +702,11 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             $tabletClass = $element['enableTabletTitle'] ? 'tablet-title-visible' : 'tablet-title-hidden';
                             $mobileClass = $element['enableMobileTitle'] ? 'mobile-title-visible' : 'mobile-title-hidden';
                         ?>
+                                       
+
                        <div
                             style="
-                                transform: rotate(<?php echo esc_attr($element['rotate']); ?>deg);
-                                opacity: <?php echo esc_attr($element['opacity']); ?>;
+                                
                                 --rotate-hover: <?php echo esc_attr($element['rotateHover']); ?>deg;
                                 --color-decoration: <?php echo esc_attr($element['underlineColor']); ?>;
                                 --padding-decoration: <?php echo esc_attr($element['underlinePadding']); ?>px;
@@ -757,15 +720,25 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                 --animation-decoration-from-size: <?php echo esc_attr($element['underlineFromSizeNew']); ?>%;
                                 --animation-decoration-to-size: <?php echo esc_attr($element['underlineToSizeNew']); ?>%;
                                 --animation-decoration-transition: <?php echo esc_attr($element['underlineAnimationTransition']); ?>s;
+                                --duration-effect: <?php echo esc_attr($element['durationEffect']); ?>s;
+                                --delay-effect: <?php echo esc_attr($element['delayEffect']);?>s;
+                                --interation: <?php echo esc_attr($element['interation']);?>;
+                                transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px);
+                              position: absolute;
                                 width: <?php echo esc_attr($element['widthTitle']) === 'custom' ? esc_attr($element['widthCustomTitle']) . '%' : esc_attr($element['widthTitle']); ?>;
                             "
-                            class="content-title-slide <?php echo esc_attr($element['decoration']); ?> <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?>"
+                            class="content-title-slide <?php echo esc_attr($element['decoration']); ?> <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?> <?php echo esc_attr($element['animation']); ?>"
                             data-speed-effect="<?php echo esc_attr($element['speedEffect']); ?>"
+                            data-animation="<?php echo esc_attr($element['animation']); ?>"
+                            data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                            data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                            data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                            data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                            data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                            data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
                         >
-
-
                             <<?php echo esc_attr($tag); ?>
-                                class="title-slide letter  <?php echo esc_attr($element['animation']); ?>"
+                                class="title-slide <?php echo esc_attr($element['animationHover']); ?>"
                                 <?php
                                 $link_start = '';
                                 $link_end = '';
@@ -800,7 +773,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                 data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>"
                                 data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>"
                                 data-font-family="<?php echo esc_attr($element['fontFamily']); ?>" 
-                                data-animation="<?php echo esc_attr($element['animation']); ?>"
+                             
                                 <?php if ($element['textLink'] === 'link') : ?>
                                     href="<?php echo esc_url($element['linkUrl']); ?>"
                                 <?php elseif ($element['textLink'] === 'scroll-below' || $element['textLink'] === 'scroll-to-id') : ?>
@@ -854,8 +827,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                         : "0 0 0 0 #000000",
                                     'writing-mode' => isset($textDiv['textWriteMode']) ? $textDiv['textWriteMode'] : "initial",
                                     'text-orientation' => isset($textDiv['textOrientation']) ? $textDiv['textOrientation'] : "initial",
-                                    '--interation-title-block' => isset($textDiv['iteration']) ? $textDiv['iteration'] : "forwards",
-                                    '--duration-effect-title-block' => isset($textDiv['durationEffect']) ? $textDiv['durationEffect'] . "s" : "0s",
                                     '--delay-effect-title-block' => isset($textDiv['delayEffect']) ? $textDiv['delayEffect'] . "s" : "0s",
                                     '--duration-effect-odd-title-block' => isset($textDiv['durationEffectOdd']) ? $textDiv['durationEffectOdd'] . "s" : "0s",
                                     '--duration-effect-even-title-block' => isset($textDiv['durationEffectEven']) ? $textDiv['durationEffectEven'] . "s" : "0s",
@@ -863,69 +834,31 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                     '--color-gradient-two-title-div' => isset($textDiv['gradinetColorTwo']) ? $textDiv['gradinetColorTwo'] : "",
                                     '--color-gradient-three-title-div' => isset($textDiv['gradinetColorThree']) ? $textDiv['gradinetColorThree'] : "",
                                     '--color-gradient-four-title-div' => isset($textDiv['gradinetColorFour']) ? $textDiv['gradinetColorFour'] : "",
-                                    '--color-gradient-five-title-div' => isset($textDiv['gradinetColorFive']) ? $textDiv['gradinetColorFive'] : "",
-
-                                    
+                                    '--border-style-hover-title-div' => isset($textDiv['borderStyleHover']) ? $textDiv['borderStyleHover'] : "none",
+                                    '--transition-hover-title-div' => isset($textDiv['durationEffectHover']) ? $textDiv['durationEffectHover'] . 's' : "0.3s",
+                                    '--translate-hover-title-div' => isset($textDiv['translateEffectHover']) ? $textDiv['translateEffectHover'] . 'px' : "-10px",
+                                    '--color-effect-hover-title-div' => isset($textDiv['effectHoverColorHover']) ? $textDiv['effectHoverColorHover'] : "#000000",
+                                    '--border-color-hover-title-div' => isset($textDiv['backgroundBorderColorHover']) ? $textDiv['backgroundBorderColorHover'] : "#000000",
+                                    '--border-width-hover-title-div' => isset($textDiv['backgroundBorderSizeHover']) ? $textDiv['backgroundBorderSizeHover'] . 'px' : "0px",
+                                    '--opacity-hover-title-div' => isset($textDiv['opacityHover']) ? $textDiv['opacityHover'] : 1,
+                                    '--color-hover-title-div' => isset($textDiv['textColorHover']) ? $textDiv['textColorHover'] : "",
+                                    'opacity' => isset($textDiv['opacity']) ? esc_attr($textDiv['opacity']) : 1, 
                                 ];
 
                                 $styleString = '';
                                 foreach ($styles as $key => $value) {
                                     $styleString .= $key . ': ' . esc_attr($value) . '; ';
                                 }
-
                                 return $styleString;
                             }
                             }
                             ?>
-                            <?php
-                                // Definizione della funzione get_image_style_block
-                                if (!function_exists('get_image_style_block')) {
-                                function get_image_style_block($imageDiv) {
-                                    $style = [
-                                        'max-width' => '100%',
-                                        'min-width' => '0',
-                                        'max-height' => '100%',
-                                        'min-height' => '0',
-                                        'border' => esc_attr($imageDiv['backgroundBorderSizeImage']) . 'px solid ' . esc_attr($imageDiv['backgroundBorderColorImage']),
-                                        'border-radius' => esc_attr($imageDiv['backgroundBorderRadiusImage']) . 'px',
-                                        'padding' => esc_attr($imageDiv['paddingImage']) . 'px',
-                                        'background-color' => esc_attr($imageDiv['backgroundColorImage']),
-                                        'margin' => esc_attr($imageDiv['marginImage']['top']) . ' ' . esc_attr($imageDiv['marginImage']['right']) . ' ' . esc_attr($imageDiv['marginImage']['bottom']) . ' ' . esc_attr($imageDiv['marginImage']['left']),
-                                    ];
-
-                                    if ($imageDiv['widthImage'] === 'relative') {
-                                        $style['width'] = esc_attr($imageDiv['customWidthImage']) . '%';
-                                    } elseif ($imageDiv['widthImage'] === 'fixed') {
-                                        $style['width'] = esc_attr($imageDiv['customWidthImagePx']) . 'px';
-                                    }
-
-                                    if ($imageDiv['heightImage'] === 'relative') {
-                                        $style['height'] = esc_attr($imageDiv['customHeightImage']) . '%';
-                                    } elseif ($imageDiv['heightImage'] === 'fixed') {
-                                        $style['height'] = esc_attr($imageDiv['customHeightImagePx']) . 'px';
-                                    }
-
-                                    if ($imageDiv['widthImage'] !== 'auto' || $imageDiv['heightImage'] !== 'auto') {
-                                        $style['object-fit'] = esc_attr($imageDiv['fit']);
-                                    }
-
-                                    // Convertire l'array di stili in una stringa CSS
-                                    $styleString = '';
-                                    foreach ($style as $key => $value) {
-                                        $styleString .= $key . ': ' . $value . '; ';
-                                    }
-
-                                    return $styleString;
-                                }
-                                }
-                                ?>
                             <?php if ($element['type'] === 'div'): ?>
                             <?php
                              $link_url = '';
                              $onclick = '';
                              $target_div = '_self'; // Default
                              $rel_div = 'follow'; // Default
-                             
                              if ($element['textLinkDiv'] !== 'none') {
                                  // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
                                  if ($element['textLinkDiv'] === 'link' && !empty($element['linkUrlDiv'])) {
@@ -944,7 +877,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                      $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
                                  }
                              }
-
                              // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
                              $desktopClassDiv = $element['enableDesktopDiv'] ? 'desktop-div-visible' : 'desktop-div-hidden';
                              $tabletClassDiv = $element['enableTabletDiv'] ? 'tablet-div-visible' : 'tablet-div-hidden';
@@ -995,6 +927,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                     --interation-div: <?php echo esc_attr($element['interationDiv']) ?>;
                                     --color-hover-div:  <?php echo esc_attr($element['divColorHover']) ?>;
                                     --border-color-hover-div: <?php echo esc_attr($element['backgroundBorderColorHoverDiv']) ?>;
+                                    --border-width-hover-div: <?php echo esc_attr($element['backgroundBorderSizeDivHover']) ?>px;
                                     --opacity-hover-div: <?php echo esc_attr($element['opacityHoverDiv']) ?>;
                                     --border-style-hover-div: <?php echo esc_attr($element['borderStyleHoverDiv']) ?>;
                                     --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;    
@@ -1007,9 +940,14 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                 <?php if (!empty($element['innerTextDivs']) && is_array($element['innerTextDivs'])): ?>
                                     <?php foreach ($element['innerTextDivs'] as $textIndex => $textDiv): ?>
                                         <?php $TagBlock = !empty($textDiv['elementTitle']) ? $textDiv['elementTitle'] : 'h3'; ?>
+                                        <?php
+                                            // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
+                                            $desktopClassTitleDiv = $textDiv['enableDesktopTitle'] ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
+                                            $tabletClassTitleDiv = $textDiv['enableTabletTitle'] ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
+                                            $mobileClassTitleDiv = $textDiv['enableMobileTitle'] ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
+                                        ?>
                                         <div
                                             style="transform: rotate(<?php echo esc_attr($textDiv['rotate']); ?>deg); 
-                                            opacity: <?php echo esc_attr($textDiv['opacity']); ?>;
                                             --color-decoration-title-div: <?php echo esc_attr($textDiv['underlineColor']); ?>;
                                             --padding-decoration-title-div: <?php echo esc_attr($textDiv['underlinePadding']); ?>px;
                                             --width-decoration-title-div: <?php echo esc_attr($textDiv['underlineWidth']); ?>%;
@@ -1022,46 +960,168 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                             --animation-decoration-from-size-title-div: <?php echo esc_attr($textDiv['underlineFromSizeNew']); ?>%;
                                             --animation-decoration-to-size-title-div: <?php echo esc_attr($textDiv['underlineToSizeNew']); ?>%;
                                             --animation-decoration-transition-title-div: <?php echo esc_attr($textDiv['underlineAnimationTransition']); ?>s;
+                                            --rotate-hover-title-div: <?php echo esc_attr($textDiv['rotateHover']); ?>deg;
+                                            --duration-effect-title-block: <?php echo esc_attr($textDiv['durationEffect']); ?>s; 
+                                            --delay-effect-title-block: <?php echo esc_attr($textDiv['delayEffect']) ; ?>s; 
+                                            --interation-title-block: <?php echo esc_attr($textDiv['iteration']); ?>;
                                             "
-                                            class="<?php echo esc_attr($textDiv['decoration']); ?>"
+                                            class="content-title-div letter <?php echo esc_attr($textDiv['decoration']); ?> <?php echo esc_attr($textDiv['animation']); ?>  <?php echo esc_attr($desktopClassTitleDiv); ?> <?php echo esc_attr($tabletClassTitleDiv); ?> <?php echo esc_attr($mobileClassTitleDiv); ?>"
+                                             data-animation-title-div="<?php echo esc_attr($textDiv['animation']); ?>"
                                         >
                                             <<?php echo esc_attr($TagBlock); ?>
-                                                class="title-slide letter <?php echo esc_attr($textDiv['animation']); ?>"
+                                                class="title-slide-div <?php echo esc_attr($textDiv['animationHover']); ?>"
+                                            <?php
+                                                $link_start = '';
+                                                $link_end = '';
+                                                $target = '_self'; // Default
+                                                $rel = 'follow'; // Default
+                                                // Verifica il tipo di link e prepara i tag <a> e attributi
+                                                    if ($textDiv['textLink'] === 'link' && !empty($textDiv['linkUrl'])) {
+                                                        // Se è un link, prepara i tag <a> con target e rel
+                                                        if (!empty($textDiv['linkTarget'])) {
+                                                            $target = esc_attr($textDiv['linkTarget']);
+                                                        }
+                                                        if ($textDiv['linkRel'] === 'nofollow') {
+                                                            $rel = 'nofollow';
+                                                        }
+                                                        $link_start = '<a href="' . esc_url($textDiv['linkUrl']) . '" target="' . $target . '" rel="' . $rel . '">';
+                                                        $link_end = '</a>';
+                                                    } elseif ($textDiv['textLink'] === 'scroll-below') {
+                                                        // Logica per lo scroll in basso
+                                                        $link_start = '<a href="#" onclick="window.scrollBy({ top: window.innerHeight, behavior: \'smooth\' }); return false;">';
+                                                        $link_end = '</a>';
+                                                    } elseif ($textDiv['textLink'] === 'scroll-to-id' && !empty($textDiv['scrollToId'])) {
+                                                        // Logica per scrollare ad un ID specifico
+                                                        $link_start = '<a href="#" onclick="document.getElementById(\'' . esc_attr($textDiv['scrollToId']) . '\').scrollIntoView({ behavior: \'smooth\' }); return false;">';
+                                                        $link_end = '</a>';
+                                                    }
+                                                ?>
                                                 style="<?php echo esc_attr(getStylesTitleBlock($textDiv)); ?>"
                                                 data-swiper-parallax-x="<?php echo esc_attr($textDiv['parallaxTitle']); ?>"
                                                 data-swiper-parallax-y="<?php echo esc_attr($textDiv['parallaxTitleY']); ?>"
                                                 data-swiper-parallax-scale="<?php echo esc_attr($textDiv['parallaxTitleScale']); ?>"
                                                 data-swiper-parallax-duration="<?php echo esc_attr($textDiv['parallaxTitleDuration']); ?>"
                                                 data-swiper-parallax-opacity="<?php echo esc_attr($textDiv['parallaxTitleOpacity']); ?>"
+                                                <?php if ($textDiv['textLink'] === 'link') : ?>
+                                                    href="<?php echo esc_url($textDiv['linkUrl']); ?>"
+                                                <?php elseif ($textDiv['textLink'] === 'scroll-below' || $textDiv['textLink'] === 'scroll-to-id') : ?>
+                                                    onclick="
+                                                        <?php if ($textDiv['textLink'] === 'scroll-below') : ?>
+                                                            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+                                                        <?php elseif ($textDiv['textLink'] === 'scroll-to-id') : ?>
+                                                            var targetElement = document.getElementById('<?php echo esc_js($textDiv['scrollToId']); ?>');
+                                                            if (targetElement) {
+                                                                targetElement.scrollIntoView({ behavior: 'smooth' });
+                                                            }
+                                                        <?php endif; ?>
+                                                        return false;
+                                                    "
+                                                <?php endif; ?>
                                             >
-                                 
+                                            <?php echo $link_start; ?>
                                                 <?php echo splitTextIntoLettersTitleDiv($textDiv['content'], $textDiv['animation'],$textDiv); ?>
+                                            <?php echo $link_end; ?>
                                             </<?php echo esc_attr($TagBlock); ?>>
                                         </div>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
  
                                 <?php if (!empty($element['innerImageDivs']) && is_array($element['innerImageDivs'])): ?>
-                                    <?php foreach ($element['innerImageDivs'] as $imageIndex => $imageDiv): ?>
-                                        <div 
-                                            style="transform: rotate(<?php echo esc_attr($imageDiv['rotateImage']); ?>deg); opacity: <?php echo esc_attr($imageDiv['opacityImage']); ?>;"
-                                            class="moving-background"
-                                        >
-                                            <img
-                                                src="<?php echo esc_url($imageDiv['imageUrl']); ?>"
-                                                alt="<?php echo esc_attr($imageDiv['alt']); ?>"
-                                                style="<?php echo get_image_style_block($imageDiv); ?>"
-                                                class="image-with-mask <?php echo esc_attr($imageDiv['blobMask']); ?>"
-                                                data-swiper-parallax-x="<?php echo esc_attr($imageDiv['parallaxImage']); ?>"
-                                                data-swiper-parallax-y="<?php echo esc_attr($imageDiv['parallaxImageY']); ?>"
-                                                data-swiper-parallax-scale="<?php echo esc_attr($imageDiv['parallaxImageScale']); ?>"
-                                                data-swiper-parallax-duration="<?php echo esc_attr($imageDiv['parallaxImageDuration']); ?>"
-                                                data-swiper-parallax-opacity="<?php echo esc_attr($imageDiv['parallaxImageOpacity']); ?>"
-                                            />
-                                        </div>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </<?php echo esc_attr($TagDiv); ?>>
+                                    <?php foreach ($element['innerImageDivs'] as $imageIndex => $imageDiv): 
+
+                                        $style = "max-width: 100%; min-width: 0; 
+                                        max-height: 100%; min-height: 0;
+                                        border-style: " . esc_attr($imageDiv['borderStyleImage']) . ";
+                                        border-width: " . esc_attr($imageDiv['backgroundBorderSizeImage']) . "px;
+                                        border-color: " . esc_attr($imageDiv['backgroundBorderColorImage']) . ";
+                                        border-radius: " . esc_attr($imageDiv['backgroundBorderRadiusImage']) . "px;
+                                        padding: " . esc_attr($imageDiv['paddingImage']) . "px;
+                                        box-shadow: " . esc_attr($imageDiv['boxShadowXImage']) . "px " . esc_attr($imageDiv['boxShadowYImage']) . "px " . esc_attr($imageDiv['boxShadowBlurImage']) . "px " . esc_attr($imageDiv['boxShadowSpreadImage']) . "px " . esc_attr($imageDiv['colorShadowImage']) . ";
+                                        background-color: " . esc_attr($imageDiv['backgroundColorImage']) . ";
+                                        margin: " . esc_attr($imageDiv['marginImage']['top']) . ' ' . esc_attr($imageDiv['marginImage']['right']) . ' ' . esc_attr($imageDiv['marginImage']['bottom']) . ' ' . esc_attr($imageDiv['marginImage']['left']) . ";
+                                        --spike-width-inner:" . esc_attr($imageDiv['spikeLeftWidth']) . "%;
+                                        --spike-width-right-inner: " . esc_attr($imageDiv['spikeRightWidth']) . "%;
+                                        --duration-effect-image-inner: " . esc_attr($imageDiv['durationEffectImage']) . "s;
+                                        --duration-effect-moving-image-inner: " . esc_attr($imageDiv['durationEffectImageMoving']) . "s;
+                                        --color-hover-image-inner: " . esc_attr($imageDiv['imageColorHover']) . ";
+                                        --border-color-hover-image-inner: " . esc_attr($imageDiv['backgroundBorderColorHoverImage']) . ";
+                                        --opacity-hover-image-inner: " . esc_attr($imageDiv['opacityHoverImage']) . ";
+                                        --border-style-hover-image-inner: " . esc_attr($imageDiv['borderStyleHoverImage']) . ";
+                                        --border-width-hover-image-inner: " . esc_attr($imageDiv['backgroundBorderSizeImageHover']) . "px;
+                                        --transition-hover-image-inner: " . esc_attr($imageDiv['durationEffectHoverImage']) . "s;
+                                        --translate-hover-image-inner: " . esc_attr($imageDiv['translateEffectHoverImage']) . "px;
+                                        --color-effect-hover-image-inner: " . esc_attr($imageDiv['effectHoverColorHoverImage']) . ";
+                                        --interation-image-inner: " . esc_attr($imageDiv['interationImage']) . ";
+                                        ";
+
+                                        if ($imageDiv['widthImage'] === 'relative') {
+                                            $style .= "width: " . esc_attr($imageDiv['customWidthImage']) . "%;";
+                                        } elseif ($imageDiv['widthImage'] === 'fixed') {
+                                            $style .= "width: " . esc_attr($imageDiv['customWidthImagePx']) . "px;";
+                                        }
+
+                                        if ($imageDiv['heightImage'] === 'relative') {
+                                            $style .= "height: " . esc_attr($imageDiv['customHeightImage']) . "%;";
+                                        } elseif ($imageDiv['heightImage'] === 'fixed') {
+                                            $style .= "height: " . esc_attr($imageDiv['customHeightImagePx']) . "px;";
+                                        }
+
+                                        if ($imageDiv['widthImage'] !== 'auto' || $imageDiv['heightImage'] !== 'auto') {
+                                            $style .= "object-fit: " . esc_attr($imageDiv['fit']) . ";";
+                                        }
+
+                                        $desktopClassImage = $imageDiv['enableDesktopImage'] ? 'desktop-image-visible-inner' : 'desktop-image-hidden-inner';
+                                        $tabletClassImage = $imageDiv['enableTabletImage'] ? 'tablet-image-visible-inner' : 'tablet-image-hidden-inner';
+                                        $mobileClassImage = $imageDiv['enableMobileImage'] ? 'mobile-image-visible-inner' : 'mobile-image-hidden-inner';
+                                        $link_url = '';
+                                        $onclick = '';
+                                        $linkTargetImage = '_self'; // Default
+                                        $rel_div = 'follow'; // Default
+                                        
+                                        if ($imageDiv['imageLink'] !== 'none') {
+                                            // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                            if ($imageDiv['imageLink'] === 'link' && !empty($imageDiv['linkUrlImage'])) {
+                                                $link_url = esc_url($imageDiv['linkUrlImage']);
+                                                if (!empty($imageDiv['linkTargetImage'])) {
+                                                    $linkTargetImage = esc_attr($imageDiv['linkTargetImage']);
+                                                }
+                                                if ($imageDiv['linkRelImage'] === 'nofollow') {
+                                                    $rel_div = 'nofollow';
+                                                }
+                                                $onclick = "window.open('{$link_url}', '{$linkTargetImage}', 'rel={$rel_div}');";
+                                            } elseif ($imageDiv['imageLink'] === 'scroll-below') {
+                                                $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                            } elseif ($imageDiv['imageLink'] === 'scroll-to-id' && !empty($imageDiv['scrollToIdImage'])) {
+                                                $scroll_id = esc_attr($imageDiv['scrollToIdImage']);
+                                                $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                            }
+                                        }
+                                    ?>
+                                    <div 
+                                    <?php if ($imageDiv['imageLink'] !== 'none') : ?>
+                                                                onclick="<?php echo $onclick; ?>"
+                                                            <?php endif; ?> 
+                                        style="transform: rotate(<?php echo esc_attr($imageDiv['rotateImage']); ?>deg); opacity: <?php echo esc_attr($imageDiv['opacityImage']); ?>; --duration-effect-moving-image-inner:<?php echo esc_attr($imageDiv['durationEffectImageMoving'])?>s; --translate-effect-moving-image-inner:<?php echo esc_attr($imageDiv['translateEffectImageMoving']) ?>px; --duration-effect-moving-image-hover-inner:<?php echo esc_attr($imageDiv['durationEffectImageMovingHover'])?>s; --translate-effect-moving-image-hover-inner:<?php echo esc_attr($imageDiv['translateEffectImageMovingHover'])?>px; --rotate-hover-image-inner: <?php echo esc_attr($imageDiv['rotateHoverImage'])?>deg; --transition-hover-image-inner: <?php echo esc_attr($imageDiv['durationEffectHoverImage'])?>s; width:<?php echo esc_attr($imageDiv['widthImageContent'])?>; <?php if ($imageDiv['imageLink'] !== 'none') : ?>
+                                                                    cursor: pointer;
+                                                                <?php endif; ?>"
+                                        class="content-img-inner <?php echo esc_attr($imageDiv['animationImageMoving'])?> <?php echo esc_attr($imageDiv['animationImageMovingHover'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>"
+                                    >
+                                        <img
+                                            src="<?php echo esc_url($imageDiv['imageUrl']); ?>"
+                                            alt="<?php echo esc_attr($imageDiv['alt']); ?>"
+                                            style="<?php echo $style ?>"
+                                            class="img-inner image-with-mask <?php echo esc_attr($imageDiv['blobMask']); ?> <?php echo esc_attr($imageDiv['spikeMask'])?> <?php echo esc_attr($imageDiv['spikeMaskRight'])?> <?php echo esc_attr($imageDiv['animationImage'])?> <?php echo esc_attr($imageDiv['imageFilter'])?> <?php echo esc_attr($imageDiv['animationHoverImage'])?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($imageDiv['parallaxImage']); ?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($imageDiv['parallaxImageY']); ?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($imageDiv['parallaxImageScale']); ?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($imageDiv['parallaxImageDuration']); ?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($imageDiv['parallaxImageOpacity']); ?>"
+                                            data-animation-image-inner="<?php echo esc_attr($imageDiv['animationImage']); ?>"
+                                        />
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </<?php echo esc_attr($TagDiv); ?>>
                         <?php endif; ?>
 
                         <?php if ($element['type'] === 'image' && !empty($element['url'])): 
@@ -1070,8 +1130,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             $marginBottom = isset($element['marginImage']['bottom']) ? esc_attr($element['marginImage']['bottom']) : '0px';
                             $marginLeft = isset($element['marginImage']['left']) ? esc_attr($element['marginImage']['left']) : '0px';
                             $margin = "$marginTop $marginRight $marginBottom $marginLeft";
-                            $style = "max-width: 100%; min-width: 0; 
-                                      max-height: 100%; min-height: 0;
+                            $style = "
                                       border-style: " . esc_attr($element['borderStyleImage']) . ";
                                       border-width: " . esc_attr($element['backgroundBorderSizeImage']) . "px;
                                       border-color: " . esc_attr($element['backgroundBorderColorImage']) . ";
@@ -1090,11 +1149,13 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                           --color-hover-image: " . esc_attr($element['imageColorHover']) . ";
                                         --border-color-hover-image: " . esc_attr($element['backgroundBorderColorHoverImage']) . ";
                                         --opacity-hover-image: " . esc_attr($element['opacityHoverImage']) . ";
+                                        --border-width-hover-image: " . esc_attr($element['backgroundBorderSizeImageHover']) . "px;
                                         --border-style-hover-image: " . esc_attr($element['borderStyleHoverImage']) . ";
                                         --transition-hover-image: " . esc_attr($element['durationEffectHoverImage']) . "s;
                                         --translate-hover-image: " . esc_attr($element['translateEffectHoverImage']) . "px;
                                         --color-effect-hover-image: " . esc_attr($element['effectHoverColorHoverImage']) . ";
                                        margin: " . $margin . ";
+                                       
                                        --interation-image: " . esc_attr($element['interationImage']) . ";
                                     "; // Stile di base per 'auto'
 
@@ -1103,13 +1164,11 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             } elseif ($element['widthImage'] === 'fixed') {
                                 $style .= " width: " . esc_attr($element['customWidthImagePx']) . "px;";
                             }
-
                             if ($element['heightImage'] === 'relative') {
                                 $style .= " height: " . esc_attr($element['customHeightImage']) . "%;";
                             } elseif ($element['heightImage'] === 'fixed') {
                                 $style .= " height: " . esc_attr($element['customHeightImagePx']) . "px;";
                             }
-
                             // Applica object-fit solo se width o height sono relative o fixed
                             if ($element['widthImage'] !== 'auto' || $element['heightImage'] !== 'auto') {
                                 $style .= " object-fit: " . esc_attr($element['fit']) . ";"; 
@@ -1117,21 +1176,69 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             $desktopClassImage = $element['enableDesktopImage'] ? 'desktop-image-visible' : 'desktop-image-hidden';
                             $tabletClassImage = $element['enableTabletImage'] ? 'tablet-image-visible' : 'tablet-image-hidden';
                             $mobileClassImage = $element['enableMobileImage'] ? 'mobile-image-visible' : 'mobile-image-hidden';
+                            $link_url = '';
+                            $onclick = '';
+                            $linkTargetImage = '_self'; // Default
+                            $rel_div = 'follow'; // Default
+                            if ($element['imageLink'] !== 'none') {
+                                // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                if ($element['imageLink'] === 'link' && !empty($element['linkUrlImage'])) {
+                                    $link_url = esc_url($element['linkUrlImage']);
+                                    if (!empty($element['linkTargetImage'])) {
+                                        $linkTargetImage = esc_attr($element['linkTargetImage']);
+                                    }
+                                    if ($element['linkRelImage'] === 'nofollow') {
+                                        $rel_div = 'nofollow';
+                                    }
+                                    $onclick = "window.open('{$link_url}', '{$linkTargetImage}', 'rel={$rel_div}');";
+                                } elseif ($element['imageLink'] === 'scroll-below') {
+                                    $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                } elseif ($element['imageLink'] === 'scroll-to-id' && !empty($element['scrollToIdImage'])) {
+                                    $scroll_id = esc_attr($element['scrollToIdImage']);
+                                    $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                }
+                            }
                         ?>
-                       <div style="transform:rotate(<?php echo esc_attr($element['rotateImage'])?>deg);opacity:<?php echo esc_attr($element['opacityImage'])?>; --duration-effect-moving-image:<?php echo esc_attr($element['durationEffectImageMoving'])?>s;--translate-effect-moving-image:<?php echo esc_attr( $element['translateEffectImageMoving'] ) ?>px; --duration-effect-moving-image-hover:<?php echo esc_attr( $element['durationEffectImageMovingHover'] )?>s;
+                       
+                       <div 
+                           <?php if ($element['imageLink'] !== 'none') : ?>
+                                    onclick="<?php echo $onclick; ?>"
+                                <?php endif; ?> 
+                                style="transform:rotate(<?php echo esc_attr($element['rotateImage'])?>deg);opacity:<?php echo esc_attr($element['opacityImage'])?>; --duration-effect-moving-image:<?php echo esc_attr($element['durationEffectImageMoving'])?>s;--translate-effect-moving-image:<?php echo esc_attr( $element['translateEffectImageMoving'] ) ?>px;
+                                        transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px);
+                                        --duration-effect-moving-image-hover:<?php echo esc_attr( $element['durationEffectImageMovingHover'] )?>s;
                                 --translate-effect-moving-image-hover:<?php echo esc_attr( $element['translateEffectImageMovingHover'] )?>px;
                                 --rotate-hover-image: <?php echo esc_attr( $element['rotateHoverImage'] )?>deg;
                                 --transition-hover-image: <?php echo esc_attr( $element['durationEffectHoverImage'] )?>s;
-                                width:<?php echo esc_attr( $element['widthImageContent'] )?>;" class="content-img-first <?php echo esc_attr( $element['animationImageMoving'])?> <?php echo esc_attr( $element['animationImageMovingHover'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>">
-                            <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-first-slide image-with-mask <?php echo esc_attr( $element['blobMask'])?> <?php echo esc_attr( $element['spikeMask'])?> <?php echo esc_attr( $element['spikeMaskRight'])?> <?php echo esc_attr( $element['animationImage'])?> <?php echo esc_attr( $element['imageFilter'])?> <?php echo esc_attr( $element['animationHoverImage'])?>" style="<?php echo $style; ?>" data-swiper-parallax-x="<?php echo esc_attr($element['parallaxImage']); ?>" data-swiper-parallax-y="<?php echo esc_attr($element['parallaxImageY']); ?>" data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxImageScale']); ?>" data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxImageDuration']); ?>" data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxImageOpacity']); ?>"   data-animation-image="<?php echo esc_attr($element['animationImage']); ?>"/>
+                                 <?php if ($element['imageLink'] !== 'none') : ?>
+                                        cursor: pointer;
+                                    <?php endif; ?>
+                                width:<?php echo esc_attr( $element['widthImageContent'] )?>;" 
+                                class="content-img-first <?php echo esc_attr( $element['animationImageMoving'])?> <?php echo esc_attr( $element['animationImageMovingHover'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>"
+                               data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                            data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                            data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                            data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                            data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                            data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>" 
+                                >
+                            <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-first-slide image-with-mask <?php echo esc_attr( $element['blobMask'])?> <?php echo esc_attr( $element['spikeMask'])?> <?php echo esc_attr( $element['spikeMaskRight'])?> <?php echo esc_attr( $element['animationImage'])?> <?php echo esc_attr( $element['imageFilter'])?> <?php echo esc_attr( $element['animationHoverImage'])?>" 
+                                 style="<?php echo $style; ?>" 
+                                 data-swiper-parallax-x="<?php echo esc_attr($element['parallaxImage']); ?>" 
+                                 data-swiper-parallax-y="<?php echo esc_attr($element['parallaxImageY']); ?>" 
+                                 data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxImageScale']); ?>" 
+                                 data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxImageDuration']); ?>" 
+                                 data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxImageOpacity']); ?>"   
+                                 data-animation-image="<?php echo esc_attr($element['animationImage']); ?>"/>
                         </div>
+                       
                             <?php endif; ?>
 
                     <?php endforeach; ?>
                 <?php endif; ?>
                 
             </div>
-           
+        </div>
         <?php endforeach; ?>
         <?php endif; ?>
     </div>

@@ -1,11 +1,6 @@
 import { __ } from "@wordpress/i18n";
-import {
-  useBlockProps,
-  InspectorControls,
-} from "@wordpress/block-editor";
-import {
-  TabPanel,
-} from "@wordpress/components";
+import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import { TabPanel } from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -29,16 +24,19 @@ import "../components/editor.scss";
 import { select } from "@wordpress/data";
 import SliderControls from "../components/SliderControls";
 import React, { useRef, useEffect } from "react";
+import { useState } from "@wordpress/element";
 import SliderControlsNavigation from "../components/SliderControlsNavigation";
 import SliderControlsOptions from "../components/SliderControlsOptions";
-import NavigationButtons from "../components/NavigationButtons"; 
+import NavigationButtons from "../components/NavigationButtons";
 import ImageComponent from "../components/ImageComponent";
 import TextComponent from "../components/textComponent";
 import DivComponent from "../components/divComponent";
 import SlideControls from "../components/slideControls";
+import ButtonComponent from "../components/buttonComponent";
+import DraggableTest from "../components/dragable";
 
-export default function Edit({ attributes, setAttributes }) {
 
+export default function Edit({ attributes, setAttributes, slide }) {
   const {
     directionSlider,
     effect,
@@ -245,60 +243,61 @@ export default function Edit({ attributes, setAttributes }) {
   }, []);
 
   /* Nascondi il pannello Advanced */
-useEffect(() => {
-  const handleTabClick = (event) => {
-    const tabId = event.currentTarget.id;
-    const advancedPanel = document.querySelector('.cocoblocks-custom-advanced-panel');
+  useEffect(() => {
+    const handleTabClick = (event) => {
+      const tabId = event.currentTarget.id;
+      const advancedPanel = document.querySelector(
+        ".cocoblocks-custom-advanced-panel"
+      );
 
-    // Lista dei tab che devono nascondere il pannello avanzato
-    const tabsToHideAdvancedPanel = [
-      'tab-panel-0-tab2',
-      'tab-panel-0-tab3',
-      'tab-panel-0-tab4'
-    ];
+      // Lista dei tab che devono nascondere il pannello avanzato
+      const tabsToHideAdvancedPanel = [
+        "tab-panel-0-tab2",
+        "tab-panel-0-tab3",
+        "tab-panel-0-tab4",
+      ];
 
-    if (tabsToHideAdvancedPanel.includes(tabId)) {
-      // Nascondi il pannello avanzato
-      if (advancedPanel) {
-        advancedPanel.classList.add('hidden');
+      if (tabsToHideAdvancedPanel.includes(tabId)) {
+        // Nascondi il pannello avanzato
+        if (advancedPanel) {
+          advancedPanel.classList.add("hidden");
+        }
+      } else {
+        // Mostra il pannello avanzato
+        if (advancedPanel) {
+          advancedPanel.classList.remove("hidden");
+        }
       }
-    } else {
-      // Mostra il pannello avanzato
-      if (advancedPanel) {
-        advancedPanel.classList.remove('hidden');
-      }
-    }
-  };
+    };
 
-  const initializeButtonListener = () => {
-    // Trova tutti i bottoni delle schede
-    const tabButtons = document.querySelectorAll('[role="tab"]');
-    tabButtons.forEach(button => {
-      button.addEventListener('click', handleTabClick);
+    const initializeButtonListener = () => {
+      // Trova tutti i bottoni delle schede
+      const tabButtons = document.querySelectorAll('[role="tab"]');
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", handleTabClick);
+      });
+    };
+
+    // Crea un osservatore per monitorare i cambiamenti nel DOM
+    const observer = new MutationObserver(() => {
+      initializeButtonListener(); // Prova a inizializzare l'ascoltatore ogni volta che il DOM cambia
     });
-  };
 
-  // Crea un osservatore per monitorare i cambiamenti nel DOM
-  const observer = new MutationObserver(() => {
-    initializeButtonListener(); // Prova a inizializzare l'ascoltatore ogni volta che il DOM cambia
-  });
+    // Inizia ad osservare il corpo del documento
+    observer.observe(document.body, { childList: true, subtree: true });
 
-  // Inizia ad osservare il corpo del documento
-  observer.observe(document.body, { childList: true, subtree: true });
+    // Esegui inizializzazione e pulizia
+    initializeButtonListener();
 
-  // Esegui inizializzazione e pulizia
-  initializeButtonListener();
-
-  return () => {
-    // Pulizia: disattiva l'osservatore e rimuove gli ascoltatori
-    observer.disconnect();
-    const tabButtons = document.querySelectorAll('[role="tab"]');
-    tabButtons.forEach(button => {
-      button.removeEventListener('click', handleTabClick);
-    });
-  };
-}, []);
-
+    return () => {
+      // Pulizia: disattiva l'osservatore e rimuove gli ascoltatori
+      observer.disconnect();
+      const tabButtons = document.querySelectorAll('[role="tab"]');
+      tabButtons.forEach((button) => {
+        button.removeEventListener("click", handleTabClick);
+      });
+    };
+  }, []);
 
   // Tab Panel
 
@@ -307,37 +306,39 @@ useEffect(() => {
 
   const blockProps = useBlockProps();
 
-    useEffect(() => {
-      // Identificatore specifico del blocco, ad esempio un data-attribute
-      const blockContainer = document.querySelector('[data-type="slider-builder/slider"]');
-  
-      if (!blockContainer) return; // Se il blocco non è presente, interrompi
-  
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          // Cerca i popover solo all'interno del tuo blocco specifico
-          const popovers = blockContainer.querySelectorAll(
-            ".components-dropdown-menu__popover .components-popover__content"
-          );
-          popovers.forEach((popover) => {
-            // Aggiungi la tua classe personalizzata solo ai popover del tuo blocco
-            if (!popover.classList.contains("slide-popover-class")) {
-              popover.classList.add("slide-popover-class");
-            }
-          });
+  useEffect(() => {
+    // Identificatore specifico del blocco, ad esempio un data-attribute
+    const blockContainer = document.querySelector(
+      '[data-type="slider-builder/slider"]'
+    );
+
+    if (!blockContainer) return; // Se il blocco non è presente, interrompi
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        // Cerca i popover solo all'interno del tuo blocco specifico
+        const popovers = blockContainer.querySelectorAll(
+          ".components-dropdown-menu__popover .components-popover__content"
+        );
+        popovers.forEach((popover) => {
+          // Aggiungi la tua classe personalizzata solo ai popover del tuo blocco
+          if (!popover.classList.contains("slide-popover-class")) {
+            popover.classList.add("slide-popover-class");
+          }
         });
       });
-  
-      // Osserva solo il tuo blocco specifico
-      observer.observe(blockContainer, {
-        childList: true,
-        subtree: true,
-      });
-  
-      // Cleanup
-      return () => {
-        observer.disconnect();
-      };
+    });
+
+    // Osserva solo il tuo blocco specifico
+    observer.observe(blockContainer, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   // Update Effect
@@ -453,7 +454,110 @@ useEffect(() => {
 
   // Rif Swiper for circle color panel
   const swiperRef = useRef(null);
-  
+
+  // Definisci lo stato per il dispositivo attivo
+const [activeDevice, setActiveDevice] = useState('desktop');
+
+// Funzione per cambiare dispositivo
+const handleDeviceChange = (device) => {
+  setActiveDevice(device);
+  updateEditorView(device); // Aggiorna la vista
+  updateElementPositions(device); // Ricalcola le posizioni
+};
+
+// Funzione per gestire il drag e aggiornare le posizioni
+const handleDragElement = (slideId, index, x, y) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            i === index
+              ? {
+                  ...element,
+                  [activeDevice]: { x, y }, // Salva solo le coordinate per il dispositivo attivo
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Funzione per aggiornare la classe del container in base al dispositivo
+const updateEditorView = (device) => {
+  const container = document.querySelector('.editor-visual-editor'); // Cambia con il selettore giusto
+  if (container) {
+    container.classList.remove('desktop-view', 'tablet-view', 'mobile-view');
+    container.classList.add(`${device}-view`);
+  }
+};
+
+useEffect(() => {
+  const updatedSlides = slides.map((slide) => ({
+    ...slide,
+    elements: slide.elements.map((element) => ({
+      ...element,
+      desktop: element.desktop || { x: 0, y: 0 },
+      tablet: element.tablet || { x: 0, y: 0 },
+      mobile: element.mobile || { x: 0, y: 0 },
+    })),
+  }));
+
+  setAttributes({ slides: updatedSlides });
+  updateElementPositions(activeDevice); // Inizializza le posizioni
+}, [activeDevice]);
+
+const updateElementPositions = (device) => {
+  const editor = document.querySelector('.editor-visual-editor');
+
+  if (editor) {
+    const elements = document.querySelectorAll('.draggable');
+
+    elements.forEach(element => {
+      let x = 0, y = 0;
+
+      // Leggi le coordinate corrette in base al tipo di dispositivo
+      if (device === 'mobile') {
+        x = parseFloat(element.getAttribute('data-mobile-x')) || 0;
+        y = parseFloat(element.getAttribute('data-mobile-y')) || 0;
+      } else if (device === 'tablet') {
+        x = parseFloat(element.getAttribute('data-tablet-x')) || 0;
+        y = parseFloat(element.getAttribute('data-tablet-y')) || 0;
+      } else {
+        x = parseFloat(element.getAttribute('data-desktop-x')) || 0;
+        y = parseFloat(element.getAttribute('data-desktop-y')) || 0;
+      }
+
+      console.log(`Applying position for ${device}: x=${x}, y=${y}`);
+      
+      // Applica la posizione
+      element.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
+};
+
+
+// Chiama questa funzione ogni volta che cambia il dispositivo o ridimensioni l'iframe
+window.addEventListener('resize', updateElementPositions);
+
+
+const getDeviceType = () => {
+  const editor = document.querySelector('.editor-visual-editor');
+  const width = editor ? editor.clientWidth : window.innerWidth;
+
+  if (width <= 768) {
+    return 'mobile';
+  } else if (width <= 1024) {
+    return 'tablet';
+  } else {
+    return 'desktop';
+  }
+};
+
+
+
   return (
     <>
       <InspectorControls>
@@ -550,12 +654,18 @@ useEffect(() => {
                   attributes={attributes}
                   setAttributes={setAttributes}
                   slides={slides}
+                  swiperRef={swiperRef}
                   parallax={parallax}
+                  slide={slide}
                 />
               </div>
             </>
           )}
         </TabPanel>
+        <button onClick={() => handleDeviceChange('desktop')}>Desktop</button>
+<button onClick={() => handleDeviceChange('tablet')}>Tablet</button>
+<button onClick={() => handleDeviceChange('mobile')}>Mobile</button>
+
       </InspectorControls>
 
       <div {...blockProps}>
@@ -603,7 +713,7 @@ useEffect(() => {
           }}
           autoplay={autoplayConfig}
           onAutoplayTimeLeft={autoplayProgress ? onAutoplayTimeLeft : undefined}
-          className={"slider-builder "+filter}
+          className={"slider-builder editor-grid " + filter}
           dir={languageSlider}
           direction={directionSlider}
           effect={effect}
@@ -734,13 +844,7 @@ useEffect(() => {
                 <SwiperSlide key={slide.id}>
                   <div
                     className={
-                      "swiper-slide " +
-                      slide.position +
-                      " " +
-                      overflow +
-                      " " +
-                      slide.layout +
-                      "-layout"
+                      "swiper-slide"
                     }
                     style={{
                       // Gestione dell'immagine di sfondo
@@ -770,67 +874,138 @@ useEffect(() => {
                             background: slide.backgroundGradient,
                           }
                         : {}),
-
-                      // Gestione dello spazio e altre proprietà
-                      height: autoHeight ? "auto" : `${slideHeight}px`,
-                      display: "flex",
-                      flexDirection:
-                        slide.layout === "horizontal" ? "row" : "column",
-                      textAlign: "center",
-                      width: "100%",
-                      position: "relative",
-                      visibility: "visible",
-                      gap: slide.gapItems + "px",
-                      borderRadius: slide.backgroundBorderRadius + "px",
-                      paddingTop: slide.backgroundVerticalPadding + "px",
-                      paddingBottom: slide.backgroundVerticalPadding + "px",
-                      paddingLeft: slide.backgroundHorizontalPadding + "px",
-                      paddingRight: slide.backgroundHorizontalPadding + "px",
-                      borderStyle: slide.borderStyleSlide,
-                      borderWidth: slide.backgroundBorderSize + "px",
-                      borderColor: slide.backgroundBorderColor,
                     }}
                   >
+                    <div className={"content-slide-slider " +
+                      slide.position +
+                      " " +
+                      overflow +
+                      " " +
+                      slide.layout +
+                      "-layout"}
+                      style={{
+                          // Gestione dello spazio e altre proprietà
+                          height: autoHeight ? "auto" : `${slideHeight}px`,
+                          display: "flex",
+                          flexDirection:
+                            slide.layout === "horizontal" ? "row" : "column",
+                          textAlign: "center",
+                          width: "100%",
+                          position: "relative",
+                          visibility: "visible",
+                          gap: slide.gapItems + "px",
+                          borderRadius: slide.backgroundBorderRadius + "px",
+                          paddingTop: slide.backgroundVerticalPadding + "px",
+                          paddingBottom: slide.backgroundVerticalPadding + "px",
+                          paddingLeft: slide.backgroundHorizontalPadding + "px",
+                          paddingRight: slide.backgroundHorizontalPadding + "px",
+                          borderStyle: slide.borderStyleSlide,
+                          borderWidth: slide.backgroundBorderSize + "px",
+                          borderColor: slide.backgroundBorderColor,
+                          margin: "0 auto",
+                          maxWidth: slide.enableContentWidth ? `${slide.contentWidth}px` : false,
+                          flexWrap: slide.layoutWrap,
+                      }}
+                      >
                     {slide.backgroundType === "video" && (
-                    <>
-                      {slide.backgroundVideo && (
-                        <video
-                          src={slide.backgroundVideo}
-                          autoPlay
-                          muted
-                          loop
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            position: "absolute",
-                            objectPosition: slide.focalPoint
-                              ? `${slide.focalPoint.x * 100}% ${
-                                  slide.focalPoint.y * 100
-                                }%`
-                              : "center",
-                            top: 0,
-                            left: 0,
-                            zIndex: 0,
-                            objectFit: "cover",
-                          }}
-                        />
-                      )}
-                    </>
+                      <>
+                        {slide.backgroundVideo && (
+                          <video
+                            src={slide.backgroundVideo}
+                            autoPlay
+                            muted
+                            loop
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              position: "absolute",
+                              objectPosition: slide.focalPoint
+                                ? `${slide.focalPoint.x * 100}% ${
+                                    slide.focalPoint.y * 100
+                                  }%`
+                                : "center",
+                              top: 0,
+                              left: 0,
+                              zIndex: 0,
+                              objectFit: "cover",
+                            }}
+                          />
+                        )}
+                      </>
                     )}
-                    
-                    {slide.elements.map((element, index) => {
-                      switch (element.type) {
-                        case "title":
-                          return <TextComponent element={element} index={index} />;
-                        case "image":
-                          return <ImageComponent element={element} index={index} />;
-                        case "div":
-                          return <DivComponent element={element} index={index} />;
-                        default:
-                          return null;
-                      }
-                    })}
-                  </div>
+
+
+                  {slide.elements.map((element, index) => {
+      const handleDrag = (e, data) => {
+        handleDragElement(slide.id, index, data.x, data.y);
+      };
+      
+
+
+      switch (element.type) {
+        case "title":
+          return (
+            <DraggableTest
+              key={index}
+              x={element[activeDevice]?.x || 0}
+          y={element[activeDevice]?.y || 0}
+          onDrag={handleDrag}
+          activeDevice={activeDevice}
+        
+            >
+              
+              <TextComponent element={element} index={index} />
+              
+            </DraggableTest>
+      );
+    case "image":
+      return (
+        <DraggableTest
+              key={index}
+              x={element[activeDevice]?.x || 0}
+          y={element[activeDevice]?.y || 0}
+          onDrag={handleDrag}
+          activeDevice={activeDevice}
+        
+            >
+          <ImageComponent element={element} index={index} />
+        </DraggableTest>
+      );
+    case "div":
+      return (
+        <DraggableTest
+              key={index}
+              x={element[activeDevice]?.x || 0}
+          y={element[activeDevice]?.y || 0}
+          onDrag={handleDrag}
+          activeDevice={activeDevice}
+        
+            >
+          <DivComponent element={element} index={index} />
+        </DraggableTest>
+      );
+    case "button":
+      return (
+         <DraggableTest
+              key={index}
+              x={element[activeDevice]?.x || 0}
+          y={element[activeDevice]?.y || 0}
+          onDrag={handleDrag}
+          activeDevice={activeDevice}
+        
+            >
+          <ButtonComponent element={element} index={index} />
+        </DraggableTest>
+      );
+    default:
+      return null;
+  }
+})} 
+
+</div>
+
+                    </div>
+                
                 </SwiperSlide>
               ))
             : null}
@@ -849,16 +1024,16 @@ useEffect(() => {
           <div className="filter-slider"></div>
         </Swiper>
         <NavigationButtons
-            navigation={navigation}
-            nextRef={nextRef}
-            prevRef={prevRef}
-            swiperButtonNextClasses={swiperButtonNextClasses}
-            swiperButtonPrevClasses={swiperButtonPrevClasses}
-            stylesNavigation={stylesNavigation}
-            navigationIcons={navigationIcons}
-            navColor={navColor}
-            sizeNav={sizeNav}
-          />
+          navigation={navigation}
+          nextRef={nextRef}
+          prevRef={prevRef}
+          swiperButtonNextClasses={swiperButtonNextClasses}
+          swiperButtonPrevClasses={swiperButtonPrevClasses}
+          stylesNavigation={stylesNavigation}
+          navigationIcons={navigationIcons}
+          navColor={navColor}
+          sizeNav={sizeNav}
+        />
       </div>
     </>
   );

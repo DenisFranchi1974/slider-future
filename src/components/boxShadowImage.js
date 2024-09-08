@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RangeControl} from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import "./editor.scss"; // Assicurati di avere il file CSS per lo stile del componente
+import "./editor.scss"; 
 import ColorOptionsPanel from "./colorPanel";
 
 const BoxShadowControlImage = ({ 

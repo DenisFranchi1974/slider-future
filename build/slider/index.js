@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@wordpress/icons/build-module/library/add-template.js":
@@ -8,6 +7,7 @@
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -40,6 +40,7 @@ const addTemplate = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -70,6 +71,7 @@ const alignCenter = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1
   \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -100,6 +102,7 @@ const alignLeft = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__
   \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -124,12 +127,44 @@ const alignRight = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1_
 
 /***/ }),
 
+/***/ "./node_modules/@wordpress/icons/build-module/library/button.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/button.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/**
+ * WordPress dependencies
+ */
+
+
+const button = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M8 12.5h8V11H8v1.5Z M19 6.5H5a2 2 0 0 0-2 2V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a2 2 0 0 0-2-2ZM5 8h14a.5.5 0 0 1 .5.5V15a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8.5A.5.5 0 0 1 5 8Z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (button);
+//# sourceMappingURL=button.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@wordpress/icons/build-module/library/format-bold.js":
 /*!***************************************************************************!*\
   !*** ./node_modules/@wordpress/icons/build-module/library/format-bold.js ***!
   \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -160,6 +195,7 @@ const formatBold = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1_
   \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -190,6 +226,7 @@ const formatItalic = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_
   \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -220,6 +257,7 @@ const formatUnderline = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -250,6 +288,7 @@ const info = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)
   \******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -280,6 +319,7 @@ const justifyCenter = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -310,6 +350,7 @@ const justifyLeft = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1
   \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -340,6 +381,7 @@ const justifyRight = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_
   \*************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -370,6 +412,7 @@ const justifySpaceBetween = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -400,6 +443,7 @@ const replace = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.j
   \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -426,12 +470,1902 @@ const trash = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx
 
 /***/ }),
 
+/***/ "./src/components/ButtonControls.js":
+/*!******************************************!*\
+  !*** ./src/components/ButtonControls.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aligncontrol-three */ "./src/components/aligncontrol-three.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _font_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./font-style */ "./src/components/font-style.js");
+/* harmony import */ var _sectionSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSelector */ "./src/components/sectionSelector.js");
+/* harmony import */ var _TextControlsHover__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TextControlsHover */ "./src/components/TextControlsHover.js");
+/* harmony import */ var _boxShadow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./boxShadow */ "./src/components/boxShadow.js");
+
+
+
+
+
+
+
+
+
+
+
+
+const ButtonControls = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes,
+  setActiveSection,
+  activeSection,
+  parallax,
+  device,
+  handleDesktopClick,
+  handleTabletClick,
+  handleMobileClick,
+  showOtherButtons,
+  attributes
+}) => {
+  // Inizializza lo stato locale utilizzando element.playState
+  const [playState, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playState || "");
+
+  // Funzione per alternare il valore dello stato
+  const togglePlayState = () => {
+    const newState = playState === "play" ? "" : "play";
+    setPlayState(newState);
+    // Aggiorna element.playState piuttosto che attributes.playState
+    element.playState = newState;
+    setAttributes({
+      elements: [...slides]
+    }); // Oppure aggiorna la struttura dati appropriata
+  };
+
+  // Remove button
+  const removeSlideButton = (slideId, index) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.filter((element, i) => !(element.type === "button" && i === index))
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update button
+  const updateSlideButton = (slideId, index, newButton) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        button: newButton
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update button align
+  const updateButtonAlign = (slideId, index, align) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        buttonAlign: align
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update button color
+  const updateSlideButtonColor = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        buttonColor: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update button background color
+  const updateSlideButtonBackgroundColor = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        buttonBackgroundColor: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Style
+  const updateFontStyleButton = (slideId, index, styleType, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "button" && i === index) {
+          const updatedFontStyle = {
+            ...element.fontStyleButton,
+            [styleType]: value
+          };
+          return {
+            ...element,
+            fontStyle: updatedFontStyle
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Family
+  const updateButtonFamily = (slideId, index, family) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        fontFamilyButton: family
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style
+  const updateBorderStyleButton = (slideId, index, newBorderStyle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        borderStyleButton: newBorderStyle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Font Weight
+  const updateButtonWeight = (slideId, index, weight) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        fontWeightButton: weight
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateButton = (slideId, index, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        rotateButton: rotate
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityButton = (slideId, index, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        opacityButton: opacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width
+  const updateWidthButton = (slideId, index, newWidthTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        widthButton: newWidthTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Custom width
+  const updateCustomWidthButton = (slideId, index, customWidth) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        widthCustomButton: customWidth
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Size
+  const updateFontSizeButton = (slideId, index, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        fontSizeButton: newSize
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Size Tablet
+  const updateFontSizeButtonTablet = (slideId, index, newSizeTablet) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        fontSizeButtonTablet: newSizeTablet
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  // Size Mobile
+  const updateFontSizeButtonMobile = (slideId, index, newSizeMobile) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        fontSizeButtonMobile: newSizeMobile
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Line height
+  const updateLineHeightButton = (slideId, index, newLineHeight) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        lineHeightButton: newLineHeight
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Letter Spacing
+  const updateLetterSpacingButton = (slideId, index, newLetterSpacing) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        letterSpacingButton: newLetterSpacing
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect
+  const updateDurationEffectButton = (slideId, index, newDurationEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        durationEffectButton: newDurationEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Delay effect
+  const updateDelayEffectButton = (slideId, index, newDelayEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        delayEffectButton: newDelayEffect
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border color
+  const updateButtonBackgroundBorderColor = (slideId, index, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        backgroundBorderColorButton: color
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Width border
+  const updateButtonBackgroundBorderSize = (slideId, index, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        backgroundBorderSizeButton: newSize
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Border radius
+  const updateButtonBackgroundBorderRadius = (slideId, index, newRadius) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        backgroundBorderRadiusButton: newRadius
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Padding title
+  const updatenewPaddingButton = (slideId, index, newPaddingtitle) => {
+    console.log("Updating margin with:", newPaddingtitle); // Log per debug
+
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "button" && i === index) {
+          return {
+            ...element,
+            paddingButton: {
+              top: addUnit(newPaddingtitle.top || "0", newPaddingtitle.unit || "px"),
+              right: addUnit(newPaddingtitle.right || "0", newPaddingtitle.unit || "px"),
+              bottom: addUnit(newPaddingtitle.bottom || "0", newPaddingtitle.unit || "px"),
+              left: addUnit(newPaddingtitle.left || "0", newPaddingtitle.unit || "px")
+            }
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Margin title
+  const updatenewMarginButton = (slideId, index, newMargintitle) => {
+    console.log("Updating margin with:", newMargintitle); // Log per debug
+
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => {
+        if (element.type === "button" && i === index) {
+          return {
+            ...element,
+            marginButton: {
+              top: addUnit(newMargintitle.top || "0", newMargintitle.unit || "px"),
+              right: addUnit(newMargintitle.right || "0", newMargintitle.unit || "px"),
+              bottom: addUnit(newMargintitle.bottom || "0", newMargintitle.unit || "px"),
+              left: addUnit(newMargintitle.left || "0", newMargintitle.unit || "px")
+            }
+          };
+        }
+        return element;
+      })
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text x
+  const updateParallaxButton = (slideId, index, newParallaxTitle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        parallaxButton: newParallaxTitle
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text y
+  const updateParallaxButtonY = (slideId, index, newParallaxTitleY) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        parallaxButtonY: newParallaxTitleY
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text scale
+  const updateParallaxButtonScale = (slideId, index, newParallaxTitleScale) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        parallaxButtonScale: newParallaxTitleScale
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text opacity
+  const updateParallaxButtonOpacity = (slideId, index, newParallaxTitleOpacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        parallaxButtonOpacity: newParallaxTitleOpacity
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Parallax text duration
+  const updateParallaxButtonDuration = (slideId, index, newParallaxTitleDuration) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        parallaxButtonDuration: newParallaxTitleDuration
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Text Split
+  const updateButtonAnimation = (slideId, index, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        animationButton: animation
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Selector link
+  const updateButtonLink = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        buttonLink: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Url
+  const updateLinkUrlButton = (slideId, index, url) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        linkUrlButton: url
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateScrollToIdButton = (slideId, index, id) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        scrollToIdButton: id
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateLinkTargetButton = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        linkTargetButton: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Rel
+  const updateLinkRelButton = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        linkRelButton: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Desktop
+  const updateEnableDesktopButton = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        enableDesktopButton: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Tablet
+  const updateEnableTabletButton = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        enableTabletButton: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Mobile
+  const updateEnableMobileButton = (slideId, index, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "button" && i === index ? {
+        ...element,
+        enableMobileButton: value
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Font Family Options
+  const fontOptions = [{
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arial", "cocoblock"),
+    value: "Arial, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Helvetica", "cocoblock"),
+    value: "Helvetica, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Georgia", "cocoblock"),
+    value: "Georgia, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Times New Roman", "cocoblock"),
+    value: "Times New Roman, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Verdana", "cocoblock"),
+    value: "Verdana, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Tahoma", "cocoblock"),
+    value: "Tahoma, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Trebuchet MS", "cocoblock"),
+    value: "Trebuchet MS, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Gill Sans", "cocoblock"),
+    value: "Gill Sans, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Courier New", "cocoblock"),
+    value: "Courier New, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Lucida Console", "cocoblock"),
+    value: "Lucida Console, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Consolas", "cocoblock"),
+    value: "Consolas, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Monaco", "cocoblock"),
+    value: "Monaco, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Comic Sans MS", "cocoblock"),
+    value: "Comic Sans MS, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Brush Script MT", "cocoblock"),
+    value: "Brush Script MT, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Impact", "cocoblock"),
+    value: "Impact, fantasy"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Palatino Linotype", "cocoblock"),
+    value: "Palatino Linotype, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Book Antiqua", "cocoblock"),
+    value: "Book Antiqua, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Roboto", "cocoblock"),
+    value: "Roboto, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open Sans", "cocoblock"),
+    value: "Open Sans, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Ubuntu Mono", "cocoblock"),
+    value: "Ubuntu Mono, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inconsolata", "cocoblock"),
+    value: "Inconsolata, monospace"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bungee Tint", "cocoblock"),
+    value: "Bungee Tint, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Matemasie", "cocoblock"),
+    value: "Matemasie, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Anton", "cocoblock"),
+    value: "Anton, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Baskervville SC", "cocoblock"),
+    value: "Baskervville SC, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bodoni Moda SC", "cocoblock"),
+    value: "Bodoni Moda SC, serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Ga Maamli", "cocoblock"),
+    value: "Ga Maamli, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Goldman", "cocoblock"),
+    value: "Goldman, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Kanit", "cocoblock"),
+    value: "Kanit, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Knewave", "cocoblock"),
+    value: "Knewave, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Londrina Outline", "cocoblock"),
+    value: "Londrina Outline, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Macondo", "cocoblock"),
+    value: "Macondo, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rampart One", "cocoblock"),
+    value: "Rampart One, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rubik Wet Paint", "cocoblock"),
+    value: "Rubik Wet Paint, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Ruslan Display", "cocoblock"),
+    value: "Ruslan Display, display"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Titan One", "cocoblock"),
+    value: "Titan One, sans-serif"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Vujahday Script", "cocoblock"),
+    value: "Vujahday Script, cursive"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Wallpoet", "cocoblock"),
+    value: "Wallpoet, cursive"
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-controls"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-element"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isDestructive: true,
+    onClick: () => removeSlideButton(slide.id, elementIndex),
+    className: "button-remove-element",
+    style: {
+      position: "absolute",
+      right: "80px",
+      top: "10px"
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Text", "cocoblocks"),
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onSectionChange: setActiveSection
+  }), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    value: element.button,
+    onChange: newButton => updateSlideButton(slide.id, elementIndex, newButton),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add button", "cocoblocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Width", "cocoblocks")),
+    value: element.widthButton,
+    onChange: newElement => updateWidthButton(slide.id, elementIndex, newElement),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Auto", "cocoblocks"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("100%", "cocoblocks"),
+      value: "100%"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom", "cocoblocks"),
+      value: "custom"
+    }]
+  })), element.widthButton !== "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0",
+      marginTop: "6px",
+      marginBottom: "6px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Attention: Side transition effects will not work with this setting!", "cocoblocks")), element.widthButton === "custom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom Width (%)", "cocoblocks")),
+    value: element.widthCustomButton,
+    onChange: customWidth => updateCustomWidthButton(slide.id, elementIndex, customWidth),
+    min: 1,
+    max: 100,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    value: element.buttonAlign,
+    onChange: align => updateButtonAlign(slide.id, elementIndex, align)
+  })))), activeSection === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+    className: "device-switcher"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "desktop",
+    onClick: handleDesktopClick,
+    className: device !== "desktop" ? "inactive" : ""
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "tablet",
+    onClick: handleTabletClick,
+    className: device !== "tablet" ? "inactive" : ""
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: device === "mobile",
+    onClick: handleMobileClick,
+    className: device !== "mobile" ? "inactive" : ""
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed",
+    style: {
+      width: "16px",
+      height: "16px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+  }))))), device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+    })),
+    value: element.fontSizeButton,
+    onChange: newSize => updateFontSizeButton(slide.id, elementIndex, newSize),
+    min: 4,
+    max: 500,
+    step: 1
+  }), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z"
+    })),
+    value: element.fontSizeButtonTablet,
+    onChange: newSizeTablet => updateFontSizeButtonTablet(slide.id, elementIndex, newSizeTablet),
+    min: 4,
+    max: 500,
+    step: 1
+  }), device === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font Size", "cocoblocks")),
+    beforeIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        width: "16px",
+        height: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"
+    })),
+    value: element.fontSizeButtonMobile,
+    onChange: newSizeMobile => updateFontSizeButtonMobile(slide.id, elementIndex, newSizeMobile),
+    min: 4,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_font_style__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    value: element.fontStyleButton || {} // Inizializza con un oggetto vuoto se undefined
+    ,
+    onChange: (styleType, value) => updateFontStyleButton(slide.id, elementIndex, styleType, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M186-80q-54 0-80-22t-26-66q0-58 49-74t116-16h21v-56q0-34-1-55.5t-6-35.5q-5-14-11.5-19.5T230-430q-9 0-16.5 3t-12.5 8q-4 5-5 10.5t1 11.5q6 11 14 21.5t8 24.5q0 25-17.5 42.5T159-291q-25 0-42.5-17.5T99-351q0-27 12-44t32.5-27q20.5-10 47.5-14t58-4q85 0 118 30.5T400-302v147q0 19 4.5 28t15.5 9q12 0 19.5-18t9.5-56h11q-3 62-23.5 87T368-80q-43 0-67.5-13.5T269-134q-10 29-29.5 41.5T186-80Zm373 0q-20 0-32.5-16.5T522-132l102-269q7-17 22-28t34-11q19 0 34 11t22 28l102 269q8 19-4.5 35.5T801-80q-12 0-22-7t-15-19l-20-58H616l-20 58q-4 11-14 18.5T559-80Zm-324-29q13 0 22-20.5t9-49.5v-67q-26 0-38 15.5T216-180v11q0 36 4 48t15 12Zm407-125h77l-39-114-38 114Zm-37-285q-48 0-76.5-33.5T500-643q0-104 66-170.5T735-880q42 0 68 9.5t26 24.5q0 6-2 12t-7 11q-5 7-12.5 10t-15.5 1q-14-4-32-7t-33-3q-71 0-114 48t-43 127q0 22 8 46t36 24q11 0 21.5-5t18.5-14q17-18 31.5-60T712-758q2-13 10.5-18.5T746-782q18 0 27.5 9.5T779-749q-12 43-17.5 75t-5.5 58q0 20 5.5 29t16.5 9q11 0 21.5-8t29.5-30q2-3 15-7 8 0 12 6t4 17q0 28-32 54t-67 26q-26 0-44.5-14T691-574q-15 26-37 40.5T605-519Zm-485-1v-220q0-58 41-99t99-41q58 0 99 41t41 99v220h-80v-80H200v80h-80Zm80-160h120v-60q0-25-17.5-42.5T260-800q-25 0-42.5 17.5T200-740v60Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font family", "cocoblocks")),
+    value: element.fontFamilyButton,
+    options: fontOptions,
+    onChange: family => updateButtonFamily(slide.id, elementIndex, family)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-200h480l-57-400H297l-57 400Zm240-480q17 0 28.5-11.5T520-720q0-17-11.5-28.5T480-760q-17 0-28.5 11.5T440-720q0 17 11.5 28.5T480-680Zm113 0h70q30 0 52 20t27 49l57 400q5 36-18.5 63.5T720-120H240q-37 0-60.5-27.5T161-211l57-400q5-29 27-49t52-20h70q-3-10-5-19.5t-2-20.5q0-50 35-85t85-35q50 0 85 35t35 85q0 11-2 20.5t-5 19.5ZM240-200h480-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font weight", "cocoblocks")),
+    value: element.fontWeightButton,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("100 Thin", "cocoblocks"),
+      value: "100"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("300 Light", "cocoblocks"),
+      value: "300"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("400 Regular", "cocoblocks"),
+      value: "400"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("500 Medium", "cocoblocks"),
+      value: "500"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("700 Bold", "cocoblocks"),
+      value: "700"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("900 Black", "cocoblocks"),
+      value: "900"
+    }],
+    onChange: weight => updateButtonWeight(slide.id, elementIndex, weight)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Line height", "cocoblocks")),
+    value: element.lineHeightButton,
+    onChange: newLineHeight => updateLineHeightButton(slide.id, elementIndex, newLineHeight),
+    min: 0.5,
+    max: 2.5,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-160v-640h80v640h-80Zm560 0v-640h80v640h-80ZM294-280l150-400h72l150 400h-69l-36-102H399l-36 102h-69Zm126-160h120l-58-166h-4l-58 166Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Letter spacing", "cocoblocks")),
+    value: element.letterSpacingButton,
+    onChange: newLetterSpacing => updateLetterSpacingButton(slide.id, elementIndex, newLetterSpacing),
+    min: 0,
+    max: 100,
+    step: 0.5
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "0",
+      marginTop: "6px",
+      marginBottom: "6px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.buttonColor,
+    setColorNormal: color => updateSlideButtonColor(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.buttonBackgroundColor,
+    setColorNormal: color => updateSlideButtonBackgroundColor(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spacings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Padding", "cocoblocks")),
+    values: element.paddingButton,
+    units: {},
+    onChange: newPaddingtitle => updatenewPaddingButton(slide.id, elementIndex, newPaddingtitle)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    id: "custom-margin-control",
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "5px",
+        marginBottom: "-5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin", "cocoblocks")),
+    values: element.marginButton,
+    units: {},
+    onChange: newMargintitle => updatenewMarginButton(slide.id, elementIndex, newMargintitle)
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      paddingTop: "0",
+      paddingBottom: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: element.borderStyleButton,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: newBorderStyle => updateBorderStyleButton(slide.id, elementIndex, newBorderStyle)
+  })), element.borderStyleButton !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: element.backgroundBorderColorButton,
+    setColorNormal: color => updateButtonBackgroundBorderColor(slide.id, elementIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSizeButton,
+    onChange: newSize => updateButtonBackgroundBorderSize(slide.id, elementIndex, newSize),
+    min: 0,
+    max: 20,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border radius", "cocoblocks")),
+    value: element.backgroundBorderRadiusButton,
+    onChange: newRadius => updateButtonBackgroundBorderRadius(slide.id, elementIndex, newRadius),
+    min: 0,
+    max: 256,
+    step: 1
+  }))))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Basic Transforms", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: element.rotateButton,
+    onChange: rotate => updateRotateButton(slide.id, elementIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transparency Setting", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: element.opacityButton,
+    onChange: opacity => updateOpacityButton(slide.id, elementIndex, opacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_boxShadow__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSection === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: element.animationButton,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Fade In",
+      value: "fade-in"
+    }, {
+      label: "Fade In Left",
+      value: "fade-in-left"
+    }, {
+      label: "Fade In Right",
+      value: "fade-in-right"
+    }, {
+      label: "Fade In Top",
+      value: "fade-in-top"
+    }, {
+      label: "Fade In Bottom",
+      value: "fade-in-bottom"
+    }, {
+      label: "Slide In Left",
+      value: "slide-in-left"
+    }, {
+      label: "Slide In Right",
+      value: "slide-in-right"
+    }, {
+      label: "Slide In Top",
+      value: "slide-in-top"
+    }, {
+      label: "Slide In Bottom",
+      value: "slide-in-bottom"
+    }, {
+      label: "Zoom In",
+      value: "zoom-in"
+    }, {
+      label: "Zoom In Left",
+      value: "zoom-in-left"
+    }, {
+      label: "Zoom In Right",
+      value: "zoom-in-right"
+    }, {
+      label: "Zoom In Top",
+      value: "zoom-in-top"
+    }, {
+      label: "Zoom In Bottom",
+      value: "zoom-in-bottom"
+    }, {
+      label: "Rotate In Left",
+      value: "rotate-in-left"
+    }, {
+      label: "Rotate In Right",
+      value: "rotate-in-right"
+    }, {
+      label: "Rotate In Top",
+      value: "rotate-in-top"
+    }, {
+      label: "Rotate In Bottom",
+      value: "rotate-in-bottom"
+    }, {
+      label: "Rotate Continuos",
+      value: "rotate-continuous"
+    }, {
+      label: "Bounce in",
+      value: "bounce-effect"
+    }, {
+      label: "Bounce in Left",
+      value: "bounce-left-effect"
+    }, {
+      label: "Bounce in Right",
+      value: "bounce-right-effect"
+    }, {
+      label: "Bounce in Top",
+      value: "bounce-top-effect"
+    }, {
+      label: "Bounce in Bottom",
+      value: "bounce-bottom-effect"
+    }, {
+      label: "Wiggle",
+      value: "wiggle"
+    }, {
+      label: "Flip",
+      value: "flip"
+    }, {
+      label: "Swing",
+      value: "swing"
+    }, {
+      label: "Rubber band",
+      value: "rubber-band"
+    }, {
+      label: "Letter Bounce",
+      value: "bounce"
+    }, {
+      label: "Stretch",
+      value: "stretch"
+    }, {
+      label: "Focus",
+      value: "focus"
+    }, {
+      label: "Typing",
+      value: "typing-effect"
+    }, {
+      label: "Explosion",
+      value: "explode"
+    }, {
+      label: "Implode",
+      value: "implode"
+    }, {
+      label: "Letters Fly In From Left",
+      value: "letters-fly-in-from-left"
+    }, {
+      label: "Letters Fly In From Right",
+      value: "letters-fly-in-from-right"
+    }, {
+      label: "Letters Fly In From Top",
+      value: "letters-fly-in-from-top"
+    }, {
+      label: "Letters Fly In From Bottom",
+      value: "letters-fly-in-from-bottom"
+    }, {
+      label: "Letter Flip From Top",
+      value: "letter-flip-from-top"
+    }, {
+      label: "Letter Flip From Bottom",
+      value: "letter-flip-from-bottom"
+    }, {
+      label: "Letter Flip Cycle",
+      value: "letter-flip-cycle"
+    }, {
+      label: "Gradient Animation",
+      value: "gradient-animation"
+    }, {
+      label: "Text Shadow",
+      value: "text-shadow"
+    }, {
+      label: "Text Shadow Light",
+      value: "text-shadow-light"
+    }, {
+      label: "Text Shadow Heavy",
+      value: "text-shadow-heavy"
+    }, {
+      label: "Neon Effect",
+      value: "text-neon"
+    }],
+    onChange: animation => updateButtonAnimation(slide.id, elementIndex, animation)
+  })), element.animationButton !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, ![" ", "typing-effect", "text-shadow", "text-shadow-light", "text-shadow-heavy", "text-neon"].includes(element.animationButton) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
+    value: element.durationEffectButton,
+    onChange: newDurationEffect => updateDurationEffectButton(slide.id, elementIndex, newDurationEffect),
+    min: 0.1,
+    max: 15,
+    step: 0.1
+  }))), ["explode", "implode", "letters-fly-in-from-left", "letters-fly-in-from-right", "letters-fly-in-from-top", "letters-fly-in-from-bottom", "letter-flip-from-top", "letter-flip-from-bottom", "letter-flip-cycle"].includes(element.animationButton) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Delay", "cocoblocks")),
+    value: element.delayEffectButton,
+    onChange: newDelayEffect => updateDelayEffectButton(slide.id, elementIndex, newDelayEffect),
+    min: 0,
+    max: 10,
+    step: 0.1
+  })), ["bounce-effect", "bounce-left-effect", "bounce-right-effect", "bounce-top-effect", "bounce-bottom-effect", "wiggle", "flip", "swing", "rubber-band"].includes(element.animationButton) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Iteration Mode", "cocoblocks")),
+    value: element.iterationButton,
+    options: [{
+      label: "Forwards",
+      value: "forwards"
+    }, {
+      label: "Infinite",
+      value: "infinite"
+    }],
+    onChange: value => updateInterationButton(slide.id, elementIndex, value)
+  })), element.animationButton !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-reply-effect"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    text: playState === "play" ? "Play" : "Repeat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    variant: playState === "play",
+    onClick: togglePlayState,
+    icon: playState === "play" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M170-228q-38-44-61-98T80-440h82q6 44 22 83.5t42 72.5l-56 56ZM80-520q8-60 30-114t60-98l56 56q-26 33-42 72.5T162-520H80ZM438-82q-60-6-113.5-29T226-170l56-58q35 26 73.5 43t82.5 23v80ZM284-732l-58-58q45-36 98.5-59T440-878v80q-45 6-84 23t-72 43Zm96 432v-360l280 180-280 180ZM520-82v-80q121-17 200.5-107T800-480q0-121-79.5-211T520-798v-80q154 17 257 130t103 268q0 155-103 268T520-82Z"
+    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"
+    }))
+  }))))), activeSection === "hover" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_TextControlsHover__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSection === "actions" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Actions", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link actions", "cocoblocks")),
+    value: element.buttonLink,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Link",
+      value: "link"
+    }, {
+      label: "Scroll Below Slider",
+      value: "scroll-below"
+    }, {
+      label: "Scroll to ID Element",
+      value: "scroll-to-id"
+    }],
+    onChange: value => updateButtonLink(slide.id, elementIndex, value)
+  })), element.buttonLink === "link" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter URL", "cocoblocks")),
+    value: element.linkUrlButton,
+    onChange: value => updateLinkUrlButton(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Target", "cocoblocks")),
+    value: element.linkTargetButton,
+    options: [{
+      label: "Same Window",
+      value: "_self"
+    }, {
+      label: "New Window",
+      value: "_blank"
+    }],
+    onChange: value => updateLinkTargetButton(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m791-55-91-91q-49 32-104.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-60 17-115.5T146-700l-91-91 57-57 736 736-57 57ZM480-160q43 0 83.5-11t78.5-33L204-642q-22 38-33 78.5T160-480q0 133 93.5 226.5T480-160Zm334-100-58-58q22-38 33-78.5t11-83.5q0-133-93.5-226.5T480-800q-43 0-83.5 11T318-756l-58-58q49-32 104.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 60-17 115.5T814-260ZM537-537ZM423-423Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link Behavior", "cocoblocks")),
+    value: element.linkRelButton,
+    options: [{
+      label: "Follow Link",
+      value: "follow"
+    }, {
+      label: "No Follow",
+      value: "nofollow"
+    }],
+    onChange: value => updateLinkRelButton(slide.id, elementIndex, value)
+  }))), element.buttonLink === "scroll-to-id" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-160q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v284q-10-2-19.5-3t-20.5-1h-40v-280H200v560h124q4 22 10.5 42t17.5 38H200Zm0-120v40-560 520Zm80-40h44q8-49 35-90.5t69-69.5H280v160Zm0-240h160v-160H280v160Zm280 440q-66 0-113-47t-47-113q0-66 47-113t113-47h80v80h-80q-33 0-56.5 23.5T480-280q0 33 23.5 56.5T560-200h80v80h-80Zm-40-440h160v-160H520v160Zm40 320v-80h240v80H560Zm160 120v-80h80q33 0 56.5-23.5T880-280q0-33-23.5-56.5T800-360h-80v-80h80q66 0 113 46.5T960-280q0 66-47 113t-113 47h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter ID", "cocoblocks")),
+    value: element.scrollToIdButton,
+    onChange: value => updateScrollToIdButton(slide.id, elementIndex, value)
+  })))), activeSection === "visibility" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Visibility", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80-160q-33 0-56.5-23.5T0-240h160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240h160q0 33-23.5 56.5T880-160H80Zm400-40q17 0 28.5-11.5T520-240q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240q0 17 11.5 28.5T480-200ZM160-320h640v-440H160v440Zm0 0v-440 440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Desktop", "cocoblocks")),
+    checked: element.enableDesktopButton,
+    onChange: value => updateEnableDesktopButton(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-140q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM200-40q-33 0-56.5-23.5T120-120v-720q0-33 23.5-56.5T200-920h560q33 0 56.5 23.5T840-840v720q0 33-23.5 56.5T760-40H200Zm0-200v120h560v-120H200Zm0-80h560v-400H200v400Zm0-480h560v-40H200v40Zm0 0v-40 40Zm0 560v120-120Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Tablet", "cocoblocks")),
+    checked: element.enableTabletButton,
+    onChange: value => updateEnableTabletButton(slide.id, elementIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mobile", "cocoblocks")),
+    checked: element.enableMobileButton,
+    onChange: value => updateEnableMobileButton(slide.id, elementIndex, value)
+  })))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effects", "cocoblocks"))), parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax offset X", "cocoblocks")),
+    value: element.parallaxButton,
+    onChange: newParallaxTitle => updateParallaxButton(slide.id, elementIndex, newParallaxTitle),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax offset Y", "cocoblocks")),
+    value: element.parallaxButtonY,
+    onChange: newParallaxTitleY => updateParallaxButtonY(slide.id, elementIndex, newParallaxTitleY),
+    min: -500,
+    max: 500,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax scale", "cocoblocks")),
+    value: element.parallaxButtonScale,
+    onChange: newParallaxTitleScale => updateParallaxButtonScale(slide.id, elementIndex, newParallaxTitleScale),
+    min: 0,
+    max: 2,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax opacity", "cocoblocks")),
+    value: element.parallaxButtonOpacity,
+    onChange: newParallaxTitleOpacity => updateParallaxButtonOpacity(slide.id, elementIndex, newParallaxTitleOpacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax duration", "cocoblocks")),
+    value: element.parallaxButtonDuration,
+    onChange: newParallaxTitleDuration => updateParallaxButtonDuration(slide.id, elementIndex, newParallaxTitleDuration),
+    min: 100,
+    max: 2000,
+    step: 10
+  })))), !parallax && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help",
+    style: {
+      borderRadius: "8px",
+      marginTop: "18px"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonControls);
+
+/***/ }),
+
 /***/ "./src/components/DivControlsHover.js":
 /*!********************************************!*\
   !*** ./src/components/DivControlsHover.js ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -497,6 +2431,20 @@ const DivControlsHover = ({
     });
   };
 
+  // Update border width hover
+  const updateSlideBackgroundBorderSizeDivHover = (slideId, index, newSizeDiv) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === index ? {
+        ...element,
+        backgroundBorderSizeDivHover: newSizeDiv
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update Opacity
   const updateOpacityHoverDiv = (slideId, index, opacity) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -511,7 +2459,7 @@ const DivControlsHover = ({
     });
   };
 
-  // Duration effect 
+  // Duration effect
   const updateDurationEffectHoverDiv = (slideId, index, newDurationEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -567,7 +2515,7 @@ const DivControlsHover = ({
     });
   };
 
-  // Translate effect 
+  // Translate effect
   const updateTranslateEffectHoverDiv = (slideId, index, newEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -668,6 +2616,28 @@ const DivControlsHover = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
     }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "4px",
+        marginLeft: "-2px",
+        marginBottom: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSizeDivHover,
+    onChange: newSizeDiv => updateSlideBackgroundBorderSizeDivHover(slide.id, elementIndex, newSizeDiv),
+    min: 0,
+    max: 20,
+    step: 1
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
@@ -762,9 +2732,9 @@ const DivControlsHover = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
     value: element.durationEffectHoverDiv,
     onChange: newDurationEffect => updateDurationEffectHoverDiv(slide.id, elementIndex, newDurationEffect),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -815,6 +2785,7 @@ const DivControlsHover = ({
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -829,10 +2800,6 @@ const ImageComponent = ({
 }) => {
   const getImageStyle = () => {
     let style = {
-      maxWidth: "100%",
-      minWidth: "0",
-      maxHeight: "100%",
-      minHeight: "0",
       borderStyle: element.borderStyleImage || "none",
       borderColor: element.backgroundBorderColorImage || "#000000",
       borderWidth: element.backgroundBorderSizeImage + "px",
@@ -844,19 +2811,21 @@ const ImageComponent = ({
       "--box-shadow-blur-image": element.boxShadowBlurImage + "px" || 0,
       "--box-shadow-color-image": element.colorShadowImage || "#000000",
       "--box-shadow-spread-image": element.boxShadowSpreadImage + "px" || 0,
-      "--spike-width": element.spikeLeftWidth + '%' || 0,
-      "--spike-width-right": element.spikeRightWidth + '%' || 0,
+      "--spike-width": element.spikeLeftWidth + "%" || 0,
+      "--spike-width-right": element.spikeRightWidth + "%" || 0,
       "--duration-effect-image": element.durationEffectImage + "s",
       "--color-hover-image": element.imageColorHover,
+      "--border-width-hover-image": element.backgroundBorderSizeImageHover + "px",
       "--border-color-hover-image": element.backgroundBorderColorHoverImage || "#000000",
       "--opacity-hover-image": element.opacityHoverImage || 1,
       "--border-style-hover-image": element.borderStyleHoverImage || "none",
-      "--transition-hover-image": element.durationEffectHoverImage + 's' || 0,
-      "--translate-hover-image": element.translateEffectHoverImage + 'px' || 0,
+      "--transition-hover-image": element.durationEffectHoverImage + "s" || 0,
+      "--translate-hover-image": element.translateEffectHoverImage + "px" || 0,
       "--color-effect-hover-image": element.effectHoverColorHoverImage || "#000000",
       margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`,
       // Usa i valori aggi
-      "--interation-image": element.interationImage || "forwards"
+      "--interation-image": element.interationImage || "forwards",
+      position: "relative"
     };
     if (element.widthImage === "relative") {
       style.width = `${element.customWidthImage}%`;
@@ -884,7 +2853,7 @@ const ImageComponent = ({
       "--duration-effect-moving-image-hover": element.durationEffectImageMovingHover + "s",
       "--translate-effect-moving-image-hover": element.translateEffectImageMovingHover + "px",
       "--rotate-hover-image": element.rotateHoverImage + "deg" || 0,
-      "--transition-hover-image": element.durationEffectHoverImage + 's' || 0,
+      "--transition-hover-image": element.durationEffectHoverImage + "s" || 0,
       width: element.widthImageContent
     },
     className: "content-img-first " + element.animationImageMoving + " " + element.animationImageMovingHover
@@ -905,12 +2874,13 @@ const ImageComponent = ({
 
 /***/ }),
 
-/***/ "./src/components/ImageControlsHover.js":
-/*!**********************************************!*\
-  !*** ./src/components/ImageControlsHover.js ***!
-  \**********************************************/
+/***/ "./src/components/ImageControlsBlockHover.js":
+/*!***************************************************!*\
+  !*** ./src/components/ImageControlsBlockHover.js ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -923,6 +2893,564 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 
+
+
+
+
+const ImageControlsBlockHover = ({
+  slide,
+  element,
+  imageDiv,
+  imageIndex,
+  elementIndex,
+  slides,
+  setAttributes
+}) => {
+  // Update background color
+  const updateSlideImageColorHover = (slideId, divIndex, imageIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          imageColorHover: color
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateHoverImage = (slideId, divIndex, imageIndex, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          rotateHoverImage: rotate
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style
+  const updateBorderStyleHoverImage = (slideId, divIndex, imageIndex, newBorderStyle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          borderStyleHoverImage: newBorderStyle
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityHoverImage = (slideId, divIndex, imageIndex, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          opacityHoverImage: opacity
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect
+  const updateDurationEffectHoverImage = (slideId, divIndex, imageIndex, newDurationEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          durationEffectHoverImage: newDurationEffect
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border color
+  const updateImageBackgroundBorderColorHover = (slideId, divIndex, imageIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          backgroundBorderColorHoverImage: color
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border width
+  const updateSlideBackgroundBorderSizeImageBlockHover = (slideId, divIndex, imageIndex, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          backgroundBorderSizeImageHover: newSize
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Annimation
+  const updateImageAnimationHover = (slideId, divIndex, imageIndex, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          animationHoverImage: animation
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Effect color
+  const updateSlideEffectColorHoverImage = (slideId, divIndex, imageIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          effectHoverColorHoverImage: color
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Translate effect
+  const updateTranslateEffectHoverImage = (slideId, divIndex, imageIndex, newEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          translateEffectHoverImage: newEffect
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving trnaslate
+  const updateTranslateEffectImageMovingHover = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          translateEffectImageMovingHover: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving
+  const updateAnimationImageMovingHover = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          animationImageMovingHover: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Effect Image Animation Moving duration
+  const updateDurationEffectImageMovingHover = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          durationEffectImageMovingHover: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  const isAnimationNone = imageDiv.animationHoverImage === " ";
+  const showColorOptionsPanel = ["hover-effect-3-image-inner-", "hover-effect-3-image-inner", "hover-effect-4-image-inner"].includes(imageDiv.animationHoverImage);
+  const showTranslateRangeControl = ["hover-effect-2-image-inner",
+  // Translate Y
+  "hover-effect-5-image-inner" // Translate X
+  ].includes(imageDiv.animationHoverImage);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: imageDiv.imageColorHover,
+    setColorNormal: color => updateSlideImageColorHover(slide.id, elementIndex, imageIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: imageDiv.borderStyleHoverImage,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: newBorderStyle => updateBorderStyleHoverImage(slide.id, elementIndex, imageIndex, newBorderStyle)
+  })), imageDiv.borderStyleHoverImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: imageDiv.backgroundBorderColorHoverImage,
+    setColorNormal: color => updateImageBackgroundBorderColorHover(slide.id, elementIndex, imageIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: imageDiv.backgroundBorderSizeImageHover,
+    onChange: newSize => updateSlideBackgroundBorderSizeImageBlockHover(slide.id, elementIndex, imageIndex, newSize),
+    min: 0,
+    max: 20,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: imageDiv.opacityHoverImage,
+    onChange: opacity => updateOpacityHoverImage(slide.id, elementIndex, imageIndex, opacity),
+    min: 0,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: imageDiv.rotateHoverImage,
+    onChange: rotate => updateRotateHoverImage(slide.id, elementIndex, imageIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0",
+      marginTop: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Movimentation", "cocoblocks")),
+    value: imageDiv.animationImageMovingHover,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Moving background X",
+      value: "moving-background-hover-inner"
+    }, {
+      label: "Moving background Y",
+      value: "moving-background-y-hover-inner"
+    }],
+    onChange: value => updateAnimationImageMovingHover(slide.id, elementIndex, imageIndex, value)
+  })), imageDiv.animationImageMovingHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
+    value: imageDiv.durationEffectImageMovingHover,
+    onChange: value => updateDurationEffectImageMovingHover(slide.id, elementIndex, imageIndex, value),
+    min: 0.1,
+    max: 30,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate", "cocoblocks")),
+    value: imageDiv.translateEffectImageMovingHover,
+    onChange: value => updateTranslateEffectImageMovingHover(slide.id, elementIndex, imageIndex, value),
+    min: -300,
+    max: 300,
+    step: 1
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0",
+      marginTop: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: imageDiv.animationHoverImage,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Scale",
+      value: "hover-effect-1-image-inner"
+    }, {
+      label: "Translate Y",
+      value: "hover-effect-2-image-inner"
+    }, {
+      label: "Translate X",
+      value: "hover-effect-5-image-inner"
+    }, {
+      label: "Shadow",
+      value: "hover-effect-3-image-inner-"
+    }, {
+      label: "Shadow Two",
+      value: "hover-effect-3-image-inner"
+    }],
+    onChange: animation => updateImageAnimationHover(slide.id, elementIndex, imageIndex, animation)
+  })), imageDiv.animationHoverImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
+    value: imageDiv.durationEffectHoverImage,
+    onChange: newDurationEffect => updateDurationEffectHoverImage(slide.id, elementIndex, imageIndex, newDurationEffect),
+    min: 0.1,
+    max: 10,
+    step: 0.1
+  })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: imageDiv.effectHoverColorHoverImage,
+    setColorNormal: color => updateSlideEffectColorHoverImage(slide.id, elementIndex, imageIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effect Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        height: "20px",
+        width: "20px",
+        marginLeft: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"
+    }))
+  })), showTranslateRangeControl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate", "cocoblocks")),
+    value: imageDiv.translateEffectHoverImage,
+    onChange: newEffect => updateTranslateEffectHoverImage(slide.id, elementIndex, imageIndex, newEffect),
+    min: -70,
+    max: 70,
+    step: 1
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageControlsBlockHover);
+
+/***/ }),
+
+/***/ "./src/components/ImageControlsHover.js":
+/*!**********************************************!*\
+  !*** ./src/components/ImageControlsHover.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 
 
 
@@ -977,6 +3505,20 @@ const ImageControlsHover = ({
     });
   };
 
+  // Update border width hover
+  const updateSlideBackgroundBorderSizeImageHover = (slideId, index, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "image" && i === index ? {
+        ...element,
+        backgroundBorderSizeImageHover: newSize
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update Opacity
   const updateOpacityHoverImage = (slideId, index, opacity) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -991,7 +3533,7 @@ const ImageControlsHover = ({
     });
   };
 
-  // Duration effect 
+  // Duration effect
   const updateDurationEffectHoverImage = (slideId, index, newDurationEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -1047,7 +3589,7 @@ const ImageControlsHover = ({
     });
   };
 
-  // Translate effect 
+  // Translate effect
   const updateTranslateEffectHoverImage = (slideId, index, newEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -1189,6 +3731,23 @@ const ImageControlsHover = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
     }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSizeImageHover,
+    onChange: newSize => updateSlideBackgroundBorderSizeImageHover(slide.id, elementIndex, newSize),
+    min: 0,
+    max: 20,
+    step: 1
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
@@ -1251,10 +3810,10 @@ const ImageControlsHover = ({
       value: "none"
     }, {
       label: "Moving background X",
-      value: "moving-background-hover"
+      value: "moving-background-hover-inner"
     }, {
       label: "Moving background Y",
-      value: "moving-background-y-hover"
+      value: "moving-background-y-hover-inner"
     }],
     onChange: value => updateAnimationImageMovingHover(slide.id, elementIndex, value)
   })), element.animationImageMovingHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1271,9 +3830,9 @@ const ImageControlsHover = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
     value: element.durationEffectImageMovingHover,
     onChange: value => updateDurationEffectImageMovingHover(slide.id, elementIndex, value),
-    min: .1,
+    min: 0.1,
     max: 30,
-    step: .1
+    step: 0.1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
@@ -1328,12 +3887,9 @@ const ImageControlsHover = ({
     }, {
       label: "Shadow Two",
       value: "hover-effect-3-image"
-    }, {
-      label: "Shadow Three",
-      value: "hover-effect-4-image"
     }],
     onChange: animation => updateImageAnimationHover(slide.id, elementIndex, animation)
-  })), !isAnimationNone && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), element.animationHoverImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -1347,9 +3903,9 @@ const ImageControlsHover = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
     value: element.durationEffectHoverImage,
     onChange: newDurationEffect => updateDurationEffectHoverImage(slide.id, elementIndex, newDurationEffect),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1400,6 +3956,7 @@ const ImageControlsHover = ({
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1457,7 +4014,7 @@ const ImageSelectionModal = ({
     try {
       await onSelect(image); // Supponendo che onSelect gestisca l'operazione asincrona
     } catch (error) {
-      console.error('Errore durante la selezione dell\'immagine:', error);
+      console.error("Errore durante la selezione dell'immagine:", error);
     } finally {
       setIsLoading(false);
       onClose(); // Chiudi il modale dopo la selezione
@@ -1475,7 +4032,7 @@ const ImageSelectionModal = ({
     className: "logo-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: _images_1_jpg__WEBPACK_IMPORTED_MODULE_3__,
-    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Slider', 'cocoblocks')
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slider", "cocoblocks")
   })), categories.map((category, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     key: index,
     isSecondary: true,
@@ -1498,26 +4055,26 @@ const ImageSelectionModal = ({
     isSecondary: true,
     onClick: () => setIsLicenseModalOpen(true),
     style: {
-      textAlign: 'left',
-      background: 'none',
-      border: 'none',
-      color: 'inherit',
+      textAlign: "left",
+      background: "none",
+      border: "none",
+      color: "inherit",
       padding: 0
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('© Copyright & License Info', 'cocoblocks'))))), isLoading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("© Copyright & License Info", "cocoblocks"))))), isLoading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "loading-overlay"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "loading-message"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Please wait a moment...', 'text-domain')))), isLicenseModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('License Information', 'text-domain'),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Please wait a moment...", "text-domain")))), isLicenseModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("License Information", "text-domain"),
     onRequestClose: () => setIsLicenseModalOpen(false),
     className: "license-modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "license-content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Here you can put the detailed information about licenses.', 'text-domain')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Here you can put the detailed information about licenses.", "text-domain")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     isSecondary: true,
     onClick: () => setIsLicenseModalOpen(false)
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Close', 'text-domain')))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Close", "text-domain")))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageSelectionModal);
 
@@ -1529,6 +4086,7 @@ const ImageSelectionModal = ({
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1553,7 +4111,7 @@ const NavigationButtons = ({
 }) => {
   if (!navigation) return null;
   if (window.Swiper) {
-    const swiper = new window.Swiper('.swiper-container', {
+    const swiper = new window.Swiper(".swiper-container", {
       navigation: {
         nextEl: nextRef.current,
         prevEl: prevRef.current
@@ -1757,6 +4315,7 @@ const NavigationButtons = ({
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1769,9 +4328,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
 /* harmony import */ var _sectionSliderSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sectionSliderSelector */ "./src/components/sectionSliderSelector.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _modalPattern__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modalPattern */ "./src/components/modalPattern.js");
+
 
 
 
@@ -1960,6 +4521,7 @@ const SliderControls = ({
       });
     }
   }, [attributes.contentType]);
+  const [isModalOpen, setIsModalOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
 
   // Section slider
   const [activeSection, setActiveSectionSlider] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("layout");
@@ -1973,7 +4535,12 @@ const SliderControls = ({
     className: "title-custom-panel"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout Area", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isSecondary: true,
+    onClick: () => setIsModalOpen(true)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Open Pattern Modal", "text-domain")), isModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_modalPattern__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onClose: () => setIsModalOpen(false)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "svg-devices"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -2017,7 +4584,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), perViewSlider == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
@@ -2069,7 +4636,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Desktop)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right",
@@ -2101,7 +4668,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slider rows, for multirow layout.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), slidesPerRow !== "1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -2153,7 +4720,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), perViewSliderTablet == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -2201,7 +4768,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Tablet)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "svg-devices"
@@ -2247,7 +4814,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), perViewSliderMobile == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
@@ -2295,7 +4862,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Mobile)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
@@ -2328,7 +4895,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable and slider wrapper will adapt its height to the height of the currently active slide", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -2383,7 +4950,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -2422,7 +4989,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Index number of initial slide.(Starts from 0)", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -2451,7 +5018,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Doesn't work in the editor!", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -2475,7 +5042,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables Snap to slides positions in free mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2494,7 +5061,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then slide will keep moving for a while you release it after", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2513,7 +5080,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables momentum bounce in free mode", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
@@ -2535,7 +5102,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum bounce effect", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
       left: "75%",
@@ -2561,7 +5128,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum distance after you release sldier", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
       left: "75%",
@@ -2587,7 +5154,7 @@ const SliderControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum velocity after you release sldier", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "tooltip-icon",
     style: {
       left: "75%",
@@ -2932,6 +5499,7 @@ const SliderControls = ({
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3485,7 +6053,7 @@ const SliderControlsNaqvigation = ({
       borderRadius: "0",
       margin: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: In order for the carousel navigation to work in the editor, you need to change the carousel type below! Just move it once and choose the type you want!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Warning: In order for the carousel navigation to work in the editor, you need to change the carousel type below! Just move it once and choose the type you want!", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Type", "cocoblocks"),
@@ -4237,6 +6805,7 @@ const SliderControlsNaqvigation = ({
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -4535,7 +7104,7 @@ const SliderControlsOptions = ({
       marginTop: "0",
       borderRadius: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: With this effect, it\'s better to set the slide with `overflow: hidden`!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Warning: With this effect, it's better to set the slide with `overflow: hidden`!", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Shadow", "cocoblocks"),
@@ -5477,6 +8046,7 @@ const SliderControlsOptions = ({
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -5523,11 +8093,11 @@ const TextControls = ({
   attributes
 }) => {
   // Inizializza lo stato locale utilizzando element.playState
-  const [playState, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playState || '');
+  const [playState, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playState || "");
 
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
-    const newState = playState === 'play' ? '' : 'play';
+    const newState = playState === "play" ? "" : "play";
     setPlayState(newState);
     // Aggiorna element.playState piuttosto che attributes.playState
     element.playState = newState;
@@ -5791,7 +8361,7 @@ const TextControls = ({
     });
   };
 
-  // Duration effect 
+  // Duration effect
   const updateDurationEffect = (slideId, index, newDurationEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -5861,7 +8431,7 @@ const TextControls = ({
     });
   };
 
-  // Delay effect 
+  // Delay effect
   const updateDelayEffect = (slideId, index, newDelayEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -5966,20 +8536,6 @@ const TextControls = ({
       elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
         ...element,
         gradinetColorFour: newGradinetColorFour
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
-  // Update Gradient color five
-  const updateGradinetColorFive = (slideId, index, newGradinetColorFive) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
-        ...element,
-        gradinetColorFive: newGradinetColorFive
       } : element)
     } : slide);
     setAttributes({
@@ -6529,6 +9085,12 @@ const TextControls = ({
     });
   };
 
+  // Open panel
+  const [isOpen, setIsOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const handleToggle = () => {
+    setIsOpen(prevIsOpen => !prevIsOpen);
+  };
+
   // Font Family Options
   const fontOptions = [{
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Arial", "cocoblock"),
@@ -6672,7 +9234,29 @@ const TextControls = ({
     fill: "#e8eaed"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    placement: "top",
+    text: isOpen ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Close Controls', 'slider') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Open Controls', 'slider')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: handleToggle,
+    className: "button-open-control-element"
+  }, isOpen ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24px",
+    viewBox: "0 -960 960 960",
+    width: "24px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+  }))))), isOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sectionSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onSectionChange: setActiveSection
   }), activeSection === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
@@ -6723,7 +9307,7 @@ const TextControls = ({
       marginTop: "6px",
       marginBottom: "6px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Attention: Side transition effects will not work with this setting!', "cocoblocks")), element.widthTitle === "custom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Attention: Side transition effects will not work with this setting!", "cocoblocks")), element.widthTitle === "custom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7019,7 +9603,7 @@ const TextControls = ({
     onChange: newLetterSpacing => updateLetterSpacing(slide.id, elementIndex, newLetterSpacing),
     min: 0,
     max: 100,
-    step: .5
+    step: 0.5
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
     style: {
@@ -7027,7 +9611,7 @@ const TextControls = ({
       marginTop: "6px",
       marginBottom: "6px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: element.textColor,
@@ -7466,9 +10050,6 @@ const TextControls = ({
     }, {
       label: "Neon Effect",
       value: "text-neon"
-    }, {
-      label: "Color Cycle",
-      value: "color-cycle"
     }],
     onChange: animation => updateTextAnimation(slide.id, elementIndex, animation)
   })), element.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, ![" ", "typing-effect", "text-shadow", "text-shadow-light", "text-shadow-heavy", "text-neon"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -7485,10 +10066,10 @@ const TextControls = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
     value: element.durationEffect,
     onChange: newDurationEffect => updateDurationEffect(slide.id, elementIndex, newDurationEffect),
-    min: .1,
+    min: 0.1,
     max: 15,
-    step: .1
-  }))), ["explode", "implode", "letters-fly-in-from-left", "letters-fly-in-from-right", "letters-fly-in-from-top", "letters-fly-in-from-bottom", "letter-flip-from-top", "letter-flip-from-bottom", "letter-flip-cycle"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  }))), element.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7504,8 +10085,8 @@ const TextControls = ({
     onChange: newDelayEffect => updateDelayEffect(slide.id, elementIndex, newDelayEffect),
     min: 0,
     max: 10,
-    step: .1
-  })), element.animation === "bounce" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  }))), element.animation === "bounce" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -7519,9 +10100,9 @@ const TextControls = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration letter odd", "cocoblocks")),
     value: element.durationEffectOdd,
     onChange: newDurationEffectOdd => updateDurationEffectOdd(slide.id, elementIndex, newDurationEffectOdd),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
@@ -7536,9 +10117,9 @@ const TextControls = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration letter even", "cocoblocks")),
     value: element.durationEffectEven,
     onChange: newDurationEffectEven => updateDurationEffectEven(slide.id, elementIndex, newDurationEffectEven),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   }))), ["bounce-effect", "bounce-left-effect", "bounce-right-effect", "bounce-top-effect", "bounce-bottom-effect", "wiggle", "flip", "swing", "rubber-band"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
@@ -7658,9 +10239,9 @@ const TextControls = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation cursor", "cocoblocks")),
     value: element.animationCursor,
     onChange: newAnimationCursor => updateAnimationCursor(slide.id, elementIndex, newAnimationCursor),
-    min: .10,
+    min: 0.1,
     max: 3,
-    step: .01
+    step: 0.01
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -7679,7 +10260,7 @@ const TextControls = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
     }))
-  }))), ["gradient-animation", "text-shadow", "text-shadow-light", "text-shadow-heavy", "text-neon", "color-cycle"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), ["gradient-animation", "text-shadow", "text-shadow-light", "text-shadow-heavy", "text-neon"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: element.gradinetColorOne,
@@ -7697,7 +10278,7 @@ const TextControls = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
     }))
-  })), ["gradient-animation", "color-cycle"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), ["gradient-animation"].includes(element.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: element.gradinetColorTwo,
@@ -7751,32 +10332,14 @@ const TextControls = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
     }))
-  }))), element.animation === "color-cycle" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    colorNormal: element.gradinetColorFive,
-    setColorNormal: newGradinetColorFive => updateGradinetColorFive(slide.id, elementIndex, newGradinetColorFive),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Fifth Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-3px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
-    }))
-  })), element.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), element.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-reply-effect"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-    text: playState === 'play' ? 'Play' : 'Repeat'
+    text: playState === "play" ? "Play" : "Repeat"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-    variant: playState === 'play',
+    variant: playState === "play",
     onClick: togglePlayState,
-    icon: playState === 'play' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    icon: playState === "play" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       height: "24px",
       viewBox: "0 -960 960 960",
@@ -8037,7 +10600,7 @@ const TextControls = ({
     onChange: value => updateUnderlineAnimationTransition(slide.id, elementIndex, value),
     min: 0,
     max: 10,
-    step: .1
+    step: 0.1
   })))))), activeSection === "hover" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_TextControlsHover__WEBPACK_IMPORTED_MODULE_7__["default"], {
     slide: slide,
     slides: slides,
@@ -8310,7 +10873,7 @@ const TextControls = ({
       borderRadius: "8px",
       marginTop: "18px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks"))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('For these effects, you need to enable "Parallax" from the Slider options under the Animation section!', "cocoblocks")))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextControls);
 
@@ -8322,6 +10885,7 @@ const TextControls = ({
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -8332,12 +10896,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
 /* harmony import */ var _aligncontrol_three__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aligncontrol-three */ "./src/components/aligncontrol-three.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 /* harmony import */ var _font_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./font-style */ "./src/components/font-style.js");
 /* harmony import */ var _sectionSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sectionSelector */ "./src/components/sectionSelector.js");
 /* harmony import */ var _boxShadowTextBlock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./boxShadowTextBlock */ "./src/components/boxShadowTextBlock.js");
+/* harmony import */ var _TextControlsBlockHover__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TextControlsBlockHover */ "./src/components/TextControlsBlockHover.js");
+
 
 
 
@@ -8367,11 +10933,11 @@ const TextControlsBlock = ({
   showOtherButtons
 }) => {
   // Inizializza lo stato locale utilizzando element.playState
-  const [playState, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(textDiv.playState || '');
+  const [playState, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(textDiv.playState || "");
 
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
-    const newState = playState === 'play' ? '' : 'play';
+    const newState = playState === "play" ? "" : "play";
     setPlayState(newState);
     // Aggiorna element.playState piuttosto che attributes.playState
     textDiv.playState = newState;
@@ -9083,23 +11649,6 @@ const TextControlsBlock = ({
     });
   };
 
-  // Update color five
-  const updateGradinetColorFive = (slideId, divIndex, textIndex, newGradinetColorFive) => {
-    const updatedSlides = slides.map(slide => slide.id === slideId ? {
-      ...slide,
-      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
-        ...element,
-        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
-          ...textDiv,
-          gradinetColorFive: newGradinetColorFive
-        } : textDiv)
-      } : element)
-    } : slide);
-    setAttributes({
-      slides: updatedSlides
-    });
-  };
-
   // Update decoration
   const updateDecoration = (slideId, divIndex, textIndex, value) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -9312,6 +11861,142 @@ const TextControlsBlock = ({
         innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
           ...textDiv,
           underlineAnimationTransition: value
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Selector link
+  const updateTextLink = (slideId, divIndex, textIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          textLink: value
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Url
+  const updateLinkUrl = (slideId, divIndex, textIndex, url) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          linkUrl: url
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateScrollToId = (slideId, divIndex, textIndex, id) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          scrollToId: id
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateLinkTarget = (slideId, divIndex, textIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          linkTarget: value
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Rel
+  const updateLinkRel = (slideId, divIndex, textIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          linkRel: value
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Desktop
+  const updateEnableDesktopTitle = (slideId, divIndex, textIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          enableDesktopTitle: value
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Tablet
+  const updateEnableTabletTitle = (slideId, divIndex, textIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          enableTabletTitle: value
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Mobile
+  const updateEnableMobileTitle = (slideId, divIndex, textIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          enableMobileTitle: value
         } : textDiv)
       } : element)
     } : slide);
@@ -9556,7 +12241,7 @@ const TextControlsBlock = ({
       top: "10px"
     },
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Text", "cocoblocks"),
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -9616,7 +12301,7 @@ const TextControlsBlock = ({
       marginTop: "6px",
       marginBottom: "6px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Attention: Side transition effects will not work with this setting!', "cocoblocks")), textDiv.widthTitleBlock === "custom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Attention: Side transition effects will not work with this setting!", "cocoblocks")), textDiv.widthTitleBlock === "custom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -9909,7 +12594,7 @@ const TextControlsBlock = ({
     onChange: newLetterSpacing => updateLetterSpacingTitleBlock(slide.id, elementIndex, textIndex, newLetterSpacing),
     min: 0,
     max: 100,
-    step: .5
+    step: 0.5
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help",
     style: {
@@ -9917,7 +12602,7 @@ const TextControlsBlock = ({
       marginTop: "6px",
       marginBottom: "6px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!', "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: textDiv.textColor,
@@ -10358,12 +13043,9 @@ const TextControlsBlock = ({
     }, {
       label: "Neon Effect",
       value: "text-neon-title-div"
-    }, {
-      label: "Color Cycle",
-      value: "color-cycle-title-div"
     }],
     onChange: animation => updateTextAnimation(slide.id, elementIndex, textIndex, animation)
-  })), textDiv.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, ![" ", "typing-effect", "text-shadow-title-div", "text-shadow-light-title-div", "text-shadow-heavy-title-div", "text-neon-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), textDiv.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, ![" ", "typing-effect", "text-shadow-title-div", "text-shadow-light-title-div", "text-shadow-heavy-title-div", "text-neon-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -10377,10 +13059,10 @@ const TextControlsBlock = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
     value: textDiv.durationEffect,
     onChange: newDurationEffect => updateDurationEffect(slide.id, elementIndex, textIndex, newDurationEffect),
-    min: .1,
+    min: 0.1,
     max: 15,
-    step: .1
-  }))), ["explode-title-div", "implode-title-div", "letters-fly-in-from-left-div", "letters-fly-in-from-right-div", "letters-fly-in-from-top-div", "letters-fly-in-from-bottom-div", "letter-flip-from-top-div", "letter-flip-from-bottom-div", "letter-flip-cycle-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -10396,8 +13078,8 @@ const TextControlsBlock = ({
     onChange: newDelayEffect => updateDelayEffect(slide.id, elementIndex, textIndex, newDelayEffect),
     min: 0,
     max: 10,
-    step: .1
-  })), textDiv.animation === "bounce-title-div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  })))), textDiv.animation === "bounce-title-div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -10411,9 +13093,9 @@ const TextControlsBlock = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration letter odd", "cocoblocks")),
     value: textDiv.durationEffectOdd,
     onChange: newDurationEffectOdd => updateDurationEffectOdd(slide.id, elementIndex, textIndex, newDurationEffectOdd),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
@@ -10428,9 +13110,9 @@ const TextControlsBlock = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration letter even", "cocoblocks")),
     value: textDiv.durationEffectEven,
     onChange: newDurationEffectEven => updateDurationEffectEven(slide.id, elementIndex, textIndex, newDurationEffectEven),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   }))), ["bounce-effect-title-div", "bounce-left-effect-title-div", "bounce-right-effect-title-div", "bounce-top-effect-title-div", "bounce-bottom-effect-title-div", "wiggle-title-div", "flip-title-div", "swing-title-div", "rubber-band-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
@@ -10550,9 +13232,9 @@ const TextControlsBlock = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation cursor", "cocoblocks")),
     value: textDiv.animationCursor,
     onChange: newAnimationCursor => updateAnimationCursor(slide.id, elementIndex, textIndex, newAnimationCursor),
-    min: .10,
+    min: 0.1,
     max: 3,
-    step: .01
+    step: 0.01
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -10571,7 +13253,7 @@ const TextControlsBlock = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
     }))
-  }))), ["gradient-animation-title-div", "text-shadow-title-div", "text-shadow-light-title-div", "text-shadow-heavy-title-div", "text-neon-title-div", "color-cycle-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), ["gradient-animation-title-div", "text-shadow-title-div", "text-shadow-light-title-div", "text-shadow-heavy-title-div", "text-neon-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: textDiv.gradinetColorOne,
@@ -10589,7 +13271,7 @@ const TextControlsBlock = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
     }))
-  })), ["gradient-animation-title-div", "color-cycle-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), ["gradient-animation-title-div"].includes(textDiv.animation) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: textDiv.gradinetColorTwo,
@@ -10643,32 +13325,14 @@ const TextControlsBlock = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
     }))
-  }))), textDiv.animation === "color-cycle-title-div" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    colorNormal: textDiv.gradinetColorFive,
-    setColorNormal: newGradinetColorFive => updateGradinetColorFive(slide.id, elementIndex, textIndex, newGradinetColorFive),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Fifth Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      height: "24px",
-      viewBox: "0 -960 960 960",
-      width: "24px",
-      fill: "#e8eaed",
-      style: {
-        marginBottom: "-3px"
-      }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z"
-    }))
-  })), textDiv.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), textDiv.animation !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-reply-effect"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-    text: playState === 'play' ? 'Play' : 'Repeat'
+    text: playState === "play" ? "Play" : "Repeat"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-    variant: playState === 'play',
+    variant: playState === "play",
     onClick: togglePlayState,
-    icon: playState === 'play' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    icon: playState === "play" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       height: "24px",
       viewBox: "0 -960 960 960",
@@ -10929,8 +13593,179 @@ const TextControlsBlock = ({
     onChange: value => updateUnderlineAnimationTransition(slide.id, elementIndex, textIndex, value),
     min: 0,
     max: 10,
-    step: .1
-  })))))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    step: 0.1
+  })))))), activeSection === "hover" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_TextControlsBlockHover__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    textDiv: textDiv,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes,
+    textIndex: textIndex
+  })), activeSection === "actions" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Actions", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link actions", "cocoblocks")),
+    value: textDiv.textLink,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Link",
+      value: "link"
+    }, {
+      label: "Scroll Below Slider",
+      value: "scroll-below"
+    }, {
+      label: "Scroll to ID Element",
+      value: "scroll-to-id"
+    }],
+    onChange: value => updateTextLink(slide.id, elementIndex, textIndex, value)
+  })), textDiv.textLink === "link" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter URL", "cocoblocks")),
+    value: textDiv.linkUrl,
+    onChange: value => updateLinkUrl(slide.id, elementIndex, textIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Target", "cocoblocks")),
+    value: textDiv.linkTarget,
+    options: [{
+      label: "Same Window",
+      value: "_self"
+    }, {
+      label: "New Window",
+      value: "_blank"
+    }],
+    onChange: value => updateLinkTarget(slide.id, elementIndex, textIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m791-55-91-91q-49 32-104.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-60 17-115.5T146-700l-91-91 57-57 736 736-57 57ZM480-160q43 0 83.5-11t78.5-33L204-642q-22 38-33 78.5T160-480q0 133 93.5 226.5T480-160Zm334-100-58-58q22-38 33-78.5t11-83.5q0-133-93.5-226.5T480-800q-43 0-83.5 11T318-756l-58-58q49-32 104.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 60-17 115.5T814-260ZM537-537ZM423-423Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link Behavior", "cocoblocks")),
+    value: textDiv.linkRel,
+    options: [{
+      label: "Follow Link",
+      value: "follow"
+    }, {
+      label: "No Follow",
+      value: "nofollow"
+    }],
+    onChange: value => updateLinkRel(slide.id, elementIndex, textIndex, value)
+  }))), textDiv.textLink === "scroll-to-id" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-160q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v284q-10-2-19.5-3t-20.5-1h-40v-280H200v560h124q4 22 10.5 42t17.5 38H200Zm0-120v40-560 520Zm80-40h44q8-49 35-90.5t69-69.5H280v160Zm0-240h160v-160H280v160Zm280 440q-66 0-113-47t-47-113q0-66 47-113t113-47h80v80h-80q-33 0-56.5 23.5T480-280q0 33 23.5 56.5T560-200h80v80h-80Zm-40-440h160v-160H520v160Zm40 320v-80h240v80H560Zm160 120v-80h80q33 0 56.5-23.5T880-280q0-33-23.5-56.5T800-360h-80v-80h80q66 0 113 46.5T960-280q0 66-47 113t-113 47h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter ID", "cocoblocks")),
+    value: textDiv.scrollToId,
+    onChange: value => updateScrollToId(slide.id, elementIndex, textIndex, value)
+  })))), activeSection === "visibility" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Visibility", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80-160q-33 0-56.5-23.5T0-240h160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240h160q0 33-23.5 56.5T880-160H80Zm400-40q17 0 28.5-11.5T520-240q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240q0 17 11.5 28.5T480-200ZM160-320h640v-440H160v440Zm0 0v-440 440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Desktop", "cocoblocks")),
+    checked: textDiv.enableDesktopTitle,
+    onChange: value => updateEnableDesktopTitle(slide.id, elementIndex, textIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-140q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM200-40q-33 0-56.5-23.5T120-120v-720q0-33 23.5-56.5T200-920h560q33 0 56.5 23.5T840-840v720q0 33-23.5 56.5T760-40H200Zm0-200v120h560v-120H200Zm0-80h560v-400H200v400Zm0-480h560v-40H200v40Zm0 0v-40 40Zm0 560v120-120Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Tablet", "cocoblocks")),
+    checked: textDiv.enableTabletTitle,
+    onChange: value => updateEnableTabletTitle(slide.id, elementIndex, textIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mobile", "cocoblocks")),
+    checked: textDiv.enableMobileTitle,
+    onChange: value => updateEnableMobileTitle(slide.id, elementIndex, textIndex, value)
+  })))), activeSection === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -11039,12 +13874,13 @@ const TextControlsBlock = ({
 
 /***/ }),
 
-/***/ "./src/components/TextControlsHover.js":
-/*!*********************************************!*\
-  !*** ./src/components/TextControlsHover.js ***!
-  \*********************************************/
+/***/ "./src/components/TextControlsBlockHover.js":
+/*!**************************************************!*\
+  !*** ./src/components/TextControlsBlockHover.js ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -11057,6 +13893,460 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 
+
+
+
+
+const TextControlsBlockHover = ({
+  slide,
+  element,
+  elementIndex,
+  slides,
+  setAttributes,
+  textDiv,
+  textIndex
+}) => {
+  // Update Text color
+  const updateSlideTextColorHover = (slideId, divIndex, textIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          textColorHover: color
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Rotate
+  const updateRotateHover = (slideId, divIndex, textIndex, rotate) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          rotateHover: rotate
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style
+  const updateBorderStyleHover = (slideId, divIndex, textIndex, newBorderStyle) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          borderStyleHover: newBorderStyle
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border width hover
+  const updateTitleBackgroundBorderSizeHover = (slideId, divIndex, textIndex, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          backgroundBorderSizeHover: newSize
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Opacity
+  const updateOpacityHover = (slideId, divIndex, textIndex, opacity) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          opacityHover: opacity
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Duration effect
+  const updateDurationEffectHover = (slideId, divIndex, textIndex, newDurationEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          durationEffectHover: newDurationEffect
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Border color
+  const updateTitleBackgroundBorderColorHover = (slideId, divIndex, textIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          backgroundBorderColorHover: color
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Annimation
+  const updateTextAnimationHover = (slideId, divIndex, textIndex, animation) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          animationHover: animation
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Effect color
+  const updateSlideEffectColorHover = (slideId, divIndex, textIndex, color) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          effectHoverColorHover: color
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Translate effect
+  const updateTranslateEffectHover = (slideId, divIndex, textIndex, newEffect) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerTextDivs: element.innerTextDivs.map((textDiv, tIndex) => tIndex === textIndex ? {
+          ...textDiv,
+          translateEffectHover: newEffect
+        } : textDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  const isAnimationNone = textDiv.animationHover === " ";
+  const showColorOptionsPanel = ["hover-effect-3-title-div-", "hover-effect-3-title-div", "hover-effect-4-title-div", "hover-light-effect-title-div"].includes(textDiv.animationHover);
+  const showTranslateRangeControl = ["hover-effect-2-title-div",
+  // Translate Y
+  "hover-effect-5-title-div" // Translate X
+  ].includes(textDiv.animationHover);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-block-added"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Style", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: textDiv.textColorHover,
+    setColorNormal: color => updateSlideTextColorHover(slide.id, elementIndex, textIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-9px",
+        height: "24px",
+        width: "24px",
+        marginLeft: "-4px",
+        marginRight: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border style", "cocoblocks")),
+    value: textDiv.borderStyleHover,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: newBorderStyle => updateBorderStyleHover(slide.id, elementIndex, textIndex, newBorderStyle)
+  })), textDiv.borderStyleHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: textDiv.backgroundBorderColorHover,
+    setColorNormal: color => updateTitleBackgroundBorderColorHover(slide.id, elementIndex, textIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 -960 960 960",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "3px",
+        height: "16px",
+        width: "16px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: textDiv.backgroundBorderSizeHover,
+    onChange: newSize => updateTitleBackgroundBorderSizeHover(slide.id, elementIndex, textIndex, newSize),
+    min: 0,
+    max: 20,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-120q-133 0-226.5-92T160-436q0-65 25-121.5T254-658l226-222 226 222q44 44 69 100.5T800-436q0 132-93.5 224T480-120ZM242-400h474q12-72-13.5-123T650-600L480-768 310-600q-27 26-53 77t-15 123Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Opacity", "cocoblocks")),
+    value: textDiv.opacityHover,
+    onChange: opacity => updateOpacityHover(slide.id, elementIndex, textIndex, opacity),
+    min: 0.1,
+    max: 1,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Rotate", "cocoblocks")),
+    value: textDiv.rotateHover,
+    onChange: rotate => updateRotateHover(slide.id, elementIndex, textIndex, rotate),
+    min: 0,
+    max: 360,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Animation", "cocoblocks")),
+    value: textDiv.animationHover,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Scale",
+      value: "hover-effect-1-title-div"
+    }, {
+      label: "Translate Y",
+      value: "hover-effect-2-title-div"
+    }, {
+      label: "Translate X",
+      value: "hover-effect-5-title-div"
+    }, {
+      label: "Shadow",
+      value: "hover-effect-3-title-div-"
+    }, {
+      label: "Shadow Two",
+      value: "hover-effect-3-title-div"
+    }, {
+      label: "Shadow Three",
+      value: "hover-effect-4-title-div"
+    }, {
+      label: "Filter",
+      value: "hover-effect-6-title-div"
+    }, {
+      label: "Light",
+      value: "hover-light-effect-title-div"
+    }],
+    onChange: animation => updateTextAnimationHover(slide.id, elementIndex, textIndex, animation)
+  })), !isAnimationNone && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
+    value: textDiv.durationEffectHover,
+    onChange: newDurationEffect => updateDurationEffectHover(slide.id, elementIndex, textIndex, newDurationEffect),
+    min: 0.1,
+    max: 10,
+    step: 0.1
+  })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    colorNormal: textDiv.effectHoverColorHover,
+    setColorNormal: color => updateSlideEffectColorHover(slide.id, elementIndex, textIndex, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Effect Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        height: "20px",
+        width: "20px",
+        marginLeft: "-3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"
+    }))
+  })), showTranslateRangeControl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Translate", "cocoblocks")),
+    value: textDiv.translateEffectHover,
+    onChange: newEffect => updateTranslateEffectHover(slide.id, elementIndex, textIndex, newEffect),
+    min: -70,
+    max: 70,
+    step: 1
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextControlsBlockHover);
+
+/***/ }),
+
+/***/ "./src/components/TextControlsHover.js":
+/*!*********************************************!*\
+  !*** ./src/components/TextControlsHover.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 
 
 
@@ -11125,7 +14415,7 @@ const TextControlsHover = ({
     });
   };
 
-  // Duration effect 
+  // Duration effect
   const updateDurationEffectHover = (slideId, index, newDurationEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -11153,6 +14443,19 @@ const TextControlsHover = ({
     });
   };
 
+  // Update Border size
+  const updateTitleBackgroundBorderSizeHover = (slideId, index, newSize) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "title" && i === index ? {
+        ...element,
+        backgroundBorderSizeHover: newSize
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
   // Update Annimation
   const updateTextAnimationHover = (slideId, index, animation) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -11181,7 +14484,7 @@ const TextControlsHover = ({
     });
   };
 
-  // Translate effect 
+  // Translate effect
   const updateTranslateEffectHover = (slideId, index, newEffect) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -11282,6 +14585,26 @@ const TextControlsHover = ({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"
     }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "18px",
+      viewBox: "0 -960 960 960",
+      width: "18px",
+      fill: "#e8eaed",
+      style: {
+        marginRight: "2px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    value: element.backgroundBorderSizeHover,
+    onChange: newSize => updateTitleBackgroundBorderSizeHover(slide.id, elementIndex, newSize),
+    min: 0,
+    max: 20,
+    step: 1
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
@@ -11381,9 +14704,9 @@ const TextControlsHover = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Transition", "cocoblocks")),
     value: element.durationEffectHover,
     onChange: newDurationEffect => updateDurationEffectHover(slide.id, elementIndex, newDurationEffect),
-    min: .1,
+    min: 0.1,
     max: 10,
-    step: .1
+    step: 0.1
   })), showColorOptionsPanel && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -11434,6 +14757,7 @@ const TextControlsHover = ({
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -11529,6 +14853,7 @@ const AlignmentControlThree = ({
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -11617,6 +14942,7 @@ const AlignmentControlTwo = ({
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -11740,6 +15066,7 @@ const AlignmentControl = ({
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -11756,7 +15083,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Assicurati di avere il file CSS per lo stile del componente
+
 
 const BoxShadowControl = ({
   slide,
@@ -11765,7 +15092,7 @@ const BoxShadowControl = ({
   slides,
   setAttributes
 }) => {
-  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside"); // "outside" or "inside"
+  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside");
 
   // Color Shadow
   const updateColorShadow = (slideId, index, value) => {
@@ -11946,6 +15273,7 @@ const BoxShadowControl = ({
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -11962,7 +15290,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Assicurati di avere il file CSS per lo stile del componente
+
 
 const BoxShadowControlBlock = ({
   slide,
@@ -11971,7 +15299,7 @@ const BoxShadowControlBlock = ({
   elementIndex,
   setAttributes
 }) => {
-  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside"); // "outside" or "inside"
+  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside");
 
   // Color Shadow
   const updateColorShadow = (slideId, index, value) => {
@@ -12152,6 +15480,7 @@ const BoxShadowControlBlock = ({
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -12168,7 +15497,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Assicurati di avere il file CSS per lo stile del componente
+
 
 const BoxShadowControlImage = ({
   slide,
@@ -12350,12 +15679,13 @@ const BoxShadowControlImage = ({
 
 /***/ }),
 
-/***/ "./src/components/boxShadowTextBlock.js":
-/*!**********************************************!*\
-  !*** ./src/components/boxShadowTextBlock.js ***!
-  \**********************************************/
+/***/ "./src/components/boxShadowImageBlock.js":
+/*!***********************************************!*\
+  !*** ./src/components/boxShadowImageBlock.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -12372,7 +15702,228 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Assicurati di avere il file CSS per lo stile del componente
+
+
+const BoxShadowControlImageBlock = ({
+  slide,
+  imageDiv,
+  imageIndex,
+  elementIndex,
+  slides,
+  setAttributes
+}) => {
+  // Color Shadow
+  const updateColorShadowImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          colorShadowImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowX
+  const updateBoxShadowXImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          boxShadowXImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box ShadowY
+  const updateBoxShadowYImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          boxShadowYImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Blur
+  const updateBoxShadowBlurImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          boxShadowBlurImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Box Shadow Spread
+  const updateBoxShadowSpreadImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          boxShadowSpreadImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Box Shadow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    colorNormal: imageDiv.colorShadowImage,
+    setColorNormal: value => updateColorShadowImage(slide.id, elementIndex, imageIndex, value),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed",
+      style: {
+        marginBottom: "-5px",
+        width: "21px",
+        height: "21px",
+        marginLeft: "-4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m389-347 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm338 70q29-35 47-76t23-86L547-189q8 3 16.5 7t16.5 6q44-14 81-40t66-61ZM160-480q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Zm317 247 315-314q-4-18-9-35t-13-33L432-278q11 13 21 23.5t24 21.5Zm3 153q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM363-525l247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm217 45Z"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("X Position", "cocoblocks")),
+    value: imageDiv.boxShadowXImage,
+    onChange: value => updateBoxShadowXImage(slide.id, elementIndex, imageIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h80v-80q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240h-80v80q0 33-23.5 56.5T640-80H160Zm160-240h480v-480H320v480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Y Position", "cocoblocks")),
+    value: imageDiv.boxShadowYImage,
+    onChange: value => updateBoxShadowYImage(slide.id, elementIndex, imageIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Blur", "cocoblocks")),
+    value: imageDiv.boxShadowBlurImage,
+    onChange: value => updateBoxShadowBlurImage(slide.id, elementIndex, imageIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-97-427ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 15-1 29t-3 28q-30-26-67.5-40.5T728-480l64-67q-4-18-9-35t-13-33L432-278q11 13 22.5 25t25.5 23q2 42 17 79t41 67q-14 2-28.5 3T480-80Zm-91-267 337-337q-11-12-22-23.5T680-729L367-415q4 18 9 34.5t13 33.5Zm-26-178 247-247q-8-3-14.5-6.5T581-784q-86 28-145.5 97.5T363-525Zm-203 45q0 122 79 211.5T436-163q-72-55-114-137.5T280-480q0-97 42-179.5T436-797q-118 16-197 105.5T160-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spread", "cocoblocks")),
+    value: imageDiv.boxShadowSpreadImage,
+    onChange: value => updateBoxShadowSpreadImage(slide.id, elementIndex, imageIndex, value),
+    min: -100,
+    max: 100,
+    step: 1
+  }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BoxShadowControlImageBlock);
+
+/***/ }),
+
+/***/ "./src/components/boxShadowTextBlock.js":
+/*!**********************************************!*\
+  !*** ./src/components/boxShadowTextBlock.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/components/editor.scss");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+
+
+
+
+
 
 const BoxShadowControlTextBlock = ({
   slide,
@@ -12383,7 +15934,7 @@ const BoxShadowControlTextBlock = ({
   elementIndex,
   setAttributes
 }) => {
-  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside"); // "outside" or "inside"
+  const [shadowType, setShadowType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("outside");
 
   // Color Shadow
   const updateColorShadow = (slideId, divIndex, textIndex, value) => {
@@ -12402,7 +15953,7 @@ const BoxShadowControlTextBlock = ({
     });
   };
 
-  // Box ShadowX 
+  // Box ShadowX
   const updateBoxShadowX = (slideId, divIndex, textIndex, value) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -12419,7 +15970,7 @@ const BoxShadowControlTextBlock = ({
     });
   };
 
-  // Box ShadowY 
+  // Box ShadowY
   const updateBoxShadowY = (slideId, divIndex, textIndex, value) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -12573,12 +16124,121 @@ const BoxShadowControlTextBlock = ({
 
 /***/ }),
 
+/***/ "./src/components/buttonComponent.js":
+/*!*******************************************!*\
+  !*** ./src/components/buttonComponent.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ButtonComponent = ({
+  element
+}) => {
+  const {
+    buttonType
+  } = element;
+
+  // Style button 1
+  const buttonStyle1 = {
+    '--color-button': element.buttonColor,
+    '--border-color-button': element.backgroundBorderColorButton,
+    '--border-style-button': element.borderStyleButton,
+    '--border-radius-button': element.backgroundBorderRadiusButton + 'px',
+    '--border-width-button': element.backgroundBorderSizeButton + 'px',
+    '--background-color-button': element.buttonBackgroundColor
+  };
+  let buttonHTML;
+  switch (buttonType) {
+    case "type1":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "scroll-btn",
+        style: buttonStyle1
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+        href: "#"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "mouse"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null))));
+      break;
+    case "type2":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        className: "custom-button"
+      }, "Custom Button Type 2");
+      break;
+    case "type3":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Button Type 3");
+      break;
+    default:
+      buttonHTML = null;
+  }
+  return buttonHTML;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonComponent);
+
+/***/ }),
+
+/***/ "./src/components/buttonModal.js":
+/*!***************************************!*\
+  !*** ./src/components/buttonModal.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const ButtonTypeSelectionModal = ({
+  slideId,
+  onClose,
+  onSelect
+}) => {
+  const [selectedType, setSelectedType] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)("");
+  const handleSelect = () => {
+    onSelect(slideId, selectedType); // Passa solo il tipo
+    onClose();
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+    title: "Select Button Type",
+    onRequestClose: onClose
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => setSelectedType("type1")
+  }, "Type 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => setSelectedType("type2")
+  }, "Type 2"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: () => setSelectedType("type3")
+  }, "Type 3"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isPrimary: true,
+    onClick: handleSelect
+  }, "Select")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonTypeSelectionModal);
+
+/***/ }),
+
 /***/ "./src/components/colorPanel.js":
 /*!**************************************!*\
   !*** ./src/components/colorPanel.js ***!
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -12661,6 +16321,7 @@ const ColorOptionsPanel = ({
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -12744,6 +16405,7 @@ const ColorOptionsPanelGradient = ({
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -12785,8 +16447,7 @@ const DivComponent = ({
       boxShadow: `${textDiv.boxShadowX}px ${textDiv.boxShadowY}px ${textDiv.boxShadowBlur}px ${textDiv.boxShadowSpread}px ${textDiv.colorShadow}` || "0 0 0 0 #000000",
       writingMode: textDiv.textWriteMode || "initial",
       textOrientation: textDiv.textOrientation || "initial",
-      "--interation-title-block": textDiv.iteration || "forwards",
-      "--duration-effect-title-block": textDiv.durationEffect + "s",
+      opacity: textDiv.opacity,
       "--delay-effect-title-block": textDiv.delayEffect + "s",
       "--duration-effect-odd-title-block": textDiv.durationEffectOdd + "s",
       "--duration-effect-even-title-block": textDiv.durationEffectEven + "s",
@@ -12794,7 +16455,14 @@ const DivComponent = ({
       "--color-gradient-two-title-div": textDiv.gradinetColorTwo,
       "--color-gradient-three-title-div": textDiv.gradinetColorThree,
       "--color-gradient-four-title-div": textDiv.gradinetColorFour,
-      "--color-gradient-five-title-div": textDiv.gradinetColorFive
+      "--border-style-hover-title-div": textDiv.borderStyleHover || "none",
+      "--transition-hover-title-div": textDiv.durationEffectHover + "s" || 0,
+      "--translate-hover-title-div": textDiv.translateEffectHover + "px" || 0,
+      "--color-effect-hover-title-div": textDiv.effectHoverColorHover || "#000000",
+      "--border-color-hover-title-div": textDiv.backgroundBorderColorHover || "#000000",
+      "--border-width-hover-title-div": `${textDiv.backgroundBorderSizeHover}px` || 0,
+      "--opacity-hover-title-div": textDiv.opacityHover || 1,
+      "--color-hover-title-div": textDiv.textColorHover
     };
   };
 
@@ -12805,11 +16473,26 @@ const DivComponent = ({
       minWidth: "0",
       maxHeight: "100%",
       minHeight: "0",
-      border: imageDiv.backgroundBorderSizeImage + "px solid" + imageDiv.backgroundBorderColorImage,
+      borderStyle: imageDiv.borderStyleImage || "none",
+      borderColor: imageDiv.backgroundBorderColorImage || "#000000",
+      boxShadow: `${imageDiv.boxShadowXImage}px ${imageDiv.boxShadowYImage}px ${imageDiv.boxShadowBlurImage}px ${imageDiv.boxShadowSpreadImage}px ${imageDiv.colorShadowImage}` || "0 0 0 0 #000000",
+      borderWidth: imageDiv.backgroundBorderSizeImage + "px",
       borderRadius: imageDiv.backgroundBorderRadiusImage + "px",
       padding: imageDiv.paddingImage + "px",
       backgroundColor: imageDiv.backgroundColorImage,
-      margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`
+      margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`,
+      "--interation-image-inner": imageDiv.interationImage || "forwards",
+      "--spike-width-inner": imageDiv.spikeLeftWidth + "%" || 0,
+      "--spike-width-right-inner": imageDiv.spikeRightWidth + "%" || 0,
+      "--duration-effect-image-inner": imageDiv.durationEffectImage + "s",
+      "--color-hover-image-inner": imageDiv.imageColorHover,
+      "--border-color-hover-image-inner": imageDiv.backgroundBorderColorHoverImage || "#000000",
+      "--opacity-hover-image-inner": imageDiv.opacityHoverImage || 1,
+      "--border-style-hover-image-inner": imageDiv.borderStyleHoverImage || "none",
+      "--border-width-hover-image-inner": imageDiv.backgroundBorderSizeImageHover + "px",
+      "--transition-hover-image-inner": imageDiv.durationEffectHoverImage + "s" || 0,
+      "--translate-hover-image-inner": imageDiv.translateEffectHoverImage + "px" || 0,
+      "--color-effect-hover-image-inner": imageDiv.effectHoverColorHoverImage || "#000000"
     };
     if (imageDiv.widthImage === "relative") {
       style.width = `${imageDiv.customWidthImage}%`;
@@ -12853,8 +16536,8 @@ const DivComponent = ({
       borderStyle: element.borderStyleDiv || "none",
       borderColor: element.backgroundBorderColorDiv,
       borderWidth: `${element.backgroundBorderSizeDiv}px` || 0,
-      width: element.contentWidthDiv === 'custom' ? `${element.customContentWidthDiv}%` : element.contentWidthDiv,
-      height: element.contentHeightDiv === 'custom' ? `${element.customContentHeightDiv}%` : element.contentHeightDiv,
+      width: element.contentWidthDiv === "custom" ? `${element.customContentWidthDiv}%` : element.contentWidthDiv,
+      height: element.contentHeightDiv === "custom" ? `${element.customContentHeightDiv}%` : element.contentHeightDiv,
       margin: `${element.marginDiv?.top} ${element.marginDiv?.right} ${element.marginDiv?.bottom} ${element.marginDiv?.left}`,
       "--box-shadow-x-div": element.boxShadowX + "px" || 0,
       "--box-shadow-y-div": element.boxShadowY + "px" || 0,
@@ -12867,13 +16550,14 @@ const DivComponent = ({
       "--interation-div": element.interationDiv || "forwards",
       "--color-hover-div": element.divColorHover,
       "--border-color-hover-div": element.backgroundBorderColorHoverDiv || "#000000",
+      "--border-width-hover-div": `${element.backgroundBorderSizeDivHover}px` || 0,
       "--opacity-hover-div": element.opacityHoverDiv || 1,
       "--border-style-hover-div": element.borderStyleHoverDiv || "none",
-      "--transition-hover-div": element.durationEffectHoverDiv + 's' || 0,
-      "--translate-hover-div": element.translateEffectHoverDiv + 'px' || 0,
+      "--transition-hover-div": element.durationEffectHoverDiv + "s" || 0,
+      "--translate-hover-div": element.translateEffectHoverDiv + "px" || 0,
       "--color-effect-hover-div": element.effectHoverColorHoverDiv || "#000000",
       "--rotate-hover-div": element.rotateHoverDiv + "deg" || 0,
-      "--transition-hover-div": element.durationEffectHoverDiv + 's' || 0
+      "--transition-hover-div": element.durationEffectHoverDiv + "s" || 0
     }
   }, element.innerTextDivs && element.innerTextDivs.length > 0 ? element.innerTextDivs.map((textDiv, textIndex) => {
     // Definisci il tag dinamico
@@ -12896,17 +16580,17 @@ const DivComponent = ({
           key: index,
           className: "explode-title-div",
           style: {
-            '--x-title-div': `${Math.random() * 200 - 100}px`,
+            "--x-title-div": `${Math.random() * 200 - 100}px`,
             // Posizione X casuale
-            '--y-title-div': `${Math.random() * 200 - 100}px`,
+            "--y-title-div": `${Math.random() * 200 - 100}px`,
             // Posizione Y casuale
-            '--rotation-title-div': `${Math.random() * 360}deg`,
+            "--rotation-title-div": `${Math.random() * 360}deg`,
             // Rotazione casuale
-            '--explosion-delay-title-div': `${explosionDelay}s`,
+            "--explosion-delay-title-div": `${explosionDelay}s`,
             // Ritardo prima dell'esplosione
-            '--explosion-duration-title-div': `${explosionDuration}s`,
+            "--explosion-duration-title-div": `${explosionDuration}s`,
             // Durata dell'esplosione
-            '--explosion-interaction-count-title-div': `${explosionInteration}`
+            "--explosion-interaction-count-title-div": `${explosionInteration}`
           }
         }, letter));
       }
@@ -12915,15 +16599,15 @@ const DivComponent = ({
           key: index,
           className: "implode-title-div",
           style: {
-            '--x-title-div': `${Math.random() * 200 - 100}px`,
+            "--x-title-div": `${Math.random() * 200 - 100}px`,
             // Posizione X casuale
-            '--y-title-div': `${Math.random() * 200 - 100}px`,
+            "--y-title-div": `${Math.random() * 200 - 100}px`,
             // Posizione Y casuale
-            '--rotation-title-div': `${Math.random() * 360}deg`,
+            "--rotation-title-div": `${Math.random() * 360}deg`,
             // Rotazione casuale
-            '--implosion-delay-title-div': `${delay}s`,
-            '--implosion-duration-title-div': `${duration}s`,
-            '--implosion-interaction-count-title-div': `${implosionInteration}`
+            "--implosion-delay-title-div": `${delay}s`,
+            "--implosion-duration-title-div": `${duration}s`,
+            "--implosion-interaction-count-title-div": `${implosionInteration}`
           }
         }, letter));
       }
@@ -12940,7 +16624,7 @@ const DivComponent = ({
           key: index,
           className: "letters-fly-in-from-left-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
@@ -12951,7 +16635,7 @@ const DivComponent = ({
           key: index,
           className: "letters-fly-in-from-right-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
@@ -12962,7 +16646,7 @@ const DivComponent = ({
           key: index,
           className: "letters-fly-in-from-top-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
@@ -12973,7 +16657,7 @@ const DivComponent = ({
           key: index,
           className: "letters-fly-in-from-bottom-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
@@ -12984,7 +16668,7 @@ const DivComponent = ({
           key: index,
           className: "letter-flip-from-top-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
@@ -12995,7 +16679,7 @@ const DivComponent = ({
           key: index,
           className: "letter-flip-from-bottom-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
@@ -13006,11 +16690,10 @@ const DivComponent = ({
           key: index,
           className: "letter-flip-cycle-div",
           style: {
-            '--letter-index-div': index + 1
+            "--letter-index-div": index + 1
           }
         }, letter));
       }
-
       // Se l'animazione non è "bounce" o "typing-effect", restituisci il testo intero
       return text;
     };
@@ -13048,7 +16731,6 @@ const DivComponent = ({
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         transform: `rotate(${textDiv.rotate}deg)`,
-        opacity: textDiv.opacity,
         "--color-decoration-title-div": textDiv.underlineColor || "#000000",
         "--padding-decoration-title-div": textDiv.underlinePadding + "px" || 0,
         "--width-decoration-title-div": textDiv.underlineWidth + "%" || 0,
@@ -13061,12 +16743,17 @@ const DivComponent = ({
         "--animation-decoration-from-size-title-div": textDiv.underlineFromSizeNew + "%" || 0,
         "--animation-decoration-to-size-title-div": textDiv.underlineToSizeNew + "%" || 0,
         "--animation-decoration-transition-title-div": textDiv.underlineAnimationTransition + "s" || 0,
-        width: textDiv.widthTitleBlock === 'custom' ? `${textDiv.widthCustomTitleBlock}%` : textDiv.widthTitleBlock
+        "--rotate-hover-title-div": textDiv.rotateHover + "deg" || 0,
+        "--interation-title-block": textDiv.iteration || "forwards",
+        "--duration-effect-title-block": textDiv.durationEffect + "s",
+        "--delay-effect-title-block": textDiv.delayEffect + "s",
+        width: textDiv.widthTitleBlock === "custom" ? `${textDiv.widthCustomTitleBlock}%` : textDiv.widthTitleBlock
       },
-      className: textDiv.decoration
+      className: "content-title-div letter " + textDiv.decoration + " " + textDiv.animation + textDiv.playState,
+      "data-animation-title-div": textDiv.animation
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TagBlock, {
       key: textIndex,
-      className: `title-slide letter ${textDiv.animation}${textDiv.playState}`,
+      className: `title-slide-div  ${textDiv.animationHover}`,
       style: getStylesTitleBlock(textDiv),
       "data-swiper-parallax-x": textDiv.parallaxTitle,
       "data-swiper-parallax-y": textDiv.parallaxTitleY,
@@ -13077,15 +16764,22 @@ const DivComponent = ({
   }) : null, element.innerImageDivs && element.innerImageDivs.length > 0 ? element.innerImageDivs.map((imageDiv, imageIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       transform: `rotate(${imageDiv.rotateImage}deg)`,
-      opacity: imageDiv.opacityImage
+      opacity: imageDiv.opacityImage,
+      "--duration-effect-moving-image-inner": imageDiv.durationEffectImageMoving + "s",
+      "--translate-effect-moving-image-inner": imageDiv.translateEffectImageMoving + "px",
+      "--duration-effect-moving-image-hover-inner": imageDiv.durationEffectImageMovingHover + "s",
+      "--translate-effect-moving-image-hover-inner": imageDiv.translateEffectImageMovingHover + "px",
+      "--rotate-hover-image-inner": imageDiv.rotateHoverImage + "deg" || 0,
+      "--transition-hover-image-inner": imageDiv.durationEffectHoverImage + "s" || 0,
+      width: imageDiv.widthImageContent
     },
-    className: "moving-background"
+    className: "content-img-inner " + imageDiv.animationImageMoving + " " + imageDiv.animationImageMovingHover
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     key: imageIndex,
     src: imageDiv.imageUrl,
     alt: imageDiv.alt,
     style: getImageStyleBlock(imageDiv),
-    className: `image-with-mask ${imageDiv.blobMask}`,
+    className: `img-inner image-with-mask ${imageDiv.blobMask}  ${imageDiv.spikeMask} ${imageDiv.spikeMaskRight} ${imageDiv.animationImage}${imageDiv.playStateImage} ${imageDiv.imageFilter} ${imageDiv.animationHoverImage}`,
     "data-swiper-parallax-x": imageDiv.parallaxImage,
     "data-swiper-parallax-y": imageDiv.parallaxImageY,
     "data-swiper-parallax-scale": imageDiv.parallaxImageScale,
@@ -13103,6 +16797,7 @@ const DivComponent = ({
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -13153,11 +16848,11 @@ const DivControls = ({
   attributes
 }) => {
   // Inizializza lo stato locale utilizzando element.playStateDiv
-  const [playStateDiv, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playStateDiv || '');
+  const [playStateDiv, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(element.playStateDiv || "");
 
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
-    const newState = playStateDiv === 'play' ? '' : 'play';
+    const newState = playStateDiv === "play" ? "" : "play";
     setPlayState(newState);
     // Aggiorna element.playStateDiv piuttosto che attributes.playStateDiv
     element.playStateDiv = newState;
@@ -13365,7 +17060,7 @@ const DivControls = ({
     });
   };
 
-  // Update border style 
+  // Update border style
   const updateBorderStyleDiv = (slideId, index, value) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -13660,7 +17355,6 @@ const DivControls = ({
           gradinetColorTwo: "",
           gradinetColorThree: "",
           gradinetColorFour: "",
-          gradinetColorFive: "",
           decoration: "none",
           underlineColor: innerTextColorDefault,
           underlinePadding: 0,
@@ -13674,11 +17368,30 @@ const DivControls = ({
           underlineFromSizeNew: 5,
           underlineToSizeNew: 5,
           underlineAnimationTransition: 0.5,
+          textColorHover: innerTextColorDefault,
+          borderStyleHover: "none",
+          backgroundBorderColorHover: "",
+          backgroundBorderSizeHover: 0,
+          opacityHover: 1,
+          rotateHover: 0,
+          animationHover: "none",
+          durationEffectHover: 1,
+          effectHoverColorHover: innerTextColorDefault,
+          translateEffectHover: 0,
           parallaxTitle: 0,
           parallaxTitleY: 0,
           parallaxTitleScale: 1,
           parallaxTitleOpacity: 1,
-          parallaxTitleDuration: 100
+          parallaxTitleDuration: 100,
+          textLink: "none",
+          linkUrl: "",
+          linkTarget: "_self",
+          linkRel: "",
+          scrollToId: "",
+          enableDesktopTitle: true,
+          enableTabletTitle: true,
+          enableMobileTitle: true,
+          iteration: "forwards"
         }]
       } : element)
     } : slide);
@@ -13765,7 +17478,79 @@ const DivControls = ({
         ...element,
         innerImageDivs: [...(element.innerImageDivs || []), {
           imageUrl: "",
-          alt: ""
+          alt: "",
+          fit: "cover",
+          widthImage: "fixed",
+          customWidthImage: false,
+          widthImageContent: "auto",
+          customWidthImagePx: 200,
+          heightImage: "fixed",
+          customHeightImage: false,
+          customHeightImagePx: 200,
+          backgroundBorderColorImage: "",
+          backgroundBorderSizeImage: 0,
+          backgroundBorderRadiusImage: 0,
+          backgroundColorImage: "",
+          paddingImage: 0,
+          borderStyleImage: "none",
+          backgroundBorderColorImage: "",
+          backgroundBorderSizeImage: 0,
+          backgroundBorderRadiusImage: 0,
+          rotateImage: 0,
+          opacityImage: 1,
+          parallaxImage: 0,
+          parallaxImageY: 0,
+          parallaxImageScale: 1,
+          parallaxImageOpacity: 1,
+          marginImage: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+          },
+          blobMask: false,
+          animationImage: "none",
+          durationEffectImage: 1,
+          animationImageMoving: "none",
+          durationEffectImageMoving: 1,
+          translateEffectImageMoving: 0,
+          spikeMask: 0,
+          spikeLeftWidth: 0,
+          spikeMaskRight: "none",
+          spikeRightWidth: 0,
+          imageFilter: "none",
+          imageLink: "none",
+          linkUrlImage: "",
+          linkTargetImage: "_self",
+          linkRelImage: "",
+          scrollToIdImage: "",
+          enableDesktopImage: true,
+          enableTabletImage: true,
+          enableMobileImage: true,
+          imageColorHover: "",
+          borderStyleHoverImage: "none",
+          backgroundBorderColorHoverImage: "",
+          backgroundBorderSizeHoverImage: 0,
+          opacityHoverImage: 1,
+          rotateHoverImage: 0,
+          animationImageMovingHover: "none",
+          durationEffectImageMovingHover: 1,
+          translateEffectImageMovingHover: 0,
+          animationHoverImage: "none",
+          durationEffectHoverImage: 1,
+          effectHoverColorHoverImage: "",
+          translateEffectHoverImage: 0,
+          colorShadowImage: "",
+          boxShadowXImage: 0,
+          boxShadowYImage: 0,
+          boxShadowBlurImage: 0,
+          boxShadowSpreadImage: 0,
+          parallaxImage: 0,
+          parallaxImageY: 0,
+          parallaxImageScale: 1,
+          parallaxImageOpacity: 1,
+          parallaxImageDuration: 100,
+          interationImage: "forwards"
         }]
       } : element)
     } : slide);
@@ -14380,9 +18165,9 @@ const DivControls = ({
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Duration", "cocoblocks")),
     value: element.durationEffectDiv,
     onChange: value => updateDurationEffectDiv(slide.id, elementIndex, value),
-    min: .1,
+    min: 0.1,
     max: 15,
-    step: .1
+    step: 0.1
   }))), ["bounce-effect-div", "bounce-left-effect-div", "bounce-right-effect-div", "bounce-top-effect-div", "bounce-bottom-effect-div", "wiggle-div", "flip-div", "swing-div", "rubber-band-div"].includes(element.animationDiv) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-control-label-right"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
@@ -14407,11 +18192,11 @@ const DivControls = ({
   })), element.animationDiv !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-reply-effect"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
-    text: playStateDiv === 'play' ? 'Play' : 'Repeat'
+    text: playStateDiv === "play" ? "Play" : "Repeat"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-    variant: playStateDiv === 'play',
+    variant: playStateDiv === "play",
     onClick: togglePlayState,
-    icon: playStateDiv === 'play' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    icon: playStateDiv === "play" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
       xmlns: "http://www.w3.org/2000/svg",
       height: "24px",
       viewBox: "0 -960 960 960",
@@ -14738,12 +18523,143 @@ const DivControls = ({
 
 /***/ }),
 
+/***/ "./src/components/dragable.js":
+/*!************************************!*\
+  !*** ./src/components/dragable.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-draggable */ "./node_modules/react-draggable/build/cjs/cjs.js");
+/* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_draggable__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ruler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ruler */ "./src/components/ruler.js");
+
+
+
+
+const DraggableTest = ({
+  x,
+  y,
+  onDrag,
+  onClick,
+  children,
+  activeDevice
+}) => {
+  const draggableRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [popup, setPopup] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    visible: false,
+    x: 0,
+    y: 0
+  });
+  const [isDragging, setIsDragging] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [containerHeight, setContainerHeight] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(600); // Altezza iniziale della slider
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (draggableRef.current) {
+      const element = draggableRef.current;
+      element.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }, [x, y, activeDevice]);
+  const handleDrag = (e, data) => {
+    onDrag(e, data);
+    setPopup({
+      visible: true,
+      x: data.x,
+      y: data.y
+    });
+    setIsDragging(true);
+  };
+  const handleStop = () => {
+    setPopup({
+      ...popup,
+      visible: false
+    });
+    setIsDragging(false);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "editor-container",
+    style: {
+      position: 'relative',
+      width: '100%',
+      height: `${containerHeight}px`
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ruler__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    height: 20 // Altezza del righello orizzontale
+    ,
+    unit: 100 // Unità di misura (ad esempio, pixel)
+    ,
+    direction: "horizontal" // Imposta il righello come orizzontale
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ruler__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    width: 20 // Larghezza del righello verticale
+    ,
+    height: containerHeight // Altezza dinamica del righello verticale
+    ,
+    unit: 100 // Unità di misura
+    ,
+    direction: "vertical" // Imposta il righello come verticale
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_draggable__WEBPACK_IMPORTED_MODULE_1___default()), {
+    position: {
+      x,
+      y
+    },
+    onDrag: handleDrag,
+    onStop: handleStop,
+    innerRef: draggableRef
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "draggable",
+    style: {
+      position: 'absolute',
+      cursor: 'move',
+      border: isDragging ? '2px dashed #2e323c' : 'none',
+      zIndex: 500
+    },
+    "data-desktop-x": x,
+    "data-desktop-y": y,
+    "data-tablet-x": x * (768 / 1920),
+    "data-tablet-y": y * (768 / 1920),
+    "data-mobile-x": x * (375 / 1920),
+    "data-mobile-y": y * (375 / 1920),
+    onClick: onClick // Gestisce il click per selezionare l'elemento
+  }, children)), popup.visible && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "popup",
+    style: {
+      position: 'absolute',
+      transform: `translate(${popup.x - 5}px, ${popup.y - 40}px)`,
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
+      color: 'white',
+      padding: '5px',
+      borderRadius: '3px',
+      zIndex: 1000,
+      minWidth: '80px',
+      fontSize: '9px',
+      textAlign: 'left',
+      textTransform: 'capitalize'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, `X ${popup.x} `), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, `Y ${popup.y} `)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, activeDevice))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DraggableTest);
+
+/***/ }),
+
 /***/ "./src/components/font-style.js":
 /*!**************************************!*\
   !*** ./src/components/font-style.js ***!
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -14774,28 +18690,28 @@ const FontStyle = ({
     setIsPopoverOpen(false);
   };
   const styleOptions = [{
-    type: 'fontWeight',
-    value: 'bold',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bold', 'cocoblocks'),
+    type: "fontWeight",
+    value: "bold",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Bold", "cocoblocks"),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    type: 'fontStyle',
-    value: 'italic',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Italic', 'cocoblocks'),
+    type: "fontStyle",
+    value: "italic",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Italic", "cocoblocks"),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    type: 'textDecoration',
-    value: 'underline',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Underline', 'cocoblocks'),
+    type: "textDecoration",
+    value: "underline",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Underline", "cocoblocks"),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"]
   }];
   const selectedIcons = styleOptions.filter(option => value[option.type] === option.value).map(option => option.icon);
 
   // Calcola il margine a destra basato sul numero di icone
   const calculateMargin = numIcons => {
-    return numIcons * 14 + 'px'; // 5px per ogni icona
+    return numIcons * 14 + "px"; // 5px per ogni icona
   };
-  const iconMargin = selectedIcons.length > 0 ? calculateMargin(selectedIcons.length) : '0';
+  const iconMargin = selectedIcons.length > 0 ? calculateMargin(selectedIcons.length) : "0";
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
@@ -14813,7 +18729,7 @@ const FontStyle = ({
     })) // Mostra un'icona di default se nessuna icona è selezionata
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide__label"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Font style', 'cocoblocks')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Font style", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "postion-slide__label-icons",
     style: {
       marginRight: iconMargin
@@ -14822,8 +18738,8 @@ const FontStyle = ({
     key: index,
     icon: icon,
     style: {
-      right: '-57px',
-      fill: 'var(--primary-color)'
+      right: "-57px",
+      fill: "var(--primary-color)"
     }
   })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "ico-align-content dashicons dashicons-arrow-down-alt2"
@@ -14837,7 +18753,7 @@ const FontStyle = ({
     key: option.type,
     onClick: () => handleStyleChange(option.type, option.value),
     label: option.label,
-    className: value[option.type] === option.value ? 'selected' : ''
+    className: value[option.type] === option.value ? "selected" : ""
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: option.icon
   })))))));
@@ -14852,6 +18768,7 @@ const FontStyle = ({
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -14880,7 +18797,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Importa il nuovo componente
+
 
 const ImageControls = ({
   slide,
@@ -16229,9 +20146,6 @@ const ImageControls = ({
       label: "Flip In",
       value: "flip-image"
     }, {
-      label: "Rubber Band",
-      value: "rubber-band-image"
-    }, {
       label: "Wiggle",
       value: "wiggle-image"
     }, {
@@ -16558,7 +20472,7 @@ const ImageControls = ({
       width: "24px",
       fill: "#e8eaed"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-      d: "M120-120v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80v-200q0-50-35-85t-85-35H440v-80h200q83 0 141.5 58.5T840-640v200Z"
+      d: "M120-574v-85l181-181h85L120-574Zm0-196v-70h70l-70 70Zm527 67q-10-11-21.5-21.5T602-743l97-97h85L647-703ZM220-361l77-77q7 11 14.5 20t16.5 17q-28 7-56.5 17.5T220-361Zm480-197v-2q0-19-3-37t-9-35l152-152v86L700-558ZM436-776l65-64h85l-64 64q-11-2-21-3t-21-1q-11 0-22 1t-22 3ZM120-375v-85l144-144q-2 11-3 22t-1 22q0 11 1 21t3 20L120-375Zm709 83q-8-12-18.5-23T788-335l52-52v85l-11 10Zm-116-82q-7-3-14-5.5t-14-4.5q-9-3-17.5-6t-17.5-5l190-191v86L713-374Zm-233-26q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480ZM160-120v-71q0-34 17-63t47-44q51-26 115.5-44T480-360q76 0 140.5 18T736-298q30 15 47 44t17 63v71H160Zm81-80h478q-2-9-7-15.5T699-226q-36-18-91.5-36T480-280q-72 0-127.5 18T261-226q-8 4-13 11t-7 15Zm239 0Zm0-360Z"
     })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image Effects", "cocoblocks")),
     value: element.imageFilter,
     onChange: value => updateImageFilter(slide.id, elementIndex, value),
@@ -16877,6 +20791,7 @@ const ImageControls = ({
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -16889,10 +20804,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 /* harmony import */ var _sectionSelectorImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sectionSelectorImage */ "./src/components/sectionSelectorImage.js");
+/* harmony import */ var _ImageSelectionModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ImageSelectionModal */ "./src/components/ImageSelectionModal.js");
+/* harmony import */ var _boxShadowImageBlock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./boxShadowImageBlock */ "./src/components/boxShadowImageBlock.js");
+/* harmony import */ var _ImageControlsBlockHover__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ImageControlsBlockHover */ "./src/components/ImageControlsBlockHover.js");
+
+
+
 
 
 
@@ -16916,6 +20837,55 @@ const ImageControlsBlock = ({
   activeSectionImage,
   parallax
 }) => {
+  // Inizializza lo stato locale utilizzando element.playState
+  const [playStateImage, setPlayState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(imageDiv.playStateImage || "");
+
+  // Funzione per alternare il valore dello stato
+  const togglePlayState = () => {
+    const newState = playStateImage === "play" ? "" : "play";
+    setPlayState(newState);
+    // Aggiorna element.playState piuttosto che attributes.playState
+    imageDiv.playStateImage = newState;
+    setAttributes({
+      elements: [...slides]
+    }); // Oppure aggiorna la struttura dati appropriata
+  };
+  const [isModalOpen, setIsModalOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [selectedImages, setSelectedImages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [isLoading, setIsLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  // Funzione per aprire il modale
+  const openModal = () => setIsModalOpen(true);
+
+  // Funzione per chiudere il modale
+  const closeModal = () => setIsModalOpen(false);
+  const handleImageSelectForDiv = async image => {
+    setIsLoading(true);
+    try {
+      // Chiamata all'endpoint REST API per caricare l'immagine
+      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          image_url: image.url
+        })
+      });
+      const data = await response.json();
+      if (data.url) {
+        // Aggiorna la slide con l'immagine appena caricata
+        updateSlideImageBlock(slide.id, divIndex, imageIndex, image.url, image.alt);
+      } else {
+        console.error("Errore durante il caricamento dell'immagine.");
+      }
+    } catch (error) {
+      console.error("Errore durante la chiamata all'API:", error);
+    } finally {
+      setIsLoading(false);
+    }
+    setIsModalOpen(false);
+  };
+
   // Remove Image
   const removeSlideImageBlock = (slideId, divIndex, imageIndex) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -16974,6 +20944,40 @@ const ImageControlsBlock = ({
         innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
           ...imageDiv,
           widthImage: newWidthImage
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update width content image
+  const updateWidthImageContent = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          widthImageContent: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update border style
+  const updateBorderStyleImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, imgIndex) => imgIndex === imageIndex ? {
+          ...imageDiv,
+          borderStyleImage: value
         } : imageDiv)
       } : element)
     } : slide);
@@ -17241,6 +21245,329 @@ const ImageControlsBlock = ({
     });
   };
 
+  // Update animation image
+  const updateAnimationImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          animationImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update duration animation image
+  const updateDurationEffectImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          durationEffectImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update iteration animation image
+  const updateInterationImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          interationImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update moving animation image
+  const updateAnimationImageMoving = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          animationImageMoving: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update duration animation image
+  const updateDurationEffectImageMoving = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          durationEffectImageMoving: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update translate animation image
+  const updateTranslateEffectImageMoving = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          translateEffectImageMoving: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update spike image
+  const updateSpikeMask = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          spikeMask: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update spike left image
+  const updateSpikeLeftWidth = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          spikeLeftWidth: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update spike right image
+  const updateSpikeMaskRight = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          spikeMaskRight: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update spike right width image
+  const updateSpikeRightWidth = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          spikeRightWidth: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update filter image
+  const updateImageFilter = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          imageFilter: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Selector link
+  const updateImageLink = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          imageLink: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Url
+  const updateLinkUrlImage = (slideId, divIndex, imageIndex, url) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          linkUrlImage: url
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateScrollToIdImage = (slideId, divIndex, imageIndex, id) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          scrollToIdImage: id
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Target
+  const updateLinkTargetImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          linkTargetImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Link Rel
+  const updateLinkRelImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          linkRelImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Desktop
+  const updateEnableDesktopImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          enableDesktopImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Tablet
+  const updateEnableTabletImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          enableTabletImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Enable Mobile
+  const updateEnableMobileImage = (slideId, divIndex, imageIndex, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => element.type === "div" && i === divIndex ? {
+        ...element,
+        innerImageDivs: element.innerImageDivs.map((imageDiv, j) => j === imageIndex ? {
+          ...imageDiv,
+          enableMobileImage: value
+        } : imageDiv)
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Parallax image x
   const updateParallaxImageBlock = (slideId, divIndex, imageIndex, newParallaxImage) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -17336,7 +21663,7 @@ const ImageControlsBlock = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     onClick: () => removeSlideImageBlock(slide.id, divIndex, imageIndex),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Remove Image", "cocoblocks"),
     className: "button-remove-element",
     style: {
@@ -17387,7 +21714,21 @@ const ImageControlsBlock = ({
         color: " var(--light-color)",
         padding: "0"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Upload Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: "5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-400h400L622-580l-92 120-62-80-108 140Zm-40 160q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Media Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
@@ -17416,10 +21757,62 @@ const ImageControlsBlock = ({
         top: "-2px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image", "cocoblocks")
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image form Media Library", "cocoblocks")
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: openModal,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px"
+      },
+      className: "button-replace",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image from Object Library", "cocoblocks")
     })))
-  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, imageDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))), activeSectionImage === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !imageDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: openModal,
+    style: {
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: " var(--light-color)",
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "5px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "20px",
+    viewBox: "0 -960 960 960",
+    width: "20px",
+    fill: "#e8eaed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M440-440ZM120-120q-33 0-56.5-23.5T40-200v-480q0-33 23.5-56.5T120-760h126l74-80h240v80H355l-73 80H120v480h640v-360h80v360q0 33-23.5 56.5T760-120H120Zm640-560v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM440-260q75 0 127.5-52.5T620-440q0-75-52.5-127.5T440-620q-75 0-127.5 52.5T260-440q0 75 52.5 127.5T440-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Z"
+  })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Object Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-down-alt2",
+    style: {
+      position: "relative",
+      right: "2px",
+      top: "6px",
+      fontSize: "12px"
+    }
+  })))), isModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ImageSelectionModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onClose: closeModal,
+    onSelect: handleImageSelectForDiv
+  }), imageDiv.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       padding: "0"
@@ -17439,6 +21832,27 @@ const ImageControlsBlock = ({
     value: imageDiv.alt || "",
     onChange: newAlt => updateSlideImageBlock(slide.id, elementIndex, imageIndex, imageDiv.imageUrl, newAlt),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Add alt text...", "cocoblocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Width content", "cocoblocks")),
+    value: imageDiv.widthImageContent,
+    onChange: value => updateWidthImageContent(slide.id, elementIndex, imageIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "cocoblocks"),
+      value: "auto"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("100%", "cocoblocks"),
+      value: "100%"
+    }]
   }))))), activeSectionImage === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
@@ -17649,6 +22063,36 @@ const ImageControlsBlock = ({
       padding: "0"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-120v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80ZM120-120v-720h720v80H200v640h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border style", "cocoblocks")),
+    value: imageDiv.borderStyleImage,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Solid", "cocoblocks"),
+      value: "solid"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Dashed", "cocoblocks"),
+      value: "dashed"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Dotted", "cocoblocks"),
+      value: "dotted"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Double", "cocoblocks"),
+      value: "double"
+    }],
+    onChange: value => updateBorderStyleImage(slide.id, elementIndex, imageIndex, value)
+  })), imageDiv.borderStyleImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     colorNormal: imageDiv.backgroundBorderColorImage,
@@ -17700,7 +22144,7 @@ const ImageControlsBlock = ({
     min: 0,
     max: 256,
     step: 1
-  })))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))), activeSectionImage === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -17755,7 +22199,14 @@ const ImageControlsBlock = ({
     min: 0,
     max: 1,
     step: 0.1
-  })))), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_boxShadowImageBlock__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    slide: slide,
+    slides: slides,
+    imageDiv: imageDiv,
+    imageIndex: imageIndex,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSectionImage === "animation" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -17763,6 +22214,243 @@ const ImageControlsBlock = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Effects", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Animation", "cocoblocks")),
+    value: imageDiv.animationImage,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Fade In",
+      value: "fade-in-image-inner"
+    }, {
+      label: "Fade In Left",
+      value: "fade-in-left-image-inner"
+    }, {
+      label: "Fade In Right",
+      value: "fade-in-right-image-inner"
+    }, {
+      label: "Fade In Top",
+      value: "fade-in-top-image-inner"
+    }, {
+      label: "Fade In Bottom",
+      value: "fade-in-bottom-image-inner"
+    }, {
+      label: "Slide In Left",
+      value: "slide-in-left-image-inner"
+    }, {
+      label: "Slide In Right",
+      value: "slide-in-right-image-inner"
+    }, {
+      label: "Slide In Top",
+      value: "slide-in-top-image-inner"
+    }, {
+      label: "Slide In Bottom",
+      value: "slide-in-bottom-image-inner"
+    }, {
+      label: "Zoom In",
+      value: "zoom-in-image-inner"
+    }, {
+      label: "Zoom In Left",
+      value: "zoom-in-left-image-inner"
+    }, {
+      label: "Zoom In Right",
+      value: "zoom-in-right-image-inner"
+    }, {
+      label: "Zoom In Top",
+      value: "zoom-in-top-image-inner"
+    }, {
+      label: "Zoom In Bottom",
+      value: "zoom-in-bottom-image-inner"
+    }, {
+      label: "Rotate In Left",
+      value: "rotate-in-left-image-inner"
+    }, {
+      label: "Rotate In Right",
+      value: "rotate-in-right-image-inner"
+    }, {
+      label: "Rotate In Top",
+      value: "rotate-in-top-image-inner"
+    }, {
+      label: "Rotate In Bottom",
+      value: "rotate-in-bottom-image-inner"
+    }, {
+      label: "Rotate Continuos",
+      value: "rotate-continuous-image-inner"
+    }, {
+      label: "Bounce in",
+      value: "bounce-effect-image-inner"
+    }, {
+      label: "Bounce in Left",
+      value: "bounce-left-effect-image-inner"
+    }, {
+      label: "Bounce in Right",
+      value: "bounce-right-effect-image-inner"
+    }, {
+      label: "Bounce in Top",
+      value: "bounce-top-effect-image-inner"
+    }, {
+      label: "Bounce in Bottom",
+      value: "bounce-bottom-effect-image-inner"
+    }, {
+      label: "Flip In",
+      value: "flip-image-inner"
+    }, {
+      label: "Wiggle",
+      value: "wiggle-image-inner"
+    }, {
+      label: "Swing",
+      value: "swing-image-inner"
+    }, {
+      label: "Rubber band",
+      value: "rubber-band-image-inner"
+    }],
+    onChange: value => updateAnimationImage(slide.id, elementIndex, imageIndex, value)
+  })), imageDiv.animationImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Duration", "cocoblocks")),
+    value: imageDiv.durationEffectImage,
+    onChange: value => updateDurationEffectImage(slide.id, elementIndex, imageIndex, value),
+    min: 0.1,
+    max: 15,
+    step: 0.1
+  }))), ["bounce-effect-image-inner", "bounce-left-effect-image-inner", "bounce-right-effect-image-inner", "bounce-top-effect-image-inner", "bounce-bottom-effect-image-inner", "wiggle-image-inner", "flip-image-inner", "swing-image-inner", "rubber-band-image-inner"].includes(imageDiv.animationImage) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Iteration Mode", "cocoblocks")),
+    value: imageDiv.interationImage,
+    options: [{
+      label: "Forwards",
+      value: "forwards"
+    }, {
+      label: "Infinite",
+      value: "infinite"
+    }],
+    onChange: value => updateInterationImage(slide.id, elementIndex, imageIndex, value)
+  })), imageDiv.animationImage !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-reply-effect"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
+    text: playStateImage === "play" ? "Play" : "Repeat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    variant: playStateImage === "play",
+    onClick: togglePlayState,
+    icon: playStateImage === "play" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M170-228q-38-44-61-98T80-440h82q6 44 22 83.5t42 72.5l-56 56ZM80-520q8-60 30-114t60-98l56 56q-26 33-42 72.5T162-520H80ZM438-82q-60-6-113.5-29T226-170l56-58q35 26 73.5 43t82.5 23v80ZM284-732l-58-58q45-36 98.5-59T440-878v80q-45 6-84 23t-72 43Zm96 432v-360l280 180-280 180ZM520-82v-80q121-17 200.5-107T800-480q0-121-79.5-211T520-798v-80q154 17 257 130t103 268q0 155-103 268T520-82Z"
+    })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"
+    }))
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0",
+      marginTop: "18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Movimentation", "cocoblocks")),
+    value: imageDiv.animationImageMoving,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Moving background X",
+      value: "moving-background-inner"
+    }, {
+      label: "Moving background Y",
+      value: "moving-background-y-inner"
+    }],
+    onChange: value => updateAnimationImageMoving(slide.id, elementIndex, imageIndex, value)
+  })), imageDiv.animationImageMoving !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Duration", "cocoblocks")),
+    value: imageDiv.durationEffectImageMoving,
+    onChange: value => updateDurationEffectImageMoving(slide.id, elementIndex, imageIndex, value),
+    min: 0.1,
+    max: 30,
+    step: 0.1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Translate", "cocoblocks")),
+    value: imageDiv.translateEffectImageMoving,
+    onChange: value => updateTranslateEffectImageMoving(slide.id, elementIndex, imageIndex, value),
+    min: -300,
+    max: 300,
+    step: 1
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob Mask", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       padding: "0"
@@ -17790,7 +22478,7 @@ const ImageControlsBlock = ({
     onChange: newBlobMask => updateBlobMaskBlock(slide.id, elementIndex, imageIndex, newBlobMask),
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
-      value: ""
+      value: "none"
     }, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 1", "cocoblocks"),
       value: "blob1"
@@ -17804,6 +22492,356 @@ const ImageControlsBlock = ({
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blob 4", "cocoblocks"),
       value: "blob4"
     }]
+  })), imageDiv.blobMask !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Warning: The box shadow will not work with this effect active!", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spike Masks", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80v-200q0-50-35-85t-85-35H440v-80h200q83 0 141.5 58.5T840-640v200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Left Spike", "cocoblocks")),
+    value: imageDiv.spikeMask,
+    onChange: value => updateSpikeMask(slide.id, elementIndex, imageIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Top", "cocoblocks"),
+      value: "left-spike-1-top-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Middle", "cocoblocks"),
+      value: "left-spike-1-middle-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Bottom", "cocoblocks"),
+      value: "left-spike-1-bottom-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("2 Spikes", "cocoblocks"),
+      value: "left-spike-2-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("3 Spikes", "cocoblocks"),
+      value: "left-spike-3-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("4 Spikes", "cocoblocks"),
+      value: "left-spike-4-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("5 Spikes", "cocoblocks"),
+      value: "left-spike-5-inner"
+    }]
+  })), imageDiv.spikeMask !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-40v-160H280q-33 0-56.5-23.5T200-280v-400H40v-80h160v-160h80v640h640v80H760v160h-80Zm0-320v-320H360v-80h320q33 0 56.5 23.5T760-680v320h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spike Width", "cocoblocks")),
+    value: imageDiv.spikeLeftWidth,
+    onChange: value => updateSpikeLeftWidth(slide.id, elementIndex, imageIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80-160h-80v-200q0-50-35-85t-85-35H440v-80h200q83 0 141.5 58.5T840-640v200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Right Spike", "cocoblocks")),
+    value: imageDiv.spikeMaskRight,
+    onChange: value => updateSpikeMaskRight(slide.id, elementIndex, imageIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Top", "cocoblocks"),
+      value: "right-spike-1-top-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Middle", "cocoblocks"),
+      value: "right-spike-1-middle-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1 Spike Bottom", "cocoblocks"),
+      value: "right-spike-1-bottom-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("2 Spikes", "cocoblocks"),
+      value: "right-spike-2-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("3 Spikes", "cocoblocks"),
+      value: "right-spike-3-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("4 Spikes", "cocoblocks"),
+      value: "right-spike-4-inner"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("5 Spikes", "cocoblocks"),
+      value: "right-spike-5-inner"
+    }]
+  })), imageDiv.spikeMaskRight !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M680-40v-160H280q-33 0-56.5-23.5T200-280v-400H40v-80h160v-160h80v640h640v80H760v160h-80Zm0-320v-320H360v-80h320q33 0 56.5 23.5T760-680v320h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spike Width", "cocoblocks")),
+    value: imageDiv.spikeRightWidth,
+    onChange: value => updateSpikeRightWidth(slide.id, elementIndex, imageIndex, value),
+    min: 0,
+    max: 100,
+    step: 1
+  })), (imageDiv.spikeMaskRight !== "none" || imageDiv.spikeMask !== "none") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "notice components-base-control__help"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Attention: Single Spikes do not work on both sides together! Warning: The box shadow will not work with this effect active!", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Filter", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-574v-85l181-181h85L120-574Zm0-196v-70h70l-70 70Zm527 67q-10-11-21.5-21.5T602-743l97-97h85L647-703ZM220-361l77-77q7 11 14.5 20t16.5 17q-28 7-56.5 17.5T220-361Zm480-197v-2q0-19-3-37t-9-35l152-152v86L700-558ZM436-776l65-64h85l-64 64q-11-2-21-3t-21-1q-11 0-22 1t-22 3ZM120-375v-85l144-144q-2 11-3 22t-1 22q0 11 1 21t3 20L120-375Zm709 83q-8-12-18.5-23T788-335l52-52v85l-11 10Zm-116-82q-7-3-14-5.5t-14-4.5q-9-3-17.5-6t-17.5-5l190-191v86L713-374Zm-233-26q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480ZM160-120v-71q0-34 17-63t47-44q51-26 115.5-44T480-360q76 0 140.5 18T736-298q30 15 47 44t17 63v71H160Zm81-80h478q-2-9-7-15.5T699-226q-36-18-91.5-36T480-280q-72 0-127.5 18T261-226q-8 4-13 11t-7 15Zm239 0Zm0-360Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image Effects", "cocoblocks")),
+    value: imageDiv.imageFilter,
+    onChange: value => updateImageFilter(slide.id, elementIndex, imageIndex, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
+      value: "none"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Grayscale", "cocoblocks"),
+      value: "grayscale"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blur", "cocoblocks"),
+      value: "blur"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Sepia", "cocoblocks"),
+      value: "sepia"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contrast", "cocoblocks"),
+      value: "contrast"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Brightness", "cocoblocks"),
+      value: "brightness"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Invert", "cocoblocks"),
+      value: "invert"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Saturate", "cocoblocks"),
+      value: "saturate"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Opacity", "cocoblocks"),
+      value: "opacity"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Hue Rotate", "cocoblocks"),
+      value: "hue-rotate"
+    }]
+  })))), activeSectionImage === "hover" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ImageControlsBlockHover__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    slide: slide,
+    slides: slides,
+    imageDiv: imageDiv,
+    imageIndex: imageIndex,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes
+  })), activeSectionImage === "actions" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Actions", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Link actions", "cocoblocks")),
+    value: imageDiv.imageLink,
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Link",
+      value: "link"
+    }, {
+      label: "Scroll Below Slider",
+      value: "scroll-below"
+    }, {
+      label: "Scroll to ID Element",
+      value: "scroll-to-id"
+    }],
+    onChange: value => updateImageLink(slide.id, elementIndex, imageIndex, value)
+  })), imageDiv.imageLink === "link" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enter URL", "cocoblocks")),
+    value: imageDiv.linkUrlImage,
+    onChange: value => updateLinkUrlImage(slide.id, elementIndex, imageIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Target", "cocoblocks")),
+    value: imageDiv.linkTargetImage,
+    options: [{
+      label: "Same Window",
+      value: "_self"
+    }, {
+      label: "New Window",
+      value: "_blank"
+    }],
+    onChange: value => updateLinkTargetImage(slide.id, elementIndex, imageIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "m791-55-91-91q-49 32-104.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-60 17-115.5T146-700l-91-91 57-57 736 736-57 57ZM480-160q43 0 83.5-11t78.5-33L204-642q-22 38-33 78.5T160-480q0 133 93.5 226.5T480-160Zm334-100-58-58q22-38 33-78.5t11-83.5q0-133-93.5-226.5T480-800q-43 0-83.5 11T318-756l-58-58q49-32 104.5-49T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 60-17 115.5T814-260ZM537-537ZM423-423Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Link Behavior", "cocoblocks")),
+    value: imageDiv.linkRelImage,
+    options: [{
+      label: "Follow Link",
+      value: "follow"
+    }, {
+      label: "No Follow",
+      value: "nofollow"
+    }],
+    onChange: value => updateLinkRelImage(slide.id, elementIndex, imageIndex, value)
+  }))), imageDiv.imageLink === "scroll-to-id" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M200-160q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v284q-10-2-19.5-3t-20.5-1h-40v-280H200v560h124q4 22 10.5 42t17.5 38H200Zm0-120v40-560 520Zm80-40h44q8-49 35-90.5t69-69.5H280v160Zm0-240h160v-160H280v160Zm280 440q-66 0-113-47t-47-113q0-66 47-113t113-47h80v80h-80q-33 0-56.5 23.5T480-280q0 33 23.5 56.5T560-200h80v80h-80Zm-40-440h160v-160H520v160Zm40 320v-80h240v80H560Zm160 120v-80h80q33 0 56.5-23.5T880-280q0-33-23.5-56.5T800-360h-80v-80h80q66 0 113 46.5T960-280q0 66-47 113t-113 47h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enter ID", "cocoblocks")),
+    value: imageDiv.scrollToIdImage,
+    onChange: value => updateScrollToIdImage(slide.id, elementIndex, imageIndex, value)
+  })))), activeSectionImage === "visibility" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy",
+    style: {
+      marginTop: "-18px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Visibility", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M80-160q-33 0-56.5-23.5T0-240h160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240h160q0 33-23.5 56.5T880-160H80Zm400-40q17 0 28.5-11.5T520-240q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240q0 17 11.5 28.5T480-200ZM160-320h640v-440H160v440Zm0 0v-440 440Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Desktop", "cocoblocks")),
+    checked: imageDiv.enableDesktopImage,
+    onChange: value => updateEnableDesktopImage(slide.id, elementIndex, imageIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M480-140q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM200-40q-33 0-56.5-23.5T120-120v-720q0-33 23.5-56.5T200-920h560q33 0 56.5 23.5T840-840v720q0 33-23.5 56.5T760-40H200Zm0-200v120h560v-120H200Zm0-80h560v-400H200v400Zm0-480h560v-40H200v40Zm0 0v-40 40Zm0 560v120-120Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Tablet", "cocoblocks")),
+    checked: imageDiv.enableTabletImage,
+    onChange: value => updateEnableTabletImage(slide.id, elementIndex, imageIndex, value)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Mobile", "cocoblocks")),
+    checked: imageDiv.enableMobileImage,
+    onChange: value => updateEnableMobileImage(slide.id, elementIndex, imageIndex, value)
   })))), activeSectionImage === "parallax" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
@@ -17913,12 +22951,166 @@ const ImageControlsBlock = ({
 
 /***/ }),
 
+/***/ "./src/components/modalPattern.js":
+/*!****************************************!*\
+  !*** ./src/components/modalPattern.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+const TextPatternSelectionModal = ({
+  onClose
+}) => {
+  const patterns = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => select("core").getBlockPatterns(), []);
+  if (!patterns) {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Loading patterns...", "text-domain"));
+  }
+
+  // Filtra i pattern per la categoria "text"
+  const textPatterns = patterns.filter(pattern => pattern.categories && pattern.categories.includes("text"));
+  const handleSelect = pattern => {
+    if (!pattern || !pattern.content) {
+      console.error("Pattern content is undefined or empty", pattern);
+      return;
+    }
+    const clientId = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.select)("core/block-editor").getSelectedBlockClientId();
+    if (clientId) {
+      const blocks = wp.blocks.parse(pattern.content); // Parse the content to blocks
+      (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.dispatch)("core/block-editor").replaceBlocks(clientId, blocks);
+    } else {
+      console.error("No block selected");
+    }
+    onClose();
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
+    onRequestClose: onClose,
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Select a Text Pattern", "text-domain"),
+    isFullScreen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "pattern-selection-modal"
+  }, textPatterns.length > 0 ? textPatterns.map((pattern, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: index,
+    className: "pattern-item"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, pattern.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockPreview, {
+    viewportWidth: 800,
+    blocks: wp.blocks.parse(pattern.content)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    isPrimary: true,
+    onClick: () => handleSelect(pattern)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Select", "text-domain")))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("No patterns found in the 'text' category.", "text-domain"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextPatternSelectionModal);
+
+/***/ }),
+
+/***/ "./src/components/ruler.js":
+/*!*********************************!*\
+  !*** ./src/components/ruler.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Ruler = ({
+  width,
+  height,
+  unit,
+  direction
+}) => {
+  const [windowWidth, setWindowWidth] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.innerWidth);
+  const [windowHeight, setWindowHeight] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.innerHeight);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const horizontalMarks = Array.from({
+    length: Math.ceil(windowWidth / unit)
+  }, (_, i) => i * unit);
+  const verticalMarks = Array.from({
+    length: Math.ceil(windowHeight / unit)
+  }, (_, i) => i * unit);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "ruler-container",
+    style: {
+      position: 'relative'
+    }
+  }, direction === 'horizontal' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "ruler-horizontal",
+    style: {
+      width: `${width}px`,
+      height: `${height}px`,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      display: 'flex'
+    }
+  }, horizontalMarks.map((mark, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    key: index,
+    style: {
+      position: 'absolute',
+      left: `${mark}px`
+    }
+  }, mark))), direction === 'vertical' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "ruler-vertical",
+    style: {
+      width: `${width}px`,
+      height: `${height}px`,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, verticalMarks.map((mark, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    key: index,
+    style: {
+      position: 'absolute',
+      top: `${mark}px`
+    }
+  }, mark))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ruler);
+
+/***/ }),
+
 /***/ "./src/components/sectionSelector.js":
 /*!*******************************************!*\
   !*** ./src/components/sectionSelector.js ***!
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18058,6 +23250,7 @@ const SectionSelector = ({
   \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18197,6 +23390,7 @@ const SectionSelectorBlock = ({
   \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18395,6 +23589,7 @@ const SectionSelectorImage = ({
   \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18472,6 +23667,7 @@ const SectionSelectorSlide = ({
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18577,6 +23773,7 @@ const SectionSliderSelector = ({
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18685,6 +23882,7 @@ const SectionSliderSelectorNavigation = ({
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18783,6 +23981,7 @@ const SectionSliderSelectorOptions = ({
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -18795,9 +23994,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/replace.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/trash.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/add-template.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/button.js");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/components/editor.scss");
@@ -18809,6 +24010,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
 /* harmony import */ var _colorPanelGradient__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./colorPanelGradient */ "./src/components/colorPanelGradient.js");
 /* harmony import */ var _aligncontrol__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./aligncontrol */ "./src/components/aligncontrol.js");
+/* harmony import */ var _ImageSelectionModal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ImageSelectionModal */ "./src/components/ImageSelectionModal.js");
+/* harmony import */ var _buttonModal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./buttonModal */ "./src/components/buttonModal.js");
+/* harmony import */ var _ButtonControls__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./ButtonControls */ "./src/components/ButtonControls.js");
+
+
+
 
 
 
@@ -18831,10 +24038,9 @@ const SlideControls = ({
   elementIndex,
   slides,
   setAttributes,
-  setActiveSectionImage,
-  activeSectionImage,
   parallax,
-  attributes
+  attributes,
+  swiperRef
 }) => {
   const {
     device,
@@ -18842,11 +24048,53 @@ const SlideControls = ({
     textColorDefault,
     backgroundColorBlockDefault
   } = attributes;
+  const [isModalOpenButton, setIsModalOpenButton] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const openModalButton = () => setIsModalOpenButton(true);
+  const closeModalButton = () => setIsModalOpenButton(false);
+  const handleButtonTypeSelect = (slideId, type) => {
+    addSlideButton(slideId, type); // Passa il tipo selezionato ("type1", "type2", "type3")
+  };
+  const [isModalOpen, setIsModalOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const [selectedImages, setSelectedImages] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
+  const [isLoading, setIsLoading] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const handleImageSelect = async image => {
+    setIsLoading(true);
+    try {
+      // Chiamata all'endpoint REST API per caricare l'immagine
+      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          image_url: image.url
+        })
+      });
+      const data = await response.json();
+      if (data.url) {
+        // Aggiorna la slide con l'immagine appena caricata
+        updateSlideBackgroundImage(slides.length, image.url);
+      } else {
+        console.error("Errore durante il caricamento dell'immagine.");
+      }
+    } catch (error) {
+      console.error("Errore durante la chiamata all'API:", error);
+    } finally {
+      setIsLoading(false);
+      setIsModalOpen(false);
+    }
+  };
+
+  // Funzione per aprire il modale
+  const openModal = () => setIsModalOpen(true);
+
+  // Funzione per chiudere il modale
+  const closeModal = () => setIsModalOpen(false);
 
   // Panel Slide
   const [selectedPanel, setSelectedPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(null);
   const [primaryColor, setPrimaryColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)("");
-  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // Riferimento a Swiper
+  //const swiperRef = useRef(null); // Riferimento a Swiper
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     // Recupera il valore della variabile CSS --primary-color
@@ -18887,6 +24135,8 @@ const SlideControls = ({
 
   // Section Block
   const [activeSectionBlock, setActiveSectionBlock] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)("content");
+  // Section Image
+  const [activeSectionImage, setActiveSectionImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)("content");
 
   // Responsive
   const [showOtherButtons, setShowOtherButtons] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
@@ -19029,7 +24279,10 @@ const SlideControls = ({
       backgroundBorderRadius: 0,
       backgroundVerticalPadding: 0,
       backgroundHorizontalPadding: 0,
-      borderStyleSlide: "none"
+      borderStyleSlide: "none",
+      enableContentWidth: true,
+      contentWidth: "",
+      layoutWrap: "wrap"
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({
@@ -19144,6 +24397,28 @@ const SlideControls = ({
     });
   };
 
+  // Update Content width 
+  const updateSlideContentWidth = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      contentWidth: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update enable content width
+  const updateSlideEnableContentWidth = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      enableContentWidth: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update Layout
   const updateSlideLayout = (slideId, newLayout) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -19154,6 +24429,17 @@ const SlideControls = ({
       slides: updatedSlides
     });
   };
+  // Update layout wrap
+  const updateSlideLayoutWrap = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      layoutWrap: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update Position
   const updateSlidePosition = (slideId, newPosition) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -19248,6 +24534,18 @@ const SlideControls = ({
       ...slide,
       elements: [...(slide.elements || []), {
         type: "title",
+        desktop: {
+          x: 0,
+          y: 0
+        },
+        tablet: {
+          x: 0,
+          y: 0
+        },
+        mobile: {
+          x: 0,
+          y: 0
+        },
         text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Text Slide", "cocoblocks"),
         textAlign: "center",
         fontStyle: {
@@ -19291,6 +24589,7 @@ const SlideControls = ({
         widthCustomTitle: 100,
         backgroundBorderRadius: 0,
         backgroundBorderSize: 0,
+        backgroundBorderSizeHover: 0,
         backgroundBorderColor: "",
         textWriteMode: "initial",
         textOrientation: "initial",
@@ -19308,7 +24607,6 @@ const SlideControls = ({
         gradinetColorTwo: "#000000",
         gradinetColorThree: "#000000",
         gradinetColorFour: "#000000",
-        gradinetColorFive: "#000000",
         decoration: "none",
         underlineColor: "#000000",
         underlinePadding: 0,
@@ -19333,6 +24631,7 @@ const SlideControls = ({
         textColorHover: textColorDefault,
         borderStyleHover: "none",
         backgroundBorderColorHover: "",
+        backgoroundBorderSizeHover: 0,
         opacityHover: 1,
         rotateHover: 0,
         animationHover: "none",
@@ -19358,6 +24657,18 @@ const SlideControls = ({
       ...slide,
       elements: [...(slide.elements || []), {
         type: "image",
+        desktop: {
+          x: 0,
+          y: 0
+        },
+        tablet: {
+          x: 0,
+          y: 0
+        },
+        mobile: {
+          x: 0,
+          y: 0
+        },
         url: "",
         alt: "",
         fit: "cover",
@@ -19376,6 +24687,7 @@ const SlideControls = ({
         borderStyleImage: "none",
         backgroundBorderColorImage: "",
         backgroundBorderSizeImage: 0,
+        backgroundBorderSizeImageHover: 0,
         backgroundBorderRadiusImage: 0,
         rotateImage: 0,
         opacityImage: 1,
@@ -19411,6 +24723,7 @@ const SlideControls = ({
         imageColorHover: "",
         borderStyleHoverImage: "none",
         backgroundBorderColorHoverImage: "",
+        backgoroundBorderSizeHoverImage: 0,
         opacityHoverImage: 1,
         rotateHoverImage: 0,
         animationImageMovingHover: "none",
@@ -19444,6 +24757,18 @@ const SlideControls = ({
       ...slide,
       elements: [...slide.elements, {
         type: "div",
+        desktop: {
+          x: 0,
+          y: 0
+        },
+        tablet: {
+          x: 0,
+          y: 0
+        },
+        mobile: {
+          x: 0,
+          y: 0
+        },
         content: "",
         layoutDiv: "vertical",
         gapItemsDiv: 5,
@@ -19481,6 +24806,7 @@ const SlideControls = ({
         divColorHover: "#ffffff",
         borderStyleHoverDiv: "none",
         backgroundBorderColorHoverDiv: "",
+        backgoroundBorderSizeHoverDiv: 0,
         opacityHoverDiv: 1,
         rotateHoverDiv: 0,
         animationHoverDiv: "none",
@@ -19500,6 +24826,32 @@ const SlideControls = ({
         parallaxDivScale: 1,
         parallaxDivOpacity: 1,
         parallaxDivDuration: 100
+      }]
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Add Button
+  const addSlideButton = (slideId, buttonType) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: [...slide.elements, {
+        type: "button",
+        desktop: {
+          x: 0,
+          y: 0
+        },
+        tablet: {
+          x: 0,
+          y: 0
+        },
+        mobile: {
+          x: 0,
+          y: 0
+        },
+        buttonType: buttonType // Aggiunge il tipo di bottone selezionato
       }]
     } : slide);
     setAttributes({
@@ -19551,7 +24903,7 @@ const SlideControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "title-tab-background"
+    className: "content-background-slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24px",
@@ -19561,11 +24913,8 @@ const SlideControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
     d: "M680-640q-17 0-28.5-11.5T640-680q0-17 11.5-28.5T680-720q17 0 28.5 11.5T720-680q0 17-11.5 28.5T680-640ZM360-400l108-140 62 80 92-120 138 180H360ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm80-505v-215q0-33 23.5-56.5T320-880h200v80H320v215h-80Zm80 345q-33 0-56.5-23.5T240-320v-185h80v185h200v80H320Zm280 0v-80h200v-185h80v185q0 33-23.5 56.5T800-240H600Zm200-345v-215H600v-80h200q33 0 56.5 23.5T880-800v215h-80Z"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-tab",
-    style: {
-      marginBottom: "12px"
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the backgrounds", "slider"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
+    className: "title-tab"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the backgrounds", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     className: "background-selector",
     activeClass: "active-tab",
     initialTabName: slide.backgroundType,
@@ -19587,12 +24936,7 @@ const SlideControls = ({
       title: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Video", "your-text-domain"))
     }]
   }, tab => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, tab.name === "color" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color",
-    style: {
-      marginTop: "6px",
-      paddingLeft: "6px",
-      marginRight: "-6px"
-    }
+    className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_11__["default"], {
     colorNormal: slide.backgroundColor,
     setColorNormal: color => updateSlideBackgroundColor(slide.id, color),
@@ -19609,12 +24953,7 @@ const SlideControls = ({
       d: "M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
     }))
   })), tab.name === "gradient" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select color",
-    style: {
-      marginTop: "6px",
-      paddingLeft: "6px",
-      marginRight: "-6px"
-    }
+    className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanelGradient__WEBPACK_IMPORTED_MODULE_12__["default"], {
     gradient: slide.backgroundGradient,
     setGradient: gradient => updateSlideBackgroundGradient(slide.id, gradient),
@@ -19640,7 +24979,9 @@ const SlideControls = ({
     allowedTypes: ["image"],
     render: ({
       open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "custom-select"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       onClick: open,
       style: {
         width: "100%",
@@ -19671,7 +25012,7 @@ const SlideControls = ({
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
-    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Image", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Media Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
@@ -19679,7 +25020,47 @@ const SlideControls = ({
         top: "4px",
         fontSize: "12px"
       }
-    })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "custom-select"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: openModal,
+      style: {
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        color: " var(--light-color)",
+        padding: "0"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: "5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "20px",
+      viewBox: "0 -960 960 960",
+      width: "20px",
+      fill: "#e8eaed",
+      style: {
+        fill: " var(--light-color)",
+        width: "18px",
+        height: "18px",
+        marginLeft: "4px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M440-440ZM120-120q-33 0-56.5-23.5T40-200v-480q0-33 23.5-56.5T120-760h126l74-80h240v80H355l-73 80H120v480h640v-360h80v360q0 33-23.5 56.5T760-120H120Zm640-560v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM440-260q75 0 127.5-52.5T620-440q0-75-52.5-127.5T440-620q-75 0-127.5 52.5T260-440q0 75 52.5 127.5T440-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Object Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "dashicons dashicons-arrow-down-alt2",
+      style: {
+        position: "relative",
+        right: "2px",
+        top: "6px",
+        fontSize: "12px"
+      }
+    })))), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         position: "relative",
         padding: "0px 4px",
@@ -19716,20 +25097,30 @@ const SlideControls = ({
         padding: "3px"
       },
       className: "button-replace",
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Image", "cocoblocks")
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image form Media Library", "cocoblocks")
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: openModal,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px"
+      },
+      className: "button-replace",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image from Object Library", "cocoblocks")
     })))
   })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-delete",
     onClick: () => updateSlideBackgroundImage(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Image", "wp-kube")
+  }), isModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ImageSelectionModal__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    onClose: closeModal,
+    onSelect: handleImageSelect
   })), tab.name === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-img-upload",
-    style: {
-      marginTop: "6px"
-    }
+    className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => updateSlideBackgroundVideo(slide.id, media.url),
     allowedTypes: ["video"],
@@ -19795,16 +25186,16 @@ const SlideControls = ({
         color: " var(--light-color)",
         padding: "3px"
       },
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Video", "cocoblocks")
     })))
   })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-delete",
     onClick: () => updateSlideBackgroundVideo(slide.id, null),
     isDestructive: true,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Video", "wp-kube")
-  })))))))), activeSectionSlide === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))))), activeSectionSlide === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -19857,6 +25248,72 @@ const SlideControls = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_aligncontrol__WEBPACK_IMPORTED_MODULE_13__["default"], {
     value: slide.position,
     onChange: newPosition => updateSlidePosition(slide.id, newPosition)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 320v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 320v-80h80v80h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Use content width", "cocoblocks")),
+    checked: slide.enableContentWidth,
+    onChange: value => updateSlideEnableContentWidth(slide.id, value)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    placement: "top",
+    style: {
+      padding: "10px",
+      maxWidth: "300px",
+      borderRadius: "4px"
+    },
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Nested blocks will fill the width of this container. Toggle to constrain.", "cocoblocks")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__["default"],
+    className: "tooltip-icon",
+    style: {
+      top: "12px"
+    }
+  }))), slide.enableContentWidth && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content width", "cocoblocks")),
+    value: slide.contentWidth,
+    onChange: value => updateSlideContentWidth(slide.id, value),
+    min: 100,
+    max: 3200,
+    step: 1
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-control-label-right"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "24px",
+      viewBox: "0 -960 960 960",
+      width: "24px",
+      fill: "#e8eaed"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M40-80v-360h240v360H40Zm320 0v-360h240v360H360Zm320 0v-360h240v360H680Zm-240-80h80v-200h-80v200ZM40-520v-360h240v360H40Zm320 0v-360h240v360H360Zm320 0v-360h240v360H680Zm-560-80h80v-200h-80v200Zm640 0h80v-200h-80v200Z"
+    })), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Flex wrap", "cocoblocks")),
+    value: slide.layoutWrap,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Wrap", "slider"),
+      value: "wrap"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("No Wrap", "slider"),
+      value: "nowrap"
+    }],
+    onChange: value => updateSlideLayoutWrap(slide.id, value)
   })))), activeSectionSlide === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -20088,7 +25545,22 @@ const SlideControls = ({
     activeSectionImage: activeSectionImage,
     parallax: parallax,
     attributes: attributes
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), element.type === "button" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ButtonControls__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    slide: slide,
+    slides: slides,
+    element: element,
+    elementIndex: elementIndex,
+    setAttributes: setAttributes,
+    setActiveSection: setActiveSection,
+    activeSection: activeSection,
+    parallax: parallax,
+    device: device,
+    handleDesktopClick: handleDesktopClick,
+    handleTabletClick: handleTabletClick,
+    handleMobileClick: handleMobileClick,
+    showOtherButtons: showOtherButtons,
+    attributes: attributes
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "divider-controls"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "button-add-element"
@@ -20112,8 +25584,17 @@ const SlideControls = ({
     onClick: () => addSlideDiv(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add block", "slide")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"]
-  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_20__["default"]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    onClick: openModalButton,
+    label: "Add Button"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"]
+  })), isModalOpenButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_buttonModal__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    slideId: slide.id,
+    onClose: closeModalButton,
+    onSelect: handleButtonTypeSelect
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "controls",
     className: "button-add-slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -20140,6 +25621,7 @@ const SlideControls = ({
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -20169,11 +25651,9 @@ const TextComponent = ({
     textDecoration: element.fontStyle?.textDecoration || "none",
     // Valore di default
     lineHeight: element.lineHeight,
-    width: "100%",
     fontFamily: element.fontFamily,
     margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`,
     // Usa i valori aggi
-    "--duration-effect": element.durationEffect + "s",
     "--duration-effect-odd": element.durationEffectOdd + "s",
     "--duration-effect-even": element.durationEffectEven + "s",
     "--delay-effect": element.delayEffect + "s",
@@ -20181,7 +25661,6 @@ const TextComponent = ({
     "--color-gradient-two": element.gradinetColorTwo,
     "--color-gradient-three": element.gradinetColorThree,
     "--color-gradient-four": element.gradinetColorFour,
-    "--color-gradient-five": element.gradinetColorFive,
     padding: `${element.paddingTitle?.top} ${element.paddingTitle?.right} ${element.paddingTitle?.bottom} ${element.paddingTitle?.left}`,
     // Usa i valori aggi
     borderWidth: `${element.backgroundBorderSize}px` || 0,
@@ -20191,8 +25670,9 @@ const TextComponent = ({
     "--opacity-hover": element.opacityHover || 1,
     borderStyle: element.borderStyle || "none",
     "--border-style-hover": element.borderStyleHover || "none",
-    "--transition-hover": element.durationEffectHover + 's' || 0,
-    "--translate-hover": element.translateEffectHover + 'px' || 0,
+    "--border-width-hover": `${element.backgroundBorderSizeHover}px` || 0,
+    "--transition-hover": element.durationEffectHover + "s" || 0,
+    "--translate-hover": element.translateEffectHover + "px" || 0,
     "--color-effect-hover": element.effectHoverColorHover || "#000000",
     "--box-shadow-x": element.boxShadowX + "px" || 0,
     "--box-shadow-y": element.boxShadowY + "px" || 0,
@@ -20201,7 +25681,8 @@ const TextComponent = ({
     "--box-shadow-spread": element.boxShadowSpread + "px" || 0,
     writingMode: element.textWriteMode || "initial",
     textOrientation: element.textOrientation || "initial",
-    "--interation": element.interation || "forwards"
+    position: "relative",
+    opacity: element.opacity
   };
   const Tag = element.elementTitle || "h3";
   const stylesSpan = {
@@ -20222,17 +25703,17 @@ const TextComponent = ({
         key: index,
         className: "explode",
         style: {
-          '--x': `${Math.random() * 200 - 100}px`,
+          "--x": `${Math.random() * 200 - 100}px`,
           // Posizione X casuale
-          '--y': `${Math.random() * 200 - 100}px`,
+          "--y": `${Math.random() * 200 - 100}px`,
           // Posizione Y casuale
-          '--rotation': `${Math.random() * 360}deg`,
+          "--rotation": `${Math.random() * 360}deg`,
           // Rotazione casuale
-          '--explosion-delay': `${explosionDelay}s`,
+          "--explosion-delay": `${explosionDelay}s`,
           // Ritardo prima dell'esplosione
-          '--explosion-duration': `${explosionDuration}s`,
+          "--explosion-duration": `${explosionDuration}s`,
           // Durata dell'esplosione
-          '--explosion-interaction-count': `${explosionInteration}`
+          "--explosion-interaction-count": `${explosionInteration}`
         }
       }, letter));
     }
@@ -20241,15 +25722,15 @@ const TextComponent = ({
         key: index,
         className: "implode",
         style: {
-          '--x': `${Math.random() * 200 - 100}px`,
+          "--x": `${Math.random() * 200 - 100}px`,
           // Posizione X casuale
-          '--y': `${Math.random() * 200 - 100}px`,
+          "--y": `${Math.random() * 200 - 100}px`,
           // Posizione Y casuale
-          '--rotation': `${Math.random() * 360}deg`,
+          "--rotation": `${Math.random() * 360}deg`,
           // Rotazione casuale
-          '--implosion-delay': `${delay}s`,
-          '--implosion-duration': `${duration}s`,
-          '--implosion-interaction-count': `${implosionInteration}`
+          "--implosion-delay": `${delay}s`,
+          "--implosion-duration": `${duration}s`,
+          "--implosion-interaction-count": `${implosionInteration}`
         }
       }, letter));
     }
@@ -20266,7 +25747,7 @@ const TextComponent = ({
         key: index,
         className: "letters-fly-in-from-left",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20277,7 +25758,7 @@ const TextComponent = ({
         key: index,
         className: "letters-fly-in-from-right",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20288,7 +25769,7 @@ const TextComponent = ({
         key: index,
         className: "letters-fly-in-from-top",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20299,7 +25780,7 @@ const TextComponent = ({
         key: index,
         className: "letters-fly-in-from-bottom",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20310,7 +25791,7 @@ const TextComponent = ({
         key: index,
         className: "letter-flip-from-top",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20321,7 +25802,7 @@ const TextComponent = ({
         key: index,
         className: "letter-flip-from-bottom",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20332,7 +25813,7 @@ const TextComponent = ({
         key: index,
         className: "letter-flip-cycle",
         style: {
-          '--letter-index': index + 1
+          "--letter-index": index + 1
         }
       }, letter));
     }
@@ -20374,7 +25855,8 @@ const TextComponent = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       transform: `rotate(${element.rotate}deg)`,
-      opacity: element.opacity,
+      "--duration-effect": element.durationEffect + "s",
+      "--delay-effect": element.delayEffect + "s",
       "--rotate-hover": element.rotateHover + "deg" || 0,
       "--color-decoration": element.underlineColor || "#000000",
       "--padding-decoration": element.underlinePadding + "px" || 0,
@@ -20388,12 +25870,14 @@ const TextComponent = ({
       "--animation-decoration-from-size": element.underlineFromSizeNew + "%" || 0,
       "--animation-decoration-to-size": element.underlineToSizeNew + "%" || 0,
       "--animation-decoration-transition": element.underlineAnimationTransition + "s" || 0,
-      width: element.widthTitle === 'custom' ? `${element.widthCustomTitle}%` : element.widthTitle
+      width: element.widthTitle === "custom" ? `${element.widthCustomTitle}%` : element.widthTitle,
+      "--interation": element.interation || "forwards"
     },
-    className: "content-title-slide " + element.decoration
+    className: "content-title-slide letter " + element.decoration + " " + element.animation + element.playState,
+    "data-animation": element.animation
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Tag, {
     key: index,
-    className: `title-slide letter ${element.animationHover} ${element.animation}${element.playState}`,
+    className: `title-slide  ${element.animationHover}`,
     style: stylesTitle,
     "data-swiper-parallax-x": element.parallaxTitle,
     "data-swiper-parallax-y": element.parallaxTitleY,
@@ -20401,7 +25885,6 @@ const TextComponent = ({
     "data-swiper-parallax-duration": element.parallaxTitleDuration,
     "data-swiper-parallax-opacity": element.parallaxTitleOpacity,
     "data-font-family": element.fontFamily,
-    "data-animation": element.animation,
     onClick: () => {
       if (element.textLink === "scroll-below") {
         // Scroll down logic
@@ -20432,6 +25915,7 @@ const TextComponent = ({
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
@@ -20451,13 +25935,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_SliderControls__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/SliderControls */ "./src/components/SliderControls.js");
-/* harmony import */ var _components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/SliderControlsNavigation */ "./src/components/SliderControlsNavigation.js");
-/* harmony import */ var _components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/SliderControlsOptions */ "./src/components/SliderControlsOptions.js");
-/* harmony import */ var _components_NavigationButtons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/NavigationButtons */ "./src/components/NavigationButtons.js");
-/* harmony import */ var _components_ImageComponent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/ImageComponent */ "./src/components/ImageComponent.js");
-/* harmony import */ var _components_textComponent__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/textComponent */ "./src/components/textComponent.js");
-/* harmony import */ var _components_divComponent__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/divComponent */ "./src/components/divComponent.js");
-/* harmony import */ var _components_slideControls__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/slideControls */ "./src/components/slideControls.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/SliderControlsNavigation */ "./src/components/SliderControlsNavigation.js");
+/* harmony import */ var _components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/SliderControlsOptions */ "./src/components/SliderControlsOptions.js");
+/* harmony import */ var _components_NavigationButtons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/NavigationButtons */ "./src/components/NavigationButtons.js");
+/* harmony import */ var _components_ImageComponent__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/ImageComponent */ "./src/components/ImageComponent.js");
+/* harmony import */ var _components_textComponent__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/textComponent */ "./src/components/textComponent.js");
+/* harmony import */ var _components_divComponent__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/divComponent */ "./src/components/divComponent.js");
+/* harmony import */ var _components_slideControls__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/slideControls */ "./src/components/slideControls.js");
+/* harmony import */ var _components_buttonComponent__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/buttonComponent */ "./src/components/buttonComponent.js");
+/* harmony import */ var _components_dragable__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/dragable */ "./src/components/dragable.js");
+
+
+
 
 
 
@@ -20478,7 +25969,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function Edit({
   attributes,
-  setAttributes
+  setAttributes,
+  slide
 }) {
   const {
     directionSlider,
@@ -20683,19 +26175,19 @@ function Edit({
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const handleTabClick = event => {
       const tabId = event.currentTarget.id;
-      const advancedPanel = document.querySelector('.cocoblocks-custom-advanced-panel');
+      const advancedPanel = document.querySelector(".cocoblocks-custom-advanced-panel");
 
       // Lista dei tab che devono nascondere il pannello avanzato
-      const tabsToHideAdvancedPanel = ['tab-panel-0-tab2', 'tab-panel-0-tab3', 'tab-panel-0-tab4'];
+      const tabsToHideAdvancedPanel = ["tab-panel-0-tab2", "tab-panel-0-tab3", "tab-panel-0-tab4"];
       if (tabsToHideAdvancedPanel.includes(tabId)) {
         // Nascondi il pannello avanzato
         if (advancedPanel) {
-          advancedPanel.classList.add('hidden');
+          advancedPanel.classList.add("hidden");
         }
       } else {
         // Mostra il pannello avanzato
         if (advancedPanel) {
-          advancedPanel.classList.remove('hidden');
+          advancedPanel.classList.remove("hidden");
         }
       }
     };
@@ -20703,7 +26195,7 @@ function Edit({
       // Trova tutti i bottoni delle schede
       const tabButtons = document.querySelectorAll('[role="tab"]');
       tabButtons.forEach(button => {
-        button.addEventListener('click', handleTabClick);
+        button.addEventListener("click", handleTabClick);
       });
     };
 
@@ -20725,7 +26217,7 @@ function Edit({
       observer.disconnect();
       const tabButtons = document.querySelectorAll('[role="tab"]');
       tabButtons.forEach(button => {
-        button.removeEventListener('click', handleTabClick);
+        button.removeEventListener("click", handleTabClick);
       });
     };
   }, []);
@@ -20865,6 +26357,106 @@ function Edit({
 
   // Rif Swiper for circle color panel
   const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Definisci lo stato per il dispositivo attivo
+  const [activeDevice, setActiveDevice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_10__.useState)('desktop');
+
+  // Funzione per cambiare dispositivo
+  const handleDeviceChange = device => {
+    setActiveDevice(device);
+    updateEditorView(device); // Aggiorna la vista
+    updateElementPositions(device); // Ricalcola le posizioni
+  };
+
+  // Funzione per gestire il drag e aggiornare le posizioni
+  const handleDragElement = (slideId, index, x, y) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      elements: slide.elements.map((element, i) => i === index ? {
+        ...element,
+        [activeDevice]: {
+          x,
+          y
+        } // Salva solo le coordinate per il dispositivo attivo
+      } : element)
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Funzione per aggiornare la classe del container in base al dispositivo
+  const updateEditorView = device => {
+    const container = document.querySelector('.editor-visual-editor'); // Cambia con il selettore giusto
+    if (container) {
+      container.classList.remove('desktop-view', 'tablet-view', 'mobile-view');
+      container.classList.add(`${device}-view`);
+    }
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const updatedSlides = slides.map(slide => ({
+      ...slide,
+      elements: slide.elements.map(element => ({
+        ...element,
+        desktop: element.desktop || {
+          x: 0,
+          y: 0
+        },
+        tablet: element.tablet || {
+          x: 0,
+          y: 0
+        },
+        mobile: element.mobile || {
+          x: 0,
+          y: 0
+        }
+      }))
+    }));
+    setAttributes({
+      slides: updatedSlides
+    });
+    updateElementPositions(activeDevice); // Inizializza le posizioni
+  }, [activeDevice]);
+  const updateElementPositions = device => {
+    const editor = document.querySelector('.editor-visual-editor');
+    if (editor) {
+      const elements = document.querySelectorAll('.draggable');
+      elements.forEach(element => {
+        let x = 0,
+          y = 0;
+
+        // Leggi le coordinate corrette in base al tipo di dispositivo
+        if (device === 'mobile') {
+          x = parseFloat(element.getAttribute('data-mobile-x')) || 0;
+          y = parseFloat(element.getAttribute('data-mobile-y')) || 0;
+        } else if (device === 'tablet') {
+          x = parseFloat(element.getAttribute('data-tablet-x')) || 0;
+          y = parseFloat(element.getAttribute('data-tablet-y')) || 0;
+        } else {
+          x = parseFloat(element.getAttribute('data-desktop-x')) || 0;
+          y = parseFloat(element.getAttribute('data-desktop-y')) || 0;
+        }
+        console.log(`Applying position for ${device}: x=${x}, y=${y}`);
+
+        // Applica la posizione
+        element.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+  };
+
+  // Chiama questa funzione ogni volta che cambia il dispositivo o ridimensioni l'iframe
+  window.addEventListener('resize', updateElementPositions);
+  const getDeviceType = () => {
+    const editor = document.querySelector('.editor-visual-editor');
+    const width = editor ? editor.clientWidth : window.innerWidth;
+    if (width <= 768) {
+      return 'mobile';
+    } else if (width <= 1024) {
+      return 'tablet';
+    } else {
+      return 'desktop';
+    }
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     className: "tab-general",
     activeClass: "active-tab",
@@ -20922,22 +26514,30 @@ function Edit({
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-3 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsNavigation__WEBPACK_IMPORTED_MODULE_11__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-4 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SliderControlsOptions__WEBPACK_IMPORTED_MODULE_12__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-2 " + tab.name
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_slideControls__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_slideControls__WEBPACK_IMPORTED_MODULE_17__["default"], {
     attributes: attributes,
     setAttributes: setAttributes,
     slides: slides,
-    parallax: parallax
-  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    swiperRef: swiperRef,
+    parallax: parallax,
+    slide: slide
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleDeviceChange('desktop')
+  }, "Desktop"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleDeviceChange('tablet')
+  }, "Tablet"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: () => handleDeviceChange('mobile')
+  }, "Mobile")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.Swiper, {
     ref: swiperRef,
@@ -20967,7 +26567,7 @@ function Edit({
     },
     autoplay: autoplayConfig,
     onAutoplayTimeLeft: autoplayProgress ? onAutoplayTimeLeft : undefined,
-    className: "slider-builder " + filter,
+    className: "slider-builder editor-grid " + filter,
     dir: languageSlider,
     direction: directionSlider,
     effect: effect,
@@ -21069,7 +26669,7 @@ function Edit({
   }, "View Product")))) : null, attributes.contentType === "custom" && Array.isArray(slides) && slides.length > 0 ? slides.map(slide => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
     key: slide.id
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-slide " + slide.position + " " + overflow + " " + slide.layout + "-layout",
+    className: "swiper-slide",
     style: {
       // Gestione dell'immagine di sfondo
       ...(slide.backgroundType === "image" && slide.backgroundImage ? {
@@ -21084,7 +26684,11 @@ function Edit({
       // Gestione del gradiente di sfondo
       ...(slide.backgroundType === "gradient" ? {
         background: slide.backgroundGradient
-      } : {}),
+      } : {})
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-slide-slider " + slide.position + " " + overflow + " " + slide.layout + "-layout",
+    style: {
       // Gestione dello spazio e altre proprietà
       height: autoHeight ? "auto" : `${slideHeight}px`,
       display: "flex",
@@ -21101,7 +26705,10 @@ function Edit({
       paddingRight: slide.backgroundHorizontalPadding + "px",
       borderStyle: slide.borderStyleSlide,
       borderWidth: slide.backgroundBorderSize + "px",
-      borderColor: slide.backgroundBorderColor
+      borderColor: slide.backgroundBorderColor,
+      margin: "0 auto",
+      maxWidth: slide.enableContentWidth ? `${slide.contentWidth}px` : false,
+      flexWrap: slide.layoutWrap
     }
   }, slide.backgroundType === "video" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
     src: slide.backgroundVideo,
@@ -21119,26 +26726,58 @@ function Edit({
       objectFit: "cover"
     }
   })), slide.elements.map((element, index) => {
+    const handleDrag = (e, data) => {
+      handleDragElement(slide.id, index, data.x, data.y);
+    };
     switch (element.type) {
       case "title":
-        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_textComponent__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_dragable__WEBPACK_IMPORTED_MODULE_19__["default"], {
+          key: index,
+          x: element[activeDevice]?.x || 0,
+          y: element[activeDevice]?.y || 0,
+          onDrag: handleDrag,
+          activeDevice: activeDevice
+        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_textComponent__WEBPACK_IMPORTED_MODULE_15__["default"], {
           element: element,
           index: index
-        });
+        }));
       case "image":
-        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageComponent__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_dragable__WEBPACK_IMPORTED_MODULE_19__["default"], {
+          key: index,
+          x: element[activeDevice]?.x || 0,
+          y: element[activeDevice]?.y || 0,
+          onDrag: handleDrag,
+          activeDevice: activeDevice
+        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_ImageComponent__WEBPACK_IMPORTED_MODULE_14__["default"], {
           element: element,
           index: index
-        });
+        }));
       case "div":
-        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_divComponent__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_dragable__WEBPACK_IMPORTED_MODULE_19__["default"], {
+          key: index,
+          x: element[activeDevice]?.x || 0,
+          y: element[activeDevice]?.y || 0,
+          onDrag: handleDrag,
+          activeDevice: activeDevice
+        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_divComponent__WEBPACK_IMPORTED_MODULE_16__["default"], {
           element: element,
           index: index
-        });
+        }));
+      case "button":
+        return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_dragable__WEBPACK_IMPORTED_MODULE_19__["default"], {
+          key: index,
+          x: element[activeDevice]?.x || 0,
+          y: element[activeDevice]?.y || 0,
+          onDrag: handleDrag,
+          activeDevice: activeDevice
+        }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_buttonComponent__WEBPACK_IMPORTED_MODULE_18__["default"], {
+          element: element,
+          index: index
+        }));
       default:
         return null;
     }
-  })))) : null, autoplayProgress && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))))) : null, autoplayProgress && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "autoplay-progress " + autoplayProgressPosition,
     slot: "container-end"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -21152,7 +26791,7 @@ function Edit({
     ref: progressContent
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "filter-slider"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_NavigationButtons__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_NavigationButtons__WEBPACK_IMPORTED_MODULE_13__["default"], {
     navigation: navigation,
     nextRef: nextRef,
     prevRef: prevRef,
@@ -21173,6 +26812,7 @@ function Edit({
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -21202,6 +26842,7 @@ __webpack_require__.r(__webpack_exports__);
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -21214,6 +26855,7 @@ __webpack_require__.r(__webpack_exports__);
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -21226,9 +26868,2511 @@ __webpack_require__.r(__webpack_exports__);
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+/***/ ((module) => {
+
+"use strict";
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var printWarning = function() {};
+
+if (true) {
+  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+  var loggedTypeFailures = {};
+  var has = __webpack_require__(/*! ./lib/has */ "./node_modules/prop-types/lib/has.js");
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) { /**/ }
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (true) {
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          );
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */
+checkPropTypes.resetWarningCache = function() {
+  if (true) {
+    loggedTypeFailures = {};
+  }
+}
+
+module.exports = checkPropTypes;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/prop-types/node_modules/react-is/index.js");
+var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
+var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+var has = __webpack_require__(/*! ./lib/has */ "./node_modules/prop-types/lib/has.js");
+var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
+
+var printWarning = function() {};
+
+if (true) {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bigint: createPrimitiveTypeChecker('bigint'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message, data) {
+    this.message = message;
+    this.data = data && typeof data === 'object' ? data: {};
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ( true && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError(
+          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
+          {expectedType: expectedType}
+        );
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!ReactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (true) {
+        if (arguments.length > 1) {
+          printWarning(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : 0;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var expectedTypes = [];
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+        if (checkerResult == null) {
+          return null;
+        }
+        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+          expectedTypes.push(checkerResult.data.expectedType);
+        }
+      }
+      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function invalidValidatorError(componentName, location, propFullName, key, type) {
+    return new PropTypeError(
+      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
+      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+    );
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (has(shapeTypes, key) && typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/prop-types/node_modules/react-is/index.js");
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(ReactIs.isElement, throwOnDirectAccess);
+} else {}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/has.js":
+/*!********************************************!*\
+  !*** ./node_modules/prop-types/lib/has.js ***!
+  \********************************************/
+/***/ ((module) => {
+
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/node_modules/react-is/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/prop-types/node_modules/react-is/index.js ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/Draggable.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/Draggable.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+Object.defineProperty(exports, "DraggableCore", ({
+  enumerable: true,
+  get: function () {
+    return _DraggableCore.default;
+  }
+}));
+exports["default"] = void 0;
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+var _reactDom = _interopRequireDefault(__webpack_require__(/*! react-dom */ "react-dom"));
+var _clsx = _interopRequireDefault(__webpack_require__(/*! clsx */ "./node_modules/react-draggable/node_modules/clsx/dist/clsx.m.js"));
+var _domFns = __webpack_require__(/*! ./utils/domFns */ "./node_modules/react-draggable/build/cjs/utils/domFns.js");
+var _positionFns = __webpack_require__(/*! ./utils/positionFns */ "./node_modules/react-draggable/build/cjs/utils/positionFns.js");
+var _shims = __webpack_require__(/*! ./utils/shims */ "./node_modules/react-draggable/build/cjs/utils/shims.js");
+var _DraggableCore = _interopRequireDefault(__webpack_require__(/*! ./DraggableCore */ "./node_modules/react-draggable/build/cjs/DraggableCore.js"));
+var _log = _interopRequireDefault(__webpack_require__(/*! ./utils/log */ "./node_modules/react-draggable/build/cjs/utils/log.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); } /*:: import type {ControlPosition, PositionOffsetControlPosition, DraggableCoreProps, DraggableCoreDefaultProps} from './DraggableCore';*/
+/*:: import type {Bounds, DraggableEventHandler} from './utils/types';*/
+/*:: import type {Element as ReactElement} from 'react';*/
+/*:: type DraggableState = {
+  dragging: boolean,
+  dragged: boolean,
+  x: number, y: number,
+  slackX: number, slackY: number,
+  isElementSVG: boolean,
+  prevPropsPosition: ?ControlPosition,
+};*/
+/*:: export type DraggableDefaultProps = {
+  ...DraggableCoreDefaultProps,
+  axis: 'both' | 'x' | 'y' | 'none',
+  bounds: Bounds | string | false,
+  defaultClassName: string,
+  defaultClassNameDragging: string,
+  defaultClassNameDragged: string,
+  defaultPosition: ControlPosition,
+  scale: number,
+};*/
+/*:: export type DraggableProps = {
+  ...DraggableCoreProps,
+  ...DraggableDefaultProps,
+  positionOffset: PositionOffsetControlPosition,
+  position: ControlPosition,
+};*/
+//
+// Define <Draggable>
+//
+class Draggable extends React.Component /*:: <DraggableProps, DraggableState>*/{
+  // React 16.3+
+  // Arity (props, state)
+  static getDerivedStateFromProps(_ref /*:: */, _ref2 /*:: */) /*: ?Partial<DraggableState>*/{
+    let {
+      position
+    } /*: DraggableProps*/ = _ref /*: DraggableProps*/;
+    let {
+      prevPropsPosition
+    } /*: DraggableState*/ = _ref2 /*: DraggableState*/;
+    // Set x/y if a new position is provided in props that is different than the previous.
+    if (position && (!prevPropsPosition || position.x !== prevPropsPosition.x || position.y !== prevPropsPosition.y)) {
+      (0, _log.default)('Draggable: getDerivedStateFromProps %j', {
+        position,
+        prevPropsPosition
+      });
+      return {
+        x: position.x,
+        y: position.y,
+        prevPropsPosition: {
+          ...position
+        }
+      };
+    }
+    return null;
+  }
+  constructor(props /*: DraggableProps*/) {
+    super(props);
+    _defineProperty(this, "onDragStart", (e, coreData) => {
+      (0, _log.default)('Draggable: onDragStart: %j', coreData);
+
+      // Short-circuit if user's callback killed it.
+      const shouldStart = this.props.onStart(e, (0, _positionFns.createDraggableData)(this, coreData));
+      // Kills start event on core as well, so move handlers are never bound.
+      if (shouldStart === false) return false;
+      this.setState({
+        dragging: true,
+        dragged: true
+      });
+    });
+    _defineProperty(this, "onDrag", (e, coreData) => {
+      if (!this.state.dragging) return false;
+      (0, _log.default)('Draggable: onDrag: %j', coreData);
+      const uiData = (0, _positionFns.createDraggableData)(this, coreData);
+      const newState = {
+        x: uiData.x,
+        y: uiData.y,
+        slackX: 0,
+        slackY: 0
+      };
+
+      // Keep within bounds.
+      if (this.props.bounds) {
+        // Save original x and y.
+        const {
+          x,
+          y
+        } = newState;
+
+        // Add slack to the values used to calculate bound position. This will ensure that if
+        // we start removing slack, the element won't react to it right away until it's been
+        // completely removed.
+        newState.x += this.state.slackX;
+        newState.y += this.state.slackY;
+
+        // Get bound position. This will ceil/floor the x and y within the boundaries.
+        const [newStateX, newStateY] = (0, _positionFns.getBoundPosition)(this, newState.x, newState.y);
+        newState.x = newStateX;
+        newState.y = newStateY;
+
+        // Recalculate slack by noting how much was shaved by the boundPosition handler.
+        newState.slackX = this.state.slackX + (x - newState.x);
+        newState.slackY = this.state.slackY + (y - newState.y);
+
+        // Update the event we fire to reflect what really happened after bounds took effect.
+        uiData.x = newState.x;
+        uiData.y = newState.y;
+        uiData.deltaX = newState.x - this.state.x;
+        uiData.deltaY = newState.y - this.state.y;
+      }
+
+      // Short-circuit if user's callback killed it.
+      const shouldUpdate = this.props.onDrag(e, uiData);
+      if (shouldUpdate === false) return false;
+      this.setState(newState);
+    });
+    _defineProperty(this, "onDragStop", (e, coreData) => {
+      if (!this.state.dragging) return false;
+
+      // Short-circuit if user's callback killed it.
+      const shouldContinue = this.props.onStop(e, (0, _positionFns.createDraggableData)(this, coreData));
+      if (shouldContinue === false) return false;
+      (0, _log.default)('Draggable: onDragStop: %j', coreData);
+      const newState /*: Partial<DraggableState>*/ = {
+        dragging: false,
+        slackX: 0,
+        slackY: 0
+      };
+
+      // If this is a controlled component, the result of this operation will be to
+      // revert back to the old position. We expect a handler on `onDragStop`, at the least.
+      const controlled = Boolean(this.props.position);
+      if (controlled) {
+        const {
+          x,
+          y
+        } = this.props.position;
+        newState.x = x;
+        newState.y = y;
+      }
+      this.setState(newState);
+    });
+    this.state = {
+      // Whether or not we are currently dragging.
+      dragging: false,
+      // Whether or not we have been dragged before.
+      dragged: false,
+      // Current transform x and y.
+      x: props.position ? props.position.x : props.defaultPosition.x,
+      y: props.position ? props.position.y : props.defaultPosition.y,
+      prevPropsPosition: {
+        ...props.position
+      },
+      // Used for compensating for out-of-bounds drags
+      slackX: 0,
+      slackY: 0,
+      // Can only determine if SVG after mounting
+      isElementSVG: false
+    };
+    if (props.position && !(props.onDrag || props.onStop)) {
+      // eslint-disable-next-line no-console
+      console.warn('A `position` was applied to this <Draggable>, without drag handlers. This will make this ' + 'component effectively undraggable. Please attach `onDrag` or `onStop` handlers so you can adjust the ' + '`position` of this element.');
+    }
+  }
+  componentDidMount() {
+    // Check to see if the element passed is an instanceof SVGElement
+    if (typeof window.SVGElement !== 'undefined' && this.findDOMNode() instanceof window.SVGElement) {
+      this.setState({
+        isElementSVG: true
+      });
+    }
+  }
+  componentWillUnmount() {
+    this.setState({
+      dragging: false
+    }); // prevents invariant if unmounted while dragging
+  }
+
+  // React Strict Mode compatibility: if `nodeRef` is passed, we will use it instead of trying to find
+  // the underlying DOM node ourselves. See the README for more information.
+  findDOMNode() /*: ?HTMLElement*/{
+    var _this$props$nodeRef$c, _this$props;
+    return (_this$props$nodeRef$c = (_this$props = this.props) === null || _this$props === void 0 || (_this$props = _this$props.nodeRef) === null || _this$props === void 0 ? void 0 : _this$props.current) !== null && _this$props$nodeRef$c !== void 0 ? _this$props$nodeRef$c : _reactDom.default.findDOMNode(this);
+  }
+  render() /*: ReactElement<any>*/{
+    const {
+      axis,
+      bounds,
+      children,
+      defaultPosition,
+      defaultClassName,
+      defaultClassNameDragging,
+      defaultClassNameDragged,
+      position,
+      positionOffset,
+      scale,
+      ...draggableCoreProps
+    } = this.props;
+    let style = {};
+    let svgTransform = null;
+
+    // If this is controlled, we don't want to move it - unless it's dragging.
+    const controlled = Boolean(position);
+    const draggable = !controlled || this.state.dragging;
+    const validPosition = position || defaultPosition;
+    const transformOpts = {
+      // Set left if horizontal drag is enabled
+      x: (0, _positionFns.canDragX)(this) && draggable ? this.state.x : validPosition.x,
+      // Set top if vertical drag is enabled
+      y: (0, _positionFns.canDragY)(this) && draggable ? this.state.y : validPosition.y
+    };
+
+    // If this element was SVG, we use the `transform` attribute.
+    if (this.state.isElementSVG) {
+      svgTransform = (0, _domFns.createSVGTransform)(transformOpts, positionOffset);
+    } else {
+      // Add a CSS transform to move the element around. This allows us to move the element around
+      // without worrying about whether or not it is relatively or absolutely positioned.
+      // If the item you are dragging already has a transform set, wrap it in a <span> so <Draggable>
+      // has a clean slate.
+      style = (0, _domFns.createCSSTransform)(transformOpts, positionOffset);
+    }
+
+    // Mark with class while dragging
+    const className = (0, _clsx.default)(children.props.className || '', defaultClassName, {
+      [defaultClassNameDragging]: this.state.dragging,
+      [defaultClassNameDragged]: this.state.dragged
+    });
+
+    // Reuse the child provided
+    // This makes it flexible to use whatever element is wanted (div, ul, etc)
+    return /*#__PURE__*/React.createElement(_DraggableCore.default, _extends({}, draggableCoreProps, {
+      onStart: this.onDragStart,
+      onDrag: this.onDrag,
+      onStop: this.onDragStop
+    }), /*#__PURE__*/React.cloneElement(React.Children.only(children), {
+      className: className,
+      style: {
+        ...children.props.style,
+        ...style
+      },
+      transform: svgTransform
+    }));
+  }
+}
+exports["default"] = Draggable;
+_defineProperty(Draggable, "displayName", 'Draggable');
+_defineProperty(Draggable, "propTypes", {
+  // Accepts all props <DraggableCore> accepts.
+  ..._DraggableCore.default.propTypes,
+  /**
+   * `axis` determines which axis the draggable can move.
+   *
+   *  Note that all callbacks will still return data as normal. This only
+   *  controls flushing to the DOM.
+   *
+   * 'both' allows movement horizontally and vertically.
+   * 'x' limits movement to horizontal axis.
+   * 'y' limits movement to vertical axis.
+   * 'none' limits all movement.
+   *
+   * Defaults to 'both'.
+   */
+  axis: _propTypes.default.oneOf(['both', 'x', 'y', 'none']),
+  /**
+   * `bounds` determines the range of movement available to the element.
+   * Available values are:
+   *
+   * 'parent' restricts movement within the Draggable's parent node.
+   *
+   * Alternatively, pass an object with the following properties, all of which are optional:
+   *
+   * {left: LEFT_BOUND, right: RIGHT_BOUND, bottom: BOTTOM_BOUND, top: TOP_BOUND}
+   *
+   * All values are in px.
+   *
+   * Example:
+   *
+   * ```jsx
+   *   let App = React.createClass({
+   *       render: function () {
+   *         return (
+   *            <Draggable bounds={{right: 300, bottom: 300}}>
+   *              <div>Content</div>
+   *           </Draggable>
+   *         );
+   *       }
+   *   });
+   * ```
+   */
+  bounds: _propTypes.default.oneOfType([_propTypes.default.shape({
+    left: _propTypes.default.number,
+    right: _propTypes.default.number,
+    top: _propTypes.default.number,
+    bottom: _propTypes.default.number
+  }), _propTypes.default.string, _propTypes.default.oneOf([false])]),
+  defaultClassName: _propTypes.default.string,
+  defaultClassNameDragging: _propTypes.default.string,
+  defaultClassNameDragged: _propTypes.default.string,
+  /**
+   * `defaultPosition` specifies the x and y that the dragged item should start at
+   *
+   * Example:
+   *
+   * ```jsx
+   *      let App = React.createClass({
+   *          render: function () {
+   *              return (
+   *                  <Draggable defaultPosition={{x: 25, y: 25}}>
+   *                      <div>I start with transformX: 25px and transformY: 25px;</div>
+   *                  </Draggable>
+   *              );
+   *          }
+   *      });
+   * ```
+   */
+  defaultPosition: _propTypes.default.shape({
+    x: _propTypes.default.number,
+    y: _propTypes.default.number
+  }),
+  positionOffset: _propTypes.default.shape({
+    x: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]),
+    y: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string])
+  }),
+  /**
+   * `position`, if present, defines the current position of the element.
+   *
+   *  This is similar to how form elements in React work - if no `position` is supplied, the component
+   *  is uncontrolled.
+   *
+   * Example:
+   *
+   * ```jsx
+   *      let App = React.createClass({
+   *          render: function () {
+   *              return (
+   *                  <Draggable position={{x: 25, y: 25}}>
+   *                      <div>I start with transformX: 25px and transformY: 25px;</div>
+   *                  </Draggable>
+   *              );
+   *          }
+   *      });
+   * ```
+   */
+  position: _propTypes.default.shape({
+    x: _propTypes.default.number,
+    y: _propTypes.default.number
+  }),
+  /**
+   * These properties should be defined on the child, not here.
+   */
+  className: _shims.dontSetMe,
+  style: _shims.dontSetMe,
+  transform: _shims.dontSetMe
+});
+_defineProperty(Draggable, "defaultProps", {
+  ..._DraggableCore.default.defaultProps,
+  axis: 'both',
+  bounds: false,
+  defaultClassName: 'react-draggable',
+  defaultClassNameDragging: 'react-draggable-dragging',
+  defaultClassNameDragged: 'react-draggable-dragged',
+  defaultPosition: {
+    x: 0,
+    y: 0
+  },
+  scale: 1
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/DraggableCore.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/DraggableCore.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+var _reactDom = _interopRequireDefault(__webpack_require__(/*! react-dom */ "react-dom"));
+var _domFns = __webpack_require__(/*! ./utils/domFns */ "./node_modules/react-draggable/build/cjs/utils/domFns.js");
+var _positionFns = __webpack_require__(/*! ./utils/positionFns */ "./node_modules/react-draggable/build/cjs/utils/positionFns.js");
+var _shims = __webpack_require__(/*! ./utils/shims */ "./node_modules/react-draggable/build/cjs/utils/shims.js");
+var _log = _interopRequireDefault(__webpack_require__(/*! ./utils/log */ "./node_modules/react-draggable/build/cjs/utils/log.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+/*:: import type {EventHandler, MouseTouchEvent} from './utils/types';*/
+/*:: import type {Element as ReactElement} from 'react';*/
+// Simple abstraction for dragging events names.
+const eventsFor = {
+  touch: {
+    start: 'touchstart',
+    move: 'touchmove',
+    stop: 'touchend'
+  },
+  mouse: {
+    start: 'mousedown',
+    move: 'mousemove',
+    stop: 'mouseup'
+  }
+};
+
+// Default to mouse events.
+let dragEventFor = eventsFor.mouse;
+/*:: export type DraggableData = {
+  node: HTMLElement,
+  x: number, y: number,
+  deltaX: number, deltaY: number,
+  lastX: number, lastY: number,
+};*/
+/*:: export type DraggableEventHandler = (e: MouseEvent, data: DraggableData) => void | false;*/
+/*:: export type ControlPosition = {x: number, y: number};*/
+/*:: export type PositionOffsetControlPosition = {x: number|string, y: number|string};*/
+/*:: export type DraggableCoreDefaultProps = {
+  allowAnyClick: boolean,
+  disabled: boolean,
+  enableUserSelectHack: boolean,
+  onStart: DraggableEventHandler,
+  onDrag: DraggableEventHandler,
+  onStop: DraggableEventHandler,
+  onMouseDown: (e: MouseEvent) => void,
+  scale: number,
+};*/
+/*:: export type DraggableCoreProps = {
+  ...DraggableCoreDefaultProps,
+  cancel: string,
+  children: ReactElement<any>,
+  offsetParent: HTMLElement,
+  grid: [number, number],
+  handle: string,
+  nodeRef?: ?React.ElementRef<any>,
+};*/
+//
+// Define <DraggableCore>.
+//
+// <DraggableCore> is for advanced usage of <Draggable>. It maintains minimal internal state so it can
+// work well with libraries that require more control over the element.
+//
+
+class DraggableCore extends React.Component /*:: <DraggableCoreProps>*/{
+  constructor() {
+    super(...arguments);
+    _defineProperty(this, "dragging", false);
+    // Used while dragging to determine deltas.
+    _defineProperty(this, "lastX", NaN);
+    _defineProperty(this, "lastY", NaN);
+    _defineProperty(this, "touchIdentifier", null);
+    _defineProperty(this, "mounted", false);
+    _defineProperty(this, "handleDragStart", e => {
+      // Make it possible to attach event handlers on top of this one.
+      this.props.onMouseDown(e);
+
+      // Only accept left-clicks.
+      if (!this.props.allowAnyClick && typeof e.button === 'number' && e.button !== 0) return false;
+
+      // Get nodes. Be sure to grab relative document (could be iframed)
+      const thisNode = this.findDOMNode();
+      if (!thisNode || !thisNode.ownerDocument || !thisNode.ownerDocument.body) {
+        throw new Error('<DraggableCore> not mounted on DragStart!');
+      }
+      const {
+        ownerDocument
+      } = thisNode;
+
+      // Short circuit if handle or cancel prop was provided and selector doesn't match.
+      if (this.props.disabled || !(e.target instanceof ownerDocument.defaultView.Node) || this.props.handle && !(0, _domFns.matchesSelectorAndParentsTo)(e.target, this.props.handle, thisNode) || this.props.cancel && (0, _domFns.matchesSelectorAndParentsTo)(e.target, this.props.cancel, thisNode)) {
+        return;
+      }
+
+      // Prevent scrolling on mobile devices, like ipad/iphone.
+      // Important that this is after handle/cancel.
+      if (e.type === 'touchstart') e.preventDefault();
+
+      // Set touch identifier in component state if this is a touch event. This allows us to
+      // distinguish between individual touches on multitouch screens by identifying which
+      // touchpoint was set to this element.
+      const touchIdentifier = (0, _domFns.getTouchIdentifier)(e);
+      this.touchIdentifier = touchIdentifier;
+
+      // Get the current drag point from the event. This is used as the offset.
+      const position = (0, _positionFns.getControlPosition)(e, touchIdentifier, this);
+      if (position == null) return; // not possible but satisfies flow
+      const {
+        x,
+        y
+      } = position;
+
+      // Create an event object with all the data parents need to make a decision here.
+      const coreEvent = (0, _positionFns.createCoreData)(this, x, y);
+      (0, _log.default)('DraggableCore: handleDragStart: %j', coreEvent);
+
+      // Call event handler. If it returns explicit false, cancel.
+      (0, _log.default)('calling', this.props.onStart);
+      const shouldUpdate = this.props.onStart(e, coreEvent);
+      if (shouldUpdate === false || this.mounted === false) return;
+
+      // Add a style to the body to disable user-select. This prevents text from
+      // being selected all over the page.
+      if (this.props.enableUserSelectHack) (0, _domFns.addUserSelectStyles)(ownerDocument);
+
+      // Initiate dragging. Set the current x and y as offsets
+      // so we know how much we've moved during the drag. This allows us
+      // to drag elements around even if they have been moved, without issue.
+      this.dragging = true;
+      this.lastX = x;
+      this.lastY = y;
+
+      // Add events to the document directly so we catch when the user's mouse/touch moves outside of
+      // this element. We use different events depending on whether or not we have detected that this
+      // is a touch-capable device.
+      (0, _domFns.addEvent)(ownerDocument, dragEventFor.move, this.handleDrag);
+      (0, _domFns.addEvent)(ownerDocument, dragEventFor.stop, this.handleDragStop);
+    });
+    _defineProperty(this, "handleDrag", e => {
+      // Get the current drag point from the event. This is used as the offset.
+      const position = (0, _positionFns.getControlPosition)(e, this.touchIdentifier, this);
+      if (position == null) return;
+      let {
+        x,
+        y
+      } = position;
+
+      // Snap to grid if prop has been provided
+      if (Array.isArray(this.props.grid)) {
+        let deltaX = x - this.lastX,
+          deltaY = y - this.lastY;
+        [deltaX, deltaY] = (0, _positionFns.snapToGrid)(this.props.grid, deltaX, deltaY);
+        if (!deltaX && !deltaY) return; // skip useless drag
+        x = this.lastX + deltaX, y = this.lastY + deltaY;
+      }
+      const coreEvent = (0, _positionFns.createCoreData)(this, x, y);
+      (0, _log.default)('DraggableCore: handleDrag: %j', coreEvent);
+
+      // Call event handler. If it returns explicit false, trigger end.
+      const shouldUpdate = this.props.onDrag(e, coreEvent);
+      if (shouldUpdate === false || this.mounted === false) {
+        try {
+          // $FlowIgnore
+          this.handleDragStop(new MouseEvent('mouseup'));
+        } catch (err) {
+          // Old browsers
+          const event = ((document.createEvent('MouseEvents') /*: any*/) /*: MouseTouchEvent*/);
+          // I see why this insanity was deprecated
+          // $FlowIgnore
+          event.initMouseEvent('mouseup', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+          this.handleDragStop(event);
+        }
+        return;
+      }
+      this.lastX = x;
+      this.lastY = y;
+    });
+    _defineProperty(this, "handleDragStop", e => {
+      if (!this.dragging) return;
+      const position = (0, _positionFns.getControlPosition)(e, this.touchIdentifier, this);
+      if (position == null) return;
+      let {
+        x,
+        y
+      } = position;
+
+      // Snap to grid if prop has been provided
+      if (Array.isArray(this.props.grid)) {
+        let deltaX = x - this.lastX || 0;
+        let deltaY = y - this.lastY || 0;
+        [deltaX, deltaY] = (0, _positionFns.snapToGrid)(this.props.grid, deltaX, deltaY);
+        x = this.lastX + deltaX, y = this.lastY + deltaY;
+      }
+      const coreEvent = (0, _positionFns.createCoreData)(this, x, y);
+
+      // Call event handler
+      const shouldContinue = this.props.onStop(e, coreEvent);
+      if (shouldContinue === false || this.mounted === false) return false;
+      const thisNode = this.findDOMNode();
+      if (thisNode) {
+        // Remove user-select hack
+        if (this.props.enableUserSelectHack) (0, _domFns.removeUserSelectStyles)(thisNode.ownerDocument);
+      }
+      (0, _log.default)('DraggableCore: handleDragStop: %j', coreEvent);
+
+      // Reset the el.
+      this.dragging = false;
+      this.lastX = NaN;
+      this.lastY = NaN;
+      if (thisNode) {
+        // Remove event handlers
+        (0, _log.default)('DraggableCore: Removing handlers');
+        (0, _domFns.removeEvent)(thisNode.ownerDocument, dragEventFor.move, this.handleDrag);
+        (0, _domFns.removeEvent)(thisNode.ownerDocument, dragEventFor.stop, this.handleDragStop);
+      }
+    });
+    _defineProperty(this, "onMouseDown", e => {
+      dragEventFor = eventsFor.mouse; // on touchscreen laptops we could switch back to mouse
+
+      return this.handleDragStart(e);
+    });
+    _defineProperty(this, "onMouseUp", e => {
+      dragEventFor = eventsFor.mouse;
+      return this.handleDragStop(e);
+    });
+    // Same as onMouseDown (start drag), but now consider this a touch device.
+    _defineProperty(this, "onTouchStart", e => {
+      // We're on a touch device now, so change the event handlers
+      dragEventFor = eventsFor.touch;
+      return this.handleDragStart(e);
+    });
+    _defineProperty(this, "onTouchEnd", e => {
+      // We're on a touch device now, so change the event handlers
+      dragEventFor = eventsFor.touch;
+      return this.handleDragStop(e);
+    });
+  }
+  componentDidMount() {
+    this.mounted = true;
+    // Touch handlers must be added with {passive: false} to be cancelable.
+    // https://developers.google.com/web/updates/2017/01/scrolling-intervention
+    const thisNode = this.findDOMNode();
+    if (thisNode) {
+      (0, _domFns.addEvent)(thisNode, eventsFor.touch.start, this.onTouchStart, {
+        passive: false
+      });
+    }
+  }
+  componentWillUnmount() {
+    this.mounted = false;
+    // Remove any leftover event handlers. Remove both touch and mouse handlers in case
+    // some browser quirk caused a touch event to fire during a mouse move, or vice versa.
+    const thisNode = this.findDOMNode();
+    if (thisNode) {
+      const {
+        ownerDocument
+      } = thisNode;
+      (0, _domFns.removeEvent)(ownerDocument, eventsFor.mouse.move, this.handleDrag);
+      (0, _domFns.removeEvent)(ownerDocument, eventsFor.touch.move, this.handleDrag);
+      (0, _domFns.removeEvent)(ownerDocument, eventsFor.mouse.stop, this.handleDragStop);
+      (0, _domFns.removeEvent)(ownerDocument, eventsFor.touch.stop, this.handleDragStop);
+      (0, _domFns.removeEvent)(thisNode, eventsFor.touch.start, this.onTouchStart, {
+        passive: false
+      });
+      if (this.props.enableUserSelectHack) (0, _domFns.removeUserSelectStyles)(ownerDocument);
+    }
+  }
+
+  // React Strict Mode compatibility: if `nodeRef` is passed, we will use it instead of trying to find
+  // the underlying DOM node ourselves. See the README for more information.
+  findDOMNode() /*: ?HTMLElement*/{
+    var _this$props, _this$props2;
+    return (_this$props = this.props) !== null && _this$props !== void 0 && _this$props.nodeRef ? (_this$props2 = this.props) === null || _this$props2 === void 0 || (_this$props2 = _this$props2.nodeRef) === null || _this$props2 === void 0 ? void 0 : _this$props2.current : _reactDom.default.findDOMNode(this);
+  }
+  render() /*: React.Element<any>*/{
+    // Reuse the child provided
+    // This makes it flexible to use whatever element is wanted (div, ul, etc)
+    return /*#__PURE__*/React.cloneElement(React.Children.only(this.props.children), {
+      // Note: mouseMove handler is attached to document so it will still function
+      // when the user drags quickly and leaves the bounds of the element.
+      onMouseDown: this.onMouseDown,
+      onMouseUp: this.onMouseUp,
+      // onTouchStart is added on `componentDidMount` so they can be added with
+      // {passive: false}, which allows it to cancel. See
+      // https://developers.google.com/web/updates/2017/01/scrolling-intervention
+      onTouchEnd: this.onTouchEnd
+    });
+  }
+}
+exports["default"] = DraggableCore;
+_defineProperty(DraggableCore, "displayName", 'DraggableCore');
+_defineProperty(DraggableCore, "propTypes", {
+  /**
+   * `allowAnyClick` allows dragging using any mouse button.
+   * By default, we only accept the left button.
+   *
+   * Defaults to `false`.
+   */
+  allowAnyClick: _propTypes.default.bool,
+  children: _propTypes.default.node.isRequired,
+  /**
+   * `disabled`, if true, stops the <Draggable> from dragging. All handlers,
+   * with the exception of `onMouseDown`, will not fire.
+   */
+  disabled: _propTypes.default.bool,
+  /**
+   * By default, we add 'user-select:none' attributes to the document body
+   * to prevent ugly text selection during drag. If this is causing problems
+   * for your app, set this to `false`.
+   */
+  enableUserSelectHack: _propTypes.default.bool,
+  /**
+   * `offsetParent`, if set, uses the passed DOM node to compute drag offsets
+   * instead of using the parent node.
+   */
+  offsetParent: function (props /*: DraggableCoreProps*/, propName /*: $Keys<DraggableCoreProps>*/) {
+    if (props[propName] && props[propName].nodeType !== 1) {
+      throw new Error('Draggable\'s offsetParent must be a DOM Node.');
+    }
+  },
+  /**
+   * `grid` specifies the x and y that dragging should snap to.
+   */
+  grid: _propTypes.default.arrayOf(_propTypes.default.number),
+  /**
+   * `handle` specifies a selector to be used as the handle that initiates drag.
+   *
+   * Example:
+   *
+   * ```jsx
+   *   let App = React.createClass({
+   *       render: function () {
+   *         return (
+   *            <Draggable handle=".handle">
+   *              <div>
+   *                  <div className="handle">Click me to drag</div>
+   *                  <div>This is some other content</div>
+   *              </div>
+   *           </Draggable>
+   *         );
+   *       }
+   *   });
+   * ```
+   */
+  handle: _propTypes.default.string,
+  /**
+   * `cancel` specifies a selector to be used to prevent drag initialization.
+   *
+   * Example:
+   *
+   * ```jsx
+   *   let App = React.createClass({
+   *       render: function () {
+   *           return(
+   *               <Draggable cancel=".cancel">
+   *                   <div>
+   *                     <div className="cancel">You can't drag from here</div>
+   *                     <div>Dragging here works fine</div>
+   *                   </div>
+   *               </Draggable>
+   *           );
+   *       }
+   *   });
+   * ```
+   */
+  cancel: _propTypes.default.string,
+  /* If running in React Strict mode, ReactDOM.findDOMNode() is deprecated.
+   * Unfortunately, in order for <Draggable> to work properly, we need raw access
+   * to the underlying DOM node. If you want to avoid the warning, pass a `nodeRef`
+   * as in this example:
+   *
+   * function MyComponent() {
+   *   const nodeRef = React.useRef(null);
+   *   return (
+   *     <Draggable nodeRef={nodeRef}>
+   *       <div ref={nodeRef}>Example Target</div>
+   *     </Draggable>
+   *   );
+   * }
+   *
+   * This can be used for arbitrarily nested components, so long as the ref ends up
+   * pointing to the actual child DOM node and not a custom component.
+   */
+  nodeRef: _propTypes.default.object,
+  /**
+   * Called when dragging starts.
+   * If this function returns the boolean false, dragging will be canceled.
+   */
+  onStart: _propTypes.default.func,
+  /**
+   * Called while dragging.
+   * If this function returns the boolean false, dragging will be canceled.
+   */
+  onDrag: _propTypes.default.func,
+  /**
+   * Called when dragging stops.
+   * If this function returns the boolean false, the drag will remain active.
+   */
+  onStop: _propTypes.default.func,
+  /**
+   * A workaround option which can be passed if onMouseDown needs to be accessed,
+   * since it'll always be blocked (as there is internal use of onMouseDown)
+   */
+  onMouseDown: _propTypes.default.func,
+  /**
+   * `scale`, if set, applies scaling while dragging an element
+   */
+  scale: _propTypes.default.number,
+  /**
+   * These properties should be defined on the child, not here.
+   */
+  className: _shims.dontSetMe,
+  style: _shims.dontSetMe,
+  transform: _shims.dontSetMe
+});
+_defineProperty(DraggableCore, "defaultProps", {
+  allowAnyClick: false,
+  // by default only accept left click
+  disabled: false,
+  enableUserSelectHack: true,
+  onStart: function () {},
+  onDrag: function () {},
+  onStop: function () {},
+  onMouseDown: function () {},
+  scale: 1
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/cjs.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/cjs.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+const {
+  default: Draggable,
+  DraggableCore
+} = __webpack_require__(/*! ./Draggable */ "./node_modules/react-draggable/build/cjs/Draggable.js");
+
+// Previous versions of this lib exported <Draggable> as the root export. As to no-// them, or TypeScript, we export *both* as the root and as 'default'.
+// See https://github.com/mzabriskie/react-draggable/pull/254
+// and https://github.com/mzabriskie/react-draggable/issues/266
+module.exports = Draggable;
+module.exports["default"] = Draggable;
+module.exports.DraggableCore = DraggableCore;
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/utils/domFns.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/utils/domFns.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.addClassName = addClassName;
+exports.addEvent = addEvent;
+exports.addUserSelectStyles = addUserSelectStyles;
+exports.createCSSTransform = createCSSTransform;
+exports.createSVGTransform = createSVGTransform;
+exports.getTouch = getTouch;
+exports.getTouchIdentifier = getTouchIdentifier;
+exports.getTranslation = getTranslation;
+exports.innerHeight = innerHeight;
+exports.innerWidth = innerWidth;
+exports.matchesSelector = matchesSelector;
+exports.matchesSelectorAndParentsTo = matchesSelectorAndParentsTo;
+exports.offsetXYFromParent = offsetXYFromParent;
+exports.outerHeight = outerHeight;
+exports.outerWidth = outerWidth;
+exports.removeClassName = removeClassName;
+exports.removeEvent = removeEvent;
+exports.removeUserSelectStyles = removeUserSelectStyles;
+var _shims = __webpack_require__(/*! ./shims */ "./node_modules/react-draggable/build/cjs/utils/shims.js");
+var _getPrefix = _interopRequireWildcard(__webpack_require__(/*! ./getPrefix */ "./node_modules/react-draggable/build/cjs/utils/getPrefix.js"));
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+/*:: import type {ControlPosition, PositionOffsetControlPosition, MouseTouchEvent} from './types';*/
+let matchesSelectorFunc = '';
+function matchesSelector(el /*: Node*/, selector /*: string*/) /*: boolean*/{
+  if (!matchesSelectorFunc) {
+    matchesSelectorFunc = (0, _shims.findInArray)(['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector', 'oMatchesSelector'], function (method) {
+      // $FlowIgnore: Doesn't think elements are indexable
+      return (0, _shims.isFunction)(el[method]);
+    });
+  }
+
+  // Might not be found entirely (not an Element?) - in that case, bail
+  // $FlowIgnore: Doesn't think elements are indexable
+  if (!(0, _shims.isFunction)(el[matchesSelectorFunc])) return false;
+
+  // $FlowIgnore: Doesn't think elements are indexable
+  return el[matchesSelectorFunc](selector);
+}
+
+// Works up the tree to the draggable itself attempting to match selector.
+function matchesSelectorAndParentsTo(el /*: Node*/, selector /*: string*/, baseNode /*: Node*/) /*: boolean*/{
+  let node = el;
+  do {
+    if (matchesSelector(node, selector)) return true;
+    if (node === baseNode) return false;
+    // $FlowIgnore[incompatible-type]
+    node = node.parentNode;
+  } while (node);
+  return false;
+}
+function addEvent(el /*: ?Node*/, event /*: string*/, handler /*: Function*/, inputOptions /*: Object*/) /*: void*/{
+  if (!el) return;
+  const options = {
+    capture: true,
+    ...inputOptions
+  };
+  // $FlowIgnore[method-unbinding]
+  if (el.addEventListener) {
+    el.addEventListener(event, handler, options);
+  } else if (el.attachEvent) {
+    el.attachEvent('on' + event, handler);
+  } else {
+    // $FlowIgnore: Doesn't think elements are indexable
+    el['on' + event] = handler;
+  }
+}
+function removeEvent(el /*: ?Node*/, event /*: string*/, handler /*: Function*/, inputOptions /*: Object*/) /*: void*/{
+  if (!el) return;
+  const options = {
+    capture: true,
+    ...inputOptions
+  };
+  // $FlowIgnore[method-unbinding]
+  if (el.removeEventListener) {
+    el.removeEventListener(event, handler, options);
+  } else if (el.detachEvent) {
+    el.detachEvent('on' + event, handler);
+  } else {
+    // $FlowIgnore: Doesn't think elements are indexable
+    el['on' + event] = null;
+  }
+}
+function outerHeight(node /*: HTMLElement*/) /*: number*/{
+  // This is deliberately excluding margin for our calculations, since we are using
+  // offsetTop which is including margin. See getBoundPosition
+  let height = node.clientHeight;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  height += (0, _shims.int)(computedStyle.borderTopWidth);
+  height += (0, _shims.int)(computedStyle.borderBottomWidth);
+  return height;
+}
+function outerWidth(node /*: HTMLElement*/) /*: number*/{
+  // This is deliberately excluding margin for our calculations, since we are using
+  // offsetLeft which is including margin. See getBoundPosition
+  let width = node.clientWidth;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  width += (0, _shims.int)(computedStyle.borderLeftWidth);
+  width += (0, _shims.int)(computedStyle.borderRightWidth);
+  return width;
+}
+function innerHeight(node /*: HTMLElement*/) /*: number*/{
+  let height = node.clientHeight;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  height -= (0, _shims.int)(computedStyle.paddingTop);
+  height -= (0, _shims.int)(computedStyle.paddingBottom);
+  return height;
+}
+function innerWidth(node /*: HTMLElement*/) /*: number*/{
+  let width = node.clientWidth;
+  const computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
+  width -= (0, _shims.int)(computedStyle.paddingLeft);
+  width -= (0, _shims.int)(computedStyle.paddingRight);
+  return width;
+}
+/*:: interface EventWithOffset {
+  clientX: number, clientY: number
+}*/
+// Get from offsetParent
+function offsetXYFromParent(evt /*: EventWithOffset*/, offsetParent /*: HTMLElement*/, scale /*: number*/) /*: ControlPosition*/{
+  const isBody = offsetParent === offsetParent.ownerDocument.body;
+  const offsetParentRect = isBody ? {
+    left: 0,
+    top: 0
+  } : offsetParent.getBoundingClientRect();
+  const x = (evt.clientX + offsetParent.scrollLeft - offsetParentRect.left) / scale;
+  const y = (evt.clientY + offsetParent.scrollTop - offsetParentRect.top) / scale;
+  return {
+    x,
+    y
+  };
+}
+function createCSSTransform(controlPos /*: ControlPosition*/, positionOffset /*: PositionOffsetControlPosition*/) /*: Object*/{
+  const translation = getTranslation(controlPos, positionOffset, 'px');
+  return {
+    [(0, _getPrefix.browserPrefixToKey)('transform', _getPrefix.default)]: translation
+  };
+}
+function createSVGTransform(controlPos /*: ControlPosition*/, positionOffset /*: PositionOffsetControlPosition*/) /*: string*/{
+  const translation = getTranslation(controlPos, positionOffset, '');
+  return translation;
+}
+function getTranslation(_ref /*:: */, positionOffset /*: PositionOffsetControlPosition*/, unitSuffix /*: string*/) /*: string*/{
+  let {
+    x,
+    y
+  } /*: ControlPosition*/ = _ref /*: ControlPosition*/;
+  let translation = "translate(".concat(x).concat(unitSuffix, ",").concat(y).concat(unitSuffix, ")");
+  if (positionOffset) {
+    const defaultX = "".concat(typeof positionOffset.x === 'string' ? positionOffset.x : positionOffset.x + unitSuffix);
+    const defaultY = "".concat(typeof positionOffset.y === 'string' ? positionOffset.y : positionOffset.y + unitSuffix);
+    translation = "translate(".concat(defaultX, ", ").concat(defaultY, ")") + translation;
+  }
+  return translation;
+}
+function getTouch(e /*: MouseTouchEvent*/, identifier /*: number*/) /*: ?{clientX: number, clientY: number}*/{
+  return e.targetTouches && (0, _shims.findInArray)(e.targetTouches, t => identifier === t.identifier) || e.changedTouches && (0, _shims.findInArray)(e.changedTouches, t => identifier === t.identifier);
+}
+function getTouchIdentifier(e /*: MouseTouchEvent*/) /*: ?number*/{
+  if (e.targetTouches && e.targetTouches[0]) return e.targetTouches[0].identifier;
+  if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0].identifier;
+}
+
+// User-select Hacks:
+//
+// Useful for preventing blue highlights all over everything when dragging.
+
+// Note we're passing `document` b/c we could be iframed
+function addUserSelectStyles(doc /*: ?Document*/) {
+  if (!doc) return;
+  let styleEl = doc.getElementById('react-draggable-style-el');
+  if (!styleEl) {
+    styleEl = doc.createElement('style');
+    styleEl.type = 'text/css';
+    styleEl.id = 'react-draggable-style-el';
+    styleEl.innerHTML = '.react-draggable-transparent-selection *::-moz-selection {all: inherit;}\n';
+    styleEl.innerHTML += '.react-draggable-transparent-selection *::selection {all: inherit;}\n';
+    doc.getElementsByTagName('head')[0].appendChild(styleEl);
+  }
+  if (doc.body) addClassName(doc.body, 'react-draggable-transparent-selection');
+}
+function removeUserSelectStyles(doc /*: ?Document*/) {
+  if (!doc) return;
+  try {
+    if (doc.body) removeClassName(doc.body, 'react-draggable-transparent-selection');
+    // $FlowIgnore: IE
+    if (doc.selection) {
+      // $FlowIgnore: IE
+      doc.selection.empty();
+    } else {
+      // Remove selection caused by scroll, unless it's a focused input
+      // (we use doc.defaultView in case we're in an iframe)
+      const selection = (doc.defaultView || window).getSelection();
+      if (selection && selection.type !== 'Caret') {
+        selection.removeAllRanges();
+      }
+    }
+  } catch (e) {
+    // probably IE
+  }
+}
+function addClassName(el /*: HTMLElement*/, className /*: string*/) {
+  if (el.classList) {
+    el.classList.add(className);
+  } else {
+    if (!el.className.match(new RegExp("(?:^|\\s)".concat(className, "(?!\\S)")))) {
+      el.className += " ".concat(className);
+    }
+  }
+}
+function removeClassName(el /*: HTMLElement*/, className /*: string*/) {
+  if (el.classList) {
+    el.classList.remove(className);
+  } else {
+    el.className = el.className.replace(new RegExp("(?:^|\\s)".concat(className, "(?!\\S)"), 'g'), '');
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/utils/getPrefix.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/utils/getPrefix.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.browserPrefixToKey = browserPrefixToKey;
+exports.browserPrefixToStyle = browserPrefixToStyle;
+exports["default"] = void 0;
+exports.getPrefix = getPrefix;
+const prefixes = ['Moz', 'Webkit', 'O', 'ms'];
+function getPrefix() /*: string*/{
+  var _window$document;
+  let prop /*: string*/ = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'transform';
+  // Ensure we're running in an environment where there is actually a global
+  // `window` obj
+  if (typeof window === 'undefined') return '';
+
+  // If we're in a pseudo-browser server-side environment, this access
+  // path may not exist, so bail out if it doesn't.
+  const style = (_window$document = window.document) === null || _window$document === void 0 || (_window$document = _window$document.documentElement) === null || _window$document === void 0 ? void 0 : _window$document.style;
+  if (!style) return '';
+  if (prop in style) return '';
+  for (let i = 0; i < prefixes.length; i++) {
+    if (browserPrefixToKey(prop, prefixes[i]) in style) return prefixes[i];
+  }
+  return '';
+}
+function browserPrefixToKey(prop /*: string*/, prefix /*: string*/) /*: string*/{
+  return prefix ? "".concat(prefix).concat(kebabToTitleCase(prop)) : prop;
+}
+function browserPrefixToStyle(prop /*: string*/, prefix /*: string*/) /*: string*/{
+  return prefix ? "-".concat(prefix.toLowerCase(), "-").concat(prop) : prop;
+}
+function kebabToTitleCase(str /*: string*/) /*: string*/{
+  let out = '';
+  let shouldCapitalize = true;
+  for (let i = 0; i < str.length; i++) {
+    if (shouldCapitalize) {
+      out += str[i].toUpperCase();
+      shouldCapitalize = false;
+    } else if (str[i] === '-') {
+      shouldCapitalize = true;
+    } else {
+      out += str[i];
+    }
+  }
+  return out;
+}
+
+// Default export is the prefix itself, like 'Moz', 'Webkit', etc
+// Note that you may have to re-test for certain things; for instance, Chrome 50
+// can handle unprefixed `transform`, but not unprefixed `user-select`
+var _default = exports["default"] = (getPrefix() /*: string*/);
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/utils/log.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/utils/log.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = log;
+/*eslint no-console:0*/
+function log() {
+  if (false) {}
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/utils/positionFns.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/utils/positionFns.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.canDragX = canDragX;
+exports.canDragY = canDragY;
+exports.createCoreData = createCoreData;
+exports.createDraggableData = createDraggableData;
+exports.getBoundPosition = getBoundPosition;
+exports.getControlPosition = getControlPosition;
+exports.snapToGrid = snapToGrid;
+var _shims = __webpack_require__(/*! ./shims */ "./node_modules/react-draggable/build/cjs/utils/shims.js");
+var _domFns = __webpack_require__(/*! ./domFns */ "./node_modules/react-draggable/build/cjs/utils/domFns.js");
+/*:: import type Draggable from '../Draggable';*/
+/*:: import type {Bounds, ControlPosition, DraggableData, MouseTouchEvent} from './types';*/
+/*:: import type DraggableCore from '../DraggableCore';*/
+function getBoundPosition(draggable /*: Draggable*/, x /*: number*/, y /*: number*/) /*: [number, number]*/{
+  // If no bounds, short-circuit and move on
+  if (!draggable.props.bounds) return [x, y];
+
+  // Clone new bounds
+  let {
+    bounds
+  } = draggable.props;
+  bounds = typeof bounds === 'string' ? bounds : cloneBounds(bounds);
+  const node = findDOMNode(draggable);
+  if (typeof bounds === 'string') {
+    const {
+      ownerDocument
+    } = node;
+    const ownerWindow = ownerDocument.defaultView;
+    let boundNode;
+    if (bounds === 'parent') {
+      boundNode = node.parentNode;
+    } else {
+      boundNode = ownerDocument.querySelector(bounds);
+    }
+    if (!(boundNode instanceof ownerWindow.HTMLElement)) {
+      throw new Error('Bounds selector "' + bounds + '" could not find an element.');
+    }
+    const boundNodeEl /*: HTMLElement*/ = boundNode; // for Flow, can't seem to refine correctly
+    const nodeStyle = ownerWindow.getComputedStyle(node);
+    const boundNodeStyle = ownerWindow.getComputedStyle(boundNodeEl);
+    // Compute bounds. This is a pain with padding and offsets but this gets it exactly right.
+    bounds = {
+      left: -node.offsetLeft + (0, _shims.int)(boundNodeStyle.paddingLeft) + (0, _shims.int)(nodeStyle.marginLeft),
+      top: -node.offsetTop + (0, _shims.int)(boundNodeStyle.paddingTop) + (0, _shims.int)(nodeStyle.marginTop),
+      right: (0, _domFns.innerWidth)(boundNodeEl) - (0, _domFns.outerWidth)(node) - node.offsetLeft + (0, _shims.int)(boundNodeStyle.paddingRight) - (0, _shims.int)(nodeStyle.marginRight),
+      bottom: (0, _domFns.innerHeight)(boundNodeEl) - (0, _domFns.outerHeight)(node) - node.offsetTop + (0, _shims.int)(boundNodeStyle.paddingBottom) - (0, _shims.int)(nodeStyle.marginBottom)
+    };
+  }
+
+  // Keep x and y below right and bottom limits...
+  if ((0, _shims.isNum)(bounds.right)) x = Math.min(x, bounds.right);
+  if ((0, _shims.isNum)(bounds.bottom)) y = Math.min(y, bounds.bottom);
+
+  // But above left and top limits.
+  if ((0, _shims.isNum)(bounds.left)) x = Math.max(x, bounds.left);
+  if ((0, _shims.isNum)(bounds.top)) y = Math.max(y, bounds.top);
+  return [x, y];
+}
+function snapToGrid(grid /*: [number, number]*/, pendingX /*: number*/, pendingY /*: number*/) /*: [number, number]*/{
+  const x = Math.round(pendingX / grid[0]) * grid[0];
+  const y = Math.round(pendingY / grid[1]) * grid[1];
+  return [x, y];
+}
+function canDragX(draggable /*: Draggable*/) /*: boolean*/{
+  return draggable.props.axis === 'both' || draggable.props.axis === 'x';
+}
+function canDragY(draggable /*: Draggable*/) /*: boolean*/{
+  return draggable.props.axis === 'both' || draggable.props.axis === 'y';
+}
+
+// Get {x, y} positions from event.
+function getControlPosition(e /*: MouseTouchEvent*/, touchIdentifier /*: ?number*/, draggableCore /*: DraggableCore*/) /*: ?ControlPosition*/{
+  const touchObj = typeof touchIdentifier === 'number' ? (0, _domFns.getTouch)(e, touchIdentifier) : null;
+  if (typeof touchIdentifier === 'number' && !touchObj) return null; // not the right touch
+  const node = findDOMNode(draggableCore);
+  // User can provide an offsetParent if desired.
+  const offsetParent = draggableCore.props.offsetParent || node.offsetParent || node.ownerDocument.body;
+  return (0, _domFns.offsetXYFromParent)(touchObj || e, offsetParent, draggableCore.props.scale);
+}
+
+// Create an data object exposed by <DraggableCore>'s events
+function createCoreData(draggable /*: DraggableCore*/, x /*: number*/, y /*: number*/) /*: DraggableData*/{
+  const isStart = !(0, _shims.isNum)(draggable.lastX);
+  const node = findDOMNode(draggable);
+  if (isStart) {
+    // If this is our first move, use the x and y as last coords.
+    return {
+      node,
+      deltaX: 0,
+      deltaY: 0,
+      lastX: x,
+      lastY: y,
+      x,
+      y
+    };
+  } else {
+    // Otherwise calculate proper values.
+    return {
+      node,
+      deltaX: x - draggable.lastX,
+      deltaY: y - draggable.lastY,
+      lastX: draggable.lastX,
+      lastY: draggable.lastY,
+      x,
+      y
+    };
+  }
+}
+
+// Create an data exposed by <Draggable>'s events
+function createDraggableData(draggable /*: Draggable*/, coreData /*: DraggableData*/) /*: DraggableData*/{
+  const scale = draggable.props.scale;
+  return {
+    node: coreData.node,
+    x: draggable.state.x + coreData.deltaX / scale,
+    y: draggable.state.y + coreData.deltaY / scale,
+    deltaX: coreData.deltaX / scale,
+    deltaY: coreData.deltaY / scale,
+    lastX: draggable.state.x,
+    lastY: draggable.state.y
+  };
+}
+
+// A lot faster than stringify/parse
+function cloneBounds(bounds /*: Bounds*/) /*: Bounds*/{
+  return {
+    left: bounds.left,
+    top: bounds.top,
+    right: bounds.right,
+    bottom: bounds.bottom
+  };
+}
+function findDOMNode(draggable /*: Draggable | DraggableCore*/) /*: HTMLElement*/{
+  const node = draggable.findDOMNode();
+  if (!node) {
+    throw new Error('<DraggableCore>: Unmounted during event!');
+  }
+  // $FlowIgnore we can't assert on HTMLElement due to tests... FIXME
+  return node;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/build/cjs/utils/shims.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/react-draggable/build/cjs/utils/shims.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.dontSetMe = dontSetMe;
+exports.findInArray = findInArray;
+exports.int = int;
+exports.isFunction = isFunction;
+exports.isNum = isNum;
+// @credits https://gist.github.com/rogozhnikoff/a43cfed27c41e4e68cdc
+function findInArray(array /*: Array<any> | TouchList*/, callback /*: Function*/) /*: any*/{
+  for (let i = 0, length = array.length; i < length; i++) {
+    if (callback.apply(callback, [array[i], i, array])) return array[i];
+  }
+}
+function isFunction(func /*: any*/) /*: boolean %checks*/{
+  // $FlowIgnore[method-unbinding]
+  return typeof func === 'function' || Object.prototype.toString.call(func) === '[object Function]';
+}
+function isNum(num /*: any*/) /*: boolean %checks*/{
+  return typeof num === 'number' && !isNaN(num);
+}
+function int(a /*: string*/) /*: number*/{
+  return parseInt(a, 10);
+}
+function dontSetMe(props /*: Object*/, propName /*: string*/, componentName /*: string*/) /*: ?Error*/{
+  if (props[propName]) {
+    return new Error("Invalid prop ".concat(propName, " passed to ").concat(componentName, " - do not set this, set it on the child."));
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-draggable/node_modules/clsx/dist/clsx.m.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-draggable/node_modules/clsx/dist/clsx.m.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clsx: () => (/* binding */ clsx),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e))for(t=0;t<e.length;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);else for(t in e)e[t]&&(n&&(n+=" "),n+=t);return n}function clsx(){for(var e,t,f=0,n="";f<arguments.length;)(e=arguments[f++])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clsx);
 
 /***/ }),
 
@@ -21238,6 +29382,7 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -22581,6 +30726,7 @@ exports.jsxs = jsxs;
   \*******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 if (false) {} else {
@@ -22596,6 +30742,7 @@ if (false) {} else {
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "images/1.124bd6ff.jpg";
 
 /***/ }),
@@ -22606,6 +30753,7 @@ module.exports = __webpack_require__.p + "images/1.124bd6ff.jpg";
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "images/2.838485f9.jpg";
 
 /***/ }),
@@ -22616,6 +30764,7 @@ module.exports = __webpack_require__.p + "images/2.838485f9.jpg";
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "images/3.7506203b.jpg";
 
 /***/ }),
@@ -22626,7 +30775,19 @@ module.exports = __webpack_require__.p + "images/3.7506203b.jpg";
   \************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["React"];
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactDOM"];
 
 /***/ }),
 
@@ -22636,6 +30797,7 @@ module.exports = window["React"];
   \*************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -22646,6 +30808,7 @@ module.exports = window["wp"]["blockEditor"];
   \********************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["blocks"];
 
 /***/ }),
@@ -22656,6 +30819,7 @@ module.exports = window["wp"]["blocks"];
   \************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["components"];
 
 /***/ }),
@@ -22666,6 +30830,7 @@ module.exports = window["wp"]["components"];
   \******************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["data"];
 
 /***/ }),
@@ -22676,6 +30841,7 @@ module.exports = window["wp"]["data"];
   \*********************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["element"];
 
 /***/ }),
@@ -22686,6 +30852,7 @@ module.exports = window["wp"]["element"];
   \******************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["i18n"];
 
 /***/ }),
@@ -22696,6 +30863,7 @@ module.exports = window["wp"]["i18n"];
   \************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["primitives"];
 
 /***/ }),
@@ -22706,6 +30874,7 @@ module.exports = window["wp"]["primitives"];
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ A11y)
@@ -23096,6 +31265,7 @@ function A11y(_ref) {
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Autoplay)
@@ -23415,6 +31585,7 @@ function Autoplay(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Controller)
@@ -23617,6 +31788,7 @@ function Controller(_ref) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCards)
@@ -23761,6 +31933,7 @@ function EffectCards(_ref) {
   \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCoverflow)
@@ -23890,6 +32063,7 @@ function EffectCoverflow(_ref) {
   \*********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCreative)
@@ -24057,6 +32231,7 @@ function EffectCreative(_ref) {
   \*****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCube)
@@ -24249,6 +32424,7 @@ function EffectCube(_ref) {
   \*****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFade)
@@ -24333,6 +32509,7 @@ function EffectFade(_ref) {
   \*****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFlip)
@@ -24470,6 +32647,7 @@ function EffectFlip(_ref) {
   \***************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ freeMode)
@@ -24722,6 +32900,7 @@ function freeMode(_ref) {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Grid)
@@ -24891,6 +33070,7 @@ function Grid(_ref) {
   \*********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HashNavigation)
@@ -25000,6 +33180,7 @@ function HashNavigation(_ref) {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ History)
@@ -25157,6 +33338,7 @@ function History(_ref) {
   \***********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A11y: () => (/* reexport safe */ _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__["default"]),
@@ -25238,6 +33420,7 @@ __webpack_require__.r(__webpack_exports__);
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Keyboard)
@@ -25371,6 +33554,7 @@ function Keyboard(_ref) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Manipulation)
@@ -25576,6 +33760,7 @@ function Manipulation(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Mousewheel)
@@ -25985,6 +34170,7 @@ function Mousewheel(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Navigation)
@@ -26201,6 +34387,7 @@ function Navigation(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Pagination)
@@ -26661,6 +34848,7 @@ function Pagination(_ref) {
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Parallax)
@@ -26800,6 +34988,7 @@ function Parallax(_ref) {
   \***************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Scrollbar)
@@ -27184,6 +35373,7 @@ function Scrollbar(_ref) {
   \************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Thumb)
@@ -27392,6 +35582,7 @@ function Thumb(_ref) {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Virtual)
@@ -27757,6 +35948,7 @@ function Virtual(_ref) {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Zoom)
@@ -28394,6 +36586,7 @@ function Zoom(_ref) {
   \************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ classesToSelector)
@@ -28417,6 +36610,7 @@ function classesToSelector(classes) {
   \**********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createElementIfNotDefined)
@@ -28453,6 +36647,7 @@ function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createShadow)
@@ -28482,6 +36677,7 @@ function createShadow(suffix, slideEl, side) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectInit)
@@ -28554,6 +36750,7 @@ function effectInit(params) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectTarget)
@@ -28581,6 +36778,7 @@ function effectTarget(effectParams, slideEl) {
   \**********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectVirtualTransitionEnd)
@@ -28644,6 +36842,7 @@ function effectVirtualTransitionEnd(_ref) {
   \*******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ getWindow),
@@ -28804,6 +37003,7 @@ function getWindow() {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ Swiper),
@@ -32728,6 +40928,7 @@ Swiper.use([Resize, Observer]);
   \***************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ getChangedParams),
@@ -32877,6 +41078,7 @@ const updateOnVirtualData = swiper => {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ needsPagination),
@@ -33136,6 +41338,7 @@ function updateSwiper(_ref) {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ elementParents),
@@ -33464,6 +41667,7 @@ function makeElementsArray(el) {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Swiper: () => (/* binding */ Swiper),
@@ -33879,6 +42083,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \*******************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"parallax":{"type":"boolean","default":false},"contentType":{"type":"string","default":"custom"},"posts":{"type":"array","default":[]},"overflow":{"type":"string","default":"visible"},"backgroundBorderColor":{"type":"string","default":"#000000"},"backgroundBorderSize":{"type":"number","default":0},"backgroundBorderRadius":{"type":"number","default":0},"backgroundVerticalPadding":{"type":"number","default":0},"backgroundHorizontalPadding":{"type":"number","default":0},"backgroundColor":{"type":"string","default":"#81D1FF"},"textColorDefault":{"type":"string","default":"#000000"},"backgroundColorSlideDefault":{"type":"string","default":"#81D1FF"},"backgroundColorBlockDefault":{"type":"string","default":"#FFFFFF"},"innerTextColorDefault":{"type":"string","default":"#000000"},"filter":{"type":"string","default":" "},"colorOneEffect":{"type":"string","default":"rgba(243, 106, 188, 0.5)"},"colorTwoEffect":{"type":"string","default":"rgba(243, 106, 188, 0)"},"colorThreeEffect":{"type":"string","default":"rgba(243, 106, 188, 0.7)"}}}');
 
 /***/ })

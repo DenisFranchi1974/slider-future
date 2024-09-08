@@ -632,18 +632,18 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
               </div>
               {navigation === true && (
                 <>
-                 <p
-                  className="notice components-base-control__help"
-                  style={{
-                    borderRadius: "0",
-                    margin: "0",
-                  }}
-                >
-                  {__(
-                    'Warning: In order for the carousel navigation to work in the editor, you need to change the carousel type below! Just move it once and choose the type you want!',
-                    "cocoblocks"
-                  )}
-                </p>
+                  <p
+                    className="notice components-base-control__help"
+                    style={{
+                      borderRadius: "0",
+                      margin: "0",
+                    }}
+                  >
+                    {__(
+                      "Warning: In order for the carousel navigation to work in the editor, you need to change the carousel type below! Just move it once and choose the type you want!",
+                      "cocoblocks"
+                    )}
+                  </p>
                   <div className="custom-select select-control-label-right">
                     <SelectControl
                       label={__("Type", "cocoblocks")}

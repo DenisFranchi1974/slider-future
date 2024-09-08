@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RangeControl} from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import "./editor.scss"; // Assicurati di avere il file CSS per lo stile del componente
+import "./editor.scss"; 
 import ColorOptionsPanel from "./colorPanel";
 
 const BoxShadowControl = ({ 
@@ -12,7 +12,7 @@ const BoxShadowControl = ({
     setAttributes,
 }) => {
 
-  const [shadowType, setShadowType] = useState("outside"); // "outside" or "inside"
+  const [shadowType, setShadowType] = useState("outside"); 
 
   // Color Shadow
   const updateColorShadow = (slideId, index, value) => {

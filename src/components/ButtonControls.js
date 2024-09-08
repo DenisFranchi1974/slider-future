@@ -20,7 +20,7 @@ import SectionSelector from "./sectionSelector";
 import TextControlsHover from "./TextControlsHover";
 import BoxShadowControl from "./boxShadow";
 
-const TextControls = ({
+const ButtonControls = ({
   slide,
   element,
   elementIndex,
@@ -48,29 +48,47 @@ const TextControls = ({
     setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
   };
 
-  // Remove Text
-  const removeSlideTitle = (slideId, index) => {
+  // Remove button
+  const removeSlideButton = (slideId, index) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.filter(
-              (element, i) => !(element.type === "title" && i === index)
+              (element, i) => !(element.type === "button" && i === index)
             ),
           }
         : slide
     );
     setAttributes({ slides: updatedSlides });
   };
-  // Update Text
-  const updateSlideTitle = (slideId, index, newTitle) => {
+
+    // Update button
+    const updateSlideButton = (slideId, index, newButton) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, button: newButton }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+  // Update button align
+  const updateButtonAlign = (slideId, index, align) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, text: newTitle }
+              element.type === "button" && i === index
+                ? { ...element, buttonAlign: align }
                 : element
             ),
           }
@@ -79,15 +97,15 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Update Text align
-  const updateTextAlign = (slideId, index, align) => {
+  // Update button color
+  const updateSlideButtonColor = (slideId, index, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, textAlign: align }
+              element.type === "button" && i === index
+                ? { ...element, buttonColor: color }
                 : element
             ),
           }
@@ -96,33 +114,33 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Update Text color
-  const updateSlideTextColor = (slideId, index, color) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, textColor: color }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+    // Update button background color
+    const updateSlideButtonBackgroundColor = (slideId, index, color) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, buttonBackgroundColor: color }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
 
   // Update Font Style
-  const updateFontStyle = (slideId, index, styleType, value) => {
+  const updateFontStyleButton = (slideId, index, styleType, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) => {
-              if (element.type === "title" && i === index) {
+              if (element.type === "button" && i === index) {
                 const updatedFontStyle = {
-                  ...element.fontStyle,
+                  ...element.fontStyleButton,
                   [styleType]: value,
                 };
                 return {
@@ -139,14 +157,14 @@ const TextControls = ({
   };
 
   // Update Font Family
-  const updateTextFamily = (slideId, index, family) => {
+  const updateButtonFamily = (slideId, index, family) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontFamily: family }
+              element.type === "button" && i === index
+                ? { ...element, fontFamilyButton: family }
                 : element
             ),
           }
@@ -156,14 +174,14 @@ const TextControls = ({
   };
 
   // Update border style
-  const updateBorderStyle = (slideId, index, newBorderStyle) => {
+  const updateBorderStyleButton = (slideId, index, newBorderStyle) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, borderStyle: newBorderStyle }
+              element.type === "button" && i === index
+                ? { ...element, borderStyleButton: newBorderStyle }
                 : element
             ),
           }
@@ -173,14 +191,14 @@ const TextControls = ({
   };
 
   // Update Font Weight
-  const updateTextWeight = (slideId, index, weight) => {
+  const updateButtonWeight = (slideId, index, weight) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontWeight: weight }
+              element.type === "button" && i === index
+                ? { ...element, fontWeightButton: weight }
                 : element
             ),
           }
@@ -190,14 +208,14 @@ const TextControls = ({
   };
 
   // Update Rotate
-  const updateRotate = (slideId, index, rotate) => {
+  const updateRotateButton = (slideId, index, rotate) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, rotate: rotate }
+              element.type === "button" && i === index
+                ? { ...element, rotateButton: rotate }
                 : element
             ),
           }
@@ -207,14 +225,14 @@ const TextControls = ({
   };
 
   // Update Opacity
-  const updateOpacity = (slideId, index, opacity) => {
+  const updateOpacityButton = (slideId, index, opacity) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, opacity: opacity }
+              element.type === "button" && i === index
+                ? { ...element, opacityButton: opacity }
                 : element
             ),
           }
@@ -223,32 +241,16 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Element
-  const updateElementTitle = (slideId, index, newElementTitle) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, elementTitle: newElementTitle }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
+  
   // Width
-  const updateWidthTitle = (slideId, index, newWidthTitle) => {
+  const updateWidthButton = (slideId, index, newWidthTitle) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, widthTitle: newWidthTitle }
+              element.type === "button" && i === index
+                ? { ...element, widthButton: newWidthTitle }
                 : element
             ),
           }
@@ -258,14 +260,14 @@ const TextControls = ({
   };
 
   // Custom width
-  const updateCustomWidthTitle = (slideId, index, customWidth) => {
+  const updateCustomWidthButton = (slideId, index, customWidth) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, widthCustomTitle: customWidth }
+              element.type === "button" && i === index
+                ? { ...element, widthCustomButton: customWidth }
                 : element
             ),
           }
@@ -275,14 +277,14 @@ const TextControls = ({
   };
 
   // Size
-  const updateFontSize = (slideId, index, newSize) => {
+  const updateFontSizeButton = (slideId, index, newSize) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontSize: newSize }
+              element.type === "button" && i === index
+                ? { ...element, fontSizeButton: newSize }
                 : element
             ),
           }
@@ -291,14 +293,14 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
   // Size Tablet
-  const updateFontSizeTablet = (slideId, index, newSizeTablet) => {
+  const updateFontSizeButtonTablet = (slideId, index, newSizeTablet) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontSizeTablet: newSizeTablet }
+              element.type === "button" && i === index
+                ? { ...element, fontSizeButtonTablet: newSizeTablet }
                 : element
             ),
           }
@@ -307,14 +309,14 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
   // Size Mobile
-  const updateFontSizeMobile = (slideId, index, newSizeMobile) => {
+  const updateFontSizeButtonMobile = (slideId, index, newSizeMobile) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontSizeMobile: newSizeMobile }
+              element.type === "button" && i === index
+                ? { ...element, fontSizeButtonMobile: newSizeMobile }
                 : element
             ),
           }
@@ -324,14 +326,14 @@ const TextControls = ({
   };
 
   // Line height
-  const updateLineHeight = (slideId, index, newLineHeight) => {
+  const updateLineHeightButton = (slideId, index, newLineHeight) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, lineHeight: newLineHeight }
+              element.type === "button" && i === index
+                ? { ...element, lineHeightButton: newLineHeight }
                 : element
             ),
           }
@@ -341,14 +343,14 @@ const TextControls = ({
   };
 
   // Letter Spacing
-  const updateLetterSpacing = (slideId, index, newLetterSpacing) => {
+  const updateLetterSpacingButton = (slideId, index, newLetterSpacing) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, letterSpacing: newLetterSpacing }
+              element.type === "button" && i === index
+                ? { ...element, letterSpacingButton: newLetterSpacing }
                 : element
             ),
           }
@@ -358,14 +360,14 @@ const TextControls = ({
   };
 
   // Duration effect
-  const updateDurationEffect = (slideId, index, newDurationEffect) => {
+  const updateDurationEffectButton = (slideId, index, newDurationEffect) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, durationEffect: newDurationEffect }
+              element.type === "button" && i === index
+                ? { ...element, durationEffectButton: newDurationEffect }
                 : element
             ),
           }
@@ -374,83 +376,16 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Duration effect odd
-  const updateDurationEffectOdd = (slideId, index, newDurationEffectOdd) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, durationEffectOdd: newDurationEffectOdd }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Duration effect even
-  const updateDurationEffectEven = (slideId, index, newDurationEffectEven) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, durationEffectEven: newDurationEffectEven }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Speed effect
-  const updateEffectSpeed = (slideId, index, newSpeedEffect) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, speedEffect: newSpeedEffect }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Pause effect
-  const updateEffectPause = (slideId, index, newPauseEffect) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, pauseEffect: newPauseEffect }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
+  
   // Delay effect
-  const updateDelayEffect = (slideId, index, newDelayEffect) => {
+  const updateDelayEffectButton = (slideId, index, newDelayEffect) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, delayEffect: newDelayEffect }
+              element.type === "button" && i === index
+                ? { ...element, delayEffectButton: newDelayEffect }
                 : element
             ),
           }
@@ -459,134 +394,16 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Width Cursor
-  const updateWidthCursor = (slideId, index, newWidthCursor) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, widthCursor: newWidthCursor }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Animation Cursor
-  const updateAnimationCursor = (slideId, index, newAnimationCursor) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, animationCursor: newAnimationCursor }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Cursor color
-  const updateCursorColor = (slideId, index, newCursorColor) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, cursorColor: newCursorColor }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Gradient color one
-  const updateGradinetColorOne = (slideId, index, newGradinetColorOne) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, gradinetColorOne: newGradinetColorOne }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Gradient color two
-  const updateGradinetColorTwo = (slideId, index, newGradinetColorTwo) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, gradinetColorTwo: newGradinetColorTwo }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Gradient color three
-  const updateGradinetColorThree = (slideId, index, newGradinetColorThree) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, gradinetColorThree: newGradinetColorThree }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update Gradient color four
-  const updateGradinetColorFour = (slideId, index, newGradinetColorFour) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, gradinetColorFour: newGradinetColorFour }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
 
   // Update Border color
-  const updateTitleBackgroundBorderColor = (slideId, index, color) => {
+  const updateButtonBackgroundBorderColor = (slideId, index, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, backgroundBorderColor: color }
+              element.type === "button" && i === index
+                ? { ...element, backgroundBorderColorButton: color }
                 : element
             ),
           }
@@ -596,14 +413,14 @@ const TextControls = ({
   };
 
   // Width border
-  const updateTitleBackgroundBorderSize = (slideId, index, newSize) => {
+  const updateButtonBackgroundBorderSize = (slideId, index, newSize) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, backgroundBorderSize: newSize }
+              element.type === "button" && i === index
+                ? { ...element, backgroundBorderSizeButton: newSize }
                 : element
             ),
           }
@@ -613,14 +430,14 @@ const TextControls = ({
   };
 
   // Border radius
-  const updateTitleBackgroundBorderRadius = (slideId, index, newRadius) => {
+  const updateButtonBackgroundBorderRadius = (slideId, index, newRadius) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, backgroundBorderRadius: newRadius }
+              element.type === "button" && i === index
+                ? { ...element, backgroundBorderRadiusButton: newRadius }
                 : element
             ),
           }
@@ -630,7 +447,7 @@ const TextControls = ({
   };
 
   // Padding title
-  const updatenewPaddingtitle = (slideId, index, newPaddingtitle) => {
+  const updatenewPaddingButton = (slideId, index, newPaddingtitle) => {
     console.log("Updating margin with:", newPaddingtitle); // Log per debug
 
     const addUnit = (value, unit) => {
@@ -646,10 +463,10 @@ const TextControls = ({
         ? {
             ...slide,
             elements: slide.elements.map((element, i) => {
-              if (element.type === "title" && i === index) {
+              if (element.type === "button" && i === index) {
                 return {
                   ...element,
-                  paddingTitle: {
+                  paddingButton: {
                     top: addUnit(
                       newPaddingtitle.top || "0",
                       newPaddingtitle.unit || "px"
@@ -678,7 +495,7 @@ const TextControls = ({
   };
 
   // Margin title
-  const updatenewMargintitle = (slideId, index, newMargintitle) => {
+  const updatenewMarginButton = (slideId, index, newMargintitle) => {
     console.log("Updating margin with:", newMargintitle); // Log per debug
 
     const addUnit = (value, unit) => {
@@ -694,10 +511,10 @@ const TextControls = ({
         ? {
             ...slide,
             elements: slide.elements.map((element, i) => {
-              if (element.type === "title" && i === index) {
+              if (element.type === "button" && i === index) {
                 return {
                   ...element,
-                  marginTitle: {
+                  marginButton: {
                     top: addUnit(
                       newMargintitle.top || "0",
                       newMargintitle.unit || "px"
@@ -726,14 +543,14 @@ const TextControls = ({
   };
 
   // Parallax text x
-  const updateParallaxTitle = (slideId, index, newParallaxTitle) => {
+  const updateParallaxButton = (slideId, index, newParallaxTitle) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, parallaxTitle: newParallaxTitle }
+              element.type === "button" && i === index
+                ? { ...element, parallaxButton: newParallaxTitle }
                 : element
             ),
           }
@@ -743,14 +560,14 @@ const TextControls = ({
   };
 
   // Parallax text y
-  const updateParallaxTitleY = (slideId, index, newParallaxTitleY) => {
+  const updateParallaxButtonY = (slideId, index, newParallaxTitleY) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, parallaxTitleY: newParallaxTitleY }
+              element.type === "button" && i === index
+                ? { ...element, parallaxButtonY: newParallaxTitleY }
                 : element
             ),
           }
@@ -760,14 +577,14 @@ const TextControls = ({
   };
 
   // Parallax text scale
-  const updateParallaxTitleScale = (slideId, index, newParallaxTitleScale) => {
+  const updateParallaxButtonScale = (slideId, index, newParallaxTitleScale) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, parallaxTitleScale: newParallaxTitleScale }
+              element.type === "button" && i === index
+                ? { ...element, parallaxButtonScale: newParallaxTitleScale }
                 : element
             ),
           }
@@ -777,7 +594,7 @@ const TextControls = ({
   };
 
   // Parallax text opacity
-  const updateParallaxTitleOpacity = (
+  const updateParallaxButtonOpacity = (
     slideId,
     index,
     newParallaxTitleOpacity
@@ -787,8 +604,8 @@ const TextControls = ({
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, parallaxTitleOpacity: newParallaxTitleOpacity }
+              element.type === "button" && i === index
+                ? { ...element, parallaxButtonOpacity: newParallaxTitleOpacity }
                 : element
             ),
           }
@@ -798,7 +615,7 @@ const TextControls = ({
   };
 
   // Parallax text duration
-  const updateParallaxTitleDuration = (
+  const updateParallaxButtonDuration = (
     slideId,
     index,
     newParallaxTitleDuration
@@ -808,10 +625,10 @@ const TextControls = ({
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
+              element.type === "button" && i === index
                 ? {
                     ...element,
-                    parallaxTitleDuration: newParallaxTitleDuration,
+                    parallaxButtonDuration: newParallaxTitleDuration,
                   }
                 : element
             ),
@@ -822,65 +639,14 @@ const TextControls = ({
   };
 
   // Effect Text Split
-  const updateTextAnimation = (slideId, index, animation) => {
+  const updateButtonAnimation = (slideId, index, animation) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, animation: animation }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Effect Text Split Count
-  const updateTextAnimationCount = (slideId, index, animationCount) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, animationCount: animationCount }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Text Write mode
-  const updateTextWriteMode = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, textWriteMode: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Text Write direction
-  const updateTexOrientation = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, textOrientation: value }
+              element.type === "button" && i === index
+                ? { ...element, animationButton: animation }
                 : element
             ),
           }
@@ -890,14 +656,14 @@ const TextControls = ({
   };
 
   // Selector link
-  const updateTextLink = (slideId, index, value) => {
+  const updateButtonLink = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, textLink: value }
+              element.type === "button" && i === index
+                ? { ...element, buttonLink: value }
                 : element
             ),
           }
@@ -907,14 +673,14 @@ const TextControls = ({
   };
 
   // Link Url
-  const updateLinkUrl = (slideId, index, url) => {
+  const updateLinkUrlButton = (slideId, index, url) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, linkUrl: url }
+              element.type === "button" && i === index
+                ? { ...element, linkUrlButton: url }
                 : element
             ),
           }
@@ -924,14 +690,14 @@ const TextControls = ({
   };
 
   // Link Target
-  const updateScrollToId = (slideId, index, id) => {
+  const updateScrollToIdButton = (slideId, index, id) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, scrollToId: id }
+              element.type === "button" && i === index
+                ? { ...element, scrollToIdButton: id }
                 : element
             ),
           }
@@ -941,14 +707,14 @@ const TextControls = ({
   };
 
   // Link Target
-  const updateLinkTarget = (slideId, index, value) => {
+  const updateLinkTargetButton = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, linkTarget: value }
+              element.type === "button" && i === index
+                ? { ...element, linkTargetButton: value }
                 : element
             ),
           }
@@ -958,14 +724,14 @@ const TextControls = ({
   };
 
   // Link Rel
-  const updateLinkRel = (slideId, index, value) => {
+  const updateLinkRelButton = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, linkRel: value }
+              element.type === "button" && i === index
+                ? { ...element, linkRelButton: value }
                 : element
             ),
           }
@@ -974,253 +740,16 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Decoration
-  const updateDecoration = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, decoration: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration color
-  const updateUnderlineColor = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineColor: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration padding
-  const updateUnderlinePadding = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlinePadding: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration vertical
-  const updateUnderlineVertical = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineVertical: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Horizontal
-  const updateUnderlineHorizontal = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineHorizontal: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Height
-  const updateUnderlineHeight = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineHeight: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Width
-  const updateUnderlineWidth = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineWidth: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Animation
-  const updateUnderlineAnimation = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineAnimation: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Animation From
-  const updateUnderlineAnimationFrom = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineAnimationFrom: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Animation To
-  const updateUnderlineAnimationTo = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineAnimationTo: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Animation From Size
-  const updateUnderlineFromSizeNew = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineFromSizeNew: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Animation To Size
-  const updateUnderlineToSizeNew = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineToSizeNew: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Decoration Animation Transition
-  const updateUnderlineAnimationTransition = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, underlineAnimationTransition: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // interaction animation
-  const updateInteration = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, interation: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
 
   // Enable Desktop
-  const updateEnableDesktopTitle = (slideId, index, value) => {
+  const updateEnableDesktopButton = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, enableDesktopTitle: value }
+              element.type === "button" && i === index
+                ? { ...element, enableDesktopButton: value }
                 : element
             ),
           }
@@ -1230,14 +759,14 @@ const TextControls = ({
   };
 
   // Enable Tablet
-  const updateEnableTabletTitle = (slideId, index, value) => {
+  const updateEnableTabletButton = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, enableTabletTitle: value }
+              element.type === "button" && i === index
+                ? { ...element, enableTabletButton: value }
                 : element
             ),
           }
@@ -1247,27 +776,20 @@ const TextControls = ({
   };
 
   // Enable Mobile
-  const updateEnableMobileTitle = (slideId, index, value) => {
+  const updateEnableMobileButton = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, enableMobileTitle: value }
+              element.type === "button" && i === index
+                ? { ...element, enableMobileButton: value }
                 : element
             ),
           }
         : slide
     );
     setAttributes({ slides: updatedSlides });
-  };
-
-  // Open panel
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
   // Font Family Options
@@ -1355,7 +877,7 @@ const TextControls = ({
         <div className="title-element">
           <Button
             isDestructive
-            onClick={() => removeSlideTitle(slide.id, elementIndex)}
+            onClick={() => removeSlideButton(slide.id, elementIndex)}
             className="button-remove-element"
             style={{
               position: "absolute",
@@ -1374,20 +896,9 @@ const TextControls = ({
           >
             <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
           </svg>
-          <h2>{__("Text", "cocoblocks")}</h2>
+          <h2>{__("Button", "cocoblocks")}</h2>
         </div>
-        <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
-        <button onClick={handleToggle} className="button-open-control-element">
-          {isOpen ? (
-             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-          )}
-        </button>
-      </Tooltip>
       </div>
-      {isOpen && (
-        <>
       <SectionSelector onSectionChange={setActiveSection} />
       {activeSection === "content" && (
         <>
@@ -1403,13 +914,13 @@ const TextControls = ({
           </div>
 
           <div className="content-section-panel" style={{ padding: "0" }}>
-            <div className="custom-select">
+          <div className="custom-select">
               <TextareaControl
-                value={element.text}
-                onChange={(newTitle) =>
-                  updateSlideTitle(slide.id, elementIndex, newTitle)
+                value={element.button}
+                onChange={(newButton) =>
+                  updateSlideButton(slide.id, elementIndex, newButton)
                 }
-                placeholder={__("Add text content...", "cocoblocks")}
+                placeholder={__("Add button", "cocoblocks")}
               />
             </div>
             <div className="custom-select select-control-label-right">
@@ -1428,9 +939,9 @@ const TextControls = ({
                     {__("Width", "cocoblocks")}
                   </>
                 }
-                value={element.widthTitle}
+                value={element.widthButton}
                 onChange={(newElement) =>
-                  updateWidthTitle(slide.id, elementIndex, newElement)
+                  updateWidthButton(slide.id, elementIndex, newElement)
                 }
                 options={[
                   {
@@ -1448,7 +959,7 @@ const TextControls = ({
                 ]}
               />
             </div>
-            {element.widthTitle !== "auto" && (
+            {element.widthButton !== "auto" && (
               <p
                 className="notice components-base-control__help"
                 style={{
@@ -1463,7 +974,7 @@ const TextControls = ({
                 )}
               </p>
             )}
-            {element.widthTitle === "custom" && (
+            {element.widthButton === "custom" && (
               <>
                 <div className="custom-select">
                   <RangeControl
@@ -1481,9 +992,9 @@ const TextControls = ({
                         {__("Custom Width (%)", "cocoblocks")}
                       </>
                     }
-                    value={element.widthCustomTitle}
+                    value={element.widthCustomButton}
                     onChange={(customWidth) =>
-                      updateCustomWidthTitle(
+                      updateCustomWidthButton(
                         slide.id,
                         elementIndex,
                         customWidth
@@ -1498,62 +1009,10 @@ const TextControls = ({
             )}
             <div className="custom-select">
               <AlignmentControlThree
-                value={element.textAlign}
+                value={element.buttonAlign}
                 onChange={(align) =>
-                  updateTextAlign(slide.id, elementIndex, align)
+                  updateButtonAlign(slide.id, elementIndex, align)
                 }
-              />
-            </div>
-            <div className="custom-select select-control-label-right">
-              <SelectControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M360-160v-240q-83 0-141.5-58.5T160-600q0-83 58.5-141.5T360-800h360v80h-80v560h-80v-560H440v560h-80Z" />
-                    </svg>
-                    {__("Element html", "cocoblocks")}
-                  </>
-                }
-                value={element.elementTitle}
-                onChange={(newElementTitle) =>
-                  updateElementTitle(slide.id, elementIndex, newElementTitle)
-                }
-                options={[
-                  {
-                    label: __("P", "cocoblocks"),
-                    value: "p",
-                  },
-                  {
-                    label: __("H6", "cocoblocks"),
-                    value: "h6",
-                  },
-                  {
-                    label: __("H5", "cocoblocks"),
-                    value: "h5",
-                  },
-                  {
-                    label: __("H4", "cocoblocks"),
-                    value: "h4",
-                  },
-                  {
-                    label: __("H3", "cocoblocks"),
-                    value: "h3",
-                  },
-                  {
-                    label: __("H2", "cocoblocks"),
-                    value: "h2",
-                  },
-                  {
-                    label: __("H1", "cocoblocks"),
-                    value: "h1",
-                  },
-                ]}
               />
             </div>
           </div>
@@ -1667,9 +1126,9 @@ const TextControls = ({
                       <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
                     </svg>
                   }
-                  value={element.fontSize}
+                  value={element.fontSizeButton}
                   onChange={(newSize) =>
-                    updateFontSize(slide.id, elementIndex, newSize)
+                    updateFontSizeButton(slide.id, elementIndex, newSize)
                   }
                   min={4}
                   max={500}
@@ -1707,9 +1166,9 @@ const TextControls = ({
                       <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
                     </svg>
                   }
-                  value={element.fontSizeTablet}
+                  value={element.fontSizeButtonTablet}
                   onChange={(newSizeTablet) =>
-                    updateFontSizeTablet(slide.id, elementIndex, newSizeTablet)
+                    updateFontSizeButtonTablet(slide.id, elementIndex, newSizeTablet)
                   }
                   min={4}
                   max={500}
@@ -1747,9 +1206,9 @@ const TextControls = ({
                       <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
                     </svg>
                   }
-                  value={element.fontSizeMobile}
+                  value={element.fontSizeButtonMobile}
                   onChange={(newSizeMobile) =>
-                    updateFontSizeMobile(slide.id, elementIndex, newSizeMobile)
+                    updateFontSizeButtonMobile(slide.id, elementIndex, newSizeMobile)
                   }
                   min={4}
                   max={500}
@@ -1759,9 +1218,9 @@ const TextControls = ({
             </div>
             <div className="custom-select">
               <FontStyle
-                value={element.fontStyle || {}} // Inizializza con un oggetto vuoto se undefined
+                value={element.fontStyleButton || {}} // Inizializza con un oggetto vuoto se undefined
                 onChange={(styleType, value) =>
-                  updateFontStyle(slide.id, elementIndex, styleType, value)
+                  updateFontStyleButton(slide.id, elementIndex, styleType, value)
                 }
               />
             </div>
@@ -1781,10 +1240,10 @@ const TextControls = ({
                     {__("Font family", "cocoblocks")}
                   </>
                 }
-                value={element.fontFamily}
+                value={element.fontFamilyButton}
                 options={fontOptions}
                 onChange={(family) =>
-                  updateTextFamily(slide.id, elementIndex, family)
+                  updateButtonFamily(slide.id, elementIndex, family)
                 }
               />
             </div>
@@ -1804,7 +1263,7 @@ const TextControls = ({
                     {__("Font weight", "cocoblocks")}
                   </>
                 }
-                value={element.fontWeight}
+                value={element.fontWeightButton}
                 options={[
                   {
                     label: __("100 Thin", "cocoblocks"),
@@ -1832,7 +1291,7 @@ const TextControls = ({
                   },
                 ]}
                 onChange={(weight) =>
-                  updateTextWeight(slide.id, elementIndex, weight)
+                  updateButtonWeight(slide.id, elementIndex, weight)
                 }
               />
             </div>
@@ -1852,9 +1311,9 @@ const TextControls = ({
                     {__("Line height", "cocoblocks")}
                   </>
                 }
-                value={element.lineHeight}
+                value={element.lineHeightButton}
                 onChange={(newLineHeight) =>
-                  updateLineHeight(slide.id, elementIndex, newLineHeight)
+                  updateLineHeightButton(slide.id, elementIndex, newLineHeight)
                 }
                 min={0.5}
                 max={2.5}
@@ -1877,9 +1336,9 @@ const TextControls = ({
                     {__("Letter spacing", "cocoblocks")}
                   </>
                 }
-                value={element.letterSpacing}
+                value={element.letterSpacingButton}
                 onChange={(newLetterSpacing) =>
-                  updateLetterSpacing(slide.id, elementIndex, newLetterSpacing)
+                  updateLetterSpacingButton(slide.id, elementIndex, newLetterSpacing)
                 }
                 min={0}
                 max={100}
@@ -1901,11 +1360,36 @@ const TextControls = ({
             </p>
             <div className="custom-select color">
               <ColorOptionsPanel
-                colorNormal={element.textColor}
+                colorNormal={element.buttonColor}
                 setColorNormal={(color) =>
-                  updateSlideTextColor(slide.id, elementIndex, color)
+                  updateSlideButtonColor(slide.id, elementIndex, color)
                 }
-                buttonTitle={__("Text Color", "cocoblocks")}
+                buttonTitle={__("Color", "cocoblocks")}
+                buttonIcon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                    fill="#e8eaed"
+                    style={{
+                      marginBottom: "-9px",
+                      height: "24px",
+                      width: "24px",
+                      marginLeft: "-4px",
+                      marginRight: "-4px",
+                    }}
+                  >
+                    <path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z" />
+                  </svg>
+                }
+              />
+            </div>
+            <div className="custom-select color">
+              <ColorOptionsPanel
+                colorNormal={element.buttonBackgroundColor}
+                setColorNormal={(color) =>
+                  updateSlideButtonBackgroundColor(slide.id, elementIndex, color)
+                }
+                buttonTitle={__("Background Color", "cocoblocks")}
                 buttonIcon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1952,10 +1436,10 @@ const TextControls = ({
                     {__("Padding", "cocoblocks")}
                   </>
                 }
-                values={element.paddingTitle}
+                values={element.paddingButton}
                 units={{}}
                 onChange={(newPaddingtitle) =>
-                  updatenewPaddingtitle(slide.id, elementIndex, newPaddingtitle)
+                  updatenewPaddingButton(slide.id, elementIndex, newPaddingtitle)
                 }
               />
             </div>
@@ -1980,10 +1464,10 @@ const TextControls = ({
                     {__("Margin", "cocoblocks")}
                   </>
                 }
-                values={element.marginTitle}
+                values={element.marginButton}
                 units={{}}
                 onChange={(newMargintitle) =>
-                  updatenewMargintitle(slide.id, elementIndex, newMargintitle)
+                  updatenewMarginButton(slide.id, elementIndex, newMargintitle)
                 }
               />
             </div>
@@ -2011,7 +1495,7 @@ const TextControls = ({
                     {__("Border style", "cocoblocks")}
                   </>
                 }
-                value={element.borderStyle}
+                value={element.borderStyleButton}
                 options={[
                   {
                     label: __("None", "cocoblocks"),
@@ -2035,17 +1519,17 @@ const TextControls = ({
                   },
                 ]}
                 onChange={(newBorderStyle) =>
-                  updateBorderStyle(slide.id, elementIndex, newBorderStyle)
+                  updateBorderStyleButton(slide.id, elementIndex, newBorderStyle)
                 }
               />
             </div>
-            {element.borderStyle !== "none" && (
+            {element.borderStyleButton !== "none" && (
               <>
                 <div className="custom-select color">
                   <ColorOptionsPanel
-                    colorNormal={element.backgroundBorderColor}
+                    colorNormal={element.backgroundBorderColorButton}
                     setColorNormal={(color) =>
-                      updateTitleBackgroundBorderColor(
+                      updateButtonBackgroundBorderColor(
                         slide.id,
                         elementIndex,
                         color
@@ -2085,9 +1569,9 @@ const TextControls = ({
                         {__("Border width", "cocoblocks")}
                       </>
                     }
-                    value={element.backgroundBorderSize}
+                    value={element.backgroundBorderSizeButton}
                     onChange={(newSize) =>
-                      updateTitleBackgroundBorderSize(
+                      updateButtonBackgroundBorderSize(
                         slide.id,
                         elementIndex,
                         newSize
@@ -2115,9 +1599,9 @@ const TextControls = ({
                         {__("Border radius", "cocoblocks")}
                       </>
                     }
-                    value={element.backgroundBorderRadius}
+                    value={element.backgroundBorderRadiusButton}
                     onChange={(newRadius) =>
-                      updateTitleBackgroundBorderRadius(
+                      updateButtonBackgroundBorderRadius(
                         slide.id,
                         elementIndex,
                         newRadius
@@ -2162,66 +1646,13 @@ const TextControls = ({
                     {__("Rotate", "cocoblocks")}
                   </>
                 }
-                value={element.rotate}
+                value={element.rotateButton}
                 onChange={(rotate) =>
-                  updateRotate(slide.id, elementIndex, rotate)
+                  updateRotateButton(slide.id, elementIndex, rotate)
                 }
                 min={0}
                 max={360}
                 step={1}
-              />
-            </div>
-            <div className="custom-select select-control-label-right">
-              <SelectControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M360-360v-200q-66 0-113-47t-47-113q0-66 47-113t113-47h320v80h-80v440h-80v-440h-80v440h-80Zm0-280v-160q-33 0-56.5 23.5T280-720q0 33 23.5 56.5T360-640Zm0-80ZM680-80l-56-56 64-64H120v-80h568l-64-64 56-56 160 160L680-80Z" />
-                    </svg>
-                    {__("Writing mode", "cocoblocks")}
-                  </>
-                }
-                value={element.textWriteMode}
-                options={[
-                  { label: "Horizontal", value: "initial" },
-                  { label: "Vertical lr", value: "vertical-lr" },
-                  { label: "Vertical rl", value: "vertical-rl" },
-                ]}
-                onChange={(value) =>
-                  updateTextWriteMode(slide.id, elementIndex, value)
-                }
-              />
-            </div>
-            <div className="custom-select select-control-label-right">
-              <SelectControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M160-160v-640h80v640h-80Zm560 0v-640h80v640h-80Zm-296-98L282-400l142-141 56 56-45 45h85q33 0 56.5-23.5T600-520q0-33-23.5-56.5T520-600H280v-80h240q66 0 113 47t47 113q0 66-47 113t-113 47h-85l45 45-56 57Z" />
-                    </svg>
-                    {__("Orientation", "cocoblocks")}
-                  </>
-                }
-                value={element.textOrientation}
-                options={[
-                  { label: "Initial", value: "initial" },
-                  { label: "Upright", value: "upright" },
-                ]}
-                onChange={(value) =>
-                  updateTexOrientation(slide.id, elementIndex, value)
-                }
               />
             </div>
           </div>
@@ -2247,9 +1678,9 @@ const TextControls = ({
                     {__("Opacity", "cocoblocks")}
                   </>
                 }
-                value={element.opacity}
+                value={element.opacityButton}
                 onChange={(opacity) =>
-                  updateOpacity(slide.id, elementIndex, opacity)
+                  updateOpacityButton(slide.id, elementIndex, opacity)
                 }
                 min={0}
                 max={1}
@@ -2295,7 +1726,7 @@ const TextControls = ({
                     {__("Animation", "cocoblocks")}
                   </>
                 }
-                value={element.animation}
+                value={element.animationButton}
                 options={[
                   { label: "None", value: "none" },
                   { label: "Fade In", value: "fade-in" },
@@ -2364,11 +1795,11 @@ const TextControls = ({
                   { label: "Neon Effect", value: "text-neon" },
                 ]}
                 onChange={(animation) =>
-                  updateTextAnimation(slide.id, elementIndex, animation)
+                  updateButtonAnimation(slide.id, elementIndex, animation)
                 }
               />
             </div>
-            {element.animation !== "none" && (
+            {element.animationButton !== "none" && (
               <>
                 {![
                   " ",
@@ -2377,7 +1808,7 @@ const TextControls = ({
                   "text-shadow-light",
                   "text-shadow-heavy",
                   "text-neon",
-                ].includes(element.animation) && (
+                ].includes(element.animationButton) && (
                   <div className="custom-select">
                     <RangeControl
                       label={
@@ -2394,9 +1825,9 @@ const TextControls = ({
                           {__("Duration", "cocoblocks")}
                         </>
                       }
-                      value={element.durationEffect}
+                      value={element.durationEffectButton}
                       onChange={(newDurationEffect) =>
-                        updateDurationEffect(
+                        updateDurationEffectButton(
                           slide.id,
                           elementIndex,
                           newDurationEffect
@@ -2410,8 +1841,17 @@ const TextControls = ({
                 )}
               </>
             )}
-             {element.animation !== "none" && (
-              <>
+            {[
+              "explode",
+              "implode",
+              "letters-fly-in-from-left",
+              "letters-fly-in-from-right",
+              "letters-fly-in-from-top",
+              "letters-fly-in-from-bottom",
+              "letter-flip-from-top",
+              "letter-flip-from-bottom",
+              "letter-flip-cycle",
+            ].includes(element.animationButton) && (
               <div className="custom-select">
                 <RangeControl
                   label={
@@ -2428,78 +1868,15 @@ const TextControls = ({
                       {__("Delay", "cocoblocks")}
                     </>
                   }
-                  value={element.delayEffect}
+                  value={element.delayEffectButton}
                   onChange={(newDelayEffect) =>
-                    updateDelayEffect(slide.id, elementIndex, newDelayEffect)
+                    updateDelayEffectButton(slide.id, elementIndex, newDelayEffect)
                   }
                   min={0}
                   max={10}
                   step={0.1}
                 />
               </div>
-              </>
-            )}
-            {element.animation === "bounce" && (
-              <>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z" />
-                        </svg>
-                        {__("Duration letter odd", "cocoblocks")}
-                      </>
-                    }
-                    value={element.durationEffectOdd}
-                    onChange={(newDurationEffectOdd) =>
-                      updateDurationEffectOdd(
-                        slide.id,
-                        elementIndex,
-                        newDurationEffectOdd
-                      )
-                    }
-                    min={0.1}
-                    max={10}
-                    step={0.1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z" />
-                        </svg>
-                        {__("Duration letter even", "cocoblocks")}
-                      </>
-                    }
-                    value={element.durationEffectEven}
-                    onChange={(newDurationEffectEven) =>
-                      updateDurationEffectEven(
-                        slide.id,
-                        elementIndex,
-                        newDurationEffectEven
-                      )
-                    }
-                    min={0.1}
-                    max={10}
-                    step={0.1}
-                  />
-                </div>
-              </>
             )}
             {[
               "bounce-effect",
@@ -2511,7 +1888,7 @@ const TextControls = ({
               "flip",
               "swing",
               "rubber-band",
-            ].includes(element.animation) && (
+            ].includes(element.animationButton) && (
               <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
@@ -2528,310 +1905,18 @@ const TextControls = ({
                       {__("Iteration Mode", "cocoblocks")}
                     </>
                   }
-                  value={element.iteration}
+                  value={element.iterationButton}
                   options={[
                     { label: "Forwards", value: "forwards" },
                     { label: "Infinite", value: "infinite" },
                   ]}
                   onChange={(value) =>
-                    updateInteration(slide.id, elementIndex, value)
+                    updateInterationButton(slide.id, elementIndex, value)
                   }
                 />
               </div>
             )}
-            {element.animation === "typing-effect" && (
-              <>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M418-340q24 24 62 23.5t56-27.5l224-336-336 224q-27 18-28.5 55t22.5 61Zm62-460q59 0 113.5 16.5T696-734l-76 48q-33-17-68.5-25.5T480-720q-133 0-226.5 93.5T160-400q0 42 11.5 83t32.5 77h552q23-38 33.5-79t10.5-85q0-36-8.5-70T766-540l48-76q30 47 47.5 100T880-406q1 57-13 109t-41 99q-11 18-30 28t-40 10H204q-21 0-40-10t-30-28q-26-45-40-95.5T80-400q0-83 31.5-155.5t86-127Q252-737 325-768.5T480-800Zm7 313Z" />
-                        </svg>
-                        {__("Speed", "cocoblocks")}
-                      </>
-                    }
-                    value={element.speedEffect}
-                    onChange={(newSpeedEffect) =>
-                      updateEffectSpeed(slide.id, elementIndex, newSpeedEffect)
-                    }
-                    min={10}
-                    max={500}
-                    step={10}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M360-360v-240h80v240h-80Zm160 0v-240h80v240h-80ZM480-40q-108 0-202.5-49.5T120-228v108H40v-240h240v80h-98q51 75 129.5 117.5T480-120q115 0 208.5-66T820-361l78 18q-45 136-160 219.5T480-40ZM42-520q7-67 32-128.5T143-762l57 57q-32 41-52 87.5T123-520H42Zm214-241-57-57q53-44 114-69.5T440-918v80q-51 5-97 25t-87 52Zm449 0q-41-32-87.5-52T520-838v-80q67 6 128.5 31T762-818l-57 57Zm133 241q-5-51-25-97.5T761-705l57-57q44 52 69 113.5T918-520h-80Z" />
-                        </svg>
-                        {__("Pause", "cocoblocks")}
-                      </>
-                    }
-                    value={element.pauseEffect}
-                    onChange={(newPauseEffect) =>
-                      updateEffectPause(slide.id, elementIndex, newPauseEffect)
-                    }
-                    min={0}
-                    max={5000}
-                    step={100}
-                  />
-                </div>
-              </>
-            )}
-            {(element.animation === "explode" ||
-              element.animation === "implode") && (
-              <div className="custom-select select-control-label-right">
-                <SelectControl
-                  label={
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80ZM380-320v-60h120v-40H380v-140h180v60H440v40h80q17 0 28.5 11.5T560-420v60q0 17-11.5 28.5T520-320H380Z" />
-                      </svg>
-                      {__("Interation count", "cocoblocks")}
-                    </>
-                  }
-                  value={element.animationCount}
-                  options={[
-                    { label: "1", value: "1" },
-                    { label: "2", value: "2" },
-                    { label: "3", value: "3" },
-                    { label: "4", value: "4" },
-                    { label: "5", value: "5" },
-                    { label: "Infinite", value: "infinite" },
-                  ]}
-                  onChange={(animationCount) =>
-                    updateTextAnimationCount(
-                      slide.id,
-                      elementIndex,
-                      animationCount
-                    )
-                  }
-                />
-              </div>
-            )}
-            {element.animation === "typing-effect" && (
-              <>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M440-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM280-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM120-760v-80h80v80h-80Zm0 160v-80h80v80h-80Zm0 160v-80h80v80h-80Zm0 160v-80h80v80h-80Zm0 160v-80h80v80h-80Zm480 0v-80h80v-560h-80v-80h240v80h-80v560h80v80H600Z" />
-                        </svg>
-                        {__("Width cursor", "cocoblocks")}
-                      </>
-                    }
-                    value={element.widthCursor}
-                    onChange={(newWidthCursor) =>
-                      updateWidthCursor(slide.id, elementIndex, newWidthCursor)
-                    }
-                    min={1}
-                    max={15}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M440-120v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM120-120v-80h80v-560h-80v-80h240v80h-80v560h80v80H120Zm560-200-56-56 63-64H400v-80h287l-63-64 56-56 160 160-160 160Z" />
-                        </svg>
-                        {__("Animation cursor", "cocoblocks")}
-                      </>
-                    }
-                    value={element.animationCursor}
-                    onChange={(newAnimationCursor) =>
-                      updateAnimationCursor(
-                        slide.id,
-                        elementIndex,
-                        newAnimationCursor
-                      )
-                    }
-                    min={0.1}
-                    max={3}
-                    step={0.01}
-                  />
-                </div>
-                <div className="custom-select color">
-                  <ColorOptionsPanel
-                    colorNormal={element.cursorColor}
-                    setColorNormal={(newCursorColor) =>
-                      updateCursorColor(slide.id, elementIndex, newCursorColor)
-                    }
-                    buttonTitle={__("Cursor Color", "cocoblocks")}
-                    buttonIcon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                        style={{
-                          marginBottom: "-3px",
-                        }}
-                      >
-                        <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z" />
-                      </svg>
-                    }
-                  />
-                </div>
-              </>
-            )}
-            {[
-              "gradient-animation",
-              "text-shadow",
-              "text-shadow-light",
-              "text-shadow-heavy",
-              "text-neon",
-            ].includes(element.animation) && (
-              <div className="custom-select color">
-                <ColorOptionsPanel
-                  colorNormal={element.gradinetColorOne}
-                  setColorNormal={(newGradinetColorOne) =>
-                    updateGradinetColorOne(
-                      slide.id,
-                      elementIndex,
-                      newGradinetColorOne
-                    )
-                  }
-                  buttonTitle={__("First Color", "cocoblocks")}
-                  buttonIcon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                      style={{
-                        marginBottom: "-3px",
-                      }}
-                    >
-                      <path d="M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z" />
-                    </svg>
-                  }
-                />
-              </div>
-            )}
-            {["gradient-animation"].includes(element.animation) && (
-              <>
-                <div className="custom-select color">
-                  <ColorOptionsPanel
-                    colorNormal={element.gradinetColorTwo}
-                    setColorNormal={(newGradinetColorTwo) =>
-                      updateGradinetColorTwo(
-                        slide.id,
-                        elementIndex,
-                        newGradinetColorTwo
-                      )
-                    }
-                    buttonTitle={__("Second Color", "cocoblocks")}
-                    buttonIcon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                        style={{
-                          marginBottom: "-3px",
-                        }}
-                      >
-                        <path d="M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z" />
-                      </svg>
-                    }
-                  />
-                </div>
-                <div className="custom-select color">
-                  <ColorOptionsPanel
-                    colorNormal={element.gradinetColorThree}
-                    setColorNormal={(newGradinetColorThree) =>
-                      updateGradinetColorThree(
-                        slide.id,
-                        elementIndex,
-                        newGradinetColorThree
-                      )
-                    }
-                    buttonTitle={__("Third Color", "cocoblocks")}
-                    buttonIcon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                        style={{
-                          marginBottom: "-3px",
-                        }}
-                      >
-                        <path d="M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z" />
-                      </svg>
-                    }
-                  />
-                </div>
-                <div className="custom-select color">
-                  <ColorOptionsPanel
-                    colorNormal={element.gradinetColorFour}
-                    setColorNormal={(newGradinetColorFour) =>
-                      updateGradinetColorFour(
-                        slide.id,
-                        elementIndex,
-                        newGradinetColorFour
-                      )
-                    }
-                    buttonTitle={__("Fourth Color", "cocoblocks")}
-                    buttonIcon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                        style={{
-                          marginBottom: "-3px",
-                        }}
-                      >
-                        <path d="M440-440v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm160 0v-80h80v80h-80Zm80-80v-80h80v80h-80Zm-320 0v-80h80v80h-80Zm-80 320q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm80-80h80v-80h-80v80Zm160 0h80v-80h-80v80Zm320 0v-80 80Zm-560-80h80v-80h80v80h80v-80h80v80h80v-80h80v80h80v-80h-80v-80h80v-320H200v320h80v80h-80v80Zm0 80v-560 560Zm560-240v80-80ZM600-280v80h80v-80h-80Z" />
-                      </svg>
-                    }
-                  />
-                </div>
-              </>
-            )}
-            {element.animation !== "none" && (
+            {element.animationButton !== "none" && (
               <div className="button-reply-effect">
                 <Tooltip text={playState === "play" ? "Play" : "Repeat"}>
                   <Button
@@ -2863,368 +1948,6 @@ const TextControls = ({
                   />
                 </Tooltip>
               </div>
-            )}
-          </div>
-          <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">
-              {__("Advanced", "cocoblocks")}
-            </h2>
-          </div>
-          <div className="content-section-panel" style={{ padding: "0" }}>
-            <div className="custom-select select-control-label-right">
-              <SelectControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M293-120q-15 0-31.5-6T233-140q-8-5-16-12.5t-17-7.5h-40v-80h40q15 0 31.5 6t28.5 14q8 5 16 12.5t17 7.5q10 0 18-7.5t16-12.5q12-9 28.5-14.5T387-240q15 0 31.5 5.5T447-220q8 5 15.5 12.5T480-200q10 0 18-7.5t16-12.5q12-9 28.5-14.5T574-240q14 0 31 6t29 14q8 5 16 12.5t18 7.5q10 0 17.5-7.5T701-220q12-8 28.5-14t31.5-6h40v80h-40q-10 0-18 7.5T727-140q-12 8-29 14t-32 6q-14 0-30.5-6T607-140q-8-5-16-12.5t-18-7.5q-10 0-18 7.5T539-140q-12 9-28.5 14.5T479-120q-15 0-31.5-5.5T419-140q-8-5-15.5-12.5T386-160q-9 0-17.5 7.5T352-140q-11 9-28 14.5t-31 5.5Zm187-180q-101 0-170.5-69.5T240-540v-320h100v320q0 59 40.5 99.5T480-400q59 0 99.5-40.5T620-540v-320h100v320q0 101-69.5 170.5T480-300Z" />
-                    </svg>
-                    {__("Decorative Divider", "cocoblocks")}
-                  </>
-                }
-                value={element.decoration}
-                options={[
-                  { label: "None", value: "none" },
-                  { label: "Underline", value: "underline-effect" },
-                  { label: "Coming soon", value: "none" },
-                ]}
-                onChange={(value) =>
-                  updateDecoration(slide.id, elementIndex, value)
-                }
-              />
-            </div>
-            {element.decoration === "underline-effect" && (
-              <>
-                <div className="custom-select color">
-                  <ColorOptionsPanel
-                    colorNormal={element.underlineColor}
-                    setColorNormal={(value) =>
-                      updateUnderlineColor(slide.id, elementIndex, value)
-                    }
-                    buttonTitle={__("Color", "cocoblocks")}
-                    buttonIcon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        style={{
-                          marginBottom: "-3px",
-                        }}
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="m247-904 57-56 343 343q23 23 23 57t-23 57L457-313q-23 23-57 23t-57-23L153-503q-23-23-23-57t23-57l190-191-96-96Zm153 153L209-560h382L400-751Zm360 471q-33 0-56.5-23.5T680-360q0-21 12.5-45t27.5-45q9-12 19-25t21-25q11 12 21 25t19 25q15 21 27.5 45t12.5 45q0 33-23.5 56.5T760-280ZM80 0v-160h800V0H80Z" />
-                      </svg>
-                    }
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
-                        </svg>
-                        {__("Padding", "cocoblocks")}
-                      </>
-                    }
-                    value={element.underlinePadding}
-                    onChange={(value) =>
-                      updateUnderlinePadding(slide.id, elementIndex, value)
-                    }
-                    min={0}
-                    max={50}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z" />
-                        </svg>
-                        {__("Vertical Position", "cocoblocks")}
-                      </>
-                    }
-                    value={element.underlineVertical}
-                    onChange={(value) =>
-                      updateUnderlineVertical(slide.id, elementIndex, value)
-                    }
-                    min={-100}
-                    max={100}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z" />
-                        </svg>
-                        {__("Horizontal Position", "cocoblocks")}
-                      </>
-                    }
-                    value={element.underlineHorizontal}
-                    onChange={(value) =>
-                      updateUnderlineHorizontal(slide.id, elementIndex, value)
-                    }
-                    min={-100}
-                    max={100}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M480-120 320-280l56-56 64 63v-414l-64 63-56-56 160-160 160 160-56 57-64-64v414l64-63 56 56-160 160Z" />
-                        </svg>
-                        {__("Height", "cocoblocks")}
-                      </>
-                    }
-                    value={element.underlineHeight}
-                    onChange={(value) =>
-                      updateUnderlineHeight(slide.id, elementIndex, value)
-                    }
-                    min={0}
-                    max={100}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z" />
-                        </svg>
-                        {__("Width", "cocoblocks")}
-                      </>
-                    }
-                    value={element.underlineWidth}
-                    onChange={(value) =>
-                      updateUnderlineWidth(slide.id, elementIndex, value)
-                    }
-                    min={0}
-                    max={100}
-                    step={1}
-                  />
-                </div>
-                <div className="custom-select select-control-label-right">
-                  <SelectControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z" />
-                        </svg>
-                        {__("Animation", "cocoblocks")}
-                      </>
-                    }
-                    value={element.underlineAnimation}
-                    options={[
-                      { label: "None", value: "none" },
-                      { label: "Bounce Y", value: "bounceUnderline" },
-                      { label: "Bounce X", value: "bounceUnderlineHorizontal" },
-                    ]}
-                    onChange={(value) =>
-                      updateUnderlineAnimation(slide.id, elementIndex, value)
-                    }
-                  />
-                </div>
-                {element.underlineAnimation !== "none" && (
-                  <>
-                    <div className="custom-select">
-                      <RangeControl
-                        label={
-                          <>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              height="24px"
-                              viewBox="0 -960 960 960"
-                              width="24px"
-                              fill="#e8eaed"
-                            >
-                              <path d="M80-240v-480h80v480H80Zm560 0-57-56 144-144H240v-80h487L584-664l56-56 240 240-240 240Z" />
-                            </svg>
-                            {__("From", "cocoblocks")}
-                          </>
-                        }
-                        value={element.underlineAnimationFrom}
-                        onChange={(value) =>
-                          updateUnderlineAnimationFrom(
-                            slide.id,
-                            elementIndex,
-                            value
-                          )
-                        }
-                        min={-100}
-                        max={100}
-                        step={1}
-                      />
-                    </div>
-                    <div className="custom-select">
-                      <RangeControl
-                        label={
-                          <>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              height="24px"
-                              viewBox="0 -960 960 960"
-                              width="24px"
-                              fill="#e8eaed"
-                            >
-                              <path d="M440-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM280-760v-80h80v80h-80Zm0 640v-80h80v80h-80ZM120-760v-80h80v80h-80Zm0 640v-80h80v80h-80Zm480 0v-80h80v-560h-80v-80h240v80h-80v560h80v80H600ZM280-320 120-480l160-160 56 56-63 64h287v80H273l63 64-56 56Z" />
-                            </svg>
-                            {__("To", "cocoblocks")}
-                          </>
-                        }
-                        value={element.underlineAnimationTo}
-                        onChange={(value) =>
-                          updateUnderlineAnimationTo(
-                            slide.id,
-                            elementIndex,
-                            value
-                          )
-                        }
-                        min={-100}
-                        max={100}
-                        step={1}
-                      />
-                    </div>
-                    <div className="custom-select">
-                      <RangeControl
-                        label={
-                          <>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              height="24px"
-                              viewBox="0 -960 960 960"
-                              width="24px"
-                              fill="#e8eaed"
-                            >
-                              <path d="m296-345-56-56 240-240 240 240-56 56-184-183-184 183Z" />
-                            </svg>
-                            {__("Initial size", "cocoblocks")}
-                          </>
-                        }
-                        value={element.underlineFromSizeNew}
-                        onChange={(value) =>
-                          updateUnderlineFromSizeNew(
-                            slide.id,
-                            elementIndex,
-                            value
-                          )
-                        }
-                        min={0}
-                        max={150}
-                        step={1}
-                      />
-                    </div>
-                    <div className="custom-select">
-                      <RangeControl
-                        label={
-                          <>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              height="24px"
-                              viewBox="0 -960 960 960"
-                              width="24px"
-                              fill="#e8eaed"
-                            >
-                              <path d="m296-105-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z" />
-                            </svg>
-                            {__("Final size", "cocoblocks")}
-                          </>
-                        }
-                        value={element.underlineToSizeNew}
-                        onChange={(value) =>
-                          updateUnderlineToSizeNew(
-                            slide.id,
-                            elementIndex,
-                            value
-                          )
-                        }
-                        min={0}
-                        max={150}
-                        step={1}
-                      />
-                    </div>
-                    <div className="custom-select">
-                      <RangeControl
-                        label={
-                          <>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              height="24px"
-                              viewBox="0 -960 960 960"
-                              width="24px"
-                              fill="#e8eaed"
-                            >
-                              <path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z" />
-                            </svg>
-                            {__("Transition", "cocoblocks")}
-                          </>
-                        }
-                        value={element.underlineAnimationTransition}
-                        onChange={(value) =>
-                          updateUnderlineAnimationTransition(
-                            slide.id,
-                            elementIndex,
-                            value
-                          )
-                        }
-                        min={0}
-                        max={10}
-                        step={0.1}
-                      />
-                    </div>
-                  </>
-                )}
-              </>
             )}
           </div>
         </>
@@ -3269,7 +1992,7 @@ const TextControls = ({
                     {__("Link actions", "cocoblocks")}
                   </>
                 }
-                value={element.textLink}
+                value={element.buttonLink}
                 options={[
                   { label: "None", value: "none" },
                   { label: "Link", value: "link" },
@@ -3277,11 +2000,11 @@ const TextControls = ({
                   { label: "Scroll to ID Element", value: "scroll-to-id" },
                 ]}
                 onChange={(value) =>
-                  updateTextLink(slide.id, elementIndex, value)
+                  updateButtonLink(slide.id, elementIndex, value)
                 }
               />
             </div>
-            {element.textLink === "link" && (
+            {element.buttonLink === "link" && (
               <>
                 <div className="custom-select select-text-control">
                   <TextControl
@@ -3300,9 +2023,9 @@ const TextControls = ({
                         {__("Enter URL", "cocoblocks")}
                       </>
                     }
-                    value={element.linkUrl}
+                    value={element.linkUrlButton}
                     onChange={(value) =>
-                      updateLinkUrl(slide.id, elementIndex, value)
+                      updateLinkUrlButton(slide.id, elementIndex, value)
                     }
                   />
                 </div>
@@ -3322,13 +2045,13 @@ const TextControls = ({
                         {__("Target", "cocoblocks")}
                       </>
                     }
-                    value={element.linkTarget}
+                    value={element.linkTargetButton}
                     options={[
                       { label: "Same Window", value: "_self" },
                       { label: "New Window", value: "_blank" },
                     ]}
                     onChange={(value) =>
-                      updateLinkTarget(slide.id, elementIndex, value)
+                      updateLinkTargetButton(slide.id, elementIndex, value)
                     }
                   />
                 </div>
@@ -3348,19 +2071,19 @@ const TextControls = ({
                         {__("Link Behavior", "cocoblocks")}
                       </>
                     }
-                    value={element.linkRel}
+                    value={element.linkRelButton}
                     options={[
                       { label: "Follow Link", value: "follow" },
                       { label: "No Follow", value: "nofollow" },
                     ]}
                     onChange={(value) =>
-                      updateLinkRel(slide.id, elementIndex, value)
+                      updateLinkRelButton(slide.id, elementIndex, value)
                     }
                   />
                 </div>
               </>
             )}
-            {element.textLink === "scroll-to-id" && (
+            {element.buttonLink === "scroll-to-id" && (
               <div className="custom-select select-text-control">
                 <TextControl
                   label={
@@ -3377,9 +2100,9 @@ const TextControls = ({
                       {__("Enter ID", "cocoblocks")}
                     </>
                   }
-                  value={element.scrollToId}
+                  value={element.scrollToIdButton}
                   onChange={(value) =>
-                    updateScrollToId(slide.id, elementIndex, value)
+                    updateScrollToIdButton(slide.id, elementIndex, value)
                   }
                 />
               </div>
@@ -3416,9 +2139,9 @@ const TextControls = ({
                     {__("Desktop", "cocoblocks")}
                   </>
                 }
-                checked={element.enableDesktopTitle}
+                checked={element.enableDesktopButton}
                 onChange={(value) =>
-                  updateEnableDesktopTitle(slide.id, elementIndex, value)
+                  updateEnableDesktopButton(slide.id, elementIndex, value)
                 }
               />
             </div>
@@ -3438,9 +2161,9 @@ const TextControls = ({
                     {__("Tablet", "cocoblocks")}
                   </>
                 }
-                checked={element.enableTabletTitle}
+                checked={element.enableTabletButton}
                 onChange={(value) =>
-                  updateEnableTabletTitle(slide.id, elementIndex, value)
+                  updateEnableTabletButton(slide.id, elementIndex, value)
                 }
               />
             </div>
@@ -3460,9 +2183,9 @@ const TextControls = ({
                     {__("Mobile", "cocoblocks")}
                   </>
                 }
-                checked={element.enableMobileTitle}
+                checked={element.enableMobileButton}
                 onChange={(value) =>
-                  updateEnableMobileTitle(slide.id, elementIndex, value)
+                  updateEnableMobileButton(slide.id, elementIndex, value)
                 }
               />
             </div>
@@ -3500,9 +2223,9 @@ const TextControls = ({
                         {__("Parallax offset X", "cocoblocks")}
                       </>
                     }
-                    value={element.parallaxTitle}
+                    value={element.parallaxButton}
                     onChange={(newParallaxTitle) =>
-                      updateParallaxTitle(
+                      updateParallaxButton(
                         slide.id,
                         elementIndex,
                         newParallaxTitle
@@ -3529,9 +2252,9 @@ const TextControls = ({
                         {__("Parallax offset Y", "cocoblocks")}
                       </>
                     }
-                    value={element.parallaxTitleY}
+                    value={element.parallaxButtonY}
                     onChange={(newParallaxTitleY) =>
-                      updateParallaxTitleY(
+                      updateParallaxButtonY(
                         slide.id,
                         elementIndex,
                         newParallaxTitleY
@@ -3558,9 +2281,9 @@ const TextControls = ({
                         {__("Parallax scale", "cocoblocks")}
                       </>
                     }
-                    value={element.parallaxTitleScale}
+                    value={element.parallaxButtonScale}
                     onChange={(newParallaxTitleScale) =>
-                      updateParallaxTitleScale(
+                      updateParallaxButtonScale(
                         slide.id,
                         elementIndex,
                         newParallaxTitleScale
@@ -3587,9 +2310,9 @@ const TextControls = ({
                         {__("Parallax opacity", "cocoblocks")}
                       </>
                     }
-                    value={element.parallaxTitleOpacity}
+                    value={element.parallaxButtonOpacity}
                     onChange={(newParallaxTitleOpacity) =>
-                      updateParallaxTitleOpacity(
+                      updateParallaxButtonOpacity(
                         slide.id,
                         elementIndex,
                         newParallaxTitleOpacity
@@ -3616,9 +2339,9 @@ const TextControls = ({
                         {__("Parallax duration", "cocoblocks")}
                       </>
                     }
-                    value={element.parallaxTitleDuration}
+                    value={element.parallaxButtonDuration}
                     onChange={(newParallaxTitleDuration) =>
-                      updateParallaxTitleDuration(
+                      updateParallaxButtonDuration(
                         slide.id,
                         elementIndex,
                         newParallaxTitleDuration
@@ -3648,10 +2371,8 @@ const TextControls = ({
           )}
         </>
       )}
-      </>
-      )}
     </div>
   );
 };
 
-export default TextControls;
+export default ButtonControls;

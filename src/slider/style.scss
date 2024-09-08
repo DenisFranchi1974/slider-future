@@ -32,119 +32,119 @@
   mask-image: url('../components/svg/blob4.svg');
 }
 
-/* Base Styling for swiper-slide */
-.swiper-slide {
+/* Base Styling for content-slide-slider */
+.content-slide-slider {
   display: flex;
   width: 100%;
   box-sizing: border-box;
 }
 
 /* Flex Direction for Layouts */
-.swiper-slide.vertical-layout {
+.content-slide-slider.vertical-layout {
   flex-direction: column;
 }
-.swiper-slide.horizontal-layout {
+.content-slide-slider.horizontal-layout {
   flex-direction: row;
 }
 
 /* Top Positioning */
-.swiper-slide.vertical-layout.top-left {
+.content-slide-slider.vertical-layout.top-left {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.swiper-slide.horizontal-layout.top-left {
+.content-slide-slider.horizontal-layout.top-left {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.swiper-slide.vertical-layout.top-center {
+.content-slide-slider.vertical-layout.top-center {
   align-items: center;
   justify-content: flex-start;
 }
-.swiper-slide.horizontal-layout.top-center {
+.content-slide-slider.horizontal-layout.top-center {
   align-items: flex-start;
   justify-content: center;
 }
-.swiper-slide.vertical-layout.top-right {
+.content-slide-slider.vertical-layout.top-right {
   align-items: flex-end;
   justify-content: flex-start;
 }
-.swiper-slide.horizontal-layout.top-right {
+.content-slide-slider.horizontal-layout.top-right {
      align-items: flex-start;
     justify-content: flex-end;
 }
-.swiper-slide.vertical-layout.top-space-between {
+.content-slide-slider.vertical-layout.top-space-between {
   align-items: flex-start;
   justify-content: space-between;
 }
-.swiper-slide.horizontal-layout.top-space-between {
+.content-slide-slider.horizontal-layout.top-space-between {
   align-items: flex-start;
   justify-content: space-between;
 }
 
 /* Center Positioning */
-.swiper-slide.vertical-layout.center-left {
+.content-slide-slider.vertical-layout.center-left {
   align-items: flex-start;
   justify-content: center;
 }
-.swiper-slide.horizontal-layout.center-left {
+.content-slide-slider.horizontal-layout.center-left {
   align-items: center;
   justify-content: flex-start;
 }
-.swiper-slide.vertical-layout.center-center {
+.content-slide-slider.vertical-layout.center-center {
   align-items: center;
   justify-content: center;
 }
-.swiper-slide.horizontal-layout.center-center {
+.content-slide-slider.horizontal-layout.center-center {
   align-items: center;
   justify-content: center;
 }
-.swiper-slide.vertical-layout.center-right {
+.content-slide-slider.vertical-layout.center-right {
   align-items: flex-end;
   justify-content: center;
 }
-.swiper-slide.horizontal-layout.center-right {
+.content-slide-slider.horizontal-layout.center-right {
   align-items: center;
   justify-content: flex-end;
 }
-.swiper-slide.vertical-layout.center-space-between {
+.content-slide-slider.vertical-layout.center-space-between {
   align-items: center;
   justify-content: space-between;
 }
-.swiper-slide.horizontal-layout.center-space-between {
+.content-slide-slider.horizontal-layout.center-space-between {
   align-items: center;
   justify-content: space-between;
 }
 
 /* Bottom Positioning */
-.swiper-slide.vertical-layout.bottom-left {
+.content-slide-slider.vertical-layout.bottom-left {
   align-items: flex-start;
   justify-content: flex-end;
 }
-.swiper-slide.horizontal-layout.bottom-left {
+.content-slide-slider.horizontal-layout.bottom-left {
   align-items: flex-end;
   justify-content: flex-start;
 }
-.swiper-slide.vertical-layout.bottom-center {
+.content-slide-slider.vertical-layout.bottom-center {
   align-items: center;
   justify-content: flex-end;
 }
-.swiper-slide.horizontal-layout.bottom-center {
+.content-slide-slider.horizontal-layout.bottom-center {
   align-items: flex-end;
   justify-content: center;
 }
-.swiper-slide.vertical-layout.bottom-right {
+.content-slide-slider.vertical-layout.bottom-right {
   align-items: flex-end;
   justify-content: flex-end;
 }
-.swiper-slide.horizontal-layout.bottom-right {
+.content-slide-slider.horizontal-layout.bottom-right {
   align-items: flex-end;
   justify-content: flex-end;
 }
-.swiper-slide.vertical-layout.bottom-space-between {
+.content-slide-slider.vertical-layout.bottom-space-between {
   align-items: flex-end;
   justify-content: space-between;
 }
-.swiper-slide.horizontal-layout.bottom-space-between {
+.content-slide-slider.horizontal-layout.bottom-space-between {
   align-items: flex-end;
   justify-content: space-between;
 }
@@ -155,11 +155,11 @@
   box-sizing: border-box;
   box-shadow: var(--box-shadow-x-div) var(--box-shadow-y-div) var(--box-shadow-blur-div) var(--box-shadow-spread-div) var(--box-shadow-color-div);
 }
-
 .div-slide:hover{
   background-color:var(--color-hover-div)!important;
   border-color: var(--border-color-hover-div)!important;
   border-style: var(--border-style-hover-div)!important;
+  border-width: var(--border-width-hover-div)!important;
   opacity: var(--opacity-hover-div)!important;
   rotate: var(--rotate-hover-div)!important;
 }
@@ -273,8 +273,6 @@
   align-items: flex-end;
   justify-content: space-between;
 }
-
-
 .wp-block-slider-builder-slider {
   --swiper-theme-color: var(
     --wp--preset--color--accent,
@@ -289,11 +287,10 @@
   --swiper-scrollbar-sides-offset: 1%;
   /*max-height: 400px!important;*/
 }
-
-.swiper-slide.visible{
+.content-slide-slider.visible{
   overflow: visible;
 }
-.swiper-slide.hidden{
+.content-slide-slider.hidden{
   overflow: hidden;
 }
 
@@ -304,7 +301,6 @@
 .swiper-pagination-fraction {
   font-size: var(--swiper-font-size-fraction);
 }
-
 .swiper-pagination-bullet-active {
   width: var(--swiper-pagination-bullet-width-active);
   height: var(--swiper-pagination-bullet-height-active);
@@ -422,22 +418,21 @@
     transform: translateY(0);
 }
 }
-
 .bounce-effect {
   animation: bounce var(--duration-effect) var(--interation);
 }
-
 .bounce-effect-image {
   animation: bounce var(--duration-effect-image) var(--interation-image);
 }
-
+.bounce-effect-image-inner {
+  animation: bounce var(--duration-effect-image-inner) var(--interation-image-inner);
+}
 .bounce-effect-div {
   animation: bounce var(--duration-effect-div) var(--interation-div);
 }
 .bounce-effect-title-div {
   animation: bounce var(--duration-effect-title-block) var(--interation-title-block);
 }
-
 
 @keyframes bounce-left {
   0% {
@@ -467,11 +462,13 @@
 }
 
 .bounce-left-effect {
-  animation: bounce-left var(--duration-effect) var(--interation);
+  animation: bounce-left var(--duration-effect) var(--interation); 
 }
-
 .bounce-left-effect-image {
   animation: bounce-left var(--duration-effect-image) var(--interation-image);
+}
+.bounce-left-effect-image-inner {
+  animation: bounce-left var(--duration-effect-image-inner) var(--interation-image-inner);
 }
 .bounce-left-effect-div {
   animation: bounce-left var(--duration-effect-div) var(--interation-div);
@@ -479,7 +476,6 @@
 .bounce-left-effect-title-div {
   animation: bounce-left var(--duration-effect-title-block) var(--interation-title-block);
 }
-
 
 @keyframes bounce-right {
   0% {
@@ -511,18 +507,18 @@
 .bounce-right-effect {
   animation: bounce-right var(--duration-effect) var(--interation);
 }
-
 .bounce-right-effect-image {
   animation: bounce-right var(--duration-effect-image) var(--interation-image);
 }
-
+.bounce-right-effect-image-inner {
+  animation: bounce-right var(--duration-effect-image-inner) var(--interation-image-inner);
+}
 .bounce-right-effect-div {
   animation: bounce-right var(--duration-effect-div) var(--interation-div);
 }
 .bounce-right-effect-title-div {
   animation: bounce-right var(--duration-effect-title-block) var(--interation-title-block);
 }
-
 
 @keyframes bounce-top {
   0% {
@@ -552,21 +548,20 @@
 }
 
 .bounce-top-effect {
-  animation: bounce-top var(--duration-effect) var(--interation);
+  animation: bounce-top var(--duration-effect) var(--interation); 
 }
-
 .bounce-top-effect-image {
   animation: bounce-top var(--duration-effect-image) var(--interation-image);
 }
-
+.bounce-top-effect-image-inner {
+  animation: bounce-top var(--duration-effect-image-inner) var(--interation-image-inner);
+}
 .bounce-top-effect-div {
   animation: bounce-top var(--duration-effect-div) var(--interation-div);
 }
-
 .bounce-top-effect-title-div {
   animation: bounce-top var(--duration-effect-title-block) var(--interation-title-block);
 }
-
 
 @keyframes bounce-bottom {
   0% {
@@ -601,13 +596,15 @@
 .bounce-bottom-effect-image {
   animation: bounce-bottom var(--duration-effect-image) var(--interation-image);
 }
+.bounce-bottom-effect-image-inner {
+  animation: bounce-bottom var(--duration-effect-image-inner) var(--interation-image-inner);
+}
 .bounce-bottom-effect-div {
   animation: bounce-bottom var(--duration-effect-div) var(--interation-div);
 }
 .bounce-bottom-effect-title-div {
   animation: bounce-bottom var(--duration-effect-title-block) var(--interation-title-block);
 }
-
 
 @keyframes letterBounce {
   0%, 100% {
@@ -622,24 +619,19 @@
   display: inline-block;
   animation: letterBounce var(--duration-effect) infinite;
 }
-
 .letter.bounce:nth-child(odd) {
   animation-delay: var(--duration-effect-odd);
 }
-
 .letter.bounce:nth-child(even) {
   animation-delay: var(--duration-effect-even);
 }
-
 .letter.bounce-title-div {
   display: inline-block;
   animation: letterBounce var(--duration-effect-title-block) infinite;
 }
-
 .letter.bounce-title-div:nth-child(odd) {
   animation-delay: var(--duration-effect-odd-title-block);
 }
-
 .letter.bounce-title-div:nth-child(even) {
   animation-delay: var(--duration-effect-even-title-block);
 }
@@ -661,7 +653,6 @@
   animation: stretchText var(--duration-effect) ease-in-out infinite; /* Ripete l'animazione in modo continuo */
 }
 
-
 @keyframes focusInOut {
   0%, 100% {
     transform: perspective(600px) translate3d(0, 0, 0) scale(0.9988, 1);
@@ -682,7 +673,6 @@
   transform-origin: 50% 50%;
   animation: focusInOut var(--duration-effect) ease-in-out infinite
 }
-
 .letter.focus-title-div {
   display: inline-block;
   transform-origin: 50% 50%;
@@ -722,6 +712,37 @@
   animation: moveBackgroundY var(--duration-effect-moving-image) linear infinite; /* Regola la durata in base alle tue esigenze */
 }
 
+@keyframes moveBackgroundInner {
+  0% {
+    transform: translateX(0);
+}
+50% {
+    transform: translateX(var(--translate-effect-moving-image-inner)); /* Movimento verso destra */
+}
+100% {
+    transform: translateX(0); /* Torna alla posizione iniziale */
+}
+}
+
+.moving-background-inner{
+  animation: moveBackgroundInner var(--duration-effect-moving-image-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
+}
+
+@keyframes moveBackgroundYInner {
+  0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(var(--translate-effect-moving-image-inner)); /* Movimento verso il basso*/
+}
+100% {
+    transform: translateY(0); /* Torna alla posizione iniziale */
+}
+}
+
+.moving-background-y-inner{
+  animation: moveBackgroundYInner var(--duration-effect-moving-image-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
+}
 
 /* Movimen to background hover */
 @keyframes moveBackgroundHover {
@@ -746,8 +767,6 @@
   animation: moveBackgroundHover var(--duration-effect-moving-image-hover) linear infinite; /* Regola la durata in base alle tue esigenze */
 }
 
-
-
 @keyframes moveBackgroundYHover {
   0% {
     transform: translateY(0);
@@ -770,6 +789,50 @@
   animation: moveBackgroundYHover var(--duration-effect-moving-image-hover) linear infinite; /* Regola la durata in base alle tue esigenze */
 }
 
+/* Movimen to background hover */
+@keyframes moveBackgroundHoverInner {
+  0% {
+    transform: translateX(0);
+}
+50% {
+    transform: translateX(var(--translate-effect-moving-image-hover-inner)); /* Movimento verso destra */
+}
+100% {
+    transform: translateX(0); /* Torna alla posizione iniziale */
+}
+}
+
+.moving-background-hover-inner .img-inner {
+  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
+}
+.moving-background-hover-inner {
+  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
+}
+.moving-background-hover-inner:hover .img-inner{
+  animation: moveBackgroundHoverInner var(--duration-effect-moving-image-hover-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
+}
+
+@keyframes moveBackgroundYHoverInner {
+  0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(var(--translate-effect-moving-image-hover-inner)); /* Movimento verso il basso*/
+}
+100% {
+    transform: translateY(0); /* Torna alla posizione iniziale */
+}
+}
+
+.moving-background-y-hover-inner .img-inner {
+  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
+}
+.moving-background-y-hover-inner{
+  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
+}
+.moving-background-y-hover-inner:hover .img-inner{
+  animation: moveBackgroundYHoverInner var(--duration-effect-moving-image-hover-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
+}
 
 @keyframes bounceUnderline {
   0%, 100% {
@@ -798,7 +861,6 @@
   position: relative;
   padding-bottom: var(--padding-decoration);
 }
-
 .underline-effect::after {
   content: '';
   position: absolute;
@@ -837,7 +899,6 @@
   position: relative;
   padding-bottom: var(--padding-decoration-title-div);
 }
-
 .underline-effect-title-div::after {
   content: '';
   position: absolute;
@@ -848,18 +909,15 @@
   background-color: var(--color-decoration-title-div); /* Colore dell'elemento sotto la scritta */
   animation: var(--animation-decoration-title-div) var(--animation-decoration-transition-title-div) ease-in-out infinite;
 }
-
 .typewriter-container {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden; 
   position: relative; /* Necessario per posizionare il cursore */
 }
-
 .typewriter {
   display: inline-block;
 }
-
 .typewriter-cursor {
   display: inline-block;
   background-color: var(--color-cursor);
@@ -870,18 +928,15 @@
   right: 0;
   top: 0.15em;
 }
-
 .typewriter-container-title-div {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden; 
   position: relative; /* Necessario per posizionare il cursore */
 }
-
 .typewriter-title-div {
   display: inline-block;
 }
-
 .typewriter-cursor-title-div {
   display: inline-block;
   background-color: var(--color-cursor-title-block);
@@ -917,7 +972,6 @@
 .stretch {
   animation: stretch var(--duration-effect) infinite;
 }
-
 .stretch-title-div {
   animation: stretch var(--duration-effect-title-block) infinite;
 }
@@ -931,7 +985,6 @@
 .focus {
   animation: focus var(--duration-effect) infinite;
 }
-
 .focus-title-div {
   animation: focus var(--duration-effect-title-block) infinite;
 }
@@ -944,19 +997,22 @@
 
 .fade-in {
   animation: fadeIn var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
-
 .fade-in-image {
   animation: fadeIn var(--duration-effect-image) ease-in-out forwards;
 }
-
-
+.fade-in-image-inner {
+  animation: fadeIn var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .fade-in-div{
   animation: fadeIn var(--duration-effect-div) ease-in-out forwards;
 }
-
 .fade-in-title-div{
   animation: fadeIn var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes fadeInLeft {
@@ -966,16 +1022,18 @@
 
 .fade-in-left {
   animation: fadeInLeft var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
-
 .fade-in-left-image {
   animation: fadeInLeft var(--duration-effect-image) ease-in-out forwards;
 }
-
+.fade-in-left-image-inner {
+  animation: fadeInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .fade-in-left-div {
   animation: fadeInLeft var(--duration-effect-div) ease-in-out forwards;
 }
-
 .fade-in-left-title-div {
   animation: fadeInLeft var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -987,16 +1045,18 @@
 
 .fade-in-right {
   animation: fadeInRight var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
-
 .fade-in-right-image {
   animation: fadeInRight var(--duration-effect-image) ease-in-out forwards;
 }
-
+.fade-in-right-image-inner {
+  animation: fadeInRight var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .fade-in-right-div {
   animation: fadeInRight var(--duration-effect-div) ease-in-out forwards;
 }
-
 .fade-in-right-title-div {
   animation: fadeInRight var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1008,20 +1068,21 @@
 
 .fade-in-top {
   animation: fadeInTop var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
-
 .fade-in-top-image {
   animation: fadeInTop var(--duration-effect-image) ease-in-out forwards;
 }
-
+.fade-in-top-image-inner {
+  animation: fadeInTop var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .fade-in-top-div {
   animation: fadeInTop var(--duration-effect-div) ease-in-out forwards;
 }
-
 .fade-in-top-title-div {
   animation: fadeInTop var(--duration-effect-title-block) ease-in-out forwards;
 }
-
 
 @keyframes fadeInBottom {
   from { transform: translateY(100%); opacity: 0; }
@@ -1030,15 +1091,18 @@
 
 .fade-in-bottom {
   animation: fadeInBottom var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .fade-in-bottom-image {
   animation: fadeInBottom var(--duration-effect-image) ease-in-out forwards;
 }
-
+.fade-in-bottom-image-inner {
+  animation: fadeInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .fade-in-bottom-div {
   animation: fadeInBottom var(--duration-effect-div) ease-in-out forwards;
 }
-
 .fade-in-bottom-title-div {
   animation: fadeInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1051,14 +1115,18 @@
 
 .slide-in-left {
   animation: slideInLeft var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .slide-in-left-image {
   animation: slideInLeft var(--duration-effect-image) ease-in-out forwards;
 }
+.slide-in-left-image-inner {
+  animation: slideInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .slide-in-left-div {
   animation: slideInLeft var(--duration-effect-div) ease-in-out forwards;
 }
-
 .slide-in-left-title-div {
   animation: slideInLeft var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1070,17 +1138,23 @@
 
 .slide-in-right {
   animation: slideInRight var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .slide-in-right-image {
   animation: slideInRight var(--duration-effect-image) ease-in-out forwards;
+}
+.slide-in-right-image-inner {
+  animation: slideInRight var(--duration-effect-image-inner) ease-in-out forwards;
 }
 .slide-in-right-div {
   animation: slideInRight var(--duration-effect-div) ease-in-out forwards;
 }
 .slide-in-right-title-div {
   animation: slideInRight var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
-
 
 @keyframes slideInTop {
   from { transform: translateY(-100%); opacity: 0; }
@@ -1089,9 +1163,14 @@
 
 .slide-in-top {
   animation: slideInTop var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .slide-in-top-image {
   animation: slideInTop var(--duration-effect-image) ease-in-out forwards;
+}
+.slide-in-top-image-inner {
+  animation: slideInTop var(--duration-effect-image-inner) ease-in-out forwards;
 }
 .slide-in-top-div {
   animation: slideInTop var(--duration-effect-div) ease-in-out forwards;
@@ -1099,6 +1178,7 @@
 .slide-in-top-title-div {
   animation: slideInTop var(--duration-effect-title-block) ease-in-out forwards;
 }
+
 @keyframes slideInBottom {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -1106,11 +1186,15 @@
 
 .slide-in-bottom {
   animation: slideInBottom var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .slide-in-bottom-image {
   animation: slideInBottom var(--duration-effect-image) ease-in-out forwards;
 }
-
+.slide-in-bottom-image-inner {
+  animation: slideInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .slide-in-bottom-div {
   animation: slideInBottom var(--duration-effect-div) ease-in-out forwards;
 }
@@ -1126,14 +1210,18 @@
 
 .zoom-in {
   animation: zoomIn var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .zoom-in-image {
   animation: zoomIn var(--duration-effect-image) ease-in-out forwards;
 }
+.zoom-in-image-inner {
+  animation: zoomIn var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .zoom-in-div {
   animation: zoomIn var(--duration-effect-div) ease-in-out forwards;
 }
-
 .zoom-in-title-div {
   animation: zoomIn var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1145,15 +1233,18 @@
 
 .zoom-in-left {
   animation: zoomInLeft var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .zoom-in-left-image {
   animation: zoomInLeft var(--duration-effect-image) ease-in-out forwards;
 }
-
+.zoom-in-left-image-inner {
+  animation: zoomInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .zoom-in-left-div {
   animation: zoomInLeft var(--duration-effect-div) ease-in-out forwards;
 }
-
 .zoom-in-left-title-div {
   animation: zoomInLeft var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1165,15 +1256,18 @@
 
 .zoom-in-right {
   animation: zoomInRight var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .zoom-in-right-image {
   animation: zoomInRight var(--duration-effect-image) ease-in-out forwards;
 }
-
+.zoom-in-right-image-inner {
+  animation: zoomInRight var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .zoom-in-right-div {
   animation: zoomInRight var(--duration-effect-div) ease-in-out forwards;
 }
-
 .zoom-in-right-title-div {
   animation: zoomInRight var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1185,17 +1279,22 @@
 
 .zoom-in-top {
   animation: zoomInTop var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .zoom-in-top-image {
   animation: zoomInTop var(--duration-effect-image) ease-in-out forwards;
 }
-
+.zoom-in-top-image-inner {
+  animation: zoomInTop var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .zoom-in-top-div {
   animation: zoomInTop var(--duration-effect-div) ease-in-out forwards;
 }
 .zoom-in-top-title-div {
   animation: zoomInTop var(--duration-effect-title-block) ease-in-out forwards;
 }
+
 @keyframes zoomInBottom {
   from { transform: scale(0) translateY(100%); opacity: 0; }
   to { transform: scale(1) translateY(0); opacity: 1; }
@@ -1203,15 +1302,18 @@
 
 .zoom-in-bottom {
   animation: zoomInBottom var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .zoom-in-bottom-image {
   animation: zoomInBottom var(--duration-effect-image) ease-in-out forwards;
 }
-
+.zoom-in-bottom-image-inner {
+  animation: zoomInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .zoom-in-bottom-div {
   animation: zoomInBottom var(--duration-effect-div) ease-in-out forwards;
 }
-
 .zoom-in-bottom-title-div {
   animation: zoomInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1224,15 +1326,18 @@
 
 .rotate-in-left {
   animation: rotateInLeft var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .rotate-in-left-image {
   animation: rotateInLeft var(--duration-effect-image) ease-in-out forwards;
 }
-
+.rotate-in-left-image-inner {
+  animation: rotateInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .rotate-in-left-div {
   animation: rotateInLeft var(--duration-effect-div) ease-in-out forwards;
 }
-
 .rotate-in-left-title-div {
   animation: rotateInLeft var(--duration-effect-title-block) ease-in-out forwards;
 }
@@ -1244,9 +1349,14 @@
 
 .rotate-in-right {
   animation: rotateInRight var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .rotate-in-right-image {
   animation: rotateInRight var(--duration-effect-image) ease-in-out forwards;
+}
+.rotate-in-right-image-inner {
+  animation: rotateInRight var(--duration-effect-image-inner) ease-in-out forwards;
 }
 .rotate-in-right-div {
   animation: rotateInRight var(--duration-effect-div) ease-in-out forwards;
@@ -1262,9 +1372,14 @@
 
 .rotate-in-top {
   animation: rotateInTop var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .rotate-in-top-image {
   animation: rotateInTop var(--duration-effect-image) ease-in-out forwards;
+}
+.rotate-in-top-image-inner {
+  animation: rotateInTop var(--duration-effect-image-inner) ease-in-out forwards;
 }
 .rotate-in-top-div{
   animation: rotateInTop var(--duration-effect-div) ease-in-out forwards;
@@ -1280,9 +1395,14 @@
 
 .rotate-in-bottom {
   animation: rotateInBottom var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .rotate-in-bottom-image {
   animation: rotateInBottom var(--duration-effect-image) ease-in-out forwards;
+}
+.rotate-in-bottom-image-inner {
+  animation: rotateInBottom var(--duration-effect-image-inner) ease-in-out forwards;
 }
 .rotate-in-bottom-div {
   animation: rotateInBottom var(--duration-effect-div) ease-in-out forwards;
@@ -1290,7 +1410,6 @@
 .rotate-in-bottom-title-div {
   animation: rotateInBottom var(--duration-effect-title-block) ease-in-out forwards;
 }
-
 
 /* Wiggle */
 @keyframes wiggle {
@@ -1308,17 +1427,18 @@
   display: inline-block;
   animation: wiggle var(--duration-effect-image) ease-in-out var(--interation-image);
 }
-
+.wiggle-image-inner {
+  display: inline-block;
+  animation: wiggle var(--duration-effect-image-inner) ease-in-out var(--interation-image-inner);
+}
 .wiggle-div {
   display: inline-block;
   animation: wiggle var(--duration-effect-div) ease-in-out var(--interation-div);
 }
-
 .wiggle-title-div {
   display: inline-block;
   animation: wiggle var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
 }
-
 
 /* Rotate In */
 @keyframes rotateIn {
@@ -1328,17 +1448,22 @@
 
 .rotate-in {
   animation: rotateIn var(--duration-effect) ease-in-out forwards;
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .rotate-in-image {
   animation: rotateIn var(--duration-effect-image) ease-in-out forwards;
 }
-
+.rotate-in-image-inner {
+  animation: rotateIn var(--duration-effect-image-inner) ease-in-out forwards;
+}
 .rotate-in-div {
   animation: rotateIn var(--duration-effect-div) ease-in-out forwards;
 }
 .rotate-in-title-div {
   animation: rotateIn var(--duration-effect-title-block) ease-in-out forwards;
 }
+
 /* Flip */
 @keyframes flip {
   from { transform: rotateY(90deg); opacity: 0; }
@@ -1347,18 +1472,22 @@
 
 .flip {
   display: inline-block;
-  animation: flip var(--duration-effect) ease-in-out fvar(--interation);
+  animation: flip var(--duration-effect) ease-in-out var(--interation);
+  animation-delay: var(--delay-effect);
+  opacity: 0; 
 }
 .flip-image {
   display: inline-block;
-  animation: flip var(--duration-effect-image) ease-in-out fvar(--interation-image);
+  animation: flip var(--duration-effect-image) ease-in-out var(--interation-image);
 }
-
+.flip-image-inner {
+  display: inline-block;
+  animation: flip var(--duration-effect-image-inner) ease-in-out var(--interation-image-inner);
+}
 .flip-div {
   display: inline-block;
   animation: flip var(--duration-effect-div) ease-in-out var(--interation-div);
 }
-
 .flip-title-div {
   display: inline-block;
   animation: flip var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
@@ -1376,15 +1505,18 @@
 .swing-image {
   display: inline-block;
   transform-origin: top center;
-  animation: swing var(--duration-effect-image) ease fvar(--interation-image);
+  animation: swing var(--duration-effect-image) ease var(--interation-image);
 }
-
+.swing-image-inner {
+  display: inline-block;
+  transform-origin: top center;
+  animation: swing var(--duration-effect-image-inner) ease var(--interation-image-inner);
+}
 .swing-div {
   display: inline-block;
   transform-origin: top center;
   animation: swing var(--duration-effect-div) ease var(--interation-div);
 }
-
 .swing {
   display: inline-block;
   transform-origin: top center;
@@ -1421,18 +1553,18 @@
 .rubber-band-image {
   animation: rubberBand var(--duration-effect-image) ease-in-out var(--interation-image);
 }
-
+.rubber-band-image-inner {
+  animation: rubberBand var(--duration-effect-image-inner) ease-in-out var(--interation-image-inner);
+}
 .rubber-band-div {
   animation: rubberBand var(--duration-effect-div) ease-in-out var(--interation-div);
 }
-
 .rubber-band {
   animation: rubberBand var(--duration-effect) ease-in-out var(--interation);
 }
 .rubber-band-title-div {
   animation: rubberBand var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
 }
-
 
 /* Explode */
 @keyframes explode {
@@ -1475,7 +1607,6 @@
   }
 }
 
-
 .explode-title-div span {
   display: inline-block;
   animation-name: explodeDiv;
@@ -1494,9 +1625,7 @@
   --rotation-title-div: calc(360deg * random()); /* Rotazione casuale */
 }
 
-
 /* Implode */
-
 @keyframes implode {
   0% {
     opacity: 0;
@@ -1556,7 +1685,7 @@
 }
 
 /* Gradient Animation */
-.gradient-animation {
+.gradient-animation .title-slide {
   background: linear-gradient(90deg, var(--color-gradient-one), var(--color-gradient-two), var(--color-gradient-three), var(--color-gradient-four));
   background-size: 400% 400%;
   -webkit-background-clip: text;
@@ -1565,15 +1694,13 @@
   animation: gradient-animation var(--duration-effect) ease infinite;
  
 }
-
-.gradient-animation-title-div {
+.gradient-animation-title-div .title-slide-div{
   background: linear-gradient(90deg, var(--color-gradient-one-title-div), var(--color-gradient-two-title-div), var(--color-gradient-three-title-div), var(--color-gradient-four-title-div));
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; // Add the standard property
   animation: gradient-animation var(--duration-effect-title-block) ease infinite;
- 
 }
 
 @keyframes gradient-animation {
@@ -1589,35 +1716,35 @@
 }
 
 /* Text Shadow */
-.text-shadow{
+.text-shadow .title-slide{
   text-shadow: 2px 2px 4px var(--color-gradient-one);
 }
 
 /* Text Shadow Light */
-.text-shadow-light{
+.text-shadow-light .title-slide{
   text-shadow: 1px 1px 2px var(--color-gradient-one);
 }
 
 /* Text Shadow Heavy */
-.text-shadow-heavy{
+.text-shadow-heavy .title-slide{
   text-shadow: 4px 4px 6px var(--color-gradient-one);
 }
-.text-shadow-title-div{
+.text-shadow-title-div .title-slide-div{
   text-shadow: 2px 2px 4px var(--color-gradient-one-title-div);
 }
 
 /* Text Shadow Light */
-.text-shadow-light-title-div{
+.text-shadow-light-title-div .title-slide-div{
   text-shadow: 1px 1px 2px var(--color-gradient-one-title-div);
 }
 
 /* Text Shadow Heavy */
-.text-shadow-heavy-title-div{
+.text-shadow-heavy-title-div .title-slide-div{
   text-shadow: 4px 4px 6px var(--color-gradient-one-title-div);
 }
 
 /* Neon Effect */
-.text-neon {
+.text-neon .title-slide{
   color: #fff;
   text-shadow:
     0 0 5px var(--color-gradient-one),
@@ -1629,8 +1756,7 @@
     0 0 100px var(--color-gradient-one),
     0 0 150px var(--color-gradient-one);
 }
-
-.text-neon-title-div {
+.text-neon-title-div .title-slide-div{
   color: #fff;
   text-shadow:
     0 0 5px var(--color-gradient-one-title-div),
@@ -1641,51 +1767,6 @@
     0 0 90px var(--color-gradient-one-title-div),
     0 0 100px var(--color-gradient-one-title-div),
     0 0 150px var(--color-gradient-one-title-div);
-}
-
-/* Color Cycle */
-.color-cycle {
-  animation: color-cycle var(--duration-effect) infinite;
-}
-
-@keyframes color-cycle {
-  0% {
-    color: var(--color-gradient-one);
-  }
-  25% {
-    color: var(--color-gradient-two);
-  }
-  50% {
-    color: var(--color-gradient-three);
-  }
-  75% {
-    color: var(--color-gradient-four);
-  }
-  100% {
-    color: var(--color-gradient-five);
-  }
-}
-/* Color Cycle title div */
-.color-cycle-title-div {
-  animation: color-cycle var(--duration-effect-title-block) infinite;
-}
-
-@keyframes color-cycle {
-  0% {
-    color: var(--color-gradient-one-title-div);
-  }
-  25% {
-    color: var(--color-gradient-two-title-div);
-  }
-  50% {
-    color: var(--color-gradient-three-title-div);
-  }
-  75% {
-    color: var(--color-gradient-four-title-div);
-  }
-  100% {
-    color: var(--color-gradient-five-title-div);
-  }
 }
 
 /* Fly in left */
@@ -1703,7 +1784,6 @@
 .letters-fly-in-from-left {
   display: inline-block;
   position: relative;
-  
   span {
     display: inline-block;
     animation-name: fly-in-left;
@@ -1713,16 +1793,13 @@
     animation-timing-function: ease;
     opacity: 0;
   }
-
   span:nth-child(n) {
     --fly-in-delay: calc(var(--letter-index) * var(--delay-effect)); /* Ritardo per ogni lettera */
   }
 }
-
 .letters-fly-in-from-left-div {
   display: inline-block;
   position: relative;
-  
   span {
     display: inline-block;
     animation-name: fly-in-left;
@@ -1732,12 +1809,10 @@
     animation-timing-function: ease;
     opacity: 0;
   }
-
   span:nth-child(n) {
     --fly-in-delay-div: calc(var(--letter-index-div) * var(--delay-effect-title-block)); /* Ritardo per ogni lettera */
   }
 }
-
 
 /* Fly in right */
 @keyframes fly-in-right {
@@ -1755,7 +1830,6 @@
   display: inline-block;
   position: relative;
 }
-
 .letters-fly-in-from-right span {
   display: inline-block;
   opacity: 0;
@@ -1765,12 +1839,10 @@
   animation-delay: calc(var(--letter-index) * var(--delay-effect));
   animation-timing-function: ease;
 }
-
 .letters-fly-in-from-right-div {
   display: inline-block;
   position: relative;
 }
-
 .letters-fly-in-from-right-div span {
   display: inline-block;
   opacity: 0;
@@ -1780,7 +1852,6 @@
   animation-delay: calc(var(--letter-index-div) * var(--delay-effect-title-block));
   animation-timing-function: ease;
 }
-
 
 /* Fly in top */
 @keyframes fly-in-top {
@@ -1798,7 +1869,6 @@
   display: inline-block;
   position: relative;
 }
-
 .letters-fly-in-from-top span {
   display: inline-block;
   opacity: 0;
@@ -1808,12 +1878,10 @@
   animation-delay: calc(var(--letter-index) *  var(--delay-effect));
   animation-timing-function: ease;
 }
-
 .letters-fly-in-from-top-div {
   display: inline-block;
   position: relative;
 }
-
 .letters-fly-in-from-top-div span {
   display: inline-block;
   opacity: 0;
@@ -1823,7 +1891,6 @@
   animation-delay: calc(var(--letter-index-div) *  var(--delay-effect-title-block));
   animation-timing-function: ease;
 }
-
 
 /* Fly in bottom */
 @keyframes fly-in-bottom {
@@ -1841,7 +1908,6 @@
   display: inline-block;
   position: relative;
 }
-
 .letters-fly-in-from-bottom span {
   display: inline-block;
   opacity: 0;
@@ -1851,12 +1917,10 @@
   animation-delay: calc(var(--letter-index) *  var(--delay-effect));
   animation-timing-function: ease;
 }
-
 .letters-fly-in-from-bottom-div {
   display: inline-block;
   position: relative;
 }
-
 .letters-fly-in-from-bottom-div span {
   display: inline-block;
   opacity: 0;
@@ -1884,7 +1948,6 @@
   position: relative;
   perspective: 1000px;
 }
-
 .letter-flip-from-top span {
   display: inline-block;
   opacity: 0;
@@ -1895,13 +1958,11 @@
   animation-delay: calc(var(--letter-index) * var(--delay-effect));
   animation-timing-function: ease;
 }
-
 .letter-flip-from-top-div {
   display: inline-block;
   position: relative;
   perspective: 1000px;
 }
-
 .letter-flip-from-top-div span {
   display: inline-block;
   opacity: 0;
@@ -1930,7 +1991,6 @@
   position: relative;
   perspective: 1000px;
 }
-
 .letter-flip-from-bottom span {
   display: inline-block;
   opacity: 0;
@@ -1941,13 +2001,11 @@
   animation-delay: calc(var(--letter-index) * var(--delay-effect));
   animation-timing-function: ease;
 }
-
 .letter-flip-from-bottom-div {
   display: inline-block;
   position: relative;
   perspective: 1000px;
 }
-
 .letter-flip-from-bottom-div span {
   display: inline-block;
   opacity: 0;
@@ -1958,7 +2016,6 @@
   animation-delay: calc(var(--letter-index-div) * var(--delay-effect-title-block));
   animation-timing-function: ease;
 }
-
 
 /* Flip circle */
 @keyframes flip-cycle {
@@ -1977,7 +2034,6 @@
   position: relative;
   perspective: 1000px;
 }
-
 .letter-flip-cycle span {
   display: inline-block;
   opacity: 0;
@@ -1987,13 +2043,11 @@
   animation-delay: calc(var(--letter-index) * var(--delay-effect));
   animation-timing-function: ease;
 }
-
 .letter-flip-cycle-div {
   display: inline-block;
   position: relative;
   perspective: 1000px;
 }
-
 .letter-flip-cycle-div span {
   display: inline-block;
   opacity: 0;
@@ -2015,21 +2069,26 @@
 }
 
 /* Applica l'animazione all'elemento */
+.rotate-continuous  {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
 .rotate-continuous-image {
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect-image) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
 }
-
+.rotate-continuous-image-inner {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect-image-inner) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
 .rotate-continuous-div {
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect-div) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
 }
-
 .rotate-continuous-title-div {
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect-title-block) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
 }
-
 
 /* Filter */
 /* Filtro 1: Sfumature Laterali */
@@ -2130,7 +2189,6 @@
   z-index: 2;
 }
 
-
 /* Filtro 8: Effetto Glitch */
 .swiper.filter-glitch::after {
   content: '';
@@ -2151,7 +2209,6 @@
   50% { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
 }
-
 
 /* Filtro 9: Effetto Prisma */
 .swiper.filter-prism::after {
@@ -2211,7 +2268,6 @@
 .hover-effect-3- {
   transition: box-shadow var(--transition-hover) ease, filter var(--transition-hover) ease;
 }
-
 .hover-effect-3-:hover {
   box-shadow: 0 2px 4px var(--color-effect-hover); /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
@@ -2221,29 +2277,24 @@
 .hover-effect-3 {
   transition: box-shadow var(--transition-hover) ease, filter var(--transition-hover) ease;
 }
-
 .hover-effect-3:hover {
   box-shadow: 0 4px 8px var(--color-effect-hover); /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
-
 /* Ombra */
 .hover-effect-4{
   transition: box-shadow var(--transition-hover) ease, filter var(--transition-hover) ease;
 }
-
 .hover-effect-4:hover {
   box-shadow: 0px 8px 16px var(--color-effect-hover); /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
-
 /* Sfocatura */
 .hover-effect-6 {
   transition: filter var(--transition-hover) ease;
 }
-
 .hover-effect-6:hover {
   filter: blur(2px); /* Applica una sfocatura leggera */
 }
@@ -2253,7 +2304,6 @@
   position: relative;
   transition: color var(--transition-hover) ease;
 }
-
 .hover-light-effect::before {
   content: '';
   position: absolute;
@@ -2267,7 +2317,6 @@
   transform: translate(-50%, -50%) scale(1);
   transition: opacity var(--transition-hover) ease, transform var(--transition-hover) ease;
 }
-
 .hover-light-effect:hover::before {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1.2);
@@ -2278,14 +2327,113 @@
   box-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) var(--box-shadow-color);
 
 }
+/*
 .content-title-slide:hover{
   transform: rotate(var(--rotate-hover))!important;
 }
+  */
 .title-slide:hover{
   color: var(--color-hover)!important;
   border-color: var(--border-color-hover)!important;
   opacity: var(--opacity-hover)!important;
   border-style: var(--border-style-hover)!important;
+  border-width: var(--border-width-hover)!important;
+}
+
+/* Title slide inside div */
+
+.content-title-div:hover{
+  transform: rotate(var(--rotate-hover-title-div));
+}
+.title-slide-div:hover{
+  color: var(--color-hover-title-div)!important;
+  border-color: var(--border-color-hover-title-div)!important;
+  opacity: var(--opacity-hover-title-div)!important;
+  border-style: var(--border-style-hover-title-div)!important;
+  border-width: var(--border-width-hover-title-div)!important;
+}
+
+/* Hover Effect title inside div */
+
+/* Scale */
+.hover-effect-1-title-div{
+  transition: transform var(--transition-hover-title-div) ease;
+}
+.hover-effect-1-title-div:hover{
+  transform: scale(1.1)!important;
+}
+/* Translate Y */
+.hover-effect-2-title-div{
+  transition: transform var(--transition-hover-title-div) ease;
+}
+.hover-effect-2-title-div:hover {
+  transform: translateY(var(--translate-hover-title-div))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Translate X */
+.hover-effect-5-title-div{
+  transition: transform var(--transition-hover-title-div) ease!important;
+}
+.hover-effect-5-title-div:hover{
+  transform: translateX(var(--translate-hover-title-div))!important; /* Sposta l'elemento verso sinistra di 10px */
+}
+
+/* Shadow */
+.hover-effect-3-title-div- {
+  transition: box-shadow var(--transition-hover-title-div) ease, filter var(--transition-hover-title-div) ease;
+}
+.hover-effect-3-title-div-:hover {
+  box-shadow: 0 2px 4px var(--color-effect-hover-title-div)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Shadow */
+.hover-effect-3-title-div {
+  transition: box-shadow var(--transition-hover-title-div) ease, filter var(--transition-hover-title-div) ease;
+}
+.hover-effect-3-title-div:hover {
+  box-shadow: 0 4px 8px var(--color-effect-hover-title-div)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Ombra */
+.hover-effect-4-title-div{
+  transition: box-shadow var(--transition-hover-title-div) ease, filter var(--transition-hover-title-div) ease;
+}
+.hover-effect-4-title-div:hover {
+  box-shadow: 0px 8px 16px var(--color-effect-hover-title-div)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Sfocatura */
+.hover-effect-6-title-div {
+  transition: filter var(--transition-hover-title-div) ease;
+}
+.hover-effect-6-title-div:hover {
+  filter: blur(2px); /* Applica una sfocatura leggera */
+}
+
+/* Hover Light Effect */
+.hover-light-effect-title-div {
+  position: relative;
+  transition: color var(--transition-hover-title-div) ease;
+}
+.hover-light-effect-title-div::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-effect-hover-title-div);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity var(--transition-hover-title-div) ease, transform var(--transition-hover-title-div) ease!important;
+}
+.hover-light-effect-title-div:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 /* Hover Effect title image */
@@ -2294,16 +2442,15 @@
 .hover-effect-1-image{
   transition: transform var(--transition-hover-image) ease;
 }
-
 .hover-effect-1-image:hover{
-  transform: scale(1.1);
+  transform: scale(1.1)!important;
 }
 /* Translate Y */
 .hover-effect-2-image{
   transition: transform var(--transition-hover-image) ease;
 }
 .hover-effect-2-image:hover {
-  transform: translateY(var(--translate-hover-image)); /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-image))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
 /* Translate X */
@@ -2311,16 +2458,15 @@
   transition: transform var(--transition-hover-image) ease;
 }
 .hover-effect-5-image:hover {
-  transform: translateX(var(--translate-hover-image)); /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-image))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
 /* Shadow */
 .hover-effect-3-image- {
   transition: box-shadow var(--transition-hover-image) ease, filter var(--transition-hover-image) ease;
 }
-
 .hover-effect-3-image-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-image); /* Aggiunge un'ombra */
+  box-shadow: 0 2px 4px var(--color-effect-hover-image)!important; /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
@@ -2328,9 +2474,50 @@
 .hover-effect-3-image {
   transition: box-shadow var(--transition-hover-image) ease, filter var(--transition-hover-image) ease;
 }
-
 .hover-effect-3-image:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-image); /* Aggiunge un'ombra */
+  box-shadow: 0 4px 8px var(--color-effect-hover-image)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Hover Effect image inner */
+/* Scale */
+.hover-effect-1-image-inner{
+  transition: transform var(--transition-hover-image-inner) ease;
+}
+.hover-effect-1-image-inner:hover{
+  transform: scale(1.1)!important;
+}
+/* Translate Y */
+.hover-effect-2-image-inner{
+  transition: transform var(--transition-hover-image-inner) ease;
+}
+.hover-effect-2-image-inner:hover {
+  transform: translateY(var(--translate-hover-image-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Translate X */
+.hover-effect-5-image-inner{
+  transition: transform var(--transition-hover-image-inner) ease;
+}
+.hover-effect-5-image-inner:hover {
+  transform: translateX(var(--translate-hover-image-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Shadow */
+.hover-effect-3-image-inner- {
+  transition: box-shadow var(--transition-hover-image-inner) ease, filter var(--transition-hover-image-inner) ease;
+}
+.hover-effect-3-image-inner-:hover {
+  box-shadow: 0 2px 4px var(--color-effect-hover-image-inner)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Shadow */
+.hover-effect-3-image-inner {
+  transition: box-shadow var(--transition-hover-image-inner) ease, filter var(--transition-hover-image-inner) ease;
+}
+.hover-effect-3-image-inner:hover {
+  box-shadow: 0 4px 8px var(--color-effect-hover-image-inner)!important; /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
@@ -2340,7 +2527,6 @@
 .hover-effect-1-div{
   transition: transform var(--transition-hover-div) ease;
 }
-
 .hover-effect-1-div:hover{
   transform: scale(1.1);
 }
@@ -2364,7 +2550,6 @@
 .hover-effect-3-div- {
   transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
 }
-
 .hover-effect-3-div-:hover {
   box-shadow: 0 2px 4px var(--color-effect-hover-div); /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
@@ -2374,12 +2559,10 @@
 .hover-effect-3-div {
   transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
 }
-
 .hover-effect-3-div:hover {
   box-shadow: 0 4px 8px var(--color-effect-hover-div); /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
-
 
 /* Image slide */
 .content-img-first:hover{
@@ -2391,12 +2574,27 @@ transition: transform var(--transition-hover-image) ease;
 .image-first-slide{
   box-shadow: var(--box-shadow-x-image) var(--box-shadow-y-image) var(--box-shadow-blur-image) var(--box-shadow-spread-image) var(--box-shadow-color-image);
 }
-
 .image-first-slide:hover{
   background-color: var(--color-hover-image)!important;
   border-color: var(--border-color-hover-image)!important;
   opacity: var(--opacity-hover-image)!important;
   border-style: var(--border-style-hover-image)!important;
+  border-width: var(--border-width-hover-image)!important;
+}
+
+/* Imager Inner */
+.content-img-inner:hover{
+  transform: rotate(var(--rotate-hover-image-inner))!important;
+}
+.img-inner{
+transition: transform var(--transition-hover-image-inner) ease;
+}
+.img-inner:hover{
+  background-color: var(--color-hover-image-inner)!important;
+  border-color: var(--border-color-hover-image-inner)!important;
+  opacity: var(--opacity-hover-image-inner)!important;
+  border-style: var(--border-style-hover-image-inner)!important;
+  border-width: var(--border-width-hover-image-inner)!important;
 }
 
 /* Font size Title Responsive */
@@ -2410,14 +2608,15 @@ transition: transform var(--transition-hover-image) ease;
     font-size: var(--font-size-mobile) !important;
   }
 }
+
 /* Font size Title inside block Responsive */
 @media screen and (max-width: 780px) {
-  .title-slide {
+  .title-slide-div {
     font-size: var(--font-size-block-tablet) !important;
   }
 }
 @media screen and (max-width: 360px) {
-  .title-slide {
+  .title-slide-div {
     font-size: var(--font-size-block-mobile) !important;
   }
 }
@@ -2510,6 +2709,43 @@ transition: transform var(--transition-hover-image) ease;
   }
 }
 
+/* Responsive image inside block */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-image-visible-inner, .tablet-image-visible-inner, .mobile-image-visible-inner {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-image-visible-inner {
+    display: block;
+  }
+  .desktop-image-hidden-inner {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-image-visible-inner {
+    display: block;
+  }
+  .tablet-image-hidden-inner {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-image-visible-inner {
+    display: block;
+  }
+  .mobile-image-hidden-inner {
+    display: none;
+  }
+}
+
 /* Responsive div */
 
 /* Stili di base per nascondere gli elementi */
@@ -2547,13 +2783,600 @@ transition: transform var(--transition-hover-image) ease;
   }
 }
 
+/* Responsive Title Div */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-title-div-visible, .tablet-title-div-visible, .mobile-title-div-visible {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-title-div-visible {
+    display: block;
+  }
+  .desktop-title-div-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-title-div-visible {
+    display: block;
+  }
+  .tablet-title-div-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-title-div-visible {
+    display: block;
+  }
+  .mobile-title-div-hidden {
+    display: none;
+  }
+}
+
 /* Spike effect */
 
 /* 1 spike lato sinistro top */
 .left-spike-1-top {
   clip-path: polygon(
+    100% 100%,                      
+    calc(var(--spike-width)) 100%,   
+    0% 0%,                         
+    100% 0%   
+  );
+}
+
+/* 1 spike lato destro top */
+.right-spike-1-top {
+  clip-path: polygon(
+      0% 100%,                        
+      calc(100% - var(--spike-width-right)) 100%, 
+      100% 0%,                        
+      0% 0%                          
+  );
+}
+
+/* 1 spike lato sinistro middle */
+.left-spike-1-middle {
+  clip-path: polygon(
+    100% 0%,                        
+    100% 100%,                      
+    var(--spike-width) 100%,                       
+    0% 50%,                       
+    var(--spike-width) 0%,                          
+    100% 0%                             
+  );
+}
+
+/* 1 spike lato destro middle */
+.right-spike-1-middle {
+  clip-path: polygon(
+    0% 0%,                        
+    0% 100%,                       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 0%,  
+    0% 0%                          
+  );
+}
+
+/* 1 spike lato sinistro bottom */
+.left-spike-1-bottom {
+  clip-path: polygon(
+    100% 0%,                        
+    calc(var(--spike-width)) 0%,    
+    0% 100%,                      
+    100% 100%                          
+  );
+}
+
+/* 1 spike lato destro bottom */
+.right-spike-1-bottom {
+  clip-path: polygon(
+      0% 0%,                         
+      calc(100% - var(--spike-width-right)) 0%, 
+      100% 100%,                       
+      0% 100%                         
+  );
+}
+
+/* 2 spikes lato sinistro */
+.left-spike-2 {
+  clip-path: polygon(
+    100% 0%,                        
+    100% 100%,                      
+    var(--spike-width) 100%,        
+    0% 75%,                         
+    var(--spike-width) 50%,         
+    0% 25%,                         
+    var(--spike-width) 0%,         
+    100% 0%                       
+  );
+}
+
+/* 2 spikes lato destro */
+.right-spike-2 {
+  clip-path: polygon(
+    0% 0%,                         
+    0% 100%,                      
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 75%,                      
+    calc(100% - var(--spike-width-right)) 50%,  
+    100% 25%,                       
+    calc(100% - var(--spike-width-right)) 0%,   
+    0% 0%                         
+  );
+}
+
+/* 3 spikes lato sinistro  */
+.left-spike-3{
+  clip-path: polygon(
+    100% 0%,                        
+    100% 100%,                      
+    var(--spike-width) 100%,        
+    0% 83.33%,                      
+    var(--spike-width) 66.67%,      
+    0% 50%,                         
+    var(--spike-width) 33.33%,      
+    0% 16.67%,                      
+    var(--spike-width) 0%,          
+    100% 0%                         
+  );
+}
+
+/* 3 spikes lato destro */
+.right-spike-3 {
+  clip-path: polygon(
+    0% 0%,                          
+    0% 100%,                        
+    calc(100% - var(--spike-width-right)) 100%,
+    100% 83.33%,                   
+    calc(100% - var(--spike-width-right)) 66.67%, 
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 33.33%, 
+    100% 16.67%,                   
+    calc(100% - var(--spike-width-right)) 0%,   
+    0% 0%                          
+  );
+}
+
+/* 4 spikes lato sinistro */
+.left-spike-4{
+  clip-path: polygon(
+    100% 0%,                       
+    100% 100%,                      
+    var(--spike-width) 100%,       
+    0% 87.5%,                       
+    var(--spike-width) 75%,        
+    0% 62.5%,                       
+    var(--spike-width) 50%,       
+    0% 37.5%,                      
+    var(--spike-width) 25%,        
+    0% 12.5%,                      
+    var(--spike-width) 0%,          
+    100% 0%                       
+);
+}
+
+/* 4 spikes lato destro */
+.right-spike-4 {
+  clip-path: polygon(
+    0% 0%,                         
+    0% 100%,                       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 87.5%,                     
+    calc(100% - var(--spike-width-right)) 75%,  
+    100% 62.5%,                    
+    calc(100% - var(--spike-width-right)) 50%, 
+    100% 37.5%,                   
+    calc(100% - var(--spike-width-right)) 25%, 
+    100% 12.5%,                    
+    calc(100% - var(--spike-width-right)) 0%,   
+    0% 0%                           
+  );
+}
+/* 5 spikes lato sinistro */
+.left-spike-5 {
+  clip-path: polygon(
+    100% 0%,                        
+    100% 100%,                     
+    var(--spike-width) 100%,       
+    0% 90%,                         
+    var(--spike-width) 80%,         
+    0% 70%,                         
+    var(--spike-width) 60%,         
+    0% 50%,                        
+    var(--spike-width) 40%,         
+    0% 30%,                        
+    var(--spike-width) 20%,        
+    0% 10%,                        
+    var(--spike-width) 0%,         
+    100% 0%                        
+  );
+}
+
+/* 5 spikes lato destro */
+.right-spike-5 {
+  clip-path: polygon(
+    0% 0%,                          
+    0% 100%,                        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 90%,                      
+    calc(100% - var(--spike-width-right)) 80%,  
+    100% 70%,                      
+    calc(100% - var(--spike-width-right)) 60%, 
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 40%,  
+    100% 30%,                      
+    calc(100% - var(--spike-width-right)) 20%,  
+    100% 10%,                       
+    calc(100% - var(--spike-width-right)) 0%,   
+    0% 0%                          
+  );
+}
+
+.left-spike-5.right-spike-5 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 10%,                         
+    var(--spike-width) 20%,         
+    0% 30%,                        
+    var(--spike-width) 40%,       
+    0% 50%,                         
+    var(--spike-width) 60%,        
+    0% 70%,                         
+    var(--spike-width) 80%,         
+    0% 90%,                         
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 90%,                       
+    calc(100% - var(--spike-width-right)) 80%, 
+    100% 70%,                      
+    calc(100% - var(--spike-width-right)) 60%, 
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 40%,  
+    100% 30%,                       
+    calc(100% - var(--spike-width-right)) 20%,  
+    100% 10%,                       
+    calc(100% - var(--spike-width-right)) 0%    
+  );
+}
+
+.left-spike-4.right-spike-4 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 12.5%,                      
+    var(--spike-width) 25%,        
+    0% 37.5%,                       
+    var(--spike-width) 50%,         
+    0% 62.5%,                       
+    var(--spike-width) 75%,        
+    0% 87.5%,                       
+    var(--spike-width) 100%,       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 87.5%,                    
+    calc(100% - var(--spike-width-right)) 75%,  
+    100% 62.5%,                     
+    calc(100% - var(--spike-width-right)) 50%, 
+    100% 37.5%,                    
+    calc(100% - var(--spike-width-right)) 25%, 
+    100% 12.5%,                    
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-3.right-spike-3 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 16.67%,                      
+    var(--spike-width) 33.33%,      
+    0% 50%,                         
+    var(--spike-width) 66.67%,      
+    0% 83.33%,                      
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%,
+    100% 83.33%,                   
+    calc(100% - var(--spike-width-right)) 66.67%, 
+    100% 50%,                      
+    calc(100% - var(--spike-width-right)) 33.33%, 
+    100% 16.67%,                    
+    calc(100% - var(--spike-width-right)) 0%    
+  );
+}
+
+.left-spike-2.right-spike-2 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 25%,                        
+    var(--spike-width) 50%,         
+    0% 75%,                         
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 75%,                       
+    calc(100% - var(--spike-width-right)) 50%, 
+    100% 25%,                       
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-2.right-spike-3 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 25%,                        
+    var(--spike-width) 50%,         
+    0% 75%,                        
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 83.33%,                    
+    calc(100% - var(--spike-width-right)) 66.67%, 
+    100% 50%,                      
+    calc(100% - var(--spike-width-right)) 33.33%, 
+    100% 16.67%,                   
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-2.right-spike-4 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 25%,                        
+    var(--spike-width) 50%,        
+    0% 75%,                        
+    var(--spike-width) 100%,       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 87.5%,                    
+    calc(100% - var(--spike-width-right)) 75%,  
+    100% 62.5%,                    
+    calc(100% - var(--spike-width-right)) 50%,  
+    100% 37.5%,                   
+    calc(100% - var(--spike-width-right)) 25%,  
+    100% 12.5%,                   
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-2.right-spike-5 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 25%,                         
+    var(--spike-width) 50%,         
+    0% 75%,                         
+    var(--spike-width) 100%,       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 90%,                       
+    calc(100% - var(--spike-width-right)) 80%, 
+    100% 70%,                      
+    calc(100% - var(--spike-width-right)) 60%, 
+    100% 50%,                      
+    calc(100% - var(--spike-width-right)) 40%, 
+    100% 30%,                      
+    calc(100% - var(--spike-width-right)) 20%,  
+    100% 10%,                      
+    calc(100% - var(--spike-width-right)) 0%  
+  );
+}
+
+.left-spike-3.right-spike-2 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 16.67%,                     
+    var(--spike-width) 33.33%,      
+    0% 50%,                         
+    var(--spike-width) 66.67%,     
+    0% 83.33%,                      
+    var(--spike-width) 100%,       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 75%,                       
+    calc(100% - var(--spike-width-right)) 50%, 
+    100% 25%,                      
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-3.right-spike-4 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 16.67%,                     
+    var(--spike-width) 33.33%,      
+    0% 50%,                         
+    var(--spike-width) 66.67%,    
+    0% 83.33%,                      
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 87.5%,                    
+    calc(100% - var(--spike-width-right)) 75%, 
+    100% 62.5%,                    
+    calc(100% - var(--spike-width-right)) 50%,  
+    100% 37.5%,                     
+    calc(100% - var(--spike-width-right)) 25%,  
+    100% 12.5%,                    
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-3.right-spike-5 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 16.67%,                      
+    var(--spike-width) 33.33%,      
+    0% 50%,                        
+    var(--spike-width) 66.67%,      
+    0% 83.33%,                     
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 90%,                      
+    calc(100% - var(--spike-width-right)) 80%,  
+    100% 70%,                      
+    calc(100% - var(--spike-width-right)) 60%,  
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 40%,  
+    100% 30%,                      
+    calc(100% - var(--spike-width-right)) 20%,  
+    100% 10%,                      
+    calc(100% - var(--spike-width-right)) 0%   
+  );
+}
+
+.left-spike-4.right-spike-5 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 12.5%,                       
+    var(--spike-width) 25%,        
+    0% 37.5%,                      
+    var(--spike-width) 50%,        
+    0% 62.5%,                       
+    var(--spike-width) 75%,         
+    0% 87.5%,                       
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 90%,                       
+    calc(100% - var(--spike-width-right)) 80%,  
+    100% 70%,                      
+    calc(100% - var(--spike-width-right)) 60%, 
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 40%,  
+    100% 30%,                       
+    calc(100% - var(--spike-width-right)) 20%,  
+    100% 10%,                       
+    calc(100% - var(--spike-width-right)) 0%    
+  );
+}
+
+.left-spike-4.right-spike-3 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 12.5%,                       
+    var(--spike-width) 25%,        
+    0% 37.5%,                       
+    var(--spike-width) 50%,         
+    0% 62.5%,                       
+    var(--spike-width) 75%,         
+    0% 87.5%,                       
+    var(--spike-width) 100%,       
+    calc(100% - var(--spike-width-right)) 100%,
+    100% 83.33%,                   
+    calc(100% - var(--spike-width-right)) 66.67%, 
+    100% 50%,                       
+    calc(100% - var(--spike-width-right)) 33.33%, 
+    100% 16.67%,                    
+    calc(100% - var(--spike-width-right)) 0%,    
+    0% 0%                           
+  );
+}
+
+.left-spike-4.right-spike-2 {
+  clip-path: polygon(
+    var(--spike-width) 0%,          
+    0% 12.5%,                       
+    var(--spike-width) 25%,         
+    0% 37.5%,                       
+    var(--spike-width) 50%,         
+    0% 62.5%,                      
+    var(--spike-width) 75%,         
+    0% 87.5%,                       
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 75%,                      
+    calc(100% - var(--spike-width-right)) 50%, 
+    100% 25%,                      
+    calc(100% - var(--spike-width-right)) 0%, 
+    0% 0%                         
+  );
+}
+
+.left-spike-5.right-spike-2 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 10%,                       
+    var(--spike-width) 20%,         
+    0% 30%,                         
+    var(--spike-width) 40%,         
+    0% 50%,                         
+    var(--spike-width) 60%,         
+    0% 70%,                         
+    var(--spike-width) 80%,         
+    0% 90%,                         
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 75%,                       
+    calc(100% - var(--spike-width-right)) 50%,  
+    100% 25%,                      
+    calc(100% - var(--spike-width-right)) 0%,  
+    0% 0%                         
+  );
+}
+
+.left-spike-5.right-spike-3 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 10%,                         
+    var(--spike-width) 20%,        
+    0% 30%,                        
+    var(--spike-width) 40%,       
+    0% 50%,                         
+    var(--spike-width) 60%,       
+    0% 70%,                         
+    var(--spike-width) 80%,        
+    0% 90%,                         
+    var(--spike-width) 100%,       
+    calc(100% - var(--spike-width-right)) 100%, 
+    100% 83.33%,                   
+    calc(100% - var(--spike-width-right)) 66.67%,
+    100% 50%,                      
+    calc(100% - var(--spike-width-right)) 33.33%, 
+    100% 16.67%,                    
+    calc(100% - var(--spike-width-right)) 0%,    
+    0% 0%                           
+  );
+}
+
+.left-spike-5.right-spike-4 {
+  clip-path: polygon(
+    var(--spike-width) 0%,         
+    0% 10%,                         
+    var(--spike-width) 20%,        
+    0% 30%,                        
+    var(--spike-width) 40%,         
+    0% 50%,                         
+    var(--spike-width) 60%,         
+    0% 70%,                         
+    var(--spike-width) 80%,         
+    0% 90%,                         
+    var(--spike-width) 100%,        
+    calc(100% - var(--spike-width-right)) 100%,
+    100% 87.5%,                     
+    calc(100% - var(--spike-width-right)) 75%, 
+    100% 62.5%,                     
+    calc(100% - var(--spike-width-right)) 50%, 
+    100% 37.5%,                    
+    calc(100% - var(--spike-width-right)) 25%, 
+    100% 12.5%,                   
+    calc(100% - var(--spike-width-right)) 0%,  
+    0% 0%                          
+  );
+}
+
+
+
+
+
+
+
+
+
+/* Spike effect image inner */
+
+/* 1 spike lato sinistro top */
+.left-spike-1-top-inner {
+  clip-path: polygon(
     100% 100%,                       /* Angolo in basso a destra */
-    calc(var(--spike-width)) 100%,   /* Inizio dello spike, spostato a sinistra dal bordo inferiore */
+    calc(var(--spike-width-inner)) 100%,   /* Inizio dello spike, spostato a sinistra dal bordo inferiore */
     0% 0%,                          /* Angolo in alto a sinistra */
     100% 0%   
                           /* Angolo in basso a destra */
@@ -2561,10 +3384,10 @@ transition: transform var(--transition-hover-image) ease;
 }
 
 /* 1 spike lato destro top */
-.right-spike-1-top {
+.right-spike-1-top-inner {
   clip-path: polygon(
       0% 100%,                        /* Angolo in basso a sinistra */
-      calc(100% - var(--spike-width-right)) 100%, /* Inizio dello spike, spostato a destra dal bordo inferiore */
+      calc(100% - var(--spike-width-right-inner)) 100%, /* Inizio dello spike, spostato a destra dal bordo inferiore */
       100% 0%,                        /* Angolo in alto a destra */
       0% 0%                           /* Angolo in alto a sinistra */
   );
@@ -2572,529 +3395,532 @@ transition: transform var(--transition-hover-image) ease;
 
 
 /* 1 spike lato sinistro middle */
-.left-spike-1-middle {
+.left-spike-1-middle-inner {
   clip-path: polygon(
     100% 0%,                        /* Angolo in alto a destra */
     100% 100%,                      /* Angolo in basso a destra */
-    var(--spike-width) 100%,                        /* Punta centrale sul lato sinistro */
+    var(--spike-width-inner) 100%,                        /* Punta centrale sul lato sinistro */
     0% 50%,                        /* Angolo in basso a sinistra */
-    var(--spike-width) 0%,                          /* Angolo in alto a sinistra */
+    var(--spike-width-inner) 0%,                          /* Angolo in alto a sinistra */
     100% 0%                             /* Centro del lato sinistro */
   );
 }
 
 /* 1 spike lato destro middle */
-.right-spike-1-middle {
+.right-spike-1-middle-inner {
   clip-path: polygon(
     0% 0%,                          /* Angolo in alto a sinistra */
     0% 100%,                        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Punta centrale sul lato destro */
     100% 50%,                       /* Angolo in basso a destra */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Centro del lato destro */
   );
 }
 
 
 /* 1 spike lato sinistro bottom */
-.left-spike-1-bottom {
+.left-spike-1-bottom-inner {
   clip-path: polygon(
     100% 0%,                        /* Angolo in alto a destra */
-    calc(var(--spike-width)) 0%,     /* Inizio dello spike, spostato a sinistra dal bordo */
+    calc(var(--spike-width-inner)) 0%,     /* Inizio dello spike, spostato a sinistra dal bordo */
     0% 100%,                        /* Angolo in basso a sinistra */
     100% 100%                            /* Angolo in alto a destra */
   );
 }
 
 /* 1 spike lato destro bottom */
-.right-spike-1-bottom {
+.right-spike-1-bottom-inner {
   clip-path: polygon(
       0% 0%,                          /* Angolo in alto a sinistra */
-      calc(100% - var(--spike-width-right)) 0%, /* Inizio dello spike, spostato a destra dal bordo */
+      calc(100% - var(--spike-width-right-inner)) 0%, /* Inizio dello spike, spostato a destra dal bordo */
       100% 100%,                       /* Angolo in basso a destra */
       0% 100%                          /* Angolo in basso a sinistra */
   );
 }
 
 /* 2 spikes lato sinistro */
-.left-spike-2 {
+.left-spike-2-inner {
   clip-path: polygon(
     100% 0%,                        /* Angolo in alto a destra */
     100% 100%,                      /* Angolo in basso a destra */
-    var(--spike-width) 100%,        /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 100%,        /* Prima punta centrale sul lato sinistro */
     0% 75%,                         /* Punto intermedio tra le due punte */
-    var(--spike-width) 50%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Seconda punta centrale sul lato sinistro */
     0% 25%,                         /* Punto intermedio tra le due punte */
-    var(--spike-width) 0%,          /* Angolo in alto a sinistra */
+    var(--spike-width-inner) 0%,          /* Angolo in alto a sinistra */
     100% 0%                        /* Angolo in basso a destra */
   );
 }
 
 /* 2 spikes lato destro */
-.right-spike-2 {
+.right-spike-2-inner {
   clip-path: polygon(
     0% 0%,                          /* Angolo in alto a sinistra */
     0% 100%,                        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 75%,                       /* Punto intermedio tra le due punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Seconda punta centrale sul lato destro */
     100% 25%,                       /* Punto intermedio tra le due punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
 /* 3 spikes lato sinistro  */
-.left-spike-3{
+.left-spike-3-inner{
   clip-path: polygon(
     100% 0%,                        /* Angolo in alto a destra */
     100% 100%,                      /* Angolo in basso a destra */
-    var(--spike-width) 100%,        /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 100%,        /* Prima punta centrale sul lato sinistro */
     0% 83.33%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 66.67%,      /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 66.67%,      /* Seconda punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 33.33%,      /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 33.33%,      /* Terza punta centrale sul lato sinistro */
     0% 16.67%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 0%,          /* Angolo in alto a sinistra */
+    var(--spike-width-inner) 0%,          /* Angolo in alto a sinistra */
     100% 0%                         /* Angolo in alto a destra */
   );
 }
 
 /* 3 spikes lato destro */
-.right-spike-3 {
+.right-spike-3-inner {
   clip-path: polygon(
     0% 0%,                          /* Angolo in alto a sinistra */
     0% 100%,                        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 83.33%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 66.67%, /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 66.67%, /* Seconda punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 33.33%, /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 33.33%, /* Terza punta centrale sul lato destro */
     100% 16.67%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
 /* 4 spikes lato sinistro */
-.left-spike-4{
+.left-spike-4-inner{
   clip-path: polygon(
     100% 0%,                        /* Angolo in alto a destra */
     100% 100%,                      /* Angolo in basso a destra */
-    var(--spike-width) 100%,        /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 100%,        /* Prima punta centrale sul lato sinistro */
     0% 87.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 75%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 75%,         /* Seconda punta centrale sul lato sinistro */
     0% 62.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Terza punta centrale sul lato sinistro */
     0% 37.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 25%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 25%,         /* Quarta punta centrale sul lato sinistro */
     0% 12.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 0%,          /* Angolo in alto a sinistra */
+    var(--spike-width-inner) 0%,          /* Angolo in alto a sinistra */
     100% 0%                         /* Angolo in alto a destra */
 );
 }
 
 /* 4 spikes lato destro */
-.right-spike-4 {
+.right-spike-4-inner {
   clip-path: polygon(
     0% 0%,                          /* Angolo in alto a sinistra */
     0% 100%,                        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 87.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 75%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 75%,  /* Seconda punta centrale sul lato destro */
     100% 62.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Terza punta centrale sul lato destro */
     100% 37.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 25%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 25%,  /* Quarta punta centrale sul lato destro */
     100% 12.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 /* 5 spikes lato sinistro */
-.left-spike-5 {
+.left-spike-5-inner {
   clip-path: polygon(
     100% 0%,                        /* Angolo in alto a destra */
     100% 100%,                      /* Angolo in basso a destra */
-    var(--spike-width) 100%,        /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 100%,        /* Prima punta centrale sul lato sinistro */
     0% 90%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 80%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 80%,         /* Seconda punta centrale sul lato sinistro */
     0% 70%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 60%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 60%,         /* Terza punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 40%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 40%,         /* Quarta punta centrale sul lato sinistro */
     0% 30%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 20%,         /* Quinta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 20%,         /* Quinta punta centrale sul lato sinistro */
     0% 10%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 0%,          /* Angolo in alto a sinistra */
+    var(--spike-width-inner) 0%,          /* Angolo in alto a sinistra */
     100% 0%                         /* Angolo in alto a destra */
   );
 }
 
 /* 5 spikes lato destro */
-.right-spike-5 {
+.right-spike-5-inner {
   clip-path: polygon(
     0% 0%,                          /* Angolo in alto a sinistra */
     0% 100%,                        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 90%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 80%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 80%,  /* Seconda punta centrale sul lato destro */
     100% 70%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 60%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 60%,  /* Terza punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 40%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 40%,  /* Quarta punta centrale sul lato destro */
     100% 30%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 20%,  /* Quinta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 20%,  /* Quinta punta centrale sul lato destro */
     100% 10%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
 
-.left-spike-5.right-spike-5 {
+.left-spike-5-inner.right-spike-5-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 10%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 20%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 20%,         /* Seconda punta centrale sul lato sinistro */
     0% 30%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 40%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 40%,         /* Terza punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 60%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 60%,         /* Quarta punta centrale sul lato sinistro */
     0% 70%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 80%,         /* Quinta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 80%,         /* Quinta punta centrale sul lato sinistro */
     0% 90%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 90%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 80%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 80%,  /* Seconda punta centrale sul lato destro */
     100% 70%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 60%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 60%,  /* Terza punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 40%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 40%,  /* Quarta punta centrale sul lato destro */
     100% 30%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 20%,  /* Quinta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 20%,  /* Quinta punta centrale sul lato destro */
     100% 10%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-4.right-spike-4 {
+.left-spike-4-inner.right-spike-4-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 12.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 25%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 25%,         /* Seconda punta centrale sul lato sinistro */
     0% 37.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Terza punta centrale sul lato sinistro */
     0% 62.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 75%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 75%,         /* Quarta punta centrale sul lato sinistro */
     0% 87.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 87.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 75%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 75%,  /* Seconda punta centrale sul lato destro */
     100% 62.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Terza punta centrale sul lato destro */
     100% 37.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 25%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 25%,  /* Quarta punta centrale sul lato destro */
     100% 12.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-3.right-spike-3 {
+.left-spike-3-inner.right-spike-3-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 16.67%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 33.33%,      /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 33.33%,      /* Seconda punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 66.67%,      /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 66.67%,      /* Terza punta centrale sul lato sinistro */
     0% 83.33%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 83.33%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 66.67%, /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 66.67%, /* Seconda punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 33.33%, /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 33.33%, /* Terza punta centrale sul lato destro */
     100% 16.67%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%     /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%     /* Angolo in alto a destra */
   );
 }
 
-.left-spike-2.right-spike-2 {
+.left-spike-2-inner.right-spike-2-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 25%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Seconda punta centrale sul lato sinistro */
     0% 75%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 75%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Seconda punta centrale sul lato destro */
     100% 25%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-2.right-spike-3 {
+.left-spike-2-inner.right-spike-3-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 25%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Seconda punta centrale sul lato sinistro */
     0% 75%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 83.33%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 66.67%, /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 66.67%, /* Seconda punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 33.33%, /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 33.33%, /* Terza punta centrale sul lato destro */
     100% 16.67%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%     /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%     /* Angolo in alto a destra */
   );
 }
 
-.left-spike-2.right-spike-4 {
+.left-spike-2-inner.right-spike-4-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 25%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Seconda punta centrale sul lato sinistro */
     0% 75%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 87.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 75%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 75%,  /* Seconda punta centrale sul lato destro */
     100% 62.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Terza punta centrale sul lato destro */
     100% 37.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 25%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 25%,  /* Quarta punta centrale sul lato destro */
     100% 12.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-2.right-spike-5 {
+.left-spike-2-inner.right-spike-5-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 25%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Seconda punta centrale sul lato sinistro */
     0% 75%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 90%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 80%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 80%,  /* Seconda punta centrale sul lato destro */
     100% 70%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 60%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 60%,  /* Terza punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 40%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 40%,  /* Quarta punta centrale sul lato destro */
     100% 30%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 20%,  /* Quinta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 20%,  /* Quinta punta centrale sul lato destro */
     100% 10%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
 
-.left-spike-3.right-spike-2 {
+.left-spike-3-inner.right-spike-2-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 16.67%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 33.33%,      /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 33.33%,      /* Seconda punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 66.67%,      /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 66.67%,      /* Terza punta centrale sul lato sinistro */
     0% 83.33%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 75%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Seconda punta centrale sul lato destro */
     100% 25%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-3.right-spike-4 {
+.left-spike-3-inner.right-spike-4-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 16.67%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 33.33%,      /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 33.33%,      /* Seconda punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 66.67%,      /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 66.67%,      /* Terza punta centrale sul lato sinistro */
     0% 83.33%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 87.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 75%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 75%,  /* Seconda punta centrale sul lato destro */
     100% 62.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Terza punta centrale sul lato destro */
     100% 37.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 25%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 25%,  /* Quarta punta centrale sul lato destro */
     100% 12.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-3.right-spike-5 {
+.left-spike-3-inner.right-spike-5-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 16.67%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 33.33%,      /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 33.33%,      /* Seconda punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 66.67%,      /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 66.67%,      /* Terza punta centrale sul lato sinistro */
     0% 83.33%,                      /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 90%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 80%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 80%,  /* Seconda punta centrale sul lato destro */
     100% 70%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 60%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 60%,  /* Terza punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 40%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 40%,  /* Quarta punta centrale sul lato destro */
     100% 30%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 20%,  /* Quinta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 20%,  /* Quinta punta centrale sul lato destro */
     100% 10%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-4.right-spike-5 {
+.left-spike-4-inner.right-spike-5-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 12.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 25%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 25%,         /* Seconda punta centrale sul lato sinistro */
     0% 37.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Terza punta centrale sul lato sinistro */
     0% 62.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 75%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 75%,         /* Quarta punta centrale sul lato sinistro */
     0% 87.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 90%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 80%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 80%,  /* Seconda punta centrale sul lato destro */
     100% 70%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 60%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 60%,  /* Terza punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 40%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 40%,  /* Quarta punta centrale sul lato destro */
     100% 30%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 20%,  /* Quinta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 20%,  /* Quinta punta centrale sul lato destro */
     100% 10%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%    /* Angolo in alto a destra */
   );
 }
 
-.left-spike-4.right-spike-3 {
+.left-spike-4-inner.right-spike-3-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 12.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 25%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 25%,         /* Seconda punta centrale sul lato sinistro */
     0% 37.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Terza punta centrale sul lato sinistro */
     0% 62.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 75%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 75%,         /* Quarta punta centrale sul lato sinistro */
     0% 87.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 83.33%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 66.67%, /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 66.67%, /* Seconda punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 33.33%, /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 33.33%, /* Terza punta centrale sul lato destro */
     100% 16.67%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%,    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,    /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
-.left-spike-4.right-spike-2 {
+.left-spike-4-inner.right-spike-2-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 12.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 25%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 25%,         /* Seconda punta centrale sul lato sinistro */
     0% 37.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 50%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 50%,         /* Terza punta centrale sul lato sinistro */
     0% 62.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 75%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 75%,         /* Quarta punta centrale sul lato sinistro */
     0% 87.5%,                       /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 75%,                       /* Punto intermedio tra le due punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Seconda punta centrale sul lato destro */
     100% 25%,                       /* Punto intermedio tra le due punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
-.left-spike-5.right-spike-2 {
+.left-spike-5-inner.right-spike-2-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 10%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 20%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 20%,         /* Seconda punta centrale sul lato sinistro */
     0% 30%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 40%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 40%,         /* Terza punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 60%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 60%,         /* Quarta punta centrale sul lato sinistro */
     0% 70%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 80%,         /* Quinta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 80%,         /* Quinta punta centrale sul lato sinistro */
     0% 90%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 75%,                       /* Punto intermedio tra le due punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Seconda punta centrale sul lato destro */
     100% 25%,                       /* Punto intermedio tra le due punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
 
-.left-spike-5.right-spike-3 {
+.left-spike-5-inner.right-spike-3-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 10%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 20%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 20%,         /* Seconda punta centrale sul lato sinistro */
     0% 30%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 40%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 40%,         /* Terza punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 60%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 60%,         /* Quarta punta centrale sul lato sinistro */
     0% 70%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 80%,         /* Quinta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 80%,         /* Quinta punta centrale sul lato sinistro */
     0% 90%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 83.33%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 66.67%, /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 66.67%, /* Seconda punta centrale sul lato destro */
     100% 50%,                       /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 33.33%, /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 33.33%, /* Terza punta centrale sul lato destro */
     100% 16.67%,                    /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%,    /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,    /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
 
 
-.left-spike-5.right-spike-4 {
+.left-spike-5-inner.right-spike-4-inner {
   clip-path: polygon(
-    var(--spike-width) 0%,          /* Prima punta centrale sul lato sinistro */
+    var(--spike-width-inner) 0%,          /* Prima punta centrale sul lato sinistro */
     0% 10%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 20%,         /* Seconda punta centrale sul lato sinistro */
+    var(--spike-width-inner) 20%,         /* Seconda punta centrale sul lato sinistro */
     0% 30%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 40%,         /* Terza punta centrale sul lato sinistro */
+    var(--spike-width-inner) 40%,         /* Terza punta centrale sul lato sinistro */
     0% 50%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 60%,         /* Quarta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 60%,         /* Quarta punta centrale sul lato sinistro */
     0% 70%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 80%,         /* Quinta punta centrale sul lato sinistro */
+    var(--spike-width-inner) 80%,         /* Quinta punta centrale sul lato sinistro */
     0% 90%,                         /* Punto intermedio tra le punte */
-    var(--spike-width) 100%,        /* Angolo in basso a sinistra */
-    calc(100% - var(--spike-width-right)) 100%, /* Prima punta centrale sul lato destro */
+    var(--spike-width-inner) 100%,        /* Angolo in basso a sinistra */
+    calc(100% - var(--spike-width-right-inner)) 100%, /* Prima punta centrale sul lato destro */
     100% 87.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 75%,  /* Seconda punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 75%,  /* Seconda punta centrale sul lato destro */
     100% 62.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 50%,  /* Terza punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 50%,  /* Terza punta centrale sul lato destro */
     100% 37.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 25%,  /* Quarta punta centrale sul lato destro */
+    calc(100% - var(--spike-width-right-inner)) 25%,  /* Quarta punta centrale sul lato destro */
     100% 12.5%,                     /* Punto intermedio tra le punte */
-    calc(100% - var(--spike-width-right)) 0%,   /* Angolo in alto a destra */
+    calc(100% - var(--spike-width-right-inner)) 0%,   /* Angolo in alto a destra */
     0% 0%                           /* Angolo in alto a sinistra */
   );
 }
+
+
+
 
 /* Image Effect */
 .grayscale {
@@ -3131,4 +3957,187 @@ transition: transform var(--transition-hover-image) ease;
 
 .hue-rotate {
   filter: hue-rotate(90deg);
+}
+
+/* Button */
+
+/* Mouse */
+@-webkit-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@-moz-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+ .scroll-btn {
+	display: block;
+	/*position: absolute;
+	left: 0;
+	right: 0;*/
+	text-align: center;
+  border: none;
+}
+.scroll-btn > * {
+	display: inline-block;
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: normal;
+	color: #7f8c8d;
+	color: #ffffff;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 2px;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+	color: #ffffff;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.scroll-btn .mouse {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 55px;
+	margin: 0 auto 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  border-style: var(--border-style-button);
+  border-width: var(--border-width-button);
+  border-color: var(--border-color-button);
+	border-radius: var(--border-radius-button);
+  background-color: var(--background-color-button);
+}
+.scroll-btn .mouse > * {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+	background: var(--color-button);
+	border-radius: 50%;
+	-webkit-animation: ani-mouse 2.5s linear infinite;
+	-moz-animation: ani-mouse 2.5s linear infinite;
+	animation: ani-mouse 2.5s linear infinite;
+}
+
+/* Effect mouse in slider */
+
+/* Particle */
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 123, 0, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: flyAndFade 2s forwards ease-out;
+  mix-blend-mode: screen;
+}
+
+@keyframes flyAndFade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    box-shadow: 0 0 20px 10px rgba(255, 100, 0, 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(var(--offsetX), var(--offsetY)) scale(1.5) rotate(45deg);
+    box-shadow: 0 0 40px 20px rgba(255, 165, 0, 0.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--offsetX) * 2), calc(var(--offsetY) * 2)) scale(0.5) rotate(90deg);
+    box-shadow: 0 0 60px 30px rgba(255, 200, 0, 0.1);
+  }
+}
+
+/* Smoke */
+.smoke {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: hsla(200, 100%, 70%, 0.5); 
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: dissipate 5s forwards ease-out;
+  filter: blur(20px); 
+  mix-blend-mode: lighten;
+}
+
+
+@keyframes dissipate {
+  0% {
+    opacity: 1;
+    transform: scale(0.8) translate(0, 0);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) translate(-30px, -30px);
+    filter: blur(30px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2) translate(-60px, -60px);
+    filter: blur(60px);
+  }
 }

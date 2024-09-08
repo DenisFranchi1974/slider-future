@@ -3,22 +3,32 @@ import { SelectControl, RangeControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import ColorOptionsPanel from "./colorPanel";
 
-const ImageControlsHover = ({
+const ImageControlsBlockHover = ({
   slide,
   element,
+  imageDiv,
+  imageIndex,
   elementIndex,
   slides,
   setAttributes,
 }) => {
   // Update background color
-  const updateSlideImageColorHover = (slideId, index, color) => {
+  const updateSlideImageColorHover = (slideId, divIndex, imageIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, imageColorHover: color }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, imageColorHover: color }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -28,14 +38,22 @@ const ImageControlsHover = ({
   };
 
   // Update Rotate
-  const updateRotateHoverImage = (slideId, index, rotate) => {
+  const updateRotateHoverImage = (slideId, divIndex, imageIndex, rotate) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, rotateHoverImage: rotate }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, rotateHoverImage: rotate }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -45,14 +63,30 @@ const ImageControlsHover = ({
   };
 
   // Update border style
-  const updateBorderStyleHoverImage = (slideId, index, newBorderStyle) => {
+  const updateBorderStyleHoverImage = (
+    slideId,
+    divIndex,
+    imageIndex,
+    newBorderStyle
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, borderStyleHoverImage: newBorderStyle }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              borderStyleHoverImage: newBorderStyle,
+                            }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -60,34 +94,24 @@ const ImageControlsHover = ({
     );
     setAttributes({ slides: updatedSlides });
   };
-
-  // Update border width hover
-  const updateSlideBackgroundBorderSizeImageHover = (slideId, index, newSize) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, backgroundBorderSizeImageHover: newSize }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
 
   // Update Opacity
-  const updateOpacityHoverImage = (slideId, index, opacity) => {
+  const updateOpacityHoverImage = (slideId, divIndex, imageIndex, opacity) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, opacityHoverImage: opacity }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, opacityHoverImage: opacity }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -99,7 +123,8 @@ const ImageControlsHover = ({
   // Duration effect
   const updateDurationEffectHoverImage = (
     slideId,
-    index,
+    divIndex,
+    imageIndex,
     newDurationEffect
   ) => {
     const updatedSlides = slides.map((slide) =>
@@ -107,8 +132,19 @@ const ImageControlsHover = ({
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, durationEffectHoverImage: newDurationEffect }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              durationEffectHoverImage: newDurationEffect,
+                            }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -118,14 +154,30 @@ const ImageControlsHover = ({
   };
 
   // Update Border color
-  const updateImageBackgroundBorderColorHover = (slideId, index, color) => {
+  const updateImageBackgroundBorderColorHover = (
+    slideId,
+    divIndex,
+    imageIndex,
+    color
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, backgroundBorderColorHoverImage: color }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              backgroundBorderColorHoverImage: color,
+                            }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -134,15 +186,62 @@ const ImageControlsHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Update Annimation
-  const updateImageAnimationHover = (slideId, index, animation) => {
+  // Update Border width
+  const updateSlideBackgroundBorderSizeImageBlockHover = (
+    slideId,
+    divIndex,
+    imageIndex,
+    newSize
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, animationHoverImage: animation }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              backgroundBorderSizeImageHover: newSize,
+                            }
+                          : imageDiv
+                    ),
+                  }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+
+  // Update Annimation
+  const updateImageAnimationHover = (
+    slideId,
+    divIndex,
+    imageIndex,
+    animation
+  ) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, animationHoverImage: animation }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -152,14 +251,27 @@ const ImageControlsHover = ({
   };
 
   // Update Effect color
-  const updateSlideEffectColorHoverImage = (slideId, index, color) => {
+  const updateSlideEffectColorHoverImage = (
+    slideId,
+    divIndex,
+    imageIndex,
+    color
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, effectHoverColorHoverImage: color }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, effectHoverColorHoverImage: color }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -169,14 +281,30 @@ const ImageControlsHover = ({
   };
 
   // Translate effect
-  const updateTranslateEffectHoverImage = (slideId, index, newEffect) => {
+  const updateTranslateEffectHoverImage = (
+    slideId,
+    divIndex,
+    imageIndex,
+    newEffect
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, translateEffectHoverImage: newEffect }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              translateEffectHoverImage: newEffect,
+                            }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -186,14 +314,30 @@ const ImageControlsHover = ({
   };
 
   // Effect Image Animation Moving trnaslate
-  const updateTranslateEffectImageMovingHover = (slideId, index, value) => {
+  const updateTranslateEffectImageMovingHover = (
+    slideId,
+    divIndex,
+    imageIndex,
+    value
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, translateEffectImageMovingHover: value }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              translateEffectImageMovingHover: value,
+                            }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -203,30 +347,27 @@ const ImageControlsHover = ({
   };
 
   // Effect Image Animation Moving
-  const updateAnimationImageMovingHover = (slideId, index, value) => {
+  const updateAnimationImageMovingHover = (
+    slideId,
+    divIndex,
+    imageIndex,
+    value
+  ) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
             ...slide,
             elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, animationImageMovingHover: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-  // Effect Image Animation Moving duration
-  const updateDurationEffectImageMovingHover = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, durationEffectImageMovingHover: value }
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, animationImageMovingHover: value }
+                          : imageDiv
+                    ),
+                  }
                 : element
             ),
           }
@@ -235,16 +376,49 @@ const ImageControlsHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  const isAnimationNone = element.animationHoverImage === " ";
+  // Effect Image Animation Moving duration
+  const updateDurationEffectImageMovingHover = (
+    slideId,
+    divIndex,
+    imageIndex,
+    value
+  ) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === divIndex
+                ? {
+                    ...element,
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? {
+                              ...imageDiv,
+                              durationEffectImageMovingHover: value,
+                            }
+                          : imageDiv
+                    ),
+                  }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  const isAnimationNone = imageDiv.animationHoverImage === " ";
   const showColorOptionsPanel = [
-    "hover-effect-3-image-",
-    "hover-effect-3-image",
-    "hover-effect-4-image",
-  ].includes(element.animationHoverImage);
+    "hover-effect-3-image-inner-",
+    "hover-effect-3-image-inner",
+    "hover-effect-4-image-inner",
+  ].includes(imageDiv.animationHoverImage);
   const showTranslateRangeControl = [
-    "hover-effect-2-image", // Translate Y
-    "hover-effect-5-image", // Translate X
-  ].includes(element.animationHoverImage);
+    "hover-effect-2-image-inner", // Translate Y
+    "hover-effect-5-image-inner", // Translate X
+  ].includes(imageDiv.animationHoverImage);
 
   return (
     <div className="custom-block-added">
@@ -260,9 +434,14 @@ const ImageControlsHover = ({
       <div className="content-section-panel" style={{ padding: "0" }}>
         <div className="custom-select color">
           <ColorOptionsPanel
-            colorNormal={element.imageColorHover}
+            colorNormal={imageDiv.imageColorHover}
             setColorNormal={(color) =>
-              updateSlideImageColorHover(slide.id, elementIndex, color)
+              updateSlideImageColorHover(
+                slide.id,
+                elementIndex,
+                imageIndex,
+                color
+              )
             }
             buttonTitle={__("Background Color", "cocoblocks")}
             buttonIcon={
@@ -299,7 +478,7 @@ const ImageControlsHover = ({
                 {__("Border style", "cocoblocks")}
               </>
             }
-            value={element.borderStyleHoverImage}
+            value={imageDiv.borderStyleHoverImage}
             options={[
               {
                 label: __("None", "cocoblocks"),
@@ -326,20 +505,22 @@ const ImageControlsHover = ({
               updateBorderStyleHoverImage(
                 slide.id,
                 elementIndex,
+                imageIndex,
                 newBorderStyle
               )
             }
           />
         </div>
-        {element.borderStyleHoverImage !== "none" && (
+        {imageDiv.borderStyleHoverImage !== "none" && (
           <>
             <div className="custom-select color">
               <ColorOptionsPanel
-                colorNormal={element.backgroundBorderColorHoverImage}
+                colorNormal={imageDiv.backgroundBorderColorHoverImage}
                 setColorNormal={(color) =>
                   updateImageBackgroundBorderColorHover(
                     slide.id,
                     elementIndex,
+                    imageIndex,
                     color
                   )
                 }
@@ -361,34 +542,35 @@ const ImageControlsHover = ({
               />
             </div>
             <div className="custom-select">
-              <RangeControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="18px"
-                      viewBox="0 -960 960 960"
-                      width="18px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
-                    </svg>
-                    {__("Border width", "cocoblocks")}
-                  </>
-                }
-                value={element.backgroundBorderSizeImageHover}
-                onChange={(newSize) =>
-                  updateSlideBackgroundBorderSizeImageHover(
-                    slide.id,
-                    elementIndex,
-                    newSize
-                  )
-                }
-                min={0}
-                max={20}
-                step={1}
-              />
-            </div>
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="18px"
+                          viewBox="0 -960 960 960"
+                          width="18px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
+                        </svg>
+                        {__("Border width", "cocoblocks")}
+                      </>
+                    }
+                    value={imageDiv.backgroundBorderSizeImageHover}
+                    onChange={(newSize) =>
+                      updateSlideBackgroundBorderSizeImageBlockHover(
+                        slide.id,
+                        elementIndex,
+                        imageIndex,
+                        newSize
+                      )
+                    }
+                    min={0}
+                    max={20}
+                    step={1}
+                  />
+                </div>
           </>
         )}
         <div className="custom-select">
@@ -407,9 +589,14 @@ const ImageControlsHover = ({
                 {__("Opacity", "cocoblocks")}
               </>
             }
-            value={element.opacityHoverImage}
+            value={imageDiv.opacityHoverImage}
             onChange={(opacity) =>
-              updateOpacityHoverImage(slide.id, elementIndex, opacity)
+              updateOpacityHoverImage(
+                slide.id,
+                elementIndex,
+                imageIndex,
+                opacity
+              )
             }
             min={0}
             max={1}
@@ -432,9 +619,9 @@ const ImageControlsHover = ({
                 {__("Rotate", "cocoblocks")}
               </>
             }
-            value={element.rotateHoverImage}
+            value={imageDiv.rotateHoverImage}
             onChange={(rotate) =>
-              updateRotateHoverImage(slide.id, elementIndex, rotate)
+              updateRotateHoverImage(slide.id, elementIndex, imageIndex, rotate)
             }
             min={0}
             max={360}
@@ -465,7 +652,7 @@ const ImageControlsHover = ({
                 {__("Movimentation", "cocoblocks")}
               </>
             }
-            value={element.animationImageMovingHover}
+            value={imageDiv.animationImageMovingHover}
             options={[
               { label: "None", value: "none" },
               {
@@ -478,11 +665,16 @@ const ImageControlsHover = ({
               },
             ]}
             onChange={(value) =>
-              updateAnimationImageMovingHover(slide.id, elementIndex, value)
+              updateAnimationImageMovingHover(
+                slide.id,
+                elementIndex,
+                imageIndex,
+                value
+              )
             }
           />
         </div>
-        {element.animationImageMovingHover !== "none" && (
+        {imageDiv.animationImageMovingHover !== "none" && (
           <>
             <div className="custom-select">
               <RangeControl
@@ -500,11 +692,12 @@ const ImageControlsHover = ({
                     {__("Duration", "cocoblocks")}
                   </>
                 }
-                value={element.durationEffectImageMovingHover}
+                value={imageDiv.durationEffectImageMovingHover}
                 onChange={(value) =>
                   updateDurationEffectImageMovingHover(
                     slide.id,
                     elementIndex,
+                    imageIndex,
                     value
                   )
                 }
@@ -529,11 +722,12 @@ const ImageControlsHover = ({
                     {__("Translate", "cocoblocks")}
                   </>
                 }
-                value={element.translateEffectImageMovingHover}
+                value={imageDiv.translateEffectImageMovingHover}
                 onChange={(value) =>
                   updateTranslateEffectImageMovingHover(
                     slide.id,
                     elementIndex,
+                    imageIndex,
                     value
                   )
                 }
@@ -565,21 +759,26 @@ const ImageControlsHover = ({
                 {__("Animation", "cocoblocks")}
               </>
             }
-            value={element.animationHoverImage}
+            value={imageDiv.animationHoverImage}
             options={[
               { label: "None", value: "none" },
-              { label: "Scale", value: "hover-effect-1-image" },
-              { label: "Translate Y", value: "hover-effect-2-image" },
-              { label: "Translate X", value: "hover-effect-5-image" },
-              { label: "Shadow", value: "hover-effect-3-image-" },
-              { label: "Shadow Two", value: "hover-effect-3-image" },
+              { label: "Scale", value: "hover-effect-1-image-inner" },
+              { label: "Translate Y", value: "hover-effect-2-image-inner" },
+              { label: "Translate X", value: "hover-effect-5-image-inner" },
+              { label: "Shadow", value: "hover-effect-3-image-inner-" },
+              { label: "Shadow Two", value: "hover-effect-3-image-inner" },
             ]}
             onChange={(animation) =>
-              updateImageAnimationHover(slide.id, elementIndex, animation)
+              updateImageAnimationHover(
+                slide.id,
+                elementIndex,
+                imageIndex,
+                animation
+              )
             }
           />
         </div>
-        {element.animationHoverImage !== "none" && (
+        {imageDiv.animationHoverImage !== "none" && (
           <>
             <div className="custom-select">
               <RangeControl
@@ -597,11 +796,12 @@ const ImageControlsHover = ({
                     {__("Transition", "cocoblocks")}
                   </>
                 }
-                value={element.durationEffectHoverImage}
+                value={imageDiv.durationEffectHoverImage}
                 onChange={(newDurationEffect) =>
                   updateDurationEffectHoverImage(
                     slide.id,
                     elementIndex,
+                    imageIndex,
                     newDurationEffect
                   )
                 }
@@ -613,11 +813,12 @@ const ImageControlsHover = ({
             {showColorOptionsPanel && (
               <div className="custom-select color">
                 <ColorOptionsPanel
-                  colorNormal={element.effectHoverColorHoverImage}
+                  colorNormal={imageDiv.effectHoverColorHoverImage}
                   setColorNormal={(color) =>
                     updateSlideEffectColorHoverImage(
                       slide.id,
                       elementIndex,
+                      imageIndex,
                       color
                     )
                   }
@@ -659,11 +860,12 @@ const ImageControlsHover = ({
                       {__("Translate", "cocoblocks")}
                     </>
                   }
-                  value={element.translateEffectHoverImage}
+                  value={imageDiv.translateEffectHoverImage}
                   onChange={(newEffect) =>
                     updateTranslateEffectHoverImage(
                       slide.id,
                       elementIndex,
+                      imageIndex,
                       newEffect
                     )
                   }
@@ -680,4 +882,4 @@ const ImageControlsHover = ({
   );
 };
 
-export default ImageControlsHover;
+export default ImageControlsBlockHover;

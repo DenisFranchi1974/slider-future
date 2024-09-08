@@ -10694,9 +10694,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const isActive = slide.classList.contains('swiper-slide-active');
             if (isActive) {
               // Riavvia l'animazione per gli elementi della slide attiva
-              handleAnimation(slide.querySelectorAll('.title-slide.letter'), 'data-animation');
+              handleAnimation(slide.querySelectorAll('.content-title-slide'), 'data-animation');
               handleAnimation(slide.querySelectorAll('.image-first-slide'), 'data-animation-image');
+              handleAnimation(slide.querySelectorAll('.img-inner'), 'data-animation-image-inner');
               handleAnimation(slide.querySelectorAll('.div-slide'), 'data-animation-div');
+              handleAnimation(slide.querySelectorAll('.content-title-div.letter'), 'data-animation-title-div');
             }
           }
         });
@@ -10723,9 +10725,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Forza l'animazione per la slide iniziale al caricamento della pagina
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
-      handleAnimation(document.querySelectorAll('.swiper-slide-active .title-slide.letter'), 'data-animation');
+      handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-slide'), 'data-animation');
       handleAnimation(document.querySelectorAll('.swiper-slide-active .image-first-slide'), 'data-animation-image');
+      handleAnimation(document.querySelectorAll('.swiper-slide-active .img-inner'), 'data-animation-image-inner');
       handleAnimation(document.querySelectorAll('.swiper-slide-active .div-slide'), 'data-animation-div');
+      handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-div.letter'), 'data-animation-title-div');
     }, 100); // Delay di 100ms per l'animazione iniziale
   });
 });
@@ -10820,6 +10824,160 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(element);
   });
 });
+
+/* Effect Mouse */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const particleElements = document.querySelectorAll('[data-effect="particle"]');
+  const smokeElements = document.querySelectorAll('[data-effect="smoke"]');
+  const parallaxElements = document.querySelectorAll('[data-effect="parallax"]');
+
+  // Applicare effetto particelle a tutte le slide con data-effect="particle"
+  particleElements.forEach(particleElement => {
+    particleElement.addEventListener("mousemove", e => createParticle(e, particleElement));
+  });
+
+  // Applicare effetto fumo a tutte le slide con data-effect="smoke"
+  smokeElements.forEach(smokeElement => {
+    smokeElement.addEventListener("mousemove", e => createSmokeTrail(e, smokeElement));
+  });
+
+  // Applicare effetto parallax a tutte le slide con data-effect="parallax"
+  parallaxElements.forEach(parallaxElement => {
+    applyParallaxEffect(parallaxElement);
+  });
+});
+
+/*
+// Funzione per creare particelle
+function createParticle(e, slide) {
+    const rect = slide.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    const size = Math.random() * 20 + 10;
+    const opacity = Math.random() * 0.5 + 0.3;
+    const duration = Math.random() * 1.5 + 0.5;
+    const angle = Math.random() * 360;
+    const offsetX = (Math.random() - 0.5) * 100;
+    const offsetY = (Math.random() - 0.5) * 100;
+
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+    particle.style.opacity = opacity;
+    particle.style.transform = `rotate(${angle}deg)`;
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.setProperty('--offsetX', `${offsetX}px`);
+    particle.style.setProperty('--offsetY', `${offsetY}px`);
+
+    slide.appendChild(particle);
+
+    setTimeout(() => {
+        particle.remove();
+    }, duration * 1000);
+}
+
+// Funzione per creare scie di fumo
+function createSmokeTrail(e, slide) {
+    const rect = slide.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const smoke = document.createElement("div");
+    smoke.classList.add("smoke");
+    const size = Math.random() * 60 + 40;
+    const opacity = Math.random() * 0.5 + 0.2;
+    const duration = Math.random() * 3 + 2;
+    const hue = Math.random() * 360;
+
+    smoke.style.width = `${size}px`;
+    smoke.style.height = `${size}px`;
+    smoke.style.left = `${x}px`;
+    smoke.style.top = `${y}px`;
+    smoke.style.opacity = opacity;
+    smoke.style.animationDuration = `${duration}s`;
+    smoke.style.backgroundColor = `hsla(${hue}, 100%, 70%, 0.5)`;
+
+    slide.appendChild(smoke);
+
+    setTimeout(() => {
+        smoke.remove();
+    }, duration * 1000);
+}
+
+// Funzione per applicare l'effetto parallax
+function applyParallaxEffect(slide) {
+    const elements = slide.querySelectorAll("img,h3,h4");
+
+    let mouseX = 0, mouseY = 0;
+
+    function updateParallax() {
+        elements.forEach((element) => {
+            const rect = slide.getBoundingClientRect();
+            const x = (mouseX - rect.left) / rect.width;
+            const y = (mouseY - rect.top) / rect.height;
+            const speed = 0.5;
+            const offsetX = (x - 0.5) * 100 * speed;
+            const offsetY = (y - 0.5) * 100 * speed;
+
+            element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        });
+
+        requestAnimationFrame(updateParallax);
+    }
+
+    slide.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    requestAnimationFrame(updateParallax);
+}
+
+*/
+
+function getDeviceType() {
+  const width = window.innerWidth;
+  if (width <= 768) {
+    return 'mobile';
+  } else if (width <= 1024) {
+    return 'tablet';
+  } else {
+    return 'desktop';
+  }
+}
+function updateElementPositions() {
+  const deviceType = getDeviceType();
+  const titleElements = document.querySelectorAll('.content-title-slide');
+  const imageElements = document.querySelectorAll('.content-img-first');
+  const updatePosition = element => {
+    let x = 0,
+      y = 0;
+    if (deviceType === 'mobile') {
+      x = parseFloat(element.getAttribute('data-mobile-x')) || 0;
+      y = parseFloat(element.getAttribute('data-mobile-y')) || 0;
+    } else if (deviceType === 'tablet') {
+      x = parseFloat(element.getAttribute('data-tablet-x')) || 0;
+      y = parseFloat(element.getAttribute('data-tablet-y')) || 0;
+    } else {
+      x = parseFloat(element.getAttribute('data-desktop-x')) || 0;
+      y = parseFloat(element.getAttribute('data-desktop-y')) || 0;
+    }
+
+    // Applica la nuova posizione
+    element.style.transform = `translate(${x}px, ${y}px)`;
+  };
+  titleElements.forEach(updatePosition);
+  imageElements.forEach(updatePosition);
+}
+window.addEventListener('resize', updateElementPositions);
+
+// Chiamata iniziale per impostare le posizioni corrette al caricamento della pagina
+updateElementPositions();
 /******/ })()
 ;
 //# sourceMappingURL=view.js.map

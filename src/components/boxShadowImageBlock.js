@@ -4,19 +4,16 @@ import { __ } from "@wordpress/i18n";
 import "./editor.scss";
 import ColorOptionsPanel from "./colorPanel";
 
-const BoxShadowControlTextBlock = ({
+const BoxShadowControlImageBlock = ({
   slide,
-  slides,
-  element,
-  textDiv,
-  textIndex,
+  imageDiv,
+  imageIndex,
   elementIndex,
+  slides,
   setAttributes,
 }) => {
-  const [shadowType, setShadowType] = useState("outside");
-
   // Color Shadow
-  const updateColorShadow = (slideId, divIndex, textIndex, value) => {
+  const updateColorShadowImage = (slideId, divIndex, imageIndex, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -25,11 +22,11 @@ const BoxShadowControlTextBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, colorShadow: value }
-                          : textDiv
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, colorShadowImage: value }
+                          : imageDiv
                     ),
                   }
                 : element
@@ -41,7 +38,7 @@ const BoxShadowControlTextBlock = ({
   };
 
   // Box ShadowX
-  const updateBoxShadowX = (slideId, divIndex, textIndex, value) => {
+  const updateBoxShadowXImage = (slideId, divIndex, imageIndex, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -50,11 +47,11 @@ const BoxShadowControlTextBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, boxShadowX: value }
-                          : textDiv
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, boxShadowXImage: value }
+                          : imageDiv
                     ),
                   }
                 : element
@@ -66,7 +63,7 @@ const BoxShadowControlTextBlock = ({
   };
 
   // Box ShadowY
-  const updateBoxShadowY = (slideId, divIndex, textIndex, value) => {
+  const updateBoxShadowYImage = (slideId, divIndex, imageIndex, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -75,11 +72,11 @@ const BoxShadowControlTextBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, boxShadowY: value }
-                          : textDiv
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, boxShadowYImage: value }
+                          : imageDiv
                     ),
                   }
                 : element
@@ -91,7 +88,7 @@ const BoxShadowControlTextBlock = ({
   };
 
   // Box Shadow Blur
-  const updateBoxShadowBlur = (slideId, divIndex, textIndex, value) => {
+  const updateBoxShadowBlurImage = (slideId, divIndex, imageIndex, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -100,11 +97,11 @@ const BoxShadowControlTextBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, boxShadowBlur: value }
-                          : textDiv
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, boxShadowBlurImage: value }
+                          : imageDiv
                     ),
                   }
                 : element
@@ -116,7 +113,7 @@ const BoxShadowControlTextBlock = ({
   };
 
   // Box Shadow Spread
-  const updateBoxShadowSpread = (slideId, divIndex, textIndex, value) => {
+  const updateBoxShadowSpreadImage = (slideId, divIndex, imageIndex, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -125,11 +122,11 @@ const BoxShadowControlTextBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, boxShadowSpread: value }
-                          : textDiv
+                    innerImageDivs: element.innerImageDivs.map(
+                      (imageDiv, imgIndex) =>
+                        imgIndex === imageIndex
+                          ? { ...imageDiv, boxShadowSpreadImage: value }
+                          : imageDiv
                     ),
                   }
                 : element
@@ -148,9 +145,9 @@ const BoxShadowControlTextBlock = ({
       <div className="content-section-panel" style={{ padding: "0" }}>
         <div className="custom-select color">
           <ColorOptionsPanel
-            colorNormal={textDiv.colorShadow}
+            colorNormal={imageDiv.colorShadowImage}
             setColorNormal={(value) =>
-              updateColorShadow(slide.id, elementIndex, textIndex, value)
+              updateColorShadowImage(slide.id, elementIndex, imageIndex, value)
             }
             buttonTitle={__("Color", "cocoblocks")}
             buttonIcon={
@@ -189,9 +186,9 @@ const BoxShadowControlTextBlock = ({
                 {__("X Position", "cocoblocks")}
               </>
             }
-            value={textDiv.boxShadowX}
+            value={imageDiv.boxShadowXImage}
             onChange={(value) =>
-              updateBoxShadowX(slide.id, elementIndex, textIndex, value)
+              updateBoxShadowXImage(slide.id, elementIndex, imageIndex, value)
             }
             min={-100}
             max={100}
@@ -214,9 +211,9 @@ const BoxShadowControlTextBlock = ({
                 {__("Y Position", "cocoblocks")}
               </>
             }
-            value={textDiv.boxShadowY}
+            value={imageDiv.boxShadowYImage}
             onChange={(value) =>
-              updateBoxShadowY(slide.id, elementIndex, textIndex, value)
+              updateBoxShadowYImage(slide.id, elementIndex, imageIndex, value)
             }
             min={-100}
             max={100}
@@ -239,9 +236,14 @@ const BoxShadowControlTextBlock = ({
                 {__("Blur", "cocoblocks")}
               </>
             }
-            value={textDiv.boxShadowBlur}
+            value={imageDiv.boxShadowBlurImage}
             onChange={(value) =>
-              updateBoxShadowBlur(slide.id, elementIndex, textIndex, value)
+              updateBoxShadowBlurImage(
+                slide.id,
+                elementIndex,
+                imageIndex,
+                value
+              )
             }
             min={0}
             max={100}
@@ -264,9 +266,14 @@ const BoxShadowControlTextBlock = ({
                 {__("Spread", "cocoblocks")}
               </>
             }
-            value={textDiv.boxShadowSpread}
+            value={imageDiv.boxShadowSpreadImage}
             onChange={(value) =>
-              updateBoxShadowSpread(slide.id, elementIndex, textIndex, value)
+              updateBoxShadowSpreadImage(
+                slide.id,
+                elementIndex,
+                imageIndex,
+                value
+              )
             }
             min={-100}
             max={100}
@@ -278,4 +285,4 @@ const BoxShadowControlTextBlock = ({
   );
 };
 
-export default BoxShadowControlTextBlock;
+export default BoxShadowControlImageBlock;

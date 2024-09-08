@@ -44,6 +44,18 @@
   --dark-intermedy:#3f444a;
 }
 
+/* Background slide */
+.content-background-slide {
+  display: flex;
+  align-items: center;
+}
+.content-background-slide svg {
+  fill: var(--light-color);
+  width: 18px;
+  height: 18px;
+  margin-top: -3px;
+}
+
 /* Panel default editor */
 .cocoblocks-custom-block-card {
   background-color: var(--dark-color);
@@ -1473,4 +1485,98 @@
 .loading-message p {
   font-size: 52px;
   color: var(--dark-color);
+}
+
+/* Griglia per l'editor */
+.editor-grid {
+  position: relative;
+}
+
+.editor-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to left, rgba(91, 91, 91, 0.048) 1px, transparent 1px), linear-gradient(to bottom, rgba(91, 91, 91, 0.048) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Button open controls add element */
+.button-open-control-element {
+  background-color: var(--background-color) !important;
+  border: none;
+  position: absolute;
+  right: 42%;
+  top: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* style drag element */
+.editor-visual-editor.tablet-view, .editor-visual-editor.mobile-view {
+  margin: 0 auto;
+}
+
+.desktop-view {
+  width: 100%;
+}
+
+.tablet-view {
+  width: 768px;
+}
+
+.mobile-view {
+  width: 375px;
+}
+
+.ruler-container {
+  position: relative;
+  width: 100%;
+}
+
+.ruler-horizontal {
+  position: absolute;
+  top: 0;
+  right: 20px; /* Lascia spazio per il righello verticale */
+  width: 100%; /* Riduci la larghezza per lasciare spazio al righello verticale */
+  height: 20px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.ruler-horizontal span {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  color: #333;
+}
+
+.ruler-vertical {
+  position: absolute;
+  top: 20px; /* Lascia spazio per il righello orizzontale */
+  right: 0;
+  width: 20px;
+  height: calc(100% - 20px);
+  background-color: #f0f0f0;
+  border-left: 1px solid #ccc;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.ruler-vertical span {
+  position: absolute;
+  right: 0;
+  font-size: 10px;
+  color: #333;
 }
