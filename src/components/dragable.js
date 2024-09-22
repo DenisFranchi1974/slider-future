@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
-import Ruler from './ruler';
 
-const DraggableTest = ({ x, y, onDrag, onClick, children, activeDevice}) => {
+
+const DraggableTest = ({ x, y, onDrag, children, activeDevice, style  }) => {
   const draggableRef = useRef(null);
   const [popup, setPopup] = useState({ visible: false, x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [containerHeight, setContainerHeight] = useState(600); // Altezza iniziale della slider
+
+  const [linePosition, setLinePosition] = useState({ x: null, y: null });
+  const [temporaryZIndex, setTemporaryZIndex] = useState(null); // Stato per lo z-index temporaneo
+
 
   useEffect(() => {
     if (draggableRef.current) {
@@ -15,34 +18,59 @@ const DraggableTest = ({ x, y, onDrag, onClick, children, activeDevice}) => {
     }
   }, [x, y, activeDevice]);
 
+  const handleDragStart = () => {
+    setTemporaryZIndex(1000); // Imposta un z-index temporaneo alto all'inizio del drag
+  };
+
   const handleDrag = (e, data) => {
     onDrag(e, data);
     setPopup({ visible: true, x: data.x, y: data.y });
     setIsDragging(true);
+    setLinePosition({ x: data.x, y: data.y });
   };
 
   const handleStop = () => {
     setPopup({ ...popup, visible: false });
     setIsDragging(false);
+    setLinePosition({ x: null, y: null });
+    setTemporaryZIndex(null); // Ripristina il z-index originale alla fine del drag
   };
 
   return (
     <>
-      <div className="editor-container" style={{ position: 'relative', width: '100%', height: `${containerHeight}px` }}>
-        <Ruler
-          height={20}   // Altezza del righello orizzontale
-          unit={100}    // Unità di misura (ad esempio, pixel)
-          direction="horizontal"  // Imposta il righello come orizzontale
-        />
-
-        <Ruler
-          width={20}    // Larghezza del righello verticale
-          height={containerHeight}  // Altezza dinamica del righello verticale
-          unit={100}    // Unità di misura
-          direction="vertical"  // Imposta il righello come verticale
-        />
-      </div>
+  
+        {/* Linee rosse orizzontale e verticale */}
+        {linePosition.x !== null && linePosition.y !== null && (
+          <>
+            <div
+              className="line-horizontal"
+              style={{
+                position: 'absolute',
+                top: `${linePosition.y}px`,
+                left: 0,
+                width: '100%',
+                height: '1px',
+                backgroundColor: 'var(--ruler-color)',
+                zIndex: 1000,
+              }}
+            />
+            <div
+              className="line-vertical"
+              style={{
+                position: 'absolute',
+                left: `${linePosition.x}px`,
+                top: 0,
+                width: '1px',
+                height: '100%',
+                backgroundColor: 'var(--ruler-color)',
+                zIndex: 1000,
+              }}
+            />
+          </>
+        )}
+      
       <Draggable
+        onStart={handleDragStart} 
         position={{ x, y }}
         onDrag={handleDrag}
         onStop={handleStop}
@@ -54,7 +82,7 @@ const DraggableTest = ({ x, y, onDrag, onClick, children, activeDevice}) => {
             position: 'absolute',
             cursor: 'move',
             border: isDragging ? '2px dashed #2e323c' : 'none',
-            zIndex: 500,
+            ...style 
           }}
           data-desktop-x={x}
           data-desktop-y={y}
@@ -62,12 +90,11 @@ const DraggableTest = ({ x, y, onDrag, onClick, children, activeDevice}) => {
           data-tablet-y={y * (768 / 1920)}
           data-mobile-x={x * (375 / 1920)}
           data-mobile-y={y * (375 / 1920)}
-          onClick={onClick} // Gestisce il click per selezionare l'elemento
         >
           {children}
         </div>
       </Draggable>
-
+   
       {popup.visible && (
         <div
           className="popup"

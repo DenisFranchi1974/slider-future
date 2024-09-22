@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { TabPanel } from "@wordpress/components";
+import { useBlockProps, InspectorControls} from "@wordpress/block-editor";
+import { TabPanel, Tooltip, PanelBody, Button  } from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -29,15 +29,20 @@ import SliderControlsNavigation from "../components/SliderControlsNavigation";
 import SliderControlsOptions from "../components/SliderControlsOptions";
 import NavigationButtons from "../components/NavigationButtons";
 import ImageComponent from "../components/ImageComponent";
-import TextComponent from "../components/textComponent";
+import TextComponent from "../components/TextComponent";
 import DivComponent from "../components/divComponent";
 import SlideControls from "../components/slideControls";
 import ButtonComponent from "../components/buttonComponent";
 import DraggableTest from "../components/dragable";
+import Ruler from "../components/ruler";
+import { caption } from "@wordpress/icons";
+import IconComponent from "../components/iconComponent";
+
 
 
 export default function Edit({ attributes, setAttributes, slide }) {
   const {
+    content,
     directionSlider,
     effect,
     slides,
@@ -173,7 +178,31 @@ export default function Edit({ attributes, setAttributes, slide }) {
     colorOneEffect,
     colorTwoEffect,
     colorThreeEffect,
+    enableGrid,
+    enableRuler,
+    opacityRuler,
+    opacityGrid,
+    colorGrid,
+    mouseEffect,
+    colorEffectStart,
+    colorEffectEnd,
+    colorEffectMiddle,
+    firstColorLiquid,
+    secondColorLiquid,
+    thirdColorLiquid,
+    imgSelected, 
+    h1Selected, 
+    h2Selected, 
+    h3Selected, 
+    h4Selected,
+    h5Selected, 
+    h6Selected,  
+    buttonSelected, 
+    spanSelected, 
+    pSelected,
+    transitionParalaxMouse
   } = attributes;
+
 
   /* Classi personalizzate per il blocco */
   useEffect(() => {
@@ -342,7 +371,7 @@ export default function Edit({ attributes, setAttributes, slide }) {
   }, []);
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${parallax}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${parallax}-${backgroundColor}`;
   // Nessun movimento della slider
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
@@ -364,14 +393,14 @@ export default function Edit({ attributes, setAttributes, slide }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   useEffect(() => {
-    const swiperContainer = document.querySelector(".mySwiper");
+    const swiperContainer = document.querySelector(".slider-builder");
     if (swiperContainer && swiperContainer.swiper) {
       swiperContainer.swiper.params.navigation.prevEl = prevRef.current;
       swiperContainer.swiper.params.navigation.nextEl = nextRef.current;
       swiperContainer.swiper.navigation.update();
     }
   }, []);
-  const isNavigationEnabled = navigation; // Sostituisci con il tuo controllo di attivazione della navigazione
+  const isNavigationEnabled = navigation; 
   const navigationConfig = isNavigationEnabled
     ? {
         prevEl: prevRef.current,
@@ -421,6 +450,9 @@ export default function Edit({ attributes, setAttributes, slide }) {
     "--color-one-effect": colorOneEffect,
     "--color-two-effect": colorTwoEffect,
     "--color-three-effect": colorThreeEffect,
+    "--color-grid-editor": colorGrid,
+    "--opacity-grid-editor": opacityGrid,
+    height: autoHeight ? "auto" : `${slideHeight}px`,
   };
 
   // Autoplay
@@ -456,111 +488,121 @@ export default function Edit({ attributes, setAttributes, slide }) {
   const swiperRef = useRef(null);
 
   // Definisci lo stato per il dispositivo attivo
-const [activeDevice, setActiveDevice] = useState('desktop');
+  const [activeDevice, setActiveDevice] = useState("desktop");
 
-// Funzione per cambiare dispositivo
-const handleDeviceChange = (device) => {
-  setActiveDevice(device);
-  updateEditorView(device); // Aggiorna la vista
-  updateElementPositions(device); // Ricalcola le posizioni
-};
+  // Funzione per cambiare dispositivo
+  const handleDeviceChange = (device) => {
+    setActiveDevice(device);
+    setSelectedDevice(device); 
+    updateEditorView(device); // Aggiorna la vista
+    updateElementPositions(device); // Ricalcola le posizioni
+  };
 
-// Funzione per gestire il drag e aggiornare le posizioni
-const handleDragElement = (slideId, index, x, y) => {
-  const updatedSlides = slides.map((slide) =>
-    slide.id === slideId
-      ? {
-          ...slide,
-          elements: slide.elements.map((element, i) =>
-            i === index
-              ? {
-                  ...element,
-                  [activeDevice]: { x, y }, // Salva solo le coordinate per il dispositivo attivo
-                }
-              : element
-          ),
+  // Funzione per gestire il drag e aggiornare le posizioni
+  const handleDragElement = (slideId, index, x, y) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              i === index
+                ? {
+                    ...element,
+                    [activeDevice]: { x, y }, // Salva solo le coordinate per il dispositivo attivo
+                  }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Funzione per aggiornare la classe del container in base al dispositivo
+  const updateEditorView = (device) => {
+    const container = document.querySelector(".editor-visual-editor"); // Cambia con il selettore giusto
+    if (container) {
+      container.classList.remove("desktop-view", "tablet-view", "mobile-view");
+      container.classList.add(`${device}-view`);
+    }
+  };
+
+  useEffect(() => {
+    const updatedSlides = slides.map((slide) => ({
+      ...slide,
+      elements: slide.elements.map((element) => ({
+        ...element,
+        desktop: element.desktop || { x: 0, y: 0 },
+        tablet: element.tablet || { x: 0, y: 0 },
+        mobile: element.mobile || { x: 0, y: 0 },
+      })),
+    }));
+
+    setAttributes({ slides: updatedSlides });
+    updateElementPositions(activeDevice); // Inizializza le posizioni
+  }, [activeDevice]);
+
+  const updateElementPositions = (device) => {
+    const editor = document.querySelector(".editor-visual-editor");
+
+    if (editor) {
+      const elements = document.querySelectorAll(".draggable");
+
+      elements.forEach((element) => {
+        let x = 0,
+          y = 0;
+
+        // Leggi le coordinate corrette in base al tipo di dispositivo
+        if (device === "mobile") {
+          x = parseFloat(element.getAttribute("data-mobile-x")) || 0;
+          y = parseFloat(element.getAttribute("data-mobile-y")) || 0;
+        } else if (device === "tablet") {
+          x = parseFloat(element.getAttribute("data-tablet-x")) || 0;
+          y = parseFloat(element.getAttribute("data-tablet-y")) || 0;
+        } else {
+          x = parseFloat(element.getAttribute("data-desktop-x")) || 0;
+          y = parseFloat(element.getAttribute("data-desktop-y")) || 0;
         }
-      : slide
-  );
-  setAttributes({ slides: updatedSlides });
-};
 
-// Funzione per aggiornare la classe del container in base al dispositivo
-const updateEditorView = (device) => {
-  const container = document.querySelector('.editor-visual-editor'); // Cambia con il selettore giusto
-  if (container) {
-    container.classList.remove('desktop-view', 'tablet-view', 'mobile-view');
-    container.classList.add(`${device}-view`);
-  }
-};
+        console.log(`Applying position for ${device}: x=${x}, y=${y}`);
 
-useEffect(() => {
-  const updatedSlides = slides.map((slide) => ({
-    ...slide,
-    elements: slide.elements.map((element) => ({
-      ...element,
-      desktop: element.desktop || { x: 0, y: 0 },
-      tablet: element.tablet || { x: 0, y: 0 },
-      mobile: element.mobile || { x: 0, y: 0 },
-    })),
-  }));
+        // Applica la posizione
+        element.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+  };
 
-  setAttributes({ slides: updatedSlides });
-  updateElementPositions(activeDevice); // Inizializza le posizioni
-}, [activeDevice]);
+  // Chiama questa funzione ogni volta che cambia il dispositivo o ridimensioni l'iframe
+  window.addEventListener("resize", () => {
+    const device = getDeviceType();
+    setActiveDevice(device);
+    updateEditorView(device);
+    updateElementPositions(device);
+  });
 
-const updateElementPositions = (device) => {
-  const editor = document.querySelector('.editor-visual-editor');
+  const getDeviceType = () => {
+    const editor = document.querySelector(".editor-visual-editor");
+    const width = editor ? editor.clientWidth : window.innerWidth;
 
-  if (editor) {
-    const elements = document.querySelectorAll('.draggable');
-
-    elements.forEach(element => {
-      let x = 0, y = 0;
-
-      // Leggi le coordinate corrette in base al tipo di dispositivo
-      if (device === 'mobile') {
-        x = parseFloat(element.getAttribute('data-mobile-x')) || 0;
-        y = parseFloat(element.getAttribute('data-mobile-y')) || 0;
-      } else if (device === 'tablet') {
-        x = parseFloat(element.getAttribute('data-tablet-x')) || 0;
-        y = parseFloat(element.getAttribute('data-tablet-y')) || 0;
-      } else {
-        x = parseFloat(element.getAttribute('data-desktop-x')) || 0;
-        y = parseFloat(element.getAttribute('data-desktop-y')) || 0;
-      }
-
-      console.log(`Applying position for ${device}: x=${x}, y=${y}`);
-      
-      // Applica la posizione
-      element.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  }
-};
-
-
-// Chiama questa funzione ogni volta che cambia il dispositivo o ridimensioni l'iframe
-window.addEventListener('resize', updateElementPositions);
-
-
-const getDeviceType = () => {
-  const editor = document.querySelector('.editor-visual-editor');
-  const width = editor ? editor.clientWidth : window.innerWidth;
-
-  if (width <= 768) {
-    return 'mobile';
-  } else if (width <= 1024) {
-    return 'tablet';
-  } else {
-    return 'desktop';
-  }
-};
+    if (width <= 768) {
+      return "mobile";
+    } else if (width <= 1024) {
+      return "tablet";
+    } else {
+      return "desktop";
+    }
+  };
+  
+  // Stato per tracciare il dispositivo selezionato
+  const [selectedDevice, setSelectedDevice] = useState('desktop');
+  const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
 
 
   return (
-    <>
+    <> 
       <InspectorControls>
+     
         <TabPanel
           className="tab-general"
           activeClass="active-tab"
@@ -633,6 +675,7 @@ const getDeviceType = () => {
                   attributes={attributes}
                   setAttributes={setAttributes}
                 />
+            
               </div>
               {/*TAB 3*/}
               <div className={"tab-3 " + tab.name}>
@@ -650,6 +693,7 @@ const getDeviceType = () => {
               </div>
               {/*TAB 2*/}
               <div className={"tab-2 " + tab.name}>
+           
                 <SlideControls
                   attributes={attributes}
                   setAttributes={setAttributes}
@@ -657,18 +701,40 @@ const getDeviceType = () => {
                   swiperRef={swiperRef}
                   parallax={parallax}
                   slide={slide}
+                  selectedDevice={selectedDevice}
+                  onDeviceChange={handleDeviceChange}
+                  setSelectedIcon={setSelectedIcon}
+                 
                 />
+            
               </div>
             </>
           )}
         </TabPanel>
-        <button onClick={() => handleDeviceChange('desktop')}>Desktop</button>
-<button onClick={() => handleDeviceChange('tablet')}>Tablet</button>
-<button onClick={() => handleDeviceChange('mobile')}>Mobile</button>
-
       </InspectorControls>
-
-      <div {...blockProps}>
+     
+      <div {...blockProps} >
+      {slides && slides.length > 0 && slides.map((slide) => (
+        <>
+      {enableRuler && (
+      <div className="editor-container">
+        <Ruler
+          height={10}   // Altezza del righello orizzontale
+          unit={100}    // Unità di misura (ad esempio, pixel)
+          direction="horizontal"  // Imposta il righello come orizzontale
+          attributes={attributes}
+        />
+        <Ruler
+          width={10}    // Larghezza del righello verticale
+          unit={100}    // Unità di misura
+          direction="vertical"  // Imposta il righello come verticale
+          attributes={attributes}
+        />
+      </div>
+        )}
+        </>
+      ))}        
+     
         <Swiper
           ref={swiperRef}
           key={key}
@@ -713,7 +779,7 @@ const getDeviceType = () => {
           }}
           autoplay={autoplayConfig}
           onAutoplayTimeLeft={autoplayProgress ? onAutoplayTimeLeft : undefined}
-          className={"slider-builder editor-grid " + filter}
+          className={`slider-builder ${enableGrid ? 'editor-grid' : ''} ${filter}`} 
           dir={languageSlider}
           direction={directionSlider}
           effect={effect}
@@ -803,6 +869,7 @@ const getDeviceType = () => {
           }}
           style={stylesPagination}
         >
+          
           {attributes.contentType === "post-based" &&
           attributes.posts &&
           Array.isArray(attributes.posts) &&
@@ -843,9 +910,7 @@ const getDeviceType = () => {
             ? slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div
-                    className={
-                      "swiper-slide"
-                    }
+                   className={"swiper-slide"}
                     style={{
                       // Gestione dell'immagine di sfondo
                       ...(slide.backgroundType === "image" &&
@@ -876,136 +941,201 @@ const getDeviceType = () => {
                         : {}),
                     }}
                   >
-                    <div className={"content-slide-slider " +
-                      slide.position +
-                      " " +
-                      overflow +
-                      " " +
-                      slide.layout +
-                      "-layout"}
+                    
+                   <div
+                      className={
+                        "content-slide-slider " +
+                        (slide.developerMode
+                          ? ""
+                          : slide.position + " " + overflow + " " + slide.layout + "-layout")
+                      }
                       style={{
-                          // Gestione dello spazio e altre proprietà
-                          height: autoHeight ? "auto" : `${slideHeight}px`,
-                          display: "flex",
-                          flexDirection:
-                            slide.layout === "horizontal" ? "row" : "column",
-                          textAlign: "center",
-                          width: "100%",
-                          position: "relative",
-                          visibility: "visible",
-                          gap: slide.gapItems + "px",
-                          borderRadius: slide.backgroundBorderRadius + "px",
-                          paddingTop: slide.backgroundVerticalPadding + "px",
-                          paddingBottom: slide.backgroundVerticalPadding + "px",
-                          paddingLeft: slide.backgroundHorizontalPadding + "px",
-                          paddingRight: slide.backgroundHorizontalPadding + "px",
-                          borderStyle: slide.borderStyleSlide,
-                          borderWidth: slide.backgroundBorderSize + "px",
-                          borderColor: slide.backgroundBorderColor,
-                          margin: "0 auto",
-                          maxWidth: slide.enableContentWidth ? `${slide.contentWidth}px` : false,
-                          flexWrap: slide.layoutWrap,
+                        // Gestione dello spazio e altre proprietà
+                        height: autoHeight ? "auto" : `${slideHeight}px`,
+                        width: "100%",
+                        position: "relative",
+                        visibility: "visible",
+                        borderRadius: slide.backgroundBorderRadius + "px",
+                        borderStyle: slide.borderStyleSlide,
+                        borderWidth: slide.backgroundBorderSize + "px",
+                        borderColor: slide.backgroundBorderColor,
+                        margin: "0 auto",
+                        ...(slide.developerMode
+                          ? {}
+                          : {
+                              display: "flex",
+                              flexDirection: slide.layout === "horizontal" ? "row" : "column",
+                              textAlign: "center",
+                              gap: slide.gapItems + "px",
+                              paddingTop: slide.backgroundVerticalPadding + "px",
+                              paddingBottom: slide.backgroundVerticalPadding + "px",
+                              paddingLeft: slide.backgroundHorizontalPadding + "px",
+                              paddingRight: slide.backgroundHorizontalPadding + "px",
+                              maxWidth: slide.enableContentWidth
+                                ? `${slide.contentWidth}px`
+                                : false,
+                              flexWrap: slide.layoutWrap,
+                            }),
                       }}
-                      >
-                    {slide.backgroundType === "video" && (
-                      <>
-                        {slide.backgroundVideo && (
-                          <video
-                            src={slide.backgroundVideo}
-                            autoPlay
-                            muted
-                            loop
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              position: "absolute",
-                              objectPosition: slide.focalPoint
-                                ? `${slide.focalPoint.x * 100}% ${
-                                    slide.focalPoint.y * 100
-                                  }%`
-                                : "center",
-                              top: 0,
-                              left: 0,
-                              zIndex: 0,
-                              objectFit: "cover",
-                            }}
-                          />
-                        )}
-                      </>
-                    )}
+                    >
+                      
+                      {slide.backgroundType === "video" && (
+                        <>
+                          {slide.backgroundVideo && (
+                            <video
+                              src={slide.backgroundVideo}
+                              autoPlay
+                              muted
+                              loop
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                position: "absolute",
+                                objectPosition: slide.focalPoint
+                                  ? `${slide.focalPoint.x * 100}% ${
+                                      slide.focalPoint.y * 100
+                                    }%`
+                                  : "center",
+                                top: 0,
+                                left: 0,
+                                zIndex: 0,
+                                objectFit: "cover",
+                              }}
+                            />
+                          )}
+                        </>
+                      )}
+                   
+                    {slide.elements.map((element, index) => {
+                      const handleDrag = (e, data) => {
+                        handleDragElement(slide.id, index, data.x, data.y);
+                      };
 
-
-                  {slide.elements.map((element, index) => {
-      const handleDrag = (e, data) => {
-        handleDragElement(slide.id, index, data.x, data.y);
-      };
-      
-
-
-      switch (element.type) {
-        case "title":
-          return (
-            <DraggableTest
-              key={index}
-              x={element[activeDevice]?.x || 0}
-          y={element[activeDevice]?.y || 0}
-          onDrag={handleDrag}
-          activeDevice={activeDevice}
-        
-            >
-              
-              <TextComponent element={element} index={index} />
-              
-            </DraggableTest>
-      );
-    case "image":
-      return (
-        <DraggableTest
-              key={index}
-              x={element[activeDevice]?.x || 0}
-          y={element[activeDevice]?.y || 0}
-          onDrag={handleDrag}
-          activeDevice={activeDevice}
-        
-            >
-          <ImageComponent element={element} index={index} />
-        </DraggableTest>
-      );
-    case "div":
-      return (
-        <DraggableTest
-              key={index}
-              x={element[activeDevice]?.x || 0}
-          y={element[activeDevice]?.y || 0}
-          onDrag={handleDrag}
-          activeDevice={activeDevice}
-        
-            >
-          <DivComponent element={element} index={index} />
-        </DraggableTest>
-      );
-    case "button":
-      return (
-         <DraggableTest
-              key={index}
-              x={element[activeDevice]?.x || 0}
-          y={element[activeDevice]?.y || 0}
-          onDrag={handleDrag}
-          activeDevice={activeDevice}
-        
-            >
-          <ButtonComponent element={element} index={index} />
-        </DraggableTest>
-      );
-    default:
-      return null;
-  }
-})} 
-
-</div>
-
+                      switch (element.type) {
+                        case "title":
+                          return slide.developerMode ? (
+                            <DraggableTest
+                              key={index}
+                              x={element[activeDevice]?.x || 0}
+                              y={element[activeDevice]?.y || 0}
+                              onDrag={handleDrag}
+                              activeDevice={activeDevice}
+                              style={{zIndex: element.zIndexTitle}}
+                            >
+                              <TextComponent
+                                element={element}
+                                index={index}
+                              />
+                            </DraggableTest>
+                          ) : (
+                            <TextComponent
+                              key={index}
+                              element={element}
+                              index={index}
+                            />
+                          );
+                        case "image":
+                          return slide.developerMode ? (
+                            <DraggableTest
+                              key={index}
+                              x={element[activeDevice]?.x || 0}
+                              y={element[activeDevice]?.y || 0}
+                              onDrag={handleDrag}
+                              activeDevice={activeDevice}
+                              style={{zIndex: element.zIndexImage}}
+                            >
+                              <ImageComponent
+                                element={element}
+                                index={index}
+                              />
+                            </DraggableTest>
+                          ) : (
+                            <ImageComponent
+                              key={index}
+                              element={element}
+                              index={index}
+                            />
+                          );
+                        case "div": 
+                          return slide.developerMode ? (
+                            <DraggableTest
+                              key={index}
+                              x={element[activeDevice]?.x || 0}
+                              y={element[activeDevice]?.y || 0}
+                              onDrag={handleDrag}
+                              activeDevice={activeDevice}
+                              style={{zIndex: element.zIndexDiv}}
+                            >
+                          
+                              <DivComponent
+                                element={element}
+                                index={index}
+                              />
+                              
+                            </DraggableTest>
+                          ) : (
+                            
+                            <DivComponent
+                              key={index}
+                              element={element}
+                              index={index}
+                            />
+                           
+                          );
+                        case "button":
+                          return slide.developerMode ? (
+                            <DraggableTest
+                              key={index}
+                              x={element[activeDevice]?.x || 0}
+                              y={element[activeDevice]?.y || 0}
+                              onDrag={handleDrag}
+                              activeDevice={activeDevice}
+                              style={{zIndex: element.zIndexButton}}
+                            >
+                              <ButtonComponent
+                                element={element}
+                                index={index}
+                                selectedIcon={element.icon}
+                              />
+                            </DraggableTest>
+                          ) : (
+                            <ButtonComponent
+                              key={index}
+                              element={element}
+                              index={index}
+                              selectedIcon={element.icon}
+                            />
+                          );
+                          case "icon":
+                            return slide.developerMode ? (
+                              <DraggableTest
+                                key={index}
+                                x={element[activeDevice]?.x || 0}
+                                y={element[activeDevice]?.y || 0}
+                                onDrag={handleDrag}
+                                activeDevice={activeDevice}
+                                style={{zIndex: element.zIndexIcon}}
+                              >
+                                <IconComponent
+                                  element={element}
+                                  index={index}
+                                />
+                              </DraggableTest>
+                            ) : (
+                              <IconComponent
+                                key={index}
+                                element={element}
+                                index={index}
+                              />
+                            );
+                        default:
+                          return null;
+                      }
+                    })}
+                 
+                 
+                  </div>
                     </div>
-                
                 </SwiperSlide>
               ))
             : null}

@@ -271,3 +271,19 @@ function handle_image_upload(WP_REST_Request $request) {
         'url' => wp_get_attachment_url( $attachment_id ),
     ), 200 );
 }
+
+
+
+
+
+
+
+
+function my_block_enqueue_frontend_assets() {
+    // Carica il CSS di FontAwesome
+    wp_enqueue_style(
+        'fontawesome-css', 
+        plugin_dir_url(__FILE__) . 'fontawesome/css/all.min.css' // Percorso del CSS di FontAwesome nel plugin
+    );
+}
+add_action('wp_enqueue_scripts', 'my_block_enqueue_frontend_assets');

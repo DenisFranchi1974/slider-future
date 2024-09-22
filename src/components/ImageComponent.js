@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect, useRef } from "react";
 
 const ImageComponent = ({ element, index }) => {
   const getImageStyle = () => {
@@ -32,7 +33,7 @@ const ImageComponent = ({ element, index }) => {
       margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`, // Usa i valori aggi
       "--interation-image": element.interationImage || "forwards",
       position:"relative",
-      
+      "--delay-effect-image": element.delayEffectImage + "s",
     };
 
     if (element.widthImage === "relative") {
@@ -53,7 +54,42 @@ const ImageComponent = ({ element, index }) => {
     }
 
     return style;
-  };
+  }; 
+
+   // Nascondi l'elemento dopo un tot di tempo
+   const bannerRef = useRef(null); // Crea un ref per l'elemento
+   const [hideEnabled, setHideEnabled] = useState(element.delayHide); // Stato per abilitare/disabilitare la funzione
+   const [hideAfter, setHideAfter] = useState(element.delaySeconds); // Tempo in secondi per nascondere
+ 
+   useEffect(() => {
+     // Funzione per nascondere l'elemento
+     const hideBanner = () => {
+       if (bannerRef.current) {
+         bannerRef.current.classList.add('hidden'); // Aggiunge la classe 'hidden'
+       }
+     };
+ 
+     // Se la funzionalità è abilitata, imposta il timeout
+     if (hideEnabled) {
+       const timeout = setTimeout(hideBanner, hideAfter * 1000); // Nascondi dopo `hideAfter` secondi
+       return () => clearTimeout(timeout); // Pulisci il timeout quando il componente viene smontato o `hideEnabled` cambia
+     } else {
+       // Se disabilitato, rimuovi la classe 'hidden'
+       if (bannerRef.current) {
+         bannerRef.current.classList.remove('hidden');
+       }
+     }
+   }, [hideEnabled, hideAfter]); // Rerun l'effetto quando `hideEnabled` o `hideAfter` cambiano
+ 
+   // Forza un aggiornamento del componente quando `textDiv.delayHide` cambia
+   useEffect(() => {
+     setHideEnabled(element.delayHide);
+   }, [element.delayHide]);
+   useEffect(() => {
+     setHideAfter(element.delaySeconds);
+   }, [element.delaySeconds]);
+
+
   return (
     <div
       style={{
@@ -63,21 +99,18 @@ const ImageComponent = ({ element, index }) => {
           element.durationEffectImageMoving + "s",
         "--translate-effect-moving-image":
           element.translateEffectImageMoving + "px",
-        "--duration-effect-moving-image-hover":
-          element.durationEffectImageMovingHover + "s",
-        "--translate-effect-moving-image-hover":
-          element.translateEffectImageMovingHover + "px",
         "--rotate-hover-image": element.rotateHoverImage + "deg" || "0",
         "--transition-hover-image":
           element.durationEffectHoverImage + "s" || "0.3",
         width: element.widthImageContent,
+        "--delay-hide-seconds-image": element.delayTransition + "s",
       }}
       className={
         "content-img-first " +
         element.animationImageMoving +
-        " " +
-        element.animationImageMovingHover
+        " " + element.hideImage
       }
+      ref={bannerRef}
     >
       <img
         key={index}

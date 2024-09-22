@@ -58,6 +58,11 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
     colorOneEffect,
     colorTwoEffect,
     colorThreeEffect,
+    enableGrid,
+    enableRuler,
+    opacityRuler,
+    opacityGrid,
+    colorGrid
   } = attributes;
 
   // Effect Color Default
@@ -310,15 +315,6 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               )}
               {effect == "cube" && (
                 <>
-                  <p
-                    className="notice components-base-control__help"
-                    style={{ marginTop: "0", borderRadius: "0" }}
-                  >
-                    {__(
-                      "Warning: With this effect, it's better to set the slide with `overflow: hidden`!",
-                      "cocoblocks"
-                    )}
-                  </p>
                   <div className="custom-select">
                     <ToggleControl
                       label={__("Shadow", "cocoblocks")}
@@ -1030,6 +1026,96 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
           </div>
         </>
       )}
+      {activeSectionOptions === "design" && (
+        <>
+          <div className="content-title-custom-panel">
+            <h2 className="title-custom-panel">
+              {__("Design tools", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="cocoblocks-panel content-section-custom-panel">
+            <div className="content-section-panel">
+            <div className="custom-select">
+                  <ToggleControl
+                    label={
+                      <>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-240q-33 0-56.5-23.5T80-320v-320q0-33 23.5-56.5T160-720h640q33 0 56.5 23.5T880-640v320q0 33-23.5 56.5T800-240H160Zm0-80h640v-320H680v160h-80v-160h-80v160h-80v-160h-80v160h-80v-160H160v320Zm120-160h80-80Zm160 0h80-80Zm160 0h80-80Zm-120 0Z"/></svg>
+                        {__("Enable rulers", "cocoblocks")}
+                      </>
+                    }
+                    checked={enableRuler}
+                    onChange={(val) => setAttributes({ enableRuler: val })}
+                  />
+                </div>
+                {enableRuler && (
+                <div className="custom-select select-modal">
+                    <RangeControl
+                      label={__("Opacity", "cocoblocks")}
+                      value={opacityRuler}
+                      onChange={(val) => setAttributes({ opacityRuler: val })}
+                      min={.1}
+                      max={1}
+                      step={0.1}
+                    />
+                  </div>
+                )}
+                <div className="custom-select">
+                  <ToggleControl
+                    label={
+                      <>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h80v-80h-80v80Zm160 0h80v-80h-80v80Zm160 0h80v-80h-80v80Zm160 0h80v-80h-80v80ZM200-680h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80Zm160-320h80v-80h-80v80Zm0 160h80v-80h-80v80Zm0 160h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"/></svg>
+                        {__("Enable grid", "cocoblocks")}
+                      </>
+                    }
+                    checked={enableGrid}
+                    onChange={(val) => setAttributes({ enableGrid: val })}
+                  />
+                </div>
+                {enableGrid && (
+                <>
+                <div className="custom-select select-modal">
+                    <RangeControl
+                      label={__("Opacity", "cocoblocks")}
+                      value={opacityGrid}
+                      onChange={(val) => setAttributes({ opacityGrid: val })}
+                      min={.1}
+                      max={1}
+                      step={0.1}
+                    />
+                  </div>
+                  <div className="custom-select color">
+                      <ColorOptionsPanel
+                        colorNormal={colorGrid}
+                        setColorNormal={(color) =>
+                          setAttributes({ colorGrid: color })
+                        }
+                        buttonTitle={__("Color", "cocoblocks")}
+                        buttonIcon={
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#e8eaed"
+                            style={{
+                              marginRight: "3px",
+                              height: "16px",
+                              width: "16px",
+                              position: "relative",
+                              top: "3px",
+                            }}
+                          >
+                            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z" />
+                          </svg>
+                        }
+                      />
+                    </div>
+                  </>
+                )}
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Modal Creative Effect */}
       {isOpen && (
@@ -1273,7 +1359,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={__("Opacity", "cocoblocks")}
                       value={opacity}
                       onChange={(val) => setAttributes({ opacity: val })}
-                      min={0}
+                      min={0.1}
                       max={1}
                       step={0.1}
                     />
@@ -1443,7 +1529,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={__("Opacity", "cocoblocks")}
                       value={nextOpacity}
                       onChange={(val) => setAttributes({ nextOpacity: val })}
-                      min={0}
+                      min={0.1}
                       max={1}
                       step={0.1}
                     />

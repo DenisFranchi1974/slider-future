@@ -1,12 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const TextComponent = ({ element, index }) => {
+
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
   const stylesTitle = {
     fontSize: element.fontSize + "px",
-    "--font-size-tablet": element.fontSizeTablet + "px",
+    "--font-size-tablet": element.fontSizeTablet + "px", 
     "--font-size-mobile": element.fontSizeMobile + "px",
     color: element.textColor,
     "--color-hover": element.textColorHover,
@@ -46,8 +47,8 @@ const TextComponent = ({ element, index }) => {
     textOrientation: element.textOrientation || "initial",
     position:"relative",
     opacity: element.opacity,
-   
-
+    transform: `rotate(${element.rotate}deg)`,
+    "--rotate-hover": element.rotateHover + "deg" || "0",
   };
   const Tag = element.elementTitle || "h3";
   const stylesSpan = {
@@ -259,13 +260,44 @@ const TextComponent = ({ element, index }) => {
     );
   };
 
+  // Nascondi l'elemento dopo un tot di tempo
+  const bannerRef = useRef(null); // Crea un ref per l'elemento
+  const [hideEnabled, setHideEnabled] = useState(element.delayHide); // Stato per abilitare/disabilitare la funzione
+  const [hideAfter, setHideAfter] = useState(element.delaySeconds); // Tempo in secondi per nascondere
+
+  useEffect(() => {
+    // Funzione per nascondere l'elemento
+    const hideBanner = () => {
+      if (bannerRef.current) {
+        bannerRef.current.classList.add('hidden'); // Aggiunge la classe 'hidden'
+      }
+    };
+
+    // Se la funzionalità è abilitata, imposta il timeout
+    if (hideEnabled) {
+      const timeout = setTimeout(hideBanner, hideAfter * 1000); // Nascondi dopo `hideAfter` secondi
+      return () => clearTimeout(timeout); // Pulisci il timeout quando il componente viene smontato o `hideEnabled` cambia
+    } else {
+      // Se disabilitato, rimuovi la classe 'hidden'
+      if (bannerRef.current) {
+        bannerRef.current.classList.remove('hidden');
+      }
+    }
+  }, [hideEnabled, hideAfter]); // Rerun l'effetto quando `hideEnabled` o `hideAfter` cambiano
+
+  // Forza un aggiornamento del componente quando `textDiv.delayHide` cambia
+  useEffect(() => {
+    setHideEnabled(element.delayHide);
+  }, [element.delayHide]);
+  useEffect(() => {
+    setHideAfter(element.delaySeconds);
+  }, [element.delaySeconds]);
+
   return (
     <div
       style={{
-        transform: `rotate(${element.rotate}deg)`,
         "--duration-effect": element.durationEffect + "s",
         "--delay-effect": element.delayEffect + "s",
-        "--rotate-hover": element.rotateHover + "deg" || "0",
         "--color-decoration": element.underlineColor || "#000000",
         "--padding-decoration": element.underlinePadding + "px" || "0",
         "--width-decoration": element.underlineWidth + "%" || "100%",
@@ -287,15 +319,18 @@ const TextComponent = ({ element, index }) => {
             ? `${element.widthCustomTitle}%`
             : element.widthTitle,
         "--interation": element.interation || "forwards",
+        "--delay-hide-seconds-title": element.delayTransition + "s",
       }}
       className={
         "content-title-slide letter " +
         element.decoration +
         " " +
         element.animation +
-        element.playState
+        element.playState +
+        " " + element.hideTitle
       }
       data-animation={element.animation}
+      ref={bannerRef}
     >
       <Tag
         key={index}

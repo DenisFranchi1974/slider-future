@@ -32,6 +32,7 @@ const ImageControlsBlock = ({
   setActiveSectionImage,
   activeSectionImage,
   parallax,
+  innerElements
 }) => {
   // Inizializza lo stato locale utilizzando element.playState
   const [playStateImage, setPlayState] = useState(
@@ -91,1259 +92,1359 @@ const ImageControlsBlock = ({
     setIsModalOpen(false);
   };
 
-  // Remove Image
-  const removeSlideImageBlock = (slideId, divIndex, imageIndex) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.filter(
-                      (imageDiv, imgIndex) => imgIndex !== imageIndex
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
+// Remove Image
+const removeSlideImageBlock = (slideId, divIndex, innerIndex) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.filter(
+                    (innerElement, eIndex) => eIndex !== innerIndex || innerElement.type !== "image"
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
 
-    setAttributes({ slides: updatedSlides });
-  };
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Image inside block
-  const updateSlideImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newImageUrl,
-    newAltText
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              imageUrl: newImageUrl,
-                              alt: newAltText,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Image inside block
+const updateSlideImageBlock = (slideId, divIndex, innerIndex, newImageUrl, newAltText) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? {
+                            ...innerElement,
+                            imageUrl: newImageUrl,
+                            alt: newAltText,
+                          }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update fit image
-  const updateSlideImageFitBlock = (slideId, divIndex, imageIndex, newFit) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, fit: newFit }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update fit image
+const updateSlideImageFitBlock = (slideId, divIndex, innerIndex, newFit) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, fit: newFit }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update width image
-  const updateWidthImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newWidthImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, widthImage: newWidthImage }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update hide
+const updateDelayHide = (slideId, divIndex, innerIndex,value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, delayHide: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+
+// Update hide seconds
+const updateDelaySeconds = (slideId, divIndex, innerIndex,value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, delaySeconds: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update hide transition
+const updateDelayTransition = (slideId, divIndex, innerIndex,value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, delayTransition: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+
+// Update width image
+const updateWidthImageBlock = (slideId, divIndex, innerIndex, newWidthImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, widthImage: newWidthImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
   // Update width content image
-  const updateWidthImageContent = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, widthImageContent: value }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+const updateWidthImageContent = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, widthImageContent: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border style
-  const updateBorderStyleImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, borderStyleImage: value }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update border style
+const updateBorderStyleImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, borderStyleImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update custom width image
-  const updateCustomWidthImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newCustomWidthImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              customWidthImage: newCustomWidthImage,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update custom width image
+const updateCustomWidthImageBlock = (slideId, divIndex, innerIndex, newCustomWidthImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, customWidthImage: newCustomWidthImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update custom width image px
-  const updateCustomWidthImagePxBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newCustomWidthImagePx
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              customWidthImagePx: newCustomWidthImagePx,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update custom width image px
+const updateCustomWidthImagePxBlock = (slideId, divIndex, innerIndex, newCustomWidthImagePx) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, customWidthImagePx: newCustomWidthImagePx }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update height image
-  const updateHeightImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newHeightImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, heightImage: newHeightImage }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update height image
+const updateHeightImageBlock = (slideId, divIndex, innerIndex, newHeightImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, heightImage: newHeightImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update custom height image
-  const updateCustomHeightImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newCustomHeightImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              customHeightImage: newCustomHeightImage,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update custom height image
+const updateCustomHeightImageBlock = (slideId, divIndex, innerIndex, newCustomHeightImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, customHeightImage: newCustomHeightImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update custom height image px
-  const updateCustomHeightImagePxBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newCustomHeightImagePx
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              customHeightImagePx: newCustomHeightImagePx,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update custom height image px
+const updateCustomHeightImagePxBlock = (slideId, divIndex, innerIndex, newCustomHeightImagePx) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, customHeightImagePx: newCustomHeightImagePx }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border color image
-  const updateSlideBackgroundBorderColorImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    borderColor
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              backgroundBorderColorImage: borderColor,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update border color image
+const updateSlideBackgroundBorderColorImageBlock = (slideId, divIndex, innerIndex, borderColor) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, backgroundBorderColorImage: borderColor }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border size image
-  const updateSlideBackgroundBorderSizeImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newSizeBorderImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              backgroundBorderSizeImage: newSizeBorderImage,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update border size image
+const updateSlideBackgroundBorderSizeImageBlock = (slideId, divIndex, innerIndex, newSizeBorderImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, backgroundBorderSizeImage: newSizeBorderImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border radius image
-  const updateSlideBackgroundBorderRadiusImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newRadiusImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              backgroundBorderRadiusImage: newRadiusImage,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update border radius image
+const updateSlideBackgroundBorderRadiusImageBlock = (slideId, divIndex, innerIndex, newRadiusImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, backgroundBorderRadiusImage: newRadiusImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
+  
   // Update padding image
-  const updatePaddingImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newPaddingImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, paddingImage: newPaddingImage }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+const updatePaddingImageBlock = (slideId, divIndex, innerIndex, newPaddingImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, paddingImage: newPaddingImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update background color image
-  const updateSlideBackgroundColorImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    backgroundColorImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              backgroundColorImage: backgroundColorImage,
-                            }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update background color image
+const updateSlideBackgroundColorImageBlock = (slideId, divIndex, innerIndex, backgroundColorImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, backgroundColorImage: backgroundColorImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Rotate
-  const updateRotateImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    rotateImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, rotateImage: rotateImage }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Rotate
+const updateRotateImageBlock = (slideId, divIndex, innerIndex, rotateImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, rotateImage: rotateImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
   // Update Opacity
-  const updateOpacityImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    opacityImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, opacityImage: opacityImage }
-                          : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Margin image
-  const updatenewMarginImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newMarginImage
-  ) => {
-    const addUnit = (value, unit) => {
-      if (typeof value === "string" && value.endsWith(unit)) {
-        return value;
-      }
-      return `${value}${unit}`;
-    };
-
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) => {
-              if (element.type === "div" && i === divIndex) {
-                return {
+const updateOpacityImageBlock = (slideId, divIndex, innerIndex, opacityImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
                   ...element,
-                  innerImageDivs: element.innerImageDivs.map((imageDiv, j) => {
-                    if (j === imageIndex) {
-                      return {
-                        ...imageDiv,
-                        marginImage: {
-                          top: addUnit(
-                            newMarginImage.top || "0",
-                            newMarginImage.unit || "px"
-                          ),
-                          right: addUnit(
-                            newMarginImage.right || "0",
-                            newMarginImage.unit || "px"
-                          ),
-                          bottom: addUnit(
-                            newMarginImage.bottom || "0",
-                            newMarginImage.unit || "px"
-                          ),
-                          left: addUnit(
-                            newMarginImage.left || "0",
-                            newMarginImage.unit || "px"
-                          ),
-                        },
-                      };
-                    }
-                    return imageDiv;
-                  }),
-                };
-              }
-              return element;
-            }),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, opacityImage: opacityImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Margin image
+const updatenewMarginImageBlock = (slideId, divIndex, innerIndex, newMarginImage) => {
+  const addUnit = (value, unit) => {
+    if (typeof value === "string" && value.endsWith(unit)) {
+      return value;
+    }
+    return `${value}${unit}`;
   };
 
-  // Update blob image
-  const updateBlobMaskBlock = (slideId, divIndex, imageIndex, newBlobMask) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, blobMask: newBlobMask }
-                        : imageDiv
-                    ),
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) => {
+            if (element.type === "div" && i === divIndex) {
+              return {
+                ...element,
+                innerElements: element.innerElements.map((innerElement, eIndex) => {
+                  if (eIndex === innerIndex && innerElement.type === "image") {
+                    return {
+                      ...innerElement,
+                      marginImage: {
+                        top: addUnit(newMarginImage.top || "0", newMarginImage.unit || "px"),
+                        right: addUnit(newMarginImage.right || "0", newMarginImage.unit || "px"),
+                        bottom: addUnit(newMarginImage.bottom || "0", newMarginImage.unit || "px"),
+                        left: addUnit(newMarginImage.left || "0", newMarginImage.unit || "px"),
+                      },
+                    };
                   }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+                  return innerElement;
+                }),
+              };
+            }
+            return element;
+          }),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update animation image
-  const updateAnimationImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, animationImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update blob image
+const updateBlobMaskBlock = (slideId, divIndex, innerIndex, newBlobMask) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, blobMask: newBlobMask }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update duration animation image
-  const updateDurationEffectImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, durationEffectImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update animation image
+const updateAnimationImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, animationImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update iteration animation image
-  const updateInterationImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, interationImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update duration animation image
+const updateDurationEffectImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, durationEffectImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update moving animation image
-  const updateAnimationImageMoving = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, animationImageMoving: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
 
-  // Update duration animation image
-  const updateDurationEffectImageMoving = (
-    slideId,
-    divIndex,
-    imageIndex,
-    value
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, durationEffectImageMoving: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update iteration animation image
+const updateInterationImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, interationImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update translate animation image
-  const updateTranslateEffectImageMoving = (
-    slideId,
-    divIndex,
-    imageIndex,
-    value
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, translateEffectImageMoving: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update moving animation image
+const updateAnimationImageMoving = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, animationImageMoving: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update spike image
-  const updateSpikeMask = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, spikeMask: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update duration animation image
+const updateDurationEffectImageMoving = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, durationEffectImageMoving: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update spike left image
-  const updateSpikeLeftWidth = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, spikeLeftWidth: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update translate animation image
+const updateTranslateEffectImageMoving = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, translateEffectImageMoving: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update spike right image
-  const updateSpikeMaskRight = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, spikeMaskRight: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update spike image
+const updateSpikeMask = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, spikeMask: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update spike right width image
-  const updateSpikeRightWidth = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, spikeRightWidth: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update spike left image
+const updateSpikeLeftWidth = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, spikeLeftWidth: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update filter image
-  const updateImageFilter = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, imageFilter: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update spike right image
+const updateSpikeMaskRight = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, spikeMaskRight: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Selector link
-  const updateImageLink = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, imageLink: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update spike right width image
+const updateSpikeRightWidth = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, spikeRightWidth: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Url
-  const updateLinkUrlImage = (slideId, divIndex, imageIndex, url) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, linkUrlImage: url }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update filter image
+const updateImageFilter = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, imageFilter: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Target
-  const updateScrollToIdImage = (slideId, divIndex, imageIndex, id) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, scrollToIdImage: id }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Selector link
+const updateImageLink = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, imageLink: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+  
+// Link Url
+const updateLinkUrlImage = (slideId, divIndex, innerIndex, url) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, linkUrlImage: url }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Target
-  const updateLinkTargetImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, linkTargetImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Target
+const updateScrollToIdImage = (slideId, divIndex, innerIndex, id) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, scrollToIdImage: id }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Rel
-  const updateLinkRelImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, linkRelImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Target
+const updateLinkTargetImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, linkTargetImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Enable Desktop
-  const updateEnableDesktopImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, enableDesktopImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Rel
+const updateLinkRelImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, linkRelImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Enable Tablet
-  const updateEnableTabletImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, enableTabletImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Enable Desktop
+const updateEnableDesktopImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, enableDesktopImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Enable Mobile
-  const updateEnableMobileImage = (slideId, divIndex, imageIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, enableMobileImage: value }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Enable Tablet
+const updateEnableTabletImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, enableTabletImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Parallax image x
-  const updateParallaxImageBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newParallaxImage
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, parallaxImage: newParallaxImage }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Enable Mobile
+const updateEnableMobileImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, enableMobileImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Parallax image y
-  const updateParallaxImageYBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newParallaxImageY
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? { ...imageDiv, parallaxImageY: newParallaxImageY }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Parallax image x
+const updateParallaxImageBlock = (slideId, divIndex, innerIndex, newParallaxImage) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, parallaxImage: newParallaxImage }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Parallax image scale
-  const updateParallaxImageScaleBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newParallaxImageScale
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? {
-                            ...imageDiv,
-                            parallaxImageScale: newParallaxImageScale,
-                          }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Parallax image y
+const updateParallaxImageYBlock = (slideId, divIndex, innerIndex, newParallaxImageY) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, parallaxImageY: newParallaxImageY }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Parallax image opacity
-  const updateParallaxImageOpacityBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newParallaxImageOpacity
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? {
-                            ...imageDiv,
-                            parallaxImageOpacity: newParallaxImageOpacity,
-                          }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Parallax image scale
+const updateParallaxImageScaleBlock = (slideId, divIndex, innerIndex, newParallaxImageScale) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, parallaxImageScale: newParallaxImageScale }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Parallax image duration
-  const updateParallaxImageDurationBlock = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newParallaxImageDuration
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerImageDivs: element.innerImageDivs.map((imageDiv, j) =>
-                      j === imageIndex
-                        ? {
-                            ...imageDiv,
-                            parallaxImageDuration: newParallaxImageDuration,
-                          }
-                        : imageDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Parallax image opacity
+const updateParallaxImageOpacityBlock = (slideId, divIndex, innerIndex, newParallaxImageOpacity) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, parallaxImageOpacity: newParallaxImageOpacity }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Parallax image duration
+const updateParallaxImageDurationBlock = (slideId, divIndex, innerIndex, newParallaxImageDuration) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, parallaxImageDuration: newParallaxImageDuration }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update z-index 
+const updateZindexImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, zIndexImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update position 
+const updatePositionInnerImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, positionInnerImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update vertical position
+const updateVerticalPositionInnerImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, verticalPositionInnerImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+  // Update horizontal position
+const updateHorizontalPositionInnerImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, horizontalPositionInnerImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update delay effect
+const updateDelayEffectImage = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "image"
+                        ? { ...innerElement, delayEffectImage: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+    // nascondi l'immagine in editor
+    const [hideImage, setHideImage] = useState(imageDiv.hideImage || "");
+
+    const toggleHideImage = () => {
+      const newState = hideImage === "hide" ? "" : "hide";
+      setHideImage(newState);
+    
+      imageDiv.hideImage = newState;
+      setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
+    };
+  
+  
+   // Open panel
+   const [isOpen, setIsOpen] = useState(false);
+
+   const handleToggle = () => {
+     setIsOpen((prevIsOpen) => !prevIsOpen);
+   };
 
   return (
     <div className="custom-block-added">
       <div className="divider-controls-inner"></div>
       <div className="title-block-added">
+      <div className="title-element">
+        {imageDiv.imageUrl  ? (
+        <img src={ imageDiv.imageUrl }  style={{width:'30px',height:'30px',objectFit:'cover',borderRadius:'8px',border:'1px solid var(--background-color)'}}/>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+        )}
+          <h2>{__("Image", "slider")}</h2>
+        </div>
         <div className="title-element">
           <Button
             onClick={() =>
@@ -1353,24 +1454,20 @@ const ImageControlsBlock = ({
             icon={trash}
             label={__("Remove Image", "cocoblocks")}
             className="button-remove-element"
-            style={{
-              position: "absolute",
-              right: "12px",
-              top: "10px",
-            }}
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e8eaed"
-          >
-            <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
-          </svg>
-          <h2>{__("Inner Image", "slider")}</h2>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+        <button onClick={handleToggle} className="button-open-control-element">
+          {isOpen ? (
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          )}
+        </button>
+      </Tooltip>
         </div>
       </div>
+      {isOpen && (
+        <>
       <SectionSelectorImage onSectionChange={setActiveSectionImage} />
       <div className="content-img-upload">
         <div className="content-label-image">
@@ -1899,6 +1996,42 @@ const ImageControlsBlock = ({
               </div>
             </>
           )}
+           <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Position", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select select-control-label-right">
+              <SelectControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M479-359q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0 279L309-250l57-57 114 114 113-113 56 56L479-80ZM249-309 79-479l170-170 57 57-114 114 113 113-56 56Zm116-345-56-56 170-170 170 170-57 57-114-114-113 113Zm344 345-57-57 114-114-113-113 56-56 170 170-170 170Z"/></svg>
+                    {__("Select position", "cocoblocks")}
+                  </>
+                }
+                value={imageDiv.positionInnerImage}
+                options={[
+                  {
+                    label: __("Default", "cocoblocks"),
+                    value: "static",
+                  },
+                  {
+                    label: __("Relative", "cocoblocks"),
+                    value: "relative",
+                  },
+                ]}
+                onChange={(value) =>
+                  updatePositionInnerImage(
+                    slide.id,
+                    elementIndex,
+                    imageIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+          </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
               {__("Spacings", "cocoblocks")}
@@ -1935,6 +2068,71 @@ const ImageControlsBlock = ({
                 step={1}
               />
             </div>
+            {imageDiv.positionInnerImage === "relative" && (
+            <>
+            <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z" />
+                        </svg>
+                        {__("Vertical Position", "cocoblocks")}
+                      </>
+                    }
+                    value={imageDiv.verticalPositionInnerImage}
+                    onChange={(value) =>
+                      updateVerticalPositionInnerImage(
+                        slide.id,
+                        elementIndex,
+                        imageIndex,
+                        value
+                      )
+                    }
+                    min={-500}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z" />
+                        </svg>
+                        {__("Horizontal Position", "cocoblocks")}
+                      </>
+                    }
+                    value={imageDiv.horizontalPositionInnerImage}
+                    onChange={(value) =>
+                      updateHorizontalPositionInnerImage(
+                        slide.id,
+                        elementIndex,
+                        imageIndex,
+                        value
+                      )
+                    }
+                    min={-500}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                </>
+            )}
+            {imageDiv.positionInnerImage === "relative" && (
             <div className="custom-select box-control">
               <BoxControl
                 id="custom-margin-control"
@@ -1968,6 +2166,7 @@ const ImageControlsBlock = ({
                 }
               />
             </div>
+          )}
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
@@ -2198,6 +2397,30 @@ const ImageControlsBlock = ({
               />
             </div>
           </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("LEVEL", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-33 0-56.5-23.5T400-160v-320q0-33 23.5-56.5T480-560h320q33 0 56.5 23.5T880-480v320q0 33-23.5 56.5T800-80H480Zm0-80h320v-320H480v320Zm-240-80v-400q0-33 23.5-56.5T320-720h400v80H320v400h-80ZM80-400v-400q0-33 23.5-56.5T160-880h400v80H160v400H80Zm400 240v-320 320Z"/></svg>
+                    {__("Z-index", "cocoblocks")}
+                  </>
+                }
+                value={imageDiv.zIndexImage}
+                onChange={(value) =>
+                  updateZindexImage(slide.id, elementIndex, imageIndex, value)
+                }
+                min={0}
+                max={999}
+                step={1}
+              />
+            </div>
+          </div>
           <BoxShadowControlImageBlock
             slide={slide}
             slides={slides}
@@ -2360,6 +2583,43 @@ const ImageControlsBlock = ({
                     step={0.1}
                   />
                 </div>
+                {![
+                "bounce-effect-image-inner",
+                "bounce-left-effect-image-inner",
+                "bounce-right-effect-image-inner",
+                "bounce-top-effect-image-inner",
+                "bounce-bottom-effect-image-inner",
+                "rotate-continuous-image-inner",
+                "wiggle-image-inner",
+                "swing-image-inner",
+                "rubber-band-image-inner",
+              ].includes(imageDiv.animationImage) && (
+                <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                      >
+                        <path d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z" />
+                      </svg>
+                      {__("Delay", "cocoblocks")}
+                    </>
+                  }
+                  value={imageDiv.delayEffectImage}
+                  onChange={(value) =>
+                    updateDelayEffectImage(slide.id, elementIndex,imageIndex, value)
+                  }
+                  min={0}
+                  max={10}
+                  step={0.1}
+                />
+              </div>
+            )}
               </>
             )}
             {[
@@ -2893,6 +3153,80 @@ const ImageControlsBlock = ({
               />
             </div>
           </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Hide", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+             <div className="custom-select">
+              <ToggleControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></svg>
+                    {__("Delay hide", "cocoblocks")}
+                  </>
+                }
+                checked={imageDiv.delayHide}
+                onChange={(value) =>
+                  updateDelayHide(
+                    slide.id,
+                    elementIndex,
+                    imageIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+            {imageDiv.delayHide && (
+            <>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-270h160q33 0 56.5-23.5T600-350v-50q0-33-23.5-56.5T520-480h-80v-50h160v-80H360v210h160v50H360v80Zm0-570v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Seconds", "cocoblocks")}
+                  </>
+                }
+                value={imageDiv.delaySeconds}
+                onChange={(value) =>
+                  updateDelaySeconds(
+                    slide.id,
+                    elementIndex,
+                    imageIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={20}
+                step={1}
+              />
+            </div>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Transition", "cocoblocks")}
+                  </>
+                }
+                value={imageDiv.delayTransition}
+                onChange={(value) =>
+                  updateDelayTransition(
+                    slide.id,
+                    elementIndex,
+                    imageIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={3}
+                step={.1}
+              />
+            </div>
+            </>
+            )}
+          </div>
         </>
       )}
       {activeSectionImage === "hover" && (
@@ -3316,7 +3650,7 @@ const ImageControlsBlock = ({
                         newParallaxImageOpacity
                       )
                     }
-                    min={0}
+                    min={0.1}
                     max={1}
                     step={0.1}
                   />
@@ -3355,6 +3689,37 @@ const ImageControlsBlock = ({
             </>
           )}
         </>
+      )}
+       {activeSectionImage === "hide-image-editor" && (
+        <>
+        <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Hide in editor", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select button-hide-element" style={{textAlign:'center'}}>
+        <Button
+          variant={hideImage === "hide"}
+          onClick={toggleHideImage}
+          icon={
+            hideImage === "hide" ? (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            ) : (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+            )
+          }
+        />
+        </div>
+        </div>        
+        </>
+      )}
+       </>
       )}
     </div>
   );

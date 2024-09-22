@@ -39,6 +39,7 @@ const TextControls = ({
   // Inizializza lo stato locale utilizzando element.playState
   const [playState, setPlayState] = useState(element.playState || "");
 
+
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
     const newState = playState === "play" ? "" : "play";
@@ -47,6 +48,17 @@ const TextControls = ({
     element.playState = newState;
     setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
   };
+
+    // nascondi il titolo in editor
+    const [hideTitle, setHideTitle] = useState(element.hideTitle || "");
+
+    const toggleHideTitle = () => {
+      const newState = hideTitle === "hide" ? "" : "hide";
+      setHideTitle(newState);
+    
+      element.hideTitle = newState;
+      setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
+    };
 
   // Remove Text
   const removeSlideTitle = (slideId, index) => {
@@ -154,6 +166,57 @@ const TextControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
+   // Update hide
+   const updateDelayHide = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, delayHide: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+     // Update hide seconds
+     const updateDelaySeconds = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "title" && i === index
+                  ? { ...element, delaySeconds: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Update hide transition
+    const updateDelayTransition = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "title" && i === index
+                  ? { ...element, delayTransition: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
 
   // Update border style
   const updateBorderStyle = (slideId, index, newBorderStyle) => {
@@ -1263,6 +1326,24 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+    // Z index
+    const updateZindexTitle = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "title" && i === index
+                  ? { ...element, zIndexTitle: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
+
   // Open panel
   const [isOpen, setIsOpen] = useState(false);
 
@@ -1347,25 +1428,20 @@ const TextControls = ({
     },
     { label: __("Wallpoet", "cocoblock"), value: "Wallpoet, cursive" },
   ];
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.substring(0, maxLength) + ' ...';
+  };
+  const truncatedText = truncateText(element.text, 7);
 
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
       <div className="title-block-added">
         <div className="title-element">
-          <Button
-            isDestructive
-            onClick={() => removeSlideTitle(slide.id, elementIndex)}
-            className="button-remove-element"
-            style={{
-              position: "absolute",
-              right: "80px",
-              top: "10px",
-            }}
-            label={__("Remove Text", "cocoblocks")}
-            icon={trash}
-          ></Button>
-          <svg
+        <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -1374,17 +1450,26 @@ const TextControls = ({
           >
             <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
           </svg>
-          <h2>{__("Text", "cocoblocks")}</h2>
+        <h2>{truncatedText}</h2>
         </div>
+        <div className="title-element">
+        <Button
+            isDestructive
+            onClick={() => removeSlideTitle(slide.id, elementIndex)}
+            className="button-remove-element"
+            label={__("Remove Text", "cocoblocks")}
+            icon={trash}
+          ></Button>
         <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
-             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
           )}
         </button>
       </Tooltip>
+      </div>
       </div>
       {isOpen && (
         <>
@@ -2257,6 +2342,34 @@ const TextControls = ({
               />
             </div>
           </div>
+          {slide.developerMode && (
+            <>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("LEVEL", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-33 0-56.5-23.5T400-160v-320q0-33 23.5-56.5T480-560h320q33 0 56.5 23.5T880-480v320q0 33-23.5 56.5T800-80H480Zm0-80h320v-320H480v320Zm-240-80v-400q0-33 23.5-56.5T320-720h400v80H320v400h-80ZM80-400v-400q0-33 23.5-56.5T160-880h400v80H160v400H80Zm400 240v-320 320Z"/></svg>
+                    {__("Z-index", "cocoblocks")}
+                  </>
+                }
+                value={element.zIndexTitle}
+                onChange={(value) =>
+                  updateZindexTitle(slide.id, elementIndex, value)
+                }
+                min={0}
+                max={999}
+                step={1}
+              />
+            </div>
+          </div>
+          </>
+          )}
           <BoxShadowControl
             slide={slide}
             slides={slides}
@@ -2410,7 +2523,19 @@ const TextControls = ({
                 )}
               </>
             )}
-             {element.animation !== "none" && (
+              {![
+              "bounce-effect",
+              "bounce-left-effect",
+              "bounce-right-effect",
+              "bounce-top-effect",
+              "bounce-bottom-effect",
+              "bounce",
+              "stretch",
+              "focus",
+              "wiggle",
+              "swing",
+              "rubber-band",
+            ].includes(element.animation) && (
               <>
               <div className="custom-select">
                 <RangeControl
@@ -3227,6 +3352,77 @@ const TextControls = ({
               </>
             )}
           </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Hide", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+             <div className="custom-select">
+              <ToggleControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></svg>
+                    {__("Delay hide", "cocoblocks")}
+                  </>
+                }
+                checked={element.delayHide}
+                onChange={(value) =>
+                  updateDelayHide(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+            {element.delayHide && (
+            <>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-270h160q33 0 56.5-23.5T600-350v-50q0-33-23.5-56.5T520-480h-80v-50h160v-80H360v210h160v50H360v80Zm0-570v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Seconds", "cocoblocks")}
+                  </>
+                }
+                value={element.delaySeconds}
+                onChange={(value) =>
+                  updateDelaySeconds(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={20}
+                step={1}
+              />
+            </div>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Transition", "cocoblocks")}
+                  </>
+                }
+                value={element.delayTransition}
+                onChange={(value) =>
+                  updateDelayTransition(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={3}
+                step={.1}
+              />
+            </div>
+            </>
+            )}
+          </div>
         </>
       )}
       {activeSection === "hover" && (
@@ -3595,7 +3791,7 @@ const TextControls = ({
                         newParallaxTitleOpacity
                       )
                     }
-                    min={0}
+                    min={0.1}
                     max={1}
                     step={0.1}
                   />
@@ -3646,6 +3842,35 @@ const TextControls = ({
               )}
             </p>
           )}
+        </>
+      )}
+      {activeSection === "hide-title-editor" && (
+        <>
+        <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Hide in editor", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select button-hide-element" style={{textAlign:'center'}}>
+        <Button
+          variant={hideTitle === "hide"}
+          onClick={toggleHideTitle}
+          icon={
+            hideTitle === "hide" ? (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            ) : (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+            )
+          }
+        />
+        </div>
+        </div>        
         </>
       )}
       </>

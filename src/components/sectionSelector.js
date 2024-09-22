@@ -129,7 +129,7 @@ const SectionSelector = ({ onSectionChange }) => {
         >
           <path d="M520-120H200q-33 0-56.5-23.5T120-200v-320h400v400Zm-360-80h320L376-340l-76 100-56-74-84 114Zm40-560h-80q0-33 23.5-56.5T200-840v80Zm80 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0 640v-80h80v80h-80Zm160-640v-80q33 0 56.5 23.5T840-760h-80ZM120-600v-80h80v80h-80Zm640 400h80q0 33-23.5 56.5T760-120v-80Zm0-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Z" />
         </svg>
-        {__(" Visibility", "cocoblocks")}
+        {__("Visibility", "cocoblocks")}
       </Button>
       <Button
         className="section-selector-button"
@@ -145,9 +145,16 @@ const SectionSelector = ({ onSectionChange }) => {
         >
           <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
         </svg>
-        {__(" Parallax", "cocoblocks")}
+        {__("Parallax", "cocoblocks")}
       </Button>
-      <Button className="section-selector-button"></Button>
+      <Button
+        className="section-selector-button"
+        variant={activeSection === "hide-title-editor" ? "primary" : "secondary"}
+        onClick={() => handleSectionChange("hide-title-editor")}
+      >
+         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+        {__("Hide in editor", "cocoblocks")}
+      </Button>
     </ButtonGroup>
   );
 };

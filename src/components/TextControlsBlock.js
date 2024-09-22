@@ -36,6 +36,7 @@ const TextControlsBlock = ({
   handleTabletClick,
   handleMobileClick,
   showOtherButtons,
+  innerElements
 }) => {
   // Inizializza lo stato locale utilizzando element.playState
   const [playState, setPlayState] = useState(textDiv.playState || "");
@@ -50,7 +51,7 @@ const TextControlsBlock = ({
   };
 
   // Remove Text
-  const removeSlideTitleBlock = (slideId, divIndex, textIndex) => {
+  const removeSlideTitleBlock = (slideId, divIndex, innerIndex) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -59,8 +60,8 @@ const TextControlsBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.filter(
-                      (textDiv, tIndex) => tIndex !== textIndex
+                    innerElements: element.innerElements.filter(
+                      (innerElement, eIndex) => eIndex !== innerIndex
                     ),
                   }
                 : element
@@ -70,9 +71,10 @@ const TextControlsBlock = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
 
   // Update Text
-  const updateSlideTitleBlock = (slideId, divIndex, textIndex, newTitle) => {
+  const updateSlideTextElement = (slideId, divIndex, textIndex, newContent) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -81,11 +83,11 @@ const TextControlsBlock = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, content: newTitle }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === textIndex && innerElement.type === "text"
+                          ? { ...innerElement, content: newContent }
+                          : innerElement
                     ),
                   }
                 : element
@@ -95,173 +97,173 @@ const TextControlsBlock = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+  
 
-  // Width
-  const updateWidthTitleBlock = (
-    slideId,
-    divIndex,
-    textIndex,
-    newWidthTitle
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, widthTitleBlock: newWidthTitle }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Width
+const updateWidthTitleBlock = (
+  slideId,
+  divIndex,
+  innerIndex,
+  newWidthTitle
+) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, widthTitleBlock: newWidthTitle }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Custom width
-  const updateCustomWidthTitleBlock = (
-    slideId,
-    divIndex,
-    textIndex,
-    customWidth
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, widthCustomTitleBlock: customWidth }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Custom width
+const updateCustomWidthTitleBlock = (
+  slideId,
+  divIndex,
+  innerIndex,
+  customWidth
+) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, widthCustomTitleBlock: customWidth }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Text align
-  const updateTextAlign = (slideId, divIndex, textIndex, align) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, textAlign: align }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Text align
+const updateTextAlign = (slideId, divIndex, innerIndex, align) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, textAlign: align }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Text color
-  const updateSlideTextColor = (slideId, divIndex, textIndex, color) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, textColor: color }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Text color
+const updateSlideTextColor = (slideId, divIndex, innerIndex, color) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, textColor: color }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Font Style
-  const updateFontStyle = (slideId, divIndex, textIndex, styleType, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              fontStyle: {
-                                ...textDiv.fontStyle,
-                                [styleType]: value,
-                              },
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Font Style
+const updateFontStyle = (slideId, divIndex, innerIndex, styleType, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? {
+                            ...innerElement,
+                            fontStyle: {
+                              ...innerElement.fontStyle,
+                              [styleType]: value,
+                            },
+                          }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Font Family
-  const updateTextFamilyTitleBlock = (slideId, divIndex, textIndex, family) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, fontFamilyTitleBlock: family }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
+// Update Font Family
+const updateTextFamilyTitleBlock = (slideId, divIndex, innerIndex, family) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, fontFamilyTitleBlock: family }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
   // Update Font Weight
 
   const updateTextWeightTitleBlock = (slideId, divIndex, textIndex, weight) => {
@@ -289,1653 +291,1676 @@ const TextControlsBlock = ({
   };
 
   // Update letter spacing
-  const updateLetterSpacingTitleBlock = (
-    slideId,
-    divIndex,
-    textIndex,
-    newLetterSpacing
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              letterSpacingTitleBlock: newLetterSpacing,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
+const updateLetterSpacingTitleBlock = (
+  slideId,
+  divIndex,
+  innerIndex,
+  newLetterSpacing
+) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? {
+                            ...innerElement,
+                            letterSpacingTitleBlock: newLetterSpacing,
+                          }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Rotate
+const updateRotate = (slideId, divIndex, innerIndex, rotate) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, rotate: rotate }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Opacity
+const updateOpacity = (slideId, divIndex, innerIndex, opacity) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, opacity: opacity }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Element Title
+const updateElementTitle = (slideId, divIndex, innerIndex, newElementTitle) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, elementTitle: newElementTitle }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Font Size
+const updateFontSize = (slideId, divIndex, innerIndex, newSize) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, fontSize: newSize }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Font Size for Tablet
+const updateFontSizeTablet = (slideId, divIndex, innerIndex, newSizeTablet) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, fontSizeTablet: newSizeTablet }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Font Size for Mobile
+const updateFontSizeMobile = (slideId, divIndex, innerIndex, newSizeMobile) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, fontSizeMobile: newSizeMobile }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Line Height
+const updateLineHeight = (slideId, divIndex, innerIndex, newLineHeight) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, lineHeight: newLineHeight }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update border style
+const updateBorderStyle = (slideId, divIndex, innerIndex, newBorderStyle) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, borderStyle: newBorderStyle }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update border color
+const updateTitleBackgroundBorderColor = (slideId, divIndex, innerIndex, color) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, backgroundBorderColor: color }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update border size
+const updateTitleBackgroundBorderSize = (slideId, divIndex, innerIndex, newSize) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, backgroundBorderSize: newSize }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update border radius
+const updateTitleBackgroundBorderRadius = (slideId, divIndex, innerIndex, newRadius) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, backgroundBorderRadius: newRadius }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update text write mode
+const updateTextWriteMode = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, textWriteMode: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+// Update text orientation
+const updateTexOrientation = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, textOrientation: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update padding Title
+const updatenewPaddingtitleBlock = (slideId, divIndex, innerIndex, newPaddingtitle) => {
+  const addUnit = (value, unit) => {
+    if (typeof value === "string" && value.endsWith(unit)) {
+      return value;
+    }
+    return `${value}${unit}`;
   };
 
-  // Update Rotate
-  const updateRotate = (slideId, divIndex, textIndex, rotate) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, rotate: rotate }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? {
+                            ...innerElement,
+                            paddingTitleBlock: {
+                              top: addUnit(newPaddingtitle.top || "0", "px"),
+                              right: addUnit(newPaddingtitle.right || "0", "px"),
+                              bottom: addUnit(newPaddingtitle.bottom || "0", "px"),
+                              left: addUnit(newPaddingtitle.left || "0", "px"),
+                            },
+                          }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+// Update Margin Title
+const updatenewMargintitle = (slideId, divIndex, innerIndex, newMargintitle) => {
+  const addUnit = (value, unit) => {
+    if (typeof value === "string" && value.endsWith(unit)) {
+      return value;
+    }
+    return `${value}${unit}`;
   };
 
-  // Update Opacity
-  const updateOpacity = (slideId, divIndex, textIndex, opacity) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, opacity: opacity }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? {
+                            ...innerElement,
+                            marginTitle: {
+                              top: addUnit(newMargintitle.top || "0", "px"),
+                              right: addUnit(newMargintitle.right || "0", "px"),
+                              bottom: addUnit(newMargintitle.bottom || "0", "px"),
+                              left: addUnit(newMargintitle.left || "0", "px"),
+                            },
+                          }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Element Title
-  const updateElementTitle = (
-    slideId,
-    divIndex,
-    textIndex,
-    newElementTitle
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, elementTitle: newElementTitle }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update duration effect
+const updateDurationEffect = (slideId, divIndex, innerIndex, newDurationEffect) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, durationEffect: newDurationEffect }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Font Size
-  const updateFontSize = (slideId, divIndex, textIndex, newSize) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, fontSize: newSize }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
 
-  // Update Font Size for Tablet
-  const updateFontSizeTablet = (
-    slideId,
-    divIndex,
-    textIndex,
-    newSizeTablet
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, fontSizeTablet: newSizeTablet }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update delay effect
+const updateDelayEffect = (slideId, divIndex, innerIndex, newDelayEffect) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, delayEffect: newDelayEffect }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Font Size for Mobile
-  const updateFontSizeMobile = (
-    slideId,
-    divIndex,
-    textIndex,
-    newSizeMobile
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, fontSizeMobile: newSizeMobile }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update duration effect
+const updateDurationEffectOdd = (slideId, divIndex, innerIndex, newDurationEffectOdd) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, durationEffectOdd: newDurationEffectOdd }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Line Height
-  const updateLineHeight = (slideId, divIndex, textIndex, newLineHeight) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, lineHeight: newLineHeight }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update letter even
+const updateDurationEffectEven = (slideId, divIndex, innerIndex, newDurationEffectEven) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, durationEffectEven: newDurationEffectEven }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border style
-  const updateBorderStyle = (slideId, divIndex, textIndex, newBorderStyle) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, borderStyle: newBorderStyle }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update iteration mode
+const updateInteration = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, iteration: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border color
-  const updateTitleBackgroundBorderColor = (
-    slideId,
-    divIndex,
-    textIndex,
-    color
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, backgroundBorderColor: color }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update speed effect
+const updateEffectSpeed = (slideId, divIndex, innerIndex, newSpeedEffect) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, speedEffect: newSpeedEffect }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border size
-  const updateTitleBackgroundBorderSize = (
-    slideId,
-    divIndex,
-    textIndex,
-    newSize
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, backgroundBorderSize: newSize }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update pause effect
+const updateEffectPause = (slideId, divIndex, innerIndex, newPauseEffect) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, pauseEffect: newPauseEffect }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update border radius
-  const updateTitleBackgroundBorderRadius = (
-    slideId,
-    divIndex,
-    textIndex,
-    newRadius
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, backgroundBorderRadius: newRadius }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update animation count
+const updateTextAnimationCount = (slideId, divIndex, innerIndex, animationCount) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, animationCount: animationCount }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update text write mode
-  const updateTextWriteMode = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, textWriteMode: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update width cursor
+const updateWidthCursor = (slideId, divIndex, innerIndex, newWidthCursor) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, widthCursor: newWidthCursor }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+// Update animation cursor
+const updateAnimationCursor = (slideId, divIndex, innerIndex, newAnimationCursor) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, animationCursor: newAnimationCursor }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update text orientation
-  const updateTexOrientation = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, textOrientation: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update color cursor
+const updateCursorColor = (slideId, divIndex, innerIndex, newCursorColor) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, cursorColor: newCursorColor }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update padding Title
-  const updatenewPaddingtitleBlock = (
-    slideId,
-    divIndex,
-    textIndex,
-    newPaddingtitle
-  ) => {
-    const addUnit = (value, unit) => {
-      if (typeof value === "string" && value.endsWith(unit)) {
-        return value;
-      }
-      return `${value}${unit}`;
-    };
+// Update color first
+const updateGradinetColorOne = (slideId, divIndex, innerIndex, newGradinetColorOne) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, gradinetColorOne: newGradinetColorOne }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              paddingTitleBlock: {
-                                top: addUnit(newPaddingtitle.top || "0", "px"),
-                                right: addUnit(
-                                  newPaddingtitle.right || "0",
-                                  "px"
-                                ),
-                                bottom: addUnit(
-                                  newPaddingtitle.bottom || "0",
-                                  "px"
-                                ),
-                                left: addUnit(
-                                  newPaddingtitle.left || "0",
-                                  "px"
-                                ),
-                              },
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update color two
+const updateGradinetColorTwo = (slideId, divIndex, innerIndex, newGradinetColorTwo) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, gradinetColorTwo: newGradinetColorTwo }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Margin Title
-  const updatenewMargintitle = (
-    slideId,
-    divIndex,
-    textIndex,
-    newMargintitle
-  ) => {
-    const addUnit = (value, unit) => {
-      if (typeof value === "string" && value.endsWith(unit)) {
-        return value;
-      }
-      return `${value}${unit}`;
-    };
+// Update color three
+const updateGradinetColorThree = (slideId, divIndex, innerIndex, newGradinetColorThree) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, gradinetColorThree: newGradinetColorThree }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              marginTitle: {
-                                top: addUnit(newMargintitle.top || "0", "px"),
-                                right: addUnit(
-                                  newMargintitle.right || "0",
-                                  "px"
-                                ),
-                                bottom: addUnit(
-                                  newMargintitle.bottom || "0",
-                                  "px"
-                                ),
-                                left: addUnit(newMargintitle.left || "0", "px"),
-                              },
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update color four
+const updateGradinetColorFour = (slideId, divIndex, innerIndex, newGradinetColorFour) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, gradinetColorFour: newGradinetColorFour }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update duration effect
-  const updateDurationEffect = (
-    slideId,
-    divIndex,
-    textIndex,
-    newDurationEffect
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, durationEffect: newDurationEffect }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration
+const updateDecoration = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, decoration: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update delay effect
-  const updateDelayEffect = (slideId, divIndex, textIndex, newDelayEffect) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, delayEffect: newDelayEffect }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration color
+const updateUnderlineColor = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineColor: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update delay effect
-  const updateDurationEffectOdd = (
-    slideId,
-    divIndex,
-    textIndex,
-    newDurationEffectOdd
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              durationEffectOdd: newDurationEffectOdd,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update letter even
-  const updateDurationEffectEven = (
-    slideId,
-    divIndex,
-    textIndex,
-    newDurationEffectEven
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              durationEffectEven: newDurationEffectEven,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update iteration mode
-  const updateInteration = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, iteration: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update speed effect
-  const updateEffectSpeed = (slideId, divIndex, textIndex, newSpeedEffect) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, speedEffect: newSpeedEffect }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update pause effect
-  const updateEffectPause = (slideId, divIndex, textIndex, newPauseEffect) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, pauseEffect: newPauseEffect }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update animation count
-  const updateTextAnimationCount = (
-    slideId,
-    divIndex,
-    textIndex,
-    animationCount
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, animationCount: animationCount }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update width cursor
-  const updateWidthCursor = (slideId, divIndex, textIndex, newWidthCursor) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, widthCursor: newWidthCursor }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update animation cursor
-  const updateAnimationCursor = (
-    slideId,
-    divIndex,
-    textIndex,
-    newAnimationCursor
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, animationCursor: newAnimationCursor }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update color cursor
-  const updateCursorColor = (slideId, divIndex, textIndex, newCursorColor) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, cursorColor: newCursorColor }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update color first
-  const updateGradinetColorOne = (
-    slideId,
-    divIndex,
-    textIndex,
-    newGradinetColorOne
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              gradinetColorOne: newGradinetColorOne,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update color two
-  const updateGradinetColorTwo = (
-    slideId,
-    divIndex,
-    textIndex,
-    newGradinetColorTwo
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              gradinetColorTwo: newGradinetColorTwo,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update color three
-  const updateGradinetColorThree = (
-    slideId,
-    divIndex,
-    textIndex,
-    newGradinetColorThree
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              gradinetColorThree: newGradinetColorThree,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update color four
-  const updateGradinetColorFour = (
-    slideId,
-    divIndex,
-    textIndex,
-    newGradinetColorFour
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              gradinetColorFour: newGradinetColorFour,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update decoration
-  const updateDecoration = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, decoration: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update decoration color
-  const updateUnderlineColor = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineColor: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Update decoration padding
-  const updateUnderlinePadding = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlinePadding: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration padding
+const updateUnderlinePadding = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlinePadding: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
   // Update decoration vertical
-  const updateUnderlineVertical = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineVertical: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+const updateUnderlineVertical = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineVertical: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update decoration horizontal
-  const updateUnderlineHorizontal = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineHorizontal: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration horizontal
+const updateUnderlineHorizontal = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineHorizontal: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update decoration height
-  const updateUnderlineHeight = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineHeight: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration height
+const updateUnderlineHeight = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineHeight: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
   // Update decoration width
-  const updateUnderlineWidth = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineWidth: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+const updateUnderlineWidth = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineWidth: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update decoration animation
-  const updateUnderlineAnimation = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineAnimation: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration animation
+const updateUnderlineAnimation = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineAnimation: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update decoration animation from
-  const updateUnderlineAnimationFrom = (
-    slideId,
-    divIndex,
-    textIndex,
-    value
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineAnimationFrom: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-  // Update decoration animation to
-  const updateUnderlineAnimationTo = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineAnimationTo: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration animation from
+const updateUnderlineAnimationFrom = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineAnimationFrom: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update decoration animation from
-  const updateUnderlineFromSizeNew = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineFromSizeNew: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration animation to
+const updateUnderlineAnimationTo = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineAnimationTo: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update decoration animation to size
-  const updateUnderlineToSizeNew = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineToSizeNew: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update decoration animation from
+const updateUnderlineFromSizeNew = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineFromSizeNew: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
+// Update decoration animation to size
+const updateUnderlineToSizeNew = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineToSizeNew: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+  
   // Update decoration animation transition
-  const updateUnderlineAnimationTransition = (
-    slideId,
-    divIndex,
-    textIndex,
-    value
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, underlineAnimationTransition: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+const updateUnderlineAnimationTransition = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, underlineAnimationTransition: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Selector link
-  const updateTextLink = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, textLink: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Selector link
+const updateTextLink = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, textLink: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Url
-  const updateLinkUrl = (slideId, divIndex, textIndex, url) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, linkUrl: url }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Url
+const updateLinkUrl = (slideId, divIndex, innerIndex, url) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, linkUrl: url }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Target
-  const updateScrollToId = (slideId, divIndex, textIndex, id) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, scrollToId: id }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Scroll
+const updateScrollToId = (slideId, divIndex, innerIndex, id) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, scrollToId: id }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Target
-  const updateLinkTarget = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, linkTarget: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Target
+const updateLinkTarget = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, linkTarget: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Link Rel
-  const updateLinkRel = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, linkRel: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Link Rel
+const updateLinkRel = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, linkRel: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+  
+ 
+// Enable Desktop
+const updateEnableDesktopTitle = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, enableDesktopTitle: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Enable Desktop
-  const updateEnableDesktopTitle = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, enableDesktopTitle: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Enable Tablet
+const updateEnableTabletTitle = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, enableTabletTitle: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Enable Tablet
-  const updateEnableTabletTitle = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, enableTabletTitle: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Enable Mobile
+const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, enableMobileTitle: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+  
+// Update Parallax Title X
+const updateParallaxTitle = (slideId, divIndex, innerIndex, newParallaxTitle) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, parallaxTitle: newParallaxTitle }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Enable Mobile
-  const updateEnableMobileTitle = (slideId, divIndex, textIndex, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, enableMobileTitle: value }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Parallax Title Y
+const updateParallaxTitleY = (slideId, divIndex, innerIndex, newParallaxTitleY) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, parallaxTitleY: newParallaxTitleY }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Parallax Title X
-  const updateParallaxTitle = (
-    slideId,
-    divIndex,
-    textIndex,
-    newParallaxTitle
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, parallaxTitle: newParallaxTitle }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Parallax Title Scale
+const updateParallaxTitleScale = (slideId, divIndex, innerIndex, newParallaxTitleScale) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, parallaxTitleScale: newParallaxTitleScale }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Parallax Title Y
-  const updateParallaxTitleY = (
-    slideId,
-    divIndex,
-    textIndex,
-    newParallaxTitleY
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, parallaxTitleY: newParallaxTitleY }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Parallax Title Opacity
+const updateParallaxTitleOpacity = (slideId, divIndex, innerIndex, newParallaxTitleOpacity) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, parallaxTitleOpacity: newParallaxTitleOpacity }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Parallax Title Scale
-  const updateParallaxTitleScale = (
-    slideId,
-    divIndex,
-    textIndex,
-    newParallaxTitleScale
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              parallaxTitleScale: newParallaxTitleScale,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update position 
+const updatePositionInnerText = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, positionInnerText: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Parallax Title Opacity
-  const updateParallaxTitleOpacity = (
-    slideId,
-    divIndex,
-    textIndex,
-    newParallaxTitleOpacity
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              parallaxTitleOpacity: newParallaxTitleOpacity,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update vertical position 
+const updateVerticalPositionInnerText = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, verticalPositionInnerText: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Parallax Title Duration
-  const updateParallaxTitleDuration = (
-    slideId,
-    divIndex,
-    textIndex,
-    newParallaxTitleDuration
-  ) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              parallaxTitleDuration: newParallaxTitleDuration,
-                            }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update horizontal position 
+const updateHorizontalPositionInnerText = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, horizontalPositionInnerText: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
-  // Update Text Animation
-  const updateTextAnimation = (slideId, divIndex, textIndex, animation) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "div" && i === divIndex
-                ? {
-                    ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, animation: animation }
-                          : textDiv
-                    ),
-                  }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+// Update Parallax Title Duration
+const updateParallaxTitleDuration = (slideId, divIndex, innerIndex, newParallaxTitleDuration) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, parallaxTitleDuration: newParallaxTitleDuration }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update Text Animation
+const updateTextAnimation = (slideId, divIndex, innerIndex, animation) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, animation: animation }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update delay hide 
+const updateDelayHide = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, delayHide: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update delay transition
+const updateDelayTransition = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, delayTransition: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update delay seconds
+const updateDelaySeconds = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, delaySeconds: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Update z-index
+const updateZindexTitle = (slideId, divIndex, innerIndex, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === divIndex
+              ? {
+                  ...element,
+                  innerElements: element.innerElements.map(
+                    (innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === "text"
+                        ? { ...innerElement, zIndexTitle: value }
+                        : innerElement
+                  ),
+                }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+      // nascondi il titolo in editor
+      const [hideTitle, setHideTitle] = useState(textDiv.hideTitle || "");
+
+      const toggleHideTitle = () => {
+        const newState = hideTitle === "hide" ? "" : "hide";
+        setHideTitle(newState);
+      
+        textDiv.hideTitle = newState;
+        setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
+      };
 
   // Font Family Options
   const fontOptions = [
@@ -2015,25 +2040,26 @@ const TextControlsBlock = ({
     { label: __("Wallpoet", "cocoblock"), value: "Wallpoet, cursive" },
   ];
 
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.substring(0, maxLength) + ' ...';
+  };
+  const truncatedText = truncateText(textDiv.content, 14);
+
+    // Open panel
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
+
   return (
     <div className="custom-block-added">
       <div className="divider-controls-inner"></div>
       <div className="title-block-added">
         <div className="title-element">
-          <Button
-            isDestructive
-            onClick={() =>
-              removeSlideTitleBlock(slide.id, elementIndex, textIndex)
-            }
-            className="button-remove-element"
-            style={{
-              position: "absolute",
-              right: "12px",
-              top: "10px",
-            }}
-            label={__("Remove Text", "cocoblocks")}
-            icon={trash}
-          ></Button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
@@ -2043,9 +2069,31 @@ const TextControlsBlock = ({
           >
             <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
           </svg>
-          <h2>{__("Inner Text", "cocoblocks")}</h2>
+          <h2>{truncatedText}</h2>
+        </div>
+        <div className="title-element">
+        <Button
+            isDestructive
+            onClick={() =>
+              removeSlideTitleBlock(slide.id, elementIndex, textIndex)
+            }
+            className="button-remove-element"
+            label={__("Remove Inner Text", "cocoblocks")}
+            icon={trash}
+          ></Button>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+        <button onClick={handleToggle} className="button-open-control-element">
+          {isOpen ? (
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          )}
+        </button>
+      </Tooltip>
         </div>
       </div>
+      {isOpen && (
+        <>
       <SectionSelector onSectionChange={setActiveSection} />
       {activeSection === "content" && (
         <>
@@ -2061,18 +2109,18 @@ const TextControlsBlock = ({
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
             <div className="custom-select">
-              <TextareaControl
-                value={textDiv.content}
-                onChange={(newTitle) =>
-                  updateSlideTitleBlock(
-                    slide.id,
-                    elementIndex,
-                    textIndex,
-                    newTitle
-                  )
-                }
-                placeholder={__("Add text content...", "cocoblocks")}
-              />
+            <TextareaControl
+  value={textDiv.content}
+  onChange={(newContent) =>
+    updateSlideTextElement(
+      slide.id,
+      elementIndex,
+      textIndex,
+      newContent
+    )
+  }
+  placeholder={__("Add text content...", "cocoblocks")}
+/>
             </div>
             <div className="custom-select select-control-label-right">
               <SelectControl
@@ -2633,6 +2681,42 @@ const TextControlsBlock = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
+              {__("Position", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select select-control-label-right">
+              <SelectControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M479-359q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0 279L309-250l57-57 114 114 113-113 56 56L479-80ZM249-309 79-479l170-170 57 57-114 114 113 113-56 56Zm116-345-56-56 170-170 170 170-57 57-114-114-113 113Zm344 345-57-57 114-114-113-113 56-56 170 170-170 170Z"/></svg>
+                    {__("Select position", "cocoblocks")}
+                  </>
+                }
+                value={textDiv.positionInnerText}
+                options={[
+                  {
+                    label: __("Default", "cocoblocks"),
+                    value: "static",
+                  },
+                  {
+                    label: __("Relative", "cocoblocks"),
+                    value: "relative",
+                  },
+                ]}
+                onChange={(value) =>
+                  updatePositionInnerText(
+                    slide.id,
+                    elementIndex,
+                    textIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+          </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
               {__("Spacings", "cocoblocks")}
             </h2>
           </div>
@@ -2670,6 +2754,71 @@ const TextControlsBlock = ({
                 }
               />
             </div>
+            {textDiv.positionInnerText === "relative" && (
+            <>
+            <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z" />
+                        </svg>
+                        {__("Vertical Position", "cocoblocks")}
+                      </>
+                    }
+                    value={textDiv.verticalPositionInnerText}
+                    onChange={(value) =>
+                      updateVerticalPositionInnerText(
+                        slide.id,
+                        elementIndex,
+                        textIndex,
+                        value
+                      )
+                    }
+                    min={-500}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z" />
+                        </svg>
+                        {__("Horizontal Position", "cocoblocks")}
+                      </>
+                    }
+                    value={textDiv.horizontalPositionInnerText}
+                    onChange={(value) =>
+                      updateHorizontalPositionInnerText(
+                        slide.id,
+                        elementIndex,
+                        textIndex,
+                        value
+                      )
+                    }
+                    min={-500}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                </>
+            )}
+            {textDiv.positionInnerText === "static" && (
             <div className="custom-select box-control">
               <BoxControl
                 id="custom-margin-control"
@@ -2703,6 +2852,7 @@ const TextControlsBlock = ({
                 }
               />
             </div>
+            )}
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
@@ -2981,6 +3131,30 @@ const TextControlsBlock = ({
               />
             </div>
           </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("LEVEL", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-33 0-56.5-23.5T400-160v-320q0-33 23.5-56.5T480-560h320q33 0 56.5 23.5T880-480v320q0 33-23.5 56.5T800-80H480Zm0-80h320v-320H480v320Zm-240-80v-400q0-33 23.5-56.5T320-720h400v80H320v400h-80ZM80-400v-400q0-33 23.5-56.5T160-880h400v80H160v400H80Zm400 240v-320 320Z"/></svg>
+                    {__("Z-index", "cocoblocks")}
+                  </>
+                }
+                value={textDiv.zIndexTitle}
+                onChange={(value) =>
+                  updateZindexTitle(slide.id, elementIndex, textIndex, value)
+                }
+                min={0}
+                max={999}
+                step={1}
+              />
+            </div>
+          </div>
           <BoxShadowControlTextBlock
             slide={slide}
             slides={slides}
@@ -3188,7 +3362,20 @@ const TextControlsBlock = ({
                       step={0.1}
                     />
                   </div>
-                 
+                  {![
+              "bounce-effect-title-div",
+              "bounce-left-effect-title-div",
+              "bounce-right-effect-title-div",
+              "bounce-top-effect-title-div",
+              "bounce-bottom-effect-title-div",
+              "bounce-title-div",
+              "stretch-title-div",
+              "focus-title-div",
+              "wiggle-title-div",
+              "swing-title-div",
+              "rubber-band-title-div",
+            ].includes(textDiv.animation) && (
+              <>
               <div className="custom-select">
                 <RangeControl
                   label={
@@ -3219,6 +3406,8 @@ const TextControlsBlock = ({
                   step={0.1}
                 />
               </div>
+              </>
+            )}
             </>
             )}
              </>
@@ -4081,6 +4270,80 @@ const TextControlsBlock = ({
                 )}
               </>
             )}
+             </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Hide", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+             <div className="custom-select">
+              <ToggleControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></svg>
+                    {__("Delay hide", "cocoblocks")}
+                  </>
+                }
+                checked={textDiv.delayHide}
+                onChange={(value) =>
+                  updateDelayHide(
+                    slide.id,
+                    elementIndex,
+                    textIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+            {textDiv.delayHide && (
+            <>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-270h160q33 0 56.5-23.5T600-350v-50q0-33-23.5-56.5T520-480h-80v-50h160v-80H360v210h160v50H360v80Zm0-570v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Seconds", "cocoblocks")}
+                  </>
+                }
+                value={textDiv.delaySeconds}
+                onChange={(value) =>
+                  updateDelaySeconds(
+                    slide.id,
+                    elementIndex,
+                    textIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={20}
+                step={1}
+              />
+            </div>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Transition", "cocoblocks")}
+                  </>
+                }
+                value={textDiv.delayTransition}
+                onChange={(value) =>
+                  updateDelayTransition(
+                    slide.id,
+                    elementIndex,
+                    textIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={3}
+                step={.1}
+              />
+            </div>
+            </>
+            )}
           </div>
         </>
       )}
@@ -4471,7 +4734,7 @@ const TextControlsBlock = ({
                         newParallaxTitleOpacity
                       )
                     }
-                    min={0}
+                    min={0.1}
                     max={1}
                     step={0.1}
                   />
@@ -4524,6 +4787,37 @@ const TextControlsBlock = ({
             </p>
           )}
         </>
+      )}
+       {activeSection === "hide-title-editor" && (
+        <>
+        <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Hide in editor", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select button-hide-element" style={{textAlign:'center'}}>
+        <Button
+          variant={hideTitle === "hide"}
+          onClick={toggleHideTitle}
+          icon={
+            hideTitle === "hide" ? (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            ) : (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+            )
+          }
+        />
+        </div>
+        </div>        
+        </>
+      )}
+      </>
       )}
     </div>
   );

@@ -20,6 +20,250 @@
   --dark-button: #3c4556;
   --notice-background: #e7dfe2;
   --dark-intermedy:#3f444a;
+  --ruler-color: #ff000077; 
+}
+
+/* Table hsv */
+.last-border-table-hsv td{
+  border-bottom: none!important;
+}
+.thead-hsv th{
+  border-top: none!important;
+}
+
+/* Tab Checkbox */
+.custom-select.checkbox input{
+  background-color: var(--background-color)!important;
+  border-radius: 50%;
+  border: 1px solid var(--light-color)!important;
+}
+.content-title-checkbox{
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 3px;
+  margin-bottom: 12px;
+    h2{
+      color: var(--light-color);
+      font-size: 12px;
+      margin: 0;
+    }
+    svg{
+      fill: var(--light-color);
+      width: 18px;
+      height: 18px;
+    }
+}
+
+/* Modal button */
+.modal-button{
+  background-color: var(--dark-color-hover);
+    .components-modal__content{
+      padding-top: 24px!important;
+      .content-button-modal{
+        margin-bottom: 24px;
+      }
+    }
+    .components-modal__header{
+      border-bottom: 1px solid var(--label-color);
+      padding-bottom: 24px;
+    }
+    .components-modal__header .components-modal__header-heading{
+      color: var(--light-color);
+    }
+    .components-modal__header .components-button{
+      color: var(--light-color);
+    }
+    .button-select{
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      color: var(--primary-color);
+    }
+    button{
+      box-shadow: none;
+      height: auto;
+      margin: 5px!important;
+      max-width: max-content;
+      width: max-content;
+    }
+    .selected {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8)!important;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    .button-select{
+      padding: 0;
+      box-shadow: none;
+      color: var(--light-color);
+    }
+    .button-select.selected {
+      color: var(--primary-color);
+      box-shadow: none!important;
+    }
+    
+}
+
+/* Modale icone */
+
+.icon-modal{
+  max-width: 850px;
+  min-width: 850px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  h1{
+    color: var(--light-color);
+  }
+    .components-modal__header svg{
+        fill: var(--light-color)!important;
+    }
+  input:focus {
+    outline: none!important; /* Rimuove il bordo blu predefinito */
+    border: 1px solid var(--primary-color)!important; /* Aggiunge un bordo personalizzato, qui arancione */
+    box-shadow: 0 0 3px var(--primary-color)!important; /* Aggiunge un'ombra per evidenziare ulteriormente l'input */
+  }
+}
+.icon-modal-container {
+  display: flex;
+}
+
+.icon-modal-sidebar {
+  width: 150px;
+  padding-right: 10px;
+  border-right: 1px solid #ddd;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column; /* Disposizione verticale */
+  gap: 5px; /* Spaziatura tra le categorie */
+  button{
+    width: 100%;
+    white-space: nowrap; /* Impedisce il ritorno a capo del testo */
+    overflow: hidden; /* Nasconde il testo che eccede */
+    text-overflow: ellipsis; /* Aggiunge "..." per indicare testo troncato */
+    color: var(--light-color);
+    &:hover{
+      color: var(--primary-color);
+    }
+  }
+  button.is-primary{
+    background-color: var(--primary-color)!important;
+    color: var(--light-color);
+    &:hover{
+      background-color: var(--primary-color)!important;
+    }
+  }
+  h3{
+    color: var(--light-color);
+  }
+}
+
+.icon-modal-main {
+  flex: 1;
+}
+
+.icon-subcategory {
+  margin-bottom: 10px;
+  button{
+    color: var(--light-color);
+    &:hover{
+      color: var(--primary-color);
+    }
+  }
+  button.is-primary{
+    background-color: var(--primary-color)!important;
+    color: var(--light-color);
+    &:hover{
+      background-color: var(--primary-color)!important;
+    }
+}
+}
+
+.icon-subcategory button {
+  margin-right: 5px;
+}
+
+.icon-selection {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 8 colonne */
+  gap: 10px; /* Spaziatura tra le icone */
+}
+
+.icon-selection button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  background-color: var(--black-color);
+  border-radius: 4px;
+}
+
+.icon-selection i {
+  font-size: 24px;
+  color: var(--light-color);
+}
+
+/* Button open modal */
+.add-icon-button-select{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  padding-bottom: 6px;
+    .title-add-icon-button{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      svg{
+        fill: var(--light-color);
+        width: 18px;
+        height: 18px;
+      }
+    }
+    h2{
+      color: var(--light-color);
+      font-size: 12px;
+      margin: 0;
+    }
+    button{
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      svg{
+        fill: var(--light-color);
+        width: 18px;
+        height: 18px;
+      }
+    }
+}
+
+/* Stili per il modale */
+.modal-button {
+  max-width: 700px;
+//  margin: 0 auto; /* Centra il modale orizzontalmente */
+}
+
+.content-button-modal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);/* Due colonne di uguale larghezza */
+  gap: 16px; /* Spaziatura tra i bottoni */
+  padding: 16px; /* Spaziatura interna del contenitore */
+}
+
+.content-button-modal button {
+  width: 100%; /* Assicura che i bottoni riempiano la colonna */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; /* Spaziatura interna dei bottoni */
+}
+
+.content-button-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Background slide */
@@ -182,16 +426,21 @@
   .button-move button {
     color: var(--primary-color);
   }
+  .button-move-element-div button {
+    color: var(--primary-color);
+  }
   .button-add-element {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 colonne di uguale larghezza */
     margin-top: 12px;
-    justify-content: center;
-    gap: 12px;
+    gap: 12px; /* Spazio tra i bottoni */
     button {
       background-color: var(--background-color);
       color: var(--light-color);
       border-radius: 12px;
       border: 1px solid var(--light-color);
+      justify-content: center;
+      cursor: pointer;
     }
     button:hover {
       color: var(--white-color);
@@ -215,8 +464,8 @@
   }
   .button-move {
     position: relative;
-    right: 0;
-    top: 44px;
+    right: 76px;
+    top: 45px;
     float: right;
     z-index: 9;
     display: flex;
@@ -226,6 +475,21 @@
       background-color: var(--background-color);
     }
   }
+
+  .button-move-element-div{
+    position: relative;
+    right: 76px;
+    top: 42px;
+    float: right;
+    z-index: 9;
+    display: flex;
+    gap: 5px;
+    button {
+      border-radius: 100%;
+      background-color: var(--background-color);
+    }
+  }
+  
   .divider-controls {
     margin-top: 24px;
     margin-bottom: 24px;
@@ -530,6 +794,12 @@
   .color-options-panel.color-gradient
     .components-flex.components-custom-gradient-picker__ui-line {
     align-items: flex-start !important;
+  }
+  .custom-select.drag-mode{
+    right: -24px!important;
+  }
+  .custom-select.drag-mode:hover{
+    background-color: inherit!important;
   }
   .custom-select.color
     .color-options-panel.color-gradient
@@ -1230,7 +1500,7 @@
       text-transform: uppercase;
       padding-top: 12px;
       padding-bottom: 12px;
-      padding-left: 18px;
+      padding-left: 15px;
     }
 }
 
@@ -1275,9 +1545,10 @@
   margin-left: -14px;
   margin-right: -14px;
   background: var(--dark-color);
-  padding: 16px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* Nascondi advanced panel */
@@ -1462,13 +1733,10 @@
   }
 }
 
-
-
 /* Griglia per l'editor */
 .editor-grid {
   position: relative;
 }
-
 .editor-grid::before {
   content: '';
   position: absolute;
@@ -1476,97 +1744,160 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to right, rgba(91, 91, 91, 0.048) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(91, 91, 91, 0.048) 1px, transparent 1px);
+  background-image: linear-gradient(to right, var(--color-grid-editor) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--color-grid-editor) 1px, transparent 1px);
   background-size: 20px 20px; 
   pointer-events: none; 
   z-index: 10; 
+  opacity: var(--opacity-grid-editor);
 }
-
-
 
 /* Button open controls add element */
 .button-open-control-element{
-  background-color: var(--background-color)!important;
+  background-color: transparent!important;
   border: none;
-  position: absolute;
-  left: 42%;
-  top: 34px;
-  border-radius: 8px;
   cursor: pointer;
 }
-
-
-
-
-/* style drag element */
-
+/* Responsive button devices */
 .editor-visual-editor.tablet-view,.editor-visual-editor.mobile-view{
   margin: 0 auto;
 }
-
-
 .desktop-view {
   width: 100%; 
-
 }
-
 .tablet-view {
   width: 768px; 
- 
 }
-
 .mobile-view {
-  width: 375px; 
-  
+  width: 360px; 
 }
 
 
+.button-button-group-responsive{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+    .button-group-button-title{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+        h2{
+          color: var(--light-color);
+          margin: 0;
+          font-size: 12px;
+        }
+    }
+    button{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+        svg{
+          fill: var(--light-color);
+          width: 20px;
+          height: 20px;
+        }
+    }
+    .active svg{
+      fill: var(--primary-color);
+    }
+}
 
+/* Rules */
 .ruler-container {
   position: relative;
   width: 100%;
 }
-
 .ruler-horizontal {
   position: absolute;
   top: 0;
   left: 20px; /* Lascia spazio per il righello verticale */
   width: 100%; /* Riduci la larghezza per lasciare spazio al righello verticale */
   height: 20px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
   z-index: 1000;
   display: flex;
   align-items: center;
   pointer-events: none;
 }
-
 .ruler-horizontal span {
   position: absolute;
   top: 0;
   font-size: 10px;
   color: #333;
 }
-
 .ruler-vertical {
   position: absolute;
   top: 20px; /* Lascia spazio per il righello orizzontale */
   left: 0;
   width: 20px;
-  height: calc(100% - 20px);
-  background-color: #f0f0f0;
-  border-right: 1px solid #ccc;
+  height: 100%;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
   pointer-events: none;
 }
-
 .ruler-vertical span {
   position: absolute;
   left: 0;
   font-size: 10px;
   color: #333;
+}
+
+/* Hide title editor */
+.content-title-slide.hide{
+ visibility: hidden;
+}
+
+/* Hide icon editor */
+.content-icon.hide{
+  visibility: hidden;
+  opacity: 0!important;
+ }
+ 
+
+/* Hide image editor */
+.content-img-first.hide{
+  visibility: hidden;
+}
+
+/* Hide div editor */
+.content-inner-div.hide{
+  visibility: hidden;
+  opacity: 0!important;
+}
+
+/* Hide title div editor */
+.content-title-div.hide{
+  visibility: hidden;
+  opacity: 0!important;
+}
+
+
+/* Hide image div editor */
+.content-img-inner.hide{
+  visibility: hidden;
+  opacity: 0!important;
+}
+
+/* Hide  button editor */
+.scroll-btn.hide,.button-slider.hide{
+  visibility: hidden;
+  opacity: 0!important;
+}
+
+/* Hide inner button editor */
+.scroll-btn-inner.hide,.button-slider-inner.hide{
+  visibility: hidden;
+  opacity: 0!important;
+}
+
+
+
+.gif-preview {
+  display: none; /* Nasconde la GIF di default */
+}
+
+.div-item:hover .gif-preview {
+  display: block; /* Mostra la GIF quando si passa il mouse sul div */
 }

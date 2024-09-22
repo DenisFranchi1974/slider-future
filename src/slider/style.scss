@@ -36,7 +36,7 @@
 .content-slide-slider {
   display: flex;
   width: 100%;
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 }
 
 /* Flex Direction for Layouts */
@@ -150,10 +150,10 @@
 }
 
 /* Base Styling for div-slide */
+
 .div-slide {
   display: flex;
-  box-sizing: border-box;
-  box-shadow: var(--box-shadow-x-div) var(--box-shadow-y-div) var(--box-shadow-blur-div) var(--box-shadow-spread-div) var(--box-shadow-color-div);
+  transition: transform var(--transition-hover-div) ease;
 }
 .div-slide:hover{
   background-color:var(--color-hover-div)!important;
@@ -161,8 +161,9 @@
   border-style: var(--border-style-hover-div)!important;
   border-width: var(--border-width-hover-div)!important;
   opacity: var(--opacity-hover-div)!important;
-  rotate: var(--rotate-hover-div)!important;
+  transform: rotate(var(--rotate-hover-div))!important;
 }
+
 
 /* Flex Direction for Layouts */
 .div-slide.vertical-layout {
@@ -285,7 +286,6 @@
   --swiper-scrollbar-left: auto;
   --swiper-scrollbar-right: 4px;
   --swiper-scrollbar-sides-offset: 1%;
-  /*max-height: 400px!important;*/
 }
 .content-slide-slider.visible{
   overflow: visible;
@@ -421,6 +421,15 @@
 .bounce-effect {
   animation: bounce var(--duration-effect) var(--interation);
 }
+.bounce-effect-button {
+  animation: bounce var(--duration-effect-button) var(--interation-button);
+}
+.bounce-effect-icon {
+  animation: bounce var(--duration-effect-icon) var(--interation-icon);
+}
+.bounce-effect-button-inner {
+  animation: bounce var(--duration-effect-button-inner) var(--interation-button-inner);
+}
 .bounce-effect-image {
   animation: bounce var(--duration-effect-image) var(--interation-image);
 }
@@ -463,6 +472,15 @@
 
 .bounce-left-effect {
   animation: bounce-left var(--duration-effect) var(--interation); 
+}
+.bounce-left-effect-button {
+  animation: bounce-left var(--duration-effect-button) var(--interation-button); 
+}
+.bounce-left-effect-icon {
+  animation: bounce-left var(--duration-effect-icon) var(--interation-icon); 
+}
+.bounce-left-effect-button-inner {
+  animation: bounce-left var(--duration-effect-button-inner) var(--interation-button-inner); 
 }
 .bounce-left-effect-image {
   animation: bounce-left var(--duration-effect-image) var(--interation-image);
@@ -507,6 +525,15 @@
 .bounce-right-effect {
   animation: bounce-right var(--duration-effect) var(--interation);
 }
+.bounce-right-effect-button {
+  animation: bounce-right var(--duration-effect-button) var(--interation-button);
+}
+.bounce-right-effect-icon {
+  animation: bounce-right var(--duration-effect-icon) var(--interation-icon);
+}
+.bounce-right-effect-button-inner {
+  animation: bounce-right var(--duration-effect-button-inner) var(--interation-button-inner);
+}
 .bounce-right-effect-image {
   animation: bounce-right var(--duration-effect-image) var(--interation-image);
 }
@@ -550,6 +577,15 @@
 .bounce-top-effect {
   animation: bounce-top var(--duration-effect) var(--interation); 
 }
+.bounce-top-effect-button {
+  animation: bounce-top var(--duration-effect-button) var(--interation-button); 
+}
+.bounce-top-effect-icon {
+  animation: bounce-top var(--duration-effect-icon) var(--interation-icon); 
+}
+.bounce-top-effect-button-inner {
+  animation: bounce-top var(--duration-effect-button-inner) var(--interation-button-inner); 
+}
 .bounce-top-effect-image {
   animation: bounce-top var(--duration-effect-image) var(--interation-image);
 }
@@ -592,6 +628,15 @@
 
 .bounce-bottom-effect {
   animation: bounce-bottom var(--duration-effect) var(--interation);
+}
+.bounce-bottom-effect-button {
+  animation: bounce-bottom var(--duration-effect-button) var(--interation-button);
+}
+.bounce-bottom-effect-icon {
+  animation: bounce-bottom var(--duration-effect-icon) var(--interation-icon);
+}
+.bounce-bottom-effect-button-inner {
+  animation: bounce-bottom var(--duration-effect-button-inner) var(--interation-button-inner);
 }
 .bounce-bottom-effect-image {
   animation: bounce-bottom var(--duration-effect-image) var(--interation-image);
@@ -744,96 +789,6 @@
   animation: moveBackgroundYInner var(--duration-effect-moving-image-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
 }
 
-/* Movimen to background hover */
-@keyframes moveBackgroundHover {
-  0% {
-    transform: translateX(0);
-}
-50% {
-    transform: translateX(var(--translate-effect-moving-image-hover)); /* Movimento verso destra */
-}
-100% {
-    transform: translateX(0); /* Torna alla posizione iniziale */
-}
-}
-
-.moving-background-hover .image-first-slide {
-  transition: transform var(--duration-effect-moving-image-hover) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-hover {
-  transition: transform var(--duration-effect-moving-image-hover) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-hover:hover .image-first-slide{
-  animation: moveBackgroundHover var(--duration-effect-moving-image-hover) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-@keyframes moveBackgroundYHover {
-  0% {
-    transform: translateY(0);
-}
-50% {
-    transform: translateY(var(--translate-effect-moving-image-hover)); /* Movimento verso il basso*/
-}
-100% {
-    transform: translateY(0); /* Torna alla posizione iniziale */
-}
-}
-
-.moving-background-y-hover .image-first-slide {
-  transition: transform var(--duration-effect-moving-image-hover) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-y-hover{
-  transition: transform var(--duration-effect-moving-image-hover) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-y-hover:hover .image-first-slide{
-  animation: moveBackgroundYHover var(--duration-effect-moving-image-hover) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-/* Movimen to background hover */
-@keyframes moveBackgroundHoverInner {
-  0% {
-    transform: translateX(0);
-}
-50% {
-    transform: translateX(var(--translate-effect-moving-image-hover-inner)); /* Movimento verso destra */
-}
-100% {
-    transform: translateX(0); /* Torna alla posizione iniziale */
-}
-}
-
-.moving-background-hover-inner .img-inner {
-  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-hover-inner {
-  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-hover-inner:hover .img-inner{
-  animation: moveBackgroundHoverInner var(--duration-effect-moving-image-hover-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-@keyframes moveBackgroundYHoverInner {
-  0% {
-    transform: translateY(0);
-}
-50% {
-    transform: translateY(var(--translate-effect-moving-image-hover-inner)); /* Movimento verso il basso*/
-}
-100% {
-    transform: translateY(0); /* Torna alla posizione iniziale */
-}
-}
-
-.moving-background-y-hover-inner .img-inner {
-  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-y-hover-inner{
-  transition: transform var(--duration-effect-moving-image-hover-inner) ease-out; /* Aggiungi una transizione alla proprietà transform */
-}
-.moving-background-y-hover-inner:hover .img-inner{
-  animation: moveBackgroundYHoverInner var(--duration-effect-moving-image-hover-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
 @keyframes bounceUnderline {
   0%, 100% {
       height: var(--animation-decoration-from-size);
@@ -975,7 +930,15 @@
 .stretch-title-div {
   animation: stretch var(--duration-effect-title-block) infinite;
 }
-
+.stretch-button {
+  animation: stretch var(--duration-effect-button) infinite;
+}
+.stretch-icon {
+  animation: stretch var(--duration-effect-icon) infinite;
+}
+.stretch-button-inner {
+  animation: stretch var(--duration-effect-button-inner) infinite;
+}
 /* Focus */
 @keyframes focus {
   0%, 100% { text-shadow: none; }
@@ -1000,14 +963,35 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.fade-in-button {
+  animation: fadeIn var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.fade-in-icon {
+  animation: fadeIn var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-button-inner {
+  animation: fadeIn var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .fade-in-image {
   animation: fadeIn var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .fade-in-image-inner {
   animation: fadeIn var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .fade-in-div{
   animation: fadeIn var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .fade-in-title-div{
   animation: fadeIn var(--duration-effect-title-block) ease-in-out forwards;
@@ -1025,17 +1009,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.fade-in-left-button {
+  animation: fadeInLeft var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.fade-in-left-icon {
+  animation: fadeInLeft var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-left-button-inner {
+  animation: fadeInLeft var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .fade-in-left-image {
   animation: fadeInLeft var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .fade-in-left-image-inner {
   animation: fadeInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .fade-in-left-div {
   animation: fadeInLeft var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .fade-in-left-title-div {
   animation: fadeInLeft var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes fadeInRight {
@@ -1048,17 +1055,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.fade-in-right-button {
+  animation: fadeInRight var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.fade-in-right-icon {
+  animation: fadeInRight var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-right-button-inner {
+  animation: fadeInRight var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .fade-in-right-image {
   animation: fadeInRight var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .fade-in-right-image-inner {
   animation: fadeInRight var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .fade-in-right-div {
   animation: fadeInRight var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .fade-in-right-title-div {
   animation: fadeInRight var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes fadeInTop {
@@ -1071,17 +1101,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.fade-in-top-button {
+  animation: fadeInTop var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.fade-in-top-icon {
+  animation: fadeInTop var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-top-button-inner {
+  animation: fadeInTop var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .fade-in-top-image {
   animation: fadeInTop var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .fade-in-top-image-inner {
   animation: fadeInTop var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .fade-in-top-div {
   animation: fadeInTop var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .fade-in-top-title-div {
   animation: fadeInTop var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes fadeInBottom {
@@ -1094,17 +1147,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.fade-in-bottom-button {
+  animation: fadeInBottom var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.fade-in-bottom-icon {
+  animation: fadeInBottom var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-bottom-button-inner {
+  animation: fadeInBottom var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .fade-in-bottom-image {
   animation: fadeInBottom var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .fade-in-bottom-image-inner {
   animation: fadeInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .fade-in-bottom-div {
   animation: fadeInBottom var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .fade-in-bottom-title-div {
   animation: fadeInBottom var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 /* Slide In */
@@ -1118,17 +1194,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.slide-in-left-button {
+  animation: slideInLeft var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.slide-in-left-icon {
+  animation: slideInLeft var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.slide-in-left-button-inner {
+  animation: slideInLeft var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .slide-in-left-image {
   animation: slideInLeft var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .slide-in-left-image-inner {
   animation: slideInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .slide-in-left-div {
   animation: slideInLeft var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .slide-in-left-title-div {
   animation: slideInLeft var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes slideInRight {
@@ -1141,14 +1240,35 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.slide-in-right-button {
+  animation: slideInRight var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.slide-in-right-icon {
+  animation: slideInRight var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.slide-in-right-button-inner {
+  animation: slideInRight var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .slide-in-right-image {
   animation: slideInRight var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .slide-in-right-image-inner {
   animation: slideInRight var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .slide-in-right-div {
   animation: slideInRight var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .slide-in-right-title-div {
   animation: slideInRight var(--duration-effect-title-block) ease-in-out forwards;
@@ -1166,17 +1286,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.slide-in-top-button {
+  animation: slideInTop var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.slide-in-top-icon {
+  animation: slideInTop var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.slide-in-top-button-inner {
+  animation: slideInTop var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .slide-in-top-image {
   animation: slideInTop var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .slide-in-top-image-inner {
   animation: slideInTop var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .slide-in-top-div {
   animation: slideInTop var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .slide-in-top-title-div {
   animation: slideInTop var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes slideInBottom {
@@ -1189,17 +1332,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.slide-in-bottom-button {
+  animation: slideInBottom var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.slide-in-bottom-icon {
+  animation: slideInBottom var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.slide-in-bottom-button-inner {
+  animation: slideInBottom var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .slide-in-bottom-image {
   animation: slideInBottom var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .slide-in-bottom-image-inner {
   animation: slideInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .slide-in-bottom-div {
   animation: slideInBottom var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .slide-in-bottom-title-div {
   animation: slideInBottom var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 /* Zoom In */
@@ -1213,17 +1379,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.zoom-in-button {
+  animation: zoomIn var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.zoom-in-icon {
+  animation: zoomIn var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-button-inner {
+  animation: zoomIn var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .zoom-in-image {
   animation: zoomIn var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .zoom-in-image-inner {
   animation: zoomIn var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .zoom-in-div {
   animation: zoomIn var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .zoom-in-title-div {
   animation: zoomIn var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes zoomInLeft {
@@ -1236,17 +1425,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.zoom-in-left-button {
+  animation: zoomInLeft var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.zoom-in-left-icon {
+  animation: zoomInLeft var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-left-button-inner {
+  animation: zoomInLeft var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .zoom-in-left-image {
   animation: zoomInLeft var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .zoom-in-left-image-inner {
   animation: zoomInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .zoom-in-left-div {
   animation: zoomInLeft var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .zoom-in-left-title-div {
   animation: zoomInLeft var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes zoomInRight {
@@ -1259,17 +1471,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.zoom-in-right-button {
+  animation: zoomInRight var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.zoom-in-right-icon {
+  animation: zoomInRight var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-right-button-inner {
+  animation: zoomInRight var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .zoom-in-right-image {
   animation: zoomInRight var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .zoom-in-right-image-inner {
   animation: zoomInRight var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .zoom-in-right-div {
   animation: zoomInRight var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .zoom-in-right-title-div {
   animation: zoomInRight var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes zoomInTop {
@@ -1282,17 +1517,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.zoom-in-top-button {
+  animation: zoomInTop var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.zoom-in-top-icon {
+  animation: zoomInTop var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-top-button-inner {
+  animation: zoomInTop var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .zoom-in-top-image {
   animation: zoomInTop var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .zoom-in-top-image-inner {
   animation: zoomInTop var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .zoom-in-top-div {
   animation: zoomInTop var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .zoom-in-top-title-div {
   animation: zoomInTop var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes zoomInBottom {
@@ -1305,17 +1563,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.zoom-in-bottom-button {
+  animation: zoomInBottom var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.zoom-in-bottom-icon {
+  animation: zoomInBottom var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-bottom-button-inner {
+  animation: zoomInBottom var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .zoom-in-bottom-image {
   animation: zoomInBottom var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .zoom-in-bottom-image-inner {
   animation: zoomInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .zoom-in-bottom-div {
   animation: zoomInBottom var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .zoom-in-bottom-title-div {
   animation: zoomInBottom var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 /* Extra: Rotate In from Directions */
@@ -1329,17 +1610,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.rotate-in-left-button {
+  animation: rotateInLeft var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.rotate-in-left-icon {
+  animation: rotateInLeft var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-left-button-inner {
+  animation: rotateInLeft var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .rotate-in-left-image {
   animation: rotateInLeft var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .rotate-in-left-image-inner {
   animation: rotateInLeft var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .rotate-in-left-div {
   animation: rotateInLeft var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .rotate-in-left-title-div {
   animation: rotateInLeft var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes rotateInRight {
@@ -1352,17 +1656,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.rotate-in-right-button {
+  animation: rotateInRight var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.rotate-in-right-icon {
+  animation: rotateInRight var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-right-button-inner {
+  animation: rotateInRight var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .rotate-in-right-image {
   animation: rotateInRight var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .rotate-in-right-image-inner {
   animation: rotateInRight var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .rotate-in-right-div {
   animation: rotateInRight var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .rotate-in-right-title-div {
   animation: rotateInRight var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes rotateInTop {
@@ -1375,17 +1702,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.rotate-in-top-button {
+  animation: rotateInTop var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.rotate-in-top-icon {
+  animation: rotateInTop var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-top-button-inner {
+  animation: rotateInTop var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .rotate-in-top-image {
   animation: rotateInTop var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .rotate-in-top-image-inner {
   animation: rotateInTop var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .rotate-in-top-div{
   animation: rotateInTop var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .rotate-in-top-title-div{
   animation: rotateInTop var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 @keyframes rotateInBottom {
@@ -1398,17 +1748,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.rotate-in-bottom-button {
+  animation: rotateInBottom var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.rotate-in-bottom-icon {
+  animation: rotateInBottom var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-bottom-button-inner {
+  animation: rotateInBottom var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .rotate-in-bottom-image {
   animation: rotateInBottom var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .rotate-in-bottom-image-inner {
   animation: rotateInBottom var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .rotate-in-bottom-div {
   animation: rotateInBottom var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .rotate-in-bottom-title-div {
   animation: rotateInBottom var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 /* Wiggle */
@@ -1422,6 +1795,18 @@
 .wiggle {
   display: inline-block;
   animation: wiggle var(--duration-effect) ease-in-out var(--interation);
+}
+.wiggle-button {
+  display: inline-block;
+  animation: wiggle var(--duration-effect-button) ease-in-out var(--interation-button);
+}
+.wiggle-icon {
+  display: inline-block;
+  animation: wiggle var(--duration-effect-icon) ease-in-out var(--interation-icon);
+}
+.wiggle-button-inner {
+  display: inline-block;
+  animation: wiggle var(--duration-effect-button-inner) ease-in-out var(--interation-button-inner);
 }
 .wiggle-image {
   display: inline-block;
@@ -1451,17 +1836,40 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.rotate-in-button {
+  animation: rotateIn var(--duration-effect-button) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.rotate-in-icon {
+  animation: rotateIn var(--duration-effect-icon) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-button-inner {
+  animation: rotateIn var(--duration-effect-button-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .rotate-in-image {
   animation: rotateIn var(--duration-effect-image) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .rotate-in-image-inner {
   animation: rotateIn var(--duration-effect-image-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .rotate-in-div {
   animation: rotateIn var(--duration-effect-div) ease-in-out forwards;
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .rotate-in-title-div {
   animation: rotateIn var(--duration-effect-title-block) ease-in-out forwards;
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 /* Flip */
@@ -1476,21 +1884,47 @@
   animation-delay: var(--delay-effect);
   opacity: 0; 
 }
+.flip-button {
+  display: inline-block;
+  animation: flip var(--duration-effect-button) ease-in-out var(--interation-button);
+  animation-delay: var(--delay-effect-button);
+  opacity: 0; 
+}
+.flip-icon {
+  display: inline-block;
+  animation: flip var(--duration-effect-icon) ease-in-out var(--interation-icon);
+  animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.flip-button-inner {
+  display: inline-block;
+  animation: flip var(--duration-effect-button-inner) ease-in-out var(--interation-button-inner);
+  animation-delay: var(--delay-effect-button-inner);
+  opacity: 0; 
+}
 .flip-image {
   display: inline-block;
   animation: flip var(--duration-effect-image) ease-in-out var(--interation-image);
+  animation-delay: var(--delay-effect-image);
+  opacity: 0; 
 }
 .flip-image-inner {
   display: inline-block;
   animation: flip var(--duration-effect-image-inner) ease-in-out var(--interation-image-inner);
+  animation-delay: var(--delay-effect-image-inner);
+  opacity: 0; 
 }
 .flip-div {
   display: inline-block;
   animation: flip var(--duration-effect-div) ease-in-out var(--interation-div);
+  animation-delay: var(--delay-effect-div);
+  opacity: 0; 
 }
 .flip-title-div {
   display: inline-block;
   animation: flip var(--duration-effect-title-block) ease-in-out var(--interation-title-block);
+  animation-delay: var(--delay-effect-title-block);
+  opacity: 0; 
 }
 
 /* Swing */
@@ -1506,6 +1940,21 @@
   display: inline-block;
   transform-origin: top center;
   animation: swing var(--duration-effect-image) ease var(--interation-image);
+}
+.swing-button {
+  display: inline-block;
+  transform-origin: top center;
+  animation: swing var(--duration-effect-button) ease var(--interation-button);
+}
+.swing-icon {
+  display: inline-block;
+  transform-origin: top center;
+  animation: swing var(--duration-effect-icon) ease var(--interation-icon);
+}
+.swing-button-inner {
+  display: inline-block;
+  transform-origin: top center;
+  animation: swing var(--duration-effect-button-inner) ease var(--interation-button-inner);
 }
 .swing-image-inner {
   display: inline-block;
@@ -1552,6 +2001,15 @@
 
 .rubber-band-image {
   animation: rubberBand var(--duration-effect-image) ease-in-out var(--interation-image);
+}
+.rubber-band-button {
+  animation: rubberBand var(--duration-effect-button) ease-in-out var(--interation-button);
+}
+.rubber-band-icon {
+  animation: rubberBand var(--duration-effect-icon) ease-in-out var(--interation-icon);
+}
+.rubber-band-button-inner {
+  animation: rubberBand var(--duration-effect-button-inner) ease-in-out var(--interation-button-inner);
 }
 .rubber-band-image-inner {
   animation: rubberBand var(--duration-effect-image-inner) ease-in-out var(--interation-image-inner);
@@ -2073,6 +2531,18 @@
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
 }
+.rotate-continuous-button  {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect-button) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
+.rotate-continuous-icon  {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect-icon) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
+.rotate-continuous-button-inner  {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect-button-inner) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
 .rotate-continuous-image {
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect-image) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
@@ -2238,30 +2708,43 @@
   z-index: 2;
 }
 
-/* Hover Effect title */
 
-/* Scale */
-.hover-effect-1{
+/* Effetto hover per .title-slide */
+.title-slide a{
+  text-decoration: none;
+}
+.title-slide {
   transition: transform var(--transition-hover) ease;
 }
 
-.hover-effect-1:hover{
-  transform: scale(1.1);
+.title-slide:hover {
+  transform: rotate(var(--rotate-hover));
 }
+
+/* Effetto hover combinato per .title-slide con .hover-effect-1 */
+.title-slide.hover-effect-1 {
+  transition: transform var(--transition-hover) ease;
+}
+
+.title-slide.hover-effect-1:hover {
+  transform: rotate(var(--rotate-hover)) scale(1.1)!important;
+}
+
+
 /* Translate Y */
-.hover-effect-2{
+.title-slide.hover-effect-2{
   transition: transform var(--transition-hover) ease;
 }
-.hover-effect-2:hover {
-  transform: translateY(var(--translate-hover)); /* Sposta l'elemento verso l'alto di 10px */
+.title-slide.hover-effect-2:hover {
+  transform: rotate(var(--rotate-hover)) translateY(var(--translate-hover))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
 /* Translate X */
-.hover-effect-5{
+.title-slide.hover-effect-5{
   transition: transform var(--transition-hover) ease;
 }
-.hover-effect-5:hover {
-  transform: translateX(var(--translate-hover)); /* Sposta l'elemento verso l'alto di 10px */
+.title-slide.hover-effect-5:hover {
+  transform: rotate(var(--rotate-hover)) translateX(var(--translate-hover))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
 /* Shadow */
@@ -2327,11 +2810,11 @@
   box-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) var(--box-shadow-color);
 
 }
-/*
-.content-title-slide:hover{
+
+.title-slide:hover{
   transform: rotate(var(--rotate-hover))!important;
 }
-  */
+  
 .title-slide:hover{
   color: var(--color-hover)!important;
   border-color: var(--border-color-hover)!important;
@@ -2340,11 +2823,76 @@
   border-width: var(--border-width-hover)!important;
 }
 
-/* Title slide inside div */
-
-.content-title-div:hover{
-  transform: rotate(var(--rotate-hover-title-div));
+/* Icon Slide */
+.content-icon:hover .slide-icon{
+  color: var(--color-hover-icon)!important;
+  border-color: var(--border-color-hover-icon)!important;
+  opacity: var(--opacity-hover-icon)!important;
+  border-style: var(--border-style-hover-icon)!important;
+  border-width: var(--border-width-hover-icon)!important;
+  rotate: var(--rotate-hover-icon)!important;
 }
+.slide-icon{
+  transition: color var(--transition-hover-icon) ease, opacity var(--transition-hover-icon) ease, transform var(--transition-hover-icon) ease;
+}
+/* Effetto hover */
+.slide-icon.hover-effect-1-icon {
+  transition: transform var(--transition-hover-icon) ease;
+}
+.slide-icon.hover-effect-1-icon:hover {
+  transform: scale(1.1)!important;
+}
+/* Translate Y */
+.slide-icon.hover-effect-2-icon:hover {
+  transform: translateY(var(--translate-hover-icon))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+/* Translate X */
+.slide-icon.hover-effect-5-icon:hover {
+  transform: translateX(var(--translate-hover-icon))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Shadow */
+.hover-effect-3-icon- {
+  transition: box-shadow var(--transition-hover-icon) ease, filter var(--transition-hover-icon) ease!important;
+}
+.hover-effect-3-icon-:hover {
+  box-shadow: 0 2px 4px var(--color-effect-hover-icon)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Shadow */
+.hover-effect-3-icon {
+  transition: box-shadow var(--transition-hover-icon) ease, filter var(--transition-hover-icon) ease!important;
+}
+.hover-effect-3-icon:hover {
+  box-shadow: 0 4px 8px var(--color-effect-hover-icon)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Ombra */
+.hover-effect-4-icon{
+  transition: box-shadow var(--transition-hover-icon) ease, filter var(--transition-hover-icon) ease!important;
+}
+.hover-effect-4-icon:hover {
+  box-shadow: 0px 8px 16px var(--color-effect-hover-icon)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Sfocatura */
+.hover-effect-6-icon {
+  transition: filter var(--transition-hover-icon) ease!important;
+}
+.hover-effect-6-icon:hover {
+  filter: blur(2px); /* Applica una sfocatura leggera */
+}
+
+
+/* Title slide inside div */
+.content-title-div{ transition: transform var(--transition-hover-title-div) ease;}
+.content-title-div:hover{
+  transform: rotate(var(--rotate-hover-title-div))!important;
+}
+
 .title-slide-div:hover{
   color: var(--color-hover-title-div)!important;
   border-color: var(--border-color-hover-title-div)!important;
@@ -2480,6 +3028,10 @@
 }
 
 /* Hover Effect image inner */
+
+.content-img-inner{
+  transition: transform var(--transition-hover-image-inner) ease;
+}
 /* Scale */
 .hover-effect-1-image-inner{
   transition: transform var(--transition-hover-image-inner) ease;
@@ -2524,18 +3076,21 @@
 /* Hover Effect div */
 
 /* Scale */
-.hover-effect-1-div{
+.content-inner-div{
   transition: transform var(--transition-hover-div) ease;
 }
+.hover-effect-1-div{
+  transition: transform var(--transition-hover-div) ease!important;
+}
 .hover-effect-1-div:hover{
-  transform: scale(1.1);
+  transform: scale(1.1)!important;
 }
 /* Translate Y */
 .hover-effect-2-div{
   transition: transform var(--transition-hover-div) ease;
 }
 .hover-effect-2-div:hover {
-  transform: translateY(var(--translate-hover-div)); /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-div))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
 /* Translate X */
@@ -2543,7 +3098,7 @@
   transition: transform var(--transition-hover-div) ease;
 }
 .hover-effect-5-div:hover {
-  transform: translateX(var(--translate-hover-div)); /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-div))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
 /* Shadow */
@@ -2551,7 +3106,7 @@
   transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
 }
 .hover-effect-3-div-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-div); /* Aggiunge un'ombra */
+  box-shadow: 0 2px 4px var(--color-effect-hover-div)!important; /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
@@ -2560,9 +3115,19 @@
   transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
 }
 .hover-effect-3-div:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-div); /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-div)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.4); /* Aumenta la luminosità dell'elemento */
 }
+
+/* Shadow */
+.hover-effect-4-div {
+  transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
+}
+.hover-effect-4-div:hover {
+  box-shadow: 0 8px 16px var(--color-effect-hover-div)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.8); /* Aumenta la luminosità dell'elemento */
+}
+
 
 /* Image slide */
 .content-img-first:hover{
@@ -2582,10 +3147,59 @@ transition: transform var(--transition-hover-image) ease;
   border-width: var(--border-width-hover-image)!important;
 }
 
+/* Effect Icon Button */
+/* Effetto hover */
+.hover-effect-1-icon-button {
+  transition: transform var(--transition-hover-icon-button) ease;
+}
+.content-button-slide:hover .hover-effect-1-icon-button {
+  transform: scale(1.1)!important;
+}
+/* Translate Y */
+.hover-effect-2-icon-button{
+  transition: transform var(--transition-hover-icon-button) ease;
+}
+.content-button-slide:hover .hover-effect-2-icon-button {
+  transform: translateY(var(--translate-hover-icon-button))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+/* Translate X */
+.hover-effect-5-icon-button{
+  transition: transform var(--transition-hover-icon-button) ease;
+}
+.content-button-slide:hover .hover-effect-5-icon-button {
+  transform: translateX(var(--translate-hover-icon-button))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Effect Icon Button Inner*/
+/* Effetto hover */
+.hover-effect-1-icon-button-inner {
+  transition: transform var(--transition-hover-icon-button-inner) ease;
+}
+.content-button-slide-inner:hover .hover-effect-1-icon-button-inner {
+  transform: scale(1.1)!important;
+}
+/* Translate Y */
+.hover-effect-2-icon-button-inner{
+  transition: transform var(--transition-hover-icon-button-inner) ease;
+}
+.content-button-slide-inner:hover .hover-effect-2-icon-button-inner {
+  transform: translateY(var(--translate-hover-icon-button-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+/* Translate X */
+.hover-effect-5-icon-button-inner{
+  transition: transform var(--transition-hover-icon-button-inner) ease;
+}
+.content-button-slide-inner:hover .hover-effect-5-icon-button-inner {
+  transform: translateX(var(--translate-hover-icon-button-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
 /* Imager Inner */
+
+
 .content-img-inner:hover{
   transform: rotate(var(--rotate-hover-image-inner))!important;
 }
+
 .img-inner{
 transition: transform var(--transition-hover-image-inner) ease;
 }
@@ -2609,6 +3223,18 @@ transition: transform var(--transition-hover-image-inner) ease;
   }
 }
 
+/* Font size Icon Responsive */
+@media screen and (max-width: 780px) {
+  .slide-icon {
+    font-size: var(--font-size-tablet-icon) !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .slide-icon {
+    font-size: var(--font-size-mobile-icon) !important;
+  }
+}
+
 /* Font size Title inside block Responsive */
 @media screen and (max-width: 780px) {
   .title-slide-div {
@@ -2618,6 +3244,30 @@ transition: transform var(--transition-hover-image-inner) ease;
 @media screen and (max-width: 360px) {
   .title-slide-div {
     font-size: var(--font-size-block-mobile) !important;
+  }
+}
+
+/* Font size Button Responsive */
+@media screen and (max-width: 780px) {
+  .content-button-slide {
+    font-size: var(--font-size-button-tablet) !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .content-button-slide {
+    font-size: var(--font-size-button-mobile) !important;
+  }
+}
+
+/* Font size inner Button Responsive */
+@media screen and (max-width: 780px) {
+  .content-button-slide-inner {
+    font-size: var(--font-size-button-tablet-inner) !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .content-button-slide-inner {
+    font-size: var(--font-size-button-mobile-inner) !important;
   }
 }
 
@@ -2672,6 +3322,81 @@ transition: transform var(--transition-hover-image-inner) ease;
   }
 }
 
+
+/* Responsive Icon */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-icon-visible, .tablet-icon-visible, .mobile-icon-visible {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-icon-visible {
+    display: block;
+  }
+  .desktop-icon-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-icon-visible {
+    display: block;
+  }
+  .tablet-icon-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-icon-visible {
+    display: block;
+  }
+  .mobile-icon-hidden {
+    display: none;
+  }
+}
+
+/* Responsive Icon Inner*/
+
+/* Stili di base per nascondere gli elementi */
+.desktop-icon-inner-visible, .tablet-icon-inner-visible, .mobile-icon-inner-visible {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-icon-inner-visible {
+    display: block;
+  }
+  .desktop-icon-inner-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-icon-inner-visible {
+    display: block;
+  }
+  .tablet-icon-inner-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-icon-visible {
+    display: block;
+  }
+  .mobile-icon-hidden {
+    display: none;
+  }
+}
+
 /* Responsive image */
 
 /* Stili di base per nascondere gli elementi */
@@ -2705,6 +3430,81 @@ transition: transform var(--transition-hover-image-inner) ease;
     display: block;
   }
   .mobile-image-hidden {
+    display: none;
+  }
+}
+
+/* Responsive button */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-button-visible, .tablet-button-visible, .mobile-button-visible {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-button-visible {
+    display: block;
+  }
+  .desktop-button-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-button-visible {
+    display: block;
+  }
+  .tablet-button-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-button-visible {
+    display: block;
+  }
+  .mobile-button-hidden {
+    display: none;
+  }
+}
+
+
+/* Responsive inner button */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-button-visible-inner, .tablet-button-visible-inner, .mobile-button-visible-inner {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-button-visible-inner {
+    display: block;
+  }
+  .desktop-button-hidden-inner {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-button-visible-inner {
+    display: block;
+  }
+  .tablet-button-hidden-inner {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-button-visible-inner {
+    display: block;
+  }
+  .mobile-button-hidden-inner {
     display: none;
   }
 }
@@ -4017,27 +4817,16 @@ transition: transform var(--transition-hover-image-inner) ease;
 	}
 }
  .scroll-btn {
-	display: block;
-	/*position: absolute;
-	left: 0;
-	right: 0;*/
-	text-align: center;
   border: none;
 }
 .scroll-btn > * {
 	display: inline-block;
-	line-height: 18px;
-	font-size: 13px;
-	font-weight: normal;
-	color: #7f8c8d;
-	color: #ffffff;
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	letter-spacing: 2px;
+	color: var(--color-button);
 }
 .scroll-btn > *:hover,
 .scroll-btn > *:focus,
 .scroll-btn > *.active {
-	color: #ffffff;
+	color: var(--color-button);
 }
 .scroll-btn > *:hover,
 .scroll-btn > *:focus,
@@ -4049,9 +4838,8 @@ transition: transform var(--transition-hover-image-inner) ease;
 .scroll-btn .mouse {
 	position: relative;
 	display: block;
-	width: 35px;
-	height: 55px;
-	margin: 0 auto 20px;
+	width: var(--buttonWidth);
+	height: var(--buttonHeight);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -4060,7 +4848,17 @@ transition: transform var(--transition-hover-image-inner) ease;
   border-color: var(--border-color-button);
 	border-radius: var(--border-radius-button);
   background-color: var(--background-color-button);
+  box-shadow: var(--box-shadow-x-button) var(--box-shadow-y-button) var(--box-shadow-blur-button) var(--box-shadow-spread-button) var(--box-shadow-color-button);
 }
+.scroll-btn .mouse:hover {
+  background-color: var(--color-button-hover)!important;
+  border-style: var(--border-style-button-hover)!important;
+  border-width: var(--border-width-button-hover)!important;
+  border-color: var(--border-color-button-hover)!important;
+  rotate: var(--rotate-button-hover)!important;
+  opacity: var(--opacity-button-hover)!important;
+}
+
 .scroll-btn .mouse > * {
 	position: absolute;
 	display: block;
@@ -4076,6 +4874,95 @@ transition: transform var(--transition-hover-image-inner) ease;
 	animation: ani-mouse 2.5s linear infinite;
 }
 
+/* Button classic */
+.button-slider a:hover{
+  background-color: var(--background-color-button-hover)!important;
+  color: var(--color-button-hover)!important;
+  border-width:var(--border-width-button-hover)!important;
+  border-style: var(--border-style-button-hover)!important;
+  border-color:var(--border-color-button-hover)!important;
+  opacity: var(--opacity-button-hover)!important;
+  transform: rotate(var(--rotate-button-hover))!important;
+}
+.button-slider:hover{
+  transform: rotate(var(--rotate-button-hover))!important;
+}
+
+
+/* Button Inner */
+.scroll-btn-inner {
+  border: none;
+}
+.scroll-btn-inner > * {
+	display: inline-block;
+	color: var(--color-button-inner);
+}
+.scroll-btn-inner > *:hover,
+.scroll-btn-inner > *:focus,
+.scroll-btn-inner > *.active {
+	color: var(--color-button-inner);
+}
+.scroll-btn-inner > *:hover,
+.scroll-btn-inner > *:focus,
+.scroll-btn-inner > *:active,
+.scroll-btn-inner > *.active {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.scroll-btn-inner .mouse-inner {
+	position: relative;
+	display: block;
+	width: var(--buttonWidth-inner);
+	height: var(--buttonHeight-inner);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  border-style: var(--border-style-button-inner);
+  border-width: var(--border-width-button-inner);
+  border-color: var(--border-color-button-inner);
+	border-radius: var(--border-radius-button-inner);
+  background-color: var(--background-color-button-inner);
+  box-shadow: var(--box-shadow-x-button-inner) var(--box-shadow-y-button-inner) var(--box-shadow-blur-button-inner) var(--box-shadow-spread-button-inner) var(--box-shadow-color-button-inner);
+}
+.scroll-btn-inner .mouse-inner:hover {
+  background-color: var(--color-button-hover-inner)!important;
+  border-style: var(--border-style-button-hover-inner)!important;
+  border-width: var(--border-width-button-hover-inner)!important;
+  border-color: var(--border-color-button-hover-inner)!important;
+  rotate: var(--rotate-button-hover-inner)!important;
+  opacity: var(--opacity-button-hover-inner)!important;
+}
+
+.scroll-btn-inner .mouse-inner > * {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+	background: var(--color-button-inner);
+	border-radius: 50%;
+	-webkit-animation: ani-mouse 2.5s linear infinite;
+	-moz-animation: ani-mouse 2.5s linear infinite;
+	animation: ani-mouse 2.5s linear infinite;
+}
+
+/* Button classic inner */
+.button-slider-inner a:hover{
+  background-color: var(--background-color-button-hover-inner)!important;
+  color: var(--color-button-hover-inner)!important;
+  border-width:var(--border-width-button-hover-inner)!important;
+  border-style: var(--border-style-button-hover-inner)!important;
+  border-color:var(--border-color-button-hover-inner)!important;
+  opacity: var(--opacity-button-hover-inner)!important;
+  transform: rotate(var(--rotate-button-hover-inner))!important;
+}
+.button-slider-inner:hover{
+  transform: rotate(var(--rotate-button-hover-inner))!important;
+}
+
+
 /* Effect mouse in slider */
 
 /* Particle */
@@ -4083,7 +4970,6 @@ transition: transform var(--transition-hover-image-inner) ease;
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: rgba(255, 123, 0, 0.5);
   border-radius: 50%;
   pointer-events: none;
   will-change: transform, opacity;
@@ -4095,17 +4981,17 @@ transition: transform var(--transition-hover-image-inner) ease;
   0% {
     opacity: 1;
     transform: translate(0, 0) scale(1) rotate(0deg);
-    box-shadow: 0 0 20px 10px rgba(255, 100, 0, 0.5);
+    box-shadow: 0 0 20px 10px var(--color-start);
   }
   50% {
     opacity: 0.7;
     transform: translate(var(--offsetX), var(--offsetY)) scale(1.5) rotate(45deg);
-    box-shadow: 0 0 40px 20px rgba(255, 165, 0, 0.4);
+    box-shadow: 0 0 40px 20px var(--color-middle);
   }
   100% {
     opacity: 0;
     transform: translate(calc(var(--offsetX) * 2), calc(var(--offsetY) * 2)) scale(0.5) rotate(90deg);
-    box-shadow: 0 0 60px 30px rgba(255, 200, 0, 0.1);
+    box-shadow: 0 0 60px 30px var(--color-end);
   }
 }
 
@@ -4114,7 +5000,6 @@ transition: transform var(--transition-hover-image-inner) ease;
   position: absolute;
   width: 60px;
   height: 60px;
-  background-color: hsla(200, 100%, 70%, 0.5); 
   border-radius: 50%;
   pointer-events: none;
   will-change: transform, opacity;
@@ -4141,3 +5026,222 @@ transition: transform var(--transition-hover-image-inner) ease;
     filter: blur(60px);
   }
 }
+
+/* Effetto nascondi l'elemento inner text */
+.content-title-div.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-title-block) ease-in-out;
+}
+
+
+/* Effetto nascondi l'elemento button */
+.content-button-slide.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-button) ease-in-out;
+}
+
+/* Effetto nascondi l'elemento icon */
+.content-icon.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-icon) ease-in-out;
+}
+
+
+/* Effetto nascondi l'elemento inner button */
+.content-button-slide-inner.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-button-inner) ease-in-out;
+}
+
+/* Effetto nascondi l'elemento div */
+.content-inner-div.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-div) ease-in-out;
+}
+
+/* Effetto nascondi l'elemento title */
+.content-title-slide.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-title) ease-in-out;
+}
+
+/* Effetto nascondi l'elemento image */
+.content-img-first.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-image) ease-in-out;
+}
+
+/* Effetto nascondi l'elemento inner image */
+.content-img-inner.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-image-block) ease-in-out;
+}
+
+
+
+/* Icon Button */
+.content-button-slide:hover .content-icon-button{
+  transform: rotate(var(--rotate-icon-button-hover))!important; ;
+ 
+}
+
+.content-button-slide:hover .content-icon-button i{
+  color: var(--color-icon-button-hover)!important;
+}
+
+
+.content-button-slide.icon-show-hover.icon-hide-opacity i{
+  opacity: 0;
+}
+
+.content-button-slide.icon-show-hover.icon-hide-opacity:hover i{
+  opacity: 1;
+}
+
+.content-button-slide.icon-show-hover.icon-hide-display-none i{
+  display: none;
+}
+
+.content-button-slide.icon-show-hover.icon-hide-display-none:hover i{
+  display: block;
+}
+
+/* Icon Inner Button */
+.content-button-slide-inner:hover .content-icon-button-inner{
+  transform: rotate(var(--rotate-icon-button-hover-inner))!important; ;
+ 
+}
+
+.content-button-slide-inner:hover .content-icon-button-inner i{
+  color: var(--color-icon-button-hover-inner)!important;
+}
+
+
+.content-button-slide-inner.icon-show-hover-inner.icon-hide-opacity-inner i{
+  opacity: 0;
+}
+
+.content-button-slide-inner.icon-show-hover-inner.icon-hide-opacity-inner:hover i{
+  opacity: 1;
+}
+
+.content-button-slide-inner.icon-show-hover-inner.icon-hide-display-none-inner i{
+  display: none;
+}
+
+.content-button-slide-inner.icon-show-hover-inner.icon-hide-display-none-inner:hover i{
+  display: block;
+}
+
+
+/*---------------------------------------------------------------------
+                        Mouse Effect
+-----------------------------------------------------------------------*/
+.mouse-move {
+  position: absolute;
+  bottom: -130px;
+  left: 50%;
+  width: 65px;
+  margin-left: -50px;
+}
+.mouse-move a {
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 65px;
+  width: 65px;
+  line-height: 65px;
+  display: inline-block;
+  border-radius: 900px;
+  text-align: center;
+}
+.mouse-move .boom::before,
+.mouse-move .boom::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.mouse-move .boom::before,
+.mouse-move .boom::after {
+  content: "";
+  z-index: -1;
+  margin: 0;
+  border-radius: 900px;
+  box-shadow: inset 0 0 0 2px;
+  animation: clipMe 8s linear infinite;
+}
+.mouse-move .boom::before {
+  animation-delay: -4s;
+}
+@keyframes clipMe {
+  0%,
+  100% {
+    clip: rect(0px, 220px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 220px, 0px);
+  }
+  50% {
+    clip: rect(218px, 220px, 220px, 0px);
+  }
+  75% {
+    clip: rect(0px, 220px, 220px, 218px);
+  }
+}
+.banner_canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+/* Effetto zoom 
+
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; 
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: zoomInInfinite 15s infinite; 
+}
+
+
+@keyframes zoomInInfinite {
+  0% {
+    transform: scale(1); 
+  }
+  50% {
+    transform: scale(1.1); 
+  }
+  100% {
+    transform: scale(1); 
+  }
+}
+
+
+.swiper-slide .slide-content {
+  position: relative;
+  z-index: 1; 
+}
+
+*/
+

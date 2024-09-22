@@ -569,6 +569,98 @@
     "colorThreeEffect": {
       "type": "string",
       "default": "rgba(243, 106, 188, 0.7)"
+    },
+    "enableGrid": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableRuler": {
+      "type": "boolean",
+      "default": false
+    },
+    "opacityRuler": {
+      "type": "number",
+      "default": 0.4
+    },
+    "opacityGrid": {
+      "type": "number",
+      "default": 0.4
+    },
+    "colorGrid": {
+      "type": "string",
+      "default": "rgba(91, 91, 91, 0.078)"
+    },
+    "mouseEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "colorEffectStart": {
+      "type": "string",
+      "default": "rgba(255, 123, 0, 0.5)"
+    },
+    "colorEffectMiddle": {
+      "type": "string",
+      "default": "rgba(255, 123, 0, 0)"
+    },
+    "colorEffectEnd": {
+      "type": "string",
+      "default": "rgba(255, 123, 0, 0.5)"
+    },
+    "firstColorLiquid": {
+      "type": "number",
+      "default": 0
+    },
+    "secondColorLiquid": {
+      "type": "number",
+      "default": 1
+    },
+    "thirdColorLiquid": {
+      "type": "number",
+      "default": 1
+    },
+    "imgSelected": {
+      "type": "boolean",
+      "default": true
+    },
+    "h1Selected": {
+      "type": "boolean",
+      "default": true
+    },
+    "h2Selected": {
+      "type": "boolean",
+      "default": true
+    },
+    "h3Selected": {
+      "type": "boolean",
+      "default": true
+    },
+    "h4Selected": {
+      "type": "boolean",
+      "default": true
+    },
+    "h5Selected": {
+      "type": "boolean",
+      "default": true
+    },
+    "h6Selected": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonSelected": {
+      "type": "boolean",
+      "default": true
+    },
+    "spanSelected": {
+      "type": "boolean",
+      "default": true
+    },
+    "pSelected": {
+      "type": "boolean",
+      "default": true
+    },
+    "transitionParalaxMouse": {
+      "type": "number",
+      "default": 0.5
     }
   }
 }

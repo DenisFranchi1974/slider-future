@@ -12,7 +12,7 @@ import {
   Tooltip,
   ToggleControl,
 } from "@wordpress/components";
-import { trash, replace, addTemplate, button, info} from "@wordpress/icons";
+import { trash, replace, addTemplate, button, info, plus} from "@wordpress/icons";
 import React, { useRef, useEffect } from "react";
 import { useState } from "@wordpress/element";
 import "./editor.scss";
@@ -27,6 +27,11 @@ import AlignmentControl from "./aligncontrol";
 import ImageSelectionModal from "./ImageSelectionModal";
 import ButtonTypeSelectionModal from "./buttonModal";
 import ButtonControls from "./ButtonControls";
+import DeviceSelector from "./devicesSelector";
+import IconControls from "./IconControls";
+import DivModal  from "./layerLibrary"
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
 
 const SlideControls = ({
   slide,
@@ -37,7 +42,9 @@ const SlideControls = ({
   parallax,
   attributes,
   swiperRef,
- 
+  selectedDevice,
+  onDeviceChange,
+  setSelectedIcon,
 }) => {
   const {
     device,
@@ -45,7 +52,8 @@ const SlideControls = ({
     textColorDefault,
     backgroundColorBlockDefault,
   } = attributes;
-  
+
+
 
   const [isModalOpenButton, setIsModalOpenButton] = useState(false);
 
@@ -123,7 +131,7 @@ const SlideControls = ({
       display: "inline-block",
       width: "12px",
       height: "12px",
-      borderRadius: "3px",
+      borderRadius: "50px",
       border: `2px solid ${primaryColor}`,
       backgroundColor: isSelected ? primaryColor : "transparent",
       marginRight: "8px",
@@ -132,6 +140,37 @@ const SlideControls = ({
     };
 
     return <span style={circleStyle}></span>;
+  };
+
+    // Movimentazione elementi
+
+  // Move Element Up
+  const moveElementUp = (slideId, index) => {
+    const updatedSlides = slides.map((slide) => {
+      if (slide.id === slideId && index > 0) {
+        const elements = [...slide.elements];
+        const temp = elements[index - 1];
+        elements[index - 1] = elements[index];
+        elements[index] = temp;
+        return { ...slide, elements };
+      }
+      return slide;
+    });
+    setAttributes({ slides: updatedSlides });
+  };
+  // Move Elemet Down
+  const moveElementDown = (slideId, index) => {
+    const updatedSlides = slides.map((slide) => {
+      if (slide.id === slideId && index < slide.elements.length - 1) {
+        const elements = [...slide.elements];
+        const temp = elements[index + 1];
+        elements[index + 1] = elements[index];
+        elements[index] = temp;
+        return { ...slide, elements };
+      }
+      return slide;
+    });
+    setAttributes({ slides: updatedSlides });
   };
 
   // Section slide
@@ -222,36 +261,6 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Movimentazione elementi
-
-  // Move Element Up
-  const moveElementUp = (slideId, index) => {
-    const updatedSlides = slides.map((slide) => {
-      if (slide.id === slideId && index > 0) {
-        const elements = [...slide.elements];
-        const temp = elements[index - 1];
-        elements[index - 1] = elements[index];
-        elements[index] = temp;
-        return { ...slide, elements };
-      }
-      return slide;
-    });
-    setAttributes({ slides: updatedSlides });
-  };
-  // Move Elemet Down
-  const moveElementDown = (slideId, index) => {
-    const updatedSlides = slides.map((slide) => {
-      if (slide.id === slideId && index < slide.elements.length - 1) {
-        const elements = [...slide.elements];
-        const temp = elements[index + 1];
-        elements[index + 1] = elements[index];
-        elements[index] = temp;
-        return { ...slide, elements };
-      }
-      return slide;
-    });
-    setAttributes({ slides: updatedSlides });
-  };
 
   // Add Slide
   const addSlide = () => {
@@ -270,8 +279,9 @@ const SlideControls = ({
       backgroundHorizontalPadding: 0,
       borderStyleSlide: "none",
       enableContentWidth: true,
-      contentWidth:"",
+      contentWidth:900,
       layoutWrap: "wrap",
+      developerMode: false,
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -468,6 +478,19 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update developer mode
+  const updateDeveloperMode = (
+    slideId,
+    value
+  ) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? { ...slide, developerMode: value }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Add Text
   const addSlideTitle = (slideId) => {
     const updatedSlides = slides.map((slide) =>
@@ -579,6 +602,10 @@ const SlideControls = ({
                 boxShadowBlur: 0,
                 boxShadowSpread: 0,
                 interation: "forwards",
+                zIndexTitle: 1,
+                delayHide:false,
+                delaySeconds:2,
+                delayTransition: 0.5,
               },
             ],
           }
@@ -632,6 +659,7 @@ const SlideControls = ({
                   bottom: 0,
                   left: 0,
                 },
+                delayEffectImage: 0,
                 blobMask: false,
                 animationImage: "none",
                 durationEffectImage: 1,
@@ -657,9 +685,7 @@ const SlideControls = ({
                 backgoroundBorderSizeHoverImage: 0,
                 opacityHoverImage: 1,
                 rotateHoverImage: 0,
-                animationImageMovingHover: "none",
                 durationEffectImageMovingHover: 1,
-                translateEffectImageMovingHover: 0,
                 animationHoverImage: "none",
                 durationEffectHoverImage: 1,
                 effectHoverColorHoverImage: "",
@@ -675,6 +701,10 @@ const SlideControls = ({
                 parallaxImageOpacity: 1,
                 parallaxImageDuration: 100,
                 interationImage: "forwards",
+                zIndexImage: 1,
+                delayHide:false,
+                delaySeconds:2,
+                delayTransition: 0.5,
               },
             ],
           }
@@ -682,6 +712,7 @@ const SlideControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
 
   // Add Div
   const addSlideDiv = (slideId) => {
@@ -692,6 +723,7 @@ const SlideControls = ({
             elements: [
               ...slide.elements,
               {
+                innerElements: [],
                 type: "div",
                 desktop: { x: 0, y: 0 },
                 tablet: { x: 0, y: 0 },
@@ -705,8 +737,8 @@ const SlideControls = ({
                 contentHeightDiv: "auto",
                 customContentHeightDiv: 100,
                 elementDiv: "div",
-                backgroundVerticalPaddingDiv: 0,
-                backgroundHorizontalPaddingDiv: 0,
+                backgroundVerticalPaddingDiv: 30,
+                backgroundHorizontalPaddingDiv: 30,
                 marginDiv: {
                   top: 0,
                   right: 0,
@@ -730,14 +762,15 @@ const SlideControls = ({
                 backgroundColor: backgroundColorBlockDefault,
                 imageUrl: "",
                 innerDivs: [],
-                divColorHover: "#ffffff",
+                divColorHover: "FFFFFF00",
                 borderStyleHoverDiv: "none",
+                backgroundBorderSizeDivHover: 0,
                 backgroundBorderColorHoverDiv: "",
-                backgoroundBorderSizeHoverDiv: 0,
                 opacityHoverDiv: 1,
                 rotateHoverDiv: 0,
                 animationHoverDiv: "none",
                 durationEffectHoverDiv: 1,
+                delayEffectDiv: 0,
                 effectHoverColorHoverDiv: "",
                 translateEffectHoverDiv: 0,
                 textLinkDiv: "none",
@@ -753,6 +786,10 @@ const SlideControls = ({
                 parallaxDivScale: 1,
                 parallaxDivOpacity: 1,
                 parallaxDivDuration: 100,
+                zIndexDiv: 1,
+                delayHide:false,
+                delaySeconds:2,
+                delayTransition: 0.5,
               },
             ],
           }
@@ -761,8 +798,439 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Add Button
-    const addSlideButton = (slideId, buttonType) => {
+  // Funzione per aggiungere un bottone
+  const addSlideButton = (slideId, buttonType) => {
+    const defaultValues = {
+      type1: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        backgroundBorderRadiusButton: 30,
+        backgroundBorderSizeButton: 3,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#FFFFFF',
+        rotateButton: 0,
+        widthCustomButton: 35,
+        heightCustomButton: 55,
+        marginButton: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+        opacityButton: 1,
+        colorShadow: "",
+        boxShadowX: 0,
+        boxShadowY: 0,
+        boxShadowBlur: 0,
+        boxShadowSpread: 0,
+        animationButton: "none",
+        durationEffectButton: 1,
+        delayEffect: 0,
+        interationButton: "forwards",
+        buttonColorHover: "",
+        borderStyleHover: "none",
+        backgroundBorderColorHover: "",
+        backgoroundBorderSizeHover: 0,
+        opacityHover: 1,
+        rotateHover: 0,
+      },
+      type2: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        backgroundBorderRadiusButton: 30,
+        backgroundBorderSizeButton: 3,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#18191c',
+        rotateButton: 0,
+        widthCustomButton: 35,
+        heightCustomButton: 55,
+        marginButton: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+        opacityButton: 1,
+        colorShadow: "",
+        boxShadowX: 0,
+        boxShadowY: 0,
+        boxShadowBlur: 0,
+        boxShadowSpread: 0,
+        animationButton: "none",
+        durationEffectButton: 1,
+        delayEffect: 0,
+        interationButton: "forwards",
+        buttonColorHover: "",
+        borderStyleHover: "none",
+        backgroundBorderColorHover: "",
+        backgoroundBorderSizeHover: 0,
+        opacityHover: 1,
+        rotateHover: 0,
+      },
+      type3: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '50px',
+          right: '50px',
+          bottom:'50px',
+          left: '50px',
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#18191c',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#18191c",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#FFFFFF",
+      },
+      type4: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '50px',
+          right: '50px',
+          bottom:'50px',
+          left: '50px',
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#FFFFFF',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#FFFFFF",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#18191c",
+      },
+      type5: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: 0,
+          right: 0,
+          bottom:0,
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#18191c',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#18191c",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#FFFFFF",
+      },
+      type6: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: 0,
+          right: 0,
+          bottom:0,
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#FFFFFF',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#FFFFFF",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#18191c",
+      },
+      type7: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '35px',
+          right: 0,
+          bottom:'35px',
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#18191c',
+        paddingButton: {
+          top: '10px',
+          right: '20px',
+          bottom: '10px',
+          left: '20px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#18191c",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#FFFFFF",
+      },
+      type8: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '35px',
+          right: 0,
+          bottom:'35px',
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#FFFFFF',
+        paddingButton: {
+          top: '10px',
+          right: '20px',
+          bottom: '10px',
+          left: '20px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#FFFFFF",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#18191c",
+      },
+
+
+     
+      // Aggiungi altri tipi di bottoni se necessario
+    };
+
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: [
+              ...(slide.elements || []),
+              {
+                type: 'button',
+                button:__(' Click Here', 'cocoblocks'),
+                buttonType: buttonType,
+                desktop: { x: 0, y: 0 },
+                tablet: { x: 0, y: 0 },
+                mobile: { x: 0, y: 0 },
+                ...defaultValues[buttonType], 
+                enableDesktopButton: true,
+                enableTabletButton: true,
+                enableMobileButton: true,
+                buttonLink: "none",
+                linkUrlButton: "",
+                linkTargetButton: "_self",
+                linkRelButton: "",
+                scrollToIdButton: "",
+                parallaxButton: 0,
+                parallaxButtonY: 0,
+                parallaxButtonScale: 1,
+                parallaxButtonOpacity: 1,
+                parallaxButtonDuration: 100,
+                widthButton:"auto",
+                zIndexButton: 1,
+                delayHide:false,
+                delaySeconds:2,
+                delayTransition: 0.5,
+                fontFamilyButton: "Arial",
+                fontSizeButton: 16,
+                fontSizeButtonTablet: 16,
+                fontSizeButtonMobile: 16,
+                lineHeightButton: 1.5,
+                letterSpacingButton: 0,
+                widthCustomButton:35,
+                marginButton: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                opacityButton: 1,
+                colorShadow: "",
+                boxShadowX: 0,
+                boxShadowY: 0,
+                boxShadowBlur: 0,
+                boxShadowSpread: 0,
+                animationButton: "none",
+                durationEffectButton: 1,
+                delayEffect: 0,
+                interationButton: "forwards",
+                opacityHover: 1,
+                rotateHover: 0,
+                durationEffectHover:.2,
+                rotateButton: 0,
+                icoPositionButton: "after",
+                iconColor: "#000000",
+                sizeIcon: 16,
+                icoAligItemButton: "center",
+                gapIcon: 5,
+                rotateIcon: 0,
+                iconAnimationDuration:0.5,
+                iconAnimation: "none",
+                rotateIconHover: 0,
+                iconColorHover: "#000000",
+                iconShowHover:"icon-show-always",
+                iconHideShowHover:"icon-hide-opacity",
+                delayHide:false,
+                delaySeconds:2,
+                delayTransition: 0.5,
+                animationHoverIcon: "none",
+                durationEffectHoverIcon: 0.6,
+                translateEffectHoverIcon: 15,
+              },
+            ],
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+
+  // Add Icon
+  const addSlideIcon = (slideId) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: [
+              ...(slide.elements || []),
+              {
+                type: "icon",
+                icon: "fas fa-star",
+                desktop: { x: 0, y: 0 },
+                tablet: { x: 0, y: 0 },
+                mobile: { x: 0, y: 0 },
+                textAlign: "center",
+                widthTitle: "auto",
+                widthCustomTitle: 100,
+                fontSize: 16,
+                fontSizeTablet: 16,
+                fontSizeMobile: 16,
+                textColor: textColorDefault,
+                backgroundColor:'#ffffff00',
+                marginTitle: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                paddingTitle: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                borderStyle: "none",
+                parallaxTitle: 0,
+                parallaxTitleY: 0,
+                parallaxTitleScale: 1,
+                parallaxTitleOpacity: 1,
+                parallaxTitleDuration: 100,
+                opacity: 1,
+                rotate: 0,
+                animation: "none",
+                width: "auto",
+                widthCustomTitle: 100,
+                backgroundBorderRadius: 0,
+                backgroundBorderSize: 0,
+                backgroundBorderSizeHover: 0,
+                backgroundBorderColor: "",
+                durationEffect: 1,
+                delayEffect: 0,
+                animationCount: 1,
+                textLink: "none",
+                linkUrl: "",
+                linkTarget: "_self",
+                linkRel: "",
+                scrollToId: "",
+                enableDesktopTitle: true,
+                enableTabletTitle: true,
+                enableMobileTitle: true,
+                textColorHover: textColorDefault,
+                borderStyleHover: "none",
+                backgroundBorderColorHover: "",
+                backgoroundBorderSizeHover: 0,
+                opacityHover: 1,
+                rotateHover: 0,
+                animationHover: "none",
+                durationEffectHover: 1,
+                effectHoverColorHover: textColorDefault,
+                translateEffectHover: 0,
+                colorShadow: "",
+                boxShadowX: 0,
+                boxShadowY: 0,
+                boxShadowBlur: 0,
+                boxShadowSpread: 0,
+                interation: "forwards",
+                zIndexTitle: 1,
+                delayHide:false,
+                delaySeconds:2,
+                delayTransition: 0.5,
+                iconAnimationDuration:0.5,
+                hideTitle: false,
+                iconAnimation: "none",
+              },
+            ],
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    
+
+  const [isDivModalOpen, setIsDivModalOpen] = useState(false);
+  
+  // Funzioni per aprire e chiudere il modale
+  const openDivModal = () => setIsDivModalOpen(true);
+  const closeDivModal = () => setIsDivModalOpen(false);
+
+
+    // Funzione per aggiungere un div predefinito
+    const addSlideDivLibrary = (slideId, divType) => {
+      const defaultValues = {
+        type1: {
+          backgroundColor: '#FFFFFF',
+          borderStyle: 'solid',
+          borderRadius: 10,
+          borderSize: 2,
+          padding: 20,
+          margin: 10,
+          content: "Div predefinito 1",
+        },
+        type2: {
+          backgroundColor: '#18191c',
+          borderStyle: 'dashed',
+          borderRadius: 5,
+          borderSize: 1,
+          padding: 15,
+          margin: 5,
+          content: "Div predefinito 2",
+        },
+      };
+    
+      // Usa il divType per ottenere i valori corretti
+      const selectedValues = defaultValues[divType] || defaultValues['type1']; 
+    
       const updatedSlides = slides.map((slide) =>
         slide.id === slideId
           ? {
@@ -770,20 +1238,204 @@ const SlideControls = ({
               elements: [
                 ...slide.elements,
                 {
-                  type: "button",
+                  innerElements: [
+                    {
+                      type: "text", 
+                      content: selectedValues.content, // Usa il contenuto selezionato
+                      widthTitleBlock: "auto",
+                      widthCustomTitleBlock: 100,
+                      textAlign: "center",
+                      elementTitle: "h4",
+                      fontSize: 16,
+                      fontSizeTablet: 16,
+                      fontSizeMobile: 16,
+                      fontStyle: "",
+                      fontFamilyTitleBlock: "",
+                      fontWeightTitleBlock: "",
+                      lineHeight: 1.2,
+                      letterSpacingTitleBlock: 0,
+                      textColor: 'red',
+                      paddingTitleBlock: {
+                        top: "0",
+                        right: "0",
+                        bottom: "0",
+                        left: "0",
+                      },
+                      marginTitle: {
+                        top: "0",
+                        right: "0",
+                        bottom: "0",
+                        left: "0",
+                      },
+                      borderStyle: "none",
+                      backgroundBorderSize: 0,
+                      backgroundBorderRadius: 0,
+                      backgroundBorderColor: "",
+                      rotate: 0,
+                      opacity: 1,
+                      textWriteMode: "horizontal-tb",
+                      textOrientation: "initial",
+                      animation: "none",
+                      durationEffect: 1,
+                      delayEffect: 0,
+                      durationEffectOdd: 1,
+                      durationEffectEven: 1,
+                      interation: 1,
+                      speedEffect: 100,
+                      pauseEffect: 0,
+                      animationCount: "1",
+                      widthCursor: 2,
+                      animationCursor: 1,
+                      cursorColor: 'red',
+                      gradinetColorOne: "",
+                      gradinetColorTwo: "",
+                      gradinetColorThree: "",
+                      gradinetColorFour: "",
+                      decoration: "none",
+                      underlineColor: 'red',
+                      underlinePadding: 0,
+                      underlineVertical: 0,
+                      underlineHorizontal: 0,
+                      underlineWidth: 20,
+                      underlineHeight: 3,
+                      underlineAnimation: "none",
+                      underlineAnimationFrom: 5,
+                      underlineAnimationTo: 50,
+                      underlineFromSizeNew: 5,
+                      underlineToSizeNew: 5,
+                      underlineAnimationTransition: 0.5,
+                      textColorHover: 'red',
+                      borderStyleHover: "none",
+                      backgroundBorderColorHover: "",
+                      backgroundBorderSizeHover: 0,
+                      opacityHover: 1,
+                      rotateHover: 0,
+                      animationHover: "none",
+                      durationEffectHover: 1,
+                      effectHoverColorHover: 'red',
+                      translateEffectHover: 0,
+                      parallaxTitle: 0,
+                      parallaxTitleY: 0,
+                      parallaxTitleScale: 1,
+                      parallaxTitleOpacity: 1,
+                      parallaxTitleDuration: 100,
+                      textLink: "none",
+                      linkUrl: "",
+                      linkTarget: "_self",
+                      linkRel: "",
+                      scrollToId: "",
+                      enableDesktopTitle: true,
+                      enableTabletTitle: true,
+                      enableMobileTitle: true,
+                      iteration: "forwards",
+                      positionInnerText:"static",
+                      verticalPositionInnerText: 0,
+                      horizontalPositionInnerText: 0,
+                      delayHide: true,
+                      delaySeconds: 2,
+                      delayTransition: 0.9,
+                      zIndexTitle: 1,
+                    },
+                  ],
+                  type: "div",
                   desktop: { x: 0, y: 0 },
                   tablet: { x: 0, y: 0 },
                   mobile: { x: 0, y: 0 },
-                  buttonType: buttonType, // Aggiunge il tipo di bottone selezionato
+                  content: "",
+                  layoutDiv: "vertical",
+                  gapItemsDiv: 5,
+                  positionDiv: "center-center",
+                  contentWidthDiv: "auto",
+                  customContentWidthDiv: 100,
+                  contentHeightDiv: "auto",
+                  customContentHeightDiv: 100,
+                  elementDiv: "div",
+                  backgroundVerticalPaddingDiv: 30,
+                  backgroundHorizontalPaddingDiv: 30,
+                  marginDiv: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                  },
+                  borderStyleDiv: "none",
+                  backgroundBorderColorDiv: "",
+                  backgroundBorderSizeDiv: 0,
+                  backgroundBorderRadiusDiv: 0,
+                  rotateDiv: 0,
+                  opacityDiv: 1,
+                  animationDiv: "none",
+                  durationEffectDiv: 1,
+                  interationDiv: "forwards",
+                  boxShadowX: 0,
+                  boxShadowY: 0,
+                  boxShadowBlur: 0,
+                  boxShadowSpread: 0,
+                  colorShadow: "",
+                  backgroundColor: selectedValues.backgroundColor, // Usa il colore di sfondo selezionato
+                  borderStyle: selectedValues.borderStyle, // Usa lo stile di bordo selezionato
+                  borderRadius: selectedValues.borderRadius, // Usa il raggio di bordo selezionato
+                  backgroundBorderSizeDiv: selectedValues.borderSize, // Usa la dimensione di bordo selezionata
+                  padding: selectedValues.padding, // Usa il padding selezionato
+                  margin: selectedValues.margin, // Usa il margin selezionato
+                  imageUrl: "",
+                  innerDivs: [],
+                 
+                
+                  borderStyleDiv: "none",
+                  backgroundBorderColorDiv: "",
+                  backgroundBorderSizeDiv: 0,
+                  backgroundBorderRadiusDiv: 0,
+                  rotateDiv: 0,
+                  opacityDiv: 1,
+                  animationDiv: "none",
+                  durationEffectDiv: 1,
+                  interationDiv: "forwards",
+                  boxShadowX: 0,
+                  boxShadowY: 0,
+                  boxShadowBlur: 0,
+                  boxShadowSpread: 0,
+                  colorShadow: "",
+                  divColorHover: "FFFFFF00",
+                  borderStyleHoverDiv: "none",
+                  backgroundBorderSizeDivHover: 0,
+                  backgroundBorderColorHoverDiv: "",
+                  opacityHoverDiv: 1,
+                  rotateHoverDiv: 0,
+                  animationHoverDiv: "none",
+                  durationEffectHoverDiv: 1,
+                  delayEffectDiv: 0,
+                  effectHoverColorHoverDiv: "",
+                  translateEffectHoverDiv: 0,
+                  textLinkDiv: "none",
+                  linkUrlDiv: "",
+                  linkTargetDiv: "_self",
+                  linkRelDiv: "",
+                  scrollToIdDiv: "",
+                  enableDesktopDiv: true,
+                  enableTabletDiv: true,
+                  enableMobileDiv: true,
+                  parallaxDiv: 0,
+                  parallaxDivY: 0,
+                  parallaxDivScale: 1,
+                  parallaxDivOpacity: 1,
+                  parallaxDivDuration: 100,
+                  zIndexDiv: 1,
+                  delayHide:false,
+                  delaySeconds:2,
+                  delayTransition: 0.5,
                 },
               ],
             }
           : slide
       );
       setAttributes({ slides: updatedSlides });
+      setIsDivModalOpen(false);
     };
     
-    
+
+
+
   return (
     <>
       <div className="content-subdescription-section-slider">
@@ -1294,11 +1946,49 @@ const SlideControls = ({
                 <h2 className="title-custom-panel">
                   {__("Layout", "cocoblocks")}
                 </h2>
+                <div className="custom-select drag-mode">
+                  <ToggleControl
+                    label={
+                      <>
+                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z"/></svg>
+                        {__("Advanced Mode", "cocoblocks")}
+                      </>
+                    }
+                    checked={slide.developerMode}
+                    onChange={(value) =>
+                      updateDeveloperMode(slide.id, value)
+                    }
+                  />
+                </div>
               </div>
               <div
                 className="content-section-panel"
                 style={{ paddingTop: "0", paddingBottom: "0" }}
               >
+              {slide.developerMode && (
+              <>
+              <p
+                className="notice components-base-control__help"
+                style={{
+                  borderRadius: "0",
+                  marginTop: "0px",
+                }}
+              >
+                {__(
+                  "Warning: Enabling this mode activates the drag-and-drop functionality for elements within the slide using absolute positioning. You can place them wherever you like. Each element can be positioned for desktop, tablet, and mobile responsive views. Please proceed with caution!",
+                  "cocoblocks"
+                )}
+              </p>
+              <div className="custom-select">
+              <DeviceSelector
+                selectedDevice={selectedDevice}
+                onDeviceChange={onDeviceChange} 
+              />
+              </div>
+              </>
+            )}
+               {!slide.developerMode && (
+                <>
                 <div className="custom-select select-control-label-right">
                   <SelectControl
                     label={
@@ -1440,11 +2130,14 @@ const SlideControls = ({
                     }
                   />
                 </div>
+                </>
+               )}
               </div>
             </>
           )}
-
           {activeSectionSlide === "style" && (
+            <>
+            {!slide.developerMode && (
             <>
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
@@ -1548,6 +2241,8 @@ const SlideControls = ({
                   )}
                 </div>
               </div>
+              </>
+          )}
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
                   {__("Border", "cocoblocks")}
@@ -1681,7 +2376,8 @@ const SlideControls = ({
                   </>
                 )}
               </div>
-            </>
+            
+          </>
           )}
           {/* Elements */}
           {slide.elements &&
@@ -1692,7 +2388,7 @@ const SlideControls = ({
                   marginBottom: "10px",
                   alignItems: "center",
                 }}
-              >
+              >{!slide.developerMode && (
                 <div className="button-move">
                   <Tooltip text={__("Move before", "cocoblocks")}>
                     <Button
@@ -1715,6 +2411,7 @@ const SlideControls = ({
                     </Button>
                   </Tooltip>
                 </div>
+              )}
                 {element.type === "title" && (
                   <>
                     <TextControls
@@ -1736,6 +2433,7 @@ const SlideControls = ({
                   </>
                 )}
                 {element.type === "div" && (
+                  <>
                   <DivControls
                     slide={slide}
                     slides={slides}
@@ -1752,6 +2450,8 @@ const SlideControls = ({
                     handleMobileClick={handleMobileClick}
                     showOtherButtons={showOtherButtons}
                   />
+                 
+                  </>
                 )}
                 {element.type === "image" && (
                   <ImageControls
@@ -1783,9 +2483,30 @@ const SlideControls = ({
                       handleMobileClick={handleMobileClick}
                       showOtherButtons={showOtherButtons}
                       attributes={attributes}
+                      setSelectedIcon={setSelectedIcon}
                     />
                   </>              
                   )}
+                   {element.type === "icon" && (
+                  <>
+                    <IconControls
+                      slide={slide}
+                      slides={slides}
+                      element={element}
+                      elementIndex={elementIndex}
+                      setAttributes={setAttributes}
+                      setActiveSection={setActiveSection}
+                      activeSection={activeSection}
+                      parallax={parallax}
+                      device={device}
+                      handleDesktopClick={handleDesktopClick}
+                      handleTabletClick={handleTabletClick}
+                      handleMobileClick={handleMobileClick}
+                      showOtherButtons={showOtherButtons}
+                      attributes={attributes}
+                    />
+                  </>
+                )}
               </div>
             ))}
           <div className="divider-controls"></div>
@@ -1812,7 +2533,7 @@ const SlideControls = ({
             </Button>
             <Button
               onClick={() => addSlideDiv(slide.id)}
-              label={__("Add block", "slide")}
+              label={__("Add group", "slide")}
             >
               <Icon icon={addTemplate} />
             </Button>
@@ -1826,6 +2547,27 @@ const SlideControls = ({
                 onSelect={handleButtonTypeSelect} 
               />
             )}
+            <Button
+              onClick={() => addSlideIcon(slide.id)}
+              label={__("Add Icon", "slide")}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Z"/></svg>
+            </Button>
+             <Button
+              onClick={() => setIsDivModalOpen(true)}
+              className="button-add-div"
+              label={__("Add Layer Library", "cocoblocks")}
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-400h80v-120h120v-80H600v-120h-80v120H400v80h120v120ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+           </Button>
+            {isDivModalOpen && (
+              <DivModal
+              slideId={slide.id}
+              onClose={() => setIsDivModalOpen(false)}
+              onSelect={(divType) => addSlideDivLibrary(slide.id, divType)}
+              />
+            )}
+        
           </div>
         </PanelBody>
       ))}
@@ -1841,6 +2583,7 @@ const SlideControls = ({
             <path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
           </svg>
           <button onClick={addSlide}>{__("Add Slide", "slider")}</button>
+         
         </div>
       </div>
     </>

@@ -185,55 +185,6 @@ const ImageControlsHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Effect Image Animation Moving trnaslate
-  const updateTranslateEffectImageMovingHover = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, translateEffectImageMovingHover: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Effect Image Animation Moving
-  const updateAnimationImageMovingHover = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, animationImageMovingHover: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-  // Effect Image Animation Moving duration
-  const updateDurationEffectImageMovingHover = (slideId, index, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "image" && i === index
-                ? { ...element, durationEffectImageMovingHover: value }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
 
   const isAnimationNone = element.animationHoverImage === " ";
   const showColorOptionsPanel = [
@@ -411,7 +362,7 @@ const ImageControlsHover = ({
             onChange={(opacity) =>
               updateOpacityHoverImage(slide.id, elementIndex, opacity)
             }
-            min={0}
+            min={0.1}
             max={1}
             step={0.1}
           />
@@ -444,106 +395,6 @@ const ImageControlsHover = ({
       </div>
       <div className="content-title-custom-panel intermedy">
         <h2 className="title-custom-panel">{__("Animation", "cocoblocks")}</h2>
-      </div>
-      <div
-        className="content-section-panel"
-        style={{ padding: "0", marginTop: "18px" }}
-      >
-        <div className="custom-select select-control-label-right">
-          <SelectControl
-            label={
-              <>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M480-80 310-250l57-57 73 73v-166h80v165l72-73 58 58L480-80ZM250-310 80-480l169-169 57 57-72 72h166v80H235l73 72-58 58Zm460 0-57-57 73-73H560v-80h165l-73-72 58-58 170 170-170 170ZM440-560v-166l-73 73-57-57 170-170 170 170-57 57-73-73v166h-80Z" />
-                </svg>
-                {__("Movimentation", "cocoblocks")}
-              </>
-            }
-            value={element.animationImageMovingHover}
-            options={[
-              { label: "None", value: "none" },
-              {
-                label: "Moving background X",
-                value: "moving-background-hover-inner",
-              },
-              {
-                label: "Moving background Y",
-                value: "moving-background-y-hover-inner",
-              },
-            ]}
-            onChange={(value) =>
-              updateAnimationImageMovingHover(slide.id, elementIndex, value)
-            }
-          />
-        </div>
-        {element.animationImageMovingHover !== "none" && (
-          <>
-            <div className="custom-select">
-              <RangeControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z" />
-                    </svg>
-                    {__("Duration", "cocoblocks")}
-                  </>
-                }
-                value={element.durationEffectImageMovingHover}
-                onChange={(value) =>
-                  updateDurationEffectImageMovingHover(
-                    slide.id,
-                    elementIndex,
-                    value
-                  )
-                }
-                min={0.1}
-                max={30}
-                step={0.1}
-              />
-            </div>
-            <div className="custom-select">
-              <RangeControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M200-120q-33 0-56.5-23.5T120-200v-120h80v120h560v-480H200v120h-80v-200q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm260-140-56-56 83-84H120v-80h367l-83-84 56-56 180 180-180 180Z" />
-                    </svg>
-                    {__("Translate", "cocoblocks")}
-                  </>
-                }
-                value={element.translateEffectImageMovingHover}
-                onChange={(value) =>
-                  updateTranslateEffectImageMovingHover(
-                    slide.id,
-                    elementIndex,
-                    value
-                  )
-                }
-                min={-300}
-                max={300}
-                step={1}
-              />
-            </div>
-          </>
-        )}
       </div>
       <div
         className="content-section-panel"

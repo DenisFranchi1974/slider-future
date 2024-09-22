@@ -17,8 +17,9 @@ import AlignmentControlThree from "./aligncontrol-three";
 import ColorOptionsPanel from "./colorPanel";
 import FontStyle from "./font-style";
 import SectionSelector from "./sectionSelector";
-import TextControlsHover from "./TextControlsHover";
-import BoxShadowControl from "./boxShadow";
+import ButtonControlsHover from "./ButtonControlsHover";
+import BoxShadowControlButton from "./boxShadowButton";
+import IconModal from "./IconModal";
 
 const ButtonControls = ({
   slide,
@@ -35,6 +36,7 @@ const ButtonControls = ({
   handleMobileClick,
   showOtherButtons,
   attributes,
+  setSelectedIcon
 }) => {
   // Inizializza lo stato locale utilizzando element.playState
   const [playState, setPlayState] = useState(element.playState || "");
@@ -79,7 +81,41 @@ const ButtonControls = ({
       );
       setAttributes({ slides: updatedSlides });
     };
-  
+
+    // Update button icon
+  const updateSlideButtonIcon = (slideId, index, newIcon) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "button" && i === index
+                ? { ...element, icon: newIcon }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Remove icon
+    const removeSlideButtonIcon = (slideId, index) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, icon: null } // Imposta l'icona su null o una stringa vuota
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
   // Update button align
   const updateButtonAlign = (slideId, index, align) => {
     const updatedSlides = slides.map((slide) =>
@@ -114,6 +150,57 @@ const ButtonControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update button hide
+  const updateDelayHide = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "button" && i === index
+                ? { ...element, delayHide: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update button hide seconds
+    const updateDelaySeconds = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, delaySeconds: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Update button hide transition
+    const  updateDelayTransition = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, delayTransition: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
     // Update button background color
     const updateSlideButtonBackgroundColor = (slideId, index, color) => {
       const updatedSlides = slides.map((slide) =>
@@ -132,7 +219,7 @@ const ButtonControls = ({
     };
 
   // Update Font Style
-  const updateFontStyleButton = (slideId, index, styleType, value) => {
+  const updateFontStyle = (slideId, index, styleType, value) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -140,7 +227,7 @@ const ButtonControls = ({
             elements: slide.elements.map((element, i) => {
               if (element.type === "button" && i === index) {
                 const updatedFontStyle = {
-                  ...element.fontStyleButton,
+                  ...element.fontStyle,
                   [styleType]: value,
                 };
                 return {
@@ -233,24 +320,6 @@ const ButtonControls = ({
             elements: slide.elements.map((element, i) =>
               element.type === "button" && i === index
                 ? { ...element, opacityButton: opacity }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  
-  // Width
-  const updateWidthButton = (slideId, index, newWidthTitle) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "button" && i === index
-                ? { ...element, widthButton: newWidthTitle }
                 : element
             ),
           }
@@ -542,6 +611,53 @@ const ButtonControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Border radius two 
+  const  updateBorderRadiusButton = (slideId, index, newBorderRadius) => {
+    
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "button" && i === index) {
+                return {
+                  ...element,
+                  borderRadiusButton: {
+                    top: addUnit(
+                      newBorderRadius.top|| "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                    right: addUnit(
+                      newBorderRadius.right || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                    bottom: addUnit(
+                      newBorderRadius.bottom || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                    left: addUnit(
+                      newBorderRadius.left || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                  },
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Parallax text x
   const updateParallaxButton = (slideId, index, newParallaxTitle) => {
     const updatedSlides = slides.map((slide) =>
@@ -637,6 +753,25 @@ const ButtonControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
+  // Update custom height
+  const updateCustomHeightButton = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "button" && i === index
+                ? { ...element, heightCustomButton: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+ 
 
   // Effect Text Split
   const updateButtonAnimation = (slideId, index, animation) => {
@@ -758,6 +893,23 @@ const ButtonControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Z index
+  const updateZindexButton = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "button" && i === index
+                ? { ...element, zIndexButton: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Enable Tablet
   const updateEnableTabletButton = (slideId, index, value) => {
     const updatedSlides = slides.map((slide) =>
@@ -791,6 +943,170 @@ const ButtonControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
+  // Update widht eleemnt
+  const updateWidthButton = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "button" && i === index
+                ? { ...element, widthButton: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update position icon
+  const updateIcoPositionButton = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "button" && i === index
+                ? { ...element, icoPositionButton: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
+    // Update align item icon
+    const updateIcoAligItemButton = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, icoAligItemButton: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+        // Update gap icon
+        const updateGapIcon = (slideId, index, value) => {
+          const updatedSlides = slides.map((slide) =>
+            slide.id === slideId
+              ? {
+                  ...slide,
+                  elements: slide.elements.map((element, i) =>
+                    element.type === "button" && i === index
+                      ? { ...element, gapIcon: value }
+                      : element
+                  ),
+                }
+              : slide
+          );
+          setAttributes({ slides: updatedSlides });
+        };
+
+        // Update size icon
+        const updateSizeIcon = (slideId, index, value) => {
+          const updatedSlides = slides.map((slide) =>
+            slide.id === slideId
+              ? {
+                  ...slide,
+                  elements: slide.elements.map((element, i) =>
+                    element.type === "button" && i === index
+                      ? { ...element, sizeIcon: value }
+                      : element
+                  ),
+                }
+              : slide
+          );
+          setAttributes({ slides: updatedSlides });
+        };
+
+        // Update color icon
+        const updateIconColor = (slideId, index, color) => {
+          const updatedSlides = slides.map((slide) =>
+            slide.id === slideId
+              ? {
+                  ...slide,
+                  elements: slide.elements.map((element, i) =>
+                    element.type === "button" && i === index
+                      ? { ...element, iconColor: color }
+                      : element
+                  ),
+                }
+              : slide
+          );
+          setAttributes({ slides: updatedSlides });
+        };
+
+   // Update rotate icon
+    const updateRotateIcon = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, rotateIcon: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+     // Update animation icon
+     const updateIconAnimation = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, iconAnimation: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+     // Update animation duration icon
+     const updateIconAnimationDuration = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "button" && i === index
+                  ? { ...element, iconAnimationDuration: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+   // nascondi il bottone in editor
+   const [hideButton, setHideButton] = useState(element.hideButton || "");
+
+   const toggleHideButton = () => {
+     const newState = hideButton === "hide" ? "" : "hide";
+     setHideButton(newState);
+   
+     element.hideButton = newState;
+     setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
+   };
 
   // Font Family Options
   const fontOptions = [
@@ -870,35 +1186,58 @@ const ButtonControls = ({
     { label: __("Wallpoet", "cocoblock"), value: "Wallpoet, cursive" },
   ];
 
+    // Open panel
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
+
+
+    const [isIconModalOpen, setIsIconModalOpen] = useState(false);
+   
+  
+    const handleOpenIconModal = () => {
+      setIsIconModalOpen(true);
+    };
+  
+    const handleCloseIconModal = () => {
+      setIsIconModalOpen(false);
+    };
+  
+    const handleSelectIcon = (iconName) => {
+      setSelectedIcon(iconName);
+      setIsIconModalOpen(false);
+    };
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
       <div className="title-block-added">
         <div className="title-element">
-          <Button
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-440h320q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
+          <h2>{__("Button", "cocoblocks")}</h2>
+        </div>
+        <div className="title-element">
+        <Button
             isDestructive
             onClick={() => removeSlideButton(slide.id, elementIndex)}
             className="button-remove-element"
-            style={{
-              position: "absolute",
-              right: "80px",
-              top: "10px",
-            }}
-            label={__("Remove Text", "cocoblocks")}
+            label={__("Remove Button", "cocoblocks")}
             icon={trash}
           ></Button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e8eaed"
-          >
-            <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
-          </svg>
-          <h2>{__("Button", "cocoblocks")}</h2>
+           <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+        <button onClick={handleToggle} className="button-open-control-element">
+          {isOpen ? (
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          )}
+        </button>
+      </Tooltip>
         </div>
       </div>
+      {isOpen && (
+        <>
       <SectionSelector onSectionChange={setActiveSection} />
       {activeSection === "content" && (
         <>
@@ -914,16 +1253,83 @@ const ButtonControls = ({
           </div>
 
           <div className="content-section-panel" style={{ padding: "0" }}>
+          {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
           <div className="custom-select">
               <TextareaControl
                 value={element.button}
                 onChange={(newButton) =>
                   updateSlideButton(slide.id, elementIndex, newButton)
                 }
-                placeholder={__("Add button", "cocoblocks")}
+                placeholder={__("Add text button", "cocoblocks")}
               />
             </div>
-            <div className="custom-select select-control-label-right">
+          )}
+          
+            {element.buttonType === 'type1' && element.buttonType === 'type2' && (
+              <>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z" />
+                        </svg>
+                        {__("Width (px)", "cocoblocks")}
+                      </>
+                    }
+                    value={element.widthCustomButton}
+                    onChange={(customWidth) =>
+                      updateCustomWidthButton(
+                        slide.id,
+                        elementIndex,
+                        customWidth
+                      )
+                    }
+                    min={1}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                        >
+                          <path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z" />
+                        </svg>
+                        {__("Height (px)", "cocoblocks")}
+                      </>
+                    }
+                    value={element.heightCustomButton}
+                    onChange={(value) =>
+                      updateCustomHeightButton(
+                        slide.id,
+                        elementIndex,
+                        value
+                      )
+                    }
+                    min={1}
+                    max={500}
+                    step={1}
+                  />
+                </div>
+                </>
+            )}
+             {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
+              <>
+              <div className="custom-select select-control-label-right">
               <SelectControl
                 label={
                   <>
@@ -940,8 +1346,8 @@ const ButtonControls = ({
                   </>
                 }
                 value={element.widthButton}
-                onChange={(newElement) =>
-                  updateWidthButton(slide.id, elementIndex, newElement)
+                onChange={(value) =>
+                  updateWidthButton(slide.id, elementIndex, value)
                 }
                 options={[
                   {
@@ -1015,6 +1421,128 @@ const ButtonControls = ({
                 }
               />
             </div>
+            <div className="custom-select">
+              <div className="add-icon-button-select">
+                <div className="title-add-icon-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Z"/></svg>
+                <h2>{__('Add Icon','cocoblock')}</h2>
+                </div>
+                <div className="add-icon-button">
+                {element.icon && (
+                <Button
+            isDestructive
+            onClick={() => removeSlideButtonIcon(slide.id, elementIndex)}
+            className="button-remove-element"
+            label={__("Remove Icon", "cocoblocks")}
+            icon={trash}
+          ></Button>
+                )}
+            <button onClick={handleOpenIconModal}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+            </div>
+            </div>
+            </div>
+              {isIconModalOpen && (
+                <IconModal
+                isOpen={isIconModalOpen}
+                onClose={handleCloseIconModal}
+                onSelectIcon={(iconName) => {
+                  handleSelectIcon(iconName);
+                  updateSlideButtonIcon(slide.id, elementIndex, iconName); 
+                }}
+              />
+              )}
+               
+              {element.icon && (
+                <>
+                <div className="custom-select select-control-label-right">
+              <SelectControl
+                label={
+                  <>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                    >
+                      <path d="M120-120v-720h80v720h-80Zm640 0v-720h80v720h-80ZM280-440v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 0v-80h80v80h-80Z" />
+                    </svg>
+                    {__("Icon position", "cocoblocks")}
+                  </>
+                }
+                value={element.icoPositionButton}
+                onChange={(value) =>
+                  updateIcoPositionButton(slide.id, elementIndex, value)
+                }
+                options={[
+                  {
+                    label: __("Before", "cocoblocks"),
+                    value: "before",
+                  },
+                  {
+                    label: __("After", "cocoblocks"),
+                    value: "after",
+                  },
+                ]}
+              />
+            </div>
+            <div className="custom-select select-control-label-right">
+              <SelectControl
+                label={
+                  <>
+                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-240v-480h120v480H280Zm280 0v-480h120v480H560ZM80-800v-80h800v80H80Zm0 720v-80h800v80H80Z"/></svg>
+                    {__("Icon position", "cocoblocks")}
+                  </>
+                }
+                value={element.icoAligItemButton}
+                onChange={(value) =>
+                  updateIcoAligItemButton(slide.id, elementIndex, value)
+                }
+                options={[
+                  {
+                    label: __("Baseline", "cocoblocks"),
+                    value: "baseline",
+                  },
+                  {
+                    label: __("Center", "cocoblocks"),
+                    value: "center",
+                  },
+                  {
+                    label: __("End", "cocoblocks"),
+                    value: "end",
+                  },
+                  {
+                    label: __("Start", "cocoblocks"),
+                    value: "flex-start",
+                  },
+                ]}
+              />
+            </div>
+            <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-240v-480h80v480H80Zm560 0-57-56 144-144H240v-80h487L584-664l56-56 240 240-240 240Z"/></svg>
+                        {__("Gap", "cocoblocks")}
+                      </>
+                    }
+                    value={element.gapIcon}
+                    onChange={(value) =>
+                      updateGapIcon(
+                        slide.id,
+                        elementIndex,
+                        value
+                      )
+                    }
+                    min={0}
+                    max={50}
+                    step={1}
+                  />
+                </div>
+            </>
+              )}
+            </>
+          )}
           </div>
         </>
       )}
@@ -1029,6 +1557,8 @@ const ButtonControls = ({
             <h2 className="title-custom-panel">{__("Font", "cocoblocks")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
+          {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
+            <>
             <div className="custom-select">
               <ButtonGroup className="device-switcher">
                 <Button
@@ -1218,9 +1748,9 @@ const ButtonControls = ({
             </div>
             <div className="custom-select">
               <FontStyle
-                value={element.fontStyleButton || {}} // Inizializza con un oggetto vuoto se undefined
+                value={element.fontStyle || {}} // Inizializza con un oggetto vuoto se undefined
                 onChange={(styleType, value) =>
-                  updateFontStyleButton(slide.id, elementIndex, styleType, value)
+                  updateFontStyle(slide.id, elementIndex, styleType, value)
                 }
               />
             </div>
@@ -1358,6 +1888,8 @@ const ButtonControls = ({
                 "cocoblocks"
               )}
             </p>
+          </>
+          )}
             <div className="custom-select color">
               <ColorOptionsPanel
                 colorNormal={element.buttonColor}
@@ -1415,6 +1947,7 @@ const ButtonControls = ({
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
+          {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
             <div className="custom-select box-control">
               <BoxControl
                 id="custom-margin-control"
@@ -1443,6 +1976,7 @@ const ButtonControls = ({
                 }
               />
             </div>
+          )}
             <div className="custom-select box-control">
               <BoxControl
                 id="custom-margin-control"
@@ -1582,6 +2116,35 @@ const ButtonControls = ({
                     step={1}
                   />
                 </div>
+                {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
+                <div className="custom-select box-control">
+              <BoxControl
+                id="custom-margin-control"
+                label={
+                  <>
+                     <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="18px"
+                          viewBox="0 -960 960 960"
+                          width="18px"
+                          fill="#e8eaed"
+                          style={{ marginRight: "2px" }}
+                        >
+                          <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
+                        </svg>
+                    {__("Border radius", "cocoblocks")}
+                  </>
+                }
+                values={element.borderRadiusButton}
+                units={{}}
+                onChange={(newBorderRadius) =>
+                  updateBorderRadiusButton(slide.id, elementIndex, newBorderRadius)
+                }
+              />
+            </div>
+                )}
+            {(element.buttonType === 'type1' || element.buttonType === 'type2') && (
+              <>
                 <div className="custom-select">
                   <RangeControl
                     label={
@@ -1612,9 +2175,73 @@ const ButtonControls = ({
                     step={1}
                   />
                 </div>
+                </>
+            )}
               </>
             )}
           </div>
+          {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
+            <>
+            {element.icon && (
+              <>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">{__("Font Icon", "cocoblocks")}</h2>
+          </div>
+          <div
+            className="content-section-panel"
+            style={{ paddingTop: "0", paddingBottom: "0" }}
+          >
+            <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M760-600v-160H600v-80h240v240h-80ZM120-120v-240h80v160h160v80H120Zm0-320v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 0v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm160 0v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Z"/></svg>
+                        {__("Font Size", "cocoblocks")}
+                      </>
+                    }
+                    value={element.sizeIcon}
+                    onChange={(value) =>
+                      updateSizeIcon(
+                        slide.id,
+                        elementIndex,
+                        value
+                      )
+                    }
+                    min={1}
+                    max={256}
+                    step={1}
+                  />
+                </div>
+                <div className="custom-select color">
+              <ColorOptionsPanel
+                colorNormal={element.iconColor}
+                setColorNormal={(color) =>
+                  updateIconColor(slide.id, elementIndex, color)
+                }
+                buttonTitle={__("Color", "cocoblocks")}
+                buttonIcon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                    fill="#e8eaed"
+                    style={{
+                      marginBottom: "-9px",
+                      height: "24px",
+                      width: "24px",
+                      marginLeft: "-4px",
+                      marginRight: "-4px",
+                    }}
+                  >
+                    <path d="M192-396v-72h288v72H192Zm0-150v-72h432v72H192Zm0-150v-72h432v72H192Zm336 504v-113l210-209q7.26-7.41 16.13-10.71Q763-528 771.76-528q9.55 0 18.31 3.5Q798.83-521 806-514l44 45q6.59 7.26 10.29 16.13Q864-444 864-435.24t-3.29 17.92q-3.3 9.15-10.71 16.32L641-192H528Zm288-243-45-45 45 45ZM576-240h45l115-115-22-23-22-22-116 115v45Zm138-138-22-22 44 45-22-23Z" />
+                  </svg>
+                }
+              />
+            </div>
+          </div>
+          </>
+          )}
+          </>
+          )}
         </>
       )}
       {activeSection === "adv-style" && (
@@ -1682,19 +2309,88 @@ const ButtonControls = ({
                 onChange={(opacity) =>
                   updateOpacityButton(slide.id, elementIndex, opacity)
                 }
-                min={0}
+                min={0.1}
                 max={1}
                 step={0.1}
               />
             </div>
           </div>
-          <BoxShadowControl
+          {slide.developerMode && (
+            <>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("LEVEL", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-33 0-56.5-23.5T400-160v-320q0-33 23.5-56.5T480-560h320q33 0 56.5 23.5T880-480v320q0 33-23.5 56.5T800-80H480Zm0-80h320v-320H480v320Zm-240-80v-400q0-33 23.5-56.5T320-720h400v80H320v400h-80ZM80-400v-400q0-33 23.5-56.5T160-880h400v80H160v400H80Zm400 240v-320 320Z"/></svg>
+                    {__("Z-index", "cocoblocks")}
+                  </>
+                }
+                value={element.zIndexButton}
+                onChange={(value) =>
+                  updateZindexButton(slide.id, elementIndex, value)
+                }
+                min={0}
+                max={999}
+                step={1}
+              />
+            </div>
+          </div>
+          </>
+          )}
+          <BoxShadowControlButton
             slide={slide}
             slides={slides}
             element={element}
             elementIndex={elementIndex}
             setAttributes={setAttributes}
           />
+            {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
+            <>
+            {element.icon && (
+              <>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">{__("Basic Transforms Icon", "cocoblocks")}</h2>
+          </div>
+          <div
+            className="content-section-panel"
+            style={{ paddingTop: "0", paddingBottom: "0" }}
+          >
+<div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                    >
+                      <path d="m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z" />
+                    </svg>
+                    {__("Rotate", "cocoblocks")}
+                  </>
+                }
+                value={element.rotateIcon}
+                onChange={(value) =>
+                  updateRotateIcon(slide.id, elementIndex, value)
+                }
+                min={0}
+                max={360}
+                step={1}
+              />
+            </div>
+          </div>
+          </>
+          )}
+          </>
+          )}
         </>
       )}
       {activeSection === "animation" && (
@@ -1729,70 +2425,35 @@ const ButtonControls = ({
                 value={element.animationButton}
                 options={[
                   { label: "None", value: "none" },
-                  { label: "Fade In", value: "fade-in" },
-                  { label: "Fade In Left", value: "fade-in-left" },
-                  { label: "Fade In Right", value: "fade-in-right" },
-                  { label: "Fade In Top", value: "fade-in-top" },
-                  { label: "Fade In Bottom", value: "fade-in-bottom" },
-                  { label: "Slide In Left", value: "slide-in-left" },
-                  { label: "Slide In Right", value: "slide-in-right" },
-                  { label: "Slide In Top", value: "slide-in-top" },
-                  { label: "Slide In Bottom", value: "slide-in-bottom" },
-                  { label: "Zoom In", value: "zoom-in" },
-                  { label: "Zoom In Left", value: "zoom-in-left" },
-                  { label: "Zoom In Right", value: "zoom-in-right" },
-                  { label: "Zoom In Top", value: "zoom-in-top" },
-                  { label: "Zoom In Bottom", value: "zoom-in-bottom" },
-                  { label: "Rotate In Left", value: "rotate-in-left" },
-                  { label: "Rotate In Right", value: "rotate-in-right" },
-                  { label: "Rotate In Top", value: "rotate-in-top" },
-                  { label: "Rotate In Bottom", value: "rotate-in-bottom" },
-                  { label: "Rotate Continuos", value: "rotate-continuous" },
-                  { label: "Bounce in", value: "bounce-effect" },
-                  { label: "Bounce in Left", value: "bounce-left-effect" },
-                  { label: "Bounce in Right", value: "bounce-right-effect" },
-                  { label: "Bounce in Top", value: "bounce-top-effect" },
-                  { label: "Bounce in Bottom", value: "bounce-bottom-effect" },
-                  { label: "Wiggle", value: "wiggle" },
-                  { label: "Flip", value: "flip" },
-                  { label: "Swing", value: "swing" },
-                  { label: "Rubber band", value: "rubber-band" },
-                  { label: "Letter Bounce", value: "bounce" },
-                  { label: "Stretch", value: "stretch" },
-                  { label: "Focus", value: "focus" },
-                  { label: "Typing", value: "typing-effect" },
-                  { label: "Explosion", value: "explode" },
-                  { label: "Implode", value: "implode" },
-                  {
-                    label: "Letters Fly In From Left",
-                    value: "letters-fly-in-from-left",
-                  },
-                  {
-                    label: "Letters Fly In From Right",
-                    value: "letters-fly-in-from-right",
-                  },
-                  {
-                    label: "Letters Fly In From Top",
-                    value: "letters-fly-in-from-top",
-                  },
-                  {
-                    label: "Letters Fly In From Bottom",
-                    value: "letters-fly-in-from-bottom",
-                  },
-                  {
-                    label: "Letter Flip From Top",
-                    value: "letter-flip-from-top",
-                  },
-                  {
-                    label: "Letter Flip From Bottom",
-                    value: "letter-flip-from-bottom",
-                  },
-                  { label: "Letter Flip Cycle", value: "letter-flip-cycle" },
-                  { label: "Gradient Animation", value: "gradient-animation" },
-                  { label: "Text Shadow", value: "text-shadow" },
-                  { label: "Text Shadow Light", value: "text-shadow-light" },
-                  { label: "Text Shadow Heavy", value: "text-shadow-heavy" },
-                  { label: "Neon Effect", value: "text-neon" },
+                  { label: "Fade In", value: "fade-in-button" },
+                  { label: "Fade In Left", value: "fade-in-left-button" },
+                  { label: "Fade In Right", value: "fade-in-right-button" },
+                  { label: "Fade In Top", value: "fade-in-top-button" },
+                  { label: "Fade In Bottom", value: "fade-in-bottom-button" },
+                  { label: "Slide In Left", value: "slide-in-left-button" },
+                  { label: "Slide In Right", value: "slide-in-right-button" },
+                  { label: "Slide In Top", value: "slide-in-top-button" },
+                  { label: "Slide In Bottom", value: "slide-in-bottom-button" },
+                  { label: "Zoom In", value: "zoom-in-button" },
+                  { label: "Zoom In Left", value: "zoom-in-left-button" },
+                  { label: "Zoom In Right", value: "zoom-in-right-button" },
+                  { label: "Zoom In Top", value: "zoom-in-top-button" },
+                  { label: "Zoom In Bottom", value: "zoom-in-bottom-button" },
+                  { label: "Rotate In Left", value: "rotate-in-left-button" },
+                  { label: "Rotate In Right", value: "rotate-in-right-button" },
+                  { label: "Rotate In Top", value: "rotate-in-top-button" },
+                  { label: "Rotate In Bottom", value: "rotate-in-bottom-button" },
+                  { label: "Rotate Continuos", value: "rotate-continuous-button" },
+                  { label: "Bounce in", value: "bounce-effect-button" },
+                  { label: "Bounce in Left", value: "bounce-left-effect-button" },
+                  { label: "Bounce in Right", value: "bounce-right-effect-button" },
+                  { label: "Bounce in Top", value: "bounce-top-effect-button" },
+                  { label: "Bounce in Bottom", value: "bounce-bottom-effect-button" },
+                  { label: "Wiggle", value: "wiggle-button" },
+                  { label: "Flip", value: "flip-button" },
+                  { label: "Swing", value: "swing-button" },
+                  { label: "Rubber band", value: "rubber-band-button" },
+                  { label: "Stretch", value: "stretch-button" },
                 ]}
                 onChange={(animation) =>
                   updateButtonAnimation(slide.id, elementIndex, animation)
@@ -1801,14 +2462,6 @@ const ButtonControls = ({
             </div>
             {element.animationButton !== "none" && (
               <>
-                {![
-                  " ",
-                  "typing-effect",
-                  "text-shadow",
-                  "text-shadow-light",
-                  "text-shadow-heavy",
-                  "text-neon",
-                ].includes(element.animationButton) && (
                   <div className="custom-select">
                     <RangeControl
                       label={
@@ -1838,20 +2491,6 @@ const ButtonControls = ({
                       step={0.1}
                     />
                   </div>
-                )}
-              </>
-            )}
-            {[
-              "explode",
-              "implode",
-              "letters-fly-in-from-left",
-              "letters-fly-in-from-right",
-              "letters-fly-in-from-top",
-              "letters-fly-in-from-bottom",
-              "letter-flip-from-top",
-              "letter-flip-from-bottom",
-              "letter-flip-cycle",
-            ].includes(element.animationButton) && (
               <div className="custom-select">
                 <RangeControl
                   label={
@@ -1877,17 +2516,18 @@ const ButtonControls = ({
                   step={0.1}
                 />
               </div>
+              </>
             )}
             {[
-              "bounce-effect",
-              "bounce-left-effect",
-              "bounce-right-effect",
-              "bounce-top-effect",
-              "bounce-bottom-effect",
-              "wiggle",
-              "flip",
-              "swing",
-              "rubber-band",
+              "bounce-effect-button",
+              "bounce-left-effect-button",
+              "bounce-right-effect-button",
+              "bounce-top-effect-button",
+              "bounce-bottom-effect-button",
+              "wiggle-button",
+              "flip-button",
+              "swing-button",
+              "rubber-band-button",
             ].includes(element.animationButton) && (
               <div className="custom-select select-control-label-right">
                 <SelectControl
@@ -1950,11 +2590,168 @@ const ButtonControls = ({
               </div>
             )}
           </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Hide", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+             <div className="custom-select">
+              <ToggleControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></svg>
+                    {__("Delay hide", "cocoblocks")}
+                  </>
+                }
+                checked={element.delayHide}
+                onChange={(value) =>
+                  updateDelayHide(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+            {element.delayHide && (
+            <>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-270h160q33 0 56.5-23.5T600-350v-50q0-33-23.5-56.5T520-480h-80v-50h160v-80H360v210h160v50H360v80Zm0-570v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Seconds", "cocoblocks")}
+                  </>
+                }
+                value={element.delaySeconds}
+                onChange={(value) =>
+                  updateDelaySeconds(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={20}
+                step={1}
+              />
+            </div>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Transition", "cocoblocks")}
+                  </>
+                }
+                value={element.delayTransition}
+                onChange={(value) =>
+                  updateDelayTransition(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={3}
+                step={.1}
+              />
+            </div>
+            </>
+            )}
+            </div>
+            {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
+            <>
+            {element.icon && (
+              <>
+            <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Animation Icon", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select select-control-label-right">
+              <SelectControl
+                label={
+                  <>
+                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"/></svg>
+                    {__("Animation", "cocoblocks")}
+                  </>
+                }
+                value={element.iconAnimation}
+                onChange={(value) =>
+                  updateIconAnimation(slide.id, elementIndex, value)
+                }
+                options={[
+                  {
+                    label: __("None", "cocoblocks"),
+                    value: "none",
+                  },
+                  {
+                    label: __("Beat", "cocoblocks"),
+                    value: "fa-beat",
+                  },
+                  {
+                    label: __("Fade", "cocoblocks"),
+                    value: "fa-fade",
+                  },
+                  {
+                    label: __("Beat-fade", "cocoblocks"),
+                    value: "fa-beat-fade",
+                  },
+                  {
+                    label: __("Bounce", "cocoblocks"),
+                    value: "fa-bounce",
+                  },
+                  {
+                    label: __("Flip", "cocoblocks"),
+                    value: "fa-flip",
+                  },
+                  {
+                    label: __("Shake", "cocoblocks"),
+                    value: "fa-shake",
+                  },
+                  {
+                    label: __("Spin", "cocoblocks"),
+                    value: "fa-spin",
+                  },
+                ]}
+              />
+            </div>
+            {element.iconAnimation !== "none" && (
+            <div className="custom-select">
+                  <RangeControl
+                    label={
+                      <>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                        {__("Duration", "cocoblocks")}
+                      </>
+                    }
+                    value={element.iconAnimationDuration}
+                    onChange={(value) =>
+                      updateIconAnimationDuration(
+                        slide.id,
+                        elementIndex,
+                        value
+                      )
+                    }
+                    min={.1}
+                    max={10}
+                    step={.1}
+                  />
+                </div>
+            )}
+          </div>
+          </>
+          )}
+          </>
+          )}
         </>
       )}
       {activeSection === "hover" && (
         <>
-          <TextControlsHover
+          <ButtonControlsHover
             slide={slide}
             slides={slides}
             element={element}
@@ -2369,6 +3166,37 @@ const ButtonControls = ({
               )}
             </p>
           )}
+        </>
+      )}
+      </>
+      )}
+       {activeSection === "hide-title-editor" && (
+        <>
+        <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Hide in editor", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select button-hide-element" style={{textAlign:'center'}}>
+        <Button
+          variant={hideButton === "hide"}
+          onClick={toggleHideButton}
+          icon={
+            hideButton === "hide" ? (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            ) : (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+            )
+          }
+        />
+        </div>
+        </div>        
         </>
       )}
     </div>

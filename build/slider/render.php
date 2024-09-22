@@ -126,6 +126,14 @@ $filter = isset($attributes['filter']) ? $attributes['filter'] : null;
 $colorOneEffect = isset($attributes['colorOneEffect']) ? $attributes['colorOneEffect'] : null;
 $colorTwoEffect = isset($attributes['colorTwoEffect']) ? $attributes['colorTwoEffect'] : null;
 $colorThreeEffect = isset($attributes['colorThreeEffect']) ? $attributes['colorThreeEffect'] : null;
+$mouseEffect = isset($attributes['mouseEffect']) ? $attributes['mouseEffect'] : null;
+$colorEffectStart = isset($attributes['colorEffectStart']) ? $attributes['colorEffectStart'] : null;
+$colorEffectEnd = isset($attributes['colorEffectEnd']) ? $attributes['colorEffectEnd'] : null;
+$colorEffectMiddle = isset($attributes['colorEffectMiddle']) ? $attributes['colorEffectMiddle'] : null;
+$firstColorLiquid = isset($attributes['firstColorLiquid']) ? $attributes['firstColorLiquid'] : null;
+$secondColorLiquid = isset($attributes['secondColorLiquid']) ? $attributes['secondColorLiquid'] : null;
+$thirdColorLiquid = isset($attributes['thirdColorLiquid']) ? $attributes['thirdColorLiquid'] : null;
+$transitionParalaxMouse = isset($attributes['transitionParalaxMouse']) ? $attributes['transitionParalaxMouse'] : null;
 
 // Recupera le slide dai tuoi attributi (adatta questo in base alla struttura dei tuoi attributi)
 $slides = !empty($attributes['slides']) ? $attributes['slides'] : [];
@@ -259,14 +267,27 @@ $swiper_attr = array(
     'colorOneEffect' => $colorOneEffect,
     'colorTwoEffect' => $colorTwoEffect,
     'colorThreeEffect' => $colorThreeEffect,
+    'mouseEffect' => $mouseEffect,
+    'colorEffectStart' => $colorEffectStart,
+    'colorEffectEnd' => $colorEffectEnd,
+    'colorEffectMiddle' => $colorEffectMiddle,
+    'firstColorLiquid' => $firstColorLiquid,
+    'secondColorLiquid' => $secondColorLiquid,
+    'thirdColorLiquid' => $thirdColorLiquid,
+    'transitionParalaxMouse' => $transitionParalaxMouse,
 );
 
 $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
 
+$stylesSlider = '--color-one-effect: ' . esc_attr($colorOneEffect) . '; ' .
+          '--color-two-effect: ' . esc_attr($colorTwoEffect) . '; ' .
+          '--color-three-effect: ' . esc_attr($colorThreeEffect) . '; ' .
+          ($autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ');
+
 $wrapper_attributes = get_block_wrapper_attributes(
     array(
         'class' => 'swiper ' . $slider_unique_class . ' slider-builder swiper-container ' . $filter ,
-        'style' => '--color-one-effect: ' . esc_attr($colorOneEffect) . '; --color-two-effect: ' . esc_attr($colorTwoEffect) . '; --color-three-effect: ' . esc_attr($colorThreeEffect) . ';',
+        'style' => $stylesSlider,
     )
 );
 
@@ -405,13 +426,13 @@ if (!function_exists('splitTextIntoLetters')) {
 }
 
 if (!function_exists('splitTextIntoLettersTitleDiv')) {
-    function splitTextIntoLettersTitleDiv($content = '', $animation = '', $textDiv = []) {
+    function splitTextIntoLettersTitleDiv($content = '', $animation = '', $innerElement = []) {
 
-        $speedEffect = isset($textDiv['speedEffect']) ? $textDiv['speedEffect'] : 200; // Valore predefinito: 100ms
-        $pauseEffect = isset($textDiv['pauseEffect']) ? $textDiv['pauseEffect'] : 2000; // Valore predefinito: 2000ms
-        $durationEffect = isset($textDiv['durationEffect']) ? $textDiv['durationEffect'] : 2; // Valore predefinito: Parametro passato
-        $delayEffect = isset($textDiv['delayEffect']) ? $textDiv['delayEffect'] : 0; // Valore predefinito: Parametro passato
-        $animationCount = isset($textDiv['animationCount']) ? $textDiv['animationCount'] : 1; // Valore predefinito: 1
+        $speedEffect = isset($innerElement['speedEffect']) ? $innerElement['speedEffect'] : 200; // Valore predefinito: 100ms
+        $pauseEffect = isset($innerElement['pauseEffect']) ? $innerElement['pauseEffect'] : 2000; // Valore predefinito: 2000ms
+        $durationEffect = isset($innerElement['durationEffect']) ? $innerElement['durationEffect'] : 2; // Valore predefinito: Parametro passato
+        $delayEffect = isset($innerElement['delayEffect']) ? $innerElement['delayEffect'] : 0; // Valore predefinito: Parametro passato
+        $animationCount = isset($innerElement['animationCount']) ? $innerElement['animationCount'] : 1; // Valore predefinito: 1
         // Se l'animazione è "bounce", esegui lo split del testo in lettere
         if ($animation === 'bounce-title-div') {
             $letters = str_split($content);
@@ -449,9 +470,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
         }
 
         $stylesSpan = [
-            "--width-cursor-title-block" => isset($textDiv['widthCursor']) ? $textDiv['widthCursor'] . "px" : "2px",
-            "--color-cursor-title-block" => isset($textDiv['cursorColor']) ? $textDiv['cursorColor'] : "#000000",
-            "--animation-cursor-title-block" => isset($textDiv['animationCursor']) ? $textDiv['animationCursor'] . "s" : "0.75s",
+            "--width-cursor-title-block" => isset($innerElement['widthCursor']) ? $innerElement['widthCursor'] . "px" : "2px",
+            "--color-cursor-title-block" => isset($innerElement['cursorColor']) ? $innerElement['cursorColor'] : "#000000",
+            "--animation-cursor-title-block" => isset($innerElement['animationCursor']) ? $innerElement['animationCursor'] . "s" : "0.75s",
         ];
         
         $styleAttribute = '';
@@ -542,7 +563,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
 
 ?>         
 
-<div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>">
+<div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>" >
     <div class="swiper-wrapper">
     <?php if ($attributes['contentType'] === 'post-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
         <?php foreach ($attributes['posts'] as $post) : ?>
@@ -601,30 +622,69 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                     }
                 ?>">
 
-                <?php $maxWidth = $slide['enableContentWidth'] ? $slide['contentWidth'] . 'px' : 'false';?>
-                <div data-effect="particle" class="content-slide-slider <?php echo esc_attr($layout_class); ?> <?php echo esc_attr($slide['position']); ?> <?php echo esc_attr($overflow); ?>"
-                        style="<?php 
-                            // Gestisci l'altezza
-                            echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
-                            echo 'display: flex; ';
-                            echo 'text-align: center; ';
-                            echo 'width: 100%; ';
-                            echo 'position: relative; ';
-                            echo 'gap: ' . esc_attr($slide['gapItems']) . 'px; ';
-                            echo 'border-radius: ' . esc_attr($slide['backgroundBorderRadius']) . 'px; ';
-                            echo 'padding-top: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
-                            echo 'padding-bottom: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
-                            echo 'padding-left: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
-                            echo 'padding-right: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
-                            echo 'border-style: ' . esc_attr($slide['borderStyleSlide']) . '; ';
-                            echo 'border-width: ' . esc_attr($slide['backgroundBorderSize']) . 'px; ';
-                            echo 'border-color: ' . esc_attr($slide['backgroundBorderColor']) . '; ';
-                            echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . ';';
-                            echo 'margin: 0 auto;';
-                            echo 'max-width: ' . esc_attr($maxWidth) . ';';
-                            echo 'flex-wrap: ' . esc_attr($slide['layoutWrap']) . ';';
-                        ?>"
-                >
+                <?php 
+                $maxWidth = $slide['enableContentWidth'] ? $slide['contentWidth'] . 'px' : 'false';
+                $developerMode = $slide['developerMode']; 
+                ?>
+                <div colorEffectStart="<?php echo esc_attr($colorEffectStart); ?>" 
+                    colorEffectMiddle="<?php echo esc_attr($colorEffectMiddle); ?>" 
+                    colorEffectEnd="<?php echo esc_attr($colorEffectEnd); ?>" 
+                    data-effect="<?php echo esc_attr($mouseEffect)?>" 
+                    data-color-first-liquid="<?php echo esc_attr($firstColorLiquid)?>"
+                    data-color-second-liquid="<?php echo esc_attr($secondColorLiquid)?>"
+                    data-color-third-liquid="<?php echo esc_attr($thirdColorLiquid)?>"
+                    data-img-selected="<?php echo esc_attr( $attributes['imgSelected'] ? 'true' : 'false' ); ?>"
+                    data-h1-selected="<?php echo esc_attr( $attributes['h1Selected'] ? 'true' : 'false' ); ?>"
+                    data-h2-selected="<?php echo esc_attr( $attributes['h2Selected'] ? 'true' : 'false' ); ?>"
+                    data-h3-selected="<?php echo esc_attr( $attributes['h3Selected'] ? 'true' : 'false' ); ?>"
+                    data-h4-selected="<?php echo esc_attr( $attributes['h4Selected'] ? 'true' : 'false' ); ?>"
+                    data-h5-selected="<?php echo esc_attr( $attributes['h5Selected'] ? 'true' : 'false' ); ?>"
+                    data-h6-selected="<?php echo esc_attr( $attributes['h6Selected'] ? 'true' : 'false' ); ?>"
+                    data-button-selected="<?php echo esc_attr( $attributes['buttonSelected'] ? 'true' : 'false' ); ?>"
+                    data-span-selected="<?php echo esc_attr( $attributes['spanSelected'] ? 'true' : 'false' ); ?>"
+                    data-p-selected="<?php echo esc_attr( $attributes['pSelected'] ? 'true' : 'false' ); ?>"
+                    data-transition-paralax-mouse="<?php echo esc_attr($transitionParalaxMouse)?>s"
+                    class="content-slide-slider <?php 
+                    echo esc_attr($layout_class); 
+                    if (!$developerMode) {
+                        echo ' ' . esc_attr($slide['position']) . ' ' . esc_attr($overflow) . ' ' . esc_attr($slide['layout']) . '-layout';
+                    }
+                ?>"  style="<?php 
+                  // Gestisci l'altezza
+                  echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
+                    echo 'width: 100%; ';
+                    echo 'position: relative; ';
+                    echo 'visibility: visible; ';
+                    echo 'border-radius: ' . esc_attr($slide['backgroundBorderRadius']) . 'px; ';
+                    echo 'border-style: ' . esc_attr($slide['borderStyleSlide']) . '; ';
+                    echo 'border-width: ' . esc_attr($slide['backgroundBorderSize']) . 'px; ';
+                    echo 'border-color: ' . esc_attr($slide['backgroundBorderColor']) . '; ';
+                    echo 'margin: 0 auto; ';
+                    if (!$developerMode) {
+                        echo 'display: flex; ';
+                        echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . '; ';
+                        echo 'text-align: center; ';
+                        echo 'gap: ' . esc_attr($slide['gapItems']) . 'px; ';
+                        echo 'padding-top: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
+                        echo 'padding-bottom: ' . esc_attr($slide['backgroundVerticalPadding']) . 'px; ';
+                        echo 'padding-left: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
+                        echo 'padding-right: ' . esc_attr($slide['backgroundHorizontalPadding']) . 'px; ';
+                        echo 'max-width: ' . esc_attr($maxWidth) . '; ';
+                        echo 'flex-wrap: ' . esc_attr($slide['layoutWrap']) . '; ';
+                    }
+                ?>">
+               <?php if ($mouseEffect === 'liquid') : ?>
+                    <script>
+                    window.ga = window.ga || function() {
+                        (ga.q = ga.q || []).push(arguments)
+                    };
+                    ga.l = +new Date;
+                    ga('create', 'UA-105392568-1', 'auto');
+                    ga('send', 'pageview');
+                    </script>
+                    <canvas class="banner_canvas" id="canvas_banner"></canvas>
+                    <div class="top-title wow fadeInUp" onmousemove="color_hover(event)"></div>
+                <?php endif; ?>
                
                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
                     <video src="<?php echo esc_url($slide['backgroundVideo']); ?>" autoplay muted loop style="width: 100%; object-position: <?php echo esc_attr( $background_position )?>; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; z-index: 0;"></video>
@@ -690,7 +750,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             . 'writing-mode: ' . esc_attr($element['textWriteMode']) . ';'
                             . 'text-orientation: ' . esc_attr($element['textOrientation']) . ';'
                             . 'border-radius: ' . esc_attr($element['backgroundBorderRadius']) . 'px;'
-                            . 'opacity: ' . esc_attr($element['opacity']) . ';';
+                            . 'opacity: ' . esc_attr($element['opacity']) . ';'
+                            . 'transform: rotate(' . esc_attr($element['rotate']) . 'deg);'
+                            . '--rotate-hover:' . esc_attr($element['rotateHover']) . 'deg;';
                          
 
                             // Recupera il tag HTML
@@ -701,13 +763,25 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             $desktopClass = $element['enableDesktopTitle'] ? 'desktop-title-visible' : 'desktop-title-hidden';
                             $tabletClass = $element['enableTabletTitle'] ? 'tablet-title-visible' : 'tablet-title-hidden';
                             $mobileClass = $element['enableMobileTitle'] ? 'mobile-title-visible' : 'mobile-title-hidden';
+                            
                         ?>
-                                       
-
+                        <?php if ($slide['developerMode']) : ?>         
+                       <div class="content-content-slide-absolute"
+                            style="
+                                transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
+                                position: absolute;
+                                z-index:<?php echo esc_attr( $element['zIndexTitle'] )?>
+                            "
+                            data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                            data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                            data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                            data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                            data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                            data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
+                       >
+                       <?php endif; ?>
                        <div
                             style="
-                                
-                                --rotate-hover: <?php echo esc_attr($element['rotateHover']); ?>deg;
                                 --color-decoration: <?php echo esc_attr($element['underlineColor']); ?>;
                                 --padding-decoration: <?php echo esc_attr($element['underlinePadding']); ?>px;
                                 --width-decoration: <?php echo esc_attr($element['underlineWidth']); ?>%;
@@ -723,19 +797,15 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                 --duration-effect: <?php echo esc_attr($element['durationEffect']); ?>s;
                                 --delay-effect: <?php echo esc_attr($element['delayEffect']);?>s;
                                 --interation: <?php echo esc_attr($element['interation']);?>;
-                                transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px);
-                              position: absolute;
+                                --delay-hide-seconds-title: <?php echo esc_attr($element['delayTransition']);?>s;
                                 width: <?php echo esc_attr($element['widthTitle']) === 'custom' ? esc_attr($element['widthCustomTitle']) . '%' : esc_attr($element['widthTitle']); ?>;
                             "
-                            class="content-title-slide <?php echo esc_attr($element['decoration']); ?> <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?> <?php echo esc_attr($element['animation']); ?>"
+                            class="content-title-slide letter <?php echo esc_attr($element['decoration']); ?> <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?> <?php echo esc_attr($element['animation']); ?>"
                             data-speed-effect="<?php echo esc_attr($element['speedEffect']); ?>"
                             data-animation="<?php echo esc_attr($element['animation']); ?>"
-                            data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
-                            data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
-                            data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
-                            data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
-                            data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
-                            data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
+                            data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                            data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                           
                         >
                             <<?php echo esc_attr($tag); ?>
                                 class="title-slide <?php echo esc_attr($element['animationHover']); ?>"
@@ -799,50 +869,54 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                             </<?php echo esc_attr($tag); ?>>
                         </div>
 
+                        <?php if ($slide['developerMode']) : ?>    
+                        </div>
+                        <?php endif; ?>
+
                         <?php endif; ?>
                         <?php
                          if (!function_exists('getStylesTitleBlock')) {
-                            function getStylesTitleBlock($textDiv) {
-                                $isBold = isset($textDiv['fontStyle']['fontWeight']) && $textDiv['fontStyle']['fontWeight'] === "bold";
+                            function getStylesTitleBlock($innerElement) {
+                                $isBold = isset($innerElement['fontStyle']['fontWeight']) && $innerElement['fontStyle']['fontWeight'] === "bold";
                                 $styles = [
-                                    'font-size' => !empty($textDiv['fontSize']) ? $textDiv['fontSize'] . 'px' : '16px',
-                                    '--font-size-block-tablet' => !empty($textDiv['fontSizeTablet']) ? $textDiv['fontSizeTablet'] . 'px' : '14px',
-                                    '--font-size-block-mobile' => !empty($textDiv['fontSizeMobile']) ? $textDiv['fontSizeMobile'] . 'px' : '12px',
-                                    'color' => !empty($textDiv['textColor']) ? $textDiv['textColor'] : '#000000',
-                                    'text-align' => !empty($textDiv['textAlign']) ? $textDiv['textAlign'] : 'left',
-                                    'letter-spacing' => isset($textDiv['letterSpacingTitleBlock']) ? $textDiv['letterSpacingTitleBlock'] . "px" : "0px",
-                                    'font-style' => isset($textDiv['fontStyle']['fontStyle']) ? $textDiv['fontStyle']['fontStyle'] : "normal",
-                                    'font-weight' => $isBold ? "bold" : (isset($textDiv['fontWeightTitleBlock']) ? $textDiv['fontWeightTitleBlock'] : "normal"),
-                                    'text-decoration' => isset($textDiv['fontStyle']['textDecoration']) ? $textDiv['fontStyle']['textDecoration'] : "none",
-                                    'line-height' => !empty($textDiv['lineHeight']) ? $textDiv['lineHeight'] : '1.5',
-                                    'font-family' => !empty($textDiv['fontFamilyTitleBlock']) ? $textDiv['fontFamilyTitleBlock'] : 'inherit', // Inherit se non specificato
-                                    'margin' => !empty($textDiv['marginTitle']) ? $textDiv['marginTitle']['top'] . ' ' . $textDiv['marginTitle']['right'] . ' ' . $textDiv['marginTitle']['bottom'] . ' ' . $textDiv['marginTitle']['left'] : '0',
-                                    'padding' => !empty($textDiv['paddingTitleBlock']) ? $textDiv['paddingTitleBlock']['top'] . ' ' . $textDiv['paddingTitleBlock']['right'] . ' ' . $textDiv['paddingTitleBlock']['bottom'] . ' ' . $textDiv['paddingTitleBlock']['left'] : '0',
-                                    'border-style' => !empty($textDiv['borderStyle']) ? $textDiv['borderStyle'] : 'none',
-                                    'border-width' => !empty($textDiv['backgroundBorderSize']) ? $textDiv['backgroundBorderSize'] . 'px' : '0',
-                                    'border-color' => !empty($textDiv['backgroundBorderColor']) ? $textDiv['backgroundBorderColor'] : 'transparent',
-                                    'border-radius' => !empty($textDiv['backgroundBorderRadius']) ? $textDiv['backgroundBorderRadius'] . 'px' : '0',
-                                    'box-shadow' => isset($textDiv['boxShadowX']) && isset($textDiv['boxShadowY']) && isset($textDiv['boxShadowBlur']) && isset($textDiv['boxShadowSpread']) && isset($textDiv['colorShadow']) 
-                                        ? "{$textDiv['boxShadowX']}px {$textDiv['boxShadowY']}px {$textDiv['boxShadowBlur']}px {$textDiv['boxShadowSpread']}px {$textDiv['colorShadow']}" 
+                                    'font-size' => !empty($innerElement['fontSize']) ? $innerElement['fontSize'] . 'px' : '16px',
+                                    '--font-size-block-tablet' => !empty($innerElement['fontSizeTablet']) ? $innerElement['fontSizeTablet'] . 'px' : '14px',
+                                    '--font-size-block-mobile' => !empty($innerElement['fontSizeMobile']) ? $innerElement['fontSizeMobile'] . 'px' : '12px',
+                                    'color' => !empty($innerElement['textColor']) ? $innerElement['textColor'] : '#000000',
+                                    'text-align' => !empty($innerElement['textAlign']) ? $innerElement['textAlign'] : 'left',
+                                    'letter-spacing' => isset($innerElement['letterSpacingTitleBlock']) ? $innerElement['letterSpacingTitleBlock'] . "px" : "0px",
+                                    'font-style' => isset($innerElement['fontStyle']['fontStyle']) ? $innerElement['fontStyle']['fontStyle'] : "normal",
+                                    'font-weight' => $isBold ? "bold" : (isset($innerElement['fontWeightTitleBlock']) ? $innerElement['fontWeightTitleBlock'] : "normal"),
+                                    'text-decoration' => isset($innerElement['fontStyle']['textDecoration']) ? $innerElement['fontStyle']['textDecoration'] : "none",
+                                    'line-height' => !empty($innerElement['lineHeight']) ? $innerElement['lineHeight'] : '1.5',
+                                    'font-family' => !empty($innerElement['fontFamilyTitleBlock']) ? $innerElement['fontFamilyTitleBlock'] : 'inherit', // Inherit se non specificato
+                                    'margin' => !empty($innerElement['marginTitle']) ? $innerElement['marginTitle']['top'] . ' ' . $innerElement['marginTitle']['right'] . ' ' . $innerElement['marginTitle']['bottom'] . ' ' . $innerElement['marginTitle']['left'] : '0',
+                                    'padding' => !empty($innerElement['paddingTitleBlock']) ? $innerElement['paddingTitleBlock']['top'] . ' ' . $innerElement['paddingTitleBlock']['right'] . ' ' . $innerElement['paddingTitleBlock']['bottom'] . ' ' . $innerElement['paddingTitleBlock']['left'] : '0',
+                                    'border-style' => !empty($innerElement['borderStyle']) ? $innerElement['borderStyle'] : 'none',
+                                    'border-width' => !empty($innerElement['backgroundBorderSize']) ? $innerElement['backgroundBorderSize'] . 'px' : '0',
+                                    'border-color' => !empty($innerElement['backgroundBorderColor']) ? $innerElement['backgroundBorderColor'] : 'transparent',
+                                    'border-radius' => !empty($innerElement['backgroundBorderRadius']) ? $innerElement['backgroundBorderRadius'] . 'px' : '0',
+                                    'box-shadow' => isset($innerElement['boxShadowX']) && isset($innerElement['boxShadowY']) && isset($innerElement['boxShadowBlur']) && isset($innerElement['boxShadowSpread']) && isset($innerElement['colorShadow']) 
+                                        ? "{$innerElement['boxShadowX']}px {$innerElement['boxShadowY']}px {$innerElement['boxShadowBlur']}px {$innerElement['boxShadowSpread']}px {$innerElement['colorShadow']}" 
                                         : "0 0 0 0 #000000",
-                                    'writing-mode' => isset($textDiv['textWriteMode']) ? $textDiv['textWriteMode'] : "initial",
-                                    'text-orientation' => isset($textDiv['textOrientation']) ? $textDiv['textOrientation'] : "initial",
-                                    '--delay-effect-title-block' => isset($textDiv['delayEffect']) ? $textDiv['delayEffect'] . "s" : "0s",
-                                    '--duration-effect-odd-title-block' => isset($textDiv['durationEffectOdd']) ? $textDiv['durationEffectOdd'] . "s" : "0s",
-                                    '--duration-effect-even-title-block' => isset($textDiv['durationEffectEven']) ? $textDiv['durationEffectEven'] . "s" : "0s",
-                                    '--color-gradient-one-title-div' => isset($textDiv['gradinetColorOne']) ? $textDiv['gradinetColorOne'] : "",
-                                    '--color-gradient-two-title-div' => isset($textDiv['gradinetColorTwo']) ? $textDiv['gradinetColorTwo'] : "",
-                                    '--color-gradient-three-title-div' => isset($textDiv['gradinetColorThree']) ? $textDiv['gradinetColorThree'] : "",
-                                    '--color-gradient-four-title-div' => isset($textDiv['gradinetColorFour']) ? $textDiv['gradinetColorFour'] : "",
-                                    '--border-style-hover-title-div' => isset($textDiv['borderStyleHover']) ? $textDiv['borderStyleHover'] : "none",
-                                    '--transition-hover-title-div' => isset($textDiv['durationEffectHover']) ? $textDiv['durationEffectHover'] . 's' : "0.3s",
-                                    '--translate-hover-title-div' => isset($textDiv['translateEffectHover']) ? $textDiv['translateEffectHover'] . 'px' : "-10px",
-                                    '--color-effect-hover-title-div' => isset($textDiv['effectHoverColorHover']) ? $textDiv['effectHoverColorHover'] : "#000000",
-                                    '--border-color-hover-title-div' => isset($textDiv['backgroundBorderColorHover']) ? $textDiv['backgroundBorderColorHover'] : "#000000",
-                                    '--border-width-hover-title-div' => isset($textDiv['backgroundBorderSizeHover']) ? $textDiv['backgroundBorderSizeHover'] . 'px' : "0px",
-                                    '--opacity-hover-title-div' => isset($textDiv['opacityHover']) ? $textDiv['opacityHover'] : 1,
-                                    '--color-hover-title-div' => isset($textDiv['textColorHover']) ? $textDiv['textColorHover'] : "",
-                                    'opacity' => isset($textDiv['opacity']) ? esc_attr($textDiv['opacity']) : 1, 
+                                    'writing-mode' => isset($innerElement['textWriteMode']) ? $innerElement['textWriteMode'] : "initial",
+                                    'text-orientation' => isset($innerElement['textOrientation']) ? $innerElement['textOrientation'] : "initial",
+                                    '--delay-effect-title-block' => isset($innerElement['delayEffect']) ? $innerElement['delayEffect'] . "s" : "0s",
+                                    '--duration-effect-odd-title-block' => isset($innerElement['durationEffectOdd']) ? $innerElement['durationEffectOdd'] . "s" : "0s",
+                                    '--duration-effect-even-title-block' => isset($innerElement['durationEffectEven']) ? $innerElement['durationEffectEven'] . "s" : "0s",
+                                    '--color-gradient-one-title-div' => isset($innerElement['gradinetColorOne']) ? $innerElement['gradinetColorOne'] : "",
+                                    '--color-gradient-two-title-div' => isset($innerElement['gradinetColorTwo']) ? $innerElement['gradinetColorTwo'] : "",
+                                    '--color-gradient-three-title-div' => isset($innerElement['gradinetColorThree']) ? $innerElement['gradinetColorThree'] : "",
+                                    '--color-gradient-four-title-div' => isset($innerElement['gradinetColorFour']) ? $innerElement['gradinetColorFour'] : "",
+                                    '--border-style-hover-title-div' => isset($innerElement['borderStyleHover']) ? $innerElement['borderStyleHover'] : "none",
+                                    '--transition-hover-title-div' => isset($innerElement['durationEffectHover']) ? $innerElement['durationEffectHover'] . 's' : "0.3s",
+                                    '--translate-hover-title-div' => isset($innerElement['translateEffectHover']) ? $innerElement['translateEffectHover'] . 'px' : "-10px",
+                                    '--color-effect-hover-title-div' => isset($innerElement['effectHoverColorHover']) ? $innerElement['effectHoverColorHover'] : "#000000",
+                                    '--border-color-hover-title-div' => isset($innerElement['backgroundBorderColorHover']) ? $innerElement['backgroundBorderColorHover'] : "#000000",
+                                    '--border-width-hover-title-div' => isset($innerElement['backgroundBorderSizeHover']) ? $innerElement['backgroundBorderSizeHover'] . 'px' : "0px",
+                                    '--opacity-hover-title-div' => isset($innerElement['opacityHover']) ? $innerElement['opacityHover'] : 1,
+                                    '--color-hover-title-div' => isset($innerElement['textColorHover']) ? $innerElement['textColorHover'] : "",
+                                    'opacity' => isset($innerElement['opacity']) ? esc_attr($innerElement['opacity']) : 1, 
                                 ];
 
                                 $styleString = '';
@@ -884,6 +958,30 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                              // Element Div
                              $TagDiv = !empty($element['elementDiv']) ? $element['elementDiv'] : 'div';
                             ?>
+                            <?php if ($slide['developerMode']) : ?>    
+                             <div 
+                                class="content-inner-div-absolute" 
+                                style="transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
+                                       position: absolute;
+                                        z-index:<?php echo esc_attr( $element['zIndexDiv'] )?>
+                                       "
+                                data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                                data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                                data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                                data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                                data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                                data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
+                             >
+                             <?php endif; ?> 
+                             <div 
+                                class="content-inner-div" 
+                                style="opacity: <?php echo esc_attr($element['opacityDiv']) ?>;  
+                                       --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;
+                                        --delay-hide-seconds-div: <?php echo esc_attr($element['delayTransition']);?>s;
+                                "
+                                data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                >
                              <<?php echo esc_attr($TagDiv); ?>
                                 <?php if ($element['textLinkDiv'] !== 'none') : ?>
                                     onclick="<?php echo $onclick; ?>"
@@ -915,12 +1013,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                     width: <?php echo esc_attr($element['contentWidthDiv']) === 'custom' ? esc_attr($element['customContentWidthDiv']) . '%' : esc_attr($element['contentWidthDiv']); ?>;
                                     height: <?php echo esc_attr($element['contentHeightDiv']) === 'custom' ? esc_attr($element['customContentHeightDiv']) . '%' : esc_attr($element['contentHeightDiv']); ?>;
                                     margin: <?php echo esc_attr($element['marginDiv']['top']) . ' ' . esc_attr($element['marginDiv']['right']) . ' ' . esc_attr($element['marginDiv']['bottom']) . ' ' . esc_attr($element['marginDiv']['left'])?>;
-                                    --box-shadow-x-div:<?php echo esc_attr($element['boxShadowX']) ?> px;
-                                    --box-shadow-y-div: <?php echo esc_attr($element['boxShadowY']) ?> px;
-                                    --box-shadow-blur-div: <?php echo esc_attr($element['boxShadowBlur']) ?> px;
-                                    --box-shadow-color-div: <?php echo esc_attr($element['colorShadow']) ?>;
-                                    --box-shadow-spread-div: <?php echo esc_attr($element['boxShadowSpread']) ?> px;
-                                    opacity: <?php echo esc_attr($element['opacityDiv']) ?>;
+                                    box-shadow: <?php echo esc_attr($element['boxShadowX']) ?>px <?php echo esc_attr($element['boxShadowY']) ?>px <?php echo esc_attr($element['boxShadowBlur']) ?>px <?php echo esc_attr($element['boxShadowSpread']) ?>px <?php echo esc_attr($element['colorShadow']) ?>;
                                     rotate: <?php echo esc_attr($element['rotateDiv']) ?>deg;
                                     transform: rotate(<?php echo esc_attr($element['rotateDiv']) ?>deg);
                                     --duration-effect-div: <?php echo esc_attr($element['durationEffectDiv']) ?>s;
@@ -934,82 +1027,95 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                     --translate-hover-div: <?php echo esc_attr($element['translateEffectHoverDiv']) ?>px;
                                     --color-effect-hover-div: <?php echo esc_attr($element['effectHoverColorHoverDiv']) ?>;
                                     --rotate-hover-div: <?php echo esc_attr($element['rotateHoverDiv']) ?>deg;
-                                    --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;
+                                    --delay-effect-div: <?php echo esc_attr($element['delayEffectDiv']) ?>s; 
                                 "
                             >
-                                <?php if (!empty($element['innerTextDivs']) && is_array($element['innerTextDivs'])): ?>
-                                    <?php foreach ($element['innerTextDivs'] as $textIndex => $textDiv): ?>
-                                        <?php $TagBlock = !empty($textDiv['elementTitle']) ? $textDiv['elementTitle'] : 'h3'; ?>
+
+
+                                <?php if (!empty($element['innerElements']) && is_array($element['innerElements'])): ?>
+                                    <?php foreach ($element['innerElements'] as $innerIndex => $innerElement): ?>
+
+                                    <?php if ($innerElement['type'] === 'text'): ?>
+                                        <?php $TagBlock = !empty($innerElement['elementTitle']) ? $innerElement['elementTitle'] : 'h3'; ?>
                                         <?php
                                             // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
-                                            $desktopClassTitleDiv = $textDiv['enableDesktopTitle'] ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
-                                            $tabletClassTitleDiv = $textDiv['enableTabletTitle'] ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
-                                            $mobileClassTitleDiv = $textDiv['enableMobileTitle'] ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
+                                            $desktopClassTitleDiv = $innerElement['enableDesktopTitle'] ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
+                                            $tabletClassTitleDiv = $innerElement['enableTabletTitle'] ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
+                                            $mobileClassTitleDiv = $innerElement['enableMobileTitle'] ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
                                         ?>
                                         <div
-                                            style="transform: rotate(<?php echo esc_attr($textDiv['rotate']); ?>deg); 
-                                            --color-decoration-title-div: <?php echo esc_attr($textDiv['underlineColor']); ?>;
-                                            --padding-decoration-title-div: <?php echo esc_attr($textDiv['underlinePadding']); ?>px;
-                                            --width-decoration-title-div: <?php echo esc_attr($textDiv['underlineWidth']); ?>%;
-                                            --vertical-decoration-title-div: <?php echo esc_attr($textDiv['underlineVertical']); ?>px;
-                                            --horizontal-decoration-title-div: <?php echo esc_attr($textDiv['underlineHorizontal']); ?>px;
-                                            --height-decoration-title-div: <?php echo esc_attr($textDiv['underlineHeight']); ?>px;
-                                            --animation-decoration-title-div: <?php echo esc_attr($textDiv['underlineAnimation']); ?>;
-                                            --animation-decoration-from-title-div: <?php echo esc_attr($textDiv['underlineAnimationFrom']); ?>%;
-                                            --animation-decoration-to-title-div: <?php echo esc_attr($textDiv['underlineAnimationTo']); ?>%;
-                                            --animation-decoration-from-size-title-div: <?php echo esc_attr($textDiv['underlineFromSizeNew']); ?>%;
-                                            --animation-decoration-to-size-title-div: <?php echo esc_attr($textDiv['underlineToSizeNew']); ?>%;
-                                            --animation-decoration-transition-title-div: <?php echo esc_attr($textDiv['underlineAnimationTransition']); ?>s;
-                                            --rotate-hover-title-div: <?php echo esc_attr($textDiv['rotateHover']); ?>deg;
-                                            --duration-effect-title-block: <?php echo esc_attr($textDiv['durationEffect']); ?>s; 
-                                            --delay-effect-title-block: <?php echo esc_attr($textDiv['delayEffect']) ; ?>s; 
-                                            --interation-title-block: <?php echo esc_attr($textDiv['iteration']); ?>;
+                                            style="transform: rotate(<?php echo esc_attr($innerElement['rotate']); ?>deg); 
+                                            --color-decoration-title-div: <?php echo esc_attr($innerElement['underlineColor']); ?>;
+                                            --padding-decoration-title-div: <?php echo esc_attr($innerElement['underlinePadding']); ?>px;
+                                            --width-decoration-title-div: <?php echo esc_attr($innerElement['underlineWidth']); ?>%;
+                                            --vertical-decoration-title-div: <?php echo esc_attr($innerElement['underlineVertical']); ?>px;
+                                            --horizontal-decoration-title-div: <?php echo esc_attr($innerElement['underlineHorizontal']); ?>px;
+                                            --height-decoration-title-div: <?php echo esc_attr($innerElement['underlineHeight']); ?>px;
+                                            --animation-decoration-title-div: <?php echo esc_attr($innerElement['underlineAnimation']); ?>;
+                                            --animation-decoration-from-title-div: <?php echo esc_attr($innerElement['underlineAnimationFrom']); ?>%;
+                                            --animation-decoration-to-title-div: <?php echo esc_attr($innerElement['underlineAnimationTo']); ?>%;
+                                            --animation-decoration-from-size-title-div: <?php echo esc_attr($innerElement['underlineFromSizeNew']); ?>%;
+                                            --animation-decoration-to-size-title-div: <?php echo esc_attr($innerElement['underlineToSizeNew']); ?>%;
+                                            --animation-decoration-transition-title-div: <?php echo esc_attr($innerElement['underlineAnimationTransition']); ?>s;
+                                            --rotate-hover-title-div: <?php echo esc_attr($innerElement['rotateHover']); ?>deg;
+                                            --duration-effect-title-block: <?php echo esc_attr($innerElement['durationEffect']); ?>s; 
+                                            --delay-effect-title-block: <?php echo esc_attr($innerElement['delayEffect']) ; ?>s; 
+                                            --transition-hover-title-div: <?php echo esc_attr($innerElement['durationEffectHover']) ?>s;
+                                            --interation-title-block: <?php echo esc_attr($innerElement['iteration']); ?>;
+                                            --delay-hide-seconds-title-block: <?php echo esc_attr($innerElement['delayTransition']);?>s;
+                                             z-index:<?php echo esc_attr( $innerElement['zIndexTitle'] )?>;
+                                             position:<?php echo esc_attr($innerElement['positionInnerText']) ?> ;
+                                           top: <?php echo esc_attr($innerElement['verticalPositionInnerText'])?>px;
+                                           left: <?php echo esc_attr($innerElement['horizontalPositionInnerText']) ?>px;
                                             "
-                                            class="content-title-div letter <?php echo esc_attr($textDiv['decoration']); ?> <?php echo esc_attr($textDiv['animation']); ?>  <?php echo esc_attr($desktopClassTitleDiv); ?> <?php echo esc_attr($tabletClassTitleDiv); ?> <?php echo esc_attr($mobileClassTitleDiv); ?>"
-                                             data-animation-title-div="<?php echo esc_attr($textDiv['animation']); ?>"
+                                            class="content-title-div letter <?php echo esc_attr($innerElement['decoration']); ?> <?php echo esc_attr($innerElement['animation']); ?>  <?php echo esc_attr($desktopClassTitleDiv); ?> <?php echo esc_attr($tabletClassTitleDiv); ?> <?php echo esc_attr($mobileClassTitleDiv); ?>"
+                                            data-animation-title-div="<?php echo esc_attr($innerElement['animation']); ?>"
+                                            data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
                                         >
                                             <<?php echo esc_attr($TagBlock); ?>
-                                                class="title-slide-div <?php echo esc_attr($textDiv['animationHover']); ?>"
+                                                class="title-slide-div <?php echo esc_attr($innerElement['animationHover']); ?>"
                                             <?php
                                                 $link_start = '';
                                                 $link_end = '';
                                                 $target = '_self'; // Default
                                                 $rel = 'follow'; // Default
                                                 // Verifica il tipo di link e prepara i tag <a> e attributi
-                                                    if ($textDiv['textLink'] === 'link' && !empty($textDiv['linkUrl'])) {
+                                                    if ($innerElement['textLink'] === 'link' && !empty($innerElement['linkUrl'])) {
                                                         // Se è un link, prepara i tag <a> con target e rel
-                                                        if (!empty($textDiv['linkTarget'])) {
-                                                            $target = esc_attr($textDiv['linkTarget']);
+                                                        if (!empty($innerElement['linkTarget'])) {
+                                                            $target = esc_attr($innerElement['linkTarget']);
                                                         }
-                                                        if ($textDiv['linkRel'] === 'nofollow') {
+                                                        if ($innerElement['linkRel'] === 'nofollow') {
                                                             $rel = 'nofollow';
                                                         }
-                                                        $link_start = '<a href="' . esc_url($textDiv['linkUrl']) . '" target="' . $target . '" rel="' . $rel . '">';
+                                                        $link_start = '<a style="text-decoration:none;color:inherit;" href="' . esc_url($innerElement['linkUrl']) . '" target="' . $target . '" rel="' . $rel . '">';
                                                         $link_end = '</a>';
-                                                    } elseif ($textDiv['textLink'] === 'scroll-below') {
+                                                    } elseif ($innerElement['textLink'] === 'scroll-below') {
                                                         // Logica per lo scroll in basso
-                                                        $link_start = '<a href="#" onclick="window.scrollBy({ top: window.innerHeight, behavior: \'smooth\' }); return false;">';
+                                                        $link_start = '<a style="text-decoration:none;color:inherit;" href="#" onclick="window.scrollBy({ top: window.innerHeight, behavior: \'smooth\' }); return false;">';
                                                         $link_end = '</a>';
-                                                    } elseif ($textDiv['textLink'] === 'scroll-to-id' && !empty($textDiv['scrollToId'])) {
+                                                    } elseif ($innerElement['textLink'] === 'scroll-to-id' && !empty($innerElement['scrollToId'])) {
                                                         // Logica per scrollare ad un ID specifico
-                                                        $link_start = '<a href="#" onclick="document.getElementById(\'' . esc_attr($textDiv['scrollToId']) . '\').scrollIntoView({ behavior: \'smooth\' }); return false;">';
+                                                        $link_start = '<a style="text-decoration:none;color:inherit;" href="#" onclick="document.getElementById(\'' . esc_attr($innerElement['scrollToId']) . '\').scrollIntoView({ behavior: \'smooth\' }); return false;">';
                                                         $link_end = '</a>';
                                                     }
                                                 ?>
-                                                style="<?php echo esc_attr(getStylesTitleBlock($textDiv)); ?>"
-                                                data-swiper-parallax-x="<?php echo esc_attr($textDiv['parallaxTitle']); ?>"
-                                                data-swiper-parallax-y="<?php echo esc_attr($textDiv['parallaxTitleY']); ?>"
-                                                data-swiper-parallax-scale="<?php echo esc_attr($textDiv['parallaxTitleScale']); ?>"
-                                                data-swiper-parallax-duration="<?php echo esc_attr($textDiv['parallaxTitleDuration']); ?>"
-                                                data-swiper-parallax-opacity="<?php echo esc_attr($textDiv['parallaxTitleOpacity']); ?>"
-                                                <?php if ($textDiv['textLink'] === 'link') : ?>
-                                                    href="<?php echo esc_url($textDiv['linkUrl']); ?>"
-                                                <?php elseif ($textDiv['textLink'] === 'scroll-below' || $textDiv['textLink'] === 'scroll-to-id') : ?>
+                                                style="<?php echo esc_attr(getStylesTitleBlock($innerElement)); ?>"
+                                                data-swiper-parallax-x="<?php echo esc_attr($innerElement['parallaxTitle']); ?>"
+                                                data-swiper-parallax-y="<?php echo esc_attr($innerElement['parallaxTitleY']); ?>"
+                                                data-swiper-parallax-scale="<?php echo esc_attr($innerElement['parallaxTitleScale']); ?>"
+                                                data-swiper-parallax-duration="<?php echo esc_attr($innerElement['parallaxTitleDuration']); ?>"
+                                                data-swiper-parallax-opacity="<?php echo esc_attr($innerElement['parallaxTitleOpacity']); ?>"
+                                                data-font-family="<?php echo esc_attr($innerElement['fontFamilyTitleBlock']); ?>" 
+                                                <?php if ($innerElement['textLink'] === 'link') : ?>
+                                                    href="<?php echo esc_url($innerElement['linkUrl']); ?>"
+                                                <?php elseif ($innerElement['textLink'] === 'scroll-below' || $innerElement['textLink'] === 'scroll-to-id') : ?>
                                                     onclick="
-                                                        <?php if ($textDiv['textLink'] === 'scroll-below') : ?>
+                                                        <?php if ($innerElement['textLink'] === 'scroll-below') : ?>
                                                             window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-                                                        <?php elseif ($textDiv['textLink'] === 'scroll-to-id') : ?>
-                                                            var targetElement = document.getElementById('<?php echo esc_js($textDiv['scrollToId']); ?>');
+                                                        <?php elseif ($innerElement['textLink'] === 'scroll-to-id') : ?>
+                                                            var targetElement = document.getElementById('<?php echo esc_js($innerElement['scrollToId']); ?>');
                                                             if (targetElement) {
                                                                 targetElement.scrollIntoView({ behavior: 'smooth' });
                                                             }
@@ -1019,110 +1125,857 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                                 <?php endif; ?>
                                             >
                                             <?php echo $link_start; ?>
-                                                <?php echo splitTextIntoLettersTitleDiv($textDiv['content'], $textDiv['animation'],$textDiv); ?>
+                                                <?php echo splitTextIntoLettersTitleDiv($innerElement['content'], $innerElement['animation'],$innerElement); ?>
                                             <?php echo $link_end; ?>
                                             </<?php echo esc_attr($TagBlock); ?>>
                                         </div>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+                        <?php
+                           // Button
+                           elseif  ($innerElement['type'] === 'button'): 
+
+                                $desktopClassButton = $innerElement['enableDesktopButton'] ? 'desktop-button-visible-inner' : 'desktop-button-hidden-inner';
+                                $tabletClassButton = $innerElement['enableTabletButton'] ? 'tablet-button-visible-inner' : 'tablet-button-hidden-inner';
+                                $mobileClassButton = $innerElement['enableMobileButton'] ? 'mobile-button-visible-inner' : 'mobile-button-hidden-inner';
+                                if ($innerElement['buttonLink'] !== 'none') {
+                                    // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                    if ($innerElement['buttonLink'] === 'link' && !empty($innerElement['linkUrlButton'])) {
+                                        $link_url = esc_url($innerElement['linkUrlButton']);
+                                        if (!empty($innerElement['linkTargetButton'])) {
+                                            $linkTargetButton = esc_attr($innerElement['linkTargetButton']);
+                                        }
+                                        if ($innerElement['linkRelButton'] === 'nofollow') {
+                                            $rel_div = 'nofollow';
+                                        }
+                                        $onclick = "window.open('{$link_url}', '{$linkTargetButton}', 'rel={$rel_div}');";
+                                    } elseif ($innerElement['buttonLink'] === 'scroll-below') {
+                                        $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                    } elseif ($innerElement['buttonLink'] === 'scroll-to-id' && !empty($innerElement['scrollToIdButton'])) {
+                                        $scroll_id = esc_attr($innerElement['scrollToIdButton']);
+                                        $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                    }
+                                }
+
+
+                                $defaultButtonColor = '#000000';
+                                $defaultBackgroundBorderColorButton = '#cccccc';
+                                $defaultBorderStyleButton = 'solid';
+                                $defaultBackgroundBorderRadiusButton = '4';
+                                $defaultBackgroundBorderSizeButton = '1';
+                                $defaultButtonBackgroundColor = '#ffffff';
+                                $defaultWidthButton = '35';
+                                $defaultHeightButton = '55';
+                                $defaultButtonColorHover = '#000000';
+
+                                $buttonStyle = "
+                                --color-button-inner: " . (isset($innerElement['buttonColor']) ? esc_attr($innerElement['buttonColor']) : $defaultButtonColor) . ";
+                                --border-color-button-inner: " . (isset($innerElement['backgroundBorderColorButton']) ? esc_attr($innerElement['backgroundBorderColorButton']) : $defaultBackgroundBorderColorButton) . ";
+                                --border-style-button-inner: " . (isset($innerElement['borderStyleButton']) ? esc_attr($innerElement['borderStyleButton']) : $defaultBorderStyleButton) . ";
+                                --border-radius-button-inner: " . (isset($innerElement['backgroundBorderRadiusButton']) ? esc_attr($innerElement['backgroundBorderRadiusButton']) : $defaultBackgroundBorderRadiusButton) . "px;
+                                --border-width-button-inner: " . (isset($innerElement['backgroundBorderSizeButton']) ? esc_attr($innerElement['backgroundBorderSizeButton']) : $defaultBackgroundBorderSizeButton) . "px;
+                                --background-color-button-inner: " . (isset($innerElement['buttonBackgroundColor']) ? esc_attr($innerElement['buttonBackgroundColor']) : $defaultButtonBackgroundColor) . ";
+                                --buttonWidth-inner: " . (isset($innerElement['widthCustomButton']) ? esc_attr($innerElement['widthCustomButton']) :$defaultWidthButton) . "px;
+                                --buttonHeight-inner: " . (isset($innerElement['heightCustomButton']) ? esc_attr($innerElement['heightCustomButton']) :$defaultHeightButton) . "px;
+                                --color-button-hover-inner: " . (isset($innerElement['buttonColorHover']) ? esc_attr($innerElement['buttonColorHover']) : $defaultButtonColorHover) . ";
+                                transform: rotate(" . (isset($innerElement['rotateButton']) ? esc_attr($innerElement['rotateButton']) : '0') . "deg);
+                                margin: " . (isset($innerElement['marginButton']['top']) ? esc_attr($innerElement['marginButton']['top']) : '0') . " " . 
+                                        (isset($innerElement['marginButton']['right']) ? esc_attr($innerElement['marginButton']['right']) : '0') . " " . 
+                                        (isset($innerElement['marginButton']['bottom']) ? esc_attr($innerElement['marginButton']['bottom']) : '0') . " " . 
+                                        (isset($innerElement['marginButton']['left']) ? esc_attr($innerElement['marginButton']['left']) : '0') . ";
+                                --box-shadow-x-button-inner: " . (isset($innerElement['boxShadowX']) ? esc_attr($innerElement['boxShadowX']) : '0') . "px;
+                                --box-shadow-y-button-inner: " . (isset($innerElement['boxShadowY']) ? esc_attr($innerElement['boxShadowY']) : '0') . "px;
+                                --box-shadow-blur-button-inner: " . (isset($innerElement['boxShadowBlur']) ? esc_attr($innerElement['boxShadowBlur']) : '0') . "px;
+                                --box-shadow-color-button-inner: " . (isset($innerElement['colorShadow']) ? esc_attr($innerElement['colorShadow']) : '#000000') . ";
+                                --box-shadow-spread-button-inner: " . (isset($innerElement['boxShadowSpread']) ? esc_attr($innerElement['boxShadowSpread']) : '0') . "px;
+                                --duration-effect-button-inner: " . (isset($innerElement['durationEffectButton']) ? esc_attr($innerElement['durationEffectButton']) : '0') . "s;
+                                --delay-effect-button-inner: " . (isset($innerElement['delayEffectButton']) ? esc_attr($innerElement['delayEffectButton']) : '0') . "s;
+                                --interation-button-inner: " . (isset($innerElement['interationButton']) ? esc_attr($innerElement['interationButton']) : 'forwards') . ";
+                                --border-color-button-hover-inner: " . (isset($innerElement['backgroundBorderColorHover']) ? esc_attr($innerElement['backgroundBorderColorHover']) : '#000000') . ";
+                                --border-style-button-hover-inner: " . (isset($innerElement['borderStyleHover']) ? esc_attr($innerElement['borderStyleHover']) : 'none') . ";
+                                --border-width-button-hover-inner: " . (isset($innerElement['backgroundBorderSizeHover']) ? esc_attr($innerElement['backgroundBorderSizeHover']) : '0') . "px;
+                                --rotate-button-hover-inner: " . (isset($innerElement['rotateHover']) ? esc_attr($innerElement['rotateHover']) : '0') . "deg;
+                                --delay-hide-seconds-button-inner: " . (isset($innerElement['delayTransition'])? esc_attr($innerElement['delayTransition']) : '0') . "s;
+                                 " . ($innerElement['buttonLink'] !== 'none' ? 'cursor: pointer;' : '') . "
+                                ";
+                                $mouseStyles = "
+                                opacity: " . (isset($innerElement['opacityButton']) ? esc_attr($innerElement['opacityButton']) : '1') . ";
+                                --opacity-button-hover-inner: " . (isset($innerElement['opacityHover']) ? esc_attr($innerElement['opacityHover']) : '1') . ";
+                                transition: " . (isset($innerElement['durationEffectHover']) ? esc_attr($innerElement['durationEffectHover']) : '0') . "s;
+                                ";
+
+                                $isBold = isset($innerElement['fontStyle']['fontWeight']) && $innerElement['fontStyle']['fontWeight'] === 'bold';
+
+                                $buttonStyle3 = "
+                                    color: " . (isset($innerElement['buttonColor']) ? esc_attr($innerElement['buttonColor']) : '#000000') . ";
+                                    border-color: " . (isset($innerElement['backgroundBorderColorButton']) ? esc_attr($innerElement['backgroundBorderColorButton']) : '#000000') . ";
+                                    border-style: " . (isset($innerElement['borderStyleButton']) ? esc_attr($innerElement['borderStyleButton']) : 'none') . ";
+                                    border-width: " . (isset($innerElement['backgroundBorderSizeButton']) ? esc_attr($innerElement['backgroundBorderSizeButton']) : '0') . "px;
+                                    background-color: " . (isset($innerElement['buttonBackgroundColor']) ? esc_attr($innerElement['buttonBackgroundColor']) : '#ffffff') . ";
+                                    font-size: " . (isset($innerElement['fontSizeButton']) ? esc_attr($innerElement['fontSizeButton']) : '16') . "px;
+                                    --font-size-button-tablet-inner: " . (isset($innerElement['fontSizeButtonTablet']) ? esc_attr($innerElement['fontSizeButtonTablet']) : '16') . "px;
+                                    --font-size-button-mobile-inner: " . (isset($innerElement['fontSizeButtonMobile']) ? esc_attr($innerElement['fontSizeButtonMobile']) : '16') . "px;
+                                    font-weight: " . (isset($innerElement['fontWeightButton']) ? esc_attr($innerElement['fontWeightButton']) : 'normal') . ";
+                                    font-style: " . (isset($innerElement['fontStyle']['fontStyle']) ? esc_attr($innerElement['fontStyle']['fontStyle']) : 'normal') . ";
+                                    text-decoration: " . (isset($innerElement['fontStyle']['textDecoration']) ? esc_attr($innerElement['fontStyle']['textDecoration']) : 'none') . ";
+                                    line-height: " . (isset($innerElement['lineHeightButton']) ? esc_attr($innerElement['lineHeightButton']) : 'normal') . ";
+                                    font-family: " . (isset($innerElement['fontFamilyButton']) ? esc_attr($innerElement['fontFamilyButton']) : 'inherit') . ";
+                                    letter-spacing: " . (isset($innerElement['letterSpacingButton']) ? esc_attr($innerElement['letterSpacingButton']) : '0') . "px;
+                                    --buttonWidth-inner: " . (isset($innerElement['widthCustomButton']) ? esc_attr($innerElement['widthCustomButton']) : 'auto') . "px;
+                                    --buttonHeight-inner: " . (isset($innerElement['heightCustomButton']) ? esc_attr($innerElement['heightCustomButton']) : 'auto') . "px;
+                                    border-top-left-radius: " . (isset($innerElement['borderRadiusButton']['top']) ? esc_attr($innerElement['borderRadiusButton']['top']) : '0') . ";
+                                    border-top-right-radius: " . (isset($innerElement['borderRadiusButton']['right']) ? esc_attr($innerElement['borderRadiusButton']['right']) : '0') . ";
+                                    border-bottom-right-radius: " . (isset($innerElement['borderRadiusButton']['bottom']) ? esc_attr($innerElement['borderRadiusButton']['bottom']) : '0') . ";
+                                    border-bottom-left-radius: " . (isset($innerElement['borderRadiusButton']['left']) ? esc_attr($innerElement['borderRadiusButton']['left']) : '0') . ";
+                                    padding: " . (isset($innerElement['paddingButton']['top']) ? esc_attr($innerElement['paddingButton']['top']) : '0') . " " . 
+                                            (isset($innerElement['paddingButton']['right']) ? esc_attr($innerElement['paddingButton']['right']) : '0') . " " . 
+                                            (isset($innerElement['paddingButton']['bottom']) ? esc_attr($innerElement['paddingButton']['bottom']) : '0') . " " . 
+                                            (isset($innerElement['paddingButton']['left']) ? esc_attr($innerElement['paddingButton']['left']) : '0') . ";
+                                    --border-color-button-hover-inner: " . (isset($innerElement['backgroundBorderColorHover']) ? esc_attr($innerElement['backgroundBorderColorHover']) : '#000000') . ";
+                                    --border-style-button-hover-inner: " . (isset($innerElement['borderStyleHover']) ? esc_attr($innerElement['borderStyleHover']) : 'none') . ";
+                                    --border-width-button-hover-inner: " . (isset($innerElement['backgroundBorderSizeHover']) ? esc_attr($innerElement['backgroundBorderSizeHover']) : '0') . "px;
+                                    --background-color-button-hover-inner: " . (isset($innerElement['buttonBackgroundColorHover']) ? esc_attr($innerElement['buttonBackgroundColorHover']) : '#ffffff') . ";
+                                    --color-button-hover-inner: " . (isset($innerElement['buttonColorHover']) ? esc_attr($innerElement['buttonColorHover']) : '#000000') . ";
+                                    opacity: " . (isset($innerElement['opacityButton']) ? esc_attr($innerElement['opacityButton']) : '1') . ";
+                                    box-shadow: " . (isset($innerElement['boxShadowX']) ? esc_attr($innerElement['boxShadowX']) : '0') . "px " . 
+                                                (isset($innerElement['boxShadowY']) ? esc_attr($innerElement['boxShadowY']) : '0') . "px " . 
+                                                (isset($innerElement['boxShadowBlur']) ? esc_attr($innerElement['boxShadowBlur']) : '0') . "px " . 
+                                                (isset($innerElement['boxShadowSpread']) ? esc_attr($innerElement['boxShadowSpread']) : '0') . "px " . 
+                                                (isset($innerElement['colorShadow']) ? esc_attr($innerElement['colorShadow']) : '#000000') . ";
+                                    --opacity-button-hover-inner: " . (isset($innerElement['opacityHover']) ? esc_attr($innerElement['opacityHover']) : '1') . ";
+                                     --delay-hide-seconds-button-inner: " . (isset($innerElement['delayTransition'])? esc_attr($innerElement['delayTransition']) : '0') . "s;
+                                     " . (!empty($innerElement['icon']) ? "display: flex; align-items: " . esc_attr($innerElement['icoAligItemButton']) . "; gap: " . esc_attr($innerElement['gapIcon']) . "px;" : "") . "
+                                ";
+                                
+                                $buttonContentStyle3 = "
+                                   text-align: " . (isset($innerElement['buttonAlign']) ? esc_attr($innerElement['buttonAlign']) : 'left') . ";
+                                    width: " . (isset($innerElement['widthButton']) && $innerElement['widthButton'] === 'custom' 
+                                                ? esc_attr($innerElement['widthCustomButton']) . '%' 
+                                                : esc_attr($innerElement['widthButton'])) . ";
+                                    transform: rotate(" . (isset($innerElement['rotateButton']) ? esc_attr($innerElement['rotateButton']) : '0') . "deg);
+                                    --duration-effect-button-inner: " . (isset($innerElement['durationEffectButton']) ? esc_attr($innerElement['durationEffectButton']) : '0') . "s;
+                                    --delay-effect-button-inner: " . (isset($innerElement['delayEffectButton']) ? esc_attr($innerElement['delayEffectButton']) : '0') . "s;
+                                    --interation-button-inner: " . (isset($innerElement['interationButton']) ? esc_attr($innerElement['interationButton']) : 'forwards') . ";
+                                    --rotate-button-hover-inner: " . (isset($innerElement['rotateHover']) ? esc_attr($innerElement['rotateHover']) : '0') . "deg;
+                                    transition: transform " . (isset($innerElement['durationEffectHover']) ? esc_attr($innerElement['durationEffectHover']) : '0') . "s ease;
+                                    margin: " . (isset($innerElement['marginButton']['top']) ? esc_attr($innerElement['marginButton']['top']) : '0') . " " . 
+                                            (isset($innerElement['marginButton']['right']) ? esc_attr($innerElement['marginButton']['right']) : '0') . " " . 
+                                            (isset($innerElement['marginButton']['bottom']) ? esc_attr($innerElement['marginButton']['bottom']) : '0') . " " . 
+                                            (isset($innerElement['marginButton']['left']) ? esc_attr($innerElement['marginButton']['left']) : '0') . ";
+                                ";
+
+                                switch ($innerElement['buttonType']) {
+                                    case 'type1':
+                                        ?>
+                                            <?php if ($slide['developerMode']) : ?>         
+                                            <div class="content-button-slide-inner content-button-absolute-inner"
+                                                    style="
+                                                        transform: translate(<?php echo esc_attr($innerElement['desktop']['x']) ?> px, <?php echo esc_attr($innerElement['desktop']['y']) ?>px);
+                                                        position: absolute;
+                                                        --delay-hide-seconds-button-inner: <?php echo esc_attr($innerElement['delayTransition'] );?>s;
+                                                    "
+                                                    data-desktop-x="<?php echo esc_attr($innerElement['desktop']['x']); ?>"
+                                                    data-desktop-y="<?php echo esc_attr($innerElement['desktop']['y']); ?>"
+                                                    data-tablet-x="<?php echo esc_attr($innerElement['tablet']['x']); ?>"
+                                                    data-tablet-y="<?php echo esc_attr($innerElement['tablet']['y']); ?>"
+                                                    data-mobile-x="<?php echo esc_attr($innerElement['mobile']['x']); ?>"
+                                                    data-mobile-y="<?php echo esc_attr($innerElement['mobile']['y']); ?>"
+                                                     data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                                    data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
+                                                    
+                                            >
+                                            <?php endif; ?>
+                                        <span 
+                                            <?php if ($innerElement['buttonLink'] !== 'none') : ?>
+                                                onclick="<?php echo $onclick; ?>"
+                                            <?php endif; ?> 
+                                            class="content-button-slide-inner scroll-btn-inner <?php echo esc_attr($innerElement['animationButton']);?> <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>" 
+                                            style="<?php echo esc_attr($buttonStyle); ?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($innerElement['parallaxButton']); ?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($innerElement['parallaxButtonY']); ?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($innerElement['parallaxButtonScale']); ?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($innerElement['parallaxButtonDuration']); ?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($innerElement['parallaxButtonOpacity']); ?>"
+                                            data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
+                                             data-animation-button-inner="<?php echo esc_attr($innerElement['animationButton']); ?>"
+                                        >
+                                            <span class="mouse" style="<?php echo esc_attr($mouseStyles); ?>">
+                                                <span></span>
+                                            </span>
+                                        </span>
+                                        <?php if ($slide['developerMode']) : ?>  
+                                            </div>
+                                            <?php endif; ?>
+                                        <?php
+                                        break;
+                                    case 'type2':
+                                        ?>
+                                         <?php if ($slide['developerMode']) : ?>        
+                                        <div class="content-button-slide-inner content-button-absolute-inner"
+                                                style="
+                                                    transform: translate(<?php echo esc_attr($innerElement['desktop']['x']) ?> px, <?php echo esc_attr($innerElement['desktop']['y']) ?>px);
+                                                    position: absolute;
+                                                    --delay-hide-seconds-button-inner: <?php echo esc_attr($innerElement['delayTransition'] );?>s;
+                                                "
+                                                data-desktop-x="<?php echo esc_attr($innerElement['desktop']['x']); ?>"
+                                                data-desktop-y="<?php echo esc_attr($innerElement['desktop']['y']); ?>"
+                                                data-tablet-x="<?php echo esc_attr($innerElement['tablet']['x']); ?>"
+                                                data-tablet-y="<?php echo esc_attr($innerElement['tablet']['y']); ?>"
+                                                data-mobile-x="<?php echo esc_attr($innerElement['mobile']['x']); ?>"
+                                                data-mobile-y="<?php echo esc_attr($innerElement['mobile']['y']); ?>"
+                                                data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                                data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
+                                        >
+                                        <?php endif; ?>
+                                        <span 
+                                            <?php if ($innerElement['buttonLink'] !== 'none') : ?>
+                                                onclick="<?php echo $onclick; ?>"
+                                            <?php endif; ?> 
+                                            class="content-button-slide scroll-btn <?php echo esc_attr($innerElement['animationButton']);?> <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>" 
+                                            style="<?php echo esc_attr($buttonStyle); ?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($innerElement['parallaxButton']); ?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($innerElement['parallaxButtonY']); ?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($innerElement['parallaxButtonScale']); ?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($innerElement['parallaxButtonDuration']); ?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($innerElement['parallaxButtonOpacity']); ?>"
+                                             data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
+                                             data-animation-button="<?php echo esc_attr($innerElement['animationButton']); ?>"
+                                        >
+                                            <span class="mouse-inner" style="<?php echo esc_attr($mouseStyles); ?>">
+                                                <span></span>
+                                            </span>
+                                        </span>
+                                        <?php if ($slide['developerMode']) : ?>  
+                                            </div>
+                                            <?php endif; ?>
+                                        <?php
+                                        break;
+                                    case 'type3':
+                                    case 'type4':
+                                    case 'type5':
+                                    case 'type6':
+                                    case 'type7':
+                                    case 'type8':
+                                
+                                        $link_url = '#';
+                                        $linkTargetButton = '_self';
+                                        $rel_div = '';
+                                
+                                        if ($innerElement['buttonLink'] !== 'none') {
+                                            // Prepara l'attributo href se buttonLink è diverso da 'none'
+                                            if ($innerElement['buttonLink'] === 'link' && !empty($innerElement['linkUrlButton'])) {
+                                                $link_url = esc_url($innerElement['linkUrlButton']);
+                                                if (!empty($innerElement['linkTargetButton'])) {
+                                                    $linkTargetButton = esc_attr($innerElement['linkTargetButton']);
+                                                }
+                                                if ($innerElement['linkRelButton'] === 'nofollow') {
+                                                    $rel_div = 'nofollow';
+                                                }
+                                            } elseif ($innerElement['buttonLink'] === 'scroll-below') {
+                                                $link_url = '#scroll-below';
+                                            } elseif ($innerElement['buttonLink'] === 'scroll-to-id' && !empty($innerElement['scrollToIdButton'])) {
+                                                $scroll_id = esc_attr($innerElement['scrollToIdButton']);
+                                                $link_url = "#{$scroll_id}";
+                                            }
+                                        }
+                                        ?>
+                                         <?php if ($slide['developerMode']) : ?>       
+                                               <div class="content-button-slide-inner content-button-absolute-inner"
+                                                style="
+                                                    transform: translate(<?php echo esc_attr($innerElement['desktop']['x']) ?> px, <?php echo esc_attr($innerElement['desktop']['y']) ?>px);
+                                                    position: absolute;
+                                                    --delay-hide-seconds-button-inner: <?php echo esc_attr($innerElement['delayTransition'] );?>s;
+                                                "
+                                                data-desktop-x="<?php echo esc_attr($innerElement['desktop']['x']); ?>"
+                                                data-desktop-y="<?php echo esc_attr($innerElement['desktop']['y']); ?>"
+                                                data-tablet-x="<?php echo esc_attr($innerElement['tablet']['x']); ?>"
+                                                data-tablet-y="<?php echo esc_attr($innerElement['tablet']['y']); ?>"
+                                                data-mobile-x="<?php echo esc_attr($innerElement['mobile']['x']); ?>"
+                                                data-mobile-y="<?php echo esc_attr($innerElement['mobile']['y']); ?>"
+                                                data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                                data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
+                                        >
+                                        <?php endif; ?>                           
+                                        <div class=" button-slider-inner <?php echo esc_attr($innerElement['animationButton']);?> <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>"
+                                            style="<?php echo esc_attr($buttonContentStyle3); ?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($innerElement['parallaxButton']);?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($innerElement['parallaxButtonY']);?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($innerElement['parallaxButtonScale']);?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($innerElement['parallaxButtonDuration']);?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($innerElement['parallaxButtonOpacity']);?>"
+                                            data-font-family="<?php echo esc_attr($innerElement['fontFamilyButton']); ?>" 
+                                             data-animation-button-inner="<?php echo esc_attr($innerElement['animationButton']); ?>"
+                                          
+                                        >
+                                        <a class="content-button-slide-inner <?php echo esc_attr($innerElement['iconShowHover']);?> <?php echo esc_attr($innerElement['iconHideShowHover']);?>" href="<?php echo $link_url; ?>" 
+                                        style="<?php echo esc_attr($buttonStyle3); ?>"
+                                          data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
+                                            
+                                        target="<?php echo $linkTargetButton; ?>"
+                                        rel="<?php echo $rel_div; ?>"
+                                        <?php if ($innerElement['buttonLink'] === 'scroll-below' || ($innerElement['buttonLink'] === 'scroll-to-id' && !empty($innerElement['scrollToIdButton']))) : ?>
+                                            onclick="event.preventDefault(); <?php echo $innerElement['buttonLink'] === 'scroll-below' ? "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });" : "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });"; ?>"
+                                        <?php endif; ?>
+                                        >
+                                            <?php if (!empty($innerElement['icon']) && $innerElement['icoPositionButton'] === 'before') : ?>
+                                                <div class="content-icon-button-inner" style="transform:rotate(<?php echo esc_attr( $innerElement['rotateIcon'] )?>deg);--rotate-icon-button-hover-inner:<?php echo esc_attr( $innerElement['rotateIconHover'] )?>deg;"><i class="<?php echo esc_attr($innerElement['icon']); ?> <?php echo esc_attr($innerElement['iconAnimation']); ?> <?php echo esc_attr($innerElement['animationHoverIcon']); ?>" style="color:<?php echo esc_attr( $innerElement['iconColor'] )?>;font-size:<?php echo esc_attr( $innerElement['sizeIcon'] )?>px;--fa-animation-duration:<?php echo esc_attr( $innerElement['iconAnimationDuration'] )?>s;--color-icon-button-hover-inner:<?php echo esc_attr( $innerElement['iconColorHover'] )?>;--translate-hover-icon-button-inner:<?php echo esc_attr( $innerElement['translateEffectHoverIcon'] )?>px;--transition-hover-icon-button-inner:<?php echo esc_attr( $innerElement['durationEffectHoverIcon'] )?>s;"></i></div>
+                                            <?php endif; ?>
+                                            <?php echo esc_html($innerElement['button']); ?>
+                                            <?php if (!empty($innerElement['icon']) && $innerElement['icoPositionButton'] === 'after') : ?>
+                                                <div class="content-icon-button-inner" style="transform:rotate(<?php echo esc_attr( $innerElement['rotateIcon'] )?>deg);--rotate-icon-button-hover-inner:<?php echo esc_attr( $innerElement['rotateIconHover'] )?>deg;"><i class="<?php echo esc_attr($innerElement['icon']); ?> <?php echo esc_attr($innerElement['iconAnimation']); ?> <?php echo esc_attr($innerElement['animationHoverIcon']); ?>" style="color:<?php echo esc_attr( $innerElement['iconColor'] )?>;font-size:<?php echo esc_attr( $innerElement['sizeIcon'] )?>px;--fa-animation-duration:<?php echo esc_attr( $innerElement['iconAnimationDuration'] )?>s;--color-icon-button-hover-inner:<?php echo esc_attr( $innerElement['iconColorHover'] )?>;--translate-hover-icon-button-inner:<?php echo esc_attr( $innerElement['translateEffectHoverIcon'] )?>px;--transition-hover-icon-button-inner:<?php echo esc_attr( $innerElement['durationEffectHoverIcon'] )?>s;"></i></div>
+                                            <?php endif; ?>
+                                
+                                
+                                        </a>
+                                        </div>
+                                        <?php if ($slide['developerMode']) : ?>  
+                                            </div>
+                                            <?php endif; ?>
+                                        <?php
+                                        break;
+                                    default:
+                                        break;
+                                }
+                               
+                                ?>
+
+                            
+
+                                        <?php elseif ($innerElement['type'] === 'image'): ?>
  
-                                <?php if (!empty($element['innerImageDivs']) && is_array($element['innerImageDivs'])): ?>
-                                    <?php foreach ($element['innerImageDivs'] as $imageIndex => $imageDiv): 
+                                        <?php
 
                                         $style = "max-width: 100%; min-width: 0; 
                                         max-height: 100%; min-height: 0;
-                                        border-style: " . esc_attr($imageDiv['borderStyleImage']) . ";
-                                        border-width: " . esc_attr($imageDiv['backgroundBorderSizeImage']) . "px;
-                                        border-color: " . esc_attr($imageDiv['backgroundBorderColorImage']) . ";
-                                        border-radius: " . esc_attr($imageDiv['backgroundBorderRadiusImage']) . "px;
-                                        padding: " . esc_attr($imageDiv['paddingImage']) . "px;
-                                        box-shadow: " . esc_attr($imageDiv['boxShadowXImage']) . "px " . esc_attr($imageDiv['boxShadowYImage']) . "px " . esc_attr($imageDiv['boxShadowBlurImage']) . "px " . esc_attr($imageDiv['boxShadowSpreadImage']) . "px " . esc_attr($imageDiv['colorShadowImage']) . ";
-                                        background-color: " . esc_attr($imageDiv['backgroundColorImage']) . ";
-                                        margin: " . esc_attr($imageDiv['marginImage']['top']) . ' ' . esc_attr($imageDiv['marginImage']['right']) . ' ' . esc_attr($imageDiv['marginImage']['bottom']) . ' ' . esc_attr($imageDiv['marginImage']['left']) . ";
-                                        --spike-width-inner:" . esc_attr($imageDiv['spikeLeftWidth']) . "%;
-                                        --spike-width-right-inner: " . esc_attr($imageDiv['spikeRightWidth']) . "%;
-                                        --duration-effect-image-inner: " . esc_attr($imageDiv['durationEffectImage']) . "s;
-                                        --duration-effect-moving-image-inner: " . esc_attr($imageDiv['durationEffectImageMoving']) . "s;
-                                        --color-hover-image-inner: " . esc_attr($imageDiv['imageColorHover']) . ";
-                                        --border-color-hover-image-inner: " . esc_attr($imageDiv['backgroundBorderColorHoverImage']) . ";
-                                        --opacity-hover-image-inner: " . esc_attr($imageDiv['opacityHoverImage']) . ";
-                                        --border-style-hover-image-inner: " . esc_attr($imageDiv['borderStyleHoverImage']) . ";
-                                        --border-width-hover-image-inner: " . esc_attr($imageDiv['backgroundBorderSizeImageHover']) . "px;
-                                        --transition-hover-image-inner: " . esc_attr($imageDiv['durationEffectHoverImage']) . "s;
-                                        --translate-hover-image-inner: " . esc_attr($imageDiv['translateEffectHoverImage']) . "px;
-                                        --color-effect-hover-image-inner: " . esc_attr($imageDiv['effectHoverColorHoverImage']) . ";
-                                        --interation-image-inner: " . esc_attr($imageDiv['interationImage']) . ";
+                                        border-style: " . esc_attr($innerElement['borderStyleImage']) . ";
+                                        border-width: " . esc_attr($innerElement['backgroundBorderSizeImage']) . "px;
+                                        border-color: " . esc_attr($innerElement['backgroundBorderColorImage']) . ";
+                                        border-radius: " . esc_attr($innerElement['backgroundBorderRadiusImage']) . "px;
+                                        padding: " . esc_attr($innerElement['paddingImage']) . "px;
+                                        box-shadow: " . esc_attr($innerElement['boxShadowXImage']) . "px " . esc_attr($innerElement['boxShadowYImage']) . "px " . esc_attr($innerElement['boxShadowBlurImage']) . "px " . esc_attr($innerElement['boxShadowSpreadImage']) . "px " . esc_attr($innerElement['colorShadowImage']) . ";
+                                        background-color: " . esc_attr($innerElement['backgroundColorImage']) . ";
+                                        margin: " . esc_attr($innerElement['marginImage']['top']) . ' ' . esc_attr($innerElement['marginImage']['right']) . ' ' . esc_attr($innerElement['marginImage']['bottom']) . ' ' . esc_attr($innerElement['marginImage']['left']) . ";
+                                        --spike-width-inner:" . esc_attr($innerElement['spikeLeftWidth']) . "%;
+                                        --spike-width-right-inner: " . esc_attr($innerElement['spikeRightWidth']) . "%;
+                                        --duration-effect-image-inner: " . esc_attr($innerElement['durationEffectImage']) . "s;
+                                        --duration-effect-moving-image-inner: " . esc_attr($innerElement['durationEffectImageMoving']) . "s;
+                                        --color-hover-image-inner: " . esc_attr($innerElement['imageColorHover']) . ";
+                                        --border-color-hover-image-inner: " . esc_attr($innerElement['backgroundBorderColorHoverImage']) . ";
+                                        --opacity-hover-image-inner: " . esc_attr($innerElement['opacityHoverImage']) . ";
+                                        --border-style-hover-image-inner: " . esc_attr($innerElement['borderStyleHoverImage']) . ";
+                                        --border-width-hover-image-inner: " . esc_attr($innerElement['backgroundBorderSizeImageHover']) . "px;
+                                        --transition-hover-image-inner: " . esc_attr($innerElement['durationEffectHoverImage']) . "s;
+                                        --translate-hover-image-inner: " . esc_attr($innerElement['translateEffectHoverImage']) . "px;
+                                        --color-effect-hover-image-inner: " . esc_attr($innerElement['effectHoverColorHoverImage']) . ";
+                                        --interation-image-inner: " . esc_attr($innerElement['interationImage']) . ";
+                                        z-index: " . esc_attr( $innerElement['zIndexImage'] ). ";
+                                        --delay-effect-image-inner: " . esc_attr($innerElement['delayEffectImage']) . "s; 
                                         ";
 
-                                        if ($imageDiv['widthImage'] === 'relative') {
-                                            $style .= "width: " . esc_attr($imageDiv['customWidthImage']) . "%;";
-                                        } elseif ($imageDiv['widthImage'] === 'fixed') {
-                                            $style .= "width: " . esc_attr($imageDiv['customWidthImagePx']) . "px;";
+                                        if ($innerElement['widthImage'] === 'relative') {
+                                            $style .= "width: " . esc_attr($innerElement['customWidthImage']) . "%;";
+                                        } elseif ($innerElement['widthImage'] === 'fixed') {
+                                            $style .= "width: " . esc_attr($innerElement['customWidthImagePx']) . "px;";
                                         }
 
-                                        if ($imageDiv['heightImage'] === 'relative') {
-                                            $style .= "height: " . esc_attr($imageDiv['customHeightImage']) . "%;";
-                                        } elseif ($imageDiv['heightImage'] === 'fixed') {
-                                            $style .= "height: " . esc_attr($imageDiv['customHeightImagePx']) . "px;";
+                                        if ($innerElement['heightImage'] === 'relative') {
+                                            $style .= "height: " . esc_attr($innerElement['customHeightImage']) . "%;";
+                                        } elseif ($innerElement['heightImage'] === 'fixed') {
+                                            $style .= "height: " . esc_attr($innerElement['customHeightImagePx']) . "px;";
                                         }
 
-                                        if ($imageDiv['widthImage'] !== 'auto' || $imageDiv['heightImage'] !== 'auto') {
-                                            $style .= "object-fit: " . esc_attr($imageDiv['fit']) . ";";
+                                        if ($innerElement['widthImage'] !== 'auto' || $innerElement['heightImage'] !== 'auto') {
+                                            $style .= "object-fit: " . esc_attr($innerElement['fit']) . ";";
                                         }
 
-                                        $desktopClassImage = $imageDiv['enableDesktopImage'] ? 'desktop-image-visible-inner' : 'desktop-image-hidden-inner';
-                                        $tabletClassImage = $imageDiv['enableTabletImage'] ? 'tablet-image-visible-inner' : 'tablet-image-hidden-inner';
-                                        $mobileClassImage = $imageDiv['enableMobileImage'] ? 'mobile-image-visible-inner' : 'mobile-image-hidden-inner';
+                                        $desktopClassImage = $innerElement['enableDesktopImage'] ? 'desktop-image-visible-inner' : 'desktop-image-hidden-inner';
+                                        $tabletClassImage = $innerElement['enableTabletImage'] ? 'tablet-image-visible-inner' : 'tablet-image-hidden-inner';
+                                        $mobileClassImage = $innerElement['enableMobileImage'] ? 'mobile-image-visible-inner' : 'mobile-image-hidden-inner';
                                         $link_url = '';
                                         $onclick = '';
                                         $linkTargetImage = '_self'; // Default
                                         $rel_div = 'follow'; // Default
                                         
-                                        if ($imageDiv['imageLink'] !== 'none') {
+                                        if ($innerElement['imageLink'] !== 'none') {
                                             // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
-                                            if ($imageDiv['imageLink'] === 'link' && !empty($imageDiv['linkUrlImage'])) {
-                                                $link_url = esc_url($imageDiv['linkUrlImage']);
-                                                if (!empty($imageDiv['linkTargetImage'])) {
-                                                    $linkTargetImage = esc_attr($imageDiv['linkTargetImage']);
+                                            if ($innerElement['imageLink'] === 'link' && !empty($innerElement['linkUrlImage'])) {
+                                                $link_url = esc_url($innerElement['linkUrlImage']);
+                                                if (!empty($innerElement['linkTargetImage'])) {
+                                                    $linkTargetImage = esc_attr($innerElement['linkTargetImage']);
                                                 }
-                                                if ($imageDiv['linkRelImage'] === 'nofollow') {
+                                                if ($innerElement['linkRelImage'] === 'nofollow') {
                                                     $rel_div = 'nofollow';
                                                 }
                                                 $onclick = "window.open('{$link_url}', '{$linkTargetImage}', 'rel={$rel_div}');";
-                                            } elseif ($imageDiv['imageLink'] === 'scroll-below') {
+                                            } elseif ($innerElement['imageLink'] === 'scroll-below') {
                                                 $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
-                                            } elseif ($imageDiv['imageLink'] === 'scroll-to-id' && !empty($imageDiv['scrollToIdImage'])) {
-                                                $scroll_id = esc_attr($imageDiv['scrollToIdImage']);
+                                            } elseif ($innerElement['imageLink'] === 'scroll-to-id' && !empty($innerElement['scrollToIdImage'])) {
+                                                $scroll_id = esc_attr($innerElement['scrollToIdImage']);
                                                 $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
                                             }
                                         }
                                     ?>
                                     <div 
-                                    <?php if ($imageDiv['imageLink'] !== 'none') : ?>
+                                    <?php if ($innerElement['imageLink'] !== 'none') : ?>
                                                                 onclick="<?php echo $onclick; ?>"
                                                             <?php endif; ?> 
-                                        style="transform: rotate(<?php echo esc_attr($imageDiv['rotateImage']); ?>deg); opacity: <?php echo esc_attr($imageDiv['opacityImage']); ?>; --duration-effect-moving-image-inner:<?php echo esc_attr($imageDiv['durationEffectImageMoving'])?>s; --translate-effect-moving-image-inner:<?php echo esc_attr($imageDiv['translateEffectImageMoving']) ?>px; --duration-effect-moving-image-hover-inner:<?php echo esc_attr($imageDiv['durationEffectImageMovingHover'])?>s; --translate-effect-moving-image-hover-inner:<?php echo esc_attr($imageDiv['translateEffectImageMovingHover'])?>px; --rotate-hover-image-inner: <?php echo esc_attr($imageDiv['rotateHoverImage'])?>deg; --transition-hover-image-inner: <?php echo esc_attr($imageDiv['durationEffectHoverImage'])?>s; width:<?php echo esc_attr($imageDiv['widthImageContent'])?>; <?php if ($imageDiv['imageLink'] !== 'none') : ?>
+                                        style="transform: rotate(<?php echo esc_attr($innerElement['rotateImage']); ?>deg); opacity: <?php echo esc_attr($innerElement['opacityImage']); ?>; --duration-effect-moving-image-inner:<?php echo esc_attr($innerElement['durationEffectImageMoving'])?>s; --translate-effect-moving-image-inner:<?php echo esc_attr($innerElement['translateEffectImageMoving']) ?>px;--rotate-hover-image-inner: <?php echo esc_attr($innerElement['rotateHoverImage'])?>deg; --transition-hover-image-inner: <?php echo esc_attr($innerElement['durationEffectHoverImage'])?>s; width:<?php echo esc_attr($innerElement['widthImageContent'])?>;
+                                           position:<?php echo esc_attr($innerElement['positionInnerImage']) ?> ;
+                                           top: <?php echo esc_attr($innerElement['verticalPositionInnerImage'])?>px;
+                                           left: <?php echo esc_attr($innerElement['horizontalPositionInnerImage']) ?>px;
+                                            --delay-hide-seconds-image-block: <?php echo esc_attr($innerElement['delayTransition'])?>s;
+                                         <?php if ($innerElement['imageLink'] !== 'none') : ?>
                                                                     cursor: pointer;
                                                                 <?php endif; ?>"
-                                        class="content-img-inner <?php echo esc_attr($imageDiv['animationImageMoving'])?> <?php echo esc_attr($imageDiv['animationImageMovingHover'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>"
+                                        class="content-img-inner <?php echo esc_attr($innerElement['animationImageMoving'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>"
+                                        data-delay-hide="<?php echo esc_attr($innerElement['delayHide']) ? 'true' : 'false'; ?>"
+                                        data-delay-seconds="<?php echo esc_attr($innerElement['delaySeconds']); ?>"
                                     >
                                         <img
-                                            src="<?php echo esc_url($imageDiv['imageUrl']); ?>"
-                                            alt="<?php echo esc_attr($imageDiv['alt']); ?>"
+                                            src="<?php echo esc_url($innerElement['imageUrl']); ?>"
+                                            alt="<?php echo esc_attr($innerElement['alt']); ?>"
                                             style="<?php echo $style ?>"
-                                            class="img-inner image-with-mask <?php echo esc_attr($imageDiv['blobMask']); ?> <?php echo esc_attr($imageDiv['spikeMask'])?> <?php echo esc_attr($imageDiv['spikeMaskRight'])?> <?php echo esc_attr($imageDiv['animationImage'])?> <?php echo esc_attr($imageDiv['imageFilter'])?> <?php echo esc_attr($imageDiv['animationHoverImage'])?>"
-                                            data-swiper-parallax-x="<?php echo esc_attr($imageDiv['parallaxImage']); ?>"
-                                            data-swiper-parallax-y="<?php echo esc_attr($imageDiv['parallaxImageY']); ?>"
-                                            data-swiper-parallax-scale="<?php echo esc_attr($imageDiv['parallaxImageScale']); ?>"
-                                            data-swiper-parallax-duration="<?php echo esc_attr($imageDiv['parallaxImageDuration']); ?>"
-                                            data-swiper-parallax-opacity="<?php echo esc_attr($imageDiv['parallaxImageOpacity']); ?>"
-                                            data-animation-image-inner="<?php echo esc_attr($imageDiv['animationImage']); ?>"
+                                            class="img-inner image-with-mask <?php echo esc_attr($innerElement['blobMask']); ?> <?php echo esc_attr($innerElement['spikeMask'])?> <?php echo esc_attr($innerElement['spikeMaskRight'])?> <?php echo esc_attr($innerElement['animationImage'])?> <?php echo esc_attr($innerElement['imageFilter'])?> <?php echo esc_attr($innerElement['animationHoverImage'])?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($innerElement['parallaxImage']); ?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($innerElement['parallaxImageY']); ?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($innerElement['parallaxImageScale']); ?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($innerElement['parallaxImageDuration']); ?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($innerElement['parallaxImageOpacity']); ?>"
+                                            data-animation-image-inner="<?php echo esc_attr($innerElement['animationImage']); ?>"
                                         />
                                     </div>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </<?php echo esc_attr($TagDiv); ?>>
+                        </div>
+                        <?php if ($slide['developerMode']) : ?>   
+                        </div>
                         <?php endif; ?>
+                        <?php endif; ?>
+
+
+                        <?php
+                           // Button
+                            if ($element['type'] === 'button'): 
+
+                                $desktopClassButton = $element['enableDesktopButton'] ? 'desktop-button-visible' : 'desktop-button-hidden';
+                                $tabletClassButton = $element['enableTabletButton'] ? 'tablet-button-visible' : 'tablet-button-hidden';
+                                $mobileClassButton = $element['enableMobileButton'] ? 'mobile-button-visible' : 'mobile-button-hidden';
+                                if ($element['buttonLink'] !== 'none') {
+                                    // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                    if ($element['buttonLink'] === 'link' && !empty($element['linkUrlButton'])) {
+                                        $link_url = esc_url($element['linkUrlButton']);
+                                        if (!empty($element['linkTargetButton'])) {
+                                            $linkTargetButton = esc_attr($element['linkTargetButton']);
+                                        }
+                                        if ($element['linkRelButton'] === 'nofollow') {
+                                            $rel_div = 'nofollow';
+                                        }
+                                        $onclick = "window.open('{$link_url}', '{$linkTargetButton}', 'rel={$rel_div}');";
+                                    } elseif ($element['buttonLink'] === 'scroll-below') {
+                                        $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                    } elseif ($element['buttonLink'] === 'scroll-to-id' && !empty($element['scrollToIdButton'])) {
+                                        $scroll_id = esc_attr($element['scrollToIdButton']);
+                                        $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                    }
+                                }
+
+
+                                $defaultButtonColor = '#000000';
+                                $defaultBackgroundBorderColorButton = '#cccccc';
+                                $defaultBorderStyleButton = 'solid';
+                                $defaultBackgroundBorderRadiusButton = '4';
+                                $defaultBackgroundBorderSizeButton = '1';
+                                $defaultButtonBackgroundColor = '#ffffff';
+                                $defaultWidthButton = '35';
+                                $defaultHeightButton = '55';
+                                $defaultButtonColorHover = '#000000';
+
+                                $buttonStyle = "
+                                    --color-button: " . (isset($element['buttonColor']) ? esc_attr($element['buttonColor']) : $defaultButtonColor) . ";
+                                    --border-color-button: " . (isset($element['backgroundBorderColorButton']) ? esc_attr($element['backgroundBorderColorButton']) : $defaultBackgroundBorderColorButton) . ";
+                                    --border-style-button: " . (isset($element['borderStyleButton']) ? esc_attr($element['borderStyleButton']) : $defaultBorderStyleButton) . ";
+                                    --border-radius-button: " . (isset($element['backgroundBorderRadiusButton']) ? esc_attr($element['backgroundBorderRadiusButton']) : $defaultBackgroundBorderRadiusButton) . "px;
+                                    --border-width-button: " . (isset($element['backgroundBorderSizeButton']) ? esc_attr($element['backgroundBorderSizeButton']) : $defaultBackgroundBorderSizeButton) . "px;
+                                    --background-color-button: " . (isset($element['buttonBackgroundColor']) ? esc_attr($element['buttonBackgroundColor']) : $defaultButtonBackgroundColor) . ";
+                                    --buttonWidth: " . (isset($element['widthCustomButton']) ? esc_attr($element['widthCustomButton']) :$defaultWidthButton) . "px;
+                                    --buttonHeight: " . (isset($element['heightCustomButton']) ? esc_attr($element['heightCustomButton']) :$defaultHeightButton) . "px;
+                                    --color-button-hover: " . (isset($element['buttonColorHover']) ? esc_attr($element['buttonColorHover']) : $defaultButtonColorHover) . ";
+                                    transform: rotate(" . (isset($element['rotateButton']) ? esc_attr($element['rotateButton']) : '0') . "deg);
+                                    margin: " . (isset($element['marginButton']['top']) ? esc_attr($element['marginButton']['top']) : '0') . " " . 
+                                            (isset($element['marginButton']['right']) ? esc_attr($element['marginButton']['right']) : '0') . " " . 
+                                            (isset($element['marginButton']['bottom']) ? esc_attr($element['marginButton']['bottom']) : '0') . " " . 
+                                            (isset($element['marginButton']['left']) ? esc_attr($element['marginButton']['left']) : '0') . ";
+                                    --box-shadow-x-button: " . (isset($element['boxShadowX']) ? esc_attr($element['boxShadowX']) : '0') . "px;
+                                    --box-shadow-y-button: " . (isset($element['boxShadowY']) ? esc_attr($element['boxShadowY']) : '0') . "px;
+                                    --box-shadow-blur-button: " . (isset($element['boxShadowBlur']) ? esc_attr($element['boxShadowBlur']) : '0') . "px;
+                                    --box-shadow-color-button: " . (isset($element['colorShadow']) ? esc_attr($element['colorShadow']) : '#000000') . ";
+                                    --box-shadow-spread-button: " . (isset($element['boxShadowSpread']) ? esc_attr($element['boxShadowSpread']) : '0') . "px;
+                                    --duration-effect-button: " . (isset($element['durationEffectButton']) ? esc_attr($element['durationEffectButton']) : '0') . "s;
+                                    --delay-effect-button: " . (isset($element['delayEffectButton']) ? esc_attr($element['delayEffectButton']) : '0') . "s;
+                                    --interation-button: " . (isset($element['interationButton']) ? esc_attr($element['interationButton']) : 'forwards') . ";
+                                    --border-color-button-hover: " . (isset($element['backgroundBorderColorHover']) ? esc_attr($element['backgroundBorderColorHover']) : '#000000') . ";
+                                    --border-style-button-hover: " . (isset($element['borderStyleHover']) ? esc_attr($element['borderStyleHover']) : 'none') . ";
+                                    --border-width-button-hover: " . (isset($element['backgroundBorderSizeHover']) ? esc_attr($element['backgroundBorderSizeHover']) : '0') . "px;
+                                    --rotate-button-hover: " . (isset($element['rotateHover']) ? esc_attr($element['rotateHover']) : '0') . "deg;
+                                    --delay-hide-seconds-button: " . (isset($element['delayTransition'])? esc_attr($element['delayTransition']) : '0') . "s;
+                                     " . ($element['buttonLink'] !== 'none' ? 'cursor: pointer;' : '') . "
+                                ";
+                                $mouseStyles = "
+                                    opacity: " . (isset($element['opacityButton']) ? esc_attr($element['opacityButton']) : '1') . ";
+                                    --opacity-button-hover: " . (isset($element['opacityHover']) ? esc_attr($element['opacityHover']) : '1') . ";
+                                    transition: " . (isset($element['durationEffectHover']) ? esc_attr($element['durationEffectHover']) : '0') . "s;
+                                ";
+
+                                $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === 'bold';
+
+                                $buttonStyle3 = "
+                                    color: " . (isset($element['buttonColor']) ? esc_attr($element['buttonColor']) : '#000000') . ";
+                                    border-color: " . (isset($element['backgroundBorderColorButton']) ? esc_attr($element['backgroundBorderColorButton']) : '#000000') . ";
+                                    border-style: " . (isset($element['borderStyleButton']) ? esc_attr($element['borderStyleButton']) : 'none') . ";
+                                    border-width: " . (isset($element['backgroundBorderSizeButton']) ? esc_attr($element['backgroundBorderSizeButton']) : '0') . "px;
+                                    background-color: " . (isset($element['buttonBackgroundColor']) ? esc_attr($element['buttonBackgroundColor']) : '#ffffff') . ";
+                                    font-size: " . (isset($element['fontSizeButton']) ? esc_attr($element['fontSizeButton']) : '16') . "px;
+                                    --font-size-button-tablet: " . (isset($element['fontSizeButtonTablet']) ? esc_attr($element['fontSizeButtonTablet']) : '16') . "px;
+                                    --font-size-button-mobile: " . (isset($element['fontSizeButtonMobile']) ? esc_attr($element['fontSizeButtonMobile']) : '16') . "px;
+                                    font-weight: " . (isset($element['fontWeightButton']) ? esc_attr($element['fontWeightButton']) : 'normal') . ";
+                                    font-style: " . (isset($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal') . ";
+                                    text-decoration: " . (isset($element['fontStyle']['textDecoration']) ? esc_attr($element['fontStyle']['textDecoration']) : 'none') . ";
+                                    line-height: " . (isset($element['lineHeightButton']) ? esc_attr($element['lineHeightButton']) : 'normal') . ";
+                                    font-family: " . (isset($element['fontFamilyButton']) ? esc_attr($element['fontFamilyButton']) : 'inherit') . ";
+                                    letter-spacing: " . (isset($element['letterSpacingButton']) ? esc_attr($element['letterSpacingButton']) : '0') . "px;
+                                    --buttonWidth: " . (isset($element['widthCustomButton']) ? esc_attr($element['widthCustomButton']) : 'auto') . "px;
+                                    --buttonHeight: " . (isset($element['heightCustomButton']) ? esc_attr($element['heightCustomButton']) : 'auto') . "px;
+                                    border-top-left-radius: " . (isset($element['borderRadiusButton']['top']) ? esc_attr($element['borderRadiusButton']['top']) : '0') . ";
+                                    border-top-right-radius: " . (isset($element['borderRadiusButton']['right']) ? esc_attr($element['borderRadiusButton']['right']) : '0') . ";
+                                    border-bottom-right-radius: " . (isset($element['borderRadiusButton']['bottom']) ? esc_attr($element['borderRadiusButton']['bottom']) : '0') . ";
+                                    border-bottom-left-radius: " . (isset($element['borderRadiusButton']['left']) ? esc_attr($element['borderRadiusButton']['left']) : '0') . ";
+                                    padding: " . (isset($element['paddingButton']['top']) ? esc_attr($element['paddingButton']['top']) : '0') . " " . 
+                                            (isset($element['paddingButton']['right']) ? esc_attr($element['paddingButton']['right']) : '0') . " " . 
+                                            (isset($element['paddingButton']['bottom']) ? esc_attr($element['paddingButton']['bottom']) : '0') . " " . 
+                                            (isset($element['paddingButton']['left']) ? esc_attr($element['paddingButton']['left']) : '0') . ";
+                                    --border-color-button-hover: " . (isset($element['backgroundBorderColorHover']) ? esc_attr($element['backgroundBorderColorHover']) : '#000000') . ";
+                                    --border-style-button-hover: " . (isset($element['borderStyleHover']) ? esc_attr($element['borderStyleHover']) : 'none') . ";
+                                    --border-width-button-hover: " . (isset($element['backgroundBorderSizeHover']) ? esc_attr($element['backgroundBorderSizeHover']) : '0') . "px;
+                                    --background-color-button-hover: " . (isset($element['buttonBackgroundColorHover']) ? esc_attr($element['buttonBackgroundColorHover']) : '#ffffff') . ";
+                                    --color-button-hover: " . (isset($element['buttonColorHover']) ? esc_attr($element['buttonColorHover']) : '#000000') . ";
+                                    opacity: " . (isset($element['opacityButton']) ? esc_attr($element['opacityButton']) : '1') . ";
+                                    box-shadow: " . (isset($element['boxShadowX']) ? esc_attr($element['boxShadowX']) : '0') . "px " . 
+                                                (isset($element['boxShadowY']) ? esc_attr($element['boxShadowY']) : '0') . "px " . 
+                                                (isset($element['boxShadowBlur']) ? esc_attr($element['boxShadowBlur']) : '0') . "px " . 
+                                                (isset($element['boxShadowSpread']) ? esc_attr($element['boxShadowSpread']) : '0') . "px " . 
+                                                (isset($element['colorShadow']) ? esc_attr($element['colorShadow']) : '#000000') . ";
+                                    --opacity-button-hover: " . (isset($element['opacityHover']) ? esc_attr($element['opacityHover']) : '1') . ";
+                                     --delay-hide-seconds-button: " . (isset($element['delayTransition'])? esc_attr($element['delayTransition']) : '0') . "s;
+                                     " . (!empty($element['icon']) ? "display: flex; align-items: " . esc_attr($element['icoAligItemButton']) . "; gap: " . esc_attr($element['gapIcon']) . "px;" : "") . "
+                                ";
+
+                                $buttonContentStyle3 = "
+                                   text-align: " . (isset($element['buttonAlign']) ? esc_attr($element['buttonAlign']) : 'left') . ";
+                                    width: " . (isset($element['widthButton']) && $element['widthButton'] === 'custom' 
+                                                ? esc_attr($element['widthCustomButton']) . '%' 
+                                                : esc_attr($element['widthButton'])) . ";
+                                    transform: rotate(" . (isset($element['rotateButton']) ? esc_attr($element['rotateButton']) : '0') . "deg);
+                                    --duration-effect-button: " . (isset($element['durationEffectButton']) ? esc_attr($element['durationEffectButton']) : '0') . "s;
+                                    --delay-effect-button: " . (isset($element['delayEffectButton']) ? esc_attr($element['delayEffectButton']) : '0') . "s;
+                                    --interation-button: " . (isset($element['interationButton']) ? esc_attr($element['interationButton']) : 'forwards') . ";
+                                    --rotate-button-hover: " . (isset($element['rotateHover']) ? esc_attr($element['rotateHover']) : '0') . "deg;
+                                    transition: transform " . (isset($element['durationEffectHover']) ? esc_attr($element['durationEffectHover']) : '0') . "s ease;
+                                    margin: " . (isset($element['marginButton']['top']) ? esc_attr($element['marginButton']['top']) : '0') . " " . 
+                                            (isset($element['marginButton']['right']) ? esc_attr($element['marginButton']['right']) : '0') . " " . 
+                                            (isset($element['marginButton']['bottom']) ? esc_attr($element['marginButton']['bottom']) : '0') . " " . 
+                                            (isset($element['marginButton']['left']) ? esc_attr($element['marginButton']['left']) : '0') . ";
+                                ";
+
+                                switch ($element['buttonType']) {
+                                    case 'type1':
+                                        ?>
+                                            <?php if ($slide['developerMode']) : ?>         
+                                            <div class="content-button-slide content-button-absolute"
+                                                    style="
+                                                        transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
+                                                        position: absolute;
+                                                        --delay-hide-seconds-button: <?php echo esc_attr($element['delayTransition'] );?>s;
+                                                    "
+                                                    data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                                                    data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                                                    data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                                                    data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                                                    data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                                                    data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
+                                                     data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                                    data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                                    
+                                            >
+                                            <?php endif; ?>
+                                        <span 
+                                            <?php if ($element['buttonLink'] !== 'none') : ?>
+                                                onclick="<?php echo $onclick; ?>"
+                                            <?php endif; ?> 
+                                            class="content-button-slide scroll-btn <?php echo esc_attr($element['animationButton']);?> <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>" 
+                                            style="<?php echo esc_attr($buttonStyle); ?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($element['parallaxButton']); ?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($element['parallaxButtonY']); ?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxButtonScale']); ?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxButtonDuration']); ?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxButtonOpacity']); ?>"
+                                            data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                             data-animation-button="<?php echo esc_attr($element['animationButton']); ?>"
+                                        >
+                                            <span class="mouse" style="<?php echo esc_attr($mouseStyles); ?>">
+                                                <span></span>
+                                            </span>
+                                        </span>
+                                        <?php if ($slide['developerMode']) : ?>  
+                                            </div>
+                                            <?php endif; ?>
+                                        <?php
+                                        break;
+                                    case 'type2':
+                                        ?>
+                                         <?php if ($slide['developerMode']) : ?>        
+                                        <div class="content-button-slide content-button-absolute"
+                                                style="
+                                                    transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
+                                                    position: absolute;
+                                                    --delay-hide-seconds-button: <?php echo esc_attr($element['delayTransition'] );?>s;
+                                                "
+                                                data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                                                data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                                                data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                                                data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                                                data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                                                data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
+                                                data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                                data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                        >
+                                        <?php endif; ?>
+                                        <span 
+                                            <?php if ($element['buttonLink'] !== 'none') : ?>
+                                                onclick="<?php echo $onclick; ?>"
+                                            <?php endif; ?> 
+                                            class="content-button-slide scroll-btn <?php echo esc_attr($element['animationButton']);?> <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>" 
+                                            style="<?php echo esc_attr($buttonStyle); ?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($element['parallaxButton']); ?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($element['parallaxButtonY']); ?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxButtonScale']); ?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxButtonDuration']); ?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxButtonOpacity']); ?>"
+                                             data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                             data-animation-button="<?php echo esc_attr($element['animationButton']); ?>"
+                                        >
+                                            <span class="mouse" style="<?php echo esc_attr($mouseStyles); ?>">
+                                                <span></span>
+                                            </span>
+                                        </span>
+                                        <?php if ($slide['developerMode']) : ?>  
+                                            </div>
+                                            <?php endif; ?>
+                                        <?php
+                                        break;
+                                    case 'type3':
+                                    case 'type4':
+                                    case 'type5':
+                                    case 'type6':
+                                    case 'type7':
+                                    case 'type8':
+
+                                        $link_url = '#';
+                                        $linkTargetButton = '_self';
+                                        $rel_div = '';
+
+                                        if ($element['buttonLink'] !== 'none') {
+                                            // Prepara l'attributo href se buttonLink è diverso da 'none'
+                                            if ($element['buttonLink'] === 'link' && !empty($element['linkUrlButton'])) {
+                                                $link_url = esc_url($element['linkUrlButton']);
+                                                if (!empty($element['linkTargetButton'])) {
+                                                    $linkTargetButton = esc_attr($element['linkTargetButton']);
+                                                }
+                                                if ($element['linkRelButton'] === 'nofollow') {
+                                                    $rel_div = 'nofollow';
+                                                }
+                                            } elseif ($element['buttonLink'] === 'scroll-below') {
+                                                $link_url = '#scroll-below';
+                                            } elseif ($element['buttonLink'] === 'scroll-to-id' && !empty($element['scrollToIdButton'])) {
+                                                $scroll_id = esc_attr($element['scrollToIdButton']);
+                                                $link_url = "#{$scroll_id}";
+                                            }
+                                        }
+                                        ?>
+                                         <?php if ($slide['developerMode']) : ?>       
+                                               <div class="content-button-slide content-button-absolute"
+                                                style="
+                                                    transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
+                                                    position: absolute;
+                                                    --delay-hide-seconds-button: <?php echo esc_attr($element['delayTransition'] );?>s;
+                                                "
+                                                data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                                                data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                                                data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                                                data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                                                data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                                                data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
+                                                data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                                data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                        >
+                                        <?php endif; ?>                           
+                                        <div class=" button-slider <?php echo esc_attr($element['animationButton']);?> <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>"
+                                            style="<?php echo esc_attr($buttonContentStyle3); ?>"
+                                            data-swiper-parallax-x="<?php echo esc_attr($element['parallaxButton']);?>"
+                                            data-swiper-parallax-y="<?php echo esc_attr($element['parallaxButtonY']);?>"
+                                            data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxButtonScale']);?>"
+                                            data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxButtonDuration']);?>"
+                                            data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxButtonOpacity']);?>"
+                                            data-font-family="<?php echo esc_attr($element['fontFamilyButton']); ?>" 
+                                            data-animation-button="<?php echo esc_attr($element['animationButton']); ?>"
+                                          
+                                        >
+                                        <a class="content-button-slide <?php echo esc_attr($element['iconShowHover']);?> <?php echo esc_attr($element['iconHideShowHover']);?>" href="<?php echo $link_url; ?>" 
+                                        style="<?php echo esc_attr($buttonStyle3); ?>"
+                                          data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                            data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
+                                            
+                                        target="<?php echo $linkTargetButton; ?>"
+                                        rel="<?php echo $rel_div; ?>"
+                                        <?php if ($element['buttonLink'] === 'scroll-below' || ($element['buttonLink'] === 'scroll-to-id' && !empty($element['scrollToIdButton']))) : ?>
+                                            onclick="event.preventDefault(); <?php echo $element['buttonLink'] === 'scroll-below' ? "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });" : "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });"; ?>"
+                                        <?php endif; ?>
+                                        >
+                                            <?php if (!empty($element['icon']) && $element['icoPositionButton'] === 'before') : ?>
+                                                <div class="content-icon-button" style="transform:rotate(<?php echo esc_attr( $element['rotateIcon'] )?>deg);--rotate-icon-button-hover:<?php echo esc_attr( $element['rotateIconHover'] )?>deg;"><i class="<?php echo esc_attr($element['icon']); ?> <?php echo esc_attr($element['iconAnimation']); ?> <?php echo esc_attr($element['animationHoverIcon']); ?>" style="color:<?php echo esc_attr( $element['iconColor'] )?>;font-size:<?php echo esc_attr( $element['sizeIcon'] )?>px;--fa-animation-duration:<?php echo esc_attr( $element['iconAnimationDuration'] )?>s;--color-icon-button-hover:<?php echo esc_attr( $element['iconColorHover'] )?>;--translate-hover-icon-button:<?php echo esc_attr( $element['translateEffectHoverIcon'] )?>px;--transition-hover-icon-button:<?php echo esc_attr( $element['durationEffectHoverIcon'] )?>s;"></i></div>
+                                            <?php endif; ?>
+                                            <?php echo esc_html($element['button']); ?>
+                                            <?php if (!empty($element['icon']) && $element['icoPositionButton'] === 'after') : ?>
+                                                <div class="content-icon-button" style="transform:rotate(<?php echo esc_attr( $element['rotateIcon'] )?>deg);--rotate-icon-button-hover:<?php echo esc_attr( $element['rotateIconHover'] )?>deg;"><i class="<?php echo esc_attr($element['icon']); ?> <?php echo esc_attr($element['iconAnimation']); ?> <?php echo esc_attr($element['animationHoverIcon']); ?>" style="color:<?php echo esc_attr( $element['iconColor'] )?>;font-size:<?php echo esc_attr( $element['sizeIcon'] )?>px;--fa-animation-duration:<?php echo esc_attr( $element['iconAnimationDuration'] )?>s;--color-icon-button-hover:<?php echo esc_attr( $element['iconColorHover'] )?>;--translate-hover-icon-button:<?php echo esc_attr( $element['translateEffectHoverIcon'] )?>px;--transition-hover-icon-button:<?php echo esc_attr( $element['durationEffectHoverIcon'] )?>s;"></i></div>
+                                            <?php endif; ?>
+
+
+                                        </a>
+                                        </div>
+                                        <?php if ($slide['developerMode']) : ?>  
+                                            </div>
+                                            <?php endif; ?>
+                                        <?php
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            endif;
+                            ?>
+
+
+                            <?php if ($element['type'] === 'icon'): 
+                               $desktopClassIcon = $element['enableDesktopTitle'] ? 'desktop-icon-visible' : 'desktop-icon-hidden';
+                               $tabletClassIcon = $element['enableTabletTitle'] ? 'tablet-icon-visible' : 'tablet-icon-hidden';
+                               $mobileClassIcon = $element['enableMobileTitle'] ? 'mobile-icon-visible' : 'mobile-icon-hidden';
+                               if ($element['textLink'] !== 'none') {
+                                // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                if ($element['textLink'] === 'link' && !empty($element['linkUrl'])) {
+                                    $link_url = esc_url($element['linkUrl']);
+                                    if (!empty($element['linkTarget'])) {
+                                        $linkTarget = esc_attr($element['linkTarget']);
+                                    }
+                                    if ($element['linkRel'] === 'nofollow') {
+                                        $rel_div = 'nofollow';
+                                    }
+                                    $onclick = "window.open('{$link_url}', '{$linkTarget}', 'rel={$rel_div}');";
+                                } elseif ($element['textLink'] === 'scroll-below') {
+                                    $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                } elseif ($element['textLink'] === 'scroll-to-id' && !empty($element['scrollToId'])) {
+                                    $scroll_id = esc_attr($element['scrollToId']);
+                                    $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                }
+                            }
+                               // Styles Icon
+                                    $stylesIcon = "
+                                    font-size: " . esc_attr($element['fontSize']) . "px;
+                                    --font-size-tablet-icon: " . esc_attr($element['fontSizeTablet']) . "px;
+                                    --font-size-mobile-icon: " . esc_attr($element['fontSizeMobile']) . "px;
+                                    color: " . esc_attr($element['textColor']) . ";
+                                    background-color: " . esc_attr($element['backgroundColor']) . ";
+                                    --color-hover-icon: " . esc_attr($element['textColorHover']) . ";
+                                    margin: " . esc_attr($element['marginTitle']['top']) . " " . esc_attr($element['marginTitle']['right']) . " " . esc_attr($element['marginTitle']['bottom']) . " " . esc_attr($element['marginTitle']['left']) . ";
+                                    --delay-effect-icon: " . esc_attr($element['delayEffect']) . "s;
+                                    padding: " . esc_attr($element['paddingTitle']['top']) . " " . esc_attr($element['paddingTitle']['right']) . " " . esc_attr($element['paddingTitle']['bottom']) . " " . esc_attr($element['paddingTitle']['left']) . ";
+                                    border-width: " . esc_attr($element['backgroundBorderSize']) . "px;
+                                    border-color: " . esc_attr($element['backgroundBorderColor']) . ";
+                                    border-radius: " . esc_attr($element['backgroundBorderRadius']) . "px;
+                                    --border-color-hover-icon: " . esc_attr($element['backgroundBorderColorHover']) . ";
+                                    --opacity-hover-icon: " . esc_attr($element['opacityHover']) . ";
+                                    border-style: " . esc_attr($element['borderStyle']) . ";
+                                    --border-style-hover-icon: " . esc_attr($element['borderStyleHover']) . ";
+                                    --border-width-hover-icon: " . esc_attr($element['backgroundBorderSizeHover']) . "px;
+                                    --translate-hover-icon: " . esc_attr($element['translateEffectHover']) . "px;
+                                    --color-effect-hover-icon: " . esc_attr($element['effectHoverColorHover']) . ";
+                                    box-shadow: " . esc_attr($element['boxShadowX']) . "px " . esc_attr($element['boxShadowY']) . "px " . esc_attr($element['boxShadowBlur']) . "px " . esc_attr($element['boxShadowSpread']) . "px " . esc_attr($element['colorShadow']) . ";
+                                    position: relative;
+                                    opacity: " . esc_attr($element['opacity']) . ";
+                                    transform: rotate(" . esc_attr($element['rotate']) . "deg);
+                                    --rotate-hover-icon: " . esc_attr($element['rotateHover']) . "deg;
+                                    --fa-animation-duration: " . esc_attr($element['iconAnimationDuration']) . "s;
+                                     " . ($element['textLink'] !== 'none' ? 'cursor: pointer;' : '') . "
+                                ";
+
+                                // Styles for the container div
+                                $stylesDiv = "
+                                    --duration-effect-icon: " . esc_attr($element['durationEffect']) . "s;
+                                    --delay-effect-icon: " . esc_attr($element['delayEffect']) . "s;
+                                    --transition-hover-icon: " . esc_attr($element['durationEffectHover']) . "s;
+                                    width: " . ($element['widthTitle'] === 'custom' ? esc_attr($element['widthCustomTitle']) . "%" : esc_attr($element['widthTitle'])) . ";
+                                    --interation-icon: " . esc_attr($element['interation']) . ";
+                                    --delay-hide-seconds-icon: " . esc_attr($element['delayTransition']) . "s;
+                                    text-align: " . esc_attr($element['textAlign']) . ";
+                                ";
+                                // Class names for the container div
+                                    $classNamesDiv = "content-icon " . esc_attr($element['animation']) . " " . esc_attr($element['hideTitle']);
+
+                                    // Class names for the icon
+                                    $classNamesIcon = "slide-icon " . esc_attr($element['icon']) . " " . esc_attr($element['iconAnimation']) . " " . esc_attr($element['animationHover']);
+                                ?>
+                                 <?php if ($slide['developerMode']) : ?>  
+                                <div class="content-content-icon-absolute <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>"
+                                        data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                                        data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
+                                        data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
+                                        data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
+                                        data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
+                                        data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>" 
+                                        style=" transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px); position: absolute; z-index:<?php echo esc_attr( $element['zIndexIcon'] )?>;"
+                                >
+                                <?php endif; ?> 
+                                <div <?php if ($element['textLink'] !== 'none') : ?> onclick="<?php echo $onclick; ?>" <?php endif; ?>  style="<?php echo $stylesDiv; ?>" class="<?php echo $classNamesDiv; ?> <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>" data-animation-icon="<?php echo esc_attr($element['animation']); ?>">
+                                    <i 
+                                        class="<?php echo $classNamesIcon; ?>" 
+                                        style="<?php echo $stylesIcon; ?>"
+                                        data-swiper-parallax-x="<?php echo esc_attr($element['parallaxTitle']); ?>"
+                                        data-swiper-parallax-y="<?php echo esc_attr($element['parallaxTitleY']); ?>"
+                                        data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxTitleScale']); ?>"
+                                        data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>"
+                                        data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>"
+                                    >
+                                    </i>
+                                </div>
+                                <?php if ($slide['developerMode']) : ?>  
+                                </div>
+                                <?php endif; ?>
+                            <?php endif;
+                            ?>
+
 
                         <?php if ($element['type'] === 'image' && !empty($element['url'])): 
                             $marginTop = isset($element['marginImage']['top']) ? esc_attr($element['marginImage']['top']) : '0px';
@@ -1155,7 +2008,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                         --translate-hover-image: " . esc_attr($element['translateEffectHoverImage']) . "px;
                                         --color-effect-hover-image: " . esc_attr($element['effectHoverColorHoverImage']) . ";
                                        margin: " . $margin . ";
-                                       
+                                        --delay-effect-image: " . esc_attr($element['delayEffectImage']) . "s; 
                                        --interation-image: " . esc_attr($element['interationImage']) . ";
                                     "; // Stile di base per 'auto'
 
@@ -1199,28 +2052,36 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                 }
                             }
                         ?>
-                       
-                       <div 
-                           <?php if ($element['imageLink'] !== 'none') : ?>
-                                    onclick="<?php echo $onclick; ?>"
-                                <?php endif; ?> 
-                                style="transform:rotate(<?php echo esc_attr($element['rotateImage'])?>deg);opacity:<?php echo esc_attr($element['opacityImage'])?>; --duration-effect-moving-image:<?php echo esc_attr($element['durationEffectImageMoving'])?>s;--translate-effect-moving-image:<?php echo esc_attr( $element['translateEffectImageMoving'] ) ?>px;
-                                        transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px);
-                                        --duration-effect-moving-image-hover:<?php echo esc_attr( $element['durationEffectImageMovingHover'] )?>s;
-                                --translate-effect-moving-image-hover:<?php echo esc_attr( $element['translateEffectImageMovingHover'] )?>px;
-                                --rotate-hover-image: <?php echo esc_attr( $element['rotateHoverImage'] )?>deg;
-                                --transition-hover-image: <?php echo esc_attr( $element['durationEffectHoverImage'] )?>s;
-                                 <?php if ($element['imageLink'] !== 'none') : ?>
-                                        cursor: pointer;
-                                    <?php endif; ?>
-                                width:<?php echo esc_attr( $element['widthImageContent'] )?>;" 
-                                class="content-img-first <?php echo esc_attr( $element['animationImageMoving'])?> <?php echo esc_attr( $element['animationImageMovingHover'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>"
-                               data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
+                     <?php if ($slide['developerMode']) : ?>  
+                       <div class="content-content-image-first-absolute"
+                       data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
                             data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
                             data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
                             data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
                             data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
                             data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>" 
+                            style=" transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px); position: absolute; z-index:<?php echo esc_attr( $element['zIndexImage'] )?>;"
+                       >
+                       <?php endif; ?> 
+                       <div 
+                           <?php if ($element['imageLink'] !== 'none') : ?>
+                                    onclick="<?php echo $onclick; ?>"
+                                <?php endif; ?> 
+                                style="transform:rotate(<?php echo esc_attr($element['rotateImage'])?>deg);
+                                opacity:<?php echo esc_attr($element['opacityImage'])?>; 
+                                --duration-effect-moving-image:<?php echo esc_attr($element['durationEffectImageMoving'])?>s;
+                                --translate-effect-moving-image:<?php echo esc_attr( $element['translateEffectImageMoving'] ) ?>px;
+                                --rotate-hover-image: <?php echo esc_attr( $element['rotateHoverImage'] )?>deg;
+                                --transition-hover-image: <?php echo esc_attr( $element['durationEffectHoverImage'] )?>s;
+                                 <?php if ($element['imageLink'] !== 'none') : ?>
+                                        cursor: pointer;
+                                    <?php endif; ?>
+                                width:<?php echo esc_attr( $element['widthImageContent'] )?>;
+                                 --delay-hide-seconds-image: <?php echo esc_attr($element['delayTransition']);?>s;
+                                " 
+                                class="content-img-first <?php echo esc_attr( $element['animationImageMoving'])?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>"
+                                data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
+                                data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
                                 >
                             <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-first-slide image-with-mask <?php echo esc_attr( $element['blobMask'])?> <?php echo esc_attr( $element['spikeMask'])?> <?php echo esc_attr( $element['spikeMaskRight'])?> <?php echo esc_attr( $element['animationImage'])?> <?php echo esc_attr( $element['imageFilter'])?> <?php echo esc_attr( $element['animationHoverImage'])?>" 
                                  style="<?php echo $style; ?>" 
@@ -1231,7 +2092,9 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                  data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxImageOpacity']); ?>"   
                                  data-animation-image="<?php echo esc_attr($element['animationImage']); ?>"/>
                         </div>
-                       
+                        <?php if ($slide['developerMode']) : ?>  
+                        </div>
+                        <?php endif; ?>
                             <?php endif; ?>
 
                     <?php endforeach; ?>

@@ -41,6 +41,17 @@ const ImageControls = ({
     setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
   };
 
+  // nascondi l'immagine in editor
+  const [hideImage, setHideImage] = useState(element.hideImage || "");
+
+  const toggleHideImage = () => {
+    const newState = hideImage === "hide" ? "" : "hide";
+    setHideImage(newState);
+  
+    element.hideImage = newState;
+    setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImages, setSelectedImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -120,6 +131,58 @@ const ImageControls = ({
             elements: slide.elements.map((element, i) =>
               element.type === "image" && i === index
                 ? { ...element, fit: newFit }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update dealy
+  const updateDelayHide = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, delayHide: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Update dealy seconds
+   const updateDelaySeconds = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, delaySeconds: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+
+   // Update dealy transition
+   const updateDelayTransition = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, delayTransition: value }
                 : element
             ),
           }
@@ -885,35 +948,80 @@ const ImageControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Z index
+  const updateZInedxImage = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "image" && i === index
+                ? { ...element, zIndexImage: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Delay effect
+    const updateDelayEffectImage = (slideId, index, newDelayEffect) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "image" && i === index
+                  ? { ...element, delayEffectImage: newDelayEffect }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Open panel
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
+  
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
       <div className="title-block-added">
         <div className="title-element">
-          <Button
+        {element.url ? (
+        <img src={ element.url}  style={{width:'30px',height:'30px',objectFit:'cover',borderRadius:'8px',border:'1px solid var(--background-color)'}}/>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+        )}
+          <h2>{__("Image", "slider")}</h2>
+        </div>
+        <div className="title-element">
+        <Button
             onClick={() => removeSlideImage(slide.id, elementIndex)}
             isDestructive
             icon={trash}
             label={__("Remove Image", "cocoblocks")}
             className="button-remove-element"
-            style={{
-              position: "absolute",
-              right: "80px",
-              top: "10px",
-            }}
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e8eaed"
-          >
-            <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
-          </svg>
-          <h2>{__("Image", "slider")}</h2>
-        </div>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+        <button onClick={handleToggle} className="button-open-control-element">
+          {isOpen ? (
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          )}
+        </button>
+      </Tooltip>
+          </div>
       </div>
+      {isOpen && (
+        <>
       <SectionSelectorImage onSectionChange={setActiveSectionImage} />
       <div className="content-img-upload">
         <div className="content-label-image">
@@ -1686,6 +1794,34 @@ const ImageControls = ({
               />
             </div>
           </div>
+          {slide.developerMode && (
+            <>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("LEVEL", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-33 0-56.5-23.5T400-160v-320q0-33 23.5-56.5T480-560h320q33 0 56.5 23.5T880-480v320q0 33-23.5 56.5T800-80H480Zm0-80h320v-320H480v320Zm-240-80v-400q0-33 23.5-56.5T320-720h400v80H320v400h-80ZM80-400v-400q0-33 23.5-56.5T160-880h400v80H160v400H80Zm400 240v-320 320Z"/></svg>
+                    {__("Z-index", "cocoblocks")}
+                  </>
+                }
+                value={element.zIndexImage}
+                onChange={(value) =>
+                  updateZInedxImage(slide.id, elementIndex, value)
+                }
+                min={0}
+                max={999}
+                step={1}
+              />
+            </div>
+          </div>
+          </>
+          )}
           <BoxShadowControlImage
             slide={slide}
             slides={slides}
@@ -1804,6 +1940,43 @@ const ImageControls = ({
                     step={0.1}
                   />
                 </div>
+                {![
+                "bounce-effect-image",
+                "bounce-left-effect-image",
+                "bounce-right-effect-image",
+                "bounce-top-effect-image",
+                "bounce-bottom-effect-image",
+                "rotate-continuous-image",
+                "wiggle-image",
+                "swing-image",
+                "rubber-band-image",
+              ].includes(element.animationImage) && (
+                <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                      >
+                        <path d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z" />
+                      </svg>
+                      {__("Delay", "cocoblocks")}
+                    </>
+                  }
+                  value={element.delayEffectImage}
+                  onChange={(newDelayEffect) =>
+                    updateDelayEffectImage(slide.id, elementIndex, newDelayEffect)
+                  }
+                  min={0}
+                  max={10}
+                  step={0.1}
+                />
+              </div>
+            )}
               </>
             )}
             {[
@@ -2310,6 +2483,77 @@ const ImageControls = ({
               />
             </div>
           </div>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Hide", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+             <div className="custom-select">
+              <ToggleControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></svg>
+                    {__("Delay hide", "cocoblocks")}
+                  </>
+                }
+                checked={element.delayHide}
+                onChange={(value) =>
+                  updateDelayHide(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+            {element.delayHide && (
+            <>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-270h160q33 0 56.5-23.5T600-350v-50q0-33-23.5-56.5T520-480h-80v-50h160v-80H360v210h160v50H360v80Zm0-570v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Seconds", "cocoblocks")}
+                  </>
+                }
+                value={element.delaySeconds}
+                onChange={(value) =>
+                  updateDelaySeconds(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={20}
+                step={1}
+              />
+            </div>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Transition", "cocoblocks")}
+                  </>
+                }
+                value={element.delayTransition}
+                onChange={(value) =>
+                  updateDelayTransition(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={3}
+                step={.1}
+              />
+            </div>
+            </>
+            )}
+          </div>
         </>
       )}
       {activeSectionImage === "hover" && (
@@ -2693,7 +2937,7 @@ const ImageControls = ({
                         newParallaxImageOpacity
                       )
                     }
-                    min={0}
+                    min={0.1}
                     max={1}
                     step={0.1}
                   />
@@ -2730,7 +2974,39 @@ const ImageControls = ({
               </div>
             </>
           )}
+       
+       </>
+      )}
+        {activeSectionImage === "hide-image-editor" && (
+        <>
+        <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Hide in editor", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select button-hide-element" style={{textAlign:'center'}}>
+        <Button
+          variant={hideImage === "hide"}
+          onClick={toggleHideImage}
+          icon={
+            hideImage === "hide" ? (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            ) : (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+            )
+          }
+        />
+        </div>
+        </div>        
         </>
+      )}
+       </>
       )}
     </div>
   );

@@ -18,6 +18,11 @@
 		"@wordpress/scripts": "^27.9.0"
 	},
 	"dependencies": {
+		"@fortawesome/fontawesome-free": "^6.6.0",
+		"@fortawesome/fontawesome-svg-core": "^6.6.0",
+		"@fortawesome/free-brands-svg-icons": "^6.6.0",
+		"@fortawesome/free-solid-svg-icons": "^6.6.0",
+		"@fortawesome/react-fontawesome": "^0.2.2",
 		"@wordpress/data": "^10.2.0",
 		"@wordpress/icons": "^10.3.0",
 		"react-beautiful-dnd": "^13.1.1",

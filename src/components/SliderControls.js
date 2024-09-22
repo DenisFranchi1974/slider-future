@@ -6,6 +6,8 @@ import {
   RangeControl,
   ToggleControl,
   Button,
+  CheckboxControl, 
+
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { useEffect, useState } from "@wordpress/element";
@@ -49,7 +51,41 @@ const SliderControls = ({ attributes, setAttributes }) => {
     backgroundColorBlockDefault,
     textColorDefault,
     innerTextColorDefault,
+    mouseEffect,
+    colorEffectStart,
+    colorEffectEnd,
+    colorEffectMiddle,
+    firstColorLiquid,
+    secondColorLiquid,
+    thirdColorLiquid,
+    imgSelected, 
+    h1Selected, 
+    h2Selected, 
+    h3Selected, 
+    h4Selected,
+    h5Selected, 
+    h6Selected,  
+    buttonSelected, 
+    spanSelected, 
+    pSelected,
+    transitionParalaxMouse
   } = attributes;
+
+   // Funzione per gestire il cambiamento del checkbox "Select all"
+   const handleSelectAllChange = (isChecked) => {
+    setAttributes({
+        imgSelected: isChecked,
+        h1Selected: isChecked,
+        h2Selected: isChecked,
+        h3Selected: isChecked,
+        h4Selected: isChecked,
+        h5Selected: isChecked,
+        h6Selected: isChecked,
+        buttonSelected: isChecked,
+        spanSelected: isChecked,
+        pSelected: isChecked,
+    });
+};
 
   const [showLoopNotice, setShowLoopNotice] = useState(false);
   const [showGridNotice, setShowGridNotice] = useState(false);
@@ -268,7 +304,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                 height="24px"
                 viewBox="0 -960 960 960"
                 width="24px"
-                fill="#e8eaed"
+                fill="var(--light-color)"
               >
                 <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
               </svg>
@@ -290,7 +326,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M520-320h200v-320H520v320Zm-280 0h200v-320H240v320Zm-80 160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-560H160v480h640v-480Zm-640 0v480-480Z" />
                       </svg>
@@ -338,7 +374,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z" />
                       </svg>
@@ -360,7 +396,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M160-240h160v-480H160v480Zm240 0h160v-480H400v480Zm240 0h160v-480H640v480Zm-480 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z" />
                       </svg>
@@ -403,7 +439,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M760-200v-120H200v120h560Zm0-200v-160H200v160h560Zm0-240v-120H200v120h560ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z" />
                       </svg>
@@ -456,7 +492,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                 height="24px"
                 viewBox="0 -960 960 960"
                 width="24px"
-                fill="#e8eaed"
+                fill="var(--light-color)"
               >
                 <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
               </svg>
@@ -478,7 +514,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M520-320h200v-320H520v320Zm-280 0h200v-320H240v320Zm-80 160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-560H160v480h640v-480Zm-640 0v480-480Z" />
                       </svg>
@@ -523,7 +559,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z" />
                       </svg>
@@ -545,7 +581,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M160-240h160v-480H160v480Zm240 0h160v-480H400v480Zm240 0h160v-480H640v480Zm-480 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z" />
                       </svg>
@@ -580,7 +616,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                 height="24px"
                 viewBox="0 -960 960 960"
                 width="24px"
-                fill="#e8eaed"
+                fill="var(--light-color)"
               >
                 <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
               </svg>
@@ -602,7 +638,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M520-320h200v-320H520v320Zm-280 0h200v-320H240v320Zm-80 160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-560H160v480h640v-480Zm-640 0v480-480Z" />
                       </svg>
@@ -647,7 +683,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M800-80v-200H680v-400h120v-200h80v800h-80ZM80-80v-800h80v200h120v400H160v200H80Z" />
                       </svg>
@@ -669,7 +705,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M160-240h160v-480H160v480Zm240 0h160v-480H400v480Zm240 0h160v-480H640v480Zm-480 80q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z" />
                       </svg>
@@ -785,7 +821,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M440-80v-800h80v800h-80Zm160-200v-400h120v400H600Zm-360 0v-400h120v400H240Z" />
                       </svg>
@@ -837,7 +873,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
                       </svg>
@@ -875,7 +911,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M280-240v-480h80v480h-80ZM440-80v-800h80v800h-80ZM120-400v-160h80v160h-80Zm480 160v-480h80v480h-80Zm160-160v-160h80v160h-80Z" />
                       </svg>
@@ -1095,7 +1131,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       height="24px"
                       viewBox="0 -960 960 960"
                       width="24px"
-                      fill="#e8eaed"
+                      fill="var(--light-color)"
                     >
                       <path d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z" />
                     </svg>
@@ -1111,7 +1147,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
                       </svg>
@@ -1153,7 +1189,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 -960 960 960"
-                      fill="#e8eaed"
+                      fill="var(--light-color)"
                       style={{
                         marginRight: "3px",
                         height: "16px",
@@ -1174,7 +1210,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="18px"
                         viewBox="0 -960 960 960"
                         width="18px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                         style={{ marginRight: "2px" }}
                       >
                         <path d="M144-144v-672h72v672h-72Zm150 0v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-300v-72h72v72h-72Zm0-300v-72h72v72h-72Zm150 600v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Z" />
@@ -1202,7 +1238,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="18px"
                         viewBox="0 -960 960 960"
                         width="18px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                         style={{ marginRight: "2px" }}
                       >
                         <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
@@ -1237,7 +1273,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="18px"
                         viewBox="0 -960 960 960"
                         width="18px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                         style={{ marginRight: "2px" }}
                       >
                         <path d="M192-744v-72h576v72H192Zm252 600v-390L339-429l-51-51 192-192 192 192-51 51-105-105v390h-72Z" />
@@ -1265,7 +1301,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="18px"
                         viewBox="0 -960 960 960"
                         width="18px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                         style={{
                           marginRight: "2px",
                           transform: "rotate(90deg)",
@@ -1325,7 +1361,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       height="24px"
                       viewBox="0 -960 960 960"
                       width="24px"
-                      fill="#e8eaed"
+                      fill="var(--light-color)"
                       style={{
                         marginRight: "3px",
                         height: "16px",
@@ -1352,7 +1388,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       height="24px"
                       viewBox="0 -960 960 960"
                       width="24px"
-                      fill="#e8eaed"
+                      fill="var(--light-color)"
                       style={{
                         marginRight: "3px",
                         height: "16px",
@@ -1379,7 +1415,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       height="24px"
                       viewBox="0 -960 960 960"
                       width="24px"
-                      fill="#e8eaed"
+                      fill="var(--light-color)"
                       style={{
                         marginRight: "3px",
                         height: "16px",
@@ -1406,7 +1442,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       height="24px"
                       viewBox="0 -960 960 960"
                       width="24px"
-                      fill="#e8eaed"
+                      fill="var(--light-color)"
                       style={{
                         marginRight: "3px",
                         height: "16px",
@@ -1443,7 +1479,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                         height="24px"
                         viewBox="0 -960 960 960"
                         width="24px"
-                        fill="#e8eaed"
+                        fill="var(--light-color)"
                       >
                         <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
                       </svg>
@@ -1484,6 +1520,393 @@ const SliderControls = ({ attributes, setAttributes }) => {
             </div>
           </div>
         </>
+      )}
+       {activeSection === "mouse-effect" && (
+        <>
+          <div className="content-title-custom-panel">
+            <h2 className="title-custom-panel">
+              {__("Mouse Effect", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="cocoblocks-panel content-section-custom-panel">
+            <div className="content-section-panel">
+              <div className="custom-select select-control-label-right">
+                <SelectControl
+                  label={
+                    <>
+                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--light-color)"><path d="M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"/></svg>
+                      {__("Choose the effect", "cocoblocks")}
+                    </>
+                  }
+                  value={mouseEffect}
+                  onChange={(value) => setAttributes({ mouseEffect: value })}
+                  options={[
+                    { label: __("None", "cocoblocks"), value: "none" },
+                    { label: __("Particle", "cocoblocks"), value: "particle" },
+                    {
+                      label: __("Smoke", "cocoblocks"),
+                      value: "smoke",
+                    },
+                    {
+                      label: __("Parallax", "cocoblocks"),
+                      value: "parallax",
+                    },
+                    {
+                      label: __("Liquid", "cocoblocks"),
+                      value: "liquid",
+                    },
+                  ]}
+                />
+                </div>
+                {mouseEffect !== "none" && (
+                <p
+                    className="notice components-base-control__help"
+                    style={{
+                      borderRadius: "0",
+                      margin: "0",
+                    }}
+                  >
+                    {__(
+                      "This effect is only visible in the frontend!",
+                      "cocoblocks"
+                    )}
+                  </p>
+                )}
+                {(mouseEffect === "particle" || mouseEffect === "smoke") && ( 
+                  <>
+                 <div className="custom-select color">
+                <ColorOptionsPanel
+                  colorNormal={colorEffectStart}
+                  setColorNormal={(color) =>
+                    setAttributes({ colorEffectStart: color })
+                  }
+                  buttonTitle={__("Color Effect Start", "cocoblocks")}
+                  buttonIcon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="var(--light-color)"
+                      style={{
+                        marginRight: "3px",
+                        height: "16px",
+                        width: "16px",
+                        position: "relative",
+                        top: "3px",
+                      }}
+                    >
+                      <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z" />
+                    </svg>
+                  }
+                />
+              </div>
+              </>
+                )}
+              {mouseEffect === "particle"  && ( 
+              <>
+              <div className="custom-select color">
+                <ColorOptionsPanel
+                  colorNormal={colorEffectMiddle}
+                  setColorNormal={(color) =>
+                    setAttributes({ colorEffectMiddle: color })
+                  }
+                  buttonTitle={__("Color Effect Middle", "cocoblocks")}
+                  buttonIcon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="var(--light-color)"
+                      style={{
+                        marginRight: "3px",
+                        height: "16px",
+                        width: "16px",
+                        position: "relative",
+                        top: "3px",
+                      }}
+                    >
+                      <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z" />
+                    </svg>
+                  }
+                />
+              </div>
+              <div className="custom-select color">
+                <ColorOptionsPanel
+                  colorNormal={colorEffectEnd}
+                  setColorNormal={(color) =>
+                    setAttributes({ colorEffectEnd: color })
+                  }
+                  buttonTitle={__("Color Effect End", "cocoblocks")}
+                  buttonIcon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="var(--light-color)"
+                      style={{
+                        marginRight: "3px",
+                        height: "16px",
+                        width: "16px",
+                        position: "relative",
+                        top: "3px",
+                      }}
+                    >
+                      <path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z" />
+                    </svg>
+                  }
+                />
+              </div>
+              </>
+              )}
+              {mouseEffect === "liquid" && (
+                <>
+                 <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-190l358-358-58-56 58-56 76 76 124-124q5-5 12.5-8t15.5-3q8 0 15 3t13 8l94 94q5 6 8 13t3 15q0 8-3 15.5t-8 12.5L705-555l76 78-57 57-56-58-358 358H120Zm80-80h78l332-334-76-76-334 332v78Zm447-410 96-96-37-37-96 96 37 37Zm0 0-37-37 37 37Z"/></svg>
+                      {__("Adjust Hue (H)", "cocoblocks")}
+                    </>
+                  }
+                  value={firstColorLiquid}
+                  onChange={(value) =>
+                    setAttributes({
+                      firstColorLiquid: value,
+                    })
+                  }
+                  min={0}
+                  max={1}
+                  step={0.01}
+                />
+              </div>
+              <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"/></svg>
+                      {__("Adjust Saturation (S)", "cocoblocks")}
+                    </>
+                  }
+                  value={secondColorLiquid}
+                  onChange={(value) =>
+                    setAttributes({
+                      secondColorLiquid: value,
+                    })
+                  }
+                  min={0}
+                  max={1}
+                  step={0.01}
+                />
+              </div>
+              <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"/></svg>
+                      {__("Adjust Value (V)", "cocoblocks")}
+                    </>
+                  }
+                  value={thirdColorLiquid}
+                  onChange={(value) =>
+                    setAttributes({
+                      thirdColorLiquid: value,
+                    })
+                  }
+                  min={0.01}
+                  max={1}
+                  step={0.01}
+                />
+              </div>
+              <p
+                    className="notice components-base-control__help"
+                    style={{
+                      borderRadius: "0",
+                      margin: "0",
+                    }}
+                  >
+                    {__(
+                      "Due to the nature of the liquid effect, we use HSV (Hue, Saturation, Value) color model to provide more precise control over the colors. Please use the sliders to adjust the hue, saturation, and value for the effect.",
+                      "cocoblocks"
+                    )}
+                  </p>
+                  <div className="custom-select">
+                  <table
+                    style={{
+                      width: "100%",
+                      borderCollapse: "collapse",
+                      color: "var(--light-color)",
+                    }}
+                    className="table-hsv"
+                  >
+  <thead className="thead-hsv">
+    <tr>
+      <th style={{ border: "1px solid var(--light-color)", borderLeft:"none", padding: "5px" }}>
+        {__("Hue", "cocoblocks")}
+      </th>
+      <th style={{ border: "1px solid var(--light-color)", padding: "5px" }}>
+        {__("Saturation", "cocoblocks")}
+      </th>
+      <th style={{ border: "1px solid var(--light-color)", padding: "5px" }}>
+        {__("Value", "cocoblocks")}
+      </th>
+      <th style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none" }}>
+        {__("Color", "cocoblocks")}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>  {__("0", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(0, 100%, 50%)" }}>  {__("Red", "cocoblocks")}</td>
+    </tr>
+    <tr>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.083", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(30, 100%, 50%)" }}>{__("Orange", "cocoblocks")}</td>
+    </tr>
+    <tr>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.17", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(60, 100%, 50%)" }}>{__("Yellow", "cocoblocks")}</td>
+    </tr>
+    <tr>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.33", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(120, 100%, 50%)" }}>{__("Green", "cocoblocks")}</td>
+    </tr>
+    <tr>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.5", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(180, 100%, 50%)" }}>{__("Cyan", "cocoblocks")}</td>
+    </tr>
+    <tr>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.67", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(240, 100%, 50%)" }}>{__("Blue", "cocoblocks")}</td>
+    </tr>
+    <tr className="last-border-table-hsv">
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.83", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)",borderRight:"none", padding: "5px", backgroundColor: "hsl(300, 100%, 50%)" }}>{__("Magenta", "cocoblocks")}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</>
+              )}
+
+{mouseEffect === "parallax" && (
+  <>
+<div className="custom-select checkbox">
+              <div className="content-title-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-80q-58 0-109-22t-89-60q-38-38-60-89T80-360q0-81 42-148t110-102q20-39 49.5-68.5T350-728q33-68 101-110t149-42q58 0 109 22t89 60q38 38 60 89t22 109q0 85-42 150T728-350q-20 39-49.5 68.5T610-232q-35 68-102 110T360-80Zm0-80q33 0 63.5-10t56.5-30q-58 0-109-22t-89-60q-38-38-60-89t-22-109q-20 26-30 56.5T160-360q0 42 16 78t43 63q27 27 63 43t78 16Zm120-120q33 0 64.5-10t57.5-30q-59 0-110-22.5T403-403q-38-38-60.5-89T320-602q-20 26-30 57.5T280-480q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm120-120q18 0 34.5-3t33.5-9q22-60 6.5-115.5T621-621q-38-38-93.5-53.5T412-668q-6 17-9 33.5t-3 34.5q0 42 15.5 78t43.5 63q27 28 63 43.5t78 15.5Zm160-78q20-26 30-57.5t10-64.5q0-42-15.5-78T741-741q-27-28-63-43.5T600-800q-35 0-65.5 10T478-760q59 0 110 22.5t89 60.5q38 38 60.5 89T760-478Z"/></svg>
+                <h2>
+                  {__("Select elements to apply effect", "cocoblocks")}
+                  </h2>
+              </div>
+                              <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('Select all','cocoblock')}
+                    checked={imgSelected && h3Selected && h4Selected && buttonSelected && spanSelected && pSelected}
+                    onChange={handleSelectAllChange}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('Image','cocoblock')}
+                    checked={imgSelected}
+                    onChange={(isChecked) => setAttributes({ imgSelected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('H1','cocoblock')}
+                    checked={h1Selected}
+                    onChange={(isChecked) => setAttributes({ h1Selected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('H2','cocoblock')}
+                    checked={h2Selected}
+                    onChange={(isChecked) => setAttributes({ h2Selected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('H3','cocoblock')}
+                    checked={h3Selected}
+                    onChange={(isChecked) => setAttributes({ h3Selected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('H4','cocoblock')}
+                    checked={h4Selected}
+                    onChange={(isChecked) => setAttributes({ h4Selected: isChecked })}
+                />
+                  <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('H5','cocoblock')}
+                    checked={h5Selected}
+                    onChange={(isChecked) => setAttributes({ h5Selected: isChecked })}
+                />
+                  <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('H6','cocoblock')}
+                    checked={h6Selected}
+                    onChange={(isChecked) => setAttributes({ h6Selected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('Button','cocoblock')}
+                    checked={buttonSelected}
+                    onChange={(isChecked) => setAttributes({ buttonSelected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('Span','cocoblock')}
+                    checked={spanSelected}
+                    onChange={(isChecked) => setAttributes({ spanSelected: isChecked })}
+                />
+                <CheckboxControl
+                    __nextHasNoMarginBottom
+                    label={__('Paragraph','cocoblock')}
+                    checked={pSelected}
+                    onChange={(isChecked) => setAttributes({ pSelected: isChecked })}
+                />
+            
+</div>
+<div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                      {__("Motion Transition", "cocoblocks")}
+                    </>
+                  }
+                  value={transitionParalaxMouse}
+                  onChange={(value) =>
+                    setAttributes({
+                      transitionParalaxMouse: value,
+                    })
+                  }
+                  min={0}
+                  max={4}
+                  step={0.1}
+                />
+              </div>
+              </>
+              )}
+            </div>
+          </div>
+          </>
       )}
     </>
   );

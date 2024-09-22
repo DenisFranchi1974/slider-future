@@ -11,7 +11,7 @@ import {
 } from "@wordpress/components";
 import { useState } from "react";
 import { __ } from "@wordpress/i18n";
-import { trash } from "@wordpress/icons";
+import { trash , info, button} from "@wordpress/icons";
 import ColorOptionsPanel from "./colorPanel";
 import TextControlsBlock from "./TextControlsBlock";
 import ImageControlsBlock from "./imageControlsBlock";
@@ -20,6 +20,10 @@ import AlignmentControl from "./aligncontrol";
 import BoxShadowControlBlock from "./boxShadowBlock";
 import DivControlsHover from "./DivControlsHover";
 import FontStyle from "./font-style";
+import ButtonControlsBlock from "./ButtonControlsBlock";
+import ButtonTypeInnerSelectionModal from "./buttonInnerModal";
+import IconControlsInner from "./IconControlsInner";
+
 
 const DivControls = ({
   slide,
@@ -36,9 +40,12 @@ const DivControls = ({
   handleMobileClick,
   showOtherButtons,
   attributes,
+  innerElements,
+  
 }) => {
   // Inizializza lo stato locale utilizzando element.playStateDiv
   const [playStateDiv, setPlayState] = useState(element.playStateDiv || "");
+  const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
@@ -49,7 +56,19 @@ const DivControls = ({
     setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
   };
 
+  // nascondi il div in editor
+  const [hideDiv, setHideDiv] = useState(element.hideDiv || "");
+
+  const toggleHideDiv = () => {
+    const newState = hideDiv === "hide" ? "" : "hide";
+    setHideDiv(newState);
+  
+    element.hideDiv = newState;
+    setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
+  };
+
   const { innerTextColorDefault } = attributes;
+  
 
   // Background color Content
   const updateDivBackgroundColor = (slideId, index, newColor) => {
@@ -84,6 +103,58 @@ const DivControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
+  // Update delay
+  const updateDelayHide = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, delayHide: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update delay
+    const updateDelaySeconds = (slideId, index, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) =>
+                element.type === "div" && i === index
+                  ? { ...element, delaySeconds: value }
+                  : element
+              ),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+        // Update delay transition
+        const updateDelayTransition = (slideId, index, value) => {
+          const updatedSlides = slides.map((slide) =>
+            slide.id === slideId
+              ? {
+                  ...slide,
+                  elements: slide.elements.map((element, i) =>
+                    element.type === "div" && i === index
+                      ? { ...element, delayTransition: value }
+                      : element
+                  ),
+                }
+              : slide
+          );
+          setAttributes({ slides: updatedSlides });
+        };
+  
 
   // Update Gap Items
   const updateSlideGapItemsDiv = (slideId, index, newGapItemsDiv) => {
@@ -616,9 +687,10 @@ const DivControls = ({
               index === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: [
-                      ...(element.innerTextDivs || []),
+                    innerElements: [
+                      ...(element.innerElements || []),
                       {
+                        type: "text", 
                         content: "",
                         widthTitleBlock: "auto",
                         widthCustomTitleBlock: 100,
@@ -706,6 +778,13 @@ const DivControls = ({
                         enableTabletTitle: true,
                         enableMobileTitle: true,
                         iteration: "forwards",
+                        positionInnerText:"static",
+                        verticalPositionInnerText: 0,
+                        horizontalPositionInnerText: 0,
+                        delayHide: false,
+                        delaySeconds: 1,
+                        delayTransition: 0,
+                        zIndexTitle: 1,
                       },
                     ],
                   }
@@ -809,6 +888,57 @@ const DivControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Delay effect
+  const updateDelayEffectDiv = (slideId, index, newDelayEffect) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, delayEffectDiv: newDelayEffect }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Z index
+  const updateZindexDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, zIndexDiv: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+// Name group
+const updateNameGroup = (slideId, index, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === index
+              ? { ...element, nameGroup: value }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
   // Add Image inside block
   const addSlideImageDiv = (slideId, divIndex) => {
     const updatedSlides = slides.map((slide) =>
@@ -819,10 +949,11 @@ const DivControls = ({
               index === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: [
-                      ...(element.innerImageDivs || []),
+                    innerElements: [
+                      ...(element.innerElements || []),
                       {
                         imageUrl: "",
+                        type: "image", 
                         alt: "",
                         fit: "cover",
                         widthImage: "fixed",
@@ -875,12 +1006,9 @@ const DivControls = ({
                         imageColorHover: "",
                         borderStyleHoverImage: "none",
                         backgroundBorderColorHoverImage: "",
-                        backgroundBorderSizeHoverImage: 0,
+                        backgroundBorderSizeImageHover: 0,
                         opacityHoverImage: 1,
                         rotateHoverImage: 0,
-                        animationImageMovingHover: "none",
-                        durationEffectImageMovingHover: 1,
-                        translateEffectImageMovingHover: 0,
                         animationHoverImage: "none",
                         durationEffectHoverImage: 1,
                         effectHoverColorHoverImage: "",
@@ -896,6 +1024,14 @@ const DivControls = ({
                         parallaxImageOpacity: 1,
                         parallaxImageDuration: 100,
                         interationImage: "forwards",
+                        zIndexImage: 1,
+                        positionInnerImage: "static",
+                        verticalPositionInnerImage: 0,
+                        horizontalPositionInnerImage: 0,
+                        delayEffectImage: 0,
+                        delayHide:false,
+                        delaySeconds:2,
+                        delayTransition: 0.5,
                       },
                     ],
                   }
@@ -907,26 +1043,507 @@ const DivControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+
+  // Add Button inside block
+  const addSlideButtonDiv = (slideId,  elementIndex,buttonType) => {
+    const defaultValues = {
+      type1: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        backgroundBorderRadiusButton: 30,
+        backgroundBorderSizeButton: 3,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#FFFFFF',
+        rotateButton: 0,
+        widthCustomButton: 35,
+        heightCustomButton: 55,
+        marginButton: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+        opacityButton: 1,
+        colorShadow: "",
+        boxShadowX: 0,
+        boxShadowY: 0,
+        boxShadowBlur: 0,
+        boxShadowSpread: 0,
+        animationButton: "none",
+        durationEffectButton: 1,
+        delayEffect: 0,
+        interationButton: "forwards",
+        buttonColorHover: "",
+        borderStyleHover: "none",
+        backgroundBorderColorHover: "",
+        backgoroundBorderSizeHover: 0,
+        opacityHover: 1,
+        rotateHover: 0,
+      },
+      type2: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        backgroundBorderRadiusButton: 30,
+        backgroundBorderSizeButton: 3,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#18191c',
+        rotateButton: 0,
+        widthCustomButton: 35,
+        heightCustomButton: 55,
+        marginButton: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+        opacityButton: 1,
+        colorShadow: "",
+        boxShadowX: 0,
+        boxShadowY: 0,
+        boxShadowBlur: 0,
+        boxShadowSpread: 0,
+        animationButton: "none",
+        durationEffectButton: 1,
+        delayEffect: 0,
+        interationButton: "forwards",
+        buttonColorHover: "",
+        borderStyleHover: "none",
+        backgroundBorderColorHover: "",
+        backgoroundBorderSizeHover: 0,
+        opacityHover: 1,
+        rotateHover: 0,
+      },
+      type3: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '50px',
+          right: '50px',
+          bottom:'50px',
+          left: '50px',
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#18191c',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#18191c",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#FFFFFF",
+      },
+      type4: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '50px',
+          right: '50px',
+          bottom:'50px',
+          left: '50px',
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#FFFFFF',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#FFFFFF",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#18191c",
+      },
+      type5: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: 0,
+          right: 0,
+          bottom:0,
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#18191c',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#18191c",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#FFFFFF",
+      },
+      type6: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: 0,
+          right: 0,
+          bottom:0,
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#FFFFFF',
+        paddingButton: {
+          top: '8px',
+          right: '12px',
+          bottom: '8px',
+          left: '12px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#FFFFFF",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#18191c",
+      },
+      type7: {
+        buttonColor: '#FFFFFF',
+        backgroundBorderColorButton: '#FFFFFF',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '35px',
+          right: 0,
+          bottom:'35px',
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#18191c',
+        buttonColorHover: '#18191c',
+        paddingButton: {
+          top: '10px',
+          right: '20px',
+          bottom: '10px',
+          left: '20px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#18191c",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#FFFFFF",
+      },
+      type8: {
+        buttonColor: '#18191c',
+        backgroundBorderColorButton: '#18191c',
+        borderStyleButton: 'solid',
+        borderRadiusButton:{
+          top: '35px',
+          right: 0,
+          bottom:'35px',
+          left: 0,
+        },
+        backgroundBorderSizeButton: 1,
+        buttonBackgroundColor: '#FFFFFF',
+        buttonColorHover: '#FFFFFF',
+        paddingButton: {
+          top: '10px',
+          right: '20px',
+          bottom: '10px',
+          left: '20px',
+        },
+        borderStyleHover: "solid",
+        backgroundBorderColorHover: "#FFFFFF",
+        backgroundBorderSizeHover: 1,
+        buttonBackgroundColorHover: "#18191c",
+      },
+
+
+     
+      // Aggiungi altri tipi di bottoni se necessario
+    };
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, index) =>
+              index ===  elementIndex
+                ? {
+                    ...element,
+                    innerElements: [
+                      ...(element.innerElements || []),
+                      {
+                        type: 'button',
+                        button:__(' Click Here', 'cocoblocks'),
+                        buttonType: buttonType,
+                        desktop: { x: 0, y: 0 },
+                        tablet: { x: 0, y: 0 },
+                        mobile: { x: 0, y: 0 },
+                        ...defaultValues[buttonType], 
+                        enableDesktopButton: true,
+                        enableTabletButton: true,
+                        enableMobileButton: true,
+                        buttonLink: "none",
+                        linkUrlButton: "",
+                        linkTargetButton: "_self",
+                        linkRelButton: "",
+                        scrollToIdButton: "",
+                        parallaxButton: 0,
+                        parallaxButtonY: 0,
+                        parallaxButtonScale: 1,
+                        parallaxButtonOpacity: 1,
+                        parallaxButtonDuration: 100,
+                        widthButton:"auto",
+                        zIndexButton: 1,
+                        delayHide:false,
+                        delaySeconds:2,
+                        delayTransition: 0.5,
+                        fontFamilyButton: "Arial",
+                        fontSizeButton: 16,
+                        fontSizeButtonTablet: 16,
+                        fontSizeButtonMobile: 16,
+                        lineHeightButton: 1.5,
+                        letterSpacingButton: 0,
+                        widthCustomButton:35,
+                        marginButton: {
+                          top: 0,
+                          right: 0,
+                          bottom: 0,
+                          left: 0,
+                        },
+                        opacityButton: 1,
+                        colorShadow: "",
+                        boxShadowX: 0,
+                        boxShadowY: 0,
+                        boxShadowBlur: 0,
+                        boxShadowSpread: 0,
+                        animationButton: "none",
+                        durationEffectButton: 1,
+                        delayEffect: 0,
+                        interationButton: "forwards",
+                        opacityHover: 1,
+                        rotateHover: 0,
+                        durationEffectHover:.2,
+                        rotateButton: 0,
+                        icoPositionButton: "after",
+                        iconColor: "#000000",
+                        sizeIcon: 16,
+                        icoAligItemButton: "center",
+                        gapIcon: 5,
+                        rotateIcon: 0,
+                        iconAnimationDuration:0.5,
+                        iconAnimation: "none",
+                        rotateIconHover: 0,
+                        iconColorHover: "#000000",
+                        iconShowHover:"icon-show-always-inner",
+                        iconHideShowHover:"icon-hide-opacity-inner",
+                        delayHide:false,
+                        delaySeconds:2,
+                        delayTransition: 0.5,
+                        animationHoverIcon: "none",
+                        durationEffectHoverIcon: 0.6,
+                        translateEffectHoverIcon: 15,
+                      },
+                    ],
+                  }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+
+  // Add Icon inside block
+  const addSlideIconDiv = (slideId, divIndex) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, index) =>
+              index === divIndex
+                ? {
+                    ...element,
+                    innerElements: [
+                      ...(element.innerElements || []),
+                      {
+                        type: "icon", 
+                        content: "",
+                        widthTitleBlock: "auto",
+                        widthCustomTitleBlock: 100,
+                        textAlign: "center",
+                        elementTitle: "h4",
+                        fontSize: 16,
+                        fontSizeTablet: 16,
+                        fontSizeMobile: 16,
+                        fontStyle: "",
+                        fontFamilyTitleBlock: "",
+                        fontWeightTitleBlock: "",
+                        lineHeight: 1.2,
+                        letterSpacingTitleBlock: 0,
+                        textColor: innerTextColorDefault,
+                        paddingTitleBlock: {
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          left: "0",
+                        },
+                        marginTitle: {
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          left: "0",
+                        },
+                        borderStyle: "none",
+                        backgroundBorderSize: 0,
+                        backgroundBorderRadius: 0,
+                        backgroundBorderColor: "",
+                        rotate: 0,
+                        opacity: 1,
+                        textWriteMode: "horizontal-tb",
+                        textOrientation: "initial",
+                        animation: "none",
+                        durationEffect: 1,
+                        delayEffect: 0,
+                        durationEffectOdd: 1,
+                        durationEffectEven: 1,
+                        interation: 1,
+                        speedEffect: 100,
+                        pauseEffect: 0,
+                        animationCount: "1",
+                        widthCursor: 2,
+                        animationCursor: 1,
+                        cursorColor: innerTextColorDefault,
+                        gradinetColorOne: "",
+                        gradinetColorTwo: "",
+                        gradinetColorThree: "",
+                        gradinetColorFour: "",
+                        decoration: "none",
+                        underlineColor: innerTextColorDefault,
+                        underlinePadding: 0,
+                        underlineVertical: 0,
+                        underlineHorizontal: 0,
+                        underlineWidth: 20,
+                        underlineHeight: 3,
+                        underlineAnimation: "none",
+                        underlineAnimationFrom: 5,
+                        underlineAnimationTo: 50,
+                        underlineFromSizeNew: 5,
+                        underlineToSizeNew: 5,
+                        underlineAnimationTransition: 0.5,
+                        textColorHover: innerTextColorDefault,
+                        borderStyleHover: "none",
+                        backgroundBorderColorHover: "",
+                        backgroundBorderSizeHover: 0,
+                        opacityHover: 1,
+                        rotateHover: 0,
+                        animationHover: "none",
+                        durationEffectHover: 1,
+                        effectHoverColorHover: innerTextColorDefault,
+                        translateEffectHover: 0,
+                        parallaxTitle: 0,
+                        parallaxTitleY: 0,
+                        parallaxTitleScale: 1,
+                        parallaxTitleOpacity: 1,
+                        parallaxTitleDuration: 100,
+                        textLink: "none",
+                        linkUrl: "",
+                        linkTarget: "_self",
+                        linkRel: "",
+                        scrollToId: "",
+                        enableDesktopTitle: true,
+                        enableTabletTitle: true,
+                        enableMobileTitle: true,
+                        iteration: "forwards",
+                        positionInnerText:"static",
+                        verticalPositionInnerText: 0,
+                        horizontalPositionInnerText: 0,
+                        delayHide: false,
+                        delaySeconds: 1,
+                        delayTransition: 0,
+                        zIndexTitle: 1,
+                      },
+                    ],
+                  }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Open panel
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
+
+    const truncateText = (text, maxLength) => {
+      if (text.length <= maxLength) {
+        return text;
+      }
+      return text.substring(0, maxLength) + ' ...';
+    };
+
   const [activeSection, setActiveSection] = useState("content");
   const [activeSectionImage, setActiveSectionImage] = useState("content");
+  
+  const moveInnerElementUp = (slideIndex, elementIndex, innerIndex, slides, setAttributes) => {
+    console.log(`Moving up: slideIndex=${slideIndex}, elementIndex=${elementIndex}, innerIndex=${innerIndex}`);
+    const element = slides[slideIndex].elements[elementIndex];
+    if (!element.innerElements || innerIndex === 0) return; // Non può spostare il primo elemento su
+    const newInnerElements = [...element.innerElements];
+    [newInnerElements[innerIndex - 1], newInnerElements[innerIndex]] = [newInnerElements[innerIndex], newInnerElements[innerIndex - 1]];
+    element.innerElements = newInnerElements;
+    console.log('Updated inner elements:', newInnerElements);
+    setAttributes({ slides: [...slides] });
+  };
+  
+  const moveInnerElementDown = (slideIndex, elementIndex, innerIndex, slides, setAttributes) => {
+    console.log(`Moving down: slideIndex=${slideIndex}, elementIndex=${elementIndex}, innerIndex=${innerIndex}`);
+    const element = slides[slideIndex].elements[elementIndex];
+    if (!element.innerElements || innerIndex === element.innerElements.length - 1) return; // Non può spostare l'ultimo elemento giù
+    const newInnerElements = [...element.innerElements];
+    [newInnerElements[innerIndex + 1], newInnerElements[innerIndex]] = [newInnerElements[innerIndex], newInnerElements[innerIndex + 1]];
+    element.innerElements = newInnerElements;
+    console.log('Updated inner elements:', newInnerElements);
+    setAttributes({ slides: [...slides] });
+  };
+
+  const isSingleInnerElement = element.innerElements.length === 1;
+
+  const [isModalOpenButton, setIsModalOpenButton] = useState(false);
+  const [selectedSlideId, setSelectedSlideId] = useState(null);
+  const [selectedElementIndex, setSelectedElementIndex] = useState(null);
+  
+  const openModalButton = (slideId, elementIndex) => {
+    setSelectedSlideId(slideId);
+    setSelectedElementIndex(elementIndex);
+    setIsModalOpenButton(true);
+  };
+  
+  const closeModalButton = () => {
+    setIsModalOpenButton(false);
+    setSelectedSlideId(null);
+    setSelectedElementIndex(null);
+  };
+  
+  const handleButtonTypeSelect = (slideId, elementIndex, type) => {
+    addSlideButtonDiv(slideId, elementIndex, type); // Passa slideId, elementIndex e il tipo selezionato
+    closeModalButton();
+  };
+
   return (
     <>
       <div className="custom-block-added">
         <div className="divider-controls"></div>
         <div className="title-block-added">
           <div className="title-element">
-            <Button
-              onClick={() => removeSlideDiv(slide.id, elementIndex)}
-              style={{
-                position: "absolute",
-                right: "80px",
-                top: "10px",
-              }}
-              isDestructive
-              icon={trash}
-              label={__("Remove block", "cocoblocks")}
-              className="button-remove-element"
-            />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -936,9 +1553,29 @@ const DivControls = ({
             >
               <path d="M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
             </svg>
-            <h2>{__("Block", "slider")}</h2>
+            <h2>{element.nameGroup ? truncateText(element.nameGroup, 7) : __("Group", "slider")}</h2>
+          </div>
+          <div className="title-element">
+          <Button
+              onClick={() => removeSlideDiv(slide.id, elementIndex)}
+              isDestructive
+              icon={trash}
+              label={__("Remove group", "cocoblocks")}
+              className="button-remove-element"
+            />
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+        <button onClick={handleToggle} className="button-open-control-element">
+          {isOpen ? (
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" style={{marginTop:'4px'}}><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          )}
+        </button>
+      </Tooltip>
           </div>
         </div>
+        {isOpen && ( 
+        <>
         <SectionSelectorBlock onSectionChange={setActiveSectionBlock} />
         {activeSectionBlock === "content" && (
           <>
@@ -951,6 +1588,41 @@ const DivControls = ({
               <h2 className="title-custom-panel">
                 {__("Content", "cocoblocks")}
               </h2>
+            </div>
+            <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select select-text-control">
+              <TextControl
+                label={
+                  <>
+                    {" "}
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-440h200v-80H560v80Zm0-120h200v-80H560v80ZM200-320h320v-22q0-45-44-71.5T360-440q-72 0-116 26.5T200-342v22Zm160-160q33 0 56.5-23.5T440-560q0-33-23.5-56.5T360-640q-33 0-56.5 23.5T280-560q0 33 23.5 56.5T360-480ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/></svg>
+                    {__("Add name group", "cocoblocks")}
+                  </>
+                }
+                value={element.nameGroup}
+                onChange={(value) =>
+                  updateNameGroup(slide.id, elementIndex, value)
+                }
+              />
+              <Tooltip
+                  placement="top"
+                  style={{
+                    padding: "10px",
+                    maxWidth: "300px",
+                    borderRadius: "4px",
+                  }}
+                  text={__(
+                    "Useful if you have many groups inside the slide!",
+                    "cocoblocks"
+                  )}
+                >
+                  <Icon
+                    icon={info}
+                    className="tooltip-icon"
+                    style={{ top: "4px" }}
+                  />
+                </Tooltip>
+            </div>
             </div>
             <div
               className="button-add-element"
@@ -975,6 +1647,26 @@ const DivControls = ({
                 label={__("Add inner image", "slide")}
               >
                 <span class="dashicons dashicons-format-image"></span>
+              </Button>
+              <Button
+                onClick={() => openModalButton(slide.id, elementIndex)} // Passa slide.id e elementIndex
+                label={__("Add inner button", "slide")}
+              >
+                <Icon icon={button} />
+              </Button>
+              {isModalOpenButton && (
+              <ButtonTypeInnerSelectionModal
+                slideId={slide.id} 
+                elementIndex={selectedElementIndex}
+                onClose={closeModalButton}
+                onSelect={handleButtonTypeSelect} 
+              />
+            )}
+             <Button
+                onClick={() => addSlideIconDiv(slide.id, elementIndex)}
+                label={__("Add inner icon", "slide")}
+              >
+                <Icon icon={button} />
               </Button>
             </div>
           </>
@@ -1109,6 +1801,7 @@ const DivControls = ({
                   }
                 />
               </div>
+              {element.contentWidthDiv === "custom" && (
               <div className="custom-select">
                 <RangeControl
                   label={
@@ -1134,6 +1827,7 @@ const DivControls = ({
                   step={1}
                 />
               </div>
+              )}
               <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
@@ -1161,6 +1855,7 @@ const DivControls = ({
                   }
                 />
               </div>
+              {element.contentHeightDiv === "custom" && (
               <div className="custom-select">
                 <RangeControl
                   label={
@@ -1186,6 +1881,7 @@ const DivControls = ({
                   step={1}
                 />
               </div>
+              )}
               <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
@@ -1558,6 +2254,34 @@ const DivControls = ({
                 />
               </div>
             </div>
+            {slide.developerMode && (
+            <>
+          <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("LEVEL", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-33 0-56.5-23.5T400-160v-320q0-33 23.5-56.5T480-560h320q33 0 56.5 23.5T880-480v320q0 33-23.5 56.5T800-80H480Zm0-80h320v-320H480v320Zm-240-80v-400q0-33 23.5-56.5T320-720h400v80H320v400h-80ZM80-400v-400q0-33 23.5-56.5T160-880h400v80H160v400H80Zm400 240v-320 320Z"/></svg>
+                    {__("Z-index", "cocoblocks")}
+                  </>
+                }
+                value={element.zIndexDiv}
+                onChange={(value) =>
+                  updateZindexDiv(slide.id, elementIndex, value)
+                }
+                min={0}
+                max={999}
+                step={1}
+              />
+            </div>
+          </div>
+          </>
+          )}
             <BoxShadowControlBlock
               slide={slide}
               slides={slides}
@@ -1675,6 +2399,43 @@ const DivControls = ({
                       step={0.1}
                     />
                   </div>
+                  {![
+                "bounce-effect-div",
+                "bounce-left-effect-div",
+                "bounce-right-effect-div",
+                "bounce-top-effect-div",
+                "bounce-bottom-effect-div",
+                "rotate-continuous-div",
+                "wiggle-div",
+                "swing-div",
+                "rubber-band-div",
+              ].includes(element.animationDiv) && (
+                <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                      >
+                        <path d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z" />
+                      </svg>
+                      {__("Delay", "cocoblocks")}
+                    </>
+                  }
+                  value={element.delayEffectDiv}
+                  onChange={(newDelayEffect) =>
+                    updateDelayEffectDiv(slide.id, elementIndex, newDelayEffect)
+                  }
+                  min={0}
+                  max={10}
+                  step={0.1}
+                />
+              </div>
+            )}
                 </>
               )}
               {[
@@ -1751,6 +2512,77 @@ const DivControls = ({
                 </>
               )}
             </div>
+            <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Hide", "cocoblocks")}
+            </h2>
+          </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+             <div className="custom-select">
+              <ToggleControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></svg>
+                    {__("Delay hide", "cocoblocks")}
+                  </>
+                }
+                checked={element.delayHide}
+                onChange={(value) =>
+                  updateDelayHide(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+              />
+            </div>
+            {element.delayHide && (
+            <>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-270h160q33 0 56.5-23.5T600-350v-50q0-33-23.5-56.5T520-480h-80v-50h160v-80H360v210h160v50H360v80Zm0-570v-80h240v80H360ZM480-80q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Seconds", "cocoblocks")}
+                  </>
+                }
+                value={element.delaySeconds}
+                onChange={(value) =>
+                  updateDelaySeconds(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={20}
+                step={1}
+              />
+            </div>
+            <div className="custom-select">
+              <RangeControl
+                label={
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
+                    {__("Transition", "cocoblocks")}
+                  </>
+                }
+                value={element.delayTransition}
+                onChange={(value) =>
+                  updateDelayTransition(
+                    slide.id,
+                    elementIndex,
+                    value
+                  )
+                }
+                min={0}
+                max={3}
+                step={.1}
+              />
+            </div>
+            </>
+            )}
+          </div>
           </>
         )}
         {activeSectionBlock === "hover" && (
@@ -2172,40 +3004,120 @@ const DivControls = ({
             )}
           </>
         )}
+        {activeSectionBlock === "hide-div-editor" && (
+        <>
+        <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Hide in editor", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select button-hide-element" style={{textAlign:'center'}}>
+        <Button
+          variant={hideDiv === "hide"}
+          onClick={toggleHideDiv}
+          icon={
+            hideDiv === "hide" ? (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+            ) : (
+              <svg style={{fill:'var(--light-color)'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+            )
+          }
+        />
+        </div>
+        </div>        
+        </>
+      )}
 
-        {element.innerTextDivs &&
-          element.innerTextDivs.map((textDiv, textIndex) => (
-            <div key={textIndex}>
-              <TextControlsBlock
-                slide={slide}
-                slides={slides}
-                textDiv={textDiv}
-                element={element}
-                textIndex={textIndex}
-                elementIndex={elementIndex}
-                setAttributes={setAttributes}
-                setActiveSection={setActiveSection}
-                activeSection={activeSection}
-                parallax={parallax}
-                device={device}
-                handleDesktopClick={handleDesktopClick}
-                handleTabletClick={handleTabletClick}
-                handleMobileClick={handleMobileClick}
-                showOtherButtons={showOtherButtons}
-              />
-            </div>
-          ))}
-
-        {element.innerImageDivs &&
-          element.innerImageDivs.map((imageDiv, imageIndex) => (
+{element.innerElements &&
+  element.innerElements.map((innerElement, innerIndex) => {
+    if (innerElement.type === "text") {
+      return (
+        <div key={innerIndex}>
+           <div className={"button-move-element-div"}>
+                  <Tooltip text={__("Move before", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === 0 || isSingleInnerElement}
+                      label={__("Move before", "cocoblocks")}
+                    >
+                      ↑
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={__("Move after", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
+                      label={__("Move after", "cocoblocks")}
+                    >
+                      ↓
+                    </Button>
+                  </Tooltip>
+                </div>
+          <TextControlsBlock
+            slide={slide}
+            slides={slides}
+            textDiv={innerElement} // Usa `innerElement` invece di `textDiv`
+            element={element}
+            textIndex={innerIndex}
+            elementIndex={elementIndex}
+            setAttributes={setAttributes}
+            setActiveSection={setActiveSection}
+            activeSection={activeSection}
+            parallax={parallax}
+            device={device}
+            handleDesktopClick={handleDesktopClick}
+            handleTabletClick={handleTabletClick}
+            handleMobileClick={handleMobileClick}
+            showOtherButtons={showOtherButtons}
+          />
+          
+              </div>
+      );
+    }
+    return null;
+  })}
+         {element.innerElements &&
+        element.innerElements.map((innerElement, imageIndex) => {
+            if (innerElement.type === "image") {
+              return (
             <div key={imageIndex}>
+               <div className={"button-move-element-div"}>
+                  <Tooltip text={__("Move before", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, imageIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={imageIndex === 0 || isSingleInnerElement}
+                      label={__("Move before", "cocoblocks")}
+                    >
+                      ↑
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={__("Move after", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, imageIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={imageIndex === element.innerElements.length - 1 || isSingleInnerElement}
+                      label={__("Move after", "cocoblocks")}
+                    >
+                      ↓
+                    </Button>
+                  </Tooltip>
+                </div>
               <ImageControlsBlock
                 slide={slide}
                 slides={slides}
                 element={element}
-                divIndex={elementIndex}
+                divIndex={elementIndex} 
                 elementIndex={elementIndex}
-                imageDiv={imageDiv}
+                imageDiv={innerElement}
                 imageIndex={imageIndex}
                 setAttributes={setAttributes}
                 setActiveSectionImage={setActiveSectionImage}
@@ -2213,8 +3125,112 @@ const DivControls = ({
                 parallax={parallax}
               />
             </div>
-          ))}
+          );
+        }
+        return null;
+      })}
+
+{element.innerElements &&
+        element.innerElements.map((innerElement, innerIndex) => {
+            if (innerElement.type === "button") {
+              return (
+            <div key={innerIndex}>
+               <div className={"button-move-element-div"}>
+                  <Tooltip text={__("Move before", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === 0 || isSingleInnerElement}
+                      label={__("Move before", "cocoblocks")}
+                    >
+                      ↑
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={__("Move after", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
+                      label={__("Move after", "cocoblocks")}
+                    >
+                      ↓
+                    </Button>
+                  </Tooltip>
+                </div>
+                <ButtonControlsBlock
+                  slide={slide}
+                  slides={slides}
+                  element={element}
+                  divIndex={elementIndex} 
+                  elementIndex={elementIndex}
+                  buttonDiv={innerElement}
+                  setAttributes={setAttributes}
+                  buttonIndex={innerIndex}
+                  setActiveSection={setActiveSection}
+                  activeSection={activeSection}
+                  parallax={parallax}
+                  setSelectedIcon={setSelectedIcon}
+                />
+            </div>
+          );
+        }
+        return null;
+      })}
+
+{element.innerElements &&
+        element.innerElements.map((innerElement, innerIndex) => {
+            if (innerElement.type === "icon") {
+              return (
+            <div key={innerIndex}>
+               <div className={"button-move-element-div"}>
+                  <Tooltip text={__("Move before", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === 0 || isSingleInnerElement}
+                      label={__("Move before", "cocoblocks")}
+                    >
+                      ↑
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={__("Move after", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
+                      label={__("Move after", "cocoblocks")}
+                    >
+                      ↓
+                    </Button>
+                  </Tooltip>
+                </div>
+                <IconControlsInner
+                  slide={slide}
+                  slides={slides}
+                  element={element}
+                  divIndex={elementIndex} 
+                  elementIndex={elementIndex}
+                  iconDiv={innerElement}
+                  setAttributes={setAttributes}
+                  iconIndex={innerIndex}
+                  setActiveSection={setActiveSection}
+                  activeSection={activeSection}
+                  parallax={parallax}
+                  setSelectedIcon={setSelectedIcon}
+                />
+            </div>
+          );
+        }
+        return null;
+      })}
+
+
+
+
+           </>
+      )}
       </div>
+
     </>
   );
 };
