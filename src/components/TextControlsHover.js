@@ -358,7 +358,12 @@ const TextControlsHover = ({
             step={0.1}
           />
         </div>
-        <div className="custom-select">
+      </div>
+      <div className="content-title-custom-panel intermedy">
+        <h2 className="title-custom-panel">{__("Animation", "cocoblocks")}</h2>
+      </div>
+      <div className="content-section-panel" style={{ padding: "0" }}>
+      <div className="custom-select">
           <RangeControl
             label={
               <>
@@ -383,11 +388,6 @@ const TextControlsHover = ({
             step={1}
           />
         </div>
-      </div>
-      <div className="content-title-custom-panel intermedy">
-        <h2 className="title-custom-panel">{__("Animation", "cocoblocks")}</h2>
-      </div>
-      <div className="content-section-panel" style={{ padding: "0" }}>
         <div className="custom-select select-control-label-right">
           <SelectControl
             label={

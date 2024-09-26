@@ -612,8 +612,6 @@ const updateIconHideShowHover = (slideId, divIndex, innerIndex, value) => {
             step={1}
           />
         </div>
-        </div>
-      <div className="content-section-panel" style={{ padding: "0" }}>
             <div className="custom-select">
               <RangeControl
                 label={

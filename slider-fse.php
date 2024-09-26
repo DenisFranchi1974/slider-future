@@ -147,7 +147,8 @@ if (!function_exists('is_plugin_active')) {
     include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 }
 
-function cocoblocks_get_content($content_type = 'post') {
+
+function cocoblocks_get_content($content_type = 'post', $include_categories = array(), $exclude_categories = array(), $order = 'ASC',$posts_per_page = 5) {
     // Controlla se WooCommerce è attivo quando viene richiesto il tipo di contenuto 'product'
     if ($content_type === 'product' && !is_plugin_active('woocommerce/woocommerce.php')) {
         return new WP_Error('woocommerce_inactive', __('WooCommerce non è attivo. Per favore installa e attiva WooCommerce per utilizzare questa funzione.', 'cocoblocks'));
@@ -156,8 +157,21 @@ function cocoblocks_get_content($content_type = 'post') {
     // Configura la query per recuperare i post o i prodotti
     $args = array(
         'post_type' => $content_type, // Tipo di contenuto ('post' o 'product')
-        'posts_per_page' => -1, // Recupera tutti i post/prodotti
+        'posts_per_page' => $posts_per_page, // Numero di post da visualizzare
+        'orderby' => 'date',
+        'order' => $order, // Ordine dinamico
+        'post_status' => 'publish',
     );
+
+  // Aggiungi il filtro per includere categorie se specificato
+  if (!empty($include_categories)) {
+    $args['category__in'] = array_map('intval', $include_categories);
+}
+
+// Aggiungi il filtro per escludere categorie se specificato
+if (!empty($exclude_categories)) {
+    $args['category__not_in'] = array_map('intval', $exclude_categories);
+}
 
     $posts = get_posts($args);
 
@@ -169,12 +183,43 @@ function cocoblocks_get_content($content_type = 'post') {
     $post_data = array();
 
     foreach ($posts as $post) {
+        // Recupera l'autore
+        $author_name = get_the_author_meta('display_name', $post->post_author);
+
+        // Recupera la data di pubblicazione
+        $publish_date = get_the_date('Y-m-d', $post->ID);
+
+        // Recupera le categorie come array di nomi
+        $categories = get_the_category($post->ID);
+        $category_names = [];
+        if (!empty($categories)) {
+            foreach ($categories as $category) {
+                $category_names[] = $category->name;
+            }
+        }
+
+        // Recupera i tag come array di nomi, limita a un massimo di 3
+        $tags = get_the_tags($post->ID);
+        $tag_names = [];
+        if (!empty($tags)) {
+            foreach ($tags as $tag) {
+                $tag_names[] = $tag->name;
+                if (count($tag_names) >= 3) {
+                    break;
+                }
+            }
+        }
+
         $post_data[] = array(
             'id' => $post->ID,
             'title' => get_the_title($post->ID),
             'excerpt' => get_the_excerpt($post->ID),
             'image' => get_the_post_thumbnail_url($post->ID, 'full'),
             'link' => get_permalink($post->ID),
+            'author' => $author_name, // Aggiungi l'autore
+            'date' => $publish_date, // Aggiungi la data di pubblicazione
+            'categories' => $category_names, // Aggiungi le categorie
+            'tags' => $tag_names, // Aggiungi i tag
         );
     }
 
@@ -186,19 +231,31 @@ function cocoblocks_register_rest_routes() {
     // Rotta per i post
     register_rest_route('cocoblocks/v1', '/get-posts/', array(
         'methods' => 'GET',
-        'callback' => function() {
-            return cocoblocks_get_content('post');
+        'callback' => function(WP_REST_Request $request) {
+            $include_categories = $request->get_param('include_categories');
+            $exclude_categories = $request->get_param('exclude_categories');
+            $order = $request->get_param('order');
+            $posts_per_page = $request->get_param('posts_per_page');
+            $include_categories = !empty($include_categories) ? explode(',', $include_categories) : array();
+            $exclude_categories = !empty($exclude_categories) ? explode(',', $exclude_categories) : array();
+            return cocoblocks_get_content('post', $include_categories, $exclude_categories,$order,$posts_per_page);
         },
-        'permission_callback' => '__return_true', // Aggiungi questa linea
+        'permission_callback' => '__return_true',
     ));
 
     // Rotta per i prodotti di WooCommerce
     register_rest_route('cocoblocks/v1', '/get-products/', array(
         'methods' => 'GET',
-        'callback' => function() {
-            return cocoblocks_get_content('product');
+        'callback' => function(WP_REST_Request $request) {
+            $include_categories = $request->get_param('include_categories');
+            $exclude_categories = $request->get_param('exclude_categories');
+            $order = $request->get_param('order');
+            $posts_per_page = $request->get_param('posts_per_page');
+            $include_categories = !empty($include_categories) ? explode(',', $include_categories) : array();
+            $exclude_categories = !empty($exclude_categories) ? explode(',', $exclude_categories) : array();
+            return cocoblocks_get_content('product', $include_categories, $exclude_categories,$order,$posts_per_page);
         },
-        'permission_callback' => '__return_true', // Aggiungi questa linea
+        'permission_callback' => '__return_true',
     ));
 }
 

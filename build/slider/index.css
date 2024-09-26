@@ -49,11 +49,107 @@
   --ruler-color: #ff000077;
 }
 
-/* Table hsv */
-.last-border-table-hsv td {
-  border-bottom: none !important;
+/* Menu controls */
+.menu-control input {
+  max-width: 100% !important;
 }
 
+.menu-control input::-moz-placeholder {
+  color: var(--light-color) !important;
+}
+
+.menu-control input::placeholder {
+  color: var(--light-color) !important;
+}
+
+.content-text-input-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-control .block-editor-link-control__search-item .block-editor-link-control__search-item-header .block-editor-link-control__search-item-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
+.menu-control .block-editor-link-control__search-item .block-editor-link-control__search-item-header .block-editor-link-control__search-item-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.menu-control .block-editor-link-control {
+  min-width: auto !important;
+}
+
+.menu-control .block-editor-link-control__search-item.is-current {
+  padding: 0 !important;
+}
+
+.menu-control .block-editor-link-control__tools {
+  display: none !important;
+}
+
+.menu-control .components-menu-item__item, .menu-control .block-editor-link-control__search-item-title, .menu-control .components-button.is-compact.has-icon,
+.menu-control .block-editor-link-control__tools .components-button.block-editor-link-control__drawer-toggle[aria-expanded=true], .menu-control .components-button.is-tertiary {
+  color: var(--light-color) !important;
+}
+
+.menu-control .block-editor-link-control__tools .components-button.block-editor-link-control__drawer-toggle {
+  color: var(--light-color) !important;
+}
+
+.menu-control .components-checkbox-control__input[type=checkbox]:checked, .components-checkbox-control__input[type=checkbox]:indeterminate {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.menu-control .components-button.is-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.menu-control .components-button.is-primary[aria-disabled=true], .menu-control .components-button.is-primary:hover:not(:disabled) {
+  background-color: var(--dark-color) !important;
+  color: var(--light-color) !important;
+}
+
+.menu-control .components-button.is-tertiary:hover:not(:disabled, [aria-disabled=true]) {
+  color: var(--primary-color) !important;
+}
+
+.menu-contro .block-editor-link-control__search-item .block-editor-link-control__search-item-header .block-editor-link-control__search-item-icon {
+  background-color: var(--label-color) !important;
+  border-radius: 4px !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Button device slider */
+.device-switcher-slider {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 12px;
+}
+.device-switcher-slider button {
+  color: var(--light-color);
+  box-shadow: none !important;
+}
+.device-switcher-slider button svg {
+  fill: var(--light-color);
+  width: 18px;
+  height: 18px;
+}
+.device-switcher-slider .is-pressed svg {
+  color: var(--primary-color);
+  fill: var(--primary-color) !important;
+}
+
+.select-button-device-slider svg {
+  fill: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* Table hsv */
 .thead-hsv th {
   border-top: none !important;
 }
@@ -85,7 +181,7 @@
 
 /* Modal button */
 .modal-button {
-  background-color: var(--dark-color-hover);
+  background-color: var(--background-color);
 }
 .modal-button .components-modal__content {
   padding-top: 24px !important;
@@ -105,8 +201,8 @@
 }
 .modal-button .button-select {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 40px;
+  bottom: 24px;
   color: var(--primary-color);
 }
 .modal-button button {
@@ -1891,6 +1987,12 @@
   opacity: 0 !important;
 }
 
+/* Hide iconinner editor */
+.content-icon-inner.hide {
+  visibility: hidden;
+  opacity: 0 !important;
+}
+
 /* Hide image editor */
 .content-img-first.hide {
   visibility: hidden;
@@ -1922,6 +2024,12 @@
 
 /* Hide inner button editor */
 .scroll-btn-inner.hide, .button-slider-inner.hide {
+  visibility: hidden;
+  opacity: 0 !important;
+}
+
+/* Hide menu */
+.hamburger-icon.hide {
   visibility: hidden;
   opacity: 0 !important;
 }

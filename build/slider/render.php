@@ -134,6 +134,15 @@ $firstColorLiquid = isset($attributes['firstColorLiquid']) ? $attributes['firstC
 $secondColorLiquid = isset($attributes['secondColorLiquid']) ? $attributes['secondColorLiquid'] : null;
 $thirdColorLiquid = isset($attributes['thirdColorLiquid']) ? $attributes['thirdColorLiquid'] : null;
 $transitionParalaxMouse = isset($attributes['transitionParalaxMouse']) ? $attributes['transitionParalaxMouse'] : null;
+$sliderMarginTop = isset($attributes['sliderMarginTop']) ? $attributes['sliderMarginTop'] : null;
+$sliderMarginBottom = isset($attributes['sliderMarginBottom']) ? $attributes['sliderMarginBottom'] : null;
+$backgroundColor = isset($attributes['backgroundColor']) ? $attributes['backgroundColor'] : null;
+$backgroundHorizontalPadding = isset($attributes['backgroundHorizontalPadding']) ? $attributes['backgroundHorizontalPadding'] : null;
+$backgroundVerticalPadding = isset($attributes['backgroundVerticalPadding']) ? $attributes['backgroundVerticalPadding'] : null;
+$includeCategories = isset($attributes['includeCategories']) ? $attributes['includeCategories'] : null;
+$excludeCategories = isset($attributes['excludeCategories']) ? $attributes['excludeCategories'] : null;
+$order = isset($attributes['order']) ? $attributes['order'] : null;
+$postsToShow = isset($attributes['postsToShow']) ? $attributes['postsToShow'] : null;
 
 // Recupera le slide dai tuoi attributi (adatta questo in base alla struttura dei tuoi attributi)
 $slides = !empty($attributes['slides']) ? $attributes['slides'] : [];
@@ -275,6 +284,15 @@ $swiper_attr = array(
     'secondColorLiquid' => $secondColorLiquid,
     'thirdColorLiquid' => $thirdColorLiquid,
     'transitionParalaxMouse' => $transitionParalaxMouse,
+    'sliderMarginTop' => $sliderMarginTop,
+    'sliderMarginBottom' => $sliderMarginBottom,
+    'backgroundColor' => $backgroundColor,
+    'backgroundHorizontalPadding' => $backgroundHorizontalPadding,
+    'backgroundVerticalPadding' => $backgroundVerticalPadding,
+    'includeCategories' => $includeCategories,
+    'excludeCategories' => $excludeCategories,
+    'order' => $order,
+    'postsToShow' => $postsToShow,
 );
 
 $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
@@ -282,6 +300,9 @@ $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
 $stylesSlider = '--color-one-effect: ' . esc_attr($colorOneEffect) . '; ' .
           '--color-two-effect: ' . esc_attr($colorTwoEffect) . '; ' .
           '--color-three-effect: ' . esc_attr($colorThreeEffect) . '; ' .
+          'margin-top: ' . esc_attr($sliderMarginTop) . 'px; ' .
+          'margin-bottom: ' . esc_attr($sliderMarginBottom) . 'px; ' .
+          'background-color: ' . esc_attr($backgroundColor) . '; ' .
           ($autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ');
 
 $wrapper_attributes = get_block_wrapper_attributes(
@@ -561,27 +582,69 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
     }
 }
 
+
+
 ?>         
 
 <div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>" >
     <div class="swiper-wrapper">
-    <?php if ($attributes['contentType'] === 'post-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
-        <?php foreach ($attributes['posts'] as $post) : ?>
-            <div class="swiper-slide">
-                <?php if (!empty($post['image'])) : ?>
-                    <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
-                <?php endif; ?>
-                <?php if (!empty($post['title'])) : ?>
-                    <h3><?php echo esc_html($post['title']); ?></h3>
-                <?php endif; ?>
-                <?php if (!empty($post['excerpt'])) : ?>
-                    <p><?php echo esc_html($post['excerpt']); ?></p>
-                <?php endif; ?>
-                <?php if (!empty($post['link'])) : ?>
-                    <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
+
+
+    <?php 
+
+// Recupera i post inclusi ed esclusi
+$include_categories = !empty($attributes['includeCategories']) ? $attributes['includeCategories'] : [];
+$exclude_categories = !empty($attributes['excludeCategories']) ? $attributes['excludeCategories'] : [];
+
+// Recupera i post filtrati
+$posts = cocoblocks_get_content('post', $include_categories, $exclude_categories,$order,$postsToShow);
+
+
+
+if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($posts)) : ?>
+    <?php foreach ($posts as $post) : ?>
+        <div class="swiper-slide">
+            <div class="content-slide-post">
+                <?php if (!empty($attributes['postElementsOrder'])) : ?>
+                    <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
+                        <?php if ($element === 'image' && !empty($post['image'])) : ?>
+                            <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
+                        <?php elseif ($element === 'title' && !empty($post['title'])) : ?>
+                            <h3><?php echo esc_html($post['title']); ?></h3>
+                        <?php elseif ($element === 'excerpt' && !empty($post['excerpt'])) : ?>
+                            <p><?php echo esc_html($post['excerpt']); ?></p>
+                        <?php elseif ($element === 'link' && !empty($post['link'])) : ?>
+                            <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
+                        <?php elseif ($element === 'author' && !empty($post['author'])) : ?>
+                            <p><?php echo esc_html($post['author']); ?></p>
+                        <?php elseif ($element === 'date' && !empty($post['date'])) : ?>
+                            <p><?php echo esc_html($post['date']); ?></p>
+                        <?php elseif ($element === 'categories' && !empty($post['categories'])) : ?>
+                            <p>
+                                <?php foreach ($post['categories'] as $category) : ?>
+                                    <span class="category"><?php echo esc_html($category); ?></span>
+                                <?php endforeach; ?>
+                            </p>
+                        <?php elseif ($element === 'tags' && !empty($post['tags'])) : ?>
+                            <p>
+                                <?php foreach ($post['tags'] as $tag) : ?>
+                                    <span class="tag"><?php echo esc_html($tag); ?></span>
+                                <?php endforeach; ?>
+                            </p>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
-        <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
+
+
+
+
+
+
+
+
 
     <?php elseif ($attributes['contentType'] === 'woocommerce-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
         <?php foreach ($attributes['posts'] as $product) : ?>
@@ -692,6 +755,74 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                            
                     <?php if (!empty($slide['elements']) && is_array($slide['elements'])): ?>
                     <?php foreach ($slide['elements'] as $element): ?>
+
+                        <?php if ($element['type'] === 'menu'): ?>
+
+                            <?php 
+                              $desktopClassMenu = $element['enableDesktopTitle'] ? 'desktop-menu-visible' : 'desktop-menu-hidden';
+                              $tabletClassMenu = $element['enableTabletTitle'] ? 'tablet-menu-visible' : 'tablet-menu-hidden';
+                              $mobileClassMenu = $element['enableMobileTitle'] ? 'mobile-menu-visible' : 'mobile-menu-hidden';
+                            // Verifica se il fontWeight è "bold"
+                            $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === 'bold';
+                            // Styles for the toggle
+                            $stylesToggle = "
+                                margin: " . esc_attr($element['marginTitle']['top']) . " " . esc_attr($element['marginTitle']['right']) . " " . esc_attr($element['marginTitle']['bottom']) . " " . esc_attr($element['marginTitle']['left']) . ";
+                                box-shadow: " . esc_attr($element['boxShadowX']) . "px " . esc_attr($element['boxShadowY']) . "px " . esc_attr($element['boxShadowBlur']) . "px " . esc_attr($element['boxShadowSpread']) . "px " . esc_attr($element['colorShadow']) . ";
+                                background-color: " . esc_attr($element['backgroundColorToggle']) . ";
+                                --color-icon-menu: " . esc_attr($element['toggleColor']) . ";
+                                border-radius: " . esc_attr($element['radiusToggle']) . "px;
+                                --scale-icon-menu: " . esc_attr($element['scaleToggle']) . ";
+                            ";
+
+                            // Styles for the menu
+                            $stylesUlMenu = "
+                                justify-content: " . esc_attr($element['textAlign']) . ";
+                                align-items: " . esc_attr($element['textAlignItems']) . ";
+                                background-color: " . esc_attr($element['backgroundColor']) . ";
+                                gap: " . esc_attr($element['gapMenu']) . "px;
+                                height: " . esc_attr($element['heightMenu']) . ";
+                                padding: " . esc_attr($element['paddingTitle']['top']) . " " . esc_attr($element['paddingTitle']['right']) . " " . esc_attr($element['paddingTitle']['bottom']) . " " . esc_attr($element['paddingTitle']['left']) . ";
+                            ";
+
+                            // Styles for the links inside the menu
+                            $stylesAMenu = "
+                                font-size: " . esc_attr($element['fontSize']) . "px;
+                                color: " . esc_attr($element['textColor']) . ";
+                                --color-hover-menu: " . esc_attr($element['textColorHover']) . ";
+                                letter-spacing: " . esc_attr($element['letterSpacing']) . "px;
+                                font-style: " . (!empty($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal') . ";
+                                font-weight: " . ($isBold ? 'bold' : (!empty($element['fontWeight']) ? esc_attr($element['fontWeight']) : 'normal')) . ";
+                                text-decoration: " . (!empty($element['fontStyle']['textDecoration']) ? esc_attr($element['fontStyle']['textDecoration']) : 'none') . ";
+                                line-height: " . esc_attr($element['lineHeight']) . ";
+                                font-family: " . esc_attr($element['fontFamily']) . ";
+                            ";
+                            ?>
+
+                            <div class="hamburger-icon <?php echo esc_attr($element['direction']); ?> <?php echo esc_attr($element['sizeToggle']); ?> <?php echo esc_attr($desktopClassMenu); ?> <?php echo esc_attr($tabletClassMenu); ?> <?php echo esc_attr($mobileClassMenu); ?>" style="<?php echo $stylesToggle; ?>">
+                                <div class="icon-1"></div>
+                                <div class="icon-2"></div>
+                                <div class="icon-3"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <nav class="nav <?php echo esc_attr($element['direction'] . ' ' . $element['directionMenu'] . ' ' . $element['widthMenu']); ?>">
+                                <ul style="<?php echo $stylesUlMenu; ?>">
+                                    <?php foreach ($element['menuItems'] as $item) : ?>
+                                        <li>
+                                        <a 
+                                            style="<?php echo esc_attr($stylesAMenu); ?>" 
+                                            href="<?php echo esc_url($item['link']); ?>" 
+                                            target="<?php echo esc_attr($item['openInNewTab']) ? '_blank' : '_self'; ?>" 
+                                            rel="<?php echo esc_attr($item['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
+                                        >
+                                                <?php echo esc_html($item['text']); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </nav>
+
+                            <?php endif; ?>
+
                       
                         <?php if ($element['type'] === 'title' && !empty($element['text'])): 
                             $fontStyle = isset($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal';
@@ -1132,14 +1263,6 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
 
 
 
-
-
-
-
-
-
-
-
                         <?php
                            // Button
                            elseif  ($innerElement['type'] === 'button'): 
@@ -1451,7 +1574,102 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                
                                 ?>
 
-                            
+
+                                <?php elseif ($innerElement['type'] === 'icon'): 
+
+                               $desktopClassIconInner = $innerElement['enableDesktopTitle'] ? 'desktop-icon-inner-visible' : 'desktop-icon-inner-hidden';
+                               $tabletClassIconInner = $innerElement['enableTabletTitle'] ? 'tablet-icon-inner-visible' : 'tablet-icon-inner-hidden';
+                               $mobileClassIconInner = $innerElement['enableMobileTitle'] ? 'mobile-icon-inner-visible' : 'mobile-icon-inner-hidden';
+                               if ($innerElement['textLink'] !== 'none') {
+                                // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                if ($innerElement['textLink'] === 'link' && !empty($innerElement['linkUrl'])) {
+                                    $link_url = esc_url($innerElement['linkUrl']);
+                                    if (!empty($innerElement['linkTarget'])) {
+                                        $linkTarget = esc_attr($innerElement['linkTarget']);
+                                    }
+                                    if ($innerElement['linkRel'] === 'nofollow') {
+                                        $rel_div = 'nofollow';
+                                    }
+                                    $onclick = "window.open('{$link_url}', '{$linkTarget}', 'rel={$rel_div}');";
+                                } elseif ($innerElement['textLink'] === 'scroll-below') {
+                                    $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                                } elseif ($innerElement['textLink'] === 'scroll-to-id' && !empty($innerElement['scrollToId'])) {
+                                    $scroll_id = esc_attr($innerElement['scrollToId']);
+                                    $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                                }
+                            }
+                               // Styles Icon
+                                    $stylesIcon = "
+                                    font-size: " . esc_attr($innerElement['fontSize']) . "px;
+                                    --font-size-tablet-icon-inner: " . esc_attr($innerElement['fontSizeTablet']) . "px;
+                                    --font-size-mobile-icon-inner: " . esc_attr($innerElement['fontSizeMobile']) . "px;
+                                    color: " . esc_attr($innerElement['textColor']) . ";
+                                    background-color: " . esc_attr($innerElement['backgroundColor']) . ";
+                                    --color-hover-icon-inner: " . esc_attr($innerElement['textColorHover']) . ";
+                                    margin: " . esc_attr($innerElement['marginTitle']['top']) . " " . esc_attr($innerElement['marginTitle']['right']) . " " . esc_attr($innerElement['marginTitle']['bottom']) . " " . esc_attr($innerElement['marginTitle']['left']) . ";
+                                    --delay-effect-icon-inner: " . esc_attr($innerElement['delayEffect']) . "s;
+                                    padding: " . esc_attr($innerElement['paddingTitle']['top']) . " " . esc_attr($innerElement['paddingTitle']['right']) . " " . esc_attr($innerElement['paddingTitle']['bottom']) . " " . esc_attr($innerElement['paddingTitle']['left']) . ";
+                                    border-width: " . esc_attr($innerElement['backgroundBorderSize']) . "px;
+                                    border-color: " . esc_attr($innerElement['backgroundBorderColor']) . ";
+                                    border-radius: " . esc_attr($innerElement['backgroundBorderRadius']) . "px;
+                                    --border-color-hover-icon-inner: " . esc_attr($innerElement['backgroundBorderColorHover']) . ";
+                                    --opacity-hover-icon-inner: " . esc_attr($innerElement['opacityHover']) . ";
+                                    border-style: " . esc_attr($innerElement['borderStyle']) . ";
+                                    --border-style-hover-icon-inner: " . esc_attr($innerElement['borderStyleHover']) . ";
+                                    --border-width-hover-icon-inner: " . esc_attr($innerElement['backgroundBorderSizeHover']) . "px;
+                                    --translate-hover-icon-inner: " . esc_attr($innerElement['translateEffectHover']) . "px;
+                                    --color-effect-hover-icon-inner: " . esc_attr($innerElement['effectHoverColorHover']) . ";
+                                    box-shadow: " . esc_attr($innerElement['boxShadowX']) . "px " . esc_attr($innerElement['boxShadowY']) . "px " . esc_attr($innerElement['boxShadowBlur']) . "px " . esc_attr($innerElement['boxShadowSpread']) . "px " . esc_attr($innerElement['colorShadow']) . ";
+                                    position: relative;
+                                    opacity: " . esc_attr($innerElement['opacity']) . ";
+                                    transform: rotate(" . esc_attr($innerElement['rotate']) . "deg);
+                                    --rotate-hover-icon-inner: " . esc_attr($innerElement['rotateHover']) . "deg;
+                                    --fa-animation-duration: " . esc_attr($innerElement['iconAnimationDuration']) . "s;
+                                     " . ($innerElement['textLink'] !== 'none' ? 'cursor: pointer;' : '') . "
+                                ";
+
+                                // Styles for the container div
+                                $stylesDiv = "
+                                    --duration-effect-icon-inner: " . esc_attr($innerElement['durationEffect']) . "s;
+                                    --delay-effect-icon-inner: " . esc_attr($innerElement['delayEffect']) . "s;
+                                    --transition-hover-icon-inner: " . esc_attr($innerElement['durationEffectHover']) . "s;
+                                    width: " . ($innerElement['widthTitle'] === 'custom' ? esc_attr($innerElement['widthCustomTitle']) . "%" : esc_attr($innerElement['widthTitle'])) . ";
+                                    --interation-icon-inner: " . esc_attr($innerElement['interation']) . ";
+                                    --delay-hide-seconds-icon-inner: " . esc_attr($innerElement['delayTransition']) . "s;
+                                    text-align: " . esc_attr($innerElement['textAlign']) . ";
+                                ";
+                                // Class names for the container div
+                                    $classNamesDiv = "content-icon-inner " . esc_attr($innerElement['animation']) ;
+
+                                    // Class names for the icon
+                                    $classNamesIcon = "slide-icon-inner " . esc_attr($innerElement['icon']) . " " . esc_attr($innerElement['iconAnimation']) . " " . esc_attr($innerElement['animationHover']);
+                                ?>
+                                 <?php if ($slide['developerMode']) : ?>  
+                                <div class="content-content-icon-inner-absolute <?php echo esc_attr($desktopClassIconInner); ?> <?php echo esc_attr($tabletClassIconInner); ?> <?php echo esc_attr($mobileClassIconInner); ?>"
+                                        data-desktop-x="<?php echo esc_attr($innerElement['desktop']['x']); ?>"
+                                        data-desktop-y="<?php echo esc_attr($innerElement['desktop']['y']); ?>"
+                                        data-tablet-x="<?php echo esc_attr($innerElement['tablet']['x']); ?>"
+                                        data-tablet-y="<?php echo esc_attr($innerElement['tablet']['y']); ?>"
+                                        data-mobile-x="<?php echo esc_attr($innerElement['mobile']['x']); ?>"
+                                        data-mobile-y="<?php echo esc_attr($innerElement['mobile']['y']); ?>" 
+                                        style=" transform: translate(<?php echo esc_attr($innerElement['desktop']['x']); ?>px, <?php echo esc_attr($innerElement['desktop']['y']); ?>px); position: absolute; z-index:<?php echo esc_attr( $innerElement['zIndexIcon'] )?>;"
+                                >
+                                <?php endif; ?> 
+                                <div <?php if ($innerElement['textLink'] !== 'none') : ?> onclick="<?php echo $onclick; ?>" <?php endif; ?>  style="<?php echo $stylesDiv; ?>" class="<?php echo $classNamesDiv; ?> <?php echo esc_attr($desktopClassIconInner); ?> <?php echo esc_attr($tabletClassIconInner); ?> <?php echo esc_attr($mobileClassIconInner); ?>" data-animation-icon-inner="<?php echo esc_attr($innerElement['animation']); ?>">
+                                    <i 
+                                        class="<?php echo $classNamesIcon; ?>" 
+                                        style="<?php echo $stylesIcon; ?>"
+                                        data-swiper-parallax-x="<?php echo esc_attr($innerElement['parallaxTitle']); ?>"
+                                        data-swiper-parallax-y="<?php echo esc_attr($innerElement['parallaxTitleY']); ?>"
+                                        data-swiper-parallax-scale="<?php echo esc_attr($innerElement['parallaxTitleScale']); ?>"
+                                        data-swiper-parallax-duration="<?php echo esc_attr($innerElement['parallaxTitleDuration']); ?>"
+                                        data-swiper-parallax-opacity="<?php echo esc_attr($innerElement['parallaxTitleOpacity']); ?>"
+                                    >
+                                    </i>
+                                </div>
+                                <?php if ($slide['developerMode']) : ?>  
+                                </div>
+                                <?php endif; ?>
 
                                         <?php elseif ($innerElement['type'] === 'image'): ?>
  
@@ -1942,7 +2160,7 @@ if (!function_exists('splitTextIntoLettersTitleDiv')) {
                                     text-align: " . esc_attr($element['textAlign']) . ";
                                 ";
                                 // Class names for the container div
-                                    $classNamesDiv = "content-icon " . esc_attr($element['animation']) . " " . esc_attr($element['hideTitle']);
+                                    $classNamesDiv = "content-icon " . esc_attr($element['animation']) ;
 
                                     // Class names for the icon
                                     $classNamesIcon = "slide-icon " . esc_attr($element['icon']) . " " . esc_attr($element['iconAnimation']) . " " . esc_attr($element['animationHover']);

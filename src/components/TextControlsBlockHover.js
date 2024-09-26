@@ -13,7 +13,7 @@ const TextControlsBlockHover = ({
   textIndex,
 }) => {
   // Update Text color
-  const updateSlideTextColorHover = (slideId, divIndex, textIndex, color) => {
+  const updateSlideTextColorHover = (slideId, divIndex, innerIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -22,11 +22,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, textColorHover: color }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, textColorHover: color }
+                          : innerElement
                     ),
                   }
                 : element
@@ -38,7 +38,7 @@ const TextControlsBlockHover = ({
   };
 
   // Update Rotate
-  const updateRotateHover = (slideId, divIndex, textIndex, rotate) => {
+  const updateRotateHover = (slideId, divIndex, innerIndex, rotate) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -47,11 +47,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, rotateHover: rotate }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, rotateHover: rotate }
+                          : innerElement
                     ),
                   }
                 : element
@@ -62,13 +62,9 @@ const TextControlsBlockHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
+
   // Update border style
-  const updateBorderStyleHover = (
-    slideId,
-    divIndex,
-    textIndex,
-    newBorderStyle
-  ) => {
+  const updateBorderStyleHover = (slideId, divIndex, innerIndex, newBorderStyle) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -77,11 +73,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, borderStyleHover: newBorderStyle }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, borderStyleHover: newBorderStyle }
+                          : innerElement
                     ),
                   }
                 : element
@@ -93,12 +89,7 @@ const TextControlsBlockHover = ({
   };
 
     // Update border width hover
-    const updateTitleBackgroundBorderSizeHover = (
-      slideId,
-      divIndex,
-      textIndex,
-      newSize
-    ) => {
+    const updateTitleBackgroundBorderSizeHover = (slideId, divIndex, innerIndex, newSize) => {
       const updatedSlides = slides.map((slide) =>
         slide.id === slideId
           ? {
@@ -107,11 +98,11 @@ const TextControlsBlockHover = ({
                 element.type === "div" && i === divIndex
                   ? {
                       ...element,
-                      innerTextDivs: element.innerTextDivs.map(
-                        (textDiv, tIndex) =>
-                          tIndex === textIndex
-                            ? { ...textDiv, backgroundBorderSizeHover: newSize }
-                            : textDiv
+                      innerElements: element.innerElements.map(
+                        (innerElement, eIndex) =>
+                          eIndex === innerIndex && innerElement.type === "text"
+                            ? { ...innerElement, backgroundBorderSizeHover: newSize }
+                            : innerElement
                       ),
                     }
                   : element
@@ -123,7 +114,7 @@ const TextControlsBlockHover = ({
     };
 
   // Update Opacity
-  const updateOpacityHover = (slideId, divIndex, textIndex, opacity) => {
+  const updateOpacityHover = (slideId, divIndex, innerIndex, opacity) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -132,11 +123,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, opacityHover: opacity }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, opacityHover: opacity }
+                          : innerElement
                     ),
                   }
                 : element
@@ -146,14 +137,10 @@ const TextControlsBlockHover = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
 
   // Duration effect
-  const updateDurationEffectHover = (
-    slideId,
-    divIndex,
-    textIndex,
-    newDurationEffect
-  ) => {
+  const updateDurationEffectHover = (slideId, divIndex, innerIndex, newDurationEffect) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -162,14 +149,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? {
-                              ...textDiv,
-                              durationEffectHover: newDurationEffect,
-                            }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, durationEffectHover: newDurationEffect }
+                          : innerElement
                     ),
                   }
                 : element
@@ -180,13 +164,9 @@ const TextControlsBlockHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
+
   // Update Border color
-  const updateTitleBackgroundBorderColorHover = (
-    slideId,
-    divIndex,
-    textIndex,
-    color
-  ) => {
+  const updateTitleBackgroundBorderColorHover = (slideId, divIndex, innerIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -195,11 +175,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, backgroundBorderColorHover: color }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, backgroundBorderColorHover: color }
+                          : innerElement
                     ),
                   }
                 : element
@@ -211,12 +191,7 @@ const TextControlsBlockHover = ({
   };
 
   // Update Annimation
-  const updateTextAnimationHover = (
-    slideId,
-    divIndex,
-    textIndex,
-    animation
-  ) => {
+  const updateTextAnimationHover = (slideId, divIndex, innerIndex, animation) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -225,11 +200,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, animationHover: animation }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, animationHover: animation }
+                          : innerElement
                     ),
                   }
                 : element
@@ -241,7 +216,7 @@ const TextControlsBlockHover = ({
   };
 
   // Update Effect color
-  const updateSlideEffectColorHover = (slideId, divIndex, textIndex, color) => {
+  const updateSlideEffectColorHover = (slideId, divIndex, innerIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -250,11 +225,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, effectHoverColorHover: color }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, effectHoverColorHover: color }
+                          : innerElement
                     ),
                   }
                 : element
@@ -266,12 +241,7 @@ const TextControlsBlockHover = ({
   };
 
   // Translate effect
-  const updateTranslateEffectHover = (
-    slideId,
-    divIndex,
-    textIndex,
-    newEffect
-  ) => {
+  const updateTranslateEffectHover = (slideId, divIndex, innerIndex, newEffect) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -280,11 +250,11 @@ const TextControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerTextDivs: element.innerTextDivs.map(
-                      (textDiv, tIndex) =>
-                        tIndex === textIndex
-                          ? { ...textDiv, translateEffectHover: newEffect }
-                          : textDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "text"
+                          ? { ...innerElement, translateEffectHover: newEffect }
+                          : innerElement
                     ),
                   }
                 : element
@@ -294,6 +264,7 @@ const TextControlsBlockHover = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
 
   const isAnimationNone = textDiv.animationHover === " ";
   const showColorOptionsPanel = [
@@ -486,7 +457,12 @@ const TextControlsBlockHover = ({
             step={0.1}
           />
         </div>
-        <div className="custom-select">
+      </div>
+      <div className="content-title-custom-panel intermedy">
+        <h2 className="title-custom-panel">{__("Animation", "cocoblocks")}</h2>
+      </div>
+      <div className="content-section-panel" style={{ padding: "0" }}>
+      <div className="custom-select">
           <RangeControl
             label={
               <>
@@ -511,11 +487,6 @@ const TextControlsBlockHover = ({
             step={1}
           />
         </div>
-      </div>
-      <div className="content-title-custom-panel intermedy">
-        <h2 className="title-custom-panel">{__("Animation", "cocoblocks")}</h2>
-      </div>
-      <div className="content-section-panel" style={{ padding: "0" }}>
         <div className="custom-select select-control-label-right">
           <SelectControl
             label={

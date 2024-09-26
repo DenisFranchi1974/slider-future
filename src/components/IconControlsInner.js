@@ -15,8 +15,8 @@ import { trash } from "@wordpress/icons";
 import AlignmentControlThree from "./aligncontrol-three";
 import ColorOptionsPanel from "./colorPanel";
 import SectionSelector from "./sectionSelector";
-import IconControlsHover from "./IconControlsHover";
-import BoxShadowIcon from "./boxShadowIcon";
+import IconControlsInnerHover from "./IconControlsInnerHover";
+import BoxShadowIconBlock from "./boxShadowIconBlock";
 import IconModal from "./IconModal";
 
 const IconControlsInner = ({
@@ -1866,12 +1866,14 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
         </div>
         </>
         )}
-        <BoxShadowIcon
+        <BoxShadowIconBlock
           slide={slide}
           slides={slides}
           element={element}
           elementIndex={elementIndex}
           setAttributes={setAttributes}
+          iconIndex={iconIndex}
+          iconDiv={iconDiv}
         />
       </>
     )}
@@ -1907,35 +1909,35 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
               value={iconDiv.animation}
               options={[
                 { label: "None", value: "none" },
-                { label: "Fade In", value: "fade-in-icon" },
-                { label: "Fade In Left", value: "fade-in-left-icon" },
-                { label: "Fade In Right", value: "fade-in-right-icon" },
-                { label: "Fade In Top", value: "fade-in-top-icon" },
-                { label: "Fade In Bottom", value: "fade-in-bottom-icon" },
-                { label: "Slide In Left", value: "slide-in-left-icon" },
-                { label: "Slide In Right", value: "slide-in-right-icon" },
-                { label: "Slide In Top", value: "slide-in-top-icon" },
-                { label: "Slide In Bottom", value: "slide-in-bottom-icon" },
-                { label: "Zoom In", value: "zoom-in-icon" },
-                { label: "Zoom In Left", value: "zoom-in-left-icon" },
-                { label: "Zoom In Right", value: "zoom-in-right-icon" },
-                { label: "Zoom In Top", value: "zoom-in-top-icon" },
-                { label: "Zoom In Bottom", value: "zoom-in-bottom-icon" },
-                { label: "Rotate In Left", value: "rotate-in-left-icon" },
-                { label: "Rotate In Right", value: "rotate-in-right-icon" },
-                { label: "Rotate In Top", value: "rotate-in-top-icon" },
-                { label: "Rotate In Bottom", value: "rotate-in-bottom-icon" },
-                { label: "Rotate Continuos", value: "rotate-continuous-icon" },
-                { label: "Bounce in", value: "bounce-effect-icon" },
-                { label: "Bounce in Left", value: "bounce-left-effect-icon" },
-                { label: "Bounce in Right", value: "bounce-right-effect-icon" },
-                { label: "Bounce in Top", value: "bounce-top-effect-icon" },
-                { label: "Bounce in Bottom", value: "bounce-bottom-effect-icon" },
-                { label: "Wiggle", value: "wiggle-icon" },
-                { label: "Flip", value: "flip-icon" },
-                { label: "Swing", value: "swing-icon" },
-                { label: "Rubber band", value: "rubber-band-icon" },
-                { label: "Stretch", value: "stretch-icon" },
+                { label: "Fade In", value: "fade-in-icon-inner" },
+                { label: "Fade In Left", value: "fade-in-left-icon-inner" },
+                { label: "Fade In Right", value: "fade-in-right-icon-inner" },
+                { label: "Fade In Top", value: "fade-in-top-icon-inner" },
+                { label: "Fade In Bottom", value: "fade-in-bottom-icon-inner" },
+                { label: "Slide In Left", value: "slide-in-left-icon-inner" },
+                { label: "Slide In Right", value: "slide-in-right-icon-inner" },
+                { label: "Slide In Top", value: "slide-in-top-icon-inner" },
+                { label: "Slide In Bottom", value: "slide-in-bottom-icon-inner" },
+                { label: "Zoom In", value: "zoom-in-icon-inner" },
+                { label: "Zoom In Left", value: "zoom-in-left-icon-inner" },
+                { label: "Zoom In Right", value: "zoom-in-right-icon-inner" },
+                { label: "Zoom In Top", value: "zoom-in-top-icon-inner" },
+                { label: "Zoom In Bottom", value: "zoom-in-bottom-icon-inner" },
+                { label: "Rotate In Left", value: "rotate-in-left-icon-inner" },
+                { label: "Rotate In Right", value: "rotate-in-right-icon-inner" },
+                { label: "Rotate In Top", value: "rotate-in-top-icon-inner" },
+                { label: "Rotate In Bottom", value: "rotate-in-bottom-icon-inner" },
+                { label: "Rotate Continuos", value: "rotate-continuous-icon-inner" },
+                { label: "Bounce in", value: "bounce-effect-icon-inner" },
+                { label: "Bounce in Left", value: "bounce-left-effect-icon-inner" },
+                { label: "Bounce in Right", value: "bounce-right-effect-icon-inner" },
+                { label: "Bounce in Top", value: "bounce-top-effect-icon-inner" },
+                { label: "Bounce in Bottom", value: "bounce-bottom-effect-icon-inner" },
+                { label: "Wiggle", value: "wiggle-icon-inner" },
+                { label: "Flip", value: "flip-icon-inner" },
+                { label: "Swing", value: "swing-icon-inner" },
+                { label: "Rubber band", value: "rubber-band-icon-inner" },
+                { label: "Stretch", value: "stretch-icon-inner" },
               ]}
               onChange={(animation) =>
                 updateTextAnimation(slide.id, elementIndex, iconIndex, animation)
@@ -1976,15 +1978,15 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
                 </div>
            
             {![
-            "bounce-effect-icon",
-            "bounce-left-effect-icon",
-            "bounce-right-effect-icon",
-            "bounce-top-effect-icon",
-            "bounce-bottom-effect-icon",
-            "stretch-icon",
-            "wiggle-icon",
-            "swing-icon",
-            "rubber-band-icon",
+            "bounce-effect-icon-inner",
+            "bounce-left-effect-icon-inner",
+            "bounce-right-effect-icon-inner",
+            "bounce-top-effect-icon-inner",
+            "bounce-bottom-effect-icon-inner",
+            "stretch-icon-inner",
+            "wiggle-icon-inner",
+            "swing-icon-inner",
+            "rubber-band-icon-inner",
           ].includes(iconDiv.animation) && (
             <>
             <div className="custom-select">
@@ -2015,15 +2017,15 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
             </>
           )}
           {[
-            "bounce-effect-icon",
-            "bounce-left-effect-icon",
-            "bounce-right-effect-icon",
-            "bounce-top-effect-icon",
-            "bounce-bottom-effect-icon",
-            "wiggle-icon",
-            "flip-icon",
-            "swing-icon",
-            "rubber-band-icon",
+            "bounce-effect-icon-inner",
+            "bounce-left-effect-icon-inner",
+            "bounce-right-effect-icon-inner",
+            "bounce-top-effect-icon-inner",
+            "bounce-bottom-effect-icon-inner",
+            "wiggle-icon-inner",
+            "flip-icon-inner",
+            "swing-icon-inner",
+            "rubber-band-icon-inner",
           ].includes(iconDiv.animation) && (
             <div className="custom-select select-control-label-right">
               <SelectControl
@@ -2041,7 +2043,7 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
                     {__("Iteration Mode", "cocoblocks")}
                   </>
                 }
-                value={iconDiv.iteration}
+                value={iconDiv.interation}
                 options={[
                   { label: "Forwards", value: "forwards" },
                   { label: "Infinite", value: "infinite" },
@@ -2243,12 +2245,14 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
     )}
     {activeSection === "hover" && (
       <>
-        <IconControlsHover
+        <IconControlsInnerHover
           slide={slide}
           slides={slides}
           element={element}
           elementIndex={elementIndex}
           setAttributes={setAttributes}
+          iconDiv={iconDiv}
+          iconIndex={iconIndex}
         />
       </>
     )}

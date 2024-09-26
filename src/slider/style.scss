@@ -427,6 +427,9 @@
 .bounce-effect-icon {
   animation: bounce var(--duration-effect-icon) var(--interation-icon);
 }
+.bounce-effect-icon-inner {
+  animation: bounce var(--duration-effect-icon-inner) var(--interation-icon-inner);
+}
 .bounce-effect-button-inner {
   animation: bounce var(--duration-effect-button-inner) var(--interation-button-inner);
 }
@@ -479,6 +482,9 @@
 .bounce-left-effect-icon {
   animation: bounce-left var(--duration-effect-icon) var(--interation-icon); 
 }
+.bounce-left-effect-icon-inner {
+  animation: bounce-left var(--duration-effect-icon-inner) var(--interation-icon-inner); 
+}
 .bounce-left-effect-button-inner {
   animation: bounce-left var(--duration-effect-button-inner) var(--interation-button-inner); 
 }
@@ -530,6 +536,9 @@
 }
 .bounce-right-effect-icon {
   animation: bounce-right var(--duration-effect-icon) var(--interation-icon);
+}
+.bounce-right-effect-icon-inner {
+  animation: bounce-right var(--duration-effect-icon-inner) var(--interation-icon-inner);
 }
 .bounce-right-effect-button-inner {
   animation: bounce-right var(--duration-effect-button-inner) var(--interation-button-inner);
@@ -936,6 +945,9 @@
 .stretch-icon {
   animation: stretch var(--duration-effect-icon) infinite;
 }
+.stretch-icon-inner {
+  animation: stretch var(--duration-effect-icon-inner) infinite;
+}
 .stretch-button-inner {
   animation: stretch var(--duration-effect-button-inner) infinite;
 }
@@ -971,6 +983,11 @@
 .fade-in-icon {
   animation: fadeIn var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-icon-inner {
+  animation: fadeIn var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .fade-in-button-inner {
@@ -1019,6 +1036,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.fade-in-left-icon-inner {
+  animation: fadeInLeft var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .fade-in-left-button-inner {
   animation: fadeInLeft var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1063,6 +1085,11 @@
 .fade-in-right-icon {
   animation: fadeInRight var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-right-icon-inner {
+  animation: fadeInRight var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .fade-in-right-button-inner {
@@ -1111,6 +1138,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.fade-in-top-icon-inner {
+  animation: fadeInTop var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .fade-in-top-button-inner {
   animation: fadeInTop var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1155,6 +1187,11 @@
 .fade-in-bottom-icon {
   animation: fadeInBottom var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.fade-in-bottom-icon-inner {
+  animation: fadeInBottom var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .fade-in-bottom-button-inner {
@@ -1204,6 +1241,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.slide-in-left-icon-inner {
+  animation: slideInLeft var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .slide-in-left-button-inner {
   animation: slideInLeft var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1248,6 +1290,11 @@
 .slide-in-right-icon {
   animation: slideInRight var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.slide-in-right-icon-inner {
+  animation: slideInRight var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .slide-in-right-button-inner {
@@ -1296,6 +1343,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.slide-in-top-icon-inner {
+  animation: slideInTop var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .slide-in-top-button-inner {
   animation: slideInTop var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1340,6 +1392,11 @@
 .slide-in-bottom-icon {
   animation: slideInBottom var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.slide-in-bottom-icon-inner {
+  animation: slideInBottom var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .slide-in-bottom-button-inner {
@@ -1389,6 +1446,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.zoom-in-icon-inner {
+  animation: zoomIn var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .zoom-in-button-inner {
   animation: zoomIn var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1433,6 +1495,11 @@
 .zoom-in-left-icon {
   animation: zoomInLeft var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-left-icon-inner {
+  animation: zoomInLeft var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .zoom-in-left-button-inner {
@@ -1481,6 +1548,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.zoom-in-right-icon-inner {
+  animation: zoomInRight var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .zoom-in-right-button-inner {
   animation: zoomInRight var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1527,6 +1599,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.zoom-in-top-icon-inner {
+  animation: zoomInTop var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .zoom-in-top-button-inner {
   animation: zoomInTop var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1571,6 +1648,11 @@
 .zoom-in-bottom-icon {
   animation: zoomInBottom var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.zoom-in-bottom-icon-inner {
+  animation: zoomInBottom var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .zoom-in-bottom-button-inner {
@@ -1620,6 +1702,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.rotate-in-left-icon-inner {
+  animation: rotateInLeft var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .rotate-in-left-button-inner {
   animation: rotateInLeft var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1664,6 +1751,11 @@
 .rotate-in-right-icon {
   animation: rotateInRight var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-right-icon-inner {
+  animation: rotateInRight var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .rotate-in-right-button-inner {
@@ -1712,6 +1804,11 @@
   animation-delay: var(--delay-effect-icon);
   opacity: 0; 
 }
+.rotate-in-top-icon-inner {
+  animation: rotateInTop var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
+  opacity: 0; 
+}
 .rotate-in-top-button-inner {
   animation: rotateInTop var(--duration-effect-button-inner) ease-in-out forwards;
   animation-delay: var(--delay-effect-button-inner);
@@ -1756,6 +1853,11 @@
 .rotate-in-bottom-icon {
   animation: rotateInBottom var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-bottom-icon-inner {
+  animation: rotateInBottom var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .rotate-in-bottom-button-inner {
@@ -1804,6 +1906,10 @@
   display: inline-block;
   animation: wiggle var(--duration-effect-icon) ease-in-out var(--interation-icon);
 }
+.wiggle-icon-inner {
+  display: inline-block;
+  animation: wiggle var(--duration-effect-icon-inner) ease-in-out var(--interation-icon-inner);
+}
 .wiggle-button-inner {
   display: inline-block;
   animation: wiggle var(--duration-effect-button-inner) ease-in-out var(--interation-button-inner);
@@ -1844,6 +1950,11 @@
 .rotate-in-icon {
   animation: rotateIn var(--duration-effect-icon) ease-in-out forwards;
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.rotate-in-icon-inner {
+  animation: rotateIn var(--duration-effect-icon-inner) ease-in-out forwards;
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .rotate-in-button-inner {
@@ -1894,6 +2005,12 @@
   display: inline-block;
   animation: flip var(--duration-effect-icon) ease-in-out var(--interation-icon);
   animation-delay: var(--delay-effect-icon);
+  opacity: 0; 
+}
+.flip-icon-inner {
+  display: inline-block;
+  animation: flip var(--duration-effect-icon-inner) ease-in-out var(--interation-icon-inner);
+  animation-delay: var(--delay-effect-icon-inner);
   opacity: 0; 
 }
 .flip-button-inner {
@@ -1951,6 +2068,11 @@
   transform-origin: top center;
   animation: swing var(--duration-effect-icon) ease var(--interation-icon);
 }
+.swing-icon-inner {
+  display: inline-block;
+  transform-origin: top center;
+  animation: swing var(--duration-effect-icon-inner) ease var(--interation-icon-inner);
+}
 .swing-button-inner {
   display: inline-block;
   transform-origin: top center;
@@ -2007,6 +2129,9 @@
 }
 .rubber-band-icon {
   animation: rubberBand var(--duration-effect-icon) ease-in-out var(--interation-icon);
+}
+.rubber-band-icon-inner {
+  animation: rubberBand var(--duration-effect-icon-inner) ease-in-out var(--interation-icon-inner);
 }
 .rubber-band-button-inner {
   animation: rubberBand var(--duration-effect-button-inner) ease-in-out var(--interation-button-inner);
@@ -2539,6 +2664,10 @@
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect-icon) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
 }
+.rotate-continuous-icon-inner  {
+  display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
+  animation: rotateContinuos var(--duration-effect-icon-inner) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
+}
 .rotate-continuous-button-inner  {
   display: inline-block; /* Assicurati che l'elemento sia inline-block per applicare la rotazione */
   animation: rotateContinuos var(--duration-effect-button-inner) linear infinite; /* Durata di 2 secondi, effetto di rotazione continuo, senza fine */
@@ -2886,6 +3015,68 @@
   filter: blur(2px); /* Applica una sfocatura leggera */
 }
 
+/* Icon inner Slide */
+.content-icon-inner:hover .slide-icon-inner{
+  color: var(--color-hover-icon-inner)!important;
+  border-color: var(--border-color-hover-icon-inner)!important;
+  opacity: var(--opacity-hover-icon-inner)!important;
+  border-style: var(--border-style-hover-icon-inner)!important;
+  border-width: var(--border-width-hover-icon-inner)!important;
+  rotate: var(--rotate-hover-icon-inner)!important;
+}
+.slide-icon-inner{
+  transition: color var(--transition-hover-icon-inner) ease, opacity var(--transition-hover-icon-inner) ease, transform var(--transition-hover-icon-inner) ease;
+}
+/* Effetto hover */
+.slide-icon-inner.hover-effect-1-icon-inner {
+  transition: transform var(--transition-hover-icon-inner) ease;
+}
+.slide-icon-inner.hover-effect-1-icon-inner:hover {
+  transform: scale(1.1)!important;
+}
+/* Translate Y */
+.slide-icon-inner.hover-effect-2-icon-inner:hover {
+  transform: translateY(var(--translate-hover-icon-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+/* Translate X */
+.slide-icon-inner.hover-effect-5-icon-inner:hover {
+  transform: translateX(var(--translate-hover-icon-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+}
+
+/* Shadow */
+.hover-effect-3-icon-inner- {
+  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease!important;
+}
+.hover-effect-3-icon-inner-:hover {
+  box-shadow: 0 2px 4px var(--color-effect-hover-icon-inner)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Shadow */
+.hover-effect-3-icon-inner {
+  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease!important;
+}
+.hover-effect-3-icon-inner:hover {
+  box-shadow: 0 4px 8px var(--color-effect-hover-icon-inner)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Ombra */
+.hover-effect-4-icon-inner{
+  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease!important;
+}
+.hover-effect-4-icon-inner:hover {
+  box-shadow: 0px 8px 16px var(--color-effect-hover-icon-inner)!important; /* Aggiunge un'ombra */
+  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+}
+
+/* Sfocatura */
+.hover-effect-6-icon-inner {
+  transition: filter var(--transition-hover-icon-inner) ease!important;
+}
+.hover-effect-6-icon-inner:hover {
+  filter: blur(2px); /* Applica una sfocatura leggera */
+}
 
 /* Title slide inside div */
 .content-title-div{ transition: transform var(--transition-hover-title-div) ease;}
@@ -3467,6 +3658,43 @@ transition: transform var(--transition-hover-image-inner) ease;
     display: block;
   }
   .mobile-button-hidden {
+    display: none;
+  }
+}
+
+/* Responsive menu */
+
+/* Stili di base per nascondere gli elementi */
+.desktop-menu-visible, .tablet-menu-visible, .mobile-menu-visible {
+  display: none;
+}
+
+/* Visibilità per desktop */
+@media (min-width: 1025px) {
+  .desktop-menu-visible {
+    display: block;
+  }
+  .desktop-menu-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-menu-visible {
+    display: block;
+  }
+  .tablet-menu-hidden {
+    display: none;
+  }
+}
+
+/* Visibilità per mobile */
+@media (max-width: 767px) {
+  .mobile-menu-visible {
+    display: block;
+  }
+  .mobile-menu-hidden {
     display: none;
   }
 }
@@ -5046,6 +5274,13 @@ transition: transform var(--transition-hover-image-inner) ease;
   transition: opacity var(--delay-hide-seconds-icon) ease-in-out;
 }
 
+/* Effetto nascondi l'elemento inner icon */
+.content-icon-inner.hidden {
+  opacity: 0 !important;
+  transition: opacity var(--delay-hide-seconds-icon-inner) ease-in-out;
+}
+
+
 
 /* Effetto nascondi l'elemento inner button */
 .content-button-slide-inner.hidden {
@@ -5245,3 +5480,248 @@ transition: transform var(--transition-hover-image-inner) ease;
 
 */
 
+
+
+/* Menu controls */
+.hamburger-icon.toggle-small {
+  width: 40px;
+  height: 40px;
+  .icon-1, .icon-2, .icon-3 {
+    width: 20px;
+    height: 2px;
+  }
+}
+.hamburger-icon.toggle-medium {
+  width: 50px;
+  height: 50px;
+  .icon-1, .icon-2, .icon-3 {
+    width: 25px;
+    height: 3px;
+  }
+}
+.hamburger-icon.toggle-large {
+  width: 60px;
+  height: 60px;
+  .icon-1, .icon-2, .icon-3 {
+    width: 32px;
+    height: 3px;
+  }
+}
+.icon-1, .icon-2, .icon-3 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  background-color: var(--color-icon-menu);
+  transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+}
+
+.icon-1 {
+  transform: translateY(-8px);
+  animation-delay: 100ms;
+}
+
+.icon-3 {
+  transform: translateY(8px);
+  animation-delay: 250ms;
+}
+
+.hamburger-icon {
+  position: absolute;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.hamburger-icon:hover {
+  transform: scale(var(--scale-icon-menu));
+}
+
+.icon-1.a {
+  transform: rotate(40deg);
+}
+
+.icon-3.b {
+  transform: rotate(-40deg);
+}
+
+.icon-2.c {
+  opacity: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.hamburger-icon.left{
+  top: 0;
+  left: 0;
+}
+.hamburger-icon.top{
+  top: 0;
+  left: 45%;
+}
+.hamburger-icon.right{
+  top: 0;
+  right: 0;
+}
+
+nav.left.menu-left{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+}
+nav.left.menu-left.half.show {
+  width: 50%;
+  opacity: 1;
+}
+nav.left.menu-left.full.show {
+  width: 100%;
+  opacity: 1;
+}
+nav.left.menu-left.auto.show {
+  width: auto;
+  opacity: 1;
+}
+nav.left.menu-top{
+  top: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+nav.left.menu-top.show {
+  height: 100%;
+  opacity: 1;
+}
+nav.left.menu-right{
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+}
+nav.left.menu-right.half.show {
+  width: 50%;
+  opacity: 1;
+}
+nav.left.menu-right.full.show {
+  width: 100%;
+  opacity: 1;
+}
+nav.left.menu-right.auto.show {
+  width: auto;
+  opacity: 1;
+}
+nav.left.menu-bottom{
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+nav.left.menu-bottom.show {
+  height: 100%;
+  opacity: 1;
+}
+
+
+nav.top.menu-top{
+  top: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+nav.top.menu-top.show {
+  height: 100%;
+  opacity: 1;
+}
+nav.top.menu-bottom{
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+nav.top.menu-bottom.show {
+  height: 100%;
+  opacity: 1;
+}
+
+nav.right.menu-top{
+  top: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+nav.right.menu-top.show {
+  height: 100%;
+  opacity: 1;
+}
+nav.right.menu-right{
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+}
+nav.right.menu-right.half.show {
+  width: 50%;
+  opacity: 1;
+}
+nav.right.menu-right.full.show {
+  width: 100%;
+  opacity: 1;
+}
+nav.right.menu-right.auto.show {
+  width: auto;
+  opacity: 1;
+}
+nav.right.menu-bottom{
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+}
+nav.right.menu-bottom.show {
+  height: 100%;
+  opacity: 1;
+}
+nav.right.menu-left{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+}
+nav.right.menu-left.half.show {
+  width: 50%;
+  opacity: 1;
+}
+nav.right.menu-left.full.show {
+  width: 100%;
+  opacity: 1;
+}
+nav.right.menu-left.auto.show {
+  width: auto;
+  opacity: 1;
+}
+
+nav {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 100ms;
+}
+nav ul {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+nav ul li {
+  list-style: none;
+}
+
+nav ul li:hover a{
+  color: var(--color-hover-menu)!important;
+}
+
+
+
+.content-slide-post img{
+  max-width: 250px;
+}

@@ -13,7 +13,7 @@ const ImageControlsBlockHover = ({
   setAttributes,
 }) => {
   // Update background color
-  const updateSlideImageColorHover = (slideId, divIndex, imageIndex, color) => {
+  const updateSlideImageColorHover = (slideId, divIndex, innerIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -22,11 +22,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, imageColorHover: color }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement, imageColorHover: color }
+                          : innerElement
                     ),
                   }
                 : element
@@ -38,7 +38,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Update Rotate
-  const updateRotateHoverImage = (slideId, divIndex, imageIndex, rotate) => {
+  const updateRotateHoverImage = (slideId, divIndex, innerIndex, rotate) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -47,11 +47,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, rotateHoverImage: rotate }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement, rotateHoverImage: rotate }
+                          : innerElement
                     ),
                   }
                 : element
@@ -63,12 +63,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Update border style
-  const updateBorderStyleHoverImage = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newBorderStyle
-  ) => {
+  const updateBorderStyleHoverImage = (slideId, divIndex, innerIndex, newBorderStyle) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -77,14 +72,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              borderStyleHoverImage: newBorderStyle,
-                            }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement, borderStyleHoverImage: newBorderStyle }
+                          : innerElement
                     ),
                   }
                 : element
@@ -95,8 +87,9 @@ const ImageControlsBlockHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
+
   // Update Opacity
-  const updateOpacityHoverImage = (slideId, divIndex, imageIndex, opacity) => {
+  const updateOpacityHoverImage= (slideId, divIndex, innerIndex, opacity) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -105,11 +98,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, opacityHoverImage: opacity }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement,  opacityHoverImage: opacity }
+                          : innerElement
                     ),
                   }
                 : element
@@ -121,12 +114,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Duration effect
-  const updateDurationEffectHoverImage = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newDurationEffect
-  ) => {
+  const updateDurationEffectHoverImage= (slideId, divIndex, innerIndex, newDurationEffect) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -135,14 +123,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              durationEffectHoverImage: newDurationEffect,
-                            }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement,  durationEffectHoverImage: newDurationEffect }
+                          : innerElement
                     ),
                   }
                 : element
@@ -154,12 +139,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Update Border color
-  const updateImageBackgroundBorderColorHover = (
-    slideId,
-    divIndex,
-    imageIndex,
-    color
-  ) => {
+  const updateImageBackgroundBorderColorHover= (slideId, divIndex, innerIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -168,14 +148,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              backgroundBorderColorHoverImage: color,
-                            }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement,  backgroundBorderColorHoverImage: color }
+                          : innerElement
                     ),
                   }
                 : element
@@ -187,12 +164,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Update Border width
-  const updateSlideBackgroundBorderSizeImageBlockHover = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newSize
-  ) => {
+  const updateSlideBackgroundBorderSizeImageBlockHover= (slideId, divIndex, innerIndex, newSize) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -201,14 +173,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              backgroundBorderSizeImageHover: newSize,
-                            }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement,  backgroundBorderSizeImageHover: newSize }
+                          : innerElement
                     ),
                   }
                 : element
@@ -219,14 +188,8 @@ const ImageControlsBlockHover = ({
     setAttributes({ slides: updatedSlides });
   };
 
-
   // Update Annimation
-  const updateImageAnimationHover = (
-    slideId,
-    divIndex,
-    imageIndex,
-    animation
-  ) => {
+  const updateImageAnimationHover= (slideId, divIndex, innerIndex, animation) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -235,11 +198,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, animationHoverImage: animation }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement, animationHoverImage: animation }
+                          : innerElement
                     ),
                   }
                 : element
@@ -251,12 +214,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Update Effect color
-  const updateSlideEffectColorHoverImage = (
-    slideId,
-    divIndex,
-    imageIndex,
-    color
-  ) => {
+  const updateSlideEffectColorHoverImage= (slideId, divIndex, innerIndex, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -265,11 +223,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? { ...imageDiv, effectHoverColorHoverImage: color }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement, effectHoverColorHoverImage: color }
+                          : innerElement
                     ),
                   }
                 : element
@@ -281,12 +239,7 @@ const ImageControlsBlockHover = ({
   };
 
   // Translate effect
-  const updateTranslateEffectHoverImage = (
-    slideId,
-    divIndex,
-    imageIndex,
-    newEffect
-  ) => {
+  const updateTranslateEffectHoverImage= (slideId, divIndex, innerIndex, newEffect) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {
@@ -295,14 +248,11 @@ const ImageControlsBlockHover = ({
               element.type === "div" && i === divIndex
                 ? {
                     ...element,
-                    innerImageDivs: element.innerImageDivs.map(
-                      (imageDiv, imgIndex) =>
-                        imgIndex === imageIndex
-                          ? {
-                              ...imageDiv,
-                              translateEffectHoverImage: newEffect,
-                            }
-                          : imageDiv
+                    innerElements: element.innerElements.map(
+                      (innerElement, eIndex) =>
+                        eIndex === innerIndex && innerElement.type === "image"
+                          ? { ...innerElement, translateEffectHoverImage: newEffect}
+                          : innerElement
                     ),
                   }
                 : element
@@ -312,7 +262,7 @@ const ImageControlsBlockHover = ({
     );
     setAttributes({ slides: updatedSlides });
   };
-
+ 
   const isAnimationNone = imageDiv.animationHoverImage === " ";
   const showColorOptionsPanel = [
     "hover-effect-3-image-inner-",
@@ -540,11 +490,6 @@ const ImageControlsBlockHover = ({
             step={1}
           />
         </div>
-      </div>
-      <div
-        className="content-section-panel"
-        style={{ padding: "0", marginTop: "18px" }}
-      >
         <div className="custom-select select-control-label-right">
           <SelectControl
             label={
@@ -649,11 +594,6 @@ const ImageControlsBlockHover = ({
             )}
           </>
         )}
-      </div>
-      <div
-          className="content-section-panel"
-          style={{ padding: "0", marginTop: "18px" }}
-        >
          <div className="custom-select">
               <RangeControl
                 label={

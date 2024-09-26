@@ -31,6 +31,8 @@ import DeviceSelector from "./devicesSelector";
 import IconControls from "./IconControls";
 import DivModal  from "./layerLibrary"
 import { icon } from "@fortawesome/fontawesome-svg-core";
+import MenuControls from "./MenuControls";
+import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 
 const SlideControls = ({
@@ -1434,12 +1436,80 @@ const SlideControls = ({
     };
     
 
+    // Add Menu
+  const addSlideMenu = (slideId) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: [
+              ...(slide.elements || []),
+              {
+                type: "menu",
+                menuItems: [],
+                textAlign: "center",
+                textAlignItems: "center",
+                fontStyle: {
+                  italic: false,
+                  underline: false,
+                  bold: false,
+                },
+                fontWeight: 400,
+                letterSpacing: 0,
+                fontSize: 18,
+                fontSizeTablet: 16,
+                fontSizeMobile: 16,
+                lineHeight: 1.5,
+                textColor: textColorDefault,
+                backgroundColor: "#ffffff",
+                toggleColor: "#000000",
+                backgroundColorToggle: "#ffffff",
+                radiusToggle: 100,
+                gapMenu: 5,
+                marginTitle: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                paddingTitle: {
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                },
+                fontFamily: "Arial",
+                linkUrl: "",
+                linkTarget: "_self",
+                enableDesktopTitle: true,
+                enableTabletTitle: true,
+                enableMobileTitle: true,
+                textColorHover: textColorDefault,
+                colorShadow: "",
+                boxShadowX: 0,
+                boxShadowY: 0,
+                boxShadowBlur: 0,
+                boxShadowSpread: 0,
+                direction:"left",
+                directionMenu:"menu-left",
+                widthMenu: "half",
+                heightMenu: "100%",
+                scaleToggle: 1.2,
+                sizeToggle: "toggle-medium",
+              },
+            ],
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
 
 
   return (
     <>
       <div className="content-subdescription-section-slider">
-        <h2>{__("Content Options")}</h2>
+        <h2>{__("Custom Content")}</h2>
       </div>
       {slides.map((slide, index) => (
         <PanelBody
@@ -1975,9 +2045,11 @@ const SlideControls = ({
                 }}
               >
                 {__(
-                  "Warning: Enabling this mode activates the drag-and-drop functionality for elements within the slide using absolute positioning. You can place them wherever you like. Each element can be positioned for desktop, tablet, and mobile responsive views. Please proceed with caution!",
-                  "cocoblocks"
-                )}
+    "Warning: Enabling this mode activates the drag-and-drop functionality for elements within the slide using absolute positioning. You can place them wherever you like. Each element can be positioned for desktop, tablet, and mobile responsive views. Please proceed with caution! ",
+    "cocoblocks"
+)}
+<strong>{__("The menu item cannot be dragged!", "cocoblocks")}</strong>
+
               </p>
               <div className="custom-select">
               <DeviceSelector
@@ -2412,6 +2484,25 @@ const SlideControls = ({
                   </Tooltip>
                 </div>
               )}
+                {element.type === "menu" && (
+                  <>
+                    <MenuControls
+                      slide={slide}
+                      slides={slides}
+                      element={element}
+                      elementIndex={elementIndex}
+                      setAttributes={setAttributes}
+                      setActiveSection={setActiveSection}
+                      activeSection={activeSection}
+                      device={device}
+                      handleDesktopClick={handleDesktopClick}
+                      handleTabletClick={handleTabletClick}
+                      handleMobileClick={handleMobileClick}
+                      showOtherButtons={showOtherButtons}
+                      attributes={attributes}
+                    />
+                  </>
+                )}
                 {element.type === "title" && (
                   <>
                     <TextControls
@@ -2567,7 +2658,12 @@ const SlideControls = ({
               onSelect={(divType) => addSlideDivLibrary(slide.id, divType)}
               />
             )}
-        
+         <Button
+              onClick={() => addSlideMenu(slide.id)}
+              label={__("Add menu", "slide")}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </Button>
           </div>
         </PanelBody>
       ))}

@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls} from "@wordpress/block-editor";
-import { TabPanel, Tooltip, PanelBody, Button  } from "@wordpress/components";
+import { TabPanel,  } from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -35,10 +35,11 @@ import SlideControls from "../components/slideControls";
 import ButtonComponent from "../components/buttonComponent";
 import DraggableTest from "../components/dragable";
 import Ruler from "../components/ruler";
-import { caption } from "@wordpress/icons";
 import IconComponent from "../components/iconComponent";
+import MenuComponent from "../components/menuComponent";
+import PostsControls from "../components/postsControls";
 
-
+import apiFetch from '@wordpress/api-fetch';
 
 export default function Edit({ attributes, setAttributes, slide }) {
   const {
@@ -200,7 +201,21 @@ export default function Edit({ attributes, setAttributes, slide }) {
     buttonSelected, 
     spanSelected, 
     pSelected,
-    transitionParalaxMouse
+    transitionParalaxMouse,
+    sliderMarginTop,
+    sliderMarginBottom,
+    postElementsOrder,
+    posts,
+    layoutPost,
+    gapItemsPost,
+    positionPost,
+    enableContentWidthPost,
+    contentWidthPost,
+    layoutWrapPost,
+    includeCategories = [],
+    excludeCategories = [],
+    order = "ASC",
+    postsToShow
   } = attributes;
 
 
@@ -371,7 +386,7 @@ export default function Edit({ attributes, setAttributes, slide }) {
   }, []);
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${parallax}-${backgroundColor}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${parallax}-${backgroundColor}-${JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)}`;
   // Nessun movimento della slider
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
@@ -445,7 +460,6 @@ export default function Edit({ attributes, setAttributes, slide }) {
     "--swiper-autoplay-progress-color": autoplayProgressColor,
     border: backgroundBorderSize + "px solid " + backgroundBorderColor,
     borderRadius: backgroundBorderRadius + "px",
-    padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
     backgroundColor: backgroundColor,
     "--color-one-effect": colorOneEffect,
     "--color-two-effect": colorTwoEffect,
@@ -453,6 +467,8 @@ export default function Edit({ attributes, setAttributes, slide }) {
     "--color-grid-editor": colorGrid,
     "--opacity-grid-editor": opacityGrid,
     height: autoHeight ? "auto" : `${slideHeight}px`,
+    marginTop: `${sliderMarginTop}px`,
+    marginBottom: `${sliderMarginBottom}px`,
   };
 
   // Autoplay
@@ -597,6 +613,31 @@ export default function Edit({ attributes, setAttributes, slide }) {
   const [selectedDevice, setSelectedDevice] = useState('desktop');
   const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
+  useEffect(() => {
+    const includeCategoriesParam = includeCategories.length ? includeCategories.join(',') : '';
+    const excludeCategoriesParam = excludeCategories.length ? excludeCategories.join(',') : '';
+    apiFetch({ path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}` })
+      .then((data) => {
+        console.log('Data ricevuti:', data); // Controlla i dati
+        setAttributes({ posts: data });
+      })
+      .catch((error) => {
+        console.error('Errore nel recupero dei post:', error);
+      });
+  }, [includeCategories, excludeCategories, order]);
+  
+// Debug: Verifica l'ordine dei post
+console.log('Ordine dei post:', posts);
+  
+  // Style content posts
+  const stylesContentPosts = {
+    padding: backgroundVerticalPadding + 'px ' + backgroundHorizontalPadding + 'px',
+    display: 'flex',
+    flexDirection: layoutPost,
+    gap: gapItemsPost + 'px',
+    flexWrap: layoutWrapPost,
+
+  };
 
 
   return (
@@ -651,6 +692,7 @@ export default function Edit({ attributes, setAttributes, slide }) {
                 </svg>
               ),
             },
+            ...(attributes.contentType === "custom" ? [
             {
               name: "tab2",
               title: (
@@ -664,7 +706,14 @@ export default function Edit({ attributes, setAttributes, slide }) {
                   <path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z" />
                 </svg>
               ),
-            },
+            }]: []),
+             ...(attributes.contentType === "post-based" ? [
+            {
+              name: "tab5",
+              title: (
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-400h160v-80H400v80Zm0-120h320v-80H400v80Zm0-120h320v-80H400v80Zm-80 400q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+              ),
+            }]: []),
           ]}
         >
           {(tab) => (
@@ -675,7 +724,6 @@ export default function Edit({ attributes, setAttributes, slide }) {
                   attributes={attributes}
                   setAttributes={setAttributes}
                 />
-            
               </div>
               {/*TAB 3*/}
               <div className={"tab-3 " + tab.name}>
@@ -692,6 +740,7 @@ export default function Edit({ attributes, setAttributes, slide }) {
                 />
               </div>
               {/*TAB 2*/}
+              {attributes.contentType === "custom" && (
               <div className={"tab-2 " + tab.name}>
            
                 <SlideControls
@@ -708,6 +757,17 @@ export default function Edit({ attributes, setAttributes, slide }) {
                 />
             
               </div>
+              )}
+                {/*TAB 5*/}
+                {attributes.contentType === "post-based" && (
+                <div className={"tab-5 " + tab.name}>
+               <PostsControls
+                  attributes={attributes}
+                  setAttributes={setAttributes}
+                 
+                />
+                </div>
+                )}
             </>
           )}
         </TabPanel>
@@ -870,21 +930,39 @@ export default function Edit({ attributes, setAttributes, slide }) {
           style={stylesPagination}
         >
           
-          {attributes.contentType === "post-based" &&
-          attributes.posts &&
-          Array.isArray(attributes.posts) &&
-          attributes.posts.length > 0
-            ? attributes.posts.map((post, index) => (
-                <SwiperSlide key={index}>
-                  <div className="swiper-slide">
-                    {post.image && <img src={post.image} alt={post.title} />}
-                    {post.title && <h3>{post.title}</h3>}
-                    {post.excerpt && <p>{post.excerpt}</p>}
-                    {post.link && <a href={post.link}>Read More</a>}
-                  </div>
-                </SwiperSlide>
-              ))
-            : null}
+          {attributes.contentType === "post-based" && posts && Array.isArray(posts) && posts.length > 0 ? (
+        posts.map((post, index) => (
+          <SwiperSlide key={index}>
+            <div className="swiper-slide">
+              <div className={"content-slide-post " + positionPost} style={stylesContentPosts}>
+                {postElementsOrder.map((element) => {
+                  switch (element) {
+                    case "image":
+                      return post.image && <img src={post.image} alt={post.title} />;
+                    case "title":
+                      return post.title && <h3>{post.title}</h3>;
+                    case "excerpt":
+                      return post.excerpt && <p>{post.excerpt}</p>;
+                    case "link":
+                      return post.link && <a href={post.link}>Read More</a>;
+                    case "author":
+                      return post.author && <p>{post.author}</p>;
+                    case "date":
+                      return post.date && <p>{post.date}</p>;
+                    case "categories":
+                      return post.categories && post.categories.map((cat, idx) => <span key={idx}>{cat}</span>);
+                    case "tags":
+                      return post.tags && post.tags.map((tag, idx) => <span key={idx}>{tag}</span>);
+                    default:
+                      return null;
+                  }
+                })}
+              </div>
+            </div>
+          </SwiperSlide>
+        ))
+      ) : null}
+
 
           {attributes.contentType === "woocommerce-based" &&
           attributes.posts &&
@@ -960,6 +1038,7 @@ export default function Edit({ attributes, setAttributes, slide }) {
                         borderWidth: slide.backgroundBorderSize + "px",
                         borderColor: slide.backgroundBorderColor,
                         margin: "0 auto",
+                        padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
                         ...(slide.developerMode
                           ? {}
                           : {
@@ -1081,6 +1160,22 @@ export default function Edit({ attributes, setAttributes, slide }) {
                               index={index}
                             />
                            
+                          );
+                          case "menu": 
+                          return slide.developerMode ? (
+                              <MenuComponent
+                                key={index}
+                                element={element}
+                                index={index}
+                                menuItems={element.menuItems || [{ text: "Home", link: "" }]}
+                              />
+                          ) : (
+                            <MenuComponent
+                              key={index}
+                              element={element}
+                              index={index}
+                              menuItems={element.menuItems || [{ text: "Home", link: "" }]}
+                            />
                           );
                         case "button":
                           return slide.developerMode ? (

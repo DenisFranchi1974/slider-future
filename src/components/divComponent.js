@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef  } from "react";
 import InnerTextDivComponent from "./innerTextDivComponent";
 import InnerImageDivComponent from "./innerImageDivComponent";
 import InnerButtonDivComponent from "./innerButtonDivComponent";
+import IconComponentInner from "./iconComponentInner";
 
 const DivComponent = ({ element, index }) => {
   const DivBlock = element.elementDiv || "div";
@@ -136,6 +137,11 @@ const DivComponent = ({ element, index }) => {
                   <InnerButtonDivComponent
                     buttonDiv={innerElement}
                     buttonIndex={innerIndex}
+                  />
+                ) : innerElement.type === "icon" ? (
+                  <IconComponentInner
+                    iconDiv={innerElement}
+                    iconIndex={innerIndex}
                   />
                 ) : innerElement.type === "image" ? (
                   <InnerImageDivComponent

@@ -661,6 +661,67 @@
     "transitionParalaxMouse": {
       "type": "number",
       "default": 0.5
+    },
+    "sliderMarginTop": {
+      "type": "number",
+      "default": 0
+    },
+    "sliderMarginBottom": {
+      "type": "number",
+      "default": 0
+    },
+    "postElementsOrder": {
+      "type": "array",
+      "default": [
+        "image",
+        "title",
+        "excerpt",
+        "link",
+        "author",
+        "date",
+        "categories",
+        "tags"
+      ]
+    },
+    "layoutPost": {
+      "type": "string",
+      "default": "column"
+    },
+    "gapItemsPost": {
+      "type": "number",
+      "default": 10
+    },
+    "positionPost": {
+      "type": "string",
+      "default": "top"
+    },
+    "enableContentWidthPost": {
+      "type": "boolean",
+      "default": false
+    },
+    "contentWidthPost": {
+      "type": "number",
+      "default": 100
+    },
+    "layoutWrapPost": {
+      "type": "string",
+      "default": "wrap"
+    },
+    "includeCategories": {
+      "type": "array",
+      "default": []
+    },
+    "excludeCategories": {
+      "type": "array",
+      "default": []
+    },
+    "order": {
+      "type": "string",
+      "default": "ASC"
+    },
+    "postsToShow": {
+      "type": "number",
+      "default": 5
     }
   }
 }

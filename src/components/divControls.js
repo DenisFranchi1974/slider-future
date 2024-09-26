@@ -1371,7 +1371,7 @@ const updateNameGroup = (slideId, index, value) => {
                       ...(element.innerElements || []),
                       {
                         type: "icon", 
-                        content: "",
+                        icon: "fas fa-star",
                         widthTitleBlock: "auto",
                         widthCustomTitleBlock: 100,
                         textAlign: "center",
@@ -1380,12 +1380,8 @@ const updateNameGroup = (slideId, index, value) => {
                         fontSizeTablet: 16,
                         fontSizeMobile: 16,
                         fontStyle: "",
-                        fontFamilyTitleBlock: "",
-                        fontWeightTitleBlock: "",
-                        lineHeight: 1.2,
-                        letterSpacingTitleBlock: 0,
                         textColor: innerTextColorDefault,
-                        paddingTitleBlock: {
+                        paddingTitle: {
                           top: "0",
                           right: "0",
                           bottom: "0",
@@ -1414,26 +1410,7 @@ const updateNameGroup = (slideId, index, value) => {
                         speedEffect: 100,
                         pauseEffect: 0,
                         animationCount: "1",
-                        widthCursor: 2,
-                        animationCursor: 1,
-                        cursorColor: innerTextColorDefault,
-                        gradinetColorOne: "",
-                        gradinetColorTwo: "",
-                        gradinetColorThree: "",
-                        gradinetColorFour: "",
-                        decoration: "none",
-                        underlineColor: innerTextColorDefault,
-                        underlinePadding: 0,
-                        underlineVertical: 0,
-                        underlineHorizontal: 0,
-                        underlineWidth: 20,
-                        underlineHeight: 3,
-                        underlineAnimation: "none",
-                        underlineAnimationFrom: 5,
-                        underlineAnimationTo: 50,
-                        underlineFromSizeNew: 5,
-                        underlineToSizeNew: 5,
-                        underlineAnimationTransition: 0.5,
+                        widthTitle: 100,
                         textColorHover: innerTextColorDefault,
                         borderStyleHover: "none",
                         backgroundBorderColorHover: "",
@@ -1464,7 +1441,15 @@ const updateNameGroup = (slideId, index, value) => {
                         delayHide: false,
                         delaySeconds: 1,
                         delayTransition: 0,
-                        zIndexTitle: 1,
+                        zIndexIcon: 1, 
+                        colorShadow: "",
+                        boxShadowX: 0,
+                        boxShadowY: 0,
+                        boxShadowBlur: 0,
+                        boxShadowSpread: 0,
+                        iconAnimationDuration:0.5,
+                        iconAnimation: "none",
+                        backgroundColor:'#ffffff00',
                       },
                     ],
                   }
@@ -1666,7 +1651,7 @@ const updateNameGroup = (slideId, index, value) => {
                 onClick={() => addSlideIconDiv(slide.id, elementIndex)}
                 label={__("Add inner icon", "slide")}
               >
-                <Icon icon={button} />
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Z"/></svg>
               </Button>
             </div>
           </>
@@ -3217,6 +3202,11 @@ const updateNameGroup = (slideId, index, value) => {
                   activeSection={activeSection}
                   parallax={parallax}
                   setSelectedIcon={setSelectedIcon}
+                  device={device}
+                  handleDesktopClick={handleDesktopClick}
+                  handleTabletClick={handleTabletClick}
+                  handleMobileClick={handleMobileClick}
+                  showOtherButtons={showOtherButtons}
                 />
             </div>
           );

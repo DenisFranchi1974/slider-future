@@ -2354,7 +2354,7 @@ const updateZindexTitle = (slideId, divIndex, innerIndex, value) => {
                   </Button>
                 </>
               </ButtonGroup>
-              {device === "desktop" && (
+              {device === "desktop" && ( 
                 <RangeControl
                   label={
                     <>

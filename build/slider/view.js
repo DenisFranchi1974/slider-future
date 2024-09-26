@@ -10481,6 +10481,7 @@ document.addEventListener('DOMContentLoaded', () => {
             handleAnimation(slide.querySelectorAll('.button-slider-inner'), 'data-animation-button-inner');
             handleAnimation(slide.querySelectorAll('.content-button-slide-inner'), 'data-animation-button-inner');
             handleAnimation(slide.querySelectorAll('.content-icon'), 'data-animation-icon');
+            handleAnimation(slide.querySelectorAll('.content-icon-inner'), 'data-animation-icon-inner');
           }
         }
       });
@@ -10658,6 +10659,7 @@ document.addEventListener('DOMContentLoaded', () => {
         handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider-inner'), 'data-animation-button-inner');
         handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide-inner'), 'data-animation-button-inner');
         handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon'), 'data-animation-icon');
+        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon-inner'), 'data-animation-icon-inner');
       }, 100);
     }
   });
@@ -11892,6 +11894,7 @@ function updateElementPositions() {
   const divElements = document.querySelectorAll('.content-inner-div-absolute');
   const buttonElements = document.querySelectorAll('.content-button-absolute');
   const iconElements = document.querySelectorAll('.content-content-icon-absolute');
+  const iconInnerElements = document.querySelectorAll('.content-content-icon-inner-absolute');
   const updatePosition = element => {
     let x = 0,
       y = 0;
@@ -11913,6 +11916,7 @@ function updateElementPositions() {
   divElements.forEach(updatePosition);
   buttonElements.forEach(updatePosition);
   iconElements.forEach(updatePosition);
+  iconInnerElements.forEach(updatePosition);
 }
 window.addEventListener('resize', updateElementPositions);
 // Chiamata iniziale per impostare le posizioni corrette al caricamento della pagina
@@ -12021,7 +12025,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* Delay Elements */
 document.addEventListener('DOMContentLoaded', function () {
-  const elements = document.querySelectorAll('.content-title-div, .content-button-slide,.content-button-slide-inner,.content-title-slide,.content-inner-div,.content-img-first,.content-img-inner');
+  const elements = document.querySelectorAll('.content-title-div, .content-button-slide,.content-button-slide-inner,.content-title-slide,.content-inner-div,.content-img-first,.content-img-inner,.content-icon,.content-icon-inner');
 
   // Itera su tutti gli elementi selezionati
   elements.forEach(element => {
@@ -12038,6 +12042,27 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       element.classList.remove('hidden');
     }
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const menus = document.querySelectorAll('.hamburger-icon');
+  menus.forEach((menu, index) => {
+    const uniqueId = `menu-${index}`;
+    menu.id = `icon-${uniqueId}`;
+    const icon1 = menu.querySelector('.icon-1');
+    const icon2 = menu.querySelector('.icon-2');
+    const icon3 = menu.querySelector('.icon-3');
+    const nav = menu.nextElementSibling;
+    icon1.id = `a-${uniqueId}`;
+    icon2.id = `b-${uniqueId}`;
+    icon3.id = `c-${uniqueId}`;
+    nav.id = `nav-${uniqueId}`;
+    menu.addEventListener('click', function () {
+      icon1.classList.toggle('a');
+      icon2.classList.toggle('c');
+      icon3.classList.toggle('b');
+      nav.classList.toggle('show');
+    });
   });
 });
 /******/ })()

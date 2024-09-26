@@ -7,7 +7,7 @@ import {
   ToggleControl,
   Button,
   CheckboxControl, 
-
+  ButtonGroup,
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { useEffect, useState } from "@wordpress/element";
@@ -68,7 +68,12 @@ const SliderControls = ({ attributes, setAttributes }) => {
     buttonSelected, 
     spanSelected, 
     pSelected,
-    transitionParalaxMouse
+    transitionParalaxMouse,
+    device,
+    sliderMarginTop,
+    sliderMarginBottom,
+    includeCategories = [],
+    excludeCategories = [],
   } = attributes;
 
    // Funzione per gestire il cambiamento del checkbox "Select all"
@@ -85,6 +90,24 @@ const SliderControls = ({ attributes, setAttributes }) => {
         spanSelected: isChecked,
         pSelected: isChecked,
     });
+};
+
+ // Responsive
+ const [showOtherButtons, setShowOtherButtons] = useState(false);
+ 
+const handleDesktopClick = () => {
+  setAttributes({ device: "desktop" });
+  setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+};
+
+const handleTabletClick = () => {
+  setAttributes({ device: "tablet" });
+  setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+};
+
+const handleMobileClick = () => {
+  setAttributes({ device: "mobile" });
+  setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
 };
 
   const [showLoopNotice, setShowLoopNotice] = useState(false);
@@ -268,7 +291,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
               ? "Errore nel recuperare i prodotti. Assicurati che WooCommerce sia installato e attivo."
               : "Errore nel recuperare i post.";
 
-          setAttributes({ posts: [], notice: message });
+          setAttributes({ posts: [], notice: message }); 
         });
     }
   }, [attributes.contentType]);
@@ -280,44 +303,111 @@ const SliderControls = ({ attributes, setAttributes }) => {
 
   return (
     <>
+      <Button isSecondary onClick={() => setIsModalOpen(true)}>
+              {__("Open Pattern Modal", "text-domain")}
+            </Button>
+            {isModalOpen && (
+              <PatternSelectionModal onClose={() => setIsModalOpen(false)} />
+            )}
       <div className="content-subdescription-section-slider">
         <h2>{__("General Options")}</h2>
       </div>
       <SectionSliderSelector onSectionChange={setActiveSectionSlider} />
       {activeSection === "layout" && (
         <>
-          <div className="content-title-custom-panel">
+          <div className="content-title-custom-panel" style={{justifyContent:'space-between'}}>
             <h2 className="title-custom-panel">
               {__("Layout Area", "cocoblocks")}
             </h2>
+            <ButtonGroup className="device-switcher-slider">
+                <Button
+                  size="small"
+                  isPressed={device === "desktop"}
+                  onClick={handleDesktopClick}
+                  className={device !== "desktop" ? "inactive" : ""}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                    style={{
+                      width: "16px",
+                      height: "16px",
+                    }}
+                  >
+                    <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
+                  </svg>
+                </Button>
+
+                <>
+                  <Button
+                    size="small"
+                    isPressed={device === "tablet"}
+                    onClick={handleTabletClick}
+                    className={device !== "tablet" ? "inactive" : ""}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    >
+                      <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
+                    </svg>
+                  </Button>
+                  <Button
+                    size="small"
+                    isPressed={device === "mobile"}
+                    onClick={handleMobileClick}
+                    className={device !== "mobile" ? "inactive" : ""}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    >
+                      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
+                    </svg>
+                  </Button>
+                </>
+              </ButtonGroup>
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
-            <Button isSecondary onClick={() => setIsModalOpen(true)}>
-              {__("Open Pattern Modal", "text-domain")}
-            </Button>
-            {isModalOpen && (
-              <PatternSelectionModal onClose={() => setIsModalOpen(false)} />
-            )}
-            <div className="svg-devices">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="var(--light-color)"
-              >
-                <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
-              </svg>
-              <h3>{__("Desktop", "cocoblocks")}</h3>
-            </div>
+          
+
+
+            {device === "desktop" && (
+              <>
             <div className="content-section-panel">
-              <div
-                className="custom-select select-control-label-right"
-                style={{
-                  borderTopLeftRadius: "8px",
-                  borderTopRightRadius: "8px",
-                }}
-              >
+              <div className="custom-select select-button-device-slider" style={{textAlign:'right'}}>
+                <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    >
+                      <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
+                    </svg>
+                  </div>
+              <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
                     <>
@@ -486,26 +576,28 @@ const SliderControls = ({ attributes, setAttributes }) => {
                 </Notice>
               )}
             </div>
-            <div className="svg-devices">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="var(--light-color)"
-              >
-                <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
-              </svg>
-              <h3>{__("Tablet", "cocoblocks")}</h3>
-            </div>
+            </>
+            )}
+    
+            {device === "tablet" && (
+              <>
             <div className="content-section-panel">
-              <div
-                className="custom-select select-control-label-right"
-                style={{
-                  borderTopLeftRadius: "8px",
-                  borderTopRightRadius: "8px",
-                }}
-              >
+            <div className="custom-select select-button-device-slider" style={{textAlign:'right'}}>
+            <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    >
+                      <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
+                    </svg>
+                  </div>
+              <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
                     <>
@@ -610,26 +702,28 @@ const SliderControls = ({ attributes, setAttributes }) => {
                 </Tooltip>
               </div>
             </div>
-            <div className="svg-devices">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="var(--light-color)"
-              >
-                <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
-              </svg>
-              <h3>{__("Mobile", "cocoblocks")}</h3>
-            </div>
+            </>
+            )}
+          
+            {device === "mobile" && (
+              <>
             <div className="content-section-panel">
-              <div
-                className="custom-select select-control-label-right"
-                style={{
-                  borderTopLeftRadius: "8px",
-                  borderTopRightRadius: "8px",
-                }}
-              >
+            <div className="custom-select select-button-device-slider" style={{textAlign:'right'}}>
+            <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    >
+                      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
+                    </svg>
+                  </div>
+              <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
                     <>
@@ -734,6 +828,8 @@ const SliderControls = ({ attributes, setAttributes }) => {
                 </Tooltip>
               </div>
             </div>
+            </>
+            )}
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
                 {__("Layout Size", "cocoblocks")}
@@ -1322,10 +1418,11 @@ const SliderControls = ({ attributes, setAttributes }) => {
                   max={256}
                   step={1}
                 />
+                </div>
                 {backgroundHorizontalPadding > 0 && (
                   <p
                     className="notice components-base-control__help"
-                    style={{ borderRadius: "0" }}
+                    style={{ margin: "0" }}
                   >
                     {__(
                       'Warning: if you set space here you also need to adjust "Space between slides"!',
@@ -1333,8 +1430,48 @@ const SliderControls = ({ attributes, setAttributes }) => {
                     )}
                   </p>
                 )}
-              </div>
+              
             </div>
+            <div className="content-section-panel" style={{ padding: "0" }}>
+              <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"/></svg>
+                      {__("Margin Top", "cocoblocks")}
+                    </>
+                  }
+                  value={sliderMarginTop}
+                  onChange={(value) =>
+                    setAttributes({
+                      sliderMarginTop: value,
+                    })
+                  }
+                  min={-200}
+                  max={200}
+                  step={1}
+                />
+              </div>
+              <div className="custom-select">
+                <RangeControl
+                  label={
+                    <>
+                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Zm120 160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm160 0q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm160 0q17 0 28.5-11.5T680-640q0-17-11.5-28.5T640-680q-17 0-28.5 11.5T600-640q0 17 11.5 28.5T640-600Zm0 160q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520q-17 0-28.5 11.5T600-480q0 17 11.5 28.5T640-440Zm-160 0q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440Zm-160 0q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Z"/></svg>
+                      {__("Margin Bottom", "cocoblocks")}
+                    </>
+                  }
+                  value={sliderMarginBottom}
+                  onChange={(value) =>
+                    setAttributes({
+                      sliderMarginBottom: value,
+                    })
+                  }
+                  min={-200}
+                  max={200}
+                  step={1}
+                />
+              </div>
+              </div>
           </div>
         </>
       )}
@@ -1500,23 +1637,26 @@ const SliderControls = ({ attributes, setAttributes }) => {
                     },
                   ]}
                 />
+                </div>
                 {attributes.notice && (
-                  <div className="notice notice-warning">
+                  <div className="notice components-base-control__help" style={{ margin: 0 }}>
                     <p>{attributes.notice}</p>
                   </div>
                 )}
                 {attributes.contentType === "custom" && (
+                 
                   <p
                     className="notice components-base-control__help"
-                    style={{ borderRadius: 0, marginTop: "18px" }}
+                    style={{ margin: 0 }}
                   >
                     {__(
                       "No further source settings needed. Content is created manually.",
                       "cocoblocks"
                     )}
                   </p>
+                
                 )}
-              </div>
+              
             </div>
           </div>
         </>
@@ -1732,7 +1872,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
                       "cocoblocks"
                     )}
                   </p>
-                  <div className="custom-select">
+                  <div className="custom-select" style={{paddingBottom:'12px'}}>
                   <table
                     style={{
                       width: "100%",
@@ -1743,62 +1883,63 @@ const SliderControls = ({ attributes, setAttributes }) => {
                   >
   <thead className="thead-hsv">
     <tr>
-      <th style={{ border: "1px solid var(--light-color)", borderLeft:"none", padding: "5px" }}>
+      <th style={{  padding: "5px" }}>
         {__("Hue", "cocoblocks")}
       </th>
-      <th style={{ border: "1px solid var(--light-color)", padding: "5px" }}>
-        {__("Saturation", "cocoblocks")}
+      <th style={{  padding: "5px" }}>
+        {__("Sat.", "cocoblocks")}
       </th>
-      <th style={{ border: "1px solid var(--light-color)", padding: "5px" }}>
+      <th style={{ padding: "5px" }}>
         {__("Value", "cocoblocks")}
       </th>
-      <th style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none" }}>
+      <th style={{  padding: "5px" }}>
         {__("Color", "cocoblocks")}
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>  {__("0", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("0", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(0, 100%, 50%)" }}>  {__("Red", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none' }}>  {__("Red", "cocoblocks")}<div style={{backgroundColor: "hsl(0, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.083", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.083", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(30, 100%, 50%)" }}>{__("Orange", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Orange", "cocoblocks")}<div style={{backgroundColor: "hsl(30, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+   
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.17", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.17", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(60, 100%, 50%)" }}>{__("Yellow", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px" ,borderLeft:'none',borderTopColor:'transparent'}}>  {__("Yellow", "cocoblocks")}<div style={{backgroundColor: "hsl(60, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.33", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.33", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(120, 100%, 50%)" }}>{__("Green", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Green", "cocoblocks")}<div style={{backgroundColor: "hsl(120, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.5", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.5", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(180, 100%, 50%)" }}>{__("Cyan", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Cyan", "cocoblocks")}<div style={{backgroundColor: "hsl(180, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.67", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.67", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px",borderRight:"none", backgroundColor: "hsl(240, 100%, 50%)" }}>{__("Blue", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Blue", "cocoblocks")}<div style={{backgroundColor: "hsl(240, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr className="last-border-table-hsv">
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", borderLeft:"none" }}>{__("0.83", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.83", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
       <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)",borderRight:"none", padding: "5px", backgroundColor: "hsl(300, 100%, 50%)" }}>{__("Magenta", "cocoblocks")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent'}}>  {__("Magenta", "cocoblocks")}<div style={{backgroundColor: "hsl(300, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
   </tbody>
 </table>

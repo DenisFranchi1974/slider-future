@@ -379,16 +379,9 @@ const ButtonTypeSelectionModal = ({ slideId, onClose, onSelect }) => {
           </a>
         </div>
         </Button>
-        <Button onClick={() => setSelectedType("type8")}  className={selectedType === "type8" ? "selected" : ""}>
+        <Button onClick={() =>setSelectedType("type8")} className={selectedType === "type8" ? "selected" : ""}>
         <div className={'content-button-slide button-slider'} >
           <a href="#" style={getButtonStyleButton("type8")}>
-              {__('Click Here', 'cocoblocks')}
-          </a>
-        </div>
-        </Button>
-        <Button onClick={() => setSelectedType("type9")}  className={selectedType === "type9" ? "selected" : ""}>
-        <div className={'content-button-slide button-slider'} >
-          <a href="#" style={getButtonStyleButton("type9")}>
               {__('Click Here', 'cocoblocks')}
           </a>
         </div>

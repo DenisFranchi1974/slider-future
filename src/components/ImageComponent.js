@@ -90,6 +90,7 @@ const ImageComponent = ({ element, index }) => {
    }, [element.delaySeconds]);
 
 
+
   return (
     <div
       style={{
