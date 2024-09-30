@@ -19,6 +19,14 @@ import FontStyle from "./font-style";
 import SectionSelector from "./sectionSelector";
 import TextControlsHover from "./TextControlsHover";
 import BoxShadowControl from "./boxShadow";
+import CustomRangeControl from "../controls/range"
+import RotateRightIcon from '@mui/icons-material/RotateRight'; // Importa l'icona RotateRight
+import WidthWideIcon from '@mui/icons-material/WidthWide';
+import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
+import TabletMacIcon from '@mui/icons-material/TabletMac';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import HeightIcon from '@mui/icons-material/Height';
+import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
 
 const TextControls = ({
   slide,
@@ -39,6 +47,32 @@ const TextControls = ({
   // Inizializza lo stato locale utilizzando element.playState
   const [playState, setPlayState] = useState(element.playState || "");
 
+// Funzione generale per aggiornare i controlli
+const updateElement = (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) => {
+            if (updateType === "primary" && i === elementIndex && element.type === elementType) {
+              return { ...element, [property]: newValue };
+            } else if (updateType === "secondary" && i === elementIndex && element.type === "div") {
+              return {
+                ...element,
+                innerElements: element.innerElements.map((innerElement, eIndex) =>
+                  eIndex === innerIndex && innerElement.type === elementType
+                    ? { ...innerElement, [property]: newValue }
+                    : innerElement
+                ),
+              };
+            }
+            return element;
+          }),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
 
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
@@ -252,22 +286,6 @@ const TextControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Update Rotate
-  const updateRotate = (slideId, index, rotate) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, rotate: rotate }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
 
   // Update Opacity
   const updateOpacity = (slideId, index, opacity) => {
@@ -319,107 +337,7 @@ const TextControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
-
-  // Custom width
-  const updateCustomWidthTitle = (slideId, index, customWidth) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, widthCustomTitle: customWidth }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Size
-  const updateFontSize = (slideId, index, newSize) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontSize: newSize }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-  // Size Tablet
-  const updateFontSizeTablet = (slideId, index, newSizeTablet) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontSizeTablet: newSizeTablet }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-  // Size Mobile
-  const updateFontSizeMobile = (slideId, index, newSizeMobile) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, fontSizeMobile: newSizeMobile }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Line height
-  const updateLineHeight = (slideId, index, newLineHeight) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, lineHeight: newLineHeight }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
-  // Letter Spacing
-  const updateLetterSpacing = (slideId, index, newLetterSpacing) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, i) =>
-              element.type === "title" && i === index
-                ? { ...element, letterSpacing: newLetterSpacing }
-                : element
-            ),
-          }
-        : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
-
+  
   // Duration effect
   const updateDurationEffect = (slideId, index, newDurationEffect) => {
     const updatedSlides = slides.map((slide) =>
@@ -1550,35 +1468,27 @@ const TextControls = ({
             )}
             {element.widthTitle === "custom" && (
               <>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 -960 960 960"
-                          width="24px"
-                          fill="#e8eaed"
-                        >
-                          <path d="M280-320 120-480l160-160 57 56-64 64h414l-63-64 56-56 160 160-160 160-56-56 63-64H273l63 64-56 56Z" />
-                        </svg>
-                        {__("Custom Width (%)", "cocoblocks")}
-                      </>
-                    }
-                    value={element.widthCustomTitle}
-                    onChange={(customWidth) =>
-                      updateCustomWidthTitle(
-                        slide.id,
-                        elementIndex,
-                        customWidth
-                      )
-                    }
-                    min={1}
-                    max={100}
-                    step={1}
-                  />
-                </div>
+              <CustomRangeControl
+                label={
+                  <>
+                    <WidthWideIcon />
+                    {__("Custom Width (%)", "cocoblocks")}
+                  </>
+                }
+                value={element.widthCustomTitle}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={1}
+                max={100}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'widthCustomTitle')
+                }
+              />
               </>
             )}
             <div className="custom-select">
@@ -1655,7 +1565,6 @@ const TextControls = ({
             <h2 className="title-custom-panel">{__("Font", "cocoblocks")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
-            <div className="custom-select">
               <ButtonGroup className="device-switcher">
                 <Button
                   size="small"
@@ -1663,19 +1572,7 @@ const TextControls = ({
                   onClick={handleDesktopClick}
                   className={device !== "desktop" ? "inactive" : ""}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#e8eaed"
-                    style={{
-                      width: "16px",
-                      height: "16px",
-                    }}
-                  >
-                    <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
-                  </svg>
+                  <PersonalVideoIcon />
                 </Button>
 
                 <>
@@ -1685,19 +1582,7 @@ const TextControls = ({
                     onClick={handleTabletClick}
                     className={device !== "tablet" ? "inactive" : ""}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                      }}
-                    >
-                      <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
-                    </svg>
+                    <TabletMacIcon />
                   </Button>
                   <Button
                     size="small"
@@ -1705,143 +1590,79 @@ const TextControls = ({
                     onClick={handleMobileClick}
                     className={device !== "mobile" ? "inactive" : ""}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                      }}
-                    >
-                      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
-                    </svg>
+                    <SmartphoneIcon />
                   </Button>
                 </>
               </ButtonGroup>
               {device === "desktop" && (
-                <RangeControl
+                <CustomRangeControl
                   label={
                     <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z" />
-                      </svg>
-                      {__("Font Size", "cocoblocks")}
+                      <PersonalVideoIcon />
+                      {__("Font size", "cocoblocks")}
                     </>
                   }
-                  beforeIcon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                      }}
-                    >
-                      <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
-                    </svg>
-                  }
                   value={element.fontSize}
-                  onChange={(newSize) =>
-                    updateFontSize(slide.id, elementIndex, newSize)
-                  }
+                  slides={slides}
+                  setAttributes={setAttributes}
                   min={4}
                   max={500}
                   step={1}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="title"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSize')
+                  }
                 />
               )}
               {device === "tablet" && (
-                <RangeControl
-                  label={
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z" />
-                      </svg>
-                      {__("Font Size", "cocoblocks")}
-                    </>
-                  }
-                  beforeIcon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                      }}
-                    >
-                      <path d="M120-160q-33 0-56.5-23.5T40-240v-480q0-33 23.5-56.5T120-800h720q33 0 56.5 23.5T920-720v480q0 33-23.5 56.5T840-160H120Zm40-560h-40v480h40v-480Zm80 480h480v-480H240v480Zm560-480v480h40v-480h-40Zm0 0h40-40Zm-640 0h-40 40Z" />
-                    </svg>
-                  }
-                  value={element.fontSizeTablet}
-                  onChange={(newSizeTablet) =>
-                    updateFontSizeTablet(slide.id, elementIndex, newSizeTablet)
-                  }
-                  min={4}
-                  max={500}
-                  step={1}
-                />
+              <CustomRangeControl
+                label={
+                  <>
+                    <TabletMacIcon />
+                    {__("Font size", "cocoblocks")}
+                  </>
+                }
+                value={element.fontSizeTablet}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={4}
+                max={500}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeTablet')
+                }
+              />
               )}
               {device === "mobile" && (
-                <RangeControl
-                  label={
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z" />
-                      </svg>
-                      {__("Font Size", "cocoblocks")}
-                    </>
-                  }
-                  beforeIcon={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                      }}
-                    >
-                      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z" />
-                    </svg>
-                  }
-                  value={element.fontSizeMobile}
-                  onChange={(newSizeMobile) =>
-                    updateFontSizeMobile(slide.id, elementIndex, newSizeMobile)
-                  }
-                  min={4}
-                  max={500}
-                  step={1}
-                />
+              <CustomRangeControl
+                label={
+                  <>
+                    <SmartphoneIcon />
+                    {__("Font size", "cocoblocks")}
+                  </>
+                }
+                value={element.fontSizeMobile}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={4}
+                max={500}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeMobile')
+                }
+              />
               )}
-            </div>
             <div className="custom-select">
               <FontStyle
                 value={element.fontStyle || {}} // Inizializza con un oggetto vuoto se undefined
@@ -1921,56 +1742,48 @@ const TextControls = ({
                 }
               />
             </div>
-            <div className="custom-select">
-              <RangeControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="18px"
-                      viewBox="0 -960 960 960"
-                      width="18px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M240-160 80-320l56-56 64 62v-332l-64 62-56-56 160-160 160 160-56 56-64-62v332l64-62 56 56-160 160Zm240-40v-80h400v80H480Zm0-240v-80h400v80H480Zm0-240v-80h400v80H480Z" />
-                    </svg>
-                    {__("Line height", "cocoblocks")}
-                  </>
-                }
-                value={element.lineHeight}
-                onChange={(newLineHeight) =>
-                  updateLineHeight(slide.id, elementIndex, newLineHeight)
-                }
-                min={0.5}
-                max={2.5}
-                step={0.1}
-              />
-            </div>
-            <div className="custom-select">
-              <RangeControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M160-160v-640h80v640h-80Zm560 0v-640h80v640h-80ZM294-280l150-400h72l150 400h-69l-36-102H399l-36 102h-69Zm126-160h120l-58-166h-4l-58 166Z" />
-                    </svg>
-                    {__("Letter spacing", "cocoblocks")}
-                  </>
-                }
-                value={element.letterSpacing}
-                onChange={(newLetterSpacing) =>
-                  updateLetterSpacing(slide.id, elementIndex, newLetterSpacing)
-                }
-                min={0}
-                max={100}
-                step={0.5}
-              />
-            </div>
+              <CustomRangeControl
+                  label={
+                    <>
+                      <HeightIcon />
+                      {__("Line height", "cocoblocks")}
+                    </>
+                  }
+                  value={element.lineHeight}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={.5}
+                  max={2.5}
+                  step={.1}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="title"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'lineHeight')
+                  }
+                />
+                <CustomRangeControl
+                  label={
+                    <>
+                      <FormatLineSpacingIcon style={{transform:'rotate(90deg)'}} />
+                      {__("Letter spacing", "cocoblocks")}
+                    </>
+                  }
+                  value={element.letterSpacing}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={0}
+                  max={100}
+                  step={.5}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="title"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'letterSpacing')
+                  }
+                />
             <p
               className="notice components-base-control__help"
               style={{
@@ -2231,31 +2044,49 @@ const TextControls = ({
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
-            <div className="custom-select">
-              <RangeControl
+          
+
+
+
+            <CustomRangeControl
                 label={
                   <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z" />
-                    </svg>
+                    <RotateRightIcon />
                     {__("Rotate", "cocoblocks")}
                   </>
                 }
                 value={element.rotate}
-                onChange={(rotate) =>
-                  updateRotate(slide.id, elementIndex, rotate)
-                }
+                slides={slides}
+                setAttributes={setAttributes}
                 min={0}
                 max={360}
                 step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotate')
+                }
               />
-            </div>
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
             <div className="custom-select select-control-label-right">
               <SelectControl
                 label={
@@ -2342,8 +2173,7 @@ const TextControls = ({
               />
             </div>
           </div>
-          {slide.developerMode && (
-            <>
+        
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
               {__("LEVEL", "cocoblocks")}
@@ -2368,8 +2198,7 @@ const TextControls = ({
               />
             </div>
           </div>
-          </>
-          )}
+          
           <BoxShadowControl
             slide={slide}
             slides={slides}

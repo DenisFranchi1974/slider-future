@@ -74,7 +74,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
 
   const resetEffect = () => {
     setAttributes({
-      colorOneEffect: defaultAttributes.colorOneEffect,
+     colorOneEffect: defaultAttributes.colorOneEffect,
       colorTwoEffect: defaultAttributes.colorTwoEffect,
       colorThreeEffect: defaultAttributes.colorThreeEffect,
     });

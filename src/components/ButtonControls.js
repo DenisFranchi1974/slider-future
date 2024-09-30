@@ -2315,8 +2315,6 @@ const ButtonControls = ({
               />
             </div>
           </div>
-          {slide.developerMode && (
-            <>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
               {__("LEVEL", "cocoblocks")}
@@ -2341,8 +2339,6 @@ const ButtonControls = ({
               />
             </div>
           </div>
-          </>
-          )}
           <BoxShadowControlButton
             slide={slide}
             slides={slides}

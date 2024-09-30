@@ -29,6 +29,7 @@ const IconComponentInner = ({ iconDiv, iconIndex }) => {
     boxShadow: `${iconDiv.boxShadowX}px ${iconDiv.boxShadowY}px ${iconDiv.boxShadowBlur}px ${iconDiv.boxShadowSpread}px ${iconDiv.colorShadow}` || "0 0 0 0 #000000",
     position:"relative",
     opacity: iconDiv.opacity,
+    zIndex: iconDiv.zIndexIcon,
     transform: `rotate(${iconDiv.rotate}deg)`,
     "--rotate-hover-icon-inner": iconDiv.rotateHover + "deg" || "0",
     '--fa-animation-duration': iconDiv.iconAnimationDuration + 's',

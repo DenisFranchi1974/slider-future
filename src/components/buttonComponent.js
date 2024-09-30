@@ -87,6 +87,7 @@ const ButtonComponent = ({ element, selectedIcon }) => {
     "--border-width-button-hover": `${element.backgroundBorderSizeHover}px` || "0",
     "--rotate-button-hover": `${element.rotateHover}deg` || "0",
     "--delay-hide-seconds-button": element.delayTransition + "s",
+    zIndex: element.zIndexButton,
   };
 
   const isBold = element.fontStyle?.fontWeight === "bold";
@@ -131,6 +132,7 @@ const ButtonComponent = ({ element, selectedIcon }) => {
       display: 'flex',
       alignItems: element.icoAligItemButton,
       gap: element.gapIcon + 'px',
+      zIndex: element.zIndexButton
     }),
    };
 
@@ -150,6 +152,7 @@ const ButtonComponent = ({ element, selectedIcon }) => {
             'color ' + element.durationEffectHover + 's ease',
     margin: `${element.marginButton?.top} ${element.marginButton?.right} ${element.marginButton?.bottom} ${element.marginButton?.left}`,
     "--delay-hide-seconds-button": element.delayTransition + "s",
+    zIndex: element.zIndexButton,
    };
 
   let buttonHTML;

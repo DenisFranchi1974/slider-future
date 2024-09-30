@@ -1,4 +1,6 @@
 import { Swiper } from 'swiper';
+import { gsap } from 'gsap';
+
 import { Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel, Parallax } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -2056,7 +2058,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+/* Menu Eleemnt */
 
 document.addEventListener('DOMContentLoaded', function() {
   const menus = document.querySelectorAll('.hamburger-icon');
@@ -2080,12 +2082,110 @@ document.addEventListener('DOMContentLoaded', function() {
       icon3.classList.toggle('b');
       nav.classList.toggle('show');
     });
+
+    // Gestione del breakpoint
+    const breakpoint = parseInt(menu.getAttribute('data-breakpoint'), 10);
+    const menuComponent = menu.closest('.menu-component');
+    const menuMode = menuComponent && menuComponent.classList.contains('menu-mode-toggle') ? 'toggle' : 'responsive';
+    const handleResize = () => {
+      if (menuMode === 'responsive') {
+        if (window.innerWidth <= breakpoint) {
+          menu.style.display = 'block';
+          nav.style.display = 'block';
+          const normalMenu = document.querySelector(`.slider-nav-menu[data-breakpoint="${breakpoint}"]`);
+          if (normalMenu) {
+            normalMenu.style.display = 'none';
+          }
+        } else {
+          menu.style.display = 'none';
+          nav.style.display = 'none';
+          const normalMenu = document.querySelector(`.slider-nav-menu[data-breakpoint="${breakpoint}"]`);
+          if (normalMenu) {
+            normalMenu.style.display = 'block';
+          }
+          nav.classList.remove('show'); // Nasconde il menu quando si esce dalla modalità responsive
+          icon1.classList.remove('a');
+          icon2.classList.remove('c');
+          icon3.classList.remove('b');
+        }
+      } else if (menuMode === 'toggle') {
+        menu.style.display = 'block';
+        nav.style.display = 'block';
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Chiama la funzione una volta per impostare lo stato iniziale
+
+
+
   });
+
+
+
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
+    const subMenuRefs = {}; // Oggetto per contenere i riferimenti ai sub-menu
+  
+    // Inizializza i riferimenti per ciascun sub-menu
+    submenuToggles.forEach(button => {
+      const index = button.dataset.index; // Ottieni l'indice dal bottone
+      subMenuRefs[index] = button.nextElementSibling; // Salva il riferimento al sub-menu
+  
+      // Aggiungi un evento click al bottone
+      button.addEventListener('click', () => {
+        const subMenu = subMenuRefs[index];
+  
+        if (subMenu.style.display === 'block') {
+          // Chiudi il sub-menu
+          gsap.to(subMenu, {
+            height: 0,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              subMenu.style.display = 'none'; // Nascondi il sub-menu al termine dell'animazione
+            }
+          });
+        } else {
+          // Apri il sub-menu
+          subMenu.style.display = 'block'; // Assicurati che il sub-menu sia visibile prima di animare
+          gsap.fromTo(subMenu, 
+            { height: 0, opacity: 0 }, 
+            { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
+          );
+        }
+      });
+  
+      // Aggiungi eventi mouse solo se il modo è hover
+      if (button.closest('li').classList.contains('submenu-hover')) {
+        button.closest('li').addEventListener('mouseenter', () => {
+          const subMenu = subMenuRefs[index];
+          subMenu.style.display = 'block'; // Assicurati che il sub-menu sia visibile prima di animare
+          gsap.fromTo(subMenu, 
+            { height: 0, opacity: 0 }, 
+            { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
+          );
+        });
+  
+        button.closest('li').addEventListener('mouseleave', () => {
+          const subMenu = subMenuRefs[index];
+          gsap.to(subMenu, {
+            height: 0,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              subMenu.style.display = 'none'; // Nascondi il sub-menu al termine dell'animazione
+            }
+          });
+        });
+      }
+    });
+  
+
+  
+
 });
-
-
-
-
 
 
 

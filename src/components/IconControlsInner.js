@@ -1838,8 +1838,6 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
             />
           </div>
         </div>
-        {slide.developerMode && (
-          <>
         <div className="content-title-custom-panel intermedy">
           <h2 className="title-custom-panel">
             {__("LEVEL", "cocoblocks")}
@@ -1864,8 +1862,6 @@ const updateEnableMobileTitle = (slideId, divIndex, innerIndex, value) => {
             />
           </div>
         </div>
-        </>
-        )}
         <BoxShadowIconBlock
           slide={slide}
           slides={slides}

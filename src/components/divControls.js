@@ -23,6 +23,7 @@ import FontStyle from "./font-style";
 import ButtonControlsBlock from "./ButtonControlsBlock";
 import ButtonTypeInnerSelectionModal from "./buttonInnerModal";
 import IconControlsInner from "./IconControlsInner";
+import MenuInnerControls from "./MenuInnerControls";
 
 
 const DivControls = ({
@@ -497,6 +498,23 @@ const DivControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update justify content in resposnive
+  const updateJustifyContentResponsiveDiv = (slideId, index, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "div" && i === index
+                ? { ...element, justifyContentResponsiveDiv: value }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   // Link Url
   const updateLinkUrlDiv = (slideId, index, url) => {
     const updatedSlides = slides.map((slide) =>
@@ -904,6 +922,23 @@ const DivControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+// Update layout wrap 
+const updateDivLayoutWrap = (slideId, index, value) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === slideId
+      ? {
+          ...slide,
+          elements: slide.elements.map((element, i) =>
+            element.type === "div" && i === index
+              ? { ...element, layoutWrap: value }
+              : element
+          ),
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+  
 
   // Z index
   const updateZindexDiv = (slideId, index, value) => {
@@ -1042,7 +1077,6 @@ const updateNameGroup = (slideId, index, value) => {
     );
     setAttributes({ slides: updatedSlides });
   };
-
 
   // Add Button inside block
   const addSlideButtonDiv = (slideId,  elementIndex,buttonType) => {
@@ -1461,6 +1495,83 @@ const updateNameGroup = (slideId, index, value) => {
     setAttributes({ slides: updatedSlides });
   };
 
+     // Add Menu
+  const addSlideMenuDiv = (slideId, divIndex) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, index) =>
+              index === divIndex
+                ? {
+                    ...element,
+                    innerElements: [
+                      ...(element.innerElements || []),
+                      {
+
+                  type: "menu",
+                  menuItems: [],
+                  textAlign: "center",
+                  textAlignItems: "center",
+                  fontStyle: {
+                    italic: false,
+                    underline: false,
+                    bold: false,
+                  },
+                  fontWeight: 400,
+                  letterSpacing: 0,
+                  fontSize: 18,
+                  fontSizeTablet: 16,
+                  fontSizeMobile: 16,
+                  lineHeight: 1.5,
+                  textColor: '#000000',
+                  backgroundColor: "#ffffff",
+                  toggleColor: "#000000",
+                  backgroundColorToggle: "#ffffff",
+                  radiusToggle: 100,
+                  gapMenu: 5,
+                  marginTitle: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                  },
+                  paddingTitle: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                  },
+                  fontFamily: "Arial",
+                  linkUrl: "",
+                  linkTarget: "_self",
+                  enableDesktopTitle: true,
+                  enableTabletTitle: true,
+                  enableMobileTitle: true,
+                  textColorHover: '#000000',
+                  colorShadow: "",
+                  boxShadowX: 0,
+                  boxShadowY: 0,
+                  boxShadowBlur: 0,
+                  boxShadowSpread: 0,
+                  direction:"left",
+                  directionMenu:"menu-left",
+                  widthMenu: "half",
+                  heightMenu: "100%",
+                  scaleToggle: 1.2,
+                  sizeToggle: "toggle-medium",
+                },
+              ],
+            }
+          : element
+      ),
+    }
+  : slide
+);
+setAttributes({ slides: updatedSlides });
+};
+  
+
     // Open panel
     const [isOpen, setIsOpen] = useState(false);
 
@@ -1653,6 +1764,12 @@ const updateNameGroup = (slideId, index, value) => {
               >
                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Z"/></svg>
               </Button>
+              <Button
+              onClick={() => addSlideMenuDiv(slide.id,elementIndex)}
+              label={__("Add menu", "slide")}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </Button>
             </div>
           </>
         )}
@@ -1759,6 +1876,51 @@ const updateNameGroup = (slideId, index, value) => {
                   }
                 />
               </div>
+              <div className="custom-select select-control-label-right">
+                  <SelectControl
+                    label={
+                      <>
+                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M40-80v-360h240v360H40Zm320 0v-360h240v360H360Zm320 0v-360h240v360H680Zm-240-80h80v-200h-80v200ZM40-520v-360h240v360H40Zm320 0v-360h240v360H360Zm320 0v-360h240v360H680Zm-560-80h80v-200h-80v200Zm640 0h80v-200h-80v200Z"/></svg>
+                        {__("Flex wrap", "cocoblocks")}
+                      </>
+                    }
+                    value={element.layoutWrap}
+                    options={[
+                      {
+                        label: __("Wrap", "slider"),
+                        value: "wrap",
+                      },
+                      {
+                        label: __("No Wrap", "slider"),
+                        value: "nowrap",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateDivLayoutWrap(slide.id,elementIndex, value)
+                    }
+                  />
+                </div>
+              {element.layoutWrap === "wrap" && (
+              <div className="custom-select select-control-label-right">
+                <SelectControl
+                  label={
+                    <>
+                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-80v-800h80v800h-80Zm160-200v-400h120v400H600Zm-360 0v-400h120v400H240Z"/></svg>
+                      {__("Justify in responsive", "cocoblocks")}
+                    </>
+                  }
+                  value={element.justifyContentResponsiveDiv}
+                  options={[
+                    { label: "Left", value: "left" },
+                    { label: "Center", value: "center" },
+                    { label: "Right", value: "right" },
+                  ]}
+                  onChange={(value) =>
+                    updateJustifyContentResponsiveDiv(slide.id, elementIndex, value)
+                  }
+                />
+              </div>
+              )}
               <div className="custom-select select-control-label-right">
                 <SelectControl
                   label={
@@ -1911,7 +2073,7 @@ const updateNameGroup = (slideId, index, value) => {
                   ]}
                 />
               </div>
-            </div>
+              </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
                 {__("Spacings", "cocoblocks")}
@@ -2239,8 +2401,6 @@ const updateNameGroup = (slideId, index, value) => {
                 />
               </div>
             </div>
-            {slide.developerMode && (
-            <>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
               {__("LEVEL", "cocoblocks")}
@@ -2265,8 +2425,6 @@ const updateNameGroup = (slideId, index, value) => {
               />
             </div>
           </div>
-          </>
-          )}
             <BoxShadowControlBlock
               slide={slide}
               slides={slides}
@@ -3214,6 +3372,57 @@ const updateNameGroup = (slideId, index, value) => {
         return null;
       })}
 
+
+{element.innerElements &&
+        element.innerElements.map((innerElement, innerIndex) => {
+            if (innerElement.type === "menu") {
+              return (
+            <div key={innerIndex}>
+               <div className={"button-move-element-div"}>
+                  <Tooltip text={__("Move before", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === 0 || isSingleInnerElement}
+                      label={__("Move before", "cocoblocks")}
+                    >
+                      ↑
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={__("Move after", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
+                      size="small"
+                      disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
+                      label={__("Move after", "cocoblocks")}
+                    >
+                      ↓
+                    </Button>
+                  </Tooltip>
+                </div>
+          
+                <MenuInnerControls
+                  slide={slide}
+                  slides={slides}
+                  menuDiv={innerElement} 
+                  element={element}
+                  menuIndex={innerIndex}
+                  elementIndex={elementIndex}
+                  setAttributes={setAttributes}
+                  setActiveSection={setActiveSection}
+                  activeSection={activeSection}
+                  parallax={parallax}
+                  device={device}
+                  handleDesktopClick={handleDesktopClick}
+                  handleTabletClick={handleTabletClick}
+                  handleMobileClick={handleMobileClick}
+                  showOtherButtons={showOtherButtons}
+                />
+            </div>
+          );
+        }
+        return null;
+      })}
 
 
 

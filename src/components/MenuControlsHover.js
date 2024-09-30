@@ -81,6 +81,8 @@ const MenuControlsHover = ({
             }
           />
         </div>
+        {element.menuMode !== 'normal' && (
+          <>
         <div className="custom-select">
               <RangeControl
                 label={
@@ -106,6 +108,8 @@ const MenuControlsHover = ({
                 step={0.1}
               />
             </div>
+            </>
+        )}
       </div>
     </div>
   );

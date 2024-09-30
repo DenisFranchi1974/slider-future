@@ -4,6 +4,7 @@ import InnerTextDivComponent from "./innerTextDivComponent";
 import InnerImageDivComponent from "./innerImageDivComponent";
 import InnerButtonDivComponent from "./innerButtonDivComponent";
 import IconComponentInner from "./iconComponentInner";
+import MenuInnerComponent from "./menuInnerComponent";
 
 const DivComponent = ({ element, index }) => {
   const DivBlock = element.elementDiv || "div";
@@ -18,9 +19,9 @@ const DivComponent = ({ element, index }) => {
   const stylesDiv = {
     backgroundColor: element.backgroundColor || "transparent",
     display: "flex",
+    flexWrap: element.layoutWrap,
+    '--justify-content-responsive-div': element.justifyContentResponsiveDiv || 'center',
     flexDirection: element.layoutDiv === "horizontal" ? "row" : "column",
-    textAlign: "center",
-    width: "100%",
     rotate: element.rotateDiv + "deg",
     position: "relative",
     visibility: "visible",
@@ -33,10 +34,6 @@ const DivComponent = ({ element, index }) => {
     borderStyle: element.borderStyleDiv || "none",
     borderColor: element.backgroundBorderColorDiv,
     borderWidth: `${element.backgroundBorderSizeDiv}px` || 0,
-    width:
-      element.contentWidthDiv === "custom"
-        ? `${element.customContentWidthDiv}%`
-        : element.contentWidthDiv,
     height:
       element.contentHeightDiv === "custom"
         ? `${element.customContentHeightDiv}%`
@@ -101,6 +98,11 @@ const DivComponent = ({ element, index }) => {
       style={{
         opacity: element.opacityDiv,
         "--delay-hide-seconds-div": element.delayTransition + "s",
+        zIndex: element.zIndexDiv,
+        width:
+      element.contentWidthDiv === "custom"
+        ? `${element.customContentWidthDiv}%`
+        : element.contentWidthDiv,
       }}
       ref={bannerRef}
     >
@@ -147,6 +149,12 @@ const DivComponent = ({ element, index }) => {
                   <InnerImageDivComponent
                     imageDiv={innerElement}
                     imageIndex={innerIndex}
+                  />
+                ) : innerElement.type === "menu" ? (
+                  <MenuInnerComponent
+                    menuDiv={innerElement}
+                    menuIndex={innerIndex}
+                    menuItems={element.menuItems || [{ text: "Home", link: "" }]}
                   />
                 ) : null}
                  

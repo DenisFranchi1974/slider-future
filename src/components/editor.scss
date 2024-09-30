@@ -537,10 +537,19 @@
   }
   .device-switcher {
     float: right;
+    position: relative;
+    z-index: 9999;
+    right: 8px;
+    top: 4px;
     button {
       color: var(--light-color);
       box-shadow: none !important;
       padding: 4px;
+      svg{
+        width: 16px;
+        height: 16px;
+        fill: var(--light-color);
+      }
     }
     button.is-pressed {
       color: var(--white-color);
@@ -1987,7 +1996,7 @@
 }
 
 /* Hide menu */
-.hamburger-icon.hide{
+.hamburger-icon.hide,.slider-nav-menu.hide{
   visibility: hidden;
   opacity: 0!important;
 }

@@ -12,7 +12,7 @@ import {
   Tooltip,
   ToggleControl,
 } from "@wordpress/components";
-import { trash, replace, addTemplate, button, info, plus} from "@wordpress/icons";
+import { trash, replace, addTemplate, button, info, plus, filter} from "@wordpress/icons";
 import React, { useRef, useEffect } from "react";
 import { useState } from "@wordpress/element";
 import "./editor.scss";
@@ -31,7 +31,7 @@ import DeviceSelector from "./devicesSelector";
 import IconControls from "./IconControls";
 import DivModal  from "./layerLibrary"
 import { icon } from "@fortawesome/fontawesome-svg-core";
-import MenuControls from "./MenuControls";
+import MenuControls from "./menu/MenuControls";
 import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 
@@ -284,6 +284,17 @@ const SlideControls = ({
       contentWidth:900,
       layoutWrap: "wrap",
       developerMode: false,
+      filter: "none",
+      colorOneEffect: "rgba(243, 106, 188, 0.5)",
+      colorTwoEffect: "rgba(243, 106, 188, 0)",
+      colorThreeEffect: "rgba(243, 106, 188, 0.7)",
+      layoutAlignItems: "center",
+      layoutAlignResponsive: "center",
+      layoutDisplay: "flex",
+      effectRadialColorOne: "rgba(243, 106, 188, 0.5)",
+      effectRadialColorTwo: "rgba(243, 106, 188, 0)",
+      rangeEffectRadial: 5,
+      enableRadialEffect: false,
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -328,6 +339,24 @@ const SlideControls = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
+  // Funzione per aggiornare il colore di sfondo
+  const updateSlideEffectRadialColorOne = (slideId,color) => {
+    setAttributes({
+      slides: slides.map((slide) =>
+        slide.id === slideId ? { ...slide, effectRadialColorOne: color } : slide
+      ),
+    });
+  };
+    // Funzione per aggiornare il colore di sfondo
+    const updateSlideEffectRadialColorTwo = (slideId,color) => {
+      setAttributes({
+        slides: slides.map((slide) =>
+          slide.id === slideId ? { ...slide, effectRadialColorTwo: color } : slide
+        ),
+      });
+    };
+  
 
   // Funzione per aggiornare il gradiente di sfondo
   const updateSlideBackgroundGradient = (id, gradient) => {
@@ -412,6 +441,15 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  
+    // Update Filter
+    const updateSlideFilter = (slideId, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId ? { ...slide, filter: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
   // Update Gap Items
   const updateSlideGapItems = (slideId, newGapItems) => {
     const updatedSlides = slides.map((slide) =>
@@ -428,10 +466,75 @@ const SlideControls = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update align items
+  const updateSlideLayoutAlignItems = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, layoutAlignItems: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
   // Update Border Color
   const updateSlideBackgroundBorderColor = (id, color) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === id ? { ...slide, backgroundBorderColor: color } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Size effect
+  const updateSlideRangeEffectRadial = (id, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === id ? { ...slide,  rangeEffectRadial: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Enable radial effect
+  const updateEnableRadialEffect = (id, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === id ? { ...slide,  enableRadialEffect: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+  
+
+  // Update Effect Color one
+  const updateColorOneEffect = (id, color) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === id ? { ...slide, colorOneEffect: color } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update align layout responsive
+    const updateSlideLayoutAlignResponsive = (id, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === id ? { ...slide, layoutAlignResponsive: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+     // Update display
+     const updateSlideLayoutDisplay = (id, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === id ? { ...slide, layoutDisplay: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+  
+   // Update Effect Color two
+   const updateColorTwoEffect = (id, color) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === id ? { ...slide, colorTwoEffect: color } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Update Effect Color three
+   const updateColorThreeEffect = (id, color) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === id ? { ...slide, colorThreeEffect: color } : slide
     );
     setAttributes({ slides: updatedSlides });
   };
@@ -792,6 +895,8 @@ const SlideControls = ({
                 delayHide:false,
                 delaySeconds:2,
                 delayTransition: 0.5,
+                layoutWrap: "wrap",
+                justifyContentResponsiveDiv: "center",
               },
             ],
           }
@@ -1496,6 +1601,10 @@ const SlideControls = ({
                 heightMenu: "100%",
                 scaleToggle: 1.2,
                 sizeToggle: "toggle-medium",
+                menuMode:"normal",
+                breakpoint: 768,
+                orientationMenu: "row",
+                zIndexMenu:99,
               },
             ],
           }
@@ -1505,6 +1614,29 @@ const SlideControls = ({
   };
 
 
+  // Dichiara defaultAttributes all'inizio del componente
+const defaultAttributes = {
+  colorOneEffect: "rgba(243, 106, 188, 0.5)",
+  colorTwoEffect: "rgba(243, 106, 188, 0)",
+  colorThreeEffect: "rgba(243, 106, 188, 0.7)",
+};
+
+const resetEffect = (id) => {
+  const updatedSlides = slides.map((slide) =>
+    slide.id === id
+      ? {
+          ...slide,
+          colorOneEffect: defaultAttributes.colorOneEffect,
+          colorTwoEffect: defaultAttributes.colorTwoEffect,
+          colorThreeEffect: defaultAttributes.colorThreeEffect,
+        }
+      : slide
+  );
+  setAttributes({ slides: updatedSlides });
+};
+
+// Array di filtri per cui mostrare il controllo colore
+const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-inverse"];
 
   return (
     <>
@@ -1609,6 +1741,7 @@ const SlideControls = ({
                       {(tab) => (
                         <>
                           {tab.name === "color" && (
+                            <>
                             <div
                               className="custom-select color"
                             >
@@ -1631,6 +1764,86 @@ const SlideControls = ({
                                 }
                               />
                             </div>
+                            <div className="custom-select">
+                              <ToggleControl
+                                label={
+                                  <>
+                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z"/></svg>
+                                    {__("Radial Effect", "cocoblocks")}
+                                  </>
+                                }
+                                checked={slide.enableRadialEffect}
+                                onChange={(value) =>
+                                  updateEnableRadialEffect(slide.id, value)
+                                }
+                              />
+                            </div>
+                            {slide.enableRadialEffect && (
+                              <>
+                            <div
+                              className="custom-select color"
+                            >
+                              <ColorOptionsPanel
+                                colorNormal={slide.effectRadialColorOne}
+                                setColorNormal={(color) =>
+                                  updateSlideEffectRadialColorOne(slide.id, color)
+                                }
+                                buttonIcon={
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#e8eaed"
+                                    style={{ marginBottom: "-4px" }}
+                                  >
+                                    <path d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z" />
+                                  </svg>
+                                }
+                              />
+                            </div>
+                            <div
+                              className="custom-select color"
+                            >
+                              <ColorOptionsPanel
+                                colorNormal={slide.effectRadialColorTwo}
+                                setColorNormal={(color) =>
+                                  updateSlideEffectRadialColorTwo(slide.id, color)
+                                }
+                                buttonIcon={
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    viewBox="0 -960 960 960"
+                                    width="24px"
+                                    fill="#e8eaed"
+                                    style={{ marginBottom: "-4px" }}
+                                  >
+                                    <path d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z" />
+                                  </svg>
+                                }
+                              />
+                            </div>
+                                      <div className="custom-select">
+                            <RangeControl
+                              label={
+                                <>
+                                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-170v-620h800v620H80Zm80-440h100v-100H160v100Zm180 0h100v-100H340v100Zm180 0h100v-100H520v100Zm180 0h100v-100H700v100Zm0 180h100v-100H700v100Zm-180 0h100v-100H520v100Zm-180 0h100v-100H340v100Zm-80-100H160v100h100v-100Zm440 280h100v-100H700v100Zm-180 0h100v-100H520v100Zm-180 0h100v-100H340v100Zm-180 0h100v-100H160v100Z"/></svg>
+                                  {__("Size", "cocoblocks")}
+                                </>
+                              }
+                              value={slide.rangeEffectRadial}
+                              onChange={(value) =>
+                                updateSlideRangeEffectRadial(slide.id, value)
+                              }
+                              min={1}
+                              max={7}
+                              step={1}
+                            />
+                          </div>
+                          </>
+                            )}
+                            </>
                           )}
                           {tab.name === "gradient" && (
                             <div
@@ -2065,6 +2278,40 @@ const SlideControls = ({
                   <SelectControl
                     label={
                       <>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-160v-640h800v640H80Zm720-360v-200H160v200h640ZM400-240h400v-200H400v200Zm-240 0h160v-200H160v200Z"/></svg>
+                        {__("Display", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.layoutDisplay}
+                    options={[
+                      {
+                        label: __("Flex", "slider"),
+                        value: "flex",
+                      },
+                      {
+                        label: __("Block", "slider"),
+                        value: "block",
+                      },
+                      {
+                        label: __("Inline Block", "slider"),
+                        value: "inline-block",
+                      },
+                      {
+                        label: __("Inline", "slider"),
+                        value: "inline",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutDisplay(slide.id, value)
+                    }
+                  />
+                </div>
+                {slide.layoutDisplay === "flex" && (
+                  <>
+                <div className="custom-select select-control-label-right">
+                  <SelectControl
+                    label={
+                      <>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="24px"
@@ -2126,6 +2373,8 @@ const SlideControls = ({
                     }
                   />
                 </div>
+                </>
+                )}
                 <div className="custom-select">
                 <ToggleControl
                   label={
@@ -2178,6 +2427,68 @@ const SlideControls = ({
                   />
                 </div>
                 </>)}
+                {slide.layoutDisplay === "flex" && (
+                  <>
+                  {slide.layout === "vertical" && (
+                    <>
+                <div className="custom-select select-control-label-right">
+                  <SelectControl
+                    label={
+                      <>
+                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-240v-480h120v480H280Zm280 0v-480h120v480H560ZM80-800v-80h800v80H80Zm0 720v-80h800v80H80Z"/></svg>
+                        {__("Align items", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.layoutAlignItems}
+                    options={[
+                      {
+                        label: __("Flex start", "slider"),
+                        value: "flex-start",
+                      },
+                      {
+                        label: __("Center", "slider"),
+                        value: "center",
+                      },
+                      {
+                        label: __("Flex end", "slider"),
+                        value: "flex-end",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutAlignItems(slide.id, value)
+                    }
+                  />
+                </div>
+                </>
+                )}
+                <div className="custom-select select-control-label-right">
+                  <SelectControl
+                    label={
+                      <>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-80v-800h80v800h-80Zm160-200v-400h120v400H600Zm-360 0v-400h120v400H240Z"/></svg>
+                        {__("Justify in responsive", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.layoutAlignResponsive}
+                    options={[
+                      {
+                        label: __("Left", "slider"),
+                        value: "left",
+                      },
+                      {
+                        label: __("Center", "slider"),
+                        value: "center",
+                      },
+                      {
+                        label: __("Right", "slider"),
+                        value: "right",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutAlignResponsive(slide.id, value)
+                    }
+                  />
+                </div>
                 <div className="custom-select select-control-label-right">
                   <SelectControl
                     label={
@@ -2202,6 +2513,8 @@ const SlideControls = ({
                     }
                   />
                 </div>
+                </>
+                )}
                 </>
                )}
               </div>
@@ -2451,6 +2764,185 @@ const SlideControls = ({
             
           </>
           )}
+        {activeSectionSlide === "filter" && (
+        <>
+         <div className="content-title-custom-panel intermedy">
+            <h2 className="title-custom-panel">
+              {__("Filters", "cocoblocks")}
+            </h2>
+          </div>
+            <div className="content-section-panel" style={{ padding: "0" }}>
+              <div className="custom-select select-control-label-right">
+                <SelectControl
+                  label={
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                      >
+                        <path d="M120-380q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm120 340q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm0-160q-17 0-28.5-11.5T200-400q0-17 11.5-28.5T240-440q17 0 28.5 11.5T280-400q0 17-11.5 28.5T240-360Zm0-160q-17 0-28.5-11.5T200-560q0-17 11.5-28.5T240-600q17 0 28.5 11.5T280-560q0 17-11.5 28.5T240-520Zm0-160q-17 0-28.5-11.5T200-720q0-17 11.5-28.5T240-760q17 0 28.5 11.5T280-720q0 17-11.5 28.5T240-680Zm160 340q-25 0-42.5-17.5T340-400q0-25 17.5-42.5T400-460q25 0 42.5 17.5T460-400q0 25-17.5 42.5T400-340Zm0-160q-25 0-42.5-17.5T340-560q0-25 17.5-42.5T400-620q25 0 42.5 17.5T460-560q0 25-17.5 42.5T400-500Zm0 300q-17 0-28.5-11.5T360-240q0-17 11.5-28.5T400-280q17 0 28.5 11.5T440-240q0 17-11.5 28.5T400-200Zm0-480q-17 0-28.5-11.5T360-720q0-17 11.5-28.5T400-760q17 0 28.5 11.5T440-720q0 17-11.5 28.5T400-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 480q-25 0-42.5-17.5T500-400q0-25 17.5-42.5T560-460q25 0 42.5 17.5T620-400q0 25-17.5 42.5T560-340Zm0-160q-25 0-42.5-17.5T500-560q0-25 17.5-42.5T560-620q25 0 42.5 17.5T620-560q0 25-17.5 42.5T560-500Zm0 300q-17 0-28.5-11.5T520-240q0-17 11.5-28.5T560-280q17 0 28.5 11.5T600-240q0 17-11.5 28.5T560-200Zm0-480q-17 0-28.5-11.5T520-720q0-17 11.5-28.5T560-760q17 0 28.5 11.5T600-720q0 17-11.5 28.5T560-680Zm0 580q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-720q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm160 620q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200Zm0-160q-17 0-28.5-11.5T680-400q0-17 11.5-28.5T720-440q17 0 28.5 11.5T760-400q0 17-11.5 28.5T720-360Zm0-160q-17 0-28.5-11.5T680-560q0-17 11.5-28.5T720-600q17 0 28.5 11.5T760-560q0 17-11.5 28.5T720-520Zm0-160q-17 0-28.5-11.5T680-720q0-17 11.5-28.5T720-760q17 0 28.5 11.5T760-720q0 17-11.5 28.5T720-680Zm120 300q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Zm0-160q-8 0-14-6t-6-14q0-8 6-14t14-6q8 0 14 6t6 14q0 8-6 14t-14 6Z" />
+                      </svg>
+                      {__("Bg Filter", "cocoblocks")}
+                    </>
+                  }
+                  value={slide.filter}
+                  onChange={(value) =>
+                    updateSlideFilter(slide.id, value)
+                  }
+                  options={[
+                    {
+                      label: __("None", "cocoblocks"),
+                      value: "none",
+                    },
+                    {
+                      label: __("Lateral", "cocoblocks"),
+                      value: "filter-lateral",
+                    },
+                    {
+                      label: __("Central circle", "cocoblocks"),
+                      value: "filter-central-circle",
+                    },
+                    {
+                      label: __("Border fade", "cocoblocks"),
+                      value: "filter-border-fade",
+                    },
+                    {
+                      label: __("Vignette", "cocoblocks"),
+                      value: "filter-vignette",
+                    },
+                    {
+                      label: __("Spotlight", "cocoblocks"),
+                      value: "filter-spotlight",
+                    },
+                    {
+                      label: __("Diagonal", "cocoblocks"),
+                      value: "filter-diagonal",
+                    },
+                    {
+                      label: __("Nebula", "cocoblocks"),
+                      value: "filter-nebula",
+                    },
+                    {
+                      label: __("Glitch", "cocoblocks"),
+                      value: "filter-glitch",
+                    },
+                    {
+                      label: __("Prism", "cocoblocks"),
+                      value: "filter-prism",
+                    },
+                    {
+                      label: __("Inverse", "cocoblocks"),
+                      value: "filter-inverse",
+                    },
+                  ]}
+                />
+              </div>
+            {slide.filter !== "none" && (
+              <>
+                  <div className="custom-select color">
+                    <ColorOptionsPanel
+                      colorNormal={slide.colorOneEffect}
+                      setColorNormal={(color) =>
+                        updateColorOneEffect(slide.id, color)
+                      }
+                      buttonTitle={__("First Color", "cocoblocks")}
+                      buttonIcon={
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                          style={{
+                            marginRight: "3px",
+                            height: "16px",
+                            width: "16px",
+                            position: "relative",
+                            top: "3px",
+                          }}
+                        >
+                          <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z" />
+                        </svg>
+                      }
+                    />
+                  </div>
+                  <div className="custom-select color">
+                    <ColorOptionsPanel
+                      colorNormal={slide.colorTwoEffect}
+                      setColorNormal={(color) =>
+                        updateColorTwoEffect(slide.id, color)
+                      }
+                      buttonTitle={__("Second Color", "cocoblocks")}
+                      buttonIcon={
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#e8eaed"
+                          style={{
+                            marginRight: "3px",
+                            height: "16px",
+                            width: "16px",
+                            position: "relative",
+                            top: "3px",
+                          }}
+                        >
+                          <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z" />
+                        </svg>
+                      }
+                    />
+                  </div>
+                  {filtersWithColorOptions.includes(slide.filter) && (
+                    <div className="custom-select color">
+                      <ColorOptionsPanel
+                        colorNormal={slide.colorThreeEffect}
+                        setColorNormal={(color) =>
+                          updateColorThreeEffect(slide.id, color)
+                        }
+                        buttonTitle={__("Third Color", "cocoblocks")}
+                        buttonIcon={
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#e8eaed"
+                            style={{
+                              marginRight: "3px",
+                              height: "16px",
+                              width: "16px",
+                              position: "relative",
+                              top: "3px",
+                            }}
+                          >
+                            <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z" />
+                          </svg>
+                        }
+                      />
+                    </div>
+                  )}
+                    <Button onClick={() => resetEffect(slide.id)} className="button-reset">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#5f6368"
+                    >
+                      <path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z" />
+                    </svg>
+                    {__("Reset Effect Color", "cocoblocks")}
+                  </Button>
+               </>
+            )}
+            </div>
+          
+        </>
+      )}
           {/* Elements */}
           {slide.elements &&
             slide.elements.map((element, elementIndex) => (

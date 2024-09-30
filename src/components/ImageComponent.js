@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 
+
 const ImageComponent = ({ element, index }) => {
   const getImageStyle = () => {
     let style = {
@@ -90,7 +91,6 @@ const ImageComponent = ({ element, index }) => {
    }, [element.delaySeconds]);
 
 
-
   return (
     <div
       style={{
@@ -105,6 +105,7 @@ const ImageComponent = ({ element, index }) => {
           element.durationEffectHoverImage + "s" || "0.3",
         width: element.widthImageContent,
         "--delay-hide-seconds-image": element.delayTransition + "s",
+        zIndex: element.zIndexImage,
       }}
       className={
         "content-img-first " +

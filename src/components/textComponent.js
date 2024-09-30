@@ -48,6 +48,7 @@ const TextComponent = ({ element, index }) => {
     position:"relative",
     opacity: element.opacity,
     transform: `rotate(${element.rotate}deg)`,
+    zIndex: element.zIndexTitle,
     "--rotate-hover": element.rotateHover + "deg" || "0",
   };
   const Tag = element.elementTitle || "h3";

@@ -36,8 +36,9 @@ import ButtonComponent from "../components/buttonComponent";
 import DraggableTest from "../components/dragable";
 import Ruler from "../components/ruler";
 import IconComponent from "../components/iconComponent";
-import MenuComponent from "../components/menuComponent";
+import MenuComponent from "../components/menu/menuComponent";
 import PostsControls from "../components/postsControls";
+
 
 import apiFetch from '@wordpress/api-fetch';
 
@@ -217,6 +218,7 @@ export default function Edit({ attributes, setAttributes, slide }) {
     order = "ASC",
     postsToShow
   } = attributes;
+
 
 
   /* Classi personalizzate per il blocco */
@@ -988,7 +990,7 @@ console.log('Ordine dei post:', posts);
             ? slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div
-                   className={"swiper-slide"}
+                   className={"swiper-slide " + slide.filter}
                     style={{
                       // Gestione dell'immagine di sfondo
                       ...(slide.backgroundType === "image" &&
@@ -1017,6 +1019,16 @@ console.log('Ordine dei post:', posts);
                             background: slide.backgroundGradient,
                           }
                         : {}),
+                        "--color-one-effect-slide": slide.colorOneEffect,
+                        "--color-two-effect-slide": slide.colorTwoEffect,
+                        "--color-three-effect-slide": slide.colorThreeEffect,
+                        // Effetto radiale
+                        ...(slide.enableRadialEffect
+                          ? {
+                              backgroundImage: `radial-gradient(circle, ${slide.effectRadialColorOne} 0.6px, ${slide.effectRadialColorTwo} 0)`,
+                              backgroundSize: `${slide.rangeEffectRadial}px ${slide.rangeEffectRadial}px`,
+                            }
+                          : {}),
                     }}
                   >
                     
@@ -1037,6 +1049,7 @@ console.log('Ordine dei post:', posts);
                         borderStyle: slide.borderStyleSlide,
                         borderWidth: slide.backgroundBorderSize + "px",
                         borderColor: slide.backgroundBorderColor,
+                        display:slide.layoutDisplay,
                         margin: "0 auto",
                         padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
                         ...(slide.developerMode
@@ -1057,6 +1070,7 @@ console.log('Ordine dei post:', posts);
                             }),
                       }}
                     >
+                  
                       
                       {slide.backgroundType === "video" && (
                         <>
@@ -1084,13 +1098,14 @@ console.log('Ordine dei post:', posts);
                           )}
                         </>
                       )}
-                   
+                    <div className={"content-inner-for-slide " + slide.position + " " +  slide.layout + "-layout"} style={{alignItems: slide.layoutAlignItems,display:slide.layoutDisplay,width:'100%',flexWrap:slide.layoutWrap,'--justify-content-responsive-slide':slide.layoutAlignResponsive, gap: slide.gapItems + "px",}}>
                     {slide.elements.map((element, index) => {
                       const handleDrag = (e, data) => {
                         handleDragElement(slide.id, index, data.x, data.y);
                       };
-
+                 
                       switch (element.type) {
+                       
                         case "title":
                           return slide.developerMode ? (
                             <DraggableTest
@@ -1149,6 +1164,7 @@ console.log('Ordine dei post:', posts);
                               <DivComponent
                                 element={element}
                                 index={index}
+
                               />
                               
                             </DraggableTest>
@@ -1227,7 +1243,7 @@ console.log('Ordine dei post:', posts);
                           return null;
                       }
                     })}
-                 
+                 </div>
                  
                   </div>
                     </div>

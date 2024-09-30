@@ -19,6 +19,9 @@ import FontStyle from "./font-style";
 import SectionSelector from "./sectionSelector";
 import BoxShadowControlTextBlock from "./boxShadowTextBlock";
 import TextControlsBlockHover from "./TextControlsBlockHover";
+import CustomRangeControl from "../controls/range"
+import RotateRightIcon from '@mui/icons-material/RotateRight'; // Importa l'icona RotateRight
+import VignetteIcon from '@mui/icons-material/Vignette';
 
 const TextControlsBlock = ({
   slide,
@@ -40,6 +43,34 @@ const TextControlsBlock = ({
 }) => {
   // Inizializza lo stato locale utilizzando element.playState
   const [playState, setPlayState] = useState(textDiv.playState || "");
+
+    // Funzione generale per aggiornare i controlli
+    const updateElement = (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) => {
+                if (updateType === "primary" && i === elementIndex && element.type === elementType) {
+                  return { ...element, [property]: newValue };
+                } else if (updateType === "secondary" && i === elementIndex && element.type === "div") {
+                  return {
+                    ...element,
+                    innerElements: element.innerElements.map((innerElement, eIndex) =>
+                      eIndex === innerIndex && innerElement.type === elementType
+                        ? { ...innerElement, [property]: newValue }
+                        : innerElement
+                    ),
+                  };
+                }
+                return element;
+              }),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+  
 
   // Funzione per alternare il valore dello stato
   const togglePlayState = () => {
@@ -2971,37 +3002,28 @@ const updateZindexTitle = (slideId, divIndex, innerIndex, value) => {
                     step={1}
                   />
                 </div>
-                <div className="custom-select">
-                  <RangeControl
-                    label={
-                      <>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="18px"
-                          viewBox="0 -960 960 960"
-                          width="18px"
-                          fill="#e8eaed"
-                          style={{ marginRight: "2px" }}
-                        >
-                          <path d="M216-216h528v-528H216v528Zm-72 72v-672h672v672H144Zm150-300v-72h72v72h-72Zm150 150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm0-150v-72h72v72h-72Zm150 150v-72h72v72h-72Z" />
-                        </svg>
-                        {__("Border radius", "cocoblocks")}
-                      </>
-                    }
-                    value={textDiv.backgroundBorderRadius}
-                    onChange={(newRadius) =>
-                      updateTitleBackgroundBorderRadius(
-                        slide.id,
-                        elementIndex,
-                        textIndex,
-                        newRadius
-                      )
-                    }
-                    min={0}
-                    max={256}
-                    step={1}
-                  />
-                </div>
+                <CustomRangeControl
+                  label={
+                    <>
+                      <VignetteIcon />
+                      {__("Border radius", "cocoblocks")}
+                    </>
+                  }
+                  value={textDiv.backgroundBorderRadius}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={0}
+                  max={256}
+                  step={1}
+                  updateType="secondary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  innerIndex={textIndex}
+                  elementType="text"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderRadius')
+                  }
+                />
               </>
             )}
           </div>
@@ -3020,31 +3042,28 @@ const updateZindexTitle = (slideId, divIndex, innerIndex, value) => {
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
-            <div className="custom-select">
-              <RangeControl
-                label={
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path d="m360-160-56-56 70-72q-128-17-211-70T80-480q0-83 115.5-141.5T480-680q169 0 284.5 58.5T880-480q0 62-66.5 111T640-296v-82q77-20 118.5-49.5T800-480q0-32-85.5-76T480-600q-149 0-234.5 44T160-480q0 24 51 57.5T356-372l-52-52 56-56 160 160-160 160Z" />
-                    </svg>
-                    {__("Rotate", "cocoblocks")}
-                  </>
-                }
-                value={textDiv.rotate}
-                onChange={(rotate) =>
-                  updateRotate(slide.id, elementIndex, textIndex, rotate)
-                }
-                min={0}
-                max={360}
-                step={1}
-              />
-            </div>
+          <CustomRangeControl
+            label={
+              <>
+                <RotateRightIcon />
+                {__("Rotate", "cocoblocks")}
+              </>
+            }
+            value={textDiv.rotate}
+            slides={slides}
+            setAttributes={setAttributes}
+            min={0}
+            max={360}
+            step={1}
+            updateType="secondary"
+            slideId={slide.id}
+            elementIndex={elementIndex}
+            innerIndex={textIndex}
+            elementType="text"
+            updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+              updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotate')
+            }
+          />
             <div className="custom-select select-control-label-right">
               <SelectControl
                 label={

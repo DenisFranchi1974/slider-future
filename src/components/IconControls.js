@@ -1539,8 +1539,6 @@ const IconControls = ({
               />
             </div>
           </div>
-          {slide.developerMode && (
-            <>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
               {__("LEVEL", "cocoblocks")}
@@ -1565,8 +1563,6 @@ const IconControls = ({
               />
             </div>
           </div>
-          </>
-          )}
           <BoxShadowIcon
             slide={slide}
             slides={slides}

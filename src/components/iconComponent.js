@@ -29,6 +29,7 @@ const IconComponent = ({ element, index }) => {
     boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorShadow}` || "0 0 0 0 #000000",
     position:"relative",
     opacity: element.opacity,
+    zIndex: element.zIndexIcon,
     transform: `rotate(${element.rotate}deg)`,
     "--rotate-hover-icon": element.rotateHover + "deg" || "0",
     '--fa-animation-duration': element.iconAnimationDuration + 's',
