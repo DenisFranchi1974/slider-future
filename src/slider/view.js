@@ -1,19 +1,22 @@
 import { Swiper } from 'swiper';
-import { gsap } from 'gsap';
+
+import { animationsIn, animationsOut, getAnimationProps  } from "../animate";
 
 import { Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel, Parallax } from 'swiper/modules';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Seleziona tutti gli elementi con la classe 'swiper'
     const swiperElements = document.querySelectorAll('.swiper');
 
-    // Funzione per animazioni
+    // Funzione per riavviare l'animazione CSS
     function restartAnimation(element, animation) {
         element.classList.remove(animation);
         void element.offsetWidth; // Forza il reflow
         element.classList.add(animation);
     }
 
+    // Funzione per applicare animazioni CSS (esistente)
     function handleAnimation(elements, dataAttr) {
         elements.forEach(element => {
             const animation = element.getAttribute(dataAttr);
@@ -23,32 +26,111 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function observeSlides(slide) {
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                if (mutation.attributeName === 'class') {
-                    const isActive = slide.classList.contains('swiper-slide-active');
-                    if (isActive) {
-                        // Riavvia l'animazione per gli elementi della slide attiva
-                        handleAnimation(slide.querySelectorAll('.content-title-slide'), 'data-animation');
-                        handleAnimation(slide.querySelectorAll('.image-first-slide'), 'data-animation-image');
-                        handleAnimation(slide.querySelectorAll('.img-inner'), 'data-animation-image-inner');
-                        handleAnimation(slide.querySelectorAll('.div-slide'), 'data-animation-div');
-                        handleAnimation(slide.querySelectorAll('.content-title-div.letter'), 'data-animation-title-div');
-                        handleAnimation(slide.querySelectorAll('.button-slider'), 'data-animation-button');
-                        handleAnimation(slide.querySelectorAll('.content-button-slide'), 'data-animation-button');
-                        handleAnimation(slide.querySelectorAll('.button-slider-inner'), 'data-animation-button-inner');
-                        handleAnimation(slide.querySelectorAll('.content-button-slide-inner'), 'data-animation-button-inner');
-                        handleAnimation(slide.querySelectorAll('.content-icon'), 'data-animation-icon');
-                        handleAnimation(slide.querySelectorAll('.content-icon-inner'), 'data-animation-icon-inner');
+    // Funzione per animare un elemento
+    function animateElement(element) {
+      const effectIn = element.getAttribute('data-effect-in') || "fadeIn";
+      const effectOut = element.getAttribute('data-effect-out') || "none";
+      const duration = parseInt(element.getAttribute('data-duration')) || 3000;
+      const delayIn = parseInt(element.getAttribute('data-delay-in')) || 0;
+      const delayInEnd = parseInt(element.getAttribute('data-delay-in-end')) || 0;
+      const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
+      const directionIn = element.getAttribute('data-direction-in') || 'normal';
+      const loopIn = element.getAttribute('data-loop-in') || 1;
+      const opacityInFrom = element.getAttribute('data-opacity-in-from') || 0;
+      const opacityInTo = element.getAttribute('data-opacity-in-to') || 1;
+      const startXFrom = element.getAttribute('data-start-x-from') || 0;
+      const startXTo = element.getAttribute('data-start-x-to') || 0;
+      const startYFrom = element.getAttribute('data-start-y-from') || 0;
+      const startYTo = element.getAttribute('data-start-y-to') || 0;
+      const stagger = parseInt(element.getAttribute('data-stagger')) || 50;
+      const textSplitEffect = element.getAttribute('data-effect-split') || 'getAnimationEffectSplit';
+      const directionBlock = element.getAttribute('data-direction-block');
+      const colorBlockEffectIn = element.getAttribute('data-color-block') || '#000';
+      const rotateInFrom = parseInt(element.getAttribute('data-rotate-in-from')) || 0;
+      const rotateInTo = parseInt(element.getAttribute('data-rotate-in-to')) || 0;
+      const rotateInXFrom = parseInt(element.getAttribute('data-rotate-in-x-from')) || 0;
+      const rotateInXTo = parseInt(element.getAttribute('data-rotate-in-x-to')) || 0;
+      const rotateInYFrom = parseInt(element.getAttribute('data-rotate-in-y-from')) || 0;
+      const rotateInYTo = parseInt(element.getAttribute('data-rotate-in-y-to')) || 0;
+      const scaleFrom = parseInt(element.getAttribute('data-scale-in-from')) || 1;
+      const scaleTo = parseInt(element.getAttribute('data-scale-in-to')) || 1;
+      const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) || 0;
+      const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) || 0;
+      const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) || 0;
+      const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) || 0;
 
-                    }
-                }
-            });
-        });
 
-        observer.observe(slide, { attributes: true });
-    }
+      // Imposta l'opacità iniziale a 0
+     //element.style.opacity = 0;
+
+      const animationProps = getAnimationProps({
+        duration,
+        delay:delayIn,
+        endDelay: delayInEnd,
+        easing: easingIn,
+        loop: loopIn,
+        direction: directionIn,
+        opacityInFrom,
+        opacityInTo,
+        startXFrom,
+        startXTo,
+        startYFrom,
+        startYTo,
+        stagger,
+        textSplitEffect,
+        directionBlock,
+        colorBlockEffectIn,
+        rotateInFrom,
+        rotateInTo,
+        rotateInXFrom,
+        rotateInXTo,
+        rotateInYFrom,
+        rotateInYTo,
+        scaleFrom,
+        scaleTo,
+        skewXFrom,
+        skewXTo,
+        skewYFrom,
+        skewYTo,
+    });
+
+      setTimeout(() => {
+        if (animationsIn[effectIn]) {
+            animationsIn[effectIn](element, animationProps);
+        }
+    }, delayIn);
+
+      // Chiamare l'animazione di uscita dopo un certo tempo (es. 3000ms)
+      setTimeout(() => {
+          if (animationsOut[effectOut]) {
+              animationsOut[effectOut](element,animationProps);
+          }
+      }, duration); // Durata dell'animazione di entrata
+
+  }
+
+
+ // Funzione per osservare i cambiamenti di classe nelle slide
+function observeSlides(slide) {
+  const observer = new MutationObserver(() => {
+      const isActive = slide.classList.contains('swiper-slide-active');
+      if (isActive) {
+          // Seleziona e anima il testo con Anime.js
+          const elements = slide.querySelectorAll('[data-effect-in]');
+          elements.forEach(element => {
+              animateElement(element);
+          });
+      }
+  });
+
+  observer.observe(slide, { attributes: true });
+}
+
+    // Applica l'osservatore su ogni elemento Swiper
+    swiperElements.forEach(swiper => {
+        const slides = swiper.querySelectorAll('.swiper-slide');
+        slides.forEach(observeSlides);
+    });
 
     // Inizializza Swiper per ogni elemento
     swiperElements.forEach(swiperElement => {
@@ -201,6 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     } : undefined,
 
+                   
+
                 },
 
             });
@@ -227,74 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* Effetto zoom 
-    const applyZoomEffect = () => {
-      const slides = document.querySelectorAll('.swiper-slide');
-      slides.forEach(slide => {
-        slide.classList.add('zoom-active');
-      });
-    };
-
-    */
-/* Animation letter title */
-document.addEventListener('DOMContentLoaded', () => {
-    // Osservatore per gli elementi di testo con animazione delle lettere
-    const elements = document.querySelectorAll('.title-slide.letter');
-  
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        const element = entry.target;
-        const animationClass = element.getAttribute('data-animation');
-  
-        if (entry.isIntersecting) {
-          if (animationClass && (animationClass.startsWith('letters-') || animationClass.startsWith('letter-'))) {
-            // Verifica se l'elemento ha già l'animazione applicata
-            if (!element.classList.contains(animationClass)) {
-              // Aggiungi un ritardo minimo prima di applicare l'animazione
-              setTimeout(() => {
-                element.classList.remove(animationClass);
-                void element.offsetWidth; // Trigger reflow
-                element.classList.add(animationClass);
-  
-                // Gestisci l'animazione delle lettere
-                const spans = element.querySelectorAll('span');
-                spans.forEach((span, index) => {
-                  // Rimuovi e riapplica la classe di animazione per ogni lettera
-                  span.classList.remove(animationClass);
-                  void span.offsetWidth; // Trigger reflow
-                  span.classList.add(animationClass);
-  
-                  // Imposta il delay per ogni lettera in base all'animazione
-                  if (animationClass === 'letters-fly-in-from-left' ||
-                      animationClass === 'letters-fly-in-from-right' ||
-                      animationClass === 'letters-fly-in-from-top' ||
-                      animationClass === 'letters-fly-in-from-bottom') {
-                    span.style.setProperty('--letter-index', index + 1);
-                  } else if (animationClass === 'letter-flip-from-top' ||
-                             animationClass === 'letter-flip-from-bottom' ||
-                             animationClass === 'letter-flip-cycle') {
-                    span.style.setProperty('--letter-index', index + 1);
-                  }
-                });
-              }, 100); // Ritardo di 100ms
-            }
-          }
-  
-          // Smetti di osservare l'elemento una volta che l'animazione è stata applicata
-          observer.unobserve(element);
-        } else {
-          // Riaggiungi l'osservatore quando l'elemento esce dall'area di visibilità
-          observer.observe(element);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-  
-    elements.forEach(element => {
-      observer.observe(element);
-    });
-  });
 
 
 /* Effect Mouse */
@@ -1955,243 +1971,6 @@ const loadGoogleFont = (fontFamily) => {
     document.head.appendChild(link);
 };
   
-/*Text Effect */
-document.addEventListener('DOMContentLoaded', function() {
-    const typewriters = document.querySelectorAll('.typewriter');
-    const typewritersDiv = document.querySelectorAll('.typewriter-title-div');
-
-    typewriters.forEach(typewriter => {
-        const text = typewriter.getAttribute('data-text');
-        const speedEffect = parseInt(typewriter.getAttribute('data-speed-effect'), 10) || 100; // Velocità di digitazione (default: 100ms)
-        const pauseEffect = parseInt(typewriter.getAttribute('data-pause-effect'), 10) || 2000; // Pausa prima di riavviare l'effetto (default: 2000ms)
-        let index = 0;
-
-        // Crea e aggiungi il cursore
-        const cursor = document.createElement('span');
-        cursor.classList.add('typewriter-cursor');
-
-        // Copia gli stili dal cursore PHP
-        const existingCursor = typewriter.nextElementSibling;
-        if (existingCursor && existingCursor.classList.contains('typewriter-cursor')) {
-            cursor.style.cssText = existingCursor.style.cssText;
-        }
-
-        typewriter.parentNode.insertBefore(cursor, typewriter.nextSibling);
-
-        const typeWriter = () => {
-            if (index < text.length) {
-                typewriter.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, speedEffect); // Imposta la velocità della scrittura
-            } else {
-                setTimeout(() => {
-                    typewriter.textContent = '';  // Resetta il testo
-                    index = 0;                    // Resetta l'indice
-                    typeWriter();                 // Riavvia l'effetto
-                }, pauseEffect);                          // Pausa prima di riavviare l'effetto
-            }
-        };
-
-        typeWriter();
-    });
-
-    typewritersDiv.forEach(typewriter => {
-        const text = typewriter.getAttribute('data-text-title-div');
-        const speedEffect = parseInt(typewriter.getAttribute('data-speed-effect-title-div'), 10) || 100; // Velocità di digitazione (default: 100ms)
-        const pauseEffect = parseInt(typewriter.getAttribute('data-pause-effect-title-div'), 10) || 2000; // Pausa prima di riavviare l'effetto (default: 2000ms)
-        let index = 0;
-
-        // Crea e aggiungi il cursore
-        const cursor = document.createElement('span');
-        cursor.classList.add('typewriter-cursor-title-div');
-
-        // Copia gli stili dal cursore PHP
-        const existingCursor = typewriter.nextElementSibling;
-        if (existingCursor && existingCursor.classList.contains('typewriter-cursor-title-div')) {
-            cursor.style.cssText = existingCursor.style.cssText;
-        }
-
-        typewriter.parentNode.insertBefore(cursor, typewriter.nextSibling);
-
-        const typeWriter = () => {
-            if (index < text.length) {
-                typewriter.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, speedEffect); // Imposta la velocità della scrittura
-            } else {
-                setTimeout(() => {
-                    typewriter.textContent = '';  // Resetta il testo
-                    index = 0;                    // Resetta l'indice
-                    typeWriter();                 // Riavvia l'effetto
-                }, pauseEffect);                          // Pausa prima di riavviare l'effetto
-            }
-        };
-
-        typeWriter();
-    });
-
-});
-
-
-/* Delay Elements */
-document.addEventListener('DOMContentLoaded', function() {
-  const elements = document.querySelectorAll('.content-title-div, .content-button-slide,.content-button-slide-inner,.content-title-slide,.content-inner-div,.content-img-first,.content-img-inner,.content-icon,.content-icon-inner');
-  
-  // Itera su tutti gli elementi selezionati
-  elements.forEach((element) => {
-      // Verifica se l'elemento esiste
-      if (!element) {
-          return; // Se l'elemento non esiste, passa al prossimo
-      }
-
-      const hideEnabled = element.getAttribute('data-delay-hide') === 'true';
-      const hideAfter = parseInt(element.getAttribute('data-delay-seconds'), 10);
-
-      if (hideEnabled) {
-          setTimeout(() => {
-              element.classList.add('hidden');
-          }, hideAfter * 1000);
-      } else {
-          element.classList.remove('hidden');
-      }
-  });
-});
-
-
-/* Menu Eleemnt */
-
-document.addEventListener('DOMContentLoaded', function() {
-  const menus = document.querySelectorAll('.hamburger-icon');
-
-  menus.forEach((menu, index) => {
-    const uniqueId = `menu-${index}`;
-    menu.id = `icon-${uniqueId}`;
-    const icon1 = menu.querySelector('.icon-1');
-    const icon2 = menu.querySelector('.icon-2');
-    const icon3 = menu.querySelector('.icon-3');
-    const nav = menu.nextElementSibling;
-
-    icon1.id = `a-${uniqueId}`;
-    icon2.id = `b-${uniqueId}`;
-    icon3.id = `c-${uniqueId}`;
-    nav.id = `nav-${uniqueId}`;
-
-    menu.addEventListener('click', function() {
-      icon1.classList.toggle('a');
-      icon2.classList.toggle('c');
-      icon3.classList.toggle('b');
-      nav.classList.toggle('show');
-    });
-
-    // Gestione del breakpoint
-    const breakpoint = parseInt(menu.getAttribute('data-breakpoint'), 10);
-    const menuComponent = menu.closest('.menu-component');
-    const menuMode = menuComponent && menuComponent.classList.contains('menu-mode-toggle') ? 'toggle' : 'responsive';
-    const handleResize = () => {
-      if (menuMode === 'responsive') {
-        if (window.innerWidth <= breakpoint) {
-          menu.style.display = 'block';
-          nav.style.display = 'block';
-          const normalMenu = document.querySelector(`.slider-nav-menu[data-breakpoint="${breakpoint}"]`);
-          if (normalMenu) {
-            normalMenu.style.display = 'none';
-          }
-        } else {
-          menu.style.display = 'none';
-          nav.style.display = 'none';
-          const normalMenu = document.querySelector(`.slider-nav-menu[data-breakpoint="${breakpoint}"]`);
-          if (normalMenu) {
-            normalMenu.style.display = 'block';
-          }
-          nav.classList.remove('show'); // Nasconde il menu quando si esce dalla modalità responsive
-          icon1.classList.remove('a');
-          icon2.classList.remove('c');
-          icon3.classList.remove('b');
-        }
-      } else if (menuMode === 'toggle') {
-        menu.style.display = 'block';
-        nav.style.display = 'block';
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Chiama la funzione una volta per impostare lo stato iniziale
-
-
-
-  });
-
-
-
-    const submenuToggles = document.querySelectorAll('.submenu-toggle');
-    const subMenuRefs = {}; // Oggetto per contenere i riferimenti ai sub-menu
-  
-    // Inizializza i riferimenti per ciascun sub-menu
-    submenuToggles.forEach(button => {
-      const index = button.dataset.index; // Ottieni l'indice dal bottone
-      subMenuRefs[index] = button.nextElementSibling; // Salva il riferimento al sub-menu
-  
-      // Aggiungi un evento click al bottone
-      button.addEventListener('click', () => {
-        const subMenu = subMenuRefs[index];
-  
-        if (subMenu.style.display === 'block') {
-          // Chiudi il sub-menu
-          gsap.to(subMenu, {
-            height: 0,
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power2.inOut',
-            onComplete: () => {
-              subMenu.style.display = 'none'; // Nascondi il sub-menu al termine dell'animazione
-            }
-          });
-        } else {
-          // Apri il sub-menu
-          subMenu.style.display = 'block'; // Assicurati che il sub-menu sia visibile prima di animare
-          gsap.fromTo(subMenu, 
-            { height: 0, opacity: 0 }, 
-            { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
-          );
-        }
-      });
-  
-      // Aggiungi eventi mouse solo se il modo è hover
-      if (button.closest('li').classList.contains('submenu-hover')) {
-        button.closest('li').addEventListener('mouseenter', () => {
-          const subMenu = subMenuRefs[index];
-          subMenu.style.display = 'block'; // Assicurati che il sub-menu sia visibile prima di animare
-          gsap.fromTo(subMenu, 
-            { height: 0, opacity: 0 }, 
-            { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
-          );
-        });
-  
-        button.closest('li').addEventListener('mouseleave', () => {
-          const subMenu = subMenuRefs[index];
-          gsap.to(subMenu, {
-            height: 0,
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power2.inOut',
-            onComplete: () => {
-              subMenu.style.display = 'none'; // Nascondi il sub-menu al termine dell'animazione
-            }
-          });
-        });
-      }
-    });
-  
-
-  
-
-});
-
-
-
-
-
-
 
 
 

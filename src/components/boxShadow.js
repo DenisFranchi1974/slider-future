@@ -15,7 +15,7 @@ const BoxShadowControl = ({
   const [shadowType, setShadowType] = useState("outside"); 
 
   // Color Shadow
-  const updateColorShadow = (slideId, index, value) => {
+  const updateColorShadow = (slideId, index, value) => { 
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
         ? {

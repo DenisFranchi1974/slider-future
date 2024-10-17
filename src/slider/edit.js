@@ -29,7 +29,7 @@ import SliderControlsNavigation from "../components/SliderControlsNavigation";
 import SliderControlsOptions from "../components/SliderControlsOptions";
 import NavigationButtons from "../components/NavigationButtons";
 import ImageComponent from "../components/ImageComponent";
-import TextComponent from "../components/TextComponent";
+import TextRender from "../components/text/TextRender";
 import DivComponent from "../components/divComponent";
 import SlideControls from "../components/slideControls";
 import ButtonComponent from "../components/buttonComponent";
@@ -38,11 +38,16 @@ import Ruler from "../components/ruler";
 import IconComponent from "../components/iconComponent";
 import MenuComponent from "../components/menu/menuComponent";
 import PostsControls from "../components/postsControls";
+import SettingsIcon from '@mui/icons-material/Settings';
+import BurstModeIcon from '@mui/icons-material/BurstMode';
+import GamepadIcon from '@mui/icons-material/Gamepad';
+import LayersIcon from '@mui/icons-material/Layers';
+import ArticleIcon from '@mui/icons-material/Article';
 
 
 import apiFetch from '@wordpress/api-fetch';
 
-export default function Edit({ attributes, setAttributes, slide }) {
+export default function Edit({ attributes, setAttributes, slide}) {
   const {
     content,
     directionSlider,
@@ -218,8 +223,6 @@ export default function Edit({ attributes, setAttributes, slide }) {
     order = "ASC",
     postsToShow
   } = attributes;
-
-
 
   /* Classi personalizzate per il blocco */
   useEffect(() => {
@@ -615,32 +618,75 @@ export default function Edit({ attributes, setAttributes, slide }) {
   const [selectedDevice, setSelectedDevice] = useState('desktop');
   const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
+
+  
+  // Cache per i risultati delle chiamate API
+  const apiCache = {};
+  
+  const debounce = (func, delay) => {
+    let debounceTimer;
+    return (...args) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  
+  /* Da controllare perchè rallenta il sito!!!!!!
   useEffect(() => {
     const includeCategoriesParam = includeCategories.length ? includeCategories.join(',') : '';
     const excludeCategoriesParam = excludeCategories.length ? excludeCategories.join(',') : '';
-    apiFetch({ path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}` })
-      .then((data) => {
-        console.log('Data ricevuti:', data); // Controlla i dati
-        setAttributes({ posts: data });
-      })
-      .catch((error) => {
-        console.error('Errore nel recupero dei post:', error);
-      });
-  }, [includeCategories, excludeCategories, order]);
+    const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}`;
   
-// Debug: Verifica l'ordine dei post
-console.log('Ordine dei post:', posts);
+    // Controlla se la risposta è già nella cache
+    if (apiCache[cacheKey]) {
+      setAttributes({ posts: apiCache[cacheKey] });
+      return;
+    }
+  
+    // Funzione per recuperare i post con debounce
+    const fetchPosts = debounce(() => {
+      apiFetch({
+        path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}`,
+      })
+        .then((data) => {
+          console.log('Data ricevuti:', data); // Controlla i dati
+          apiCache[cacheKey] = data; // Memorizza i risultati nella cache
+          setAttributes({ posts: data });
+        })
+        .catch((error) => {
+          console.error('Errore nel recupero dei post:', error);
+        });
+    }, 300); // Imposta il debounce con un ritardo di 300ms
+  
+    // Chiama la funzione debounce
+    fetchPosts();
+  }, [includeCategories, excludeCategories, order, postsToShow]);
+
+  */
+  
+  // Debug: Verifica l'ordine dei post
+  console.log('Ordine dei post:', posts);
   
   // Style content posts
   const stylesContentPosts = {
-    padding: backgroundVerticalPadding + 'px ' + backgroundHorizontalPadding + 'px',
+    padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
     display: 'flex',
     flexDirection: layoutPost,
-    gap: gapItemsPost + 'px',
+    gap: `${gapItemsPost}px`,
     flexWrap: layoutWrapPost,
-
   };
 
+
+  const playAnimations = [];
+
+  const handlePlayAll = () => {
+    playAnimations.forEach(playAnimation => {
+      if (playAnimation) {
+        playAnimation();
+      }
+    });
+  };
 
   return (
     <> 
@@ -655,65 +701,33 @@ console.log('Ordine dei post:', posts);
             {
               name: "tab1",
               title: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
-                </svg>
+                <SettingsIcon/>
               ),
             },
             {
               name: "tab3",
               title: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M480-654Zm174 174Zm-348 0Zm174 174Zm0-234L360-660v-220h240v220L480-540Zm180 180L540-480l120-120h220v240H660Zm-580 0v-240h220l120 120-120 120H80ZM360-80v-220l120-120 120 120v220H360Zm120-574 40-40v-106h-80v106l40 40ZM160-440h106l40-40-40-40H160v80Zm280 280h80v-106l-40-40-40 40v106Zm254-280h106v-80H694l-40 40 40 40Z" />
-                </svg>
+                <GamepadIcon/>
               ),
             },
             {
               name: "tab4",
               title: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M40-200v-560h80v560H40Zm160 0v-560h80v560h-80Zm240 0q-33 0-56.5-23.5T360-280v-400q0-33 23.5-56.5T440-760h400q33 0 56.5 23.5T920-680v400q0 33-23.5 56.5T840-200H440Zm0-80h400v-400H440v400Zm40-80h320L696-500l-76 100-56-74-84 114Zm-40 80v-400 400Z" />
-                </svg>
+                <BurstModeIcon/>
               ),
             },
             ...(attributes.contentType === "custom" ? [
             {
               name: "tab2",
               title: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z" />
-                </svg>
+                <LayersIcon/>
               ),
             }]: []),
              ...(attributes.contentType === "post-based" ? [
             {
               name: "tab5",
               title: (
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-400h160v-80H400v80Zm0-120h320v-80H400v80Zm0-120h320v-80H400v80Zm-80 400q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+                <ArticleIcon/>
               ),
             }]: []),
           ]}
@@ -744,7 +758,6 @@ console.log('Ordine dei post:', posts);
               {/*TAB 2*/}
               {attributes.contentType === "custom" && (
               <div className={"tab-2 " + tab.name}>
-           
                 <SlideControls
                   attributes={attributes}
                   setAttributes={setAttributes}
@@ -755,9 +768,8 @@ console.log('Ordine dei post:', posts);
                   selectedDevice={selectedDevice}
                   onDeviceChange={handleDeviceChange}
                   setSelectedIcon={setSelectedIcon}
-                 
+                  handlePlayAll={handlePlayAll} 
                 />
-            
               </div>
               )}
                 {/*TAB 5*/}
@@ -766,7 +778,6 @@ console.log('Ordine dei post:', posts);
                <PostsControls
                   attributes={attributes}
                   setAttributes={setAttributes}
-                 
                 />
                 </div>
                 )}
@@ -932,7 +943,7 @@ console.log('Ordine dei post:', posts);
           style={stylesPagination}
         >
           
-          {attributes.contentType === "post-based" && posts && Array.isArray(posts) && posts.length > 0 ? (
+        {attributes.contentType === "post-based" && posts && Array.isArray(posts) && posts.length > 0 ? (
         posts.map((post, index) => (
           <SwiperSlide key={index}>
             <div className="swiper-slide">
@@ -964,7 +975,6 @@ console.log('Ordine dei post:', posts);
           </SwiperSlide>
         ))
       ) : null}
-
 
           {attributes.contentType === "woocommerce-based" &&
           attributes.posts &&
@@ -1071,7 +1081,6 @@ console.log('Ordine dei post:', posts);
                       }}
                     >
                   
-                      
                       {slide.backgroundType === "video" && (
                         <>
                           {slide.backgroundVideo && (
@@ -1098,7 +1107,18 @@ console.log('Ordine dei post:', posts);
                           )}
                         </>
                       )}
-                    <div className={"content-inner-for-slide " + slide.position + " " +  slide.layout + "-layout"} style={{alignItems: slide.layoutAlignItems,display:slide.layoutDisplay,width:'100%',flexWrap:slide.layoutWrap,'--justify-content-responsive-slide':slide.layoutAlignResponsive, gap: slide.gapItems + "px",}}>
+                    <div className={"content-inner-for-slide " + (slide.developerMode ? "" : slide.position + " " + slide.layout + "-layout")
+                      } 
+                      style={
+                        slide.developerMode ? {} : {
+                          alignItems: slide.layoutAlignItems,
+                          display: slide.layoutDisplay,
+                          width: '100%',
+                          flexWrap: slide.layoutWrap,
+                          '--justify-content-responsive-slide': slide.layoutAlignResponsive,
+                          gap: slide.gapItems + "px",
+                        }
+                      }>
                     {slide.elements.map((element, index) => {
                       const handleDrag = (e, data) => {
                         handleDragElement(slide.id, index, data.x, data.y);
@@ -1116,16 +1136,18 @@ console.log('Ordine dei post:', posts);
                               activeDevice={activeDevice}
                               style={{zIndex: element.zIndexTitle}}
                             >
-                              <TextComponent
+                              <TextRender
                                 element={element}
                                 index={index}
+                                onPlay={playAnimation => playAnimations.push(playAnimation)}
                               />
                             </DraggableTest>
                           ) : (
-                            <TextComponent
+                            <TextRender
                               key={index}
                               element={element}
                               index={index}
+                              onPlay={playAnimation => playAnimations.push(playAnimation)}
                             />
                           );
                         case "image":
@@ -1150,6 +1172,7 @@ console.log('Ordine dei post:', posts);
                               index={index}
                             />
                           );
+                       
                         case "div": 
                           return slide.developerMode ? (
                             <DraggableTest
@@ -1160,23 +1183,20 @@ console.log('Ordine dei post:', posts);
                               activeDevice={activeDevice}
                               style={{zIndex: element.zIndexDiv}}
                             >
-                          
                               <DivComponent
                                 element={element}
                                 index={index}
-
                               />
-                              
                             </DraggableTest>
                           ) : (
-                            
                             <DivComponent
                               key={index}
                               element={element}
                               index={index}
                             />
-                           
                           );
+                          
+                         
                           case "menu": 
                           return slide.developerMode ? (
                               <MenuComponent
@@ -1193,6 +1213,7 @@ console.log('Ordine dei post:', posts);
                               menuItems={element.menuItems || [{ text: "Home", link: "" }]}
                             />
                           );
+                          
                         case "button":
                           return slide.developerMode ? (
                             <DraggableTest
@@ -1244,13 +1265,11 @@ console.log('Ordine dei post:', posts);
                       }
                     })}
                  </div>
-                 
                   </div>
                     </div>
                 </SwiperSlide>
               ))
             : null}
-
           {autoplayProgress && (
             <div
               className={"autoplay-progress " + autoplayProgressPosition}

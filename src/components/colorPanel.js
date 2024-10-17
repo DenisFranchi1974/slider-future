@@ -18,10 +18,10 @@ const ColorOptionsPanel = ({ colorNormal, setColorNormal, buttonTitle, buttonIco
                 style={{ 
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-between', 
                     cursor: 'pointer',
                     width: '100%',
-                    marginLeft: '-16px',
+                    marginLeft: '-18px',
                 }}
             >
                 <div>

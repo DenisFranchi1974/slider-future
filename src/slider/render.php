@@ -311,359 +311,69 @@ $wrapper_attributes = get_block_wrapper_attributes(
         'style' => $stylesSlider,
     )
 );
-
-if (!function_exists('splitTextIntoLetters')) {
-    function splitTextIntoLetters($text = '', $animation = '', $element = []) {
-
-        $speedEffect = isset($element['speedEffect']) ? $element['speedEffect'] : 200; // Valore predefinito: 100ms
-        $pauseEffect = isset($element['pauseEffect']) ? $element['pauseEffect'] : 2000; // Valore predefinito: 2000ms
-        $durationEffect = isset($element['durationEffect']) ? $element['durationEffect'] : 2; // Valore predefinito: Parametro passato
-        $delayEffect = isset($element['delayEffect']) ? $element['delayEffect'] : 0; // Valore predefinito: Parametro passato
-        $animationCount = isset($element['animationCount']) ? $element['animationCount'] : 1; // Valore predefinito: 1
-        // Se l'animazione è "bounce", esegui lo split del testo in lettere
-        if ($animation === 'bounce') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-        // Se l'animazione è "explode"
-        if ($animation === 'explode') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $x = rand(-100, 100); // Posizione X casuale
-                $y = rand(-100, 100); // Posizione Y casuale
-                $rotation = rand(0, 360); // Rotazione casuale
-                $result .= '<span class="explode" data-explosion-delay="' . esc_attr($delayEffect) . '" data-explosion-duration="' . esc_attr($durationEffect) . '" style="--x:' . $x . 'px; --y:' . $y . 'px; --rotation:' . $rotation . 'deg;animation-delay:' . esc_attr($delayEffect) . 's;animation-iteration-count:' . esc_attr($animationCount) .'; animation-duration:'  . esc_attr($durationEffect) .'s;">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "implode"
-        if ($animation === 'implode') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $x = rand(-100, 100); // Posizione X casuale
-                $y = rand(-100, 100); // Posizione Y casuale
-                $rotation = rand(0, 360); // Rotazione casuale
-                $result .= '<span class="implode" style="--x:' . $x . 'px; --y:' . $y . 'px; --rotation:' . $rotation . 'deg;animation-iteration-count:' . esc_attr($animationCount) .'; animation-delay:' . esc_attr($delayEffect) . 's; animation-duration:' . esc_attr($durationEffect) . 's;">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        $stylesSpan = [
-            "--width-cursor" => isset($element['widthCursor']) ? $element['widthCursor'] . "px" : "2px",
-            "--color-cursor" => isset($element['cursorColor']) ? $element['cursorColor'] : "#000000",
-            "--animation-cursor" => isset($element['animationCursor']) ? $element['animationCursor'] . "s" : "0.75s",
-        ];
-        
-        $styleAttribute = '';
-        foreach ($stylesSpan as $property => $value) {
-            $styleAttribute .= $property . ':' . $value . '; ';
-        }
-        
-        if ($animation === 'typing-effect') {
-            return '<span class="typewriter" data-text="' . esc_attr($text) . '" data-speed-effect="' . esc_attr($speedEffect) . '"  data-pause-effect="' . esc_attr($pauseEffect) . '"></span>
-                    <span class="typewriter-cursor" style="' . esc_attr($styleAttribute) . '"></span>';
-        }
-        
-        // Se l'animazione è "letters-fly-in-from-left"
-        if ($animation === 'letters-fly-in-from-left') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-left" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letters-fly-in-from-right"
-        if ($animation === 'letters-fly-in-from-right') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-right" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letters-fly-in-from-top"
-        if ($animation === 'letters-fly-in-from-top') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-top" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letters-fly-in-from-bottom"
-        if ($animation === 'letters-fly-in-from-bottom') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-bottom" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letter-flip-from-top"
-        if ($animation === 'letter-flip-from-top') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter-flip-from-top" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letter-flip-from-bottom"
-        if ($animation === 'letter-flip-from-bottom') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter-flip-from-bottom" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letter-flip-cycle"
-        if ($animation === 'letter-flip-cycle') {
-            $letters = str_split($text);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter-flip-cycle" style="--letter-index: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione non è tra quelle gestite, restituisci il testo intero senza avvolgerlo in uno span
-        return $text;
-    }
-}
-
-if (!function_exists('splitTextIntoLettersTitleDiv')) {
-    function splitTextIntoLettersTitleDiv($content = '', $animation = '', $innerElement = []) {
-
-        $speedEffect = isset($innerElement['speedEffect']) ? $innerElement['speedEffect'] : 200; // Valore predefinito: 100ms
-        $pauseEffect = isset($innerElement['pauseEffect']) ? $innerElement['pauseEffect'] : 2000; // Valore predefinito: 2000ms
-        $durationEffect = isset($innerElement['durationEffect']) ? $innerElement['durationEffect'] : 2; // Valore predefinito: Parametro passato
-        $delayEffect = isset($innerElement['delayEffect']) ? $innerElement['delayEffect'] : 0; // Valore predefinito: Parametro passato
-        $animationCount = isset($innerElement['animationCount']) ? $innerElement['animationCount'] : 1; // Valore predefinito: 1
-        // Se l'animazione è "bounce", esegui lo split del testo in lettere
-        if ($animation === 'bounce-title-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter ' . esc_attr($animation) . '">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "explode"
-        if ($animation === 'explode-title-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $x = rand(-100, 100); // Posizione X casuale
-                $y = rand(-100, 100); // Posizione Y casuale
-                $rotation = rand(0, 360); // Rotazione casuale
-                $result .= '<span class="explode-title-div" data-explosion-delay="' . esc_attr($delayEffect) . '" data-explosion-duration="' . esc_attr($durationEffect) . '" style="--x-title-div:' . $x . 'px; --y-title-div:' . $y . 'px; --rotation-title-div:' . $rotation . 'deg;animation-delay:' . esc_attr($delayEffect) . 's;animation-iteration-count:' . esc_attr($animationCount) .'; animation-duration:'  . esc_attr($durationEffect) .'s;">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "implode"
-        if ($animation === 'implode-title-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $x = rand(-100, 100); // Posizione X casuale
-                $y = rand(-100, 100); // Posizione Y casuale
-                $rotation = rand(0, 360); // Rotazione casuale
-                $result .= '<span class="implode-title-div" style="--x-title-div:' . $x . 'px; --y-title-div:' . $y . 'px; --rotation-title-div:' . $rotation . 'deg;animation-iteration-count:' . esc_attr($animationCount) .'; animation-delay:' . esc_attr($delayEffect) . 's; animation-duration:' . esc_attr($durationEffect) . 's;">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        $stylesSpan = [
-            "--width-cursor-title-block" => isset($innerElement['widthCursor']) ? $innerElement['widthCursor'] . "px" : "2px",
-            "--color-cursor-title-block" => isset($innerElement['cursorColor']) ? $innerElement['cursorColor'] : "#000000",
-            "--animation-cursor-title-block" => isset($innerElement['animationCursor']) ? $innerElement['animationCursor'] . "s" : "0.75s",
-        ];
-        
-        $styleAttribute = '';
-        foreach ($stylesSpan as $property => $value) {
-            $styleAttribute .= $property . ':' . $value . '; ';
-        }
-        
-        if ($animation === 'typing-effect') {
-            return '<span class="typewriter-title-div" data-text-title-div="' . esc_attr($content) . '" data-speed-effect-title-div="' . esc_attr($speedEffect) . '"  data-pause-effect-title-div="' . esc_attr($pauseEffect) . '"></span>
-                    <span class="typewriter-cursor-title-div" style="' . esc_attr($styleAttribute) . '"></span>';
-        }
-        
-
-        // Se l'animazione è "letters-fly-in-from-left"
-        if ($animation === 'letters-fly-in-from-left-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-left-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letters-fly-in-from-right"
-        if ($animation === 'letters-fly-in-from-right-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-right-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letters-fly-in-from-top"
-        if ($animation === 'letters-fly-in-from-top-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-top-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letters-fly-in-from-bottom"
-        if ($animation === 'letters-fly-in-from-bottom-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letters-fly-in-from-bottom-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letter-flip-from-top"
-        if ($animation === 'letter-flip-from-top-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter-flip-from-top-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letter-flip-from-bottom"
-        if ($animation === 'letter-flip-from-bottom-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter-flip-from-bottom-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione è "letter-flip-cycle"
-        if ($animation === 'letter-flip-cycle-div') {
-            $letters = str_split($content);
-            $result = '';
-            foreach ($letters as $index => $letter) {
-                $result .= '<span class="letter-flip-cycle-div" style="--letter-index-div: ' . ($index + 1) . ';">' . esc_html($letter) . '</span>';
-            }
-            return $result;
-        }
-
-        // Se l'animazione non è tra quelle gestite, restituisci il testo intero senza avvolgerlo in uno span
-        return $content;
-    }
-}
-
-
-
 ?>         
-
 <div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>" >
     <div class="swiper-wrapper">
-
-
     <?php 
-
-// Recupera i post inclusi ed esclusi
-$include_categories = !empty($attributes['includeCategories']) ? $attributes['includeCategories'] : [];
-$exclude_categories = !empty($attributes['excludeCategories']) ? $attributes['excludeCategories'] : [];
-
-// Recupera i post filtrati
-$posts = cocoblocks_get_content('post', $include_categories, $exclude_categories,$order,$postsToShow);
-
-
-
-if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($posts)) : ?>
-    <?php foreach ($posts as $post) : ?>
-        <div class="swiper-slide">
-            <div class="content-slide-post">
-                <?php if (!empty($attributes['postElementsOrder'])) : ?>
-                    <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
-                        <?php if ($element === 'image' && !empty($post['image'])) : ?>
-                            <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
-                        <?php elseif ($element === 'title' && !empty($post['title'])) : ?>
-                            <h3><?php echo esc_html($post['title']); ?></h3>
-                        <?php elseif ($element === 'excerpt' && !empty($post['excerpt'])) : ?>
-                            <p><?php echo esc_html($post['excerpt']); ?></p>
-                        <?php elseif ($element === 'link' && !empty($post['link'])) : ?>
-                            <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
-                        <?php elseif ($element === 'author' && !empty($post['author'])) : ?>
-                            <p><?php echo esc_html($post['author']); ?></p>
-                        <?php elseif ($element === 'date' && !empty($post['date'])) : ?>
-                            <p><?php echo esc_html($post['date']); ?></p>
-                        <?php elseif ($element === 'categories' && !empty($post['categories'])) : ?>
-                            <p>
-                                <?php foreach ($post['categories'] as $category) : ?>
-                                    <span class="category"><?php echo esc_html($category); ?></span>
-                                <?php endforeach; ?>
-                            </p>
-                        <?php elseif ($element === 'tags' && !empty($post['tags'])) : ?>
-                            <p>
-                                <?php foreach ($post['tags'] as $tag) : ?>
-                                    <span class="tag"><?php echo esc_html($tag); ?></span>
-                                <?php endforeach; ?>
-                            </p>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    <?php endforeach; ?>
-
-
-
-
-
-
-
-
-
-    <?php elseif ($attributes['contentType'] === 'woocommerce-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
-        <?php foreach ($attributes['posts'] as $product) : ?>
+    // Recupera i post inclusi ed esclusi
+    $include_categories = !empty($attributes['includeCategories']) ? $attributes['includeCategories'] : [];
+    $exclude_categories = !empty($attributes['excludeCategories']) ? $attributes['excludeCategories'] : [];
+    // Recupera i post filtrati
+    $posts = cocoblocks_get_content('post', $include_categories, $exclude_categories,$order,$postsToShow);
+    if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($posts)) : ?>
+        <?php foreach ($posts as $post) : ?>
             <div class="swiper-slide">
-                <?php if (!empty($product['image'])) : ?>
-                    <img src="<?php echo esc_url($product['image']); ?>" alt="<?php echo esc_attr($product['title']); ?>" />
-                <?php endif; ?>
-                <?php if (!empty($product['title'])) : ?>
-                    <h3><?php echo esc_html($product['title']); ?></h3>
-                <?php endif; ?>
-                <?php if (!empty($product['excerpt'])) : ?>
-                    <p><?php echo esc_html($product['excerpt']); ?></p>
-                <?php endif; ?>
-                <?php if (!empty($product['link'])) : ?>
-                    <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'cocoblocks'); ?></a>
-                <?php endif; ?>
+                <div class="content-slide-post">
+                    <?php if (!empty($attributes['postElementsOrder'])) : ?>
+                        <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
+                            <?php if ($element === 'image' && !empty($post['image'])) : ?>
+                                <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
+                            <?php elseif ($element === 'title' && !empty($post['title'])) : ?>
+                                <h3><?php echo esc_html($post['title']); ?></h3>
+                            <?php elseif ($element === 'excerpt' && !empty($post['excerpt'])) : ?>
+                                <p><?php echo esc_html($post['excerpt']); ?></p>
+                            <?php elseif ($element === 'link' && !empty($post['link'])) : ?>
+                                <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
+                            <?php elseif ($element === 'author' && !empty($post['author'])) : ?>
+                                <p><?php echo esc_html($post['author']); ?></p>
+                            <?php elseif ($element === 'date' && !empty($post['date'])) : ?>
+                                <p><?php echo esc_html($post['date']); ?></p>
+                            <?php elseif ($element === 'categories' && !empty($post['categories'])) : ?>
+                                <p>
+                                    <?php foreach ($post['categories'] as $category) : ?>
+                                        <span class="category"><?php echo esc_html($category); ?></span>
+                                    <?php endforeach; ?>
+                                </p>
+                            <?php elseif ($element === 'tags' && !empty($post['tags'])) : ?>
+                                <p>
+                                    <?php foreach ($post['tags'] as $tag) : ?>
+                                        <span class="tag"><?php echo esc_html($tag); ?></span>
+                                    <?php endforeach; ?>
+                                </p>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php endforeach; ?>
 
+        <?php elseif ($attributes['contentType'] === 'woocommerce-based' && !empty($attributes['posts']) && is_array($attributes['posts'])) : ?>
+            <?php foreach ($attributes['posts'] as $product) : ?>
+                <div class="swiper-slide">
+                    <?php if (!empty($product['image'])) : ?>
+                        <img src="<?php echo esc_url($product['image']); ?>" alt="<?php echo esc_attr($product['title']); ?>" />
+                    <?php endif; ?>
+                    <?php if (!empty($product['title'])) : ?>
+                        <h3><?php echo esc_html($product['title']); ?></h3>
+                    <?php endif; ?>
+                    <?php if (!empty($product['excerpt'])) : ?>
+                        <p><?php echo esc_html($product['excerpt']); ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($product['link'])) : ?>
+                        <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'cocoblocks'); ?></a>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
 
         <?php elseif ($attributes['contentType'] === 'custom' && !empty($attributes['slides']) && is_array($attributes['slides'])) : ?>
             <?php foreach ($slides as $slide) : 
@@ -718,8 +428,8 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                         echo ' ' . esc_attr($slide['position']) . ' ' . esc_attr($overflow) . ' ' . esc_attr($slide['layout']) . '-layout';
                     }
                 ?>"  style="<?php 
-                  // Gestisci l'altezza
-                  echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
+                    // Gestisci l'altezza
+                    echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
                     echo 'width: 100%; ';
                     echo 'position: relative; ';
                     echo 'visibility: visible; ';
@@ -741,8 +451,12 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                         echo 'flex-wrap: ' . esc_attr($slide['layoutWrap']) . '; ';
                     }
                 ?>">
-                <div class="content-inner-for-slide <?php echo esc_attr($slide['position'])?> <?php echo esc_attr($slide['layout'])?>-layout" style="width:100%;display:<?php echo esc_attr( $slide['layoutDisplay'] )?>;align-items:<?php echo esc_attr( $slide['layoutAlignItems'] )?>;flex-wrap:<?php echo esc_attr($slide['layoutWrap'])?>;--justify-content-responsive-slide:<?php echo esc_attr($slide['layoutAlignResponsive'])?>;gap:<?php echo esc_attr($slide['gapItems'])?>px;">
-               <?php if ($mouseEffect === 'liquid') : ?>
+                <?php if ($developerMode): ?>
+                    <div class="content-inner-for-slide">
+                    <?php else: ?>
+                    <div class="content-inner-for-slide <?php echo esc_attr($slide['position'])?> <?php echo esc_attr($slide['layout'])?>-layout" style="width:100%;display:<?php echo esc_attr($slide['layoutDisplay'])?>;align-items:<?php echo esc_attr($slide['layoutAlignItems'])?>;flex-wrap:<?php echo esc_attr($slide['layoutWrap'])?>;--justify-content-responsive-slide:<?php echo esc_attr($slide['layoutAlignResponsive'])?>;gap:<?php echo esc_attr($slide['gapItems'])?>px;">
+                    <?php endif; ?>
+                <?php if ($mouseEffect === 'liquid') : ?>
                     <script>
                     window.ga = window.ga || function() {
                         (ga.q = ga.q || []).push(arguments)
@@ -759,156 +473,145 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                     <video src="<?php echo esc_url($slide['backgroundVideo']); ?>" autoplay muted loop style="width: 100%; object-position: <?php echo esc_attr( $background_position )?>; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; z-index: 0;"></video>
                 <?php endif; ?>
                            
-                    <?php if (!empty($slide['elements']) && is_array($slide['elements'])): ?>
+                <?php if (!empty($slide['elements']) && is_array($slide['elements'])): ?>
                     <?php foreach ($slide['elements'] as $element): ?>
-
+                        <!-- Elemento  Menu -->
                         <?php if ($element['type'] === 'menu'): ?>
+                        <?php 
+                            // Imposta le classi per il menu a seconda delle modalità
+                            $menuMode = $element['menuMode'];
+                            $desktopClassMenu = $element['enableDesktopTitle'] ? 'desktop-menu-visible' : 'desktop-menu-hidden';
+                            $tabletClassMenu = $element['enableTabletTitle'] ? 'tablet-menu-visible' : 'tablet-menu-hidden';
+                            $mobileClassMenu = $element['enableMobileTitle'] ? 'mobile-menu-visible' : 'mobile-menu-hidden';
+                            // Verifica se il fontWeight è "bold"
+                            $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === 'bold';
+                            // Styles for the toggle
+                            $stylesToggle = "
+                                margin: " . esc_attr($element['marginTitle']['top']) . " " . esc_attr($element['marginTitle']['right']) . " " . esc_attr($element['marginTitle']['bottom']) . " " . esc_attr($element['marginTitle']['left']) . ";
+                                box-shadow: " . esc_attr($element['boxShadowX']) . "px " . esc_attr($element['boxShadowY']) . "px " . esc_attr($element['boxShadowBlur']) . "px " . esc_attr($element['boxShadowSpread']) . "px " . esc_attr($element['colorShadow']) . ";
+                                background-color: " . esc_attr($element['backgroundColorToggle']) . ";
+                                --color-icon-menu: " . esc_attr($element['toggleColor']) . ";
+                                border-radius: " . esc_attr($element['radiusToggle']) . "px;
+                                --scale-icon-menu: " . esc_attr($element['scaleToggle']) . ";
+                            ";
+                            // Styles for the menu
+                            $stylesUlMenu = "
+                                justify-content: " . esc_attr($element['textAlign']) . ";
+                                align-items: " . esc_attr($element['textAlignItems']) . ";
+                                background-color: " . esc_attr($element['backgroundColor']) . ";
+                                gap: " . esc_attr($element['gapMenu']) . "px;
+                                height: " . esc_attr($element['heightMenu']) . ";
+                                padding: " . esc_attr($element['paddingTitle']['top']) . " " . esc_attr($element['paddingTitle']['right']) . " " . esc_attr($element['paddingTitle']['bottom']) . " " . esc_attr($element['paddingTitle']['left']) . ";
+                            ";
+                            // Styles for the links inside the menu
+                            $stylesAMenu = "
+                                font-size: " . esc_attr($element['fontSize']) . "px;
+                                color: " . esc_attr($element['textColor']) . ";
+                                --color-hover-menu: " . esc_attr($element['textColorHover']) . ";
+                                letter-spacing: " . esc_attr($element['letterSpacing']) . "px;
+                                font-style: " . (!empty($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal') . ";
+                                font-weight: " . ($isBold ? 'bold' : (!empty($element['fontWeight']) ? esc_attr($element['fontWeight']) : 'normal')) . ";
+                                text-decoration: " . (!empty($element['fontStyle']['textDecoration']) ? esc_attr($element['fontStyle']['textDecoration']) : 'none') . ";
+                                line-height: " . esc_attr($element['lineHeight']) . ";
+                                font-family: " . esc_attr($element['fontFamily']) . ";
+                            ";
+                        ?>
 
-<?php 
-    // Imposta le classi per il menu a seconda delle modalità
-    $menuMode = $element['menuMode'];
-    $desktopClassMenu = $element['enableDesktopTitle'] ? 'desktop-menu-visible' : 'desktop-menu-hidden';
-    $tabletClassMenu = $element['enableTabletTitle'] ? 'tablet-menu-visible' : 'tablet-menu-hidden';
-    $mobileClassMenu = $element['enableMobileTitle'] ? 'mobile-menu-visible' : 'mobile-menu-hidden';
+                        <div style="z-index:<?php echo esc_attr($element['zIndexMenu'])?>" class="menu-component menu-mode-<?php echo esc_attr($menuMode); ?> <?php echo esc_attr($desktopClassMenu); ?> <?php echo esc_attr($tabletClassMenu); ?> <?php echo esc_attr($mobileClassMenu); ?>">
+                            <?php if ($menuMode === 'toggle' || $menuMode === 'responsive'): ?>
+                                <div class="hamburger-icon <?php echo esc_attr($element['direction']); ?> <?php echo esc_attr($element['sizeToggle']); ?>" data-breakpoint="<?php echo esc_attr($element['breakpoint']); ?>" style="<?php echo $stylesToggle; ?>">
+                                    <div class="icon-1"></div>
+                                    <div class="icon-2"></div>
+                                    <div class="icon-3"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <nav class="nav-toggle-slide <?php echo esc_attr($element['direction'] . ' ' . $element['directionMenu'] . ' ' . $element['widthMenu']); ?>">
+                                    <ul style="<?php echo esc_attr($stylesUlMenu); ?>">
+                                    <?php foreach ($element['menuItems'] as $idx => $item) : ?>
+                                        <li class="<?php echo !empty($item['subMenu']) ? 'has-submenu' : ''; ?> <?php echo $element['submenuMode'] === 'hover' ? 'submenu-hover' : ''; ?>" style="position: relative;">
+                                            <a 
+                                                style="<?php echo esc_attr($stylesAMenu); ?>" 
+                                                href="<?php echo esc_url($item['link']); ?>" 
+                                                target="<?php echo esc_attr($item['openInNewTab']) ? '_blank' : '_self'; ?>" 
+                                                rel="<?php echo esc_attr($item['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
+                                            >
+                                                <?php echo esc_html($item['text']); ?>
+                                            </a>
+                                            <?php if (!empty($item['subMenu'])) : ?>
+                                                <button 
+                                                    class="submenu-toggle" 
+                                                    data-index="<?php echo $idx; ?>" 
+                                                    style="background: none; border: none; cursor: pointer; position: absolute; top: 0; right: 0;"
+                                                >
+                                                    ▼
+                                                </button>
+                                                <ul class="sub-menu" data-index="<?php echo $idx; ?>" style="display: none; position: absolute; top: 100%; left: 0;">
+                                                    <?php foreach ($item['subMenu'] as $subIdx => $subItem) : ?>
+                                                        <li>
+                                                            <a 
+                                                                style="<?php echo esc_attr($stylesAMenu); ?>" 
+                                                                href="<?php echo esc_url($subItem['link']); ?>" 
+                                                                target="<?php echo esc_attr($subItem['openInNewTab']) ? '_blank' : '_self'; ?>" 
+                                                                rel="<?php echo esc_attr($subItem['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
+                                                            >
+                                                                <?php echo esc_html($subItem['text']); ?>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            <?php endif; ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
 
-    // Verifica se il fontWeight è "bold"
-    $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === 'bold';
+                            <?php if ($menuMode === 'normal' || $menuMode === 'responsive'): ?>
+                                <nav class="slider-nav-menu normal-menu" data-breakpoint="<?php echo esc_attr($element['breakpoint']); ?>">
+                                    <ul style="<?php echo esc_attr($stylesUlMenu); ?>">
+                                        <?php foreach ($element['menuItems'] as $idx => $item) : ?>
+                                            <li class="<?php echo !empty($item['subMenu']) ? 'has-submenu' : ''; ?> <?php echo $element['submenuMode'] === 'hover' ? 'submenu-hover' : ''; ?>" style="position: relative;">
+                                                <a 
+                                                    style="<?php echo esc_attr($stylesAMenu); ?>" 
+                                                    href="<?php echo esc_url($item['link']); ?>" 
+                                                    target="<?php echo esc_attr($item['openInNewTab']) ? '_blank' : '_self'; ?>" 
+                                                    rel="<?php echo esc_attr($item['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
+                                                >
+                                                    <?php echo esc_html($item['text']); ?>
+                                                </a>
+                                                <?php if (!empty($item['subMenu'])) : ?>
+                                                    <button 
+                                                        class="submenu-toggle" 
+                                                        data-index="<?php echo $idx; ?>" 
+                                                        style="background: none; border: none; cursor: pointer; position: absolute; top: 0; right: 0;"
+                                                    >
+                                                        ▼
+                                                    </button>
+                                                    <ul class="sub-menu" data-index="<?php echo $idx; ?>" style="display: none; position: absolute; top: 100%; left: 0;">
+                                                        <?php foreach ($item['subMenu'] as $subIdx => $subItem) : ?>
+                                                            <li>
+                                                                <a 
+                                                                    style="<?php echo esc_attr($stylesAMenu); ?>" 
+                                                                    href="<?php echo esc_url($subItem['link']); ?>" 
+                                                                    target="<?php echo esc_attr($subItem['openInNewTab']) ? '_blank' : '_self'; ?>" 
+                                                                    rel="<?php echo esc_attr($subItem['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
+                                                                >
+                                                                    <?php echo esc_html($subItem['text']); ?>
+                                                                </a>
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                <?php endif; ?>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
+                        </div>
+                       <?php endif; ?>
+                        <!-- Fine Elemento Menu -->
 
-    // Styles for the toggle
-    $stylesToggle = "
-        margin: " . esc_attr($element['marginTitle']['top']) . " " . esc_attr($element['marginTitle']['right']) . " " . esc_attr($element['marginTitle']['bottom']) . " " . esc_attr($element['marginTitle']['left']) . ";
-        box-shadow: " . esc_attr($element['boxShadowX']) . "px " . esc_attr($element['boxShadowY']) . "px " . esc_attr($element['boxShadowBlur']) . "px " . esc_attr($element['boxShadowSpread']) . "px " . esc_attr($element['colorShadow']) . ";
-        background-color: " . esc_attr($element['backgroundColorToggle']) . ";
-        --color-icon-menu: " . esc_attr($element['toggleColor']) . ";
-        border-radius: " . esc_attr($element['radiusToggle']) . "px;
-        --scale-icon-menu: " . esc_attr($element['scaleToggle']) . ";
-    ";
-
-    // Styles for the menu
-    $stylesUlMenu = "
-        justify-content: " . esc_attr($element['textAlign']) . ";
-        align-items: " . esc_attr($element['textAlignItems']) . ";
-        background-color: " . esc_attr($element['backgroundColor']) . ";
-        gap: " . esc_attr($element['gapMenu']) . "px;
-        height: " . esc_attr($element['heightMenu']) . ";
-        padding: " . esc_attr($element['paddingTitle']['top']) . " " . esc_attr($element['paddingTitle']['right']) . " " . esc_attr($element['paddingTitle']['bottom']) . " " . esc_attr($element['paddingTitle']['left']) . ";
-    ";
-
-    // Styles for the links inside the menu
-    $stylesAMenu = "
-        font-size: " . esc_attr($element['fontSize']) . "px;
-        color: " . esc_attr($element['textColor']) . ";
-        --color-hover-menu: " . esc_attr($element['textColorHover']) . ";
-        letter-spacing: " . esc_attr($element['letterSpacing']) . "px;
-        font-style: " . (!empty($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal') . ";
-        font-weight: " . ($isBold ? 'bold' : (!empty($element['fontWeight']) ? esc_attr($element['fontWeight']) : 'normal')) . ";
-        text-decoration: " . (!empty($element['fontStyle']['textDecoration']) ? esc_attr($element['fontStyle']['textDecoration']) : 'none') . ";
-        line-height: " . esc_attr($element['lineHeight']) . ";
-        font-family: " . esc_attr($element['fontFamily']) . ";
-    ";
-?>
-
-<div style="z-index:<?php echo esc_attr($element['zIndexMenu'])?>" class="menu-component menu-mode-<?php echo esc_attr($menuMode); ?> <?php echo esc_attr($desktopClassMenu); ?> <?php echo esc_attr($tabletClassMenu); ?> <?php echo esc_attr($mobileClassMenu); ?>">
-    
-    <?php if ($menuMode === 'toggle' || $menuMode === 'responsive'): ?>
-        <div class="hamburger-icon <?php echo esc_attr($element['direction']); ?> <?php echo esc_attr($element['sizeToggle']); ?>" data-breakpoint="<?php echo esc_attr($element['breakpoint']); ?>" style="<?php echo $stylesToggle; ?>">
-            <div class="icon-1"></div>
-            <div class="icon-2"></div>
-            <div class="icon-3"></div>
-            <div class="clear"></div>
-        </div>
-        <nav class="nav-toggle-slide <?php echo esc_attr($element['direction'] . ' ' . $element['directionMenu'] . ' ' . $element['widthMenu']); ?>">
-        <ul style="<?php echo esc_attr($stylesUlMenu); ?>">
-    <?php foreach ($element['menuItems'] as $idx => $item) : ?>
-        <li class="<?php echo !empty($item['subMenu']) ? 'has-submenu' : ''; ?> <?php echo $element['submenuMode'] === 'hover' ? 'submenu-hover' : ''; ?>" style="position: relative;">
-            <a 
-                style="<?php echo esc_attr($stylesAMenu); ?>" 
-                href="<?php echo esc_url($item['link']); ?>" 
-                target="<?php echo esc_attr($item['openInNewTab']) ? '_blank' : '_self'; ?>" 
-                rel="<?php echo esc_attr($item['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
-            >
-                <?php echo esc_html($item['text']); ?>
-            </a>
-            <?php if (!empty($item['subMenu'])) : ?>
-                <button 
-                    class="submenu-toggle" 
-                    data-index="<?php echo $idx; ?>" 
-                    style="background: none; border: none; cursor: pointer; position: absolute; top: 0; right: 0;"
-                >
-                    ▼
-                </button>
-                <ul class="sub-menu" data-index="<?php echo $idx; ?>" style="display: none; position: absolute; top: 100%; left: 0;">
-                    <?php foreach ($item['subMenu'] as $subIdx => $subItem) : ?>
-                        <li>
-                            <a 
-                                style="<?php echo esc_attr($stylesAMenu); ?>" 
-                                href="<?php echo esc_url($subItem['link']); ?>" 
-                                target="<?php echo esc_attr($subItem['openInNewTab']) ? '_blank' : '_self'; ?>" 
-                                rel="<?php echo esc_attr($subItem['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
-                            >
-                                <?php echo esc_html($subItem['text']); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
-          
-        </nav>
-    <?php endif; ?>
-
-    <?php if ($menuMode === 'normal' || $menuMode === 'responsive'): ?>
-        <nav class="slider-nav-menu normal-menu" data-breakpoint="<?php echo esc_attr($element['breakpoint']); ?>">
-        <ul style="<?php echo esc_attr($stylesUlMenu); ?>">
-    <?php foreach ($element['menuItems'] as $idx => $item) : ?>
-        <li class="<?php echo !empty($item['subMenu']) ? 'has-submenu' : ''; ?> <?php echo $element['submenuMode'] === 'hover' ? 'submenu-hover' : ''; ?>" style="position: relative;">
-            <a 
-                style="<?php echo esc_attr($stylesAMenu); ?>" 
-                href="<?php echo esc_url($item['link']); ?>" 
-                target="<?php echo esc_attr($item['openInNewTab']) ? '_blank' : '_self'; ?>" 
-                rel="<?php echo esc_attr($item['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
-            >
-                <?php echo esc_html($item['text']); ?>
-            </a>
-            <?php if (!empty($item['subMenu'])) : ?>
-                <button 
-                    class="submenu-toggle" 
-                    data-index="<?php echo $idx; ?>" 
-                    style="background: none; border: none; cursor: pointer; position: absolute; top: 0; right: 0;"
-                >
-                    ▼
-                </button>
-                <ul class="sub-menu" data-index="<?php echo $idx; ?>" style="display: none; position: absolute; top: 100%; left: 0;">
-                    <?php foreach ($item['subMenu'] as $subIdx => $subItem) : ?>
-                        <li>
-                            <a 
-                                style="<?php echo esc_attr($stylesAMenu); ?>" 
-                                href="<?php echo esc_url($subItem['link']); ?>" 
-                                target="<?php echo esc_attr($subItem['openInNewTab']) ? '_blank' : '_self'; ?>" 
-                                rel="<?php echo esc_attr($subItem['openInNewTab']) ? 'noopener noreferrer' : ''; ?>"
-                            >
-                                <?php echo esc_html($subItem['text']); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-
-        </nav>
-    <?php endif; ?>
-</div>
-
-<?php endif; ?>
-
-
-
-                      
+                        <!-- Elemento Testo -->
                         <?php if ($element['type'] === 'title' && !empty($element['text'])): 
                             $fontStyle = isset($element['fontStyle']['fontStyle']) ? esc_attr($element['fontStyle']['fontStyle']) : 'normal';
                             $fontWeight = isset($element['fontStyle']['fontWeight']) ? esc_attr($element['fontStyle']['fontWeight']) : 'normal';
@@ -938,13 +641,6 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                             . 'text-decoration: ' . $textDecoration . '; '
                             . 'line-height: ' . esc_attr($element['lineHeight']) . '; '
                             . 'font-family: ' . esc_attr($element['fontFamily']) . '; '
-                            . '--duration-effect-odd: ' . esc_attr($element['durationEffectOdd']) . 's;'
-                            . '--duration-effect-even: ' . esc_attr($element['durationEffectEven']) . 's;'
-                            . '--delay-effect :' . esc_attr($element['delayEffect']) . 's;'
-                            . '--color-gradient-one:' . esc_attr($element['gradinetColorOne']) . ';'
-                            . '--color-gradient-two:' . esc_attr($element['gradinetColorTwo']) . ';'
-                            . '--color-gradient-three:' . esc_attr($element['gradinetColorThree']) . ';'
-                            . '--color-gradient-four:' . esc_attr($element['gradinetColorFour']) . ';'
                             . 'margin: ' . $margin . ';'
                             . 'padding: ' . $padding . ';'
                             . 'border-width: ' . esc_attr($element['backgroundBorderSize']) . 'px ' . ';'
@@ -955,77 +651,57 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                             . '--color-hover: ' . esc_attr($element['textColorHover']) . ';'
                             . '--border-style-hover: ' . esc_attr($element['borderStyleHover']) . ';'
                             . '--border-width-hover: ' . esc_attr($element['backgroundBorderSizeHover']) . 'px;'
-                            . '--transition-hover: ' . esc_attr($element['durationEffectHover']) . 's;'
-                            . '--translate-hover: ' . esc_attr($element['translateEffectHover']) . 'px;'
-                            . '--color-effect-hover: ' . esc_attr($element['effectHoverColorHover']) . ';'
-                            . '--box-shadow-x: ' . esc_attr($element['boxShadowX']) . 'px;'
-                            . '--box-shadow-y: ' . esc_attr($element['boxShadowY']) . 'px;'
-                            . '--box-shadow-blur: ' . esc_attr($element['boxShadowBlur']) . 'px;'
-                            . '--box-shadow-spread: ' . esc_attr($element['boxShadowSpread']) . 'px;'
-                            . '--box-shadow-color: ' . esc_attr($element['colorShadow']) . ';'
                             . 'writing-mode: ' . esc_attr($element['textWriteMode']) . ';'
                             . 'text-orientation: ' . esc_attr($element['textOrientation']) . ';'
-                            . 'border-radius: ' . esc_attr($element['backgroundBorderRadius']) . 'px;'
-                            . 'opacity: ' . esc_attr($element['opacity']) . ';'
                             . 'transform: rotate(' . esc_attr($element['rotate']) . 'deg);'
-                            . '--rotate-hover:' . esc_attr($element['rotateHover']) . 'deg;';
-                         
-
+                            . 'border-radius: ' . esc_attr($element['backgroundBorderRadius']) . 'px;';
+                            if (!empty($element['enableTextShadow'])) {
+                                $stylesTitle .= 'text-shadow: ' . esc_attr($element['textShadowX']) . 'px ' 
+                                        . esc_attr($element['textShadowY']) . 'px ' 
+                                        . esc_attr($element['textShadowBlur']) . 'px ' 
+                                        . esc_attr($element['colorTextShadow']) . ';';
+                            }
+                            if (!empty($element['enableBoxShadow'])) {
+                                $stylesTitle .= 'box-shadow: ' . esc_attr($element['boxShadowX']) . 'px ' 
+                                        . esc_attr($element['boxShadowY']) . 'px ' 
+                                        . esc_attr($element['boxShadowBlur']) . 'px ' 
+                                        . esc_attr($element['boxShadowSpread']) . 'px ' 
+                                        . esc_attr($element['colorBoxShadow']) . ';';
+                            }
+                            if (!empty($element['enableStroke'])) {
+                                $stylesTitle .= '-webkit-text-stroke-width: ' . esc_attr($element['stroke']) . 'px;'
+                                        . '-webkit-text-stroke-color: ' . esc_attr($element['colorStroke']) . ';';
+                            }
                             // Recupera il tag HTML
                             $tag = isset($element['elementTitle']) ? esc_attr($element['elementTitle']) : 'h3';
                         ?>
-                        <?php
+                        <?php 
                             // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
                             $desktopClass = $element['enableDesktopTitle'] ? 'desktop-title-visible' : 'desktop-title-hidden';
                             $tabletClass = $element['enableTabletTitle'] ? 'tablet-title-visible' : 'tablet-title-hidden';
                             $mobileClass = $element['enableMobileTitle'] ? 'mobile-title-visible' : 'mobile-title-hidden';
-                            
                         ?>
                         <?php if ($slide['developerMode']) : ?>         
-                       <div class="content-content-slide-absolute"
-                            style="
-                                transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
+                        <div class="content-content-slide-absolute"
+                            style="transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
                                 position: absolute;
-                                z-index:<?php echo esc_attr( $element['zIndexTitle'] )?>
-                            "
+                                z-index:<?php echo esc_attr( $element['zIndexTitle'] )?>"
                             data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
                             data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
                             data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
                             data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
                             data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
                             data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
-                       >
-                       <?php endif; ?>
-                       <div
-                            style="
-                                --color-decoration: <?php echo esc_attr($element['underlineColor']); ?>;
-                                --padding-decoration: <?php echo esc_attr($element['underlinePadding']); ?>px;
-                                --width-decoration: <?php echo esc_attr($element['underlineWidth']); ?>%;
-                                --vertical-decoration: <?php echo esc_attr($element['underlineVertical']); ?>px;
-                                --horizontal-decoration: <?php echo esc_attr($element['underlineHorizontal']); ?>px;
-                                --height-decoration: <?php echo esc_attr($element['underlineHeight']); ?>px;
-                                --animation-decoration: <?php echo esc_attr($element['underlineAnimation']); ?>;
-                                --animation-decoration-from: <?php echo esc_attr($element['underlineAnimationFrom']); ?>%;
-                                --animation-decoration-to: <?php echo esc_attr($element['underlineAnimationTo']); ?>%;
-                                --animation-decoration-from-size: <?php echo esc_attr($element['underlineFromSizeNew']); ?>%;
-                                --animation-decoration-to-size: <?php echo esc_attr($element['underlineToSizeNew']); ?>%;
-                                --animation-decoration-transition: <?php echo esc_attr($element['underlineAnimationTransition']); ?>s;
-                                --duration-effect: <?php echo esc_attr($element['durationEffect']); ?>s;
-                                --delay-effect: <?php echo esc_attr($element['delayEffect']);?>s;
-                                --interation: <?php echo esc_attr($element['interation']);?>;
-                                --delay-hide-seconds-title: <?php echo esc_attr($element['delayTransition']);?>s;
-                                z-index: <?php echo esc_attr($element['zIndexTitle']); ?>;
-                                width: <?php echo esc_attr($element['widthTitle']) === 'custom' ? esc_attr($element['widthCustomTitle']) . '%' : esc_attr($element['widthTitle']); ?>;
-                            "
-                            class="content-title-slide letter <?php echo esc_attr($element['decoration']); ?> <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?> <?php echo esc_attr($element['animation']); ?>"
-                            data-speed-effect="<?php echo esc_attr($element['speedEffect']); ?>"
-                            data-animation="<?php echo esc_attr($element['animation']); ?>"
-                            data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
-                            data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
-                           
                         >
-                            <<?php echo esc_attr($tag); ?>
-                                class="title-slide <?php echo esc_attr($element['animationHover']); ?>"
+                        <?php endif; ?>
+                        <div
+                            style="z-index: <?php echo esc_attr($element['zIndexTitle']); ?>;
+                                width: <?php echo esc_attr($element['widthTitle']) === 'custom' ? esc_attr($element['widthCustomTitle']) . '%' : esc_attr($element['widthTitle']); ?>; mix-blend-mode:<?php echo esc_attr($element['blendMode'])?>;"
+                            class="content-title-slide <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?>"
+
+                        >
+                        <<?php echo esc_attr($tag); ?>
+                                class="title-slide"
                                 <?php
                                 $link_start = '';
                                 $link_end = '';
@@ -1054,11 +730,6 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                                     }
                                 ?>
                                 style="<?php echo esc_attr($stylesTitle); ?>"
-                                data-swiper-parallax-x="<?php echo esc_attr($element['parallaxTitle']); ?>"
-                                data-swiper-parallax-y="<?php echo esc_attr($element['parallaxTitleY']); ?>"
-                                data-swiper-parallax-scale="<?php echo esc_attr($element['parallaxTitleScale']); ?>"
-                                data-swiper-parallax-duration="<?php echo esc_attr($element['parallaxTitleDuration']); ?>"
-                                data-swiper-parallax-opacity="<?php echo esc_attr($element['parallaxTitleOpacity']); ?>"
                                 data-font-family="<?php echo esc_attr($element['fontFamily']); ?>" 
                              
                                 <?php if ($element['textLink'] === 'link') : ?>
@@ -1076,21 +747,62 @@ if  ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($
                                         return false;
                                     "
                                 <?php endif; ?>
+                                data-text="<?php echo esc_attr($element['text']); ?>"
+                                data-effect-in="<?php echo esc_attr($element['effectIn']); ?>"
+                                data-duration="<?php echo esc_attr( $element['duration'] )?>"
+                                data-delay-in="<?php echo esc_attr( $element['delayIn'] )?>"
+                                data-delay-in-end="<?php echo esc_attr( $element['endDelay'] )?>"
+                                data-easing-in="<?php echo esc_attr( $element['easing'] )?>"
+                                data-direction-in="<?php echo esc_attr( $element['direction'] )?>"
+                                data-loop-in="<?php echo esc_attr( $element['loop'] )?>"
+                                data-opacity-in-from="<?php echo esc_attr( $element['opacityInFrom'] )?>"
+                                data-opacity-in-to="<?php echo esc_attr( $element['opacityInTo'] )?>"
+                                data-start-x-from="<?php echo esc_attr( $element['startXFrom'] )?>"
+                                data-start-x-to="<?php echo esc_attr( $element['startXTo'] )?>"
+                                data-start-y-from="<?php echo esc_attr( $element['startYFrom'] )?>"
+                                data-start-y-to="<?php echo esc_attr( $element['startYTo'] )?>"
+                                data-stagger="<?php echo esc_attr( $element['stagger'] )?>"
+                                data-effect-split="<?php echo esc_attr( $element['textSplitEffect'] )?>"
+                                data-direction-block="<?php echo esc_attr( $element['directionBlock'] )?>"
+                                data-color-block="<?php echo esc_attr( $element['colorBlockEffectIn'] )?>"
+                                data-rotate-in-from="<?php echo esc_attr( $element['rotateInFrom'] )?>"
+                                data-rotate-in-to="<?php echo esc_attr( $element['rotateInTo'] )?>"
+                                data-rotate-x-in-from="<?php echo esc_attr( $element['rotateInXFrom'] )?>"
+                                data-rotate-x-in-to="<?php echo esc_attr( $element['rotateInXTo'] )?>"
+                                data-rotate-y-in-from="<?php echo esc_attr( $element['rotateInYFrom'] )?>"
+                                data-rotate-y-in-to="<?php echo esc_attr( $element['rotateInYTo'] )?>"
+                                data-scale-in-from="<?php echo esc_attr( $element['scaleFrom'] )?>"
+                                data-scale-in-to="<?php echo esc_attr( $element['scaleTo'] )?>"
+                                data-skew-x-from="<?php echo esc_attr( $element['skewXFrom'] )?>"
+                                data-skew-x-to="<?php echo esc_attr( $element['skewXTo'] )?>"
+                                data-skew-y-from="<?php echo esc_attr( $element['skewYFrom'] )?>"
+                                data-skew-y-to="<?php echo esc_attr( $element['skewYTo'] )?>"
                             >
                             <?php echo $link_start; ?>
-                                <?php
-                                // Genera il testo con lettere animate solo se c'è un'animazione
-                                echo splitTextIntoLetters($element['text'], $element['animation'], $element);
-                                ?>
+                                <?php  echo esc_attr($element['text']) ?>
+                                    
                                 <?php echo $link_end; ?>
+
                             </<?php echo esc_attr($tag); ?>>
+                        
+
                         </div>
+
+
 
                         <?php if ($slide['developerMode']) : ?>    
                         </div>
                         <?php endif; ?>
 
                         <?php endif; ?>
+                        <!-- Fine Elemento Testo -->
+
+
+
+
+
+
+
                         <?php
                          if (!function_exists('getStylesTitleBlock')) {
                             function getStylesTitleBlock($innerElement) {

@@ -22,7 +22,7 @@ const FontStyle = ({ value, onChange }) => {
     },
     {
       type: "fontStyle",
-      value: "italic",
+      value: "italic", 
       label: __("Italic", "cocoblocks"),
       icon: formatItalic,
     },

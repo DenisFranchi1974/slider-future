@@ -1,5 +1,6 @@
 import React from "react";
-import { RangeControl } from "@wordpress/components";
+import { RangeControl, Tooltip } from "@wordpress/components";
+import InfoIcon from '@mui/icons-material/Info';
 
 const CustomRangeControl = ({
   label,          // Etichetta per il controllo (includi l'icona o altro HTML qui)
@@ -15,6 +16,8 @@ const CustomRangeControl = ({
   innerIndex,     // Indice dell'elemento secondario (se secondario)
   elementType,    // Tipo di elemento (ad es. "title", "button", ecc.)
   updateElement,  // Funzione di aggiornamento passata come prop
+  tooltipText,  // Testo per il tooltip
+  showTooltip = false, // Mostra o nasconde il tooltip (Facoltativo) 
   ...restProps    // Altri eventuali props da passare
 }) => {
   
@@ -35,6 +38,19 @@ const CustomRangeControl = ({
           step={step}
           {...restProps}
         />
+        {showTooltip && (
+          <Tooltip
+            placement="top"
+            style={{
+              padding: "10px",
+              maxWidth: "300px",
+              borderRadius: "4px",
+            }}
+            text={tooltipText || __("Default tooltip text", "cocoblocks")} // Testo di fallback
+          >
+            <InfoIcon  className="tooltip-icon" style={{top:'3px'}} />
+          </Tooltip>
+        )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./menu.scss";
-import { gsap } from 'gsap';
+//import { gsap } from 'gsap';
 
 const MenuComponent = ({ element, menuItems }) => {
   const [isToggled, setIsToggled] = useState(false);

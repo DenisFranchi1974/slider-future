@@ -18,7 +18,7 @@ import { useState } from "@wordpress/element";
 import "./editor.scss";
 import "../slider/editor.scss";
 import SectionSelectorSlide from "./sectionSelectorSlide";
-import TextControls from "./TextControls";
+import TextEdit from "./text/TextEdit";
 import ImageControls from "./imageControls";
 import DivControls from "./divControls";
 import ColorOptionsPanel from "./colorPanel";
@@ -33,6 +33,7 @@ import DivModal  from "./layerLibrary"
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import MenuControls from "./menu/MenuControls";
 import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
+import { stagger } from "animejs";
 
 
 const SlideControls = ({
@@ -47,6 +48,8 @@ const SlideControls = ({
   selectedDevice,
   onDeviceChange,
   setSelectedIcon,
+  handlePlayAll
+  
 }) => {
   const {
     device,
@@ -706,11 +709,51 @@ const SlideControls = ({
                 boxShadowY: 0,
                 boxShadowBlur: 0,
                 boxShadowSpread: 0,
+                blendMode: "normal",
                 interation: "forwards",
                 zIndexTitle: 1,
                 delayHide:false,
                 delaySeconds:2,
                 delayTransition: 0.5,
+                effectIn: "none",
+                effectOut: "none",
+                opacityInFrom: 0,
+                opacityInTo: 1,
+                filterInFrom: 0,
+                filterInTo: 0,
+                startXFrom: 0,
+                startXTo: 0,
+                startYFrom: 0,
+                startYTo: 0,
+                scaleFrom: 0,
+                scaleTo: 1,
+                rotateInFrom: 0,
+                rotateInTo: 0,
+                rotateInXFrom: 0,
+                rotateInXTo: 0,
+                rotateInYFrom: 0,
+                rotateInYTo: 0,
+                skewXFrom: 0,
+                skewXTo: 0,
+                skewYFrom: 0,
+                skewYTo: 0,
+                directionBlock:"left",
+                colorBlockEffectIn: "#000000",
+                duration:800,
+                delayIn:0,
+                endDelay:0,
+                easing:"linear",
+                direction:"normal",
+                loop: "1",
+                stagger: 100,
+                textSplitEffect:"uno",
+
+
+
+
+
+
+
               },
             ],
           }
@@ -2997,7 +3040,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                 )}
                 {element.type === "title" && (
                   <>
-                    <TextControls
+                    <TextEdit
                       slide={slide}
                       slides={slides}
                       element={element}
@@ -3005,13 +3048,13 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                       setAttributes={setAttributes}
                       setActiveSection={setActiveSection}
                       activeSection={activeSection}
-                      parallax={parallax}
                       device={device}
                       handleDesktopClick={handleDesktopClick}
                       handleTabletClick={handleTabletClick}
                       handleMobileClick={handleMobileClick}
                       showOtherButtons={showOtherButtons}
                       attributes={attributes}
+                      onAnimatedText={handlePlayAll}
                     />
                   </>
                 )}
