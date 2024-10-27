@@ -2,8 +2,6 @@ import React, { useRef } from "react";
 import {
   Button,
   ButtonGroup,
-  RangeControl,
-  ToggleControl,
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
@@ -13,26 +11,7 @@ import { trash } from "@wordpress/icons";
 import ColorOptionsPanel from "../colorPanel";
 import FontStyle from "../font-style";
 import SectionSelector from "../sectionSelector";
-import TextControlsHover from "../TextControlsHover";
 import CustomRangeControl from "../../controls/range"
-import RotateRightIcon from '@mui/icons-material/RotateRight'; // Importa l'icona RotateRight
-import WidthWideIcon from '@mui/icons-material/WidthWide';
-import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
-import TabletMacIcon from '@mui/icons-material/TabletMac';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
-import HeightIcon from '@mui/icons-material/Height';
-import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
-import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
-import CustomSelectControl from "../../controls/select/SelectControl";
-import TimelineIcon from '@mui/icons-material/Timeline';
-import HistoryToggleOffIcon from '@mui/icons-material/HistoryToggleOff';
-import CustomToggleControl from "../../controls/toggle/ToggleControl";
-import DescriptionIcon from '@mui/icons-material/Description';
-import CustomTextAreaControl from "../../controls/text-area/TextAreaControl";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import CustomAlignControl from "../../controls/align/AlignControl";
-import FormatTextdirectionLToRIcon from '@mui/icons-material/FormatTextdirectionLToR';
 import {elementOptions} from '../../assets/options';
 import {fontOptions} from '../../assets/options';
 import {alignOptions} from '../../assets/options';
@@ -43,17 +22,35 @@ import {borderStyleOptions} from '../../assets/options';
 import {linkOptions} from '../../assets/options';
 import {selectOptionsRepeat} from '../../assets/options';
 import { selectOptionsEffectIn } from "../../assets/options";
-import { selectOptionsEffectOut } from "../../assets/options";
 import {selectOptionsEase} from '../../assets/options';
 import {selectOptionsDirection} from '../../assets/options';
 import {selectOptionsEffectSplit} from '../../assets/options';
 import {selectOptionsDirectionBlock} from '../../assets/options';
+import {selectOptionsScaleIn} from '../../assets/options';
+import {selectOptionsEffectHover} from '../../assets/options';
+import CustomShadowControl from "../../controls/shadow/ShadowControl";
+import CustomStrokeControl from "../../controls/stroke/StrokeControl";
+import CustomTextControl from "../../controls/text/TextControl";
+import CustomAlignControl from "../../controls/align/AlignControl";
+import CustomTextAreaControl from "../../controls/text-area/TextAreaControl";
+import RotateRightIcon from '@mui/icons-material/RotateRight'; 
+import WidthWideIcon from '@mui/icons-material/WidthWide';
+import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
+import TabletMacIcon from '@mui/icons-material/TabletMac';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import HeightIcon from '@mui/icons-material/Height';
+import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
+import CustomSelectControl from "../../controls/select/SelectControl";
+import HistoryToggleOffIcon from '@mui/icons-material/HistoryToggleOff';
+import CustomToggleControl from "../../controls/toggle/ToggleControl";
+import DescriptionIcon from '@mui/icons-material/Description';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import FormatTextdirectionLToRIcon from '@mui/icons-material/FormatTextdirectionLToR';
 import FontDownloadIcon from '@mui/icons-material/FontDownload';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import PaddingIcon from '@mui/icons-material/Padding';
 import MarginIcon from '@mui/icons-material/Margin';
-import CustomShadowControl from "../../controls/shadow/ShadowControl";
-import CustomStrokeControl from "../../controls/stroke/StrokeControl";
 import FilterTiltShiftIcon from '@mui/icons-material/FilterTiltShift';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import OpacityIcon from '@mui/icons-material/Opacity';
@@ -66,20 +63,16 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import BorderLeftIcon from '@mui/icons-material/BorderLeft';
 import BorderInnerIcon from '@mui/icons-material/BorderInner';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
-import CustomTextControl from "../../controls/text/TextControl";
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import DatasetLinkedIcon from '@mui/icons-material/DatasetLinked';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
-import RepeatIcon from '@mui/icons-material/Repeat';
 import LoginIcon from '@mui/icons-material/Login';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
-import LogoutIcon from '@mui/icons-material/Logout';
 import ScatterPlotIcon from '@mui/icons-material/ScatterPlot';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import LoopIcon from '@mui/icons-material/Loop';
-import StartIcon from '@mui/icons-material/Start';
 import SwapCallsIcon from '@mui/icons-material/SwapCalls';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -87,23 +80,8 @@ import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
 import DeblurIcon from '@mui/icons-material/Deblur';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
-
-
-// Funzione di verifica per effetti incompatibili
-const isEffectIncompatible = (effectIn) => {
-  return [
-    "blockFromLeft", 
-    "blockFromRight", 
-    "blockFromTop", 
-    "blockFromBottom",
-    "skewIn",
-    "waveEffect",
-    "blurIn",
-    "twistIn",
-    "flipIn3D",
-
-  ].includes(effectIn);
-};
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import GrainIcon from '@mui/icons-material/Grain';
 
 const TextEdit = ({
   slide,
@@ -123,13 +101,7 @@ const TextEdit = ({
 
 }) => {
 
-
-  const showIncompatibilityNotice = element.enableSplitText && isEffectIncompatible(element.effectIn);
-
-
-  const initialEffectIn = element.effectIn || 'fadeInTop'; // Sostituisci 'defaultEffect' con l'effetto predefinito desiderato.
-
-
+const initialEffectIn = element.effectIn || 'fadeInTop'; // Sostituisci 'defaultEffect' con l'effetto predefinito desiderato.
 
   // Funzione generale per aggiornare i controlli
   const updateElement = (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) => {
@@ -371,6 +343,23 @@ const TextEdit = ({
   };
   const truncatedText = truncateText(element.text, 7);
 
+   // Update Text color
+   const updateSlideTextColorHover = (slideId, index, color) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) =>
+              element.type === "title" && i === index
+                ? { ...element, textColorHover: color }
+                : element
+            ),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
@@ -432,10 +421,10 @@ const TextEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Width", "cocoblocks")}
+                    {__("Width content", "cocoblocks")}
                   </>
                 }
-                value={element.widthTitle}
+                value={element.widthTitle || "100%"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -471,7 +460,7 @@ const TextEdit = ({
                     {__("Custom Width (%)", "cocoblocks")}
                   </>
                 }
-                value={element.widthCustomTitle}
+                value={element.widthCustomTitle || 100}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={1}
@@ -488,7 +477,7 @@ const TextEdit = ({
               </>
             )}
              <CustomAlignControl
-                value={element.textAlign}
+                value={element.textAlign || "center"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -506,7 +495,7 @@ const TextEdit = ({
                     {__("Element html", "cocoblocks")}
                   </>
                 }
-                value={element.elementTitle}
+                value={element.elementTitle || "h3"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -569,7 +558,7 @@ const TextEdit = ({
                       {__("Font size", "cocoblocks")}
                     </>
                   }
-                  value={element.fontSize}
+                  value={element.fontSize || 22}
                   slides={slides}
                   setAttributes={setAttributes}
                   min={4}
@@ -592,7 +581,7 @@ const TextEdit = ({
                     {__("Font size", "cocoblocks")}
                   </>
                 }
-                value={element.fontSizeTablet}
+                value={element.fontSizeTablet || 16}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={4}
@@ -615,7 +604,7 @@ const TextEdit = ({
                     {__("Font size", "cocoblocks")}
                   </>
                 }
-                value={element.fontSizeMobile}
+                value={element.fontSizeMobile || 16}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={4}
@@ -645,7 +634,7 @@ const TextEdit = ({
                     {__("Font family", "cocoblocks")}
                   </>
                 }
-                value={element.fontFamily}
+                value={element.fontFamily || "Arial, sans-serif"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -664,7 +653,7 @@ const TextEdit = ({
                     {__("Font weight", "cocoblocks")}
                   </>
                 }
-                value={element.fontWeight}
+                value={element.fontWeight || "400"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -683,7 +672,7 @@ const TextEdit = ({
                       {__("Line height", "cocoblocks")}
                     </>
                   }
-                  value={element.lineHeight}
+                  value={element.lineHeight || 1.5}
                   slides={slides}
                   setAttributes={setAttributes}
                   min={.5}
@@ -704,7 +693,7 @@ const TextEdit = ({
                       {__("Letter spacing", "cocoblocks")}
                     </>
                   }
-                  value={element.letterSpacing}
+                  value={element.letterSpacing || 0}
                   slides={slides}
                   setAttributes={setAttributes}
                   min={0}
@@ -795,7 +784,7 @@ const TextEdit = ({
                     {__("Border style", "cocoblocks")}
                   </>
                 }
-                value={element.borderStyle}
+                value={element.borderStyle || "none"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -832,7 +821,7 @@ const TextEdit = ({
                       {__("Border width", "cocoblocks")}
                     </>
                   }
-                  value={element.backgroundBorderSize}
+                  value={element.backgroundBorderSize || 1}
                   slides={slides}
                   setAttributes={setAttributes}
                   min={0}
@@ -853,7 +842,7 @@ const TextEdit = ({
                       {__("Border radius", "cocoblocks")}
                     </>
                   }
-                  value={element.backgroundBorderSize}
+                  value={element.backgroundBorderSize || 0}
                   slides={slides}
                   setAttributes={setAttributes}
                   min={0}
@@ -892,7 +881,7 @@ const TextEdit = ({
                     {__("Rotate", "cocoblocks")}
                   </>
                 }
-                value={element.rotate}
+                value={element.rotate || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={0}
@@ -913,7 +902,7 @@ const TextEdit = ({
                     {__("Writing mode", "cocoblocks")}
                   </>
                 }
-                value={element.textWriteMode}
+                value={element.textWriteMode || "initial"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -932,7 +921,7 @@ const TextEdit = ({
                     {__("Orientation", "cocoblocks")}
                   </>
                 }
-                value={element.textOrientation}
+                value={element.textOrientation || "initial"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -961,7 +950,7 @@ const TextEdit = ({
                   {__("Opacity", "cocoblocks")}
                 </>
               }
-              value={element.opacity}
+              value={element.opacity || 1}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -989,7 +978,7 @@ const TextEdit = ({
                   {__("Z-index", "cocoblocks")}
                 </>
               }
-              value={element.zIndexTitle}
+              value={element.zIndexTitle || 1}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1014,9 +1003,9 @@ const TextEdit = ({
             <div className="content-section-panel" style={{ padding: "0" }}>
               <CustomShadowControl
                 valueEnableShadow={element.enableTextShadow}
-                valueRangeShadowX={element.textShadowX}
-                valueRangeShadowY={element.textShadowY}
-                valueRangeShadowBlur={element.textShadowBlur}
+                valueRangeShadowX={element.textShadowX || 0}
+                valueRangeShadowY={element.textShadowY || 0}
+                valueRangeShadowBlur={element.textShadowBlur || 0}
                 valueRangeShadowColor={element.colorTextShadow}
                 slides={slides}
                 setAttributes={setAttributes}
@@ -1044,10 +1033,10 @@ const TextEdit = ({
         <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomShadowControl
             valueEnableShadow={element.enableBoxShadow}
-            valueRangeShadowX={element.boxShadowX}
-            valueRangeShadowY={element.boxShadowY}
-            valueRangeShadowBlur={element.boxShadowBlur}
-            valueRangeShadowSpread={element.boxShadowSpread}
+            valueRangeShadowX={element.boxShadowX || 0}
+            valueRangeShadowY={element.boxShadowY || 0}
+            valueRangeShadowBlur={element.boxShadowBlur || 0}
+            valueRangeShadowSpread={element.boxShadowSpread || 0}
             valueRangeShadowColor={element.colorBoxShadow}
             slides={slides}
             showSpread={true}
@@ -1077,7 +1066,7 @@ const TextEdit = ({
         <div className="content-section-panel" style={{ padding: "0" }}>
         <CustomStrokeControl
             valueEnableStroke={element.enableStroke}
-            valueRangeStroke={element.stroke}
+            valueRangeStroke={element.stroke || 0}
             valueRangeStrokeColor={element.colorStroke}
             slides={slides}
             setAttributes={setAttributes}
@@ -1111,7 +1100,7 @@ const TextEdit = ({
                     {__("Effect", "cocoblocks")}
                   </>
                 }
-                value={element.blendMode}
+                value={element.blendMode || "normal"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -1138,9 +1127,9 @@ const TextEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Animation: In & Out", "cocoblocks")}
+              {__("Animations", "cocoblocks")}
             </h2>
-            {(element.effectIn !== 'none' || element.effectOut !== 'none') && (
+            {(element.effectIn !== 'none') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
             <Tooltip text={__('Play','cocoblock')}>
             <Button onClick={onAnimatedText} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
@@ -1149,15 +1138,14 @@ const TextEdit = ({
           )}
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
-            {!element.split && (
             <CustomSelectControl
               label={
                 <>
                   <LoginIcon />
-                  {__("Animations In", "cocoblocks")}
+                  {__("Effects", "cocoblocks")}
                 </>
               }
-              value={element.effectIn || ''}
+              value={element.effectIn || 'none'}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -1173,17 +1161,16 @@ const TextEdit = ({
               tooltipLeft = '45%' // Posizione 'left' del tooltip (di default 35%)
               selectOptions={selectOptionsEffectIn} // Passa le opzioni dinamiche
             />
-           )}
               {element.effectIn === "splitText" && (
                 <>
                  <CustomSelectControl
               label={
                 <>
-                  <LoginIcon />
+                  <ScatterPlotIcon />
                   {__("Effect Split", "cocoblocks")}
                 </>
               }
-              value={element.textSplitEffect || ''}
+              value={element.textSplitEffect || 'fadeSplit'}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -1193,10 +1180,7 @@ const TextEdit = ({
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textSplitEffect')
               }
-              tooltipText={__('Entry animations control how elements appear on the slide, to create visually engaging and smooth introductions.','cocoblock')} // Testo del tooltip personalizzato
-              showTooltip={true} // Mostra il tooltip
-              tooltipTop = '8px' // Posizione 'top' del tooltip (di default 5px)
-              tooltipLeft = '45%' // Posizione 'left' del tooltip (di default 35%)
+              showTooltip={false} // Mostra il tooltip
               selectOptions={selectOptionsEffectSplit} // Passa le opzioni dinamiche
             />
               <CustomRangeControl
@@ -1206,10 +1190,10 @@ const TextEdit = ({
                   {__("Stagger", "cocoblocks")}
                 </>
               }
-              value={element.stagger}
+              value={element.stagger || 50}
               slides={slides}
               setAttributes={setAttributes}
-              min={50}
+              min={0}
               max={3000}
               step={10}
               updateType="primary"
@@ -1224,23 +1208,6 @@ const TextEdit = ({
             />
             </>
             )}
-            {showIncompatibilityNotice && (
-              <>
-              <p
-                className="notice components-base-control__help"
-                style={{
-                  borderRadius: "0",
-                  marginTop: "6px",
-                  marginBottom: "6px",
-                }}
-              >
-              {__(
-                "The selected effect is not compatible with Split Text. The animation will not be applied!",
-                "cocoblocks"
-              )}
-              </p>
-              </>
-            )}
             {element.effectIn !== "none" && (
             <>
             {element.effectIn !== "BlockFromIn" && (
@@ -1252,7 +1219,7 @@ const TextEdit = ({
                   {__("Opacity From", "cocoblocks")}
                 </>
               }
-              value={element.opacityInFrom}
+              value={element.opacityInFrom || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1274,7 +1241,7 @@ const TextEdit = ({
                   {__("Opacity To", "cocoblocks")}
                 </>
               }
-              value={element.opacityInTo}
+              value={element.opacityInTo || 1}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1296,7 +1263,7 @@ const TextEdit = ({
                   {__("Blur From", "cocoblocks")}
                 </>
               }
-              value={element.filterInFrom}
+              value={element.filterInFrom || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1318,7 +1285,7 @@ const TextEdit = ({
                   {__("Blur To", "cocoblocks")}
                 </>
               }
-              value={element.filterInTo}
+              value={element.filterInTo || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1335,7 +1302,9 @@ const TextEdit = ({
             />
             </>
             )}
-             {element.effectIn === "translateXYIn" && (
+         {(['translateXYIn', 'customEffectIn'].includes(element.effectIn) || 
+            (element.effectIn === 'splitText' && 
+            ['translateSplit', 'customSplit'].includes(element.textSplitEffect))) && (
               <>
              <CustomRangeControl
               label={
@@ -1344,7 +1313,7 @@ const TextEdit = ({
                   {__("Translate X From", "cocoblocks")}
                 </>
               }
-              value={element.startXFrom}
+              value={element.startXFrom || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={-500}
@@ -1366,7 +1335,7 @@ const TextEdit = ({
                   {__("Translate X To", "cocoblocks")}
                 </>
               }
-              value={element.startXTo}
+              value={element.startXTo || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={-500}
@@ -1388,7 +1357,7 @@ const TextEdit = ({
                   {__("Translate Y From", "cocoblocks")}
                 </>
               }
-              value={element.startYFrom}
+              value={element.startYFrom || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={-500}
@@ -1410,7 +1379,7 @@ const TextEdit = ({
                   {__("Translate Y To", "cocoblocks")}
                 </>
               }
-              value={element.startYTo}
+              value={element.startYTo || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={-500}
@@ -1427,7 +1396,29 @@ const TextEdit = ({
             />
             </>
             )}
-            {['scaleIn', 'scaleInX', 'scaleInY'].includes(element.effectIn) && (
+             {['customEffectIn'].includes(element.effectIn) && (
+             <CustomSelectControl
+              label={
+                <>
+                  <LinearScaleIcon />
+                  {__("Choose the scale", "cocoblocks")}
+                </>
+              }
+              value={element.scaleType || 'scale'}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'scaleType')
+              }
+              showTooltip={false} // Mostra il tooltip
+              selectOptions={selectOptionsScaleIn} // Passa le opzioni dinamiche
+            />
+            )}
+            {(['scaleIn', 'scaleInX', 'scaleInY','customEffectIn'].includes(element.effectIn)  || ['scaleSplit', 'scaleXSplit', 'scaleYSplit','explosion','gather'].includes(element.textSplitEffect)) && (
             <>
             <CustomRangeControl
               label={
@@ -1436,7 +1427,7 @@ const TextEdit = ({
                   {__("Scale From", "cocoblocks")}
                 </>
               }
-              value={element.scaleFrom}
+              value={element.scaleFrom || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1458,7 +1449,7 @@ const TextEdit = ({
                   {__("Scale To", "cocoblocks")}
                 </>
               }
-              value={element.scaleTo}
+              value={element.scaleTo || 1}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1475,7 +1466,8 @@ const TextEdit = ({
             />
             </>
             )}
-            {['rotateIn'].includes(element.effectIn) && (
+            {(['rotateIn','customEffectIn'].includes(element.effectIn) ||  (element.effectIn === 'splitText' && 
+            ['translateSplit', 'customSplit'].includes(element.textSplitEffect))) && (
             <>
               <CustomRangeControl
                 label={
@@ -1484,7 +1476,7 @@ const TextEdit = ({
                     {__("Rotate From", "cocoblocks")}
                   </>
                 }
-                value={element.rotateInFrom}
+                value={element.rotateInFrom || 0} 
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-360}
@@ -1506,7 +1498,7 @@ const TextEdit = ({
                     {__("Rotate To", "cocoblocks")}
                   </>
                 }
-                value={element.rotateInTo}
+                value={element.rotateInTo || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-360}
@@ -1528,7 +1520,7 @@ const TextEdit = ({
                     {__("Rotate X From", "cocoblocks")}
                   </>
                 }
-                value={element.rotateInXFrom}
+                value={element.rotateInXFrom || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-360}
@@ -1550,7 +1542,7 @@ const TextEdit = ({
                     {__("Rotate X To", "cocoblocks")}
                   </>
                 }
-                value={element.rotateInXTo}
+                value={element.rotateInXTo || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-360}
@@ -1572,7 +1564,7 @@ const TextEdit = ({
                     {__("Rotate Y From", "cocoblocks")}
                   </>
                 }
-                value={element.rotateInYFrom}
+                value={element.rotateInYFrom || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-360}
@@ -1594,7 +1586,7 @@ const TextEdit = ({
                     {__("Rotate Y To", "cocoblocks")}
                   </>
                 }
-                value={element.rotateInYTo}
+                value={element.rotateInYTo || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-360}
@@ -1611,7 +1603,8 @@ const TextEdit = ({
               />
             </>
           )}
-          {['skewInX'].includes(element.effectIn) && (
+          {(['skewInX','customEffectIn'].includes(element.effectIn) || (element.effectIn === 'splitText' && 
+            ['translateSplit', 'customSplit'].includes(element.textSplitEffect))) && (
             <>
               <CustomRangeControl
                 label={
@@ -1620,7 +1613,7 @@ const TextEdit = ({
                     {__("Skew X From", "cocoblocks")}
                   </>
                 }
-                value={element.skewXFrom}
+                value={element.skewXFrom || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-90}
@@ -1642,7 +1635,7 @@ const TextEdit = ({
                     {__("Skew X To", "cocoblocks")}
                   </>
                 }
-                value={element.skewXTo}
+                value={element.skewXTo || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={-90}
@@ -1664,11 +1657,11 @@ const TextEdit = ({
                     {__("Skew Y From", "cocoblocks")}
                   </>
                 }
-                value={element.skewYFrom}
+                value={element.skewYFrom || 0}
                 slides={slides}
                 setAttributes={setAttributes}
-                min={-10}
-                max={10}
+                min={-90}
+                max={90}
                 step={1}
                 updateType="primary"
                 slideId={slide.id}
@@ -1686,11 +1679,11 @@ const TextEdit = ({
                     {__("Skew Y To", "cocoblocks")}
                   </>
                 }
-                value={element.skewYTo}
+                value={element.skewYTo || 0}
                 slides={slides}
                 setAttributes={setAttributes}
-                min={-10}
-                max={10}
+                min={-90}
+                max={90}
                 step={1}
                 updateType="primary"
                 slideId={slide.id}
@@ -1712,7 +1705,7 @@ const TextEdit = ({
                   {__("Block Direction", "cocoblocks")}
                 </>
               }
-              value={element.directionBlock || ''}
+              value={element.directionBlock || 'left'}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -1750,7 +1743,7 @@ const TextEdit = ({
                   {__("Duration", "cocoblocks")}
                 </>
               }
-              value={element.duration}
+              value={element.duration || 1000}
               slides={slides}
               setAttributes={setAttributes}
               min={100}
@@ -1772,7 +1765,7 @@ const TextEdit = ({
                   {__("Delay", "cocoblocks")}
                 </>
               }
-              value={element.delayIn}
+              value={element.delayIn || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1794,7 +1787,7 @@ const TextEdit = ({
                   {__("End Delay", "cocoblocks")}
                 </>
               }
-              value={element.endDelay}
+              value={element.endDelay || 0}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1816,7 +1809,7 @@ const TextEdit = ({
                   {__("Easing", "cocoblocks")}
                 </>
               }
-              value={element.easing || ''}
+              value={element.easing || 'linear'}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -1838,7 +1831,7 @@ const TextEdit = ({
                   {__("Direction", "cocoblocks")}
                 </>
               }
-              value={element.direction || ''}
+              value={element.direction || 'normal'}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -1860,7 +1853,7 @@ const TextEdit = ({
                   {__("Loop", "cocoblocks")}
                 </>
               }
-              value={element.loop || ''}
+              value={element.loop || '1'}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -1906,173 +1899,7 @@ const TextEdit = ({
             </div>
             </>      
             )}
-            <div className="intern-divider-editor"></div>
-            <CustomSelectControl
-              label={
-                <>
-                  <LogoutIcon />
-                  {__("Animations Out", "cocoblocks")}
-                </>
-              }
-              value={element.effectOut}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="title"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'effectOut')
-              }
-              tooltipText={__('Exit animations control how elements leave the slide, adding smooth transitions that enhance the visual flow and create a polished ending to the presentation.','cocoblock')} // Testo del tooltip personalizzato
-              showTooltip={true} // Mostra il tooltip
-              tooltipTop = '8px' // Posizione 'top' del tooltip (di default 5px)
-              tooltipLeft = '46%' // Posizione 'left' del tooltip (di default 35%)
-              selectOptions={selectOptionsEffectOut} // Passa le opzioni dinamiche
-            />
-            {element.effectOut !== "none" && (
-            <>
-            <CustomRangeControl
-              label={
-                <>
-                  <HourglassBottomIcon />
-                  {__("Duration Out", "cocoblocks")}
-                </>
-              }
-              value={element.durationOut}
-              slides={slides}
-              setAttributes={setAttributes}
-              min={0.1}
-              max={5}
-              step={0.1}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="title"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'durationOut')
-              }
-              showTooltip={false} // Mostra il tooltip
-            />
-            <CustomSelectControl
-              label={
-                <>
-                  <TimelineIcon />
-                  {__("Easing Out", "cocoblocks")}
-                </>
-              }
-              value={element.easeOut}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="title"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'easeOut')
-              }
-              tooltipText={__('Easing refers to the gradual acceleration or deceleration of an animation, allowing for smoother transitions. It controls how an object\'s speed changes over time, creating a more natural feel.','cocoblock')} // Testo del tooltip personalizzato
-              showTooltip={true} // Mostra il tooltip
-              tooltipTop = '7px' // Posizione 'top' del tooltip (di default 5px)
-              tooltipLeft = '40%' // Posizione 'left' del tooltip (di default 35%)
-              selectOptions={selectOptionsEase} // Passa le opzioni dinamiche
-            />
-            <CustomRangeControl
-              label={
-                <>
-                  <HistoryToggleOffIcon />
-                  {__("Delay Out", "cocoblocks")}
-                </>
-              }
-              value={element.delayOut}
-              slides={slides}
-              setAttributes={setAttributes}
-              min={0.1}
-              max={10}
-              step={0.1}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="title"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'delayOut')
-              }
-              showTooltip={false} // Mostra il tooltip
-            />
-            <CustomToggleControl
-                label={
-                  <>
-                    <VisibilityOffIcon />
-                    {__("Hide after out", "cocoblocks")}
-                  </>
-                }
-                value={element.hideAfterOut}
-                slides={slides}
-                setAttributes={setAttributes}
-                updateType="primary"
-                slideId={slide.id}
-                elementIndex={elementIndex}
-                elementType="title"
-                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'hideAfterOut')
-                }
-                tooltipText={__('The toggle hides the element after an exit effect is set; otherwise, it enables the original element to appear.','cocoblock')} // Testo del tooltip personalizzato
-                showTooltip={true} // Mostra il tooltip
-                tooltipTop = '10px' // Posizione 'top' del tooltip (di default 5px)
-              />
-            </>
-            )}
-            {(element.effectIn !== 'none' || element.effectOut !== 'none') && (
-            <>
-            <div className="intern-divider-editor"></div>
-            <CustomToggleControl
-              label={
-                <>
-                  <ScatterPlotIcon />
-                  {__("Split Words", "cocoblocks")}
-                </>
-              }
-              value={element.enableSplitText}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="title"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableSplitText')
-              }
-              showTooltip={false} // Mostra il tooltip
-            />
-            </>
-            )}
-            
-            {element.effectOut !== "none" && element.enableSplitText && (
-            <CustomRangeControl
-              label={
-                <>
-                  <StackedLineChartIcon />
-                  {__("Stagger out", "cocoblocks")}
-                </>
-              }
-              value={element.staggerOut}
-              slides={slides}
-              setAttributes={setAttributes}
-              min={0}
-              max={2}
-              step={0.01}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="title"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'staggerOut')
-              }
-              tooltipText={__('Set the delay between character animations. Higher values create a longer pause between each character\'s entrance.','cocoblock')} // Testo del tooltip personalizzato
-              showTooltip={true} // Mostra il tooltip
-            />
-            )}
-            {(element.effectIn !== 'none' || element.effectOut !== 'none') && (
+            {(element.effectIn !== 'none' ) && (
           <div className="button-reply-effect">
             <Tooltip text={__('Play','cocoblock')}>
             <Button onClick={onAnimatedText}><SlowMotionVideoIcon/></Button> 
@@ -2080,28 +1907,361 @@ const TextEdit = ({
           </div>
           )}
           </div>
-          <div
-            className="content-title-custom-panel intermedy"
-          >
-            <h2 className="title-custom-panel">
-              {__("Special Effects", "cocoblocks")}
-            </h2>
-          </div>
-          <div className="content-section-panel" style={{ padding: "0" }}>
-
-          </div>
         </>
       )}
 
       {activeSection === "hover" && (
         <>
-          <TextControlsHover
-            slide={slide}
-            slides={slides}
-            element={element}
-            elementIndex={elementIndex}
-            setAttributes={setAttributes}
+         <div className="custom-block-added">
+      <div
+        className="content-title-custom-panel intermedy"
+        style={{
+          marginTop: "-18px",
+        }}
+      >
+        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+      </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
+          <CustomSelectControl
+              label={
+                <>
+                  <GrainIcon />
+                  {__("Effects", "cocoblocks")}
+                </>
+              }
+              value={element.effectHover || 'none'}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'effectHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+              selectOptions={selectOptionsEffectHover} // Passa le opzioni dinamiche
+            />
+            {element.effectHover !== "none" && (
+              <>
+               <div className="custom-select color">
+          <ColorOptionsPanel
+            colorNormal={element.textColorHover}
+            setColorNormal={(color) =>
+              updateSlideTextColorHover(slide.id, elementIndex, color)
+            }
+            buttonTitle={__("Text Color", "cocoblocks")}
+            buttonIcon={
+              <FormatColorTextIcon style={{marginBottom:'-3px'}} />
+            }
           />
+        </div>
+            <CustomRangeControl
+              label={
+                <>
+                  <OpacityIcon />
+                  {__("Opacity", "cocoblocks")}
+                </>
+              }
+              value={element.opacityHover || 1}
+              slides={slides}
+              setAttributes={setAttributes}
+              min={0}
+              max={1}
+              step={.1}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'opacityHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+            />
+            <CustomRangeControl
+              label={
+                <>
+                  <DeblurIcon />
+                  {__("Blur", "cocoblocks")}
+                </>
+              }
+              value={element.filterHover || 0}
+              slides={slides}
+              setAttributes={setAttributes}
+              min={0}
+              max={20}
+              step={1}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'filterHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+            />
+              {['translateHover','customHover'].includes(element.effectHover) && (
+                <>
+            <CustomRangeControl
+              label={
+                <>
+                  <SyncAltIcon />
+                  {__("Translate X", "cocoblocks")}
+                </>
+              }
+              value={element.startXHover || 0}
+              slides={slides}
+              setAttributes={setAttributes}
+              min={-500}
+              max={500}
+              step={1}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'startXHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+            />
+            <CustomRangeControl
+              label={
+                <>
+                  <SyncAltIcon style={{transform:'rotate(90deg)'}} />
+                  {__("Translate Y", "cocoblocks")}
+                </>
+              }
+              value={element.startYHover || 0}
+              slides={slides}
+              setAttributes={setAttributes}
+              min={-500}
+              max={500}
+              step={1}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'startYHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+            />
+            </>
+            )}
+            {['customHover'].includes(element.effectHover) && (
+             <CustomSelectControl
+              label={
+                <>
+                  <LinearScaleIcon />
+                  {__("Choose the scale", "cocoblocks")}
+                </>
+              }
+              value={element.scaleTypeHover || 'scale'}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'scaleTypeHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+              selectOptions={selectOptionsScaleIn} // Passa le opzioni dinamiche
+            />
+            )}
+            {['scaleHover','scaleXHover','scaleYHover','customHover'].includes(element.effectHover) && (
+            <>
+            <CustomRangeControl
+              label={
+                <>
+                  <ZoomOutMapIcon />
+                  {__("Scale", "cocoblocks")}
+                </>
+              }
+              value={element.scaleHover || 1}
+              slides={slides}
+              setAttributes={setAttributes}
+              min={.1}
+              max={20}
+              step={.1}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'scaleHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+            />
+            </>
+            )}
+              {['rotateHover','customHover'].includes(element.effectHover) && (
+                <>
+              <CustomRangeControl
+                label={
+                  <>
+                    <RefreshIcon />
+                    {__("Rotate", "cocoblocks")}
+                  </>
+                }
+                value={element.rotateHover || 0}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={-360}
+                max={360}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateHover')
+                }
+                showTooltip={false}
+              />
+               <CustomRangeControl
+                label={
+                  <>
+                    <ThreeSixtyIcon />
+                    {__("Rotate X", "cocoblocks")}
+                  </>
+                }
+                value={element.rotateXHover || 0}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={-360}
+                max={360}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateXHover')
+                }
+                showTooltip={false}
+              />
+              <CustomRangeControl
+                label={
+                  <>
+                    <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
+                    {__("Rotate Y", "cocoblocks")}
+                  </>
+                }
+                value={element.rotateYHover || 0}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={-360}
+                max={360}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateYHover')
+                }
+                showTooltip={false}
+              />
+              </>
+            )}
+              {['skewHover','customHover'].includes(element.effectHover) && (
+                <>
+              <CustomRangeControl
+                label={
+                  <>
+                    <RefreshIcon />
+                    {__("Skew X", "cocoblocks")}
+                  </>
+                }
+                value={element.skewXHover || 0}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={-90}
+                max={90}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'skewXHover')
+                }
+                showTooltip={false}
+              />
+              <CustomRangeControl
+                label={
+                  <>
+                    <RefreshIcon />
+                    {__("Skew Y", "cocoblocks")}
+                  </>
+                }
+                value={element.skewYHover || 0}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={-90}
+                max={90}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'skewYHover')
+                }
+                showTooltip={false}
+              />
+              </>
+            )}
+             <CustomRangeControl
+              label={
+                <>
+                  <HourglassBottomIcon />
+                  {__("Duration", "cocoblocks")}
+                </>
+              }
+              value={element.durationHover || 1000}
+              slides={slides}
+              setAttributes={setAttributes}
+              min={100}
+              max={5000}
+              step={100}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'durationHover')
+              }
+              showTooltip={false} // Mostra il tooltip
+            />
+            <CustomSelectControl
+              label={
+                <>
+                  <SwapCallsIcon />
+                  {__("Easing", "cocoblocks")}
+                </>
+              }
+              value={element.easingHover || 'linear'}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'easingHover')
+              }
+              tooltipText={__('Easing refers to the gradual acceleration or deceleration of an animation, allowing for smoother transitions. It controls how an object\'s speed changes over time, creating a more natural feel.','cocoblock')} // Testo del tooltip personalizzato
+              showTooltip={true} // Mostra il tooltip
+              tooltipTop = '8px' // Posizione 'top' del tooltip (di default 5px)
+              selectOptions={selectOptionsEase} // Passa le opzioni dinamiche
+            />
+              </>
+            )}
+          </div>
+          </div>
         </>
       )}
 
@@ -2126,7 +2286,7 @@ const TextEdit = ({
                     {__("Link actions", "cocoblocks")}
                   </>
                 }
-                value={element.textLink}
+                value={element.textLink || 'none'}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -2188,7 +2348,7 @@ const TextEdit = ({
                       {__("Link Behavior", "cocoblocks")}
                     </>
                   }
-                  value={element.linkRel}
+                  value={element.linkRel || 'follow'}
                   slides={slides}
                   setAttributes={setAttributes}
                   updateType="primary"
@@ -2249,7 +2409,7 @@ const TextEdit = ({
                   {__("Desktop", "cocoblocks")}
                 </>
               }
-              value={element.enableDesktopTitle}
+              value={element.enableDesktopTitle !== undefined ? element.enableDesktopTitle : true}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -2267,7 +2427,7 @@ const TextEdit = ({
                   {__("Tablet", "cocoblocks")}
                 </>
               }
-              value={element.enableTabletTitle}
+              value={element.enableTabletTitle !== undefined ? element.enableTabletTitle : true}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -2282,10 +2442,10 @@ const TextEdit = ({
               label={
                 <>
                   <SmartphoneIcon />
-                  {__("Tablet", "cocoblocks")}
+                  {__("Mobile", "cocoblocks")}
                 </>
               }
-              value={element.enableMobileTitle}
+              value={element.enableMobileTitle !== undefined ? element.enableMobileTitle : true}
               slides={slides}
               setAttributes={setAttributes}
               updateType="primary"
@@ -2318,9 +2478,9 @@ const TextEdit = ({
           onClick={toggleHideTitle}
           icon={
             hideTitle === "hide" ? (
-              <VisibilityIcon/>
+              <VisibilityIcon  style={{fill:'var(--light-color)'}}/>
             ) : (
-              <VisibilityOffIcon/>
+              <VisibilityOffIcon  style={{fill:'var(--light-color)'}}/>
             )
           }
         />

@@ -1336,7 +1336,11 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BlockFromIn: () => (/* binding */ BlockFromIn),
+/* harmony export */   animateBar: () => (/* binding */ animateBar),
+/* harmony export */   customEffectIn: () => (/* binding */ customEffectIn),
 /* harmony export */   fadeIn: () => (/* binding */ fadeIn),
+/* harmony export */   handleMouseEnter: () => (/* binding */ handleMouseEnter),
+/* harmony export */   handleMouseLeave: () => (/* binding */ handleMouseLeave),
 /* harmony export */   rotateIn: () => (/* binding */ rotateIn),
 /* harmony export */   scaleIn: () => (/* binding */ scaleIn),
 /* harmony export */   scaleInX: () => (/* binding */ scaleInX),
@@ -1349,9 +1353,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Funzione per ottenere gli attributi comuni delle animazioni
-const getAnimationProps = props => {
+const getAnimationProps = (props, target) => {
   const {
-    duration = 3000,
+    duration = 1000,
     delayIn = 0,
     endDelay = 0,
     easing = 'easeInQuad',
@@ -1364,7 +1368,7 @@ const getAnimationProps = props => {
     scaleFrom: scaleFrom,
     scaleTo: scaleTo,
     stagger,
-    textSplitEffect = "getAnimationEffectSplit",
+    textSplitEffect = "translateSplit",
     opacityInFrom: opacityInFrom,
     opacityInTo: opacityInTo,
     rotateInFrom: rotateInFrom,
@@ -1380,11 +1384,37 @@ const getAnimationProps = props => {
     directionBlock: directionBlock,
     colorBlockEffectIn: colorBlockEffectIn,
     filterInFrom: filterInFrom,
-    filterInTo: filterInTo
+    filterInTo: filterInTo,
+    scaleType: scaleType,
+    textColor: textColor,
+    textColorHover: textColorHover,
+    backgroundColorImage: backgroundColorImage,
+    backgroundColorImageHover: backgroundColorImageHover,
+    effectHover: effectHover,
+    opacityHover: opacityHover,
+    filterHover: filterHover,
+    rotateHover: rotateHover,
+    rotateXHover: rotateXHover,
+    rotateYHover: rotateYHover,
+    skewXHover: skewXHover,
+    skewYHover: skewYHover,
+    scaleHover: scaleHover,
+    startXHover: startXHover,
+    startYHover: startYHover,
+    scaleTypeHover: scaleTypeHover,
+    durationHover = 1000,
+    easingHover = 'easeInQuad',
+    heightFrom: heightFrom,
+    heightTo: heightTo
   } = props;
 
   // Converti il valore di loop in un numero
   const loopCount = typeof loop === 'string' && loop.toLowerCase() === 'true' ? Infinity : Number(loop);
+
+  // Aggiungi la classe per disabilitare gli eventi del mouse
+  if (target) {
+    target.classList.add('no-pointer-events');
+  }
   return {
     duration,
     delay: delayIn,
@@ -1415,8 +1445,68 @@ const getAnimationProps = props => {
     directionBlock,
     colorBlockEffectIn,
     filterInFrom,
-    filterInTo
+    filterInTo,
+    scaleType,
+    textColor,
+    textColorHover,
+    backgroundColorImage,
+    backgroundColorImageHover,
+    effectHover,
+    opacityHover,
+    filterHover,
+    rotateHover,
+    rotateXHover,
+    rotateYHover,
+    skewXHover,
+    skewYHover,
+    scaleHover,
+    startXHover,
+    startYHover,
+    scaleTypeHover,
+    durationHover,
+    easingHover,
+    heightFrom,
+    heightTo,
+    complete: function (anim) {
+      // Rimuovi la classe per riabilitare gli eventi del mouse
+      if (target) {
+        target.classList.remove('no-pointer-events');
+      }
+      if (props.complete) {
+        props.complete(anim);
+      }
+    }
   };
+};
+
+// In animationIn.js
+const animateBar = (barRef, props = {}) => {
+  const {
+    duration = 500,
+    // Imposta un valore di default se non è fornito
+    heightFrom = '10px',
+    // Altri valori dinamici se necessario
+    heightTo = '25px',
+    easing = 'easeInQuint',
+    loop = true
+  } = props;
+  if (barRef && barRef.current) {
+    // Controlla che barRef e barRef.current siano definiti
+    // Converti il valore di loop in un numero
+    const loopCount = typeof loop === 'string' && loop.toLowerCase() === 'true' ? Infinity : Number(loop);
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      targets: barRef.current,
+      height: [heightFrom, heightTo],
+      // Usa valori dinamici per l'altezza
+      easing: easing,
+      opacity: 1,
+      duration: duration,
+      direction: 'alternate',
+      loop: loopCount
+    });
+  } else {
+    console.error('barRef is not defined');
+  }
 };
 
 // Effect Block
@@ -1540,7 +1630,7 @@ const blockTransition = (element, direction, animationProps = {}) => {
   });
 };
 const fadeIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const filterInFrom = props.filterInFrom + 'px';
@@ -1553,7 +1643,7 @@ const fadeIn = (target, props = {}) => {
   });
 };
 const translateXYIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const startXFrom = props.startXFrom || 0;
   const startXTo = props.startXTo || 0;
   const startYFrom = props.startYFrom || 0;
@@ -1572,7 +1662,7 @@ const translateXYIn = (target, props = {}) => {
   });
 };
 const scaleIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const scaleFrom = props.scaleFrom || 0;
@@ -1588,7 +1678,7 @@ const scaleIn = (target, props = {}) => {
   });
 };
 const scaleInX = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const scaleFrom = props.scaleFrom || 0;
@@ -1604,7 +1694,7 @@ const scaleInX = (target, props = {}) => {
   });
 };
 const scaleInY = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const scaleFrom = props.scaleFrom || 0;
@@ -1620,7 +1710,7 @@ const scaleInY = (target, props = {}) => {
   });
 };
 const rotateIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const rotateInFrom = props.rotateInFrom;
@@ -1642,7 +1732,7 @@ const rotateIn = (target, props = {}) => {
   });
 };
 const skewInX = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const skewXFrom = props.skewXFrom;
@@ -1661,7 +1751,7 @@ const skewInX = (target, props = {}) => {
   });
 };
 const BlockFromIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const directionBlock = props.directionBlock || 'left';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
@@ -1670,13 +1760,103 @@ const BlockFromIn = (target, props = {}) => {
   // Aggiungi il blockTransition dopo l'animazione
   blockTransition(target, directionBlock, animationProps);
 };
+const customEffectIn = (target, props = {}) => {
+  const animationProps = getAnimationProps(props, target);
+  const startXFrom = props.startXFrom || 0;
+  const startXTo = props.startXTo || 0;
+  const startYFrom = props.startYFrom || 0;
+  const startYTo = props.startYTo || 0;
+  const opacityInFrom = props.opacityInFrom || 0;
+  const opacityInTo = props.opacityInTo || 1;
+  const filterInFrom = props.filterInFrom + 'px';
+  const filterInTo = props.filterInTo + 'px';
+  const scaleFrom = props.scaleFrom || 0;
+  const scaleTo = props.scaleTo || 1;
+  const rotateInFrom = props.rotateInFrom;
+  const rotateInTo = props.rotateInTo;
+  const rotateInXFrom = props.rotateInXFrom;
+  const rotateInXTo = props.rotateInXTo;
+  const rotateInYFrom = props.rotateInYFrom;
+  const rotateInYTo = props.rotateInYTo;
+  const skewXFrom = props.skewXFrom;
+  const skewXTo = props.skewXTo;
+  const skewYFrom = props.skewYFrom;
+  const skewYTo = props.skewYTo;
+  const scaleType = props.scaleType || 'scale'; // Default to 'scale'
+  const animationTargets = {
+    targets: target,
+    translateX: [startXFrom, startXTo],
+    translateY: [startYFrom, startYTo],
+    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
+    ...animationProps,
+    opacity: [opacityInFrom, opacityInTo],
+    rotate: [rotateInFrom, rotateInTo],
+    rotateX: [rotateInXFrom, rotateInXTo],
+    rotateY: [rotateInYFrom, rotateInYTo],
+    skewX: [skewXFrom, skewXTo],
+    skewY: [skewYFrom, skewYTo]
+  };
+
+  // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
+  if (scaleType === 'scale') {
+    animationTargets.scale = [scaleFrom, scaleTo];
+  } else if (scaleType === 'scaleX') {
+    animationTargets.scaleX = [scaleFrom, scaleTo];
+  } else if (scaleType === 'scaleY') {
+    animationTargets.scaleY = [scaleFrom, scaleTo];
+  }
+  (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])(animationTargets);
+};
 
 // Definisci gli effetti di animazione
-const getAnimationEffect = (effectName, container) => {
+const getAnimationEffect = (effectName, container, props = {}) => {
+  const animationProps = getAnimationProps(props); // Usa getAnimationProps per ottenere le proprietà comuni
+
   switch (effectName) {
-    case 'getAnimationEffectSplit':
+    case 'fadeSplit':
       return {
-        translateY: [100, 0] // Esempio effetto Uno
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)']
+      };
+    case 'translateSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        translateX: [animationProps.startXFrom, animationProps.startXTo],
+        translateY: [animationProps.startYFrom, animationProps.startYTo]
+      };
+    case 'scaleSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        scale: [animationProps.scaleFrom, animationProps.scaleTo]
+      };
+    case 'scaleXSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        scaleX: [animationProps.scaleFrom, animationProps.scaleTo]
+      };
+    case 'scaleYSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        scaleY: [animationProps.scaleFrom, animationProps.scaleTo]
+      };
+    case 'rotateSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        rotate: [animationProps.rotateInFrom, animationProps.rotateInTo],
+        rotateX: [animationProps.rotateInXFrom, animationProps.rotateInXTo],
+        rotateY: [animationProps.rotateInYFrom, animationProps.rotateInYTo]
+      };
+    case 'skewSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        skewX: [animationProps.skewXFrom, animationProps.skewXTo],
+        skewY: [animationProps.skewYFrom, animationProps.skewYTo]
       };
     case 'explosion':
       return {
@@ -1686,9 +1866,9 @@ const getAnimationEffect = (effectName, container) => {
         // Movimento casuale sull'asse Y
         rotate: () => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-360, 360),
         // Rotazione casuale
-        scale: [1, 0],
-        // Scala da 1 a 0
-        opacity: [1, 0] // Cambia l'opacità da 1 a 0
+        scale: [animationProps.scaleTo, animationProps.scaleFrom],
+        filter: ['blur(' + animationProps.filterInTo + 'px)', 'blur(' + animationProps.filterInFrom + 'px)'],
+        opacity: [animationProps.opacityInTo, animationProps.opacityInFrom]
       };
     case 'gather':
       return {
@@ -1698,133 +1878,22 @@ const getAnimationEffect = (effectName, container) => {
         // Movimento casuale sull'asse Y verso il centro
         rotate: [() => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-360, 360), 0],
         // Rotazione casuale verso 0
-        scale: [0, 1],
-        // Scala da 0 a 1
-        opacity: [0, 1] // Cambia l'opacità da 0 a 1
+        scale: [animationProps.scaleFrom, animationProps.scaleTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo]
       };
-    case 'explosionAndGather':
+    case 'customSplit':
       return {
-        translateX: [{
-          value: () => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-1000, 1000),
-          duration: 1000
-        },
-        // Esplosione
-        {
-          value: 0,
-          duration: 1000,
-          delay: 500
-        } // Raccolta con pausa
-        ],
-        translateY: [{
-          value: () => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-1000, 1000),
-          duration: 1000
-        },
-        // Esplosione
-        {
-          value: 0,
-          duration: 1000,
-          delay: 500
-        } // Raccolta con pausa
-        ],
-        rotate: [{
-          value: () => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-360, 360),
-          duration: 1000
-        },
-        // Esplosione
-        {
-          value: 0,
-          duration: 1000,
-          delay: 500
-        } // Raccolta con pausa
-        ],
-        scale: [{
-          value: 1,
-          duration: 1000
-        },
-        // Esplosione
-        {
-          value: 1,
-          duration: 0
-        },
-        // Mantieni la scala durante la transizione
-        {
-          value: 1,
-          duration: 1000,
-          delay: 500
-        } // Raccolta
-        ],
-        opacity: [{
-          value: 1,
-          duration: 1000
-        },
-        // Esplosione
-        {
-          value: 1,
-          duration: 0
-        },
-        // Mantieni l'opacità durante la transizione
-        {
-          value: 1,
-          duration: 1000,
-          delay: 500
-        } // Raccolta
-        ]
-      };
-    case 'getAnimationEffectSplitTwo':
-      return {
-        translateX: [100, 0] // Esempio effetto Due
-      };
-    case 'typewriter':
-      return {
-        opacity: [0, 1],
-        duration: 1000,
-        // Durata breve per ogni lettera
-        easing: 'linear',
-        delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(100),
-        // Ritardo tra le lettere
-        update: function (anim) {
-          const lettersRef = anim.animatables;
-
-          // Trova o crea un unico cursore
-          let cursor = container.querySelector('.cursor');
-          if (!cursor) {
-            cursor = document.createElement('span');
-            cursor.className = 'cursor';
-            cursor.textContent = '|';
-            cursor.style.position = 'absolute';
-            cursor.style.color = '#000'; // Imposta il colore del cursore a nero
-            container.appendChild(cursor);
-
-            // Anima il cursore con anime.js per il lampeggiamento
-            (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-              targets: cursor,
-              opacity: [0, 1],
-              // Cambia opacità da 0 a 1
-              easing: 'linear',
-              // Funzione di easing più dolce
-              duration: 1000,
-              // Durata di ogni ciclo di lampeggio
-              loop: true,
-              // Ripeti all'infinito
-              direction: 'alternate' // Alterna tra 0 e 1 per creare l'effetto di lampeggio
-            });
-          }
-
-          // Ottieni la lettera corrente
-          const currentLetterIndex = Math.floor(anim.progress / 100 * lettersRef.length);
-          const currentLetter = lettersRef[currentLetterIndex]?.target;
-          if (currentLetter) {
-            cursor.style.left = currentLetter.offsetLeft + currentLetter.offsetWidth + 10 + 'px';
-            cursor.style.top = currentLetter.offsetTop + 'px';
-          }
-        },
-        complete: function () {
-          // Rimuovi il cursore alla fine dell'animazione
-          const cursor = container.querySelector('.cursor');
-          if (cursor) {
-            cursor.remove();
-          }
-        }
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        rotate: [animationProps.rotateInFrom, animationProps.rotateInTo],
+        rotateX: [animationProps.rotateInXFrom, animationProps.rotateInXTo],
+        rotateY: [animationProps.rotateInYFrom, animationProps.rotateInYTo],
+        scale: [animationProps.scaleFrom, animationProps.scaleTo],
+        translateX: [animationProps.startXFrom, animationProps.startXTo],
+        translateY: [animationProps.startYFrom, animationProps.startYTo],
+        skewX: [animationProps.skewXFrom, animationProps.skewXTo],
+        skewY: [animationProps.skewYFrom, animationProps.skewYTo]
       };
     default:
       return {
@@ -1891,7 +1960,7 @@ const splitText = (container, props = {}) => {
   letters.forEach(letter => container.appendChild(letter)); // Aggiungi ogni lettera (span) nel container
 
   // Ottieni l'effetto in base alla stringa dal selettore
-  const animationEffect = getAnimationEffect(animationProps.textSplitEffect, container);
+  const animationEffect = getAnimationEffect(animationProps.textSplitEffect, container, props);
 
   // Creare una timeline per l'animazione
   animejs__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
@@ -1901,14 +1970,13 @@ const splitText = (container, props = {}) => {
     targets: lettersRef.current,
     // Anima tutte le lettere via ref
     //scale: [4, 1], // Scala le lettere da 4 a 1
-    opacity: [0, 1],
-    // Cambia l'opacità da 0 a 1
+    // opacity: [0, 1],
     //rotateX: [360, 0], // Ruota le lettere da
 
     translateZ: 0,
     ...animationEffect,
     // Applica l'effetto dinamico
-    easing: animationProps.easing,
+    easing: animationProps.easing || 'linear',
     // Applica l'easing
     duration: animationProps.duration,
     // Durata dell'animazione
@@ -1916,39 +1984,170 @@ const splitText = (container, props = {}) => {
   });
 };
 
-/***/ }),
+// Definisci gli effetti hover
+const hoverEffects = {
+  scaleHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      scale: animationProps.scaleHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      duration: animationProps.durationHover
+    });
+  },
+  scaleXHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      scaleX: animationProps.scaleHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover
+    });
+  },
+  scaleYHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      scaleY: animationProps.scaleHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover
+    });
+  },
+  rotateHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      rotate: animationProps.rotateHover,
+      rotateX: animationProps.rotateXHover,
+      rotateY: animationProps.rotateYHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover
+    });
+  },
+  translateHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      translateX: animationProps.startXHover,
+      translateY: animationProps.startYHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover
+    });
+  },
+  opacityHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover
+    });
+  },
+  skewHover: (element, animationProps) => {
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      skewX: animationProps.skewXHover,
+      skewY: animationProps.skewYHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover
+    });
+  },
+  customHover: (element, animationProps) => {
+    const scaleTypeHover = animationProps.scaleTypeHover || 'scale'; // Default to 'scale'
+    const animationTargetsHover = {
+      opacity: animationProps.opacityHover,
+      filter: 'blur(' + animationProps.filterHover + 'px)',
+      targets: element,
+      rotate: animationProps.rotateHover,
+      rotateX: animationProps.rotateXHover,
+      rotateY: animationProps.rotateYHover,
+      translateX: animationProps.startXHover,
+      translateY: animationProps.startYHover,
+      skewX: animationProps.skewXHover,
+      skewY: animationProps.skewYHover0,
+      easing: animationProps.easingHover,
+      duration: animationProps.durationHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      color: animationProps.textColorHover
+    };
 
-/***/ "./src/animate/animationOut.js":
-/*!*************************************!*\
-  !*** ./src/animate/animationOut.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   fadeOut: () => (/* binding */ fadeOut),
-/* harmony export */   slideOut: () => (/* binding */ slideOut)
-/* harmony export */ });
-/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
-
-const fadeOut = target => {
-  (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    targets: target,
-    opacity: [1, 0],
-    translateY: [0, 50],
-    easing: 'easeInOutQuad',
-    duration: 1000,
-    delay: 100
-  });
+    // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
+    if (scaleTypeHover === 'scale') {
+      animationTargetsHover.scale = animationProps.scaleHover;
+    } else if (scaleTypeHover === 'scaleX') {
+      animationTargetsHover.scaleX = animationProps.scaleHover;
+    } else if (scaleTypeHover === 'scaleY') {
+      animationTargetsHover.scaleY = animationProps.scaleHover;
+    }
+    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])(animationTargetsHover);
+  }
 };
-const slideOut = target => {
+
+// Funzione per gestire l'hover all'entrata
+const handleMouseEnter = (e, props = {}) => {
+  const animationProps = getAnimationProps(props);
+  animejs__WEBPACK_IMPORTED_MODULE_0__["default"].remove(e.target); // Rimuove eventuali animazioni in corso
+
+  if (hoverEffects[animationProps.effectHover]) {
+    hoverEffects[animationProps.effectHover](e.target, animationProps);
+  }
+};
+
+// Funzione per gestire l'hover all'uscita
+const handleMouseLeave = (e, props = {}) => {
+  const animationProps = getAnimationProps(props);
+  animejs__WEBPACK_IMPORTED_MODULE_0__["default"].remove(e.target); // Rimuove eventuali animazioni in corso
+  // Ripristina lo stato originale dell'elemento
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    targets: target,
-    opacity: [1, 0],
-    translateX: [0, 100],
-    easing: 'easeInOutQuad',
-    duration: 1000,
-    delay: 100
+    targets: e.target,
+    scale: 1,
+    // Torna alla scala originale
+    scaleX: 1,
+    // Torna alla scala originale
+    scaleY: 1,
+    // Torna alla scala originale
+    rotate: 0,
+    // Torna alla rotazione originale
+    rotateX: 0,
+    // Torna alla rotazione originale
+    rotateY: 0,
+    // Torna alla rotazione originale
+    translateX: 0,
+    // Torna alla posizione originale
+    translateY: 0,
+    // Torna alla posizione originale
+    opacity: 1,
+    // Torna all'opacità originale
+    filter: 'blur(0px)',
+    // Rimuove l'effetto blur
+    skewX: 0,
+    // Torna allo skew originale
+    skewY: 0,
+    // Torna allo skew originale
+    easing: animationProps.easingHover || 'linear',
+    color: animationProps.textColor,
+    backgroundColor: animationProps.backgroundColorImage,
+    duration: animationProps.durationHover
   });
 };
 
@@ -1963,18 +2162,15 @@ const slideOut = target => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   animationsIn: () => (/* binding */ animationsIn),
-/* harmony export */   animationsOut: () => (/* binding */ animationsOut),
 /* harmony export */   getAnimationProps: () => (/* binding */ getAnimationProps)
 /* harmony export */ });
 /* harmony import */ var _animationIn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animationIn */ "./src/animate/animationIn.js");
-/* harmony import */ var _animationOut__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animationOut */ "./src/animate/animationOut.js");
-
 
 
 // Funzione per ottenere gli attributi comuni delle animazioni
 const getAnimationProps = props => {
   const {
-    duration = 3000,
+    duration = 1000,
     delayIn = 0,
     endDelay = 0,
     easing = 'easeInQuad',
@@ -1988,7 +2184,7 @@ const getAnimationProps = props => {
     scaleFrom: scaleFrom,
     scaleTo: scaleTo,
     stagger,
-    textSplitEffect = "getAnimationEffectSplit",
+    textSplitEffect = "translateSplit",
     opacityInFrom: opacityInFrom,
     opacityInTo: opacityInTo,
     rotateInFrom: rotateInFrom,
@@ -2004,7 +2200,8 @@ const getAnimationProps = props => {
     directionBlock: directionBlock,
     colorBlockEffectIn: colorBlockEffectIn,
     filterInFrom: filterInFrom,
-    filterInTo: filterInTo
+    filterInTo: filterInTo,
+    scaleType: scaleType
   } = props;
 
   // Converti il valore di loop in un numero
@@ -2040,7 +2237,8 @@ const getAnimationProps = props => {
     directionBlock,
     colorBlockEffectIn,
     filterInFrom,
-    filterInTo
+    filterInTo,
+    scaleType
   };
 };
 const animationsIn = {
@@ -2052,11 +2250,8 @@ const animationsIn = {
   rotateIn: _animationIn__WEBPACK_IMPORTED_MODULE_0__.rotateIn,
   skewInX: _animationIn__WEBPACK_IMPORTED_MODULE_0__.skewInX,
   BlockFromIn: _animationIn__WEBPACK_IMPORTED_MODULE_0__.BlockFromIn,
+  customEffectIn: _animationIn__WEBPACK_IMPORTED_MODULE_0__.customEffectIn,
   splitText: _animationIn__WEBPACK_IMPORTED_MODULE_0__.splitText
-};
-const animationsOut = {
-  fadeOut: _animationOut__WEBPACK_IMPORTED_MODULE_1__.fadeOut,
-  slideOut: _animationOut__WEBPACK_IMPORTED_MODULE_1__.slideOut
 };
 
 
@@ -12504,7 +12699,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var _animate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../animate */ "./src/animate/index.js");
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var _animate_animationIn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../animate/animationIn */ "./src/animate/animationIn.js");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+
+//import anime from 'animejs';
+//import lottie from 'lottie-web';
+//import animationData from './one.json';
+
 
 
 
@@ -12530,83 +12731,145 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Funzione per animare un elemento
-  function animateElement(element) {
-    const effectIn = element.getAttribute('data-effect-in') || "fadeIn";
-    const effectOut = element.getAttribute('data-effect-out') || "none";
-    const duration = parseInt(element.getAttribute('data-duration')) || 3000;
-    const delayIn = parseInt(element.getAttribute('data-delay-in')) || 0;
-    const delayInEnd = parseInt(element.getAttribute('data-delay-in-end')) || 0;
-    const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
-    const directionIn = element.getAttribute('data-direction-in') || 'normal';
-    const loopIn = element.getAttribute('data-loop-in') || 1;
-    const opacityInFrom = element.getAttribute('data-opacity-in-from') || 0;
-    const opacityInTo = element.getAttribute('data-opacity-in-to') || 1;
-    const startXFrom = element.getAttribute('data-start-x-from') || 0;
-    const startXTo = element.getAttribute('data-start-x-to') || 0;
-    const startYFrom = element.getAttribute('data-start-y-from') || 0;
-    const startYTo = element.getAttribute('data-start-y-to') || 0;
-    const stagger = parseInt(element.getAttribute('data-stagger')) || 50;
-    const textSplitEffect = element.getAttribute('data-effect-split') || 'getAnimationEffectSplit';
-    const directionBlock = element.getAttribute('data-direction-block');
-    const colorBlockEffectIn = element.getAttribute('data-color-block') || '#000';
-    const rotateInFrom = parseInt(element.getAttribute('data-rotate-in-from')) || 0;
-    const rotateInTo = parseInt(element.getAttribute('data-rotate-in-to')) || 0;
-    const rotateInXFrom = parseInt(element.getAttribute('data-rotate-in-x-from')) || 0;
-    const rotateInXTo = parseInt(element.getAttribute('data-rotate-in-x-to')) || 0;
-    const rotateInYFrom = parseInt(element.getAttribute('data-rotate-in-y-from')) || 0;
-    const rotateInYTo = parseInt(element.getAttribute('data-rotate-in-y-to')) || 0;
-    const scaleFrom = parseInt(element.getAttribute('data-scale-in-from')) || 1;
-    const scaleTo = parseInt(element.getAttribute('data-scale-in-to')) || 1;
-    const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) || 0;
-    const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) || 0;
-    const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) || 0;
-    const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) || 0;
+  function animateElement() {
+    const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide');
+    elementsToAnimate.forEach(element => {
+      // Dynamic Bar
+      if (element.classList.contains('dynamic-bar')) {
+        // Estrai gli attributi specifici per la barra
+        const heightFrom = element.getAttribute('data-height-from') || '5px';
+        const heightTo = element.getAttribute('data-height-to') || '15px';
+        const duration = parseInt(element.getAttribute('data-duration')) || 500;
+        const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
+        const loopIn = element.getAttribute('data-loop-in') || 1;
 
-    // Imposta l'opacità iniziale a 0
-    //element.style.opacity = 0;
+        // Crea l'oggetto props con i parametri estratti
+        const props = {
+          heightFrom,
+          heightTo,
+          duration,
+          easing: easingIn,
+          loop: loopIn
+          // direction: directionIn,
+        };
 
-    const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_1__.getAnimationProps)({
-      duration,
-      delay: delayIn,
-      endDelay: delayInEnd,
-      easing: easingIn,
-      loop: loopIn,
-      direction: directionIn,
-      opacityInFrom,
-      opacityInTo,
-      startXFrom,
-      startXTo,
-      startYFrom,
-      startYTo,
-      stagger,
-      textSplitEffect,
-      directionBlock,
-      colorBlockEffectIn,
-      rotateInFrom,
-      rotateInTo,
-      rotateInXFrom,
-      rotateInXTo,
-      rotateInYFrom,
-      rotateInYTo,
-      scaleFrom,
-      scaleTo,
-      skewXFrom,
-      skewXTo,
-      skewYFrom,
-      skewYTo
+        // Passa l'elemento (come riferimento) e i props alla funzione animateBar
+        (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.animateBar)({
+          current: element
+        }, props);
+      } else {
+        const effectIn = element.getAttribute('data-effect-in') || "fadeIn";
+        const duration = parseInt(element.getAttribute('data-duration')) || 3000;
+        const delayIn = parseInt(element.getAttribute('data-delay-in')) || 0;
+        const delayInEnd = parseInt(element.getAttribute('data-delay-in-end')) || 0;
+        const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
+        const directionIn = element.getAttribute('data-direction-in') || 'normal';
+        const loopIn = element.getAttribute('data-loop-in') || 1;
+        const opacityInFrom = element.getAttribute('data-opacity-in-from') || 0;
+        const opacityInTo = element.getAttribute('data-opacity-in-to') || 1;
+        const startXFrom = element.getAttribute('data-start-x-from') || 0;
+        const startXTo = element.getAttribute('data-start-x-to') || 0;
+        const startYFrom = element.getAttribute('data-start-y-from') || 0;
+        const startYTo = element.getAttribute('data-start-y-to') || 0;
+        const stagger = parseInt(element.getAttribute('data-stagger')) || 50;
+        const textSplitEffect = element.getAttribute('data-effect-split') || 'translateSplit';
+        const directionBlock = element.getAttribute('data-direction-block');
+        const colorBlockEffectIn = element.getAttribute('data-color-block') || '#000';
+        const rotateInFrom = parseInt(element.getAttribute('data-rotate-in-from')) || 0;
+        const rotateInTo = parseInt(element.getAttribute('data-rotate-in-to')) || 0;
+        const rotateInXFrom = parseInt(element.getAttribute('data-rotate-x-in-from')) || 0;
+        const rotateInXTo = parseInt(element.getAttribute('data-rotate-x-in-to')) || 0;
+        const rotateInYFrom = parseInt(element.getAttribute('data-rotate-y-in-from')) || 0;
+        const rotateInYTo = parseInt(element.getAttribute('data-rotate-y-in-to')) || 0;
+        const scaleFrom = parseInt(element.getAttribute('data-scale-in-from')) || 1;
+        const scaleTo = parseInt(element.getAttribute('data-scale-in-to')) || 1;
+        const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) || 0;
+        const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) || 0;
+        const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) || 0;
+        const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) || 0;
+        const scaleType = element.getAttribute('data-scale-custom-effect-in') || 'scale';
+        const textColor = element.getAttribute('data-text-color') || '#000';
+        const backgroundColorImage = element.getAttribute('data-image-color') || '#000';
+        const backgroundColorImageHover = element.getAttribute('data-image-color-hover') || '#000';
+        const textColorHover = element.getAttribute('data-text-color-hover') || '#000';
+        const effectHover = element.getAttribute('data-effect-hover');
+        const scaleHover = parseInt(element.getAttribute('data-scale-hover')) || 1;
+        const opacityHover = parseInt(element.getAttribute('data-opacity-hover')) || 0;
+        const filterHover = parseInt(element.getAttribute('data-filter-hover')) || 0;
+        const rotateHover = parseInt(element.getAttribute('data-rotate-hover')) || 0;
+        const rotateXHover = parseInt(element.getAttribute('data-rotate-x-hover')) || 0;
+        const rotateYHover = parseInt(element.getAttribute('data-rotate-y-hover')) || 0;
+        const skewXHover = parseInt(element.getAttribute('data-skew-x-hover')) || 0;
+        const skewYHover = parseInt(element.getAttribute('data-skew-y-hover')) || 0;
+        const startXHover = parseInt(element.getAttribute('data-start-x-hover')) || 0;
+        const startYHover = parseInt(element.getAttribute('data-start-y-hover')) || 0;
+        const scaleTypeHover = element.getAttribute('data-scale-custom-effect-hover');
+        const durationHover = element.getAttribute('data-duration-hover');
+        const easingHover = element.getAttribute('data-easing-hover');
+        const heightFrom = element.getAttribute('data-height-from');
+        const heightTo = element.getAttribute('data-height-to');
+
+        // Imposta l'opacità iniziale a 0
+        //element.style.opacity = 0;
+
+        const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_1__.getAnimationProps)({
+          duration,
+          delay: delayIn,
+          endDelay: delayInEnd,
+          easing: easingIn,
+          loop: loopIn,
+          direction: directionIn,
+          opacityInFrom,
+          opacityInTo,
+          startXFrom,
+          startXTo,
+          startYFrom,
+          startYTo,
+          stagger,
+          textSplitEffect,
+          directionBlock,
+          colorBlockEffectIn,
+          rotateInFrom,
+          rotateInTo,
+          rotateInXFrom,
+          rotateInXTo,
+          rotateInYFrom,
+          rotateInYTo,
+          scaleFrom,
+          scaleTo,
+          skewXFrom,
+          skewXTo,
+          skewYFrom,
+          skewYTo,
+          scaleType,
+          effectHover,
+          textColor,
+          textColorHover,
+          backgroundColorImage,
+          backgroundColorImageHover,
+          scaleHover,
+          opacityHover,
+          filterHover,
+          rotateHover,
+          rotateXHover,
+          rotateYHover,
+          skewXHover,
+          skewYHover,
+          startXHover,
+          startYHover,
+          scaleTypeHover,
+          durationHover,
+          easingHover,
+          heightFrom,
+          heightTo
+        });
+        setTimeout(() => {
+          if (_animate__WEBPACK_IMPORTED_MODULE_1__.animationsIn[effectIn]) {
+            _animate__WEBPACK_IMPORTED_MODULE_1__.animationsIn[effectIn](element, animationProps);
+          }
+        }, delayIn);
+      }
     });
-    setTimeout(() => {
-      if (_animate__WEBPACK_IMPORTED_MODULE_1__.animationsIn[effectIn]) {
-        _animate__WEBPACK_IMPORTED_MODULE_1__.animationsIn[effectIn](element, animationProps);
-      }
-    }, delayIn);
-
-    // Chiamare l'animazione di uscita dopo un certo tempo (es. 3000ms)
-    setTimeout(() => {
-      if (_animate__WEBPACK_IMPORTED_MODULE_1__.animationsOut[effectOut]) {
-        _animate__WEBPACK_IMPORTED_MODULE_1__.animationsOut[effectOut](element, animationProps);
-      }
-    }, duration); // Durata dell'animazione di entrata
   }
 
   // Funzione per osservare i cambiamenti di classe nelle slide
@@ -12625,6 +12888,82 @@ document.addEventListener('DOMContentLoaded', () => {
       attributes: true
     });
   }
+
+  // Aggiungi gli eventi di hover
+  const elements = document.querySelectorAll('.title-slide, .image-first-slide');
+  elements.forEach(element => {
+    element.addEventListener('mouseenter', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
+      durationHover: element.getAttribute('data-duration-hover'),
+      easingHover: element.getAttribute('data-easing-hover'),
+      textColorHover: element.getAttribute('data-text-color-hover'),
+      backgroundColorImageHover: element.getAttribute('data-image-color-hover'),
+      scaleHover: element.getAttribute('data-scale-hover'),
+      effectHover: element.getAttribute('data-effect-hover'),
+      opacityHover: element.getAttribute('data-opacity-hover'),
+      filterHover: element.getAttribute('data-filter-hover'),
+      rotateHover: element.getAttribute('data-rotate-hover'),
+      rotateXHover: element.getAttribute('data-rotate-x-hover'),
+      rotateYHover: element.getAttribute('data-rotate-y-hover'),
+      skewXHover: element.getAttribute('data-skew-x-hover'),
+      skewYHover: element.getAttribute('data-skew-y-hover'),
+      startXHover: element.getAttribute('data-start-x-hover'),
+      startYHover: element.getAttribute('data-start-y-hover'),
+      scaleTypeHover: element.getAttribute('data-scale-custom-effect-hover')
+    }));
+    element.addEventListener('mouseleave', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
+      durationHover: element.getAttribute('data-duration-hover'),
+      easingHover: element.getAttribute('data-easing-hover'),
+      textColor: element.getAttribute('data-text-color'),
+      backgroundColorImage: element.getAttribute('data-image-color')
+    }));
+  });
+
+  /*
+  // Animazione del percorso SVG con anime.js
+  // Seleziona gli elementi <path> nell'SVG
+  const paths = document.querySelectorAll('svg path');
+  
+  paths.forEach(path => {
+      const length = path.getTotalLength(); // Ottieni la lunghezza del path
+  
+      // Imposta il dasharray e il dashoffset
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+  
+      anime({
+          targets: path,
+          strokeDashoffset: [length, 0], // Disegna il path da 0 a lunghezza
+          easing: 'easeInOutSine',
+          duration: 2000,
+          loop: true,
+          direction: 'alternate'
+      });
+  });
+  
+  
+  lottie.loadAnimation({
+    container: document.getElementById('lottie'), // Contenitore dell'animazione
+    renderer: 'svg', // Usare SVG come renderer
+    loop: true, // Ciclo continuo
+    autoplay: true, // Avvia automaticamente
+    animationData: animationData, 
+  });
+  
+  // Utilizza Anime.js per animare il contenitore
+  anime({
+    targets: '#lottie',
+    opacity: [0, 1],
+    scale: [0.5, 1],
+    duration: 1000,
+    loop:true,
+    direction: 'alternate',
+    easing: 'easeInOutQuad',
+    complete: () => {
+        // Eventuale codice da eseguire al termine dell'animazione
+    }
+  });
+  
+  */
 
   // Applica l'osservatore su ogni elemento Swiper
   swiperElements.forEach(swiper => {
@@ -12655,7 +12994,7 @@ document.addEventListener('DOMContentLoaded', () => {
         direction: swiperConfig.directionSlider,
         effect: swiperConfig.effect,
         autoplay: autoplayConfig,
-        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Keyboard, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCube, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectFlip, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCards, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Mousewheel, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Parallax],
+        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Keyboard, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.EffectCube, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.EffectFlip, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.EffectCards, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Mousewheel],
         pagination: {
           enabled: swiperConfig.paginationEnable,
           hideOnClick: swiperConfig.hidePagination,
@@ -12746,7 +13085,6 @@ document.addEventListener('DOMContentLoaded', () => {
           onlyInViewport: swiperConfig.viewPortKeyboard,
           pageUpDown: swiperConfig.upKeyboard
         },
-        parallax: swiperConfig.parallax,
         breakpoints: {
           640: {
             slidesPerView: swiperConfig.perViewSliderMobile,
@@ -12788,20 +13126,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Forza l'animazione per la slide iniziale
+      /*
+      // Forza l'animazione per la slide iniziale ( quest onon dovrebbe sefriver, alla fine toglierlo)
       setTimeout(() => {
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-slide'), 'data-animation');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .image-first-slide'), 'data-animation-image');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .img-inner'), 'data-animation-image-inner');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .div-slide'), 'data-animation-div');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-div.letter'), 'data-animation-title-div');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider'), 'data-animation-button');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide'), 'data-animation-button');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider-inner'), 'data-animation-button-inner');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide-inner'), 'data-animation-button-inner');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon'), 'data-animation-icon');
-        handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon-inner'), 'data-animation-icon-inner');
-      }, 100);
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-slide'), 'data-animation');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .image-first-slide'), 'data-animation-image');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .img-inner'), 'data-animation-image-inner');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .div-slide'), 'data-animation-div');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-div.letter'), 'data-animation-title-div');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider'), 'data-animation-button');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide'), 'data-animation-button');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider-inner'), 'data-animation-button-inner');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide-inner'), 'data-animation-button-inner');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon'), 'data-animation-icon');
+          handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon-inner'), 'data-animation-icon-inner');
+       }, 100);
+       */
     }
   });
 });

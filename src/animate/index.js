@@ -7,14 +7,14 @@ import {
   rotateIn,
   skewInX,
   BlockFromIn,
+  customEffectIn,
   splitText,
 } from './animationIn';
-import { fadeOut, slideOut } from './animationOut';
 
 // Funzione per ottenere gli attributi comuni delle animazioni
 export const getAnimationProps = (props) => {
     const {
-      duration = 3000,
+      duration = 1000,
       delayIn = 0,
       endDelay = 0,
       easing = 'easeInQuad',
@@ -28,7 +28,7 @@ export const getAnimationProps = (props) => {
       scaleFrom: scaleFrom,
       scaleTo: scaleTo,
       stagger,
-      textSplitEffect = "getAnimationEffectSplit",
+      textSplitEffect = "translateSplit",
       opacityInFrom : opacityInFrom,
       opacityInTo : opacityInTo,
       rotateInFrom: rotateInFrom,
@@ -45,6 +45,7 @@ export const getAnimationProps = (props) => {
       colorBlockEffectIn: colorBlockEffectIn,
       filterInFrom: filterInFrom,
       filterInTo: filterInTo,
+      scaleType: scaleType,
       
     } = props;
 
@@ -83,6 +84,7 @@ export const getAnimationProps = (props) => {
       colorBlockEffectIn,
       filterInFrom,
       filterInTo,
+      scaleType,
     };
   };
 
@@ -95,12 +97,8 @@ const animationsIn = {
   rotateIn,
   skewInX,
   BlockFromIn,
-  splitText
+  customEffectIn,
+  splitText,
 };
 
-const animationsOut = {
-  fadeOut,
-  slideOut,
-};
-
-export { animationsIn, animationsOut };
+export { animationsIn };

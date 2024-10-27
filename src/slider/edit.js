@@ -17,7 +17,6 @@ import {
   FreeMode,
   Keyboard,
   Mousewheel,
-  Parallax,
 } from "swiper/modules";
 import "./editor.scss";
 import "../components/editor.scss";
@@ -28,7 +27,7 @@ import { useState } from "@wordpress/element";
 import SliderControlsNavigation from "../components/SliderControlsNavigation";
 import SliderControlsOptions from "../components/SliderControlsOptions";
 import NavigationButtons from "../components/NavigationButtons";
-import ImageComponent from "../components/ImageComponent";
+import ImageRender from "../components/image/ImageRender";
 import TextRender from "../components/text/TextRender";
 import DivComponent from "../components/divComponent";
 import SlideControls from "../components/slideControls";
@@ -44,8 +43,6 @@ import GamepadIcon from '@mui/icons-material/Gamepad';
 import LayersIcon from '@mui/icons-material/Layers';
 import ArticleIcon from '@mui/icons-material/Article';
 
-
-import apiFetch from '@wordpress/api-fetch';
 
 export default function Edit({ attributes, setAttributes, slide}) {
   const {
@@ -169,7 +166,6 @@ export default function Edit({ attributes, setAttributes, slide}) {
     autoplayProgress,
     autoplayProgressColor,
     autoplayProgressPosition,
-    parallax,
     overflow,
     backgroundBorderColor,
     backgroundBorderSize,
@@ -391,7 +387,7 @@ export default function Edit({ attributes, setAttributes, slide}) {
   }, []);
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${parallax}-${backgroundColor}-${JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${backgroundColor}-${JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)}`;
   // Nessun movimento della slider
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
@@ -677,11 +673,30 @@ export default function Edit({ attributes, setAttributes, slide}) {
     flexWrap: layoutWrapPost,
   };
 
-
+  // Animazioni 
+  // All
   const playAnimations = [];
-
   const handlePlayAll = () => {
     playAnimations.forEach(playAnimation => {
+      if (playAnimation) {
+        playAnimation();
+      }
+    });
+  };
+
+  // Text
+  const playAnimationText = [];
+  const handlePlayText = () => {
+    playAnimationText.forEach(playAnimation => {
+      if (playAnimation) {
+        playAnimation();
+      }
+    });
+  };
+  // Image
+  const playAnimationImg = [];
+  const handlePlayImage = () => {
+    playAnimationImg.forEach(playAnimation => {
       if (playAnimation) {
         playAnimation();
       }
@@ -763,13 +778,16 @@ export default function Edit({ attributes, setAttributes, slide}) {
                   setAttributes={setAttributes}
                   slides={slides}
                   swiperRef={swiperRef}
-                  parallax={parallax}
                   slide={slide}
                   selectedDevice={selectedDevice}
                   onDeviceChange={handleDeviceChange}
                   setSelectedIcon={setSelectedIcon}
                   handlePlayAll={handlePlayAll} 
+                  handlePlayImage={handlePlayImage}
+                  handlePlayText={handlePlayText}
                 />
+                   <button onClick={() => handlePlayAll()}>Play All</button>
+     
               </div>
               )}
                 {/*TAB 5*/}
@@ -826,7 +844,6 @@ export default function Edit({ attributes, setAttributes, slide}) {
             FreeMode,
             Keyboard,
             Mousewheel,
-            Parallax,
           ]}
           navigation={navigationConfig}
           pagination={{
@@ -922,7 +939,6 @@ export default function Edit({ attributes, setAttributes, slide}) {
             momentumRatio: momentumRatioFreeMode,
             momentumVelocityRatio: momentumVelocityRatioFreeMode,
           }}
-          parallax={parallax}
           breakpoints={{
             640: {
               slidesPerView: perViewSliderMobile,
@@ -1139,7 +1155,10 @@ export default function Edit({ attributes, setAttributes, slide}) {
                               <TextRender
                                 element={element}
                                 index={index}
-                                onPlay={playAnimation => playAnimations.push(playAnimation)}
+                                onPlay={playAnimation => {
+                                  playAnimations.push(playAnimation);
+                                  playAnimationText.push(playAnimation);
+                                }}
                               />
                             </DraggableTest>
                           ) : (
@@ -1147,7 +1166,10 @@ export default function Edit({ attributes, setAttributes, slide}) {
                               key={index}
                               element={element}
                               index={index}
-                              onPlay={playAnimation => playAnimations.push(playAnimation)}
+                              onPlay={playAnimation => {
+                                playAnimations.push(playAnimation);
+                                playAnimationText.push(playAnimation);
+                              }}
                             />
                           );
                         case "image":
@@ -1160,16 +1182,24 @@ export default function Edit({ attributes, setAttributes, slide}) {
                               activeDevice={activeDevice}
                               style={{zIndex: element.zIndexImage}}
                             >
-                              <ImageComponent
+                              <ImageRender
                                 element={element}
                                 index={index}
+                                onPlay={playAnimation => {
+                                  playAnimations.push(playAnimation);
+                                  playAnimationImg.push(playAnimation);
+                                }}
                               />
                             </DraggableTest>
                           ) : (
-                            <ImageComponent
+                            <ImageRender
                               key={index}
                               element={element}
                               index={index}
+                              onPlay={playAnimation => {
+                                playAnimations.push(playAnimation);
+                                playAnimationImg.push(playAnimation);
+                              }}
                             />
                           );
                        

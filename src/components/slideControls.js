@@ -19,7 +19,7 @@ import "./editor.scss";
 import "../slider/editor.scss";
 import SectionSelectorSlide from "./sectionSelectorSlide";
 import TextEdit from "./text/TextEdit";
-import ImageControls from "./imageControls";
+import ImageEdit from "./image/ImageEdit";
 import DivControls from "./divControls";
 import ColorOptionsPanel from "./colorPanel";
 import ColorOptionsPanelGradient from "./colorPanelGradient";
@@ -42,13 +42,13 @@ const SlideControls = ({
   elementIndex,
   slides,
   setAttributes,
-  parallax,
   attributes,
   swiperRef,
   selectedDevice,
   onDeviceChange,
   setSelectedIcon,
-  handlePlayAll
+  handlePlayImage,
+  handlePlayText
   
 }) => {
   const {
@@ -273,31 +273,15 @@ const SlideControls = ({
       id: slides.length + 1,
       elements: [], // Inizializza elements come un array vuoto
       layout: "vertical",
-      gapItems: 5,
       position: "center-center",
       backgroundType: "color",
       backgroundColor: backgroundColorSlideDefault,
-      backgroundBorderColor: "#000000",
-      backgroundBorderSize: 0,
-      backgroundBorderRadius: 0,
-      backgroundVerticalPadding: 0,
-      backgroundHorizontalPadding: 0,
-      borderStyleSlide: "none",
-      enableContentWidth: true,
-      contentWidth:900,
-      layoutWrap: "wrap",
       developerMode: false,
-      filter: "none",
-      colorOneEffect: "rgba(243, 106, 188, 0.5)",
-      colorTwoEffect: "rgba(243, 106, 188, 0)",
-      colorThreeEffect: "rgba(243, 106, 188, 0.7)",
       layoutAlignItems: "center",
       layoutAlignResponsive: "center",
       layoutDisplay: "flex",
-      effectRadialColorOne: "rgba(243, 106, 188, 0.5)",
-      effectRadialColorTwo: "rgba(243, 106, 188, 0)",
-      rangeEffectRadial: 5,
-      enableRadialEffect: false,
+      borderStyleSlide: "none",
+      filter: "none",
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -600,6 +584,19 @@ const SlideControls = ({
   };
 
   // Add Text
+  const defaultTitleAttributes = {
+    type: "title",
+    desktop: { x: 0, y: 0 },
+    tablet: { x: 0, y: 0 },
+    mobile: { x: 0, y: 0 },
+    text: __("Text Slide", "cocoblocks"),
+    fontSize: 22,
+    textColor: textColorDefault,
+    textLink: "none",
+    effectIn: "none",
+    effectHover: "none",
+  };
+  
   const addSlideTitle = (slideId) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
@@ -607,154 +604,7 @@ const SlideControls = ({
             ...slide,
             elements: [
               ...(slide.elements || []),
-              {
-                type: "title",
-                desktop: { x: 0, y: 0 },
-                tablet: { x: 0, y: 0 },
-                mobile: { x: 0, y: 0 },
-                text: __("Text Slide", "cocoblocks"),
-                textAlign: "center",
-                fontStyle: {
-                  italic: false,
-                  underline: false,
-                  bold: false,
-                },
-                fontWeight: 400,
-                letterSpacing: 0,
-                widthTitle: "auto",
-                widthCustomTitle: 100,
-                fontSize: 22,
-                fontSizeTablet: 16,
-                fontSizeMobile: 16,
-                lineHeight: 1.5,
-                textColor: textColorDefault,
-                marginTitle: {
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  left: 0,
-                },
-                paddingTitle: {
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  left: 0,
-                },
-                borderStyle: "none",
-                fontFamily: "Arial",
-                parallaxTitle: 0,
-                parallaxTitleY: 0,
-                parallaxTitleScale: 1,
-                parallaxTitleOpacity: 1,
-                parallaxTitleDuration: 100,
-                elementTitle: "h3",
-                opacity: 1,
-                rotate: 0,
-                animation: "none",
-                width: "auto",
-                widthCustomTitle: 100,
-                backgroundBorderRadius: 0,
-                backgroundBorderSize: 0,
-                backgroundBorderSizeHover: 0,
-                backgroundBorderColor: "",
-                textWriteMode: "initial",
-                textOrientation: "initial",
-                durationEffect: 1,
-                delayEffect: 0,
-                durationEffectOdd: 1,
-                durationEffectEven: 1,
-                speedEffect: 1,
-                pauseEffect: 0,
-                animationCount: 1,
-                widthCursor: 2,
-                animationCursor: "none",
-                colorCursor: "#000000",
-                gradinetColorOne: "#000000",
-                gradinetColorTwo: "#000000",
-                gradinetColorThree: "#000000",
-                gradinetColorFour: "#000000",
-                decoration: "none",
-                underlineColor: "#000000",
-                underlinePadding: 0,
-                underlineVertical: 0,
-                underlineHorizontal: 0,
-                underlineWidth: 1,
-                underlineHeight: 1,
-                underlineAnimation: "none",
-                underlineAnimationFrom: 0,
-                underlineAnimationTo: 0,
-                underlineFromSizeNew: 0,
-                underlineToSizeNew: 0,
-                underlineAnimationTransition: 0,
-                textLink: "none",
-                linkUrl: "",
-                linkTarget: "_self",
-                linkRel: "",
-                scrollToId: "",
-                enableDesktopTitle: true,
-                enableTabletTitle: true,
-                enableMobileTitle: true,
-                textColorHover: textColorDefault,
-                borderStyleHover: "none",
-                backgroundBorderColorHover: "",
-                backgoroundBorderSizeHover: 0,
-                opacityHover: 1,
-                rotateHover: 0,
-                animationHover: "none",
-                durationEffectHover: 1,
-                effectHoverColorHover: textColorDefault,
-                translateEffectHover: 0,
-                colorShadow: "",
-                boxShadowX: 0,
-                boxShadowY: 0,
-                boxShadowBlur: 0,
-                boxShadowSpread: 0,
-                blendMode: "normal",
-                interation: "forwards",
-                zIndexTitle: 1,
-                delayHide:false,
-                delaySeconds:2,
-                delayTransition: 0.5,
-                effectIn: "none",
-                effectOut: "none",
-                opacityInFrom: 0,
-                opacityInTo: 1,
-                filterInFrom: 0,
-                filterInTo: 0,
-                startXFrom: 0,
-                startXTo: 0,
-                startYFrom: 0,
-                startYTo: 0,
-                scaleFrom: 0,
-                scaleTo: 1,
-                rotateInFrom: 0,
-                rotateInTo: 0,
-                rotateInXFrom: 0,
-                rotateInXTo: 0,
-                rotateInYFrom: 0,
-                rotateInYTo: 0,
-                skewXFrom: 0,
-                skewXTo: 0,
-                skewYFrom: 0,
-                skewYTo: 0,
-                directionBlock:"left",
-                colorBlockEffectIn: "#000000",
-                duration:800,
-                delayIn:0,
-                endDelay:0,
-                easing:"linear",
-                direction:"normal",
-                loop: "1",
-                stagger: 100,
-                textSplitEffect:"uno",
-
-
-
-
-
-
-
-              },
+              { ...defaultTitleAttributes },
             ],
           }
         : slide
@@ -779,80 +629,20 @@ const SlideControls = ({
                 alt: "",
                 fit: "cover",
                 widthImage: "fixed",
-                customWidthImage: false,
                 widthImageContent: "auto",
                 customWidthImagePx: 200,
-                heightImage: "fixed",
-                customHeightImage: false,
-                customHeightImagePx: 200,
-                backgroundBorderColorImage: "",
-                backgroundBorderSizeImage: 0,
-                backgroundBorderRadiusImage: 0,
-                backgroundColorImage: "",
-                paddingImage: 0,
-                borderStyleImage: "none",
-                backgroundBorderColorImage: "",
-                backgroundBorderSizeImage: 0,
-                backgroundBorderSizeImageHover: 0,
-                backgroundBorderRadiusImage: 0,
-                rotateImage: 0,
-                opacityImage: 1,
-                parallaxImage: 0,
-                parallaxImageY: 0,
-                parallaxImageScale: 1,
-                parallaxImageOpacity: 1,
-                marginImage: {
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  left: 0,
-                },
-                delayEffectImage: 0,
+                heightImage: "auto",
                 blobMask: false,
-                animationImage: "none",
-                durationEffectImage: 1,
-                animationImageMoving: "none",
-                durationEffectImageMoving: 1,
-                translateEffectImageMoving: 0,
-                spikeMask: 0,
-                spikeLeftWidth: 0,
-                spikeMaskRight: "none",
-                spikeRightWidth: 0,
                 imageFilter: "none",
                 imageLink: "none",
-                linkUrlImage: "",
-                linkTargetImage: "_self",
-                linkRelImage: "",
-                scrollToIdImage: "",
                 enableDesktopImage: true,
                 enableTabletImage: true,
                 enableMobileImage: true,
-                imageColorHover: "",
-                borderStyleHoverImage: "none",
-                backgroundBorderColorHoverImage: "",
-                backgoroundBorderSizeHoverImage: 0,
-                opacityHoverImage: 1,
-                rotateHoverImage: 0,
-                durationEffectImageMovingHover: 1,
-                animationHoverImage: "none",
-                durationEffectHoverImage: 1,
-                effectHoverColorHoverImage: "",
-                translateEffectHoverImage: 0,
-                colorShadowImage: "",
-                boxShadowXImage: 0,
-                boxShadowYImage: 0,
-                boxShadowBlurImage: 0,
-                boxShadowSpreadImage: 0,
-                parallaxImage: 0,
-                parallaxImageY: 0,
-                parallaxImageScale: 1,
-                parallaxImageOpacity: 1,
-                parallaxImageDuration: 100,
-                interationImage: "forwards",
-                zIndexImage: 1,
-                delayHide:false,
-                delaySeconds:2,
-                delayTransition: 0.5,
+                borderStyleImage: "none",
+                spikeMask: 'none',
+                spikeMaskRight: 'none',
+                effectIn: "none",
+                effectHover: "none",
               },
             ],
           }
@@ -1815,7 +1605,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                                     {__("Radial Effect", "cocoblocks")}
                                   </>
                                 }
-                                checked={slide.enableRadialEffect}
+                                checked={slide.enableRadialEffect || false}
                                 onChange={(value) =>
                                   updateEnableRadialEffect(slide.id, value)
                                 }
@@ -1875,7 +1665,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                                   {__("Size", "cocoblocks")}
                                 </>
                               }
-                              value={slide.rangeEffectRadial}
+                              value={slide.rangeEffectRadial||1}
                               onChange={(value) =>
                                 updateSlideRangeEffectRadial(slide.id, value)
                               }
@@ -2399,7 +2189,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                         {__("Gap between items", "cocoblocks")}
                       </>
                     }
-                    value={slide.gapItems}
+                    value={slide.gapItems || 0}
                     onChange={(newGapItems) =>
                       updateSlideGapItems(slide.id, newGapItems)
                     }
@@ -2426,7 +2216,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                       {__("Use content width", "cocoblocks")}
                     </>
                   }
-                  checked={slide.enableContentWidth}
+                  checked={slide.enableContentWidth || false}
                   onChange={(value) =>  updateSlideEnableContentWidth(slide.id, value)
 
                   }
@@ -2460,7 +2250,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                         {__("Content width", "cocoblocks")}
                       </>
                     }
-                    value={slide.contentWidth}
+                    value={slide.contentWidth || 900}
                     onChange={(value) =>
                       updateSlideContentWidth(slide.id, value)
                     }
@@ -2540,7 +2330,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                         {__("Flex wrap", "cocoblocks")}
                       </>
                     }
-                    value={slide.layoutWrap}
+                    value={slide.layoutWrap || "wrap"}
                     options={[
                       {
                         label: __("Wrap", "slider"),
@@ -2590,7 +2380,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                         {__("Content vertical padding", "cocoblocks")}
                       </>
                     }
-                    value={slide.backgroundVerticalPadding}
+                    value={slide.backgroundVerticalPadding || 0}
                     onChange={(newVerticalPadding) =>
                       updateSlideBackgroundVerticalPadding(
                         slide.id,
@@ -2622,7 +2412,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                         {__("Content horizontal padding", "cocoblocks")}
                       </>
                     }
-                    value={slide.backgroundHorizontalPadding}
+                    value={slide.backgroundHorizontalPadding || 0}
                     onChange={(newHorizontalPadding) =>
                       updateSlideBackgroundHorizontalPadding(
                         slide.id,
@@ -2696,7 +2486,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                         {__("Border style", "cocoblocks")}
                       </>
                     }
-                    value={slide.borderStyleSlide}
+                    value={slide.borderStyleSlide || "none"}
                     options={[
                       {
                         label: __("None", "cocoblocks"),
@@ -2766,7 +2556,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                             {__("Border width", "cocoblocks")}
                           </>
                         }
-                        value={slide.backgroundBorderSize}
+                        value={slide.backgroundBorderSize || 0}
                         onChange={(newSize) =>
                           updateSlideBackgroundBorderSize(slide.id, newSize)
                         }
@@ -2792,7 +2582,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                             {__("Border radius", "cocoblocks")}
                           </>
                         }
-                        value={slide.backgroundBorderRadius}
+                        value={slide.backgroundBorderRadius || 0}
                         onChange={(newRadius) =>
                           updateSlideBackgroundBorderRadius(slide.id, newRadius)
                         }
@@ -2831,7 +2621,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                       {__("Bg Filter", "cocoblocks")}
                     </>
                   }
-                  value={slide.filter}
+                  value={slide.filter || 'none'}
                   onChange={(value) =>
                     updateSlideFilter(slide.id, value)
                   }
@@ -3054,7 +2844,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                       handleMobileClick={handleMobileClick}
                       showOtherButtons={showOtherButtons}
                       attributes={attributes}
-                      onAnimatedText={handlePlayAll}
+                      onAnimatedText={handlePlayText}
                     />
                   </>
                 )}
@@ -3080,7 +2870,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                   </>
                 )}
                 {element.type === "image" && (
-                  <ImageControls
+                  <ImageEdit
                     slide={slide}
                     slides={slides}
                     element={element}
@@ -3088,8 +2878,8 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                     setAttributes={setAttributes}
                     setActiveSectionImage={setActiveSectionImage}
                     activeSectionImage={activeSectionImage}
-                    parallax={parallax}
                     attributes={attributes}
+                    onAnimatedImage={handlePlayImage}
                   />
                 )}
                  {element.type === "button" && (

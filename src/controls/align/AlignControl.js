@@ -45,7 +45,7 @@ const CustomAlignControl = ({
         {...restProps}
       >
         <div className='postion-slide__label'>
-          <h2>{label || __('Text align', 'cocoblocks')}</h2>
+          <h2>{label || __('Align', 'cocoblocks')}</h2>
           <Icon icon={selectedIcon || "editor-alignleft"} style={{ right: '-50px' }} />
           <span className="ico-align-content dashicons dashicons-arrow-down-alt2"></span>
         </div>

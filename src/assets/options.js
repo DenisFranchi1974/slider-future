@@ -6,37 +6,42 @@ import { __ } from '@wordpress/i18n';
 export const selectOptionsEffectIn = [
   { value: "none", label: __("None", "cocoblocks") },
   { value: "fadeIn", label: __("Fade", "cocoblocks") },
-{ value: "translateXYIn", label: __("Translate", "cocoblocks") },
+  { value: "translateXYIn", label: __("Translate", "cocoblocks") },
   { value: "scaleIn", label: __("Scale", "cocoblocks") },
   { value: "scaleInX", label: __("Scale X", "cocoblocks") },
   { value: "scaleInY", label: __("Scale Y", "cocoblocks") },
   { value: "rotateIn", label: __("Rotate", "cocoblocks") },
   {value: "skewInX", label: __("Skew", "cocoblocks") },
   { value: "BlockFromIn", label: __("Block", "cocoblocks") },
+  { value: "customEffectIn", label: __("Custom", "cocoblocks") },
   {value: "splitText", label: __("Split Text", "cocoblocks") },
+];
 
+// Opzioni per il controllo degli effetti In image
+export const selectOptionsEffectInImage = [
+  { value: "none", label: __("None", "cocoblocks") },
+  { value: "fadeIn", label: __("Fade", "cocoblocks") },
+  { value: "translateXYIn", label: __("Translate", "cocoblocks") },
+  { value: "scaleIn", label: __("Scale", "cocoblocks") },
+  { value: "scaleInX", label: __("Scale X", "cocoblocks") },
+  { value: "scaleInY", label: __("Scale Y", "cocoblocks") },
+  { value: "rotateIn", label: __("Rotate", "cocoblocks") },
+  {value: "skewInX", label: __("Skew", "cocoblocks") },
+  { value: "customEffectIn", label: __("Custom", "cocoblocks") },
 ];
   
-  // Opzioni per il controllo degli effetti Out
-  export const selectOptionsEffectOut = [
-    { value: "none", label: __("None", "cocoblocks") },
-    { value: "fadeOut", label: __("Fade Out", "cocoblocks") },
-    { value: "slideOutLeft", label: __("Slide Out Left", "cocoblocks") },
-    { value: "slideOutRight", label: __("Slide Out Right", "cocoblocks") },
-    { value: "slideOutUp", label: __("Slide Out Up", "cocoblocks") },
-    { value: "slideOutDown", label: __("Slide Out Down", "cocoblocks") },
-    { value: "scaleOut", label: __("Scale Out", "cocoblocks") },
-    { value: "bounceOut", label: __("Bounce Out", "cocoblocks") },
-    { value: "flipOutX", label: __("Flip Out X", "cocoblocks") },
-    { value: "flipOutY", label: __("Flip Out Y", "cocoblocks") },
-    { value: "zoomOut", label: __("Zoom Out", "cocoblocks") },
-    { value: "rollOut", label: __("Roll Out", "cocoblocks") },
-    { value: "rotateOut", label: __("Rotate Out", "cocoblocks") },
-    { value: "lightSpeedOut", label: __("Light Speed Out", "cocoblocks") },
-    { value: "hingeOut", label: __("Hinge Out", "cocoblocks") },
-    { value: "backOut", label: __("Back Out", "cocoblocks") },
-    { value: "explodeOut", label: __("Explode Out", "cocoblocks") },
-  ];
+// Opzioni effetti hover
+export const selectOptionsEffectHover = [
+  { value: "none", label: __("None", "cocoblocks") },
+  { value: "opacityHover", label: __("Fade", "cocoblocks") },
+  { value: "translateHover", label: __("Translate", "cocoblocks") },
+  { value: "scaleHover", label: __("Scale", "cocoblocks") },
+  { value: "scaleXHover", label: __("Scale X", "cocoblocks") },
+  { value: "scaleYHover", label: __("Scale Y", "cocoblocks") },
+  { value: "rotateHover", label: __("Rotate", "cocoblocks") },
+  {value: "skewHover", label: __("Skew", "cocoblocks") },
+  { value: "customHover", label: __("Custom", "cocoblocks") },
+];
   
   // Opzioni per il controllo Ease 
 export const selectOptionsEase = [
@@ -96,17 +101,29 @@ export const selectOptionsDirectionBlock = [
 
 ////////////////////////////
 
+// Opzioni per il tipo di scala
+
+export const selectOptionsScaleIn = [
+  { value: "scale", label: __("Scale", "cocoblocks") },
+  { value: "scaleX", label: __("Scale X", "cocoblocks") },
+  { value: "scaleY", label: __("Scale Y", "cocoblocks") },
+];
+
+////////////////////////////
+
 // Opzioni Split text
 
-export const selectOptionsEffectSplit = [
-  { value: 'getAnimationEffectSplit', label: 'uno' },
-  { value: 'getAnimationEffectSplitTwo', label: 'two' },
+export const selectOptionsEffectSplit = [  
+  { value: 'fadeSplit', label: 'Fade' },
+  { value: 'translateSplit', label: 'Translate' },
+  { value: 'scaleSplit', label: 'Scale'},
+  { value: 'scaleXSplit', label: 'Scale X'},
+  { value: 'scaleYSplit', label: 'Scale Y'},
+  { value: 'rotateSplit', label: 'Rotate'},
+  { value: 'skewSplit', label: 'Skew'},
   { value: "explosion", label: __("Explosion", "cocoblocks") },
   { value: "gather", label: __("Gather", "cocoblocks") },
-  { value: "explosionAndGather", label: __("Explosion and Gather", "cocoblocks") },
-
-  {value: 'typewriter', label: 'typewriter'},
-
+  { value: "customSplit", label: __("Custom", "cocoblocks") },  
 ];
 
   ////////////////////////////
@@ -238,7 +255,7 @@ export const fontWeightOptions = [
     {
         label: __("900 Black", "cocoblocks"),
         value: "900",
-    },
+    }, 
 ];
 
   // Larghezza options

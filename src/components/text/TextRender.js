@@ -1,32 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-import { animationsIn, animationsOut} from '../../animate';
-import { getAnimationProps } from '../../animate';
-import { rotateIn } from "../../animate/animationIn";
-import { skeletonClasses } from "@mui/material";
-import { textColor } from "@wordpress/icons";
+import { animationsIn, getAnimationProps} from '../../animate';
+import {handleMouseEnter, handleMouseLeave, animateBar} from '../../animate/animationIn'
 
-
-const TextRender = ({ element, index,   onPlay  }) => {
-
+const TextRender = ({ element, index, onPlay  }) => {
 
   const textRef = useRef(null); // Ref per il contenitore del testo
-  
+  //const barRef = useRef(null); // Ref per il div che vuoi animare
   const [hasPlayed, setHasPlayed] = useState(false); // Stato per tracciare se l'animazione è stata attivata
-
 
   // Funzione per attivare l'animazione
   const playAnimation = () => {
     const effectIn = animationsIn[element.effectIn];
-
+   
     // Converti il valore di loop in un numero
     const loopCount = (typeof element.loop === 'string' && element.loop.toLowerCase() === 'true') 
+    
     ? 5
     : (parseInt(element.loop) >= 1 && parseInt(element.loop) <= 10) 
     ? parseInt(element.loop) 
     : 1; // Imposta un valore di default se non è in un intervallo valido
 
     if (effectIn ) {
-   
      // textRef.current.style.opacity = 0; // Reset
       const animationProps = getAnimationProps({
         duration: element.duration,
@@ -59,14 +53,28 @@ const TextRender = ({ element, index,   onPlay  }) => {
         filterInFrom: element.filterInFrom,
         filterInTo: element.filterInTo,
         colorBlockEffectIn: element.colorBlockEffectIn,
+        scaleType: element.scaleType,
       });
   
-        setTimeout(() => {
-          effectIn(textRef.current, animationProps);
-        }, element.delayIn);
+      setTimeout(() => {
+        // Animazione del testo
+        effectIn(textRef.current, animationProps);
+      
+        // Animazione del bar con valori dinamici
+        {/*if (barRef.current) {
+          animateBar(barRef, {
+            duration: element.barDuration, // Assicurati che questo valore sia definito
+            heightFrom: element.barHeightFrom || '5px', // Altri valori dinamici se necessario
+            heightTo: element.barHeightTo || '15px',
+            easing: element.barEasing || 'easeInQuint', // Esempio di easing dinamico
+            loop: loopCount, // O impostalo su un valore dinamico
+          });
+        }*/}
+      }, element.delayIn);
+      
     }
-    
   };
+
 
   // Questo useEffect ora non avvia più l'animazione automaticamente
   useEffect(() => {
@@ -83,13 +91,13 @@ const TextRender = ({ element, index,   onPlay  }) => {
     }
   }, [hasPlayed]);
 
-  
-
   // Aggiungi un useEffect per osservare i cambiamenti di effectIn ed easing
   useEffect(() => {
     playAnimation();
+    {/*if (barRef.current) {
+      animateBar(barRef); // Chiama animateBar passando barRef
+    }*/}
   }, [element.effectIn, element.easing, element.direction,element.text]);
-
 
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
@@ -98,7 +106,6 @@ const TextRender = ({ element, index,   onPlay  }) => {
     "--font-size-tablet": element.fontSizeTablet + "px", 
     "--font-size-mobile": element.fontSizeMobile + "px",
     color: element.textColor,
-    "--color-hover": element.textColorHover,
     textAlign: element.textAlign,
     letterSpacing: element.letterSpacing + "px",
     fontStyle: element.fontStyle?.fontStyle || "normal", // Valore di default
@@ -111,11 +118,7 @@ const TextRender = ({ element, index,   onPlay  }) => {
     borderWidth: `${element.backgroundBorderSize}px` || 0,
     borderColor: element.backgroundBorderColor || "#000000",
     borderRadius: `${element.backgroundBorderRadius}px` || 0,
-    "--border-color-hover": element.backgroundBorderColorHover || "#000000",
-    "--opacity-hover": element.opacityHover || 1,
     borderStyle: element.borderStyle || "none",
-    "--border-style-hover": element.borderStyleHover || "none",
-    "--border-width-hover": `${element.backgroundBorderSizeHover}px` || 0,
     ...(element.enableTextShadow && {
     textShadow: `${element.textShadowX}px ${element.textShadowY}px ${element.textShadowBlur}px ${element.colorTextShadow}`,
     }),
@@ -138,31 +141,50 @@ const TextRender = ({ element, index,   onPlay  }) => {
   const Tag = element.elementTitle || "h3";
 
   return (
-    <>
     <div
       style={{
         width:
           element.widthTitle === "custom"
             ? `${element.widthCustomTitle}%`
             : element.widthTitle,
-            //opacity:0
       }}
-      className={"content-title-slide"}
-    
+      className={"content-title-slide " + element.hideTitle }
     >
-      
       <Tag
         key={index}
         className={"title-slide"}
         style={stylesTitle}
         data-font-family={element.fontFamily}
         ref={textRef}
+        onMouseEnter={(e) => handleMouseEnter(e, { 
+          durationHover: element.durationHover,
+          textColorHover:element.textColorHover,
+          effectHover:element.effectHover,
+          easingHover:element.easingHover,
+          opacityHover:element.opacityHover,
+          filterHover:element.filterHover,
+          startXHover:element.startXHover,
+          startYHover:element.startYHover,
+          scaleHover:element.scaleHover,
+          rotateHover:element.rotateHover,
+          rotateXHover:element.rotateXHover,
+          rotateYHover:element.rotateYHover,
+          skewXHover:element.skewXHover,
+          skewYHover:element.skewYHover,
+          scaleTypeHover:element.scaleTypeHover,
+        })} // Passa element.duration
+        onMouseLeave={(e) => handleMouseLeave(e, { 
+          durationHover: element.durationHover,
+          textColor:element.textColor,
+          easingHover:element.easingHover,
+
+        })} // Passa element.duration
       >
         {element.text}
       </Tag>
-
+      
+     {/* <div ref={barRef} style={{ width: '100%', height: '0px', backgroundColor: 'black' }}></div>*/}
     </div>
-    </>
   );
 };
 

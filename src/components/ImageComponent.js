@@ -1,8 +1,101 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import { animationsIn, getAnimationProps} from '../animate';
+import {handleMouseEnter, handleMouseLeave, animateBar} from '../animate/animationIn'
 
+const ImageComponent = ({ element, index, onPlay  }) => {
 
-const ImageComponent = ({ element, index }) => {
+  const imageRef = useRef(null); // Ref per il contenitore del testo
+  //const barRef = useRef(null); // Ref per il div che vuoi animare
+  const [hasPlayed, setHasPlayed] = useState(false); // Stato per tracciare se l'animazione è stata attivata
+
+  // Funzione per attivare l'animazione
+  const playAnimation = () => {
+    const effectIn = animationsIn[element.effectIn];
+   
+    // Converti il valore di loop in un numero
+    const loopCount = (typeof element.loop === 'string' && element.loop.toLowerCase() === 'true') 
+    
+    ? 5
+    : (parseInt(element.loop) >= 1 && parseInt(element.loop) <= 10) 
+    ? parseInt(element.loop) 
+    : 1; // Imposta un valore di default se non è in un intervallo valido
+
+    if (effectIn ) {
+     // textRef.current.style.opacity = 0; // Reset
+      const animationProps = getAnimationProps({
+        duration: element.duration,
+        delayIn: element.delayIn, // Passa delayIn come delay
+        endDelay: element.endDelay,
+        easing: element.easing,
+        direction: element.direction,
+        loop: loopCount,
+        startXFrom: element.startXFrom, 
+        startXTo: element.startXTo, 
+        startYFrom: element.startYFrom,
+        startYTo: element.startYTo,
+        stagger: element.stagger,
+        opacityInFrom: element.opacityInFrom,
+        opacityInTo: element.opacityInTo,
+        scaleFrom: element.scaleFrom,
+        scaleTo: element.scaleTo,
+        rotateInFrom: element.rotateInFrom,
+        rotateInTo: element.rotateInTo,
+        rotateInXFrom: element.rotateInXFrom, 
+        rotateInXTo: element.rotateInXTo,
+        rotateInYFrom: element.rotateInYFrom,
+        rotateInYTo: element.rotateInYTo,
+        skewXFrom: element.skewXFrom,
+        skewXTo: element.skewXTo,
+        skewYFrom: element.skewYFrom,
+        skewYTo: element.skewYTo,
+        filterInFrom: element.filterInFrom,
+        filterInTo: element.filterInTo,
+        scaleType: element.scaleType,
+      });
+  
+      setTimeout(() => {
+        // Animazione del testo
+        effectIn(imageRef.current, animationProps);
+      
+        // Animazione del bar con valori dinamici
+        {/*if (barRef.current) {
+          animateBar(barRef, {
+            duration: element.barDuration, // Assicurati che questo valore sia definito
+            heightFrom: element.barHeightFrom || '5px', // Altri valori dinamici se necessario
+            heightTo: element.barHeightTo || '15px',
+            easing: element.barEasing || 'easeInQuint', // Esempio di easing dinamico
+            loop: loopCount, // O impostalo su un valore dinamico
+          });
+        }*/}
+      }, element.delayIn);
+      
+    }
+  };
+
+  // Questo useEffect ora non avvia più l'animazione automaticamente
+  useEffect(() => {
+    // Passa la funzione playAnimation al genitore tramite onPlay
+    if (onPlay) {
+      onPlay(playAnimation); // Questa linea consente al genitore di controllare l'animazione
+    }
+  }, [onPlay]);
+
+  useEffect(() => {
+    // Imposta l'opacità iniziale a 1 solo se l'animazione non è stata avviata
+    if (imageRef.current && !hasPlayed) {
+      imageRef.current.style.opacity = 1;
+    }
+  }, [hasPlayed]);
+
+  // Aggiungi un useEffect per osservare i cambiamenti di effectIn ed easing
+  useEffect(() => {
+    playAnimation();
+    {/*if (barRef.current) {
+      animateBar(barRef); // Chiama animateBar passando barRef
+    }*/}
+  }, [element.effectIn, element.easing, element.direction,element.text]);
+
   const getImageStyle = () => {
     let style = {
       borderStyle: element.borderStyleImage || "none",
@@ -11,30 +104,13 @@ const ImageComponent = ({ element, index }) => {
       borderRadius: element.backgroundBorderRadiusImage + "px",
       padding: element.paddingImage + "px",
       backgroundColor: element.backgroundColorImage,
-      "--box-shadow-x-image": element.boxShadowXImage + "px" || "0",
-      "--box-shadow-y-image": element.boxShadowYImage + "px" || "0",
-      "--box-shadow-blur-image": element.boxShadowBlurImage + "px" || "0",
-      "--box-shadow-color-image": element.colorShadowImage || "#000000",
-      "--box-shadow-spread-image": element.boxShadowSpreadImage + "px" || "0",
+      ...(element.enableBoxShadowImage && {
+        boxShadow: `${element.boxShadowXImage}px ${element.boxShadowYImage}px ${element.boxShadowBlurImage}px ${element.boxShadowSpreadImage}px ${element.colorShadowImage}`,
+      }),
       "--spike-width": element.spikeLeftWidth + "%" || "0",
       "--spike-width-right": element.spikeRightWidth + "%" || "0",
-      "--duration-effect-image": element.durationEffectImage + "s",
-      "--color-hover-image": element.imageColorHover,
-      "--border-width-hover-image": element.backgroundBorderSizeImageHover + "px",
-      "--border-color-hover-image":
-        element.backgroundBorderColorHoverImage || "#000000",
-      "--opacity-hover-image": element.opacityHoverImage || 1,
-      "--border-style-hover-image": element.borderStyleHoverImage || "none",
-      "--transition-hover-image":
-        element.durationEffectHoverImage + "s" || "0.3",
-      "--translate-hover-image":
-        element.translateEffectHoverImage + "px" || "-10",
-      "--color-effect-hover-image":
-        element.effectHoverColorHoverImage || "#000000",
       margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`, // Usa i valori aggi
-      "--interation-image": element.interationImage || "forwards",
       position:"relative",
-      "--delay-effect-image": element.delayEffectImage + "s",
     };
 
     if (element.widthImage === "relative") {
@@ -57,74 +133,49 @@ const ImageComponent = ({ element, index }) => {
     return style;
   }; 
 
-   // Nascondi l'elemento dopo un tot di tempo
-   const bannerRef = useRef(null); // Crea un ref per l'elemento
-   const [hideEnabled, setHideEnabled] = useState(element.delayHide); // Stato per abilitare/disabilitare la funzione
-   const [hideAfter, setHideAfter] = useState(element.delaySeconds); // Tempo in secondi per nascondere
- 
-   useEffect(() => {
-     // Funzione per nascondere l'elemento
-     const hideBanner = () => {
-       if (bannerRef.current) {
-         bannerRef.current.classList.add('hidden'); // Aggiunge la classe 'hidden'
-       }
-     };
- 
-     // Se la funzionalità è abilitata, imposta il timeout
-     if (hideEnabled) {
-       const timeout = setTimeout(hideBanner, hideAfter * 1000); // Nascondi dopo `hideAfter` secondi
-       return () => clearTimeout(timeout); // Pulisci il timeout quando il componente viene smontato o `hideEnabled` cambia
-     } else {
-       // Se disabilitato, rimuovi la classe 'hidden'
-       if (bannerRef.current) {
-         bannerRef.current.classList.remove('hidden');
-       }
-     }
-   }, [hideEnabled, hideAfter]); // Rerun l'effetto quando `hideEnabled` o `hideAfter` cambiano
- 
-   // Forza un aggiornamento del componente quando `textDiv.delayHide` cambia
-   useEffect(() => {
-     setHideEnabled(element.delayHide);
-   }, [element.delayHide]);
-   useEffect(() => {
-     setHideAfter(element.delaySeconds);
-   }, [element.delaySeconds]);
-
-
   return (
     <div
       style={{
         transform: `rotate(${element.rotateImage}deg)`,
         opacity: element.opacityImage,
-        "--duration-effect-moving-image":
-          element.durationEffectImageMoving + "s",
-        "--translate-effect-moving-image":
-          element.translateEffectImageMoving + "px",
-        "--rotate-hover-image": element.rotateHoverImage + "deg" || "0",
-        "--transition-hover-image":
-          element.durationEffectHoverImage + "s" || "0.3",
         width: element.widthImageContent,
-        "--delay-hide-seconds-image": element.delayTransition + "s",
         zIndex: element.zIndexImage,
+        textAlign: element.imageAlign,
       }}
       className={
         "content-img-first " +
-        element.animationImageMoving +
         " " + element.hideImage
       }
-      ref={bannerRef}
     >
       <img
+       ref={imageRef}
+       onMouseEnter={(e) => handleMouseEnter(e, { 
+         durationHover: element.durationHover,
+         backgroundColorImageHover:element.backgroundColorImageHover,
+         effectHover:element.effectHover,
+         easingHover:element.easingHover,
+         opacityHover:element.opacityHover,
+         filterHover:element.filterHover,
+         startXHover:element.startXHover,
+         startYHover:element.startYHover,
+         scaleHover:element.scaleHover,
+         rotateHover:element.rotateHover,
+         rotateXHover:element.rotateXHover,
+         rotateYHover:element.rotateYHover,
+         skewXHover:element.skewXHover,
+         skewYHover:element.skewYHover,
+         scaleTypeHover:element.scaleTypeHover,
+       })} // Passa element.duration
+       onMouseLeave={(e) => handleMouseLeave(e, { 
+         durationHover: element.durationHover,
+         backgroundColorImage:element.backgroundColorImage,
+         easingHover:element.easingHover,
+       })} // Passa element.duration
         key={index}
         src={element.url}
         alt={element.alt}
         style={getImageStyle()}
-        className={`image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight} ${element.animationImage}${element.playStateImage} ${element.imageFilter} ${element.animationHoverImage}`}
-        data-swiper-parallax-x={element.parallaxImage}
-        data-swiper-parallax-y={element.parallaxImageY}
-        data-swiper-parallax-scale={element.parallaxImageScale}
-        data-swiper-parallax-duration={element.parallaxImageDuration}
-        data-swiper-parallax-opacity={element.parallaxImageOpacity}
+        className={`image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight}  ${element.imageFilter} `}
       />
     </div>
   );

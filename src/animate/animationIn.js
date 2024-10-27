@@ -1,9 +1,9 @@
 import anime from 'animejs';
 
 // Funzione per ottenere gli attributi comuni delle animazioni
-const getAnimationProps = (props) => {
+const getAnimationProps = (props, target) => {
   const {
-    duration = 3000,
+    duration = 1000,
     delayIn = 0,
     endDelay = 0,
     easing = 'easeInQuad',
@@ -16,7 +16,7 @@ const getAnimationProps = (props) => {
     scaleFrom: scaleFrom,
     scaleTo: scaleTo,
     stagger,
-    textSplitEffect="getAnimationEffectSplit",
+    textSplitEffect="translateSplit",
     opacityInFrom : opacityInFrom,
     opacityInTo : opacityInTo,
     rotateInFrom: rotateInFrom,
@@ -33,11 +33,37 @@ const getAnimationProps = (props) => {
     colorBlockEffectIn: colorBlockEffectIn,
     filterInFrom: filterInFrom,
     filterInTo: filterInTo,
+    scaleType: scaleType,
+    textColor: textColor,
+    textColorHover: textColorHover,
+    backgroundColorImage: backgroundColorImage,
+    backgroundColorImageHover: backgroundColorImageHover,
+    effectHover: effectHover,
+    opacityHover: opacityHover,
+    filterHover: filterHover,
+    rotateHover: rotateHover,
+    rotateXHover: rotateXHover,
+    rotateYHover: rotateYHover,
+    skewXHover: skewXHover,
+    skewYHover: skewYHover,
+    scaleHover: scaleHover,
+    startXHover: startXHover,
+    startYHover: startYHover,
+    scaleTypeHover: scaleTypeHover,
+    durationHover = 1000,
+    easingHover = 'easeInQuad',
+    heightFrom: heightFrom,
+    heightTo: heightTo,
   
   } = props;
 
     // Converti il valore di loop in un numero
     const loopCount = (typeof loop === 'string' && loop.toLowerCase() === 'true') ? Infinity : Number(loop);
+
+    // Aggiungi la classe per disabilitare gli eventi del mouse
+    if (target) {
+      target.classList.add('no-pointer-events');
+    }
 
   return {
     duration,
@@ -70,11 +96,74 @@ const getAnimationProps = (props) => {
     colorBlockEffectIn,
     filterInFrom,
     filterInTo,
+    scaleType,
+    textColor,
+    textColorHover,
+    backgroundColorImage,
+    backgroundColorImageHover,
+    effectHover,
+    opacityHover,
+    filterHover,
+    rotateHover,
+    rotateXHover,
+    rotateYHover,
+    skewXHover,
+    skewYHover,
+    scaleHover,
+    startXHover,
+    startYHover,
+    scaleTypeHover,
+    durationHover,
+    easingHover,
+    heightFrom,
+    heightTo,
+    complete: function(anim) {
+      // Rimuovi la classe per riabilitare gli eventi del mouse
+      if (target) {
+        target.classList.remove('no-pointer-events');
+      }
+      if (props.complete) {
+        props.complete(anim);
+      }
+    }
   };
 };
 
+
+// In animationIn.js
+export const animateBar = (barRef, props={}) => {
+ 
+  const {
+    duration = 500, // Imposta un valore di default se non è fornito
+    heightFrom =  '10px', // Altri valori dinamici se necessario
+    heightTo =  '25px',
+    easing = 'easeInQuint',
+    loop = true,
+  } = props;
+
+  if (barRef && barRef.current) { // Controlla che barRef e barRef.current siano definiti
+     // Converti il valore di loop in un numero
+  const loopCount = (typeof loop === 'string' && loop.toLowerCase() === 'true') ? Infinity : Number(loop);
+    anime({
+      targets: barRef.current,
+      height: [heightFrom, heightTo], // Usa valori dinamici per l'altezza
+      easing: easing,
+      opacity: 1,
+      duration: duration,
+      direction: 'alternate',
+      loop: loopCount,
+    });
+  } else {
+    console.error('barRef is not defined');
+  }
+};
+
+
+
+
 // Effect Block
 const blockTransition = (element, direction, animationProps = {}) => {
+  
   const block = document.createElement("div");
   block.className = "block-transition";
   const colorBlock = animationProps.colorBlockEffectIn || '#000';
@@ -155,7 +244,7 @@ const blockTransition = (element, direction, animationProps = {}) => {
 };
 
 export const fadeIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const filterInFrom = props.filterInFrom + 'px';
@@ -168,8 +257,11 @@ export const fadeIn = (target, props = {}) => {
   });
 };
 
+ 
+
 export const translateXYIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+
+  const animationProps = getAnimationProps(props, target);
   const startXFrom = props.startXFrom || 0;
   const startXTo = props.startXTo || 0;
   const startYFrom = props.startYFrom || 0;
@@ -189,7 +281,7 @@ export const translateXYIn = (target, props = {}) => {
 };
 
 export const scaleIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const scaleFrom = props.scaleFrom || 0;
@@ -207,7 +299,7 @@ export const scaleIn = (target, props = {}) => {
 };
 
 export const scaleInX= (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const scaleFrom = props.scaleFrom || 0;
@@ -225,7 +317,7 @@ export const scaleInX= (target, props = {}) => {
 };
 
 export const scaleInY= (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const scaleFrom = props.scaleFrom || 0;
@@ -243,7 +335,7 @@ export const scaleInY= (target, props = {}) => {
 };
 
 export const rotateIn= (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const rotateInFrom = props.rotateInFrom;
@@ -265,8 +357,9 @@ export const rotateIn= (target, props = {}) => {
   });
 };
 
+
 export const skewInX= (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const opacityInFrom = props.opacityInFrom || 0;
   const opacityInTo = props.opacityInTo || 1;
   const skewXFrom = props.skewXFrom;
@@ -286,7 +379,7 @@ export const skewInX= (target, props = {}) => {
 };
 
 export const BlockFromIn = (target, props = {}) => {
-  const animationProps = getAnimationProps(props);
+  const animationProps = getAnimationProps(props, target);
   const directionBlock = props.directionBlock || 'left';
   anime({
     targets: target,
@@ -296,106 +389,137 @@ export const BlockFromIn = (target, props = {}) => {
   blockTransition(target, directionBlock, animationProps);
 };
 
+export const customEffectIn = (target, props = {}) => {
+  const animationProps = getAnimationProps(props, target);
+  const startXFrom = props.startXFrom || 0;
+  const startXTo = props.startXTo || 0;
+  const startYFrom = props.startYFrom || 0;
+  const startYTo = props.startYTo || 0;
+  const opacityInFrom = props.opacityInFrom || 0;
+  const opacityInTo = props.opacityInTo || 1;
+  const filterInFrom = props.filterInFrom + 'px';
+  const filterInTo = props.filterInTo + 'px';
+  const scaleFrom = props.scaleFrom || 0;
+  const scaleTo = props.scaleTo || 1;
+  const rotateInFrom = props.rotateInFrom;
+  const rotateInTo = props.rotateInTo;
+  const rotateInXFrom = props.rotateInXFrom;
+  const rotateInXTo = props.rotateInXTo;
+  const rotateInYFrom = props.rotateInYFrom;
+  const rotateInYTo = props.rotateInYTo ;
+  const skewXFrom = props.skewXFrom;
+  const skewXTo = props.skewXTo;
+  const skewYFrom = props.skewYFrom;
+  const skewYTo = props.skewYTo;
+  const scaleType = props.scaleType || 'scale'; // Default to 'scale'
+  const animationTargets = {
+    targets: target,
+    translateX: [startXFrom, startXTo],
+    translateY: [startYFrom, startYTo],
+    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
+    ...animationProps,
+    opacity: [opacityInFrom, opacityInTo],
+    rotate: [rotateInFrom, rotateInTo],
+    rotateX: [rotateInXFrom, rotateInXTo],
+    rotateY: [rotateInYFrom, rotateInYTo],
+    skewX: [skewXFrom, skewXTo],
+    skewY: [skewYFrom, skewYTo],
+  };
+
+  // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
+  if (scaleType === 'scale') {
+    animationTargets.scale = [scaleFrom, scaleTo];
+  } else if (scaleType === 'scaleX') {
+    animationTargets.scaleX = [scaleFrom, scaleTo];
+  } else if (scaleType === 'scaleY') {
+    animationTargets.scaleY = [scaleFrom, scaleTo];
+  }
+
+  anime(animationTargets);
+};
+
 // Definisci gli effetti di animazione
-const getAnimationEffect = (effectName, container) => {
+const getAnimationEffect = (effectName, container,  props = {}) => {
+
+  const animationProps = getAnimationProps(props); // Usa getAnimationProps per ottenere le proprietà comuni
 
   switch (effectName) {
-    case 'getAnimationEffectSplit':
+    case 'fadeSplit':
       return {
-        translateY: [100, 0], // Esempio effetto Uno
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
       };
-      case 'explosion':
+    case 'translateSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+        translateX: [animationProps.startXFrom, animationProps.startXTo],
+        translateY: [animationProps.startYFrom, animationProps.startYTo],
+      };
+    case 'scaleSplit':
+      return {
+        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+        filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+        scale: [animationProps.scaleFrom, animationProps.scaleTo],
+      };
+    case 'scaleXSplit':
+        return {
+          opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+          filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+          scaleX: [animationProps.scaleFrom, animationProps.scaleTo],
+        };
+      case 'scaleYSplit':
+          return {
+            opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+            filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+            scaleY: [animationProps.scaleFrom, animationProps.scaleTo],
+          };
+        case 'rotateSplit':
+            return {
+              opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+              filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+              rotate: [animationProps.rotateInFrom, animationProps.rotateInTo],
+              rotateX: [animationProps.rotateInXFrom, animationProps.rotateInXTo],
+              rotateY: [animationProps.rotateInYFrom, animationProps.rotateInYTo],
+            };
+            case 'skewSplit':
+              return {
+                opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+                filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+                skewX: [animationProps.skewXFrom, animationProps.skewXTo],
+                skewY: [animationProps.skewYFrom, animationProps.skewYTo],
+              };
+    case 'explosion':
         return {
           translateX: () => anime.random(-1000, 1000), // Movimento casuale sull'asse X
           translateY: () => anime.random(-1000, 1000), // Movimento casuale sull'asse Y
           rotate: () => anime.random(-360, 360), // Rotazione casuale
-          scale: [1, 0], // Scala da 1 a 0
-          opacity: [1, 0], // Cambia l'opacità da 1 a 0
+          scale: [animationProps.scaleTo,animationProps.scaleFrom],
+          filter: ['blur('+animationProps.filterInTo+'px)', 'blur('+animationProps.filterInFrom+'px)'],
+          opacity: [animationProps.opacityInTo,animationProps.opacityInFrom],
         };
         case 'gather':
           return {
             translateX: [() => anime.random(-1000, 1000), 0], // Movimento casuale sull'asse X verso il centro
             translateY: [() => anime.random(-1000, 1000), 0], // Movimento casuale sull'asse Y verso il centro
             rotate: [() => anime.random(-360, 360), 0], // Rotazione casuale verso 0
-            scale: [0, 1], // Scala da 0 a 1
-            opacity: [0, 1], // Cambia l'opacità da 0 a 1
+            scale: [animationProps.scaleFrom,animationProps.scaleTo],
+            filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+            opacity: [animationProps.opacityInFrom,animationProps.opacityInTo],
           };
-          case 'explosionAndGather':
+          case 'customSplit':
             return {
-              translateX: [
-                { value: () => anime.random(-1000, 1000), duration: 1000 }, // Esplosione
-                { value: 0, duration: 1000, delay: 500 } // Raccolta con pausa
-              ],
-              translateY: [
-                { value: () => anime.random(-1000, 1000), duration: 1000 }, // Esplosione
-                { value: 0, duration: 1000, delay: 500 } // Raccolta con pausa
-              ],
-              rotate: [
-                { value: () => anime.random(-360, 360), duration: 1000 }, // Esplosione
-                { value: 0, duration: 1000, delay: 500 } // Raccolta con pausa
-              ],
-              scale: [
-                { value: 1, duration: 1000 }, // Esplosione
-                { value: 1, duration: 0 }, // Mantieni la scala durante la transizione
-                { value: 1, duration: 1000, delay: 500 }, // Raccolta
-              ],
-              opacity: [
-                { value: 1, duration: 1000 }, // Esplosione
-                { value: 1, duration: 0 }, // Mantieni l'opacità durante la transizione
-                { value: 1, duration: 1000, delay: 500 }, // Raccolta
-              ],
+              opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
+              filter: ['blur('+animationProps.filterInFrom+'px)', 'blur('+animationProps.filterInTo+'px)'],
+              rotate: [animationProps.rotateInFrom, animationProps.rotateInTo],
+              rotateX: [animationProps.rotateInXFrom, animationProps.rotateInXTo],
+              rotateY: [animationProps.rotateInYFrom, animationProps.rotateInYTo],
+              scale: [animationProps.scaleFrom, animationProps.scaleTo],
+              translateX: [animationProps.startXFrom, animationProps.startXTo],
+              translateY: [animationProps.startYFrom, animationProps.startYTo],
+              skewX: [animationProps.skewXFrom, animationProps.skewXTo],
+              skewY: [animationProps.skewYFrom, animationProps.skewYTo],
             };
-    case 'getAnimationEffectSplitTwo':
-      return {
-        translateX: [100, 0], // Esempio effetto Due
-      };
-      case 'typewriter':
-  return {
-    opacity: [0, 1],
-    duration: 1000, // Durata breve per ogni lettera
-    easing: 'linear',
-    delay: anime.stagger(100), // Ritardo tra le lettere
-    update: function(anim) {
-      const lettersRef = anim.animatables;
-
-      // Trova o crea un unico cursore
-      let cursor = container.querySelector('.cursor');
-      if (!cursor) {
-        cursor = document.createElement('span');
-        cursor.className = 'cursor';
-        cursor.textContent = '|';
-        cursor.style.position = 'absolute';
-        cursor.style.color = '#000'; // Imposta il colore del cursore a nero
-        container.appendChild(cursor);
-
-        // Anima il cursore con anime.js per il lampeggiamento
-        anime({
-          targets: cursor,
-          opacity: [0, 1], // Cambia opacità da 0 a 1
-          easing: 'linear', // Funzione di easing più dolce
-          duration: 1000, // Durata di ogni ciclo di lampeggio
-          loop: true, // Ripeti all'infinito
-          direction: 'alternate' // Alterna tra 0 e 1 per creare l'effetto di lampeggio
-        });
-      }
-
-      // Ottieni la lettera corrente
-      const currentLetterIndex = Math.floor(anim.progress / 100 * lettersRef.length);
-      const currentLetter = lettersRef[currentLetterIndex]?.target;
-
-      if (currentLetter) {
-        cursor.style.left = currentLetter.offsetLeft + currentLetter.offsetWidth + 10 + 'px';
-        cursor.style.top = currentLetter.offsetTop + 'px';
-      }
-    },
-    complete: function() {
-      // Rimuovi il cursore alla fine dell'animazione
-      const cursor = container.querySelector('.cursor');
-      if (cursor) {
-        cursor.remove();
-      }
-    }
-  };
     default:
       return {
         translateY: [100, 0], // Imposta un effetto di default
@@ -464,7 +588,7 @@ const splitTextContent = (text, lettersRef) => {
   letters.forEach(letter => container.appendChild(letter)); // Aggiungi ogni lettera (span) nel container
 
   // Ottieni l'effetto in base alla stringa dal selettore
-  const animationEffect = getAnimationEffect(animationProps.textSplitEffect,container);
+  const animationEffect = getAnimationEffect(animationProps.textSplitEffect,container,props);
 
   // Creare una timeline per l'animazione
   anime.timeline({
@@ -474,13 +598,171 @@ const splitTextContent = (text, lettersRef) => {
   .add({
     targets: lettersRef.current, // Anima tutte le lettere via ref
     //scale: [4, 1], // Scala le lettere da 4 a 1
-    opacity: [0, 1], // Cambia l'opacità da 0 a 1
+   // opacity: [0, 1],
     //rotateX: [360, 0], // Ruota le lettere da
  
     translateZ: 0,
     ...animationEffect, // Applica l'effetto dinamico
-    easing: animationProps.easing, // Applica l'easing
+    easing: animationProps.easing || 'linear', // Applica l'easing
     duration: animationProps.duration, // Durata dell'animazione
     delay: anime.stagger(animationProps.stagger || 200), // Stagger tra le lettere
+  });
+};
+
+// Definisci gli effetti hover
+const hoverEffects = {
+  scaleHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      scale: animationProps.scaleHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  scaleXHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      scaleX: animationProps.scaleHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  scaleYHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      scaleY: animationProps.scaleHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  rotateHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      rotate: animationProps.rotateHover ,
+      rotateX: animationProps.rotateXHover ,
+      rotateY: animationProps.rotateYHover ,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  translateHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      translateX: animationProps.startXHover,
+      translateY: animationProps.startYHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  opacityHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  skewHover: (element, animationProps) => {
+    anime({
+      opacity: animationProps.opacityHover,
+      filter: 'blur('+animationProps.filterHover+'px)',
+      targets: element,
+      skewX:animationProps.skewXHover ,
+      skewY:animationProps.skewYHover,
+      easing: animationProps.easingHover,
+      color: animationProps.textColorHover,
+      backgroundColor: animationProps.backgroundColorImageHover,
+      duration: animationProps.durationHover,
+    });
+  },
+  customHover: (element, animationProps) => {
+    const scaleTypeHover = animationProps.scaleTypeHover || 'scale'; // Default to 'scale'
+  const animationTargetsHover = {
+    opacity: animationProps.opacityHover,
+    filter: 'blur('+animationProps.filterHover+'px)',
+    targets: element,
+    rotate: animationProps.rotateHover ,
+    rotateX: animationProps.rotateXHover,
+    rotateY: animationProps.rotateYHover,
+    translateX: animationProps.startXHover,
+    translateY: animationProps.startYHover,
+    skewX: animationProps.skewXHover,
+    skewY: animationProps.skewYHover0,
+    easing: animationProps.easingHover,
+    duration: animationProps.durationHover,
+    backgroundColor: animationProps.backgroundColorImageHover,
+    color: animationProps.textColorHover,
+  };
+
+  // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
+  if (scaleTypeHover === 'scale') {
+    animationTargetsHover.scale = animationProps.scaleHover;
+  } else if (scaleTypeHover === 'scaleX') {
+    animationTargetsHover.scaleX = animationProps.scaleHover;
+  } else if (scaleTypeHover === 'scaleY') {
+    animationTargetsHover.scaleY = animationProps.scaleHover;
+  }
+
+  anime(animationTargetsHover);
+  },
+};
+
+// Funzione per gestire l'hover all'entrata
+export const handleMouseEnter = (e, props = {}) => {
+  const animationProps = getAnimationProps(props);
+  
+
+  anime.remove(e.target); // Rimuove eventuali animazioni in corso
+
+  if (hoverEffects[animationProps.effectHover]) {
+    hoverEffects[animationProps.effectHover](e.target, animationProps);
+  }
+};
+
+// Funzione per gestire l'hover all'uscita
+export const handleMouseLeave = (e, props = {}) => {
+  const animationProps = getAnimationProps(props);
+  anime.remove(e.target); // Rimuove eventuali animazioni in corso
+  // Ripristina lo stato originale dell'elemento
+  anime({
+    targets: e.target,
+    scale: 1, // Torna alla scala originale
+    scaleX: 1, // Torna alla scala originale
+    scaleY: 1, // Torna alla scala originale
+    rotate: 0, // Torna alla rotazione originale
+    rotateX: 0, // Torna alla rotazione originale
+    rotateY: 0, // Torna alla rotazione originale
+    translateX: 0, // Torna alla posizione originale
+    translateY: 0, // Torna alla posizione originale
+    opacity: 1, // Torna all'opacità originale
+    filter: 'blur(0px)', // Rimuove l'effetto blur
+    skewX: 0, // Torna allo skew originale
+    skewY: 0, // Torna allo skew originale
+    easing: animationProps.easingHover || 'linear',
+    color: animationProps.textColor,
+    backgroundColor: animationProps.backgroundColorImage,
+    duration: animationProps.durationHover,
   });
 };

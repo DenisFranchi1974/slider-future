@@ -1,9 +1,13 @@
 import { Swiper } from 'swiper';
+//import anime from 'animejs';
+//import lottie from 'lottie-web';
+//import animationData from './one.json';
 
-import { animationsIn, animationsOut, getAnimationProps  } from "../animate";
 
-import { Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel, Parallax } from 'swiper/modules';
+import { animationsIn, getAnimationProps, } from "../animate";
+import {handleMouseEnter, handleMouseLeave, animateBar} from '../animate/animationIn'
 
+import { Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Seleziona tutti gli elementi con la classe 'swiper'
@@ -27,9 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Funzione per animare un elemento
-    function animateElement(element) {
+    function animateElement() {
+      const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide');
+      elementsToAnimate.forEach(element => {
+        // Dynamic Bar
+        if (element.classList.contains('dynamic-bar')) {
+          // Estrai gli attributi specifici per la barra
+          const heightFrom = element.getAttribute('data-height-from') || '5px';
+          const heightTo = element.getAttribute('data-height-to') || '15px';
+          const duration = parseInt(element.getAttribute('data-duration')) || 500;
+          const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
+          const loopIn = element.getAttribute('data-loop-in') || 1;
+
+          // Crea l'oggetto props con i parametri estratti
+          const props = {
+              heightFrom,
+              heightTo,
+              duration,
+              easing: easingIn,
+              loop: loopIn,
+             // direction: directionIn,
+          };
+
+          // Passa l'elemento (come riferimento) e i props alla funzione animateBar
+          animateBar({ current: element }, props);
+      } else {
       const effectIn = element.getAttribute('data-effect-in') || "fadeIn";
-      const effectOut = element.getAttribute('data-effect-out') || "none";
       const duration = parseInt(element.getAttribute('data-duration')) || 3000;
       const delayIn = parseInt(element.getAttribute('data-delay-in')) || 0;
       const delayInEnd = parseInt(element.getAttribute('data-delay-in-end')) || 0;
@@ -43,25 +70,46 @@ document.addEventListener('DOMContentLoaded', () => {
       const startYFrom = element.getAttribute('data-start-y-from') || 0;
       const startYTo = element.getAttribute('data-start-y-to') || 0;
       const stagger = parseInt(element.getAttribute('data-stagger')) || 50;
-      const textSplitEffect = element.getAttribute('data-effect-split') || 'getAnimationEffectSplit';
+      const textSplitEffect = element.getAttribute('data-effect-split') || 'translateSplit';
       const directionBlock = element.getAttribute('data-direction-block');
       const colorBlockEffectIn = element.getAttribute('data-color-block') || '#000';
       const rotateInFrom = parseInt(element.getAttribute('data-rotate-in-from')) || 0;
       const rotateInTo = parseInt(element.getAttribute('data-rotate-in-to')) || 0;
-      const rotateInXFrom = parseInt(element.getAttribute('data-rotate-in-x-from')) || 0;
-      const rotateInXTo = parseInt(element.getAttribute('data-rotate-in-x-to')) || 0;
-      const rotateInYFrom = parseInt(element.getAttribute('data-rotate-in-y-from')) || 0;
-      const rotateInYTo = parseInt(element.getAttribute('data-rotate-in-y-to')) || 0;
+      const rotateInXFrom = parseInt(element.getAttribute('data-rotate-x-in-from')) || 0 ;
+      const rotateInXTo = parseInt(element.getAttribute('data-rotate-x-in-to')) || 0;
+      const rotateInYFrom = parseInt(element.getAttribute('data-rotate-y-in-from'))|| 0;
+      const rotateInYTo = parseInt(element.getAttribute('data-rotate-y-in-to')) || 0;
       const scaleFrom = parseInt(element.getAttribute('data-scale-in-from')) || 1;
       const scaleTo = parseInt(element.getAttribute('data-scale-in-to')) || 1;
       const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) || 0;
       const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) || 0;
       const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) || 0;
       const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) || 0;
-
-
+      const scaleType = element.getAttribute('data-scale-custom-effect-in') || 'scale';
+      const textColor = element.getAttribute('data-text-color') || '#000';
+      const backgroundColorImage = element.getAttribute('data-image-color') || '#000';
+      const backgroundColorImageHover = element.getAttribute('data-image-color-hover') || '#000';
+      const textColorHover = element.getAttribute('data-text-color-hover') || '#000';
+      const effectHover = element.getAttribute('data-effect-hover');
+      const scaleHover = parseInt(element.getAttribute('data-scale-hover')) || 1;
+      const opacityHover = parseInt(element.getAttribute('data-opacity-hover')) || 0;
+      const filterHover = parseInt(element.getAttribute('data-filter-hover')) || 0;
+      const rotateHover = parseInt(element.getAttribute('data-rotate-hover')) || 0;
+      const rotateXHover = parseInt(element.getAttribute('data-rotate-x-hover')) || 0;
+      const rotateYHover = parseInt(element.getAttribute('data-rotate-y-hover')) || 0;
+      const skewXHover = parseInt(element.getAttribute('data-skew-x-hover')) || 0;
+      const skewYHover = parseInt(element.getAttribute('data-skew-y-hover')) || 0;
+      const startXHover = parseInt(element.getAttribute('data-start-x-hover')) || 0;
+      const startYHover = parseInt(element.getAttribute('data-start-y-hover')) || 0;
+      const scaleTypeHover = element.getAttribute('data-scale-custom-effect-hover');
+      const durationHover = element.getAttribute('data-duration-hover');
+      const easingHover = element.getAttribute('data-easing-hover');
+      const  heightFrom = element.getAttribute('data-height-from');
+      const  heightTo = element.getAttribute('data-height-to');
+     
       // Imposta l'opacità iniziale a 0
      //element.style.opacity = 0;
+     
 
       const animationProps = getAnimationProps({
         duration,
@@ -92,22 +140,42 @@ document.addEventListener('DOMContentLoaded', () => {
         skewXTo,
         skewYFrom,
         skewYTo,
+        scaleType,
+        effectHover,
+        textColor,
+        textColorHover,
+        backgroundColorImage,
+        backgroundColorImageHover,
+        scaleHover,
+        opacityHover,
+        filterHover,
+        rotateHover,
+        rotateXHover,
+        rotateYHover,
+        skewXHover,
+        skewYHover,
+        startXHover,
+        startYHover,
+        scaleTypeHover,
+        durationHover,
+        easingHover,
+        heightFrom,
+        heightTo
     });
+
+
 
       setTimeout(() => {
         if (animationsIn[effectIn]) {
             animationsIn[effectIn](element, animationProps);
         }
+       
+      
     }, delayIn);
-
-      // Chiamare l'animazione di uscita dopo un certo tempo (es. 3000ms)
-      setTimeout(() => {
-          if (animationsOut[effectOut]) {
-              animationsOut[effectOut](element,animationProps);
-          }
-      }, duration); // Durata dell'animazione di entrata
-
   }
+    });
+  }
+
 
 
  // Funzione per osservare i cambiamenti di classe nelle slide
@@ -122,9 +190,86 @@ function observeSlides(slide) {
           });
       }
   });
-
+      
   observer.observe(slide, { attributes: true });
 }
+
+// Aggiungi gli eventi di hover
+const elements = document.querySelectorAll('.title-slide, .image-first-slide');
+elements.forEach(element => {
+    element.addEventListener('mouseenter', (e) => handleMouseEnter(e, { 
+      durationHover: element.getAttribute('data-duration-hover'),
+      easingHover: element.getAttribute('data-easing-hover'), 
+      textColorHover: element.getAttribute('data-text-color-hover'),
+      backgroundColorImageHover: element.getAttribute('data-image-color-hover'),
+      scaleHover: element.getAttribute('data-scale-hover'),
+      effectHover: element.getAttribute('data-effect-hover'),
+      opacityHover: element.getAttribute('data-opacity-hover'),
+      filterHover: element.getAttribute('data-filter-hover'),
+      rotateHover: element.getAttribute('data-rotate-hover'),
+      rotateXHover: element.getAttribute('data-rotate-x-hover'),
+      rotateYHover: element.getAttribute('data-rotate-y-hover'),
+      skewXHover: element.getAttribute('data-skew-x-hover'),
+      skewYHover: element.getAttribute('data-skew-y-hover'),
+      startXHover: element.getAttribute('data-start-x-hover'),
+      startYHover: element.getAttribute('data-start-y-hover'),
+      scaleTypeHover: element.getAttribute('data-scale-custom-effect-hover'),
+    }));
+    element.addEventListener('mouseleave', (e) => handleMouseLeave(e, { 
+      durationHover: element.getAttribute('data-duration-hover'),
+      easingHover: element.getAttribute('data-easing-hover'), 
+      textColor: element.getAttribute('data-text-color'),
+      backgroundColorImage: element.getAttribute('data-image-color'),
+    }));
+});
+
+
+/*
+// Animazione del percorso SVG con anime.js
+// Seleziona gli elementi <path> nell'SVG
+const paths = document.querySelectorAll('svg path');
+
+paths.forEach(path => {
+    const length = path.getTotalLength(); // Ottieni la lunghezza del path
+
+    // Imposta il dasharray e il dashoffset
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+
+    anime({
+        targets: path,
+        strokeDashoffset: [length, 0], // Disegna il path da 0 a lunghezza
+        easing: 'easeInOutSine',
+        duration: 2000,
+        loop: true,
+        direction: 'alternate'
+    });
+});
+
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie'), // Contenitore dell'animazione
+  renderer: 'svg', // Usare SVG come renderer
+  loop: true, // Ciclo continuo
+  autoplay: true, // Avvia automaticamente
+  animationData: animationData, 
+});
+
+// Utilizza Anime.js per animare il contenitore
+anime({
+  targets: '#lottie',
+  opacity: [0, 1],
+  scale: [0.5, 1],
+  duration: 1000,
+  loop:true,
+  direction: 'alternate',
+  easing: 'easeInOutQuad',
+  complete: () => {
+      // Eventuale codice da eseguire al termine dell'animazione
+  }
+});
+
+*/
 
     // Applica l'osservatore su ogni elemento Swiper
     swiperElements.forEach(swiper => {
@@ -157,7 +302,7 @@ function observeSlides(slide) {
                 direction: swiperConfig.directionSlider,
                 effect: swiperConfig.effect,
                 autoplay: autoplayConfig,
-                modules: [Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel, Parallax],
+                modules: [Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel],
                 pagination: {
                     enabled: swiperConfig.paginationEnable,
                     hideOnClick: swiperConfig.hidePagination,
@@ -243,7 +388,6 @@ function observeSlides(slide) {
                     onlyInViewport: swiperConfig.viewPortKeyboard,
                     pageUpDown: swiperConfig.upKeyboard,
                 },
-                parallax: swiperConfig.parallax,
                 breakpoints: {
                     640: {
                         slidesPerView: swiperConfig.perViewSliderMobile,
@@ -289,9 +433,8 @@ function observeSlides(slide) {
 
             });
 
-         
-
-            // Forza l'animazione per la slide iniziale
+            /*
+            // Forza l'animazione per la slide iniziale ( quest onon dovrebbe sefriver, alla fine toglierlo)
             setTimeout(() => {
                 handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-slide'), 'data-animation');
                 handleAnimation(document.querySelectorAll('.swiper-slide-active .image-first-slide'), 'data-animation-image');
@@ -306,11 +449,12 @@ function observeSlides(slide) {
                 handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon-inner'), 'data-animation-icon-inner');
 
             }, 100);
+
+            */
         }
        
     });
 });
-
 
 
 /* Effect Mouse */
@@ -417,7 +561,6 @@ function createSmokeTrail(e, slide) {
 }
 
 
-
 // Funzione per creare effetto parallax
 function applyParallaxEffect(slide) {
 
@@ -508,7 +651,6 @@ function applyParallaxEffect(slide) {
   // Avvia l'aggiornamento del parallax
   requestAnimationFrame(updateParallax);
 }
-
 
 
 // Funzione per applicare l'effetto liquid
@@ -1489,10 +1631,7 @@ function applyLiquidEffect(slide) {
       return target;
     }
     
-    
-    
     initFramebuffers();
-    
     
     let lastColorChangeTime = Date.now();
     

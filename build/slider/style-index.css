@@ -1454,88 +1454,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
   transform: rotate(-90deg);
 }
 
-/* Da controllare se serve per l'immagine !!!!!!!!!!!!!!!!!!!!!!!!! */
-/* Movimen to background */
-@keyframes moveBackground {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(var(--translate-effect-moving-image)); /* Movimento verso destra */
-  }
-  100% {
-    transform: translateX(0); /* Torna alla posizione iniziale */
-  }
-}
-.moving-background {
-  animation: moveBackground var(--duration-effect-moving-image) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-@keyframes moveBackgroundY {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(var(--translate-effect-moving-image)); /* Movimento verso il basso*/
-  }
-  100% {
-    transform: translateY(0); /* Torna alla posizione iniziale */
-  }
-}
-.moving-background-y {
-  animation: moveBackgroundY var(--duration-effect-moving-image) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-@keyframes moveBackgroundInner {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(var(--translate-effect-moving-image-inner)); /* Movimento verso destra */
-  }
-  100% {
-    transform: translateX(0); /* Torna alla posizione iniziale */
-  }
-}
-.moving-background-inner {
-  animation: moveBackgroundInner var(--duration-effect-moving-image-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-@keyframes moveBackgroundYInner {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(var(--translate-effect-moving-image-inner)); /* Movimento verso il basso*/
-  }
-  100% {
-    transform: translateY(0); /* Torna alla posizione iniziale */
-  }
-}
-.moving-background-y-inner {
-  animation: moveBackgroundYInner var(--duration-effect-moving-image-inner) linear infinite; /* Regola la durata in base alle tue esigenze */
-}
-
-@keyframes bounceUnderline {
-  0%, 100% {
-    height: var(--animation-decoration-from-size);
-    transform: translateY(var(--animation-decoration-from));
-  }
-  50% {
-    height: var(--animation-decoration-to-size);
-    transform: translateY(var(--animation-decoration-to));
-  }
-}
-@keyframes bounceUnderlineHorizontal {
-  0%, 100% {
-    width: var(--animation-decoration-from-size);
-    transform: translateX(var(--animation-decoration-from));
-  }
-  50% {
-    width: var(--animation-decoration-to-size);
-    transform: translateX(var(--animation-decoration-to));
-  }
-}
 /* Filter */
 /* Filtro 1: Sfumature Laterali */
 .swiper.filter-lateral::after {
@@ -1686,46 +1604,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
   z-index: 2;
 }
 
-/* Effetto hover per .title-slide */
-.title-slide a {
-  text-decoration: none;
-}
-
-.title-slide {
-  transition: transform var(--transition-hover) ease;
-}
-
-.title-slide:hover {
-  transform: rotate(var(--rotate-hover));
-}
-
-/* Effetto hover combinato per .title-slide con .hover-effect-1 */
-.title-slide.hover-effect-1 {
-  transition: transform var(--transition-hover) ease;
-}
-
-.title-slide.hover-effect-1:hover {
-  transform: rotate(var(--rotate-hover)) scale(1.1) !important;
-}
-
-/* Translate Y */
-.title-slide.hover-effect-2 {
-  transition: transform var(--transition-hover) ease;
-}
-
-.title-slide.hover-effect-2:hover {
-  transform: rotate(var(--rotate-hover)) translateY(var(--translate-hover)) !important; /* Sposta l'elemento verso l'alto di 10px */
-}
-
-/* Translate X */
-.title-slide.hover-effect-5 {
-  transition: transform var(--transition-hover) ease;
-}
-
-.title-slide.hover-effect-5:hover {
-  transform: rotate(var(--rotate-hover)) translateX(var(--translate-hover)) !important; /* Sposta l'elemento verso l'alto di 10px */
-}
-
 /* Shadow */
 .hover-effect-3- {
   transition: box-shadow var(--transition-hover) ease, filter var(--transition-hover) ease;
@@ -1793,18 +1671,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
 /* Title slide */
 .title-slide {
   box-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) var(--box-shadow-color);
-}
-
-.title-slide:hover {
-  transform: rotate(var(--rotate-hover)) !important;
-}
-
-.title-slide:hover {
-  color: var(--color-hover) !important;
-  border-color: var(--border-color-hover) !important;
-  opacity: var(--opacity-hover) !important;
-  border-style: var(--border-style-hover) !important;
-  border-width: var(--border-width-hover) !important;
 }
 
 /* Icon Slide */
@@ -2220,27 +2086,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
 .hover-effect-4-div:hover {
   box-shadow: 0 8px 16px var(--color-effect-hover-div) !important; /* Aggiunge un'ombra */
   filter: brightness(1.8); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Image slide */
-.content-img-first:hover {
-  transform: rotate(var(--rotate-hover-image)) !important;
-}
-
-.content-img-first {
-  transition: transform var(--transition-hover-image) ease;
-}
-
-.image-first-slide {
-  box-shadow: var(--box-shadow-x-image) var(--box-shadow-y-image) var(--box-shadow-blur-image) var(--box-shadow-spread-image) var(--box-shadow-color-image);
-}
-
-.image-first-slide:hover {
-  background-color: var(--color-hover-image) !important;
-  border-color: var(--border-color-hover-image) !important;
-  opacity: var(--opacity-hover-image) !important;
-  border-style: var(--border-style-hover-image) !important;
-  border-width: var(--border-width-hover-image) !important;
 }
 
 /* Effect Icon Button */
@@ -3621,6 +3466,10 @@ li.has-submenu.submenu-hover:hover .sub-menu{
 /* Split text */
 .letter {
   display: inline-block; /* Oppure block */
+}
+
+.no-pointer-events {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

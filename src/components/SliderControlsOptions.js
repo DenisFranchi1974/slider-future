@@ -53,7 +53,6 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
     nextOpacity,
     modifier,
     rotateCards,
-    parallax,
     filter,
     colorOneEffect,
     colorTwoEffect,
@@ -643,55 +642,6 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   />
                 </Tooltip>
               </div>
-            </div>
-
-            <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
-                  label={
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="m680-320-56-56 63-64H440v-80h247l-63-64 56-56 160 160-160 160ZM200-200h80v-560h-80v560Zm-80 80v-720h240v720H120Zm320 0v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80Zm160 640v-80h80v80h-80Zm0-640v-80h80v80h-80ZM200-200h80-80Z" />
-                      </svg>
-                      {__("Parallax", "cocoblocks")}
-                    </>
-                  }
-                  checked={parallax}
-                  onChange={(value) => setAttributes({ parallax: value })}
-                />
-                <Tooltip
-                  placement="top"
-                  style={{
-                    padding: "10px",
-                    maxWidth: "300px",
-                    borderRadius: "4px",
-                  }}
-                  text={__("Enables parallax transition effects", "cocoblocks")}
-                >
-                  <Icon
-                    icon={info}
-                    className="tooltip-icon"
-                    style={{ left: "65%", top: "13px" }}
-                  />
-                </Tooltip>
-              </div>
-              {parallax == true && (
-                <p
-                  className="notice components-base-control__help"
-                  style={{ borderRadius: 0, marginTop: 0 }}
-                >
-                  {__(
-                    "By enabling this effect you will have additional controls available for the various elements of the Slides to adjust the Parallax effect!",
-                    "cocoblocks"
-                  )}
-                </p>
-              )}
             </div>
           </div>
         </>

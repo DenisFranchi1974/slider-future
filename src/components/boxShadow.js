@@ -96,7 +96,7 @@ const BoxShadowControl = ({
           }
         : slide
     );
-    setAttributes({ slides: updatedSlides });
+    setAttributes({ slides: updatedSlides }); 
   };
 
   return (

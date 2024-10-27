@@ -10,39 +10,39 @@ import logo from "../assets/images/1.jpg";
 
 const ImageSelectionModal = ({ onClose, onSelect }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [categories] = useState(["Tutte", "Categoria 1", "Categoria 2"]);
-  const [selectedCategory, setSelectedCategory] = useState("Tutte");
+  const [categories] = useState([__('All','cocoblock'), __('City','cocoblock'), __('Sport','cocoblock')]);
+  const [selectedCategory, setSelectedCategory] = useState(__('All','cocoblock'));
   const [images] = useState([
     {
       url: img1,
       alt: "Immagine 1",
       title: "Titolo 1",
-      category: "Categoria 1",
+      category:__('City','cocoblock'),
     },
     {
       url: img2,
       alt: "Immagine 2",
       title: "Titolo 2",
-      category: "Categoria 2",
+      category:  __('Sport','cocoblock'),
     },
     {
       url: img3,
       alt: "Immagine 3",
       title: "Titolo 3",
-      category: "Categoria 1",
+      category: __('City','cocoblock'),
     },
     {
       url: img4,
       alt: "Immagine 4",
       title: "Titolo 4",
-      category: "Categoria 1",
+      category: __('City','cocoblock'),
     },
   ]);
 
   const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
 
   const filteredImages =
-    selectedCategory === "Tutte"
+    selectedCategory === __("All", "cocoblocks")
       ? images
       : images.filter((image) => image.category === selectedCategory);
 
@@ -75,7 +75,7 @@ const ImageSelectionModal = ({ onClose, onSelect }) => {
               key={index}
               isSecondary
               onClick={() => setSelectedCategory(category)}
-              className={selectedCategory === category ? "active" : ""}
+              className={selectedCategory === category ? "button-cat-modal active" : "button-cat-modal"}
             >
               {category}
             </Button>
@@ -130,7 +130,10 @@ const ImageSelectionModal = ({ onClose, onSelect }) => {
               )}
             </p>
             {/* Aggiungi ulteriori dettagli sulle licenze qui */}
-            <Button isSecondary onClick={() => setIsLicenseModalOpen(false)}>
+            <Button isSecondary 
+            onClick={() => setIsLicenseModalOpen(false)}
+            className="button-close-modal-license"
+            >
               {__("Close", "text-domain")}
             </Button>
           </div>
