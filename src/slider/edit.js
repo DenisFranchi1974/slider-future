@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls} from "@wordpress/block-editor";
-import { TabPanel,  } from "@wordpress/components";
+import { TabPanel, Button, Tooltip } from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -42,9 +42,10 @@ import BurstModeIcon from '@mui/icons-material/BurstMode';
 import GamepadIcon from '@mui/icons-material/Gamepad';
 import LayersIcon from '@mui/icons-material/Layers';
 import ArticleIcon from '@mui/icons-material/Article';
+import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 
 
-export default function Edit({ attributes, setAttributes, slide}) {
+export default function Edit({ attributes, setAttributes, slide, element}) {
   const {
     content,
     directionSlider,
@@ -703,6 +704,23 @@ export default function Edit({ attributes, setAttributes, slide}) {
     });
   };
 
+  // Group
+  const playAnimationGroup = [];
+  const handlePlayGroup = () => {
+    playAnimationGroup.forEach(playAnimation => {
+      if (playAnimation) {
+        playAnimation();
+      }
+    });
+  };
+
+  // Funzione per verificare la presenza di animazioni
+const hasAnimations = (slides) => {
+  return slides.some(slide => 
+    slide.elements && slide.elements.some(element => element.effectIn && element.effectIn !== 'none')
+  );
+};
+
   return (
     <> 
       <InspectorControls>
@@ -773,6 +791,13 @@ export default function Edit({ attributes, setAttributes, slide}) {
               {/*TAB 2*/}
               {attributes.contentType === "custom" && (
               <div className={"tab-2 " + tab.name}>
+                 {hasAnimations(slides) && (
+                <div className="button-reply-effect" style={{backgroundColor:'var(--black-color)'}}>
+                  <Tooltip placement="top" text={__('Play All Animations','cocoblock')}>
+                  <Button onClick={handlePlayAll} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
+                  </Tooltip>
+                </div>
+                )}
                 <SlideControls
                   attributes={attributes}
                   setAttributes={setAttributes}
@@ -785,9 +810,8 @@ export default function Edit({ attributes, setAttributes, slide}) {
                   handlePlayAll={handlePlayAll} 
                   handlePlayImage={handlePlayImage}
                   handlePlayText={handlePlayText}
+                  handlePlayGroup={handlePlayGroup}
                 />
-                   <button onClick={() => handlePlayAll()}>Play All</button>
-     
               </div>
               )}
                 {/*TAB 5*/}
@@ -1216,6 +1240,10 @@ export default function Edit({ attributes, setAttributes, slide}) {
                               <DivComponent
                                 element={element}
                                 index={index}
+                                onPlay={playAnimation => {
+                                  playAnimations.push(playAnimation);
+                                  playAnimationGroup.push(playAnimation);
+                                }}
                               />
                             </DraggableTest>
                           ) : (
@@ -1223,6 +1251,10 @@ export default function Edit({ attributes, setAttributes, slide}) {
                               key={index}
                               element={element}
                               index={index}
+                              onPlay={playAnimation => {
+                                playAnimations.push(playAnimation);
+                                playAnimationGroup.push(playAnimation);
+                              }}
                             />
                           );
                           

@@ -521,7 +521,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                     <?php endif; ?>
                     data-effect="<?php echo esc_attr($mouseEffect)?>" 
                     class="content-slide-slider <?php 
-                    echo esc_attr($layout_class); 
+                    
                     if (!$developerMode) {
                         echo ' ' . esc_attr($slide['position']) . ' ' . esc_attr($overflow) . ' ' . esc_attr($slide['layout']) . '-layout';
                     }
@@ -576,9 +576,9 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <?php 
                             // Imposta le classi per il menu a seconda delle modalità
                             $menuMode = $element['menuMode'];
-                            $desktopClassMenu = $element['enableDesktopTitle'] ? 'desktop-menu-visible' : 'desktop-menu-hidden';
-                            $tabletClassMenu = $element['enableTabletTitle'] ? 'tablet-menu-visible' : 'tablet-menu-hidden';
-                            $mobileClassMenu = $element['enableMobileTitle'] ? 'mobile-menu-visible' : 'mobile-menu-hidden';
+                            $desktopClassMenu = $element['enableDesktop'] ? 'desktop-menu-visible' : 'desktop-menu-hidden';
+                            $tabletClassMenu = $element['enableTablet'] ? 'tablet-menu-visible' : 'tablet-menu-hidden';
+                            $mobileClassMenu = $element['enableMobile'] ? 'mobile-menu-visible' : 'mobile-menu-hidden';
                             // Verifica se il fontWeight è "bold"
                             $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === 'bold';
                             // Styles for the toggle
@@ -801,18 +801,18 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             // Recupera il tag HTML
                             $tag = esc_attr($element['elementTitle'] ?? 'h3');
                             // Imposta i valori di default utilizzando l'operatore di coalescenza null
-                            $enableDesktopTitle = $element['enableDesktopTitle'] ?? true; // Default a true
-                            $enableTabletTitle = $element['enableTabletTitle'] ?? true; // Default a true
-                            $enableMobileTitle = $element['enableMobileTitle'] ?? true; // Default a true
+                            $enableDesktop = $element['enableDesktop'] ?? true; // Default a true
+                            $enableTablet = $element['enableTablet'] ?? true; // Default a true
+                            $enableMobile = $element['enableMobile'] ?? true; // Default a true
                             // Assegnazione delle classi basata sui valori
-                            $desktopClass = $enableDesktopTitle ? 'desktop-title-visible' : 'desktop-title-hidden';
-                            $tabletClass = $enableTabletTitle ? 'tablet-title-visible' : 'tablet-title-hidden';
-                            $mobileClass = $enableMobileTitle ? 'mobile-title-visible' : 'mobile-title-hidden';
+                            $desktopClass = $enableDesktop ? 'desktop-title-visible' : 'desktop-title-hidden';
+                            $tabletClass = $enableTablet ? 'tablet-title-visible' : 'tablet-title-hidden';
+                            $mobileClass = $enableMobile ? 'mobile-title-visible' : 'mobile-title-hidden';
                             
                         if ($slide['developerMode']) : ?>         
                         <div class="content-content-slide-absolute"
-                            style="transform: translate(<?php echo esc_attr($element['desktop']['x']) ?> px, <?php echo esc_attr($element['desktop']['y']) ?>px);
-                                position: absolute;
+                            style="
+                                position: absolute;"
                             data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
                             data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
                             data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"
@@ -874,53 +874,53 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             <?php endif; ?>
                             <?php if ($element['effectIn'] !== 'none') : ?>
                                 data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
-                                data-duration="<?php echo esc_attr($element['duration'] ?? ''); ?>"
-                                data-delay-in="<?php echo esc_attr($element['delayIn'] ?? ''); ?>"
-                                data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? ''); ?>"
-                                data-easing-in="<?php echo esc_attr($element['easing'] ?? ''); ?>"
-                                data-direction-in="<?php echo esc_attr($element['direction'] ?? ''); ?>"
-                                data-loop-in="<?php echo esc_attr($element['loop'] ?? ''); ?>"
-                                data-opacity-in-from="<?php echo esc_attr($element['opacityInFrom'] ?? ''); ?>"
-                                data-opacity-in-to="<?php echo esc_attr($element['opacityInTo'] ?? ''); ?>"
-                                data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? ''); ?>"
-                                data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? ''); ?>"
-                                data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? ''); ?>"
-                                data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? ''); ?>"
-                                data-stagger="<?php echo esc_attr($element['stagger'] ?? ''); ?>"
+                                data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"
+                                data-delay-in="<?php echo esc_attr($element['delay'] ?? 0); ?>"
+                                data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? 0); ?>"
+                                data-easing-in="<?php echo esc_attr($element['easing'] ?? 'linear'); ?>"
+                                data-direction-in="<?php echo esc_attr($element['direction'] ?? 'normal'); ?>"
+                                data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
+                                data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
+                                data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                                data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
+                                data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
+                                data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"
+                                data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? 0); ?>"
+                                data-stagger="<?php echo esc_attr($element['stagger'] ?? 80); ?>"
                                 data-effect-split="<?php echo esc_attr($element['textSplitEffect'] ?? ''); ?>"
-                                data-direction-block="<?php echo esc_attr($element['directionBlock'] ?? ''); ?>"
-                                data-color-block="<?php echo esc_attr($element['colorBlockEffectIn'] ?? ''); ?>"
-                                data-rotate-in-from="<?php echo esc_attr($element['rotateInFrom'] ?? ''); ?>"
-                                data-rotate-in-to="<?php echo esc_attr($element['rotateInTo'] ?? ''); ?>"
-                                data-rotate-x-in-from="<?php echo esc_attr($element['rotateInXFrom'] ?? ''); ?>"
-                                data-rotate-x-in-to="<?php echo esc_attr($element['rotateInXTo'] ?? ''); ?>"
-                                data-rotate-y-in-from="<?php echo esc_attr($element['rotateInYFrom'] ?? ''); ?>"
-                                data-rotate-y-in-to="<?php echo esc_attr($element['rotateInYTo'] ?? ''); ?>"
-                                data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? ''); ?>"
-                                data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? ''); ?>"
-                                data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? ''); ?>"
-                                data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? ''); ?>"
-                                data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? ''); ?>"
-                                data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? ''); ?>"
-                                data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? ''); ?>"
+                                data-direction-block="<?php echo esc_attr($element['directionBlock'] ?? 'right'); ?>"
+                                data-color-block="<?php echo esc_attr($element['colorBlockEffect'] ?? '#000'); ?>"
+                                data-rotate-in-from="<?php echo esc_attr($element['rotateFrom'] ?? 0); ?>"
+                                data-rotate-in-to="<?php echo esc_attr($element['rotateTo'] ?? 0); ?>"
+                                data-rotate-x-in-from="<?php echo esc_attr($element['rotateXFrom'] ?? 0); ?>"
+                                data-rotate-x-in-to="<?php echo esc_attr($element['rotateXTo'] ?? 0); ?>"
+                                data-rotate-y-in-from="<?php echo esc_attr($element['rotateYFrom'] ?? 0); ?>"
+                                data-rotate-y-in-to="<?php echo esc_attr($element['rotateYTo'] ?? 0); ?>"
+                                data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? 0 ); ?>"
+                                data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? 1 ); ?>"
+                                data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? 0); ?>"
+                                data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? 1); ?>"
+                                data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
+                                data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 1); ?>"
+                                data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
                                 data-text-color="<?php echo esc_attr($element['textColor'] ?? ''); ?>"
                             <?php endif; 
                                 if ($element['effectHover'] !== 'none') : ?>
                                 data-text-color-hover="<?php echo esc_attr($element['textColorHover'] ?? ''); ?>"
                                 data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
-                                data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? ''); ?>"
-                                data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? ''); ?>"
-                                data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? ''); ?>"
-                                data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? ''); ?>"
-                                data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? ''); ?>"
-                                data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? ''); ?>"
-                                data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? ''); ?>"
-                                data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? ''); ?>"
-                                data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? ''); ?>"
-                                data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? ''); ?>"
-                                data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? ''); ?>"
-                                data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? ''); ?>"
-                                data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? ''); ?>"
+                                data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
+                                data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"
+                                data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? 0); ?>"
+                                data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? 0); ?>"
+                                data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? 0); ?>"
+                                data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? 0); ?>"
+                                data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? 0); ?>"
+                                data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? 0); ?>"
+                                data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? 100); ?>"
+                                data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? 0); ?>"
+                                data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? 'scale'); ?>"
+                                data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? 800); ?>"
+                                data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
                             <?php endif; ?>
                             >
                             <?php
@@ -1001,10 +1001,10 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             $backgroundBorderColorImage = esc_attr($element['backgroundBorderColorImage'] ?? '#000');
                             $backgroundBorderRadiusImage = esc_attr($element['backgroundBorderRadiusImage'] ?? 0);
                             $paddingImage = esc_attr($element['paddingImage'] ?? 0);
-                            $backgroundColorImage = esc_attr($element['backgroundColorImage'] ?? '#fff');
+                            $backgroundColorImage = esc_attr($element['backgroundColorImage'] ?? '');
                             $spikeLeftWidth = esc_attr($element['spikeLeftWidth'] ?? 0);
                             $spikeRightWidth = esc_attr($element['spikeRightWidth'] ?? 0);
-                            $imageColorHover = esc_attr($element['imageColorHover'] ?? '#fff');
+                            $imageColorHover = esc_attr($element['imageColorHover'] ?? '');
                             $margin = "$marginTop $marginRight $marginBottom $marginLeft";
                             $style .= "
                                     border-style: " . esc_attr($element['borderStyleImage']) . ";
@@ -1041,7 +1041,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             $linkTargetImage = '_self'; // Default
                             $rel_div = 'follow'; // Default
                             if ($element['imageLink'] !== 'none') {
-                                // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                // Prepara l'attributo onclick se textLink è diverso da 'none'
                                 if ($element['imageLink'] === 'link' && !empty($element['linkUrlImage'])) {
                                     $link_url = esc_url($element['linkUrlImage']);
                                     if (!empty($element['linkTargetImage'])) {
@@ -1067,7 +1067,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
                             data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
                             data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>" 
-                            style=" transform: translate(<?php echo esc_attr($element['desktop']['x']); ?>px, <?php echo esc_attr($element['desktop']['y']); ?>px); position: absolute; text-align:<?php echo $imageAlign;?>;"
+                            style="position: absolute; text-align:<?php echo $imageAlign;?>;"
                        >
                        <?php endif; ?> 
                        <div 
@@ -1097,53 +1097,49 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                  style="<?php echo $style; ?>" 
                                  <?php if ($element['effectIn'] !== 'none') : ?>
                                 data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
-                                data-duration="<?php echo esc_attr($element['duration'] ?? ''); ?>"
-                                data-delay-in="<?php echo esc_attr($element['delayIn'] ?? ''); ?>"
-                                data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? ''); ?>"
-                                data-easing-in="<?php echo esc_attr($element['easing'] ?? ''); ?>"
-                                data-direction-in="<?php echo esc_attr($element['direction'] ?? ''); ?>"
-                                data-loop-in="<?php echo esc_attr($element['loop'] ?? ''); ?>"
-                                data-opacity-in-from="<?php echo esc_attr($element['opacityInFrom'] ?? ''); ?>"
-                                data-opacity-in-to="<?php echo esc_attr($element['opacityInTo'] ?? ''); ?>"
-                                data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? ''); ?>"
-                                data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? ''); ?>"
-                                data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? ''); ?>"
-                                data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? ''); ?>"
-                                data-stagger="<?php echo esc_attr($element['stagger'] ?? ''); ?>"
-                                data-effect-split="<?php echo esc_attr($element['textSplitEffect'] ?? ''); ?>"
-                                data-direction-block="<?php echo esc_attr($element['directionBlock'] ?? ''); ?>"
-                                data-color-block="<?php echo esc_attr($element['colorBlockEffectIn'] ?? ''); ?>"
-                                data-rotate-in-from="<?php echo esc_attr($element['rotateInFrom'] ?? ''); ?>"
-                                data-rotate-in-to="<?php echo esc_attr($element['rotateInTo'] ?? ''); ?>"
-                                data-rotate-x-in-from="<?php echo esc_attr($element['rotateInXFrom'] ?? ''); ?>"
-                                data-rotate-x-in-to="<?php echo esc_attr($element['rotateInXTo'] ?? ''); ?>"
-                                data-rotate-y-in-from="<?php echo esc_attr($element['rotateInYFrom'] ?? ''); ?>"
-                                data-rotate-y-in-to="<?php echo esc_attr($element['rotateInYTo'] ?? ''); ?>"
-                                data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? ''); ?>"
-                                data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? ''); ?>"
-                                data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? ''); ?>"
-                                data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? ''); ?>"
-                                data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? ''); ?>"
-                                data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? ''); ?>"
-                                data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? ''); ?>"
+                                data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"
+                                data-delay-in="<?php echo esc_attr($element['delay'] ?? 0); ?>"
+                                data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? 0); ?>"
+                                data-easing-in="<?php echo esc_attr($element['easing'] ?? 'linear'); ?>"
+                                data-direction-in="<?php echo esc_attr($element['direction'] ?? 'normal'); ?>"
+                                data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
+                                data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
+                                data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                                data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
+                                data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
+                                data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"
+                                data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? 0); ?>"
+                                data-rotate-in-from="<?php echo esc_attr($element['rotateFrom'] ?? 0); ?>"
+                                data-rotate-in-to="<?php echo esc_attr($element['rotateTo'] ?? 0); ?>"
+                                data-rotate-x-in-from="<?php echo esc_attr($element['rotateXFrom'] ?? 0); ?>"
+                                data-rotate-x-in-to="<?php echo esc_attr($element['rotateXTo'] ?? 0); ?>"
+                                data-rotate-y-in-from="<?php echo esc_attr($element['rotateYFrom'] ?? 0); ?>"
+                                data-rotate-y-in-to="<?php echo esc_attr($element['rotateYTo'] ?? 0); ?>"
+                                data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? 0); ?>"
+                                data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? 1 ); ?>"
+                                data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? 0); ?>"
+                                data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? 0); ?>"
+                                data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
+                                data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 0); ?>"
+                                data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
                                 data-image-color="<?php echo esc_attr($element['backgroundColorImage'] ?? ''); ?>"
                             <?php endif; 
                               if ($element['effectHover'] !== 'none') : ?>
                                 data-image-color-hover="<?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>"
                                 data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
-                                data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? ''); ?>"
-                                data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? ''); ?>"
-                                data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? ''); ?>"
-                                data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? ''); ?>"
-                                data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? ''); ?>"
-                                data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? ''); ?>"
-                                data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? ''); ?>"
-                                data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? ''); ?>"
-                                data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? ''); ?>"
-                                data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? ''); ?>"
-                                data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? ''); ?>"
-                                data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? ''); ?>"
-                                data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? ''); ?>"
+                                data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
+                                data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"
+                                data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? 0); ?>"
+                                data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? 0); ?>"
+                                data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? 0); ?>"
+                                data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? 0); ?>"
+                                data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? 0); ?>"
+                                data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? 0); ?>"
+                                data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? 100); ?>"
+                                data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? 0); ?>"
+                                data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? 'scale'); ?>"
+                                data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? 800); ?>"
+                                data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
                             <?php endif; ?>
                                 />
                         </div>
@@ -1219,28 +1215,28 @@ $wrapper_attributes = get_block_wrapper_attributes(
                              $onclick = '';
                              $target_div = '_self'; // Default
                              $rel_div = 'follow'; // Default
-                             if ($element['textLinkDiv'] !== 'none') {
-                                 // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
-                                 if ($element['textLinkDiv'] === 'link' && !empty($element['linkUrlDiv'])) {
-                                     $link_url = esc_url($element['linkUrlDiv']);
-                                     if (!empty($element['linkTargetDiv'])) {
-                                         $target_div = esc_attr($element['linkTargetDiv']);
+                             if ($element['textLink'] !== 'none') {
+                                 // Prepara l'attributo onclick se textLink è diverso da 'none'
+                                 if ($element['textLink'] === 'link' && !empty($element['linkUrl'])) {
+                                     $link_url = esc_url($element['linkUrl']);
+                                     if (!empty($element['linkTarget'])) {
+                                         $target_div = esc_attr($element['linkTarget']);
                                      }
-                                     if ($element['linkRelDiv'] === 'nofollow') {
+                                     if ($element['linkRel'] === 'nofollow') {
                                          $rel_div = 'nofollow';
                                      }
                                      $onclick = "window.open('{$link_url}', '{$target_div}', 'rel={$rel_div}');";
-                                 } elseif ($element['textLinkDiv'] === 'scroll-below') {
+                                 } elseif ($element['textLink'] === 'scroll-below') {
                                      $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
-                                 } elseif ($element['textLinkDiv'] === 'scroll-to-id' && !empty($element['scrollToId'])) {
+                                 } elseif ($element['textLink'] === 'scroll-to-id' && !empty($element['scrollToId'])) {
                                      $scroll_id = esc_attr($element['scrollToId']);
                                      $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
                                  }
                              }
                              // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
-                             $desktopClassDiv = $element['enableDesktopDiv'] ? 'desktop-div-visible' : 'desktop-div-hidden';
-                             $tabletClassDiv = $element['enableTabletDiv'] ? 'tablet-div-visible' : 'tablet-div-hidden';
-                             $mobileClassDiv = $element['enableMobileDiv'] ? 'mobile-div-visible' : 'mobile-div-hidden';
+                             $desktopClassDiv = $element['enableDesktop'] ? 'desktop-div-visible' : 'desktop-div-hidden';
+                             $tabletClassDiv = $element['enableTablet'] ? 'tablet-div-visible' : 'tablet-div-hidden';
+                             $mobileClassDiv = $element['enableMobile'] ? 'mobile-div-visible' : 'mobile-div-hidden';
                              // Element Div
                              $TagDiv = !empty($element['elementDiv']) ? $element['elementDiv'] : 'div';
                             ?>
@@ -1262,16 +1258,12 @@ $wrapper_attributes = get_block_wrapper_attributes(
                              <div 
                                 class="content-inner-div" 
                                 style="opacity: <?php echo esc_attr($element['opacityDiv']) ?>;  
-                                       --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;
-                                        --delay-hide-seconds-div: <?php echo esc_attr($element['delayTransition']);?>s;
                                          z-index:<?php echo esc_attr( $element['zIndexDiv'] )?>;
                                          width: <?php echo esc_attr($element['contentWidthDiv']) === 'custom' ? esc_attr($element['customContentWidthDiv']) . '%' : esc_attr($element['contentWidthDiv']); ?>;
                                 "
-                                data-delay-hide="<?php echo esc_attr($element['delayHide']) ? 'true' : 'false'; ?>"
-                                data-delay-seconds="<?php echo esc_attr($element['delaySeconds']); ?>"
                                 >
                              <<?php echo esc_attr($TagDiv); ?>
-                                <?php if ($element['textLinkDiv'] !== 'none') : ?>
+                                <?php if ($element['textLink'] !== 'none') : ?>
                                     onclick="<?php echo $onclick; ?>"
                                 <?php endif; ?> 
                                 class="div-slide <?php echo esc_attr($element['positionDiv'] . ' ' . $element['layoutDiv'] . '-layout ' . $element['animationDiv']  . ' ' . $element['animationHoverDiv'] . ' ' . $desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv ); ?>"  data-animation-div="<?php echo esc_attr($element['animationDiv']); ?>"
@@ -1281,7 +1273,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                     flex-wrap: <?php echo $element['layoutWrap']?>;
                                     text-align: center;
                                     position: relative;
-                                    <?php if ($element['textLinkDiv'] !== 'none') : ?>
+                                    <?php if ($element['textLink'] !== 'none') : ?>
                                         cursor: pointer;
                                     <?php endif; ?>
                                     visibility: visible;
@@ -1294,25 +1286,58 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                     border-style: <?php echo esc_attr( $element['borderStyleDiv'] ); ?>;
                                     border-width: <?php echo esc_attr( $element['backgroundBorderSizeDiv'] ); ?>px;
                                     border-color: <?php echo esc_attr( $element['backgroundBorderColorDiv'] ); ?>;
-                                   
                                     height: <?php echo esc_attr($element['contentHeightDiv']) === 'custom' ? esc_attr($element['customContentHeightDiv']) . '%' : esc_attr($element['contentHeightDiv']); ?>;
                                     margin: <?php echo esc_attr($element['marginDiv']['top']) . ' ' . esc_attr($element['marginDiv']['right']) . ' ' . esc_attr($element['marginDiv']['bottom']) . ' ' . esc_attr($element['marginDiv']['left'])?>;
                                     box-shadow: <?php echo esc_attr($element['boxShadowX']) ?>px <?php echo esc_attr($element['boxShadowY']) ?>px <?php echo esc_attr($element['boxShadowBlur']) ?>px <?php echo esc_attr($element['boxShadowSpread']) ?>px <?php echo esc_attr($element['colorShadow']) ?>;
-                                    rotate: <?php echo esc_attr($element['rotateDiv']) ?>deg;
                                     transform: rotate(<?php echo esc_attr($element['rotateDiv']) ?>deg);
-                                    --duration-effect-div: <?php echo esc_attr($element['durationEffectDiv']) ?>s;
-                                    --interation-div: <?php echo esc_attr($element['interationDiv']) ?>;
-                                    --color-hover-div:  <?php echo esc_attr($element['divColorHover']) ?>;
-                                    --border-color-hover-div: <?php echo esc_attr($element['backgroundBorderColorHoverDiv']) ?>;
-                                    --border-width-hover-div: <?php echo esc_attr($element['backgroundBorderSizeDivHover']) ?>px;
-                                    --opacity-hover-div: <?php echo esc_attr($element['opacityHoverDiv']) ?>;
-                                    --border-style-hover-div: <?php echo esc_attr($element['borderStyleHoverDiv']) ?>;
-                                    --transition-hover-div: <?php echo esc_attr($element['durationEffectHoverDiv']) ?>s;    
-                                    --translate-hover-div: <?php echo esc_attr($element['translateEffectHoverDiv']) ?>px;
-                                    --color-effect-hover-div: <?php echo esc_attr($element['effectHoverColorHoverDiv']) ?>;
-                                    --rotate-hover-div: <?php echo esc_attr($element['rotateHoverDiv']) ?>deg;
-                                    --delay-effect-div: <?php echo esc_attr($element['delayEffectDiv']) ?>s; 
                                 "
+                                <?php if ($element['effectIn'] !== 'none') : ?>
+                                data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
+                                data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"
+                                data-delay-in="<?php echo esc_attr($element['delay'] ?? 0); ?>"
+                                data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? 0); ?>"
+                                data-easing-in="<?php echo esc_attr($element['easing'] ?? 'linear'); ?>"
+                                data-direction-in="<?php echo esc_attr($element['direction'] ?? 'normal'); ?>"
+                                data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
+                                data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
+                                data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                                data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
+                                data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
+                                data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"
+                                data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? 0); ?>"
+                                data-rotate-in-from="<?php echo esc_attr($element['rotateFrom'] ?? 0); ?>"
+                                data-rotate-in-to="<?php echo esc_attr($element['rotateTo'] ?? 0); ?>"
+                                data-rotate-x-in-from="<?php echo esc_attr($element['rotateXFrom'] ?? 0); ?>"
+                                data-rotate-x-in-to="<?php echo esc_attr($element['rotateXTo'] ?? 0); ?>"
+                                data-rotate-y-in-from="<?php echo esc_attr($element['rotateYFrom'] ?? 0); ?>"
+                                data-rotate-y-in-to="<?php echo esc_attr($element['rotateYTo'] ?? 0); ?>"
+                                data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? 0); ?>"
+                                data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? 1 ); ?>"
+                                data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? 0); ?>"
+                                data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? 0); ?>"
+                                data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
+                                data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 0); ?>"
+                                data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
+                                data-image-color="<?php echo esc_attr($element['backgroundColorImage'] ?? ''); ?>"
+                            <?php endif; 
+                              if ($element['effectHover'] !== 'none') : ?>
+                                data-image-color-hover="<?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>"
+                                data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
+                                data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
+                                data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"
+                                data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? 0); ?>"
+                                data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? 0); ?>"
+                                data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? 0); ?>"
+                                data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? 0); ?>"
+                                data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? 0); ?>"
+                                data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? 0); ?>"
+                                data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? 100); ?>"
+                                data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? 0); ?>"
+                                data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? 'scale'); ?>"
+                                data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? 800); ?>"
+                                data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
+                            <?php endif; ?>
+
                             >
 
 
@@ -1323,9 +1348,9 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                         <?php $TagBlock = !empty($innerElement['elementTitle']) ? $innerElement['elementTitle'] : 'h3'; ?>
                                         <?php
                                             // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
-                                            $desktopClassTitleDiv = $innerElement['enableDesktopTitle'] ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
-                                            $tabletClassTitleDiv = $innerElement['enableTabletTitle'] ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
-                                            $mobileClassTitleDiv = $innerElement['enableMobileTitle'] ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
+                                            $desktopClassTitleDiv = $innerElement['enableDesktop'] ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
+                                            $tabletClassTitleDiv = $innerElement['enableTablet'] ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
+                                            $mobileClassTitleDiv = $innerElement['enableMobile'] ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
                                         ?>
                                         <div
                                             style="transform: rotate(<?php echo esc_attr($innerElement['rotate']); ?>deg); 
@@ -1437,7 +1462,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                 $tabletClassButton = $innerElement['enableTabletButton'] ? 'tablet-button-visible-inner' : 'tablet-button-hidden-inner';
                                 $mobileClassButton = $innerElement['enableMobileButton'] ? 'mobile-button-visible-inner' : 'mobile-button-hidden-inner';
                                 if ($innerElement['buttonLink'] !== 'none') {
-                                    // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                    // Prepara l'attributo onclick se textLink è diverso da 'none'
                                     if ($innerElement['buttonLink'] === 'link' && !empty($innerElement['linkUrlButton'])) {
                                         $link_url = esc_url($innerElement['linkUrlButton']);
                                         if (!empty($innerElement['linkTargetButton'])) {
@@ -1731,11 +1756,11 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
                                 <?php elseif ($innerElement['type'] === 'icon'): 
 
-                               $desktopClassIconInner = $innerElement['enableDesktopTitle'] ? 'desktop-icon-inner-visible' : 'desktop-icon-inner-hidden';
-                               $tabletClassIconInner = $innerElement['enableTabletTitle'] ? 'tablet-icon-inner-visible' : 'tablet-icon-inner-hidden';
-                               $mobileClassIconInner = $innerElement['enableMobileTitle'] ? 'mobile-icon-inner-visible' : 'mobile-icon-inner-hidden';
+                               $desktopClassIconInner = $innerElement['enableDesktop'] ? 'desktop-icon-inner-visible' : 'desktop-icon-inner-hidden';
+                               $tabletClassIconInner = $innerElement['enableTablet'] ? 'tablet-icon-inner-visible' : 'tablet-icon-inner-hidden';
+                               $mobileClassIconInner = $innerElement['enableMobile'] ? 'mobile-icon-inner-visible' : 'mobile-icon-inner-hidden';
                                if ($innerElement['textLink'] !== 'none') {
-                                // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                // Prepara l'attributo onclick se textLink è diverso da 'none'
                                 if ($innerElement['textLink'] === 'link' && !empty($innerElement['linkUrl'])) {
                                     $link_url = esc_url($innerElement['linkUrl']);
                                     if (!empty($innerElement['linkTarget'])) {
@@ -1877,7 +1902,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                         $rel_div = 'follow'; // Default
                                         
                                         if ($innerElement['imageLink'] !== 'none') {
-                                            // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                            // Prepara l'attributo onclick se textLink è diverso da 'none'
                                             if ($innerElement['imageLink'] === 'link' && !empty($innerElement['linkUrlImage'])) {
                                                 $link_url = esc_url($innerElement['linkUrlImage']);
                                                 if (!empty($innerElement['linkTargetImage'])) {
@@ -1938,7 +1963,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                 $tabletClassButton = $element['enableTabletButton'] ? 'tablet-button-visible' : 'tablet-button-hidden';
                                 $mobileClassButton = $element['enableMobileButton'] ? 'mobile-button-visible' : 'mobile-button-hidden';
                                 if ($element['buttonLink'] !== 'none') {
-                                    // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                    // Prepara l'attributo onclick se textLink è diverso da 'none'
                                     if ($element['buttonLink'] === 'link' && !empty($element['linkUrlButton'])) {
                                         $link_url = esc_url($element['linkUrlButton']);
                                         if (!empty($element['linkTargetButton'])) {
@@ -2231,11 +2256,11 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
 
                             <?php if ($element['type'] === 'icon'): 
-                               $desktopClassIcon = $element['enableDesktopTitle'] ? 'desktop-icon-visible' : 'desktop-icon-hidden';
-                               $tabletClassIcon = $element['enableTabletTitle'] ? 'tablet-icon-visible' : 'tablet-icon-hidden';
-                               $mobileClassIcon = $element['enableMobileTitle'] ? 'mobile-icon-visible' : 'mobile-icon-hidden';
+                               $desktopClassIcon = $element['enableDesktop'] ? 'desktop-icon-visible' : 'desktop-icon-hidden';
+                               $tabletClassIcon = $element['enableTablet'] ? 'tablet-icon-visible' : 'tablet-icon-hidden';
+                               $mobileClassIcon = $element['enableMobile'] ? 'mobile-icon-visible' : 'mobile-icon-hidden';
                                if ($element['textLink'] !== 'none') {
-                                // Prepara l'attributo onclick se textLinkDiv è diverso da 'none'
+                                // Prepara l'attributo onclick se textLink è diverso da 'none'
                                 if ($element['textLink'] === 'link' && !empty($element['linkUrl'])) {
                                     $link_url = esc_url($element['linkUrl']);
                                     if (!empty($element['linkTarget'])) {

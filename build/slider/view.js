@@ -1355,11 +1355,11 @@ __webpack_require__.r(__webpack_exports__);
 // Funzione per ottenere gli attributi comuni delle animazioni
 const getAnimationProps = (props, target) => {
   const {
-    duration = 1000,
-    delayIn = 0,
+    duration = 800,
+    delay = 0,
     endDelay = 0,
-    easing = 'easeInQuad',
-    loop = 1,
+    easing = 'linear',
+    loop = '1',
     direction = 'normal',
     startXFrom: startXFrom,
     startXTo: startXTo,
@@ -1369,22 +1369,22 @@ const getAnimationProps = (props, target) => {
     scaleTo: scaleTo,
     stagger,
     textSplitEffect = "translateSplit",
-    opacityInFrom: opacityInFrom,
-    opacityInTo: opacityInTo,
-    rotateInFrom: rotateInFrom,
-    rotateInTo: rotateInTo,
-    rotateInXFrom: rotateInXFrom,
-    rotateInXTo: rotateInXTo,
-    rotateInYFrom: rotateInYFrom,
-    rotateInYTo: rotateInYTo,
+    opacityFrom: opacityFrom,
+    opacityTo: opacityTo,
+    rotateFrom: rotateFrom,
+    rotateTo: rotateTo,
+    rotateXFrom: rotateXFrom,
+    rotateXTo: rotateXTo,
+    rotateYFrom: rotateYFrom,
+    rotateYTo: rotateYTo,
     skewXFrom: skewXFrom,
     skewXTo: skewXTo,
     skewYFrom: skewYFrom,
     skewYTo: skewYTo,
     directionBlock: directionBlock,
-    colorBlockEffectIn: colorBlockEffectIn,
-    filterInFrom: filterInFrom,
-    filterInTo: filterInTo,
+    colorBlockEffect: colorBlockEffect,
+    filterFrom: filterFrom,
+    filterTo: filterTo,
     scaleType: scaleType,
     textColor: textColor,
     textColorHover: textColorHover,
@@ -1402,8 +1402,8 @@ const getAnimationProps = (props, target) => {
     startXHover: startXHover,
     startYHover: startYHover,
     scaleTypeHover: scaleTypeHover,
-    durationHover = 1000,
-    easingHover = 'easeInQuad',
+    durationHover = 800,
+    easingHover = 'linear',
     heightFrom: heightFrom,
     heightTo: heightTo
   } = props;
@@ -1417,7 +1417,7 @@ const getAnimationProps = (props, target) => {
   }
   return {
     duration,
-    delay: delayIn,
+    delay: delay,
     endDelay,
     easing,
     loop: loopCount,
@@ -1428,24 +1428,24 @@ const getAnimationProps = (props, target) => {
     startYTo,
     stagger,
     textSplitEffect,
-    opacityInFrom,
-    opacityInTo,
+    opacityFrom,
+    opacityTo,
     scaleFrom,
     scaleTo,
-    rotateInFrom,
-    rotateInTo,
-    rotateInXFrom,
-    rotateInXTo,
-    rotateInYFrom,
-    rotateInYTo,
+    rotateFrom,
+    rotateTo,
+    rotateXFrom,
+    rotateXTo,
+    rotateYFrom,
+    rotateYTo,
     skewXFrom,
     skewXTo,
     skewYFrom,
     skewYTo,
     directionBlock,
-    colorBlockEffectIn,
-    filterInFrom,
-    filterInTo,
+    colorBlockEffect,
+    filterFrom,
+    filterTo,
     scaleType,
     textColor,
     textColorHover,
@@ -1513,7 +1513,7 @@ const animateBar = (barRef, props = {}) => {
 const blockTransition = (element, direction, animationProps = {}) => {
   const block = document.createElement("div");
   block.className = "block-transition";
-  const colorBlock = animationProps.colorBlockEffectIn || '#000';
+  const colorBlock = animationProps.colorBlockEffect || '#000';
 
   // Impostazioni iniziali del blocco
   block.style.position = "absolute";
@@ -1630,121 +1630,129 @@ const blockTransition = (element, direction, animationProps = {}) => {
   });
 };
 const fadeIn = (target, props = {}) => {
+  var _props$opacityFrom, _props$opacityTo;
   const animationProps = getAnimationProps(props, target);
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const opacityFrom = (_props$opacityFrom = props.opacityFrom) !== null && _props$opacityFrom !== void 0 ? _props$opacityFrom : 0;
+  const opacityTo = (_props$opacityTo = props.opacityTo) !== null && _props$opacityTo !== void 0 ? _props$opacityTo : 1;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
     ...animationProps,
-    opacity: [opacityInFrom, opacityInTo]
+    opacity: [opacityFrom, opacityTo]
   });
 };
 const translateXYIn = (target, props = {}) => {
+  var _props$startXFrom, _props$startXTo, _props$startYFrom, _props$startYTo, _props$opacityFrom2, _props$opacityTo2;
   const animationProps = getAnimationProps(props, target);
-  const startXFrom = props.startXFrom || 0;
-  const startXTo = props.startXTo || 0;
-  const startYFrom = props.startYFrom || 0;
-  const startYTo = props.startYTo || 0;
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const startXFrom = (_props$startXFrom = props.startXFrom) !== null && _props$startXFrom !== void 0 ? _props$startXFrom : 100;
+  const startXTo = (_props$startXTo = props.startXTo) !== null && _props$startXTo !== void 0 ? _props$startXTo : 0;
+  const startYFrom = (_props$startYFrom = props.startYFrom) !== null && _props$startYFrom !== void 0 ? _props$startYFrom : 0;
+  const startYTo = (_props$startYTo = props.startYTo) !== null && _props$startYTo !== void 0 ? _props$startYTo : 0;
+  const opacityFrom = (_props$opacityFrom2 = props.opacityFrom) !== null && _props$opacityFrom2 !== void 0 ? _props$opacityFrom2 : 0;
+  const opacityTo = (_props$opacityTo2 = props.opacityTo) !== null && _props$opacityTo2 !== void 0 ? _props$opacityTo2 : 1;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
     translateX: [startXFrom, startXTo],
     translateY: [startYFrom, startYTo],
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
     ...animationProps,
-    opacity: [opacityInFrom, opacityInTo]
+    opacity: [opacityFrom, opacityTo]
   });
 };
 const scaleIn = (target, props = {}) => {
+  var _props$opacityFrom3, _props$opacityTo3, _props$scaleFrom, _props$scaleTo;
   const animationProps = getAnimationProps(props, target);
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const scaleFrom = props.scaleFrom || 0;
-  const scaleTo = props.scaleTo || 1;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const opacityFrom = (_props$opacityFrom3 = props.opacityFrom) !== null && _props$opacityFrom3 !== void 0 ? _props$opacityFrom3 : 0;
+  const opacityTo = (_props$opacityTo3 = props.opacityTo) !== null && _props$opacityTo3 !== void 0 ? _props$opacityTo3 : 1;
+  const scaleFrom = (_props$scaleFrom = props.scaleFrom) !== null && _props$scaleFrom !== void 0 ? _props$scaleFrom : 0;
+  const scaleTo = (_props$scaleTo = props.scaleTo) !== null && _props$scaleTo !== void 0 ? _props$scaleTo : 1;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
-    opacity: [opacityInFrom, opacityInTo],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
+    opacity: [opacityFrom, opacityTo],
     scale: [scaleFrom, scaleTo],
     ...animationProps
   });
 };
 const scaleInX = (target, props = {}) => {
+  var _props$opacityFrom4, _props$opacityTo4, _props$scaleFrom2, _props$scaleTo2;
   const animationProps = getAnimationProps(props, target);
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const scaleFrom = props.scaleFrom || 0;
-  const scaleTo = props.scaleTo || 1;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const opacityFrom = (_props$opacityFrom4 = props.opacityFrom) !== null && _props$opacityFrom4 !== void 0 ? _props$opacityFrom4 : 0;
+  ;
+  const opacityTo = (_props$opacityTo4 = props.opacityTo) !== null && _props$opacityTo4 !== void 0 ? _props$opacityTo4 : 1;
+  const scaleFrom = (_props$scaleFrom2 = props.scaleFrom) !== null && _props$scaleFrom2 !== void 0 ? _props$scaleFrom2 : 0;
+  const scaleTo = (_props$scaleTo2 = props.scaleTo) !== null && _props$scaleTo2 !== void 0 ? _props$scaleTo2 : 1;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
-    opacity: [opacityInFrom, opacityInTo],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
+    opacity: [opacityFrom, opacityTo],
     scaleX: [scaleFrom, scaleTo],
     ...animationProps
   });
 };
 const scaleInY = (target, props = {}) => {
+  var _props$opacityFrom5, _props$opacityTo5, _props$scaleFrom3, _props$scaleTo3;
   const animationProps = getAnimationProps(props, target);
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const scaleFrom = props.scaleFrom || 0;
-  const scaleTo = props.scaleTo || 1;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const opacityFrom = (_props$opacityFrom5 = props.opacityFrom) !== null && _props$opacityFrom5 !== void 0 ? _props$opacityFrom5 : 0;
+  const opacityTo = (_props$opacityTo5 = props.opacityTo) !== null && _props$opacityTo5 !== void 0 ? _props$opacityTo5 : 1;
+  const scaleFrom = (_props$scaleFrom3 = props.scaleFrom) !== null && _props$scaleFrom3 !== void 0 ? _props$scaleFrom3 : 0;
+  const scaleTo = (_props$scaleTo3 = props.scaleTo) !== null && _props$scaleTo3 !== void 0 ? _props$scaleTo3 : 1;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
-    opacity: [opacityInFrom, opacityInTo],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
+    opacity: [opacityFrom, opacityTo],
     scaleY: [scaleFrom, scaleTo],
     ...animationProps
   });
 };
 const rotateIn = (target, props = {}) => {
+  var _props$opacityFrom6, _props$opacityTo6, _props$rotateFrom, _props$rotateTo, _props$rotateXFrom, _props$rotateXTo, _props$rotateYFrom, _props$rotateYTo;
   const animationProps = getAnimationProps(props, target);
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const rotateInFrom = props.rotateInFrom;
-  const rotateInTo = props.rotateInTo;
-  const rotateInXFrom = props.rotateInXFrom;
-  const rotateInXTo = props.rotateInXTo;
-  const rotateInYFrom = props.rotateInYFrom;
-  const rotateInYTo = props.rotateInYTo;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const opacityFrom = (_props$opacityFrom6 = props.opacityFrom) !== null && _props$opacityFrom6 !== void 0 ? _props$opacityFrom6 : 0;
+  const opacityTo = (_props$opacityTo6 = props.opacityTo) !== null && _props$opacityTo6 !== void 0 ? _props$opacityTo6 : 1;
+  const rotateFrom = (_props$rotateFrom = props.rotateFrom) !== null && _props$rotateFrom !== void 0 ? _props$rotateFrom : 0;
+  const rotateTo = (_props$rotateTo = props.rotateTo) !== null && _props$rotateTo !== void 0 ? _props$rotateTo : 0;
+  const rotateXFrom = (_props$rotateXFrom = props.rotateXFrom) !== null && _props$rotateXFrom !== void 0 ? _props$rotateXFrom : 0;
+  const rotateXTo = (_props$rotateXTo = props.rotateXTo) !== null && _props$rotateXTo !== void 0 ? _props$rotateXTo : 0;
+  const rotateYFrom = (_props$rotateYFrom = props.rotateYFrom) !== null && _props$rotateYFrom !== void 0 ? _props$rotateYFrom : 0;
+  const rotateYTo = (_props$rotateYTo = props.rotateYTo) !== null && _props$rotateYTo !== void 0 ? _props$rotateYTo : 0;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
-    opacity: [opacityInFrom, opacityInTo],
-    rotate: [rotateInFrom, rotateInTo],
-    rotateX: [rotateInXFrom, rotateInXTo],
-    rotateY: [rotateInYFrom, rotateInYTo],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
+    opacity: [opacityFrom, opacityTo],
+    rotate: [rotateFrom, rotateTo],
+    rotateX: [rotateXFrom, rotateXTo],
+    rotateY: [rotateYFrom, rotateYTo],
     ...animationProps
   });
 };
 const skewInX = (target, props = {}) => {
+  var _props$opacityFrom7, _props$opacityTo7, _props$skewXFrom, _props$skewXTo, _props$skewYFrom, _props$skewYTo;
   const animationProps = getAnimationProps(props, target);
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const skewXFrom = props.skewXFrom;
-  const skewXTo = props.skewXTo;
-  const skewYFrom = props.skewYFrom;
-  const skewYTo = props.skewYTo;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
+  const opacityFrom = (_props$opacityFrom7 = props.opacityFrom) !== null && _props$opacityFrom7 !== void 0 ? _props$opacityFrom7 : 0;
+  const opacityTo = (_props$opacityTo7 = props.opacityTo) !== null && _props$opacityTo7 !== void 0 ? _props$opacityTo7 : 1;
+  const skewXFrom = (_props$skewXFrom = props.skewXFrom) !== null && _props$skewXFrom !== void 0 ? _props$skewXFrom : 0;
+  const skewXTo = (_props$skewXTo = props.skewXTo) !== null && _props$skewXTo !== void 0 ? _props$skewXTo : 0;
+  const skewYFrom = (_props$skewYFrom = props.skewYFrom) !== null && _props$skewYFrom !== void 0 ? _props$skewYFrom : 0;
+  const skewYTo = (_props$skewYTo = props.skewYTo) !== null && _props$skewYTo !== void 0 ? _props$skewYTo : 0;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: target,
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
-    opacity: [opacityInFrom, opacityInTo],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
+    opacity: [opacityFrom, opacityTo],
     skewX: [skewXFrom, skewXTo],
     skewY: [skewYFrom, skewYTo],
     ...animationProps
@@ -1761,38 +1769,39 @@ const BlockFromIn = (target, props = {}) => {
   blockTransition(target, directionBlock, animationProps);
 };
 const customEffectIn = (target, props = {}) => {
+  var _props$startXFrom2, _props$startXTo2, _props$startYFrom2, _props$startYTo2, _props$opacityFrom8, _props$opacityTo8, _props$scaleFrom4, _props$scaleTo4, _props$rotateFrom2, _props$rotateTo2, _props$rotateXFrom2, _props$rotateXTo2, _props$rotateYFrom2, _props$rotateYTo2, _props$skewXFrom2, _props$skewXTo2, _props$skewYFrom2, _props$skewYTo2, _props$scaleType;
   const animationProps = getAnimationProps(props, target);
-  const startXFrom = props.startXFrom || 0;
-  const startXTo = props.startXTo || 0;
-  const startYFrom = props.startYFrom || 0;
-  const startYTo = props.startYTo || 0;
-  const opacityInFrom = props.opacityInFrom || 0;
-  const opacityInTo = props.opacityInTo || 1;
-  const filterInFrom = props.filterInFrom + 'px';
-  const filterInTo = props.filterInTo + 'px';
-  const scaleFrom = props.scaleFrom || 0;
-  const scaleTo = props.scaleTo || 1;
-  const rotateInFrom = props.rotateInFrom;
-  const rotateInTo = props.rotateInTo;
-  const rotateInXFrom = props.rotateInXFrom;
-  const rotateInXTo = props.rotateInXTo;
-  const rotateInYFrom = props.rotateInYFrom;
-  const rotateInYTo = props.rotateInYTo;
-  const skewXFrom = props.skewXFrom;
-  const skewXTo = props.skewXTo;
-  const skewYFrom = props.skewYFrom;
-  const skewYTo = props.skewYTo;
-  const scaleType = props.scaleType || 'scale'; // Default to 'scale'
+  const startXFrom = (_props$startXFrom2 = props.startXFrom) !== null && _props$startXFrom2 !== void 0 ? _props$startXFrom2 : 0;
+  const startXTo = (_props$startXTo2 = props.startXTo) !== null && _props$startXTo2 !== void 0 ? _props$startXTo2 : 100;
+  const startYFrom = (_props$startYFrom2 = props.startYFrom) !== null && _props$startYFrom2 !== void 0 ? _props$startYFrom2 : 0;
+  const startYTo = (_props$startYTo2 = props.startYTo) !== null && _props$startYTo2 !== void 0 ? _props$startYTo2 : 0;
+  const opacityFrom = (_props$opacityFrom8 = props.opacityFrom) !== null && _props$opacityFrom8 !== void 0 ? _props$opacityFrom8 : 0;
+  const opacityTo = (_props$opacityTo8 = props.opacityTo) !== null && _props$opacityTo8 !== void 0 ? _props$opacityTo8 : 1;
+  const filterFrom = props.filterFrom + 'px';
+  const filterTo = props.filterTo + 'px';
+  const scaleFrom = (_props$scaleFrom4 = props.scaleFrom) !== null && _props$scaleFrom4 !== void 0 ? _props$scaleFrom4 : 0;
+  const scaleTo = (_props$scaleTo4 = props.scaleTo) !== null && _props$scaleTo4 !== void 0 ? _props$scaleTo4 : 1;
+  const rotateFrom = (_props$rotateFrom2 = props.rotateFrom) !== null && _props$rotateFrom2 !== void 0 ? _props$rotateFrom2 : 0;
+  const rotateTo = (_props$rotateTo2 = props.rotateTo) !== null && _props$rotateTo2 !== void 0 ? _props$rotateTo2 : 0;
+  const rotateXFrom = (_props$rotateXFrom2 = props.rotateXFrom) !== null && _props$rotateXFrom2 !== void 0 ? _props$rotateXFrom2 : 0;
+  const rotateXTo = (_props$rotateXTo2 = props.rotateXTo) !== null && _props$rotateXTo2 !== void 0 ? _props$rotateXTo2 : 0;
+  const rotateYFrom = (_props$rotateYFrom2 = props.rotateYFrom) !== null && _props$rotateYFrom2 !== void 0 ? _props$rotateYFrom2 : 0;
+  const rotateYTo = (_props$rotateYTo2 = props.rotateYTo) !== null && _props$rotateYTo2 !== void 0 ? _props$rotateYTo2 : 0;
+  const skewXFrom = (_props$skewXFrom2 = props.skewXFrom) !== null && _props$skewXFrom2 !== void 0 ? _props$skewXFrom2 : 0;
+  const skewXTo = (_props$skewXTo2 = props.skewXTo) !== null && _props$skewXTo2 !== void 0 ? _props$skewXTo2 : 0;
+  const skewYFrom = (_props$skewYFrom2 = props.skewYFrom) !== null && _props$skewYFrom2 !== void 0 ? _props$skewYFrom2 : 0;
+  const skewYTo = (_props$skewYTo2 = props.skewYTo) !== null && _props$skewYTo2 !== void 0 ? _props$skewYTo2 : 0;
+  const scaleType = (_props$scaleType = props.scaleType) !== null && _props$scaleType !== void 0 ? _props$scaleType : 'scale'; // Default to 'scale'
   const animationTargets = {
     targets: target,
     translateX: [startXFrom, startXTo],
     translateY: [startYFrom, startYTo],
-    filter: ['blur(' + filterInFrom + ')', 'blur(' + filterInTo + ')'],
+    filter: ['blur(' + filterFrom + ')', 'blur(' + filterTo + ')'],
     ...animationProps,
-    opacity: [opacityInFrom, opacityInTo],
-    rotate: [rotateInFrom, rotateInTo],
-    rotateX: [rotateInXFrom, rotateInXTo],
-    rotateY: [rotateInYFrom, rotateInYTo],
+    opacity: [opacityFrom, opacityTo],
+    rotate: [rotateFrom, rotateTo],
+    rotateX: [rotateXFrom, rotateXTo],
+    rotateY: [rotateYFrom, rotateYTo],
     skewX: [skewXFrom, skewXTo],
     skewY: [skewYFrom, skewYTo]
   };
@@ -1815,46 +1824,46 @@ const getAnimationEffect = (effectName, container, props = {}) => {
   switch (effectName) {
     case 'fadeSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)']
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)']
       };
     case 'translateSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
         translateX: [animationProps.startXFrom, animationProps.startXTo],
         translateY: [animationProps.startYFrom, animationProps.startYTo]
       };
     case 'scaleSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
         scale: [animationProps.scaleFrom, animationProps.scaleTo]
       };
     case 'scaleXSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
         scaleX: [animationProps.scaleFrom, animationProps.scaleTo]
       };
     case 'scaleYSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
         scaleY: [animationProps.scaleFrom, animationProps.scaleTo]
       };
     case 'rotateSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
-        rotate: [animationProps.rotateInFrom, animationProps.rotateInTo],
-        rotateX: [animationProps.rotateInXFrom, animationProps.rotateInXTo],
-        rotateY: [animationProps.rotateInYFrom, animationProps.rotateInYTo]
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
+        rotate: [animationProps.rotateFrom, animationProps.rotateTo],
+        rotateX: [animationProps.rotateXFrom, animationProps.rotateXTo],
+        rotateY: [animationProps.rotateYFrom, animationProps.rotateYTo]
       };
     case 'skewSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
         skewX: [animationProps.skewXFrom, animationProps.skewXTo],
         skewY: [animationProps.skewYFrom, animationProps.skewYTo]
       };
@@ -1867,8 +1876,8 @@ const getAnimationEffect = (effectName, container, props = {}) => {
         rotate: () => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-360, 360),
         // Rotazione casuale
         scale: [animationProps.scaleTo, animationProps.scaleFrom],
-        filter: ['blur(' + animationProps.filterInTo + 'px)', 'blur(' + animationProps.filterInFrom + 'px)'],
-        opacity: [animationProps.opacityInTo, animationProps.opacityInFrom]
+        filter: ['blur(' + animationProps.filterTo + 'px)', 'blur(' + animationProps.filterFrom + 'px)'],
+        opacity: [animationProps.opacityTo, animationProps.opacityFrom]
       };
     case 'gather':
       return {
@@ -1879,16 +1888,16 @@ const getAnimationEffect = (effectName, container, props = {}) => {
         rotate: [() => animejs__WEBPACK_IMPORTED_MODULE_0__["default"].random(-360, 360), 0],
         // Rotazione casuale verso 0
         scale: [animationProps.scaleFrom, animationProps.scaleTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo]
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo]
       };
     case 'customSplit':
       return {
-        opacity: [animationProps.opacityInFrom, animationProps.opacityInTo],
-        filter: ['blur(' + animationProps.filterInFrom + 'px)', 'blur(' + animationProps.filterInTo + 'px)'],
-        rotate: [animationProps.rotateInFrom, animationProps.rotateInTo],
-        rotateX: [animationProps.rotateInXFrom, animationProps.rotateInXTo],
-        rotateY: [animationProps.rotateInYFrom, animationProps.rotateInYTo],
+        opacity: [animationProps.opacityFrom, animationProps.opacityTo],
+        filter: ['blur(' + animationProps.filterFrom + 'px)', 'blur(' + animationProps.filterTo + 'px)'],
+        rotate: [animationProps.rotateFrom, animationProps.rotateTo],
+        rotateX: [animationProps.rotateXFrom, animationProps.rotateXTo],
+        rotateY: [animationProps.rotateYFrom, animationProps.rotateYTo],
         scale: [animationProps.scaleFrom, animationProps.scaleTo],
         translateX: [animationProps.startXFrom, animationProps.startXTo],
         translateY: [animationProps.startYFrom, animationProps.startYTo],
@@ -1987,106 +1996,114 @@ const splitText = (container, props = {}) => {
 // Definisci gli effetti hover
 const hoverEffects = {
   scaleHover: (element, animationProps) => {
+    var _animationProps$opaci, _animationProps$scale, _animationProps$easin, _animationProps$durat;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci = animationProps.opacityHover) !== null && _animationProps$opaci !== void 0 ? _animationProps$opaci : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      scale: animationProps.scaleHover,
-      easing: animationProps.easingHover,
+      scale: (_animationProps$scale = animationProps.scaleHover) !== null && _animationProps$scale !== void 0 ? _animationProps$scale : 1,
+      easing: (_animationProps$easin = animationProps.easingHover) !== null && _animationProps$easin !== void 0 ? _animationProps$easin : 'linear',
       color: animationProps.textColorHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat = animationProps.durationHover) !== null && _animationProps$durat !== void 0 ? _animationProps$durat : 800
     });
   },
   scaleXHover: (element, animationProps) => {
+    var _animationProps$opaci2, _animationProps$scale2, _animationProps$easin2, _animationProps$durat2;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci2 = animationProps.opacityHover) !== null && _animationProps$opaci2 !== void 0 ? _animationProps$opaci2 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      scaleX: animationProps.scaleHover,
-      easing: animationProps.easingHover,
+      scaleX: (_animationProps$scale2 = animationProps.scaleHover) !== null && _animationProps$scale2 !== void 0 ? _animationProps$scale2 : 1,
+      easing: (_animationProps$easin2 = animationProps.easingHover) !== null && _animationProps$easin2 !== void 0 ? _animationProps$easin2 : 'linear',
       color: animationProps.textColorHover,
       backgroundColor: animationProps.backgroundColorImageHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat2 = animationProps.durationHover) !== null && _animationProps$durat2 !== void 0 ? _animationProps$durat2 : 800
     });
   },
   scaleYHover: (element, animationProps) => {
+    var _animationProps$opaci3, _animationProps$scale3, _animationProps$easin3, _animationProps$durat3;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci3 = animationProps.opacityHover) !== null && _animationProps$opaci3 !== void 0 ? _animationProps$opaci3 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      scaleY: animationProps.scaleHover,
-      easing: animationProps.easingHover,
+      scaleY: (_animationProps$scale3 = animationProps.scaleHover) !== null && _animationProps$scale3 !== void 0 ? _animationProps$scale3 : 1,
+      easing: (_animationProps$easin3 = animationProps.easingHover) !== null && _animationProps$easin3 !== void 0 ? _animationProps$easin3 : 'linear',
       color: animationProps.textColorHover,
       backgroundColor: animationProps.backgroundColorImageHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat3 = animationProps.durationHover) !== null && _animationProps$durat3 !== void 0 ? _animationProps$durat3 : 800
     });
   },
   rotateHover: (element, animationProps) => {
+    var _animationProps$rotat, _animationProps$rotat2, _animationProps$rotat3, _animationProps$easin4, _animationProps$durat4;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
       opacity: animationProps.opacityHover,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      rotate: animationProps.rotateHover,
-      rotateX: animationProps.rotateXHover,
-      rotateY: animationProps.rotateYHover,
-      easing: animationProps.easingHover,
+      rotate: (_animationProps$rotat = animationProps.rotateHover) !== null && _animationProps$rotat !== void 0 ? _animationProps$rotat : 0,
+      rotateX: (_animationProps$rotat2 = animationProps.rotateXHover) !== null && _animationProps$rotat2 !== void 0 ? _animationProps$rotat2 : 0,
+      rotateY: (_animationProps$rotat3 = animationProps.rotateYHover) !== null && _animationProps$rotat3 !== void 0 ? _animationProps$rotat3 : 0,
+      easing: (_animationProps$easin4 = animationProps.easingHover) !== null && _animationProps$easin4 !== void 0 ? _animationProps$easin4 : 'linear',
       color: animationProps.textColorHover,
       backgroundColor: animationProps.backgroundColorImageHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat4 = animationProps.durationHover) !== null && _animationProps$durat4 !== void 0 ? _animationProps$durat4 : 800
     });
   },
   translateHover: (element, animationProps) => {
+    var _animationProps$opaci4, _animationProps$start, _animationProps$start2, _animationProps$easin5, _animationProps$durat5;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci4 = animationProps.opacityHover) !== null && _animationProps$opaci4 !== void 0 ? _animationProps$opaci4 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      translateX: animationProps.startXHover,
-      translateY: animationProps.startYHover,
-      easing: animationProps.easingHover,
+      translateX: (_animationProps$start = animationProps.startXHover) !== null && _animationProps$start !== void 0 ? _animationProps$start : 0,
+      translateY: (_animationProps$start2 = animationProps.startYHover) !== null && _animationProps$start2 !== void 0 ? _animationProps$start2 : 0,
+      easing: (_animationProps$easin5 = animationProps.easingHover) !== null && _animationProps$easin5 !== void 0 ? _animationProps$easin5 : 'linear',
       color: animationProps.textColorHover,
       backgroundColor: animationProps.backgroundColorImageHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat5 = animationProps.durationHover) !== null && _animationProps$durat5 !== void 0 ? _animationProps$durat5 : 800
     });
   },
   opacityHover: (element, animationProps) => {
+    var _animationProps$opaci5, _animationProps$easin6, _animationProps$durat6;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci5 = animationProps.opacityHover) !== null && _animationProps$opaci5 !== void 0 ? _animationProps$opaci5 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      easing: animationProps.easingHover,
+      easing: (_animationProps$easin6 = animationProps.easingHover) !== null && _animationProps$easin6 !== void 0 ? _animationProps$easin6 : 'linear',
       color: animationProps.textColorHover,
       backgroundColor: animationProps.backgroundColorImageHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat6 = animationProps.durationHover) !== null && _animationProps$durat6 !== void 0 ? _animationProps$durat6 : 800
     });
   },
   skewHover: (element, animationProps) => {
+    var _animationProps$opaci6, _animationProps$skewX, _animationProps$skewY, _animationProps$easin7, _animationProps$durat7;
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci6 = animationProps.opacityHover) !== null && _animationProps$opaci6 !== void 0 ? _animationProps$opaci6 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      skewX: animationProps.skewXHover,
-      skewY: animationProps.skewYHover,
-      easing: animationProps.easingHover,
+      skewX: (_animationProps$skewX = animationProps.skewXHover) !== null && _animationProps$skewX !== void 0 ? _animationProps$skewX : 0,
+      skewY: (_animationProps$skewY = animationProps.skewYHover) !== null && _animationProps$skewY !== void 0 ? _animationProps$skewY : 0,
+      easing: (_animationProps$easin7 = animationProps.easingHover) !== null && _animationProps$easin7 !== void 0 ? _animationProps$easin7 : 'linear',
       color: animationProps.textColorHover,
       backgroundColor: animationProps.backgroundColorImageHover,
-      duration: animationProps.durationHover
+      duration: (_animationProps$durat7 = animationProps.durationHover) !== null && _animationProps$durat7 !== void 0 ? _animationProps$durat7 : 800
     });
   },
   customHover: (element, animationProps) => {
+    var _animationProps$opaci7, _animationProps$rotat4, _animationProps$rotat5, _animationProps$rotat6, _animationProps$start3, _animationProps$start4, _animationProps$skewX2, _animationProps$skewY2;
     const scaleTypeHover = animationProps.scaleTypeHover || 'scale'; // Default to 'scale'
     const animationTargetsHover = {
-      opacity: animationProps.opacityHover,
+      opacity: (_animationProps$opaci7 = animationProps.opacityHover) !== null && _animationProps$opaci7 !== void 0 ? _animationProps$opaci7 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
-      rotate: animationProps.rotateHover,
-      rotateX: animationProps.rotateXHover,
-      rotateY: animationProps.rotateYHover,
-      translateX: animationProps.startXHover,
-      translateY: animationProps.startYHover,
-      skewX: animationProps.skewXHover,
-      skewY: animationProps.skewYHover0,
-      easing: animationProps.easingHover,
-      duration: animationProps.durationHover,
+      rotate: (_animationProps$rotat4 = animationProps.rotateHover) !== null && _animationProps$rotat4 !== void 0 ? _animationProps$rotat4 : 0,
+      rotateX: (_animationProps$rotat5 = animationProps.rotateXHover) !== null && _animationProps$rotat5 !== void 0 ? _animationProps$rotat5 : 0,
+      rotateY: (_animationProps$rotat6 = animationProps.rotateYHover) !== null && _animationProps$rotat6 !== void 0 ? _animationProps$rotat6 : 0,
+      translateX: (_animationProps$start3 = animationProps.startXHover) !== null && _animationProps$start3 !== void 0 ? _animationProps$start3 : 0,
+      translateY: (_animationProps$start4 = animationProps.startYHover) !== null && _animationProps$start4 !== void 0 ? _animationProps$start4 : 0,
+      skewX: (_animationProps$skewX2 = animationProps.skewXHover) !== null && _animationProps$skewX2 !== void 0 ? _animationProps$skewX2 : 0,
+      skewY: (_animationProps$skewY2 = animationProps.skewYHover) !== null && _animationProps$skewY2 !== void 0 ? _animationProps$skewY2 : 0,
+      easing: animationProps.easingHover || 'linear',
+      duration: animationProps.durationHover || 800,
       backgroundColor: animationProps.backgroundColorImageHover,
       color: animationProps.textColorHover
     };
@@ -2170,11 +2187,11 @@ __webpack_require__.r(__webpack_exports__);
 // Funzione per ottenere gli attributi comuni delle animazioni
 const getAnimationProps = props => {
   const {
-    duration = 1000,
-    delayIn = 0,
+    duration = 800,
+    delay = 0,
     endDelay = 0,
-    easing = 'easeInQuad',
-    loop = 1,
+    easing = 'linear',
+    loop = '1',
     direction = 'normal',
     startXFrom: startXFrom,
     startXTo: startXTo,
@@ -2184,23 +2201,23 @@ const getAnimationProps = props => {
     scaleFrom: scaleFrom,
     scaleTo: scaleTo,
     stagger,
-    textSplitEffect = "translateSplit",
-    opacityInFrom: opacityInFrom,
-    opacityInTo: opacityInTo,
-    rotateInFrom: rotateInFrom,
-    rotateInTo: rotateInTo,
-    rotateInXFrom: rotateInXFrom,
-    rotateInXTo: rotateInXTo,
-    rotateInYFrom: rotateInYFrom,
-    rotateInYTo: rotateInYTo,
+    textSplitEffect,
+    opacityFrom: opacityFrom,
+    opacityTo: opacityTo,
+    rotateFrom: rotateFrom,
+    rotateTo: rotateTo,
+    rotateXFrom: rotateXFrom,
+    rotateXTo: rotateXTo,
+    rotateYFrom: rotateYFrom,
+    rotateYTo: rotateYTo,
     skewXFrom: skewXFrom,
     skewXTo: skewXTo,
     skewYFrom: skewYFrom,
     skewYTo: skewYTo,
     directionBlock: directionBlock,
-    colorBlockEffectIn: colorBlockEffectIn,
-    filterInFrom: filterInFrom,
-    filterInTo: filterInTo,
+    colorBlockEffect: colorBlockEffect,
+    filterFrom: filterFrom,
+    filterTo: filterTo,
     scaleType: scaleType
   } = props;
 
@@ -2208,7 +2225,7 @@ const getAnimationProps = props => {
   const loopCount = typeof loop === 'string' && loop.toLowerCase() === 'true' ? Infinity : Number(loop);
   return {
     duration,
-    delay: delayIn,
+    delay: delay,
     endDelay,
     easing,
     loop: loopCount,
@@ -2220,24 +2237,24 @@ const getAnimationProps = props => {
     startYBottom,
     stagger,
     textSplitEffect,
-    opacityInFrom,
-    opacityInTo,
+    opacityFrom,
+    opacityTo,
     scaleFrom,
     scaleTo,
-    rotateInFrom,
-    rotateInTo,
-    rotateInXFrom,
-    rotateInXTo,
-    rotateInYFrom,
-    rotateInYTo,
+    rotateFrom,
+    rotateTo,
+    rotateXFrom,
+    rotateXTo,
+    rotateYFrom,
+    rotateYTo,
     skewXFrom,
     skewXTo,
     skewYFrom,
     skewYTo,
     directionBlock,
-    colorBlockEffectIn,
-    filterInFrom,
-    filterInTo,
+    colorBlockEffect,
+    filterFrom,
+    filterTo,
     scaleType
   };
 };
@@ -12732,7 +12749,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Funzione per animare un elemento
   function animateElement() {
-    const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide');
+    const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide, .div-slide');
     elementsToAnimate.forEach(element => {
       // Dynamic Bar
       if (element.classList.contains('dynamic-bar')) {
@@ -12758,69 +12775,70 @@ document.addEventListener('DOMContentLoaded', () => {
           current: element
         }, props);
       } else {
-        const effectIn = element.getAttribute('data-effect-in') || "fadeIn";
-        const duration = parseInt(element.getAttribute('data-duration')) || 3000;
-        const delayIn = parseInt(element.getAttribute('data-delay-in')) || 0;
-        const delayInEnd = parseInt(element.getAttribute('data-delay-in-end')) || 0;
-        const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
-        const directionIn = element.getAttribute('data-direction-in') || 'normal';
-        const loopIn = element.getAttribute('data-loop-in') || 1;
-        const opacityInFrom = element.getAttribute('data-opacity-in-from') || 0;
-        const opacityInTo = element.getAttribute('data-opacity-in-to') || 1;
-        const startXFrom = element.getAttribute('data-start-x-from') || 0;
-        const startXTo = element.getAttribute('data-start-x-to') || 0;
-        const startYFrom = element.getAttribute('data-start-y-from') || 0;
-        const startYTo = element.getAttribute('data-start-y-to') || 0;
-        const stagger = parseInt(element.getAttribute('data-stagger')) || 50;
-        const textSplitEffect = element.getAttribute('data-effect-split') || 'translateSplit';
-        const directionBlock = element.getAttribute('data-direction-block');
-        const colorBlockEffectIn = element.getAttribute('data-color-block') || '#000';
-        const rotateInFrom = parseInt(element.getAttribute('data-rotate-in-from')) || 0;
-        const rotateInTo = parseInt(element.getAttribute('data-rotate-in-to')) || 0;
-        const rotateInXFrom = parseInt(element.getAttribute('data-rotate-x-in-from')) || 0;
-        const rotateInXTo = parseInt(element.getAttribute('data-rotate-x-in-to')) || 0;
-        const rotateInYFrom = parseInt(element.getAttribute('data-rotate-y-in-from')) || 0;
-        const rotateInYTo = parseInt(element.getAttribute('data-rotate-y-in-to')) || 0;
-        const scaleFrom = parseInt(element.getAttribute('data-scale-in-from')) || 1;
-        const scaleTo = parseInt(element.getAttribute('data-scale-in-to')) || 1;
-        const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) || 0;
-        const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) || 0;
-        const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) || 0;
-        const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) || 0;
-        const scaleType = element.getAttribute('data-scale-custom-effect-in') || 'scale';
-        const textColor = element.getAttribute('data-text-color') || '#000';
-        const backgroundColorImage = element.getAttribute('data-image-color') || '#000';
-        const backgroundColorImageHover = element.getAttribute('data-image-color-hover') || '#000';
-        const textColorHover = element.getAttribute('data-text-color-hover') || '#000';
-        const effectHover = element.getAttribute('data-effect-hover');
-        const scaleHover = parseInt(element.getAttribute('data-scale-hover')) || 1;
-        const opacityHover = parseInt(element.getAttribute('data-opacity-hover')) || 0;
-        const filterHover = parseInt(element.getAttribute('data-filter-hover')) || 0;
-        const rotateHover = parseInt(element.getAttribute('data-rotate-hover')) || 0;
-        const rotateXHover = parseInt(element.getAttribute('data-rotate-x-hover')) || 0;
-        const rotateYHover = parseInt(element.getAttribute('data-rotate-y-hover')) || 0;
-        const skewXHover = parseInt(element.getAttribute('data-skew-x-hover')) || 0;
-        const skewYHover = parseInt(element.getAttribute('data-skew-y-hover')) || 0;
-        const startXHover = parseInt(element.getAttribute('data-start-x-hover')) || 0;
-        const startYHover = parseInt(element.getAttribute('data-start-y-hover')) || 0;
-        const scaleTypeHover = element.getAttribute('data-scale-custom-effect-hover');
-        const durationHover = element.getAttribute('data-duration-hover');
-        const easingHover = element.getAttribute('data-easing-hover');
-        const heightFrom = element.getAttribute('data-height-from');
-        const heightTo = element.getAttribute('data-height-to');
+        var _element$getAttribute, _parseInt, _parseInt2, _parseInt3, _element$getAttribute2, _element$getAttribute3, _element$getAttribute4, _element$getAttribute5, _element$getAttribute6, _element$getAttribute7, _element$getAttribute8, _element$getAttribute9, _element$getAttribute10, _parseInt4, _element$getAttribute11, _element$getAttribute12, _element$getAttribute13, _parseInt5, _parseInt6, _parseInt7, _parseInt8, _parseInt9, _parseInt10, _parseFloat, _parseFloat2, _parseInt11, _parseInt12, _parseInt13, _parseInt14, _element$getAttribute14, _element$getAttribute15, _element$getAttribute16, _element$getAttribute17, _element$getAttribute18, _element$getAttribute19, _parseInt15, _parseInt16, _parseInt17, _parseInt18, _parseInt19, _parseInt20, _parseInt21, _parseInt22, _parseInt23, _parseInt24, _dataScaleCustomEf, _dataDurationHover, _dataEasingHover, _dataHeightFrom, _dataHeightTo;
+        const effectIn = (_element$getAttribute = element.getAttribute('data-effect-in')) !== null && _element$getAttribute !== void 0 ? _element$getAttribute : '';
+        const duration = (_parseInt = parseInt(element.getAttribute('data-duration'))) !== null && _parseInt !== void 0 ? _parseInt : 800;
+        const delay = (_parseInt2 = parseInt(element.getAttribute('data-delay-in'))) !== null && _parseInt2 !== void 0 ? _parseInt2 : 0;
+        const delayEnd = (_parseInt3 = parseInt(element.getAttribute('data-delay-in-end'))) !== null && _parseInt3 !== void 0 ? _parseInt3 : 0;
+        const easingIn = (_element$getAttribute2 = element.getAttribute('data-easing-in')) !== null && _element$getAttribute2 !== void 0 ? _element$getAttribute2 : 'linear';
+        const directionIn = (_element$getAttribute3 = element.getAttribute('data-direction-in')) !== null && _element$getAttribute3 !== void 0 ? _element$getAttribute3 : 'normal';
+        const loopIn = (_element$getAttribute4 = element.getAttribute('data-loop-in')) !== null && _element$getAttribute4 !== void 0 ? _element$getAttribute4 : '1';
+        const opacityFrom = (_element$getAttribute5 = element.getAttribute('data-opacity-in-from')) !== null && _element$getAttribute5 !== void 0 ? _element$getAttribute5 : 0;
+        const opacityTo = (_element$getAttribute6 = element.getAttribute('data-opacity-in-to')) !== null && _element$getAttribute6 !== void 0 ? _element$getAttribute6 : 1;
+        const startXFrom = (_element$getAttribute7 = element.getAttribute('data-start-x-from')) !== null && _element$getAttribute7 !== void 0 ? _element$getAttribute7 : 100;
+        const startXTo = (_element$getAttribute8 = element.getAttribute('data-start-x-to')) !== null && _element$getAttribute8 !== void 0 ? _element$getAttribute8 : 0;
+        const startYFrom = (_element$getAttribute9 = element.getAttribute('data-start-y-from')) !== null && _element$getAttribute9 !== void 0 ? _element$getAttribute9 : 0;
+        const startYTo = (_element$getAttribute10 = element.getAttribute('data-start-y-to')) !== null && _element$getAttribute10 !== void 0 ? _element$getAttribute10 : 0;
+        const stagger = (_parseInt4 = parseInt(element.getAttribute('data-stagger'))) !== null && _parseInt4 !== void 0 ? _parseInt4 : 80;
+        const textSplitEffect = (_element$getAttribute11 = element.getAttribute('data-effect-split')) !== null && _element$getAttribute11 !== void 0 ? _element$getAttribute11 : 'translateSplit';
+        const directionBlock = (_element$getAttribute12 = element.getAttribute('data-direction-block')) !== null && _element$getAttribute12 !== void 0 ? _element$getAttribute12 : 'right';
+        const colorBlockEffect = (_element$getAttribute13 = element.getAttribute('data-color-block')) !== null && _element$getAttribute13 !== void 0 ? _element$getAttribute13 : '#000';
+        const rotateFrom = (_parseInt5 = parseInt(element.getAttribute('data-rotate-in-from'))) !== null && _parseInt5 !== void 0 ? _parseInt5 : 0;
+        const rotateTo = (_parseInt6 = parseInt(element.getAttribute('data-rotate-in-to'))) !== null && _parseInt6 !== void 0 ? _parseInt6 : 0;
+        const rotateXFrom = (_parseInt7 = parseInt(element.getAttribute('data-rotate-x-in-from'))) !== null && _parseInt7 !== void 0 ? _parseInt7 : 0;
+        const rotateXTo = (_parseInt8 = parseInt(element.getAttribute('data-rotate-x-in-to'))) !== null && _parseInt8 !== void 0 ? _parseInt8 : 0;
+        const rotateYFrom = (_parseInt9 = parseInt(element.getAttribute('data-rotate-y-in-from'))) !== null && _parseInt9 !== void 0 ? _parseInt9 : 0;
+        const rotateYTo = (_parseInt10 = parseInt(element.getAttribute('data-rotate-y-in-to'))) !== null && _parseInt10 !== void 0 ? _parseInt10 : 0;
+        const scaleFrom = (_parseFloat = parseFloat(element.getAttribute('data-scale-in-from'))) !== null && _parseFloat !== void 0 ? _parseFloat : 0;
+        const scaleTo = (_parseFloat2 = parseFloat(element.getAttribute('data-scale-in-to'))) !== null && _parseFloat2 !== void 0 ? _parseFloat2 : 1;
+        const skewXFrom = (_parseInt11 = parseInt(element.getAttribute('data-skew-x-from'))) !== null && _parseInt11 !== void 0 ? _parseInt11 : 0;
+        const skewXTo = (_parseInt12 = parseInt(element.getAttribute('data-skew-x-to'))) !== null && _parseInt12 !== void 0 ? _parseInt12 : 1;
+        const skewYFrom = (_parseInt13 = parseInt(element.getAttribute('data-skew-y-from'))) !== null && _parseInt13 !== void 0 ? _parseInt13 : 0;
+        const skewYTo = (_parseInt14 = parseInt(element.getAttribute('data-skew-y-to'))) !== null && _parseInt14 !== void 0 ? _parseInt14 : 1;
+        const scaleType = (_element$getAttribute14 = element.getAttribute('data-scale-custom-effect-in')) !== null && _element$getAttribute14 !== void 0 ? _element$getAttribute14 : 'scale';
+        const textColor = (_element$getAttribute15 = element.getAttribute('data-text-color')) !== null && _element$getAttribute15 !== void 0 ? _element$getAttribute15 : '';
+        const backgroundColorImage = (_element$getAttribute16 = element.getAttribute('data-image-color')) !== null && _element$getAttribute16 !== void 0 ? _element$getAttribute16 : '';
+        const backgroundColorImageHover = (_element$getAttribute17 = element.getAttribute('data-image-color-hover')) !== null && _element$getAttribute17 !== void 0 ? _element$getAttribute17 : '';
+        const textColorHover = (_element$getAttribute18 = element.getAttribute('data-text-color-hover')) !== null && _element$getAttribute18 !== void 0 ? _element$getAttribute18 : '0';
+        const effectHover = (_element$getAttribute19 = element.getAttribute('data-effect-hover')) !== null && _element$getAttribute19 !== void 0 ? _element$getAttribute19 : '';
+        const scaleHover = (_parseInt15 = parseInt(element.getAttribute('data-scale-hover'))) !== null && _parseInt15 !== void 0 ? _parseInt15 : 1;
+        const opacityHover = (_parseInt16 = parseInt(element.getAttribute('data-opacity-hover'))) !== null && _parseInt16 !== void 0 ? _parseInt16 : 1;
+        const filterHover = (_parseInt17 = parseInt(element.getAttribute('data-filter-hover'))) !== null && _parseInt17 !== void 0 ? _parseInt17 : 0;
+        const rotateHover = (_parseInt18 = parseInt(element.getAttribute('data-rotate-hover'))) !== null && _parseInt18 !== void 0 ? _parseInt18 : 0;
+        const rotateXHover = (_parseInt19 = parseInt(element.getAttribute('data-rotate-x-hover'))) !== null && _parseInt19 !== void 0 ? _parseInt19 : 0;
+        const rotateYHover = (_parseInt20 = parseInt(element.getAttribute('data-rotate-y-hover'))) !== null && _parseInt20 !== void 0 ? _parseInt20 : 0;
+        const skewXHover = (_parseInt21 = parseInt(element.getAttribute('data-skew-x-hover'))) !== null && _parseInt21 !== void 0 ? _parseInt21 : 1;
+        const skewYHover = (_parseInt22 = parseInt(element.getAttribute('data-skew-y-hover'))) !== null && _parseInt22 !== void 0 ? _parseInt22 : 1;
+        const startXHover = (_parseInt23 = parseInt(element.getAttribute('data-start-x-hover'))) !== null && _parseInt23 !== void 0 ? _parseInt23 : 0;
+        const startYHover = (_parseInt24 = parseInt(element.getAttribute('data-start-y-hover'))) !== null && _parseInt24 !== void 0 ? _parseInt24 : 0;
+        const scaleTypeHover = element.getAttribute((_dataScaleCustomEf = 'data-scale-custom-effect-hover') !== null && _dataScaleCustomEf !== void 0 ? _dataScaleCustomEf : 'scale');
+        const durationHover = element.getAttribute((_dataDurationHover = 'data-duration-hover') !== null && _dataDurationHover !== void 0 ? _dataDurationHover : 800);
+        const easingHover = element.getAttribute((_dataEasingHover = 'data-easing-hover') !== null && _dataEasingHover !== void 0 ? _dataEasingHover : 'linear');
+        const heightFrom = element.getAttribute((_dataHeightFrom = 'data-height-from') !== null && _dataHeightFrom !== void 0 ? _dataHeightFrom : 0);
+        const heightTo = element.getAttribute((_dataHeightTo = 'data-height-to') !== null && _dataHeightTo !== void 0 ? _dataHeightTo : 0);
 
         // Imposta l'opacità iniziale a 0
         //element.style.opacity = 0;
 
         const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_1__.getAnimationProps)({
           duration,
-          delay: delayIn,
-          endDelay: delayInEnd,
+          delay: delay,
+          endDelay: delayEnd,
           easing: easingIn,
           loop: loopIn,
           direction: directionIn,
-          opacityInFrom,
-          opacityInTo,
+          opacityFrom,
+          opacityTo,
           startXFrom,
           startXTo,
           startYFrom,
@@ -12828,13 +12846,13 @@ document.addEventListener('DOMContentLoaded', () => {
           stagger,
           textSplitEffect,
           directionBlock,
-          colorBlockEffectIn,
-          rotateInFrom,
-          rotateInTo,
-          rotateInXFrom,
-          rotateInXTo,
-          rotateInYFrom,
-          rotateInYTo,
+          colorBlockEffect,
+          rotateFrom,
+          rotateTo,
+          rotateXFrom,
+          rotateXTo,
+          rotateYFrom,
+          rotateYTo,
           scaleFrom,
           scaleTo,
           skewXFrom,
@@ -12867,7 +12885,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (_animate__WEBPACK_IMPORTED_MODULE_1__.animationsIn[effectIn]) {
             _animate__WEBPACK_IMPORTED_MODULE_1__.animationsIn[effectIn](element, animationProps);
           }
-        }, delayIn);
+        }, delay);
       }
     });
   }
@@ -12890,7 +12908,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Aggiungi gli eventi di hover
-  const elements = document.querySelectorAll('.title-slide, .image-first-slide');
+  const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide');
   elements.forEach(element => {
     element.addEventListener('mouseenter', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
       durationHover: element.getAttribute('data-duration-hover'),
@@ -14209,7 +14227,7 @@ function applyLiquidEffect(slide) {
     gl.uniform1f(splatProgram.uniforms.aspectRatio, canvas.width / canvas.height);
     gl.uniform2f(splatProgram.uniforms.point, x / canvas.width, 1.0 - y / canvas.height);
     gl.uniform3f(splatProgram.uniforms.color, dx, -dy, 1.0);
-    gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 100.0);
+    gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 1000.0); // Regolazione grandezza vapore da impostare 
     blit(velocity.write.fbo);
     velocity.swap();
     gl.viewport(0, 0, dyeWidth, dyeHeight);
@@ -14230,8 +14248,8 @@ function applyLiquidEffect(slide) {
   pointers[0].down = true;
   canvas.addEventListener("mousemove", e => {
     pointers[0].moved = true;
-    pointers[0].dx = (e.offsetX - pointers[0].x) * 5.0;
-    pointers[0].dy = (e.offsetY - pointers[0].y) * 5.0;
+    pointers[0].dx = (e.offsetX - pointers[0].x) * 5; // Regolazione grandezza vapore
+    pointers[0].dy = (e.offsetY - pointers[0].y) * 5; // Regolazione grandezza vapore
     pointers[0].x = e.offsetX;
     pointers[0].y = e.offsetY;
     pointers[0].down = true;

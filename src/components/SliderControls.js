@@ -14,7 +14,7 @@ import { useEffect, useState } from "@wordpress/element";
 import { info } from "@wordpress/icons";
 import SectionSliderSelector from "./sectionSliderSelector";
 import ColorOptionsPanel from "./colorPanel";
-//import PatternSelectionModal from "./modalPattern";
+import PatternSelectionModal from "./modalPattern";
 
 const SliderControls = ({ attributes, setAttributes }) => {
   const {

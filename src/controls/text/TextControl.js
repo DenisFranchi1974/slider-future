@@ -1,6 +1,7 @@
 import React from "react";
 import { TextControl, Tooltip } from "@wordpress/components";
 import InfoIcon from '@mui/icons-material/Info';
+import { __ } from "@wordpress/i18n";
 
 const CustomTextControl = ({
   placeholder,    // Etichetta per il controllo (includi l'icona o altro HTML qui)

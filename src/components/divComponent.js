@@ -1,15 +1,95 @@
-import { box } from "@wordpress/icons";
-import React, { useState, useEffect, useRef  } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { animationsIn, getAnimationProps} from '../animate';
+import {handleMouseEnter, handleMouseLeave, animateBar} from '../animate/animationIn'
+
 import InnerTextDivComponent from "./innerTextDivComponent";
 import InnerImageDivComponent from "./innerImageDivComponent";
 import InnerButtonDivComponent from "./innerButtonDivComponent";
 import IconComponentInner from "./iconComponentInner";
 import MenuInnerComponent from "./menuInnerComponent";
 
-const DivComponent = ({ element, index }) => {
+const DivComponent = ({ element, index, onPlay }) => {
   const DivBlock = element.elementDiv || "div";
 
   const [innerElements, setInnerElements] = useState(element.innerElements || []);
+
+  const groupRef = useRef(null); // Ref per il contenitore del testo
+  //const barRef = useRef(null); // Ref per il div che vuoi animare
+  const [hasPlayed, setHasPlayed] = useState(false); // Stato per tracciare se l'animazione è stata attivata
+
+  // Funzione per attivare l'animazione
+  const playAnimation = () => {
+    const effectIn = animationsIn[element.effectIn];
+   
+    // Converti il valore di loop in un numero
+    const loopCount = (typeof element.loop === 'string' && element.loop.toLowerCase() === 'true') 
+    
+    ? 5
+    : (parseInt(element.loop) >= 1 && parseInt(element.loop) <= 10) 
+    ? parseInt(element.loop) 
+    : 1; // Imposta un valore di default se non è in un intervallo valido
+
+    if (effectIn ) {
+     // textRef.current.style.opacity = 0; // Reset
+      const animationProps = getAnimationProps({
+        duration: element.duration ?? 800,
+        delay: element.delay ?? 0,
+        endDelay: element.endDelay ?? 0,
+        easing: element.easing ?? 'linear',
+        direction: element.direction ?? 'normal',
+        loop: loopCount,
+        startXFrom: element.startXFrom ?? 100, 
+        startXTo: element.startXTo ?? 0, 
+        startYFrom: element.startYFrom ?? 0,
+        startYTo: element.startYTo ?? 0,
+        opacityFrom: element.opacityFrom ?? 0,
+        opacityTo: element.opacityTo ?? 1,
+        scaleFrom: element.scaleFrom ?? 0,
+        scaleTo: element.scaleTo ?? 1,
+        rotateFrom: element.rotateFrom ?? 0,
+        rotateTo: element.rotateTo ?? 0,
+        rotateXFrom: element.rotateXFrom ?? 0, 
+        rotateXTo: element.rotateXTo ?? 0,
+        rotateYFrom: element.rotateYFrom ?? 0,
+        rotateYTo: element.rotateYTo ?? 0,
+        skewXFrom: element.skewXFrom ?? 0,
+        skewXTo: element.skewXTo ?? 0, 
+        skewYFrom: element.skewYFrom ?? 0,
+        skewYTo: element.skewYTo ?? 0,
+        filterFrom: element.filterFrom ?? 0,
+        filterTo: element.filterTo ?? 0,
+        scaleType: element.scaleType ?? 'scale',
+      });
+  
+      setTimeout(() => {
+        // Animazione del testo
+        effectIn(groupRef.current, animationProps);
+      
+      }, element.delay);
+      
+    }
+  };
+
+
+  // Questo useEffect ora non avvia più l'animazione automaticamente
+  useEffect(() => {
+    // Passa la funzione playAnimation al genitore tramite onPlay
+    if (onPlay) {
+      onPlay(playAnimation); // Questa linea consente al genitore di controllare l'animazione
+    }
+  }, [onPlay]);
+
+  useEffect(() => {
+    // Imposta l'opacità iniziale a 1 solo se l'animazione non è stata avviata
+    if (groupRef.current && !hasPlayed) {
+      groupRef.current.style.opacity = 1;
+    }
+  }, [hasPlayed]);
+
+  // Aggiungi un useEffect per osservare i cambiamenti di effectIn ed easing
+  useEffect(() => {
+    playAnimation();
+  }, [element.effectIn, element.easing, element.direction]);
 
 
   useEffect(() => {
@@ -39,72 +119,24 @@ const DivComponent = ({ element, index }) => {
         ? `${element.customContentHeightDiv}%`
         : element.contentHeightDiv,
     margin: `${element.marginDiv?.top} ${element.marginDiv?.right} ${element.marginDiv?.bottom} ${element.marginDiv?.left}`,
-    boxShadow:
-      `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorShadow}` ||
-      "0 0 0 0 #000000",
+    ...(element.enableBoxShadow && {
+      boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorShadow}`,
+      }),
     transform: `rotate(${element.rotateDiv}deg)`,
-    "--duration-effect-div": element.durationEffectDiv + "s",
-    "--interation-div": element.interationDiv || "forwards",
-    "--color-hover-div": element.divColorHover,
-    "--border-color-hover-div":
-      element.backgroundBorderColorHoverDiv || "#000000",
-    "--border-width-hover-div":
-      `${element.backgroundBorderSizeDivHover}px` || 0,
-    "--opacity-hover-div": element.opacityHoverDiv || 1,
-    "--border-style-hover-div": element.borderStyleHoverDiv || "none",
-    "--transition-hover-div": element.durationEffectHoverDiv + "s" || "0.3",
-    "--translate-hover-div": element.translateEffectHoverDiv + "px" || "-10",
-    "--color-effect-hover-div": element.effectHoverColorHoverDiv || "#000000",
-    "--rotate-hover-div": element.rotateHoverDiv + "deg" || "0",
-    "--delay-effect-div": element.delayEffectDiv + "s",
   };
 
-  // Nascondi l'elemento dopo un tot di tempo
-  const bannerRef = useRef(null); // Crea un ref per l'elemento
-  const [hideEnabled, setHideEnabled] = useState(element.delayHide); // Stato per abilitare/disabilitare la funzione
-  const [hideAfter, setHideAfter] = useState(element.delaySeconds); // Tempo in secondi per nascondere
-
-  useEffect(() => {
-    // Funzione per nascondere l'elemento
-    const hideBanner = () => {
-      if (bannerRef.current) {
-        bannerRef.current.classList.add('hidden'); // Aggiunge la classe 'hidden'
-      }
-    };
-
-    // Se la funzionalità è abilitata, imposta il timeout
-    if (hideEnabled) {
-      const timeout = setTimeout(hideBanner, hideAfter * 1000); // Nascondi dopo `hideAfter` secondi
-      return () => clearTimeout(timeout); // Pulisci il timeout quando il componente viene smontato o `hideEnabled` cambia
-    } else {
-      // Se disabilitato, rimuovi la classe 'hidden'
-      if (bannerRef.current) {
-        bannerRef.current.classList.remove('hidden');
-      }
-    }
-  }, [hideEnabled, hideAfter]); // Rerun l'effetto quando `hideEnabled` o `hideAfter` cambiano
-
-  // Forza un aggiornamento del componente quando `textDiv.delayHide` cambia
-  useEffect(() => {
-    setHideEnabled(element.delayHide);
-  }, [element.delayHide]);
-  useEffect(() => {
-    setHideAfter(element.delaySeconds);
-  }, [element.delaySeconds]);
 
   return (
     <div
       className={"content-inner-div " + element.hideDiv}
       style={{
         opacity: element.opacityDiv,
-        "--delay-hide-seconds-div": element.delayTransition + "s",
         zIndex: element.zIndexDiv,
         width:
       element.contentWidthDiv === "custom"
         ? `${element.customContentWidthDiv}%`
         : element.contentWidthDiv,
       }}
-      ref={bannerRef}
     >
       <DivBlock
         className={
@@ -112,19 +144,34 @@ const DivComponent = ({ element, index }) => {
           element.positionDiv +
           " " +
           element.layoutDiv +
-          "-layout " +
-          element.animationDiv +
-          element.playStateDiv +
-          " " +
-          element.animationHoverDiv
+          "-layout " 
         }
-        data-swiper-parallax-x={element.parallaxDiv}
-        data-swiper-parallax-y={element.parallaxDivY}
-        data-swiper-parallax-scale={element.parallaxDivScale}
-        data-swiper-parallax-duration={element.parallaxDivDuration}
-        data-swiper-parallax-opacity={element.parallaxDivOpacity}
         key={index}
         style={stylesDiv}
+        ref={groupRef}
+        onMouseEnter={(e) => handleMouseEnter(e, { 
+          durationHover: element.durationHover ?? 800,
+          backgroundColorImageHover:element.backgroundColorImageHover,
+          effectHover:element.effectHover,
+          easingHover:element.easingHover ?? 'linear',
+          opacityHover:element.opacityHover ?? 1,
+          filterHover:element.filterHover ?? 0,
+          startXHover:element.startXHover ?? 100,
+          startYHover:element.startYHover ?? 0,
+          scaleHover:element.scaleHover ?? 1,
+          rotateHover:element.rotateHover ?? 0,
+          rotateXHover:element.rotateXHover ?? 0,
+          rotateYHover:element.rotateYHover ?? 0,
+          skewXHover:element.skewXHover ?? 0,
+          skewYHover:element.skewYHover ?? 0,
+          scaleTypeHover:element.scaleTypeHover ?? 'scale',
+        })} // Passa element.duration
+        onMouseLeave={(e) => handleMouseLeave(e, { 
+          durationHover: element.durationHover ?? 800,
+          backgroundColorImage:element.backgroundColor,
+          easingHover:element.easingHover ?? 'linear',
+
+        })} // Passa element.duration
       >
         {innerElements &&
           innerElements.map((innerElement, innerIndex) => {

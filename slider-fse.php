@@ -24,6 +24,8 @@ function create_block_slider_fse_block_init() {
 }
 add_action('init', 'create_block_slider_fse_block_init');
 
+// Codice amministrativo
+if (is_admin()) {
 // Admin Dashboard
 function my_plugin_admin_menu() {
     add_menu_page(
@@ -120,6 +122,10 @@ function my_plugin_save_color(WP_REST_Request $request) {
 
     return rest_ensure_response(array('success' => true));
 }
+
+}
+
+
 
 // Carica gli stili per il blocco
 function my_plugin_enqueue_block_editor_assets() {
@@ -331,11 +337,6 @@ function handle_image_upload(WP_REST_Request $request) {
 
 
 
-
-
-
-
-
 function my_block_enqueue_frontend_assets() {
     // Carica il CSS di FontAwesome
     wp_enqueue_style(
@@ -344,3 +345,5 @@ function my_block_enqueue_frontend_assets() {
     );
 }
 add_action('wp_enqueue_scripts', 'my_block_enqueue_frontend_assets');
+
+

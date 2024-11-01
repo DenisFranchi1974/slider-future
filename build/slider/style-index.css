@@ -1011,6 +1011,10 @@ li.has-submenu.submenu-hover:hover .sub-menu{
   box-sizing: border-box;
 }
 
+.swiper-wrapper a {
+  text-decoration: none;
+}
+
 /* Mask blob image */
 .image-with-mask {
   mask-mode: alpha;
@@ -1183,16 +1187,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
 /* Base Styling for div-slide */
 .div-slide {
   display: flex;
-  transition: transform var(--transition-hover-div) ease;
-}
-
-.div-slide:hover {
-  background-color: var(--color-hover-div) !important;
-  border-color: var(--border-color-hover-div) !important;
-  border-style: var(--border-style-hover-div) !important;
-  border-width: var(--border-width-hover-div) !important;
-  opacity: var(--opacity-hover-div) !important;
-  transform: rotate(var(--rotate-hover-div)) !important;
 }
 
 /* Flex Direction for Layouts */
@@ -2023,48 +2017,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
 
 .hover-effect-3-image-inner:hover {
   box-shadow: 0 4px 8px var(--color-effect-hover-image-inner) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Hover Effect div */
-/* Scale */
-.content-inner-div {
-  transition: transform var(--transition-hover-div) ease;
-}
-
-.hover-effect-1-div {
-  transition: transform var(--transition-hover-div) ease !important;
-}
-
-.hover-effect-1-div:hover {
-  transform: scale(1.1) !important;
-}
-
-/* Translate Y */
-.hover-effect-2-div {
-  transition: transform var(--transition-hover-div) ease;
-}
-
-.hover-effect-2-div:hover {
-  transform: translateY(var(--translate-hover-div)) !important; /* Sposta l'elemento verso l'alto di 10px */
-}
-
-/* Translate X */
-.hover-effect-5-div {
-  transition: transform var(--transition-hover-div) ease;
-}
-
-.hover-effect-5-div:hover {
-  transform: translateX(var(--translate-hover-div)) !important; /* Sposta l'elemento verso l'alto di 10px */
-}
-
-/* Shadow */
-.hover-effect-3-div- {
-  transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
-}
-
-.hover-effect-3-div-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-div) !important; /* Aggiunge un'ombra */
   filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
@@ -3172,12 +3124,6 @@ li.has-submenu.submenu-hover:hover .sub-menu{
 .content-title-slide.hidden {
   opacity: 0 !important;
   transition: opacity var(--delay-hide-seconds-title) ease-in-out;
-}
-
-/* Effetto nascondi l'elemento image */
-.content-img-first.hidden {
-  opacity: 0 !important;
-  transition: opacity var(--delay-hide-seconds-image) ease-in-out;
 }
 
 /* Effetto nascondi l'elemento inner image */

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione per animare un elemento
     function animateElement() {
-      const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide');
+      const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide, .div-slide');
       elementsToAnimate.forEach(element => {
         // Dynamic Bar
         if (element.classList.contains('dynamic-bar')) {
@@ -56,56 +56,56 @@ document.addEventListener('DOMContentLoaded', () => {
           // Passa l'elemento (come riferimento) e i props alla funzione animateBar
           animateBar({ current: element }, props);
       } else {
-      const effectIn = element.getAttribute('data-effect-in') || "fadeIn";
-      const duration = parseInt(element.getAttribute('data-duration')) || 3000;
-      const delayIn = parseInt(element.getAttribute('data-delay-in')) || 0;
-      const delayInEnd = parseInt(element.getAttribute('data-delay-in-end')) || 0;
-      const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
-      const directionIn = element.getAttribute('data-direction-in') || 'normal';
-      const loopIn = element.getAttribute('data-loop-in') || 1;
-      const opacityInFrom = element.getAttribute('data-opacity-in-from') || 0;
-      const opacityInTo = element.getAttribute('data-opacity-in-to') || 1;
-      const startXFrom = element.getAttribute('data-start-x-from') || 0;
-      const startXTo = element.getAttribute('data-start-x-to') || 0;
-      const startYFrom = element.getAttribute('data-start-y-from') || 0;
-      const startYTo = element.getAttribute('data-start-y-to') || 0;
-      const stagger = parseInt(element.getAttribute('data-stagger')) || 50;
-      const textSplitEffect = element.getAttribute('data-effect-split') || 'translateSplit';
-      const directionBlock = element.getAttribute('data-direction-block');
-      const colorBlockEffectIn = element.getAttribute('data-color-block') || '#000';
-      const rotateInFrom = parseInt(element.getAttribute('data-rotate-in-from')) || 0;
-      const rotateInTo = parseInt(element.getAttribute('data-rotate-in-to')) || 0;
-      const rotateInXFrom = parseInt(element.getAttribute('data-rotate-x-in-from')) || 0 ;
-      const rotateInXTo = parseInt(element.getAttribute('data-rotate-x-in-to')) || 0;
-      const rotateInYFrom = parseInt(element.getAttribute('data-rotate-y-in-from'))|| 0;
-      const rotateInYTo = parseInt(element.getAttribute('data-rotate-y-in-to')) || 0;
-      const scaleFrom = parseInt(element.getAttribute('data-scale-in-from')) || 1;
-      const scaleTo = parseInt(element.getAttribute('data-scale-in-to')) || 1;
-      const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) || 0;
-      const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) || 0;
-      const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) || 0;
-      const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) || 0;
-      const scaleType = element.getAttribute('data-scale-custom-effect-in') || 'scale';
-      const textColor = element.getAttribute('data-text-color') || '#000';
-      const backgroundColorImage = element.getAttribute('data-image-color') || '#000';
-      const backgroundColorImageHover = element.getAttribute('data-image-color-hover') || '#000';
-      const textColorHover = element.getAttribute('data-text-color-hover') || '#000';
-      const effectHover = element.getAttribute('data-effect-hover');
-      const scaleHover = parseInt(element.getAttribute('data-scale-hover')) || 1;
-      const opacityHover = parseInt(element.getAttribute('data-opacity-hover')) || 0;
-      const filterHover = parseInt(element.getAttribute('data-filter-hover')) || 0;
-      const rotateHover = parseInt(element.getAttribute('data-rotate-hover')) || 0;
-      const rotateXHover = parseInt(element.getAttribute('data-rotate-x-hover')) || 0;
-      const rotateYHover = parseInt(element.getAttribute('data-rotate-y-hover')) || 0;
-      const skewXHover = parseInt(element.getAttribute('data-skew-x-hover')) || 0;
-      const skewYHover = parseInt(element.getAttribute('data-skew-y-hover')) || 0;
-      const startXHover = parseInt(element.getAttribute('data-start-x-hover')) || 0;
-      const startYHover = parseInt(element.getAttribute('data-start-y-hover')) || 0;
-      const scaleTypeHover = element.getAttribute('data-scale-custom-effect-hover');
-      const durationHover = element.getAttribute('data-duration-hover');
-      const easingHover = element.getAttribute('data-easing-hover');
-      const  heightFrom = element.getAttribute('data-height-from');
-      const  heightTo = element.getAttribute('data-height-to');
+      const effectIn = element.getAttribute('data-effect-in') ?? '';
+      const duration = parseInt(element.getAttribute('data-duration')) ?? 800;
+      const delay = parseInt(element.getAttribute('data-delay-in')) ?? 0;
+      const delayEnd = parseInt(element.getAttribute('data-delay-in-end')) ?? 0;
+      const easingIn = element.getAttribute('data-easing-in') ?? 'linear';
+      const directionIn = element.getAttribute('data-direction-in') ?? 'normal';
+      const loopIn = element.getAttribute('data-loop-in') ?? '1';
+      const opacityFrom = element.getAttribute('data-opacity-in-from') ?? 0;
+      const opacityTo = element.getAttribute('data-opacity-in-to') ?? 1;
+      const startXFrom = element.getAttribute('data-start-x-from') ?? 100;
+      const startXTo = element.getAttribute('data-start-x-to') ?? 0;
+      const startYFrom = element.getAttribute('data-start-y-from') ?? 0;
+      const startYTo = element.getAttribute('data-start-y-to') ?? 0;
+      const stagger = parseInt(element.getAttribute('data-stagger')) ?? 80;
+      const textSplitEffect = element.getAttribute('data-effect-split') ?? 'translateSplit';
+      const directionBlock = element.getAttribute('data-direction-block') ?? 'right';
+      const colorBlockEffect = element.getAttribute('data-color-block') ?? '#000';
+      const rotateFrom = parseInt(element.getAttribute('data-rotate-in-from')) ?? 0;
+      const rotateTo = parseInt(element.getAttribute('data-rotate-in-to')) ?? 0;
+      const rotateXFrom = parseInt(element.getAttribute('data-rotate-x-in-from')) ?? 0 ;
+      const rotateXTo = parseInt(element.getAttribute('data-rotate-x-in-to')) ?? 0;
+      const rotateYFrom = parseInt(element.getAttribute('data-rotate-y-in-from')) ?? 0;
+      const rotateYTo = parseInt(element.getAttribute('data-rotate-y-in-to')) ?? 0;
+      const scaleFrom = parseFloat(element.getAttribute('data-scale-in-from')) ?? 0;
+      const scaleTo = parseFloat(element.getAttribute('data-scale-in-to')) ?? 1;
+      const skewXFrom = parseInt(element.getAttribute('data-skew-x-from')) ?? 0;
+      const skewXTo = parseInt(element.getAttribute('data-skew-x-to')) ?? 1;
+      const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) ?? 0;
+      const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) ?? 1;
+      const scaleType = element.getAttribute('data-scale-custom-effect-in') ?? 'scale';
+      const textColor = element.getAttribute('data-text-color') ?? '';
+      const backgroundColorImage = element.getAttribute('data-image-color') ?? '';
+      const backgroundColorImageHover = element.getAttribute('data-image-color-hover') ?? '';
+      const textColorHover = element.getAttribute('data-text-color-hover') ?? '0';
+      const effectHover = element.getAttribute('data-effect-hover') ?? '';
+      const scaleHover = parseInt(element.getAttribute('data-scale-hover')) ?? 1;
+      const opacityHover = parseInt(element.getAttribute('data-opacity-hover')) ?? 1;
+      const filterHover = parseInt(element.getAttribute('data-filter-hover')) ?? 0;
+      const rotateHover = parseInt(element.getAttribute('data-rotate-hover')) ?? 0;
+      const rotateXHover = parseInt(element.getAttribute('data-rotate-x-hover')) ?? 0;
+      const rotateYHover = parseInt(element.getAttribute('data-rotate-y-hover')) ?? 0;
+      const skewXHover = parseInt(element.getAttribute('data-skew-x-hover')) ?? 1;
+      const skewYHover = parseInt(element.getAttribute('data-skew-y-hover')) ?? 1;
+      const startXHover = parseInt(element.getAttribute('data-start-x-hover')) ?? 0;
+      const startYHover = parseInt(element.getAttribute('data-start-y-hover')) ?? 0;
+      const scaleTypeHover = element.getAttribute('data-scale-custom-effect-hover' ?? 'scale');
+      const durationHover = element.getAttribute('data-duration-hover' ?? 800);
+      const easingHover = element.getAttribute('data-easing-hover' ?? 'linear');
+      const  heightFrom = element.getAttribute('data-height-from' ?? 0);
+      const  heightTo = element.getAttribute('data-height-to' ?? 0);
      
       // Imposta l'opacità iniziale a 0
      //element.style.opacity = 0;
@@ -113,13 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const animationProps = getAnimationProps({
         duration,
-        delay:delayIn,
-        endDelay: delayInEnd,
+        delay:delay,
+        endDelay: delayEnd,
         easing: easingIn,
         loop: loopIn,
         direction: directionIn,
-        opacityInFrom,
-        opacityInTo,
+        opacityFrom,
+        opacityTo,
         startXFrom,
         startXTo,
         startYFrom,
@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
         stagger,
         textSplitEffect,
         directionBlock,
-        colorBlockEffectIn,
-        rotateInFrom,
-        rotateInTo,
-        rotateInXFrom,
-        rotateInXTo,
-        rotateInYFrom,
-        rotateInYTo,
+        colorBlockEffect,
+        rotateFrom,
+        rotateTo,
+        rotateXFrom,
+        rotateXTo,
+        rotateYFrom,
+        rotateYTo,
         scaleFrom,
         scaleTo,
         skewXFrom,
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
        
       
-    }, delayIn);
+    }, delay);
   }
     });
   }
@@ -195,7 +195,7 @@ function observeSlides(slide) {
 }
 
 // Aggiungi gli eventi di hover
-const elements = document.querySelectorAll('.title-slide, .image-first-slide');
+const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide');
 elements.forEach(element => {
     element.addEventListener('mouseenter', (e) => handleMouseEnter(e, { 
       durationHover: element.getAttribute('data-duration-hover'),
@@ -1895,7 +1895,7 @@ function applyLiquidEffect(slide) {
         1.0 - y / canvas.height
       );
       gl.uniform3f(splatProgram.uniforms.color, dx, -dy, 1.0);
-      gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 100.0);
+      gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 1000.0); // Regolazione grandezza vapore da impostare 
       blit(velocity.write.fbo);
       velocity.swap();
     
@@ -1925,8 +1925,8 @@ function applyLiquidEffect(slide) {
     
     canvas.addEventListener("mousemove", (e) => {
       pointers[0].moved = true;
-      pointers[0].dx = (e.offsetX - pointers[0].x) * 5.0;
-      pointers[0].dy = (e.offsetY - pointers[0].y) * 5.0;
+      pointers[0].dx = (e.offsetX - pointers[0].x) * 5; // Regolazione grandezza vapore
+      pointers[0].dy = (e.offsetY - pointers[0].y) * 5; // Regolazione grandezza vapore
       pointers[0].x = e.offsetX;
       pointers[0].y = e.offsetY;
       pointers[0].down = true;

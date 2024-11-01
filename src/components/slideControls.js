@@ -20,7 +20,7 @@ import "../slider/editor.scss";
 import SectionSelectorSlide from "./sectionSelectorSlide";
 import TextEdit from "./text/TextEdit";
 import ImageEdit from "./image/ImageEdit";
-import DivControls from "./divControls";
+import GroupEdit from "./group/GroupEdit";
 import ColorOptionsPanel from "./colorPanel";
 import ColorOptionsPanelGradient from "./colorPanelGradient";
 import AlignmentControl from "./aligncontrol";
@@ -30,10 +30,14 @@ import ButtonControls from "./ButtonControls";
 import DeviceSelector from "./devicesSelector";
 import IconControls from "./IconControls";
 import DivModal  from "./layerLibrary"
-import { icon } from "@fortawesome/fontawesome-svg-core";
 import MenuControls from "./menu/MenuControls";
-import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
-import { stagger } from "animejs";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Popover from '@mui/material/Popover';
+import MenuItem from '@mui/material/MenuItem';
+
+
 
 
 const SlideControls = ({
@@ -48,7 +52,8 @@ const SlideControls = ({
   onDeviceChange,
   setSelectedIcon,
   handlePlayImage,
-  handlePlayText
+  handlePlayText,
+  handlePlayGroup
   
 }) => {
   const {
@@ -595,6 +600,8 @@ const SlideControls = ({
     textLink: "none",
     effectIn: "none",
     effectHover: "none",
+    widthTitle: "auto",
+    borderStyle: "none",
   };
   
   const addSlideTitle = (slideId) => {
@@ -711,14 +718,14 @@ const SlideControls = ({
                 delayEffectDiv: 0,
                 effectHoverColorHoverDiv: "",
                 translateEffectHoverDiv: 0,
-                textLinkDiv: "none",
-                linkUrlDiv: "",
-                linkTargetDiv: "_self",
-                linkRelDiv: "",
-                scrollToIdDiv: "",
-                enableDesktopDiv: true,
-                enableTabletDiv: true,
-                enableMobileDiv: true,
+                textLink: "none",
+                linkUrl: "",
+                linkTarget: "_self",
+                linkRel: "",
+                scrollToId: "",
+                enableDesktop: true,
+                enableTablet: true,
+                enableMobile: true,
                 parallaxDiv: 0,
                 parallaxDivY: 0,
                 parallaxDivScale: 1,
@@ -730,6 +737,8 @@ const SlideControls = ({
                 delayTransition: 0.5,
                 layoutWrap: "wrap",
                 justifyContentResponsiveDiv: "center",
+                effectIn: "none",
+                effectHover: "none",
               },
             ],
           }
@@ -1102,9 +1111,9 @@ const SlideControls = ({
                 linkTarget: "_self",
                 linkRel: "",
                 scrollToId: "",
-                enableDesktopTitle: true,
-                enableTabletTitle: true,
-                enableMobileTitle: true,
+                enableDesktop: true,
+                enableTablet: true,
+                enableMobile: true,
                 textColorHover: textColorDefault,
                 borderStyleHover: "none",
                 backgroundBorderColorHover: "",
@@ -1264,9 +1273,9 @@ const SlideControls = ({
                       linkTarget: "_self",
                       linkRel: "",
                       scrollToId: "",
-                      enableDesktopTitle: true,
-                      enableTabletTitle: true,
-                      enableMobileTitle: true,
+                      enableDesktop: true,
+                      enableTablet: true,
+                      enableMobile: true,
                       iteration: "forwards",
                       positionInnerText:"static",
                       verticalPositionInnerText: 0,
@@ -1347,14 +1356,14 @@ const SlideControls = ({
                   delayEffectDiv: 0,
                   effectHoverColorHoverDiv: "",
                   translateEffectHoverDiv: 0,
-                  textLinkDiv: "none",
-                  linkUrlDiv: "",
-                  linkTargetDiv: "_self",
-                  linkRelDiv: "",
-                  scrollToIdDiv: "",
-                  enableDesktopDiv: true,
-                  enableTabletDiv: true,
-                  enableMobileDiv: true,
+                  textLink: "none",
+                  linkUrl: "",
+                  linkTarget: "_self",
+                  linkRel: "",
+                  scrollToId: "",
+                  enableDesktop: true,
+                  enableTablet: true,
+                  enableMobile: true,
                   parallaxDiv: 0,
                   parallaxDivY: 0,
                   parallaxDivScale: 1,
@@ -1419,9 +1428,9 @@ const SlideControls = ({
                 fontFamily: "Arial",
                 linkUrl: "",
                 linkTarget: "_self",
-                enableDesktopTitle: true,
-                enableTabletTitle: true,
-                enableMobileTitle: true,
+                enableDesktop: true,
+                enableTablet: true,
+                enableMobile: true,
                 textColorHover: textColorDefault,
                 colorShadow: "",
                 boxShadowX: 0,
@@ -1471,6 +1480,20 @@ const resetEffect = (id) => {
 // Array di filtri per cui mostrare il controllo colore
 const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-inverse"];
 
+
+const [anchorEl, setAnchorEl] = useState(null);
+
+const handleClick = (event) => {
+  setAnchorEl(event.currentTarget);
+};
+
+const handleClose = () => {
+  setAnchorEl(null);
+};
+
+const open = Boolean(anchorEl);
+const id = open ? 'custom-popover' : undefined;
+
   return (
     <>
       <div className="content-subdescription-section-slider">
@@ -1488,23 +1511,46 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                   event.stopPropagation();
                 }}
               >
-                <DropdownMenu
-                  icon="ellipsis"
-                  label={__("Slide Options", "slider")}
-                  className="menu-slide-content"
-                  controls={[
-                    {
-                      icon: "trash",
-                      title: __("Delete", "slider"),
-                      onClick: () => removeSlide(slide.id),
-                    },
-                    {
-                      icon: "admin-page",
-                      title: __("Clone", "slider"),
-                      onClick: () => cloneSlide(slide),
-                    },
-                  ]}
-                />
+               
+
+               
+    
+        <MoreVertIcon className={`icon-slide-clone ${open ? 'active' : ''}`} aria-describedby={id} onClick={handleClick} />
+
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        slotProps={{
+          paper: {
+            style: { backgroundColor: 'var(--background-color)',color:'var(--light-color' }, // Personalizza il colore di sfondo
+          },
+        }}
+         // Aggiungi un offset per spostare il popover più in basso
+         style={{ marginTop: '20px' }} // Regola questo valore per spostare il popover più in basso
+      >
+        <MenuItem  style={{ fontSize: '13px'}} onClick={() => { removeSlide(slide.id); handleClose(); }}>
+          <DeleteOutlineIcon  style={{ fontSize: '14px',marginRight:'8px'}} />
+          {__("Delete", "slider")}
+        </MenuItem>
+        <MenuItem  style={{ fontSize: '13px'}} onClick={()  => { cloneSlide(slide); handleClose(); }}>
+          <FileCopyIcon  style={{ fontSize: '14px', marginRight:'8px'}} />
+          {__("Clone", "slider")}
+        </MenuItem>
+      </Popover>
+   
+
+
+              
               </div>
             </>
           }
@@ -1670,7 +1716,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                                 updateSlideRangeEffectRadial(slide.id, value)
                               }
                               min={1}
-                              max={7}
+                              max={70}
                               step={1}
                             />
                           </div>
@@ -2850,7 +2896,7 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                 )}
                 {element.type === "div" && (
                   <>
-                  <DivControls
+                  <GroupEdit
                     slide={slide}
                     slides={slides}
                     element={element}
@@ -2858,13 +2904,13 @@ const filtersWithColorOptions = ["filter-glitch", "filter-prism", "filter-invers
                     setAttributes={setAttributes}
                     setActiveSectionBlock={setActiveSectionBlock}
                     activeSectionBlock={activeSectionBlock}
-                    parallax={parallax}
                     attributes={attributes}
                     device={device}
                     handleDesktopClick={handleDesktopClick}
                     handleTabletClick={handleTabletClick}
                     handleMobileClick={handleMobileClick}
                     showOtherButtons={showOtherButtons}
+                    onAnimatedGroup={handlePlayGroup}
                   />
                  
                   </>

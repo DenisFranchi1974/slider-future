@@ -24,34 +24,33 @@ const ImageRender = ({ element, index, onPlay  }) => {
     if (effectIn ) {
      // textRef.current.style.opacity = 0; // Reset
       const animationProps = getAnimationProps({
-        duration: element.duration,
-        delayIn: element.delayIn, // Passa delayIn come delay
-        endDelay: element.endDelay,
-        easing: element.easing,
-        direction: element.direction,
+        duration: element.duration ?? 800,
+        delay: element.delay ?? 0, 
+        endDelay: element.endDelay ?? 0,
+        easing: element.easing ?? 'linear', 
+        direction: element.direction ?? 'normal',
         loop: loopCount,
-        startXFrom: element.startXFrom, 
-        startXTo: element.startXTo, 
-        startYFrom: element.startYFrom,
-        startYTo: element.startYTo,
-        stagger: element.stagger,
-        opacityInFrom: element.opacityInFrom,
-        opacityInTo: element.opacityInTo,
-        scaleFrom: element.scaleFrom,
-        scaleTo: element.scaleTo,
-        rotateInFrom: element.rotateInFrom,
-        rotateInTo: element.rotateInTo,
-        rotateInXFrom: element.rotateInXFrom, 
-        rotateInXTo: element.rotateInXTo,
-        rotateInYFrom: element.rotateInYFrom,
-        rotateInYTo: element.rotateInYTo,
-        skewXFrom: element.skewXFrom,
-        skewXTo: element.skewXTo,
-        skewYFrom: element.skewYFrom,
-        skewYTo: element.skewYTo,
-        filterInFrom: element.filterInFrom,
-        filterInTo: element.filterInTo,
-        scaleType: element.scaleType,
+        startXFrom: element.startXFrom ?? 100, 
+        startXTo: element.startXTo ?? 0, 
+        startYFrom: element.startYFrom ?? 0,
+        startYTo: element.startYTo ?? 0,
+        opacityFrom: element.opacityFrom ?? 0,
+        opacityTo: element.opacityTo ?? 1,
+        scaleFrom: element.scaleFrom ?? 0,
+        scaleTo: element.scaleTo ?? 1,
+        rotateFrom: element.rotateFrom ?? 0,
+        rotateTo: element.rotateTo ?? 0,
+        rotateXFrom: element.rotateXFrom ?? 0, 
+        rotateXTo: element.rotateXTo ?? 0,
+        rotateYFrom: element.rotateYFrom ?? 0,
+        rotateYTo: element.rotateYTo ?? 0,
+        skewXFrom: element.skewXFrom ?? 0,
+        skewXTo: element.skewXTo ?? 0,
+        skewYFrom: element.skewYFrom ?? 0,
+        skewYTo: element.skewYTo ?? 0,
+        filterFrom: element.filterFrom ?? 0,
+        filterTo: element.filterTo ?? 0,
+        scaleType: element.scaleType ?? 'scale',
       });
   
       setTimeout(() => {
@@ -68,7 +67,7 @@ const ImageRender = ({ element, index, onPlay  }) => {
             loop: loopCount, // O impostalo su un valore dinamico
           });
         }*/}
-      }, element.delayIn);
+      }, element.delay);
       
     }
   };
@@ -150,26 +149,26 @@ const ImageRender = ({ element, index, onPlay  }) => {
       <img
        ref={imageRef}
        onMouseEnter={(e) => handleMouseEnter(e, { 
-         durationHover: element.durationHover,
+         durationHover: element.durationHover ?? 800,
          backgroundColorImageHover:element.backgroundColorImageHover,
          effectHover:element.effectHover,
-         easingHover:element.easingHover,
-         opacityHover:element.opacityHover,
-         filterHover:element.filterHover,
-         startXHover:element.startXHover,
-         startYHover:element.startYHover,
-         scaleHover:element.scaleHover,
-         rotateHover:element.rotateHover,
-         rotateXHover:element.rotateXHover,
-         rotateYHover:element.rotateYHover,
-         skewXHover:element.skewXHover,
-         skewYHover:element.skewYHover,
-         scaleTypeHover:element.scaleTypeHover,
+         easingHover:element.easingHover ?? 'linear',
+         opacityHover:element.opacityHover ?? 1,
+         filterHover:element.filterHover ?? 0,
+         startXHover:element.startXHover ?? 100,
+         startYHover:element.startYHover ?? 0,
+         scaleHover:element.scaleHover ?? 1,
+         rotateHover:element.rotateHover ?? 0,
+         rotateXHover:element.rotateXHover ?? 0,
+         rotateYHover:element.rotateYHover ?? 0,
+         skewXHover:element.skewXHover ?? 0,
+         skewYHover:element.skewYHover ?? 0,
+         scaleTypeHover:element.scaleTypeHover ?? 'scale',
        })} // Passa element.duration
        onMouseLeave={(e) => handleMouseLeave(e, { 
-         durationHover: element.durationHover,
+         durationHover: element.durationHover ?? 800,
          backgroundColorImage:element.backgroundColorImage,
-         easingHover:element.easingHover,
+         easingHover:element.easingHover ?? 'linear',
        })} // Passa element.duration
         key={index}
         src={element.url}

@@ -18,7 +18,7 @@ export const selectOptionsEffectIn = [
 ];
 
 // Opzioni per il controllo degli effetti In image
-export const selectOptionsEffectInImage = [
+export const selectOptionsEffectElement = [
   { value: "none", label: __("None", "cocoblocks") },
   { value: "fadeIn", label: __("Fade", "cocoblocks") },
   { value: "translateXYIn", label: __("Translate", "cocoblocks") },
@@ -387,8 +387,7 @@ export const fontWeightOptions = [
 
   export const writeModeOptions = [
     { label: "Horizontal", value: "initial" },
-    { label: "Vertical lr", value: "vertical-lr" },
-    { label: "Vertical rl", value: "vertical-rl" },
+    { label: "Vertical", value: "vertical-lr" },
   ];
 
   ////////////////////////////
@@ -430,3 +429,185 @@ export const fontWeightOptions = [
   ];
 
 
+////////////////////////////
+
+/* Opzioni per blob immagine */
+
+export const blobOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("Blob 1", "cocoblocks"),
+    value: "blob1",
+  },
+  {
+    label: __("Blob 2", "cocoblocks"),
+    value: "blob2",
+  },
+  {
+    label: __("Blob 3", "cocoblocks"),
+    value: "blob3",
+  },
+  {
+    label: __("Blob 4", "cocoblocks"),
+    value: "blob4",
+  },
+];
+
+
+////////////////////////////
+
+/* Opzioni per spike immagine */
+
+export const spikeOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("1 Spike Top", "cocoblocks"),
+    value: "left-spike-1-top",
+  },
+  {
+    label: __("1 Spike Middle", "cocoblocks"),
+    value: "left-spike-1-middle",
+  },
+  {
+    label: __("1 Spike Bottom", "cocoblocks"),
+    value: "left-spike-1-bottom",
+  },
+  {
+    label: __("2 Spikes", "cocoblocks"),
+    value: "left-spike-2",
+  },
+  {
+    label: __("3 Spikes", "cocoblocks"),
+    value: "left-spike-3",
+  },
+  {
+    label: __("4 Spikes", "cocoblocks"),
+    value: "left-spike-4",
+  },
+  {
+    label: __("5 Spikes", "cocoblocks"),
+    value: "left-spike-5",
+  },
+];
+
+
+////////////////////////////
+
+/* Opzioni per spike right immagine */
+
+export const spikeRightOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("1 Spike Top", "cocoblocks"),
+    value: "right-spike-1-top",
+  },
+  {
+    label: __("1 Spike Middle", "cocoblocks"),
+    value: "right-spike-1-middle",
+  },
+  {
+    label: __("1 Spike Bottom", "cocoblocks"),
+    value: "right-spike-1-bottom",
+  },
+  {
+    label: __("2 Spikes", "cocoblocks"),
+    value: "right-spike-2",
+  },
+  {
+    label: __("3 Spikes", "cocoblocks"),
+    value: "right-spike-3",
+  },
+  {
+    label: __("4 Spikes", "cocoblocks"),
+    value: "right-spike-4",
+  },
+  {
+    label: __("5 Spikes", "cocoblocks"),
+    value: "right-spike-5",
+  },
+];
+
+
+////////////////////////////
+
+/* Opzioni filter immagine */
+
+export const filterImageOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("Grayscale", "cocoblocks"),
+    value: "grayscale",
+  },
+  {
+    label: __("Blur", "cocoblocks"),
+    value: "blur",
+  },
+  {
+    label: __("Sepia", "cocoblocks"),
+    value: "sepia",
+  },
+  {
+    label: __("Contrast", "cocoblocks"),
+    value: "contrast",
+  },
+  {
+    label: __("Brightness", "cocoblocks"),
+    value: "brightness",
+  },
+  {
+    label: __("Invert", "cocoblocks"),
+    value: "invert",
+  },
+  {
+    label: __("Saturate", "cocoblocks"),
+    value: "saturate",
+  },
+  {
+    label: __("Opacity", "cocoblocks"),
+    value: "opacity",
+  },
+  {
+    label: __("Hue Rotate", "cocoblocks"),
+    value: "hue-rotate",
+  },
+];
+
+
+////////////////////////////
+
+/* Opzioni di elementi */
+
+export const elementHtmlOptions = [
+  {
+    label: __("<div>", "cocoblocks"),
+    value: "div",
+  },
+  {
+    label: __("<section>", "cocoblocks"),
+    value: "section",
+  },
+  {
+    label: __("<main>", "cocoblocks"),
+    value: "main",
+  },
+  {
+    label: __("<article>", "cocoblocks"),
+    value: "article",
+  },
+  {
+    label: __("<aside>", "cocoblocks"),
+    value: "aside",
+  },
+];

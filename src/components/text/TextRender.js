@@ -23,37 +23,37 @@ const TextRender = ({ element, index, onPlay  }) => {
     if (effectIn ) {
      // textRef.current.style.opacity = 0; // Reset
       const animationProps = getAnimationProps({
-        duration: element.duration,
-        delayIn: element.delayIn, // Passa delayIn come delay
-        endDelay: element.endDelay,
-        easing: element.easing,
-        direction: element.direction,
+        duration: element.duration ?? 800,
+        delay: element.delay ?? 0, 
+        endDelay: element.endDelay ?? 0,
+        easing: element.easing ?? 'linear', 
+        direction: element.direction ?? 'normal',
         loop: loopCount,
-        startXFrom: element.startXFrom, 
-        startXTo: element.startXTo, 
-        startYFrom: element.startYFrom,
-        startYTo: element.startYTo,
-        stagger: element.stagger,
+        startXFrom: element.startXFrom ?? 100, 
+        startXTo: element.startXTo ?? 0, 
+        startYFrom: element.startYFrom ?? 0,
+        startYTo: element.startYTo ?? 0,
+        stagger: element.stagger ?? 80,
         textSplitEffect: element.textSplitEffect,
-        opacityInFrom: element.opacityInFrom,
-        opacityInTo: element.opacityInTo,
-        scaleFrom: element.scaleFrom,
-        scaleTo: element.scaleTo,
-        rotateInFrom: element.rotateInFrom,
-        rotateInTo: element.rotateInTo,
-        rotateInXFrom: element.rotateInXFrom, 
-        rotateInXTo: element.rotateInXTo,
-        rotateInYFrom: element.rotateInYFrom,
-        rotateInYTo: element.rotateInYTo,
-        skewXFrom: element.skewXFrom,
-        skewXTo: element.skewXTo,
-        skewYFrom: element.skewYFrom,
-        skewYTo: element.skewYTo,
-        directionBlock: element.directionBlock,
-        filterInFrom: element.filterInFrom,
-        filterInTo: element.filterInTo,
-        colorBlockEffectIn: element.colorBlockEffectIn,
-        scaleType: element.scaleType,
+        opacityFrom: element.opacityFrom ?? 0,
+        opacityTo: element.opacityTo ?? 1,
+        scaleFrom: element.scaleFrom ?? 0,
+        scaleTo: element.scaleTo ?? 1,
+        rotateFrom: element.rotateFrom ?? 0,
+        rotateTo: element.rotateTo ?? 0,
+        rotateXFrom: element.rotateXFrom ?? 0, 
+        rotateXTo: element.rotateXTo ?? 0,
+        rotateYFrom: element.rotateYFrom ?? 0,
+        rotateYTo: element.rotateYTo ?? 0,
+        skewXFrom: element.skewXFrom ?? 0,
+        skewXTo: element.skewXTo ?? 0,
+        skewYFrom: element.skewYFrom ?? 0,
+        skewYTo: element.skewYTo ?? 0,
+        directionBlock: element.directionBlock ?? 'right',
+        filterFrom: element.filterFrom ?? 0,
+        filterTo: element.filterTo ?? 0,
+        colorBlockEffect: element.colorBlockEffect,
+        scaleType: element.scaleType ?? 'scale',
       });
   
       setTimeout(() => {
@@ -70,7 +70,7 @@ const TextRender = ({ element, index, onPlay  }) => {
             loop: loopCount, // O impostalo su un valore dinamico
           });
         }*/}
-      }, element.delayIn);
+      }, element.delay);
       
     }
   };
@@ -108,17 +108,17 @@ const TextRender = ({ element, index, onPlay  }) => {
     color: element.textColor,
     textAlign: element.textAlign,
     letterSpacing: element.letterSpacing + "px",
-    fontStyle: element.fontStyle?.fontStyle || "normal", // Valore di default
-    fontWeight: isBold ? "bold" : element.fontWeight || "normal",
-    textDecoration: element.fontStyle?.textDecoration || "none", // Valore di default
+    fontStyle: element.fontStyle?.fontStyle ?? "normal", // Valore di default
+    fontWeight: isBold ? "bold" : element.fontWeight ?? "normal",
+    textDecoration: element.fontStyle?.textDecoration ?? "none", // Valore di default
     lineHeight: element.lineHeight,
     fontFamily: element.fontFamily,
     margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`, // Usa i valori aggi
     padding: `${element.paddingTitle?.top} ${element.paddingTitle?.right} ${element.paddingTitle?.bottom} ${element.paddingTitle?.left}`, // Usa i valori aggi
-    borderWidth: `${element.backgroundBorderSize}px` || 0,
+    borderWidth: `${element.backgroundBorderSize}px` ?? 0,
     borderColor: element.backgroundBorderColor || "#000000",
-    borderRadius: `${element.backgroundBorderRadius}px` || 0,
-    borderStyle: element.borderStyle || "none",
+    borderRadius: `${element.backgroundBorderRadius}px` ?? 0,
+    borderStyle: element.borderStyle ?? "none",
     ...(element.enableTextShadow && {
     textShadow: `${element.textShadowX}px ${element.textShadowY}px ${element.textShadowBlur}px ${element.colorTextShadow}`,
     }),
@@ -134,7 +134,7 @@ const TextRender = ({ element, index, onPlay  }) => {
     textOrientation: element.textOrientation || "initial",
     position:"relative",
     transform: `rotate(${element.rotate}deg)`,
-    opacity: element.opacity,
+  
     zIndex: element.zIndexTitle,
     
   };
@@ -143,6 +143,7 @@ const TextRender = ({ element, index, onPlay  }) => {
   return (
     <div
       style={{
+        opacity: element.opacity,
         width:
           element.widthTitle === "custom"
             ? `${element.widthCustomTitle}%`
@@ -157,26 +158,26 @@ const TextRender = ({ element, index, onPlay  }) => {
         data-font-family={element.fontFamily}
         ref={textRef}
         onMouseEnter={(e) => handleMouseEnter(e, { 
-          durationHover: element.durationHover,
+          durationHover: element.durationHover ?? 800,
           textColorHover:element.textColorHover,
           effectHover:element.effectHover,
-          easingHover:element.easingHover,
-          opacityHover:element.opacityHover,
-          filterHover:element.filterHover,
-          startXHover:element.startXHover,
-          startYHover:element.startYHover,
-          scaleHover:element.scaleHover,
-          rotateHover:element.rotateHover,
-          rotateXHover:element.rotateXHover,
-          rotateYHover:element.rotateYHover,
-          skewXHover:element.skewXHover,
-          skewYHover:element.skewYHover,
-          scaleTypeHover:element.scaleTypeHover,
+          easingHover:element.easingHover ?? 'linear',
+          opacityHover:element.opacityHover ?? 1,
+          filterHover:element.filterHover ?? 0,
+          startXHover:element.startXHover ?? 100,
+          startYHover:element.startYHover ?? 0,
+          scaleHover:element.scaleHover ?? 1,
+          rotateHover:element.rotateHover ?? 0,
+          rotateXHover:element.rotateXHover ?? 0,
+          rotateYHover:element.rotateYHover ?? 0,
+          skewXHover:element.skewXHover ?? 0,
+          skewYHover:element.skewYHover ?? 0,
+          scaleTypeHover:element.scaleTypeHover ?? 'scale',
         })} // Passa element.duration
         onMouseLeave={(e) => handleMouseLeave(e, { 
-          durationHover: element.durationHover,
+          durationHover: element.durationHover ?? 800,
           textColor:element.textColor,
-          easingHover:element.easingHover,
+          easingHover:element.easingHover ?? 'linear',
 
         })} // Passa element.duration
       >

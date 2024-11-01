@@ -493,6 +493,10 @@
     right: 45px;
     color: var(--background-color);
   }
+
+  .menu-slide-content svg{
+    fill: var(--background-color);
+  }
   .components-dropdown-menu__toggle.is-opened .dashicon {
     color: var(--light-color);
   }
@@ -688,9 +692,21 @@
     color: var(--primary-color);
   }
 }
-.cocoblocks-panel.panel-slide:hover .dashicon {
-  color: var(--light-color) !important;
+.cocoblocks-panel.panel-slide .icon-slide-clone{
+  fill: var(--background-color);
+  position: absolute;
+  right: 50px;
+  top: 14px;
+  width: 30px;
 }
+.components-panel__body.cocoblocks-panel.panel-slide:hover .icon-slide-clone {
+  fill: var(--light-color) !important;
+}
+
+.components-panel__body.cocoblocks-panel.panel-slide .icon-slide-clone.active {
+  fill: var(--light-color) !important;
+}
+
 .cocoblocks-panel .components-base-control__field {
   margin-bottom: 0 !important;
 }
@@ -843,14 +859,14 @@
     line-height: 38px;
   }
   /* Select Control */
+  
   .components-panel__body-toggle {
     background-color: var(--background-color);
     color: var(--light-color) !important;
     text-transform: uppercase;
-    svg {
-      fill: var(--light-color) !important;
-    }
+   
   }
+
   .components-select-control {
     flex-direction: row !important;
     align-items: center !important;
