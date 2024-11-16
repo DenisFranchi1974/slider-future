@@ -12,7 +12,7 @@ import {
 import { __ } from "@wordpress/i18n";
 import { useEffect, useState } from "@wordpress/element";
 import { info } from "@wordpress/icons";
-import SectionSliderSelector from "./sectionSliderSelector";
+import SectionSliderSelector from "./multitab/sectionSliderSelector";
 import ColorOptionsPanel from "./colorPanel";
 import PatternSelectionModal from "./modalPattern";
 
@@ -409,6 +409,7 @@ const handleMobileClick = () => {
                   </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -479,6 +480,7 @@ const handleMobileClick = () => {
               </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -522,6 +524,7 @@ const handleMobileClick = () => {
                 }}
               >
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -599,6 +602,7 @@ const handleMobileClick = () => {
                   </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -666,6 +670,7 @@ const handleMobileClick = () => {
               </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -725,6 +730,7 @@ const handleMobileClick = () => {
                   </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -792,6 +798,7 @@ const handleMobileClick = () => {
               </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -962,6 +969,7 @@ const handleMobileClick = () => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -1236,6 +1244,7 @@ const handleMobileClick = () => {
               </div>
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -1609,6 +1618,7 @@ const handleMobileClick = () => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -1672,6 +1682,7 @@ const handleMobileClick = () => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--light-color)"><path d="M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z"/></svg>

@@ -6,8 +6,7 @@ import {
 } from "@wordpress/components";
 import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import SectionSelectorImage from "../sectionSelectorImage";
+import SectionSelector from "../multitab/sectionSelector";
 import ImageSelectionModal from "../ImageSelectionModal";
 import CustomTextAreaControl from "../../controls/text-area/TextAreaControl";
 import CustomAlignControl from "../../controls/align/AlignControl";
@@ -15,19 +14,17 @@ import CustomSelectControl from "../../controls/select/SelectControl";
 import CustomRangeControl from "../../controls/range"
 import {borderStyleOptions} from '../../assets/options';
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
-import CustomTextControl from "../../controls/text/TextControl";
-import CustomToggleControl from "../../controls/toggle/ToggleControl";
 import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomEffectControls from "../../multiControls/effect";
 import CustomHoverControls from "../../multiControls/hover";
-import {linkOptions} from '../../assets/options';
 import { selectOptionsEffectElement } from "../../assets/options";
 import {spikeOptions} from '../../assets/options';
 import {blobOptions} from '../../assets/options';
 import {filterImageOptions} from '../../assets/options';
 import {spikeRightOptions} from '../../assets/options';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import WidthWideIcon from '@mui/icons-material/WidthWide';
-import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import FitScreenIcon from '@mui/icons-material/FitScreen';
 import PaletteIcon from '@mui/icons-material/Palette';
 import HeightIcon from '@mui/icons-material/Height';
 import BorderStyleIcon from '@mui/icons-material/BorderStyle';
@@ -39,16 +36,8 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import LayersClearIcon from '@mui/icons-material/LayersClear';
 import RotateRightIcon from '@mui/icons-material/RotateRight'; 
-import TouchAppIcon from '@mui/icons-material/TouchApp';
-import InsertLinkIcon from '@mui/icons-material/InsertLink';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import DatasetLinkedIcon from '@mui/icons-material/DatasetLinked';
-import PhishingIcon from '@mui/icons-material/Phishing';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
-import TabletMacIcon from '@mui/icons-material/TabletMac';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import CloudIcon from '@mui/icons-material/Cloud';
 import PhotoSizeSelectSmallIcon from '@mui/icons-material/PhotoSizeSelectSmall';
@@ -58,6 +47,10 @@ import ImageIcon from '@mui/icons-material/Image';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ChangeCircleOutlinedIcon from '@mui/icons-material/ChangeCircleOutlined';
+import CustomActionControls from "../../multiControls/action";
+import CustomVisibilityControls from "../../multiControls/visibility"
+import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
 const ImageEdit = ({
   slide,
@@ -225,6 +218,144 @@ const ImageEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Padding Image
+  const updatenewPaddingImage = (slideId, index, newPaddingImage) => {
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "image" && i === index) {
+                return {
+                  ...element,
+                  paddingImage: {
+                    top: addUnit(
+                      newPaddingImage.top || "0",
+                      newPaddingImage.unit || "px"
+                    ),
+                    right: addUnit(
+                      newPaddingImage.right || "0",
+                      newPaddingImage.unit || "px"
+                    ),
+                    bottom: addUnit(
+                      newPaddingImage.bottom || "0",
+                      newPaddingImage.unit || "px"
+                    ),
+                    left: addUnit(
+                      newPaddingImage.left || "0",
+                      newPaddingImage.unit || "px"
+                    ),
+                  },
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Border size
+    const updatenewBackgroundBorderSizeImage = (slideId, index, newBorderSize) => {
+      const addUnit = (value, unit) => {
+        // Verifica se il valore termina già con l'unità
+        if (typeof value === "string" && value.endsWith(unit)) {
+          return value;
+        }
+        return `${value}${unit}`;
+      };
+  
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) => {
+                if (element.type === "image" && i === index) {
+                  return {
+                    ...element,
+                    backgroundBorderSizeImage: {
+                      top: addUnit(
+                        newBorderSize.top || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                      right: addUnit(
+                        newBorderSize.right || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                      bottom: addUnit(
+                        newBorderSize.bottom || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                      left: addUnit(
+                        newBorderSize.left || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                    },
+                  };
+                }
+                return element;
+              }),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+        // Border radius
+        const updatenewBackgroundBorderRadiusImage = (slideId, index, newBorderRadius) => {
+          const addUnit = (value, unit) => {
+            // Verifica se il valore termina già con l'unità
+            if (typeof value === "string" && value.endsWith(unit)) {
+              return value;
+            }
+            return `${value}${unit}`;
+          };
+      
+          const updatedSlides = slides.map((slide) =>
+            slide.id === slideId
+              ? {
+                  ...slide,
+                  elements: slide.elements.map((element, i) => {
+                    if (element.type === "image" && i === index) {
+                      return {
+                        ...element,
+                        backgroundBorderRadiusImage: {
+                          top: addUnit(
+                            newBorderRadius.top || "0",
+                            newBorderRadius.unit || "px"
+                          ),
+                          right: addUnit(
+                            newBorderRadius.right || "0",
+                            newBorderRadius.unit || "px"
+                          ),
+                          bottom: addUnit(
+                            newBorderRadius.bottom || "0",
+                            newBorderRadius.unit || "px"
+                          ),
+                          left: addUnit(
+                            newBorderRadius.left || "0",
+                            newBorderRadius.unit || "px"
+                          ),
+                        },
+                      };
+                    }
+                    return element;
+                  }),
+                }
+              : slide
+          );
+          setAttributes({ slides: updatedSlides });
+        };
+
     // Open panel
     const [isOpen, setIsOpen] = useState(false);
 
@@ -265,7 +396,7 @@ const ImageEdit = ({
       </div>
       {isOpen && (
         <>
-      <SectionSelectorImage onSectionChange={setActiveSectionImage} />
+      <SectionSelector onSectionChange={setActiveSectionImage} />
       <div className="content-img-upload">
         <div className="content-label-image">
           {activeSectionImage === "content" && (
@@ -317,15 +448,7 @@ const ImageEdit = ({
                                   gap: "5px",
                                 }}
                               >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  height="20px"
-                                  viewBox="0 -960 960 960"
-                                  width="20px"
-                                  fill="#e8eaed"
-                                >
-                                  <path d="M360-400h400L622-580l-92 120-62-80-108 140Zm-40 160q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z" />
-                                </svg>
+                                <PhotoSizeSelectActualIcon/>
                                 {__("Media Library", "cocoblocks")}
                               </div>
                               <span
@@ -422,15 +545,7 @@ const ImageEdit = ({
                       gap: "5px",
                     }}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="20px"
-                      viewBox="0 -960 960 960"
-                      width="20px"
-                      fill="#e8eaed"
-                    >
-                      <path d="M440-440ZM120-120q-33 0-56.5-23.5T40-200v-480q0-33 23.5-56.5T120-760h126l74-80h240v80H355l-73 80H120v480h640v-360h80v360q0 33-23.5 56.5T760-120H120Zm640-560v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM440-260q75 0 127.5-52.5T620-440q0-75-52.5-127.5T440-620q-75 0-127.5 52.5T260-440q0 75 52.5 127.5T440-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Z" />
-                    </svg>
+                     <PhotoLibraryIcon/>
                     {__("Object Library", "cocoblocks")}
                   </div>
                   <span
@@ -531,7 +646,7 @@ const ImageEdit = ({
               <CustomSelectControl
                   label={
                     <>
-                      <AspectRatioIcon />
+                      <FitScreenIcon />
                       {__("Image fit", "cocoblocks")}
                     </>
                   }
@@ -755,27 +870,22 @@ const ImageEdit = ({
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
-            <CustomRangeControl
-                  label={
-                    <>
-                    <PaddingIcon />
-                      {__("Padding", "cocoblocks")}
-                    </>
-                  }
-                  value={element.paddingImage || 0}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={50}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'paddingImage')
-                  }
-                />
+          <div className="custom-select box-control">
+              <BoxControl
+                id="custom-margin-control"
+                label={
+                  <>
+                    <PaddingIcon/>
+                    {__("Padding", "cocoblocks")}
+                  </>
+                }
+                values={element.paddingImage|| { 0: "0", 1: "0", 2: "0", 3: "0" }}
+                units={{}}
+                onChange={(newPaddingImage) =>
+                  updatenewPaddingImage(slide.id, elementIndex, newPaddingImage)
+                }
+              />
+            </div>
             <div className="custom-select box-control">
               <BoxControl
                 id="custom-margin-control"
@@ -832,50 +942,41 @@ const ImageEdit = ({
                   updateElement={updateElement}
                   property="backgroundBorderColorImage"
                 />
-                <CustomRangeControl
-                  label={
-                    <>
-                     <BorderLeftIcon />
-                      {__("Border width", "cocoblocks")}
-                    </>
-                  }
-                  value={element.backgroundBorderSizeImage}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={20}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderSizeImage')
-                  }
-                />
+                <div className="custom-select box-control">
+              <BoxControl
+                id="custom-margin-control"
+                label={
+                  <>
+                    <BorderLeftIcon />
+                    {__("Border width", "cocoblocks")}
+                  </>
+                }
+                values={element.backgroundBorderSizeImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
+                units={{}}
+                onChange={(newBorderSize) =>
+                  updatenewBackgroundBorderSizeImage(slide.id, elementIndex, newBorderSize)
+                }
+              />
+            </div>
               </>
             )}
-             <CustomRangeControl
-                  label={
-                    <>
-                     <BorderInnerIcon />
-                      {__("Border radius", "cocoblocks")}
-                    </>
-                  }
-                  value={element.backgroundBorderRadiusImage || 0}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={256}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderRadiusImage')
-                  }
-                />
+             
+              <div className="custom-select box-control">
+              <BoxControl
+                id="custom-margin-control"
+                label={
+                  <>
+                    <BorderInnerIcon />
+                    {__("Border radius", "cocoblocks")}
+                  </>
+                }
+                values={element.backgroundBorderRadiusImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
+                units={{}}
+                onChange={(newBorderRadius) =>
+                  updatenewBackgroundBorderRadiusImage(slide.id, elementIndex, newBorderRadius)
+                }
+              />
+            </div>
           </div>
         </>
       )}
@@ -1167,7 +1268,7 @@ const ImageEdit = ({
               label={
                 <>
                   <PhotoSizeSelectSmallIcon />
-                  {__("Left Spike", "cocoblocks")}
+                  {__("Right Spike", "cocoblocks")}
                 </>
               }
               value={element.spikeMaskRight }
@@ -1291,200 +1392,48 @@ const ImageEdit = ({
          />
       )}
       {activeSectionImage === "actions" && (
-        <>
-          <div
-            className="content-title-custom-panel intermedy"
-            style={{
-              marginTop: "-18px",
-            }}
-          >
-            <h2 className="title-custom-panel">
-              {__("Actions", "cocoblocks")}
-            </h2>
-          </div>
-          <div className="content-section-panel" style={{ padding: "0" }}>
-            <CustomSelectControl
-                  label={
-                    <>
-                       <TouchAppIcon />
-                      {__("Link actions", "cocoblocks")}
-                    </>
-                  }
-                  value={element.imageLink}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'imageLink')
-                  }
-                  selectOptions={linkOptions} // Passa le opzioni dinamiche
-                />
-            {element.imageLink === "link" && (
-              <>
-              <CustomTextControl
-                 label={
-                  <>
-                    <InsertLinkIcon />
-                    {__("Enter Url", "cocoblocks")}
-                  </>
-                }
-                  value={element.linkUrlImage}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  placeholder={__("Enter url...", "cocoblocks")}
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'linkUrlImage')
-                  }
-                />
-                 <CustomSelectControl
-                  label={
-                    <>
-                      <OpenInNewIcon />
-                      {__("Target", "cocoblocks")}
-                    </>
-                  }
-                  value={element.linkTargetImage}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'linkTargetImage')
-                  }
-                  selectOptions={[
-                    { label: "Same Window", value: "_self" },
-                    { label: "New Window", value: "_blank" },
-                  ]} // Passa le opzioni dinamiche
-                />
-                <CustomSelectControl
-                  label={
-                    <>
-                      <DatasetLinkedIcon />
-                      {__("Link Behavior", "cocoblocks")}
-                    </>
-                  }
-                  value={element.linkRelImage || 'follow'}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="image"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'linkRelImage')
-                  }
-                  selectOptions={[
-                    { label: "Follow Link", value: "follow" },
-                    { label: "No Follow", value: "nofollow" },
-                  ]} // Passa le opzioni dinamiche
-                />
-              </>
-            )}
-            {element.imageLink === "scroll-to-id" && (
-              <CustomTextControl
-              label={
-               <>
-                 <PhishingIcon />
-                 {__("Enter ID", "cocoblocks")}
-               </>
-             }
-               value={element.scrollToIdImage}
-               slides={slides}
-               setAttributes={setAttributes}
-               updateType="primary"
-               slideId={slide.id}
-               elementIndex={elementIndex}
-               elementType="image"
-               placeholder={__("Enter id...", "cocoblocks")}
-               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'scrollToIdImage')
-               }
-             />
-            )}
-          </div>
-        </>
+          <CustomActionControls
+        valueSelectLink={element.imageLink}
+        valueUrl={element.linkUrlImage}
+        valueSelectTarget={element.linkTargetImage}
+        valueSelectRel={element.linkRelImage}
+        valueScrollId={element.scrollToIdImage}
+        slides={slides}
+        setAttributes={setAttributes}
+        updateType="primary"
+        slideId={slide.id}
+        elementIndex={elementIndex}
+        elementType="image"
+        updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) =>
+          updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property)
+        }
+        linkProperty="imageLink"
+        urlProperty="linkUrlImage"
+        targetProperty="linkTargetImage"
+        relProperty="linkRelImage"
+        scrollIdProperty="scrollToIdImage"
+      />
       )}
-
       {activeSectionImage === "visibility" && (
-        <>
-          <div
-            className="content-title-custom-panel intermedy"
-            style={{
-              marginTop: "-18px",
-            }}
-          >
-            <h2 className="title-custom-panel">
-              {__("Visibility", "cocoblocks")}
-            </h2>
-          </div>
-          <div className="content-section-panel" style={{ padding: "0" }}>
-          <CustomToggleControl
-              label={
-                <>
-                  <PersonalVideoIcon />
-                  {__("Desktop", "cocoblocks")}
-                </>
-              }
-              value={element.enableDesktopImage !== undefined ? element.enableDesktopImage : true}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="image"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableDesktopImage')
-              }
-            />
-            <CustomToggleControl
-              label={
-                <>
-                  <TabletMacIcon />
-                  {__("Tablet", "cocoblocks")}
-                </>
-              }
-              value={element.enableTabletImage !== undefined ? element.enableTabletImage : true}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="image"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableTabletImage')
-              }
-            />
-            <CustomToggleControl
-              label={
-                <>
-                  <SmartphoneIcon />
-                  {__("Mobile", "cocoblocks")}
-                </>
-              }
-              value={element.enableMobileImage !== undefined ? element.enableMobileImage : true}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="image"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableMobileImage')
-              }
-            />
-          </div>
-        </>
+           <CustomVisibilityControls
+       valueDesktop={element.enableDesktopImage}
+       valueTablet={element.enableTabletImage}
+       valueMobile={element.enableMobileImage}
+       slides={slides}
+       setAttributes={setAttributes}
+       updateType="primary"
+       slideId={slide.id}
+       elementIndex={elementIndex}
+       elementType="image"
+       updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) =>
+         updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property)
+       }
+       desktopProperty="enableDesktopImage"
+       tabletProperty="enableTabletImage"
+       mobileProperty="enableMobileImage"
+     />
       )}
-        {activeSectionImage === "hide-image-editor" && (
+        {activeSectionImage === "hide-title-editor" && (
         <>
         <div
           className="content-title-custom-panel intermedy"

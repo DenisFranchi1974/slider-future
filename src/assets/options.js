@@ -383,7 +383,7 @@ export const fontWeightOptions = [
 
   ////////////////////////////
 
-  /* OpzioniWrite Mo de*/
+  /* Opzioni Write Mode */
 
   export const writeModeOptions = [
     { label: "Horizontal", value: "initial" },
@@ -539,6 +539,84 @@ export const spikeRightOptions = [
 
 ////////////////////////////
 
+/* Opzioni per spike immagine inner */
+
+export const spikeOptionsInner =[ 
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("1 Spike Top", "cocoblocks"),
+    value: "left-spike-1-top-inner",
+  },
+  {
+    label: __("1 Spike Middle", "cocoblocks"),
+    value: "left-spike-1-middle-inner",
+  },
+  {
+    label: __("1 Spike Bottom", "cocoblocks"),
+    value: "left-spike-1-bottom-inner",
+  },
+  {
+    label: __("2 Spikes", "cocoblocks"),
+    value: "left-spike-2-inner",
+  },
+  {
+    label: __("3 Spikes", "cocoblocks"),
+    value: "left-spike-3-inner",
+  },
+  {
+    label: __("4 Spikes", "cocoblocks"),
+    value: "left-spike-4-inner",
+  },
+  {
+    label: __("5 Spikes", "cocoblocks"),
+    value: "left-spike-5-inner",
+  },
+];
+
+////////////////////////////
+
+/* Opzioni per spike right immagine */
+
+export const spikeRightOptionsInner = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("1 Spike Top", "cocoblocks"),
+    value: "right-spike-1-top-inner",
+  },
+  {
+    label: __("1 Spike Middle", "cocoblocks"),
+    value: "right-spike-1-middle-inner",
+  },
+  {
+    label: __("1 Spike Bottom", "cocoblocks"),
+    value: "right-spike-1-bottom-inner",
+  },
+  {
+    label: __("2 Spikes", "cocoblocks"),
+    value: "right-spike-2-inner",
+  },
+  {
+    label: __("3 Spikes", "cocoblocks"),
+    value: "right-spike-3-inner",
+  },
+  {
+    label: __("4 Spikes", "cocoblocks"),
+    value: "right-spike-4-inner",
+  },
+  {
+    label: __("5 Spikes", "cocoblocks"),
+    value: "right-spike-5-inner",
+  },
+];
+
+////////////////////////////
+
 /* Opzioni filter immagine */
 
 export const filterImageOptions = [
@@ -609,5 +687,118 @@ export const elementHtmlOptions = [
   {
     label: __("<aside>", "cocoblocks"),
     value: "aside",
+  },
+];
+
+
+////////////////////////////
+
+/* Opzioni effetti icona */
+
+export const iconEffectOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("Beat", "cocoblocks"),
+    value: "fa-beat",
+  },
+  {
+    label: __("Fade", "cocoblocks"),
+    value: "fa-fade",
+  },
+  {
+    label: __("Beat-fade", "cocoblocks"),
+    value: "fa-beat-fade",
+  },
+  {
+    label: __("Bounce", "cocoblocks"),
+    value: "fa-bounce",
+  },
+  {
+    label: __("Flip", "cocoblocks"),
+    value: "fa-flip",
+  },
+  {
+    label: __("Shake", "cocoblocks"),
+    value: "fa-shake",
+  },
+  {
+    label: __("Pulse", "cocoblocks"),
+    value: "fa-pulse",
+  },
+  {
+    label: __("Spin", "cocoblocks"),
+    value: "fa-spin",
+  },
+];
+
+
+
+////////////////////////////
+
+/* Opzioni effetti icona hover */
+export const iconEffectHoverOptions = [
+  { label: "None", value: "none" },
+  { label: "Scale", value: "hover-effect-1-icon-button" },
+  { label: "Translate Y", value: "hover-effect-2-icon-button" },
+  { label: "Translate X", value: "hover-effect-5-icon-button" },
+];
+
+
+
+////////////////////////////
+
+/* Opzioni filter background slide */
+
+export const filterBackgroundOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("Classic", "cocoblocks"),
+    value: "filter-classic",
+  },
+  {
+    label: __("Lateral", "cocoblocks"),
+    value: "filter-lateral",
+  },
+  {
+    label: __("Central circle", "cocoblocks"),
+    value: "filter-central-circle",
+  },
+  {
+    label: __("Border fade", "cocoblocks"),
+    value: "filter-border-fade",
+  },
+  {
+    label: __("Vignette", "cocoblocks"),
+    value: "filter-vignette",
+  },
+  {
+    label: __("Spotlight", "cocoblocks"),
+    value: "filter-spotlight",
+  },
+  {
+    label: __("Diagonal", "cocoblocks"),
+    value: "filter-diagonal",
+  },
+  {
+    label: __("Nebula", "cocoblocks"),
+    value: "filter-nebula",
+  },
+  {
+    label: __("Glitch", "cocoblocks"),
+    value: "filter-glitch",
+  },
+  {
+    label: __("Prism", "cocoblocks"),
+    value: "filter-prism",
+  },
+  {
+    label: __("Inverse", "cocoblocks"),
+    value: "filter-inverse",
   },
 ];

@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { animationsIn, getAnimationProps} from '../animate';
-import {handleMouseEnter, handleMouseLeave, animateBar} from '../animate/animationIn'
+import { animationsIn, getAnimationProps} from '../../animate';
+import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
 
-import InnerTextDivComponent from "./innerTextDivComponent";
-import InnerImageDivComponent from "./innerImageDivComponent";
-import InnerButtonDivComponent from "./innerButtonDivComponent";
-import IconComponentInner from "./iconComponentInner";
-import MenuInnerComponent from "./menuInnerComponent";
+import InnerTextRender from "../innertext/InnerTextRender";
+import InnerImageRender from "../innerimage/InnerImageRender";
+import InnerButtonDivComponent from "../innerButtonDivComponent";
+import IconComponentInner from "../iconComponentInner";
 
-const GroupComponent = ({ element, index, onPlay }) => {
+
+const GroupComponent = ({ element, index, onPlay,handlePlayInnerText,playAnimationInnerText,playAnimations,handlePlayInnerImage,playAnimationInnerImage}) => {
   const DivBlock = element.elementDiv || "div";
 
   const [innerElements, setInnerElements] = useState(element.innerElements || []);
@@ -31,7 +31,7 @@ const GroupComponent = ({ element, index, onPlay }) => {
 
     if (effectIn ) {
      // textRef.current.style.opacity = 0; // Reset
-      const animationProps = getAnimationProps({
+      const animationProps = getAnimationProps({ 
         duration: element.duration ?? 800,
         delay: element.delay ?? 0,
         endDelay: element.endDelay ?? 0,
@@ -106,14 +106,14 @@ const GroupComponent = ({ element, index, onPlay }) => {
     position: "relative",
     visibility: "visible",
     gap: element.gapItemsDiv + "px",
-    borderRadius: element.backgroundBorderRadiusDiv + "px",
     paddingTop: element.backgroundVerticalPaddingDiv + "px",
     paddingBottom: element.backgroundVerticalPaddingDiv + "px",
     paddingLeft: element.backgroundHorizontalPaddingDiv + "px",
     paddingRight: element.backgroundHorizontalPaddingDiv + "px",
     borderStyle: element.borderStyleDiv || "none",
     borderColor: element.backgroundBorderColorDiv,
-    borderWidth: `${element.backgroundBorderSizeDiv}px` || 0,
+    borderWidth: `${element.backgroundBorderSizeDiv?.top} ${element.backgroundBorderSizeDiv?.right} ${element.backgroundBorderSizeDiv?.bottom} ${element.backgroundBorderSizeDiv?.left}`,
+    borderRadius: `${element.backgroundBorderRadiusDiv?.top} ${element.backgroundBorderRadiusDiv?.right} ${element.backgroundBorderRadiusDiv?.bottom} ${element.backgroundBorderRadiusDiv?.left}`,
     height:
       element.contentHeightDiv === "custom"
         ? `${element.customContentHeightDiv}%`
@@ -178,9 +178,16 @@ const GroupComponent = ({ element, index, onPlay }) => {
             return (
               <div key={innerIndex}>
                 {innerElement.type === "text" ? (
-                  <InnerTextDivComponent
+                  <InnerTextRender
                     textDiv={innerElement}
                     textIndex={innerIndex}
+                    handlePlayInnerText={handlePlayInnerText}
+                    playAnimations={playAnimations}
+                  playAnimationInnerText={playAnimationInnerText}
+                  onPlay={playAnimation => {
+                    playAnimations.push(playAnimation);
+                    playAnimationInnerText.push(playAnimation);
+                  }}
                   />
                 ) : innerElement.type === "button" ? (
                   <InnerButtonDivComponent
@@ -193,15 +200,16 @@ const GroupComponent = ({ element, index, onPlay }) => {
                     iconIndex={innerIndex}
                   />
                 ) : innerElement.type === "image" ? (
-                  <InnerImageDivComponent
+                  <InnerImageRender
                     imageDiv={innerElement}
                     imageIndex={innerIndex}
-                  />
-                ) : innerElement.type === "menu" ? (
-                  <MenuInnerComponent
-                    menuDiv={innerElement}
-                    menuIndex={innerIndex}
-                    menuItems={element.menuItems || [{ text: "Home", link: "" }]}
+                    handlePlayInnerImage={handlePlayInnerImage}
+                    playAnimations={playAnimations}
+                    playAnimationInnerImage={playAnimationInnerImage}
+                    onPlay={playAnimation => {
+                      playAnimations.push(playAnimation);
+                      playAnimationInnerImage.push(playAnimation);
+                    }}
                   />
                 ) : null}
                  

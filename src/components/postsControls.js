@@ -9,7 +9,7 @@ import {
   Tooltip,
   ToggleControl,
 } from "@wordpress/components";
-import AlignmentControl from "./aligncontrol";
+import AlignmentControl from "./align/aligncontrol";
 import {  button, info} from "@wordpress/icons";
 import apiFetch from '@wordpress/api-fetch';
 

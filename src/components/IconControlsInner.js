@@ -12,12 +12,12 @@ import {
 import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import { trash } from "@wordpress/icons";
-import AlignmentControlThree from "./aligncontrol-three";
+import AlignmentControlThree from "./align/aligncontrol-three";
 import ColorOptionsPanel from "./colorPanel";
-import SectionSelector from "./sectionSelector";
+import SectionSelector from "./multitab/sectionSelector";
 import IconControlsInnerHover from "./IconControlsInnerHover";
 import BoxShadowIconBlock from "./boxShadowIconBlock";
-import IconModal from "./IconModal";
+import IconModal from "../icons/IconModal";
 
 const IconControlsInner = ({
   slide,

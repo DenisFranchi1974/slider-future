@@ -15,7 +15,6 @@ import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import GrainIcon from '@mui/icons-material/Grain';
 import OpacityIcon from '@mui/icons-material/Opacity';
 
-
 const CustomHoverControls = ({
   valueEffectHover,
   colorNormal,       // Colore corrente
@@ -35,6 +34,7 @@ const CustomHoverControls = ({
     valueSkewYHover,
     valueDurationHover,
     valueEasingHover,
+    showColorControl = true, // Mostra o nasconde il controllo del colore
   slides, // Stato delle slide
   setAttributes, // Funzione per aggiornare lo stato delle slide
   updateType, // Tipo di elemento (primario o secondario)
@@ -294,6 +294,8 @@ const CustomHoverControls = ({
         </div>
         {valueEffectHover !== "none" && (
         <>
+        {showColorControl && (
+          <>
         <div className="custom-select color">
     <div className="color-options-panel">
       <Button
@@ -340,6 +342,8 @@ const CustomHoverControls = ({
       )}
     </div>
     </div>
+    </>
+    )}
     <div className="custom-select">
         <RangeControl
           label={

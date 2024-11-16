@@ -216,6 +216,17 @@
     border: 1px solid var(--primary-color)!important; /* Aggiunge un bordo personalizzato, qui arancione */
     box-shadow: 0 0 3px var(--primary-color)!important; /* Aggiunge un'ombra per evidenziare ulteriormente l'input */
   }
+  .icon-modal-search{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 25px;
+    left: 45%;
+    z-index: 9999;
+    .components-base-control{
+      max-width: 250px;
+    }
+  }
 }
 .icon-modal-container {
   display: flex;
@@ -251,7 +262,7 @@
   }
 }
 
-.icon-modal-main {
+.icon-modal-main { 
   flex: 1;
 }
 
@@ -277,9 +288,10 @@
 }
 
 .icon-selection {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr); /* 8 colonne */
-  gap: 10px; /* Spaziatura tra le icone */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-height: max-content;
 }
 
 .icon-selection button {
@@ -291,9 +303,11 @@
   border-radius: 4px;
 }
 
-.icon-selection i {
-  font-size: 24px;
-  color: var(--light-color);
+.icon-selection svg {
+  fill: var(--light-color);
+}
+.icon-selection button:hover svg{
+  fill: var(--primary-color);
 }
 
 /* Button open modal */
@@ -336,6 +350,7 @@
 /* Stili per il modale */
 .modal-button {
   max-width: 700px;
+  min-width: 700px;
 //  margin: 0 auto; /* Centra il modale orizzontalmente */
 }
 
@@ -354,11 +369,14 @@
   padding: 8px; /* Spaziatura interna dei bottoni */
 }
 
+/*
 .content-button-slide {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+*/
 
 /* Background slide */
 .content-background-slide{
@@ -583,6 +601,9 @@
       background-color: var(--background-color);
     }
   }
+  .button-move button[disabled] {
+    opacity: 0.3; /* Riduce l'opacità per indicare che il bottone è disabilitato */
+  }
 
   .button-move-element-div{
     position: relative;
@@ -598,6 +619,10 @@
     }
   }
   
+  .button-move-element-div button[disabled] {
+    opacity: 0.3; /* Riduce l'opacità per indicare che il bottone è disabilitato */
+  }
+
   .divider-controls {
     margin-top: 24px;
     margin-bottom: 24px;
@@ -1101,6 +1126,7 @@
       right: 8px;
     }
   }
+
  
   /* Toogle */
   .components-toggle-control .components-h-stack {
@@ -1748,7 +1774,7 @@
   height: 100%;
   display: flex;
   gap: 20px;
-  margin-top: 30px;
+  margin-top: 0;
 }
 .category-navigator{
   width: 250px;

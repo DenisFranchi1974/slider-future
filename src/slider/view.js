@@ -1,62 +1,54 @@
 import { Swiper } from 'swiper';
-//import anime from 'animejs';
-//import lottie from 'lottie-web';
-//import animationData from './one.json';
-
-
+import materialIcons from '../icons/materialIcons';
+import ReactDOM from 'react-dom/client';
 import { animationsIn, getAnimationProps, } from "../animate";
-import {handleMouseEnter, handleMouseLeave, animateBar} from '../animate/animationIn'
-
+import {handleMouseEnter, handleMouseLeave} from '../animate/animationIn'
 import { Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Seleziona tutti gli elementi con la classe 'swiper'
     const swiperElements = document.querySelectorAll('.swiper');
 
-    // Funzione per riavviare l'animazione CSS
-    function restartAnimation(element, animation) {
-        element.classList.remove(animation);
-        void element.offsetWidth; // Forza il reflow
-        element.classList.add(animation);
-    }
+    // Funzione per mostrare l'icona nel bottone
+    const iconWrappers = document.querySelectorAll('.content-icon-button');
+    iconWrappers.forEach(wrapper => {
+      const iconName = wrapper.getAttribute('data-icon');
+      const IconComponent = materialIcons[iconName];
+  
+      if (IconComponent) {
+        // Crea una root per il rendering con createRoot
+        const root = ReactDOM.createRoot(wrapper);
+        const iconSize = parseInt(wrapper.getAttribute('data-icon-size')) ;
+        const iconColor = wrapper.getAttribute('data-icon-color');
+        root.render(<IconComponent style={{ width: iconSize, height: iconSize, fill: iconColor }} />);
+      }
+    });
 
-    // Funzione per applicare animazioni CSS (esistente)
-    function handleAnimation(elements, dataAttr) {
-        elements.forEach(element => {
-            const animation = element.getAttribute(dataAttr);
-            if (animation) {
-                restartAnimation(element, animation);
-            }
-        });
-    }
+    // Funzione per mostrare l'icona primaria
+    const iconWrappersPrimary = document.querySelectorAll('.element-icon-primary');
+    iconWrappersPrimary.forEach(wrapperPrimary => {
+      const iconName = wrapperPrimary.getAttribute('data-icon-primary');
+      const IconComponent = materialIcons[iconName];
+
+      if (IconComponent) {
+        // Crea una root per il rendering con createRoot
+        const root = ReactDOM.createRoot(wrapperPrimary);
+        const iconSizeMin = parseInt(wrapperPrimary.getAttribute('data-icon-size-primary-min'));
+        const iconSizePreferred = parseInt(wrapperPrimary.getAttribute('data-icon-size-primary-preferred'));
+        const iconSizeMax = parseInt(wrapperPrimary.getAttribute('data-icon-size-primary-max'));
+        const iconColorPrimary = wrapperPrimary.getAttribute('data-icon-color-primary');
+        // Calcola la dimensione dell'icona utilizzando clamp
+        const iconSize = `clamp(${iconSizeMin}px, ${iconSizePreferred}vw, ${iconSizeMax}px)`;
+
+        root.render(<IconComponent style={{ width: iconSize, height: iconSize, fill: iconColorPrimary }} />);
+      }
+    });
 
     // Funzione per animare un elemento
     function animateElement() {
-      const elementsToAnimate = document.querySelectorAll('.title-slide, .dynamic-bar, .image-first-slide, .div-slide');
+      const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .content-icon,.title-slide-div, .img-inner');
       elementsToAnimate.forEach(element => {
-        // Dynamic Bar
-        if (element.classList.contains('dynamic-bar')) {
-          // Estrai gli attributi specifici per la barra
-          const heightFrom = element.getAttribute('data-height-from') || '5px';
-          const heightTo = element.getAttribute('data-height-to') || '15px';
-          const duration = parseInt(element.getAttribute('data-duration')) || 500;
-          const easingIn = element.getAttribute('data-easing-in') || 'easeInQuad';
-          const loopIn = element.getAttribute('data-loop-in') || 1;
-
-          // Crea l'oggetto props con i parametri estratti
-          const props = {
-              heightFrom,
-              heightTo,
-              duration,
-              easing: easingIn,
-              loop: loopIn,
-             // direction: directionIn,
-          };
-
-          // Passa l'elemento (come riferimento) e i props alla funzione animateBar
-          animateBar({ current: element }, props);
-      } else {
-      const effectIn = element.getAttribute('data-effect-in') ?? '';
+      const effectIn = element.getAttribute('data-effect-in');
       const duration = parseInt(element.getAttribute('data-duration')) ?? 800;
       const delay = parseInt(element.getAttribute('data-delay-in')) ?? 0;
       const delayEnd = parseInt(element.getAttribute('data-delay-in-end')) ?? 0;
@@ -104,14 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const scaleTypeHover = element.getAttribute('data-scale-custom-effect-hover' ?? 'scale');
       const durationHover = element.getAttribute('data-duration-hover' ?? 800);
       const easingHover = element.getAttribute('data-easing-hover' ?? 'linear');
-      const  heightFrom = element.getAttribute('data-height-from' ?? 0);
-      const  heightTo = element.getAttribute('data-height-to' ?? 0);
-     
-      // Imposta l'opacità iniziale a 0
-     //element.style.opacity = 0;
-     
+      const heightFrom = element.getAttribute('data-height-from' ?? 0);
+      const heightTo = element.getAttribute('data-height-to' ?? 0);
 
       const animationProps = getAnimationProps({
+        effectIn,
         duration,
         delay:delay,
         endDelay: delayEnd,
@@ -163,39 +152,19 @@ document.addEventListener('DOMContentLoaded', () => {
         heightTo
     });
 
-
-
+     // Controlla se animationsIn[effectIn] è definito
+     if (typeof animationsIn[effectIn] === 'function') {
       setTimeout(() => {
-        if (animationsIn[effectIn]) {
-            animationsIn[effectIn](element, animationProps);
-        }
-       
-      
-    }, delay);
-  }
-    });
-  }
-
-
-
- // Funzione per osservare i cambiamenti di classe nelle slide
-function observeSlides(slide) {
-  const observer = new MutationObserver(() => {
-      const isActive = slide.classList.contains('swiper-slide-active');
-      if (isActive) {
-          // Seleziona e anima il testo con Anime.js
-          const elements = slide.querySelectorAll('[data-effect-in]');
-          elements.forEach(element => {
-              animateElement(element);
-          });
-      }
+        animationsIn[effectIn](element, animationProps);
+      }, delay);
+    } 
   });
-      
-  observer.observe(slide, { attributes: true });
-}
+  }
+
+
 
 // Aggiungi gli eventi di hover
-const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide');
+const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .title-slide-div, .img-inner');
 elements.forEach(element => {
     element.addEventListener('mouseenter', (e) => handleMouseEnter(e, { 
       durationHover: element.getAttribute('data-duration-hover'),
@@ -223,59 +192,6 @@ elements.forEach(element => {
     }));
 });
 
-
-/*
-// Animazione del percorso SVG con anime.js
-// Seleziona gli elementi <path> nell'SVG
-const paths = document.querySelectorAll('svg path');
-
-paths.forEach(path => {
-    const length = path.getTotalLength(); // Ottieni la lunghezza del path
-
-    // Imposta il dasharray e il dashoffset
-    path.style.strokeDasharray = length;
-    path.style.strokeDashoffset = length;
-
-    anime({
-        targets: path,
-        strokeDashoffset: [length, 0], // Disegna il path da 0 a lunghezza
-        easing: 'easeInOutSine',
-        duration: 2000,
-        loop: true,
-        direction: 'alternate'
-    });
-});
-
-
-lottie.loadAnimation({
-  container: document.getElementById('lottie'), // Contenitore dell'animazione
-  renderer: 'svg', // Usare SVG come renderer
-  loop: true, // Ciclo continuo
-  autoplay: true, // Avvia automaticamente
-  animationData: animationData, 
-});
-
-// Utilizza Anime.js per animare il contenitore
-anime({
-  targets: '#lottie',
-  opacity: [0, 1],
-  scale: [0.5, 1],
-  duration: 1000,
-  loop:true,
-  direction: 'alternate',
-  easing: 'easeInOutQuad',
-  complete: () => {
-      // Eventuale codice da eseguire al termine dell'animazione
-  }
-});
-
-*/
-
-    // Applica l'osservatore su ogni elemento Swiper
-    swiperElements.forEach(swiper => {
-        const slides = swiper.querySelectorAll('.swiper-slide');
-        slides.forEach(observeSlides);
-    });
 
     // Inizializza Swiper per ogni elemento
     swiperElements.forEach(swiperElement => {
@@ -406,16 +322,18 @@ anime({
                     },
                 },
                 on: {
-                    init: function () {
-                        const slides = swiperElement.querySelectorAll('.swiper-slide');
-                        slides.forEach(slide => observeSlides(slide));
-                     //   applyZoomEffect(); // Applica l'effetto di zoom all'inizio
-                    },
+                   
                     slideChange: function () {
-                        const slides = swiperElement.querySelectorAll('.swiper-slide');
-                        slides.forEach(slide => observeSlides(slide));
-                     //   applyZoomEffect(); // Applica l'effetto di zoom su ogni slide
-                    },
+                      const slides = swiperElement.querySelectorAll('.swiper-slide');
+                      slides.forEach(slide => {
+                          if (slide.classList.contains('swiper-slide-active')) {
+                              const elements = slide.querySelectorAll('[data-effect-in]');
+                              elements.forEach(element => {
+                                  animateElement(element);
+                              });
+                          }
+                      });
+                  },
                     autoplayTimeLeft: swiperConfig.autoplayProgress ? (s, time, progress) => {
                         const progressCircle = document.querySelector('.progress-circle circle');
                         const progressContent = document.querySelector('.progress-content');
@@ -426,33 +344,18 @@ anime({
                             progressContent.textContent = `${Math.ceil(time / 1000)}s`;
                         }
                     } : undefined,
-
-                   
-
                 },
-
             });
 
-            /*
-            // Forza l'animazione per la slide iniziale ( quest onon dovrebbe sefriver, alla fine toglierlo)
-            setTimeout(() => {
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-slide'), 'data-animation');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .image-first-slide'), 'data-animation-image');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .img-inner'), 'data-animation-image-inner');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .div-slide'), 'data-animation-div');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .content-title-div.letter'), 'data-animation-title-div');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider'), 'data-animation-button');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide'), 'data-animation-button');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .button-slider-inner'), 'data-animation-button-inner');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .content-button-slide-inner'), 'data-animation-button-inner');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon'), 'data-animation-icon');
-                handleAnimation(document.querySelectorAll('.swiper-slide-active .content-icon-inner'), 'data-animation-icon-inner');
-
-            }, 100);
-
-            */
+            // Esegui l'animazione sulla prima slide attiva subito dopo l'inizializzazione
+          const initialActiveSlide = swiperElement.querySelector('.swiper-slide-active');
+          if (initialActiveSlide) {
+              const elements = initialActiveSlide.querySelectorAll('[data-effect-in]');
+              elements.forEach(element => {
+                  animateElement(element);
+              });
+          }
         }
-       
     });
 });
 
@@ -2109,11 +2012,3 @@ const loadGoogleFont = (fontFamily) => {
     link.rel = "stylesheet";
     document.head.appendChild(link);
 };
-  
-
-
-
-
-
-
-

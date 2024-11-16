@@ -12,8 +12,8 @@
 @import "swiper/css/scrollbar";
 @import "swiper/css/free-mode";
 
-// Style menu
-@import "../components/menu/menu";
+// Style button
+@import "../components/button/button";
 
 /* Content slide da veder !!!! */
 .content-slide-slider{
@@ -394,6 +394,18 @@
 
 
 /* Filter */
+/* Filtro 0: Classico */
+.swiper.filter-classic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-one-effect);
+  pointer-events: none;
+  z-index: 2;
+}
 /* Filtro 1: Sfumature Laterali */
 .swiper.filter-lateral::after {
   content: '';
@@ -601,30 +613,26 @@
   transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* Title slide */
-.title-slide{       
-  box-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) var(--box-shadow-color);
-
-}
-
 /* Icon Slide */
 .content-icon:hover .slide-icon{
-  color: var(--color-hover-icon)!important;
+  fill: var(--color-hover-icon)!important;
   border-color: var(--border-color-hover-icon)!important;
-  opacity: var(--opacity-hover-icon)!important;
   border-style: var(--border-style-hover-icon)!important;
   border-width: var(--border-width-hover-icon)!important;
-  rotate: var(--rotate-hover-icon)!important;
+  opacity: var(--opacity-hover-icon)!important;
+  transform: rotate(var(--rotate-hover-icon))!important;
 }
-.slide-icon{
-  transition: color var(--transition-hover-icon) ease, opacity var(--transition-hover-icon) ease, transform var(--transition-hover-icon) ease;
+
+
+.slide-icon,.content-icon{
+  transition: fill var(--transition-hover-icon) ease, opacity var(--transition-hover-icon) ease, transform var(--transition-hover-icon) ease;
 }
 /* Effetto hover */
 .slide-icon.hover-effect-1-icon {
   transition: transform var(--transition-hover-icon) ease;
 }
 .slide-icon.hover-effect-1-icon:hover {
-  transform: scale(1.1)!important;
+  transform: scale(var(--scale-hover-icon))!important;
 }
 /* Translate Y */
 .slide-icon.hover-effect-2-icon:hover {
@@ -635,39 +643,12 @@
   transform: translateX(var(--translate-hover-icon))!important; /* Sposta l'elemento verso l'alto di 10px */
 }
 
-/* Shadow */
-.hover-effect-3-icon- {
-  transition: box-shadow var(--transition-hover-icon) ease, filter var(--transition-hover-icon) ease!important;
-}
-.hover-effect-3-icon-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-icon)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Shadow */
-.hover-effect-3-icon {
-  transition: box-shadow var(--transition-hover-icon) ease, filter var(--transition-hover-icon) ease!important;
-}
-.hover-effect-3-icon:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-icon)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Ombra */
-.hover-effect-4-icon{
-  transition: box-shadow var(--transition-hover-icon) ease, filter var(--transition-hover-icon) ease!important;
-}
-.hover-effect-4-icon:hover {
-  box-shadow: 0px 8px 16px var(--color-effect-hover-icon)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
 /* Sfocatura */
 .hover-effect-6-icon {
   transition: filter var(--transition-hover-icon) ease!important;
 }
 .hover-effect-6-icon:hover {
-  filter: blur(2px); /* Applica una sfocatura leggera */
+  filter: blur(var(--blur-hover-icon));
 }
 
 /* Icon inner Slide */
@@ -875,9 +856,7 @@
 
 /* Hover Effect image inner */
 
-.content-img-inner{
-  transition: transform var(--transition-hover-image-inner) ease;
-}
+
 /* Scale */
 .hover-effect-1-image-inner{
   transition: transform var(--transition-hover-image-inner) ease;
@@ -943,22 +922,22 @@
 .hover-effect-1-icon-button {
   transition: transform var(--transition-hover-icon-button) ease;
 }
-.content-button-slide:hover .hover-effect-1-icon-button {
+.content-button-slide:hover .content-icon-button.hover-effect-1-icon-button {
   transform: scale(1.1)!important;
 }
 /* Translate Y */
 .hover-effect-2-icon-button{
   transition: transform var(--transition-hover-icon-button) ease;
 }
-.content-button-slide:hover .hover-effect-2-icon-button {
-  transform: translateY(var(--translate-hover-icon-button))!important; /* Sposta l'elemento verso l'alto di 10px */
+.content-button-slide:hover .content-icon-button.hover-effect-2-icon-button {
+  transform: translateY(var(--translate-hover-icon-button))!important; 
 }
 /* Translate X */
 .hover-effect-5-icon-button{
   transition: transform var(--transition-hover-icon-button) ease;
 }
-.content-button-slide:hover .hover-effect-5-icon-button {
-  transform: translateX(var(--translate-hover-icon-button))!important; /* Sposta l'elemento verso l'alto di 10px */
+.content-button-slide:hover .content-icon-button.hover-effect-5-icon-button {
+  transform: translateX(var(--translate-hover-icon-button))!important; 
 }
 
 /* Effect Icon Button Inner*/
@@ -974,31 +953,16 @@
   transition: transform var(--transition-hover-icon-button-inner) ease;
 }
 .content-button-slide-inner:hover .hover-effect-2-icon-button-inner {
-  transform: translateY(var(--translate-hover-icon-button-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-icon-button-inner))!important; 
 }
 /* Translate X */
 .hover-effect-5-icon-button-inner{
   transition: transform var(--transition-hover-icon-button-inner) ease;
 }
 .content-button-slide-inner:hover .hover-effect-5-icon-button-inner {
-  transform: translateX(var(--translate-hover-icon-button-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-icon-button-inner))!important; 
 }
 
-/* Imager Inner */
-.content-img-inner:hover{
-  transform: rotate(var(--rotate-hover-image-inner))!important;
-}
-
-.img-inner{
-transition: transform var(--transition-hover-image-inner) ease;
-}
-.img-inner:hover{
-  background-color: var(--color-hover-image-inner)!important;
-  border-color: var(--border-color-hover-image-inner)!important;
-  opacity: var(--opacity-hover-image-inner)!important;
-  border-style: var(--border-style-hover-image-inner)!important;
-  border-width: var(--border-width-hover-image-inner)!important;
-}
 
 /* Slide content */
 .content-inner-for-slide.vertical-layout {
@@ -1034,53 +998,6 @@ transition: transform var(--transition-hover-image-inner) ease;
   }
 }
 
-/* Font size Title Responsive */
-@media screen and (max-width: 780px) {
-  .title-slide {
-    font-size: var(--font-size-tablet) !important;
-  }
-}
-@media screen and (max-width: 360px) {
-  .title-slide {
-    font-size: var(--font-size-mobile) !important;
-  }
-}
-
-/* Font size Icon Responsive */
-@media screen and (max-width: 780px) {
-  .slide-icon {
-    font-size: var(--font-size-tablet-icon) !important;
-  }
-}
-@media screen and (max-width: 360px) {
-  .slide-icon {
-    font-size: var(--font-size-mobile-icon) !important;
-  }
-}
-
-/* Font size Title inside block Responsive */
-@media screen and (max-width: 780px) {
-  .title-slide-div {
-    font-size: var(--font-size-block-tablet) !important;
-  }
-}
-@media screen and (max-width: 360px) {
-  .title-slide-div {
-    font-size: var(--font-size-block-mobile) !important;
-  }
-}
-
-/* Font size Button Responsive */
-@media screen and (max-width: 780px) {
-  .content-button-slide {
-    font-size: var(--font-size-button-tablet) !important;
-  }
-}
-@media screen and (max-width: 360px) {
-  .content-button-slide {
-    font-size: var(--font-size-button-mobile) !important;
-  }
-}
 
 /* Font size inner Button Responsive */
 @media screen and (max-width: 780px) {
@@ -2692,7 +2609,7 @@ transition: transform var(--transition-hover-image-inner) ease;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
   border-style: var(--border-style-button);
-  border-width: var(--border-width-button);
+  border-width: var(--border-width-button-top) var(--border-width-button-right) var(--border-width-button-bottom) var(--border-width-button-left);
   border-color: var(--border-color-button);
 	border-radius: var(--border-radius-button);
   background-color: var(--background-color-button);
@@ -2701,7 +2618,7 @@ transition: transform var(--transition-hover-image-inner) ease;
 .scroll-btn .mouse:hover {
   background-color: var(--color-button-hover)!important;
   border-style: var(--border-style-button-hover)!important;
-  border-width: var(--border-width-button-hover)!important;
+  border-width: var(--border-width-button-hover-top) var(--border-width-button-hover-right) var(--border-width-button-hover-bottom) var(--border-width-button-hover-left)!important;
   border-color: var(--border-color-button-hover)!important;
   rotate: var(--rotate-button-hover)!important;
   opacity: var(--opacity-button-hover)!important;
@@ -2726,14 +2643,10 @@ transition: transform var(--transition-hover-image-inner) ease;
 .button-slider a:hover{
   background-color: var(--background-color-button-hover)!important;
   color: var(--color-button-hover)!important;
-  border-width:var(--border-width-button-hover)!important;
+  border-width: var(--border-width-button-hover-top) var(--border-width-button-hover-right) var(--border-width-button-hover-bottom) var(--border-width-button-hover-left)!important;
   border-style: var(--border-style-button-hover)!important;
   border-color:var(--border-color-button-hover)!important;
   opacity: var(--opacity-button-hover)!important;
-  transform: rotate(var(--rotate-button-hover))!important;
-}
-.button-slider:hover{
-  transform: rotate(var(--rotate-button-hover))!important;
 }
 
 
@@ -2920,38 +2833,35 @@ transition: transform var(--transition-hover-image-inner) ease;
   transition: opacity var(--delay-hide-seconds-title) ease-in-out;
 }
 
-/* Effetto nascondi l'elemento inner image */
-.content-img-inner.hidden {
-  opacity: 0 !important;
-  transition: opacity var(--delay-hide-seconds-image-block) ease-in-out;
-}
-
 
 
 /* Icon Button */
-.content-button-slide:hover .content-icon-button{
-  transform: rotate(var(--rotate-icon-button-hover))!important; ;
- 
+.button-slider:hover .content-icon-button{
+  transform: rotate(var(--rotate-icon-button-hover))!important;
+  transition: transform var(--transition-hover-icon-button) ease;
+}
+.content-icon-button{
+  transition: transform var(--transition-hover-icon-button) ease;
 }
 
-.content-button-slide:hover .content-icon-button i{
-  color: var(--color-icon-button-hover)!important;
+.content-button-slide:hover .content-icon-button svg{
+  fill: var(--color-icon-button-hover)!important;
 }
 
 
-.content-button-slide.icon-show-hover.icon-hide-opacity i{
-  opacity: 0;
+.content-button-slide.icon-show-hover.icon-hide-opacity svg{
+  opacity: 0!important;
 }
 
-.content-button-slide.icon-show-hover.icon-hide-opacity:hover i{
-  opacity: 1;
+.content-button-slide.icon-show-hover.icon-hide-opacity:hover svg{
+  opacity: 1!important;
 }
 
-.content-button-slide.icon-show-hover.icon-hide-display-none i{
+.content-button-slide.icon-show-hover.icon-hide-display-none svg{
   display: none;
 }
 
-.content-button-slide.icon-show-hover.icon-hide-display-none:hover i{
+.content-button-slide.icon-show-hover.icon-hide-display-none:hover svg{
   display: block;
 }
 
@@ -3056,6 +2966,18 @@ transition: transform var(--transition-hover-image-inner) ease;
 
 
 /* Filter slide */
+/* Filtro 0: Classico */
+.swiper-slide.filter-classic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-one-effect-slide);
+  pointer-events: none;
+  z-index: 2;
+}
 /* Filtro 1: Sfumature Laterali */
 .swiper-slide.filter-lateral::after {
   content: '';
@@ -3209,13 +3131,19 @@ transition: transform var(--transition-hover-image-inner) ease;
   z-index: 9999;
 }
 
-/* Split text */
-
-.letter {
-  display: inline-block; /* Oppure block */
-}
-
+/* Animation*/
 
 .no-pointer-events{
   pointer-events: none;
 }
+
+
+
+
+
+
+
+
+
+
+

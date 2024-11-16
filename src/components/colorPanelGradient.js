@@ -24,9 +24,9 @@ const ColorOptionsPanelGradient = ({ buttonTitle, buttonIcon, gradient, setGradi
                     marginLeft: '-16px',
                 }}
             >
-                <div>
+                <div style={{display:'flex',alignItems: 'center',gap: '5px'}}>
                     {buttonIcon && (
-                        <span className="button-icon" style={{ marginRight: '4px' }}>
+                        <span className="button-icon">
                             <Icon icon={buttonIcon} />
                         </span>
                     )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { animationsIn, getAnimationProps} from '../../animate';
-import {handleMouseEnter, handleMouseLeave, animateBar} from '../../animate/animationIn'
+import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
 
 const ImageRender = ({ element, index, onPlay  }) => {
 
@@ -57,16 +57,6 @@ const ImageRender = ({ element, index, onPlay  }) => {
         // Animazione del testo
         effectIn(imageRef.current, animationProps);
       
-        // Animazione del bar con valori dinamici
-        {/*if (barRef.current) {
-          animateBar(barRef, {
-            duration: element.barDuration, // Assicurati che questo valore sia definito
-            heightFrom: element.barHeightFrom || '5px', // Altri valori dinamici se necessario
-            heightTo: element.barHeightTo || '15px',
-            easing: element.barEasing || 'easeInQuint', // Esempio di easing dinamico
-            loop: loopCount, // O impostalo su un valore dinamico
-          });
-        }*/}
       }, element.delay);
       
     }
@@ -90,25 +80,22 @@ const ImageRender = ({ element, index, onPlay  }) => {
   // Aggiungi un useEffect per osservare i cambiamenti di effectIn ed easing
   useEffect(() => {
     playAnimation();
-    {/*if (barRef.current) {
-      animateBar(barRef); // Chiama animateBar passando barRef
-    }*/}
   }, [element.effectIn, element.easing, element.direction,element.text]);
 
   const getImageStyle = () => {
     let style = {
       borderStyle: element.borderStyleImage || "none",
       borderColor: element.backgroundBorderColorImage || "#000000",
-      borderWidth: element.backgroundBorderSizeImage + "px",
-      borderRadius: element.backgroundBorderRadiusImage + "px",
-      padding: element.paddingImage + "px",
+      borderWidth: `${element.backgroundBorderSizeImage?.top} ${element.backgroundBorderSizeImage?.right} ${element.backgroundBorderSizeImage?.bottom} ${element.backgroundBorderSizeImage?.left}`,
+      borderRadius: `${element.backgroundBorderRadiusImage?.top} ${element.backgroundBorderRadiusImage?.right} ${element.backgroundBorderRadiusImage?.bottom} ${element.backgroundBorderRadiusImage?.left}`,
+      padding: `${element.paddingImage?.top} ${element.paddingImage?.right} ${element.paddingImage?.bottom} ${element.paddingImage?.left}`,
       backgroundColor: element.backgroundColorImage,
       ...(element.enableBoxShadowImage && {
         boxShadow: `${element.boxShadowXImage}px ${element.boxShadowYImage}px ${element.boxShadowBlurImage}px ${element.boxShadowSpreadImage}px ${element.colorShadowImage}`,
       }),
       "--spike-width": element.spikeLeftWidth + "%" || "0",
       "--spike-width-right": element.spikeRightWidth + "%" || "0",
-      margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`, // Usa i valori aggi
+      margin: `${element.marginImage?.top} ${element.marginImage?.right} ${element.marginImage?.bottom} ${element.marginImage?.left}`,
       position:"relative",
     };
 

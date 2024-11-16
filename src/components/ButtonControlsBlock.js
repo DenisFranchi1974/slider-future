@@ -13,13 +13,13 @@ import {
 import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import { trash } from "@wordpress/icons";
-import AlignmentControlThree from "./aligncontrol-three";
+import AlignmentControlThree from "./align/aligncontrol-three";
 import ColorOptionsPanel from "./colorPanel";
 import FontStyle from "./font-style";
-import SectionSelector from "./sectionSelector";
+import SectionSelector from "./multitab/sectionSelector";
 import ButtonControlsBlockHover from "./ButtonControlsBlockHover";
 import BoxShadowControlButtonBlock from "./boxShadowButtonBlock";
-import IconModal from "./IconModal";
+import IconModal from "../icons/IconModal";
 
 const ButtonControlsBlock = ({
   slide,

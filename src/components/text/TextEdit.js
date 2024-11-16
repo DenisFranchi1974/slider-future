@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Button,
-  ButtonGroup,
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
@@ -10,7 +9,7 @@ import { __ } from "@wordpress/i18n";
 import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomHoverControls from "../../multiControls/hover";
 import FontStyle from "../font-style";
-import SectionSelector from "../sectionSelector";
+import SectionSelector from "../multitab/sectionSelector";
 import CustomRangeControl from "../../controls/range"
 import {elementOptions} from '../../assets/options';
 import {fontOptions} from '../../assets/options';
@@ -19,7 +18,7 @@ import {blendModeOptions} from '../../assets/options';
 import {fontWeightOptions} from '../../assets/options';
 import {writeModeOptions} from '../../assets/options';
 import {borderStyleOptions} from '../../assets/options';
-import { selectOptionsEffectIn } from "../../assets/options";;
+import { selectOptionsEffectIn } from "../../assets/options";
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomStrokeControl from "../../controls/stroke/StrokeControl";
 import CustomAlignControl from "../../controls/align/AlignControl";
@@ -27,14 +26,11 @@ import CustomVisibilityControls from "../../multiControls/visibility/VisibilityC
 import CustomActionControls from "../../multiControls/action/ActionControls";
 import CustomTextAreaControl from "../../controls/text-area/TextAreaControl";
 import CustomEffectControls from "../../multiControls/effect";
+import CustomSelectControl from "../../controls/select/SelectControl";
 import RotateRightIcon from '@mui/icons-material/RotateRight'; 
 import WidthWideIcon from '@mui/icons-material/WidthWide';
-import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
-import TabletMacIcon from '@mui/icons-material/TabletMac';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import HeightIcon from '@mui/icons-material/Height';
 import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
-import CustomSelectControl from "../../controls/select/SelectControl";;
 import DescriptionIcon from '@mui/icons-material/Description';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -52,10 +48,12 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import BorderStyleIcon from '@mui/icons-material/BorderStyle';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
-import BorderLeftIcon from '@mui/icons-material/BorderLeft';
 import BorderInnerIcon from '@mui/icons-material/BorderInner';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
+import TuneIcon from '@mui/icons-material/Tune';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 const TextEdit = ({
   slide,
@@ -65,11 +63,8 @@ const TextEdit = ({
   setAttributes,
   setActiveSection,
   activeSection,
-  device,
-  handleDesktopClick,
-  handleTabletClick,
-  handleMobileClick,
-  onAnimatedText
+  onAnimatedText,
+  className 
 }) => {
 
   // Funzione generale per aggiornare i controlli
@@ -245,6 +240,102 @@ const TextEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
+    // Border size
+    const  updatenewBackgroundBorderSize = (slideId, index, newBorderSize) => {
+      console.log("Updating border with:", newBorderSize); // Log per debug
+  
+      const addUnit = (value, unit) => {
+        // Verifica se il valore termina già con l'unità
+        if (typeof value === "string" && value.endsWith(unit)) {
+          return value;
+        }
+        return `${value}${unit}`;
+      };
+  
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) => {
+                if (element.type === "title" && i === index) {
+                  return {
+                    ...element,
+                    backgroundBorderSize: {
+                      top: addUnit(
+                        newBorderSize.top || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                      right: addUnit(
+                        newBorderSize.right || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                      bottom: addUnit(
+                        newBorderSize.bottom || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                      left: addUnit(
+                        newBorderSize.left || "0",
+                        newBorderSize.unit || "px"
+                      ),
+                    },
+                  };
+                }
+                return element;
+              }),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Border Radius
+    const  updatenewBackgroundBorderRadius = (slideId, index, newBorderRadius) => {
+   
+      const addUnit = (value, unit) => {
+        // Verifica se il valore termina già con l'unità
+        if (typeof value === "string" && value.endsWith(unit)) {
+          return value;
+        }
+        return `${value}${unit}`;
+      };
+  
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId
+          ? {
+              ...slide,
+              elements: slide.elements.map((element, i) => {
+                if (element.type === "title" && i === index) {
+                  return {
+                    ...element,
+                    backgroundBorderRadius: {
+                      top: addUnit(
+                        newBorderRadius.top || "0",
+                        newBorderRadius.unit || "px"
+                      ),
+                      right: addUnit(
+                        newBorderRadius.right || "0",
+                        newBorderRadius.unit || "px"
+                      ),
+                      bottom: addUnit(
+                        newBorderRadius.bottom || "0",
+                        newBorderRadius.unit || "px"
+                      ),
+                      left: addUnit(
+                        newBorderRadius.left || "0",
+                        newBorderRadius.unit || "px"
+                      ),
+                    },
+                  };
+                }
+                return element;
+              }),
+            }
+          : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+
   // Open panel
   const [isOpen, setIsOpen] = useState(false);
 
@@ -258,10 +349,10 @@ const TextEdit = ({
     }
     return text.substring(0, maxLength) + ' ...';
   };
-  const truncatedText = truncateText(element.text, 7);
+  const truncatedText = truncateText(element.text, 9);
 
   return (
-    <div className="custom-block-added">
+    <div className={"custom-block-added " + className}>
       <div className="divider-controls"></div>
       <div className="title-block-added">
         <div className="title-element">
@@ -360,7 +451,7 @@ const TextEdit = ({
                     {__("Custom Width (%)", "cocoblocks")}
                   </>
                 }
-                value={element.widthCustomTitle || 100}
+                value={element.widthCustomTitle ?? 100}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={1}
@@ -421,41 +512,57 @@ const TextEdit = ({
             <h2 className="title-custom-panel">{__("Font", "cocoblocks")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
-              <ButtonGroup className="device-switcher">
-                <Button
-                  size="small"
-                  isPressed={device === "desktop"}
-                  onClick={handleDesktopClick}
-                  className={device !== "desktop" ? "inactive" : ""}
-                >
-                  <PersonalVideoIcon />
-                </Button>
-
-                <>
-                  <Button
-                    size="small"
-                    isPressed={device === "tablet"}
-                    onClick={handleTabletClick}
-                    className={device !== "tablet" ? "inactive" : ""}
-                  >
-                    <TabletMacIcon />
-                  </Button>
-                  <Button
-                    size="small"
-                    isPressed={device === "mobile"}
-                    onClick={handleMobileClick}
-                    className={device !== "mobile" ? "inactive" : ""}
-                  >
-                    <SmartphoneIcon />
-                  </Button>
-                </>
-              </ButtonGroup>
-              {device === "desktop" && (
-                <CustomRangeControl
+             <CustomRangeControl
+                label={
+                  <>
+                    <TextFieldsIcon/>
+                    {__("Min", "cocoblocks")}
+                  </>
+                }
+                value={element.fontSizeMobile || 16}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={4}
+                max={100}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "cocoblocks")}
+                showTooltip = {true}
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeMobile')
+                }
+              />
+              <CustomRangeControl
+                label={
+                  <>
+                    <TuneIcon />
+                    {__("Mid", "cocoblocks")}
+                  </>
+                }
+                value={element.fontSizeTablet || 16}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={4}
+                max={200}
+                step={.5}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "cocoblocks")}
+                showTooltip = {true}
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeTablet')
+                }
+              />      
+              <CustomRangeControl
                   label={
                     <>
-                      <PersonalVideoIcon />
-                      {__("Font size", "cocoblocks")}
+                      <FullscreenIcon />
+                      {__("Max", "cocoblocks")}
                     </>
                   }
                   value={element.fontSize || 22}
@@ -468,57 +575,13 @@ const TextEdit = ({
                   slideId={slide.id}
                   elementIndex={elementIndex}
                   elementType="title"
+                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "cocoblocks")}
+                  showTooltip = {true}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSize')
                   }
                 />
-              )}
-              {device === "tablet" && (
-              <CustomRangeControl
-                label={
-                  <>
-                    <TabletMacIcon />
-                    {__("Font size", "cocoblocks")}
-                  </>
-                }
-                value={element.fontSizeTablet || 16}
-                slides={slides}
-                setAttributes={setAttributes}
-                min={4}
-                max={500}
-                step={1}
-                updateType="primary"
-                slideId={slide.id}
-                elementIndex={elementIndex}
-                elementType="title"
-                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeTablet')
-                }
-              />      
-              )}
-              {device === "mobile" && (
-              <CustomRangeControl
-                label={
-                  <>
-                    <SmartphoneIcon />
-                    {__("Font size", "cocoblocks")}
-                  </>
-                }
-                value={element.fontSizeMobile || 16}
-                slides={slides}
-                setAttributes={setAttributes}
-                min={4}
-                max={500}
-                step={1}
-                updateType="primary"
-                slideId={slide.id}
-                elementIndex={elementIndex}
-                elementType="title"
-                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeMobile')
-                }
-              />
-              )}
+              
               <div className="custom-select">
                <FontStyle
                 value={element.fontStyle || {}} // Inizializza con un oggetto vuoto se undefined
@@ -634,6 +697,20 @@ const TextEdit = ({
                   updateElement={updateElement}
                   property="textColor"
                 />
+                 <CustomColorOptionsPanel
+                  colorNormal={element.backgroundColor }
+                  setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'backgroundColor')}
+                  buttonTitle={__("Background Color", "cocoblocks")}
+                  buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="title"
+                  updateElement={updateElement}
+                  property="backgroundColor"
+                />
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
@@ -716,48 +793,38 @@ const TextEdit = ({
                   updateElement={updateElement}
                   property="backgroundBorderColor"
                 />
-                <CustomRangeControl
-                  label={
-                    <>
-                      <BorderLeftIcon />
-                      {__("Border width", "cocoblocks")}
-                    </>
-                  }
-                  value={element.backgroundBorderSize || 1}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={20}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="title"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderSize')
-                  }
-                />
-                 <CustomRangeControl
-                  label={
-                    <>
-                      <BorderInnerIcon />
-                      {__("Border radius", "cocoblocks")}
-                    </>
-                  }
-                  value={element.backgroundBorderRadius || 0}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={256}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="title"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderRadius')
-                  }
-                />
+                <div className="custom-select box-control">
+              <BoxControl
+                id="custom-margin-control"
+                label={
+                  <>
+                    <MarginIcon />
+                    {__("Border width", "cocoblocks")}
+                  </>
+                }
+                values={element.backgroundBorderSize}
+                units={{}}
+                onChange={(newBorderSize) =>
+                  updatenewBackgroundBorderSize(slide.id, elementIndex, newBorderSize)
+                }
+              />
+            </div>
+            <div className="custom-select box-control">
+              <BoxControl
+                id="custom-margin-control"
+                label={
+                  <>
+                    <BorderInnerIcon />
+                    {__("Border radius", "cocoblocks")}
+                  </>
+                }
+                values={element.backgroundBorderRadius}
+                units={{}}
+                onChange={(newBorderRadius) =>
+                  updatenewBackgroundBorderRadius(slide.id, elementIndex, newBorderRadius)
+                }
+              />
+            </div>
               </>
             )}
           </div>

@@ -16,7 +16,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { EffectCreative, Autoplay } from "swiper/modules";
 import { info } from "@wordpress/icons";
-import SectionSliderSelectorOptions from "./sectionSliderSelectorOptions";
+import SectionSliderSelectorOptions from "./multitab/sectionSliderSelectorOptions";
 import ColorOptionsPanel from "./colorPanel";
 
 const SliderControlsOptions = ({ attributes, setAttributes }) => {
@@ -258,6 +258,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -657,6 +658,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -679,6 +681,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     {
                       label: __("None", "cocoblocks"),
                       value: " ",
+                    },
+                    {
+                      label: __("Classic", "cocoblocks"),
+                      value: "filter-classic",
                     },
                     {
                       label: __("Lateral", "cocoblocks"),
@@ -837,6 +843,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -905,6 +912,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg
@@ -942,6 +950,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             <div className="content-section-panel">
               <div className="custom-select select-control-label-right">
                 <SelectControl
+                 __nextHasNoMarginBottom
                   label={
                     <>
                       <svg

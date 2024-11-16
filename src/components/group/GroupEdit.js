@@ -9,11 +9,11 @@ import { __ } from "@wordpress/i18n";
 import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomSelectControl from "../../controls/select/SelectControl";
 import CustomRangeControl from "../../controls/range/RangeControl";
-import TextControlsBlock from "../TextControlsBlock";
-import ImageControlsBlock from "../imageControlsBlock";
-import SectionSelectorBlock from "../sectionSelectorBlock";
+import InnerTextEdit from "../innertext/InnerTextEdit";
+import InnerImageEdit from "../innerimage/InnerImageEdit";
+import SectionSelector from "../multitab/sectionSelector";
 import CustomTextControl from "../../controls/text/TextControl";
-import AlignmentControl from "../aligncontrol";
+import AlignmentControl from "../align/aligncontrol";
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomActionControls from "../../multiControls/action";
 import CustomVisibilityControls from "../../multiControls/visibility";
@@ -25,7 +25,6 @@ import {borderStyleOptions} from '../../assets/options';
 import { selectOptionsEffectElement } from '../../assets/options';
 import ButtonTypeInnerSelectionModal from "../buttonInnerModal";
 import IconControlsInner from "../IconControlsInner";
-import MenuInnerControls from "../MenuInnerControls";
 import LibraryAddOutlinedIcon from '@mui/icons-material/LibraryAddOutlined';
 import PostAddOutlinedIcon from '@mui/icons-material/PostAddOutlined';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
@@ -73,12 +72,15 @@ const GroupEdit = ({
   showOtherButtons,
   attributes,
   onAnimatedGroup,
-  innerElements,
+  handlePlayInnerText,
+  handlePlayInnerImage
+
   
 }) => {
   // Inizializza lo stato locale utilizzando element.playStateDiv
   const [playStateDiv, setPlayState] = useState(element.playStateDiv || "");
   const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
+
 
     // Funzione generale per aggiornare i controlli
     const updateElement = (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) => {
@@ -182,6 +184,100 @@ const GroupEdit = ({
     );
     setAttributes({ slides: updatedSlides });
   };
+
+  // Border Size
+  const updatenewBackgroundBorderSizeDiv = (slideId, index, newBorderSize) => {
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "div" && i === index) {
+                return {
+                  ...element,
+                  backgroundBorderSizeDiv: {
+                    top: addUnit(
+                      newBorderSize.top || "0",
+                      newBorderSize.unit || "px"
+                    ),
+                    right: addUnit(
+                      newBorderSize.right || "0",
+                      newBorderSize.unit || "px"
+                    ),
+                    bottom: addUnit(
+                      newBorderSize.bottom || "0",
+                      newBorderSize.unit || "px"
+                    ),
+                    left: addUnit(
+                      newBorderSize.left || "0",
+                      newBorderSize.unit || "px"
+                    ),
+                  },
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Border Radius
+   const updatenewBackgroundBorderRadiusDiv = (slideId, index, newBorderRadius) => {
+    const addUnit = (value, unit) => {
+      // Verifica se il valore termina già con l'unità
+      if (typeof value === "string" && value.endsWith(unit)) {
+        return value;
+      }
+      return `${value}${unit}`;
+    };
+
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId
+        ? {
+            ...slide,
+            elements: slide.elements.map((element, i) => {
+              if (element.type === "div" && i === index) {
+                return {
+                  ...element,
+                  backgroundBorderRadiusDiv: {
+                    top: addUnit(
+                      newBorderRadius.top || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                    right: addUnit(
+                      newBorderRadius.right || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                    bottom: addUnit(
+                      newBorderRadius.bottom || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                    left: addUnit(
+                      newBorderRadius.left || "0",
+                      newBorderRadius.unit || "px"
+                    ),
+                  },
+                };
+              }
+              return element;
+            }),
+          }
+        : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  
 
   // Remove Div
   const removeSlideDiv = (slideId, index) => {
@@ -835,82 +931,6 @@ const GroupEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
-     // Add Menu
-  const addSlideMenuDiv = (slideId, divIndex) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId
-        ? {
-            ...slide,
-            elements: slide.elements.map((element, index) =>
-              index === divIndex
-                ? {
-                    ...element,
-                    innerElements: [
-                      ...(element.innerElements || []),
-                      {
-
-                  type: "menu",
-                  menuItems: [],
-                  textAlign: "center",
-                  textAlignItems: "center",
-                  fontStyle: {
-                    italic: false,
-                    underline: false,
-                    bold: false,
-                  },
-                  fontWeight: 400,
-                  letterSpacing: 0,
-                  fontSize: 18,
-                  fontSizeTablet: 16,
-                  fontSizeMobile: 16,
-                  lineHeight: 1.5,
-                  textColor: '#000000',
-                  backgroundColor: "#ffffff",
-                  toggleColor: "#000000",
-                  backgroundColorToggle: "#ffffff",
-                  radiusToggle: 100,
-                  gapMenu: 5,
-                  marginTitle: {
-                    top: 0,
-                    right: 0,
-                    bottom: 0,
-                    left: 0,
-                  },
-                  paddingTitle: {
-                    top: 0,
-                    right: 0,
-                    bottom: 0,
-                    left: 0,
-                  },
-                  fontFamily: "Arial",
-                  linkUrl: "",
-                  linkTarget: "_self",
-                  enableDesktop: true,
-                  enableTablet: true,
-                  enableMobile: true,
-                  textColorHover: '#000000',
-                  colorShadow: "",
-                  boxShadowX: 0,
-                  boxShadowY: 0,
-                  boxShadowBlur: 0,
-                  boxShadowSpread: 0,
-                  direction:"left",
-                  directionMenu:"menu-left",
-                  widthMenu: "half",
-                  heightMenu: "100%",
-                  scaleToggle: 1.2,
-                  sizeToggle: "toggle-medium",
-                },
-              ],
-            }
-          : element
-      ),
-    }
-  : slide
-);
-setAttributes({ slides: updatedSlides });
-};
-  
 
     // Open panel
     const [isOpen, setIsOpen] = useState(false);
@@ -981,7 +1001,7 @@ setAttributes({ slides: updatedSlides });
         <div className="title-block-added">
           <div className="title-element">
             <AutoAwesomeMosaicIcon />
-            <h2>{element.nameGroup ? truncateText(element.nameGroup, 7) : __("Group", "slider")}</h2>
+            <h2>{element.nameGroup ? truncateText(element.nameGroup, 10) : __("Group", "slider")}</h2>
           </div>
           <div className="title-element">
           <Button
@@ -1004,7 +1024,7 @@ setAttributes({ slides: updatedSlides });
         </div>
         {isOpen && ( 
         <>
-        <SectionSelectorBlock onSectionChange={setActiveSectionBlock} />
+        <SectionSelector onSectionChange={setActiveSectionBlock} />
         {activeSectionBlock === "content" && (
           <>
             <div
@@ -1460,48 +1480,38 @@ setAttributes({ slides: updatedSlides });
                   updateElement={updateElement}
                   property="backgroundBorderColorDiv"
                 />
-                <CustomRangeControl
+                 <div className="custom-select box-control">
+                <BoxControl
+                  id="custom-margin-control"
                   label={
                     <>
                       <BorderLeftIcon />
                       {__("Border width", "cocoblocks")}
                     </>
                   }
-                  value={element.backgroundBorderSizeDiv}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={20}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="div"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderSizeDiv')
+                  values={element.backgroundBorderSizeDiv}
+                  units={{}}
+                  onChange={(newBorderSize) =>
+                    updatenewBackgroundBorderSizeDiv(slide.id, elementIndex, newBorderSize)
                   }
                 />
-                 <CustomRangeControl
+              </div>
+              <div className="custom-select box-control">
+                <BoxControl
+                  id="custom-margin-control"
                   label={
                     <>
                       <BorderInnerIcon />
                       {__("Border radius", "cocoblocks")}
                     </>
                   }
-                  value={element.backgroundBorderRadiusDiv}
-                  slides={slides}
-                  setAttributes={setAttributes}
-                  min={0}
-                  max={256}
-                  step={1}
-                  updateType="primary"
-                  slideId={slide.id}
-                  elementIndex={elementIndex}
-                  elementType="div"
-                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'backgroundBorderRadiusDiv')
+                  values={element.backgroundBorderRadiusDiv}
+                  units={{}}
+                  onChange={(newBorderRadius) =>
+                    updatenewBackgroundBorderRadiusDiv(slide.id, elementIndex, newBorderRadius)
                   }
                 />
+              </div>
                 </>
               )}
             </div>
@@ -1527,7 +1537,7 @@ setAttributes({ slides: updatedSlides });
                     {__("Rotate", "cocoblocks")}
                   </>
                 }
-                value={element.rotateDiv}
+                value={element.rotateDiv || 0}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={0}
@@ -1556,7 +1566,7 @@ setAttributes({ slides: updatedSlides });
                   {__("Opacity", "cocoblocks")}
                 </>
               }
-              value={element.opacityDiv}
+              value={element.opacityDiv || 1}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1584,7 +1594,7 @@ setAttributes({ slides: updatedSlides });
                   {__("Z-index", "cocoblocks")}
                 </>
               }
-              value={element.zIndexDiv}
+              value={element.zIndexDiv || 1}
               slides={slides}
               setAttributes={setAttributes}
               min={0}
@@ -1850,10 +1860,10 @@ setAttributes({ slides: updatedSlides });
                     </Button>
                   </Tooltip>
                 </div>
-          <TextControlsBlock
+          <InnerTextEdit
             slide={slide}
             slides={slides}
-            textDiv={innerElement} // Usa `innerElement` invece di `textDiv`
+            textDiv={innerElement} 
             element={element}
             textIndex={innerIndex}
             elementIndex={elementIndex}
@@ -1866,6 +1876,7 @@ setAttributes({ slides: updatedSlides });
             handleTabletClick={handleTabletClick}
             handleMobileClick={handleMobileClick}
             showOtherButtons={showOtherButtons}
+            handlePlayInnerText={handlePlayInnerText}
           />
           
               </div>
@@ -1900,7 +1911,7 @@ setAttributes({ slides: updatedSlides });
                     </Button>
                   </Tooltip>
                 </div>
-              <ImageControlsBlock
+              <InnerImageEdit
                 slide={slide}
                 slides={slides}
                 element={element}
@@ -1911,7 +1922,7 @@ setAttributes({ slides: updatedSlides });
                 setAttributes={setAttributes}
                 setActiveSectionImage={setActiveSectionImage}
                 activeSectionImage={activeSectionImage}
-                parallax={parallax}
+                handlePlayInnerImage={handlePlayInnerImage}
               />
             </div>
           );
@@ -2017,59 +2028,6 @@ setAttributes({ slides: updatedSlides });
         }
         return null;
       })}
-
-
-{element.innerElements &&
-        element.innerElements.map((innerElement, innerIndex) => {
-            if (innerElement.type === "menu") {
-              return (
-            <div key={innerIndex}>
-               <div className={"button-move-element-div"}>
-                  <Tooltip text={__("Move before", "cocoblocks")}>
-                    <Button
-                      onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
-                      size="small"
-                      disabled={innerIndex === 0 || isSingleInnerElement}
-                      label={__("Move before", "cocoblocks")}
-                    >
-                      ↑
-                    </Button>
-                  </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
-                    <Button
-                      onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
-                      size="small"
-                      disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
-                      label={__("Move after", "cocoblocks")}
-                    >
-                      ↓
-                    </Button>
-                  </Tooltip>
-                </div>
-          
-                <MenuInnerControls
-                  slide={slide}
-                  slides={slides}
-                  menuDiv={innerElement} 
-                  element={element}
-                  menuIndex={innerIndex}
-                  elementIndex={elementIndex}
-                  setAttributes={setAttributes}
-                  setActiveSection={setActiveSection}
-                  activeSection={activeSection}
-                  parallax={parallax}
-                  device={device}
-                  handleDesktopClick={handleDesktopClick}
-                  handleTabletClick={handleTabletClick}
-                  handleMobileClick={handleMobileClick}
-                  showOtherButtons={showOtherButtons}
-                />
-            </div>
-          );
-        }
-        return null;
-      })}
-
 
 
            </>

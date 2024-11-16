@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { animationsIn, getAnimationProps} from '../../animate';
-import {handleMouseEnter, handleMouseLeave, animateBar} from '../../animate/animationIn'
+import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
 
-const TextRender = ({ element, index, onPlay  }) => {
+const TextRender = ({ element, index, onPlay, className, onClick  }) => {
 
   const textRef = useRef(null); // Ref per il contenitore del testo
   //const barRef = useRef(null); // Ref per il div che vuoi animare
@@ -59,17 +59,6 @@ const TextRender = ({ element, index, onPlay  }) => {
       setTimeout(() => {
         // Animazione del testo
         effectIn(textRef.current, animationProps);
-      
-        // Animazione del bar con valori dinamici
-        {/*if (barRef.current) {
-          animateBar(barRef, {
-            duration: element.barDuration, // Assicurati che questo valore sia definito
-            heightFrom: element.barHeightFrom || '5px', // Altri valori dinamici se necessario
-            heightTo: element.barHeightTo || '15px',
-            easing: element.barEasing || 'easeInQuint', // Esempio di easing dinamico
-            loop: loopCount, // O impostalo su un valore dinamico
-          });
-        }*/}
       }, element.delay);
       
     }
@@ -94,18 +83,14 @@ const TextRender = ({ element, index, onPlay  }) => {
   // Aggiungi un useEffect per osservare i cambiamenti di effectIn ed easing
   useEffect(() => {
     playAnimation();
-    {/*if (barRef.current) {
-      animateBar(barRef); // Chiama animateBar passando barRef
-    }*/}
   }, [element.effectIn, element.easing, element.direction,element.text]);
 
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
   const stylesTitle = {
-    fontSize: element.fontSize + "px",
-    "--font-size-tablet": element.fontSizeTablet + "px", 
-    "--font-size-mobile": element.fontSizeMobile + "px",
+    fontSize: 'clamp(' + element.fontSizeMobile + 'px,' + element.fontSizeTablet + 'vw, ' + element.fontSize + 'px)',
     color: element.textColor,
+    backgroundColor: element.backgroundColor,
     textAlign: element.textAlign,
     letterSpacing: element.letterSpacing + "px",
     fontStyle: element.fontStyle?.fontStyle ?? "normal", // Valore di default
@@ -113,11 +98,11 @@ const TextRender = ({ element, index, onPlay  }) => {
     textDecoration: element.fontStyle?.textDecoration ?? "none", // Valore di default
     lineHeight: element.lineHeight,
     fontFamily: element.fontFamily,
-    margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`, // Usa i valori aggi
+    margin: `${element.marginTitle?.top} ${element.marginTitle?.right} ${element.marginTitle?.bottom} ${element.marginTitle?.left}`,
     padding: `${element.paddingTitle?.top} ${element.paddingTitle?.right} ${element.paddingTitle?.bottom} ${element.paddingTitle?.left}`, // Usa i valori aggi
-    borderWidth: `${element.backgroundBorderSize}px` ?? 0,
+    borderWidth: `${element.backgroundBorderSize?.top} ${element.backgroundBorderSize?.right} ${element.backgroundBorderSize?.bottom} ${element.backgroundBorderSize?.left}`,
     borderColor: element.backgroundBorderColor || "#000000",
-    borderRadius: `${element.backgroundBorderRadius}px` ?? 0,
+    borderRadius: `${element.backgroundBorderRadius?.top} ${element.backgroundBorderRadius?.right} ${element.backgroundBorderRadius?.bottom} ${element.backgroundBorderRadius?.left}`,
     borderStyle: element.borderStyle ?? "none",
     ...(element.enableTextShadow && {
     textShadow: `${element.textShadowX}px ${element.textShadowY}px ${element.textShadowBlur}px ${element.colorTextShadow}`,
@@ -134,9 +119,7 @@ const TextRender = ({ element, index, onPlay  }) => {
     textOrientation: element.textOrientation || "initial",
     position:"relative",
     transform: `rotate(${element.rotate}deg)`,
-  
     zIndex: element.zIndexTitle,
-    
   };
   const Tag = element.elementTitle || "h3";
 
@@ -149,7 +132,8 @@ const TextRender = ({ element, index, onPlay  }) => {
             ? `${element.widthCustomTitle}%`
             : element.widthTitle,
       }}
-      className={"content-title-slide " + element.hideTitle }
+      className={"content-title-slide " + element.hideTitle + " " + className}
+      onClick={onClick}
     >
       <Tag
         key={index}

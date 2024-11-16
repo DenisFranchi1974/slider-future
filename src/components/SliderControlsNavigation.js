@@ -10,8 +10,8 @@ import { __ } from "@wordpress/i18n";
 import { useState } from "@wordpress/element";
 import { info } from "@wordpress/icons";
 import ColorOptionsPanel from "./colorPanel";
-import AlignmentControlTwo from "./aligncontrol-two";
-import SectionSliderSelectorNavigation from "./sectionSliderSelectorNavigation";
+import AlignmentControlTwo from "./align/aligncontrol-two";
+import SectionSliderSelectorNavigation from "./multitab/sectionSliderSelectorNavigation";
 
 const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
   const {
@@ -241,6 +241,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select select-control-label-right">
                     <SelectControl
+                     __nextHasNoMarginBottom
                       label={__("Position", "cocoblocks")}
                       value={positionScrollbar}
                       onChange={(val) => {
@@ -646,6 +647,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </p>
                   <div className="custom-select select-control-label-right">
                     <SelectControl
+                     __nextHasNoMarginBottom
                       label={__("Type", "cocoblocks")}
                       value={navigationIcons}
                       onChange={(val) => {
@@ -937,6 +939,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                 <>
                   <div className="custom-select select-control-label-right">
                     <SelectControl
+                     __nextHasNoMarginBottom
                       label={__("Type", "cocoblocks")}
                       value={typePagination}
                       onChange={(val) => {
@@ -982,6 +985,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   {typePagination !== "progressbar" && (
                     <div className="custom-select select-control-label-right">
                       <SelectControl
+                       __nextHasNoMarginBottom
                         label={__("Position", "cocoblocks")}
                         value={positionPagination}
                         onChange={(val) => {

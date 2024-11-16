@@ -26,16 +26,14 @@ import React, { useRef, useEffect } from "react";
 import { useState } from "@wordpress/element";
 import SliderControlsNavigation from "../components/SliderControlsNavigation";
 import SliderControlsOptions from "../components/SliderControlsOptions";
-import NavigationButtons from "../components/NavigationButtons";
+import NavigationButtons from "../assets/NavigationButtons";
 import ImageRender from "../components/image/ImageRender";
 import TextRender from "../components/text/TextRender";
-import DivComponent from "../components/divComponent";
-import SlideControls from "../components/slideControls";
-import ButtonComponent from "../components/buttonComponent";
-import DraggableTest from "../components/dragable";
-import Ruler from "../components/ruler";
-import IconComponent from "../components/iconComponent";
-import MenuComponent from "../components/menu/menuComponent";
+import GroupComponent from "../components/group/GroupRender";
+import SlideEdit from "../components/slide/SlideEdit";
+import DraggableLayout from "../assets/dragable";
+import Ruler from "../assets/ruler";
+import IconRender from "../components/icon/IconRender";
 import PostsControls from "../components/postsControls";
 import SettingsIcon from '@mui/icons-material/Settings';
 import BurstModeIcon from '@mui/icons-material/BurstMode';
@@ -43,7 +41,7 @@ import GamepadIcon from '@mui/icons-material/Gamepad';
 import LayersIcon from '@mui/icons-material/Layers';
 import ArticleIcon from '@mui/icons-material/Article';
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
-
+import ButtonRender from "../components/button/ButtonRender"
 
 export default function Edit({ attributes, setAttributes, slide, element}) {
   const {
@@ -714,11 +712,64 @@ export default function Edit({ attributes, setAttributes, slide, element}) {
     });
   };
 
+   // Button
+   const playAnimationButton = [];
+   const handlePlayButton = () => {
+     playAnimationButton.forEach(playAnimation => {
+       if (playAnimation) {
+         playAnimation();
+       }
+     });
+   };
+
+   // Icon
+   const playAnimationIcon = [];
+   const handlePlayIcon = () => {
+     playAnimationIcon.forEach(playAnimation => {
+       if (playAnimation) {
+         playAnimation();
+       }
+     });
+   };
+
+   // Inner Text
+  const playAnimationInnerText = [];
+  const handlePlayInnerText = () => {
+    playAnimationInnerText.forEach(playAnimation => {
+      if (playAnimation) {
+        playAnimation();
+      }
+    });
+  };
+
+  // Inner Image
+  const playAnimationInnerImage = [];
+  const handlePlayInnerImage = () => {
+    playAnimationInnerImage.forEach(playAnimation => {
+      if (playAnimation) {
+        playAnimation();
+      }
+    });
+  };
+
   // Funzione per verificare la presenza di animazioni
+// Funzione per verificare la presenza di animazioni
 const hasAnimations = (slides) => {
   return slides.some(slide => 
-    slide.elements && slide.elements.some(element => element.effectIn && element.effectIn !== 'none')
+    slide.elements && slide.elements.some(element => 
+      (element.effectIn && element.effectIn !== 'none') ||
+      (element.innerElements && element.innerElements.some(innerElement => 
+        (innerElement.type === 'text' && innerElement.effectIn && innerElement.effectIn !== 'none') ||
+        (innerElement.type === 'image' && innerElement.effectIn && innerElement.effectIn !== 'none')
+      ))
+    )
   );
+};
+
+const [selectedElement, setSelectedElement] = useState(null);
+
+const handleSelect = (index) => {
+  setSelectedElement(index);
 };
 
   return (
@@ -798,7 +849,7 @@ const hasAnimations = (slides) => {
                   </Tooltip>
                 </div>
                 )}
-                <SlideControls
+                <SlideEdit
                   attributes={attributes}
                   setAttributes={setAttributes}
                   slides={slides}
@@ -811,6 +862,13 @@ const hasAnimations = (slides) => {
                   handlePlayImage={handlePlayImage}
                   handlePlayText={handlePlayText}
                   handlePlayGroup={handlePlayGroup}
+                  handlePlayButton={handlePlayButton}
+                  handlePlayIcon={handlePlayIcon}
+                  handlePlayInnerText={handlePlayInnerText}
+                  playAnimationInnerText={playAnimationInnerText}
+                  handlePlayInnerImage={handlePlayInnerImage}
+                  playAnimationInnerImage={playAnimationInnerImage}
+                  selectedClass={selectedElement === selectedElement ? 'selected' : ''}
                 />
               </div>
               )}
@@ -1159,7 +1217,7 @@ const hasAnimations = (slides) => {
                           gap: slide.gapItems + "px",
                         }
                       }>
-                    {slide.elements.map((element, index) => {
+                    {slide.elements.map((element, index, elementIndex) => {
                       const handleDrag = (e, data) => {
                         handleDragElement(slide.id, index, data.x, data.y);
                       };
@@ -1168,7 +1226,7 @@ const hasAnimations = (slides) => {
                        
                         case "title":
                           return slide.developerMode ? (
-                            <DraggableTest
+                            <DraggableLayout
                               key={index}
                               x={element[activeDevice]?.x || 0}
                               y={element[activeDevice]?.y || 0}
@@ -1184,8 +1242,9 @@ const hasAnimations = (slides) => {
                                   playAnimationText.push(playAnimation);
                                 }}
                               />
-                            </DraggableTest>
+                            </DraggableLayout>
                           ) : (
+                           
                             <TextRender
                               key={index}
                               element={element}
@@ -1194,11 +1253,14 @@ const hasAnimations = (slides) => {
                                 playAnimations.push(playAnimation);
                                 playAnimationText.push(playAnimation);
                               }}
+                              className={selectedElement === elementIndex ? 'selected' : ''}
+                              onClick={() => handleSelect(elementIndex)}
                             />
+                            
                           );
                         case "image":
                           return slide.developerMode ? (
-                            <DraggableTest
+                            <DraggableLayout
                               key={index}
                               x={element[activeDevice]?.x || 0}
                               y={element[activeDevice]?.y || 0}
@@ -1214,7 +1276,7 @@ const hasAnimations = (slides) => {
                                   playAnimationImg.push(playAnimation);
                                 }}
                               />
-                            </DraggableTest>
+                            </DraggableLayout>
                           ) : (
                             <ImageRender
                               key={index}
@@ -1229,7 +1291,7 @@ const hasAnimations = (slides) => {
                        
                         case "div": 
                           return slide.developerMode ? (
-                            <DraggableTest
+                            <DraggableLayout
                               key={index}
                               x={element[activeDevice]?.x || 0}
                               y={element[activeDevice]?.y || 0}
@@ -1237,48 +1299,44 @@ const hasAnimations = (slides) => {
                               activeDevice={activeDevice}
                               style={{zIndex: element.zIndexDiv}}
                             >
-                              <DivComponent
+                              <GroupComponent
                                 element={element}
                                 index={index}
                                 onPlay={playAnimation => {
                                   playAnimations.push(playAnimation);
                                   playAnimationGroup.push(playAnimation);
+                                  playAnimationInnerText.push(playAnimation);
+                                  playAnimationInnerImage.push(playAnimation);
                                 }}
+                                handlePlayInnerText={handlePlayInnerText}
+                                playAnimationInnerText={playAnimationInnerText}
+                                handlePlayInnerImage={handlePlayInnerImage}
+                                playAnimationInnerImage={playAnimationInnerImage}
+                                playAnimations={playAnimations}
                               />
-                            </DraggableTest>
+                            </DraggableLayout>
                           ) : (
-                            <DivComponent
+                            <GroupComponent
                               key={index}
                               element={element}
                               index={index}
                               onPlay={playAnimation => {
                                 playAnimations.push(playAnimation);
                                 playAnimationGroup.push(playAnimation);
+                                playAnimationInnerText.push(playAnimation);
+                                playAnimationInnerImage.push(playAnimation);
                               }}
-                            />
-                          );
-                          
-                         
-                          case "menu": 
-                          return slide.developerMode ? (
-                              <MenuComponent
-                                key={index}
-                                element={element}
-                                index={index}
-                                menuItems={element.menuItems || [{ text: "Home", link: "" }]}
-                              />
-                          ) : (
-                            <MenuComponent
-                              key={index}
-                              element={element}
-                              index={index}
-                              menuItems={element.menuItems || [{ text: "Home", link: "" }]}
+                              handlePlayInnerText={handlePlayInnerText}
+                              playAnimationInnerText={playAnimationInnerText}
+                              handlePlayInnerImage={handlePlayInnerImage}
+                              playAnimationInnerImage={playAnimationInnerImage}
+                              playAnimations={playAnimations}
                             />
                           );
                           
                         case "button":
                           return slide.developerMode ? (
-                            <DraggableTest
+                            <DraggableLayout
                               key={index}
                               x={element[activeDevice]?.x || 0}
                               y={element[activeDevice]?.y || 0}
@@ -1286,23 +1344,31 @@ const hasAnimations = (slides) => {
                               activeDevice={activeDevice}
                               style={{zIndex: element.zIndexButton}}
                             >
-                              <ButtonComponent
+                              <ButtonRender
                                 element={element}
                                 index={index}
                                 selectedIcon={element.icon}
+                                onPlay={playAnimation => {
+                                  playAnimations.push(playAnimation);
+                                  playAnimationButton.push(playAnimation);
+                                }}
                               />
-                            </DraggableTest>
+                            </DraggableLayout>
                           ) : (
-                            <ButtonComponent
+                            <ButtonRender
                               key={index}
                               element={element}
                               index={index}
                               selectedIcon={element.icon}
+                              onPlay={playAnimation => {
+                                playAnimations.push(playAnimation);
+                                playAnimationButton.push(playAnimation);
+                              }}
                             />
                           );
                           case "icon":
                             return slide.developerMode ? (
-                              <DraggableTest
+                              <DraggableLayout
                                 key={index}
                                 x={element[activeDevice]?.x || 0}
                                 y={element[activeDevice]?.y || 0}
@@ -1310,16 +1376,24 @@ const hasAnimations = (slides) => {
                                 activeDevice={activeDevice}
                                 style={{zIndex: element.zIndexIcon}}
                               >
-                                <IconComponent
+                                <IconRender
                                   element={element}
                                   index={index}
+                                  onPlay={playAnimation => {
+                                    playAnimations.push(playAnimation);
+                                    playAnimationIcon.push(playAnimation);
+                                  }}
                                 />
-                              </DraggableTest>
+                              </DraggableLayout>
                             ) : (
-                              <IconComponent
+                              <IconRender
                                 key={index}
                                 element={element}
                                 index={index}
+                                onPlay={playAnimation => {
+                                  playAnimations.push(playAnimation);
+                                  playAnimationIcon.push(playAnimation);
+                                }}
                               />
                             );
                         default:
