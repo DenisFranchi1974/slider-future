@@ -318,7 +318,6 @@ const ButtonTypeSelectionModal = ({ slideId, onClose, onSelect }) => {
       buttonBackgroundColorHover: "#18191c",
     },
 
-
   };
 
   return (

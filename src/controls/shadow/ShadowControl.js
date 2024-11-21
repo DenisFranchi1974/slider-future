@@ -1,5 +1,4 @@
 import React from "react";
-import { RangeControl, ToggleControl } from "@wordpress/components";
 import ColorOptionsPanel from "../../components/colorPanel";  
 import { __ } from "@wordpress/i18n";
 import ColorLensIcon from '@mui/icons-material/ColorLens';
@@ -8,6 +7,8 @@ import SwapVertIcon from '@mui/icons-material/SwapVert';
 import BlurOnIcon from '@mui/icons-material/BlurOn';
 import ExpandIcon from '@mui/icons-material/Expand';
 import FitbitIcon from '@mui/icons-material/Fitbit';
+import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
+import CustomToggleControl from "../../controls/toggle/CustomToggleControl";
 
 const CustomShadowControl = ({
   valueEnableShadow, // Valore corrente per l'abilitazione dell'effetto
@@ -62,8 +63,7 @@ const CustomShadowControl = ({
   return (
     <>
     {/* Abilita l'effetto */}
-    <div className="custom-select">
-      <ToggleControl
+      <CustomToggleControl
           label={
             <>
               <FitbitIcon />
@@ -74,7 +74,6 @@ const CustomShadowControl = ({
           onChange={handleChangeEnableShadow}
           {...restProps}
       />
-    </div>
     {valueEnableShadow && (
     <>
      {/* Controllo per il Colore dell'ombra */}
@@ -87,8 +86,7 @@ const CustomShadowControl = ({
         />
      </div>
       {/* Controllo per Shadow X */}
-      <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <SwapHorizIcon />
@@ -102,11 +100,8 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-      </div>
-
       {/* Controllo per Shadow Y */}
-      <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <SwapVertIcon />
@@ -120,11 +115,9 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-      </div>
-
       {/* Controllo per Shadow Blur */}
-      <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
+        __nextHasNoMarginBottom
           label={
             <>
               <BlurOnIcon />
@@ -138,11 +131,10 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-      </div>
        {/* Controllo per Shadow Spread */}
       {showSpread && (
-        <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
+        __nextHasNoMarginBottom
           label={
             <>
               <ExpandIcon />
@@ -156,7 +148,6 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-      </div>
       )}
       </>
     )}

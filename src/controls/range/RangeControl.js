@@ -30,6 +30,7 @@ const CustomRangeControl = ({
   return (
     <div className="custom-select">
         <RangeControl
+          __nextHasNoMarginBottom
           label={label}
           value={value}
           onChange={handleChange}

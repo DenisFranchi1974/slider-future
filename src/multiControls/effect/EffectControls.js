@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SelectControl, Button, ColorPicker, Icon, RangeControl, Tooltip } from "@wordpress/components";
+import { Button, ColorPicker, Icon, Tooltip } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import {selectOptionsScaleIn} from '../../assets/options';
 import {selectOptionsEase} from '../../assets/options';
@@ -27,6 +27,7 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../controls/theme';
+import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
 
 const CustomEffectControls = ({
   valueEffect,
@@ -368,8 +369,7 @@ const CustomEffectControls = ({
         </Select>
     </div> 
     </ThemeProvider>
-        <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <HourglassBottomIcon />
@@ -383,13 +383,11 @@ const CustomEffectControls = ({
           step={10}
           {...restProps}
         />
-    </div>
         </>
         )}
         {valueEffect !== "none" && (
         <>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <OpacityIcon />
@@ -403,9 +401,7 @@ const CustomEffectControls = ({
           step={.1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <OpacityIcon />
@@ -419,9 +415,7 @@ const CustomEffectControls = ({
           step={.1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <DeblurIcon />
@@ -435,9 +429,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <DeblurIcon />
@@ -451,13 +443,11 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-    </div>
     {(['translateXYIn', 'customEffectIn'].includes(valueEffect) || 
             (valueEffect === 'splitText' && 
             ['translateSplit', 'customSplit'].includes(valueEffectSplit))) && (
               <>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <SyncAltIcon />
@@ -471,9 +461,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <SyncAltIcon />
@@ -487,9 +475,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
@@ -503,9 +489,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
@@ -519,7 +503,6 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
      </>
     )}
     {['customEffectIn'].includes(valueEffect) && (
@@ -551,8 +534,7 @@ const CustomEffectControls = ({
     )}
       {(['scaleIn', 'scaleInX', 'scaleInY','customEffectIn'].includes(valueEffect)  || ['scaleSplit', 'scaleXSplit', 'scaleYSplit','explosion','gather','customSplit'].includes(valueEffectSplit)) && (
             <>
-        <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <ZoomOutMapIcon />
@@ -566,9 +548,7 @@ const CustomEffectControls = ({
           step={.1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <ZoomOutMapIcon />
@@ -582,14 +562,12 @@ const CustomEffectControls = ({
           step={.1}
           {...restProps}
         />
-     </div>
      </>
     )}
         {(['rotateIn','customEffectIn'].includes(valueEffect) ||  (valueEffect === 'splitText' && 
             ['rotateSplit', 'customSplit'].includes(valueEffectSplit))) && (
             <>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <RefreshIcon />
@@ -603,9 +581,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <RefreshIcon />
@@ -619,9 +595,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <ThreeSixtyIcon />
@@ -635,9 +609,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <ThreeSixtyIcon />
@@ -651,9 +623,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
@@ -667,9 +637,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
@@ -683,14 +651,12 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
      </>
     )}
     {(['skewInX','customEffectIn'].includes(valueEffect) || (valueEffect === 'splitText' && 
             ['skewSplit', 'customSplit'].includes(valueEffectSplit))) && (
             <>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <RefreshIcon />
@@ -704,9 +670,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <RefreshIcon />
@@ -720,9 +684,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                  <RefreshIcon />
@@ -736,9 +698,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                  <RefreshIcon />
@@ -752,7 +712,6 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
-     </div>
      </>
     )}
     {['BlockFromIn'].includes(valueEffect) && (
@@ -830,8 +789,7 @@ const CustomEffectControls = ({
     </div>
     </>
      )}
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                  <HourglassBottomIcon />
@@ -845,9 +803,7 @@ const CustomEffectControls = ({
           step={100}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                   <HistoryToggleOffIcon />
@@ -861,9 +817,7 @@ const CustomEffectControls = ({
           step={100}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                   <HistoryToggleOffIcon />
@@ -877,7 +831,6 @@ const CustomEffectControls = ({
           step={100}
           {...restProps}
         />
-     </div>
      <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
            <InputLabel>   <SwapCallsIcon />

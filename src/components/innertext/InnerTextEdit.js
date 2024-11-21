@@ -57,7 +57,6 @@ import TextFieldsIcon from '@mui/icons-material/TextFields';
 import TuneIcon from '@mui/icons-material/Tune';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
-
 const InnerTextEdit = ({
   slide,
   textDiv,
@@ -69,7 +68,6 @@ const InnerTextEdit = ({
   setActiveSection,
   activeSection,
   handlePlayInnerText
-  
 }) => {
   
     // Funzione generale per aggiornare i controlli

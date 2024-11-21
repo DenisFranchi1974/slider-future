@@ -4,7 +4,7 @@ import {
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
-import { useState } from "react";
+import { useState} from "react";
 import { __ } from "@wordpress/i18n";
 import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomHoverControls from "../../multiControls/hover";

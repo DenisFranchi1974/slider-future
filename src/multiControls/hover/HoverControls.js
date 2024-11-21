@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SelectControl, Button, ColorPicker, Icon, RangeControl } from "@wordpress/components";
+import { Button, ColorPicker, Icon} from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import {selectOptionsEffectHover} from '../../assets/options';
 import {selectOptionsScaleIn} from '../../assets/options';
@@ -14,6 +14,8 @@ import DeblurIcon from '@mui/icons-material/Deblur';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import GrainIcon from '@mui/icons-material/Grain';
 import OpacityIcon from '@mui/icons-material/Opacity';
+import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
+import CustomSelectControl from "../../controls/select/CustomSelectControl";
 
 const CustomHoverControls = ({
   valueEffectHover,
@@ -278,8 +280,7 @@ const CustomHoverControls = ({
         <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
       </div>
       <div className="content-section-panel" style={{ padding: "0" }}>
-        <div className="custom-select select-control-label-right">
-          <SelectControl
+          <CustomSelectControl
             label={
               <>
                 <GrainIcon />
@@ -291,7 +292,6 @@ const CustomHoverControls = ({
             options={selectOptionsEffectHover}
             {...restProps}
           />
-        </div>
         {valueEffectHover !== "none" && (
         <>
         {showColorControl && (
@@ -344,8 +344,7 @@ const CustomHoverControls = ({
     </div>
     </>
     )}
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <OpacityIcon />
@@ -359,9 +358,7 @@ const CustomHoverControls = ({
           step={.1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <DeblurIcon />
@@ -375,11 +372,9 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-    </div>
     {['translateHover','customHover'].includes(valueEffectHover) && (
     <>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <SyncAltIcon />
@@ -393,9 +388,7 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
@@ -409,12 +402,10 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-     </div>
      </>
     )}
     {['customHover'].includes(valueEffectHover) && (
-     <div className="custom-select select-control-label-right">
-          <SelectControl
+          <CustomSelectControl
             label={
               <>
                 <LinearScaleIcon />
@@ -426,12 +417,10 @@ const CustomHoverControls = ({
             options={selectOptionsScaleIn}
             {...restProps}
           />
-        </div>
     )}
      {['scaleHover','scaleXHover','scaleYHover','customHover'].includes(valueEffectHover) && (
             <>
-        <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <ZoomOutMapIcon />
@@ -445,13 +434,11 @@ const CustomHoverControls = ({
           step={.1}
           {...restProps}
         />
-     </div>
      </>
     )}
         {['rotateHover','customHover'].includes(valueEffectHover) && (
         <>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <RefreshIcon />
@@ -465,9 +452,7 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <ThreeSixtyIcon />
@@ -481,9 +466,7 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
@@ -497,13 +480,11 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-     </div>
      </>
     )}
     {['skewHover','customHover'].includes(valueEffectHover) && (
     <>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                 <RefreshIcon />
@@ -517,9 +498,7 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-     </div>
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                  <RefreshIcon />
@@ -533,11 +512,9 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
-     </div>
      </>
     )}
-     <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
                  <HourglassBottomIcon />
@@ -551,9 +528,7 @@ const CustomHoverControls = ({
           step={100}
           {...restProps}
         />
-     </div>
-     <div className="custom-select select-control-label-right">
-          <SelectControl
+          <CustomSelectControl
             label={
               <>
                 <SwapCallsIcon />
@@ -565,7 +540,6 @@ const CustomHoverControls = ({
             options={selectOptionsEase}
             {...restProps}
           />
-        </div>
       </>
     )}
       </div>

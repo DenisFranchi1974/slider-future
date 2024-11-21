@@ -149,6 +149,10 @@
     }
 }
 
+.custom-select.checkbox .components-base-control__field{
+  margin-bottom: 5px!important;
+}
+
 /* Modal button */
 .modal-button{
   background-color: var(--background-color);
@@ -1145,7 +1149,6 @@
   .button-creative {
     color: var(--light-color);
     background-color: var(--dark-color);
-    margin-top: 16px;
     position: relative;
     width: 100%;
     svg {
@@ -1155,6 +1158,7 @@
   }
   .button-creative:hover {
     background-color: var(--dark-color-hover);
+    color: var(--light-color);
   }
   /* Panel Color */
   .panel-color-content {
@@ -1265,7 +1269,6 @@
 .cocoblocks-modal {
   background-color: var(--background-color);
   border-radius: 10px;
-  height: 90vh;
   max-height: 100% !important;
   p {
     color: var(--light-color);
@@ -1322,8 +1325,8 @@
     color: var(--light-color);
     svg {
       margin-right: 5px;
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       margin-bottom: -5px;
     }
     .svg-rotate {
@@ -2040,10 +2043,7 @@
   color: #333;
 }
 
-/* Hide title editor */
-.content-title-slide.hide{
- visibility: hidden;
-}
+
 
 /* Hide icon editor */
 .content-icon.hide{
@@ -2058,10 +2058,7 @@
  }
  
 
-/* Hide image editor */
-.content-img-first.hide{
-  visibility: hidden;
-}
+
 
 /* Hide div editor */
 .content-inner-div.hide{

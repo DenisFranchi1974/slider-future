@@ -1,17 +1,23 @@
 import {
-  SelectControl,
-  Icon,
-  Tooltip,
-  RangeControl,
   Button,
-  ToggleControl,
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { useState } from "@wordpress/element";
-import { info } from "@wordpress/icons";
 import ColorOptionsPanel from "./colorPanel";
 import AlignmentControlTwo from "./align/aligncontrol-two";
 import SectionSliderSelectorNavigation from "./multitab/sectionSliderSelectorNavigation";
+import CustomSelectControl  from "../controls/select/CustomSelectControl";
+import CustomRangeControl from "../controls/range/CustomRangeControl";
+import CustomToggleControl from "../controls/toggle/CustomToggleControl";
+import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
+import {optionsNavigation} from "../assets/options";
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import TabletMacIcon from '@mui/icons-material/TabletMac';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+import MouseIcon from '@mui/icons-material/Mouse';
+import SwipeIcon from '@mui/icons-material/Swipe';
 
 const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
   const {
@@ -195,8 +201,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
                       <svg
@@ -217,7 +222,6 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   checked={scrollbar}
                   onChange={(value) => setAttributes({ scrollbar: value })}
                 />
-              </div>
               {scrollbar == true && (
                 <>
                   <div className="custom-select color">
@@ -229,7 +233,6 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       }
                     />
                   </div>
-
                   <div className="custom-select color">
                     <ColorOptionsPanel
                       buttonTitle={__("Thumb color", "cocoblocks")}
@@ -239,9 +242,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       }
                     />
                   </div>
-                  <div className="custom-select select-control-label-right">
-                    <SelectControl
-                     __nextHasNoMarginBottom
+                    <CustomSelectControl
                       label={__("Position", "cocoblocks")}
                       value={positionScrollbar}
                       onChange={(val) => {
@@ -258,78 +259,40 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         },
                       ]}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Draggable", "cocoblocks")}
                       checked={dragScrollbar}
                       onChange={(value) =>
                         setAttributes({ dragScrollbar: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Makes scrollbar draggable that allowyou to control slider position", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'40%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Makes scrollbar draggable that allowyou to control slider position",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Hide after interaction", "cocoblocks")}
                       checked={hideScrollbar}
                       onChange={(value) =>
                         setAttributes({ hideScrollbar: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Hide scrollbar automatically after user interaction", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Hide scrollbar automatically after user interaction",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Snap on release", "cocoblocks")}
                       checked={releaseScrollbar}
                       onChange={(value) =>
                         setAttributes({ releaseScrollbar: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Snap slider position to slides when you release scrollbar", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'50%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Snap slider position to slides when you release scrollbar",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Height", "cocobocks")}
                       value={heightScrollbar}
                       onChange={(value) =>
@@ -339,9 +302,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={50}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Border Radius", "cocobocks")}
                       value={radiusScrollbar}
                       onChange={(value) =>
@@ -351,13 +312,11 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={25}
                       step={1}
                     />
-                  </div>
                 </>
               )}
             </div>
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
                       <svg
@@ -374,30 +333,14 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   }
                   checked={autoplay}
                   onChange={(value) => setAttributes({ autoplay: value })}
+                  showTooltip={true}
+                  tooltipText={__("Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.", "cocoblocks")}
+                  tooltipTop = {'11px'}
+                  tooltipLeft = {'50%'}
                 />
-                <Tooltip
-                  placement="top"
-                  style={{
-                    padding: "10px",
-                    maxWidth: "300px",
-                    borderRadius: "4px",
-                  }}
-                  text={__(
-                    "Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.",
-                    "cocoblocks"
-                  )}
-                >
-                  <Icon
-                    icon={info}
-                    className="tooltip-icon"
-                    style={{ top: "12px", left: "67%" }}
-                  />
-                </Tooltip>
-              </div>
               {autoplay === true && (
                 <>
-                  <div className="custom-select range-mark">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Delay", "cocobocks")}
                       value={autoplaySpeed}
                       onChange={(value) =>
@@ -428,135 +371,62 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           value: 10000,
                         },
                       ]}
+                      showTooltip={true}
+                      tooltipText={__("Sets the delay time in milliseconds between each slide transition.", "cocoblocks")}
+                      tooltipTop = {'2px'}
+                      tooltipLeft = {'50%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Sets the delay time in milliseconds between each slide transition.",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon
-                        icon={info}
-                        className="tooltip-icon"
-                        style={{ top: "4px", left: "67%" }}
-                      />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Disable on interaction", "cocoblocks")}
                       checked={disableOnInteraction}
                       onChange={(value) =>
                         setAttributes({ disableOnInteraction: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'65%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon
-                        icon={info}
-                        className="tooltip-icon"
-                        style={{ top: "9px", left: "65%" }}
-                      />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Pause on pointer enter", "cocoblocks")}
                       checked={pauseOnMouseEnter}
                       onChange={(value) =>
                         setAttributes({ pauseOnMouseEnter: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("When enabled autoplay will be paused on mouse enter over Swiper container. If 'Disabled on interaction' is also enabled, it will stop autoplay instead of pause", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'65%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        'When enabled autoplay will be paused on mouse enter over Swiper container. If "Disabled on interaction" is also enabled, it will stop autoplay instead of pause',
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon
-                        icon={info}
-                        className="tooltip-icon"
-                        style={{ top: "11px", left: "65%" }}
-                      />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Reverse direction", "cocoblocks")}
                       checked={reverseDirection}
                       onChange={(value) =>
                         setAttributes({ reverseDirection: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Enables autoplay in reverse direction", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Enables autoplay in reverse direction",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Stop on last slide", "cocoblocks")}
                       checked={stopOnLastSlide}
                       onChange={(value) =>
                         setAttributes({ stopOnLastSlide: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Autoplay progress", "cocoblocks")}
                       checked={autoplayProgress}
                       onChange={(value) =>
                         setAttributes({ autoplayProgress: value })
                       }
                     />
-                  </div>
                   {autoplayProgress == true && (
                     <>
                       <div className="custom-select color">
@@ -593,44 +463,20 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M400-200 120-480l280-280v560Zm-60-145v-270L205-480l135 135Zm220 145v-560l280 280-280 280Z" />
-                      </svg>
+                      <SwitchLeftIcon />
                       {__("Navigation", "cocoblocks")}
                     </>
                   }
                   checked={navigation}
                   onChange={(value) => setAttributes({ navigation: value })}
+                  showTooltip={true}
+                  tooltipText={__("Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!", "cocoblocks")}
+                  tooltipTop = {'11px'}
+                  tooltipLeft = {'60%'}
                 />
-                <Tooltip
-                  placement="top"
-                  style={{
-                    padding: "10px",
-                    maxWidth: "300px",
-                    borderRadius: "4px",
-                  }}
-                  text={__(
-                    "Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!",
-                    "cocoblocks"
-                  )}
-                >
-                  <Icon
-                    icon={info}
-                    className="tooltip-icon"
-                    style={{ top: "12px" }}
-                  />
-                </Tooltip>
-              </div>
               {navigation === true && (
                 <>
                   <p
@@ -646,43 +492,13 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     )}
                   </p>
                   <div className="custom-select select-control-label-right">
-                    <SelectControl
-                     __nextHasNoMarginBottom
+                    <CustomSelectControl
                       label={__("Type", "cocoblocks")}
                       value={navigationIcons}
                       onChange={(val) => {
                         setAttributes({ navigationIcons: val });
                       }}
-                      options={[
-                        {
-                          label: __("Classic", "cocoblocks"),
-                          value: "default",
-                        },
-                        {
-                          label: __("Sleek", "cocoblocks"),
-                          value: "one",
-                        },
-                        {
-                          label: __("Minimal", "cocoblocks"),
-                          value: "two",
-                        },
-                        {
-                          label: __("Bold", "cocoblocks"),
-                          value: "three",
-                        },
-                        {
-                          label: __("Elegant", "cocoblocks"),
-                          value: "four",
-                        },
-                        {
-                          label: __("Toggle", "cocoblocks"),
-                          value: "five",
-                        },
-                        {
-                          label: __("Text", "cocoblocks"),
-                          value: "text",
-                        },
-                      ]}
+                      options={optionsNavigation}
                     />
                   </div>
                   <div className="custom-select color">
@@ -739,8 +555,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       }
                     />
                   </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Size (px)", "cocobocks")}
                       value={sizeNav}
                       onChange={(value) => setAttributes({ sizeNav: value })}
@@ -748,9 +563,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={60}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Padding Top/Bottom (px)", "cocobocks")}
                       value={paddingNav}
                       onChange={(value) => setAttributes({ paddingNav: value })}
@@ -758,9 +571,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={50}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Padding Left/Right (px)", "cocobocks")}
                       value={paddingNavLeft}
                       onChange={(value) =>
@@ -770,9 +581,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={50}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Border Size (px)", "cocobocks")}
                       value={sizeBorderNav}
                       onChange={(value) =>
@@ -782,9 +591,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={10}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Border Radius (%)", "cocobocks")}
                       value={radiusBorderNav}
                       onChange={(value) =>
@@ -794,9 +601,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={100}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Top Offset (%)", "cocobocks")}
                       value={offSetTopNav}
                       onChange={(value) =>
@@ -806,9 +611,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={95}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Sides Offset (px)", "cocobocks")}
                       value={offSetSidesNav}
                       onChange={(value) =>
@@ -818,43 +621,21 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={100}
                       step={1}
                     />
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Hide on click", "cocoblocks")}
                       checked={hideNavigation}
                       onChange={(value) =>
                         setAttributes({ hideNavigation: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Toggle navigation buttons visibility after click on Slider's container.It is intentionally disabled in the editor!", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Toggle navigation buttons visibility after click on Slider's container.It is intentionally disabled in the editor!",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={
                         <>
-                          <Icon
-                            icon="tablet"
-                            style={{
-                              marginRight: "5px",
-                              width: "16px",
-                              height: "16px",
-                              fontSize: "16px",
-                            }}
-                          />
+                           <TabletMacIcon sx={{ fontSize: 16 }} />
                           {__("Enable in Tablet", "cocoblocks")}
                         </>
                       }
@@ -863,20 +644,10 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         setAttributes({ navigationTablet: value })
                       }
                     />
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={
                         <>
-                          <Icon
-                            icon="smartphone"
-                            style={{
-                              marginRight: "5px",
-                              width: "16px",
-                              height: "16px",
-                              fontSize: "16px",
-                            }}
-                          />
+                           <SmartphoneIcon sx={{ fontSize: 16 }} />
                           {__("Enable in Mobile", "cocoblocks")}
                         </>
                       }
@@ -885,17 +656,8 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         setAttributes({ navigationMobile: value })
                       }
                     />
-                  </div>
                   <Button onClick={resetAllAttributes} className="button-reset">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#5f6368"
-                    >
-                      <path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z" />
-                    </svg>
+                    <RestartAltIcon />
                     {__("Reset Navigation", "cocoblocks")}
                   </Button>
                 </>
@@ -913,19 +675,10 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
-                      </svg>
+                      <MoreHorizIcon />
                       {__("Pagination", "cocoblocks")}
                     </>
                   }
@@ -934,12 +687,9 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     setAttributes({ paginationEnable: value })
                   }
                 />
-              </div>
               {paginationEnable == true && (
                 <>
-                  <div className="custom-select select-control-label-right">
-                    <SelectControl
-                     __nextHasNoMarginBottom
+                    <CustomSelectControl
                       label={__("Type", "cocoblocks")}
                       value={typePagination}
                       onChange={(val) => {
@@ -960,7 +710,6 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         },
                       ]}
                     />
-                  </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
                       buttonTitle={__("Color", "cocoblocks")}
@@ -983,9 +732,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     </div>
                   )}
                   {typePagination !== "progressbar" && (
-                    <div className="custom-select select-control-label-right">
-                      <SelectControl
-                       __nextHasNoMarginBottom
+                      <CustomSelectControl
                         label={__("Position", "cocoblocks")}
                         value={positionPagination}
                         onChange={(val) => {
@@ -1002,34 +749,20 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           },
                         ]}
                       />
-                    </div>
                   )}
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Hide on click", "cocoblocks")}
                       checked={hidePagination}
                       onChange={(value) =>
                         setAttributes({ hidePagination: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Toggle (hide/show) pagination container visibility after click on Slider's container.It is intentionally disabled in the editor!", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Toggle (hide/show) pagination container visibility after click on Slider's container.It is intentionally disabled in the editor!",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
                   {typePagination == "fraction" && (
-                    <div className="custom-select">
-                      <RangeControl
+                      <CustomRangeControl
                         label={__("Font size", "cocobocks")}
                         value={fontSizePagination}
                         onChange={(value) =>
@@ -1039,12 +772,10 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         max={50}
                         step={1}
                       />
-                    </div>
                   )}
                   {typePagination == "progressbar" && (
                     <>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Height", "cocobocks")}
                           value={heightBarPagination}
                           onChange={(value) =>
@@ -1054,83 +785,45 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={50}
                           step={1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <ToggleControl
+                        <CustomToggleControl
                           label={__("Progressbar opposite", "cocoblocks")}
                           checked={progressbarOpposite}
                           onChange={(value) =>
                             setAttributes({ progressbarOpposite: value })
                           }
+                          showTooltip={true}
+                          tooltipText={__("Makes pagination progressbar opposite to Swiper's direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction", "cocoblocks")}
+                          tooltipTop = {'11px'}
+                          tooltipLeft = {'60%'}
                         />
-                        <Tooltip
-                          placement="top"
-                          style={{
-                            padding: "10px",
-                            maxWidth: "300px",
-                            borderRadius: "4px",
-                          }}
-                          text={__(
-                            "Makes pagination progressbar opposite to Swiper's direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction",
-                            "cocoblocks"
-                          )}
-                        >
-                          <Icon icon={info} className="tooltip-icon" />
-                        </Tooltip>
-                      </div>
                     </>
                   )}
                   {typePagination == "bullets" && (
                     <>
-                      <div className="custom-select">
-                        <ToggleControl
+                        <CustomToggleControl
                           label={__("Clickable", "cocoblocks")}
                           checked={clickPagination}
                           onChange={(value) =>
                             setAttributes({ clickPagination: value })
                           }
+                          showTooltip={true}
+                          tooltipText={__("If enable then clicking on pagination button will cause transition to appropriate slide. Only for 'bullets' pagination type", "cocoblocks")}
+                          tooltipTop = {'11px'}
+                          tooltipLeft = {'60%'}
                         />
-                        <Tooltip
-                          placement="top"
-                          style={{
-                            padding: "10px",
-                            maxWidth: "300px",
-                            borderRadius: "4px",
-                          }}
-                          text={__(
-                            'If enable then clicking on pagination button will cause transition to appropriate slide. Only for "bullets" pagination type',
-                            "cocoblocks"
-                          )}
-                        >
-                          <Icon icon={info} className="tooltip-icon" />
-                        </Tooltip>
-                      </div>
-                      <div className="custom-select">
-                        <ToggleControl
+                        <CustomToggleControl
                           label={__("Dynamic bullets", "cocoblocks")}
                           checked={dynamicPagination}
                           onChange={(value) =>
                             setAttributes({ dynamicPagination: value })
                           }
+                          showTooltip={true}
+                          tooltipText={__("Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time", "cocoblocks")}
+                          tooltipTop = {'11px'}
+                          tooltipLeft = {'60%'}
                         />
-                        <Tooltip
-                          placement="top"
-                          style={{
-                            padding: "10px",
-                            maxWidth: "300px",
-                            borderRadius: "4px",
-                          }}
-                          text={__(
-                            "Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time",
-                            "cocoblocks"
-                          )}
-                        >
-                          <Icon icon={info} className="tooltip-icon" />
-                        </Tooltip>
-                      </div>
                       {dynamicPagination == true && (
-                        <div className="custom-select">
-                          <RangeControl
+                          <CustomRangeControl
                             label={__("Dynamic main bullets", "cocobocks")}
                             value={dynamicMainPagination}
                             onChange={(value) =>
@@ -1140,10 +833,8 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                             max={10}
                             step={1}
                           />
-                        </div>
                       )}
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Active Opacity", "cocobocks")}
                           value={opacityPagination}
                           onChange={(value) =>
@@ -1153,9 +844,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={1}
                           step={0.1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Inactive Opacity", "cocobocks")}
                           value={opacityInactivePagination}
                           onChange={(value) =>
@@ -1165,9 +854,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={1}
                           step={0.1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Width", "cocobocks")}
                           value={widthPagination}
                           onChange={(value) =>
@@ -1177,9 +864,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={50}
                           step={1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Height", "cocobocks")}
                           value={heightPagination}
                           onChange={(value) =>
@@ -1189,9 +874,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={50}
                           step={1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Active Width", "cocobocks")}
                           value={widthPaginationActive}
                           onChange={(value) =>
@@ -1201,9 +884,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={50}
                           step={1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Active Height", "cocobocks")}
                           value={heightPaginationActive}
                           onChange={(value) =>
@@ -1213,9 +894,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={50}
                           step={1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Border Radius", "cocobocks")}
                           value={radiusPagination}
                           onChange={(value) =>
@@ -1225,9 +904,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={100}
                           step={1}
                         />
-                      </div>
-                      <div className="custom-select">
-                        <RangeControl
+                        <CustomRangeControl
                           label={__("Gap", "cocobocks")}
                           value={gapPagination}
                           onChange={(value) =>
@@ -1237,22 +914,13 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           max={20}
                           step={1}
                         />
-                      </div>
                     </>
                   )}
                   <Button
                     onClick={resetPaginationAttributes}
                     className="button-reset"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#5f6368"
-                    >
-                      <path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z" />
-                    </svg>
+                    <RestartAltIcon />
                     {__("Reset Pagination", "cocoblocks")}
                   </Button>
                 </>
@@ -1270,90 +938,42 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z" />
-                      </svg>
+                      <KeyboardIcon />
                       {__("Keyboard control", "cocoblocks")}
                     </>
                   }
                   checked={keyboard}
                   onChange={(value) => setAttributes({ keyboard: value })}
+                  showTooltip={true}
+                  tooltipText={__("Enable keyboard control. Doesn't work in the editor!", "cocoblocks")}
+                  tooltipTop = {'11px'}
+                  tooltipLeft = {'60%'}
                 />
-                <Tooltip
-                  placement="top"
-                  style={{
-                    padding: "10px",
-                    maxWidth: "300px",
-                    borderRadius: "4px",
-                  }}
-                  text={__(
-                    "Enable keyboard control. Doesn't work in the editor!",
-                    "cocoblocks"
-                  )}
-                >
-                  <Icon
-                    icon={info}
-                    className="tooltip-icon"
-                    style={{ top: "12px" }}
-                  />
-                </Tooltip>
-              </div>
               {keyboard == true && (
                 <>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Only in viewport", "cocoblocks")}
                       checked={viewPortKeyboard}
                       onChange={(value) =>
                         setAttributes({ viewPortKeyboard: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("When enabled it will control sliders that are currently in viewport", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "When enabled it will control sliders that are currently in viewport",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Page Up/Down keys", "cocoblocks")}
                       checked={upKeyboard}
                       onChange={(value) => setAttributes({ upKeyboard: value })}
+                      showTooltip={true}
+                      tooltipText={__("When enabled it will enabled keyword navigation by Page Up and Page Down keys", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "When enabled it will enabled keyword navigation by Page Up and Page Down keys",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
                 </>
               )}
             </div>
@@ -1367,115 +987,54 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M480-80q-116 0-198-82t-82-198v-240q0-116 82-198t198-82q116 0 198 82t82 198v240q0 116-82 198T480-80Zm40-520h160q0-72-45.5-127T520-796v196Zm-240 0h160v-196q-69 14-114.5 69T280-600Zm200 440q83 0 141.5-58.5T680-360v-160H280v160q0 83 58.5 141.5T480-160Zm0-360Zm40-80Zm-80 0Zm40 80Z" />
-                      </svg>
+                      <MouseIcon />
                       {__("Mousewheel control", "cocoblocks")}
                     </>
                   }
                   checked={mousewheel}
                   onChange={(value) => setAttributes({ mousewheel: value })}
+                  showTooltip={true}
+                      tooltipText={__("Enable or disable mouse wheel control for swiping.", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'65%'}
                 />
-                <Tooltip
-                  placement="top"
-                  style={{
-                    padding: "10px",
-                    maxWidth: "300px",
-                    borderRadius: "4px",
-                  }}
-                  text={__(
-                    "Enable or disable mouse wheel control for swiping.",
-                    "cocoblocks"
-                  )}
-                >
-                  <Icon
-                    icon={info}
-                    className="tooltip-icon"
-                    style={{ left: "65%", top: "13px" }}
-                  />
-                </Tooltip>
-              </div>
               {mousewheel == true && (
                 <>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Force to axis", "cocoblocks")}
                       checked={forceToAxis}
                       onChange={(value) =>
                         setAttributes({ forceToAxis: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Invert scrolling", "cocoblocks")}
                       checked={invert}
                       onChange={(value) => setAttributes({ invert: value })}
+                      showTooltip={true}
+                      tooltipText={__("Set to true to invert sliding direction", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Set to true to invert sliding direction",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <ToggleControl
+                    <CustomToggleControl
                       label={__("Release on edges", "cocoblocks")}
                       checked={releaseOnEdges}
                       onChange={(value) =>
                         setAttributes({ releaseOnEdges: value })
                       }
+                      showTooltip={true}
+                      tooltipText={__("Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)", "cocoblocks")}
+                      tooltipTop = {'11px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon icon={info} className="tooltip-icon" />
-                    </Tooltip>
-                  </div>
-                  <div className="custom-select">
-                    <RangeControl
+                    <CustomRangeControl
                       label={__("Sensitivity", "cocobocks")}
                       value={sensitivity}
                       onChange={(value) =>
@@ -1484,26 +1043,11 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       min={0.1}
                       max={3}
                       step={0.1}
+                      showTooltip={true}
+                      tooltipText={__("Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity", "cocoblocks")}
+                      tooltipTop = {'3px'}
+                      tooltipLeft = {'60%'}
                     />
-                    <Tooltip
-                      placement="top"
-                      style={{
-                        padding: "10px",
-                        maxWidth: "300px",
-                        borderRadius: "4px",
-                      }}
-                      text={__(
-                        "Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity",
-                        "cocoblocks"
-                      )}
-                    >
-                      <Icon
-                        icon={info}
-                        className="tooltip-icon"
-                        style={{ left: "75%", top: "2px" }}
-                      />
-                    </Tooltip>
-                  </div>
                 </>
               )}
             </div>
@@ -1517,44 +1061,20 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
             <div className="content-section-panel">
-              <div className="custom-select">
-                <ToggleControl
+                <CustomToggleControl
                   label={
                     <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                      >
-                        <path d="M473-80q-24 0-46-9t-39-26L184-320l30-31q16-16 37.5-21.5t42.5.5l66 19v-327q0-17 11.5-28.5T400-720q17 0 28.5 11.5T440-680v433l-97-27 102 102q5 5 12.5 8.5T473-160h167q33 0 56.5-23.5T720-240v-160q0-17 11.5-28.5T760-440q17 0 28.5 11.5T800-400v160q0 66-47 113T640-80H473Zm7-280v-160q0-17 11.5-28.5T520-560q17 0 28.5 11.5T560-520v160h-80Zm120 0v-120q0-17 11.5-28.5T640-520q17 0 28.5 11.5T680-480v120h-80Zm-20 80Zm300-400H680v-60h116q-66-58-147-89t-169-31q-88 0-169 31t-147 89h116v60H80v-200h60v81q72-59 159-90t181-31q94 0 181 31t159 90v-81h60v200Z" />
-                      </svg>
+                      <SwipeIcon />
                       {__("Grab Cursor", "cocoblocks")}
                     </>
                   }
                   checked={grabCursor}
                   onChange={(value) => setAttributes({ grabCursor: value })}
+                  showTooltip={true}
+                  tooltipText={__("Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!", "cocoblocks")}
+                  tooltipTop = {'11px'}
+                  tooltipLeft = {'60%'}
                 />
-                <Tooltip
-                  placement="top"
-                  style={{
-                    padding: "10px",
-                    maxWidth: "300px",
-                    borderRadius: "4px",
-                  }}
-                  text={__(
-                    "Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!",
-                    "cocoblocks"
-                  )}
-                >
-                  <Icon
-                    icon={info}
-                    className="tooltip-icon"
-                    style={{ top: "12px" }}
-                  />
-                </Tooltip>
-              </div>
             </div>
           </div>
         </>

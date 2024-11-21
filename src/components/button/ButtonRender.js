@@ -7,7 +7,6 @@ import materialIcons from '../../icons/materialIcons';
 const ButtonRender = ({ element, selectedIcon, onPlay}) => {
 
   const buttonRef = useRef(null); // Ref per il contenitore del testo
-  //const barRef = useRef(null); // Ref per il div che vuoi animare
   const [hasPlayed, setHasPlayed] = useState(false); // Stato per tracciare se l'animazione è stata attivata
 
   // Funzione per attivare l'animazione

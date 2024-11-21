@@ -9,7 +9,7 @@ const CustomToggleControl = ({
   options, 
   checked,      
   onChange, 
-  customClassToggle,  
+  customClassToggle = '', // Classe personalizzata per il controllo (Facoltativo)
   tooltipText,  // Testo per il tooltip
   showTooltip = false, // Mostra o nasconde il tooltip (Facoltativo) 
   tooltipTop = '3px',  // Posizione 'top' del tooltip (di default 5px)
@@ -35,7 +35,7 @@ const CustomToggleControl = ({
             }}
             text={tooltipText || __("Default tooltip text", "cocoblocks")} // Testo di fallback
         >
-            <InfoIcon  className="tooltip-icon" style={{top: tooltipTop}} />
+            <InfoIcon  className="tooltip-icon" style={{top: tooltipTop, left: tooltipLeft}} />
         </Tooltip>
         )}
     </div>

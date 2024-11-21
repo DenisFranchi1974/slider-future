@@ -392,6 +392,7 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
     <Modal title="Select Icon" onRequestClose={onClose} isOpen={isOpen} className="icon-modal">
       <div className="icon-modal-search">
         <TextControl
+          __nextHasNoMarginBottom
           value={searchTerm}
           onChange={handleSearchChange}
           placeholder="Search icons..."

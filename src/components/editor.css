@@ -772,7 +772,6 @@
 .cocoblocks-panel .button-creative {
   color: var(--light-color);
   background-color: var(--dark-color);
-  margin-top: 16px;
   position: relative;
   width: 100%;
 }
@@ -955,8 +954,8 @@
 }
 .cocoblocks-modal .select-modal svg {
   margin-right: 5px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin-bottom: -5px;
 }
 .cocoblocks-modal .select-modal .svg-rotate {

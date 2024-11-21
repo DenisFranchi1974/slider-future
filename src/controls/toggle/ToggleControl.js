@@ -28,6 +28,7 @@ const CustomToggleControl = ({
   return (
     <div className="custom-select">
         <ToggleControl
+        __nextHasNoMarginBottom
             label={label}
             checked={value}
             onChange={handleChange}

@@ -1,10 +1,11 @@
 import React from "react";
-import { RangeControl, ToggleControl } from "@wordpress/components";
 import ColorOptionsPanel from "../../components/colorPanel";  
 import { __ } from "@wordpress/i18n";
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import FitbitIcon from '@mui/icons-material/Fitbit';
 import BorderRightIcon from '@mui/icons-material/BorderRight';
+import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
+import CustomToggleControl from "../../controls/toggle/CustomToggleControl";
 
 const CustomStrokeControl = ({
   valueEnableStroke, // Valore corrente per l'abilitazione dell'effetto
@@ -43,8 +44,7 @@ const CustomStrokeControl = ({
   return (
     <>
     {/* Abilita l'effetto */}
-    <div className="custom-select">
-      <ToggleControl
+      <CustomToggleControl
           label={
             <>
               <FitbitIcon />
@@ -55,7 +55,6 @@ const CustomStrokeControl = ({
           onChange={handleChangeEnableStroke}
           {...restProps}
       />
-    </div>
     {valueEnableStroke && (
     <>
      {/* Controllo per il Colore dell'ombra */}
@@ -68,8 +67,7 @@ const CustomStrokeControl = ({
         />
      </div>
       {/* Controllo per Stroke */}
-      <div className="custom-select">
-        <RangeControl
+        <CustomRangeControl
           label={
             <>
               <BorderRightIcon />
@@ -83,7 +81,6 @@ const CustomStrokeControl = ({
           step={step}
           {...restProps}
         />
-      </div>
       </>
     )}
     </>

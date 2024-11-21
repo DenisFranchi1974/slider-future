@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { animationsIn, getAnimationProps} from '../../animate';
 import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
+import './editor-image.scss';
 
 const ImageRender = ({ element, index, onPlay  }) => {
 

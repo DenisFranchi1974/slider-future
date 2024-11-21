@@ -102,7 +102,6 @@ export const selectOptionsDirectionBlock = [
 ////////////////////////////
 
 // Opzioni per il tipo di scala
-
 export const selectOptionsScaleIn = [
   { value: "scale", label: __("Scale", "cocoblocks") },
   { value: "scaleX", label: __("Scale X", "cocoblocks") },
@@ -112,7 +111,6 @@ export const selectOptionsScaleIn = [
 ////////////////////////////
 
 // Opzioni Split text
-
 export const selectOptionsEffectSplit = [  
   { value: 'fadeSplit', label: 'Fade' },
   { value: 'translateSplit', label: 'Translate' },
@@ -230,7 +228,6 @@ export const selectOptionsEffectSplit = [
   ////////////////////////////
 
 // Font Weight Options
-
 export const fontWeightOptions = [
     {
         label: __("100 Thin", "cocoblocks"),
@@ -277,7 +274,6 @@ export const fontWeightOptions = [
   ////////////////////////////
 
   // Opzioni elementi
-
   export const elementOptions = [
     {
       label: __("P", "cocoblocks"),
@@ -309,11 +305,9 @@ export const fontWeightOptions = [
     },
   ];
   
-
   ////////////////////////////
 
   // Opzioni Bland Mode
-
   export const blendModeOptions = [
     {
       label: __("Normal", "cocoblocks"),
@@ -384,7 +378,6 @@ export const fontWeightOptions = [
   ////////////////////////////
 
   /* Opzioni Write Mode */
-
   export const writeModeOptions = [
     { label: "Horizontal", value: "initial" },
     { label: "Vertical", value: "vertical-lr" },
@@ -393,7 +386,6 @@ export const fontWeightOptions = [
   ////////////////////////////
 
   /* Opzione Border Solide */
-
   export const borderStyleOptions = [
     {
       label: __("None", "cocoblocks"),
@@ -420,7 +412,6 @@ export const fontWeightOptions = [
   ////////////////////////////
 
   /* Opzioni link */
-
   export const linkOptions = [
     { label: "None", value: "none" },
     { label: "Link", value: "link" },
@@ -428,11 +419,9 @@ export const fontWeightOptions = [
     { label: "Scroll to ID Element", value: "scroll-to-id" },
   ];
 
-
 ////////////////////////////
 
 /* Opzioni per blob immagine */
-
 export const blobOptions = [
   {
     label: __("None", "cocoblocks"),
@@ -456,11 +445,9 @@ export const blobOptions = [
   },
 ];
 
-
 ////////////////////////////
 
 /* Opzioni per spike immagine */
-
 export const spikeOptions = [
   {
     label: __("None", "cocoblocks"),
@@ -496,11 +483,9 @@ export const spikeOptions = [
   },
 ];
 
-
 ////////////////////////////
 
 /* Opzioni per spike right immagine */
-
 export const spikeRightOptions = [
   {
     label: __("None", "cocoblocks"),
@@ -536,11 +521,9 @@ export const spikeRightOptions = [
   },
 ];
 
-
 ////////////////////////////
 
 /* Opzioni per spike immagine inner */
-
 export const spikeOptionsInner =[ 
   {
     label: __("None", "cocoblocks"),
@@ -579,7 +562,6 @@ export const spikeOptionsInner =[
 ////////////////////////////
 
 /* Opzioni per spike right immagine */
-
 export const spikeRightOptionsInner = [
   {
     label: __("None", "cocoblocks"),
@@ -618,7 +600,6 @@ export const spikeRightOptionsInner = [
 ////////////////////////////
 
 /* Opzioni filter immagine */
-
 export const filterImageOptions = [
   {
     label: __("None", "cocoblocks"),
@@ -662,11 +643,9 @@ export const filterImageOptions = [
   },
 ];
 
-
 ////////////////////////////
 
 /* Opzioni di elementi */
-
 export const elementHtmlOptions = [
   {
     label: __("<div>", "cocoblocks"),
@@ -690,11 +669,9 @@ export const elementHtmlOptions = [
   },
 ];
 
-
 ////////////////////////////
 
 /* Opzioni effetti icona */
-
 export const iconEffectOptions = [
   {
     label: __("None", "cocoblocks"),
@@ -734,8 +711,6 @@ export const iconEffectOptions = [
   },
 ];
 
-
-
 ////////////////////////////
 
 /* Opzioni effetti icona hover */
@@ -746,16 +721,253 @@ export const iconEffectHoverOptions = [
   { label: "Translate X", value: "hover-effect-5-icon-button" },
 ];
 
+////////////////////////////
 
+/* Opzioni effetti icona inner hover */
+export const iconEffectHoverOptionsInner = [
+  { label: "None", value: "none" },
+  { label: "Scale", value: "hover-effect-1-icon-button-inner" },
+  { label: "Translate Y", value: "hover-effect-2-icon-button-inner" },
+  { label: "Translate X", value: "hover-effect-5-icon-button-inner" },
+];
 
 ////////////////////////////
 
 /* Opzioni filter background slide */
-
 export const filterBackgroundOptions = [
   {
     label: __("None", "cocoblocks"),
     value: "none",
+  },
+  {
+    label: __("Classic", "cocoblocks"),
+    value: "filter-classic",
+  },
+  {
+    label: __("Lateral", "cocoblocks"),
+    value: "filter-lateral",
+  },
+  {
+    label: __("Central circle", "cocoblocks"),
+    value: "filter-central-circle",
+  },
+  {
+    label: __("Border fade", "cocoblocks"),
+    value: "filter-border-fade",
+  },
+  {
+    label: __("Vignette", "cocoblocks"),
+    value: "filter-vignette",
+  },
+  {
+    label: __("Spotlight", "cocoblocks"),
+    value: "filter-spotlight",
+  },
+  {
+    label: __("Diagonal", "cocoblocks"),
+    value: "filter-diagonal",
+  },
+  {
+    label: __("Nebula", "cocoblocks"),
+    value: "filter-nebula",
+  },
+  {
+    label: __("Glitch", "cocoblocks"),
+    value: "filter-glitch",
+  },
+  {
+    label: __("Prism", "cocoblocks"),
+    value: "filter-prism",
+  },
+  {
+    label: __("Inverse", "cocoblocks"),
+    value: "filter-inverse",
+  },
+];
+
+////////////////////////////
+
+/* Opzioni per view */
+export const optionsPerView = [
+  {
+    label: __("1", "slide"),
+    value: "1",
+  },
+  {
+    label: __("2", "cocoblocks"),
+    value: "2",
+  },
+  {
+    label: __("3", "cocoblocks"),
+    value: "3",
+  },
+  {
+    label: __("4", "cocoblocks"),
+    value: "4",
+  },
+  {
+    label: __("5", "cocoblocks"),
+    value: "5",
+  },
+  {
+    label: __("6", "cocoblocks"),
+    value: "6",
+  },
+  {
+    label: __("7", "cocoblocks"),
+    value: "7",
+  },
+  {
+    label: __("8", "cocoblocks"),
+    value: "8",
+  },
+  {
+    label: __("9", "cocoblocks"),
+    value: "9",
+  },
+  {
+    label: __("10", "cocoblocks"),
+    value: "10",
+  },
+  {
+    label: __("Auto", "cocoblocks"),
+    value: "auto",
+  },
+];
+
+////////////////////////////
+
+/* Opzioni per group */
+export const optionsPerGroup = [
+  {
+    label: __("1", "slide"),
+    value: "1",
+  },
+  {
+    label: __("2", "cocoblocks"),
+    value: "2",
+  },
+  {
+    label: __("3", "cocoblocks"),
+    value: "3",
+  },
+  {
+    label: __("4", "cocoblocks"),
+    value: "4",
+  },
+  {
+    label: __("5", "cocoblocks"),
+    value: "5",
+  },
+  {
+    label: __("6", "cocoblocks"),
+    value: "6",
+  },
+  {
+    label: __("7", "cocoblocks"),
+    value: "7",
+  },
+  {
+    label: __("8", "cocoblocks"),
+    value: "8",
+  },
+  {
+    label: __("9", "cocoblocks"),
+    value: "9",
+  },
+  {
+    label: __("10", "cocoblocks"),
+    value: "10",
+  },
+];
+
+////////////////////////////
+
+/* Opzioni initial slider */
+export const optionsInitialSlide = [
+  {
+    label: __("0", "slide"),
+    value: "0",
+  },
+  {
+    label: __("1", "slide"),
+    value: "1",
+  },
+  {
+    label: __("2", "cocoblocks"),
+    value: "2",
+  },
+  {
+    label: __("3", "cocoblocks"),
+    value: "3",
+  },
+  {
+    label: __("4", "cocoblocks"),
+    value: "4",
+  },
+  {
+    label: __("5", "cocoblocks"),
+    value: "5",
+  },
+  {
+    label: __("6", "cocoblocks"),
+    value: "6",
+  },
+  {
+    label: __("7", "cocoblocks"),
+    value: "7",
+  },
+  {
+    label: __("8", "cocoblocks"),
+    value: "8",
+  },
+  {
+    label: __("9", "cocoblocks"),
+    value: "9",
+  },
+];
+
+////////////////////////////
+
+/* Opzioni per la navigazione */
+export const optionsNavigation = [
+  {
+    label: __("Classic", "cocoblocks"),
+    value: "default",
+  },
+  {
+    label: __("Sleek", "cocoblocks"),
+    value: "one",
+  },
+  {
+    label: __("Minimal", "cocoblocks"),
+    value: "two",
+  },
+  {
+    label: __("Bold", "cocoblocks"),
+    value: "three",
+  },
+  {
+    label: __("Elegant", "cocoblocks"),
+    value: "four",
+  },
+  {
+    label: __("Toggle", "cocoblocks"),
+    value: "five",
+  },
+  {
+    label: __("Text", "cocoblocks"),
+    value: "text",
+  },
+];
+
+////////////////////////////
+
+/* Opzioni filtri slider */
+export const optionsFilterSlider = [
+  {
+    label: __("None", "cocoblocks"),
+    value: " ",
   },
   {
     label: __("Classic", "cocoblocks"),

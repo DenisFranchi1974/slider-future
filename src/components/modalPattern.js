@@ -13,7 +13,7 @@ const TextPatternSelectionModal = ({ onClose }) => {
 
   // Filtra i pattern per la categoria "text"
   const textPatterns = patterns.filter(
-    (pattern) => pattern.categories && pattern.categories.includes("text")
+    (pattern) => pattern.categories && pattern.categories.includes("sf-slider")
   );
 
   const handleSelect = (pattern) => {
@@ -36,8 +36,9 @@ const TextPatternSelectionModal = ({ onClose }) => {
   return (
     <Modal
       onRequestClose={onClose}
-      title={__("Select a Text Pattern", "text-domain")}
+      title={__("Select a Slider Pattern", "text-domain")}
       isFullScreen={true}
+      className="slider-pattern-selection-modal"
     >
       <div className="pattern-selection-modal">
         {textPatterns.length > 0 ? (

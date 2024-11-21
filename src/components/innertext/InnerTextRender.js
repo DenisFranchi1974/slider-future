@@ -63,7 +63,6 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
     }
   };
 
-
   // Questo useEffect ora non avvia più l'animazione automaticamente
   useEffect(() => {
     // Passa la funzione playAnimation al genitore tramite onPlay

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 
-
 const DraggableTest = ({ x, y, onDrag, children, activeDevice, style  }) => {
   const draggableRef = useRef(null);
   const [popup, setPopup] = useState({ visible: false, x: 0, y: 0 });

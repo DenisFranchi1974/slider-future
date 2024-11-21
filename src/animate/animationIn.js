@@ -129,7 +129,6 @@ const getAnimationProps = (props, target) => {
   };
 };
 
-
 // In animationIn.js
 export const animateBar = (barRef, props={}) => {
  
@@ -157,9 +156,6 @@ export const animateBar = (barRef, props={}) => {
     console.error('barRef is not defined');
   }
 };
-
-
-
 
 // Effect Block
 const blockTransition = (element, direction, animationProps = {}) => {
@@ -256,8 +252,6 @@ export const fadeIn = (target, props = {}) => {
     opacity: [opacityFrom, opacityTo],
   });
 };
-
- 
 
 export const translateXYIn = (target, props = {}) => {
 
@@ -356,7 +350,6 @@ export const rotateIn= (target, props = {}) => {
     ...animationProps,
   });
 };
-
 
 export const skewInX= (target, props = {}) => {
   const animationProps = getAnimationProps(props, target);
@@ -561,7 +554,6 @@ const splitTextContent = (text, lettersRef) => {
     return span;
   });
 };
-
 
   const animationProps = getAnimationProps(props);
   const lettersRef = { current: [] }; // Crea un ref per contenere le lettere splittate

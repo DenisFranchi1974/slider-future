@@ -29,6 +29,7 @@ const CustomTextControl = ({
   return (
     <div className="custom-select select-text-control">
        <TextControl
+         __nextHasNoMarginBottom
           value={value}
           label={label}
           onChange={handleChange}

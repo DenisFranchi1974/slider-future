@@ -1,11 +1,12 @@
 import React from "react";
-import { SelectControl, TextControl } from "@wordpress/components";
+import { TextControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import TouchAppIcon from "@mui/icons-material/TouchApp";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import DatasetLinkedIcon from "@mui/icons-material/DatasetLinked";
 import PhishingIcon from "@mui/icons-material/Phishing";
+import CustomSelectControl from "../../controls/select/CustomSelectControl";
 
 const CustomActionControls = ({
   valueSelectLink,
@@ -95,7 +96,7 @@ const CustomActionControls = ({
       newValue,
       updateType,
       elementType,
-      "scrollIdProperty"
+      scrollIdProperty
     );
   };
 
@@ -112,8 +113,7 @@ const CustomActionControls = ({
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
-      <div className="custom-select select-control-label-right">
-        <SelectControl
+        <CustomSelectControl
           label={
             <>
               <TouchAppIcon />
@@ -130,11 +130,11 @@ const CustomActionControls = ({
           ]}
           {...restProps}
         />
-      </div>
       {valueSelectLink === "link" && (
         <>
           <div className="custom-select select-text-control">
             <TextControl
+              __nextHasNoMarginBottom
               value={valueUrl}
               label={
                 <>
@@ -147,8 +147,7 @@ const CustomActionControls = ({
               {...restProps}
             />
           </div>
-          <div className="custom-select select-control-label-right">
-            <SelectControl
+            <CustomSelectControl
               label={
                 <>
                   <OpenInNewIcon />
@@ -163,9 +162,7 @@ const CustomActionControls = ({
               ]}
               {...restProps}
             />
-          </div>
-          <div className="custom-select select-control-label-right">
-            <SelectControl
+            <CustomSelectControl
               label={
                 <>
                   <DatasetLinkedIcon />
@@ -180,12 +177,12 @@ const CustomActionControls = ({
               ]}
               {...restProps}
             />
-          </div>
         </>
       )}
       {valueSelectLink === "scroll-to-id" && (
         <div className="custom-select select-text-control">
           <TextControl
+            __nextHasNoMarginBottom
             value={valueScrollId}
             label={
               <>

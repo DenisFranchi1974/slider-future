@@ -1,11 +1,11 @@
 import React from "react";
-import { ToggleControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 import TabletMacIcon from '@mui/icons-material/TabletMac';
 import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import CustomToggleControl from "../../controls/toggle/CustomToggleControl";
 
-const CustomVisibilityControls = ({
+const CustomVisibilityControls = ({ 
   valueDesktop,
     valueTablet,
     valueMobile,
@@ -78,8 +78,7 @@ const CustomVisibilityControls = ({
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
-        <div className="custom-select">
-        <ToggleControl
+        <CustomToggleControl
             label={<>
                 <PersonalVideoIcon />
                 {__("Desktop", "cocoblocks")}
@@ -88,9 +87,7 @@ const CustomVisibilityControls = ({
             onChange={handleChangeDesktop}
             {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <ToggleControl
+        <CustomToggleControl
             label={<>
                 <TabletMacIcon />
                 {__("Tablet", "cocoblocks")}
@@ -99,9 +96,7 @@ const CustomVisibilityControls = ({
             onChange={handleChangeTablet}
             {...restProps}
         />
-    </div>
-    <div className="custom-select">
-        <ToggleControl
+        <CustomToggleControl
             label={<>
                 <SmartphoneIcon />
                 {__("Mobile", "cocoblocks")}
@@ -110,8 +105,6 @@ const CustomVisibilityControls = ({
             onChange={handleChangeMobile}
             {...restProps}
         />
-    </div>
-     
         </div>
     </>
   );

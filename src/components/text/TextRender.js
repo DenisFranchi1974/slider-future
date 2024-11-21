@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { animationsIn, getAnimationProps} from '../../animate';
 import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
+import './editor-text.scss';
 
 const TextRender = ({ element, index, onPlay, className, onClick  }) => {
 
@@ -63,7 +64,6 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
       
     }
   };
-
 
   // Questo useEffect ora non avvia più l'animazione automaticamente
   useEffect(() => {

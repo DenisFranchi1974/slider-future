@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { animationsIn, getAnimationProps} from '../../animate';
 import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
-
 import InnerTextRender from "../innertext/InnerTextRender";
 import InnerImageRender from "../innerimage/InnerImageRender";
-import InnerButtonDivComponent from "../innerButtonDivComponent";
-import IconComponentInner from "../iconComponentInner";
+import InnerButtonRender from "../innerbutton/InnerButtonRender";
+import InnerIconRender from "../innericon/InnerIconRender";
 
-
-const GroupComponent = ({ element, index, onPlay,handlePlayInnerText,playAnimationInnerText,playAnimations,handlePlayInnerImage,playAnimationInnerImage}) => {
+const GroupRender = ({ element, index, onPlay,handlePlayInnerText,playAnimationInnerText,playAnimations,handlePlayInnerImage,playAnimationInnerImage,setSelectedIcon,handlePlayInnerButton,playAnimationInnerButton,handlePlayInnerIcon,playAnimationInnerIcon}) => {
   const DivBlock = element.elementDiv || "div";
 
   const [innerElements, setInnerElements] = useState(element.innerElements || []);
@@ -70,7 +68,6 @@ const GroupComponent = ({ element, index, onPlay,handlePlayInnerText,playAnimati
     }
   };
 
-
   // Questo useEffect ora non avvia più l'animazione automaticamente
   useEffect(() => {
     // Passa la funzione playAnimation al genitore tramite onPlay
@@ -124,7 +121,6 @@ const GroupComponent = ({ element, index, onPlay,handlePlayInnerText,playAnimati
       }),
     transform: `rotate(${element.rotateDiv}deg)`,
   };
-
 
   return (
     <div
@@ -190,14 +186,29 @@ const GroupComponent = ({ element, index, onPlay,handlePlayInnerText,playAnimati
                   }}
                   />
                 ) : innerElement.type === "button" ? (
-                  <InnerButtonDivComponent
+                  <InnerButtonRender
                     buttonDiv={innerElement}
                     buttonIndex={innerIndex}
+                    selectedIcon={innerElement.icon}
+                    handlePlayInnerButton={handlePlayInnerButton}
+                    playAnimations={playAnimations}
+                    playAnimationInnerButton={playAnimationInnerButton}
+                    onPlay={playAnimation => {
+                      playAnimations.push(playAnimation);
+                      playAnimationInnerButton.push(playAnimation);
+                    }}
                   />
                 ) : innerElement.type === "icon" ? (
-                  <IconComponentInner
+                  <InnerIconRender
                     iconDiv={innerElement}
                     iconIndex={innerIndex}
+                    handlePlayInnerIcon={handlePlayInnerIcon}
+                    playAnimations={playAnimations}
+                    playAnimationInnerIcon={playAnimationInnerIcon}
+                    onPlay={playAnimation => {
+                      playAnimations.push(playAnimation);
+                      playAnimationInnerIcon.push(playAnimation);
+                    }}
                   />
                 ) : innerElement.type === "image" ? (
                   <InnerImageRender
@@ -221,4 +232,4 @@ const GroupComponent = ({ element, index, onPlay,handlePlayInnerText,playAnimati
   );
 };
 
-export default GroupComponent;
+export default GroupRender;

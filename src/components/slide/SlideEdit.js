@@ -12,7 +12,7 @@ import {
 import React, { useEffect } from "react";
 import { useState } from "@wordpress/element";
 import "../editor.scss";
-import "../../slider/editor.scss";
+import "../../editor.scss";
 import SectionSelectorSlide from "../multitab/sectionSelectorSlide";
 import TextEdit from "../text/TextEdit";
 import ImageEdit from "../image/ImageEdit";
@@ -29,7 +29,7 @@ import {borderStyleOptions} from '../../assets/options';
 import {filterBackgroundOptions} from '../../assets/options';
 import CustomSelectControl  from "../../controls/select/CustomSelectControl";
 import CustomToggleControl  from "../../controls/toggle/CustomToggleControl";
-import CustomRangeControl  from "../../controls/range/CustomRangeControl";
+import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -57,11 +57,11 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import MarginIcon from '@mui/icons-material/Margin';
 import BorderInnerIcon from '@mui/icons-material/BorderInner';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-import ImageIcon from '@mui/icons-material/Image';
+import PostAddOutlinedIcon from '@mui/icons-material/PostAddOutlined';
+import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import AddCardIcon from '@mui/icons-material/AddCard';
-import SmartButtonIcon from '@mui/icons-material/SmartButton';
-import CloudIcon from '@mui/icons-material/Cloud';
+import WbCloudyOutlinedIcon from '@mui/icons-material/WbCloudyOutlined';
+import SmartButtonOutlinedIcon from '@mui/icons-material/SmartButtonOutlined';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const SlideEdit = ({
@@ -83,6 +83,10 @@ const SlideEdit = ({
   playAnimationInnerImage,
   playAnimations,
   selectedClass,
+  handlePlayInnerButton,
+  playAnimationInnerButton,
+  handlePlayInnerIcon,
+  playAnimationInnerIcon,
   
 }) => {
   const {
@@ -145,6 +149,7 @@ const SlideEdit = ({
   const [primaryColor, setPrimaryColor] = useState("");
   //const swiperRef = useRef(null); // Riferimento a Swiper
 
+  
   useEffect(() => {
     // Recupera il valore della variabile CSS --primary-color
     const root = document.querySelector(":root");
@@ -1151,8 +1156,7 @@ const id = open ? 'custom-popover' : undefined;
                                 }
                               />
                             </div>
-                            <div className="custom-select">
-                              <ToggleControl
+                              <CustomToggleControl
                                 label={
                                   <>
                                  <BlurOnIcon/>
@@ -1164,7 +1168,6 @@ const id = open ? 'custom-popover' : undefined;
                                   updateEnableRadialEffect(slide.id, value)
                                 }
                               />
-                            </div>
                             {slide.enableRadialEffect && (
                               <>
                             <div
@@ -2093,6 +2096,10 @@ const id = open ? 'custom-popover' : undefined;
                     playAnimationInnerText={playAnimationInnerText}
                     handlePlayInnerImage={handlePlayInnerImage}
                     playAnimationInnerImage={playAnimationInnerImage}
+                    handlePlayInnerButton={handlePlayInnerButton}
+                    playAnimationInnerButton={playAnimationInnerButton}
+                    handlePlayInnerIcon={handlePlayInnerIcon}
+                    playAnimationInnerIcon={playAnimationInnerIcon}
                     playAnimations={playAnimations}
                   />
                 )}
@@ -2154,22 +2161,16 @@ const id = open ? 'custom-popover' : undefined;
               onClick={() => addSlideTitle(slide.id)}
               label={__("Add text", "slide")}
             >
-              <PlaylistAddIcon />
+               <PostAddOutlinedIcon />
             </Button>
             <Button
               onClick={() => addSlideImage(slide.id)}
               label={__("Add image", "slide")}
             >
-              <ImageIcon />
-            </Button>
-            <Button
-              onClick={() => addSlideDiv(slide.id)}
-              label={__("Add group", "slide")}
-            >
-              <AddCardIcon />
+               <AddPhotoAlternateOutlinedIcon />
             </Button>
             <Button onClick={openModalButton} label="Add Button">
-              <SmartButtonIcon />
+            <SmartButtonOutlinedIcon />
             </Button>
             {isModalOpenButton && (
               <ButtonTypeSelectionModal
@@ -2182,7 +2183,13 @@ const id = open ? 'custom-popover' : undefined;
               onClick={() => addSlideIcon(slide.id)}
               label={__("Add Icon", "slide")}
             >
-              <CloudIcon />
+              <WbCloudyOutlinedIcon />
+            </Button>
+            <Button
+              onClick={() => addSlideDiv(slide.id)}
+              label={__("Add group", "slide")}
+            >
+              <AddCardIcon />
             </Button>
           </div>
         </PanelBody>

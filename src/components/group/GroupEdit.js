@@ -18,19 +18,18 @@ import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomActionControls from "../../multiControls/action";
 import CustomVisibilityControls from "../../multiControls/visibility";
 import CustomHoverControls from "../../multiControls/hover";
-import ButtonControlsBlock from "../ButtonControlsBlock";
+import InnerButtonEdit from "../innerbutton/InnerButtonEdit";
 import CustomEffectControls from "../../multiControls/effect";
 import {elementHtmlOptions} from '../../assets/options';
 import {borderStyleOptions} from '../../assets/options';
 import { selectOptionsEffectElement } from '../../assets/options';
 import ButtonTypeInnerSelectionModal from "../buttonInnerModal";
-import IconControlsInner from "../IconControlsInner";
+import InnerIconEdit from "../innericon/InnerIconEdit";
 import LibraryAddOutlinedIcon from '@mui/icons-material/LibraryAddOutlined';
 import PostAddOutlinedIcon from '@mui/icons-material/PostAddOutlined';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import SmartButtonOutlinedIcon from '@mui/icons-material/SmartButtonOutlined';
 import WbCloudyOutlinedIcon from '@mui/icons-material/WbCloudyOutlined';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import PaletteIcon from '@mui/icons-material/Palette';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import SettingsEthernetOutlinedIcon from '@mui/icons-material/SettingsEthernetOutlined';
@@ -73,14 +72,12 @@ const GroupEdit = ({
   attributes,
   onAnimatedGroup,
   handlePlayInnerText,
-  handlePlayInnerImage
-
-  
+  handlePlayInnerImage,
+  handlePlayInnerButton,
+  handlePlayInnerIcon
 }) => {
-  // Inizializza lo stato locale utilizzando element.playStateDiv
-  const [playStateDiv, setPlayState] = useState(element.playStateDiv || "");
-  const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
+  const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
     // Funzione generale per aggiornare i controlli
     const updateElement = (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) => {
@@ -276,8 +273,6 @@ const GroupEdit = ({
     );
     setAttributes({ slides: updatedSlides });
   };
-
-  
 
   // Remove Div
   const removeSlideDiv = (slideId, index) => {
@@ -931,7 +926,6 @@ const GroupEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
-
     // Open panel
     const [isOpen, setIsOpen] = useState(false);
 
@@ -1096,12 +1090,6 @@ const GroupEdit = ({
               >
                  <WbCloudyOutlinedIcon />
               </Button>
-              <Button
-              onClick={() => addSlideMenuDiv(slide.id,elementIndex)}
-              label={__("Add menu", "slide")}
-            >
-             <MenuOutlinedIcon />
-            </Button>
             </div>
           </>
         )}
@@ -1957,7 +1945,7 @@ const GroupEdit = ({
                     </Button>
                   </Tooltip>
                 </div>
-                <ButtonControlsBlock
+                <InnerButtonEdit
                   slide={slide}
                   slides={slides}
                   element={element}
@@ -1968,8 +1956,8 @@ const GroupEdit = ({
                   buttonIndex={innerIndex}
                   setActiveSection={setActiveSection}
                   activeSection={activeSection}
-                  parallax={parallax}
                   setSelectedIcon={setSelectedIcon}
+                  handlePlayInnerButton={handlePlayInnerButton}
                 />
             </div>
           );
@@ -2004,7 +1992,7 @@ const GroupEdit = ({
                     </Button>
                   </Tooltip>
                 </div>
-                <IconControlsInner
+                <InnerIconEdit
                   slide={slide}
                   slides={slides}
                   element={element}
@@ -2015,21 +2003,15 @@ const GroupEdit = ({
                   iconIndex={innerIndex}
                   setActiveSection={setActiveSection}
                   activeSection={activeSection}
-                  parallax={parallax}
-                  setSelectedIcon={setSelectedIcon}
                   device={device}
-                  handleDesktopClick={handleDesktopClick}
-                  handleTabletClick={handleTabletClick}
-                  handleMobileClick={handleMobileClick}
                   showOtherButtons={showOtherButtons}
+                  handlePlayInnerIcon={handlePlayInnerIcon}
                 />
             </div>
           );
         }
         return null;
       })}
-
-
            </>
       )}
       </div>

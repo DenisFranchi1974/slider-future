@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectControl, Tooltip } from "@wordpress/components";
+import { Tooltip } from "@wordpress/components";
 import InfoIcon from '@mui/icons-material/Info';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -43,7 +43,7 @@ const CustomSelectControl = ({
           sx={{
             height: '30px', // Altezza del selettore
             fontSize: '13px', // Dimensione del font del selettore
-            minWidth: '100px', // Larghezza minima del selettore
+            minWidth: '80px', // Larghezza minima del selettore
             '& .MuiSelect-select': {
               padding: '6px', // Padding interno del selettore
             },
