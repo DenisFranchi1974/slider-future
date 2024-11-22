@@ -88,7 +88,7 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
   const stylesTitle = {
-    fontSize: 'clamp(' + element.fontSizeMobile + 'px,' + element.fontSizeTablet + 'vw, ' + element.fontSize + 'px)',
+    fontSize: '22px',
     color: element.textColor,
     backgroundColor: element.backgroundColor,
     textAlign: element.textAlign,

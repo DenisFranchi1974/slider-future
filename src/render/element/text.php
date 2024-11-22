@@ -39,6 +39,7 @@ function render_text($element, $slide)
     $borderRadiusLeft = esc_attr($element['backgroundBorderRadius']['left'] ?? '0px');
     $borderRadius = "$borderRadiusTop $borderRadiusRight $borderRadiusBottom $borderRadiusLeft";
     $zIndexTitle = esc_attr($element['zIndexTitle'] ?? 1);
+    $blendMode = esc_attr($element['blendMode'] ?? 'normal');
     $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === "bold" ? "bold" : (isset($element['fontWeight']) ? esc_attr($element['fontWeight']) : "normal");
     $stylesTitle = 'font-size: clamp(' . $fontSizeMobile . 'px,' . $fontSizeTablet . 'vw, ' . $fontSize . 'px); '
         . 'color: ' . $color . '; '
@@ -58,6 +59,7 @@ function render_text($element, $slide)
         . 'writing-mode: ' . $textWriteMode . ';'
         . 'text-orientation: ' . $textOrientation . ';'
         . 'transform: rotate(' . $rotate . 'deg);'
+        . 'mix-blend-mode: ' . $blendMode . ';'
         . 'z-index: ' . $zIndexTitle . ';'
         . 'border-radius: ' . $borderRadius . ';';
     if (!empty($element['enableTextShadow'])) {
@@ -109,10 +111,10 @@ function render_text($element, $slide)
         <?php
         $widthTitle = $element['widthTitle'] ?? '100%';
         $widthCustomTitle = $element['widthCustomTitle'] ?? '100';
-        $blendMode = $element['blendMode'] ?? 'normal';
+        $opacity = $element['opacity'] ?? 1;
         ?>
         <div
-            style="width: <?php echo esc_attr($widthTitle) === 'custom' ? esc_attr($widthCustomTitle) . '%' : esc_attr($widthTitle); ?>; mix-blend-mode: <?php echo esc_attr($blendMode); ?>;"
+            style="width: <?php echo esc_attr($widthTitle) === 'custom' ? esc_attr($widthCustomTitle) . '%' : esc_attr($widthTitle); ?>;opacity: <?php echo esc_attr($opacity); ?>"
             class="content-title-slide <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?>">
             <<?php
                 echo esc_attr($tag);
@@ -147,7 +149,7 @@ function render_text($element, $slide)
                                         if (targetElement) {
                                             targetElement.scrollIntoView({ behavior: 'smooth' });
                                         }
-                                    <?php endif; ?>
+                                    <?php endif; ?> 
                                     return false;
                                 "
                 <?php endif; ?>
@@ -161,6 +163,8 @@ function render_text($element, $slide)
                 data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
                 data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
                 data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                data-filter-in-from="<?php echo esc_attr($element['filterFrom'] ?? 0); ?>"
+                data-filter-in-to="<?php echo esc_attr($element['filterTo'] ?? 0); ?>"
                 data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
                 data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
                 data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"

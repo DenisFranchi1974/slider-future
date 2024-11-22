@@ -809,6 +809,8 @@ const TextEdit = ({
                 }
               />
             </div>
+            </>
+            )}
             <div className="custom-select box-control">
               <BoxControl
                 id="custom-margin-control"
@@ -825,8 +827,6 @@ const TextEdit = ({
                 }
               />
             </div>
-              </>
-            )}
           </div>
         </>
       )}

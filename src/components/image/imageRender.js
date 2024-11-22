@@ -130,7 +130,7 @@ const ImageRender = ({ element, index, onPlay  }) => {
         textAlign: element.imageAlign,
       }}
       className={
-        "content-img-first " +
+        "content-img-first " + element.imageFilter +
         " " + element.hideImage
       }
     >
@@ -162,7 +162,7 @@ const ImageRender = ({ element, index, onPlay  }) => {
         src={element.url}
         alt={element.alt}
         style={getImageStyle()}
-        className={`image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight}  ${element.imageFilter} `}
+        className={`image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight}`}
       />
     </div>
   );

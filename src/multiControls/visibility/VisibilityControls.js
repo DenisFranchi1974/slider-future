@@ -83,7 +83,7 @@ const CustomVisibilityControls = ({
                 <PersonalVideoIcon />
                 {__("Desktop", "cocoblocks")}
               </>}
-            checked={valueDesktop}
+            checked={valueDesktop ?? true}
             onChange={handleChangeDesktop}
             {...restProps}
         />
@@ -92,7 +92,7 @@ const CustomVisibilityControls = ({
                 <TabletMacIcon />
                 {__("Tablet", "cocoblocks")}
               </>}
-            checked={valueTablet}
+            checked={valueTablet ?? true}
             onChange={handleChangeTablet}
             {...restProps}
         />
@@ -101,7 +101,7 @@ const CustomVisibilityControls = ({
                 <SmartphoneIcon />
                 {__("Mobile", "cocoblocks")}
               </>}
-            checked={valueMobile}
+            checked={valueMobile ?? true}
             onChange={handleChangeMobile}
             {...restProps}
         />

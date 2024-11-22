@@ -148,6 +148,8 @@ function render_innerIcon($innerElement, $slide)
             data-loop-in="<?php echo esc_attr($innerElement['loop'] ?? '1'); ?>"
             data-opacity-in-from="<?php echo esc_attr($innerElement['opacityFrom'] ?? 0); ?>"
             data-opacity-in-to="<?php echo esc_attr($innerElement['opacityTo'] ?? 1); ?>"
+            data-filter-in-from="<?php echo esc_attr($innerElement['filterFrom'] ?? 0); ?>"
+            data-filter-in-to="<?php echo esc_attr($innerElement['filterTo'] ?? 0); ?>"
             data-start-x-from="<?php echo esc_attr($innerElement['startXFrom'] ?? 100); ?>"
             data-start-x-to="<?php echo esc_attr($innerElement['startXTo'] ?? 0); ?>"
             data-start-y-from="<?php echo esc_attr($innerElement['startYFrom'] ?? 0); ?>"

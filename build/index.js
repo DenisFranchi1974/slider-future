@@ -47196,7 +47196,7 @@ const ImageRender = ({
       zIndex: element.zIndexImage,
       textAlign: element.imageAlign
     },
-    className: "content-img-first " + " " + element.hideImage
+    className: "content-img-first " + element.imageFilter + " " + element.hideImage
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     ref: imageRef,
     onMouseEnter: e => {
@@ -47233,7 +47233,7 @@ const ImageRender = ({
     src: element.url,
     alt: element.alt,
     style: getImageStyle(),
-    className: `image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight}  ${element.imageFilter} `
+    className: `image-first-slide image-with-mask ${element.blobMask} ${element.spikeMask} ${element.spikeMaskRight}`
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ImageRender);
@@ -56413,7 +56413,7 @@ const TextEdit = ({
     values: element.backgroundBorderSize,
     units: {},
     onChange: newBorderSize => updatenewBackgroundBorderSize(slide.id, elementIndex, newBorderSize)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select box-control"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
     id: "custom-margin-control",
@@ -56421,7 +56421,7 @@ const TextEdit = ({
     values: element.backgroundBorderRadius,
     units: {},
     onChange: newBorderRadius => updatenewBackgroundBorderRadius(slide.id, elementIndex, newBorderRadius)
-  }))))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))), activeSection === "adv-style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -56918,7 +56918,7 @@ const TextRender = ({
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
   const stylesTitle = {
-    fontSize: 'clamp(' + element.fontSizeMobile + 'px,' + element.fontSizeTablet + 'vw, ' + element.fontSize + 'px)',
+    fontSize: '22px',
     color: element.textColor,
     backgroundColor: element.backgroundColor,
     textAlign: element.textAlign,
@@ -61985,17 +61985,17 @@ const CustomVisibilityControls = ({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_3__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Desktop", "cocoblocks")),
-    checked: valueDesktop,
+    checked: valueDesktop !== null && valueDesktop !== void 0 ? valueDesktop : true,
     onChange: handleChangeDesktop,
     ...restProps
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_4__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Tablet", "cocoblocks")),
-    checked: valueTablet,
+    checked: valueTablet !== null && valueTablet !== void 0 ? valueTablet : true,
     onChange: handleChangeTablet,
     ...restProps
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_5__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Mobile", "cocoblocks")),
-    checked: valueMobile,
+    checked: valueMobile !== null && valueMobile !== void 0 ? valueMobile : true,
     onChange: handleChangeMobile,
     ...restProps
   })));

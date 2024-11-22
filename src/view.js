@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const loopIn = element.getAttribute('data-loop-in') ?? '1';
       const opacityFrom = element.getAttribute('data-opacity-in-from') ?? 0;
       const opacityTo = element.getAttribute('data-opacity-in-to') ?? 1;
+      const filterFrom = element.getAttribute('data-filter-in-from') ?? 0;
+      const filterTo = element.getAttribute('data-filter-in-to') ?? 0;
       const startXFrom = element.getAttribute('data-start-x-from') ?? 100;
       const startXTo = element.getAttribute('data-start-x-to') ?? 0;
       const startYFrom = element.getAttribute('data-start-y-from') ?? 0;
@@ -144,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
         direction: directionIn,
         opacityFrom,
         opacityTo,
+        filterFrom,
+        filterTo,
         startXFrom,
         startXTo,
         startYFrom,

@@ -1063,39 +1063,39 @@ button.swiper-pagination-bullet {
 }
 
 /* Image Effect */
-.grayscale {
+.content-img-first.grayscale {
   filter: grayscale(100%);
 }
 
-.blur {
+.content-img-first.blur {
   filter: blur(5px);
 }
 
-.sepia {
+.content-img-first.sepia {
   filter: sepia(100%);
 }
 
-.contrast {
+.content-img-first.contrast {
   filter: contrast(200%);
 }
 
-.brightness {
+.content-img-first.brightness {
   filter: brightness(150%);
 }
 
-.invert {
+.content-img-first.invert {
   filter: invert(100%);
 }
 
-.saturate {
+.content-img-first.saturate {
   filter: saturate(200%);
 }
 
-.opacity {
+.content-img-first.opacity {
   opacity: 0.5;
 }
 
-.hue-rotate {
+.content-img-first.hue-rotate {
   filter: hue-rotate(90deg);
 }
 

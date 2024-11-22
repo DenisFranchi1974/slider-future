@@ -22,10 +22,18 @@ function render_image($element, $slide)
             . $boxShadowSpreadImage . 'px '
             . $colorShadowImage . ';';
     }
-    $backgroundBorderSizeImage = esc_attr($element['backgroundBorderSizeImage'] ?? 0);
     $backgroundBorderColorImage = esc_attr($element['backgroundBorderColorImage'] ?? '#000');
-    $backgroundBorderRadiusImage = esc_attr($element['backgroundBorderRadiusImage'] ?? 0);
+    $borderRadiusTop = esc_attr($element['backgroundBorderRadiusImage']['top'] ?? '0px');
+    $borderRadiusRight = esc_attr($element['backgroundBorderRadiusImage']['right'] ?? '0px');
+    $borderRadiusBottom = esc_attr($element['backgroundBorderRadiusImage']['bottom'] ?? '0px');
+    $borderRadiusLeft = esc_attr($element['backgroundBorderRadiusImage']['left'] ?? '0px');
+    $borderRadius = "$borderRadiusTop $borderRadiusRight $borderRadiusBottom $borderRadiusLeft";
     $backgroundColorImage = esc_attr($element['backgroundColorImage'] ?? '');
+    $borderWidthTop = esc_attr($element['backgroundBorderSizeImage']['top'] ?? '0px');
+    $borderWidthRight = esc_attr($element['backgroundBorderSizeImage']['right'] ?? '0px');
+    $borderWidthBottom = esc_attr($element['backgroundBorderSizeImage']['bottom'] ?? '0px');
+    $borderWidthLeft = esc_attr($element['backgroundBorderSizeImage']['left'] ?? '0px');
+    $borderWidth = "$borderWidthTop $borderWidthRight $borderWidthBottom $borderWidthLeft";
     $spikeLeftWidth = esc_attr($element['spikeLeftWidth'] ?? 0);
     $spikeRightWidth = esc_attr($element['spikeRightWidth'] ?? 0);
     $imageColorHover = esc_attr($element['imageColorHover'] ?? '');
@@ -33,9 +41,9 @@ function render_image($element, $slide)
     $padding = "$paddingTop $paddingRight $paddingBottom $paddingLeft";
     $style .= "
                                     border-style: " . esc_attr($element['borderStyleImage']) . ";
-                                    border-width: " . $backgroundBorderSizeImage . "px;
+                                    border-width: " . $borderWidth . ";
                                     border-color: " . $backgroundBorderColorImage . ";
-                                    border-radius: " . $backgroundBorderRadiusImage . "px;
+                                    border-radius: " . $borderRadius . ";
                                     padding: " . $padding . ";
                                     background-color: " . $backgroundColorImage . ";
                                     --spike-width:" . $spikeLeftWidth . "%;
@@ -110,8 +118,8 @@ function render_image($element, $slide)
                                     <?php endif; ?>
                                 width:<?php echo esc_attr($element['widthImageContent']) ?>;
                                 text-align:<?php echo $imageAlign; ?>;"
-            class="content-img-first  <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>">
-            <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-first-slide image-with-mask <?php echo esc_attr($element['blobMask']) ?> <?php echo esc_attr($element['spikeMask']) ?> <?php echo esc_attr($element['spikeMaskRight']) ?>  <?php echo esc_attr($element['imageFilter']) ?>"
+            class="content-img-first  <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?> <?php echo esc_attr($element['imageFilter']) ?>">
+            <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-first-slide image-with-mask <?php echo esc_attr($element['blobMask']) ?> <?php echo esc_attr($element['spikeMask']) ?> <?php echo esc_attr($element['spikeMaskRight']) ?>"
                 style="<?php echo $style; ?>"
                 <?php if ($element['effectIn'] !== 'none') : ?>
                 data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
@@ -123,6 +131,8 @@ function render_image($element, $slide)
                 data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
                 data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
                 data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                data-filter-in-from="<?php echo esc_attr($element['filterFrom'] ?? 0); ?>"
+                data-filter-in-to="<?php echo esc_attr($element['filterTo'] ?? 0); ?>"
                 data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
                 data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
                 data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"

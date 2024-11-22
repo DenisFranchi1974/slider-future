@@ -403,6 +403,8 @@ function render_button($element, $slide)
                     data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
                     data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
                     data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                    data-filter-in-from="<?php echo esc_attr($element['filterFrom'] ?? 0); ?>"
+                    data-filter-in-to="<?php echo esc_attr($element['filterTo'] ?? 0); ?>"
                     data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
                     data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
                     data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"

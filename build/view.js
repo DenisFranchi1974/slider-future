@@ -33754,7 +33754,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateElement() {
     const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .content-icon,.title-slide-div, .img-inner,.button-slider-inner');
     elementsToAnimate.forEach(element => {
-      var _parseInt, _parseInt2, _parseInt3, _element$getAttribute, _element$getAttribute2, _element$getAttribute3, _element$getAttribute4, _element$getAttribute5, _element$getAttribute6, _element$getAttribute7, _element$getAttribute8, _element$getAttribute9, _parseInt4, _element$getAttribute10, _element$getAttribute11, _element$getAttribute12, _parseInt5, _parseInt6, _parseInt7, _parseInt8, _parseInt9, _parseInt10, _parseFloat, _parseFloat2, _parseInt11, _parseInt12, _parseInt13, _parseInt14, _element$getAttribute13, _element$getAttribute14, _element$getAttribute15, _element$getAttribute16, _element$getAttribute17, _element$getAttribute18, _parseInt15, _parseInt16, _parseInt17, _parseInt18, _parseInt19, _parseInt20, _parseInt21, _parseInt22, _parseInt23, _parseInt24, _dataScaleCustomEf, _dataDurationHover, _dataEasingHover, _dataHeightFrom, _dataHeightTo;
+      var _parseInt, _parseInt2, _parseInt3, _element$getAttribute, _element$getAttribute2, _element$getAttribute3, _element$getAttribute4, _element$getAttribute5, _element$getAttribute6, _element$getAttribute7, _element$getAttribute8, _element$getAttribute9, _element$getAttribute10, _element$getAttribute11, _parseInt4, _element$getAttribute12, _element$getAttribute13, _element$getAttribute14, _parseInt5, _parseInt6, _parseInt7, _parseInt8, _parseInt9, _parseInt10, _parseFloat, _parseFloat2, _parseInt11, _parseInt12, _parseInt13, _parseInt14, _element$getAttribute15, _element$getAttribute16, _element$getAttribute17, _element$getAttribute18, _element$getAttribute19, _element$getAttribute20, _parseInt15, _parseInt16, _parseInt17, _parseInt18, _parseInt19, _parseInt20, _parseInt21, _parseInt22, _parseInt23, _parseInt24, _dataScaleCustomEf, _dataDurationHover, _dataEasingHover, _dataHeightFrom, _dataHeightTo;
       const effectIn = element.getAttribute('data-effect-in');
       const duration = (_parseInt = parseInt(element.getAttribute('data-duration'))) !== null && _parseInt !== void 0 ? _parseInt : 800;
       const delay = (_parseInt2 = parseInt(element.getAttribute('data-delay-in'))) !== null && _parseInt2 !== void 0 ? _parseInt2 : 0;
@@ -33764,14 +33764,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const loopIn = (_element$getAttribute3 = element.getAttribute('data-loop-in')) !== null && _element$getAttribute3 !== void 0 ? _element$getAttribute3 : '1';
       const opacityFrom = (_element$getAttribute4 = element.getAttribute('data-opacity-in-from')) !== null && _element$getAttribute4 !== void 0 ? _element$getAttribute4 : 0;
       const opacityTo = (_element$getAttribute5 = element.getAttribute('data-opacity-in-to')) !== null && _element$getAttribute5 !== void 0 ? _element$getAttribute5 : 1;
-      const startXFrom = (_element$getAttribute6 = element.getAttribute('data-start-x-from')) !== null && _element$getAttribute6 !== void 0 ? _element$getAttribute6 : 100;
-      const startXTo = (_element$getAttribute7 = element.getAttribute('data-start-x-to')) !== null && _element$getAttribute7 !== void 0 ? _element$getAttribute7 : 0;
-      const startYFrom = (_element$getAttribute8 = element.getAttribute('data-start-y-from')) !== null && _element$getAttribute8 !== void 0 ? _element$getAttribute8 : 0;
-      const startYTo = (_element$getAttribute9 = element.getAttribute('data-start-y-to')) !== null && _element$getAttribute9 !== void 0 ? _element$getAttribute9 : 0;
+      const filterFrom = (_element$getAttribute6 = element.getAttribute('data-filter-in-from')) !== null && _element$getAttribute6 !== void 0 ? _element$getAttribute6 : 0;
+      const filterTo = (_element$getAttribute7 = element.getAttribute('data-filter-in-to')) !== null && _element$getAttribute7 !== void 0 ? _element$getAttribute7 : 0;
+      const startXFrom = (_element$getAttribute8 = element.getAttribute('data-start-x-from')) !== null && _element$getAttribute8 !== void 0 ? _element$getAttribute8 : 100;
+      const startXTo = (_element$getAttribute9 = element.getAttribute('data-start-x-to')) !== null && _element$getAttribute9 !== void 0 ? _element$getAttribute9 : 0;
+      const startYFrom = (_element$getAttribute10 = element.getAttribute('data-start-y-from')) !== null && _element$getAttribute10 !== void 0 ? _element$getAttribute10 : 0;
+      const startYTo = (_element$getAttribute11 = element.getAttribute('data-start-y-to')) !== null && _element$getAttribute11 !== void 0 ? _element$getAttribute11 : 0;
       const stagger = (_parseInt4 = parseInt(element.getAttribute('data-stagger'))) !== null && _parseInt4 !== void 0 ? _parseInt4 : 80;
-      const textSplitEffect = (_element$getAttribute10 = element.getAttribute('data-effect-split')) !== null && _element$getAttribute10 !== void 0 ? _element$getAttribute10 : 'translateSplit';
-      const directionBlock = (_element$getAttribute11 = element.getAttribute('data-direction-block')) !== null && _element$getAttribute11 !== void 0 ? _element$getAttribute11 : 'right';
-      const colorBlockEffect = (_element$getAttribute12 = element.getAttribute('data-color-block')) !== null && _element$getAttribute12 !== void 0 ? _element$getAttribute12 : '#000';
+      const textSplitEffect = (_element$getAttribute12 = element.getAttribute('data-effect-split')) !== null && _element$getAttribute12 !== void 0 ? _element$getAttribute12 : 'translateSplit';
+      const directionBlock = (_element$getAttribute13 = element.getAttribute('data-direction-block')) !== null && _element$getAttribute13 !== void 0 ? _element$getAttribute13 : 'right';
+      const colorBlockEffect = (_element$getAttribute14 = element.getAttribute('data-color-block')) !== null && _element$getAttribute14 !== void 0 ? _element$getAttribute14 : '#000';
       const rotateFrom = (_parseInt5 = parseInt(element.getAttribute('data-rotate-in-from'))) !== null && _parseInt5 !== void 0 ? _parseInt5 : 0;
       const rotateTo = (_parseInt6 = parseInt(element.getAttribute('data-rotate-in-to'))) !== null && _parseInt6 !== void 0 ? _parseInt6 : 0;
       const rotateXFrom = (_parseInt7 = parseInt(element.getAttribute('data-rotate-x-in-from'))) !== null && _parseInt7 !== void 0 ? _parseInt7 : 0;
@@ -33784,12 +33786,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const skewXTo = (_parseInt12 = parseInt(element.getAttribute('data-skew-x-to'))) !== null && _parseInt12 !== void 0 ? _parseInt12 : 1;
       const skewYFrom = (_parseInt13 = parseInt(element.getAttribute('data-skew-y-from'))) !== null && _parseInt13 !== void 0 ? _parseInt13 : 0;
       const skewYTo = (_parseInt14 = parseInt(element.getAttribute('data-skew-y-to'))) !== null && _parseInt14 !== void 0 ? _parseInt14 : 1;
-      const scaleType = (_element$getAttribute13 = element.getAttribute('data-scale-custom-effect-in')) !== null && _element$getAttribute13 !== void 0 ? _element$getAttribute13 : 'scale';
-      const textColor = (_element$getAttribute14 = element.getAttribute('data-text-color')) !== null && _element$getAttribute14 !== void 0 ? _element$getAttribute14 : '';
-      const backgroundColorImage = (_element$getAttribute15 = element.getAttribute('data-image-color')) !== null && _element$getAttribute15 !== void 0 ? _element$getAttribute15 : '';
-      const backgroundColorImageHover = (_element$getAttribute16 = element.getAttribute('data-image-color-hover')) !== null && _element$getAttribute16 !== void 0 ? _element$getAttribute16 : '';
-      const textColorHover = (_element$getAttribute17 = element.getAttribute('data-text-color-hover')) !== null && _element$getAttribute17 !== void 0 ? _element$getAttribute17 : '0';
-      const effectHover = (_element$getAttribute18 = element.getAttribute('data-effect-hover')) !== null && _element$getAttribute18 !== void 0 ? _element$getAttribute18 : '';
+      const scaleType = (_element$getAttribute15 = element.getAttribute('data-scale-custom-effect-in')) !== null && _element$getAttribute15 !== void 0 ? _element$getAttribute15 : 'scale';
+      const textColor = (_element$getAttribute16 = element.getAttribute('data-text-color')) !== null && _element$getAttribute16 !== void 0 ? _element$getAttribute16 : '';
+      const backgroundColorImage = (_element$getAttribute17 = element.getAttribute('data-image-color')) !== null && _element$getAttribute17 !== void 0 ? _element$getAttribute17 : '';
+      const backgroundColorImageHover = (_element$getAttribute18 = element.getAttribute('data-image-color-hover')) !== null && _element$getAttribute18 !== void 0 ? _element$getAttribute18 : '';
+      const textColorHover = (_element$getAttribute19 = element.getAttribute('data-text-color-hover')) !== null && _element$getAttribute19 !== void 0 ? _element$getAttribute19 : '0';
+      const effectHover = (_element$getAttribute20 = element.getAttribute('data-effect-hover')) !== null && _element$getAttribute20 !== void 0 ? _element$getAttribute20 : '';
       const scaleHover = (_parseInt15 = parseInt(element.getAttribute('data-scale-hover'))) !== null && _parseInt15 !== void 0 ? _parseInt15 : 1;
       const opacityHover = (_parseInt16 = parseInt(element.getAttribute('data-opacity-hover'))) !== null && _parseInt16 !== void 0 ? _parseInt16 : 1;
       const filterHover = (_parseInt17 = parseInt(element.getAttribute('data-filter-hover'))) !== null && _parseInt17 !== void 0 ? _parseInt17 : 0;
@@ -33815,6 +33817,8 @@ document.addEventListener('DOMContentLoaded', () => {
         direction: directionIn,
         opacityFrom,
         opacityTo,
+        filterFrom,
+        filterTo,
         startXFrom,
         startXTo,
         startYFrom,
