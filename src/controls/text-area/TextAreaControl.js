@@ -27,6 +27,7 @@ const CustomTextAreaControl = ({
   return (
     <div className="custom-select">
        <TextareaControl
+       __nextHasNoMarginBottom
           value={value}
           onChange={handleChange}
           placeholder={placeholder || __("Add text content...", "cocoblocks")} 

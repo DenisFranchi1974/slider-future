@@ -23,6 +23,7 @@ function render_text($element, $slide)
     $fontSizeTablet = esc_attr($element['fontSizeTablet']);
     $fontSizeMobile = esc_attr($element['fontSizeMobile']);
     $color = esc_attr($element['textColor']);
+    $colorHover = esc_attr($element['textColorHover'] ?? '');
     $backgroundColor = esc_attr($element['backgroundColor'] ?? '');
     $textAlign = esc_attr($element['textAlign'] ?? 'center');
     $letterSpacing = esc_attr($element['letterSpacing'] ?? 0);
@@ -43,6 +44,7 @@ function render_text($element, $slide)
     $isBold = isset($element['fontStyle']['fontWeight']) && $element['fontStyle']['fontWeight'] === "bold" ? "bold" : (isset($element['fontWeight']) ? esc_attr($element['fontWeight']) : "normal");
     $stylesTitle = 'font-size: clamp(' . $fontSizeMobile . 'px,' . $fontSizeTablet . 'vw, ' . $fontSize . 'px); '
         . 'color: ' . $color . '; '
+        . '--color-hover: ' . $colorHover . '; '
         . 'background-color: ' . $backgroundColor . '; '
         . 'text-align: ' . $textAlign . '; '
         . 'letter-spacing: ' . $letterSpacing . 'px; '
@@ -186,10 +188,8 @@ function render_text($element, $slide)
                 data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
                 data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 1); ?>"
                 data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
-                data-text-color="<?php echo esc_attr($element['textColor'] ?? ''); ?>"
                 <?php endif;
                 if ($element['effectHover'] !== 'none') : ?>
-                data-text-color-hover="<?php echo esc_attr($element['textColorHover'] ?? ''); ?>"
                 data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
                 data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
                 data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"

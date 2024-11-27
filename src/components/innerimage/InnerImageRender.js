@@ -86,10 +86,6 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
   const getImageStyleBlock = (imageDiv) => {
     if (!imageDiv) return {}; // Aggiungi un controllo per imageDiv
     let style = {
-      maxWidth: "100%",
-      minWidth: "0",
-      maxHeight: "100%",
-      minHeight: "0",
       borderStyle: imageDiv.borderStyleImage || "none",
       borderColor: imageDiv.backgroundBorderColorImage || "#000000",
       ...(imageDiv.enableBoxShadowImage && {
@@ -134,9 +130,10 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
           top: imageDiv.verticalPositionInnerImage,
           left: imageDiv.horizontalPositionInnerImage,
           textAlign: imageDiv.imageAlign,
+          '--background-color-image-inner-hover': imageDiv.backgroundColorImageHover,
         }}
         className={
-          "content-img-inner " +
+          "content-img-inner " + imageDiv.imageFilter +
           " " + imageDiv.hideImage
         }
       >
@@ -144,7 +141,6 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
          ref={imageRef}
          onMouseEnter={(e) => handleMouseEnter(e, { 
            durationHover: imageDiv.durationHover ?? 800,
-           backgroundColorImageHover:imageDiv.backgroundColorImageHover,
            effectHover:imageDiv.effectHover,
            easingHover:imageDiv.easingHover ?? 'linear',
            opacityHover:imageDiv.opacityHover ?? 1,
@@ -161,14 +157,13 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
          })} // Passa element.duration
          onMouseLeave={(e) => handleMouseLeave(e, { 
            durationHover: imageDiv.durationHover ?? 800,
-           backgroundColorImage:imageDiv.backgroundColorImage,
            easingHover:imageDiv.easingHover ?? 'linear',
          })} // Passa element.duration
           key={imageIndex}
           src={imageDiv.imageUrl}
           alt={imageDiv.alt}
           style={getImageStyleBlock(imageDiv)}
-          className={`img-inner image-with-mask ${imageDiv.blobMask}  ${imageDiv.spikeMask} ${imageDiv.spikeMaskRight} ${imageDiv.imageFilter}`}
+          className={`img-inner image-with-mask ${imageDiv.blobMask}  ${imageDiv.spikeMask} ${imageDiv.spikeMaskRight}`}
         />
       </div>
     )

@@ -16,6 +16,8 @@
 @import "./components/button/button";
 // Style Image 
 @import "./components/image/image";
+// Style Image Inner
+@import "./components/innerimage/inner-image";
 
 /* Content slide da veder !!!! */
 .content-slide-slider{
@@ -607,6 +609,9 @@
   transform: rotate(var(--rotate-hover-icon))!important;
 }
 
+.slide-icon:hover svg{
+  fill: var(--color-hover-icon)!important;
+}
 
 .slide-icon,.content-icon{
   transition: fill var(--transition-hover-icon) ease, opacity var(--transition-hover-icon) ease, transform var(--transition-hover-icon) ease;
@@ -642,17 +647,21 @@
   opacity: var(--opacity-hover-icon-inner)!important;
   border-style: var(--border-style-hover-icon-inner)!important;
   border-width: var(--border-width-hover-icon-inner)!important;
-  rotate: var(--rotate-hover-icon-inner)!important;
+  transform: rotate(var(--rotate-hover-icon-inner))!important;
 }
-.slide-icon-inner{
-  transition: color var(--transition-hover-icon-inner) ease, opacity var(--transition-hover-icon-inner) ease, transform var(--transition-hover-icon-inner) ease;
+
+.slide-icon-inner:hover svg{
+  fill: var(--color-hover-icon-inner)!important;
+}
+.slide-icon-inner,.content-icon-inner{
+  transition: fill var(--transition-hover-icon-inner) ease, opacity var(--transition-hover-icon-inner) ease, transform var(--transition-hover-icon-inner) ease;
 }
 /* Effetto hover */
 .slide-icon-inner.hover-effect-1-icon-inner {
   transition: transform var(--transition-hover-icon-inner) ease;
 }
 .slide-icon-inner.hover-effect-1-icon-inner:hover {
-  transform: scale(1.1)!important;
+  transform: scale(var(--scale-hover-icon-inner))!important;
 }
 /* Translate Y */
 .slide-icon-inner.hover-effect-2-icon-inner:hover {
@@ -661,33 +670,6 @@
 /* Translate X */
 .slide-icon-inner.hover-effect-5-icon-inner:hover {
   transform: translateX(var(--translate-hover-icon-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
-}
-
-/* Shadow */
-.hover-effect-3-icon-inner- {
-  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease!important;
-}
-.hover-effect-3-icon-inner-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-icon-inner)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Shadow */
-.hover-effect-3-icon-inner {
-  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease!important;
-}
-.hover-effect-3-icon-inner:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-icon-inner)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Ombra */
-.hover-effect-4-icon-inner{
-  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease!important;
-}
-.hover-effect-4-icon-inner:hover {
-  box-shadow: 0px 8px 16px var(--color-effect-hover-icon-inner)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
 /* Sfocatura */
@@ -2024,12 +2006,10 @@
   box-shadow: var(--box-shadow-x-button) var(--box-shadow-y-button) var(--box-shadow-blur-button) var(--box-shadow-spread-button) var(--box-shadow-color-button);
 }
 .scroll-btn .mouse:hover {
-  background-color: var(--color-button-hover)!important;
+  background-color: var(--background-color-button-hover)!important;
   border-style: var(--border-style-button-hover)!important;
   border-width: var(--border-width-button-hover-top) var(--border-width-button-hover-right) var(--border-width-button-hover-bottom) var(--border-width-button-hover-left)!important;
   border-color: var(--border-color-button-hover)!important;
-  rotate: var(--rotate-button-hover)!important;
-  opacity: var(--opacity-button-hover)!important;
 }
 
 .scroll-btn .mouse > * {
@@ -2047,6 +2027,10 @@
 	animation: ani-mouse 2.5s linear infinite;
 }
 
+.scroll-btn:hover .mouse span{
+  background: var(--color-button-hover)!important;
+}
+
 /* Button classic */
 .button-slider a:hover{
   background-color: var(--background-color-button-hover)!important;
@@ -2054,7 +2038,6 @@
   border-width: var(--border-width-button-hover-top) var(--border-width-button-hover-right) var(--border-width-button-hover-bottom) var(--border-width-button-hover-left)!important;
   border-style: var(--border-style-button-hover)!important;
   border-color:var(--border-color-button-hover)!important;
-  opacity: var(--opacity-button-hover)!important;
 }
 
 
@@ -2094,12 +2077,10 @@
   box-shadow: var(--box-shadow-x-button-inner) var(--box-shadow-y-button-inner) var(--box-shadow-blur-button-inner) var(--box-shadow-spread-button-inner) var(--box-shadow-color-button-inner);
 }
 .scroll-btn-inner .mouse-inner:hover {
-  background-color: var(--color-button-hover-inner)!important;
+  background-color: var(--background-color-button-hover-inner)!important;
   border-style: var(--border-style-button-hover-inner)!important;
   border-width: var(--border-width-button-hover-inner)!important;
   border-color: var(--border-color-button-hover-inner)!important;
-  rotate: var(--rotate-button-hover-inner)!important;
-  opacity: var(--opacity-button-hover-inner)!important;
 }
 
 .scroll-btn-inner .mouse-inner > * {
@@ -2117,6 +2098,10 @@
 	animation: ani-mouse 2.5s linear infinite;
 }
 
+.scroll-btn-inner:hover .mouse-inner span{
+  background: var(--color-button-hover-inner)!important;
+}
+
 /* Button classic inner */
 .button-slider-inner a:hover{
   background-color: var(--background-color-button-hover-inner)!important;
@@ -2124,13 +2109,7 @@
   border-width: var(--border-width-button-hover-top-inner) var(--border-width-button-hover-right-inner) var(--border-width-button-hover-bottom-inner) var(--border-width-button-hover-left-inner)!important;
   border-style: var(--border-style-button-hover-inner)!important;
   border-color:var(--border-color-button-hover-inner)!important;
-  opacity: var(--opacity-button-hover-inner)!important;
-  transform: rotate(var(--rotate-button-hover-inner))!important;
 }
-.button-slider-inner:hover{
-  transform: rotate(var(--rotate-button-hover-inner))!important;
-}
-
 
 /* Effect mouse in slider */
 
@@ -2274,28 +2253,28 @@
   transition: transform var(--transition-hover-icon-button-inner) ease;
 }
 
-.button-slider-inner{
+.content-icon-button-inner{
   transition: transform var(--transition-hover-icon-button-inner) ease;
 }
 
-.button-slider-inner:hover .content-icon-button-inner svg{
+.content-button-slide-inner:hover .content-icon-button-inner svg{
   fill: var(--color-icon-button-inner-hover)!important;
 }
 
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-opacity-inner svg{
-  opacity: 0;
+.content-button-slide-inner.icon-show-hover.icon-hide-opacity svg{
+  opacity: 0!important;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-opacity-inner:hover svg{
-  opacity: 1;
+.content-button-slide-inner.icon-show-hover.icon-hide-opacity:hover svg{
+  opacity: 1!important;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-display-none-inner svg{
+.content-button-slide-inner.icon-show-hover.icon-hide-display-none svg{
   display: none;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-display-none-inner:hover svg{
+.content-button-slide-inner.icon-show-hover.icon-hide-display-none:hover svg{
   display: block;
 }
 
@@ -2545,57 +2524,41 @@
 }
 
 
-/* Divider mettere  i controlli e vedere se mettere width e height per desktop, tablet e mobile */
-
+/* Divider */
 .divider-container{
-  position: absolute;
+    position: absolute;
     width: 100%;
     overflow: hidden;
     left: 0;
-    top: 0px;
-   // bottom: 0px;/* Controllo bottom */
     line-height: 0;
-   // transform: rotate(180deg);/* Controlli invert */
 }
-
-
-
 .custom-divider {
-  //transform: scaleX(-1);
-  transform: rotateY(180deg);/* Controllo Flip */
   display: block;
   position: relative;
-  //animation: changeWidth 20s ease-in-out infinite, changeHeight 20s ease-in-out infinite;
 }
 .shape-fill{
-  fill: #ff0000;
- 
+  fill: var(--color-divider);
 }
 
-@keyframes changeWidth {
-  0% {
-    width: 100%;
-  }
-  50% {
-    width: 150%;
-  }
-  100% {
-    width: 100%;
-  }
+/* Title */
+.title-slide span,.title-slide-div span{
+  position: relative;
+  display: inline-block;
 }
-@keyframes changeHeight {
-  0% {
-    height: 300px;
-  }
-  50% {
-    height: 450px;
-  }
-  100% {
-    height: 300px;
+
+.content-title-slide:hover .title-slide{
+  color:var(--color-hover)!important;
+}
+
+/* Responsive slider height */
+@media (max-width: 1024px) {
+  .swiper,.content-slide-slider {
+      height: var(--slide-height-tablet)!important;
   }
 }
 
-
-
-
-
+@media (max-width: 768px) {
+  .swiper,.content-slide-slider {
+      height: var(--slide-height-mobile)!important;
+  }
+}

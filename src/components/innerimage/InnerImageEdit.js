@@ -688,7 +688,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                     },
                   ]} // Passa le opzioni dinamiche
                 />
-                {imageDiv.paddingImage > 0 && (
+                 {Object.values(imageDiv.paddingImage || {}).some(value => parseInt(value) > 0) && (
                      <CustomColorOptionsPanel
                      colorNormal={imageDiv.backgroundColorImage }
                      setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'image', 'backgroundColorImage')}

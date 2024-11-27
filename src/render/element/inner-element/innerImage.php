@@ -21,19 +21,17 @@ function render_innerImage($innerElement, $slide)
     $borderSizeBottom = esc_attr($innerElement['backgroundBorderSizeImage']['bottom'] ?? '0px');
     $borderSizeLeft = esc_attr($innerElement['backgroundBorderSizeImage']['left'] ?? '0px');
     $borderSize = "$borderSizeTop $borderSizeRight $borderSizeBottom $borderSizeLeft";
-    $style = "max-width: 100%; min-width: 0; 
-                                        max-height: 100%; min-height: 0;
-                                        border-style: " . esc_attr($innerElement['borderStyleImage']) . ";
-                                        border-width: " . $borderSize . ";
-                                        border-color: " . esc_attr($innerElement['backgroundBorderColorImage']) . ";
-                                        border-radius:  " . $borderRadius . ";
-                                        padding: " . $padding . ";
-                                        background-color: " . esc_attr($innerElement['backgroundColorImage']) . ";
-                                        margin: " . $margin . ";
-                                        --spike-width-inner:" . esc_attr($innerElement['spikeLeftWidth']) . "%;
-                                        --spike-width-right-inner: " . esc_attr($innerElement['spikeRightWidth']) . "%;
-                                        z-index: " . esc_attr($innerElement['zIndexImage']) . ";
-                                        ";
+    $style = "border-style: " . esc_attr($innerElement['borderStyleImage']) . ";
+                border-width: " . $borderSize . ";
+                border-color: " . esc_attr($innerElement['backgroundBorderColorImage'] ?? 0) . ";
+                border-radius:  " . $borderRadius . ";
+                padding: " . $padding . ";
+                background-color: " . esc_attr($innerElement['backgroundColorImage'] ?? '') . ";
+                margin: " . $margin . ";
+                --spike-width-inner:" . esc_attr($innerElement['spikeLeftWidth'] ?? 0) . "%;
+                --spike-width-right-inner: " . esc_attr($innerElement['spikeRightWidth'] ?? 0) . "%;
+                z-index: " . esc_attr($innerElement['zIndexImage'] ?? 1) . ";
+                ";
     if (!empty($innerElement['enableBoxShadowImage'])) {
         $boxShadowXImage = esc_attr($innerElement['boxShadowXImage'] ?? 0);
         $boxShadowYImage = esc_attr($innerElement['boxShadowYImage'] ?? 0);
@@ -90,22 +88,23 @@ function render_innerImage($innerElement, $slide)
         <?php if ($innerElement['imageLink'] !== 'none') : ?>
         onclick="<?php echo $onclick; ?>"
         <?php endif; ?>
-        style="transform: rotate(<?php echo esc_attr($innerElement['rotateImage']); ?>deg); 
-                                               opacity: <?php echo esc_attr($innerElement['opacityImage']) ?>;
+        style="transform: rotate(<?php echo esc_attr($innerElement['rotateImage'] ?? 0); ?>deg); 
+                                               opacity: <?php echo esc_attr($innerElement['opacityImage'] ?? 1) ?>;
                                                width:<?php echo esc_attr($innerElement['widthImageContent']) ?>;
-                                           position:<?php echo esc_attr($innerElement['positionInnerImage']) ?>;
-                                            text-align:<?php echo esc_attr($innerElement['imageAlign']) ?>;
-                                           top: <?php echo esc_attr($innerElement['verticalPositionInnerImage']) ?>px;
-                                           left: <?php echo esc_attr($innerElement['horizontalPositionInnerImage']) ?>px;
+                                                --background-color-image-inner-hover: <?php echo esc_attr($innerElement['backgroundColorImageHover'] ?? ''); ?>;
+                                           position:<?php echo esc_attr($innerElement['positionInnerImage'] ?? 'static') ?>;
+                                            text-align:<?php echo esc_attr($innerElement['imageAlign'] ?? 'center') ?>;
+                                           top: <?php echo esc_attr($innerElement['verticalPositionInnerImage'] ?? '') ?>px;
+                                           left: <?php echo esc_attr($innerElement['horizontalPositionInnerImage'] ?? '') ?>px;
                                             <?php if ($innerElement['imageLink'] !== 'none') : ?>
                                             cursor: pointer;
                                             <?php endif; ?>"
-        class="content-img-inner <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>">
+        class="content-img-inner <?php echo esc_attr($innerElement['imageFilter']) ?> <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>">
         <img
             src="<?php echo esc_url($innerElement['imageUrl']); ?>"
             alt="<?php echo esc_attr($innerElement['alt']); ?>"
             style="<?php echo $style ?>"
-            class="img-inner image-with-mask <?php echo esc_attr($innerElement['blobMask']); ?> <?php echo esc_attr($innerElement['spikeMask']) ?> <?php echo esc_attr($innerElement['spikeMaskRight']) ?> <?php echo esc_attr($innerElement['imageFilter']) ?>"
+            class="img-inner image-with-mask <?php echo esc_attr($innerElement['blobMask']); ?> <?php echo esc_attr($innerElement['spikeMask']) ?> <?php echo esc_attr($innerElement['spikeMaskRight']) ?>"
             <?php if ($innerElement['effectIn'] !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($innerElement['effectIn'] ?? ''); ?>"
             data-duration="<?php echo esc_attr($innerElement['duration'] ?? 800); ?>"
@@ -135,10 +134,8 @@ function render_innerImage($innerElement, $slide)
             data-skew-y-from="<?php echo esc_attr($innerElement['skewYFrom'] ?? 0); ?>"
             data-skew-y-to="<?php echo esc_attr($innerElement['skewYTo'] ?? 0); ?>"
             data-scale-custom-effect-in="<?php echo esc_attr($innerElement['scaleType'] ?? 'scale'); ?>"
-            data-image-color="<?php echo esc_attr($innerElement['backgroundColorImage'] ?? ''); ?>"
             <?php endif;
             if ($innerElement['effectHover'] !== 'none') : ?>
-            data-image-color-hover="<?php echo esc_attr($innerElement['backgroundColorImageHover'] ?? ''); ?>"
             data-effect-hover="<?php echo esc_attr($innerElement['effectHover'] ?? ''); ?>"
             data-scale-hover="<?php echo esc_attr($innerElement['scaleHover'] ?? 1); ?>"
             data-opacity-hover="<?php echo esc_attr($innerElement['opacityHover'] ?? 1); ?>"

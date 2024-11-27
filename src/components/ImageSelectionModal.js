@@ -15,25 +15,25 @@ const ImageSelectionModal = ({ onClose, onSelect }) => {
   const [images] = useState([
     {
       url: img1,
-      alt: "Immagine 1",
+      alt: "",
       title: "Titolo 1",
       category:__('City','cocoblock'),
     },
     {
       url: img2,
-      alt: "Immagine 2",
+      alt: "",
       title: "Titolo 2",
       category:  __('Sport','cocoblock'),
     },
     {
       url: img3,
-      alt: "Immagine 3",
+      alt: "",
       title: "Titolo 3",
       category: __('City','cocoblock'),
     },
     {
       url: img4,
-      alt: "Immagine 4",
+      alt: "",
       title: "Titolo 4",
       category: __('City','cocoblock'),
     },

@@ -27,17 +27,25 @@ add_action('init', 'create_block_slider_fse_block_init');
 
 
 
+
 // Funzione per vedere se WooCommerce è attivo
 if (!function_exists('is_plugin_active')) {
     include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 }
 
-
-function cocoblocks_get_content($content_type = 'post', $include_categories = array(), $exclude_categories = array(), $order = 'ASC', $posts_per_page = 5)
+function cocoblocks_get_content($content_type = 'post', $include_categories = array(), $exclude_categories = array(), $order = 'ASC', $posts_per_page = 5, $exclude_post_id = null)
 {
     // Controlla se WooCommerce è attivo quando viene richiesto il tipo di contenuto 'product'
     if ($content_type === 'product' && !is_plugin_active('woocommerce/woocommerce.php')) {
         return new WP_Error('woocommerce_inactive', __('WooCommerce non è attivo. Per favore installa e attiva WooCommerce per utilizzare questa funzione.', 'cocoblocks'));
+    }
+
+    // Genera una chiave di cache unica basata sui parametri della query
+    $cache_key = 'cocoblocks_' . md5(serialize(func_get_args()));
+    $cached_posts = get_transient($cache_key);
+
+    if ($cached_posts !== false) {
+        return $cached_posts;
     }
 
     // Configura la query per recuperare i post o i prodotti
@@ -47,6 +55,9 @@ function cocoblocks_get_content($content_type = 'post', $include_categories = ar
         'orderby' => 'date',
         'order' => $order, // Ordine dinamico
         'post_status' => 'publish',
+        'no_found_rows' => true, // Evita il conteggio totale dei risultati
+        'update_post_meta_cache' => false, // Evita di caricare i metadati inutilmente
+        'update_post_term_cache' => false, // Evita di caricare i termini inutilmente
     );
 
     // Aggiungi il filtro per includere categorie se specificato
@@ -57,6 +68,11 @@ function cocoblocks_get_content($content_type = 'post', $include_categories = ar
     // Aggiungi il filtro per escludere categorie se specificato
     if (!empty($exclude_categories)) {
         $args['category__not_in'] = array_map('intval', $exclude_categories);
+    }
+
+    // Escludi il post corrente se specificato
+    if (!empty($exclude_post_id)) {
+        $args['post__not_in'] = array($exclude_post_id);
     }
 
     $posts = get_posts($args);
@@ -109,9 +125,11 @@ function cocoblocks_get_content($content_type = 'post', $include_categories = ar
         );
     }
 
+    // Memorizza i risultati nella cache per 1 ora
+    set_transient($cache_key, $post_data, HOUR_IN_SECONDS);
+
     return $post_data;
 }
-
 
 // Registra le rotte REST per i post e i prodotti
 function cocoblocks_register_rest_routes()
@@ -131,24 +149,23 @@ function cocoblocks_register_rest_routes()
         'permission_callback' => '__return_true',
     ));
 
-    // Rotta per i prodotti di WooCommerce
-    register_rest_route('cocoblocks/v1', '/get-products/', array(
+    register_rest_route('cocoblocks/v1', '/get-posts/', array(
         'methods' => 'GET',
         'callback' => function (WP_REST_Request $request) {
             $include_categories = $request->get_param('include_categories');
             $exclude_categories = $request->get_param('exclude_categories');
             $order = $request->get_param('order');
             $posts_per_page = $request->get_param('posts_per_page');
+            $exclude_post_id = $request->get_param('exclude_post_id'); // Recupera il parametro
             $include_categories = !empty($include_categories) ? explode(',', $include_categories) : array();
             $exclude_categories = !empty($exclude_categories) ? explode(',', $exclude_categories) : array();
-            return cocoblocks_get_content('product', $include_categories, $exclude_categories, $order, $posts_per_page);
+            return cocoblocks_get_content('post', $include_categories, $exclude_categories, $order, $posts_per_page, $exclude_post_id);
         },
         'permission_callback' => '__return_true',
     ));
 }
 
 add_action('rest_api_init', 'cocoblocks_register_rest_routes');
-
 
 // Registra l'endpoint REST API per il caricamento delle immagini
 function register_custom_image_upload_endpoint()

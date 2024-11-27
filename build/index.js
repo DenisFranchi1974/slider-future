@@ -6872,6 +6872,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/esm/Flip.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/Flip.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "M15 21h2v-2h-2zm4-12h2V7h-2zM3 5v14c0 1.1.9 2 2 2h4v-2H5V5h4V3H5c-1.1 0-2 .9-2 2m16-2v2h2c0-1.1-.9-2-2-2m-8 20h2V1h-2zm8-6h2v-2h-2zM15 5h2V3h-2zm4 8h2v-2h-2zm0 8c1.1 0 2-.9 2-2h-2z"
+}), 'Flip'));
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/esm/Folder.js":
 /*!********************************************************!*\
   !*** ./node_modules/@mui/icons-material/esm/Folder.js ***!
@@ -10447,6 +10470,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/esm/ScreenRotationAlt.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/ScreenRotationAlt.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "m4 7.59 5-5c.78-.78 2.05-.78 2.83 0L20.24 11h-2.83L10.4 4 5.41 9H8v2H2V5h2zM20 19h2v-6h-6v2h2.59l-4.99 5-7.01-7H3.76l8.41 8.41c.78.78 2.05.78 2.83 0l5-5z"
+}), 'ScreenRotationAlt'));
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/esm/ScreenShare.js":
 /*!*************************************************************!*\
   !*** ./node_modules/@mui/icons-material/esm/ScreenShare.js ***!
@@ -11696,6 +11742,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
   d: "M2.5 4v3h5v12h3V7h5V4zm19 5h-9v3h3v7h3v-7h3z"
 }), 'TextFields'));
+
+/***/ }),
+
+/***/ "./node_modules/@mui/icons-material/esm/Texture.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/Texture.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "M19.51 3.08 3.08 19.51c.09.34.27.65.51.9.25.24.56.42.9.51L20.93 4.49c-.19-.69-.73-1.23-1.42-1.41M11.88 3 3 11.88v2.83L14.71 3zM5 3c-1.1 0-2 .9-2 2v2l4-4zm14 18c.55 0 1.05-.22 1.41-.59.37-.36.59-.86.59-1.41v-2l-4 4zm-9.71 0h2.83L21 12.12V9.29z"
+}), 'Texture'));
 
 /***/ }),
 
@@ -33849,10 +33918,6 @@ const getAnimationProps = (props, target) => {
     filterFrom: filterFrom,
     filterTo: filterTo,
     scaleType: scaleType,
-    textColor: textColor,
-    textColorHover: textColorHover,
-    backgroundColorImage: backgroundColorImage,
-    backgroundColorImageHover: backgroundColorImageHover,
     effectHover: effectHover,
     opacityHover: opacityHover,
     filterHover: filterHover,
@@ -33910,10 +33975,6 @@ const getAnimationProps = (props, target) => {
     filterFrom,
     filterTo,
     scaleType,
-    textColor,
-    textColorHover,
-    backgroundColorImage,
-    backgroundColorImageHover,
     effectHover,
     opacityHover,
     filterHover,
@@ -34376,6 +34437,7 @@ const getAnimationEffect = (effectName, container, props = {}) => {
 
 // Nuovo effetto di animazione per il testo splittato
 const splitText = (container, props = {}) => {
+  var _animationProps$stagg;
   // Funzione per splittare il testo
   const splitTextContent = (text, lettersRef) => {
     // Verifica se il testo è vuoto o nullo
@@ -34444,7 +34506,6 @@ const splitText = (container, props = {}) => {
     //scale: [4, 1], // Scala le lettere da 4 a 1
     // opacity: [0, 1],
     //rotateX: [360, 0], // Ruota le lettere da
-
     translateZ: 0,
     ...animationEffect,
     // Applica l'effetto dinamico
@@ -34452,7 +34513,7 @@ const splitText = (container, props = {}) => {
     // Applica l'easing
     duration: animationProps.duration,
     // Durata dell'animazione
-    delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(animationProps.stagger || 200) // Stagger tra le lettere
+    delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger((_animationProps$stagg = animationProps.stagger) !== null && _animationProps$stagg !== void 0 ? _animationProps$stagg : 200) // Stagger tra le lettere
   });
 };
 
@@ -34466,7 +34527,6 @@ const hoverEffects = {
       targets: element,
       scale: (_animationProps$scale = animationProps.scaleHover) !== null && _animationProps$scale !== void 0 ? _animationProps$scale : 1,
       easing: (_animationProps$easin = animationProps.easingHover) !== null && _animationProps$easin !== void 0 ? _animationProps$easin : 'linear',
-      color: animationProps.textColorHover,
       duration: (_animationProps$durat = animationProps.durationHover) !== null && _animationProps$durat !== void 0 ? _animationProps$durat : 800
     });
   },
@@ -34478,8 +34538,6 @@ const hoverEffects = {
       targets: element,
       scaleX: (_animationProps$scale2 = animationProps.scaleHover) !== null && _animationProps$scale2 !== void 0 ? _animationProps$scale2 : 1,
       easing: (_animationProps$easin2 = animationProps.easingHover) !== null && _animationProps$easin2 !== void 0 ? _animationProps$easin2 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat2 = animationProps.durationHover) !== null && _animationProps$durat2 !== void 0 ? _animationProps$durat2 : 800
     });
   },
@@ -34491,8 +34549,6 @@ const hoverEffects = {
       targets: element,
       scaleY: (_animationProps$scale3 = animationProps.scaleHover) !== null && _animationProps$scale3 !== void 0 ? _animationProps$scale3 : 1,
       easing: (_animationProps$easin3 = animationProps.easingHover) !== null && _animationProps$easin3 !== void 0 ? _animationProps$easin3 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat3 = animationProps.durationHover) !== null && _animationProps$durat3 !== void 0 ? _animationProps$durat3 : 800
     });
   },
@@ -34506,8 +34562,6 @@ const hoverEffects = {
       rotateX: (_animationProps$rotat2 = animationProps.rotateXHover) !== null && _animationProps$rotat2 !== void 0 ? _animationProps$rotat2 : 0,
       rotateY: (_animationProps$rotat3 = animationProps.rotateYHover) !== null && _animationProps$rotat3 !== void 0 ? _animationProps$rotat3 : 0,
       easing: (_animationProps$easin4 = animationProps.easingHover) !== null && _animationProps$easin4 !== void 0 ? _animationProps$easin4 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat4 = animationProps.durationHover) !== null && _animationProps$durat4 !== void 0 ? _animationProps$durat4 : 800
     });
   },
@@ -34520,8 +34574,6 @@ const hoverEffects = {
       translateX: (_animationProps$start = animationProps.startXHover) !== null && _animationProps$start !== void 0 ? _animationProps$start : 0,
       translateY: (_animationProps$start2 = animationProps.startYHover) !== null && _animationProps$start2 !== void 0 ? _animationProps$start2 : 0,
       easing: (_animationProps$easin5 = animationProps.easingHover) !== null && _animationProps$easin5 !== void 0 ? _animationProps$easin5 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat5 = animationProps.durationHover) !== null && _animationProps$durat5 !== void 0 ? _animationProps$durat5 : 800
     });
   },
@@ -34532,8 +34584,6 @@ const hoverEffects = {
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
       easing: (_animationProps$easin6 = animationProps.easingHover) !== null && _animationProps$easin6 !== void 0 ? _animationProps$easin6 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat6 = animationProps.durationHover) !== null && _animationProps$durat6 !== void 0 ? _animationProps$durat6 : 800
     });
   },
@@ -34546,8 +34596,6 @@ const hoverEffects = {
       skewX: (_animationProps$skewX = animationProps.skewXHover) !== null && _animationProps$skewX !== void 0 ? _animationProps$skewX : 0,
       skewY: (_animationProps$skewY = animationProps.skewYHover) !== null && _animationProps$skewY !== void 0 ? _animationProps$skewY : 0,
       easing: (_animationProps$easin7 = animationProps.easingHover) !== null && _animationProps$easin7 !== void 0 ? _animationProps$easin7 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat7 = animationProps.durationHover) !== null && _animationProps$durat7 !== void 0 ? _animationProps$durat7 : 800
     });
   },
@@ -34566,9 +34614,7 @@ const hoverEffects = {
       skewX: (_animationProps$skewX2 = animationProps.skewXHover) !== null && _animationProps$skewX2 !== void 0 ? _animationProps$skewX2 : 0,
       skewY: (_animationProps$skewY2 = animationProps.skewYHover) !== null && _animationProps$skewY2 !== void 0 ? _animationProps$skewY2 : 0,
       easing: animationProps.easingHover || 'linear',
-      duration: animationProps.durationHover || 800,
-      backgroundColor: animationProps.backgroundColorImageHover,
-      color: animationProps.textColorHover
+      duration: animationProps.durationHover || 800
     };
 
     // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
@@ -34625,8 +34671,6 @@ const handleMouseLeave = (e, props = {}) => {
     skewY: 0,
     // Torna allo skew originale
     easing: animationProps.easingHover || 'linear',
-    color: animationProps.textColor,
-    backgroundColor: animationProps.backgroundColorImage,
     duration: animationProps.durationHover
   });
 };
@@ -35122,6 +35166,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   blendModeOptions: () => (/* binding */ blendModeOptions),
 /* harmony export */   blobOptions: () => (/* binding */ blobOptions),
 /* harmony export */   borderStyleOptions: () => (/* binding */ borderStyleOptions),
+/* harmony export */   dividerBackgroundOptions: () => (/* binding */ dividerBackgroundOptions),
 /* harmony export */   elementHtmlOptions: () => (/* binding */ elementHtmlOptions),
 /* harmony export */   elementOptions: () => (/* binding */ elementOptions),
 /* harmony export */   filterBackgroundOptions: () => (/* binding */ filterBackgroundOptions),
@@ -36242,6 +36287,42 @@ const optionsFilterSlider = [{
   value: "filter-inverse"
 }];
 
+////////////////////////////
+
+/* Opzioni per i divider */
+
+const dividerBackgroundOptions = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("None", "cocoblocks"),
+  value: "none"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Wawes", "cocoblocks"),
+  value: "divider-wawes"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Curve", "cocoblocks"),
+  value: "divider-curve"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Curve Asymmetrical", "cocoblocks"),
+  value: "divider-curve-asymmetrical"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Triangle", "cocoblocks"),
+  value: "divider-triangle"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Triangle Asymmetrical", "cocoblocks"),
+  value: "divider-triangle-asymmetrical"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Tilt", "cocoblocks"),
+  value: "divider-tilt"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Arrow", "cocoblocks"),
+  value: "divider-arrow"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Split", "cocoblocks"),
+  value: "divider-split"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Book", "cocoblocks"),
+  value: "divider-book"
+}];
+
 /***/ }),
 
 /***/ "./src/assets/ruler.js":
@@ -36427,22 +36508,22 @@ const ImageSelectionModal = ({
   const [selectedCategory, setSelectedCategory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('All', 'cocoblock'));
   const [images] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
     url: _assets_images_1_jpg__WEBPACK_IMPORTED_MODULE_3__,
-    alt: "Immagine 1",
+    alt: "",
     title: "Titolo 1",
     category: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('City', 'cocoblock')
   }, {
     url: _assets_images_2_jpg__WEBPACK_IMPORTED_MODULE_4__,
-    alt: "Immagine 2",
+    alt: "",
     title: "Titolo 2",
     category: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Sport', 'cocoblock')
   }, {
     url: _assets_images_3_jpg__WEBPACK_IMPORTED_MODULE_5__,
-    alt: "Immagine 3",
+    alt: "",
     title: "Titolo 3",
     category: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('City', 'cocoblock')
   }, {
     url: _assets_images_3_jpg__WEBPACK_IMPORTED_MODULE_5__,
-    alt: "Immagine 4",
+    alt: "",
     title: "Titolo 4",
     category: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('City', 'cocoblock')
   }]);
@@ -36535,41 +36616,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _multitab_sectionSliderSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./multitab/sectionSliderSelector */ "./src/components/multitab/sectionSliderSelector.js");
-/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
-/* harmony import */ var _mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/icons-material/PersonalVideo */ "./node_modules/@mui/icons-material/esm/PersonalVideo.js");
-/* harmony import */ var _mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/icons-material/TabletMac */ "./node_modules/@mui/icons-material/esm/TabletMac.js");
-/* harmony import */ var _mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/icons-material/Smartphone */ "./node_modules/@mui/icons-material/esm/Smartphone.js");
-/* harmony import */ var _controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../controls/select/CustomSelectControl */ "./src/controls/select/CustomSelectControl.js");
-/* harmony import */ var _mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/ViewColumn */ "./node_modules/@mui/icons-material/esm/ViewColumn.js");
-/* harmony import */ var _controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../controls/range/CustomRangeControl */ "./src/controls/range/CustomRangeControl.js");
-/* harmony import */ var _mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/icons-material/SettingsEthernet */ "./node_modules/@mui/icons-material/esm/SettingsEthernet.js");
-/* harmony import */ var _mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/icons-material/CalendarViewWeek */ "./node_modules/@mui/icons-material/esm/CalendarViewWeek.js");
-/* harmony import */ var _mui_icons_material_ViewModule__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/icons-material/ViewModule */ "./node_modules/@mui/icons-material/esm/ViewModule.js");
-/* harmony import */ var _controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../controls/toggle/CustomToggleControl */ "./src/controls/toggle/CustomToggleControl.js");
-/* harmony import */ var _mui_icons_material_Height__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/icons-material/Height */ "./node_modules/@mui/icons-material/esm/Height.js");
-/* harmony import */ var _mui_icons_material_Expand__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/icons-material/Expand */ "./node_modules/@mui/icons-material/esm/Expand.js");
-/* harmony import */ var _mui_icons_material_Compress__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/icons-material/Compress */ "./node_modules/@mui/icons-material/esm/Compress.js");
-/* harmony import */ var _mui_icons_material_LinearScale__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/icons-material/LinearScale */ "./node_modules/@mui/icons-material/esm/LinearScale.js");
-/* harmony import */ var _mui_icons_material_Vibration__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/icons-material/Vibration */ "./node_modules/@mui/icons-material/esm/Vibration.js");
-/* harmony import */ var _mui_icons_material_Palette__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/icons-material/Palette */ "./node_modules/@mui/icons-material/esm/Palette.js");
-/* harmony import */ var _mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/VisibilityOff */ "./node_modules/@mui/icons-material/esm/VisibilityOff.js");
-/* harmony import */ var _mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/BorderColor */ "./node_modules/@mui/icons-material/esm/BorderColor.js");
-/* harmony import */ var _mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/icons-material/BorderInner */ "./node_modules/@mui/icons-material/esm/BorderInner.js");
-/* harmony import */ var _mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @mui/icons-material/VerticalAlignTop */ "./node_modules/@mui/icons-material/esm/VerticalAlignTop.js");
-/* harmony import */ var _mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/icons-material/Margin */ "./node_modules/@mui/icons-material/esm/Margin.js");
-/* harmony import */ var _mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/icons-material/Colorize */ "./node_modules/@mui/icons-material/esm/Colorize.js");
-/* harmony import */ var _mui_icons_material_Comment__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/icons-material/Comment */ "./node_modules/@mui/icons-material/esm/Comment.js");
-/* harmony import */ var _mui_icons_material_Mouse__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @mui/icons-material/Mouse */ "./node_modules/@mui/icons-material/esm/Mouse.js");
-/* harmony import */ var _mui_icons_material_WbSunny__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @mui/icons-material/WbSunny */ "./node_modules/@mui/icons-material/esm/WbSunny.js");
-/* harmony import */ var _mui_icons_material_Tonality__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @mui/icons-material/Tonality */ "./node_modules/@mui/icons-material/esm/Tonality.js");
-/* harmony import */ var _mui_icons_material_Animation__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/icons-material/Animation */ "./node_modules/@mui/icons-material/esm/Animation.js");
-/* harmony import */ var _mui_icons_material_HourglassBottom__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/icons-material/HourglassBottom */ "./node_modules/@mui/icons-material/esm/HourglassBottom.js");
-/* harmony import */ var _assets_options__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/options */ "./src/assets/options.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _multitab_sectionSliderSelector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./multitab/sectionSliderSelector */ "./src/components/multitab/sectionSliderSelector.js");
+/* harmony import */ var _colorPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./colorPanel */ "./src/components/colorPanel.js");
+/* harmony import */ var _mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/icons-material/PersonalVideo */ "./node_modules/@mui/icons-material/esm/PersonalVideo.js");
+/* harmony import */ var _mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/TabletMac */ "./node_modules/@mui/icons-material/esm/TabletMac.js");
+/* harmony import */ var _mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/icons-material/Smartphone */ "./node_modules/@mui/icons-material/esm/Smartphone.js");
+/* harmony import */ var _controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../controls/select/CustomSelectControl */ "./src/controls/select/CustomSelectControl.js");
+/* harmony import */ var _mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/icons-material/ViewColumn */ "./node_modules/@mui/icons-material/esm/ViewColumn.js");
+/* harmony import */ var _controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../controls/range/CustomRangeControl */ "./src/controls/range/CustomRangeControl.js");
+/* harmony import */ var _mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/icons-material/SettingsEthernet */ "./node_modules/@mui/icons-material/esm/SettingsEthernet.js");
+/* harmony import */ var _mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/icons-material/CalendarViewWeek */ "./node_modules/@mui/icons-material/esm/CalendarViewWeek.js");
+/* harmony import */ var _mui_icons_material_ViewModule__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/icons-material/ViewModule */ "./node_modules/@mui/icons-material/esm/ViewModule.js");
+/* harmony import */ var _controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../controls/toggle/CustomToggleControl */ "./src/controls/toggle/CustomToggleControl.js");
+/* harmony import */ var _mui_icons_material_Height__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/icons-material/Height */ "./node_modules/@mui/icons-material/esm/Height.js");
+/* harmony import */ var _mui_icons_material_Compress__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/icons-material/Compress */ "./node_modules/@mui/icons-material/esm/Compress.js");
+/* harmony import */ var _mui_icons_material_LinearScale__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/icons-material/LinearScale */ "./node_modules/@mui/icons-material/esm/LinearScale.js");
+/* harmony import */ var _mui_icons_material_Vibration__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/icons-material/Vibration */ "./node_modules/@mui/icons-material/esm/Vibration.js");
+/* harmony import */ var _mui_icons_material_Palette__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/Palette */ "./node_modules/@mui/icons-material/esm/Palette.js");
+/* harmony import */ var _mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/icons-material/VisibilityOff */ "./node_modules/@mui/icons-material/esm/VisibilityOff.js");
+/* harmony import */ var _mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @mui/icons-material/BorderColor */ "./node_modules/@mui/icons-material/esm/BorderColor.js");
+/* harmony import */ var _mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @mui/icons-material/BorderInner */ "./node_modules/@mui/icons-material/esm/BorderInner.js");
+/* harmony import */ var _mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/icons-material/VerticalAlignTop */ "./node_modules/@mui/icons-material/esm/VerticalAlignTop.js");
+/* harmony import */ var _mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @mui/icons-material/Margin */ "./node_modules/@mui/icons-material/esm/Margin.js");
+/* harmony import */ var _mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/Colorize */ "./node_modules/@mui/icons-material/esm/Colorize.js");
+/* harmony import */ var _mui_icons_material_Comment__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/icons-material/Comment */ "./node_modules/@mui/icons-material/esm/Comment.js");
+/* harmony import */ var _mui_icons_material_Mouse__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/Mouse */ "./node_modules/@mui/icons-material/esm/Mouse.js");
+/* harmony import */ var _mui_icons_material_WbSunny__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/icons-material/WbSunny */ "./node_modules/@mui/icons-material/esm/WbSunny.js");
+/* harmony import */ var _mui_icons_material_Tonality__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @mui/icons-material/Tonality */ "./node_modules/@mui/icons-material/esm/Tonality.js");
+/* harmony import */ var _mui_icons_material_Animation__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @mui/icons-material/Animation */ "./node_modules/@mui/icons-material/esm/Animation.js");
+/* harmony import */ var _mui_icons_material_HourglassBottom__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @mui/icons-material/HourglassBottom */ "./node_modules/@mui/icons-material/esm/HourglassBottom.js");
+/* harmony import */ var _assets_options__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/options */ "./src/assets/options.js");
+/* harmony import */ var _mui_icons_material_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/PhotoSizeSelectActual */ "./node_modules/@mui/icons-material/esm/PhotoSizeSelectActual.js");
+/* harmony import */ var _mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @mui/icons-material/ChangeCircleOutlined */ "./node_modules/@mui/icons-material/esm/ChangeCircleOutlined.js");
+/* harmony import */ var _mui_icons_material_DeleteOutline__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/icons-material/DeleteOutline */ "./node_modules/@mui/icons-material/esm/DeleteOutline.js");
+/* harmony import */ var _ImageSelectionModal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ImageSelectionModal */ "./src/components/ImageSelectionModal.js");
+/* harmony import */ var _mui_icons_material_PhotoLibrary__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/icons-material/PhotoLibrary */ "./node_modules/@mui/icons-material/esm/PhotoLibrary.js");
+/* harmony import */ var _mui_icons_material_FitScreen__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/icons-material/FitScreen */ "./node_modules/@mui/icons-material/esm/FitScreen.js");
+
+
+
+
+
+
 
 
 
@@ -36627,6 +36721,8 @@ const SliderControls = ({
     initialSlide,
     autoHeight,
     slideHeight,
+    slideHeightTablet,
+    slideHeightMobile,
     freeMode,
     stickyFreeMode,
     momentumFreeMode,
@@ -36641,6 +36737,8 @@ const SliderControls = ({
     backgroundVerticalPadding,
     backgroundHorizontalPadding,
     backgroundColor,
+    backgroundImage,
+    focalPoint,
     backgroundColorSlideDefault,
     backgroundColorBlockDefault,
     textColorDefault,
@@ -36665,8 +36763,25 @@ const SliderControls = ({
     transitionParalaxMouse,
     device,
     sliderMarginTop,
-    sliderMarginBottom
+    sliderMarginBottom,
+    fitImage
   } = attributes;
+  const [selectedTab, setSelectedTab] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)('color');
+  const updateBackgroundImage = url => {
+    setAttributes({
+      backgroundImage: url
+    });
+  };
+  const removeBackgroundImage = () => {
+    setAttributes({
+      backgroundImage: null
+    });
+  };
+  const handleFocalPointChange = newFocalPoint => {
+    setAttributes({
+      focalPoint: newFocalPoint
+    });
+  };
 
   // Funzione per gestire il cambiamento del checkbox "Select all"
   const handleSelectAllChange = isChecked => {
@@ -36685,7 +36800,7 @@ const SliderControls = ({
   };
 
   // Responsive
-  const [showOtherButtons, setShowOtherButtons] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+  const [showOtherButtons, setShowOtherButtons] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
   const handleDesktopClick = () => {
     setAttributes({
       device: "desktop"
@@ -36704,9 +36819,34 @@ const SliderControls = ({
     });
     setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
   };
-  const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
-  const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+
+  // Responsive height
+  const [deviceHeight, setDeviceHeight] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)("desktop");
+  const [showOtherButtonsHeight, setShowOtherButtonsHeight] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const handleDesktopClickHeight = () => {
+    setAttributes({
+      deviceHeight: "desktop"
+    });
+    setDeviceHeight("desktop");
+    setShowOtherButtonsHeight(!showOtherButtonsHeight); // Toggle the visibility of other buttons
+  };
+  const handleTabletClickHeight = () => {
+    setAttributes({
+      deviceHeight: "tablet"
+    });
+    setDeviceHeight("tablet");
+    setShowOtherButtonsHeight(!showOtherButtonsHeight); // Toggle the visibility of other buttons
+  };
+  const handleMobileClickHeight = () => {
+    setAttributes({
+      deviceHeight: "mobile"
+    });
+    setDeviceHeight("mobile");
+    setShowOtherButtonsHeight(!showOtherButtonsHeight); // Toggle the visibility of other buttons
+  };
+  const [showLoopNotice, setShowLoopNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const [showGridNotice, setShowGridNotice] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
     if (loopMode === "enable" && slidesPerRow > 1) {
       setShowLoopNotice(true);
       setShowGridNotice(true);
@@ -36715,7 +36855,7 @@ const SliderControls = ({
       setShowGridNotice(false);
     }
   }, [loopMode, slidesPerRow]);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
     // Resetta la notifica e i post all'inizio quando cambia il contentType
     setAttributes({
       notice: null,
@@ -36749,11 +36889,58 @@ const SliderControls = ({
     }
   }, [attributes.contentType]);
 
+  // Funzione per aprire il modale
+  const openModal = () => setIsModalOpen(true);
+
+  // Funzione per chiudere il modale
+  const closeModal = () => setIsModalOpen(false);
+  const [isModalOpen, setIsModalOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const [selectedImages, setSelectedImages] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
+  const [isLoading, setIsLoading] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const handleImageSelect = async image => {
+    if (!image || !image.url) {
+      console.error("Nessuna immagine selezionata o URL mancante.");
+      return;
+    }
+    setIsLoading(true);
+    try {
+      // Effettua la chiamata all'endpoint REST API per caricare l'immagine
+      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          image_url: image.url
+        })
+      });
+
+      // Controlla lo stato della risposta
+      if (!response.ok) {
+        throw new Error(`Errore API: ${response.statusText}`);
+      }
+      const data = await response.json();
+
+      // Verifica se l'immagine è stata caricata con successo
+      if (data?.url) {
+        // Aggiorna lo sfondo della slider con l'immagine caricata
+        updateBackgroundImage(data.url);
+      } else {
+        console.error("Errore durante il caricamento dell'immagine. Risposta non valida:", data);
+      }
+    } catch (error) {
+      console.error("Errore durante la chiamata all'API:", error);
+    } finally {
+      setIsLoading(false);
+      setIsModalOpen(false);
+    }
+  };
+
   // Section slider
-  const [activeSection, setActiveSectionSlider] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("layout");
+  const [activeSection, setActiveSectionSlider] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)("layout");
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-subdescription-section-slider"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("General Options"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_multitab_sectionSliderSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("General Options"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_multitab_sectionSliderSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
     onSectionChange: setActiveSectionSlider
   }), activeSection === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel",
@@ -36762,24 +36949,24 @@ const SliderControls = ({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout Area", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Layout Area", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
     className: "device-switcher-slider"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     size: "small",
     isPressed: device === "desktop",
     onClick: handleDesktopClick,
     className: device !== "desktop" ? "inactive" : ""
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_10__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_12__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     size: "small",
     isPressed: device === "tablet",
     onClick: handleTabletClick,
     className: device !== "tablet" ? "inactive" : ""
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_11__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_13__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     size: "small",
     isPressed: device === "mobile",
     onClick: handleMobileClick,
     className: device !== "mobile" ? "inactive" : ""
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_12__["default"], null))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_14__["default"], null))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, device === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
@@ -36788,18 +36975,18 @@ const SliderControls = ({
     style: {
       textAlign: 'right'
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_12__["default"], {
     sx: {
       fontSize: 16
     }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_13__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per view", "cocoblocks")),
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_15__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides per view", "cocoblocks")),
     value: perViewSlider,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerView,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerView,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "cocoblocks"),
     onChange: val => {
       setAttributes({
         perViewSlider: val
@@ -36811,8 +36998,8 @@ const SliderControls = ({
       borderRadius: 0,
       margin: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_14__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Space Between Slides", "cocoblocks")),
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_16__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Space Between Slides", "cocoblocks")),
     value: spaceBetween,
     onChange: val => setAttributes({
       spaceBetween: val
@@ -36820,27 +37007,27 @@ const SliderControls = ({
     min: 0,
     max: 100,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_15__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per group", "cocoblocks")),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_17__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides per group", "cocoblocks")),
     value: slidesPerGroupDesktop,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerGroup,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerGroup,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Desktop)", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("The number of slides that should be grouped together for navigation.(Desktop)", "cocoblocks"),
     onChange: val => {
       setAttributes({
         slidesPerGroupDesktop: val
       });
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewModule__WEBPACK_IMPORTED_MODULE_16__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides rows", "cocoblocks")),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewModule__WEBPACK_IMPORTED_MODULE_18__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides rows", "cocoblocks")),
     value: slidesPerRow,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerGroup,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerGroup,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slider rows, for multirow layout.", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Number of slider rows, for multirow layout.", "cocoblocks"),
     onChange: val => {
       setAttributes({
         slidesPerRow: val
@@ -36848,29 +37035,29 @@ const SliderControls = ({
     }
   }), slidesPerRow !== "1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Please note that this choice influences how the slider is displayed in responsive mode. Specifically, it may impact the functionality of "per view" controls on responsive devices. Due to the nature of the row layout, some responsive "per view" settings may not have the expected effect. It\'s recommended to test your slider across different screen sizes to ensure the desired display and functionality.', "cocoblocks")), showGridNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Please note that this choice influences how the slider is displayed in responsive mode. Specifically, it may impact the functionality of "per view" controls on responsive devices. Due to the nature of the row layout, some responsive "per view" settings may not have the expected effect. It\'s recommended to test your slider across different screen sizes to ensure the desired display and functionality.', "cocoblocks")), showGridNotice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Notice, {
     status: "warning",
     isDismissible: false,
     className: "notice-warning-margin-top"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Grid mode with more than 1 row is not compatible with loop mode.Please disable loop mode or set Slides per Row to 1.", "cocoblocks")))), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Grid mode with more than 1 row is not compatible with loop mode.Please disable loop mode or set Slides per Row to 1.", "cocoblocks")))), device === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select select-button-device-slider",
     style: {
       textAlign: 'right'
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_13__["default"], {
     sx: {
       fontSize: 16
     }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_13__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per view", "cocoblocks")),
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_15__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides per view", "cocoblocks")),
     value: perViewSliderTablet,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerView,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerView,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "cocoblocks"),
     onChange: val => {
       setAttributes({
         perViewSliderTablet: val
@@ -36878,8 +37065,8 @@ const SliderControls = ({
     }
   }), perViewSliderTablet == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_14__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Space Between Slides", "cocoblocks")),
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_16__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Space Between Slides", "cocoblocks")),
     value: spaceBetweenTablet,
     onChange: val => setAttributes({
       spaceBetweenTablet: val
@@ -36887,14 +37074,14 @@ const SliderControls = ({
     min: 0,
     max: 100,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_15__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per group", "cocoblocks")),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_17__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides per group", "cocoblocks")),
     value: slidesPerGroupTablet,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerGroup,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerGroup,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Tablet)", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("The number of slides that should be grouped together for navigation.(Tablet)", "cocoblocks"),
     onChange: val => {
       setAttributes({
         slidesPerGroupTablet: val
@@ -36907,18 +37094,18 @@ const SliderControls = ({
     style: {
       textAlign: 'right'
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_14__["default"], {
     sx: {
       fontSize: 16
     }
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_13__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per view", "cocoblocks")),
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewColumn__WEBPACK_IMPORTED_MODULE_15__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides per view", "cocoblocks")),
     value: perViewSliderMobile,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerView,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerView,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "cocoblocks"),
     onChange: val => {
       setAttributes({
         perViewSliderMobile: val
@@ -36926,8 +37113,8 @@ const SliderControls = ({
     }
   }), perViewSliderMobile == "auto" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "notice components-base-control__help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_14__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Space Between Slides", "cocoblocks")),
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_16__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Space Between Slides", "cocoblocks")),
     value: spaceBetweenMobile,
     onChange: val => setAttributes({
       spaceBetweenMobile: val
@@ -36935,14 +37122,14 @@ const SliderControls = ({
     min: 0,
     max: 100,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_15__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Slides per group", "cocoblocks")),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_CalendarViewWeek__WEBPACK_IMPORTED_MODULE_17__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slides per group", "cocoblocks")),
     value: slidesPerGroupMobile,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsPerGroup,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsPerGroup,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("The number of slides that should be grouped together for navigation.(Mobile)", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("The number of slides that should be grouped together for navigation.(Mobile)", "cocoblocks"),
     onChange: val => {
       setAttributes({
         slidesPerGroupMobile: val
@@ -36952,23 +37139,58 @@ const SliderControls = ({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout Size", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Layout Size", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Height__WEBPACK_IMPORTED_MODULE_17__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Auto height", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Height__WEBPACK_IMPORTED_MODULE_19__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto height", "cocoblocks")),
     checked: autoHeight,
     onChange: value => setAttributes({
       autoHeight: value
     }),
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable and slider wrapper will adapt its height to the height of the currently active slide", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable and slider wrapper will adapt its height to the height of the currently active slide", "cocoblocks"),
     tooltipTop: '11px',
     tooltipLeft: '40%'
-  }), !autoHeight && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Expand__WEBPACK_IMPORTED_MODULE_18__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom Height", "cocoblocks")),
+  }), !autoHeight && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
+    className: "device-switcher-slider"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: deviceHeight === "desktop",
+    onClick: handleDesktopClickHeight,
+    className: deviceHeight !== "desktop" ? "inactive" : ""
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_12__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: deviceHeight === "tablet",
+    onClick: handleTabletClickHeight,
+    className: deviceHeight !== "tablet" ? "inactive" : ""
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_13__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    size: "small",
+    isPressed: deviceHeight === "mobile",
+    onClick: handleMobileClickHeight,
+    className: deviceHeight !== "mobile" ? "inactive" : ""
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_14__["default"], null)))), deviceHeight === "desktop" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PersonalVideo__WEBPACK_IMPORTED_MODULE_12__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom Height", "cocoblocks")),
     value: slideHeight,
     onChange: val => setAttributes({
       slideHeight: val
+    }),
+    min: 10,
+    max: 1200,
+    step: 1
+  }), deviceHeight === "tablet" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TabletMac__WEBPACK_IMPORTED_MODULE_13__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom Height", "cocoblocks")),
+    value: slideHeightTablet,
+    onChange: val => setAttributes({
+      slideHeightTablet: val
+    }),
+    min: 10,
+    max: 1200,
+    step: 1
+  }), deviceHeight === "mobile" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Smartphone__WEBPACK_IMPORTED_MODULE_14__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom Height", "cocoblocks")),
+    value: slideHeightMobile,
+    onChange: val => setAttributes({
+      slideHeightMobile: val
     }),
     min: 10,
     max: 1200,
@@ -36977,38 +37199,38 @@ const SliderControls = ({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Advanced Settings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Advanced Settings", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Compress__WEBPACK_IMPORTED_MODULE_19__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Compress__WEBPACK_IMPORTED_MODULE_20__["default"], {
       sx: {
         transform: 'rotate(90deg)'
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Centered slides", "cocoblocks")),
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Centered slides", "cocoblocks")),
     checked: centeredSlides,
     onChange: value => setAttributes({
       centeredSlides: value
     }),
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks"),
     tooltipTop: '11px',
     tooltipLeft: '40%'
   })))), activeSection === "general" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("General", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("General", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_LinearScale__WEBPACK_IMPORTED_MODULE_20__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Initial slide", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_LinearScale__WEBPACK_IMPORTED_MODULE_21__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Initial slide", "cocoblocks")),
     value: initialSlide,
-    options: _assets_options__WEBPACK_IMPORTED_MODULE_9__.optionsInitialSlide,
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_10__.optionsInitialSlide,
     showTooltip: true,
     tooltipTop: '10px',
     tooltipLeft: '50%',
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Index number of initial slide.(Starts from 0)", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Index number of initial slide.(Starts from 0)", "cocoblocks"),
     onChange: val => {
       setAttributes({
         initialSlide: val
@@ -37016,50 +37238,50 @@ const SliderControls = ({
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Vibration__WEBPACK_IMPORTED_MODULE_21__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Free mode", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Vibration__WEBPACK_IMPORTED_MODULE_22__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Free mode", "cocoblocks")),
     checked: freeMode,
     onChange: value => setAttributes({
       freeMode: value
     }),
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Doesn't work in the editor!", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Doesn't work in the editor!", "cocoblocks"),
     tooltipTop: '11px',
     tooltipLeft: '40%'
   }), freeMode == true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sticky", "cocoblocks"),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Sticky", "cocoblocks"),
     checked: stickyFreeMode,
     onChange: value => setAttributes({
       stickyFreeMode: value
     }),
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables Snap to slides positions in free mode", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enables Snap to slides positions in free mode", "cocoblocks"),
     tooltipTop: '11px',
     tooltipLeft: '40%'
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum", "cocoblocks"),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Momentum", "cocoblocks"),
     checked: momentumFreeMode,
     onChange: value => setAttributes({
       momentumFreeMode: value
     }),
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("If enabled, then slide will keep moving for a while you release it after", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("If enabled, then slide will keep moving for a while you release it after", "cocoblocks"),
     tooltipTop: '11px',
     tooltipLeft: '40%'
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum bounce", "cocoblocks"),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Momentum bounce", "cocoblocks"),
     checked: momentumBounceFreeMode,
     onChange: value => setAttributes({
       momentumBounceFreeMode: value
     }),
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enables momentum bounce in free mode", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enables momentum bounce in free mode", "cocoblocks"),
     tooltipTop: '11px',
     tooltipLeft: '60%'
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum bounce ratio", "cocoblocks"),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Momentum bounce ratio", "cocoblocks"),
     value: momentumBounceRatioFreeMode,
     onChange: val => setAttributes({
       momentumBounceRatioFreeMode: val
@@ -37068,11 +37290,11 @@ const SliderControls = ({
     max: 3,
     step: 0.1,
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum bounce effect", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Higher value produces larger momentum bounce effect", "cocoblocks"),
     tooltipTop: '2px',
     tooltipLeft: '64%'
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum ratio", "cocoblocks"),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Momentum ratio", "cocoblocks"),
     value: momentumRatioFreeMode,
     onChange: val => setAttributes({
       momentumRatioFreeMode: val
@@ -37081,11 +37303,11 @@ const SliderControls = ({
     max: 3,
     step: 0.1,
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum distance after you release sldier", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Higher value produces larger momentum distance after you release sldier", "cocoblocks"),
     tooltipTop: '2px',
     tooltipLeft: '50%'
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Momentum velocity ratio", "cocoblocks"),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Momentum velocity ratio", "cocoblocks"),
     value: momentumVelocityRatioFreeMode,
     onChange: val => setAttributes({
       momentumVelocityRatioFreeMode: val
@@ -37094,40 +37316,191 @@ const SliderControls = ({
     max: 3,
     step: 0.1,
     showTooltip: true,
-    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Higher value produces larger momentum velocity after you release sldier", "cocoblocks"),
+    tooltipText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Higher value produces larger momentum velocity after you release sldier", "cocoblocks"),
     tooltipTop: '2px',
     tooltipLeft: '64%'
   })))))), activeSection === "style" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+    className: "background-selector",
+    activeClass: "active-tab",
+    initialTabName: "color",
+    onSelect: tabName => setSelectedTab(tabName),
+    tabs: [{
+      name: 'color',
+      title: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Color", "your-text-domain")),
+      className: 'tab-color'
+    }, {
+      name: 'image',
+      title: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image", "your-text-domain")),
+      className: 'tab-image'
+    }]
+  }, tab => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, tab.name === 'color' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: backgroundColor,
     setColorNormal: color => setAttributes({
       backgroundColor: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Palette__WEBPACK_IMPORTED_MODULE_22__["default"], {
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Palette__WEBPACK_IMPORTED_MODULE_23__["default"], {
       style: {
         marginBottom: "-5px",
         width: "20px",
         height: "20px"
       }
     })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_23__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Overflow", "cocoblocks")),
+  }))), tab.name === 'image' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-img-upload",
+    style: {
+      marginTop: "6px"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => updateBackgroundImage(media.url),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "custom-select"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: open,
+      style: {
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingLeft: "1px",
+        paddingRight: "0px",
+        color: " var(--light-color)",
+        padding: "3px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: "5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_24__["default"], {
+      style: {
+        width: '18px'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Media Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      class: "dashicons dashicons-arrow-down-alt2",
+      style: {
+        position: "relative",
+        right: "0px",
+        top: "4px",
+        fontSize: "12px"
+      }
+    }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "custom-select"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: openModal,
+      style: {
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        color: " var(--light-color)",
+        padding: "0"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: "5px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PhotoLibrary__WEBPACK_IMPORTED_MODULE_25__["default"], {
+      style: {
+        width: '18px'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Object Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "dashicons dashicons-arrow-down-alt2",
+      style: {
+        position: "relative",
+        right: "2px",
+        top: "6px",
+        fontSize: "12px"
+      }
+    })))), backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        position: "relative",
+        padding: "0px 4px",
+        marginTop: "12px",
+        marginBottom: "12px"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FocalPointPicker, {
+      __nextHasNoMarginBottom: true,
+      className: "focal-point-picker",
+      value: focalPoint || {
+        x: 0.5,
+        y: 0.5
+      },
+      onChange: handleFocalPointChange,
+      url: backgroundImage
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_FitScreen__WEBPACK_IMPORTED_MODULE_26__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Image fit", "cocoblocks")),
+      value: fitImage,
+      options: [{
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Cover", "slider"),
+        value: "cover"
+      }, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Auto", "slider"),
+        value: "auto"
+      }, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contain", "slider"),
+        value: "contain"
+      }],
+      onChange: val => setAttributes({
+        fitImage: val
+      })
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: open,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px",
+        color: " var(--light-color)",
+        padding: "3px"
+      },
+      className: "button-replace",
+      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_27__["default"], null),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image form Media Library", "cocoblocks")
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      onClick: openModal,
+      style: {
+        marginLeft: "2px",
+        position: "relative",
+        top: "-2px",
+        color: " var(--light-color)"
+      },
+      className: "button-replace",
+      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_27__["default"], null),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Change Image from Object Library", "cocoblocks")
+    })))
+  })), backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    onClick: removeBackgroundImage,
+    isDestructive: true,
+    className: "button-delete",
+    icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_DeleteOutline__WEBPACK_IMPORTED_MODULE_28__["default"], null),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Delete Image", "wp-kube")
+  })), isModalOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ImageSelectionModal__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    onClose: closeModal,
+    onSelect: handleImageSelect
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_29__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Overflow", "cocoblocks")),
     value: overflow,
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Visible", "cocoblock"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Visible", "cocoblock"),
       value: "visible"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hidden", "slider"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Hidden", "slider"),
       value: "hidden"
     }],
     onChange: val => {
@@ -37139,7 +37512,7 @@ const SliderControls = ({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       paddingTop: "0",
@@ -37147,15 +37520,15 @@ const SliderControls = ({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: backgroundBorderColor,
     setColorNormal: color => setAttributes({
       backgroundBorderColor: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_24__["default"], null)
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_25__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border width", "cocoblocks")),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_30__["default"], null)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_31__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border width", "cocoblocks")),
     value: backgroundBorderSize,
     onChange: val => setAttributes({
       backgroundBorderSize: val
@@ -37163,8 +37536,8 @@ const SliderControls = ({
     min: 0,
     max: 20,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "  ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_26__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border radius", "cocoblocks")),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "  ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_32__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border radius", "cocoblocks")),
     value: backgroundBorderRadius,
     onChange: val => setAttributes({
       backgroundBorderRadius: val
@@ -37176,13 +37549,13 @@ const SliderControls = ({
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Spacing", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Spacing", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       padding: "0"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_27__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content vertical padding", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_33__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Content vertical padding", "cocoblocks")),
     value: backgroundVerticalPadding,
     onChange: val => setAttributes({
       backgroundVerticalPadding: val
@@ -37190,12 +37563,12 @@ const SliderControls = ({
     min: 0,
     max: 256,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_27__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_33__["default"], {
       style: {
         transform: "rotate(90deg)"
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content horizontal padding", "cocoblocks")),
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Content horizontal padding", "cocoblocks")),
     value: backgroundHorizontalPadding,
     onChange: val => setAttributes({
       backgroundHorizontalPadding: val
@@ -37208,13 +37581,13 @@ const SliderControls = ({
     style: {
       margin: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Warning: if you set space here you also need to adjust "Space between slides"!', "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Warning: if you set space here you also need to adjust "Space between slides"!', "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel",
     style: {
       padding: "0"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_27__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin Top", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_33__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Margin Top", "cocoblocks")),
     value: sliderMarginTop,
     onChange: val => setAttributes({
       sliderMarginTop: val
@@ -37222,12 +37595,12 @@ const SliderControls = ({
     min: -200,
     max: 200,
     step: 1
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_27__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_33__["default"], {
       style: {
         transform: "rotate(180deg)"
       }
-    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Margin Bottom", "cocoblocks")),
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Margin Bottom", "cocoblocks")),
     value: sliderMarginBottom,
     onChange: value => setAttributes({
       sliderMarginBottom: value
@@ -37239,21 +37612,21 @@ const SliderControls = ({
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Content", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Comment__WEBPACK_IMPORTED_MODULE_28__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content Type", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Comment__WEBPACK_IMPORTED_MODULE_34__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Content Type", "cocoblocks")),
     value: attributes.contentType,
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Custom", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Custom", "cocoblocks"),
       value: "custom"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Post Based", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Post Based", "cocoblocks"),
       value: "post-based"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("WooComemrce", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("WooComemrce", "cocoblocks"),
       value: "woocommerce-based"
     }],
     onChange: value => setAttributes({
@@ -37269,78 +37642,78 @@ const SliderControls = ({
     style: {
       margin: 0
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("No further source settings needed. Content is created manually.", "cocoblocks"))))), activeSection === "skin" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("No further source settings needed. Content is created manually.", "cocoblocks"))))), activeSection === "skin" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Global color skin", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Global color skin", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: backgroundColorSlideDefault,
     setColorNormal: color => setAttributes({
       backgroundColorSlideDefault: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color Slide", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color Slide", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: backgroundColorBlockDefault,
     setColorNormal: color => setAttributes({
       backgroundColorBlockDefault: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background Color Block", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color Block", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: textColorDefault,
     setColorNormal: color => setAttributes({
       textColorDefault: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: innerTextColorDefault,
     setColorNormal: color => setAttributes({
       innerTextColorDefault: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Inner Text Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Inner Text Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   }))))), activeSection === "mouse-effect" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Mouse Effect", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Mouse Effect", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cocoblocks-panel content-section-custom-panel"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-section-panel"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Mouse__WEBPACK_IMPORTED_MODULE_30__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Choose the effect", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Mouse__WEBPACK_IMPORTED_MODULE_36__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Choose the effect", "cocoblocks")),
     value: mouseEffect,
     onChange: value => setAttributes({
       mouseEffect: value
     }),
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("None", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("None", "cocoblocks"),
       value: "none"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Particle", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Particle", "cocoblocks"),
       value: "particle"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Smoke", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Smoke", "cocoblocks"),
       value: "smoke"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Parallax", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Parallax", "cocoblocks"),
       value: "parallax"
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Liquid", "cocoblocks"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Liquid", "cocoblocks"),
       value: "liquid"
     }]
   }), mouseEffect !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
@@ -37349,37 +37722,37 @@ const SliderControls = ({
       borderRadius: "0",
       margin: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("This effect is only visible in the frontend!", "cocoblocks")), (mouseEffect === "particle" || mouseEffect === "smoke") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("This effect is only visible in the frontend!", "cocoblocks")), (mouseEffect === "particle" || mouseEffect === "smoke") && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: colorEffectStart,
     setColorNormal: color => setAttributes({
       colorEffectStart: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color Effect Start", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Color Effect Start", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   }))), mouseEffect === "particle" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: colorEffectMiddle,
     setColorNormal: color => setAttributes({
       colorEffectMiddle: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color Effect Middle", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Color Effect Middle", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     colorNormal: colorEffectEnd,
     setColorNormal: color => setAttributes({
       colorEffectEnd: color
     }),
-    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color Effect End", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Color Effect End", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null)
   }))), mouseEffect === "liquid" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_29__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Adjust Hue (H)", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Colorize__WEBPACK_IMPORTED_MODULE_35__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Adjust Hue (H)", "cocoblocks")),
     value: firstColorLiquid,
     onChange: value => setAttributes({
       firstColorLiquid: value
@@ -37389,8 +37762,8 @@ const SliderControls = ({
     step: 0.01
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WbSunny__WEBPACK_IMPORTED_MODULE_31__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Adjust Saturation (S)", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WbSunny__WEBPACK_IMPORTED_MODULE_37__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Adjust Saturation (S)", "cocoblocks")),
     value: secondColorLiquid,
     onChange: value => setAttributes({
       secondColorLiquid: value
@@ -37400,8 +37773,8 @@ const SliderControls = ({
     step: 0.01
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Tonality__WEBPACK_IMPORTED_MODULE_32__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Adjust Value (V)", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Tonality__WEBPACK_IMPORTED_MODULE_38__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Adjust Value (V)", "cocoblocks")),
     value: thirdColorLiquid,
     onChange: value => setAttributes({
       thirdColorLiquid: value
@@ -37415,7 +37788,7 @@ const SliderControls = ({
       borderRadius: "0",
       margin: "0"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Due to the nature of the liquid effect, we use HSV (Hue, Saturation, Value) color model to provide more precise control over the colors. Please use the sliders to adjust the hue, saturation, and value for the effect.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Due to the nature of the liquid effect, we use HSV (Hue, Saturation, Value) color model to provide more precise control over the colors. Please use the sliders to adjust the hue, saturation, and value for the effect.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select",
     style: {
       paddingBottom: '12px'
@@ -37433,34 +37806,34 @@ const SliderControls = ({
     style: {
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hue", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Hue", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
     style: {
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Sat.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Sat.", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
     style: {
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Value", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Value", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
     style: {
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
-    style: {
-      border: "1px solid var(--light-color)",
-      padding: "5px"
-    }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Color", "cocoblocks")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+    style: {
+      border: "1px solid var(--light-color)",
+      padding: "5px"
+    }
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37470,7 +37843,7 @@ const SliderControls = ({
       gap: "3px",
       borderLeft: 'none'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Red", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Red", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(0, 100%, 50%)",
       width: '15px',
@@ -37482,17 +37855,17 @@ const SliderControls = ({
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0.083", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0.083", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37503,7 +37876,7 @@ const SliderControls = ({
       borderLeft: 'none',
       borderTopColor: 'transparent'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Orange", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Orange", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(30, 100%, 50%)",
       width: '15px',
@@ -37515,17 +37888,17 @@ const SliderControls = ({
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0.17", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0.17", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37536,7 +37909,7 @@ const SliderControls = ({
       borderLeft: 'none',
       borderTopColor: 'transparent'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Yellow", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Yellow", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(60, 100%, 50%)",
       width: '15px',
@@ -37548,17 +37921,17 @@ const SliderControls = ({
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0.33", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0.33", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37569,7 +37942,7 @@ const SliderControls = ({
       borderLeft: 'none',
       borderTopColor: 'transparent'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Green", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Green", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(120, 100%, 50%)",
       width: '15px',
@@ -37581,17 +37954,17 @@ const SliderControls = ({
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0.5", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0.5", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37602,7 +37975,7 @@ const SliderControls = ({
       borderLeft: 'none',
       borderTopColor: 'transparent'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Cyan", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Cyan", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(180, 100%, 50%)",
       width: '15px',
@@ -37614,17 +37987,17 @@ const SliderControls = ({
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0.67", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0.67", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37635,7 +38008,7 @@ const SliderControls = ({
       borderLeft: 'none',
       borderTopColor: 'transparent'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Blue", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Blue", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(240, 100%, 50%)",
       width: '15px',
@@ -37649,17 +38022,17 @@ const SliderControls = ({
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("0.83", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("0.83", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px"
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("1", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     style: {
       border: "1px solid var(--light-color)",
       padding: "5px",
@@ -37670,7 +38043,7 @@ const SliderControls = ({
       borderLeft: 'none',
       borderTopColor: 'transparent'
     }
-  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Magenta", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "  ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Magenta", "cocoblocks"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       backgroundColor: "hsl(300, 100%, 50%)",
       width: '15px',
@@ -37681,85 +38054,85 @@ const SliderControls = ({
     className: "custom-select checkbox"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-checkbox"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Animation__WEBPACK_IMPORTED_MODULE_33__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Select elements to apply effect", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Animation__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Select elements to apply effect", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select all', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Select all', 'cocoblock'),
     checked: imgSelected && h3Selected && h4Selected && buttonSelected && spanSelected && pSelected,
     onChange: handleSelectAllChange
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Image', 'cocoblock'),
     checked: imgSelected,
     onChange: isChecked => setAttributes({
       imgSelected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('H1', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('H1', 'cocoblock'),
     checked: h1Selected,
     onChange: isChecked => setAttributes({
       h1Selected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('H2', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('H2', 'cocoblock'),
     checked: h2Selected,
     onChange: isChecked => setAttributes({
       h2Selected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('H3', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('H3', 'cocoblock'),
     checked: h3Selected,
     onChange: isChecked => setAttributes({
       h3Selected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('H4', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('H4', 'cocoblock'),
     checked: h4Selected,
     onChange: isChecked => setAttributes({
       h4Selected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('H5', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('H5', 'cocoblock'),
     checked: h5Selected,
     onChange: isChecked => setAttributes({
       h5Selected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('H6', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('H6', 'cocoblock'),
     checked: h6Selected,
     onChange: isChecked => setAttributes({
       h6Selected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Button', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button', 'cocoblock'),
     checked: buttonSelected,
     onChange: isChecked => setAttributes({
       buttonSelected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Span', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Span', 'cocoblock'),
     checked: spanSelected,
     onChange: isChecked => setAttributes({
       spanSelected: isChecked
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Paragraph', 'cocoblock'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Paragraph', 'cocoblock'),
     checked: pSelected,
     onChange: isChecked => setAttributes({
       pSelected: isChecked
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_HourglassBottom__WEBPACK_IMPORTED_MODULE_34__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Motion Transition", "cocoblocks")),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_HourglassBottom__WEBPACK_IMPORTED_MODULE_40__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Motion Transition", "cocoblocks")),
     value: transitionParalaxMouse,
     onChange: value => setAttributes({
       transitionParalaxMouse: value
@@ -40833,7 +41206,16 @@ const ButtonEdit = ({
     elementIndex: elementIndex,
     elementType: "button",
     updateElement: (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) => updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'zIndexButton')
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_shadow_ShadowControl__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Box Shadow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_shadow_ShadowControl__WEBPACK_IMPORTED_MODULE_12__["default"], {
     valueEnableShadow: element.enableBoxShadow,
     valueRangeShadowX: element.boxShadowX || 0,
     valueRangeShadowY: element.boxShadowY || 0,
@@ -40854,7 +41236,7 @@ const ButtonEdit = ({
     rangePropertyBlur: "boxShadowBlur",
     rangePropertySpread: "boxShadowSpread",
     rangePropertyColor: "colorBoxShadow"
-  }), element.buttonType !== 'type1' && element.buttonType !== 'type2' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, element.icon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), element.buttonType !== 'type1' && element.buttonType !== 'type2' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, element.icon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -41310,7 +41692,7 @@ const ButtonRender = ({
     const loopCount = typeof element.loop === 'string' && element.loop.toLowerCase() === 'true' ? 5 : parseInt(element.loop) >= 1 && parseInt(element.loop) <= 10 ? parseInt(element.loop) : 1; // Imposta un valore di default se non è in un intervallo valido
 
     if (effectIn) {
-      var _element$duration, _element$delay, _element$endDelay, _element$easing, _element$direction, _element$startXFrom, _element$startXTo, _element$startYFrom, _element$startYTo, _element$stagger, _element$opacityFrom, _element$opacityTo, _element$scaleFrom, _element$scaleTo, _element$rotateFrom, _element$rotateTo, _element$rotateXFrom, _element$rotateXTo, _element$rotateYFrom, _element$rotateYTo, _element$skewXFrom, _element$skewXTo, _element$skewYFrom, _element$skewYTo, _element$directionBlo, _element$filterFrom, _element$filterTo, _element$scaleType;
+      var _element$duration, _element$delay, _element$endDelay, _element$easing, _element$direction, _element$startXFrom, _element$startXTo, _element$startYFrom, _element$startYTo, _element$opacityFrom, _element$opacityTo, _element$scaleFrom, _element$scaleTo, _element$rotateFrom, _element$rotateTo, _element$rotateXFrom, _element$rotateXTo, _element$rotateYFrom, _element$rotateYTo, _element$skewXFrom, _element$skewXTo, _element$skewYFrom, _element$skewYTo, _element$filterFrom, _element$filterTo, _element$scaleType;
       // textRef.current.style.opacity = 0; // Reset
       const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_1__.getAnimationProps)({
         duration: (_element$duration = element.duration) !== null && _element$duration !== void 0 ? _element$duration : 800,
@@ -41323,8 +41705,6 @@ const ButtonRender = ({
         startXTo: (_element$startXTo = element.startXTo) !== null && _element$startXTo !== void 0 ? _element$startXTo : 0,
         startYFrom: (_element$startYFrom = element.startYFrom) !== null && _element$startYFrom !== void 0 ? _element$startYFrom : 0,
         startYTo: (_element$startYTo = element.startYTo) !== null && _element$startYTo !== void 0 ? _element$startYTo : 0,
-        stagger: (_element$stagger = element.stagger) !== null && _element$stagger !== void 0 ? _element$stagger : 80,
-        textSplitEffect: element.textSplitEffect,
         opacityFrom: (_element$opacityFrom = element.opacityFrom) !== null && _element$opacityFrom !== void 0 ? _element$opacityFrom : 0,
         opacityTo: (_element$opacityTo = element.opacityTo) !== null && _element$opacityTo !== void 0 ? _element$opacityTo : 1,
         scaleFrom: (_element$scaleFrom = element.scaleFrom) !== null && _element$scaleFrom !== void 0 ? _element$scaleFrom : 0,
@@ -41339,10 +41719,8 @@ const ButtonRender = ({
         skewXTo: (_element$skewXTo = element.skewXTo) !== null && _element$skewXTo !== void 0 ? _element$skewXTo : 0,
         skewYFrom: (_element$skewYFrom = element.skewYFrom) !== null && _element$skewYFrom !== void 0 ? _element$skewYFrom : 0,
         skewYTo: (_element$skewYTo = element.skewYTo) !== null && _element$skewYTo !== void 0 ? _element$skewYTo : 0,
-        directionBlock: (_element$directionBlo = element.directionBlock) !== null && _element$directionBlo !== void 0 ? _element$directionBlo : 'right',
         filterFrom: (_element$filterFrom = element.filterFrom) !== null && _element$filterFrom !== void 0 ? _element$filterFrom : 0,
         filterTo: (_element$filterTo = element.filterTo) !== null && _element$filterTo !== void 0 ? _element$filterTo : 0,
-        colorBlockEffect: element.colorBlockEffect,
         scaleType: (_element$scaleType = element.scaleType) !== null && _element$scaleType !== void 0 ? _element$scaleType : 'scale'
       });
       setTimeout(() => {
@@ -41405,23 +41783,23 @@ const ButtonRender = ({
     '--border-color-button': element.backgroundBorderColorButton,
     '--border-style-button': element.borderStyleButton,
     '--border-radius-button': element.backgroundBorderRadiusButton + 'px',
-    "--border-width-button-top": `${element.backgroundBorderSizeButton?.top}` || "0",
-    "--border-width-button-right": `${element.backgroundBorderSizeButton?.right}` || "0",
-    "--border-width-button-bottom": `${element.backgroundBorderSizeButton?.bottom}` || "0",
-    "--border-width-button-left": `${element.backgroundBorderSizeButton?.left}` || "0",
+    "--border-width-button-top": `${element.backgroundBorderSizeButton?.top}` || "1px",
+    "--border-width-button-right": `${element.backgroundBorderSizeButton?.right}` || "1px",
+    "--border-width-button-bottom": `${element.backgroundBorderSizeButton?.bottom}` || "1px",
+    "--border-width-button-left": `${element.backgroundBorderSizeButton?.left}` || "1px",
     '--background-color-button': element.buttonBackgroundColor,
     '--color-button-hover': element.buttonColorHover,
+    '--background-color-button-hover': element.buttonBackgroundColorHover || '#18191c',
     transform: 'rotate(' + element.rotateButton + 'deg)',
     '--buttonWidth': element.widthCustomButton + 'px',
     '--buttonHeight': element.heightCustomButton + 'px',
     margin: `${element.marginButton?.top} ${element.marginButton?.right} ${element.marginButton?.bottom} ${element.marginButton?.left}`,
-    "--border-color-button-hover": element.backgroundBorderColorHover,
-    "--border-style-button-hover": element.borderStyleHover || "none",
-    "--border-width-button-hover-top": `${element.backgroundBorderSizeHover?.top}` || "0",
-    "--border-width-button-hover-right": `${element.backgroundBorderSizeHover?.right}` || "0",
-    "--border-width-button-hover-bottom": `${element.backgroundBorderSizeHover?.bottom}` || "0",
-    "--border-width-button-hover-left": `${element.backgroundBorderSizeHover?.left}` || "0",
-    "--rotate-button-hover": `${element.rotateHover}deg` || "0",
+    "--border-color-button-hover": element.backgroundBorderColorHover || '#ffffff',
+    "--border-style-button-hover": element.borderStyleHover || "solid",
+    "--border-width-button-hover-top": `${element.backgroundBorderSizeHover?.top}` || "1px",
+    "--border-width-button-hover-right": `${element.backgroundBorderSizeHover?.right}` || "1px",
+    "--border-width-button-hover-bottom": `${element.backgroundBorderSizeHover?.bottom}` || "1px",
+    "--border-width-button-hover-left": `${element.backgroundBorderSizeHover?.left}` || "1px",
     zIndex: element.zIndexButton
   };
   const isBold = element.fontStyle?.fontWeight === "bold";
@@ -41481,49 +41859,6 @@ const ButtonRender = ({
       buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
         className: "content-button-slide scroll-btn" + " " + element.hideButton,
         style: buttonStyle1,
-        ref: buttonRef
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-        href: "#"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        className: "mouse",
-        style: {
-          opacity: element.opacityButton,
-          '--opacity-button-hover': element.opacityHover,
-          transition: element.durationEffectHover + 's',
-          ...(element.enableBoxShadow && {
-            boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`
-          })
-        }
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null))));
-      break;
-    case "type2":
-      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        className: "content-button-slide scroll-btn" + " " + element.hideButton,
-        style: buttonStyle1,
-        ref: buttonRef
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-        href: "#"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        className: "mouse",
-        style: {
-          opacity: element.opacityButton,
-          '--opacity-button-hover': element.opacityHover,
-          transition: element.durationEffectHover + 's',
-          ...(element.enableBoxShadow && {
-            boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`
-          })
-        }
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null))));
-      break;
-    case "type3":
-    case "type4":
-    case "type5":
-    case "type6":
-    case "type7":
-    case "type8":
-      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: 'button-slider ' + element.hideButton,
-        style: buttonContentStyle3,
         ref: buttonRef,
         onMouseEnter: e => {
           var _element$durationHove, _element$easingHover, _element$opacityHover, _element$filterHover, _element$startXHover, _element$startYHover, _element$scaleHover, _element$rotateHover, _element$rotateXHover, _element$rotateYHover, _element$skewXHover, _element$skewYHover, _element$scaleTypeHov;
@@ -41550,6 +41885,95 @@ const ButtonRender = ({
           return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
             durationHover: (_element$durationHove2 = element.durationHover) !== null && _element$durationHove2 !== void 0 ? _element$durationHove2 : 800,
             easingHover: (_element$easingHover2 = element.easingHover) !== null && _element$easingHover2 !== void 0 ? _element$easingHover2 : 'linear'
+          });
+        } // Passa element.duration
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "mouse",
+        style: {
+          opacity: element.opacityButton,
+          ...(element.enableBoxShadow && {
+            boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`
+          })
+        }
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null)));
+      break;
+    case "type2":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "content-button-slide scroll-btn" + " " + element.hideButton,
+        style: buttonStyle1,
+        ref: buttonRef,
+        onMouseEnter: e => {
+          var _element$durationHove3, _element$easingHover3, _element$opacityHover2, _element$filterHover2, _element$startXHover2, _element$startYHover2, _element$scaleHover2, _element$rotateHover2, _element$rotateXHover2, _element$rotateYHover2, _element$skewXHover2, _element$skewYHover2, _element$scaleTypeHov2;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
+            durationHover: (_element$durationHove3 = element.durationHover) !== null && _element$durationHove3 !== void 0 ? _element$durationHove3 : 800,
+            effectHover: element.effectHover,
+            easingHover: (_element$easingHover3 = element.easingHover) !== null && _element$easingHover3 !== void 0 ? _element$easingHover3 : 'linear',
+            opacityHover: (_element$opacityHover2 = element.opacityHover) !== null && _element$opacityHover2 !== void 0 ? _element$opacityHover2 : 1,
+            filterHover: (_element$filterHover2 = element.filterHover) !== null && _element$filterHover2 !== void 0 ? _element$filterHover2 : 0,
+            startXHover: (_element$startXHover2 = element.startXHover) !== null && _element$startXHover2 !== void 0 ? _element$startXHover2 : 100,
+            startYHover: (_element$startYHover2 = element.startYHover) !== null && _element$startYHover2 !== void 0 ? _element$startYHover2 : 0,
+            scaleHover: (_element$scaleHover2 = element.scaleHover) !== null && _element$scaleHover2 !== void 0 ? _element$scaleHover2 : 1,
+            rotateHover: (_element$rotateHover2 = element.rotateHover) !== null && _element$rotateHover2 !== void 0 ? _element$rotateHover2 : 0,
+            rotateXHover: (_element$rotateXHover2 = element.rotateXHover) !== null && _element$rotateXHover2 !== void 0 ? _element$rotateXHover2 : 0,
+            rotateYHover: (_element$rotateYHover2 = element.rotateYHover) !== null && _element$rotateYHover2 !== void 0 ? _element$rotateYHover2 : 0,
+            skewXHover: (_element$skewXHover2 = element.skewXHover) !== null && _element$skewXHover2 !== void 0 ? _element$skewXHover2 : 0,
+            skewYHover: (_element$skewYHover2 = element.skewYHover) !== null && _element$skewYHover2 !== void 0 ? _element$skewYHover2 : 0,
+            scaleTypeHover: (_element$scaleTypeHov2 = element.scaleTypeHover) !== null && _element$scaleTypeHov2 !== void 0 ? _element$scaleTypeHov2 : 'scale'
+          });
+        } // Passa element.duration
+        ,
+        onMouseLeave: e => {
+          var _element$durationHove4, _element$easingHover4;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
+            durationHover: (_element$durationHove4 = element.durationHover) !== null && _element$durationHove4 !== void 0 ? _element$durationHove4 : 800,
+            easingHover: (_element$easingHover4 = element.easingHover) !== null && _element$easingHover4 !== void 0 ? _element$easingHover4 : 'linear'
+          });
+        } // Passa element.duration
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "mouse",
+        style: {
+          opacity: element.opacityButton,
+          ...(element.enableBoxShadow && {
+            boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`
+          })
+        }
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null)));
+      break;
+    case "type3":
+    case "type4":
+    case "type5":
+    case "type6":
+    case "type7":
+    case "type8":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: 'button-slider ' + element.hideButton,
+        style: buttonContentStyle3,
+        ref: buttonRef,
+        onMouseEnter: e => {
+          var _element$durationHove5, _element$easingHover5, _element$opacityHover3, _element$filterHover3, _element$startXHover3, _element$startYHover3, _element$scaleHover3, _element$rotateHover3, _element$rotateXHover3, _element$rotateYHover3, _element$skewXHover3, _element$skewYHover3, _element$scaleTypeHov3;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
+            durationHover: (_element$durationHove5 = element.durationHover) !== null && _element$durationHove5 !== void 0 ? _element$durationHove5 : 800,
+            effectHover: element.effectHover,
+            easingHover: (_element$easingHover5 = element.easingHover) !== null && _element$easingHover5 !== void 0 ? _element$easingHover5 : 'linear',
+            opacityHover: (_element$opacityHover3 = element.opacityHover) !== null && _element$opacityHover3 !== void 0 ? _element$opacityHover3 : 1,
+            filterHover: (_element$filterHover3 = element.filterHover) !== null && _element$filterHover3 !== void 0 ? _element$filterHover3 : 0,
+            startXHover: (_element$startXHover3 = element.startXHover) !== null && _element$startXHover3 !== void 0 ? _element$startXHover3 : 100,
+            startYHover: (_element$startYHover3 = element.startYHover) !== null && _element$startYHover3 !== void 0 ? _element$startYHover3 : 0,
+            scaleHover: (_element$scaleHover3 = element.scaleHover) !== null && _element$scaleHover3 !== void 0 ? _element$scaleHover3 : 1,
+            rotateHover: (_element$rotateHover3 = element.rotateHover) !== null && _element$rotateHover3 !== void 0 ? _element$rotateHover3 : 0,
+            rotateXHover: (_element$rotateXHover3 = element.rotateXHover) !== null && _element$rotateXHover3 !== void 0 ? _element$rotateXHover3 : 0,
+            rotateYHover: (_element$rotateYHover3 = element.rotateYHover) !== null && _element$rotateYHover3 !== void 0 ? _element$rotateYHover3 : 0,
+            skewXHover: (_element$skewXHover3 = element.skewXHover) !== null && _element$skewXHover3 !== void 0 ? _element$skewXHover3 : 0,
+            skewYHover: (_element$skewYHover3 = element.skewYHover) !== null && _element$skewYHover3 !== void 0 ? _element$skewYHover3 : 0,
+            scaleTypeHover: (_element$scaleTypeHov3 = element.scaleTypeHover) !== null && _element$scaleTypeHov3 !== void 0 ? _element$scaleTypeHov3 : 'scale'
+          });
+        } // Passa element.duration
+        ,
+        onMouseLeave: e => {
+          var _element$durationHove6, _element$easingHover6;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
+            durationHover: (_element$durationHove6 = element.durationHover) !== null && _element$durationHove6 !== void 0 ? _element$durationHove6 : 800,
+            easingHover: (_element$easingHover6 = element.easingHover) !== null && _element$easingHover6 !== void 0 ? _element$easingHover6 : 'linear'
           });
         } // Passa element.duration
       }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
@@ -41627,9 +42051,6 @@ const ButtonTypeInnerSelectionModal = ({
       boxShadowY: 0,
       boxShadowBlur: 0,
       boxShadowSpread: 0,
-      durationEffectButton: 1,
-      delayEffect: 0,
-      interationButton: "forwards",
       backgroundBorderColorHover: "#FFFFFF",
       backgoroundBorderSizeHover: 3,
       borderStyleHover: "solid"
@@ -41657,9 +42078,6 @@ const ButtonTypeInnerSelectionModal = ({
       boxShadowY: 0,
       boxShadowBlur: 0,
       boxShadowSpread: 0,
-      durationEffectButton: 1,
-      delayEffect: 0,
-      interationButton: "forwards",
       borderStyleHover: "solid",
       backgroundBorderColorHover: "#18191c",
       backgoroundBorderSizeHover: 3,
@@ -41689,9 +42107,6 @@ const ButtonTypeInnerSelectionModal = ({
       "--box-shadow-blur-button-inner": element.boxShadowBlur + "px" || 0,
       "--box-shadow-color-button-inner": element.colorShadow || "#000000",
       "--box-shadow-spread-button-inner": element.boxShadowSpread + "px" || 0,
-      "--duration-effect-button-inner": element.durationEffectButton + "s",
-      "--delay-effect-button-inner": element.delayEffectButton + "s",
-      "--interation-button-inner": element.interationButton || "forwards",
       "--border-color-button-hover-inner": element.backgroundBorderColorHover,
       "--border-style-button-hover-inner": element.borderStyleHover || "none",
       "--border-width-button-hover-inner": `${element.backgroundBorderSizeHover}px` || "0",
@@ -42031,9 +42446,12 @@ const ButtonTypeSelectionModal = ({
       backgroundBorderColorButton: '#FFFFFF',
       borderStyleButton: 'solid',
       backgroundBorderRadiusButton: 30,
-      backgroundBorderSizeButton: 3,
-      buttonBackgroundColor: '#18191c',
-      buttonColorHover: '#18191c',
+      backgroundBorderSizeButton: {
+        top: 3,
+        right: 3,
+        bottom: 3,
+        left: 3
+      },
       rotateButton: 0,
       widthCustomButton: 35,
       heightCustomButton: 55,
@@ -42049,12 +42467,11 @@ const ButtonTypeSelectionModal = ({
       boxShadowY: 0,
       boxShadowBlur: 0,
       boxShadowSpread: 0,
-      durationEffectButton: 1,
-      delayEffect: 0,
-      interationButton: "forwards",
       backgroundBorderColorHover: "#FFFFFF",
       backgoroundBorderSizeHover: 3,
-      borderStyleHover: "solid"
+      borderStyleHover: "solid",
+      buttonBackgroundColorHover: "#18191c",
+      buttonColorHover: "#FFFFFF"
     },
     type2: {
       buttonColor: '#18191c',
@@ -42079,12 +42496,15 @@ const ButtonTypeSelectionModal = ({
       boxShadowY: 0,
       boxShadowBlur: 0,
       boxShadowSpread: 0,
-      durationEffectButton: 1,
-      delayEffect: 0,
-      interationButton: "forwards",
       borderStyleHover: "solid",
       backgroundBorderColorHover: "#18191c",
-      backgoroundBorderSizeHover: 3,
+      buttonBackgroundColorHover: "#ffffff",
+      backgoroundBorderSizeHover: {
+        top: 3,
+        right: 3,
+        bottom: 3,
+        left: 3
+      },
       opacityHover: 1,
       rotateHover: 0
     }
@@ -42098,9 +42518,13 @@ const ButtonTypeSelectionModal = ({
       '--border-color-button': element.backgroundBorderColorButton,
       '--border-style-button': element.borderStyleButton,
       '--border-radius-button': element.backgroundBorderRadiusButton + 'px',
-      '--border-width-button': element.backgroundBorderSizeButton + 'px',
+      "--border-width-button-top": `${element.backgroundBorderSizeButton?.top}` || "1px",
+      "--border-width-button-right": `${element.backgroundBorderSizeButton?.right}` || "1px",
+      "--border-width-button-bottom": `${element.backgroundBorderSizeButton?.bottom}` || "1px",
+      "--border-width-button-left": `${element.backgroundBorderSizeButton?.left}` || "1px",
       '--background-color-button': element.buttonBackgroundColor,
       '--color-button-hover': element.buttonColorHover,
+      '--background-color-button-hover': element.buttonBackgroundColorHover,
       transform: 'rotate(' + element.rotateButton + 'deg)',
       '--buttonWidth': element.widthCustomButton + 'px',
       '--buttonHeight': element.heightCustomButton + 'px',
@@ -42111,12 +42535,12 @@ const ButtonTypeSelectionModal = ({
       "--box-shadow-blur-button": element.boxShadowBlur + "px" || 0,
       "--box-shadow-color-button": element.colorShadow || "#000000",
       "--box-shadow-spread-button": element.boxShadowSpread + "px" || 0,
-      "--duration-effect-button": element.durationEffectButton + "s",
-      "--delay-effect-button": element.delayEffectButton + "s",
-      "--interation-button": element.interationButton || "forwards",
       "--border-color-button-hover": element.backgroundBorderColorHover,
-      "--border-style-button-hover": element.borderStyleHover || "none",
-      "--border-width-button-hover": `${element.backgroundBorderSizeHover}px` || "0",
+      "--border-style-button-hover": element.borderStyleHover || "solid",
+      "--border-width-button-hover-top": `${element.backgroundBorderSizeHover?.top}` || "1px",
+      "--border-width-button-hover-right": `${element.backgroundBorderSizeHover?.right}` || "1px",
+      "--border-width-button-hover-bottom": `${element.backgroundBorderSizeHover?.bottom}` || "1px",
+      "--border-width-button-hover-left": `${element.backgroundBorderSizeHover?.left}` || "1px",
       "--rotate-button-hover": `${element.rotateHover}deg` || "0"
     };
   };
@@ -42831,6 +43255,9 @@ const GroupEdit = ({
   handlePlayInnerButton,
   handlePlayInnerIcon
 }) => {
+  const {
+    textColorDefault
+  } = attributes;
   const [selectedIcon, setSelectedIcon] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null); // Stato locale per l'icona selezionata
 
   // Funzione generale per aggiornare i controlli
@@ -43000,100 +43427,16 @@ const GroupEdit = ({
         ...element,
         innerElements: [...(element.innerElements || []), {
           type: "text",
-          content: "",
-          widthTitleBlock: "auto",
-          widthCustomTitleBlock: 100,
-          textAlign: "center",
-          elementTitle: "h4",
-          fontSize: 16,
+          content: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Text Inner Group", "cocoblocks"),
+          fontSize: 24,
           fontSizeTablet: 16,
           fontSizeMobile: 16,
-          fontStyle: "",
-          fontFamilyTitleBlock: "",
-          fontWeightTitleBlock: "",
-          lineHeight: 1.2,
-          letterSpacingTitleBlock: 0,
-          textColor: innerTextColorDefault,
-          paddingTitleBlock: {
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0"
-          },
-          marginTitle: {
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0"
-          },
-          borderStyle: "none",
-          backgroundBorderSize: 0,
-          backgroundBorderRadius: 0,
-          backgroundBorderColor: "",
-          rotate: 0,
-          opacity: 1,
-          textWriteMode: "horizontal-tb",
-          textOrientation: "initial",
-          animation: "none",
-          durationEffect: 1,
-          delayEffect: 0,
-          durationEffectOdd: 1,
-          durationEffectEven: 1,
-          interation: 1,
-          speedEffect: 100,
-          pauseEffect: 0,
-          animationCount: "1",
-          widthCursor: 2,
-          animationCursor: 1,
-          cursorColor: innerTextColorDefault,
-          gradinetColorOne: "",
-          gradinetColorTwo: "",
-          gradinetColorThree: "",
-          gradinetColorFour: "",
-          decoration: "none",
-          underlineColor: innerTextColorDefault,
-          underlinePadding: 0,
-          underlineVertical: 0,
-          underlineHorizontal: 0,
-          underlineWidth: 20,
-          underlineHeight: 3,
-          underlineAnimation: "none",
-          underlineAnimationFrom: 5,
-          underlineAnimationTo: 50,
-          underlineFromSizeNew: 5,
-          underlineToSizeNew: 5,
-          underlineAnimationTransition: 0.5,
-          textColorHover: innerTextColorDefault,
-          borderStyleHover: "none",
-          backgroundBorderColorHover: "",
-          backgroundBorderSizeHover: 0,
-          opacityHover: 1,
-          rotateHover: 0,
-          animationHover: "none",
-          durationEffectHover: 1,
-          effectHoverColorHover: innerTextColorDefault,
-          translateEffectHover: 0,
-          parallaxTitle: 0,
-          parallaxTitleY: 0,
-          parallaxTitleScale: 1,
-          parallaxTitleOpacity: 1,
-          parallaxTitleDuration: 100,
+          textColor: textColorDefault,
           textLink: "none",
-          linkUrl: "",
-          linkTarget: "_self",
-          linkRel: "",
-          scrollToId: "",
-          enableDesktop: true,
-          enableTablet: true,
-          enableMobile: true,
-          iteration: "forwards",
-          positionInnerText: "static",
-          verticalPositionInnerText: 0,
-          horizontalPositionInnerText: 0,
-          delayHide: false,
-          delaySeconds: 1,
-          delayTransition: 0,
-          zIndexTitle: 1
+          effectIn: "none",
+          effectHover: "none",
+          widthTitle: "auto",
+          borderStyle: "none"
         }]
       } : element)
     } : slide);
@@ -43109,86 +43452,25 @@ const GroupEdit = ({
       elements: slide.elements.map((element, index) => index === divIndex ? {
         ...element,
         innerElements: [...(element.innerElements || []), {
-          imageUrl: "",
           type: "image",
+          url: "",
           alt: "",
           fit: "cover",
           widthImage: "fixed",
-          customWidthImage: false,
           widthImageContent: "auto",
           customWidthImagePx: 200,
-          heightImage: "fixed",
-          customHeightImage: false,
-          customHeightImagePx: 200,
-          backgroundBorderColorImage: "",
-          backgroundBorderSizeImage: 0,
-          backgroundBorderRadiusImage: 0,
-          backgroundColorImage: "",
-          paddingImage: 0,
-          borderStyleImage: "none",
-          backgroundBorderColorImage: "",
-          backgroundBorderSizeImage: 0,
-          backgroundBorderRadiusImage: 0,
-          rotateImage: 0,
-          opacityImage: 1,
-          parallaxImage: 0,
-          parallaxImageY: 0,
-          parallaxImageScale: 1,
-          parallaxImageOpacity: 1,
-          marginImage: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-          },
+          heightImage: "auto",
           blobMask: false,
-          animationImage: "none",
-          durationEffectImage: 1,
-          animationImageMoving: "none",
-          durationEffectImageMoving: 1,
-          translateEffectImageMoving: 0,
-          spikeMask: 0,
-          spikeLeftWidth: 0,
-          spikeMaskRight: "none",
-          spikeRightWidth: 0,
           imageFilter: "none",
           imageLink: "none",
-          linkUrlImage: "",
-          linkTargetImage: "_self",
-          linkRelImage: "",
-          scrollToIdImage: "",
           enableDesktopImage: true,
           enableTabletImage: true,
           enableMobileImage: true,
-          imageColorHover: "",
-          borderStyleHoverImage: "none",
-          backgroundBorderColorHoverImage: "",
-          backgroundBorderSizeImageHover: 0,
-          opacityHoverImage: 1,
-          rotateHoverImage: 0,
-          animationHoverImage: "none",
-          durationEffectHoverImage: 1,
-          effectHoverColorHoverImage: "",
-          translateEffectHoverImage: 0,
-          colorShadowImage: "",
-          boxShadowXImage: 0,
-          boxShadowYImage: 0,
-          boxShadowBlurImage: 0,
-          boxShadowSpreadImage: 0,
-          parallaxImage: 0,
-          parallaxImageY: 0,
-          parallaxImageScale: 1,
-          parallaxImageOpacity: 1,
-          parallaxImageDuration: 100,
-          interationImage: "forwards",
-          zIndexImage: 1,
-          positionInnerImage: "static",
-          verticalPositionInnerImage: 0,
-          horizontalPositionInnerImage: 0,
-          delayEffectImage: 0,
-          delayHide: false,
-          delaySeconds: 2,
-          delayTransition: 0.5
+          borderStyleImage: "none",
+          spikeMask: 'none',
+          spikeMaskRight: 'none',
+          effectIn: "none",
+          effectHover: "none"
         }]
       } : element)
     } : slide);
@@ -43201,74 +43483,57 @@ const GroupEdit = ({
   const addSlideButtonDiv = (slideId, elementIndex, buttonType) => {
     const defaultValues = {
       type1: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
         backgroundBorderRadiusButton: 30,
-        backgroundBorderSizeButton: 3,
+        backgroundBorderSizeButton: {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px'
+        },
         buttonBackgroundColor: '#18191c',
         buttonColorHover: '#FFFFFF',
-        rotateButton: 0,
         widthCustomButton: 35,
         heightCustomButton: 55,
-        marginButton: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
+        borderStyleHover: "solid",
+        backgroundBorderSizeButtonHover: {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px'
         },
-        opacityButton: 1,
-        colorShadow: "",
-        boxShadowX: 0,
-        boxShadowY: 0,
-        boxShadowBlur: 0,
-        boxShadowSpread: 0,
-        animationButton: "none",
-        durationEffectButton: 1,
-        delayEffect: 0,
-        interationButton: "forwards",
-        buttonColorHover: "",
-        borderStyleHover: "none",
-        backgroundBorderColorHover: "",
-        backgoroundBorderSizeHover: 0,
-        opacityHover: 1,
-        rotateHover: 0
+        backgroundBorderColorHover: '#ffffff',
+        borderStyleHover: "solid"
       },
       type2: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
         backgroundBorderRadiusButton: 30,
         backgroundBorderSizeButton: 3,
         buttonBackgroundColor: '#FFFFFF',
-        buttonColorHover: '#18191c',
-        rotateButton: 0,
+        buttonColorHover: '#ffffff',
         widthCustomButton: 35,
         heightCustomButton: 55,
-        marginButton: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
+        borderStyleHover: "solid",
+        backgroundBorderSizeButtonHover: {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px'
         },
-        opacityButton: 1,
-        colorShadow: "",
-        boxShadowX: 0,
-        boxShadowY: 0,
-        boxShadowBlur: 0,
-        boxShadowSpread: 0,
-        animationButton: "none",
-        durationEffectButton: 1,
-        delayEffect: 0,
-        interationButton: "forwards",
-        buttonColorHover: "",
-        borderStyleHover: "none",
-        backgroundBorderColorHover: "",
-        backgoroundBorderSizeHover: 0,
-        opacityHover: 1,
-        rotateHover: 0
+        backgroundBorderColorHover: '#ffffff',
+        borderStyleHover: "solid"
       },
       type3: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -43289,10 +43554,17 @@ const GroupEdit = ({
         },
         borderStyleHover: "solid",
         backgroundBorderColorHover: "#18191c",
-        backgroundBorderSizeHover: 1,
+        backgroundBorderSizeHover: {
+          top: 1,
+          right: 1,
+          bottom: 1,
+          left: 1
+        },
         buttonBackgroundColorHover: "#FFFFFF"
       },
       type4: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -43313,19 +43585,20 @@ const GroupEdit = ({
         },
         borderStyleHover: "solid",
         backgroundBorderColorHover: "#FFFFFF",
-        backgroundBorderSizeHover: 1,
+        backgroundBorderSizeHover: {
+          top: 1,
+          right: 1,
+          bottom: 1,
+          left: 1
+        },
         buttonBackgroundColorHover: "#18191c"
       },
       type5: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
-        borderRadiusButton: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
         backgroundBorderSizeButton: 1,
         buttonBackgroundColor: '#18191c',
         buttonColorHover: '#18191c',
@@ -43337,19 +43610,20 @@ const GroupEdit = ({
         },
         borderStyleHover: "solid",
         backgroundBorderColorHover: "#18191c",
-        backgroundBorderSizeHover: 1,
+        backgroundBorderSizeHover: {
+          top: 1,
+          right: 1,
+          bottom: 1,
+          left: 1
+        },
         buttonBackgroundColorHover: "#FFFFFF"
       },
       type6: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
-        borderRadiusButton: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
         backgroundBorderSizeButton: 1,
         buttonBackgroundColor: '#FFFFFF',
         buttonColorHover: '#FFFFFF',
@@ -43361,10 +43635,17 @@ const GroupEdit = ({
         },
         borderStyleHover: "solid",
         backgroundBorderColorHover: "#FFFFFF",
-        backgroundBorderSizeHover: 1,
+        backgroundBorderSizeHover: {
+          top: 1,
+          right: 1,
+          bottom: 1,
+          left: 1
+        },
         buttonBackgroundColorHover: "#18191c"
       },
       type7: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -43385,10 +43666,17 @@ const GroupEdit = ({
         },
         borderStyleHover: "solid",
         backgroundBorderColorHover: "#18191c",
-        backgroundBorderSizeHover: 1,
+        backgroundBorderSizeHover: {
+          top: 1,
+          right: 1,
+          bottom: 1,
+          left: 1
+        },
         buttonBackgroundColorHover: "#FFFFFF"
       },
       type8: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -43409,11 +43697,14 @@ const GroupEdit = ({
         },
         borderStyleHover: "solid",
         backgroundBorderColorHover: "#FFFFFF",
-        backgroundBorderSizeHover: 1,
+        backgroundBorderSizeHover: {
+          top: 1,
+          right: 1,
+          bottom: 1,
+          left: 1
+        },
         buttonBackgroundColorHover: "#18191c"
       }
-
-      // Aggiungi altri tipi di bottoni se necessario
     };
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
@@ -43423,82 +43714,19 @@ const GroupEdit = ({
           type: 'button',
           button: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(' Click Here', 'cocoblocks'),
           buttonType: buttonType,
-          desktop: {
-            x: 0,
-            y: 0
-          },
-          tablet: {
-            x: 0,
-            y: 0
-          },
-          mobile: {
-            x: 0,
-            y: 0
-          },
           ...defaultValues[buttonType],
           enableDesktopButton: true,
           enableTabletButton: true,
           enableMobileButton: true,
           buttonLink: "none",
-          linkUrlButton: "",
-          linkTargetButton: "_self",
-          linkRelButton: "",
-          scrollToIdButton: "",
-          parallaxButton: 0,
-          parallaxButtonY: 0,
-          parallaxButtonScale: 1,
-          parallaxButtonOpacity: 1,
-          parallaxButtonDuration: 100,
           widthButton: "auto",
-          zIndexButton: 1,
-          delayHide: false,
-          delaySeconds: 2,
-          delayTransition: 0.5,
           fontFamilyButton: "Arial",
           fontSizeButton: 16,
           fontSizeButtonTablet: 16,
           fontSizeButtonMobile: 16,
-          lineHeightButton: 1.5,
-          letterSpacingButton: 0,
           widthCustomButton: 35,
-          marginButton: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-          },
-          opacityButton: 1,
-          colorShadow: "",
-          boxShadowX: 0,
-          boxShadowY: 0,
-          boxShadowBlur: 0,
-          boxShadowSpread: 0,
-          animationButton: "none",
-          durationEffectButton: 1,
-          delayEffect: 0,
-          interationButton: "forwards",
-          opacityHover: 1,
-          rotateHover: 0,
-          durationEffectHover: .2,
-          rotateButton: 0,
-          icoPositionButton: "after",
-          iconColor: "#000000",
-          sizeIcon: 16,
-          icoAligItemButton: "center",
-          gapIcon: 5,
-          rotateIcon: 0,
-          iconAnimationDuration: 0.5,
-          iconAnimation: "none",
-          rotateIconHover: 0,
-          iconColorHover: "#000000",
-          iconShowHover: "icon-show-always-inner",
-          iconHideShowHover: "icon-hide-opacity-inner",
-          delayHide: false,
-          delaySeconds: 2,
-          delayTransition: 0.5,
-          animationHoverIcon: "none",
-          durationEffectHoverIcon: 0.6,
-          translateEffectHoverIcon: 15
+          effectIn: "none",
+          effectHover: "none"
         }]
       } : element)
     } : slide);
@@ -43515,85 +43743,21 @@ const GroupEdit = ({
         ...element,
         innerElements: [...(element.innerElements || []), {
           type: "icon",
-          icon: "fas fa-star",
-          widthTitleBlock: "auto",
-          widthCustomTitleBlock: 100,
-          textAlign: "center",
-          elementTitle: "h4",
-          fontSize: 16,
-          fontSizeTablet: 16,
-          fontSizeMobile: 16,
-          fontStyle: "",
-          textColor: innerTextColorDefault,
-          paddingTitle: {
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0"
-          },
-          marginTitle: {
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0"
-          },
-          borderStyle: "none",
-          backgroundBorderSize: 0,
-          backgroundBorderRadius: 0,
-          backgroundBorderColor: "",
-          rotate: 0,
-          opacity: 1,
-          textWriteMode: "horizontal-tb",
-          textOrientation: "initial",
-          animation: "none",
-          durationEffect: 1,
-          delayEffect: 0,
-          durationEffectOdd: 1,
-          durationEffectEven: 1,
-          interation: 1,
-          speedEffect: 100,
-          pauseEffect: 0,
-          animationCount: "1",
-          widthTitle: 100,
-          textColorHover: innerTextColorDefault,
-          borderStyleHover: "none",
-          backgroundBorderColorHover: "",
-          backgroundBorderSizeHover: 0,
-          opacityHover: 1,
-          rotateHover: 0,
-          animationHover: "none",
-          durationEffectHover: 1,
-          effectHoverColorHover: innerTextColorDefault,
-          translateEffectHover: 0,
-          parallaxTitle: 0,
-          parallaxTitleY: 0,
-          parallaxTitleScale: 1,
-          parallaxTitleOpacity: 1,
-          parallaxTitleDuration: 100,
-          textLink: "none",
-          linkUrl: "",
-          linkTarget: "_self",
-          linkRel: "",
-          scrollToId: "",
+          icon: "StarIcon",
+          fontSize: 42,
+          fontSizeTablet: 22,
+          fontSizeMobile: 22,
+          color: textColorDefault,
           enableDesktop: true,
           enableTablet: true,
           enableMobile: true,
-          iteration: "forwards",
-          positionInnerText: "static",
-          verticalPositionInnerText: 0,
-          horizontalPositionInnerText: 0,
-          delayHide: false,
-          delaySeconds: 1,
-          delayTransition: 0,
-          zIndexIcon: 1,
-          colorShadow: "",
-          boxShadowX: 0,
-          boxShadowY: 0,
-          boxShadowBlur: 0,
-          boxShadowSpread: 0,
-          iconAnimationDuration: 0.5,
+          borderStyle: "none",
+          effectIn: "none",
           iconAnimation: "none",
-          backgroundColor: '#ffffff00'
+          animationHover: "none",
+          borderStyleHover: "none",
+          width: "auto",
+          link: "none"
         }]
       } : element)
     } : slide);
@@ -44266,7 +44430,7 @@ const GroupEdit = ({
     desktopProperty: "enableDesktop",
     tabletProperty: "enableTablet",
     mobileProperty: "enableMobile"
-  }), activeSectionBlock === "hide-div-editor" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), activeSectionBlock === "hide-title-editor" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy",
     style: {
       marginTop: "-18px"
@@ -44411,7 +44575,7 @@ const GroupEdit = ({
       return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
         key: innerIndex
       }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: "button-move-element-div"
+        className: "button-move-element-post"
       }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
         text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Move before", "cocoblocks")
       }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
@@ -44631,9 +44795,7 @@ const GroupRender = ({
       });
     } // Passa element.duration
   }, innerElements && innerElements.map((innerElement, innerIndex) => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      key: innerIndex
-    }, innerElement.type === "text" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_innertext_InnerTextRender__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, innerElement.type === "text" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_innertext_InnerTextRender__WEBPACK_IMPORTED_MODULE_3__["default"], {
       textDiv: innerElement,
       textIndex: innerIndex,
       handlePlayInnerText: handlePlayInnerText,
@@ -45780,7 +45942,7 @@ const IconRender = ({
     const loopCount = typeof element.loop === 'string' && element.loop.toLowerCase() === 'true' ? 5 : parseInt(element.loop) >= 1 && parseInt(element.loop) <= 10 ? parseInt(element.loop) : 1; // Imposta un valore di default se non è in un intervallo valido
 
     if (effectIn) {
-      var _element$duration, _element$delay, _element$endDelay, _element$easing, _element$direction, _element$startXFrom, _element$startXTo, _element$startYFrom, _element$startYTo, _element$stagger, _element$opacityFrom, _element$opacityTo, _element$scaleFrom, _element$scaleTo, _element$rotateFrom, _element$rotateTo, _element$rotateXFrom, _element$rotateXTo, _element$rotateYFrom, _element$rotateYTo, _element$skewXFrom, _element$skewXTo, _element$skewYFrom, _element$skewYTo, _element$directionBlo, _element$filterFrom, _element$filterTo, _element$scaleType;
+      var _element$duration, _element$delay, _element$endDelay, _element$easing, _element$direction, _element$startXFrom, _element$startXTo, _element$startYFrom, _element$startYTo, _element$opacityFrom, _element$opacityTo, _element$scaleFrom, _element$scaleTo, _element$rotateFrom, _element$rotateTo, _element$rotateXFrom, _element$rotateXTo, _element$rotateYFrom, _element$rotateYTo, _element$skewXFrom, _element$skewXTo, _element$skewYFrom, _element$skewYTo, _element$filterFrom, _element$filterTo, _element$scaleType;
       // textRef.current.style.opacity = 0; // Reset
       const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_2__.getAnimationProps)({
         duration: (_element$duration = element.duration) !== null && _element$duration !== void 0 ? _element$duration : 800,
@@ -45793,8 +45955,6 @@ const IconRender = ({
         startXTo: (_element$startXTo = element.startXTo) !== null && _element$startXTo !== void 0 ? _element$startXTo : 0,
         startYFrom: (_element$startYFrom = element.startYFrom) !== null && _element$startYFrom !== void 0 ? _element$startYFrom : 0,
         startYTo: (_element$startYTo = element.startYTo) !== null && _element$startYTo !== void 0 ? _element$startYTo : 0,
-        stagger: (_element$stagger = element.stagger) !== null && _element$stagger !== void 0 ? _element$stagger : 80,
-        textSplitEffect: element.textSplitEffect,
         opacityFrom: (_element$opacityFrom = element.opacityFrom) !== null && _element$opacityFrom !== void 0 ? _element$opacityFrom : 0,
         opacityTo: (_element$opacityTo = element.opacityTo) !== null && _element$opacityTo !== void 0 ? _element$opacityTo : 1,
         scaleFrom: (_element$scaleFrom = element.scaleFrom) !== null && _element$scaleFrom !== void 0 ? _element$scaleFrom : 0,
@@ -45809,10 +45969,8 @@ const IconRender = ({
         skewXTo: (_element$skewXTo = element.skewXTo) !== null && _element$skewXTo !== void 0 ? _element$skewXTo : 0,
         skewYFrom: (_element$skewYFrom = element.skewYFrom) !== null && _element$skewYFrom !== void 0 ? _element$skewYFrom : 0,
         skewYTo: (_element$skewYTo = element.skewYTo) !== null && _element$skewYTo !== void 0 ? _element$skewYTo : 0,
-        directionBlock: (_element$directionBlo = element.directionBlock) !== null && _element$directionBlo !== void 0 ? _element$directionBlo : 'right',
         filterFrom: (_element$filterFrom = element.filterFrom) !== null && _element$filterFrom !== void 0 ? _element$filterFrom : 0,
         filterTo: (_element$filterTo = element.filterTo) !== null && _element$filterTo !== void 0 ? _element$filterTo : 0,
-        colorBlockEffect: element.colorBlockEffect,
         scaleType: (_element$scaleType = element.scaleType) !== null && _element$scaleType !== void 0 ? _element$scaleType : 'scale'
       });
       setTimeout(() => {
@@ -45860,6 +46018,9 @@ const IconRender = ({
     "--border-width-hover-icon": `${element.backgroundBorderSizeHover?.top} ${element.backgroundBorderSizeHover?.right} ${element.backgroundBorderSizeHover?.bottom} ${element.backgroundBorderSizeHover?.left}`,
     opacity: element.opacity,
     zIndex: element.zIndexIcon,
+    ...(element.enableBoxShadow && {
+      boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`
+    }),
     position: "relative",
     transform: `rotate(${element.rotate}deg)`,
     "--rotate-hover-icon": element.rotateHover + "deg" || 0,
@@ -45873,10 +46034,7 @@ const IconRender = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       width: element.width === "custom" ? `${element.widthCustom}%` : element.width,
-      textAlign: element.align,
-      ...(element.enableBoxShadow && {
-        boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`
-      }),
+      justifyContent: element.align,
       display: 'flex'
     },
     className: "content-icon " + element.hideTitle,
@@ -46457,7 +46615,7 @@ const ImageEdit = ({
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contain", "slider"),
       value: "contain"
     }] // Passa le opzioni dinamiche
-  }), element.paddingImage > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), Object.values(element.paddingImage || {}).some(value => parseInt(value) > 0) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: element.backgroundColorImage,
     setColorNormal: color => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'image', 'backgroundColorImage'),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color", "cocoblocks"),
@@ -47194,7 +47352,8 @@ const ImageRender = ({
       opacity: element.opacityImage,
       width: element.widthImageContent,
       zIndex: element.zIndexImage,
-      textAlign: element.imageAlign
+      textAlign: element.imageAlign,
+      '--background-color-image-hover': element.backgroundColorImageHover
     },
     className: "content-img-first " + element.imageFilter + " " + element.hideImage
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -47203,7 +47362,6 @@ const ImageRender = ({
       var _element$durationHove, _element$easingHover, _element$opacityHover, _element$filterHover, _element$startXHover, _element$startYHover, _element$scaleHover, _element$rotateHover, _element$rotateXHover, _element$rotateYHover, _element$skewXHover, _element$skewYHover, _element$scaleTypeHov;
       return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
         durationHover: (_element$durationHove = element.durationHover) !== null && _element$durationHove !== void 0 ? _element$durationHove : 800,
-        backgroundColorImageHover: element.backgroundColorImageHover,
         effectHover: element.effectHover,
         easingHover: (_element$easingHover = element.easingHover) !== null && _element$easingHover !== void 0 ? _element$easingHover : 'linear',
         opacityHover: (_element$opacityHover = element.opacityHover) !== null && _element$opacityHover !== void 0 ? _element$opacityHover : 1,
@@ -47224,7 +47382,6 @@ const ImageRender = ({
       var _element$durationHove2, _element$easingHover2;
       return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
         durationHover: (_element$durationHove2 = element.durationHover) !== null && _element$durationHove2 !== void 0 ? _element$durationHove2 : 800,
-        backgroundColorImage: element.backgroundColorImage,
         easingHover: (_element$easingHover2 = element.easingHover) !== null && _element$easingHover2 !== void 0 ? _element$easingHover2 : 'linear'
       });
     } // Passa element.duration
@@ -48260,7 +48417,16 @@ const InnerButtonEdit = ({
     innerIndex: buttonIndex,
     elementType: "button",
     updateElement: (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) => updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'zIndexButton')
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_shadow_ShadowControl__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Box Shadow", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_shadow_ShadowControl__WEBPACK_IMPORTED_MODULE_12__["default"], {
     valueEnableShadow: buttonDiv.enableBoxShadow,
     valueRangeShadowX: buttonDiv.boxShadowX || 0,
     valueRangeShadowY: buttonDiv.boxShadowY || 0,
@@ -48282,7 +48448,7 @@ const InnerButtonEdit = ({
     rangePropertyBlur: "boxShadowBlur",
     rangePropertySpread: "boxShadowSpread",
     rangePropertyColor: "colorBoxShadow"
-  }), buttonDiv.buttonType !== 'type1' && buttonDiv.buttonType !== 'type2' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, buttonDiv.icon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), buttonDiv.buttonType !== 'type1' && buttonDiv.buttonType !== 'type2' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, buttonDiv.icon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -48756,7 +48922,7 @@ const InnerButtonRender = ({
     const loopCount = typeof buttonDiv.loop === 'string' && buttonDiv.loop.toLowerCase() === 'true' ? 5 : parseInt(buttonDiv.loop) >= 1 && parseInt(buttonDiv.loop) <= 10 ? parseInt(buttonDiv.loop) : 1; // Imposta un valore di default se non è in un intervallo valido
 
     if (effectIn) {
-      var _buttonDiv$duration, _buttonDiv$delay, _buttonDiv$endDelay, _buttonDiv$easing, _buttonDiv$direction, _buttonDiv$startXFrom, _buttonDiv$startXTo, _buttonDiv$startYFrom, _buttonDiv$startYTo, _buttonDiv$stagger, _buttonDiv$opacityFro, _buttonDiv$opacityTo, _buttonDiv$scaleFrom, _buttonDiv$scaleTo, _buttonDiv$rotateFrom, _buttonDiv$rotateTo, _buttonDiv$rotateXFro, _buttonDiv$rotateXTo, _buttonDiv$rotateYFro, _buttonDiv$rotateYTo, _buttonDiv$skewXFrom, _buttonDiv$skewXTo, _buttonDiv$skewYFrom, _buttonDiv$skewYTo, _buttonDiv$directionB, _buttonDiv$filterFrom, _buttonDiv$filterTo, _buttonDiv$scaleType;
+      var _buttonDiv$duration, _buttonDiv$delay, _buttonDiv$endDelay, _buttonDiv$easing, _buttonDiv$direction, _buttonDiv$startXFrom, _buttonDiv$startXTo, _buttonDiv$startYFrom, _buttonDiv$startYTo, _buttonDiv$opacityFro, _buttonDiv$opacityTo, _buttonDiv$scaleFrom, _buttonDiv$scaleTo, _buttonDiv$rotateFrom, _buttonDiv$rotateTo, _buttonDiv$rotateXFro, _buttonDiv$rotateXTo, _buttonDiv$rotateYFro, _buttonDiv$rotateYTo, _buttonDiv$skewXFrom, _buttonDiv$skewXTo, _buttonDiv$skewYFrom, _buttonDiv$skewYTo, _buttonDiv$filterFrom, _buttonDiv$filterTo, _buttonDiv$scaleType;
       // textRef.current.style.opacity = 0; // Reset
       const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_1__.getAnimationProps)({
         duration: (_buttonDiv$duration = buttonDiv.duration) !== null && _buttonDiv$duration !== void 0 ? _buttonDiv$duration : 800,
@@ -48769,8 +48935,6 @@ const InnerButtonRender = ({
         startXTo: (_buttonDiv$startXTo = buttonDiv.startXTo) !== null && _buttonDiv$startXTo !== void 0 ? _buttonDiv$startXTo : 0,
         startYFrom: (_buttonDiv$startYFrom = buttonDiv.startYFrom) !== null && _buttonDiv$startYFrom !== void 0 ? _buttonDiv$startYFrom : 0,
         startYTo: (_buttonDiv$startYTo = buttonDiv.startYTo) !== null && _buttonDiv$startYTo !== void 0 ? _buttonDiv$startYTo : 0,
-        stagger: (_buttonDiv$stagger = buttonDiv.stagger) !== null && _buttonDiv$stagger !== void 0 ? _buttonDiv$stagger : 80,
-        textSplitEffect: buttonDiv.textSplitEffect,
         opacityFrom: (_buttonDiv$opacityFro = buttonDiv.opacityFrom) !== null && _buttonDiv$opacityFro !== void 0 ? _buttonDiv$opacityFro : 0,
         opacityTo: (_buttonDiv$opacityTo = buttonDiv.opacityTo) !== null && _buttonDiv$opacityTo !== void 0 ? _buttonDiv$opacityTo : 1,
         scaleFrom: (_buttonDiv$scaleFrom = buttonDiv.scaleFrom) !== null && _buttonDiv$scaleFrom !== void 0 ? _buttonDiv$scaleFrom : 0,
@@ -48785,10 +48949,8 @@ const InnerButtonRender = ({
         skewXTo: (_buttonDiv$skewXTo = buttonDiv.skewXTo) !== null && _buttonDiv$skewXTo !== void 0 ? _buttonDiv$skewXTo : 0,
         skewYFrom: (_buttonDiv$skewYFrom = buttonDiv.skewYFrom) !== null && _buttonDiv$skewYFrom !== void 0 ? _buttonDiv$skewYFrom : 0,
         skewYTo: (_buttonDiv$skewYTo = buttonDiv.skewYTo) !== null && _buttonDiv$skewYTo !== void 0 ? _buttonDiv$skewYTo : 0,
-        directionBlock: (_buttonDiv$directionB = buttonDiv.directionBlock) !== null && _buttonDiv$directionB !== void 0 ? _buttonDiv$directionB : 'right',
         filterFrom: (_buttonDiv$filterFrom = buttonDiv.filterFrom) !== null && _buttonDiv$filterFrom !== void 0 ? _buttonDiv$filterFrom : 0,
         filterTo: (_buttonDiv$filterTo = buttonDiv.filterTo) !== null && _buttonDiv$filterTo !== void 0 ? _buttonDiv$filterTo : 0,
-        colorBlockEffect: buttonDiv.colorBlockEffect,
         scaleType: (_buttonDiv$scaleType = buttonDiv.scaleType) !== null && _buttonDiv$scaleType !== void 0 ? _buttonDiv$scaleType : 'scale'
       });
       setTimeout(() => {
@@ -48851,10 +49013,10 @@ const InnerButtonRender = ({
     '--border-color-button-inner': buttonDiv.backgroundBorderColorButton,
     '--border-style-button-inner': buttonDiv.borderStyleButton,
     '--border-radius-button-inner': buttonDiv.backgroundBorderRadiusButton + 'px',
-    "--border-width-button-inner-top": `${buttonDiv.backgroundBorderSizeButton?.top}` || "0",
-    "--border-width-button-inner-right": `${buttonDiv.backgroundBorderSizeButton?.right}` || "0",
-    "--border-width-button-inner-bottom": `${buttonDiv.backgroundBorderSizeButton?.bottom}` || "0",
-    "--border-width-button-inner-left": `${buttonDiv.backgroundBorderSizeButton?.left}` || "0",
+    "--border-width-button-top-inner": `${buttonDiv.backgroundBorderSizeButton?.top}` || "0",
+    "--border-width-button-right-inner": `${buttonDiv.backgroundBorderSizeButton?.right}` || "0",
+    "--border-width-button-bottom-inner": `${buttonDiv.backgroundBorderSizeButton?.bottom}` || "0",
+    "--border-width-button-left-inner": `${buttonDiv.backgroundBorderSizeButton?.left}` || "0",
     '--background-color-button-inner': buttonDiv.buttonBackgroundColor,
     '--color-button-hover-inner': buttonDiv.buttonColorHover,
     transform: 'rotate(' + buttonDiv.rotateButton + 'deg)',
@@ -48867,7 +49029,6 @@ const InnerButtonRender = ({
     "--border-width-button-hover-left-inner": `${buttonDiv.backgroundBorderSizeHover?.left}` || "0",
     "--border-color-button-hover-inner": buttonDiv.backgroundBorderColorHover,
     "--border-style-button-hover-inner": buttonDiv.borderStyleHover || "none",
-    "--rotate-button-hover-inner": `${buttonDiv.rotateHover}deg` || "0",
     zIndex: buttonDiv.zIndexButton
   };
   const isBold = buttonDiv.fontStyle?.fontWeight === "bold";
@@ -48911,7 +49072,8 @@ const InnerButtonRender = ({
     }),
     ...(buttonDiv.icon && {
       alignItems: buttonDiv.icoAligItemButton,
-      gap: buttonDiv.gapIcon + 'px'
+      gap: buttonDiv.gapIcon + 'px',
+      zIndex: buttonDiv.zIndexButton
     })
   };
   const buttonContentStyle3 = {
@@ -48924,51 +49086,8 @@ const InnerButtonRender = ({
   switch (buttonType) {
     case "type1":
       buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        className: "content-button-slide scroll-btn-inner" + " " + buttonDiv.hideButton,
-        style: buttonStyle1,
-        ref: buttonRef
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-        href: "#"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        className: "mouse-inner",
-        style: {
-          opacity: buttonDiv.opacityButton,
-          '--opacity-button-hover': buttonDiv.opacityHover,
-          transition: buttonDiv.durationEffectHover + 's',
-          ...(buttonDiv.enableBoxShadow && {
-            boxShadow: `${buttonDiv.boxShadowX}px ${buttonDiv.boxShadowY}px ${buttonDiv.boxShadowBlur}px ${buttonDiv.boxShadowSpread}px ${buttonDiv.colorBoxShadow}`
-          })
-        }
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null))));
-      break;
-    case "type2":
-      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
         className: "content-button-slide-inner scroll-btn-inner" + " " + buttonDiv.hideButton,
         style: buttonStyle1,
-        ref: buttonRef
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-        href: "#"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-        className: "mouse-inner",
-        style: {
-          opacity: buttonDiv.opacityButton,
-          '--opacity-button-hover': buttonDiv.opacityHover,
-          transition: buttonDiv.durationEffectHover + 's',
-          ...(buttonDiv.enableBoxShadow && {
-            boxShadow: `${buttonDiv.boxShadowX}px ${buttonDiv.boxShadowY}px ${buttonDiv.boxShadowBlur}px ${buttonDiv.boxShadowSpread}px ${buttonDiv.colorBoxShadow}`
-          })
-        }
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null))));
-      break;
-    case "type3":
-    case "type4":
-    case "type5":
-    case "type6":
-    case "type7":
-    case "type8":
-      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: 'button-slider-inner ' + buttonDiv.hideButton,
-        style: buttonContentStyle3,
         ref: buttonRef,
         onMouseEnter: e => {
           var _buttonDiv$durationHo, _buttonDiv$easingHove, _buttonDiv$opacityHov, _buttonDiv$filterHove, _buttonDiv$startXHove, _buttonDiv$startYHove, _buttonDiv$scaleHover, _buttonDiv$rotateHove, _buttonDiv$rotateXHov, _buttonDiv$rotateYHov, _buttonDiv$skewXHover, _buttonDiv$skewYHover, _buttonDiv$scaleTypeH;
@@ -48995,6 +49114,95 @@ const InnerButtonRender = ({
           return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
             durationHover: (_buttonDiv$durationHo2 = buttonDiv.durationHover) !== null && _buttonDiv$durationHo2 !== void 0 ? _buttonDiv$durationHo2 : 800,
             easingHover: (_buttonDiv$easingHove2 = buttonDiv.easingHover) !== null && _buttonDiv$easingHove2 !== void 0 ? _buttonDiv$easingHove2 : 'linear'
+          });
+        } // Passa element.duration
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "mouse-inner",
+        style: {
+          opacity: buttonDiv.opacityButton,
+          ...(buttonDiv.enableBoxShadow && {
+            boxShadow: `${buttonDiv.boxShadowX}px ${buttonDiv.boxShadowY}px ${buttonDiv.boxShadowBlur}px ${buttonDiv.boxShadowSpread}px ${buttonDiv.colorBoxShadow}`
+          })
+        }
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null)));
+      break;
+    case "type2":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "content-button-slide-inner scroll-btn-inner" + " " + buttonDiv.hideButton,
+        style: buttonStyle1,
+        ref: buttonRef,
+        onMouseEnter: e => {
+          var _buttonDiv$durationHo3, _buttonDiv$easingHove3, _buttonDiv$opacityHov2, _buttonDiv$filterHove2, _buttonDiv$startXHove2, _buttonDiv$startYHove2, _buttonDiv$scaleHover2, _buttonDiv$rotateHove2, _buttonDiv$rotateXHov2, _buttonDiv$rotateYHov2, _buttonDiv$skewXHover2, _buttonDiv$skewYHover2, _buttonDiv$scaleTypeH2;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
+            durationHover: (_buttonDiv$durationHo3 = buttonDiv.durationHover) !== null && _buttonDiv$durationHo3 !== void 0 ? _buttonDiv$durationHo3 : 800,
+            effectHover: buttonDiv.effectHover,
+            easingHover: (_buttonDiv$easingHove3 = buttonDiv.easingHover) !== null && _buttonDiv$easingHove3 !== void 0 ? _buttonDiv$easingHove3 : 'linear',
+            opacityHover: (_buttonDiv$opacityHov2 = buttonDiv.opacityHover) !== null && _buttonDiv$opacityHov2 !== void 0 ? _buttonDiv$opacityHov2 : 1,
+            filterHover: (_buttonDiv$filterHove2 = buttonDiv.filterHover) !== null && _buttonDiv$filterHove2 !== void 0 ? _buttonDiv$filterHove2 : 0,
+            startXHover: (_buttonDiv$startXHove2 = buttonDiv.startXHover) !== null && _buttonDiv$startXHove2 !== void 0 ? _buttonDiv$startXHove2 : 100,
+            startYHover: (_buttonDiv$startYHove2 = buttonDiv.startYHover) !== null && _buttonDiv$startYHove2 !== void 0 ? _buttonDiv$startYHove2 : 0,
+            scaleHover: (_buttonDiv$scaleHover2 = buttonDiv.scaleHover) !== null && _buttonDiv$scaleHover2 !== void 0 ? _buttonDiv$scaleHover2 : 1,
+            rotateHover: (_buttonDiv$rotateHove2 = buttonDiv.rotateHover) !== null && _buttonDiv$rotateHove2 !== void 0 ? _buttonDiv$rotateHove2 : 0,
+            rotateXHover: (_buttonDiv$rotateXHov2 = buttonDiv.rotateXHover) !== null && _buttonDiv$rotateXHov2 !== void 0 ? _buttonDiv$rotateXHov2 : 0,
+            rotateYHover: (_buttonDiv$rotateYHov2 = buttonDiv.rotateYHover) !== null && _buttonDiv$rotateYHov2 !== void 0 ? _buttonDiv$rotateYHov2 : 0,
+            skewXHover: (_buttonDiv$skewXHover2 = buttonDiv.skewXHover) !== null && _buttonDiv$skewXHover2 !== void 0 ? _buttonDiv$skewXHover2 : 0,
+            skewYHover: (_buttonDiv$skewYHover2 = buttonDiv.skewYHover) !== null && _buttonDiv$skewYHover2 !== void 0 ? _buttonDiv$skewYHover2 : 0,
+            scaleTypeHover: (_buttonDiv$scaleTypeH2 = buttonDiv.scaleTypeHover) !== null && _buttonDiv$scaleTypeH2 !== void 0 ? _buttonDiv$scaleTypeH2 : 'scale'
+          });
+        } // Passa element.duration
+        ,
+        onMouseLeave: e => {
+          var _buttonDiv$durationHo4, _buttonDiv$easingHove4;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
+            durationHover: (_buttonDiv$durationHo4 = buttonDiv.durationHover) !== null && _buttonDiv$durationHo4 !== void 0 ? _buttonDiv$durationHo4 : 800,
+            easingHover: (_buttonDiv$easingHove4 = buttonDiv.easingHover) !== null && _buttonDiv$easingHove4 !== void 0 ? _buttonDiv$easingHove4 : 'linear'
+          });
+        } // Passa element.duration
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+        className: "mouse-inner",
+        style: {
+          opacity: buttonDiv.opacityButton,
+          ...(buttonDiv.enableBoxShadow && {
+            boxShadow: `${buttonDiv.boxShadowX}px ${buttonDiv.boxShadowY}px ${buttonDiv.boxShadowBlur}px ${buttonDiv.boxShadowSpread}px ${buttonDiv.colorBoxShadow}`
+          })
+        }
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null)));
+      break;
+    case "type3":
+    case "type4":
+    case "type5":
+    case "type6":
+    case "type7":
+    case "type8":
+      buttonHTML = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: 'button-slider-inner ' + buttonDiv.hideButton,
+        style: buttonContentStyle3,
+        ref: buttonRef,
+        onMouseEnter: e => {
+          var _buttonDiv$durationHo5, _buttonDiv$easingHove5, _buttonDiv$opacityHov3, _buttonDiv$filterHove3, _buttonDiv$startXHove3, _buttonDiv$startYHove3, _buttonDiv$scaleHover3, _buttonDiv$rotateHove3, _buttonDiv$rotateXHov3, _buttonDiv$rotateYHov3, _buttonDiv$skewXHover3, _buttonDiv$skewYHover3, _buttonDiv$scaleTypeH3;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
+            durationHover: (_buttonDiv$durationHo5 = buttonDiv.durationHover) !== null && _buttonDiv$durationHo5 !== void 0 ? _buttonDiv$durationHo5 : 800,
+            effectHover: buttonDiv.effectHover,
+            easingHover: (_buttonDiv$easingHove5 = buttonDiv.easingHover) !== null && _buttonDiv$easingHove5 !== void 0 ? _buttonDiv$easingHove5 : 'linear',
+            opacityHover: (_buttonDiv$opacityHov3 = buttonDiv.opacityHover) !== null && _buttonDiv$opacityHov3 !== void 0 ? _buttonDiv$opacityHov3 : 1,
+            filterHover: (_buttonDiv$filterHove3 = buttonDiv.filterHover) !== null && _buttonDiv$filterHove3 !== void 0 ? _buttonDiv$filterHove3 : 0,
+            startXHover: (_buttonDiv$startXHove3 = buttonDiv.startXHover) !== null && _buttonDiv$startXHove3 !== void 0 ? _buttonDiv$startXHove3 : 100,
+            startYHover: (_buttonDiv$startYHove3 = buttonDiv.startYHover) !== null && _buttonDiv$startYHove3 !== void 0 ? _buttonDiv$startYHove3 : 0,
+            scaleHover: (_buttonDiv$scaleHover3 = buttonDiv.scaleHover) !== null && _buttonDiv$scaleHover3 !== void 0 ? _buttonDiv$scaleHover3 : 1,
+            rotateHover: (_buttonDiv$rotateHove3 = buttonDiv.rotateHover) !== null && _buttonDiv$rotateHove3 !== void 0 ? _buttonDiv$rotateHove3 : 0,
+            rotateXHover: (_buttonDiv$rotateXHov3 = buttonDiv.rotateXHover) !== null && _buttonDiv$rotateXHov3 !== void 0 ? _buttonDiv$rotateXHov3 : 0,
+            rotateYHover: (_buttonDiv$rotateYHov3 = buttonDiv.rotateYHover) !== null && _buttonDiv$rotateYHov3 !== void 0 ? _buttonDiv$rotateYHov3 : 0,
+            skewXHover: (_buttonDiv$skewXHover3 = buttonDiv.skewXHover) !== null && _buttonDiv$skewXHover3 !== void 0 ? _buttonDiv$skewXHover3 : 0,
+            skewYHover: (_buttonDiv$skewYHover3 = buttonDiv.skewYHover) !== null && _buttonDiv$skewYHover3 !== void 0 ? _buttonDiv$skewYHover3 : 0,
+            scaleTypeHover: (_buttonDiv$scaleTypeH3 = buttonDiv.scaleTypeHover) !== null && _buttonDiv$scaleTypeH3 !== void 0 ? _buttonDiv$scaleTypeH3 : 'scale'
+          });
+        } // Passa element.duration
+        ,
+        onMouseLeave: e => {
+          var _buttonDiv$durationHo6, _buttonDiv$easingHove6;
+          return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
+            durationHover: (_buttonDiv$durationHo6 = buttonDiv.durationHover) !== null && _buttonDiv$durationHo6 !== void 0 ? _buttonDiv$durationHo6 : 800,
+            easingHover: (_buttonDiv$easingHove6 = buttonDiv.easingHover) !== null && _buttonDiv$easingHove6 !== void 0 ? _buttonDiv$easingHove6 : 'linear'
           });
         } // Passa element.duration
       }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
@@ -49159,7 +49367,7 @@ const InnerIconEdit = ({
   const toggleHideTitle = () => {
     const newState = hideTitle === "hide" ? "" : "hide";
     setHideTitle(newState);
-    element.hideTitle = newState;
+    iconDiv.hideTitle = newState;
     setAttributes({
       elements: [...slides]
     }); // Oppure aggiorna la struttura dati appropriata
@@ -49607,7 +49815,7 @@ const InnerIconEdit = ({
     elementType: "icon",
     updateElement: (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) => updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'borderStyle'),
     selectOptions: _assets_options__WEBPACK_IMPORTED_MODULE_10__.borderStyleOptions // Passa le opzioni dinamiche
-  }), element.borderStyle !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), iconDiv.borderStyle !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
     colorNormal: iconDiv.backgroundBorderColor,
     setColorNormal: color => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'icon', 'backgroundBorderColor'),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
@@ -49997,7 +50205,7 @@ const InnerIconEdit = ({
     elementType: "icon",
     updateElement: (slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) => updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'borderStyleHover'),
     selectOptions: _assets_options__WEBPACK_IMPORTED_MODULE_10__.borderStyleOptions // Passa le opzioni dinamiche
-  }), element.borderStyleHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), iconDiv.borderStyleHover !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_9__["default"], {
     colorNormal: iconDiv.backgroundBorderColorHover,
     setColorNormal: color => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'icon', 'backgroundBorderColorHover'),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Border Color", "cocoblocks"),
@@ -50208,6 +50416,9 @@ const InnerIconRender = ({
     "--border-width-hover-icon-inner": `${iconDiv.backgroundBorderSizeHover?.top} ${iconDiv.backgroundBorderSizeHover?.right} ${iconDiv.backgroundBorderSizeHover?.bottom} ${iconDiv.backgroundBorderSizeHover?.left}`,
     opacity: iconDiv.opacity,
     zIndex: iconDiv.zIndexIcon,
+    ...(iconDiv.enableBoxShadow && {
+      boxShadow: `${iconDiv.boxShadowX}px ${iconDiv.boxShadowY}px ${iconDiv.boxShadowBlur}px ${iconDiv.boxShadowSpread}px ${iconDiv.colorBoxShadow}`
+    }),
     position: "relative",
     transform: `rotate(${iconDiv.rotate}deg)`,
     "--rotate-hover-icon-inner": iconDiv.rotateHover + "deg" || 0,
@@ -50221,10 +50432,7 @@ const InnerIconRender = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       width: iconDiv.width === "custom" ? `${iconDiv.widthCustom}%` : iconDiv.width,
-      textAlign: iconDiv.align,
-      ...(iconDiv.enableBoxShadow && {
-        boxShadow: `${iconDiv.boxShadowX}px ${iconDiv.boxShadowY}px ${iconDiv.boxShadowBlur}px ${iconDiv.boxShadowSpread}px ${iconDiv.colorBoxShadow}`
-      }),
+      justifyContent: iconDiv.align,
       display: 'flex'
     },
     className: "content-icon-inner " + iconDiv.hideTitle,
@@ -50848,7 +51056,7 @@ const InnerImageEdit = ({
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Contain", "slider"),
       value: "contain"
     }] // Passa le opzioni dinamiche
-  }), imageDiv.paddingImage > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), Object.values(imageDiv.paddingImage || {}).some(value => parseInt(value) > 0) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_color_ColorOptionsPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: imageDiv.backgroundColorImage,
     setColorNormal: color => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'image', 'backgroundColorImage'),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Background Color", "cocoblocks"),
@@ -51626,10 +51834,6 @@ const InnerImageRender = ({
   const getImageStyleBlock = imageDiv => {
     if (!imageDiv) return {}; // Aggiungi un controllo per imageDiv
     let style = {
-      maxWidth: "100%",
-      minWidth: "0",
-      maxHeight: "100%",
-      minHeight: "0",
       borderStyle: imageDiv.borderStyleImage || "none",
       borderColor: imageDiv.backgroundBorderColorImage || "#000000",
       ...(imageDiv.enableBoxShadowImage && {
@@ -51667,16 +51871,16 @@ const InnerImageRender = ({
       position: imageDiv.positionInnerImage,
       top: imageDiv.verticalPositionInnerImage,
       left: imageDiv.horizontalPositionInnerImage,
-      textAlign: imageDiv.imageAlign
+      textAlign: imageDiv.imageAlign,
+      '--background-color-image-inner-hover': imageDiv.backgroundColorImageHover
     },
-    className: "content-img-inner " + " " + imageDiv.hideImage
+    className: "content-img-inner " + imageDiv.imageFilter + " " + imageDiv.hideImage
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     ref: imageRef,
     onMouseEnter: e => {
       var _imageDiv$durationHov, _imageDiv$easingHover, _imageDiv$opacityHove, _imageDiv$filterHover, _imageDiv$startXHover, _imageDiv$startYHover, _imageDiv$scaleHover, _imageDiv$rotateHover, _imageDiv$rotateXHove, _imageDiv$rotateYHove, _imageDiv$skewXHover, _imageDiv$skewYHover, _imageDiv$scaleTypeHo;
       return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
         durationHover: (_imageDiv$durationHov = imageDiv.durationHover) !== null && _imageDiv$durationHov !== void 0 ? _imageDiv$durationHov : 800,
-        backgroundColorImageHover: imageDiv.backgroundColorImageHover,
         effectHover: imageDiv.effectHover,
         easingHover: (_imageDiv$easingHover = imageDiv.easingHover) !== null && _imageDiv$easingHover !== void 0 ? _imageDiv$easingHover : 'linear',
         opacityHover: (_imageDiv$opacityHove = imageDiv.opacityHover) !== null && _imageDiv$opacityHove !== void 0 ? _imageDiv$opacityHove : 1,
@@ -51697,7 +51901,6 @@ const InnerImageRender = ({
       var _imageDiv$durationHov2, _imageDiv$easingHover2;
       return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
         durationHover: (_imageDiv$durationHov2 = imageDiv.durationHover) !== null && _imageDiv$durationHov2 !== void 0 ? _imageDiv$durationHov2 : 800,
-        backgroundColorImage: imageDiv.backgroundColorImage,
         easingHover: (_imageDiv$easingHover2 = imageDiv.easingHover) !== null && _imageDiv$easingHover2 !== void 0 ? _imageDiv$easingHover2 : 'linear'
       });
     } // Passa element.duration
@@ -51706,7 +51909,7 @@ const InnerImageRender = ({
     src: imageDiv.imageUrl,
     alt: imageDiv.alt,
     style: getImageStyleBlock(imageDiv),
-    className: `img-inner image-with-mask ${imageDiv.blobMask}  ${imageDiv.spikeMask} ${imageDiv.spikeMaskRight} ${imageDiv.imageFilter}`
+    className: `img-inner image-with-mask ${imageDiv.blobMask}  ${imageDiv.spikeMask} ${imageDiv.spikeMaskRight}`
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InnerImageRender);
@@ -53215,6 +53418,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/icons-material/ViewQuilt */ "./node_modules/@mui/icons-material/esm/ViewQuilt.js");
 /* harmony import */ var _mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/icons-material/ColorLens */ "./node_modules/@mui/icons-material/esm/ColorLens.js");
 /* harmony import */ var _mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/icons-material/BlurOn */ "./node_modules/@mui/icons-material/esm/BlurOn.js");
+/* harmony import */ var _mui_icons_material_TouchApp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/icons-material/TouchApp */ "./node_modules/@mui/icons-material/esm/TouchApp.js");
+
 
 
 
@@ -53255,8 +53460,10 @@ const SectionSelectorSlide = ({
     variant: activeSectionSlide === "filter" ? "primary" : "secondary",
     onClick: () => handleSectionChangeSlide("filter")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_6__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Filters", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-    className: "section-selector-button"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    className: "section-selector-button",
+    variant: activeSectionSlide === "actions" ? "primary" : "secondary",
+    onClick: () => handleSectionChangeSlide("actions")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TouchApp__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Actions", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "section-selector-button"
   }));
 };
@@ -53510,9 +53717,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _align_aligncontrol__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./align/aligncontrol */ "./src/components/align/aligncontrol.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/button.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/info.js");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/icons-material/Visibility */ "./node_modules/@mui/icons-material/esm/Visibility.js");
+/* harmony import */ var _mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/icons-material/VisibilityOff */ "./node_modules/@mui/icons-material/esm/VisibilityOff.js");
+
+
 
 
 
@@ -53538,7 +53749,8 @@ const PostsControls = ({
     includeCategories = [],
     excludeCategories = [],
     order = "ASC",
-    postsToShow
+    postsToShow,
+    visibleElements = {}
   } = attributes;
   const [categories, setCategories] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -53564,6 +53776,15 @@ const PostsControls = ({
       postElementsOrder: updatedOrder
     });
   };
+  const toggleVisibility = element => {
+    const updatedVisibleElements = {
+      ...visibleElements,
+      [element]: !visibleElements[element]
+    };
+    setAttributes({
+      visibleElements: updatedVisibleElements
+    });
+  };
 
   // Section slider
   const [activeSectionSlidePost, setActiveSectionSlidePost] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("content");
@@ -53578,13 +53799,34 @@ const PostsControls = ({
     onSectionChange: setActiveSectionSlidePost
   }), activeSectionSlidePost === "content" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, postElementsOrder.map((element, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: index
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, element), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      color: 'var(--light-color)',
+      textTransform: 'capitalize'
+    }
+  }, element), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "button-move-element-post"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move before", "cocoblocks")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => moveElement(index, index - 1),
-    disabled: index === 0
-  }, "Su"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    size: "small",
+    disabled: index === 0,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move before", "cocoblocks")
+  }, "\u2191")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move after", "cocoblocks")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => moveElement(index, index + 1),
-    disabled: index === postElementsOrder.length - 1
-  }, "Gi\xF9")))), activeSectionSlidePost === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    size: "small",
+    disabled: index === postElementsOrder.length - 1,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move after", "cocoblocks")
+  }, "\u2193")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: visibleElements[element] ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide", "cocoblocks") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show", "cocoblocks")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    onClick: () => toggleVisibility(element),
+    size: "small",
+    label: visibleElements[element] ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide", "cocoblocks") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show", "cocoblocks")
+  }, visibleElements[element] ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_7__["default"], null) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VisibilityOff__WEBPACK_IMPORTED_MODULE_8__["default"], null))))))), activeSectionSlidePost === "layout" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-title-custom-panel intermedy"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title-custom-panel"
@@ -53667,7 +53909,7 @@ const PostsControls = ({
     },
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Nested blocks will fill the width of this container. Toggle to constrain.", "cocoblocks")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
     className: "tooltip-icon",
     style: {
       top: "12px"
@@ -53886,34 +54128,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_icons_material_MoreVert__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/MoreVert */ "./node_modules/@mui/icons-material/esm/MoreVert.js");
 /* harmony import */ var _mui_material_Popover__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Popover */ "./node_modules/@mui/material/Popover/Popover.js");
 /* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
-/* harmony import */ var _mui_icons_material_Wallpaper__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/icons-material/Wallpaper */ "./node_modules/@mui/icons-material/esm/Wallpaper.js");
-/* harmony import */ var _mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/icons-material/ColorLens */ "./node_modules/@mui/icons-material/esm/ColorLens.js");
-/* harmony import */ var _mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @mui/icons-material/BlurOn */ "./node_modules/@mui/icons-material/esm/BlurOn.js");
-/* harmony import */ var _mui_icons_material_ViewCompact__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @mui/icons-material/ViewCompact */ "./node_modules/@mui/icons-material/esm/ViewCompact.js");
-/* harmony import */ var _mui_icons_material_Gradient__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @mui/icons-material/Gradient */ "./node_modules/@mui/icons-material/esm/Gradient.js");
-/* harmony import */ var _mui_icons_material_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/icons-material/PhotoSizeSelectActual */ "./node_modules/@mui/icons-material/esm/PhotoSizeSelectActual.js");
-/* harmony import */ var _mui_icons_material_PhotoLibrary__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/icons-material/PhotoLibrary */ "./node_modules/@mui/icons-material/esm/PhotoLibrary.js");
-/* harmony import */ var _mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/ChangeCircleOutlined */ "./node_modules/@mui/icons-material/esm/ChangeCircleOutlined.js");
-/* harmony import */ var _mui_icons_material_FitScreen__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/FitScreen */ "./node_modules/@mui/icons-material/esm/FitScreen.js");
-/* harmony import */ var _mui_icons_material_SmartDisplay__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/icons-material/SmartDisplay */ "./node_modules/@mui/icons-material/esm/SmartDisplay.js");
-/* harmony import */ var _mui_icons_material_Widgets__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @mui/icons-material/Widgets */ "./node_modules/@mui/icons-material/esm/Widgets.js");
-/* harmony import */ var _mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @mui/icons-material/ViewQuilt */ "./node_modules/@mui/icons-material/esm/ViewQuilt.js");
-/* harmony import */ var _mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @mui/icons-material/SettingsEthernet */ "./node_modules/@mui/icons-material/esm/SettingsEthernet.js");
-/* harmony import */ var _mui_icons_material_WidthNormal__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @mui/icons-material/WidthNormal */ "./node_modules/@mui/icons-material/esm/WidthNormal.js");
-/* harmony import */ var _mui_icons_material_AlignVerticalTop__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @mui/icons-material/AlignVerticalTop */ "./node_modules/@mui/icons-material/esm/AlignVerticalTop.js");
-/* harmony import */ var _mui_icons_material_WrapText__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @mui/icons-material/WrapText */ "./node_modules/@mui/icons-material/esm/WrapText.js");
-/* harmony import */ var _mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @mui/icons-material/VerticalAlignTop */ "./node_modules/@mui/icons-material/esm/VerticalAlignTop.js");
-/* harmony import */ var _mui_icons_material_BorderStyle__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @mui/icons-material/BorderStyle */ "./node_modules/@mui/icons-material/esm/BorderStyle.js");
-/* harmony import */ var _mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @mui/icons-material/BorderColor */ "./node_modules/@mui/icons-material/esm/BorderColor.js");
-/* harmony import */ var _mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @mui/icons-material/Margin */ "./node_modules/@mui/icons-material/esm/Margin.js");
-/* harmony import */ var _mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @mui/icons-material/BorderInner */ "./node_modules/@mui/icons-material/esm/BorderInner.js");
-/* harmony import */ var _mui_icons_material_RestartAlt__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! @mui/icons-material/RestartAlt */ "./node_modules/@mui/icons-material/esm/RestartAlt.js");
-/* harmony import */ var _mui_icons_material_PostAddOutlined__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! @mui/icons-material/PostAddOutlined */ "./node_modules/@mui/icons-material/esm/PostAddOutlined.js");
-/* harmony import */ var _mui_icons_material_AddPhotoAlternateOutlined__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! @mui/icons-material/AddPhotoAlternateOutlined */ "./node_modules/@mui/icons-material/esm/AddPhotoAlternateOutlined.js");
-/* harmony import */ var _mui_icons_material_AddCard__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! @mui/icons-material/AddCard */ "./node_modules/@mui/icons-material/esm/AddCard.js");
-/* harmony import */ var _mui_icons_material_WbCloudyOutlined__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! @mui/icons-material/WbCloudyOutlined */ "./node_modules/@mui/icons-material/esm/WbCloudyOutlined.js");
-/* harmony import */ var _mui_icons_material_SmartButtonOutlined__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! @mui/icons-material/SmartButtonOutlined */ "./node_modules/@mui/icons-material/esm/SmartButtonOutlined.js");
-/* harmony import */ var _mui_icons_material_AddCircle__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! @mui/icons-material/AddCircle */ "./node_modules/@mui/icons-material/esm/AddCircle.js");
+/* harmony import */ var _mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/icons-material/ColorLens */ "./node_modules/@mui/icons-material/esm/ColorLens.js");
+/* harmony import */ var _mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/icons-material/BlurOn */ "./node_modules/@mui/icons-material/esm/BlurOn.js");
+/* harmony import */ var _mui_icons_material_ViewCompact__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @mui/icons-material/ViewCompact */ "./node_modules/@mui/icons-material/esm/ViewCompact.js");
+/* harmony import */ var _mui_icons_material_Gradient__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @mui/icons-material/Gradient */ "./node_modules/@mui/icons-material/esm/Gradient.js");
+/* harmony import */ var _mui_icons_material_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @mui/icons-material/PhotoSizeSelectActual */ "./node_modules/@mui/icons-material/esm/PhotoSizeSelectActual.js");
+/* harmony import */ var _mui_icons_material_PhotoLibrary__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/icons-material/PhotoLibrary */ "./node_modules/@mui/icons-material/esm/PhotoLibrary.js");
+/* harmony import */ var _mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/ChangeCircleOutlined */ "./node_modules/@mui/icons-material/esm/ChangeCircleOutlined.js");
+/* harmony import */ var _mui_icons_material_FitScreen__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/icons-material/FitScreen */ "./node_modules/@mui/icons-material/esm/FitScreen.js");
+/* harmony import */ var _mui_icons_material_SmartDisplay__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/SmartDisplay */ "./node_modules/@mui/icons-material/esm/SmartDisplay.js");
+/* harmony import */ var _mui_icons_material_Widgets__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/icons-material/Widgets */ "./node_modules/@mui/icons-material/esm/Widgets.js");
+/* harmony import */ var _mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @mui/icons-material/ViewQuilt */ "./node_modules/@mui/icons-material/esm/ViewQuilt.js");
+/* harmony import */ var _mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @mui/icons-material/SettingsEthernet */ "./node_modules/@mui/icons-material/esm/SettingsEthernet.js");
+/* harmony import */ var _mui_icons_material_WidthNormal__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @mui/icons-material/WidthNormal */ "./node_modules/@mui/icons-material/esm/WidthNormal.js");
+/* harmony import */ var _mui_icons_material_AlignVerticalTop__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @mui/icons-material/AlignVerticalTop */ "./node_modules/@mui/icons-material/esm/AlignVerticalTop.js");
+/* harmony import */ var _mui_icons_material_WrapText__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @mui/icons-material/WrapText */ "./node_modules/@mui/icons-material/esm/WrapText.js");
+/* harmony import */ var _mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @mui/icons-material/VerticalAlignTop */ "./node_modules/@mui/icons-material/esm/VerticalAlignTop.js");
+/* harmony import */ var _mui_icons_material_BorderStyle__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @mui/icons-material/BorderStyle */ "./node_modules/@mui/icons-material/esm/BorderStyle.js");
+/* harmony import */ var _mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @mui/icons-material/BorderColor */ "./node_modules/@mui/icons-material/esm/BorderColor.js");
+/* harmony import */ var _mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @mui/icons-material/Margin */ "./node_modules/@mui/icons-material/esm/Margin.js");
+/* harmony import */ var _mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @mui/icons-material/BorderInner */ "./node_modules/@mui/icons-material/esm/BorderInner.js");
+/* harmony import */ var _mui_icons_material_RestartAlt__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @mui/icons-material/RestartAlt */ "./node_modules/@mui/icons-material/esm/RestartAlt.js");
+/* harmony import */ var _mui_icons_material_PostAddOutlined__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! @mui/icons-material/PostAddOutlined */ "./node_modules/@mui/icons-material/esm/PostAddOutlined.js");
+/* harmony import */ var _mui_icons_material_AddPhotoAlternateOutlined__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! @mui/icons-material/AddPhotoAlternateOutlined */ "./node_modules/@mui/icons-material/esm/AddPhotoAlternateOutlined.js");
+/* harmony import */ var _mui_icons_material_AddCard__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! @mui/icons-material/AddCard */ "./node_modules/@mui/icons-material/esm/AddCard.js");
+/* harmony import */ var _mui_icons_material_WbCloudyOutlined__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! @mui/icons-material/WbCloudyOutlined */ "./node_modules/@mui/icons-material/esm/WbCloudyOutlined.js");
+/* harmony import */ var _mui_icons_material_SmartButtonOutlined__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! @mui/icons-material/SmartButtonOutlined */ "./node_modules/@mui/icons-material/esm/SmartButtonOutlined.js");
+/* harmony import */ var _mui_icons_material_AddCircle__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! @mui/icons-material/AddCircle */ "./node_modules/@mui/icons-material/esm/AddCircle.js");
+/* harmony import */ var _mui_icons_material_TouchApp__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! @mui/icons-material/TouchApp */ "./node_modules/@mui/icons-material/esm/TouchApp.js");
+/* harmony import */ var _mui_icons_material_InsertLink__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! @mui/icons-material/InsertLink */ "./node_modules/@mui/icons-material/esm/InsertLink.js");
+/* harmony import */ var _mui_icons_material_OpenInNew__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! @mui/icons-material/OpenInNew */ "./node_modules/@mui/icons-material/esm/OpenInNew.js");
+/* harmony import */ var _mui_icons_material_DatasetLinked__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! @mui/icons-material/DatasetLinked */ "./node_modules/@mui/icons-material/esm/DatasetLinked.js");
+/* harmony import */ var _mui_icons_material_Phishing__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! @mui/icons-material/Phishing */ "./node_modules/@mui/icons-material/esm/Phishing.js");
+/* harmony import */ var _mui_icons_material_Texture__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! @mui/icons-material/Texture */ "./node_modules/@mui/icons-material/esm/Texture.js");
+/* harmony import */ var _mui_icons_material_Flip__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! @mui/icons-material/Flip */ "./node_modules/@mui/icons-material/esm/Flip.js");
+/* harmony import */ var _mui_icons_material_ScreenRotationAlt__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! @mui/icons-material/ScreenRotationAlt */ "./node_modules/@mui/icons-material/esm/ScreenRotationAlt.js");
+/* harmony import */ var _mui_icons_material_MultipleStop__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! @mui/icons-material/MultipleStop */ "./node_modules/@mui/icons-material/esm/MultipleStop.js");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54056,7 +54315,11 @@ const SlideEdit = ({
     const color = getComputedStyle(root).getPropertyValue("--primary-color");
     setPrimaryColor(color.trim());
   }, []);
+
+  // Stato per tracciare quale pannello è aperto
+  const [openPanelId, setOpenPanelId] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(null);
   const handlePanelSelect = panelId => {
+    setOpenPanelId(currentId => currentId === panelId ? null : panelId); // Aggiorna l'ID del pannello aperto
     setSelectedPanel(prevPanel => prevPanel === panelId ? null : panelId);
     // Trova l'indice della slide corrispondente
     const slideIndex = slides.findIndex(slide => slide.id === panelId);
@@ -54231,6 +54494,7 @@ const SlideEdit = ({
       layoutAlignItems: "center",
       layoutAlignResponsive: "center",
       layoutDisplay: "flex",
+      link: "none",
       borderStyleSlide: currentSettings.borderStyleSlide,
       backgroundBorderColor: currentSettings.backgroundBorderColor,
       backgroundBorderSize: currentSettings.backgroundBorderSize,
@@ -54371,6 +54635,61 @@ const SlideEdit = ({
     });
   };
 
+  // Update link
+  const updateLink = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      link: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update text link
+  const updateUrl = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      url: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update target
+  const updateTarget = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      target: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update rel
+  const updateRel = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      rel: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update scroll id
+  const updateScrollId = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      scrollId: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
   // Update Content width 
   const updateSlideContentWidth = (slideId, value) => {
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
@@ -54430,6 +54749,83 @@ const SlideEdit = ({
     const updatedSlides = slides.map(slide => slide.id === slideId ? {
       ...slide,
       filter: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Divider
+  const updateSlideDivider = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      divider: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Color divider
+  const updateColorDivider = (id, color) => {
+    const updatedSlides = slides.map(slide => slide.id === id ? {
+      ...slide,
+      colorDivider: color
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update height divider 
+  const updateSlideHeightDivider = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      heightDivider: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update width divider 
+  const updateSlideWidthDivider = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      widthDivider: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update Flip Divider
+  const updateFlipDivider = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      flipDivider: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update invert divider
+  const updateInvertDivider = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      invertDivider: value
+    } : slide);
+    setAttributes({
+      slides: updatedSlides
+    });
+  };
+
+  // Update position divider
+  const updateSlidePositionDivider = (slideId, value) => {
+    const updatedSlides = slides.map(slide => slide.id === slideId ? {
+      ...slide,
+      positionDivider: value
     } : slide);
     setAttributes({
       slides: updatedSlides
@@ -54743,30 +55139,57 @@ const SlideEdit = ({
   const addSlideButton = (slideId, buttonType) => {
     const defaultValues = {
       type1: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
         backgroundBorderRadiusButton: 30,
-        backgroundBorderSizeButton: 3,
+        backgroundBorderSizeButton: {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px'
+        },
         buttonBackgroundColor: '#18191c',
         buttonColorHover: '#FFFFFF',
         widthCustomButton: 35,
         heightCustomButton: 55,
-        borderStyleHover: "none"
+        borderStyleHover: "solid",
+        backgroundBorderSizeButtonHover: {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px'
+        },
+        backgroundBorderColorHover: '#ffffff',
+        borderStyleHover: "solid"
       },
       type2: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
         backgroundBorderRadiusButton: 30,
         backgroundBorderSizeButton: 3,
         buttonBackgroundColor: '#FFFFFF',
-        buttonColorHover: '#18191c',
+        buttonColorHover: '#ffffff',
         widthCustomButton: 35,
         heightCustomButton: 55,
-        borderStyleHover: "none"
+        borderStyleHover: "solid",
+        backgroundBorderSizeButtonHover: {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px'
+        },
+        backgroundBorderColorHover: '#ffffff',
+        borderStyleHover: "solid"
       },
       type3: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -54796,6 +55219,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#FFFFFF"
       },
       type4: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -54825,6 +55250,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#18191c"
       },
       type5: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -54848,6 +55275,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#FFFFFF"
       },
       type6: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -54871,6 +55300,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#18191c"
       },
       type7: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -54900,6 +55331,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#FFFFFF"
       },
       type8: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -55039,7 +55472,10 @@ const SlideEdit = ({
   const open = Boolean(anchorEl);
   const id = open ? 'custom-popover' : undefined;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-subdescription-section-slider"
+    className: "content-subdescription-section-slider",
+    style: {
+      borderBottom: '2px solid var(--label-color)'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom Content"))), slides.map((slide, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     key: index,
     className: "cocoblocks-panel panel-slide",
@@ -55105,7 +55541,7 @@ const SlideEdit = ({
       }
     }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Clone", "slider"))))),
     onToggle: () => handlePanelSelect(slide.id),
-    initialOpen: false
+    opened: openPanelId === slide.id
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_multitab_sectionSelectorSlide__WEBPACK_IMPORTED_MODULE_7__["default"], {
     onSectionChange: setActiveSectionSlide
   }), activeSectionSlide === "background" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -55123,13 +55559,7 @@ const SlideEdit = ({
     style: {
       padding: "0"
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "custom-select"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-background-slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Wallpaper__WEBPACK_IMPORTED_MODULE_28__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "title-tab"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose the backgrounds", "slider")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     className: "background-selector",
     activeClass: "active-tab",
     initialTabName: slide.backgroundType,
@@ -55155,9 +55585,9 @@ const SlideEdit = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: slide.backgroundColor,
     setColorNormal: color => updateSlideBackgroundColor(slide.id, color),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_21__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_30__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Radial Effect", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_29__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Radial Effect", "cocoblocks")),
     checked: slide.enableRadialEffect || false,
     onChange: value => updateEnableRadialEffect(slide.id, value)
   }), slide.enableRadialEffect && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -55165,17 +55595,17 @@ const SlideEdit = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: slide.effectRadialColorOne,
     setColorNormal: color => updateSlideEffectRadialColorOne(slide.id, color),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: slide.effectRadialColorTwo,
     setColorNormal: color => updateSlideEffectRadialColorTwo(slide.id, color),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewCompact__WEBPACK_IMPORTED_MODULE_31__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Size", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewCompact__WEBPACK_IMPORTED_MODULE_30__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Size", "cocoblocks")),
     value: slide.rangeEffectRadial || 1,
     onChange: value => updateSlideRangeEffectRadial(slide.id, value),
     min: 1,
@@ -55186,7 +55616,7 @@ const SlideEdit = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanelGradient__WEBPACK_IMPORTED_MODULE_13__["default"], {
     gradient: slide.backgroundGradient,
     setGradient: gradient => updateSlideBackgroundGradient(slide.id, gradient),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Gradient__WEBPACK_IMPORTED_MODULE_32__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Gradient__WEBPACK_IMPORTED_MODULE_31__["default"], null)
   })), tab.name === "image" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-img-upload",
     style: {
@@ -55217,7 +55647,11 @@ const SlideEdit = ({
         alignItems: "center",
         gap: "5px"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_33__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Media Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_32__["default"], {
+      style: {
+        width: '18px'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Media Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
@@ -55243,7 +55677,11 @@ const SlideEdit = ({
         alignItems: "center",
         gap: "5px"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PhotoLibrary__WEBPACK_IMPORTED_MODULE_34__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Object Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PhotoLibrary__WEBPACK_IMPORTED_MODULE_33__["default"], {
+      style: {
+        width: '18px'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Object Library", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
@@ -55255,7 +55693,8 @@ const SlideEdit = ({
       style: {
         position: "relative",
         padding: "0px 4px",
-        marginTop: "12px"
+        marginTop: "12px",
+        marginBottom: "12px"
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FocalPointPicker, {
       __nextHasNoMarginBottom: true,
@@ -55267,7 +55706,7 @@ const SlideEdit = ({
       onChange: newFocalPoint => handleFocalPointChange(slide.id, newFocalPoint),
       url: slide.backgroundImage
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-      label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_FitScreen__WEBPACK_IMPORTED_MODULE_35__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image fit", "cocoblocks")),
+      label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_FitScreen__WEBPACK_IMPORTED_MODULE_34__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image fit", "cocoblocks")),
       value: slide.fit,
       options: [{
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Cover", "slider"),
@@ -55275,6 +55714,9 @@ const SlideEdit = ({
       }, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Auto", "slider"),
         value: "auto"
+      }, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Contain", "slider"),
+        value: "contain"
       }],
       onChange: newFit => updateSlideFit(slide.id, newFit)
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -55287,7 +55729,7 @@ const SlideEdit = ({
         padding: "3px"
       },
       className: "button-replace",
-      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_36__["default"], null),
+      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_35__["default"], null),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image form Media Library", "cocoblocks")
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       onClick: openModal,
@@ -55297,7 +55739,7 @@ const SlideEdit = ({
         top: "-2px"
       },
       className: "button-replace",
-      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_36__["default"], null),
+      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_35__["default"], null),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Image from Object Library", "cocoblocks")
     })))
   })), slide.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -55334,7 +55776,7 @@ const SlideEdit = ({
         alignItems: "center",
         gap: "5px"
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SmartDisplay__WEBPACK_IMPORTED_MODULE_37__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Video", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SmartDisplay__WEBPACK_IMPORTED_MODULE_36__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Background Video", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "dashicons dashicons-arrow-down-alt2",
       style: {
         position: "relative",
@@ -55364,7 +55806,7 @@ const SlideEdit = ({
         color: " var(--light-color)",
         padding: "3px"
       },
-      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_36__["default"], null),
+      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ChangeCircleOutlined__WEBPACK_IMPORTED_MODULE_35__["default"], null),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Change Background Video", "cocoblocks")
     })))
   })), slide.backgroundVideo && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -55379,7 +55821,7 @@ const SlideEdit = ({
     className: "title-custom-panel"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Layout", "cocoblocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_21__["default"], {
     customClassToggle: "drag-mode",
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Widgets__WEBPACK_IMPORTED_MODULE_38__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Advanced Mode", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Widgets__WEBPACK_IMPORTED_MODULE_37__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Advanced Mode", "cocoblocks")),
     checked: slide.developerMode,
     onChange: value => updateDeveloperMode(slide.id, value)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -55400,7 +55842,7 @@ const SlideEdit = ({
     selectedDevice: selectedDevice,
     onDeviceChange: onDeviceChange
   }))), !slide.developerMode && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Display", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_38__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Display", "cocoblocks")),
     value: slide.layoutDisplay,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Flex", "slider"),
@@ -55417,7 +55859,7 @@ const SlideEdit = ({
     }],
     onChange: value => updateSlideLayoutDisplay(slide.id, value)
   }), slide.layoutDisplay === "flex" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content direction", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ViewQuilt__WEBPACK_IMPORTED_MODULE_38__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content direction", "cocoblocks")),
     value: slide.layout,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column", "slider"),
@@ -55428,7 +55870,7 @@ const SlideEdit = ({
     }],
     onChange: newLayout => updateSlideLayout(slide.id, newLayout)
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_40__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between items", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between items", "cocoblocks")),
     value: slide.gapItems || 0,
     onChange: newGapItems => updateSlideGapItems(slide.id, newGapItems),
     min: 0,
@@ -55440,7 +55882,7 @@ const SlideEdit = ({
     value: slide.position,
     onChange: newPosition => updateSlidePosition(slide.id, newPosition)
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_21__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WidthNormal__WEBPACK_IMPORTED_MODULE_41__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Use content width", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WidthNormal__WEBPACK_IMPORTED_MODULE_40__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Use content width", "cocoblocks")),
     checked: slide.enableContentWidth || false,
     onChange: value => updateSlideEnableContentWidth(slide.id, value),
     showTooltip: true,
@@ -55448,14 +55890,14 @@ const SlideEdit = ({
     tooltipTop: '11px',
     tooltipLeft: '40%'
   }), slide.enableContentWidth && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_40__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content width", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content width", "cocoblocks")),
     value: slide.contentWidth || 900,
     onChange: value => updateSlideContentWidth(slide.id, value),
     min: 100,
     max: 3200,
     step: 1
   })), slide.layoutDisplay === "flex" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, slide.layout === "vertical" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AlignVerticalTop__WEBPACK_IMPORTED_MODULE_42__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Align items", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AlignVerticalTop__WEBPACK_IMPORTED_MODULE_41__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Align items", "cocoblocks")),
     value: slide.layoutAlignItems,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Flex start", "slider"),
@@ -55469,7 +55911,7 @@ const SlideEdit = ({
     }],
     onChange: value => updateSlideLayoutAlignItems(slide.id, value)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AlignVerticalTop__WEBPACK_IMPORTED_MODULE_42__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Justify in responsive", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AlignVerticalTop__WEBPACK_IMPORTED_MODULE_41__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Justify in responsive", "cocoblocks")),
     value: slide.layoutAlignResponsive,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Left", "slider"),
@@ -55483,7 +55925,7 @@ const SlideEdit = ({
     }],
     onChange: value => updateSlideLayoutAlignResponsive(slide.id, value)
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WrapText__WEBPACK_IMPORTED_MODULE_43__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Flex wrap", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WrapText__WEBPACK_IMPORTED_MODULE_42__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Flex wrap", "cocoblocks")),
     value: slide.layoutWrap || "wrap",
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Wrap", "slider"),
@@ -55503,14 +55945,14 @@ const SlideEdit = ({
       padding: "0"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_44__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content vertical padding", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_43__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content vertical padding", "cocoblocks")),
     value: slide.backgroundVerticalPadding || 0,
     onChange: newVerticalPadding => updateSlideBackgroundVerticalPadding(slide.id, newVerticalPadding),
     min: 0,
     max: 256,
     step: 1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_44__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_VerticalAlignTop__WEBPACK_IMPORTED_MODULE_43__["default"], {
       style: {
         transform: "rotate(90deg)"
       }
@@ -55531,7 +55973,7 @@ const SlideEdit = ({
       paddingBottom: "0"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderStyle__WEBPACK_IMPORTED_MODULE_45__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border style", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderStyle__WEBPACK_IMPORTED_MODULE_44__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border style", "cocoblocks")),
     value: slide.borderStyleSlide || "none",
     options: _assets_options__WEBPACK_IMPORTED_MODULE_19__.borderStyleOptions,
     onChange: value => updateBorderStyleSlide(slide.id, value)
@@ -55541,16 +55983,16 @@ const SlideEdit = ({
     colorNormal: slide.backgroundBorderColor,
     setColorNormal: color => updateSlideBackgroundBorderColor(slide.id, color),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_46__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderColor__WEBPACK_IMPORTED_MODULE_45__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_47__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Margin__WEBPACK_IMPORTED_MODULE_46__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border width", "cocoblocks")),
     value: slide.backgroundBorderSize || 0,
     onChange: newSize => updateSlideBackgroundBorderSize(slide.id, newSize),
     min: 0,
     max: 20,
     step: 1
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_48__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BorderInner__WEBPACK_IMPORTED_MODULE_47__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Border radius", "cocoblocks")),
     value: slide.backgroundBorderRadius || 0,
     onChange: newRadius => updateSlideBackgroundBorderRadius(slide.id, newRadius),
     min: 0,
@@ -55591,7 +56033,7 @@ const SlideEdit = ({
       padding: "0"
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
-    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_30__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bg Filter", "cocoblocks")),
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_BlurOn__WEBPACK_IMPORTED_MODULE_29__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bg Filter", "cocoblocks")),
     value: slide.filter || 'none',
     onChange: value => updateSlideFilter(slide.id, value),
     options: _assets_options__WEBPACK_IMPORTED_MODULE_19__.filterBackgroundOptions
@@ -55601,25 +56043,142 @@ const SlideEdit = ({
     colorNormal: slide.colorOneEffect,
     setColorNormal: color => updateColorOneEffect(slide.id, color),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("First Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
   })), filtersWithColorOptionsTwo.includes(slide.filter) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: slide.colorTwoEffect,
     setColorNormal: color => updateColorTwoEffect(slide.id, color),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Second Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
   })), filtersWithColorOptions.includes(slide.filter) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select color"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
     colorNormal: slide.colorThreeEffect,
     setColorNormal: color => updateColorThreeEffect(slide.id, color),
     buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Third Color", "cocoblocks"),
-    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_29__["default"], null)
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => resetEffect(slide.id),
     className: "button-reset"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_RestartAlt__WEBPACK_IMPORTED_MODULE_49__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Reset Effect Color", "cocoblocks"))))), slide.elements && slide.elements.map((element, elementIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_RestartAlt__WEBPACK_IMPORTED_MODULE_48__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Reset Effect Color", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Texture__WEBPACK_IMPORTED_MODULE_49__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Divider", "cocoblocks")),
+    value: slide.divider || 'none',
+    onChange: value => updateSlideDivider(slide.id, value),
+    options: _assets_options__WEBPACK_IMPORTED_MODULE_19__.dividerBackgroundOptions
+  }), slide.divider !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_39__["default"], {
+      style: {
+        transform: 'rotate(90deg'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Height", "cocoblocks")),
+    value: slide.heightDivider || 200,
+    onChange: value => updateSlideHeightDivider(slide.id, value),
+    min: 0,
+    max: 500,
+    step: 1
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_range_CustomRangeControl__WEBPACK_IMPORTED_MODULE_22__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SettingsEthernet__WEBPACK_IMPORTED_MODULE_39__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Width", "cocoblocks")),
+    value: slide.widthDivider || 100,
+    onChange: value => updateSlideWidthDivider(slide.id, value),
+    min: 100,
+    max: 300,
+    step: 1
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select color"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_colorPanel__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    colorNormal: slide.colorDivider,
+    setColorNormal: color => updateColorDivider(slide.id, color),
+    buttonTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color", "cocoblocks"),
+    buttonIcon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ColorLens__WEBPACK_IMPORTED_MODULE_28__["default"], null)
+  })), ["divider-wawes", "divider-curve-asymmetrical", "divider-triangle-asymmetrical", "divider-tilt"].includes(slide.divider) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_21__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Flip__WEBPACK_IMPORTED_MODULE_50__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Flip", "cocoblocks")),
+    checked: slide.flipDivider || false,
+    onChange: value => updateFlipDivider(slide.id, value)
+  }), slide.divider !== 'divider-tilt' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_toggle_CustomToggleControl__WEBPACK_IMPORTED_MODULE_21__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_ScreenRotationAlt__WEBPACK_IMPORTED_MODULE_51__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Invert", "cocoblocks")),
+    checked: slide.invertDivider || false,
+    onChange: value => updateInvertDivider(slide.id, value)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_MultipleStop__WEBPACK_IMPORTED_MODULE_52__["default"], {
+      style: {
+        transform: 'rotate(90deg)'
+      }
+    }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Position", "cocoblocks")),
+    value: slide.positionDivider || 'none',
+    onChange: value => updateSlidePositionDivider(slide.id, value),
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Top", "cocoblocks"),
+      value: "divider-top"
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bottom", "cocoblocks"),
+      value: "divider-bottom"
+    }]
+  })))), activeSectionSlide === "actions" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-title-custom-panel intermedy"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "title-custom-panel"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Actions", "cocoblocks"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content-section-panel",
+    style: {
+      padding: "0"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_TouchApp__WEBPACK_IMPORTED_MODULE_53__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Link actions", "cocoblocks")),
+    value: slide.link || "none",
+    onChange: value => updateLink(slide.id, value),
+    options: [{
+      label: "None",
+      value: "none"
+    }, {
+      label: "Link",
+      value: "link"
+    }, {
+      label: "Scroll Below Slider",
+      value: "scroll-below"
+    }, {
+      label: "Scroll to ID Element",
+      value: "scroll-to-id"
+    }]
+  }), slide.link === "link" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    __nextHasNoMarginBottom: true,
+    value: slide.url,
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_InsertLink__WEBPACK_IMPORTED_MODULE_54__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Url", "cocoblocks")),
+    onChange: value => updateUrl(slide.id, value),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter url...", "cocoblocks")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_OpenInNew__WEBPACK_IMPORTED_MODULE_55__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Target", "cocoblocks")),
+    value: slide.target || "_self",
+    onChange: value => updateTarget(slide.id, value),
+    options: [{
+      label: "Same Window",
+      value: "_self"
+    }, {
+      label: "New Window",
+      value: "_blank"
+    }]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_controls_select_CustomSelectControl__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_DatasetLinked__WEBPACK_IMPORTED_MODULE_56__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Link Behavior", "cocoblocks")),
+    value: slide.rel || "follow",
+    onChange: value => updateRel(slide.id, value),
+    options: [{
+      label: "Follow Link",
+      value: "follow"
+    }, {
+      label: "No Follow",
+      value: "nofollow"
+    }]
+  })), slide.link === "scroll-to-id" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "custom-select select-text-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    __nextHasNoMarginBottom: true,
+    value: slide.scrollId,
+    label: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Phishing__WEBPACK_IMPORTED_MODULE_57__["default"], null), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter ID", "cocoblocks")),
+    onChange: value => updateScrollId(slide.id, value),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter id...", "cocoblocks")
+  })))), slide.elements && slide.elements.map((element, elementIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: elementIndex,
     style: {
       marginBottom: "10px",
@@ -55729,28 +56288,28 @@ const SlideEdit = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => addSlideTitle(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add text", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PostAddOutlined__WEBPACK_IMPORTED_MODULE_50__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_PostAddOutlined__WEBPACK_IMPORTED_MODULE_58__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => addSlideImage(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add image", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AddPhotoAlternateOutlined__WEBPACK_IMPORTED_MODULE_51__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AddPhotoAlternateOutlined__WEBPACK_IMPORTED_MODULE_59__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: openModalButton,
     label: "Add Button"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SmartButtonOutlined__WEBPACK_IMPORTED_MODULE_52__["default"], null)), isModalOpenButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_buttonModal__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_SmartButtonOutlined__WEBPACK_IMPORTED_MODULE_60__["default"], null)), isModalOpenButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_buttonModal__WEBPACK_IMPORTED_MODULE_16__["default"], {
     slideId: slide.id,
     onClose: closeModalButton,
     onSelect: handleButtonTypeSelect
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => addSlideIcon(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Icon", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WbCloudyOutlined__WEBPACK_IMPORTED_MODULE_53__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_WbCloudyOutlined__WEBPACK_IMPORTED_MODULE_61__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => addSlideDiv(slide.id),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add group", "slide")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AddCard__WEBPACK_IMPORTED_MODULE_54__["default"], null))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AddCard__WEBPACK_IMPORTED_MODULE_62__["default"], null))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "controls",
     className: "button-add-slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-button-slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AddCircle__WEBPACK_IMPORTED_MODULE_55__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_AddCircle__WEBPACK_IMPORTED_MODULE_63__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     onClick: addSlide
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Slide", "slider")))));
 };
@@ -56918,8 +57477,9 @@ const TextRender = ({
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
   const stylesTitle = {
-    fontSize: '22px',
+    fontSize: 'clamp(' + element.fontSizeMobile + 'px,' + element.fontSizeTablet + 'vw, ' + element.fontSize + 'px)',
     color: element.textColor,
+    '--color-hover': element.textColorHover,
     backgroundColor: element.backgroundColor,
     textAlign: element.textAlign,
     letterSpacing: element.letterSpacing + "px",
@@ -56972,7 +57532,6 @@ const TextRender = ({
       var _element$durationHove, _element$easingHover, _element$opacityHover, _element$filterHover, _element$startXHover, _element$startYHover, _element$scaleHover, _element$rotateHover, _element$rotateXHover, _element$rotateYHover, _element$skewXHover, _element$skewYHover, _element$scaleTypeHov;
       return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseEnter)(e, {
         durationHover: (_element$durationHove = element.durationHover) !== null && _element$durationHove !== void 0 ? _element$durationHove : 800,
-        textColorHover: element.textColorHover,
         effectHover: element.effectHover,
         easingHover: (_element$easingHover = element.easingHover) !== null && _element$easingHover !== void 0 ? _element$easingHover : 'linear',
         opacityHover: (_element$opacityHover = element.opacityHover) !== null && _element$opacityHover !== void 0 ? _element$opacityHover : 1,
@@ -56993,7 +57552,6 @@ const TextRender = ({
       var _element$durationHove2, _element$easingHover2;
       return (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_2__.handleMouseLeave)(e, {
         durationHover: (_element$durationHove2 = element.durationHover) !== null && _element$durationHove2 !== void 0 ? _element$durationHove2 : 800,
-        textColor: element.textColor,
         easingHover: (_element$easingHover2 = element.easingHover) !== null && _element$easingHover2 !== void 0 ? _element$easingHover2 : 'linear'
       });
     } // Passa element.duration
@@ -57929,6 +58487,7 @@ const CustomTextAreaControl = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "custom-select"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+    __nextHasNoMarginBottom: true,
     value: value,
     onChange: handleChange,
     placeholder: placeholder || __("Add text content...", "cocoblocks"),
@@ -58302,6 +58861,8 @@ function Edit({
     initialSlide,
     autoHeight,
     slideHeight,
+    slideHeightTablet,
+    slideHeightMobile,
     grabCursor,
     speed,
     crossFade,
@@ -58408,6 +58969,8 @@ function Edit({
     backgroundVerticalPadding,
     backgroundHorizontalPadding,
     backgroundColor,
+    backgroundImage,
+    focalPoint,
     backgroundColorSlideDefault,
     backgroundColorBlockDefault,
     textColorDefault,
@@ -58452,7 +59015,9 @@ function Edit({
     includeCategories = [],
     excludeCategories = [],
     order = "ASC",
-    postsToShow
+    postsToShow,
+    fitImage,
+    visibleElements
   } = attributes;
 
   /* Classi personalizzate per il blocco */
@@ -58603,7 +59168,7 @@ function Edit({
   }, []);
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${backgroundColor}-${JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)}`;
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${slideHeightTablet}-${slideHeightMobile}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${backgroundImage}-${focalPoint}-${backgroundColor}-${JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)}`;
   // Nessun movimento della slider
   const isGutenbergEditor = typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
 
@@ -58668,7 +59233,10 @@ function Edit({
     "--swiper-autoplay-progress-color": autoplayProgressColor,
     border: backgroundBorderSize + "px solid " + backgroundBorderColor,
     borderRadius: backgroundBorderRadius + "px",
-    backgroundColor: backgroundColor,
+    backgroundColor: backgroundImage ? undefined : backgroundColor,
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+    backgroundSize: fitImage ? fitImage : "cover",
+    backgroundPosition: backgroundImage ? `${focalPoint.x * 100}% ${focalPoint.y * 100}%` : undefined,
     "--color-one-effect": colorOneEffect,
     "--color-two-effect": colorTwoEffect,
     "--color-three-effect": colorThreeEffect,
@@ -58826,41 +59394,31 @@ function Edit({
       debounceTimer = setTimeout(() => func(...args), delay);
     };
   };
-
-  /* Da controllare perchè rallenta il sito!!!!!!
-  useEffect(() => {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const includeCategoriesParam = includeCategories.length ? includeCategories.join(',') : '';
     const excludeCategoriesParam = excludeCategories.length ? excludeCategories.join(',') : '';
-    const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}`;
-  
-    // Controlla se la risposta è già nella cache
+    const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}-${attributes.postId}`;
     if (apiCache[cacheKey]) {
-      setAttributes({ posts: apiCache[cacheKey] });
+      setAttributes({
+        posts: apiCache[cacheKey]
+      });
       return;
     }
-  
-    // Funzione per recuperare i post con debounce
     const fetchPosts = debounce(() => {
-      apiFetch({
-        path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}`,
-      })
-        .then((data) => {
-          console.log('Data ricevuti:', data); // Controlla i dati
-          apiCache[cacheKey] = data; // Memorizza i risultati nella cache
-          setAttributes({ posts: data });
-        })
-        .catch((error) => {
-          console.error('Errore nel recupero dei post:', error);
+      _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_23___default()({
+        path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}&exclude_post_id=${attributes.postId}`
+      }).then(data => {
+        console.log('Data ricevuti:', data);
+        apiCache[cacheKey] = data;
+        setAttributes({
+          posts: data
         });
-    }, 300); // Imposta il debounce con un ritardo di 300ms
-  
-    // Chiama la funzione debounce
+      }).catch(error => {
+        console.error('Errore nel recupero dei post:', error);
+      });
+    }, 300);
     fetchPosts();
-  }, [includeCategories, excludeCategories, order, postsToShow]);
-   */
-
-  // Debug: Verifica l'ordine dei post
-  console.log("Ordine dei post:", posts);
+  }, [includeCategories, excludeCategories, order, postsToShow, attributes.postId]);
 
   // Style content posts
   const stylesContentPosts = {
@@ -59221,6 +59779,7 @@ function Edit({
     className: "content-slide-post " + positionPost,
     style: stylesContentPosts
   }, postElementsOrder.map(element => {
+    if (!visibleElements[element]) return null;
     switch (element) {
       case "image":
         return post.image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -59287,7 +59846,103 @@ function Edit({
         backgroundSize: `${slide.rangeEffectRadial}px ${slide.rangeEffectRadial}px`
       } : {})
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, slide.divider !== "none" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "divider-container",
+    style: {
+      ...(slide.invertDivider === true && slide.divider !== 'divider-tilt' && slide.positionDivider === 'divider-top' ? {
+        transform: 'rotate(180deg)'
+      } : {}),
+      ...(slide.positionDivider === 'divider-top' ? {
+        top: '0px'
+      } : slide.positionDivider === 'divider-bottom' ? {
+        bottom: '0px',
+        ...(slide.invertDivider === false ? {
+          transform: 'rotate(180deg)'
+        } : {})
+      } : {})
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 1200 120",
+    preserveAspectRatio: "none",
+    className: `custom-divider ${slide.divider}`,
+    style: {
+      width: 'calc(' + slide.widthDivider + '% + 1.3px)',
+      height: slide.heightDivider + 'px',
+      '--color-divider': slide.colorDivider,
+      ...(slide.flipDivider === true ? {
+        transform: 'rotateY(180deg)'
+      } : {})
+    }
+  }, slide.divider === "divider-wawes" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" :
+    // Path per quando invertDivider è false
+    "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z",
+    class: "shape-fill"
+  }), slide.divider === "divider-curve" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" :
+    // Path per quando invertDivider è false
+    "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z",
+    class: "shape-fill"
+  }), slide.divider === "divider-curve-asymmetrical" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" :
+    // Path per quando invertDivider è false
+    "M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z",
+    class: "shape-fill"
+  }), slide.divider === "divider-triangle" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" :
+    // Path per quando invertDivider è false
+    "M1200 0L0 0 598.97 114.72 1200 0z",
+    class: "shape-fill"
+  }), slide.divider === "divider-triangle-asymmetrical" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" :
+    // Path per quando invertDivider è false
+    "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z",
+    class: "shape-fill"
+  }), slide.divider === "divider-tilt" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: "M1200 120L0 16.48 0 0 1200 0 1200 120z",
+    class: "shape-fill"
+  }), slide.divider === "divider-arrow" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z" :
+    // Path per quando invertDivider è false
+    "M649.97 0L550.03 0 599.91 54.12 649.97 0z",
+    class: "shape-fill"
+  }), slide.divider === "divider-split" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M600,16.8c0-8.11-8.88-13.2-19.92-13.2H0V120H1200V3.6H619.92C608.88,3.6,600,8.66,600,16.8Z" :
+    // Path per quando invertDivider è false
+    "M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z",
+    class: "shape-fill"
+  }), slide.divider === "divider-book" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    "data-v-6da3ec0c": "",
+    d: slide.invertDivider ?
+    // Path per quando invertDivider è true
+    "M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z" :
+    // Path per quando invertDivider è false
+    "M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z",
+    class: "shape-fill"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-slide-slider " + (slide.developerMode ? "" : slide.position + " " + overflow + " " + slide.layout + "-layout"),
     style: {
       // Gestione dello spazio e altre proprietà
@@ -80208,7 +80863,7 @@ SwiperSlide.displayName = 'SwiperSlide';
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"contentType":{"type":"string","default":"custom"},"posts":{"type":"array","default":[]},"overflow":{"type":"string","default":"visible"},"backgroundBorderColor":{"type":"string","default":"#000000"},"backgroundBorderSize":{"type":"number","default":0},"backgroundBorderRadius":{"type":"number","default":0},"backgroundVerticalPadding":{"type":"number","default":0},"backgroundHorizontalPadding":{"type":"number","default":0},"backgroundColor":{"type":"string","default":"#81D1FF"},"textColorDefault":{"type":"string","default":"#000000"},"backgroundColorSlideDefault":{"type":"string","default":"#81D1FF"},"backgroundColorBlockDefault":{"type":"string","default":"#FFFFFF"},"innerTextColorDefault":{"type":"string","default":"#000000"},"filter":{"type":"string","default":" "},"colorOneEffect":{"type":"string","default":"rgba(243, 106, 188, 0.5)"},"colorTwoEffect":{"type":"string","default":"rgba(243, 106, 188, 0)"},"colorThreeEffect":{"type":"string","default":"rgba(243, 106, 188, 0.7)"},"enableGrid":{"type":"boolean","default":false},"enableRuler":{"type":"boolean","default":false},"opacityRuler":{"type":"number","default":0.4},"opacityGrid":{"type":"number","default":0.4},"colorGrid":{"type":"string","default":"rgba(91, 91, 91, 0.078)"},"mouseEffect":{"type":"string","default":"none"},"colorEffectStart":{"type":"string","default":"rgba(255, 123, 0, 0.5)"},"colorEffectMiddle":{"type":"string","default":"rgba(255, 123, 0, 0)"},"colorEffectEnd":{"type":"string","default":"rgba(255, 123, 0, 0.5)"},"firstColorLiquid":{"type":"number","default":0},"secondColorLiquid":{"type":"number","default":1},"thirdColorLiquid":{"type":"number","default":1},"imgSelected":{"type":"boolean","default":true},"h1Selected":{"type":"boolean","default":true},"h2Selected":{"type":"boolean","default":true},"h3Selected":{"type":"boolean","default":true},"h4Selected":{"type":"boolean","default":true},"h5Selected":{"type":"boolean","default":true},"h6Selected":{"type":"boolean","default":true},"buttonSelected":{"type":"boolean","default":true},"spanSelected":{"type":"boolean","default":true},"pSelected":{"type":"boolean","default":true},"transitionParalaxMouse":{"type":"number","default":0.5},"sliderMarginTop":{"type":"number","default":0},"sliderMarginBottom":{"type":"number","default":0},"postElementsOrder":{"type":"array","default":["image","title","excerpt","link","author","date","categories","tags"]},"layoutPost":{"type":"string","default":"column"},"gapItemsPost":{"type":"number","default":10},"positionPost":{"type":"string","default":"top"},"enableContentWidthPost":{"type":"boolean","default":false},"contentWidthPost":{"type":"number","default":100},"layoutWrapPost":{"type":"string","default":"wrap"},"includeCategories":{"type":"array","default":[]},"excludeCategories":{"type":"array","default":[]},"order":{"type":"string","default":"ASC"},"postsToShow":{"type":"number","default":5}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"slider-builder/slider","version":"0.1.0","title":"Slider Fse","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php","attributes":{"languageSlider":{"type":"string","default":"ltr"},"directionSlider":{"type":"string","default":"horizontal"},"perViewSlider":{"type":"string","default":"1"},"perViewSliderTablet":{"type":"string","default":"1"},"perViewSliderMobile":{"type":"string","default":"1"},"spaceBetween":{"type":"number","default":0},"spaceBetweenTablet":{"type":"number","default":0},"spaceBetweenMobile":{"type":"number","default":0},"slidesPerGroupDesktop":{"type":"number","default":1},"slidesPerGroupTablet":{"type":"number","default":1},"slidesPerGroupMobile":{"type":"number","default":1},"slidesPerRow":{"type":"string","default":"1"},"slides":{"type":"array","default":[]},"effect":{"type":"string","default":"slide"},"device":{"type":"string","default":"desktop"},"centeredSlides":{"type":"boolean","default":false},"initialSlide":{"type":"string","default":"0"},"autoHeight":{"type":"boolean","default":false},"slideHeight":{"type":"number","default":300},"slideHeightTablet":{"type":"number","default":300},"slideHeightMobile":{"type":"number","default":300},"grabCursor":{"type":"boolean","default":false},"loopMode":{"type":"string","default":"disable"},"speed":{"type":"number","default":300},"crossFade":{"type":"boolean","default":true},"shadow":{"type":"boolean","default":true},"slideShadows":{"type":"boolean","default":true},"shadowOffset":{"type":"number","default":20},"shadowScale":{"type":"number","default":0.9},"depth":{"type":"number","default":100},"rotate":{"type":"number","default":80},"stretch":{"type":"number","default":0},"translateX":{"type":"number","default":-120},"translateY":{"type":"number","default":0},"translateZ":{"type":"number","default":-500},"rotateX":{"type":"number","default":0},"rotateY":{"type":"number","default":0},"rotateZ":{"type":"number","default":0},"scale":{"type":"number","default":1},"opacity":{"type":"number","default":1},"nextTranslateX":{"type":"number","default":120},"nextTranslateY":{"type":"number","default":0},"nextTranslateZ":{"type":"number","default":-500},"nextRotateX":{"type":"number","default":0},"nextRotateY":{"type":"number","default":0},"nextRotateZ":{"type":"number","default":0},"nextScale":{"type":"number","default":1},"nextOpacity":{"type":"number","default":1},"modifier":{"type":"number","default":1},"rotateCards":{"type":"boolean","default":true},"hideNavigation":{"type":"boolean","default":false},"bulletColor":{"type":"string","default":"#FFFFFF"},"bulletInactivityColor":{"type":"string","default":"#cccccc"},"positionPagination":{"type":"string","default":"bottom"},"hidePagination":{"type":"boolean","default":false},"typePagination":{"type":"string","default":"bullets"},"clickPagination":{"type":"boolean","default":false},"dynamicPagination":{"type":"boolean","default":false},"dynamicMainPagination":{"type":"number","default":1},"paginationEnable":{"type":"boolean","default":false},"opacityPagination":{"type":"number","default":1},"opacityInactivePagination":{"type":"number","default":0.2},"widthPagination":{"type":"number","default":8},"heightPagination":{"type":"number","default":8},"widthPaginationActive":{"type":"number","default":8},"heightPaginationActive":{"type":"number","default":8},"radiusPagination":{"type":"number","default":0},"gapPagination":{"type":"number","default":3},"fontSizePagination":{"type":"number","default":16},"heightBarPagination":{"type":"number","default":4},"progressbarOpposite":{"type":"boolean","default":false},"disableOnInteraction":{"type":"boolean","default":true},"pauseOnMouseEnter":{"type":"boolean","default":false},"reverseDirection":{"type":"boolean","default":false},"stopOnLastSlide":{"type":"boolean","default":false},"scrollbar":{"type":"boolean","default":false},"scrollBarColor":{"type":"string","default":"#FFFFFF"},"thumbColor":{"type":"string","default":"#CCCCCC"},"positionScrollbar":{"type":"string","default":"bottom"},"dragScrollbar":{"type":"boolean","default":false},"hideScrollbar":{"type":"boolean","default":false},"releaseScrollbar":{"type":"boolean","default":false},"heightScrollbar":{"type":"number","default":4},"radiusScrollbar":{"type":"number","default":10},"freeMode":{"type":"boolean","default":false},"stickyFreeMode":{"type":"boolean","default":false},"momentumFreeMode":{"type":"boolean","default":true},"autoplay":{"type":"boolean","default":false},"momentumBounceFreeMode":{"type":"boolean","default":true},"momentumBounceRatioFreeMode":{"type":"number","default":1},"momentumRatioFreeMode":{"type":"number","default":1},"momentumVelocityRatioFreeMode":{"type":"number","default":1},"keyboard":{"type":"boolean","default":false},"viewPortKeyboard":{"type":"boolean","default":true},"upKeyboard":{"type":"boolean","default":true},"mousewheel":{"type":"boolean","default":false},"forceToAxis":{"type":"boolean","default":false},"invert":{"type":"boolean","default":false},"releaseOnEdges":{"type":"boolean","default":false},"sensitivity":{"type":"number","default":1},"navigation":{"type":"boolean","default":false},"navigationIcons":{"type":"string","default":"default"},"autoplaySpeed":{"type":"number","default":1500},"navColor":{"type":"string","default":"#FFFFFF"},"navBackgroundColor":{"type":"string","default":"#ffffff00"},"navBorderColor":{"type":"string","default":"#FFFFFF"},"navColorHover":{"type":"string","default":"#333333"},"navBackgroundColorHover":{"type":"string","default":"#FFFFFF"},"navBorderColorHover":{"type":"string","default":"#FFFFFF"},"sizeNav":{"type":"number","default":32},"sizeBorderNav":{"type":"number","default":1},"radiusBorderNav":{"type":"number","default":100},"paddingNav":{"type":"number","default":8},"paddingNavLeft":{"type":"number","default":8},"offSetTopNav":{"type":"number","default":50},"offSetSidesNav":{"type":"number","default":10},"navigationTablet":{"type":"boolean","default":true},"navigationMobile":{"type":"boolean","default":false},"autoplayProgress":{"type":"boolean","default":false},"autoplayProgressColor":{"type":"string","default":"#FFFFFF"},"autoplayProgressPosition":{"type":"string","default":"bottom-right"},"contentType":{"type":"string","default":"custom"},"posts":{"type":"array","default":[]},"overflow":{"type":"string","default":"visible"},"backgroundBorderColor":{"type":"string","default":"#000000"},"backgroundBorderSize":{"type":"number","default":0},"backgroundBorderRadius":{"type":"number","default":0},"backgroundVerticalPadding":{"type":"number","default":0},"backgroundHorizontalPadding":{"type":"number","default":0},"backgroundColor":{"type":"string","default":"#81D1FF"},"backgroundImage":{"type":"string","default":null},"focalPoint":{"type":"object","default":{"x":0.5,"y":0.5}},"fitImage":{"type":"string","default":"cover"},"textColorDefault":{"type":"string","default":"#000000"},"backgroundColorSlideDefault":{"type":"string","default":"#81D1FF"},"backgroundColorBlockDefault":{"type":"string","default":"#FFFFFF"},"innerTextColorDefault":{"type":"string","default":"#000000"},"filter":{"type":"string","default":" "},"colorOneEffect":{"type":"string","default":"rgba(243, 106, 188, 0.5)"},"colorTwoEffect":{"type":"string","default":"rgba(243, 106, 188, 0)"},"colorThreeEffect":{"type":"string","default":"rgba(243, 106, 188, 0.7)"},"enableGrid":{"type":"boolean","default":false},"enableRuler":{"type":"boolean","default":false},"opacityRuler":{"type":"number","default":0.4},"opacityGrid":{"type":"number","default":0.4},"colorGrid":{"type":"string","default":"rgba(91, 91, 91, 0.078)"},"mouseEffect":{"type":"string","default":"none"},"colorEffectStart":{"type":"string","default":"rgba(255, 123, 0, 0.5)"},"colorEffectMiddle":{"type":"string","default":"rgba(255, 123, 0, 0)"},"colorEffectEnd":{"type":"string","default":"rgba(255, 123, 0, 0.5)"},"firstColorLiquid":{"type":"number","default":0},"secondColorLiquid":{"type":"number","default":1},"thirdColorLiquid":{"type":"number","default":1},"imgSelected":{"type":"boolean","default":true},"h1Selected":{"type":"boolean","default":true},"h2Selected":{"type":"boolean","default":true},"h3Selected":{"type":"boolean","default":true},"h4Selected":{"type":"boolean","default":true},"h5Selected":{"type":"boolean","default":true},"h6Selected":{"type":"boolean","default":true},"buttonSelected":{"type":"boolean","default":true},"spanSelected":{"type":"boolean","default":true},"pSelected":{"type":"boolean","default":true},"transitionParalaxMouse":{"type":"number","default":0.5},"sliderMarginTop":{"type":"number","default":0},"sliderMarginBottom":{"type":"number","default":0},"postElementsOrder":{"type":"array","default":["image","title","excerpt","link","author","date","categories","tags"]},"layoutPost":{"type":"string","default":"column"},"gapItemsPost":{"type":"number","default":10},"positionPost":{"type":"string","default":"top"},"enableContentWidthPost":{"type":"boolean","default":false},"contentWidthPost":{"type":"number","default":100},"layoutWrapPost":{"type":"string","default":"wrap"},"includeCategories":{"type":"array","default":[]},"excludeCategories":{"type":"array","default":[]},"order":{"type":"string","default":"ASC"},"postsToShow":{"type":"number","default":5},"visibleElements":{"type":"object","default":{"image":true,"title":true,"excerpt":true,"link":true,"author":true,"date":true,"categories":true,"tags":true}}}}');
 
 /***/ })
 

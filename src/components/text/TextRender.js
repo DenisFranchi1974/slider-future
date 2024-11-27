@@ -88,8 +88,9 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
   const isBold = element.fontStyle?.fontWeight === "bold";
   // Styles Title
   const stylesTitle = {
-    fontSize: '22px',
+    fontSize: 'clamp(' + element.fontSizeMobile + 'px,' + element.fontSizeTablet + 'vw, ' + element.fontSize + 'px)',
     color: element.textColor,
+    '--color-hover': element.textColorHover,
     backgroundColor: element.backgroundColor,
     textAlign: element.textAlign,
     letterSpacing: element.letterSpacing + "px",
@@ -143,7 +144,6 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
         ref={textRef}
         onMouseEnter={(e) => handleMouseEnter(e, { 
           durationHover: element.durationHover ?? 800,
-          textColorHover:element.textColorHover,
           effectHover:element.effectHover,
           easingHover:element.easingHover ?? 'linear',
           opacityHover:element.opacityHover ?? 1,
@@ -160,7 +160,6 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
         })} // Passa element.duration
         onMouseLeave={(e) => handleMouseLeave(e, { 
           durationHover: element.durationHover ?? 800,
-          textColor:element.textColor,
           easingHover:element.easingHover ?? 'linear',
 
         })} // Passa element.duration

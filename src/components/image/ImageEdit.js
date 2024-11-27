@@ -671,7 +671,7 @@ const ImageEdit = ({
                     },
                   ]} // Passa le opzioni dinamiche
                 />
-                {element.paddingImage > 0 && (
+                {Object.values(element.paddingImage || {}).some(value => parseInt(value) > 0) && (
                      <CustomColorOptionsPanel
                         colorNormal={element.backgroundColorImage }
                         setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'image', 'backgroundColorImage')}

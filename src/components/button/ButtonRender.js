@@ -34,8 +34,6 @@ const ButtonRender = ({ element, selectedIcon, onPlay}) => {
         startXTo: element.startXTo ?? 0, 
         startYFrom: element.startYFrom ?? 0,
         startYTo: element.startYTo ?? 0,
-        stagger: element.stagger ?? 80,
-        textSplitEffect: element.textSplitEffect,
         opacityFrom: element.opacityFrom ?? 0,
         opacityTo: element.opacityTo ?? 1,
         scaleFrom: element.scaleFrom ?? 0,
@@ -50,10 +48,8 @@ const ButtonRender = ({ element, selectedIcon, onPlay}) => {
         skewXTo: element.skewXTo ?? 0,
         skewYFrom: element.skewYFrom ?? 0,
         skewYTo: element.skewYTo ?? 0,
-        directionBlock: element.directionBlock ?? 'right',
         filterFrom: element.filterFrom ?? 0,
         filterTo: element.filterTo ?? 0,
-        colorBlockEffect: element.colorBlockEffect,
         scaleType: element.scaleType ?? 'scale',
       });
   
@@ -127,23 +123,23 @@ const ButtonRender = ({ element, selectedIcon, onPlay}) => {
     '--border-color-button': element.backgroundBorderColorButton,
     '--border-style-button': element.borderStyleButton,
     '--border-radius-button': element.backgroundBorderRadiusButton + 'px',
-    "--border-width-button-top": `${element.backgroundBorderSizeButton?.top}` || "0",
-    "--border-width-button-right": `${element.backgroundBorderSizeButton?.right}` || "0",
-    "--border-width-button-bottom": `${element.backgroundBorderSizeButton?.bottom}` || "0",
-    "--border-width-button-left": `${element.backgroundBorderSizeButton?.left}` || "0",
+    "--border-width-button-top": `${element.backgroundBorderSizeButton?.top}` || "1px",
+    "--border-width-button-right": `${element.backgroundBorderSizeButton?.right}` || "1px",
+    "--border-width-button-bottom": `${element.backgroundBorderSizeButton?.bottom}` || "1px",
+    "--border-width-button-left": `${element.backgroundBorderSizeButton?.left}` || "1px",
     '--background-color-button': element.buttonBackgroundColor,
     '--color-button-hover': element.buttonColorHover,
+    '--background-color-button-hover': element.buttonBackgroundColorHover || '#18191c',
     transform:'rotate('+element.rotateButton+'deg)',
     '--buttonWidth': element. widthCustomButton+'px',
     '--buttonHeight': element.heightCustomButton+'px',
     margin: `${element.marginButton?.top} ${element.marginButton?.right} ${element.marginButton?.bottom} ${element.marginButton?.left}`,
-    "--border-color-button-hover": element.backgroundBorderColorHover ,
-    "--border-style-button-hover": element.borderStyleHover || "none",
-    "--border-width-button-hover-top": `${element.backgroundBorderSizeHover?.top}` || "0",
-    "--border-width-button-hover-right": `${element.backgroundBorderSizeHover?.right}` || "0",
-    "--border-width-button-hover-bottom": `${element.backgroundBorderSizeHover?.bottom}` || "0",
-    "--border-width-button-hover-left": `${element.backgroundBorderSizeHover?.left}` || "0",
-    "--rotate-button-hover": `${element.rotateHover}deg` || "0",
+    "--border-color-button-hover": element.backgroundBorderColorHover|| '#ffffff',
+    "--border-style-button-hover": element.borderStyleHover || "solid",
+    "--border-width-button-hover-top": `${element.backgroundBorderSizeHover?.top}` || "1px",
+    "--border-width-button-hover-right": `${element.backgroundBorderSizeHover?.right}` || "1px",
+    "--border-width-button-hover-bottom": `${element.backgroundBorderSizeHover?.bottom}` || "1px",
+    "--border-width-button-hover-left": `${element.backgroundBorderSizeHover?.left}` || "1px",
     zIndex: element.zIndexButton,
   };
 
@@ -209,14 +205,32 @@ const ButtonRender = ({ element, selectedIcon, onPlay}) => {
             className={"content-button-slide scroll-btn" + " " + element.hideButton} 
             style={buttonStyle1}
             ref={buttonRef}
+            onMouseEnter={(e) => handleMouseEnter(e, { 
+              durationHover: element.durationHover ?? 800,
+              effectHover:element.effectHover,
+              easingHover:element.easingHover ?? 'linear',
+              opacityHover:element.opacityHover ?? 1,
+              filterHover:element.filterHover ?? 0,
+              startXHover:element.startXHover ?? 100,
+              startYHover:element.startYHover ?? 0,
+              scaleHover:element.scaleHover ?? 1,
+              rotateHover:element.rotateHover ?? 0,
+              rotateXHover:element.rotateXHover ?? 0,
+              rotateYHover:element.rotateYHover ?? 0,
+              skewXHover:element.skewXHover ?? 0,
+              skewYHover:element.skewYHover ?? 0,
+              scaleTypeHover:element.scaleTypeHover ?? 'scale',
+            })} // Passa element.duration
+            onMouseLeave={(e) => handleMouseLeave(e, { 
+              durationHover: element.durationHover ?? 800,
+              easingHover:element.easingHover ?? 'linear',
+            })} // Passa element.duration
         >
-          <a href="#">
-            <span className="mouse" style={{opacity: element.opacityButton,'--opacity-button-hover':element.opacityHover,transition: element.durationEffectHover + 's',...(element.enableBoxShadow && {
+            <span className="mouse" style={{opacity: element.opacityButton,...(element.enableBoxShadow && {
       boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`,
       }) }}>
               <span></span>
             </span>
-          </a>
         </span>
       );
       break;
@@ -226,14 +240,32 @@ const ButtonRender = ({ element, selectedIcon, onPlay}) => {
         className={"content-button-slide scroll-btn" + " " + element.hideButton} 
         style={buttonStyle1}
         ref={buttonRef}
+        onMouseEnter={(e) => handleMouseEnter(e, { 
+          durationHover: element.durationHover ?? 800,
+          effectHover:element.effectHover,
+          easingHover:element.easingHover ?? 'linear',
+          opacityHover:element.opacityHover ?? 1,
+          filterHover:element.filterHover ?? 0,
+          startXHover:element.startXHover ?? 100,
+          startYHover:element.startYHover ?? 0,
+          scaleHover:element.scaleHover ?? 1,
+          rotateHover:element.rotateHover ?? 0,
+          rotateXHover:element.rotateXHover ?? 0,
+          rotateYHover:element.rotateYHover ?? 0,
+          skewXHover:element.skewXHover ?? 0,
+          skewYHover:element.skewYHover ?? 0,
+          scaleTypeHover:element.scaleTypeHover ?? 'scale',
+        })} // Passa element.duration
+        onMouseLeave={(e) => handleMouseLeave(e, { 
+          durationHover: element.durationHover ?? 800,
+          easingHover:element.easingHover ?? 'linear',
+        })} // Passa element.duration
     >
-      <a href="#">
-        <span className="mouse" style={{opacity: element.opacityButton,'--opacity-button-hover':element.opacityHover,transition: element.durationEffectHover + 's',...(element.enableBoxShadow && {
+        <span className="mouse" style={{opacity: element.opacityButton,...(element.enableBoxShadow && {
       boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`,
       }) }}>
           <span></span>
         </span>
-      </a>
     </span>
       );
       break;

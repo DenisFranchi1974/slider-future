@@ -7,7 +7,7 @@ import {
   RangeControl,
   FocalPointPicker,
   Tooltip,
-  ToggleControl,
+  TextControl,
 } from "@wordpress/components";
 import React, { useEffect } from "react";
 import { useState } from "@wordpress/element";
@@ -27,6 +27,7 @@ import ButtonEdit from "../button/ButtonEdit";
 import DeviceSelector from "../../assets/devicesSelector";
 import {borderStyleOptions} from '../../assets/options';
 import {filterBackgroundOptions} from '../../assets/options';
+import {dividerBackgroundOptions} from '../../assets/options';
 import CustomSelectControl  from "../../controls/select/CustomSelectControl";
 import CustomToggleControl  from "../../controls/toggle/CustomToggleControl";
 import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
@@ -35,7 +36,6 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Popover from '@mui/material/Popover';
 import MenuItem from '@mui/material/MenuItem';
-import WallpaperIcon from '@mui/icons-material/Wallpaper';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import BlurOnIcon from '@mui/icons-material/BlurOn';
 import ViewCompactIcon from '@mui/icons-material/ViewCompact';
@@ -63,6 +63,16 @@ import AddCardIcon from '@mui/icons-material/AddCard';
 import WbCloudyOutlinedIcon from '@mui/icons-material/WbCloudyOutlined';
 import SmartButtonOutlinedIcon from '@mui/icons-material/SmartButtonOutlined';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import TouchAppIcon from "@mui/icons-material/TouchApp";
+import InsertLinkIcon from "@mui/icons-material/InsertLink";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import DatasetLinkedIcon from "@mui/icons-material/DatasetLinked";
+import PhishingIcon from "@mui/icons-material/Phishing";
+import TextureIcon from '@mui/icons-material/Texture';
+import FlipIcon from '@mui/icons-material/Flip';
+import ScreenRotationAltIcon from '@mui/icons-material/ScreenRotationAlt';
+import MultipleStopIcon from '@mui/icons-material/MultipleStop';
+
 
 const SlideEdit = ({
   slides,
@@ -95,6 +105,7 @@ const SlideEdit = ({
     textColorDefault,
     backgroundColorBlockDefault,
   } = attributes;
+
 
   const [isModalOpenButton, setIsModalOpenButton] = useState(false);
 
@@ -157,7 +168,12 @@ const SlideEdit = ({
     setPrimaryColor(color.trim());
   }, []);
 
+  // Stato per tracciare quale pannello è aperto
+  const [openPanelId, setOpenPanelId] = useState(null);
+
+
   const handlePanelSelect = (panelId) => {
+    setOpenPanelId((currentId) => (currentId === panelId ? null : panelId)); // Aggiorna l'ID del pannello aperto
     setSelectedPanel((prevPanel) => (prevPanel === panelId ? null : panelId));
     // Trova l'indice della slide corrispondente
     const slideIndex = slides.findIndex((slide) => slide.id === panelId);
@@ -315,6 +331,7 @@ const SlideEdit = ({
       layoutAlignItems: "center",
       layoutAlignResponsive: "center",
       layoutDisplay: "flex",
+      link: "none",
       borderStyleSlide: currentSettings.borderStyleSlide,
       backgroundBorderColor: currentSettings.backgroundBorderColor,
       backgroundBorderSize: currentSettings.backgroundBorderSize,
@@ -427,6 +444,46 @@ const SlideEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update link
+  const updateLink = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, link: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update text link
+  const updateUrl = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, url: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update target
+  const updateTarget = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, target: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+  // Update rel
+  const updateRel = (slideId, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId ? { ...slide, rel: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+  };
+
+   // Update scroll id
+   const updateScrollId = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, scrollId: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+};
+
   // Update Content width 
   const updateSlideContentWidth = (slideId, value) => {
     const updatedSlides = slides.map((slide) =>
@@ -474,6 +531,62 @@ const SlideEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
+  // Update Divider
+  const updateSlideDivider = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, divider: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+     // Update Color divider
+     const  updateColorDivider = (id, color) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === id ? { ...slide, colorDivider: color } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+  // Update height divider 
+  const updateSlideHeightDivider = (slideId, value) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, heightDivider: value } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+    // Update width divider 
+    const updateSlideWidthDivider = (slideId, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId ? { ...slide, widthDivider: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Update Flip Divider
+    const updateFlipDivider = (slideId, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId ? { ...slide, flipDivider: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Update invert divider
+    const updateInvertDivider = (slideId, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId ? { ...slide, invertDivider: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+    
+    // Update position divider
+    const updateSlidePositionDivider = (slideId, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === slideId ? { ...slide, positionDivider: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+     
   // Update Gap Items
   const updateSlideGapItems = (slideId, newGapItems) => {
     const updatedSlides = slides.map((slide) =>
@@ -560,7 +673,7 @@ const SlideEdit = ({
     );
     setAttributes({ slides: updatedSlides });
   };
-
+ 
   // Update border size
   const updateSlideBackgroundBorderSize = (slideId, newSize) => {
     const updatedSlides = slides.map((slide) =>
@@ -737,30 +850,57 @@ const SlideEdit = ({
   const addSlideButton = (slideId, buttonType) => {
     const defaultValues = {
       type1: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
         backgroundBorderRadiusButton: 30,
-        backgroundBorderSizeButton: 3,
+        backgroundBorderSizeButton:  {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px',
+        },
         buttonBackgroundColor: '#18191c',
         buttonColorHover: '#FFFFFF',
         widthCustomButton: 35,
         heightCustomButton: 55,
-        borderStyleHover: "none",
+        borderStyleHover: "solid",
+        backgroundBorderSizeButtonHover:  {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px',
+        },
+       backgroundBorderColorHover: '#ffffff',
+      borderStyleHover: "solid",
       },
       type2: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
         backgroundBorderRadiusButton: 30,
         backgroundBorderSizeButton: 3,
         buttonBackgroundColor: '#FFFFFF',
-        buttonColorHover: '#18191c',
+        buttonColorHover: '#ffffff',
         widthCustomButton: 35,
         heightCustomButton: 55,
-        borderStyleHover: "none",
+        borderStyleHover: "solid",
+        backgroundBorderSizeButtonHover:  {
+          top: '3px',
+          right: '3px',
+          bottom: '3px',
+          left: '3px',
+        },
+        backgroundBorderColorHover: '#ffffff',
+        borderStyleHover: "solid",
       },
       type3: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -790,6 +930,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#FFFFFF",
       },
       type4: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -819,6 +961,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#18191c",
       },
       type5: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -842,6 +986,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#FFFFFF",
       },
       type6: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -865,6 +1011,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#18191c",
       },
       type7: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#FFFFFF',
         backgroundBorderColorButton: '#FFFFFF',
         borderStyleButton: 'solid',
@@ -894,6 +1042,8 @@ const SlideEdit = ({
         buttonBackgroundColorHover: "#FFFFFF",
       },
       type8: {
+        effectIn: "none",
+        effectHover: "none",
         buttonColor: '#18191c',
         backgroundBorderColorButton: '#18191c',
         borderStyleButton: 'solid',
@@ -983,7 +1133,7 @@ const SlideEdit = ({
                 effectIn: "none",
                 iconAnimation: "none",
                 animationHover: "none",
-                borderStyleHover: "none",
+                borderStyleHover: "none", 
                 width:"auto",
                 link: "none",
               },
@@ -1035,7 +1185,7 @@ const id = open ? 'custom-popover' : undefined;
 
   return (
     <>
-      <div className="content-subdescription-section-slider">
+      <div className="content-subdescription-section-slider" style={{borderBottom: '2px solid var(--label-color)'}}>
         <h2>{__("Custom Content")}</h2>
       </div>
       {slides.map((slide, index) => (
@@ -1085,7 +1235,7 @@ const id = open ? 'custom-popover' : undefined;
             </>
           }
           onToggle={() => handlePanelSelect(slide.id)}
-          initialOpen={false}
+          opened={openPanelId === slide.id} 
         >
           <SectionSelectorSlide onSectionChange={setActiveSectionSlide} />
           {activeSectionSlide === "background" && (
@@ -1100,16 +1250,6 @@ const id = open ? 'custom-popover' : undefined;
                 style={{ paddingTop: "0", paddingBottom: "0" }}
               >
                 <div className="content-section-panel" style={{ padding: "0" }}>
-                    <div className="custom-select">
-                      <div className="content-background-slide">
-                      <WallpaperIcon />
-                      <h2
-                        className="title-tab"
-                      >
-                        {__("Choose the backgrounds", "slider")}
-                      </h2>
-                      </div>
-                    </div>
                     <TabPanel
                       className="background-selector"
                       activeClass="active-tab"
@@ -1275,7 +1415,7 @@ const id = open ? 'custom-popover' : undefined;
                                               gap: "5px",
                                             }}
                                           >
-                                            <PhotoSizeSelectActualIcon/>
+                                            <PhotoSizeSelectActualIcon style={{width:'18px'}}/>
                                             {__(
                                               "Media Library",
                                               "cocoblocks"
@@ -1311,7 +1451,7 @@ const id = open ? 'custom-popover' : undefined;
                                             gap: "5px",
                                           }}
                                         >
-                                          <PhotoLibraryIcon/>
+                                          <PhotoLibraryIcon style={{width:'18px'}}/>
                                           {__("Object Library", "cocoblocks")}
                                         </div>
                                         <span
@@ -1334,6 +1474,7 @@ const id = open ? 'custom-popover' : undefined;
                                               position: "relative",
                                               padding: "0px 4px",
                                               marginTop: "12px",
+                                              marginBottom: "12px",
                                             }}
                                           >
                                             <FocalPointPicker
@@ -1365,6 +1506,7 @@ const id = open ? 'custom-popover' : undefined;
                                             options={[
                                               { label: __("Cover", "slider"), value: "cover" },
                                               { label: __("Auto", "slider"), value: "auto" },
+                                              { label: __("Contain", "slider"), value: "contain" },
                                             ]}
                                             onChange={(newFit) => updateSlideFit(slide.id, newFit)}
                                           />
@@ -2020,10 +2162,219 @@ const id = open ? 'custom-popover' : undefined;
                   </Button>
                </>
             )}
+                <CustomSelectControl
+                    label={
+                      <>
+                      <TextureIcon />
+                        {__("Divider", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.divider || 'none'}
+                    onChange={(value) =>
+                      updateSlideDivider(slide.id, value)
+                    }
+                    options={dividerBackgroundOptions}
+                  />
+                    {slide.divider !== "none" && (
+                      <>
+                   <CustomRangeControl
+                    label={
+                      <>
+                        <SettingsEthernetIcon style={{transform:'rotate(90deg'}} />
+                        {__("Height", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.heightDivider || 200}
+                    onChange={(value) =>
+                      updateSlideHeightDivider(slide.id, value)
+                    }
+                    min={0}
+                    max={500}
+                    step={1}
+                  />
+                  <CustomRangeControl
+                    label={
+                      <>
+                        <SettingsEthernetIcon />
+                        {__("Width", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.widthDivider || 100}
+                    onChange={(value) =>
+                      updateSlideWidthDivider(slide.id, value)
+                    }
+                    min={100}
+                    max={300}
+                    step={1}
+                  />
+                  <div className="custom-select color">
+                      <ColorOptionsPanel
+                        colorNormal={slide.colorDivider}
+                        setColorNormal={(color) =>
+                          updateColorDivider(slide.id, color)
+                        }
+                        buttonTitle={__("Color", "cocoblocks")}
+                        buttonIcon={
+                          <ColorLensIcon />
+                        }
+                      />
+                    </div>
+                    {["divider-wawes", "divider-curve-asymmetrical", "divider-triangle-asymmetrical", "divider-tilt"].includes(slide.divider) && (
+                    <CustomToggleControl
+                      label={
+                        <>
+                        <FlipIcon/>
+                          {__("Flip", "cocoblocks")}
+                        </>
+                      }
+                      checked={slide.flipDivider || false}
+                      onChange={(value) =>
+                        updateFlipDivider(slide.id, value)
+                      }
+                    />
+                  )}
+                  {slide.divider !== 'divider-tilt' && (
+                      <CustomToggleControl
+                      label={
+                        <>
+                        <ScreenRotationAltIcon/>
+                          {__("Invert", "cocoblocks")}
+                        </>
+                      }
+                      checked={slide.invertDivider || false}
+                      onChange={(value) =>
+                        updateInvertDivider(slide.id, value)
+                      }
+                    />
+                  )}
+                     <CustomSelectControl
+                    label={
+                      <>
+                      <MultipleStopIcon style={{transform:'rotate(90deg)'}} />
+                        {__("Position", "cocoblocks")}
+                      </>
+                    }
+                    value={slide.positionDivider || 'none'}
+                    onChange={(value) =>
+                      updateSlidePositionDivider(slide.id, value)
+                    }
+                    options={[
+                      {
+                        label: __("Top", "cocoblocks"),
+                        value: "divider-top",
+                      },
+                      {
+                        label: __("Bottom", "cocoblocks"),
+                        value: "divider-bottom",
+                      },
+                    ]}
+                  />
+                  </>
+                )}
             </div>
-          
         </>
       )}
+       {activeSectionSlide === "actions" && (
+        <>
+              <div
+              className="content-title-custom-panel intermedy"
+            >
+              <h2 className="title-custom-panel">
+                {__("Actions", "cocoblocks")}
+              </h2>
+            </div>
+            <div className="content-section-panel" style={{ padding: "0" }}>
+        <CustomSelectControl
+          label={
+            <>
+              <TouchAppIcon />
+              {__("Link actions", "cocoblocks")}
+            </>
+          }
+          value={slide.link || "none"}
+          onChange={(value) =>
+            updateLink(slide.id, value)
+          }
+          options={[
+            { label: "None", value: "none" },
+            { label: "Link", value: "link" },
+            { label: "Scroll Below Slider", value: "scroll-below" },
+            { label: "Scroll to ID Element", value: "scroll-to-id" },
+          ]}
+        />
+      {slide.link === "link" && (
+        <>
+          <div className="custom-select select-text-control">
+            <TextControl
+              __nextHasNoMarginBottom
+              value={slide.url}
+              label={
+                <>
+                  <InsertLinkIcon />
+                  {__("Enter Url", "cocoblocks")}
+                </>
+              }
+              onChange={(value) =>
+                updateUrl(slide.id, value)
+              }
+              placeholder={__("Enter url...", "cocoblocks")}
+            />
+          </div>
+            <CustomSelectControl
+              label={
+                <>
+                  <OpenInNewIcon />
+                  {__("Target", "cocoblocks")}
+                </>
+              }
+              value={slide.target || "_self"}
+              onChange={(value) =>
+                updateTarget(slide.id, value)
+              }
+              options={[
+                { label: "Same Window", value: "_self" },
+                { label: "New Window", value: "_blank" },
+              ]}
+            />
+            <CustomSelectControl
+              label={
+                <>
+                  <DatasetLinkedIcon />
+                  {__("Link Behavior", "cocoblocks")}
+                </>
+              }
+              value={slide.rel || "follow"}
+              onChange={(value) =>
+                updateRel(slide.id, value)
+              }
+              options={[
+                { label: "Follow Link", value: "follow" },
+                { label: "No Follow", value: "nofollow" },
+              ]}
+            />
+        </>
+      )}
+      {slide.link === "scroll-to-id" && (
+        <div className="custom-select select-text-control">
+          <TextControl
+            __nextHasNoMarginBottom
+            value={slide.scrollId}
+            label={
+              <>
+                <PhishingIcon />
+                {__("Enter ID", "cocoblocks")}
+              </>
+            }
+            onChange={(value) =>
+              updateScrollId(slide.id, value)
+            }
+            placeholder={__("Enter id...", "cocoblocks")}
+          />
+        </div>
+      )}
+      </div>
+      </>
+              )}
           {/* Elements */}
           {slide.elements &&
             slide.elements.map((element, elementIndex) => (

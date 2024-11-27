@@ -95,7 +95,7 @@ const InnerIconEdit = ({
       const newState = hideTitle === "hide" ? "" : "hide";
       setHideTitle(newState);
     
-      element.hideTitle = newState;
+      iconDiv.hideTitle = newState;
       setAttributes({ elements: [...slides] }); // Oppure aggiorna la struttura dati appropriata
     };
 
@@ -704,7 +704,7 @@ const InnerIconEdit = ({
                 }
                 selectOptions={borderStyleOptions} // Passa le opzioni dinamiche
               />
-            {element.borderStyle !== "none" && (
+            {iconDiv.borderStyle !== "none" && (
               <>
                <CustomColorOptionsPanel
                   colorNormal={iconDiv.backgroundBorderColor }
@@ -1234,7 +1234,7 @@ const InnerIconEdit = ({
                 }
                 selectOptions={borderStyleOptions} // Passa le opzioni dinamiche
               />
-            {element.borderStyleHover !== "none" && (
+            {iconDiv.borderStyleHover !== "none" && (
               <>
                <CustomColorOptionsPanel
                   colorNormal={iconDiv.backgroundBorderColorHover }

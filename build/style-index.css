@@ -1099,6 +1099,53 @@ button.swiper-pagination-bullet {
   filter: hue-rotate(90deg);
 }
 
+/* Background hover */
+.content-img-first:hover img.image-first-slide {
+  background-color: var(--background-color-image-hover) !important;
+}
+
+/* Image Effect */
+.content-img-inner.grayscale {
+  filter: grayscale(100%);
+}
+
+.content-img-inner.blur {
+  filter: blur(5px);
+}
+
+.content-img-inner.sepia {
+  filter: sepia(100%);
+}
+
+.content-img-inner.contrast {
+  filter: contrast(200%);
+}
+
+.content-img-inner.brightness {
+  filter: brightness(150%);
+}
+
+.content-img-inner.invert {
+  filter: invert(100%);
+}
+
+.content-img-inner.saturate {
+  filter: saturate(200%);
+}
+
+.content-img-inner.opacity {
+  opacity: 0.5;
+}
+
+.content-img-inner.hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+/* Background hover */
+.content-img-inner:hover img.img-inner {
+  background-color: var(--background-color-image-inner-hover) !important;
+}
+
 /* Content slide da veder !!!! */
 .content-slide-slider {
   box-sizing: border-box;
@@ -1747,6 +1794,10 @@ button.swiper-pagination-bullet {
   transform: rotate(var(--rotate-hover-icon)) !important;
 }
 
+.slide-icon:hover svg {
+  fill: var(--color-hover-icon) !important;
+}
+
 .slide-icon, .content-icon {
   transition: fill var(--transition-hover-icon) ease, opacity var(--transition-hover-icon) ease, transform var(--transition-hover-icon) ease;
 }
@@ -1786,11 +1837,15 @@ button.swiper-pagination-bullet {
   opacity: var(--opacity-hover-icon-inner) !important;
   border-style: var(--border-style-hover-icon-inner) !important;
   border-width: var(--border-width-hover-icon-inner) !important;
-  rotate: var(--rotate-hover-icon-inner) !important;
+  transform: rotate(var(--rotate-hover-icon-inner)) !important;
 }
 
-.slide-icon-inner {
-  transition: color var(--transition-hover-icon-inner) ease, opacity var(--transition-hover-icon-inner) ease, transform var(--transition-hover-icon-inner) ease;
+.slide-icon-inner:hover svg {
+  fill: var(--color-hover-icon-inner) !important;
+}
+
+.slide-icon-inner, .content-icon-inner {
+  transition: fill var(--transition-hover-icon-inner) ease, opacity var(--transition-hover-icon-inner) ease, transform var(--transition-hover-icon-inner) ease;
 }
 
 /* Effetto hover */
@@ -1799,7 +1854,7 @@ button.swiper-pagination-bullet {
 }
 
 .slide-icon-inner.hover-effect-1-icon-inner:hover {
-  transform: scale(1.1) !important;
+  transform: scale(var(--scale-hover-icon-inner)) !important;
 }
 
 /* Translate Y */
@@ -1810,36 +1865,6 @@ button.swiper-pagination-bullet {
 /* Translate X */
 .slide-icon-inner.hover-effect-5-icon-inner:hover {
   transform: translateX(var(--translate-hover-icon-inner)) !important; /* Sposta l'elemento verso l'alto di 10px */
-}
-
-/* Shadow */
-.hover-effect-3-icon-inner- {
-  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease !important;
-}
-
-.hover-effect-3-icon-inner-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-icon-inner) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Shadow */
-.hover-effect-3-icon-inner {
-  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease !important;
-}
-
-.hover-effect-3-icon-inner:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-icon-inner) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
-}
-
-/* Ombra */
-.hover-effect-4-icon-inner {
-  transition: box-shadow var(--transition-hover-icon-inner) ease, filter var(--transition-hover-icon-inner) ease !important;
-}
-
-.hover-effect-4-icon-inner:hover {
-  box-shadow: 0px 8px 16px var(--color-effect-hover-icon-inner) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
 }
 
 /* Sfocatura */
@@ -2716,12 +2741,10 @@ button.swiper-pagination-bullet {
 }
 
 .scroll-btn .mouse:hover {
-  background-color: var(--color-button-hover) !important;
+  background-color: var(--background-color-button-hover) !important;
   border-style: var(--border-style-button-hover) !important;
   border-width: var(--border-width-button-hover-top) var(--border-width-button-hover-right) var(--border-width-button-hover-bottom) var(--border-width-button-hover-left) !important;
   border-color: var(--border-color-button-hover) !important;
-  rotate: var(--rotate-button-hover) !important;
-  opacity: var(--opacity-button-hover) !important;
 }
 
 .scroll-btn .mouse > * {
@@ -2737,6 +2760,10 @@ button.swiper-pagination-bullet {
   animation: ani-mouse 2.5s linear infinite;
 }
 
+.scroll-btn:hover .mouse span {
+  background: var(--color-button-hover) !important;
+}
+
 /* Button classic */
 .button-slider a:hover {
   background-color: var(--background-color-button-hover) !important;
@@ -2744,7 +2771,6 @@ button.swiper-pagination-bullet {
   border-width: var(--border-width-button-hover-top) var(--border-width-button-hover-right) var(--border-width-button-hover-bottom) var(--border-width-button-hover-left) !important;
   border-style: var(--border-style-button-hover) !important;
   border-color: var(--border-color-button-hover) !important;
-  opacity: var(--opacity-button-hover) !important;
 }
 
 /* Button Inner */
@@ -2786,12 +2812,10 @@ button.swiper-pagination-bullet {
 }
 
 .scroll-btn-inner .mouse-inner:hover {
-  background-color: var(--color-button-hover-inner) !important;
+  background-color: var(--background-color-button-hover-inner) !important;
   border-style: var(--border-style-button-hover-inner) !important;
   border-width: var(--border-width-button-hover-inner) !important;
   border-color: var(--border-color-button-hover-inner) !important;
-  rotate: var(--rotate-button-hover-inner) !important;
-  opacity: var(--opacity-button-hover-inner) !important;
 }
 
 .scroll-btn-inner .mouse-inner > * {
@@ -2807,6 +2831,10 @@ button.swiper-pagination-bullet {
   animation: ani-mouse 2.5s linear infinite;
 }
 
+.scroll-btn-inner:hover .mouse-inner span {
+  background: var(--color-button-hover-inner) !important;
+}
+
 /* Button classic inner */
 .button-slider-inner a:hover {
   background-color: var(--background-color-button-hover-inner) !important;
@@ -2814,12 +2842,6 @@ button.swiper-pagination-bullet {
   border-width: var(--border-width-button-hover-top-inner) var(--border-width-button-hover-right-inner) var(--border-width-button-hover-bottom-inner) var(--border-width-button-hover-left-inner) !important;
   border-style: var(--border-style-button-hover-inner) !important;
   border-color: var(--border-color-button-hover-inner) !important;
-  opacity: var(--opacity-button-hover-inner) !important;
-  transform: rotate(var(--rotate-button-hover-inner)) !important;
-}
-
-.button-slider-inner:hover {
-  transform: rotate(var(--rotate-button-hover-inner)) !important;
 }
 
 /* Effect mouse in slider */
@@ -2954,27 +2976,27 @@ button.swiper-pagination-bullet {
   transition: transform var(--transition-hover-icon-button-inner) ease;
 }
 
-.button-slider-inner {
+.content-icon-button-inner {
   transition: transform var(--transition-hover-icon-button-inner) ease;
 }
 
-.button-slider-inner:hover .content-icon-button-inner svg {
+.content-button-slide-inner:hover .content-icon-button-inner svg {
   fill: var(--color-icon-button-inner-hover) !important;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-opacity-inner svg {
-  opacity: 0;
+.content-button-slide-inner.icon-show-hover.icon-hide-opacity svg {
+  opacity: 0 !important;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-opacity-inner:hover svg {
-  opacity: 1;
+.content-button-slide-inner.icon-show-hover.icon-hide-opacity:hover svg {
+  opacity: 1 !important;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-display-none-inner svg {
+.content-button-slide-inner.icon-show-hover.icon-hide-display-none svg {
   display: none;
 }
 
-.content-button-slide-inner.icon-show-hover-inner.icon-hide-display-none-inner:hover svg {
+.content-button-slide-inner.icon-show-hover.icon-hide-display-none:hover svg {
   display: block;
 }
 
@@ -3223,46 +3245,43 @@ button.swiper-pagination-bullet {
   pointer-events: none;
 }
 
-/* Divider mettere  i controlli e vedere se mettere width e height per desktop, tablet e mobile */
+/* Divider */
 .divider-container {
   position: absolute;
   width: 100%;
   overflow: hidden;
   left: 0;
-  top: 0px;
   line-height: 0;
 }
 
 .custom-divider {
-  transform: rotateY(180deg); /* Controllo Flip */
   display: block;
   position: relative;
 }
 
 .shape-fill {
-  fill: #ff0000;
+  fill: var(--color-divider);
 }
 
-@keyframes changeWidth {
-  0% {
-    width: 100%;
-  }
-  50% {
-    width: 150%;
-  }
-  100% {
-    width: 100%;
+/* Title */
+.title-slide span, .title-slide-div span {
+  position: relative;
+  display: inline-block;
+}
+
+.content-title-slide:hover .title-slide {
+  color: var(--color-hover) !important;
+}
+
+/* Responsive slider height */
+@media (max-width: 1024px) {
+  .swiper, .content-slide-slider {
+    height: var(--slide-height-tablet) !important;
   }
 }
-@keyframes changeHeight {
-  0% {
-    height: 300px;
-  }
-  50% {
-    height: 450px;
-  }
-  100% {
-    height: 300px;
+@media (max-width: 768px) {
+  .swiper, .content-slide-slider {
+    height: var(--slide-height-mobile) !important;
   }
 }
 

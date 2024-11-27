@@ -1,0 +1,41 @@
+/* Image Effect */
+.content-img-inner.grayscale {
+    filter: grayscale(100%);
+  }
+  
+.content-img-inner.blur {
+    filter: blur(5px);
+}
+  
+.content-img-inner.sepia {
+    filter: sepia(100%);
+}
+  
+.content-img-inner.contrast {
+    filter: contrast(200%);
+}
+  
+.content-img-inner.brightness {
+    filter: brightness(150%);
+}
+  
+.content-img-inner.invert {
+    filter: invert(100%);
+}
+  
+.content-img-inner.saturate {
+    filter: saturate(200%);
+}
+  
+.content-img-inner.opacity {
+    opacity: 0.5;
+}
+  
+.content-img-inner.hue-rotate {
+    filter: hue-rotate(90deg);
+}
+
+/* Background hover */
+.content-img-inner:hover img.img-inner{
+    background-color: var(--background-color-image-inner-hover)!important;
+}

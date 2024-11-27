@@ -8,10 +8,13 @@ import {
   RangeControl,
   Tooltip,
   ToggleControl,
+  Button,
 } from "@wordpress/components";
 import AlignmentControl from "./align/aligncontrol";
 import {  button, info} from "@wordpress/icons";
 import apiFetch from '@wordpress/api-fetch';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const PostsControls = ({ setAttributes, attributes, index, element }) => {
   const { 
@@ -25,10 +28,12 @@ const PostsControls = ({ setAttributes, attributes, index, element }) => {
     includeCategories = [],
     excludeCategories = [],
     order = "ASC",
-    postsToShow
+    postsToShow,
+    visibleElements = {}
 } = attributes;
 
 const [categories, setCategories] = useState([]);
+
 
 useEffect(() => {
   // Recupera le categorie disponibili
@@ -51,6 +56,14 @@ useEffect(() => {
     updatedOrder.splice(toIndex, 0, movedElement);
 
     setAttributes({ postElementsOrder: updatedOrder });
+  };
+
+  const toggleVisibility = (element) => {
+    const updatedVisibleElements = {
+      ...visibleElements,
+      [element]: !visibleElements[element],
+    };
+    setAttributes({ visibleElements: updatedVisibleElements });
   };
 
   // Section slider
@@ -76,19 +89,39 @@ useEffect(() => {
         <>
           {postElementsOrder.map((element, index) => (
             <div key={index}>
-              <span>{element}</span>
-              <button
-                onClick={() => moveElement(index, index - 1)}
-                disabled={index === 0}
+              <span style={{color:'var(--light-color)',textTransform:'capitalize'}}>{element}</span>
+
+              <div className={"button-move-element-post"}>
+              <Tooltip text={__("Move before", "cocoblocks")}>
+                    <Button
+                      onClick={() => moveElement(index, index - 1)}
+                      size="small"
+                      disabled={index === 0}
+                      label={__("Move before", "cocoblocks")}
+                    >
+                      ↑
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={__("Move after", "cocoblocks")}>
+                    <Button
+                       onClick={() => moveElement(index, index + 1)}
+                      size="small"
+                      disabled={index === postElementsOrder.length - 1}
+                      label={__("Move after", "cocoblocks")}
+                    >
+                      ↓
+                    </Button>
+                  </Tooltip>
+                  <Tooltip text={visibleElements[element] ? __("Hide", "cocoblocks") : __("Show", "cocoblocks")}>
+              <Button
+                onClick={() => toggleVisibility(element)}
+                size="small"
+                label={visibleElements[element] ? __("Hide", "cocoblocks") : __("Show", "cocoblocks")}
               >
-                Su
-              </button>
-              <button
-                onClick={() => moveElement(index, index + 1)}
-                disabled={index === postElementsOrder.length - 1}
-              >
-                Giù
-              </button>
+                {visibleElements[element] ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </Button>
+            </Tooltip>
+             </div>
             </div>
           ))}
         </>

@@ -23,25 +23,28 @@ function render_innerText($innerElement, $slide)
     $fontSizeTablet = esc_attr($innerElement['fontSizeTablet']);
     $fontSizeMobile = esc_attr($innerElement['fontSizeMobile']);
     $color = esc_attr($innerElement['textColor']);
+    $colorHover = esc_attr($innerElement['textColorHover'] ?? '');
     $backgroundColor = esc_attr($innerElement['backgroundColor'] ?? '');
     $textAlign = esc_attr($innerElement['textAlign'] ?? 'center');
     $letterSpacing = esc_attr($innerElement['letterSpacing'] ?? 0);
     $borderStyle = esc_attr($innerElement['borderStyle'] ?? 'none');
     $backgroundBorderColor = esc_attr($innerElement['backgroundBorderColor'] ?? '#000');
-    $fontFamily = esc_attr($innerElement['fontFamily'] ?? 'Arial, sans-serif');
+    $fontFamily = esc_attr($innerElement['fontFamilyTitleBlock'] ?? 'Arial, sans-serif');
     $lineHeight = esc_attr($innerElement['lineHeight'] ?? 1.5);
     $textWriteMode = esc_attr($innerElement['textWriteMode'] ?? 'horizontal-tb');
     $textOrientation = esc_attr($innerElement['textOrientation'] ?? 'mixed');
     $rotate = esc_attr($innerElement['rotate'] ?? 0);
-    $borderRadiusTop = esc_attr($element['backgroundBorderRadius']['top'] ?? '0px');
-    $borderRadiusRight = esc_attr($element['backgroundBorderRadius']['right'] ?? '0px');
-    $borderRadiusBottom = esc_attr($element['backgroundBorderRadius']['bottom'] ?? '0px');
-    $borderRadiusLeft = esc_attr($element['backgroundBorderRadius']['left'] ?? '0px');
+    $borderRadiusTop = esc_attr($innerElement['backgroundBorderRadius']['top'] ?? '0px');
+    $borderRadiusRight = esc_attr($innerElement['backgroundBorderRadius']['right'] ?? '0px');
+    $borderRadiusBottom = esc_attr($innerElement['backgroundBorderRadius']['bottom'] ?? '0px');
+    $borderRadiusLeft = esc_attr($innerElement['backgroundBorderRadius']['left'] ?? '0px');
     $borderRadius = "$borderRadiusTop $borderRadiusRight $borderRadiusBottom $borderRadiusLeft";
     $zIndexTitle = esc_attr($innerElement['zIndexTitle'] ?? 1);
+    $blendMode = esc_attr($innerElement['blendMode'] ?? 'normal');
     $isBold = isset($innerElement['fontStyle']['fontWeight']) && $innerElement['fontStyle']['fontWeight'] === "bold" ? "bold" : (isset($innerElement['fontWeight']) ? esc_attr($innerElement['fontWeight']) : "normal");
-    $stylesTitleInner = 'font-size: clamp(' . $fontSizeMobile . 'px,' . $fontSizeTablet . 'vw, ' . $fontSize . 'px); '
+    $stylesTitle = 'font-size: clamp(' . $fontSizeMobile . 'px,' . $fontSizeTablet . 'vw, ' . $fontSize . 'px); '
         . 'color: ' . $color . '; '
+        . '--color-hover: ' . $colorHover . '; '
         . 'background-color: ' . $backgroundColor . '; '
         . 'text-align: ' . $textAlign . '; '
         . 'letter-spacing: ' . $letterSpacing . 'px; '
@@ -58,6 +61,7 @@ function render_innerText($innerElement, $slide)
         . 'writing-mode: ' . $textWriteMode . ';'
         . 'text-orientation: ' . $textOrientation . ';'
         . 'transform: rotate(' . $rotate . 'deg);'
+        . 'mix-blend-mode: ' . $blendMode . ';'
         . 'z-index: ' . $zIndexTitle . ';'
         . 'border-radius: ' . $borderRadius . ';';
     if (!empty($innerElement['enableTextShadow'])) {
@@ -65,7 +69,7 @@ function render_innerText($innerElement, $slide)
         $textShadowY = esc_attr($innerElement['textShadowY'] ?? 0);
         $textShadowBlur = esc_attr($innerElement['textShadowBlur'] ?? 0);
         $colorTextShadow = esc_attr($innerElement['colorTextShadow'] ?? '#000000');
-        $stylesTitleInner .= 'text-shadow: ' . $textShadowX . 'px '
+        $stylesTitle .= 'text-shadow: ' . $textShadowX . 'px '
             . $textShadowY . 'px '
             . $textShadowBlur . 'px '
             . $colorTextShadow . ';';
@@ -76,7 +80,7 @@ function render_innerText($innerElement, $slide)
         $boxShadowBlur = esc_attr($innerElement['boxShadowBlur'] ?? 0);
         $boxShadowSpread = esc_attr($innerElement['boxShadowSpread'] ?? 0);
         $colorBoxShadow = esc_attr($innerElement['colorBoxShadow'] ?? '#000000');
-        $stylesTitleInner .= 'box-shadow: ' . $boxShadowX . 'px '
+        $stylesTitle .= 'box-shadow: ' . $boxShadowX . 'px '
             . $boxShadowY . 'px '
             . $boxShadowBlur . 'px '
             . $boxShadowSpread . 'px '
@@ -85,40 +89,34 @@ function render_innerText($innerElement, $slide)
     if (!empty($innerElement['enableStroke'])) {
         $strokeWidth = esc_attr($innerElement['stroke'] ?? 0);
         $strokeColor = esc_attr($innerElement['colorStroke'] ?? '#000000');
-        $stylesTitleInner .= '-webkit-text-stroke-width: ' . $strokeWidth . 'px;'
+        $stylesTitle .= '-webkit-text-stroke-width: ' . $strokeWidth . 'px;'
             . '-webkit-text-stroke-color: ' . $strokeColor . ';';
     }
     $tag = esc_attr($innerElement['elementTitle'] ?? 'h3');
     $enableDesktop = $innerElement['enableDesktop'] ?? true;
     $enableTablet = $innerElement['enableTablet'] ?? true;
     $enableMobile = $innerElement['enableMobile'] ?? true;
-    $desktopClass = $enableDesktop ? 'desktop-title-visible' : 'desktop-title-hidden';
-    $tabletClass = $enableTablet ? 'tablet-title-visible' : 'tablet-title-hidden';
-    $mobileClass = $enableMobile ? 'mobile-title-visible' : 'mobile-title-hidden';
+    $desktopClass = $enableDesktop ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
+    $tabletClass = $enableTablet ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
+    $mobileClass = $enableMobile ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
 ?>
-    <?php $TagBlock = !empty($innerElement['elementTitle']) ? $innerElement['elementTitle'] : 'h3'; ?>
     <?php
-    // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
-    $desktopClassTitleDiv = $innerElement['enableDesktop'] ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
-    $tabletClassTitleDiv = $innerElement['enableTablet'] ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
-    $mobileClassTitleDiv = $innerElement['enableMobile'] ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
-    $widthTitle = $innerElement['widthTitle'] ?? '100%';
-    $widthCustomTitle = $innerElement['widthCustomTitle'] ?? '100';
-    $blendMode = $innerElement['blendMode'] ?? 'normal';
+    $widthTitle = $innerElement['widthTitleBlock'] ?? '100%';
+    $widthCustomTitle = $innerElement['widthCustomTitleBlock'] ?? '100';
+    $opacity = $innerElement['opacity'] ?? 1;
     ?>
+
     <div
-        style="width: <?php echo esc_attr($widthTitle) === 'custom' ? esc_attr($widthCustomTitle) . '%' : esc_attr($widthTitle); ?>; mix-blend-mode: <?php echo esc_attr($blendMode); ?>;"
-        class="content-title-div <?php echo esc_attr($desktopClassTitleDiv); ?> <?php echo esc_attr($tabletClassTitleDiv); ?> <?php echo esc_attr($mobileClassTitleDiv); ?>">
-        <<?php echo esc_attr($TagBlock); ?>
+        style="width: <?php echo esc_attr($widthTitle) === 'custom' ? esc_attr($widthCustomTitle) . '%' : esc_attr($widthTitle); ?>; opacity: <?php echo esc_attr($opacity); ?>"
+        class="content-title-div <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?>">
+        <<?php echo esc_attr($tag); ?>
             class="title-slide-div"
             <?php
             $link_start = '';
             $link_end = '';
-            $target = '_self'; // Default
-            $rel = 'follow'; // Default
-            // Verifica il tipo di link e prepara i tag <a> e attributi
+            $target = '_self';
+            $rel = 'follow';
             if ($innerElement['textLink'] === 'link' && !empty($innerElement['linkUrl'])) {
-                // Se è un link, prepara i tag <a> con target e rel
                 if (!empty($innerElement['linkTarget'])) {
                     $target = esc_attr($innerElement['linkTarget']);
                 }
@@ -128,17 +126,15 @@ function render_innerText($innerElement, $slide)
                 $link_start = '<a style="text-decoration:none;color:inherit;" href="' . esc_url($innerElement['linkUrl']) . '" target="' . $target . '" rel="' . $rel . '">';
                 $link_end = '</a>';
             } elseif ($innerElement['textLink'] === 'scroll-below') {
-                // Logica per lo scroll in basso
                 $link_start = '<a style="text-decoration:none;color:inherit;" href="#" onclick="window.scrollBy({ top: window.innerHeight, behavior: \'smooth\' }); return false;">';
                 $link_end = '</a>';
             } elseif ($innerElement['textLink'] === 'scroll-to-id' && !empty($innerElement['scrollToId'])) {
-                // Logica per scrollare ad un ID specifico
                 $link_start = '<a style="text-decoration:none;color:inherit;" href="#" onclick="document.getElementById(\'' . esc_attr($innerElement['scrollToId']) . '\').scrollIntoView({ behavior: \'smooth\' }); return false;">';
                 $link_end = '</a>';
             }
             ?>
-            style="<?php echo esc_attr($stylesTitleInner); ?>"
-            data-font-family="<?php echo esc_attr($innerElement['fontFamilyTitleBlock']); ?>"
+            style="<?php echo esc_attr($stylesTitle); ?>"
+            data-font-family="<?php echo esc_attr($fontFamily); ?>"
             <?php if ($innerElement['textLink'] === 'link') : ?>
             href="<?php echo esc_url($innerElement['linkUrl']); ?>"
             <?php elseif ($innerElement['textLink'] === 'scroll-below' || $innerElement['textLink'] === 'scroll-to-id') : ?>
@@ -209,6 +205,6 @@ function render_innerText($innerElement, $slide)
             <?php echo $link_start; ?>
             <?php echo $innerElement['content']; ?>
             <?php echo $link_end; ?>
-        </<?php echo esc_attr($TagBlock); ?>>
+        </<?php echo esc_attr($tag); ?>>
     </div>
 <?php } ?>

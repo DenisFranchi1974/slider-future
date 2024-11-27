@@ -1014,3 +1014,50 @@ export const optionsFilterSlider = [
     value: "filter-inverse",
   },
 ];
+
+////////////////////////////
+
+/* Opzioni per i divider */
+
+export const dividerBackgroundOptions = [
+  {
+    label: __("None", "cocoblocks"),
+    value: "none",
+  },
+  {
+    label: __("Wawes", "cocoblocks"),
+    value: "divider-wawes",
+  },
+  {
+    label: __("Curve", "cocoblocks"),
+    value: "divider-curve",
+  },
+  {
+    label: __("Curve Asymmetrical", "cocoblocks"),
+    value: "divider-curve-asymmetrical",
+  },
+  {
+    label: __("Triangle", "cocoblocks"),
+    value: "divider-triangle",
+  },
+  {
+    label: __("Triangle Asymmetrical", "cocoblocks"),
+    value: "divider-triangle-asymmetrical",
+  },
+  {
+    label: __("Tilt", "cocoblocks"),
+    value: "divider-tilt",
+  },
+  {
+    label: __("Arrow", "cocoblocks"),
+    value: "divider-arrow",
+  },
+  {
+    label: __("Split", "cocoblocks"),
+    value: "divider-split",
+  },
+  {
+    label: __("Book", "cocoblocks"),
+    value: "divider-book",
+  }
+];

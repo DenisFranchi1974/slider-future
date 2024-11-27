@@ -5,6 +5,7 @@ import WallpaperIcon from '@mui/icons-material/Wallpaper';
 import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import BlurOnIcon from '@mui/icons-material/BlurOn';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
 
 const SectionSelectorSlide = ({ onSectionChange }) => {
   const [activeSectionSlide, setActiveSectionSlide] = useState("background");
@@ -57,7 +58,11 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
       </Button>
       <Button
         className="section-selector-button"
+        variant={activeSectionSlide === "actions" ? "primary" : "secondary"}
+        onClick={() => handleSectionChangeSlide("actions")}
       >
+        <TouchAppIcon />
+        {__("Actions", "cocoblocks")}
       </Button>
       <Button
         className="section-selector-button"

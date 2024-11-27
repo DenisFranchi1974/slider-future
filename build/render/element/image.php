@@ -112,7 +112,7 @@ function render_image($element, $slide)
             style="transform:rotate(<?php echo $rotateImage; ?>deg);
                                 opacity:<?php echo $opacityImage; ?>; 
                                 z-index:<?php echo $zIndexImage; ?>;
-                
+                                --background-color-image-hover: <?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>;
                                  <?php if ($element['imageLink'] !== 'none') : ?>
                                         cursor: pointer;
                                     <?php endif; ?>
@@ -150,10 +150,8 @@ function render_image($element, $slide)
                 data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
                 data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 0); ?>"
                 data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
-                data-image-color="<?php echo esc_attr($element['backgroundColorImage'] ?? ''); ?>"
                 <?php endif;
                 if ($element['effectHover'] !== 'none') : ?>
-                data-image-color-hover="<?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>"
                 data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
                 data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
                 data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"

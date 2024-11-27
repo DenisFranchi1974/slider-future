@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione per animare un elemento
     function animateElement() {
-      const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .content-icon,.title-slide-div, .img-inner,.button-slider-inner');
+      const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .content-icon,.title-slide-div, .img-inner,.content-button-slide-inner,.content-icon-inner');
       elementsToAnimate.forEach(element => {
       const effectIn = element.getAttribute('data-effect-in');
       const duration = parseInt(element.getAttribute('data-duration')) ?? 800;
@@ -115,10 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const skewYFrom = parseInt(element.getAttribute('data-skew-y-from')) ?? 0;
       const skewYTo = parseInt(element.getAttribute('data-skew-y-to')) ?? 1;
       const scaleType = element.getAttribute('data-scale-custom-effect-in') ?? 'scale';
-      const textColor = element.getAttribute('data-text-color') ?? '';
-      const backgroundColorImage = element.getAttribute('data-image-color') ?? '';
-      const backgroundColorImageHover = element.getAttribute('data-image-color-hover') ?? '';
-      const textColorHover = element.getAttribute('data-text-color-hover') ?? '0';
       const effectHover = element.getAttribute('data-effect-hover') ?? '';
       const scaleHover = parseInt(element.getAttribute('data-scale-hover')) ?? 1;
       const opacityHover = parseInt(element.getAttribute('data-opacity-hover')) ?? 1;
@@ -170,10 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
         skewYTo,
         scaleType,
         effectHover,
-        textColor,
-        textColorHover,
-        backgroundColorImage,
-        backgroundColorImageHover,
         scaleHover,
         opacityHover,
         filterHover,
@@ -200,16 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   }
 
-
-
 // Aggiungi gli eventi di hover
-const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .title-slide-div, .img-inner,.button-slider-inner');
+const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .title-slide-div, .img-inner,.content-button-slide-inner');
 elements.forEach(element => {
     element.addEventListener('mouseenter', (e) => handleMouseEnter(e, { 
       durationHover: element.getAttribute('data-duration-hover'),
       easingHover: element.getAttribute('data-easing-hover'), 
-      textColorHover: element.getAttribute('data-text-color-hover'),
-      backgroundColorImageHover: element.getAttribute('data-image-color-hover'),
       scaleHover: element.getAttribute('data-scale-hover'),
       effectHover: element.getAttribute('data-effect-hover'),
       opacityHover: element.getAttribute('data-opacity-hover'),
@@ -226,8 +214,6 @@ elements.forEach(element => {
     element.addEventListener('mouseleave', (e) => handleMouseLeave(e, { 
       durationHover: element.getAttribute('data-duration-hover'),
       easingHover: element.getAttribute('data-easing-hover'), 
-      textColor: element.getAttribute('data-text-color'),
-      backgroundColorImage: element.getAttribute('data-image-color'),
     }));
 });
 

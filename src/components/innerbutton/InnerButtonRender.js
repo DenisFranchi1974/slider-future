@@ -34,8 +34,6 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
           startXTo: buttonDiv.startXTo ?? 0, 
           startYFrom: buttonDiv.startYFrom ?? 0,
           startYTo: buttonDiv.startYTo ?? 0,
-          stagger: buttonDiv.stagger ?? 80,
-          textSplitEffect: buttonDiv.textSplitEffect,
           opacityFrom: buttonDiv.opacityFrom ?? 0,
           opacityTo: buttonDiv.opacityTo ?? 1,
           scaleFrom: buttonDiv.scaleFrom ?? 0,
@@ -50,10 +48,8 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
           skewXTo: buttonDiv.skewXTo ?? 0,
           skewYFrom: buttonDiv.skewYFrom ?? 0,
           skewYTo: buttonDiv.skewYTo ?? 0,
-          directionBlock: buttonDiv.directionBlock ?? 'right',
           filterFrom: buttonDiv.filterFrom ?? 0,
           filterTo: buttonDiv.filterTo ?? 0,
-          colorBlockEffect: buttonDiv.colorBlockEffect,
           scaleType: buttonDiv.scaleType ?? 'scale',
         });
     
@@ -128,10 +124,10 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
     '--border-color-button-inner': buttonDiv.backgroundBorderColorButton,
     '--border-style-button-inner': buttonDiv.borderStyleButton,
     '--border-radius-button-inner': buttonDiv.backgroundBorderRadiusButton + 'px',
-    "--border-width-button-inner-top": `${buttonDiv.backgroundBorderSizeButton?.top}` || "0",
-    "--border-width-button-inner-right": `${buttonDiv.backgroundBorderSizeButton?.right}` || "0",
-    "--border-width-button-inner-bottom": `${buttonDiv.backgroundBorderSizeButton?.bottom}` || "0",
-    "--border-width-button-inner-left": `${buttonDiv.backgroundBorderSizeButton?.left}` || "0",
+    "--border-width-button-top-inner": `${buttonDiv.backgroundBorderSizeButton?.top}` || "0",
+    "--border-width-button-right-inner": `${buttonDiv.backgroundBorderSizeButton?.right}` || "0",
+    "--border-width-button-bottom-inner": `${buttonDiv.backgroundBorderSizeButton?.bottom}` || "0",
+    "--border-width-button-left-inner": `${buttonDiv.backgroundBorderSizeButton?.left}` || "0",
     '--background-color-button-inner': buttonDiv.buttonBackgroundColor,
     '--color-button-hover-inner': buttonDiv.buttonColorHover,
     transform:'rotate('+buttonDiv.rotateButton+'deg)',
@@ -144,7 +140,6 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
     "--border-width-button-hover-left-inner": `${buttonDiv.backgroundBorderSizeHover?.left}` || "0",
     "--border-color-button-hover-inner": buttonDiv.backgroundBorderColorHover ,
     "--border-style-button-hover-inner": buttonDiv.borderStyleHover || "none",
-    "--rotate-button-hover-inner": `${buttonDiv.rotateHover}deg` || "0",
     zIndex: buttonDiv.zIndexButton,
   };
 
@@ -188,6 +183,7 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
     ...(buttonDiv.icon && {
       alignItems: buttonDiv.icoAligItemButton,
       gap: buttonDiv.gapIcon + 'px',
+      zIndex: buttonDiv.zIndexButton
     }),
    };
 
@@ -206,17 +202,35 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
     case "type1":
       buttonHTML = (
         <span 
-            className={"content-button-slide scroll-btn-inner" + " " + buttonDiv.hideButton} 
+            className={"content-button-slide-inner scroll-btn-inner" + " " + buttonDiv.hideButton} 
             style={buttonStyle1}
             ref={buttonRef}
+            onMouseEnter={(e) => handleMouseEnter(e, { 
+              durationHover: buttonDiv.durationHover ?? 800,
+              effectHover:buttonDiv.effectHover,
+              easingHover:buttonDiv.easingHover ?? 'linear',
+              opacityHover:buttonDiv.opacityHover ?? 1,
+              filterHover:buttonDiv.filterHover ?? 0,
+              startXHover:buttonDiv.startXHover ?? 100,
+              startYHover:buttonDiv.startYHover ?? 0,
+              scaleHover:buttonDiv.scaleHover ?? 1,
+              rotateHover:buttonDiv.rotateHover ?? 0,
+              rotateXHover:buttonDiv.rotateXHover ?? 0,
+              rotateYHover:buttonDiv.rotateYHover ?? 0,
+              skewXHover:buttonDiv.skewXHover ?? 0,
+              skewYHover:buttonDiv.skewYHover ?? 0,
+              scaleTypeHover:buttonDiv.scaleTypeHover ?? 'scale',
+            })} // Passa element.duration
+            onMouseLeave={(e) => handleMouseLeave(e, { 
+              durationHover: buttonDiv.durationHover ?? 800,
+              easingHover:buttonDiv.easingHover ?? 'linear',
+            })} // Passa element.duration
         >
-          <a href="#">
-            <span className="mouse-inner" style={{opacity: buttonDiv.opacityButton,'--opacity-button-hover':buttonDiv.opacityHover,transition: buttonDiv.durationEffectHover + 's',...(buttonDiv.enableBoxShadow && {
+            <span className="mouse-inner" style={{opacity: buttonDiv.opacityButton,...(buttonDiv.enableBoxShadow && {
       boxShadow: `${buttonDiv.boxShadowX}px ${buttonDiv.boxShadowY}px ${buttonDiv.boxShadowBlur}px ${buttonDiv.boxShadowSpread}px ${buttonDiv.colorBoxShadow}`,
       }) }}>
               <span></span>
             </span>
-          </a>
         </span>
       );
       break;
@@ -226,14 +240,32 @@ const InnerButtonRender = ({ buttonDiv, selectedIcon, onPlay  }) => {
         className={"content-button-slide-inner scroll-btn-inner" + " " + buttonDiv.hideButton} 
         style={buttonStyle1}
         ref={buttonRef}
+        onMouseEnter={(e) => handleMouseEnter(e, { 
+          durationHover: buttonDiv.durationHover ?? 800,
+          effectHover:buttonDiv.effectHover,
+          easingHover:buttonDiv.easingHover ?? 'linear',
+          opacityHover:buttonDiv.opacityHover ?? 1,
+          filterHover:buttonDiv.filterHover ?? 0,
+          startXHover:buttonDiv.startXHover ?? 100,
+          startYHover:buttonDiv.startYHover ?? 0,
+          scaleHover:buttonDiv.scaleHover ?? 1,
+          rotateHover:buttonDiv.rotateHover ?? 0,
+          rotateXHover:buttonDiv.rotateXHover ?? 0,
+          rotateYHover:buttonDiv.rotateYHover ?? 0,
+          skewXHover:buttonDiv.skewXHover ?? 0,
+          skewYHover:buttonDiv.skewYHover ?? 0,
+          scaleTypeHover:buttonDiv.scaleTypeHover ?? 'scale',
+        })} // Passa element.duration
+        onMouseLeave={(e) => handleMouseLeave(e, { 
+          durationHover: buttonDiv.durationHover ?? 800,
+          easingHover:buttonDiv.easingHover ?? 'linear',
+        })} // Passa element.duration
     >
-      <a href="#">
-        <span className="mouse-inner" style={{opacity: buttonDiv.opacityButton,'--opacity-button-hover':buttonDiv.opacityHover,transition: buttonDiv.durationEffectHover + 's',...(buttonDiv.enableBoxShadow && {
+        <span className="mouse-inner" style={{opacity: buttonDiv.opacityButton,...(buttonDiv.enableBoxShadow && {
       boxShadow: `${buttonDiv.boxShadowX}px ${buttonDiv.boxShadowY}px ${buttonDiv.boxShadowBlur}px ${buttonDiv.boxShadowSpread}px ${buttonDiv.colorBoxShadow}`,
       }) }}>
           <span></span>
         </span>
-      </a>
     </span>
       );
       break;

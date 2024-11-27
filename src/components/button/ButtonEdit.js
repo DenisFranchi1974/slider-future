@@ -1266,6 +1266,14 @@ const ButtonEdit = ({
               }
             />
           </div>
+          <div
+                className="content-title-custom-panel intermedy"
+              >
+                <h2 className="title-custom-panel">
+                  {__("Box Shadow", "cocoblocks")}
+                </h2>
+            </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomShadowControl
             valueEnableShadow={element.enableBoxShadow}
             valueRangeShadowX={element.boxShadowX || 0}
@@ -1290,6 +1298,7 @@ const ButtonEdit = ({
             rangePropertySpread="boxShadowSpread"
             rangePropertyColor="colorBoxShadow"
           />
+          </div>
             {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
             <>
             {element.icon && (

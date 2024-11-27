@@ -570,6 +570,7 @@
 /* Border panel slide */
 .cocoblocks-panel.panel-slide {
   border-bottom: 2px solid var(--dark-color);
+  /* Button move element post */
 }
 .cocoblocks-panel.panel-slide .menu-slide-content .dashicon {
   transform: rotate(-90deg);
@@ -682,6 +683,23 @@
   background-color: var(--background-color);
 }
 .cocoblocks-panel.panel-slide .button-move-element-div button[disabled] {
+  opacity: 0.3; /* Riduce l'opacità per indicare che il bottone è disabilitato */
+}
+.cocoblocks-panel.panel-slide .button-move-element-post button {
+  color: var(--primary-color);
+}
+.cocoblocks-panel.panel-slide .button-move-element-post {
+  position: relative;
+  float: left;
+  z-index: 9;
+  display: flex;
+  gap: 5px;
+}
+.cocoblocks-panel.panel-slide .button-move-element-post button {
+  border-radius: 100%;
+  background-color: var(--background-color);
+}
+.cocoblocks-panel.panel-slide .button-move-element-post button[disabled] {
   opacity: 0.3; /* Riduce l'opacità per indicare che il bottone è disabilitato */
 }
 .cocoblocks-panel.panel-slide .divider-controls {
@@ -2151,6 +2169,16 @@
 
 .div-item:hover .gif-preview {
   display: block; /* Mostra la GIF quando si passa il mouse sul div */
+}
+
+/* Upload image */
+.content-img-upload .components-unit-control__unit-label {
+  color: var(--light-color) !important;
+}
+
+.content-img-upload .button-replace svg {
+  width: 18px;
+  height: 18px;
 }
 /*!***************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/select/SelectControl.scss ***!

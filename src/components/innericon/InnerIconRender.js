@@ -105,6 +105,9 @@ const InnerIconRender = ({ iconDiv, iconIndex, element, index, onPlay }) => {
     "--border-width-hover-icon-inner": `${iconDiv.backgroundBorderSizeHover?.top} ${iconDiv.backgroundBorderSizeHover?.right} ${iconDiv.backgroundBorderSizeHover?.bottom} ${iconDiv.backgroundBorderSizeHover?.left}`,
     opacity: iconDiv.opacity,
     zIndex: iconDiv.zIndexIcon,
+    ...(iconDiv.enableBoxShadow && {
+      boxShadow: `${iconDiv.boxShadowX}px ${iconDiv.boxShadowY}px ${iconDiv.boxShadowBlur}px ${iconDiv.boxShadowSpread}px ${iconDiv.colorBoxShadow}`,
+      }),
     position:"relative",
     transform: `rotate(${iconDiv.rotate}deg)`,
     "--rotate-hover-icon-inner": iconDiv.rotateHover + "deg" || "0",
@@ -123,17 +126,14 @@ const InnerIconRender = ({ iconDiv, iconIndex, element, index, onPlay }) => {
           iconDiv.width === "custom"
             ? `${iconDiv.widthCustom}%`
             : iconDiv.width,
-        textAlign: iconDiv.align,
-        ...(iconDiv.enableBoxShadow && {
-          boxShadow: `${iconDiv.boxShadowX}px ${iconDiv.boxShadowY}px ${iconDiv.boxShadowBlur}px ${iconDiv.boxShadowSpread}px ${iconDiv.colorBoxShadow}`,
-          }),
+        justifyContent: iconDiv.align,
           display:'flex'
       }}
       className={
         "content-icon-inner " + iconDiv.hideTitle
       }
       ref={iconRef}
-    >
+    > 
       
        {IconComponent && (
         <>

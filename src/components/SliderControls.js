@@ -3,7 +3,10 @@ import {
   Button,
   CheckboxControl, 
   ButtonGroup,
+  TabPanel,
+  FocalPointPicker
 } from "@wordpress/components";
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from "@wordpress/i18n";
 import { useEffect, useState } from "@wordpress/element";
 import SectionSliderSelector from "./multitab/sectionSliderSelector";
@@ -19,7 +22,6 @@ import CalendarViewWeekIcon from '@mui/icons-material/CalendarViewWeek';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import CustomToggleControl  from "../controls/toggle/CustomToggleControl";
 import HeightIcon from '@mui/icons-material/Height';
-import ExpandIcon from '@mui/icons-material/Expand';
 import CompressIcon from '@mui/icons-material/Compress';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import VibrationIcon from '@mui/icons-material/Vibration';
@@ -39,6 +41,12 @@ import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import {optionsPerView} from '../assets/options';
 import {optionsPerGroup} from '../assets/options';
 import {optionsInitialSlide} from '../assets/options';
+import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
+import ChangeCircleOutlinedIcon from '@mui/icons-material/ChangeCircleOutlined';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import ImageSelectionModal from "./ImageSelectionModal";
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import FitScreenIcon from '@mui/icons-material/FitScreen';
 
 const SliderControls = ({ attributes, setAttributes }) => {
   const {
@@ -57,6 +65,8 @@ const SliderControls = ({ attributes, setAttributes }) => {
     initialSlide,
     autoHeight,
     slideHeight,
+    slideHeightTablet,
+    slideHeightMobile,
     freeMode,
     stickyFreeMode,
     momentumFreeMode,
@@ -71,6 +81,8 @@ const SliderControls = ({ attributes, setAttributes }) => {
     backgroundVerticalPadding,
     backgroundHorizontalPadding,
     backgroundColor,
+    backgroundImage,
+    focalPoint,
     backgroundColorSlideDefault,
     backgroundColorBlockDefault,
     textColorDefault,
@@ -96,7 +108,22 @@ const SliderControls = ({ attributes, setAttributes }) => {
     device,
     sliderMarginTop,
     sliderMarginBottom,
+    fitImage,
   } = attributes;
+
+  const [selectedTab, setSelectedTab] = useState('color');
+
+  const updateBackgroundImage = (url) => {
+    setAttributes({ backgroundImage: url });
+  };
+
+  const removeBackgroundImage = () => {
+    setAttributes({ backgroundImage: null });
+  };
+
+  const handleFocalPointChange = (newFocalPoint) => {
+    setAttributes({ focalPoint: newFocalPoint });
+  };
 
    // Funzione per gestire il cambiamento del checkbox "Select all"
    const handleSelectAllChange = (isChecked) => {
@@ -130,6 +157,27 @@ const handleTabletClick = () => {
 const handleMobileClick = () => {
   setAttributes({ device: "mobile" });
   setShowOtherButtons(!showOtherButtons); // Toggle the visibility of other buttons
+};
+
+ // Responsive height
+ const [deviceHeight, setDeviceHeight] = useState("desktop");
+ const [showOtherButtonsHeight, setShowOtherButtonsHeight] = useState(false);
+ const handleDesktopClickHeight = () => {
+  setAttributes({ deviceHeight: "desktop" });
+  setDeviceHeight("desktop");
+  setShowOtherButtonsHeight(!showOtherButtonsHeight); // Toggle the visibility of other buttons
+};
+
+const handleTabletClickHeight = () => {
+  setAttributes({ deviceHeight: "tablet" });
+  setDeviceHeight("tablet");
+  setShowOtherButtonsHeight(!showOtherButtonsHeight); // Toggle the visibility of other buttons
+};
+
+const handleMobileClickHeight = () => {
+  setAttributes({ deviceHeight: "mobile" });
+  setDeviceHeight("mobile");
+  setShowOtherButtonsHeight(!showOtherButtonsHeight); // Toggle the visibility of other buttons
 };
 
   const [showLoopNotice, setShowLoopNotice] = useState(false);
@@ -183,6 +231,59 @@ const handleMobileClick = () => {
         });
     }
   }, [attributes.contentType]);
+
+    // Funzione per aprire il modale
+    const openModal = () => setIsModalOpen(true);
+
+    // Funzione per chiudere il modale
+    const closeModal = () => setIsModalOpen(false);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+
+
+  const handleImageSelect = async (image) => {
+    if (!image || !image.url) {
+      console.error("Nessuna immagine selezionata o URL mancante.");
+      return;
+    }
+  
+    setIsLoading(true);
+  
+    try {
+      // Effettua la chiamata all'endpoint REST API per caricare l'immagine
+      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ image_url: image.url }),
+      });
+  
+      // Controlla lo stato della risposta
+      if (!response.ok) {
+        throw new Error(`Errore API: ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+  
+      // Verifica se l'immagine è stata caricata con successo
+      if (data?.url) {
+        // Aggiorna lo sfondo della slider con l'immagine caricata
+        updateBackgroundImage(data.url);
+      } else {
+        console.error("Errore durante il caricamento dell'immagine. Risposta non valida:", data);
+      }
+    } catch (error) {
+      console.error("Errore durante la chiamata all'API:", error);
+    } finally {
+      setIsLoading(false);
+      setIsModalOpen(false);
+    }
+  };
+  
 
  
 
@@ -489,10 +590,40 @@ const handleMobileClick = () => {
                   />
               {!autoHeight && (
                 <>
+                <ButtonGroup className="device-switcher-slider">
+                <Button
+                  size="small"
+                  isPressed={deviceHeight === "desktop"}
+                  onClick={handleDesktopClickHeight}
+                  className={deviceHeight !== "desktop" ? "inactive" : ""}
+                >
+                  <PersonalVideoIcon/>
+                </Button>
+
+                <>
+                  <Button
+                    size="small"
+                    isPressed={deviceHeight === "tablet"}
+                    onClick={handleTabletClickHeight}
+                    className={deviceHeight !== "tablet" ? "inactive" : ""}
+                  >
+                   <TabletMacIcon />
+                  </Button>
+                  <Button
+                    size="small"
+                    isPressed={deviceHeight === "mobile"}
+                    onClick={handleMobileClickHeight}
+                    className={deviceHeight !== "mobile" ? "inactive" : ""}
+                  >
+                     <SmartphoneIcon />
+                  </Button>
+                </>
+              </ButtonGroup>
+              {deviceHeight === "desktop" && (
                  <CustomRangeControl
                     label={
                       <>
-                      <ExpandIcon />
+                        <PersonalVideoIcon/>
                         {__("Custom Height", "cocoblocks")}
                       </>
                     }
@@ -502,6 +633,37 @@ const handleMobileClick = () => {
                     max={1200}
                     step={1}
                   />
+              )}
+                {deviceHeight === "tablet" && (
+                 <CustomRangeControl
+                    label={
+                      <>
+                         <TabletMacIcon />
+                        {__("Custom Height", "cocoblocks")}
+                      </>
+                    }
+                    value={slideHeightTablet}
+                    onChange={(val) => setAttributes({slideHeightTablet: val })}
+                    min={10}
+                    max={1200}
+                    step={1}
+                  />
+              )}
+               {deviceHeight === "mobile" && (
+                 <CustomRangeControl
+                    label={
+                      <>
+                         <SmartphoneIcon />
+                        {__("Custom Height", "cocoblocks")}
+                      </>
+                    }
+                    value={slideHeightMobile}
+                    onChange={(val) => setAttributes({slideHeightMobile: val })}
+                    min={10}
+                    max={1200}
+                    step={1}
+                  />
+              )}
                 </>
               )}
             </div>
@@ -655,23 +817,234 @@ const handleMobileClick = () => {
             </h2>
           </div>
           <div className="cocoblocks-panel content-section-custom-panel">
-            <div className="content-section-panel">
-              <div className="custom-select color">
-                <ColorOptionsPanel
-                  colorNormal={backgroundColor}
-                  setColorNormal={(color) =>
-                    setAttributes({ backgroundColor: color })
-                  }
-                  buttonTitle={__("Background Color", "cocoblocks")}
-                  buttonIcon={
-                    <PaletteIcon style={{
-                      marginBottom: "-5px",
-                      width: "20px",
-                      height: "20px",
-                    }}/>
-                  }
-                />
-              </div>
+          <div className="content-section-panel">
+          <TabPanel
+      className="background-selector"
+      activeClass="active-tab"
+      initialTabName="color"
+      onSelect={(tabName) => setSelectedTab(tabName)}
+      tabs={[
+        {
+          name: 'color',
+          title: <span>{__("Color", "your-text-domain")}</span>,
+          className: 'tab-color',
+        },
+        {
+          name: 'image',
+          title: <span>{__("Image", "your-text-domain")}</span>,
+          className: 'tab-image',
+        },
+      ]}
+    >
+      {(tab) => (
+        <div>
+          {tab.name === 'color' && (
+            <>
+             <div
+                              className="custom-select color"
+                            >
+            <ColorOptionsPanel
+              colorNormal={backgroundColor}
+              setColorNormal={(color) => setAttributes({ backgroundColor: color })}
+              buttonTitle={__("Background Color", "cocoblocks")}
+              buttonIcon={
+                <PaletteIcon style={{
+                  marginBottom: "-5px",
+                  width: "20px",
+                  height: "20px",
+                }}/>
+              }
+            />
+          </div>
+            </>
+          )}
+          {tab.name === 'image' && (
+             <div
+             className="content-img-upload"
+                              style={{ marginTop: "6px" }}
+           >
+              <MediaUploadCheck>
+              <MediaUpload
+                onSelect={(media) => updateBackgroundImage(media.url)}
+                allowedTypes={["image"]}
+                render={({ open }) => (
+                  <>
+                    {!backgroundImage && (
+                      <>
+                        <div className="custom-select">
+                      <Button 
+                      onClick={open}
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        paddingLeft: "1px",
+                        paddingRight: "0px",
+                        color: " var(--light-color)",
+                        padding: "3px",
+                      }}
+                      >
+                         <div
+                                            style={{
+                                              display: "flex",
+                                              alignItems: "center",
+                                              gap: "5px",
+                                            }}
+                                          >
+                                            <PhotoSizeSelectActualIcon style={{width:'18px'}} />
+                                            {__(
+                                              "Media Library",
+                                              "cocoblocks"
+                                            )}
+                                          </div>
+                                          <span
+                                            class="dashicons dashicons-arrow-down-alt2"
+                                            style={{
+                                              position: "relative",
+                                              right: "0px",
+                                              top: "4px",
+                                              fontSize: "12px",
+                                            }}
+                                          ></span>
+                                       
+                      </Button>
+                      </div>
+                      <div className="custom-select">
+                                      <Button
+                                        onClick={openModal}
+                                        style={{
+                                          width: "100%",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          justifyContent: "space-between",
+                                          color: " var(--light-color)",
+                                          padding: "0",
+                                        }}
+                                      >
+                                        <div
+                                          style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "5px",
+                                          }}
+                                        >
+                                          <PhotoLibraryIcon style={{width:'18px'}} />
+                                          {__("Object Library", "cocoblocks")}
+                                        </div>
+                                        <span
+                                          className="dashicons dashicons-arrow-down-alt2"
+                                          style={{
+                                            position: "relative",
+                                            right: "2px",
+                                            top: "6px",
+                                            fontSize: "12px",
+                                          }}
+                                        ></span>
+                                      </Button>
+                                    </div>
+                      </>
+                    )}
+                    {backgroundImage && (
+                      <>
+                       <div
+                       style={{
+                         position: "relative",
+                         padding: "0px 4px",
+                         marginTop: "12px",
+                         marginBottom: "12px",
+                       }}
+                     >
+                        <FocalPointPicker
+                          __nextHasNoMarginBottom
+                         className="focal-point-picker"
+                          value={focalPoint || { x: 0.5, y: 0.5 }}
+                          onChange={handleFocalPointChange}
+                          url={backgroundImage}
+                        />
+                         </div>
+                         <CustomSelectControl
+                          label={
+                            <>
+                              <FitScreenIcon />
+                              {__("Image fit", "cocoblocks")}
+                            </>
+                          }
+                          value={fitImage}
+                          options={[
+                            { label: __("Cover", "slider"), value: "cover" },
+                            { label: __("Auto", "slider"), value: "auto" },
+                            { label: __("Contain", "slider"), value: "contain" },
+                          ]}
+                          onChange={(val) => setAttributes({fitImage: val })}
+                        />
+                        <Button 
+                        onClick={open} 
+                        style={{
+                          marginLeft: "2px",
+                          position: "relative",
+                          top: "-2px",
+                          color: " var(--light-color)",
+                          padding: "3px",
+                        }}
+                        className="button-replace"
+                        icon={<ChangeCircleOutlinedIcon />}
+                        label={__(
+                          "Change Image form Media Library",
+                          "cocoblocks"
+                        )}
+                        >
+                        </Button>
+                        <Button
+                          onClick={openModal}
+                          style={{
+                            marginLeft: "2px",
+                            position: "relative",
+                            top: "-2px",
+                            color: " var(--light-color)",
+                          }}
+                          className="button-replace"
+                          icon={<ChangeCircleOutlinedIcon />}
+                          label={__("Change Image from Object Library", "cocoblocks")}
+                        />
+                     </>
+                    )}
+                  </>
+                )}
+              />
+            </MediaUploadCheck>
+            {backgroundImage && (
+                <Button 
+                onClick={removeBackgroundImage} 
+                isDestructive
+                 className="button-delete"
+                 icon={<DeleteOutlineIcon />}
+                 label={__("Delete Image", "wp-kube")}
+                >
+              </Button>
+            )}
+            </div>
+          )}
+        {isModalOpen && (
+          <ImageSelectionModal
+            onClose={closeModal}
+            onSelect={handleImageSelect}
+          />
+        )}
+        </div>
+      )}
+    </TabPanel>
+
+
+
+
+
+
+
+
+
+           
+             
               <CustomSelectControl
                           label={
                             <>

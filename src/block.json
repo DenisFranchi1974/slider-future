@@ -95,6 +95,14 @@
 			"type":"number",
 			"default": 300
 		},
+		"slideHeightTablet":{
+			"type":"number",
+			"default": 300
+		},
+		"slideHeightMobile":{
+			"type":"number",
+			"default": 300
+		},
 		"grabCursor":{
 			"type":"boolean",
 			"default":false
@@ -531,6 +539,21 @@
 			"type":"string",
 			"default":"#81D1FF"
 		},
+		"backgroundImage": {
+			"type": "string",
+			"default": null
+		},
+		"focalPoint": {
+			"type": "object",
+			"default": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"fitImage": {
+			"type": "string",
+			"default": "cover"
+		},
 		"textColorDefault":{
 			"type":"string",
 			"default":"#000000"
@@ -706,6 +729,19 @@
 		"postsToShow": {
 			"type": "number",
 			"default": 5
+		 },
+		 "visibleElements": {
+			"type": "object",
+			"default": {
+				"image": true,
+				"title": true,
+				"excerpt": true,
+				"link": true,
+				"author": true,
+				"date": true,
+				"categories": true,
+				"tags": true
+			}
 		 }
 	}
 }

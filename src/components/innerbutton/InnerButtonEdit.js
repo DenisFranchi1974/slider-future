@@ -1366,6 +1366,14 @@ const updateBorderRadiusButton = (slideId, divIndex, innerIndex, newBorderRadius
               }
             />
           </div>
+          <div
+                className="content-title-custom-panel intermedy"
+              >
+                <h2 className="title-custom-panel">
+                  {__("Box Shadow", "cocoblocks")}
+                </h2>
+            </div>
+          <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomShadowControl
             valueEnableShadow={buttonDiv.enableBoxShadow}
             valueRangeShadowX={buttonDiv.boxShadowX || 0}
@@ -1391,6 +1399,7 @@ const updateBorderRadiusButton = (slideId, divIndex, innerIndex, newBorderRadius
             rangePropertySpread="boxShadowSpread"
             rangePropertyColor="colorBoxShadow"
           />
+          </div>
             {buttonDiv.buttonType !== 'type1' && buttonDiv.buttonType !== 'type2' && (
             <>
             {buttonDiv.icon && (

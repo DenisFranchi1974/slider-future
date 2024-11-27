@@ -81,6 +81,12 @@ function render_icon($element, $slide)
     if (isset($element['translateEffectHover'])) {
         $inline_style .= "--translate-hover-icon: " . esc_attr($element['translateEffectHover']) . "px; ";
     }
+    if (isset($element['scaleEffectHover'])) {
+        $inline_style .= "--scale-hover-icon: " . esc_attr($element['scaleEffectHover']) . "; ";
+    }
+    if (isset($element['blurEffectHover'])) {
+        $inline_style .= "--blur-hover-icon: " . esc_attr($element['blurEffectHover']) . "px; ";
+    }
     $inline_style .= "position: relative; display: flex; ";
     if (isset($element['opacity'])) {
         $inline_style .= "opacity: " . esc_attr($element['opacity']) . "; ";
@@ -103,7 +109,10 @@ function render_icon($element, $slide)
     if (isset($element['textLink']) && $element['textLink'] !== 'none') {
         $inline_style .= "cursor: pointer; ";
     }
-    if (isset($element['enableBoxShadow'])) {
+    if (isset($element['align'])) {
+        $inline_style .= "justify-content: " . esc_attr($element['align']) . "; ";
+    }
+    if (!empty($element['enableBoxShadow'])) {
         $boxShadowX = esc_attr($element['boxShadowX'] ?? 0);
         $boxShadowY = esc_attr($element['boxShadowY'] ?? 0);
         $boxShadowBlur = esc_attr($element['boxShadowBlur'] ?? 0);
@@ -119,14 +128,12 @@ function render_icon($element, $slide)
     if (isset($element['width'])) {
         $stylesDiv .= "width: " . ($element['width'] === 'custom' ? esc_attr($element['widthCustom']) . "%" : esc_attr($element['width'])) . "; ";
     }
-    if (isset($element['align'])) {
-        $stylesDiv .= "text-align: " . esc_attr($element['align']) . "; ";
-    }
     $classNamesDiv = "content-icon ";
     $classNamesIcon = "slide-icon " . esc_attr($element['icon']) . " " . esc_attr($element['iconAnimation']) . " " . esc_attr($element['animationHover']);
 ?>
     <?php if ($slide['developerMode']) : ?>
         <div class="content-content-icon-absolute <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>"
+            style="position:absolute"
             data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
             data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
             data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"

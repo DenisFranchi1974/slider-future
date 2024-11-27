@@ -34,8 +34,6 @@ const IconRender = ({ element, index, onPlay }) => {
         startXTo: element.startXTo ?? 0, 
         startYFrom: element.startYFrom ?? 0,
         startYTo: element.startYTo ?? 0,
-        stagger: element.stagger ?? 80,
-        textSplitEffect: element.textSplitEffect,
         opacityFrom: element.opacityFrom ?? 0,
         opacityTo: element.opacityTo ?? 1,
         scaleFrom: element.scaleFrom ?? 0,
@@ -50,10 +48,8 @@ const IconRender = ({ element, index, onPlay }) => {
         skewXTo: element.skewXTo ?? 0,
         skewYFrom: element.skewYFrom ?? 0,
         skewYTo: element.skewYTo ?? 0,
-        directionBlock: element.directionBlock ?? 'right',
         filterFrom: element.filterFrom ?? 0,
         filterTo: element.filterTo ?? 0,
-        colorBlockEffect: element.colorBlockEffect,
         scaleType: element.scaleType ?? 'scale',
       });
   
@@ -105,6 +101,9 @@ const IconRender = ({ element, index, onPlay }) => {
     "--border-width-hover-icon": `${element.backgroundBorderSizeHover?.top} ${element.backgroundBorderSizeHover?.right} ${element.backgroundBorderSizeHover?.bottom} ${element.backgroundBorderSizeHover?.left}`,
     opacity: element.opacity,
     zIndex: element.zIndexIcon,
+    ...(element.enableBoxShadow && {
+      boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`,
+      }),
     position:"relative",
     transform: `rotate(${element.rotate}deg)`,
     "--rotate-hover-icon": element.rotateHover + "deg" || "0",
@@ -123,10 +122,7 @@ const IconRender = ({ element, index, onPlay }) => {
           element.width === "custom"
             ? `${element.widthCustom}%`
             : element.width,
-        textAlign: element.align,
-        ...(element.enableBoxShadow && {
-          boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`,
-          }),
+        justifyContent: element.align,
           display:'flex'
       }}
       className={

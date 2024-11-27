@@ -627,6 +627,31 @@
     opacity: 0.3; /* Riduce l'opacità per indicare che il bottone è disabilitato */
   }
 
+
+  /* Button move element post */
+  .button-move-element-post button {
+    color: var(--primary-color);
+  }
+  .button-move-element-post{
+    position: relative;
+   // right: 76px;
+   // top: 42px;
+    float: right;
+    z-index: 9;
+    display: flex;
+    gap: 5px;
+    button {
+      border-radius: 100%;
+      background-color: var(--background-color);
+    }
+  }
+  
+  .button-move-element-post button[disabled] {
+    opacity: 0.3; /* Riduce l'opacità per indicare che il bottone è disabilitato */
+  }
+
+
+
   .divider-controls {
     margin-top: 24px;
     margin-bottom: 24px;
@@ -2103,4 +2128,15 @@
 
 .div-item:hover .gif-preview {
   display: block; /* Mostra la GIF quando si passa il mouse sul div */
+}
+
+
+/* Upload image */
+.content-img-upload .components-unit-control__unit-label{
+  color: var(--light-color)!important;
+}
+
+.content-img-upload .button-replace svg{
+  width: 18px;
+  height: 18px;
 }

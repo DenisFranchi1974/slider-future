@@ -128,6 +128,7 @@ const ImageRender = ({ element, index, onPlay  }) => {
         width: element.widthImageContent,
         zIndex: element.zIndexImage,
         textAlign: element.imageAlign,
+        '--background-color-image-hover': element.backgroundColorImageHover,
       }}
       className={
         "content-img-first " + element.imageFilter +
@@ -138,7 +139,6 @@ const ImageRender = ({ element, index, onPlay  }) => {
        ref={imageRef}
        onMouseEnter={(e) => handleMouseEnter(e, { 
          durationHover: element.durationHover ?? 800,
-         backgroundColorImageHover:element.backgroundColorImageHover,
          effectHover:element.effectHover,
          easingHover:element.easingHover ?? 'linear',
          opacityHover:element.opacityHover ?? 1,
@@ -155,7 +155,6 @@ const ImageRender = ({ element, index, onPlay  }) => {
        })} // Passa element.duration
        onMouseLeave={(e) => handleMouseLeave(e, { 
          durationHover: element.durationHover ?? 800,
-         backgroundColorImage:element.backgroundColorImage,
          easingHover:element.easingHover ?? 'linear',
        })} // Passa element.duration
         key={index}

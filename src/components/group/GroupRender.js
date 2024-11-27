@@ -172,7 +172,7 @@ const GroupRender = ({ element, index, onPlay,handlePlayInnerText,playAnimationI
         {innerElements &&
           innerElements.map((innerElement, innerIndex) => {
             return (
-              <div key={innerIndex}>
+              <>
                 {innerElement.type === "text" ? (
                   <InnerTextRender
                     textDiv={innerElement}
@@ -224,7 +224,7 @@ const GroupRender = ({ element, index, onPlay,handlePlayInnerText,playAnimationI
                   />
                 ) : null}
                  
-              </div>
+              </>
             );
           })}
       </DivBlock>

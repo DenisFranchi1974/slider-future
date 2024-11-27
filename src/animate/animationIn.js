@@ -34,10 +34,6 @@ const getAnimationProps = (props, target) => {
     filterFrom: filterFrom,
     filterTo: filterTo,
     scaleType: scaleType,
-    textColor: textColor,
-    textColorHover: textColorHover,
-    backgroundColorImage: backgroundColorImage,
-    backgroundColorImageHover: backgroundColorImageHover,
     effectHover: effectHover,
     opacityHover: opacityHover,
     filterHover: filterHover,
@@ -97,10 +93,6 @@ const getAnimationProps = (props, target) => {
     filterFrom,
     filterTo,
     scaleType,
-    textColor,
-    textColorHover,
-    backgroundColorImage,
-    backgroundColorImageHover,
     effectHover,
     opacityHover,
     filterHover,
@@ -592,12 +584,11 @@ const splitTextContent = (text, lettersRef) => {
     //scale: [4, 1], // Scala le lettere da 4 a 1
    // opacity: [0, 1],
     //rotateX: [360, 0], // Ruota le lettere da
- 
-    translateZ: 0,
+    translateZ:0,
     ...animationEffect, // Applica l'effetto dinamico
     easing: animationProps.easing || 'linear', // Applica l'easing
     duration: animationProps.duration, // Durata dell'animazione
-    delay: anime.stagger(animationProps.stagger || 200), // Stagger tra le lettere
+    delay: anime.stagger(animationProps.stagger ?? 200), // Stagger tra le lettere
   });
 };
 
@@ -610,7 +601,6 @@ const hoverEffects = {
       targets: element,
       scale: animationProps.scaleHover ?? 1,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -621,8 +611,6 @@ const hoverEffects = {
       targets: element,
       scaleX: animationProps.scaleHover ?? 1,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -633,8 +621,6 @@ const hoverEffects = {
       targets: element,
       scaleY: animationProps.scaleHover ?? 1,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -647,8 +633,6 @@ const hoverEffects = {
       rotateX: animationProps.rotateXHover ?? 0,
       rotateY: animationProps.rotateYHover  ?? 0,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -660,8 +644,6 @@ const hoverEffects = {
       translateX: animationProps.startXHover ?? 0,
       translateY: animationProps.startYHover ?? 0,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -671,8 +653,6 @@ const hoverEffects = {
       filter: 'blur('+animationProps.filterHover+'px)',
       targets: element,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -684,8 +664,6 @@ const hoverEffects = {
       skewX:animationProps.skewXHover ?? 0,
       skewY:animationProps.skewYHover ?? 0,
       easing: animationProps.easingHover ?? 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: animationProps.durationHover ?? 800,
     });
   },
@@ -704,8 +682,6 @@ const hoverEffects = {
     skewY: animationProps.skewYHover ?? 0,
     easing: animationProps.easingHover || 'linear',
     duration: animationProps.durationHover || 800,
-    backgroundColor: animationProps.backgroundColorImageHover,
-    color: animationProps.textColorHover,
   };
 
   // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
@@ -753,8 +729,6 @@ export const handleMouseLeave = (e, props = {}) => {
     skewX: 0, // Torna allo skew originale
     skewY: 0, // Torna allo skew originale
     easing: animationProps.easingHover || 'linear',
-    color: animationProps.textColor,
-    backgroundColor: animationProps.backgroundColorImage,
     duration: animationProps.durationHover,
   });
 };

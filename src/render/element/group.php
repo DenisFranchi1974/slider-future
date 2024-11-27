@@ -51,41 +51,42 @@ function render_group($element, $slide)
                 onclick="<?php echo $onclick; ?>"
                 <?php endif; ?>
                 class="div-slide <?php echo esc_attr($element['positionDiv'] . ' ' . $element['layoutDiv'] . '-layout ' . $desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv); ?>"
-                style="
-                                    background-color: <?php echo esc_attr($element['backgroundColor'] ?? 'transparent'); ?>;
-                                    flex-direction: <?php echo $element['layoutDiv'] === 'horizontal' ? 'row' : 'column'; ?>;
-                                    flex-wrap: <?php echo $element['layoutWrap'] ?>;
-                                    text-align: center;
-                                    position: relative;
-                                    <?php if ($element['textLink'] !== 'none') : ?>
-                                        cursor: pointer;
-                                    <?php endif; ?>
-                                    visibility: visible;
-                                    gap: <?php echo esc_attr($element['gapItemsDiv']); ?>px;
-                                    border-radius: <?php echo esc_attr($element['backgroundBorderRadiusDiv']['top'] ?? 0) . ' ' . esc_attr($element['backgroundBorderRadiusDiv']['right'] ?? 0) . ' ' . esc_attr($element['backgroundBorderRadiusDiv']['bottom'] ?? 0) . ' ' . esc_attr($element['backgroundBorderRadiusDiv']['left'] ?? 0) ?>;
-                                    padding-top: <?php echo esc_attr($element['backgroundVerticalPaddingDiv']); ?>px;
-                                    padding-bottom: <?php echo esc_attr($element['backgroundVerticalPaddingDiv']); ?>px;
-                                    padding-left: <?php echo esc_attr($element['backgroundHorizontalPaddingDiv']); ?>px;
-                                    padding-right: <?php echo esc_attr($element['backgroundHorizontalPaddingDiv']); ?>px;
-                                    border-style: <?php echo esc_attr($element['borderStyleDiv']); ?>;
-                                    border-width: <?php echo esc_attr($element['backgroundBorderSizeDiv']['top'] ?? 0) . ' ' . esc_attr($element['backgroundBorderSizeDiv']['right'] ?? 0) . ' ' . esc_attr($element['backgroundBorderSizeDiv']['bottom'] ?? 0) . ' ' . esc_attr($element['backgroundBorderSizeDiv']['left'] ?? 0) ?>;
-                                    border-color: <?php echo esc_attr($element['backgroundBorderColorDiv'] ?? ''); ?>;
-                                    height: <?php echo esc_attr($element['contentHeightDiv']) === 'custom' ? esc_attr($element['customContentHeightDiv']) . '%' : esc_attr($element['contentHeightDiv']); ?>;
-                                    margin: <?php echo esc_attr($element['marginDiv']['top'] ?? 0) . ' ' . esc_attr($element['marginDiv']['right'] ?? 0) . ' ' . esc_attr($element['marginDiv']['bottom'] ?? 0) . ' ' . esc_attr($element['marginDiv']['left'] ?? 0) ?>;
+                <?php
+                $inline_style = 'background-color: ' . esc_attr($element['backgroundColor'] ?? 'transparent') . ';'
+                    . 'flex-direction: ' . ($element['layoutDiv'] === 'horizontal' ? 'row' : 'column') . ';'
+                    . 'flex-wrap: ' . esc_attr($element['layoutWrap']) . ';'
+                    . 'text-align: center;'
+                    . 'position: relative;'
+                    . ($element['textLink'] !== 'none' ? 'cursor: pointer;' : '')
+                    . 'visibility: visible;'
+                    . 'gap: ' . esc_attr($element['gapItemsDiv']) . 'px;'
+                    . 'border-radius: ' . esc_attr($element['backgroundBorderRadiusDiv']['top'] ?? 0) . ' ' . esc_attr($element['backgroundBorderRadiusDiv']['right'] ?? 0) . ' ' . esc_attr($element['backgroundBorderRadiusDiv']['bottom'] ?? 0) . ' ' . esc_attr($element['backgroundBorderRadiusDiv']['left'] ?? 0) . ';'
+                    . 'padding-top: ' . esc_attr($element['backgroundVerticalPaddingDiv']) . 'px;'
+                    . 'padding-bottom: ' . esc_attr($element['backgroundVerticalPaddingDiv']) . 'px;'
+                    . 'padding-left: ' . esc_attr($element['backgroundHorizontalPaddingDiv']) . 'px;'
+                    . 'padding-right: ' . esc_attr($element['backgroundHorizontalPaddingDiv']) . 'px;'
+                    . 'border-style: ' . esc_attr($element['borderStyleDiv']) . ';'
+                    . 'border-width: ' . esc_attr($element['backgroundBorderSizeDiv']['top'] ?? 0) . ' ' . esc_attr($element['backgroundBorderSizeDiv']['right'] ?? 0) . ' ' . esc_attr($element['backgroundBorderSizeDiv']['bottom'] ?? 0) . ' ' . esc_attr($element['backgroundBorderSizeDiv']['left'] ?? 0) . ';'
+                    . 'border-color: ' . esc_attr($element['backgroundBorderColorDiv'] ?? '') . ';'
+                    . 'height: ' . (esc_attr($element['contentHeightDiv']) === 'custom' ? esc_attr($element['customContentHeightDiv']) . '%' : esc_attr($element['contentHeightDiv'])) . ';'
+                    . 'margin: ' . esc_attr($element['marginDiv']['top'] ?? 0) . ' ' . esc_attr($element['marginDiv']['right'] ?? 0) . ' ' . esc_attr($element['marginDiv']['bottom'] ?? 0) . ' ' . esc_attr($element['marginDiv']['left'] ?? 0) . ';';
 
-                                   <?php if (!empty($element['enableBoxShadow'])) {
-                                        $boxShadowX = esc_attr($element['boxShadowX'] ?? 0);
-                                        $boxShadowY = esc_attr($element['boxShadowY'] ?? 0);
-                                        $boxShadowBlur = esc_attr($element['boxShadowBlur'] ?? 0);
-                                        $boxShadowSpread = esc_attr($element['boxShadowSpread'] ?? 0);
-                                        $colorShadow = esc_attr($element['colorShadow'] ?? '#000000');
-                                        $style .= 'box-shadow: ' . $boxShadowX . 'px '
-                                            . $boxShadowY . 'px '
-                                            . $boxShadowBlur . 'px '
-                                            . $boxShadowSpread . 'px '
-                                            . $colorShadow . ';';
-                                    }; ?>
-                                    transform: rotate(<?php echo esc_attr($element['rotateDiv'] ?? 0) ?>deg);"
+                if (!empty($element['enableBoxShadow'])) {
+                    $boxShadowX = esc_attr($element['boxShadowX'] ?? 0);
+                    $boxShadowY = esc_attr($element['boxShadowY'] ?? 0);
+                    $boxShadowBlur = esc_attr($element['boxShadowBlur'] ?? 0);
+                    $boxShadowSpread = esc_attr($element['boxShadowSpread'] ?? 0);
+                    $colorShadow = esc_attr($element['colorShadow'] ?? '#000000');
+                    $inline_style .= 'box-shadow: ' . $boxShadowX . 'px '
+                        . $boxShadowY . 'px '
+                        . $boxShadowBlur . 'px '
+                        . $boxShadowSpread . 'px '
+                        . $colorShadow . ';';
+                }
+
+                $inline_style .= 'transform: rotate(' . esc_attr($element['rotateDiv'] ?? 0) . 'deg);';
+                ?>
+                style="<?php echo $inline_style; ?>"
                 <?php if ($element['effectIn'] !== 'none') : ?>
                 data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
                 data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"
@@ -148,7 +149,7 @@ function render_group($element, $slide)
                         if ($innerElement['type'] === 'text') :
                             render_innerText($innerElement, $slide);
                         elseif ($innerElement['type'] === 'button') :
-                            render_innerButton($innerElement, $slide);
+                            render_innerButton($innerElement);
                         elseif ($innerElement['type'] === 'icon') :
                             render_innerIcon($innerElement, $slide);
                         elseif ($innerElement['type'] === 'image') :

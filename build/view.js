@@ -17150,10 +17150,6 @@ const getAnimationProps = (props, target) => {
     filterFrom: filterFrom,
     filterTo: filterTo,
     scaleType: scaleType,
-    textColor: textColor,
-    textColorHover: textColorHover,
-    backgroundColorImage: backgroundColorImage,
-    backgroundColorImageHover: backgroundColorImageHover,
     effectHover: effectHover,
     opacityHover: opacityHover,
     filterHover: filterHover,
@@ -17211,10 +17207,6 @@ const getAnimationProps = (props, target) => {
     filterFrom,
     filterTo,
     scaleType,
-    textColor,
-    textColorHover,
-    backgroundColorImage,
-    backgroundColorImageHover,
     effectHover,
     opacityHover,
     filterHover,
@@ -17677,6 +17669,7 @@ const getAnimationEffect = (effectName, container, props = {}) => {
 
 // Nuovo effetto di animazione per il testo splittato
 const splitText = (container, props = {}) => {
+  var _animationProps$stagg;
   // Funzione per splittare il testo
   const splitTextContent = (text, lettersRef) => {
     // Verifica se il testo è vuoto o nullo
@@ -17745,7 +17738,6 @@ const splitText = (container, props = {}) => {
     //scale: [4, 1], // Scala le lettere da 4 a 1
     // opacity: [0, 1],
     //rotateX: [360, 0], // Ruota le lettere da
-
     translateZ: 0,
     ...animationEffect,
     // Applica l'effetto dinamico
@@ -17753,7 +17745,7 @@ const splitText = (container, props = {}) => {
     // Applica l'easing
     duration: animationProps.duration,
     // Durata dell'animazione
-    delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(animationProps.stagger || 200) // Stagger tra le lettere
+    delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger((_animationProps$stagg = animationProps.stagger) !== null && _animationProps$stagg !== void 0 ? _animationProps$stagg : 200) // Stagger tra le lettere
   });
 };
 
@@ -17767,7 +17759,6 @@ const hoverEffects = {
       targets: element,
       scale: (_animationProps$scale = animationProps.scaleHover) !== null && _animationProps$scale !== void 0 ? _animationProps$scale : 1,
       easing: (_animationProps$easin = animationProps.easingHover) !== null && _animationProps$easin !== void 0 ? _animationProps$easin : 'linear',
-      color: animationProps.textColorHover,
       duration: (_animationProps$durat = animationProps.durationHover) !== null && _animationProps$durat !== void 0 ? _animationProps$durat : 800
     });
   },
@@ -17779,8 +17770,6 @@ const hoverEffects = {
       targets: element,
       scaleX: (_animationProps$scale2 = animationProps.scaleHover) !== null && _animationProps$scale2 !== void 0 ? _animationProps$scale2 : 1,
       easing: (_animationProps$easin2 = animationProps.easingHover) !== null && _animationProps$easin2 !== void 0 ? _animationProps$easin2 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat2 = animationProps.durationHover) !== null && _animationProps$durat2 !== void 0 ? _animationProps$durat2 : 800
     });
   },
@@ -17792,8 +17781,6 @@ const hoverEffects = {
       targets: element,
       scaleY: (_animationProps$scale3 = animationProps.scaleHover) !== null && _animationProps$scale3 !== void 0 ? _animationProps$scale3 : 1,
       easing: (_animationProps$easin3 = animationProps.easingHover) !== null && _animationProps$easin3 !== void 0 ? _animationProps$easin3 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat3 = animationProps.durationHover) !== null && _animationProps$durat3 !== void 0 ? _animationProps$durat3 : 800
     });
   },
@@ -17807,8 +17794,6 @@ const hoverEffects = {
       rotateX: (_animationProps$rotat2 = animationProps.rotateXHover) !== null && _animationProps$rotat2 !== void 0 ? _animationProps$rotat2 : 0,
       rotateY: (_animationProps$rotat3 = animationProps.rotateYHover) !== null && _animationProps$rotat3 !== void 0 ? _animationProps$rotat3 : 0,
       easing: (_animationProps$easin4 = animationProps.easingHover) !== null && _animationProps$easin4 !== void 0 ? _animationProps$easin4 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat4 = animationProps.durationHover) !== null && _animationProps$durat4 !== void 0 ? _animationProps$durat4 : 800
     });
   },
@@ -17821,8 +17806,6 @@ const hoverEffects = {
       translateX: (_animationProps$start = animationProps.startXHover) !== null && _animationProps$start !== void 0 ? _animationProps$start : 0,
       translateY: (_animationProps$start2 = animationProps.startYHover) !== null && _animationProps$start2 !== void 0 ? _animationProps$start2 : 0,
       easing: (_animationProps$easin5 = animationProps.easingHover) !== null && _animationProps$easin5 !== void 0 ? _animationProps$easin5 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat5 = animationProps.durationHover) !== null && _animationProps$durat5 !== void 0 ? _animationProps$durat5 : 800
     });
   },
@@ -17833,8 +17816,6 @@ const hoverEffects = {
       filter: 'blur(' + animationProps.filterHover + 'px)',
       targets: element,
       easing: (_animationProps$easin6 = animationProps.easingHover) !== null && _animationProps$easin6 !== void 0 ? _animationProps$easin6 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat6 = animationProps.durationHover) !== null && _animationProps$durat6 !== void 0 ? _animationProps$durat6 : 800
     });
   },
@@ -17847,8 +17828,6 @@ const hoverEffects = {
       skewX: (_animationProps$skewX = animationProps.skewXHover) !== null && _animationProps$skewX !== void 0 ? _animationProps$skewX : 0,
       skewY: (_animationProps$skewY = animationProps.skewYHover) !== null && _animationProps$skewY !== void 0 ? _animationProps$skewY : 0,
       easing: (_animationProps$easin7 = animationProps.easingHover) !== null && _animationProps$easin7 !== void 0 ? _animationProps$easin7 : 'linear',
-      color: animationProps.textColorHover,
-      backgroundColor: animationProps.backgroundColorImageHover,
       duration: (_animationProps$durat7 = animationProps.durationHover) !== null && _animationProps$durat7 !== void 0 ? _animationProps$durat7 : 800
     });
   },
@@ -17867,9 +17846,7 @@ const hoverEffects = {
       skewX: (_animationProps$skewX2 = animationProps.skewXHover) !== null && _animationProps$skewX2 !== void 0 ? _animationProps$skewX2 : 0,
       skewY: (_animationProps$skewY2 = animationProps.skewYHover) !== null && _animationProps$skewY2 !== void 0 ? _animationProps$skewY2 : 0,
       easing: animationProps.easingHover || 'linear',
-      duration: animationProps.durationHover || 800,
-      backgroundColor: animationProps.backgroundColorImageHover,
-      color: animationProps.textColorHover
+      duration: animationProps.durationHover || 800
     };
 
     // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
@@ -17926,8 +17903,6 @@ const handleMouseLeave = (e, props = {}) => {
     skewY: 0,
     // Torna allo skew originale
     easing: animationProps.easingHover || 'linear',
-    color: animationProps.textColor,
-    backgroundColor: animationProps.backgroundColorImage,
     duration: animationProps.durationHover
   });
 };
@@ -33752,9 +33727,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Funzione per animare un elemento
   function animateElement() {
-    const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .content-icon,.title-slide-div, .img-inner,.button-slider-inner');
+    const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .content-icon,.title-slide-div, .img-inner,.content-button-slide-inner,.content-icon-inner');
     elementsToAnimate.forEach(element => {
-      var _parseInt, _parseInt2, _parseInt3, _element$getAttribute, _element$getAttribute2, _element$getAttribute3, _element$getAttribute4, _element$getAttribute5, _element$getAttribute6, _element$getAttribute7, _element$getAttribute8, _element$getAttribute9, _element$getAttribute10, _element$getAttribute11, _parseInt4, _element$getAttribute12, _element$getAttribute13, _element$getAttribute14, _parseInt5, _parseInt6, _parseInt7, _parseInt8, _parseInt9, _parseInt10, _parseFloat, _parseFloat2, _parseInt11, _parseInt12, _parseInt13, _parseInt14, _element$getAttribute15, _element$getAttribute16, _element$getAttribute17, _element$getAttribute18, _element$getAttribute19, _element$getAttribute20, _parseInt15, _parseInt16, _parseInt17, _parseInt18, _parseInt19, _parseInt20, _parseInt21, _parseInt22, _parseInt23, _parseInt24, _dataScaleCustomEf, _dataDurationHover, _dataEasingHover, _dataHeightFrom, _dataHeightTo;
+      var _parseInt, _parseInt2, _parseInt3, _element$getAttribute, _element$getAttribute2, _element$getAttribute3, _element$getAttribute4, _element$getAttribute5, _element$getAttribute6, _element$getAttribute7, _element$getAttribute8, _element$getAttribute9, _element$getAttribute10, _element$getAttribute11, _parseInt4, _element$getAttribute12, _element$getAttribute13, _element$getAttribute14, _parseInt5, _parseInt6, _parseInt7, _parseInt8, _parseInt9, _parseInt10, _parseFloat, _parseFloat2, _parseInt11, _parseInt12, _parseInt13, _parseInt14, _element$getAttribute15, _element$getAttribute16, _parseInt15, _parseInt16, _parseInt17, _parseInt18, _parseInt19, _parseInt20, _parseInt21, _parseInt22, _parseInt23, _parseInt24, _dataScaleCustomEf, _dataDurationHover, _dataEasingHover, _dataHeightFrom, _dataHeightTo;
       const effectIn = element.getAttribute('data-effect-in');
       const duration = (_parseInt = parseInt(element.getAttribute('data-duration'))) !== null && _parseInt !== void 0 ? _parseInt : 800;
       const delay = (_parseInt2 = parseInt(element.getAttribute('data-delay-in'))) !== null && _parseInt2 !== void 0 ? _parseInt2 : 0;
@@ -33787,11 +33762,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const skewYFrom = (_parseInt13 = parseInt(element.getAttribute('data-skew-y-from'))) !== null && _parseInt13 !== void 0 ? _parseInt13 : 0;
       const skewYTo = (_parseInt14 = parseInt(element.getAttribute('data-skew-y-to'))) !== null && _parseInt14 !== void 0 ? _parseInt14 : 1;
       const scaleType = (_element$getAttribute15 = element.getAttribute('data-scale-custom-effect-in')) !== null && _element$getAttribute15 !== void 0 ? _element$getAttribute15 : 'scale';
-      const textColor = (_element$getAttribute16 = element.getAttribute('data-text-color')) !== null && _element$getAttribute16 !== void 0 ? _element$getAttribute16 : '';
-      const backgroundColorImage = (_element$getAttribute17 = element.getAttribute('data-image-color')) !== null && _element$getAttribute17 !== void 0 ? _element$getAttribute17 : '';
-      const backgroundColorImageHover = (_element$getAttribute18 = element.getAttribute('data-image-color-hover')) !== null && _element$getAttribute18 !== void 0 ? _element$getAttribute18 : '';
-      const textColorHover = (_element$getAttribute19 = element.getAttribute('data-text-color-hover')) !== null && _element$getAttribute19 !== void 0 ? _element$getAttribute19 : '0';
-      const effectHover = (_element$getAttribute20 = element.getAttribute('data-effect-hover')) !== null && _element$getAttribute20 !== void 0 ? _element$getAttribute20 : '';
+      const effectHover = (_element$getAttribute16 = element.getAttribute('data-effect-hover')) !== null && _element$getAttribute16 !== void 0 ? _element$getAttribute16 : '';
       const scaleHover = (_parseInt15 = parseInt(element.getAttribute('data-scale-hover'))) !== null && _parseInt15 !== void 0 ? _parseInt15 : 1;
       const opacityHover = (_parseInt16 = parseInt(element.getAttribute('data-opacity-hover'))) !== null && _parseInt16 !== void 0 ? _parseInt16 : 1;
       const filterHover = (_parseInt17 = parseInt(element.getAttribute('data-filter-hover'))) !== null && _parseInt17 !== void 0 ? _parseInt17 : 0;
@@ -33841,10 +33812,6 @@ document.addEventListener('DOMContentLoaded', () => {
         skewYTo,
         scaleType,
         effectHover,
-        textColor,
-        textColorHover,
-        backgroundColorImage,
-        backgroundColorImageHover,
         scaleHover,
         opacityHover,
         filterHover,
@@ -33872,13 +33839,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Aggiungi gli eventi di hover
-  const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider, .title-slide-div, .img-inner,.button-slider-inner');
+  const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .title-slide-div, .img-inner,.content-button-slide-inner');
   elements.forEach(element => {
     element.addEventListener('mouseenter', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_5__.handleMouseEnter)(e, {
       durationHover: element.getAttribute('data-duration-hover'),
       easingHover: element.getAttribute('data-easing-hover'),
-      textColorHover: element.getAttribute('data-text-color-hover'),
-      backgroundColorImageHover: element.getAttribute('data-image-color-hover'),
       scaleHover: element.getAttribute('data-scale-hover'),
       effectHover: element.getAttribute('data-effect-hover'),
       opacityHover: element.getAttribute('data-opacity-hover'),
@@ -33894,9 +33859,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
     element.addEventListener('mouseleave', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_5__.handleMouseLeave)(e, {
       durationHover: element.getAttribute('data-duration-hover'),
-      easingHover: element.getAttribute('data-easing-hover'),
-      textColor: element.getAttribute('data-text-color'),
-      backgroundColorImage: element.getAttribute('data-image-color')
+      easingHover: element.getAttribute('data-easing-hover')
     }));
   });
 

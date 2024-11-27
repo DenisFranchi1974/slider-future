@@ -69,6 +69,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     initialSlide,
     autoHeight,
     slideHeight,
+    slideHeightTablet,
+    slideHeightMobile,
     grabCursor,
     speed,
     crossFade,
@@ -175,6 +177,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     backgroundVerticalPadding,
     backgroundHorizontalPadding,
     backgroundColor,
+    backgroundImage,
+    focalPoint,
     backgroundColorSlideDefault,
     backgroundColorBlockDefault,
     textColorDefault,
@@ -220,6 +224,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     excludeCategories = [],
     order = "ASC",
     postsToShow,
+    fitImage,
+    visibleElements
   } = attributes;
 
   /* Classi personalizzate per il blocco */
@@ -389,7 +395,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
   }, []);
 
   // Update Effect
-  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${backgroundColor}-${
+  const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${slideHeightTablet}-${slideHeightMobile}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${backgroundImage}-${focalPoint}-${backgroundColor}-${
     JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)
   }`;
   // Nessun movimento della slider
@@ -465,7 +471,10 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     "--swiper-autoplay-progress-color": autoplayProgressColor,
     border: backgroundBorderSize + "px solid " + backgroundBorderColor,
     borderRadius: backgroundBorderRadius + "px",
-    backgroundColor: backgroundColor,
+    backgroundColor: backgroundImage ? undefined : backgroundColor,
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+    backgroundSize: fitImage ? fitImage : "cover",
+    backgroundPosition: backgroundImage ? `${focalPoint.x * 100}% ${focalPoint.y * 100}%` : undefined,
     "--color-one-effect": colorOneEffect,
     "--color-two-effect": colorTwoEffect,
     "--color-three-effect": colorThreeEffect,
@@ -618,6 +627,10 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
   const [selectedDevice, setSelectedDevice] = useState("desktop");
   const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
+
+
+
+
   // Cache per i risultati delle chiamate API
   const apiCache = {};
 
@@ -629,41 +642,35 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     };
   };
 
-  /* Da controllare perchè rallenta il sito!!!!!!
   useEffect(() => {
     const includeCategoriesParam = includeCategories.length ? includeCategories.join(',') : '';
     const excludeCategoriesParam = excludeCategories.length ? excludeCategories.join(',') : '';
-    const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}`;
-  
-    // Controlla se la risposta è già nella cache
+    const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}-${attributes.postId}`;
+
     if (apiCache[cacheKey]) {
-      setAttributes({ posts: apiCache[cacheKey] });
-      return;
+        setAttributes({ posts: apiCache[cacheKey] });
+        return;
     }
-  
-    // Funzione per recuperare i post con debounce
+
     const fetchPosts = debounce(() => {
-      apiFetch({
-        path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}`,
-      })
-        .then((data) => {
-          console.log('Data ricevuti:', data); // Controlla i dati
-          apiCache[cacheKey] = data; // Memorizza i risultati nella cache
-          setAttributes({ posts: data });
+        apiFetch({
+            path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}&exclude_post_id=${attributes.postId}`,
         })
-        .catch((error) => {
-          console.error('Errore nel recupero dei post:', error);
-        });
-    }, 300); // Imposta il debounce con un ritardo di 300ms
-  
-    // Chiama la funzione debounce
+            .then((data) => {
+                console.log('Data ricevuti:', data);
+                apiCache[cacheKey] = data;
+                setAttributes({ posts: data });
+            })
+            .catch((error) => {
+                console.error('Errore nel recupero dei post:', error);
+            });
+    }, 300);
+
     fetchPosts();
-  }, [includeCategories, excludeCategories, order, postsToShow]);
+}, [includeCategories, excludeCategories, order, postsToShow, attributes.postId]);
 
-  */
 
-  // Debug: Verifica l'ordine dei post
-  console.log("Ordine dei post:", posts);
+  
 
   // Style content posts
   const stylesContentPosts = {
@@ -1133,6 +1140,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
                       style={stylesContentPosts}
                     >
                       {postElementsOrder.map((element) => {
+                         if (!visibleElements[element]) return null;
                         switch (element) {
                           case "image":
                             return (
@@ -1241,6 +1249,133 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
                         : {}),
                     }}
                   >
+                    {slide.divider !== "none" && (
+                      <div 
+                        className="divider-container"
+                        style={{
+                          ...(slide.invertDivider === true && slide.divider !== 'divider-tilt' && slide.positionDivider === 'divider-top'
+                            ? {
+                                transform: 'rotate(180deg)',
+                              }
+                            : {}),
+                          ...(slide.positionDivider === 'divider-top'
+                            ? {
+                                top: '0px',
+                              }
+                            : slide.positionDivider === 'divider-bottom'
+                            ? {
+                                bottom: '0px',
+                                ...(slide.invertDivider === false
+                                  ? {
+                                      transform: 'rotate(180deg)',
+                                    }
+                                  : {}),
+                              }
+                            : {}),
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 1200 120"
+                          preserveAspectRatio="none"
+                          className={`custom-divider ${slide.divider}`}
+                          style={{
+                            width: 'calc(' + slide.widthDivider + '% + 1.3px)', 
+                            height: slide.heightDivider + 'px',
+                            '--color-divider': slide.colorDivider,
+                            ...(slide.flipDivider === true
+                              ? {
+                                transform: 'rotateY(180deg)',
+                                }
+                              : {}),
+                          }}
+                        >
+                          {slide.divider === "divider-wawes" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+                              : // Path per quando invertDivider è false
+                              "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                            }
+                            class="shape-fill"></path>
+                          )}
+                          {slide.divider === "divider-curve" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                              ? // Path per quando invertDivider è true
+                            "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" 
+                            : // Path per quando invertDivider è false
+                            "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+                            }
+                            class="shape-fill"></path>
+                          )}
+                          {slide.divider === "divider-curve-asymmetrical" && (
+                         <path data-v-6da3ec0c="" d={
+                          slide.invertDivider
+                          ? // Path per quando invertDivider è true
+                          "M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
+                          : // Path per quando invertDivider è false
+                          "M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z"
+                          }
+                          class="shape-fill"></path>
+                          )}
+                          {slide.divider === "divider-triangle" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                               ? // Path per quando invertDivider è true
+                              "M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
+                              : // Path per quando invertDivider è false
+                             "M1200 0L0 0 598.97 114.72 1200 0z"
+                            }
+                              class="shape-fill"></path>
+                          )}
+                          {slide.divider === "divider-triangle-asymmetrical" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+                              : // Path per quando invertDivider è false
+                              "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+                            }
+                            class="shape-fill" ></path>
+                          )}
+                          {slide.divider === "divider-tilt" && (
+                            <path data-v-6da3ec0c="" d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                          )}
+                          {slide.divider === "divider-arrow" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z"
+                              : // Path per quando invertDivider è false
+                              "M649.97 0L550.03 0 599.91 54.12 649.97 0z"
+                            }
+                            class="shape-fill"></path>
+                          )}
+                          {slide.divider === "divider-split" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M600,16.8c0-8.11-8.88-13.2-19.92-13.2H0V120H1200V3.6H619.92C608.88,3.6,600,8.66,600,16.8Z"
+                              : // Path per quando invertDivider è false
+                              "M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"
+                            }
+                            class="shape-fill" ></path>
+                          )}
+                          {slide.divider === "divider-book" && (
+                            <path data-v-6da3ec0c="" d={
+                              slide.invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z"
+                              : // Path per quando invertDivider è false
+                               "M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z"
+                            }
+                               class="shape-fill" ></path>
+                          )}
+                        </svg>
+                      </div>
+                    )}
                     <div
                       className={
                         "content-slide-slider " +

@@ -21,14 +21,19 @@ function render_button($element, $slide)
             $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
         }
     }
-    $defaultButtonColor = '#000000';
-    $defaultBackgroundBorderColorButton = '#cccccc';
+    $defaultButtonColor = '#ffffff';
+    $defaultBackgroundBorderColorButton = '#ffffff';
     $defaultBorderStyleButton = 'solid';
     $defaultBackgroundBorderRadiusButton = '4';
     $defaultButtonBackgroundColor = '#ffffff';
+    $defaultButtonBackgroundColorHover = '#18191c';
     $defaultWidthButton = '35';
     $defaultHeightButton = '55';
-    $defaultButtonColorHover = '#000000';
+    $defaultButtonColorHover = '#ffffff';
+    $defaultBorderSizeButtonTop = '0';
+    $defaultBorderSizeButtonRight = '0';
+    $defaultBorderSizeButtonBottom = '0';
+    $defaultBorderSizeButtonLeft = '0';
     $buttonStyle = '';
     if (isset($element['buttonColor'])) {
         $buttonStyle .= "--color-button: " . esc_attr($element['buttonColor']) . "; ";
@@ -44,6 +49,26 @@ function render_button($element, $slide)
         $buttonStyle .= "--border-style-button: " . esc_attr($element['borderStyleButton']) . "; ";
     } else {
         $buttonStyle .= "--border-style-button: " . esc_attr($defaultBorderStyleButton) . "; ";
+    }
+    if (isset($element['backgroundBorderSizeButton']['top'])) {
+        $buttonStyle .= "--border-width-button-top: " . esc_attr($element['backgroundBorderSizeButton']['top']) . "; ";
+    } else {
+        $buttonStyle .= "--border-width-button-top: " . esc_attr($defaultBorderSizeButtonTop) . "; ";
+    }
+    if (isset($element['backgroundBorderSizeButton']['right'])) {
+        $buttonStyle .= "--border-width-button-right: " . esc_attr($element['backgroundBorderSizeButton']['right']) . "; ";
+    } else {
+        $buttonStyle .= "--border-width-button-right: " . esc_attr($defaultBorderSizeButtonRight) . "; ";
+    }
+    if (isset($element['backgroundBorderSizeButton']['bottom'])) {
+        $buttonStyle .= "--border-width-button-bottom: " . esc_attr($element['backgroundBorderSizeButton']['bottom']) . "; ";
+    } else {
+        $buttonStyle .= "--border-width-button-bottom: " . esc_attr($defaultBorderSizeButtonBottom) . "; ";
+    }
+    if (isset($element['backgroundBorderSizeButton']['left'])) {
+        $buttonStyle .= "--border-width-button-left: " . esc_attr($element['backgroundBorderSizeButton']['left']) . "; ";
+    } else {
+        $buttonStyle .= "--border-width-button-left: " . esc_attr($defaultBorderSizeButtonLeft) . "; ";
     }
     if (isset($element['backgroundBorderRadiusButton'])) {
         $buttonStyle .= "--border-radius-button: " . esc_attr($element['backgroundBorderRadiusButton']) . "px; ";
@@ -70,6 +95,11 @@ function render_button($element, $slide)
     } else {
         $buttonStyle .= "--color-button-hover: " . esc_attr($defaultButtonColorHover) . "; ";
     }
+    if (isset($element['buttonBackgroundColorHover'])) {
+        $buttonStyle .= "--background-color-button-hover: " . esc_attr($element['buttonBackgroundColorHover']) . "; ";
+    } else {
+        $buttonStyle .= "--background-color-button-hover: " . esc_attr($defaultButtonBackgroundColorHover) . "; ";
+    }
     if (isset($element['rotateButton'])) {
         $buttonStyle .= "transform: rotate(" . esc_attr($element['rotateButton']) . "deg); ";
     } else {
@@ -80,45 +110,20 @@ function render_button($element, $slide)
     $buttonStyle .= " " . (isset($element['marginButton']['right']) ? esc_attr($element['marginButton']['right']) : '0') . " ";
     $buttonStyle .= (isset($element['marginButton']['bottom']) ? esc_attr($element['marginButton']['bottom']) : '0') . " ";
     $buttonStyle .= (isset($element['marginButton']['left']) ? esc_attr($element['marginButton']['left']) : '0') . "; ";
-    if (isset($element['durationEffectButton'])) {
-        $buttonStyle .= "--duration-effect-button: " . esc_attr($element['durationEffectButton']) . "s; ";
-    } else {
-        $buttonStyle .= "--duration-effect-button: 0s; ";
-    }
-    if (isset($element['delayEffectButton'])) {
-        $buttonStyle .= "--delay-effect-button: " . esc_attr($element['delayEffectButton']) . "s; ";
-    } else {
-        $buttonStyle .= "--delay-effect-button: 0s; ";
-    }
-    if (isset($element['interationButton'])) {
-        $buttonStyle .= "--interation-button: " . esc_attr($element['interationButton']) . "; ";
-    } else {
-        $buttonStyle .= "--interation-button: forwards; ";
-    }
     if (isset($element['backgroundBorderColorHover'])) {
         $buttonStyle .= "--border-color-button-hover: " . esc_attr($element['backgroundBorderColorHover']) . "; ";
     } else {
-        $buttonStyle .= "--border-color-button-hover: #000000; ";
+        $buttonStyle .= "--border-color-button-hover: #ffffff; ";
     }
     if (isset($element['borderStyleHover'])) {
         $buttonStyle .= "--border-style-button-hover: " . esc_attr($element['borderStyleHover']) . "; ";
     } else {
-        $buttonStyle .= "--border-style-button-hover: none; ";
+        $buttonStyle .= "--border-style-button-hover: solid; ";
     }
-    if (isset($element['buttonBackgroundColorHover'])) {
-        $buttonStyle .= "--background-color-button-hover: " . esc_attr($element['buttonBackgroundColorHover']) . "; ";
-    } else {
-        $buttonStyle .= "--background-color-button-hover: '#FFFFFF'; ";
-    }
-    $buttonStyle .= "--border-width-button-hover-top: " . (isset($element['backgroundBorderSizeHover']['top']) ? esc_attr($element['backgroundBorderSizeHover']['top']) : '0') . "; ";
-    $buttonStyle .= "--border-width-button-hover-right: " . (isset($element['backgroundBorderSizeHover']['right']) ? esc_attr($element['backgroundBorderSizeHover']['right']) : '0') . "; ";
-    $buttonStyle .= "--border-width-button-hover-bottom: " . (isset($element['backgroundBorderSizeHover']['bottom']) ? esc_attr($element['backgroundBorderSizeHover']['bottom']) : '0') . "; ";
-    $buttonStyle .= "--border-width-button-hover-left: " . (isset($element['backgroundBorderSizeHover']['left']) ? esc_attr($element['backgroundBorderSizeHover']['left']) : '0') . "; ";
-    if (isset($element['rotateHover'])) {
-        $buttonStyle .= "--rotate-button-hover: " . esc_attr($element['rotateHover']) . "deg; ";
-    } else {
-        $buttonStyle .= "--rotate-button-hover: 0deg; ";
-    }
+    $buttonStyle .= "--border-width-button-hover-top: " . (isset($element['backgroundBorderSizeHover']['top']) ? esc_attr($element['backgroundBorderSizeHover']['top']) : '3') . "; ";
+    $buttonStyle .= "--border-width-button-hover-right: " . (isset($element['backgroundBorderSizeHover']['right']) ? esc_attr($element['backgroundBorderSizeHover']['right']) : '3') . "; ";
+    $buttonStyle .= "--border-width-button-hover-bottom: " . (isset($element['backgroundBorderSizeHover']['bottom']) ? esc_attr($element['backgroundBorderSizeHover']['bottom']) : '3') . "; ";
+    $buttonStyle .= "--border-width-button-hover-left: " . (isset($element['backgroundBorderSizeHover']['left']) ? esc_attr($element['backgroundBorderSizeHover']['left']) : '3') . "; ";
     $buttonStyle .= "z-index: " . (isset($element['zIndexButton']) ? esc_attr($element['zIndexButton']) : '1') . "; ";
     if (isset($element['delayTransition'])) {
         $buttonStyle .= "--delay-hide-seconds-button: " . esc_attr($element['delayTransition']) . "s; ";
@@ -131,12 +136,6 @@ function render_button($element, $slide)
     $mouseStyles = "";
     if (isset($element['opacityButton'])) {
         $mouseStyles .= "opacity: " . esc_attr($element['opacityButton']) . "; ";
-    }
-    if (isset($element['opacityHover'])) {
-        $mouseStyles .= "--opacity-button-hover: " . esc_attr($element['opacityHover']) . "; ";
-    }
-    if (isset($element['durationEffectHover'])) {
-        $mouseStyles .= "transition: " . esc_attr($element['durationEffectHover']) . "s; ";
     }
     if (!empty($element['enableBoxShadow'])) {
         $boxShadowX = esc_attr($element['boxShadowX'] ?? 0);
@@ -256,6 +255,7 @@ function render_button($element, $slide)
     $buttonStyle3 .= "--border-width-button-hover-bottom: " . (isset($element['backgroundBorderSizeHover']['bottom']) ? esc_attr($element['backgroundBorderSizeHover']['bottom']) : '0') . "; ";
     $buttonStyle3 .= "--border-width-button-hover-left: " . (isset($element['backgroundBorderSizeHover']['left']) ? esc_attr($element['backgroundBorderSizeHover']['left']) : '0') . "; ";
     $buttonStyle3 .= "display: flex;";
+    $buttonStyle3 .= "opacity: " . (isset($element['opacityButton']) ? esc_attr($element['opacityButton']) : '1') . "; ";
     if (isset($element['buttonAlign'])) {
         $buttonStyle3 .= "justify-content: " . esc_attr($element['buttonAlign']) . "; ";
     } else {
@@ -288,6 +288,7 @@ function render_button($element, $slide)
         ? esc_attr($element['widthCustomButton']) . '%'
         : esc_attr($element['widthButton'])) . ";
         transform: rotate(" . (isset($element['rotateButton']) ? esc_attr($element['rotateButton']) : '0') . "deg);
+        z-index: " . (isset($element['zIndexButton']) ? esc_attr($element['zIndexButton']) : '1') . ";
         margin: " . (isset($element['marginButton']['top']) ? esc_attr($element['marginButton']['top']) : '0') . " " .
         (isset($element['marginButton']['right']) ? esc_attr($element['marginButton']['right']) : '0') . " " .
         (isset($element['marginButton']['bottom']) ? esc_attr($element['marginButton']['bottom']) : '0') . " " .
@@ -312,7 +313,55 @@ function render_button($element, $slide)
                     <?php if ($element['buttonLink'] !== 'none') : ?>
                     onclick="<?php echo $onclick; ?>"
                     <?php endif; ?>
-                    class="content-button-slide scroll-btn  <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>"
+                    <?php if ($element['effectIn'] !== 'none') : ?>
+                    data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
+                    data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"
+                    data-delay-in="<?php echo esc_attr($element['delay'] ?? 0); ?>"
+                    data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? 0); ?>"
+                    data-easing-in="<?php echo esc_attr($element['easing'] ?? 'linear'); ?>"
+                    data-direction-in="<?php echo esc_attr($element['direction'] ?? 'normal'); ?>"
+                    data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
+                    data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
+                    data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                    data-filter-in-from="<?php echo esc_attr($element['filterFrom'] ?? 0); ?>"
+                    data-filter-in-to="<?php echo esc_attr($element['filterTo'] ?? 0); ?>"
+                    data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
+                    data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
+                    data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"
+                    data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? 0); ?>"
+                    data-rotate-in-from="<?php echo esc_attr($element['rotateFrom'] ?? 0); ?>"
+                    data-rotate-in-to="<?php echo esc_attr($element['rotateTo'] ?? 0); ?>"
+                    data-rotate-x-in-from="<?php echo esc_attr($element['rotateXFrom'] ?? 0); ?>"
+                    data-rotate-x-in-to="<?php echo esc_attr($element['rotateXTo'] ?? 0); ?>"
+                    data-rotate-y-in-from="<?php echo esc_attr($element['rotateYFrom'] ?? 0); ?>"
+                    data-rotate-y-in-to="<?php echo esc_attr($element['rotateYTo'] ?? 0); ?>"
+                    data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? 0); ?>"
+                    data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? 1); ?>"
+                    data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? 0); ?>"
+                    data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? 0); ?>"
+                    data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
+                    data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 0); ?>"
+                    data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
+                    data-image-color="<?php echo esc_attr($element['backgroundColorImage'] ?? ''); ?>"
+                    <?php endif;
+                    if ($element['effectHover'] !== 'none') : ?>
+                    data-image-color-hover="<?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>"
+                    data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
+                    data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
+                    data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"
+                    data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? 0); ?>"
+                    data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? 0); ?>"
+                    data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? 0); ?>"
+                    data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? 0); ?>"
+                    data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? 0); ?>"
+                    data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? 0); ?>"
+                    data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? 100); ?>"
+                    data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? 0); ?>"
+                    data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? 'scale'); ?>"
+                    data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? 800); ?>"
+                    data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
+                    <?php endif; ?>
+                    class="content-button-slide scroll-btn <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>"
                     style="<?php echo esc_attr($buttonStyle); ?>">
                     <span class="mouse" style="<?php echo esc_attr($mouseStyles); ?>">
                         <span></span>
@@ -341,7 +390,55 @@ function render_button($element, $slide)
                     <?php if ($element['buttonLink'] !== 'none') : ?>
                     onclick="<?php echo $onclick; ?>"
                     <?php endif; ?>
-                    class="content-button-slide scroll-btn  <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>"
+                    <?php if ($element['effectIn'] !== 'none') : ?>
+                    data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
+                    data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"
+                    data-delay-in="<?php echo esc_attr($element['delay'] ?? 0); ?>"
+                    data-delay-in-end="<?php echo esc_attr($element['endDelay'] ?? 0); ?>"
+                    data-easing-in="<?php echo esc_attr($element['easing'] ?? 'linear'); ?>"
+                    data-direction-in="<?php echo esc_attr($element['direction'] ?? 'normal'); ?>"
+                    data-loop-in="<?php echo esc_attr($element['loop'] ?? '1'); ?>"
+                    data-opacity-in-from="<?php echo esc_attr($element['opacityFrom'] ?? 0); ?>"
+                    data-opacity-in-to="<?php echo esc_attr($element['opacityTo'] ?? 1); ?>"
+                    data-filter-in-from="<?php echo esc_attr($element['filterFrom'] ?? 0); ?>"
+                    data-filter-in-to="<?php echo esc_attr($element['filterTo'] ?? 0); ?>"
+                    data-start-x-from="<?php echo esc_attr($element['startXFrom'] ?? 100); ?>"
+                    data-start-x-to="<?php echo esc_attr($element['startXTo'] ?? 0); ?>"
+                    data-start-y-from="<?php echo esc_attr($element['startYFrom'] ?? 0); ?>"
+                    data-start-y-to="<?php echo esc_attr($element['startYTo'] ?? 0); ?>"
+                    data-rotate-in-from="<?php echo esc_attr($element['rotateFrom'] ?? 0); ?>"
+                    data-rotate-in-to="<?php echo esc_attr($element['rotateTo'] ?? 0); ?>"
+                    data-rotate-x-in-from="<?php echo esc_attr($element['rotateXFrom'] ?? 0); ?>"
+                    data-rotate-x-in-to="<?php echo esc_attr($element['rotateXTo'] ?? 0); ?>"
+                    data-rotate-y-in-from="<?php echo esc_attr($element['rotateYFrom'] ?? 0); ?>"
+                    data-rotate-y-in-to="<?php echo esc_attr($element['rotateYTo'] ?? 0); ?>"
+                    data-scale-in-from="<?php echo esc_attr($element['scaleFrom'] ?? 0); ?>"
+                    data-scale-in-to="<?php echo esc_attr($element['scaleTo'] ?? 1); ?>"
+                    data-skew-x-from="<?php echo esc_attr($element['skewXFrom'] ?? 0); ?>"
+                    data-skew-x-to="<?php echo esc_attr($element['skewXTo'] ?? 0); ?>"
+                    data-skew-y-from="<?php echo esc_attr($element['skewYFrom'] ?? 0); ?>"
+                    data-skew-y-to="<?php echo esc_attr($element['skewYTo'] ?? 0); ?>"
+                    data-scale-custom-effect-in="<?php echo esc_attr($element['scaleType'] ?? 'scale'); ?>"
+                    data-image-color="<?php echo esc_attr($element['backgroundColorImage'] ?? ''); ?>"
+                    <?php endif;
+                    if ($element['effectHover'] !== 'none') : ?>
+                    data-image-color-hover="<?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>"
+                    data-effect-hover="<?php echo esc_attr($element['effectHover'] ?? ''); ?>"
+                    data-scale-hover="<?php echo esc_attr($element['scaleHover'] ?? 1); ?>"
+                    data-opacity-hover="<?php echo esc_attr($element['opacityHover'] ?? 1); ?>"
+                    data-filter-hover="<?php echo esc_attr($element['filterHover'] ?? 0); ?>"
+                    data-rotate-hover="<?php echo esc_attr($element['rotateHover'] ?? 0); ?>"
+                    data-rotate-x-hover="<?php echo esc_attr($element['rotateXHover'] ?? 0); ?>"
+                    data-rotate-y-hover="<?php echo esc_attr($element['rotateYHover'] ?? 0); ?>"
+                    data-skew-x-hover="<?php echo esc_attr($element['skewXHover'] ?? 0); ?>"
+                    data-skew-y-hover="<?php echo esc_attr($element['skewYHover'] ?? 0); ?>"
+                    data-start-x-hover="<?php echo esc_attr($element['startXHover'] ?? 100); ?>"
+                    data-start-y-hover="<?php echo esc_attr($element['startYHover'] ?? 0); ?>"
+                    data-scale-custom-effect-hover="<?php echo esc_attr($element['scaleTypeHover'] ?? 'scale'); ?>"
+                    data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? 800); ?>"
+                    data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
+                    <?php endif; ?>
+                    class="content-button-slide scroll-btn <?php echo esc_attr($desktopClassButton); ?> <?php echo esc_attr($tabletClassButton); ?> <?php echo esc_attr($mobileClassButton); ?>"
                     style="<?php echo esc_attr($buttonStyle); ?>">
                     <span class="mouse" style="<?php echo esc_attr($mouseStyles); ?>">
                         <span></span>

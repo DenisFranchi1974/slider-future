@@ -19,6 +19,8 @@ $centeredSlides = $attributes['centeredSlides'] ?? null;
 $initialSlide = $attributes['initialSlide'] ?? null;
 $autoHeight = $attributes['autoHeight'] ?? null;
 $slideHeight = $attributes['slideHeight'] ?? null;
+$slideHeightTablet = $attributes['slideHeightTablet'] ?? null;
+$slideHeightMobile = $attributes['slideHeightMobile'] ?? null;
 $grabCursor = $attributes['grabCursor'] ?? null;
 $loopMode = $attributes['loopMode'] ?? mull;
 $speed = $attributes['speed'] ?? null;
@@ -196,6 +198,9 @@ if ($mouseEffect !== 'none') {
 $sliderMarginTop = $attributes['sliderMarginTop'] ?? null;
 $sliderMarginBottom = $attributes['sliderMarginBottom'] ?? null;
 $backgroundColor = $attributes['backgroundColor'] ?? null;
+$backgroundImage = $attributes['backgroundImage'] ?? null;
+$fitImage = $attributes['fitImage'] ?? 'cover';
+$focalPoint = $attributes['focalPoint'] ?? ['x' => 0.5, 'y' => 0.5];
 $backgroundHorizontalPadding = $attributes['backgroundHorizontalPadding'] ?? null;
 $backgroundVerticalPadding = $attributes['backgroundVerticalPadding'] ?? null;
 $includeCategories = $attributes['includeCategories'] ?? null;
@@ -224,6 +229,8 @@ $swiper_attr = array(
     'initialSlide' => $initialSlide,
     'autoHeight' => $autoHeight,
     'slideHeight' => $slideHeight,
+    'slideHeightTablet' => $slideHeightTablet,
+    'slideHeightMobile' => $slideHeightMobile,
     'grabCursor' => $grabCursor,
     'loopMode' => $loopMode,
     'speed' => $speed,
@@ -350,6 +357,9 @@ $swiper_attr = array(
     'sliderMarginTop' => $sliderMarginTop,
     'sliderMarginBottom' => $sliderMarginBottom,
     'backgroundColor' => $backgroundColor,
+    'backgroundImage' => $backgroundImage,
+    'fitImage' => $fitImage,
+    'focalPoint' => $focalPoint,
     'backgroundHorizontalPadding' => $backgroundHorizontalPadding,
     'backgroundVerticalPadding' => $backgroundVerticalPadding,
     'includeCategories' => $includeCategories,
@@ -363,8 +373,7 @@ $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
 $stylesSlider =
     'margin-top: ' . esc_attr($sliderMarginTop) . 'px; ' .
     'margin-bottom: ' . esc_attr($sliderMarginBottom) . 'px; ' .
-    'background-color: ' . esc_attr($backgroundColor) . '; ' .
-    ($autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ');
+    ($autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; --slide-height-tablet: ' . esc_attr($slideHeightTablet) . 'px; --slide-height-mobile: ' . esc_attr($slideHeightMobile) . 'px; ');
 if ($filter !== 'none') {
     $colorOneEffect = $attributes['colorOneEffect'] ?? '';
     $colorTwoEffect = $attributes['colorTwoEffect'] ?? '';
@@ -373,6 +382,13 @@ if ($filter !== 'none') {
     $stylesSlider .= '--color-one-effect: ' . esc_attr($colorOneEffect) . '; ' .
         '--color-two-effect: ' . esc_attr($colorTwoEffect) . '; ' .
         '--color-three-effect: ' . esc_attr($colorThreeEffect) . '; ';
+}
+if ($backgroundImage) {
+    $stylesSlider .= 'background-image: url(' . esc_url($backgroundImage) . '); ';
+    $stylesSlider .= 'background-position: ' . esc_attr($focalPoint['x'] * 100) . '% ' . esc_attr($focalPoint['y'] * 100) . '%; ';
+    $stylesSlider .= 'background-size: ' . esc_attr($fitImage)  . '; ';
+} elseif ($backgroundColor) {
+    $stylesSlider .= 'background-color: ' . esc_attr($backgroundColor) . '; ';
 }
 
 $wrapper_attributes = get_block_wrapper_attributes(
@@ -396,30 +412,32 @@ $wrapper_attributes = get_block_wrapper_attributes(
                     <div class="content-slide-post">
                         <?php if (!empty($attributes['postElementsOrder'])) : ?>
                             <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
-                                <?php if ($element === 'image' && !empty($post['image'])) : ?>
-                                    <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
-                                <?php elseif ($element === 'title' && !empty($post['title'])) : ?>
-                                    <h3><?php echo esc_html($post['title']); ?></h3>
-                                <?php elseif ($element === 'excerpt' && !empty($post['excerpt'])) : ?>
-                                    <p><?php echo esc_html($post['excerpt']); ?></p>
-                                <?php elseif ($element === 'link' && !empty($post['link'])) : ?>
-                                    <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
-                                <?php elseif ($element === 'author' && !empty($post['author'])) : ?>
-                                    <p><?php echo esc_html($post['author']); ?></p>
-                                <?php elseif ($element === 'date' && !empty($post['date'])) : ?>
-                                    <p><?php echo esc_html($post['date']); ?></p>
-                                <?php elseif ($element === 'categories' && !empty($post['categories'])) : ?>
-                                    <p>
-                                        <?php foreach ($post['categories'] as $category) : ?>
-                                            <span class="category"><?php echo esc_html($category); ?></span>
-                                        <?php endforeach; ?>
-                                    </p>
-                                <?php elseif ($element === 'tags' && !empty($post['tags'])) : ?>
-                                    <p>
-                                        <?php foreach ($post['tags'] as $tag) : ?>
-                                            <span class="tag"><?php echo esc_html($tag); ?></span>
-                                        <?php endforeach; ?>
-                                    </p>
+                                <?php if (!empty($attributes['visibleElements'][$element])) : ?>
+                                    <?php if ($element === 'image' && !empty($post['image'])) : ?>
+                                        <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
+                                    <?php elseif ($element === 'title' && !empty($post['title'])) : ?>
+                                        <h3><?php echo esc_html($post['title']); ?></h3>
+                                    <?php elseif ($element === 'excerpt' && !empty($post['excerpt'])) : ?>
+                                        <p><?php echo esc_html($post['excerpt']); ?></p>
+                                    <?php elseif ($element === 'link' && !empty($post['link'])) : ?>
+                                        <a href="<?php echo esc_url($post['link']); ?>"><?php echo __('Read More', 'cocoblocks'); ?></a>
+                                    <?php elseif ($element === 'author' && !empty($post['author'])) : ?>
+                                        <p><?php echo esc_html($post['author']); ?></p>
+                                    <?php elseif ($element === 'date' && !empty($post['date'])) : ?>
+                                        <p><?php echo esc_html($post['date']); ?></p>
+                                    <?php elseif ($element === 'categories' && !empty($post['categories'])) : ?>
+                                        <p>
+                                            <?php foreach ($post['categories'] as $category) : ?>
+                                                <span class="category"><?php echo esc_html($category); ?></span>
+                                            <?php endforeach; ?>
+                                        </p>
+                                    <?php elseif ($element === 'tags' && !empty($post['tags'])) : ?>
+                                        <p>
+                                            <?php foreach ($post['tags'] as $tag) : ?>
+                                                <span class="tag"><?php echo esc_html($tag); ?></span>
+                                            <?php endforeach; ?>
+                                        </p>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -453,8 +471,35 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
             ?>
                 <?php $filter = esc_attr($slide['filter'] ?? "none"); // Custom content rendering starts here 
+                // Link 
+                $link_url = '';
+                $onclick = '';
+                $target_div = '_self'; // Default
+                $rel_div = 'follow'; // Default
+                if ($slide['link'] !== 'none') {
+                    // Prepara l'attributo onclick se textLink è diverso da 'none'
+                    if ($slide['link'] === 'link' && !empty($slide['url'])) {
+                        $link_url = esc_url($slide['url']);
+                        if (!empty($slide['target'])) {
+                            $target_div = esc_attr($slide['target']);
+                        }
+                        if ($slide['rel'] === 'nofollow') {
+                            $rel_div = 'nofollow';
+                        }
+                        $onclick = "window.open('{$link_url}', '{$target_div}', 'rel={$rel_div}');";
+                    } elseif ($slide['link'] === 'scroll-below') {
+                        $onclick = "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });";
+                    } elseif ($slide['link'] === 'scroll-to-id' && !empty($slide['scrollId'])) {
+                        $scroll_id = esc_attr($slide['scrollId']);
+                        $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
+                    }
+                }
+
                 ?>
                 <div class="swiper-slide <?php echo $filter; ?>"
+                    <?php if ($slide['link'] !== 'none') : ?>
+                    onclick="<?php echo $onclick; ?>"
+                    <?php endif; ?>
                     style="<?php
                             // Inizializzazione delle variabili di stile
                             $background_style = '';
@@ -478,21 +523,98 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             $background_style .= '--color-one-effect-slide:' . esc_attr($slide['colorOneEffect'] ?? '#fff') . '; ';
                             $background_style .= '--color-two-effect-slide:' . esc_attr($slide['colorTwoEffect'] ?? '#fff') . '; ';
                             $background_style .= '--color-three-effect-slide:' . esc_attr($slide['colorThreeEffect'] ?? '#fff') . '; ';
+                            $background_style .= ($slide['link'] !== 'none' ? 'cursor: pointer; ' : '');
                             echo trim($background_style);
                             ?>">
-                    <div class="divider-container">
-                        <svg data-v-6da3ec0c="" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="custom-divider" style="width: calc(125% + 1.3px); height: 233px;">
-                            <!-- Wawes -->
-                            <path data-v-6da3ec0c="" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                            <!-- Curve <path data-v-6da3ec0c="" d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path> -->
-                            <!-- Curve assimetriche <path data-v-6da3ec0c="" d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" class="shape-fill"></path> -->
-                            <!-- Triangle <path data-v-6da3ec0c="" d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path> -->
-                            <!-- Triangle assimmetrico <path data-v-6da3ec0c="" d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill" ></path> -->
-                            <!-- Tilt <path data-v-6da3ec0c="" d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path> -->
-                            <!-- Arrow  <path data-v-6da3ec0c="" d="M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z" class="shape-fill"></path> -->
-                            <!-- Split <path data-v-6da3ec0c="" d="M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z" class="shape-fill" ></path> -->
-                            <!-- Book  <path data-v-6da3ec0c="" d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill" ></path> -->
 
+                    <?php
+                    $divider = isset($slide['divider']) ? $slide['divider'] : 'none';
+
+                    if ($divider === 'none') {
+                        return ''; // Non rendere nulla se il divider è "none"
+                    } ?>
+                    <?php
+                    $style = '';
+                    if ($slide['invertDivider'] === true && $slide['divider'] !== 'divider-tilt' && $slide['positionDivider'] === 'divider-top') {
+                        $style .= 'transform: rotate(180deg);';
+                    }
+                    if ($slide['positionDivider'] === 'divider-top') {
+                        $style .= 'top: 0px;';
+                    } elseif ($slide['positionDivider'] === 'divider-bottom') {
+                        $style .= 'bottom: 0px;';
+                        if ($slide['invertDivider'] === false) {
+                            $style .= 'transform: rotate(180deg);';
+                        }
+                    }
+                    ?>
+                    <div class="divider-container"
+                        style="<?php echo esc_attr($style); ?>">
+                        >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 1200 120"
+                            preserveAspectRatio="none"
+                            class="custom-divider <?php echo esc_attr($slide['divider']); ?>"
+                            style="width: calc(<?php echo esc_attr($slide['widthDivider']); ?>% + 1.3px); height: <?php echo esc_attr($slide['heightDivider']); ?>px;--color-divider:<?php echo esc_attr($slide['colorDivider']); ?>;<?php if ($slide['flipDivider'] === true): ?>transform: rotateY(180deg);<?php endif; ?>">
+                            <?php if ($slide['divider'] === "divider-wawes"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                                                : "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-curve"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+                                                : "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-curve-asymmetrical"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
+                                                : "M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-triangle"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
+                                                : "M1200 0L0 0 598.97 114.72 1200 0z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-triangle-asymmetrical"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+                                                : "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-tilt"): ?>
+                                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-arrow"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z"
+                                                : "M649.97 0L550.03 0 599.91 54.12 649.97 0z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-split"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M600,16.8c0-8.11-8.88-13.2-19.92-13.2H0V120H1200V3.6H619.92C608.88,3.6,600,8.66,600,16.8Z"
+                                                : "M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
+
+                            <?php if ($slide['divider'] === "divider-book"): ?>
+                                <path d="<?php echo $slide['invertDivider']
+                                                ? "M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z"
+                                                : "M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z"; ?>"
+                                    class="shape-fill"></path>
+                            <?php endif; ?>
                         </svg>
                     </div>
                     <?php
@@ -536,7 +658,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                                         echo ' ' . esc_attr($slide['position']) . ' ' . esc_attr($overflow) . ' ' . esc_attr($slide['layout']) . '-layout';
                                                     }
                                                     ?>" style="<?php
-                                                                echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; ';
+                                                                echo $autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; --slide-height-tablet: ' . esc_attr($slideHeightTablet) . 'px; --slide-height-mobile: ' . esc_attr($slideHeightMobile) . 'px; ';
                                                                 echo 'width: 100%; ';
                                                                 echo 'position: relative; ';
                                                                 echo 'visibility: visible; ';

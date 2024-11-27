@@ -597,3 +597,8 @@
   .content-img-first.hue-rotate {
     filter: hue-rotate(90deg);
   }
+
+/* Background hover */
+.content-img-first:hover img.image-first-slide{
+  background-color: var(--background-color-image-hover)!important;
+}
