@@ -23,6 +23,7 @@ function render_text($element, $slide)
     $fontSizeTablet = esc_attr($element['fontSizeTablet']);
     $fontSizeMobile = esc_attr($element['fontSizeMobile']);
     $color = esc_attr($element['textColor']);
+    $widthCursor = esc_attr($element['widthCursor'] ?? '4px');
     $colorHover = esc_attr($element['textColorHover'] ?? '');
     $backgroundColor = esc_attr($element['backgroundColor'] ?? '');
     $textAlign = esc_attr($element['textAlign'] ?? 'center');
@@ -45,6 +46,8 @@ function render_text($element, $slide)
     $stylesTitle = 'font-size: clamp(' . $fontSizeMobile . 'px,' . $fontSizeTablet . 'vw, ' . $fontSize . 'px); '
         . 'color: ' . $color . '; '
         . '--color-hover: ' . $colorHover . '; '
+        . '--color-cursor: ' . $color . '; '
+        . '--cursor-width: ' . $widthCursor . 'px; '
         . 'background-color: ' . $backgroundColor . '; '
         . 'text-align: ' . $textAlign . '; '
         . 'letter-spacing: ' . $letterSpacing . 'px; '
@@ -99,6 +102,11 @@ function render_text($element, $slide)
     $desktopClass = $enableDesktop ? 'desktop-title-visible' : 'desktop-title-hidden';
     $tabletClass = $enableTablet ? 'tablet-title-visible' : 'tablet-title-hidden';
     $mobileClass = $enableMobile ? 'mobile-title-visible' : 'mobile-title-hidden';
+    $textTypeWriterOne = esc_attr($element['textTypeWriterOne'] ?? '');
+    $textTypeWriterTwo = esc_attr($element['textTypeWriterTwo'] ?? '');
+    $textTypeWriterThree = esc_attr($element['textTypeWriterThree'] ?? '');
+    $textTypeWriterFour = esc_attr($element['textTypeWriterFour'] ?? '');
+
     if ($slide['developerMode']) : ?>
         <div class="content-content-slide-absolute"
             style="
@@ -209,6 +217,16 @@ function render_text($element, $slide)
                 echo $link_start; ?>
                 <?php echo esc_attr($element['text']) ?>
                 <?php echo $link_end; ?>
+                <?php if ($element['enableTypeWriter']) : ?>
+                    <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($element['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($element['speedCursor']); ?>" data-type='[
+                        "<?php echo $textTypeWriterOne; ?>", 
+                        "<?php echo $textTypeWriterTwo; ?>", 
+                        "<?php echo $textTypeWriterThree; ?>", 
+                        "<?php echo $textTypeWriterFour; ?>"
+                    ]'>
+                    </span>
+                    <span class="wrap"></span>
+                <?php endif; ?>
             </<?php echo esc_attr($tag); ?>>
         </div>
 

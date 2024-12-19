@@ -27,7 +27,6 @@ import WidthWideIcon from '@mui/icons-material/WidthWide';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
 import PaletteIcon from '@mui/icons-material/Palette';
 import HeightIcon from '@mui/icons-material/Height';
-import BorderStyleIcon from '@mui/icons-material/BorderStyle';
 import PaddingIcon from '@mui/icons-material/Padding';
 import MarginIcon from '@mui/icons-material/Margin';
 import BorderLeftIcon from '@mui/icons-material/BorderLeft';
@@ -35,7 +34,6 @@ import BorderInnerIcon from '@mui/icons-material/BorderInner';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import LayersClearIcon from '@mui/icons-material/LayersClear';
-import RotateRightIcon from '@mui/icons-material/RotateRight'; 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
@@ -51,6 +49,9 @@ import CustomActionControls from "../../multiControls/action";
 import CustomVisibilityControls from "../../multiControls/visibility"
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
+import WifiProtectedSetupIcon from '@mui/icons-material/WifiProtectedSetup';
 
 const ImageEdit = ({
   slide,
@@ -366,6 +367,7 @@ const ImageEdit = ({
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
+      <div className="content-title-block-added">
       <div className="title-block-added">
         <div className="title-element">
         {element.url ? (
@@ -393,6 +395,7 @@ const ImageEdit = ({
         </button>
       </Tooltip>
           </div>
+      </div>
       </div>
       {isOpen && (
         <>
@@ -910,7 +913,7 @@ const ImageEdit = ({
           <CustomSelectControl
                   label={
                     <>
-                         <BorderStyleIcon />
+                      
                       {__("Border style", "cocoblocks")}
                     </>
                   }
@@ -996,14 +999,14 @@ const ImageEdit = ({
           <CustomRangeControl
                   label={
                     <>
-                     <RotateRightIcon />
+                      <RefreshIcon />
                       {__("Rotate", "cocoblocks")}
                     </>
                   }
                   value={element.rotateImage || 0}
                   slides={slides}
                   setAttributes={setAttributes}
-                  min={0}
+                  min={-360}
                   max={360}
                   step={1}
                   updateType="primary"
@@ -1012,6 +1015,69 @@ const ImageEdit = ({
                   elementType="image"
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImage')
+                  }
+                />
+                 <CustomRangeControl
+                  label={
+                    <>
+                      <ThreeSixtyIcon />
+                      {__("Rotate X", "cocoblocks")}
+                    </>
+                  }
+                  value={element.rotateImageX || 0}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={-360}
+                  max={360}
+                  step={1}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="image"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageX')
+                  }
+                />
+                <CustomRangeControl
+                  label={
+                    <>
+                     <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
+                      {__("Rotate Y", "cocoblocks")}
+                    </>
+                  }
+                  value={element.rotateImageY || 0}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={-360}
+                  max={360}
+                  step={1}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="image"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageY')
+                  }
+                />
+                  <CustomRangeControl
+                  label={
+                    <>
+                     <WifiProtectedSetupIcon />
+                      {__("Perspective", "cocoblocks")}
+                    </>
+                  }
+                  value={element.perspectiveImage || 1000}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={500}
+                  max={5000}
+                  step={10}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="image"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'perspectiveImage')
                   }
                 />
           </div>

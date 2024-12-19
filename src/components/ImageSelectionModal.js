@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { Modal, Button } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
 import img1 from "../assets/images/1.jpg"; 
 import img2 from "../assets/images/2.jpg";
 import img3 from "../assets/images/3.jpg";
 import img4 from "../assets/images/3.jpg";
-import logo from "../assets/images/1.jpg";
 
 const ImageSelectionModal = ({ onClose, onSelect }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [categories] = useState([__('All','cocoblock'), __('City','cocoblock'), __('Sport','cocoblock')]);
+  const [primaryCategories] = useState([
+    { label: __('Images','cocoblock'), icon: <PhotoCameraIcon /> },
+    { label: __('Objects','cocoblock'), icon: <CloudQueueIcon /> }
+  ]);
+  const [selectedPrimaryCategory, setSelectedPrimaryCategory] = useState(__('Images','cocoblock'));
+  const [categories] = useState([__('All','cocoblock'), __('City','cocoblock'), __('Sport','cocoblock'),__('People','cocoblock'),__('Cover','cocoblock')]);
   const [selectedCategory, setSelectedCategory] = useState(__('All','cocoblock'));
   const [images] = useState([
     {
@@ -37,14 +43,33 @@ const ImageSelectionModal = ({ onClose, onSelect }) => {
       title: "Titolo 4",
       category: __('City','cocoblock'),
     },
+    {
+      url: "https://franchiwebdesign.com/wp-content/uploads/2024/12/slider-layer-1.webp",
+      alt: "",
+      title: "Woman pointing",
+      category: __('People','cocoblock'),
+    },
+    {
+      url: "https://franchiwebdesign.com/wp-content/uploads/2024/12/slider-layer-2.webp",
+      alt: "",
+      title: "Woman listening to music",
+      category: __('People','cocoblock'),
+    },
+    {
+      url: "https://franchiwebdesign.com/wp-content/uploads/2024/12/disk-cover.webp",
+      alt: "",
+      title: "Disc Cover",
+      category: __('Cover','cocoblock'),
+    },
   ]);
 
   const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
 
-  const filteredImages =
-    selectedCategory === __("All", "cocoblocks")
-      ? images
-      : images.filter((image) => image.category === selectedCategory);
+  const filteredImages = selectedPrimaryCategory === __("Images", "cocoblocks")
+    ? selectedCategory === __("All", "cocoblocks")
+      ? images.filter((image) => image.category !== __('Cover','cocoblock'))
+      : images.filter((image) => image.category === selectedCategory && image.category !== __('Cover','cocoblock'))
+    : images.filter((image) => image.category === __('Cover','cocoblock'));
 
   const handleSelect = async (image) => {
     setIsLoading(true);
@@ -68,24 +93,55 @@ const ImageSelectionModal = ({ onClose, onSelect }) => {
         {/* Navigatore delle categorie */}
         <div className="category-navigator">
           <div className="logo-modal">
-            <img src={logo} alt={__("Slider", "cocoblocks")} />
+            <h2>{__('SF','cocoblock')}</h2>
           </div>
-          {categories.map((category, index) => (
-            <Button
-              key={index}
-              isSecondary
-              onClick={() => setSelectedCategory(category)}
-              className={selectedCategory === category ? "button-cat-modal active" : "button-cat-modal"}
-            >
-              {category}
-            </Button>
+          {primaryCategories.map((category, index) => (
+            <div key={index} className="primary-category">
+              <Button
+                isSecondary
+                onClick={() => {
+                  setSelectedPrimaryCategory(category.label);
+                  setSelectedCategory(__('All','cocoblock')); // Resetta la sottocategoria quando si cambia la categoria primaria
+                }}
+                className={selectedPrimaryCategory === category.label ? "button-cat-modal active" : "button-cat-modal"}
+              >
+                {category.icon} {category.label}
+              </Button>
+              {selectedPrimaryCategory === category.label && (
+                <div className="subcategory-navigator">
+                  {category.label === __("Images", "cocoblocks") && (
+                    categories.filter(subcategory => subcategory !== __('Cover','cocoblock')).map((subcategory, subIndex) => (
+                      <Button
+                        key={subIndex}
+                        isSecondary
+                        onClick={() => setSelectedCategory(subcategory)}
+                        className={selectedCategory === subcategory ? "button-cat-modal active" : "button-cat-modal"}
+                      >
+                        {subcategory}
+                      </Button>
+                    ))
+                  )}
+                  {category.label === __("Objects", "cocoblocks") && (
+                    <Button
+                      isSecondary
+                      onClick={() => setSelectedCategory(__('Cover','cocoblock'))}
+                      className={selectedCategory === __('Cover','cocoblock') ? "button-cat-modal active" : "button-cat-modal"}
+                    >
+                      {__('Cover','cocoblock')}
+                    </Button>
+                  )}
+                </div>
+              )}
+            </div>
           ))}
         </div>
         <div className="image-selection-modal">
           {/* Sezione delle immagini */}
           {filteredImages.map((image, index) => (
             <div key={index} className="image-item">
-              <img src={image.url} alt={image.alt} />
+              <div className="image-item-inner">
+                <img src={image.url} alt={image.alt} />
+              </div>
               <Button isSecondary onClick={() => handleSelect(image)}>
                 {__("Select", "text-domain")}
               </Button>
@@ -118,14 +174,14 @@ const ImageSelectionModal = ({ onClose, onSelect }) => {
       )}
       {isLicenseModalOpen && (
         <Modal
-          title={__("License Information", "text-domain")}
+          title={__("Copyright & Licensing - Slider Future Library", "text-domain")}
           onRequestClose={() => setIsLicenseModalOpen(false)}
           className="license-modal"
         >
           <div className="license-content">
             <p>
               {__(
-                "Here you can put the detailed information about licenses.",
+                "Here you will find all the licenses for images and objects in detail.",
                 "text-domain"
               )}
             </p>

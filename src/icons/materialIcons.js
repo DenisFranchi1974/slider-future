@@ -314,6 +314,11 @@ import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import TramIcon from '@mui/icons-material/Tram';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import AppleIcon from '@mui/icons-material/Apple';
+import AdbIcon from '@mui/icons-material/Adb';
+import AndroidIcon from '@mui/icons-material/Android';
+import DetailsIcon from '@mui/icons-material/Details';
 
 const materialIcons = {
   Phone: PhoneIcon,
@@ -640,6 +645,11 @@ const materialIcons = {
   Storefront: StorefrontIcon,
   Terrain: TerrainIcon,
   Tram: TramIcon,
+  PlayCircleOutlineIcon : PlayCircleOutlineIcon,
+  AppleIcon : AppleIcon,
+  AdbIcon : AdbIcon,
+  AndroidIcon : AndroidIcon,
+  DetailsIcon : DetailsIcon,
 
 };
 

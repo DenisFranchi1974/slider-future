@@ -22,7 +22,7 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
     : 1; // Imposta un valore di default se non è in un intervallo valido
 
     if (effectIn ) {
-     // textRef.current.style.opacity = 0; // Reset
+     // textRef.current.style.opacity = 0; // Reset 
       const animationProps = getAnimationProps({
         duration: imageDiv.duration ?? 800,
         delay: imageDiv.delay ?? 0, 
@@ -122,7 +122,7 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
     return (
         <div 
         style={{
-          transform: `rotate(${imageDiv.rotateImage}deg)`,
+          transform: `perspective(${imageDiv.perspectiveImage}px) rotateX(${imageDiv.rotateImageX}deg) rotateY(${imageDiv.rotateImageY}deg) rotate(${imageDiv.rotateImage}deg)`,
           opacity: imageDiv.opacityImage,
           width: imageDiv.widthImageContent, 
           zIndex: imageDiv.zIndexImage,

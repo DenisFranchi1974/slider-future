@@ -143,6 +143,7 @@ const categories = {
     'Terrain',
     'Theaters',
     'Tram',
+    'DetailsIcon'
   ],
   
   social: [
@@ -262,6 +263,10 @@ const categories = {
     'ViewInAr',
     'ScreenRotation',
     'FormatQuote',
+    'PlayCircleOutlineIcon',
+    'AppleIcon',
+    'AdbIcon',
+    'AndroidIcon'
   ],
 
   arrows: [

@@ -24,6 +24,14 @@ module.exports = {
                 { from: path.resolve(__dirname, 'src/render/element/inner-element/innerIcon.php'), to: path.resolve(__dirname, 'build/render/element/inner-element') },
                 { from: path.resolve(__dirname, 'src/render/element/inner-element/innerImage.php'), to: path.resolve(__dirname, 'build/render/element/inner-element') },
                 { from: path.resolve(__dirname, 'src/render/navigation/nav.php'), to: path.resolve(__dirname, 'build/render/navigation') },
+                { from: path.resolve(__dirname, 'src/render/post/post-image.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-title.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-excerpt.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-link.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-author.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-date.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-categories.php'), to: path.resolve(__dirname, 'build/render/post') },
+                { from: path.resolve(__dirname, 'src/render/post/post-tags.php'), to: path.resolve(__dirname, 'build/render/post') },
                 { from: path.resolve(__dirname, 'src/render.php'), to: path.resolve(__dirname, 'build') }
             ]
         })

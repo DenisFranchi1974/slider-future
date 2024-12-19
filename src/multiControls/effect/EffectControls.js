@@ -575,7 +575,7 @@ const CustomEffectControls = ({
             </>
           }
           value={valueRotateFrom ?? 0}
-          onChange={handleChangeRotateFrom}
+          onChange={handleChangeRotateFrom} 
           min={-360}
           max={360}
           step={1}

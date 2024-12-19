@@ -123,7 +123,7 @@ const ImageRender = ({ element, index, onPlay  }) => {
   return (
     <div
       style={{
-        transform: `rotate(${element.rotateImage}deg)`,
+        transform: `perspective(${element.perspectiveImage}px) rotateX(${element.rotateImageX}deg) rotateY(${element.rotateImageY}deg) rotate(${element.rotateImage}deg)`,
         opacity: element.opacityImage,
         width: element.widthImageContent,
         zIndex: element.zIndexImage,

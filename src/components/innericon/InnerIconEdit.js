@@ -374,6 +374,7 @@ const InnerIconEdit = ({
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
+      <div className="content-title-block-added" style={{marginTop: "20px"}}>
       <div className="title-block-added">
         <div className="title-element">
         {iconDiv.icon && IconComponent && (
@@ -398,6 +399,7 @@ const InnerIconEdit = ({
           )}
         </button>
       </Tooltip>
+      </div>
       </div>
       </div>
       {isOpen && (

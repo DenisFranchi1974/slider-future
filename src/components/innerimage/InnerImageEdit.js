@@ -35,7 +35,6 @@ import BorderInnerIcon from '@mui/icons-material/BorderInner';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import LayersClearIcon from '@mui/icons-material/LayersClear';
-import RotateRightIcon from '@mui/icons-material/RotateRight'; 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
@@ -53,6 +52,9 @@ import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import ControlCameraIcon from '@mui/icons-material/ControlCamera';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
+import WifiProtectedSetupIcon from '@mui/icons-material/WifiProtectedSetup';
 
 const InnerImageEdit= ({
   slide,
@@ -376,6 +378,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
   return (
     <div className="custom-block-added">
       <div className="divider-controls-inner"></div>
+      <div className="content-title-block-added" style={{marginTop: "20px"}}>
       <div className="title-block-added">
       <div className="title-element">
         {imageDiv.imageUrl  ? (
@@ -406,6 +409,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
       </Tooltip>
         </div>
       </div>
+</div>
       {isOpen && (
         <>
       <SectionSelector onSectionChange={setActiveSectionImage} />
@@ -1112,14 +1116,14 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           <CustomRangeControl
                   label={
                     <>
-                     <RotateRightIcon />
+                     <RefreshIcon />
                       {__("Rotate", "cocoblocks")}
                     </>
                   }
                   value={imageDiv.rotateImage || 0}
                   slides={slides}
                   setAttributes={setAttributes}
-                  min={0}
+                  min={-360}
                   max={360}
                   step={1}
                   updateType="secondary"
@@ -1129,6 +1133,72 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   elementType="image"
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImage')
+                  }
+                />
+                 <CustomRangeControl
+                  label={
+                    <>
+                      <ThreeSixtyIcon />
+                      {__("Rotate X", "cocoblocks")}
+                    </>
+                  }
+                  value={imageDiv.rotateImageX || 0}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={-360}
+                  max={360}
+                  step={1}
+                  updateType="secondary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  innerIndex={imageIndex}
+                  elementType="image"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageX')
+                  }
+                />
+                 <CustomRangeControl
+                  label={
+                    <>
+                     <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
+                      {__("Rotate Y", "cocoblocks")}
+                    </>
+                  }
+                  value={imageDiv.rotateImageY || 0}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={-360}
+                  max={360}
+                  step={1}
+                  updateType="secondary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  innerIndex={imageIndex}
+                  elementType="image"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageY')
+                  }
+                />
+                   <CustomRangeControl
+                  label={
+                    <>
+                     <WifiProtectedSetupIcon />
+                      {__("Perspective", "cocoblocks")}
+                    </>
+                  }
+                  value={imageDiv.perspectiveImage || 1000}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  min={500}
+                  max={5000}
+                  step={10}
+                  updateType="secondary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  innerIndex={imageIndex}
+                  elementType="image"
+                  updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                    updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'perspectiveImage')
                   }
                 />
           </div>

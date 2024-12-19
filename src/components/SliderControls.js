@@ -47,6 +47,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ImageSelectionModal from "./ImageSelectionModal";
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
+import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 
 const SliderControls = ({ attributes, setAttributes }) => {
   const {
@@ -109,6 +110,7 @@ const SliderControls = ({ attributes, setAttributes }) => {
     sliderMarginTop,
     sliderMarginBottom,
     fitImage,
+    rangeVapore
   } = attributes;
 
   const [selectedTab, setSelectedTab] = useState('color');
@@ -194,8 +196,8 @@ const handleMobileClickHeight = () => {
   }, [loopMode, slidesPerRow]);
 
   useEffect(() => {
-    // Resetta la notifica e i post all'inizio quando cambia il contentType
-    setAttributes({ notice: null, posts: [] });
+    // Resetta la notifica all'inizio quando cambia il contentType
+    setAttributes({ notice: null });
 
     if (attributes.contentType !== "custom") {
       const apiUrl =
@@ -209,28 +211,30 @@ const handleMobileClickHeight = () => {
         .then((response) => response.json())
         .then((data) => {
           if (Array.isArray(data) && data.length > 0) {
-            setAttributes({ posts: data, notice: null });
+            // Non fare nulla, i dati sono presenti
+            setAttributes({ notice: null });
           } else {
             // Mostra un avviso se non ci sono contenuti
             const message =
               attributes.contentType === "woocommerce-based"
-                ? "Devi avere installato il plugin WooCommerce e avere creato dei prodotti per utilizzare questa funzione."
-                : "Nessun contenuto trovato.";
+                ? "This feature will be available soon; we are working on it!"
+                : "No content found.";
 
-            setAttributes({ posts: [], notice: message });
+            setAttributes({ notice: message });
           }
         })
         .catch((error) => {
           console.error("Errore nel recuperare i dati:", error);
           const message =
             attributes.contentType === "woocommerce-based"
-              ? "Errore nel recuperare i prodotti. Assicurati che WooCommerce sia installato e attivo."
-              : "Errore nel recuperare i post.";
+              ? "Error retrieving products. Make sure WooCommerce is installed and active."
+              : "Error retrieving posts.";
 
-          setAttributes({ posts: [], notice: message }); 
+          setAttributes({ notice: message }); 
         });
     }
   }, [attributes.contentType]);
+  
 
     // Funzione per aprire il modale
     const openModal = () => setIsModalOpen(true);
@@ -241,7 +245,6 @@ const handleMobileClickHeight = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImages, setSelectedImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
 
 
   const handleImageSelect = async (image) => {
@@ -685,7 +688,7 @@ const handleMobileClickHeight = () => {
                     showTooltip={true}
                     tooltipText={__("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks")}
                     tooltipTop = {'11px'}
-                    tooltipLeft = {'40%'}
+                    tooltipLeft = {'60%'}
                   />
             </div>
           </div>
@@ -1035,16 +1038,6 @@ const handleMobileClickHeight = () => {
       )}
     </TabPanel>
 
-
-
-
-
-
-
-
-
-           
-             
               <CustomSelectControl
                           label={
                             <>
@@ -1384,7 +1377,27 @@ const handleMobileClickHeight = () => {
               )}
               {mouseEffect === "liquid" && (
                 <>
-                 <div className="custom-select">
+                <CustomRangeControl
+                  label={
+                    <>
+                      <ZoomOutMapIcon />
+                      {__("Liquid size", "cocoblocks")}
+                    </>
+                  }
+                  value={rangeVapore}
+                  onChange={(value) =>
+                    setAttributes({
+                      rangeVapore: value,
+                    })
+                  }
+                  min={100}
+                  max={2500}
+                  step={10}
+                  showTooltip={true}
+                  tooltipText={__("Set a smaller number to make bigger liquid!", "cocoblocks")}
+                  tooltipTop = {'3px'}
+                  tooltipLeft = {'50%'}
+                />
                 <CustomRangeControl
                   label={
                     <>
@@ -1402,8 +1415,6 @@ const handleMobileClickHeight = () => {
                   max={1}
                   step={0.01}
                 />
-              </div>
-              <div className="custom-select">
                 <CustomRangeControl
                   label={
                     <>
@@ -1421,8 +1432,6 @@ const handleMobileClickHeight = () => {
                   max={1}
                   step={0.01}
                 />
-              </div>
-              <div className="custom-select">
                 <CustomRangeControl
                   label={
                     <>
@@ -1440,7 +1449,6 @@ const handleMobileClickHeight = () => {
                   max={1}
                   step={0.01}
                 />
-              </div>
               <p
                     className="notice components-base-control__help"
                     style={{

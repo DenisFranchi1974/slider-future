@@ -317,6 +317,14 @@ const GroupEdit = ({
                         effectHover: "none",
                         widthTitle: "auto",
                         borderStyle: "none",
+                        enableTypeWriter: false,
+                        textTypeWriterOne: "Hello",
+                        textTypeWriterTwo: "World",
+                        textTypeWriterThree: "!",
+                        textTypeWriterFour: "!",
+                        widthCursor:4,
+                        breakCursor: 2000,
+                        speedCursor: 200,
                       },
                     ],
                   }
@@ -743,6 +751,7 @@ const GroupEdit = ({
     <>
       <div className="custom-block-added">
         <div className="divider-controls"></div>
+        <div className="content-title-block-added">
         <div className="title-block-added">
           <div className="title-element">
             <AutoAwesomeMosaicIcon />
@@ -766,6 +775,7 @@ const GroupEdit = ({
         </button>
       </Tooltip>
           </div>
+        </div>
         </div>
         {isOpen && ( 
         <>
@@ -1721,7 +1731,7 @@ const GroupEdit = ({
             if (innerElement.type === "icon") {
               return (
             <div key={innerIndex}>
-               <div className={"button-move-element-post"}>
+               <div className={"button-move-element-div"}>
                   <Tooltip text={__("Move before", "cocoblocks")}>
                     <Button
                       onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}

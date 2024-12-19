@@ -3014,6 +3014,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/esm/Adb.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/Adb.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-4H5zM16.12 4.37l2.1-2.1-.82-.83-2.3 2.31C14.16 3.28 13.12 3 12 3s-2.16.28-3.09.75L6.6 1.44l-.82.83 2.1 2.1C6.14 5.64 5 7.68 5 10v1h14v-1c0-2.32-1.14-4.36-2.88-5.63M9 9c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"
+}), 'Adb'));
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/esm/AddAPhoto.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@mui/icons-material/esm/AddAPhoto.js ***!
@@ -3315,6 +3338,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/esm/Android.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/Android.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "m17.6 9.48 1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52M7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25m10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25"
+}), 'Android'));
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/esm/Announcement.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@mui/icons-material/esm/Announcement.js ***!
@@ -3335,6 +3381,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
   d: "M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-7 9h-2V5h2zm0 4h-2v-2h2z"
 }), 'Announcement'));
+
+/***/ }),
+
+/***/ "./node_modules/@mui/icons-material/esm/Apple.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/Apple.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+'use client';
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_2__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+  d: "M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+}), 'Apple'));
 
 /***/ }),
 
@@ -5336,6 +5408,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
   d: "M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm2 16H8v-2h8zm0-4H8v-2h8zm-3-5V3.5L18.5 9z"
 }), 'Description'));
+
+/***/ }),
+
+/***/ "./node_modules/@mui/icons-material/esm/Details.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/Details.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "M12 3 2 21h20zm1 5.92L18.6 19H13zm-2 0V19H5.4z"
+}), 'Details'));
 
 /***/ }),
 
@@ -7712,6 +7807,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
   d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5"
 }), 'Place'));
+
+/***/ }),
+
+/***/ "./node_modules/@mui/icons-material/esm/PlayCircleOutline.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@mui/icons-material/esm/PlayCircleOutline.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon.js */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+"use client";
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon_js__WEBPACK_IMPORTED_MODULE_1__["default"])(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+  d: "m10 16.5 6-4.5-6-4.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"
+}), 'PlayCircleOutline'));
 
 /***/ }),
 
@@ -17100,7 +17218,6 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BlockFromIn: () => (/* binding */ BlockFromIn),
-/* harmony export */   animateBar: () => (/* binding */ animateBar),
 /* harmony export */   customEffectIn: () => (/* binding */ customEffectIn),
 /* harmony export */   fadeIn: () => (/* binding */ fadeIn),
 /* harmony export */   handleMouseEnter: () => (/* binding */ handleMouseEnter),
@@ -17235,36 +17352,6 @@ const getAnimationProps = (props, target) => {
   };
 };
 
-// In animationIn.js
-const animateBar = (barRef, props = {}) => {
-  const {
-    duration = 500,
-    // Imposta un valore di default se non è fornito
-    heightFrom = '10px',
-    // Altri valori dinamici se necessario
-    heightTo = '25px',
-    easing = 'easeInQuint',
-    loop = true
-  } = props;
-  if (barRef && barRef.current) {
-    // Controlla che barRef e barRef.current siano definiti
-    // Converti il valore di loop in un numero
-    const loopCount = typeof loop === 'string' && loop.toLowerCase() === 'true' ? Infinity : Number(loop);
-    (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      targets: barRef.current,
-      height: [heightFrom, heightTo],
-      // Usa valori dinamici per l'altezza
-      easing: easing,
-      opacity: 1,
-      duration: duration,
-      direction: 'alternate',
-      loop: loopCount
-    });
-  } else {
-    console.error('barRef is not defined');
-  }
-};
-
 // Effect Block
 const blockTransition = (element, direction, animationProps = {}) => {
   const block = document.createElement("div");
@@ -17280,7 +17367,7 @@ const blockTransition = (element, direction, animationProps = {}) => {
   block.style.backgroundColor = colorBlock; // Colore del blocco
   element.style.position = "relative"; // Assicura che l'elemento sia relativo
   element.appendChild(block);
-  const container = element.closest(".content-title-slide");
+  const container = element.closest(".title-slide,.title-slide-div");
   if (container) {
     container.style.opacity = "1"; // Rendi il contenuto visibile
   }
@@ -17575,6 +17662,8 @@ const customEffectIn = (target, props = {}) => {
 
 // Definisci gli effetti di animazione
 const getAnimationEffect = (effectName, container, props = {}) => {
+  container.style.opacity = 1; // Imposta l'opacità a 0 per l'animazione di ingresso
+
   const animationProps = getAnimationProps(props); // Usa getAnimationProps per ottenere le proprietà comuni
 
   switch (effectName) {
@@ -17727,7 +17816,6 @@ const splitText = (container, props = {}) => {
 
   // Ottieni l'effetto in base alla stringa dal selettore
   const animationEffect = getAnimationEffect(animationProps.textSplitEffect, container, props);
-
   // Creare una timeline per l'animazione
   animejs__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
     loop: loopCount,
@@ -18326,6 +18414,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_icons_material_Storefront__WEBPACK_IMPORTED_MODULE_298__ = __webpack_require__(/*! @mui/icons-material/Storefront */ "./node_modules/@mui/icons-material/esm/Storefront.js");
 /* harmony import */ var _mui_icons_material_Terrain__WEBPACK_IMPORTED_MODULE_299__ = __webpack_require__(/*! @mui/icons-material/Terrain */ "./node_modules/@mui/icons-material/esm/Terrain.js");
 /* harmony import */ var _mui_icons_material_Tram__WEBPACK_IMPORTED_MODULE_300__ = __webpack_require__(/*! @mui/icons-material/Tram */ "./node_modules/@mui/icons-material/esm/Tram.js");
+/* harmony import */ var _mui_icons_material_PlayCircleOutline__WEBPACK_IMPORTED_MODULE_301__ = __webpack_require__(/*! @mui/icons-material/PlayCircleOutline */ "./node_modules/@mui/icons-material/esm/PlayCircleOutline.js");
+/* harmony import */ var _mui_icons_material_Apple__WEBPACK_IMPORTED_MODULE_302__ = __webpack_require__(/*! @mui/icons-material/Apple */ "./node_modules/@mui/icons-material/esm/Apple.js");
+/* harmony import */ var _mui_icons_material_Adb__WEBPACK_IMPORTED_MODULE_303__ = __webpack_require__(/*! @mui/icons-material/Adb */ "./node_modules/@mui/icons-material/esm/Adb.js");
+/* harmony import */ var _mui_icons_material_Android__WEBPACK_IMPORTED_MODULE_304__ = __webpack_require__(/*! @mui/icons-material/Android */ "./node_modules/@mui/icons-material/esm/Android.js");
+/* harmony import */ var _mui_icons_material_Details__WEBPACK_IMPORTED_MODULE_305__ = __webpack_require__(/*! @mui/icons-material/Details */ "./node_modules/@mui/icons-material/esm/Details.js");
+
+
+
+
+
 
 
 
@@ -18940,7 +19038,12 @@ const materialIcons = {
   SatelliteAlt: _mui_icons_material_SatelliteAlt__WEBPACK_IMPORTED_MODULE_297__["default"],
   Storefront: _mui_icons_material_Storefront__WEBPACK_IMPORTED_MODULE_298__["default"],
   Terrain: _mui_icons_material_Terrain__WEBPACK_IMPORTED_MODULE_299__["default"],
-  Tram: _mui_icons_material_Tram__WEBPACK_IMPORTED_MODULE_300__["default"]
+  Tram: _mui_icons_material_Tram__WEBPACK_IMPORTED_MODULE_300__["default"],
+  PlayCircleOutlineIcon: _mui_icons_material_PlayCircleOutline__WEBPACK_IMPORTED_MODULE_301__["default"],
+  AppleIcon: _mui_icons_material_Apple__WEBPACK_IMPORTED_MODULE_302__["default"],
+  AdbIcon: _mui_icons_material_Adb__WEBPACK_IMPORTED_MODULE_303__["default"],
+  AndroidIcon: _mui_icons_material_Android__WEBPACK_IMPORTED_MODULE_304__["default"],
+  DetailsIcon: _mui_icons_material_Details__WEBPACK_IMPORTED_MODULE_305__["default"]
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (materialIcons);
 
@@ -33624,8 +33727,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons_materialIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icons/materialIcons */ "./src/icons/materialIcons.js");
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _animate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animate */ "./src/animate/index.js");
-/* harmony import */ var _animate_animationIn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animate/animationIn */ "./src/animate/animationIn.js");
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! animejs/lib/anime.es.js */ "./node_modules/animejs/lib/anime.es.js");
+/* harmony import */ var _animate_animationIn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animate/animationIn */ "./src/animate/animationIn.js");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+
 
 
 
@@ -33727,7 +33832,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Funzione per animare un elemento
   function animateElement() {
-    const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .content-icon,.title-slide-div, .img-inner,.content-button-slide-inner,.content-icon-inner');
+    const elementsToAnimate = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.content-icon,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.content-icon-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
     elementsToAnimate.forEach(element => {
       var _parseInt, _parseInt2, _parseInt3, _element$getAttribute, _element$getAttribute2, _element$getAttribute3, _element$getAttribute4, _element$getAttribute5, _element$getAttribute6, _element$getAttribute7, _element$getAttribute8, _element$getAttribute9, _element$getAttribute10, _element$getAttribute11, _parseInt4, _element$getAttribute12, _element$getAttribute13, _element$getAttribute14, _parseInt5, _parseInt6, _parseInt7, _parseInt8, _parseInt9, _parseInt10, _parseFloat, _parseFloat2, _parseInt11, _parseInt12, _parseInt13, _parseInt14, _element$getAttribute15, _element$getAttribute16, _parseInt15, _parseInt16, _parseInt17, _parseInt18, _parseInt19, _parseInt20, _parseInt21, _parseInt22, _parseInt23, _parseInt24, _dataScaleCustomEf, _dataDurationHover, _dataEasingHover, _dataHeightFrom, _dataHeightTo;
       const effectIn = element.getAttribute('data-effect-in');
@@ -33778,6 +33883,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const easingHover = element.getAttribute((_dataEasingHover = 'data-easing-hover') !== null && _dataEasingHover !== void 0 ? _dataEasingHover : 'linear');
       const heightFrom = element.getAttribute((_dataHeightFrom = 'data-height-from') !== null && _dataHeightFrom !== void 0 ? _dataHeightFrom : 0);
       const heightTo = element.getAttribute((_dataHeightTo = 'data-height-to') !== null && _dataHeightTo !== void 0 ? _dataHeightTo : 0);
+
+      // element.style.opacity = opacityFrom;
       const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_4__.getAnimationProps)({
         effectIn,
         duration,
@@ -33831,6 +33938,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Controlla se animationsIn[effectIn] è definito
       if (typeof _animate__WEBPACK_IMPORTED_MODULE_4__.animationsIn[effectIn] === 'function') {
+        // element.style.opacity = 0; 
         setTimeout(() => {
           _animate__WEBPACK_IMPORTED_MODULE_4__.animationsIn[effectIn](element, animationProps);
         }, delay);
@@ -33839,9 +33947,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Aggiungi gli eventi di hover
-  const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .title-slide-div, .img-inner,.content-button-slide-inner');
+  const elements = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
   elements.forEach(element => {
-    element.addEventListener('mouseenter', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_5__.handleMouseEnter)(e, {
+    element.addEventListener('mouseenter', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_6__.handleMouseEnter)(e, {
       durationHover: element.getAttribute('data-duration-hover'),
       easingHover: element.getAttribute('data-easing-hover'),
       scaleHover: element.getAttribute('data-scale-hover'),
@@ -33857,7 +33965,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startYHover: element.getAttribute('data-start-y-hover'),
       scaleTypeHover: element.getAttribute('data-scale-custom-effect-hover')
     }));
-    element.addEventListener('mouseleave', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_5__.handleMouseLeave)(e, {
+    element.addEventListener('mouseleave', e => (0,_animate_animationIn__WEBPACK_IMPORTED_MODULE_6__.handleMouseLeave)(e, {
       durationHover: element.getAttribute('data-duration-hover'),
       easingHover: element.getAttribute('data-easing-hover')
     }));
@@ -33886,7 +33994,7 @@ document.addEventListener('DOMContentLoaded', () => {
         direction: swiperConfig.directionSlider,
         effect: swiperConfig.effect,
         autoplay: autoplayConfig,
-        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Keyboard, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectCube, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectFlip, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectCards, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Mousewheel],
+        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Keyboard, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.EffectCube, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.EffectFlip, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.EffectCards, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.EffectCreative, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.EffectCoverflow, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Mousewheel],
         pagination: {
           enabled: swiperConfig.paginationEnable,
           hideOnClick: swiperConfig.hidePagination,
@@ -33998,10 +34106,25 @@ document.addEventListener('DOMContentLoaded', () => {
           slideChange: function () {
             const slides = swiperElement.querySelectorAll('.swiper-slide');
             slides.forEach(slide => {
+              const elements = slide.querySelectorAll('[data-effect-in]');
               if (slide.classList.contains('swiper-slide-active')) {
-                const elements = slide.querySelectorAll('[data-effect-in]');
                 elements.forEach(element => {
+                  // Rimuovi qualsiasi animazione in corso sull'elemento
+                  animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_5__["default"].remove(element);
+                  // Resetta gli stili di base
+                  element.style.transform = "none";
+                  element.style.opacity = 0;
+
+                  // Riavvia l'animazione
                   animateElement(element);
+                });
+              } else {
+                elements.forEach(element => {
+                  // Rimuovi qualsiasi animazione in corso sull'elemento
+                  animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_5__["default"].remove(element);
+                  // Resetta gli stili
+                  element.style.transform = "none";
+                  element.style.opacity = 0;
                 });
               }
             });
@@ -35088,13 +35211,15 @@ function applyLiquidEffect(slide) {
     blit(destination.fbo);
   }
   function splat(x, y, dx, dy, color) {
+    const rangeVapore = slide.getAttribute('data-range-vapore');
     gl.viewport(0, 0, simWidth, simHeight);
     splatProgram.bind();
     gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0));
     gl.uniform1f(splatProgram.uniforms.aspectRatio, canvas.width / canvas.height);
     gl.uniform2f(splatProgram.uniforms.point, x / canvas.width, 1.0 - y / canvas.height);
     gl.uniform3f(splatProgram.uniforms.color, dx, -dy, 1.0);
-    gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 1000.0); // Regolazione grandezza vapore da impostare 
+    gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / rangeVapore); // Regolazione grandezza vapore da impostare 
+
     blit(velocity.write.fbo);
     velocity.swap();
     gl.viewport(0, 0, dyeWidth, dyeHeight);
@@ -35259,6 +35384,66 @@ const loadGoogleFont = fontFamily => {
   link.rel = "stylesheet";
   document.head.appendChild(link);
 };
+
+/* Typewriter */
+function typeWritEffect() {
+  class TxtType {
+    constructor(el, toRotate, period) {
+      const breakCursor = el.getAttribute('data-break-cursor');
+      this.toRotate = toRotate.filter(text => text.trim() !== ""); // Rimuove i campi vuoti
+      this.el = el;
+      this.loopNum = 0;
+      this.period = breakCursor;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    }
+    tick() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+      const speedCursor = this.el.getAttribute('data-speed-cursor');
+      var that = this;
+      var delta = speedCursor - Math.random() * 100;
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+      setTimeout(function () {
+        that.tick();
+      }, delta);
+    }
+  }
+  window.onload = function () {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-type');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        // Assicurati che `toRotate` sia un array di stringhe, rimuovendo i vuoti
+        var texts = JSON.parse(toRotate).filter(text => text.trim() !== "");
+        if (texts.length > 0) {
+          new TxtType(elements[i], texts, period);
+        }
+      }
+    }
+  };
+}
+if (document.querySelector('.typewrite')) {
+  typeWritEffect();
+}
 })();
 
 /******/ })()

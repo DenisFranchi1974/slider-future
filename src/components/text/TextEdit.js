@@ -11,6 +11,7 @@ import CustomHoverControls from "../../multiControls/hover";
 import FontStyle from "../font-style";
 import SectionSelector from "../multitab/sectionSelector";
 import CustomRangeControl from "../../controls/range"
+import CustomToggleControl from "../../controls/toggle"
 import {elementOptions} from '../../assets/options';
 import {fontOptions} from '../../assets/options';
 import {alignOptions} from '../../assets/options';
@@ -25,6 +26,7 @@ import CustomAlignControl from "../../controls/align/AlignControl";
 import CustomVisibilityControls from "../../multiControls/visibility/VisibilityControls";
 import CustomActionControls from "../../multiControls/action/ActionControls";
 import CustomTextAreaControl from "../../controls/text-area/TextAreaControl";
+import CustomTextControl from "../../controls/text/TextControl";
 import CustomEffectControls from "../../multiControls/effect";
 import CustomSelectControl from "../../controls/select/SelectControl";
 import RotateRightIcon from '@mui/icons-material/RotateRight'; 
@@ -54,6 +56,10 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import TuneIcon from '@mui/icons-material/Tune';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import AdfScannerIcon from '@mui/icons-material/AdfScanner';
+import LineWeightIcon from '@mui/icons-material/LineWeight';
+import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
+import SpeedIcon from '@mui/icons-material/Speed';
 
 const TextEdit = ({
   slide,
@@ -354,6 +360,7 @@ const TextEdit = ({
   return (
     <div className={"custom-block-added " + className}>
       <div className="divider-controls"></div>
+     <div className="content-title-block-added">
       <div className="title-block-added">
         <div className="title-element">
           <DescriptionIcon/>
@@ -378,6 +385,8 @@ const TextEdit = ({
       </Tooltip>
       </div>
       </div>
+      </div>
+      
       {isOpen && (
         <>
       <SectionSelector onSectionChange={setActiveSection} />
@@ -408,6 +417,152 @@ const TextEdit = ({
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'text')
                 }
               />
+               <CustomToggleControl
+              label={
+                <>
+                  <AdfScannerIcon/>
+                  {__("Typewriter Effect", "cocoblocks")}
+                </>
+              }
+              value={element.enableTypeWriter || false}
+                slides={slides}
+                setAttributes={setAttributes}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                tooltipText= {__("Enable the typewriter effect. To see the changes in the texts, you need to enable and disable it!", "cocoblocks")}
+                showTooltip = {true}
+                tooltipTop={"10px"}
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableTypeWriter')
+                }
+            />
+              {(element.enableTypeWriter === true) && (
+                <>
+               <CustomTextControl
+                value={element.textTypeWriterOne}
+                slides={slides}
+                setAttributes={setAttributes}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                placeholder={__("Add text typewriter one...", "cocoblocks")}
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterOne')
+                }
+              />
+              <CustomTextControl
+              value={element.textTypeWriterTwo}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              placeholder={__("Add text typewriter two...", "cocoblocks")}
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterTwo')
+              }
+            />
+             <CustomTextControl
+              value={element.textTypeWriterThree}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              placeholder={__("Add text typewriter three...", "cocoblocks")}
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterThree')
+              }
+            />
+             <CustomTextControl
+              value={element.textTypeWriterFour}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="title"
+              placeholder={__("Add text typewriter four...", "cocoblocks")}
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterFour')
+              }
+            />
+             <CustomRangeControl
+                label={
+                  <>
+                    <LineWeightIcon style={{transform:'rotate(90deg)'}} />
+                    {__("Cursor thickness", "cocoblocks")}
+                  </>
+                }
+                value={element.widthCursor ?? 4}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={1}
+                max={30}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'widthCursor')
+                }
+              />
+               <CustomRangeControl
+                label={
+                  <>
+                    <PauseCircleOutlineIcon />
+                    {__("Pause", "cocoblocks")}
+                  </>
+                }
+                value={element.breakCursor ?? 2000}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={1000}
+                max={10000}
+                step={1000}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                tooltipText= {__("1000 = 1s. To see the changes you have to disable and enable the typewriter effect!", "cocoblocks")}
+                showTooltip = {true}
+                tooltipTop={"10px"}
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'breakCursor')
+                }
+              />
+              <CustomRangeControl
+                label={
+                  <>
+                    <SpeedIcon />
+                    {__("Speed", "cocoblocks")}
+                  </>
+                }
+                value={element.speedCursor ?? 200}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={100}
+                max={500}
+                step={10}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="title"
+                tooltipText= {__("To see the changes you have to disable and enable the typewriter effect!", "cocoblocks")}
+                showTooltip = {true}
+                tooltipTop={"10px"}
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'speedCursor')
+                }
+              />
+            </>
+              )}
               <CustomSelectControl
                 label={
                   <>
@@ -1169,12 +1324,35 @@ const TextEdit = ({
       )}
 
       {activeSection === "hover" && (
+        <>
+          <div
+          className="content-title-custom-panel intermedy"
+          style={{
+            marginTop: "-18px",
+          }}
+        >
+          <h2 className="title-custom-panel">
+            {__("Style", "cocoblocks")}
+          </h2>
+        </div>
+        <div className="content-section-panel" style={{ padding: "0",marginBottom:'36px' }}>
+          <CustomColorOptionsPanel
+                  colorNormal={element.textColorHover}
+                  setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'textColorHover}')}
+                  buttonTitle={__("Text Color", "cocoblocks")}
+                  buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
+                  slides={slides}
+                  setAttributes={setAttributes}
+                  updateType="primary"
+                  slideId={slide.id}
+                  elementIndex={elementIndex}
+                  elementType="title"
+                  updateElement={updateElement}
+                  property="textColorHover"
+                />
+                </div>
 <CustomHoverControls
            valueEffectHover={element.effectHover}
-           colorNormal={element.textColorHover } 
-           setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'textColorHover')}
-           buttonTitle={__("Text Color", "cocoblocks")}    
-           buttonIcon={ <FormatColorTextIcon style={{marginBottom:'-4px'}} />}
            valueOpacityHover={element.opacityHover}
             valueBlurHover={element.filterHover}
             valueTranslateXHover={element.startXHover}
@@ -1198,7 +1376,6 @@ const TextEdit = ({
              updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property)
            }
             effectHoverProperty="effectHover"
-            colorHoverProperty="textColorHover"
             opacityHoverProperty="opacityHover"
             blurHoverProperty="filterHover"
             translateXHoverProperty="startXHover"
@@ -1213,6 +1390,7 @@ const TextEdit = ({
             durationHoverProperty="durationHover"
             easingHoverProperty="easingHover"
          />
+         </>
       )}
       {activeSection === "actions" && (
         <CustomActionControls

@@ -6,7 +6,96 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
 
   const textRef = useRef(null); // Ref per il contenitore del testo
   const [hasPlayed, setHasPlayed] = useState(false); // Stato per tracciare se l'animazione è stata attivata
- 
+  const typewriteRef = useRef(null);
+
+  const [typewriterTexts, setTypewriterTexts] = useState([
+    textDiv.textTypeWriterOne,
+    textDiv.textTypeWriterTwo,
+    textDiv.textTypeWriterThree,
+    textDiv.textTypeWriterFour
+  ]);
+
+  useEffect(() => {
+    setTypewriterTexts([
+      textDiv.textTypeWriterOne,
+      textDiv.textTypeWriterTwo,
+      textDiv.textTypeWriterThree,
+      textDiv.textTypeWriterFour
+    ]);
+  }, [
+    textDiv.textTypeWriterOne,
+    textDiv.textTypeWriterTwo,
+    textDiv.textTypeWriterThree,
+    textDiv.textTypeWriterFour
+  ]);
+
+  useEffect(() => {
+    if (textDiv.enableTypeWriter === true) {
+      class TxtType {
+        constructor(el, toRotate, period) {
+          // Rimuove i testi vuoti o assegna un array vuoto se `toRotate` non è valido
+          this.toRotate = Array.isArray(toRotate)
+            ? toRotate.filter(txt => txt.trim() !== "")
+            : [];
+          this.el = el;
+          this.loopNum = 0;
+          this.period = textDiv.breakCursor || 2000;
+          this.txt = "";
+          this.isDeleting = false;
+          this.tick();
+        }
+        tick() {
+          const i = this.loopNum % this.toRotate.length;
+          const fullTxt = this.toRotate[i];
+  
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+  
+          this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
+  
+          let delta = textDiv.speedCursor - Math.random() * 100;
+  
+          if (this.isDeleting) {
+            delta /= 2;
+          }
+  
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+  
+          setTimeout(() => this.tick(), delta);
+        }
+      }
+  
+      // Avvia l'effetto macchina da scrivere
+      if (typewriteRef.current) {
+        const toRotateAttr = typewriteRef.current.getAttribute("data-type");
+        const period = typewriteRef.current.getAttribute("data-period");
+  
+        // Controlla che `toRotateAttr` sia una stringa valida JSON
+        let toRotate = [];
+        try {
+          toRotate = JSON.parse(toRotateAttr) || [];
+        } catch (error) {
+          console.warn("data-type attribute is not valid JSON:", error);
+        }
+  
+        if (Array.isArray(toRotate) && toRotate.length > 0) {
+          new TxtType(typewriteRef.current, toRotate, period);
+        }
+      }
+    }
+  }, [textDiv.enableTypeWriter]);
+  
+
   // Funzione per attivare l'animazione
   const playAnimation = () => {
     const effectIn = animationsIn[textDiv.effectIn];
@@ -88,6 +177,9 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
     const getStylesTitleBlock =  {
           fontSize: 'clamp(' + textDiv.fontSizeMobile + 'px,' + textDiv.fontSizeTablet + 'vw, ' + textDiv.fontSize + 'px)',
           color: textDiv.textColor || "#000000",
+          '--color-hover-inner': textDiv.textColorHover,
+          '--color-cursor-inner': textDiv.textColor,
+          '--cursor-width-inner': textDiv.widthCursor + "px",
           backgroundColor: textDiv.backgroundColor,
           textAlign: textDiv.textAlign || "left",
           letterSpacing: textDiv.letterSpacingTitleBlock + "px",
@@ -149,7 +241,6 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
                       ref={textRef}
                       onMouseEnter={(e) => handleMouseEnter(e, { 
                         durationHover: textDiv.durationHover ?? 800,
-                        textColorHover:textDiv.textColorHover,
                         effectHover:textDiv.effectHover,
                         easingHover:textDiv.easingHover ?? 'linear',
                         opacityHover:textDiv.opacityHover ?? 1,
@@ -166,12 +257,20 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
                       })} // Passa element.duration
                       onMouseLeave={(e) => handleMouseLeave(e, { 
                         durationHover: textDiv.durationHover ?? 800,
-                        textColor:textDiv.textColor,
                         easingHover:textDiv.easingHover ?? 'linear',
-              
                       })} // Passa element.duration
                     >
-                       {textDiv.content}
+                      { textDiv.content}
+                       {textDiv.enableTypeWriter && (
+                        <>
+                          <span
+                            ref={typewriteRef}
+                            data-period="2000"
+                            data-type={JSON.stringify(typewriterTexts)}
+                          ></span>
+                          <span className="wrap"></span>
+                        </>
+                      )}
                     </TagBlock>
                   </div>
                  

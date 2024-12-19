@@ -3,10 +3,10 @@
   "apiVersion": 3,
   "name": "slider-builder/slider",
   "version": "0.1.0",
-  "title": "Slider Fse",
+  "title": "Slider Future",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "images-alt2",
+  "description": "Responsive, customizable slider for dynamic and engaging web displays.",
   "example": {},
   "supports": {
     "html": false,
@@ -629,6 +629,10 @@
       "type": "number",
       "default": 0
     },
+    "rangeVapore": {
+      "type": "number",
+      "default": 200
+    },
     "secondColorLiquid": {
       "type": "number",
       "default": 1
@@ -704,11 +708,19 @@
     },
     "layoutPost": {
       "type": "string",
-      "default": "column"
+      "default": "vertical-layout"
     },
     "gapItemsPost": {
       "type": "number",
       "default": 10
+    },
+    "backgroundHorizontalPaddingPost": {
+      "type": "number",
+      "default": 0
+    },
+    "backgroundVerticalPaddingPost": {
+      "type": "number",
+      "default": 0
     },
     "positionPost": {
       "type": "string",
@@ -720,13 +732,181 @@
     },
     "contentWidthPost": {
       "type": "number",
-      "default": 100
+      "default": 1200
     },
     "layoutWrapPost": {
       "type": "string",
       "default": "wrap"
     },
+    "divider": {
+      "type": "string",
+      "default": "none"
+    },
+    "heightDivider": {
+      "type": "number",
+      "default": 150
+    },
+    "widthDivider": {
+      "type": "number",
+      "default": 100
+    },
+    "colorDivider": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "flipDivider": {
+      "type": "boolean",
+      "default": false
+    },
+    "invertDivider": {
+      "type": "boolean",
+      "default": false
+    },
+    "positionDivider": {
+      "type": "string",
+      "default": "divider-top"
+    },
+    "imageBgPost": {
+      "type": "boolean",
+      "default": false
+    },
+    "imageBgPostSize": {
+      "type": "string",
+      "default": "cover"
+    },
+    "imageBgPostRepeat": {
+      "type": "string",
+      "default": "no-repeat"
+    },
+    "imageBgPostPositionX": {
+      "type": "number",
+      "default": 0
+    },
+    "imageBgPostPositionY": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSize": {
+      "type": "string",
+      "default": "cover"
+    },
+    "imagePostColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "imagePostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "imagePostWidth": {
+      "type": "string",
+      "default": "relative"
+    },
+    "imagePostWidthPx": {
+      "type": "number",
+      "default": 150
+    },
+    "imagePostWidthPercent": {
+      "type": "number",
+      "default": 50
+    },
+    "imagePostHeight": {
+      "type": "string",
+      "default": "relative"
+    },
+    "imagePostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "imagePostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "imagePostHeightPx": {
+      "type": "number",
+      "default": 150
+    },
+    "imagePostHeightPercent": {
+      "type": "number",
+      "default": 50
+    },
+    "imagePostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "imagePostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "imagePostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "imagePostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "imagePostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "imagePostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "imagePostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "imagePostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostEffect": {
+      "type": "string",
+      "default": "none"
+    },
     "includeCategories": {
+      "type": "array",
+      "default": []
+    },
+    "specificPosts": {
       "type": "array",
       "default": []
     },
@@ -737,6 +917,14 @@
     "order": {
       "type": "string",
       "default": "ASC"
+    },
+    "postID": {
+      "type": "number",
+      "default": 0
+    },
+    "latestPosts": {
+      "type": "boolean",
+      "default": false
     },
     "postsToShow": {
       "type": "number",
@@ -754,6 +942,2422 @@
         "categories": true,
         "tags": true
       }
+    },
+    "imagePostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "imagePostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "imagePostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "imagePostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "imagePostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "imagePostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "imagePostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "imagePostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "imagePostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "imagePostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "imagePostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "imagePostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "imagePostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "imagePostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "imagePostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "imagePostLink": {
+      "type": "string",
+      "default": "none"
+    },
+    "imagePostTarget": {
+      "type": "string",
+      "default": "_self"
+    },
+    "imagePostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "imagePostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "imagePostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "titlePostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "titlePostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "titlePostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "titlePostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "titlePostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "titlePostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "titlePostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "titlePostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "titlePostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "titlePostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "titlePostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "titlePostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "titlePostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "titlePostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "titlePostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "titlePostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "titlePostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "titlePostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "titlePostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "titlePostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "titlePostLink": {
+      "type": "string",
+      "default": "none"
+    },
+    "titlePostTarget": {
+      "type": "string",
+      "default": "_self"
+    },
+    "titlePostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "titlePostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "titlePostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "titlePostFontSizeMobile": {
+      "type": "number",
+      "default": 22
+    },
+    "titlePostFontSizeTablet": {
+      "type": "number",
+      "default": 16
+    },
+    "titlePostFontSize": {
+      "type": "number",
+      "default": 22
+    },
+    "titlePostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "titlePostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "titlePostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "titlePostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "titlePostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "titlePostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "titlePostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "titlePostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "titlePostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "titlePostBlockColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "excerptPostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "excerptPostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "excerptPostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "excerptPostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "excerptPostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "excerptPostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "excerptPostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "excerptPostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "excerptPostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "excerptPostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "excerptPostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "excerptPostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "excerptPostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "excerptPostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "excerptPostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "excerptPostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "excerptPostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "excerptPostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "excerptPostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "excerptPostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "excerptPostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "excerptPostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "excerptPostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "excerptPostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "excerptPostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "excerptPostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "excerptPostLink": {
+      "type": "string",
+      "default": "none"
+    },
+    "excerptPostTarget": {
+      "type": "string",
+      "default": "_self"
+    },
+    "excerptPostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "excerptPostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "excerptPostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "excerptPostFontSizeMobile": {
+      "type": "number",
+      "default": 14
+    },
+    "excerptPostFontSizeTablet": {
+      "type": "number",
+      "default": 14
+    },
+    "excerptPostFontSize": {
+      "type": "number",
+      "default": 16
+    },
+    "excerptPostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "excerptPostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "excerptPostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "excerptPostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "excerptPostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "excerptPostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "excerptPostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "excerptPostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "excerptPostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "excerptPostBlockColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "linkPostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "linkPostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "linkPostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "linkPostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "linkPostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "linkPostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "linkPostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "linkPostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "linkPostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "linkPostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "linkPostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "linkPostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "linkPostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "linkPostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "linkPostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "linkPostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "linkPostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "linkPostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "linkPostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "linkPostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "linkPostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "linkPostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "linkPostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "linkPostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "linkPostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "linkPostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "linkPostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "linkPostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "linkPostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "linkPostFontSizeMobile": {
+      "type": "number",
+      "default": 22
+    },
+    "linkPostFontSizeTablet": {
+      "type": "number",
+      "default": 16
+    },
+    "linkPostFontSize": {
+      "type": "number",
+      "default": 22
+    },
+    "linkPostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "linkPostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "linkPostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "linkPostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "linkPostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "linkPostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "linkPostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "linkPostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "linkPostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "linkPostBlockColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "linkPostContent": {
+      "type": "string",
+      "default": "Read More"
+    },
+    "authorPostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "authorPostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "authorPostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "authorPostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "authorPostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "authorPostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "authorPostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "authorPostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "authorPostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "authorPostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "authorPostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "authorPostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "authorPostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "authorPostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "authorPostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "authorPostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "authorPostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "authorPostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "authorPostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "authorPostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "authorPostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "authorPostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "authorPostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "authorPostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "authorPostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "authorPostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "authorPostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "authorPostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "authorPostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "authorPostFontSizeMobile": {
+      "type": "number",
+      "default": 22
+    },
+    "authorPostFontSizeTablet": {
+      "type": "number",
+      "default": 16
+    },
+    "authorPostFontSize": {
+      "type": "number",
+      "default": 22
+    },
+    "authorPostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "authorPostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "authorPostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "authorPostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "authorPostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "authorPostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "authorPostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "authorPostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "authorPostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "authorPostBlockColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "datePostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "datePostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "datePostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "datePostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "datePostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "datePostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "datePostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "datePostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "datePostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "datePostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "datePostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "datePostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "datePostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "datePostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "datePostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "datePostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "datePostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "datePostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "datePostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "datePostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "datePostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "datePostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "datePostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "datePostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "datePostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "datePostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "datePostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "datePostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "datePostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "datePostFontSizeMobile": {
+      "type": "number",
+      "default": 22
+    },
+    "datePostFontSizeTablet": {
+      "type": "number",
+      "default": 16
+    },
+    "datePostFontSize": {
+      "type": "number",
+      "default": 22
+    },
+    "datePostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "datePostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "datePostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "datePostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "datePostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "datePostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "datePostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "datePostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "datePostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "datePostBlockColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "categoriesPostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "categoriesPostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "categoriesPostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "categoriesPostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "5px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "categoriesPostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "categoriesPostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "categoriesPostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "categoriesPostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "categoriesPostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "categoriesPostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "categoriesPostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "categoriesPostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "categoriesPostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "categoriesPostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "categoriesPostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "categoriesPostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "categoriesPostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "categoriesPostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "categoriesPostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "categoriesPostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "categoriesPostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "categoriesPostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "categoriesPostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "categoriesPostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "categoriesPostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "categoriesPostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "categoriesPostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "categoriesPostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "categoriesPostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "categoriesPostFontSizeMobile": {
+      "type": "number",
+      "default": 18
+    },
+    "categoriesPostFontSizeTablet": {
+      "type": "number",
+      "default": 12
+    },
+    "categoriesPostFontSize": {
+      "type": "number",
+      "default": 18
+    },
+    "categoriesPostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "categoriesPostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "categoriesPostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "categoriesPostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "categoriesPostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "categoriesPostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "categoriesPostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "categoriesPostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "categoriesPostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "categoriesPostBlockColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "tagsPostColor": {
+      "type": "string",
+      "default": "FFFFFF00"
+    },
+    "tagsPostAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "tagsPostPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "tagsPostMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "5px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "tagsPostBorderStyle": {
+      "type": "string",
+      "default": "none"
+    },
+    "tagsPostBorderSize": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "tagsPostBorderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "tagsPostBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "tagsPostRotate": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostOpacity": {
+      "type": "number",
+      "default": 1
+    },
+    "tagsPostBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "tagsPostBoxShadowColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "tagsPostBoxShadowHOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostBoxShadowVOffset": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostBoxShadowBlur": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostBoxShadowSpread": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostEffect": {
+      "type": "string",
+      "default": "none"
+    },
+    "tagsPostOpacityFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostOpacityTo": {
+      "type": "number",
+      "default": 1
+    },
+    "tagsPostBlurFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostBlurTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostTranslateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostTranslateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostTranslateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostTranslateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostScaleType": {
+      "type": "string",
+      "default": "none"
+    },
+    "tagsPostScaleFrom": {
+      "type": "number",
+      "default": 1
+    },
+    "tagsPostScaleTo": {
+      "type": "number",
+      "default": 1
+    },
+    "tagsPostRotateFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostSkewXFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostSkewXTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostSkewYFrom": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostSkewYTo": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostDuration": {
+      "type": "number",
+      "default": 800
+    },
+    "tagsPostDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostEndDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostEasing": {
+      "type": "string",
+      "default": "linear"
+    },
+    "tagsPostDirection": {
+      "type": "string",
+      "default": "normal"
+    },
+    "tagsPostLoop": {
+      "type": "string",
+      "default": "1"
+    },
+    "tagsPostEffectHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "tagsPostOpacityHover": {
+      "type": "number",
+      "default": 1
+    },
+    "tagsPostBlurHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostTranslateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostTranslateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostScaleTypeHover": {
+      "type": "string",
+      "default": "none"
+    },
+    "tagsPostScaleHover": {
+      "type": "number",
+      "default": 1
+    },
+    "tagsPostRotateHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostRotateYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostSkewXHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostSkewYHover": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostDurationHover": {
+      "type": "number",
+      "default": 800
+    },
+    "tagsPostEasingHover": {
+      "type": "string",
+      "default": "linear"
+    },
+    "tagsPostDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "tagsPostTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "tagsPostMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "tagsPostFontSizeMobile": {
+      "type": "number",
+      "default": 14
+    },
+    "tagsPostFontSizeTablet": {
+      "type": "number",
+      "default": 10
+    },
+    "tagsPostFontSize": {
+      "type": "number",
+      "default": 14
+    },
+    "tagsPostFontStyle": {
+      "type": "object",
+      "default": {}
+    },
+    "tagsPostFontFamily": {
+      "type": "string",
+      "default": "Arial, sans-serif"
+    },
+    "tagsPostFontWeight": {
+      "type": "string",
+      "default": "normal"
+    },
+    "tagsPostLineHeight": {
+      "type": "number",
+      "default": 1.5
+    },
+    "tagsPostLetterSpacing": {
+      "type": "number",
+      "default": 0
+    },
+    "tagsPostColorIn": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "tagsPostEffectSplit": {
+      "type": "string",
+      "default": "translateSplit"
+    },
+    "tagsPostStagger": {
+      "type": "number",
+      "default": 80
+    },
+    "tagsPostDirectionBlock": {
+      "type": "string",
+      "default": "right"
+    },
+    "tagsPostBlockColor": {
+      "type": "string",
+      "default": "#000000"
     }
   }
 }

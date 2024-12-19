@@ -16,11 +16,10 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
   };
 
   return (
+    <div className="content-section-selector">
     <ButtonGroup
       className="section-selector"
       style={{
-        marginLeft: "-16px",
-        marginRight: "-16px",
         marginBottom: "-16px",
       }}
     >
@@ -69,6 +68,7 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
       >
       </Button>
     </ButtonGroup>
+    </div>
   );
 };
 

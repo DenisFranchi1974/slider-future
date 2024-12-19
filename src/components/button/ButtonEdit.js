@@ -448,6 +448,7 @@ const ButtonEdit = ({
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
+      <div className="content-title-block-added">
       <div className="title-block-added">
         <div className="title-element">
         <SmartButtonIcon />
@@ -471,6 +472,7 @@ const ButtonEdit = ({
         </button>
       </Tooltip>
         </div>
+      </div>
       </div>
       {isOpen && (
         <>

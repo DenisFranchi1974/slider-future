@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { TabPanel, Button, Tooltip } from "@wordpress/components";
+import { TabPanel, Button, Tooltip} from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -34,7 +34,7 @@ import SlideEdit from "./components/slide/SlideEdit";
 import DraggableLayout from "./assets/dragable";
 import Ruler from "./assets/ruler";
 import IconRender from "./components/icon/IconRender";
-import PostsControls from "./components/postsControls";
+import PostsEdit from "./components/post/PostsEdit";
 import SettingsIcon from "@mui/icons-material/Settings";
 import BurstModeIcon from "@mui/icons-material/BurstMode";
 import GamepadIcon from "@mui/icons-material/Gamepad";
@@ -44,7 +44,16 @@ import SlowMotionVideoIcon from "@mui/icons-material/SlowMotionVideo";
 import ButtonRender from "./components/button/ButtonRender";
 import apiFetch from "@wordpress/api-fetch";
 import PatternSelectionModal from "./components/modalPattern";
+import SliderTemplateModal from "./components/modalTemplate";
 import StyleIcon from '@mui/icons-material/Style';
+import PostImageRender from "./components/post/image/PostImageRender";
+import PostTitleRender from "./components/post/title/PostTitleRender";
+import PostExcerptRender from "./components/post/excerpt/PostExcerptRender";
+import PostLinkRender from "./components/post/link/PostLinkRender";
+import PostAuthorRender from "./components/post/author/PostAuthorRender";
+import PostDateRender from "./components/post/date/PostDateRender";
+import PostCategoriesRender from "./components/post/categories/PostCategoriesRender";
+import PostTagsRender from "./components/post/tags/PostTagsRender";
 
 export default function Edit({ attributes, setAttributes, slide, element }) {
   const {
@@ -221,11 +230,28 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     contentWidthPost,
     layoutWrapPost,
     includeCategories = [],
-    excludeCategories = [],
-    order = "ASC",
-    postsToShow,
+   excludeCategories = [],
+   order,
+   postsToShow,
     fitImage,
-    visibleElements
+    visibleElements,
+    backgroundHorizontalPaddingPost,
+    backgroundVerticalPaddingPost,
+    postId,
+    divider,
+    heightDivider,
+    widthDivider,
+    colorDivider,
+    flipDivider,
+    invertDivider,
+    positionDivider,
+    imageBgPost,
+    imageBgPostSize,
+    imageBgPostRepeat,
+    imageBgPostPositionX,
+    imageBgPostPositionY,
+    specificPosts,
+    latestPosts 
   } = attributes;
 
   /* Classi personalizzate per il blocco */
@@ -481,6 +507,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     "--color-grid-editor": colorGrid,
     "--opacity-grid-editor": opacityGrid,
     height: autoHeight ? "auto" : `${slideHeight}px`,
+    '--slide-height-tablet': autoHeight ? "auto" : `${slideHeightTablet}px`,
+    '--slide-height-mobile': autoHeight ? "auto" : `${slideHeightMobile}px`,
     marginTop: `${sliderMarginTop}px`,
     marginBottom: `${sliderMarginBottom}px`,
   };
@@ -628,57 +656,60 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
   const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
 
 
+// Cache per i risultati delle chiamate API
+const apiCache = {};
 
-
-
-  // Cache per i risultati delle chiamate API
-  const apiCache = {};
-
-  const debounce = (func, delay) => {
-    let debounceTimer;
-    return (...args) => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => func(...args), delay);
-    };
+const debounce = (func, delay) => {
+  let debounceTimer;
+  return (...args) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func(...args), delay);
   };
+};
 
-  useEffect(() => {
-    const includeCategoriesParam = includeCategories.length ? includeCategories.join(',') : '';
-    const excludeCategoriesParam = excludeCategories.length ? excludeCategories.join(',') : '';
-    const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}-${attributes.postId}`;
+useEffect(() => {
+  const includeCategoriesParam = includeCategories.length ? includeCategories.join(',') : '';
+  const excludeCategoriesParam = excludeCategories.length ? excludeCategories.join(',') : '';
+  const specificPostsParam = specificPosts.length ? specificPosts.join(',') : '';
+  const latestPostsParam = latestPosts ? 'true' : 'false';
+  const excludePostIdParam = postId ? postId : '';
+  const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}-${excludePostIdParam}-${specificPostsParam}-${latestPostsParam}`;
 
-    if (apiCache[cacheKey]) {
-        setAttributes({ posts: apiCache[cacheKey] });
-        return;
-    }
+   // Invalida la cache quando latestPosts cambia
+   if (latestPosts) {
+    delete apiCache[cacheKey];
+  }
 
-    const fetchPosts = debounce(() => {
-        apiFetch({
-            path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}&exclude_post_id=${attributes.postId}`,
-        })
-            .then((data) => {
-                console.log('Data ricevuti:', data);
-                apiCache[cacheKey] = data;
-                setAttributes({ posts: data });
-            })
-            .catch((error) => {
-                console.error('Errore nel recupero dei post:', error);
-            });
-    }, 300);
+  if (apiCache[cacheKey]) {
+      setAttributes({ posts: apiCache[cacheKey] });
+      return;
+  }
 
-    fetchPosts();
-}, [includeCategories, excludeCategories, order, postsToShow, attributes.postId]);
+  const fetchPosts = debounce(() => {
+      apiFetch({
+          path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}&exclude_post_id=${excludePostIdParam}&specific_posts=${specificPostsParam}&latest_posts=${latestPostsParam}`,
+      })
+          .then((data) => {
+              console.log('Data ricevuti:', data);
+              apiCache[cacheKey] = data;
+              setAttributes({ posts: data });
+          })
+          .catch((error) => {
+              console.error('Errore nel recupero dei post:', error);
+          });
+  }, 300);
 
+  fetchPosts();
+}, [includeCategories, excludeCategories, order, postsToShow, postId, specificPosts, latestPosts]);
 
-  
 
   // Style content posts
   const stylesContentPosts = {
-    padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
-    display: "flex",
-    flexDirection: layoutPost,
     gap: `${gapItemsPost}px`,
     flexWrap: layoutWrapPost,
+    maxWidth: enableContentWidthPost
+    ? `${contentWidthPost}px`
+    : false,
   };
 
   // Animazioni
@@ -781,6 +812,71 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     });
   };
 
+  // Post Image
+  const playAnimationRef = useRef(null);
+  const handlePlayAnimation = () => {
+    if (playAnimationRef.current) {
+      playAnimationRef.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Title
+  const playAnimationRefPostTitle = useRef(null);
+  const handlePlayAnimationPostTitle = () => {
+    if (playAnimationRefPostTitle.current) {
+      playAnimationRefPostTitle.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Excerpt
+  const playAnimationRefPostExcerpt = useRef(null);
+  const handlePlayAnimationPostExcerpt = () => {
+    if (playAnimationRefPostExcerpt.current) {
+      playAnimationRefPostExcerpt.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Link
+  const playAnimationRefPostLink = useRef(null);
+  const handlePlayAnimationPostLink = () => {
+    if (playAnimationRefPostLink.current) {
+      playAnimationRefPostLink.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Author
+  const playAnimationRefPostAuthor = useRef(null);
+  const handlePlayAnimationPostAuthor = () => {
+    if (playAnimationRefPostAuthor.current) {
+      playAnimationRefPostAuthor.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Date
+  const playAnimationRefPostDate = useRef(null);
+  const handlePlayAnimationPostDate = () => {
+    if (playAnimationRefPostDate.current) {
+      playAnimationRefPostDate.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Categories
+  const playAnimationRefPostCategories = useRef(null);
+  const handlePlayAnimationPostCategories = () => {
+    if (playAnimationRefPostCategories.current) {
+      playAnimationRefPostCategories.current(); // Attiva l'animazione
+    }
+  };
+
+  // Post Tags
+  const playAnimationRefPostTags = useRef(null);
+  const handlePlayAnimationPostTags = () => {
+    if (playAnimationRefPostTags.current) {
+      playAnimationRefPostTags.current(); // Attiva l'animazione
+    }
+  };
+
+
   // Funzione per verificare la presenza di animazioni
   const hasAnimations = (slides) => {
     return slides.some(
@@ -833,6 +929,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     });
   }, []);
 
+  
   // Modal pattern
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -845,7 +942,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
           </Button>
         </div>
         {isModalOpen && (
-          <PatternSelectionModal onClose={() => setIsModalOpen(false)} />
+          <SliderTemplateModal onClose={() => setIsModalOpen(false)} />
         )}
         <TabPanel
           className="tab-general"
@@ -959,9 +1056,17 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
               {/*TAB 5*/}
               {attributes.contentType === "post-based" && (
                 <div className={"tab-5 " + tab.name}>
-                  <PostsControls
+                  <PostsEdit
                     attributes={attributes}
                     setAttributes={setAttributes}
+                    onPlayAnimation={handlePlayAnimation} 
+                    onPlayAnimationPostTitle={handlePlayAnimationPostTitle}
+                    onPlayAnimationPostExcerpt={handlePlayAnimationPostExcerpt}
+                    onPlayAnimationPostLink={handlePlayAnimationPostLink}
+                    onPlayAnimationPostAuthor={handlePlayAnimationPostAuthor}
+                    onPlayAnimationPostDate={handlePlayAnimationPostDate}
+                    onPlayAnimationPostCategories={handlePlayAnimationPostCategories}
+                    onPlayAnimationPostTags={handlePlayAnimationPostTags}
                   />
                 </div>
               )}
@@ -1134,52 +1239,188 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
           posts.length > 0
             ? posts.map((post, index) => (
                 <SwiperSlide key={index}>
-                  <div className="swiper-slide">
+                   {divider !== "none" && (
+                      <div 
+                        className="divider-container"
+                        style={{
+                          ...(invertDivider === true && divider !== 'divider-tilt' && positionDivider === 'divider-top'
+                            ? {
+                                transform: 'rotate(180deg)',
+                              }
+                            : {}),
+                          ...(positionDivider === 'divider-top'
+                            ? {
+                                top: '0px',
+                              }
+                            : positionDivider === 'divider-bottom'
+                            ? {
+                                bottom: '0px',
+                                ...(invertDivider === false
+                                  ? {
+                                      transform: 'rotate(180deg)',
+                                    }
+                                  : {}),
+                              }
+                            : {}),
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 1200 120"
+                          preserveAspectRatio="none"
+                          className={`custom-divider ${divider}`}
+                          style={{
+                            width: 'calc(' + widthDivider + '% + 1.3px)', 
+                            height: heightDivider + 'px',
+                            '--color-divider': colorDivider,
+                            ...(flipDivider === true
+                              ? {
+                                transform: 'rotateY(180deg)',
+                                }
+                              : {}),
+                          }}
+                        >
+                          {divider === "divider-wawes" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+                              : // Path per quando invertDivider è false
+                              "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                            }
+                            class="shape-fill"></path>
+                          )}
+                          {divider === "divider-curve" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                              ? // Path per quando invertDivider è true
+                            "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" 
+                            : // Path per quando invertDivider è false
+                            "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+                            }
+                            class="shape-fill"></path>
+                          )}
+                          {divider === "divider-curve-asymmetrical" && (
+                         <path data-v-6da3ec0c="" d={
+                          invertDivider
+                          ? // Path per quando invertDivider è true
+                          "M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
+                          : // Path per quando invertDivider è false
+                          "M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z"
+                          }
+                          class="shape-fill"></path>
+                          )}
+                          {divider === "divider-triangle" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                               ? // Path per quando invertDivider è true
+                              "M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
+                              : // Path per quando invertDivider è false
+                             "M1200 0L0 0 598.97 114.72 1200 0z"
+                            }
+                              class="shape-fill"></path>
+                          )}
+                          {divider === "divider-triangle-asymmetrical" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+                              : // Path per quando invertDivider è false
+                              "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+                            }
+                            class="shape-fill" ></path>
+                          )}
+                          {divider === "divider-tilt" && (
+                            <path data-v-6da3ec0c="" d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                          )}
+                          {divider === "divider-arrow" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z"
+                              : // Path per quando invertDivider è false
+                              "M649.97 0L550.03 0 599.91 54.12 649.97 0z"
+                            }
+                            class="shape-fill"></path>
+                          )}
+                          {divider === "divider-split" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M600,16.8c0-8.11-8.88-13.2-19.92-13.2H0V120H1200V3.6H619.92C608.88,3.6,600,8.66,600,16.8Z"
+                              : // Path per quando invertDivider è false
+                              "M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"
+                            }
+                            class="shape-fill" ></path>
+                          )}
+                          {divider === "divider-book" && (
+                            <path data-v-6da3ec0c="" d={
+                              invertDivider
+                              ? // Path per quando invertDivider è true
+                              "M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z"
+                              : // Path per quando invertDivider è false
+                               "M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z"
+                            }
+                               class="shape-fill" ></path>
+                          )}
+                        </svg>
+                      </div>
+                    )}
+                    <div className="content-content-slide-post" style={{ 
+                      padding: `${backgroundVerticalPaddingPost}px ${backgroundHorizontalPaddingPost}px`,
+                      ...(imageBgPost && {
+                        backgroundImage: `url(${post.image})`,
+                        backgroundSize: imageBgPostSize,
+                        backgroundRepeat: imageBgPostRepeat,
+                        backgroundPositionX: imageBgPostPositionX + 'px',
+                        backgroundPositionY: imageBgPostPositionY + 'px',
+                        }),
+                      }}>
                     <div
-                      className={"content-slide-post " + positionPost}
+                      className={"content-slide-post " + layoutPost + " " + positionPost}
                       style={stylesContentPosts}
                     >
                       {postElementsOrder.map((element) => {
                          if (!visibleElements[element]) return null;
                         switch (element) {
                           case "image":
-                            return (
-                              post.image && (
-                                <img src={post.image} alt={post.title} />
-                              )
-                            );
+                            return <PostImageRender post={post} attributes={attributes} onPlay={(playAnimation) => {
+                              playAnimationRef.current = playAnimation;
+                            }}  />;
                           case "title":
-                            return post.title && <h3>{post.title}</h3>;
+                            return <PostTitleRender post={post} attributes={attributes} onPlay={(playAnimationPostTitle) => {
+                              playAnimationRefPostTitle.current = playAnimationPostTitle;
+                            }}  />;
                           case "excerpt":
-                            return post.excerpt && <p>{post.excerpt}</p>;
+                            return <PostExcerptRender post={post} attributes={attributes} onPlay={(playAnimationPostExcerpt) => {
+                              playAnimationRefPostExcerpt.current = playAnimationPostExcerpt;
+                            }}  />;
                           case "link":
-                            return (
-                              post.link && <a href={post.link}>Read More</a>
-                            );
+                            return <PostLinkRender post={post} attributes={attributes} onPlay={(playAnimationPostLink) => {
+                              playAnimationRefPostLink.current = playAnimationPostLink;
+                            }}  />;
                           case "author":
-                            return post.author && <p>{post.author}</p>;
+                            return <PostAuthorRender post={post} attributes={attributes} onPlay={(playAnimationPostAuthor) => {
+                              playAnimationRefPostAuthor.current = playAnimationPostAuthor;
+                            }}  />;
                           case "date":
-                            return post.date && <p>{post.date}</p>;
+                            return <PostDateRender post={post} attributes={attributes} onPlay={(playAnimationPostDate) => {
+                              playAnimationRefPostDate.current = playAnimationPostDate;
+                            }}  />;
                           case "categories":
-                            return (
-                              post.categories &&
-                              post.categories.map((cat, idx) => (
-                                <span key={idx}>{cat}</span>
-                              ))
-                            );
+                            return <PostCategoriesRender post={post} attributes={attributes} onPlay={(playAnimationPostCategories) => {
+                              playAnimationRefPostCategories.current = playAnimationPostCategories;
+                            }}  />;
                           case "tags":
-                            return (
-                              post.tags &&
-                              post.tags.map((tag, idx) => (
-                                <span key={idx}>{tag}</span>
-                              ))
-                            );
+                            return <PostTagsRender post={post} attributes={attributes} onPlay={(playAnimationPostTags) => {
+                              playAnimationRefPostTags.current = playAnimationPostTags;
+                            }}  />;
                           default:
                             return null;
                         }
                       })}
                     </div>
-                  </div>
+                    </div>
                 </SwiperSlide>
               ))
             : null}
@@ -1190,14 +1431,12 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
           attributes.posts.length > 0
             ? attributes.posts.map((product, index) => (
                 <SwiperSlide key={index}>
-                  <div className="swiper-slide">
                     {product.image && (
                       <img src={product.image} alt={product.title} />
                     )}
                     {product.title && <h3>{product.title}</h3>}
                     {product.excerpt && <p>{product.excerpt}</p>}
                     {product.link && <a href={product.link}>View Product</a>}
-                  </div>
                 </SwiperSlide>
               ))
             : null}
@@ -1206,9 +1445,9 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
           Array.isArray(slides) &&
           slides.length > 0
             ? slides.map((slide) => (
-                <SwiperSlide key={slide.id}>
-                  <div
-                    className={"swiper-slide " + slide.filter}
+                  <SwiperSlide key={slide.id}
+                  className={`swiper-slide ${slide.filter} ${slide.developerMode ? 'dev-mode-nooverflows' : ''}`}
+
                     style={{
                       // Gestione dell'immagine di sfondo
                       ...(slide.backgroundType === "image" &&
@@ -1699,7 +1938,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
                         })}
                       </div>
                     </div>
-                  </div>
                 </SwiperSlide>
               ))
             : null}

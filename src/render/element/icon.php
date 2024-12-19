@@ -133,7 +133,7 @@ function render_icon($element, $slide)
 ?>
     <?php if ($slide['developerMode']) : ?>
         <div class="content-content-icon-absolute <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>"
-            style="position:absolute"
+            style="position:absolute;z-index: <?php echo esc_attr($element['zIndexIcon']); ?>;"
             data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
             data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
             data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"

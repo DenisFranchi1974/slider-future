@@ -91,6 +91,7 @@ function render_image($element, $slide)
     $imageAlign = esc_attr($element['imageAlign'] ?? 'center');
     $opacityImage = esc_attr($element['opacityImage'] ?? 1);
     $rotateImage = esc_attr($element['rotateImage'] ?? 0);
+    $zIndexImage = esc_attr($element['zIndexImage'] ?? 1);
 ?>
     <?php if ($slide['developerMode']) : ?>
         <div class="content-content-image-first-absolute"
@@ -100,14 +101,14 @@ function render_image($element, $slide)
             data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
             data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
             data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
-            style="position: absolute; text-align:<?php echo $imageAlign; ?>;">
+            style="position: absolute; text-align:<?php echo $imageAlign; ?>; z-index:<?php echo $zIndexImage; ?>">
         <?php endif; ?>
         <div
             <?php
             if ($element['imageLink'] !== 'none') : ?>
             onclick="<?php echo $onclick; ?>"
             <?php endif;
-            $zIndexImage = esc_attr($element['zIndexImage'] ?? 1);
+
             ?>
             style="transform:rotate(<?php echo $rotateImage; ?>deg);
                                 opacity:<?php echo $opacityImage; ?>; 

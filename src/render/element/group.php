@@ -33,7 +33,7 @@ function render_group($element, $slide)
     <?php if ($slide['developerMode']) : ?>
         <div
             class="content-inner-div-absolute"
-            style="position:absolute;"
+            style="position:absolute; z-index:<?php echo esc_attr($element['zIndexDiv'] ?? 1) ?>"
             data-desktop-x="<?php echo esc_attr($element['desktop']['x']); ?>"
             data-desktop-y="<?php echo esc_attr($element['desktop']['y']); ?>"
             data-tablet-x="<?php echo esc_attr($element['tablet']['x']); ?>"

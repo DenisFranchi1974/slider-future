@@ -41,7 +41,7 @@ const NavigationButtons = ({
       {/* Pulsante Avanti */}
       <div
         ref={nextRef}
-        className={swiperButtonNextClasses}
+        className={swiperButtonNextClasses} 
         style={stylesNavigation}
       >
         {navigationIcons === "default" && (

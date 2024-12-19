@@ -2,6 +2,7 @@ import { Swiper } from 'swiper';
 import materialIcons from './icons/materialIcons';
 import ReactDOM from 'react-dom/client';
 import { animationsIn, getAnimationProps, } from "./animate";
+import anime from 'animejs/lib/anime.es.js';
 import {handleMouseEnter, handleMouseLeave} from './animate/animationIn'
 import { Autoplay, Keyboard, Navigation, Pagination, EffectCube, EffectFlip, EffectCards, EffectCreative, EffectFade, Grid, EffectCoverflow, Scrollbar, FreeMode, Mousewheel } from 'swiper/modules';
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const iconName = wrapper.getAttribute('data-icon');
       const IconComponent = materialIcons[iconName];
   
-      if (IconComponent) {
+      if (IconComponent) { 
         // Crea una root per il rendering con createRoot
         const root = ReactDOM.createRoot(wrapper);
         const iconSize = parseInt(wrapper.getAttribute('data-icon-size')) ;
@@ -81,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione per animare un elemento
     function animateElement() {
-      const elementsToAnimate = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .content-icon,.title-slide-div, .img-inner,.content-button-slide-inner,.content-icon-inner');
+     
+      const elementsToAnimate = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.content-icon,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.content-icon-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
       elementsToAnimate.forEach(element => {
       const effectIn = element.getAttribute('data-effect-in');
       const duration = parseInt(element.getAttribute('data-duration')) ?? 800;
@@ -131,7 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const easingHover = element.getAttribute('data-easing-hover' ?? 'linear');
       const heightFrom = element.getAttribute('data-height-from' ?? 0);
       const heightTo = element.getAttribute('data-height-to' ?? 0);
-
+    
+     // element.style.opacity = opacityFrom;
       const animationProps = getAnimationProps({
         effectIn,
         duration,
@@ -182,9 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
         heightFrom,
         heightTo
     });
-
-     // Controlla se animationsIn[effectIn] è definito
-     if (typeof animationsIn[effectIn] === 'function') {
+ 
+    // Controlla se animationsIn[effectIn] è definito
+    if (typeof animationsIn[effectIn] === 'function') {
+     // element.style.opacity = 0; 
       setTimeout(() => {
         animationsIn[effectIn](element, animationProps);
       }, delay);
@@ -193,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 // Aggiungi gli eventi di hover
-const elements = document.querySelectorAll('.title-slide, .image-first-slide, .div-slide, .button-slider,.content-button-slide, .title-slide-div, .img-inner,.content-button-slide-inner');
+const elements = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
 elements.forEach(element => {
     element.addEventListener('mouseenter', (e) => handleMouseEnter(e, { 
       durationHover: element.getAttribute('data-duration-hover'),
@@ -347,18 +351,32 @@ elements.forEach(element => {
                     },
                 },
                 on: {
-                   
-                    slideChange: function () {
-                      const slides = swiperElement.querySelectorAll('.swiper-slide');
-                      slides.forEach(slide => {
-                          if (slide.classList.contains('swiper-slide-active')) {
-                              const elements = slide.querySelectorAll('[data-effect-in]');
-                              elements.forEach(element => {
-                                  animateElement(element);
-                              });
-                          }
-                      });
-                  },
+                  slideChange: function () {
+                    const slides = swiperElement.querySelectorAll('.swiper-slide');
+                    slides.forEach((slide) => {
+                        const elements = slide.querySelectorAll('[data-effect-in]');
+                        if (slide.classList.contains('swiper-slide-active')) {
+                            elements.forEach((element) => {
+                                // Rimuovi qualsiasi animazione in corso sull'elemento
+                               anime.remove(element);
+                                // Resetta gli stili di base
+                              element.style.transform = "none";
+                              element.style.opacity = 0;
+
+                                // Riavvia l'animazione
+                                 animateElement(element);
+                            });
+                        } else {
+                            elements.forEach((element) => {
+                                // Rimuovi qualsiasi animazione in corso sull'elemento
+                               anime.remove(element);
+                                // Resetta gli stili
+                              element.style.transform = "none";
+                                element.style.opacity = 0;
+                            });
+                        }
+                    });
+                },
                     autoplayTimeLeft: swiperConfig.autoplayProgress ? (s, time, progress) => {
                         const progressCircle = document.querySelector('.progress-circle circle');
                         const progressContent = document.querySelector('.progress-content');
@@ -379,6 +397,7 @@ elements.forEach(element => {
               elements.forEach(element => {
                   animateElement(element);
               });
+              
           }
         }
     });
@@ -1813,6 +1832,7 @@ function applyLiquidEffect(slide) {
     }
     
     function splat(x, y, dx, dy, color) {
+      const rangeVapore = slide.getAttribute('data-range-vapore');
       gl.viewport(0, 0, simWidth, simHeight);
       splatProgram.bind();
       gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0));
@@ -1822,8 +1842,9 @@ function applyLiquidEffect(slide) {
         x / canvas.width,
         1.0 - y / canvas.height
       );
-      gl.uniform3f(splatProgram.uniforms.color, dx, -dy, 1.0);
-      gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS / 1000.0); // Regolazione grandezza vapore da impostare 
+      gl.uniform3f(splatProgram.uniforms.color, dx, -dy, 1.0); 
+      gl.uniform1f(splatProgram.uniforms.radius, config.SPLAT_RADIUS /rangeVapore); // Regolazione grandezza vapore da impostare 
+    
       blit(velocity.write.fbo);
       velocity.swap();
     
@@ -2037,3 +2058,72 @@ const loadGoogleFont = (fontFamily) => {
     link.rel = "stylesheet";
     document.head.appendChild(link);
 };
+
+/* Typewriter */
+function typeWritEffect (){
+class TxtType {
+  constructor(el, toRotate, period) {
+    const breakCursor = el.getAttribute('data-break-cursor');
+    this.toRotate = toRotate.filter(text => text.trim() !== "");  // Rimuove i campi vuoti
+    this.el = el;
+    this.loopNum = 0;
+    this.period = breakCursor; 
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  }
+
+  tick() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+    const speedCursor = this.el.getAttribute('data-speed-cursor');
+    var that = this;
+    var delta = speedCursor - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  }
+}
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('typewrite');
+  for (var i = 0; i < elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-type');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      // Assicurati che `toRotate` sia un array di stringhe, rimuovendo i vuoti
+      var texts = JSON.parse(toRotate).filter(text => text.trim() !== "");
+      if (texts.length > 0) {
+        new TxtType(elements[i], texts, period);
+      }
+    }
+  }
+};
+}
+
+if (document.querySelector('.typewrite')) {
+typeWritEffect();
+}
+
+
+

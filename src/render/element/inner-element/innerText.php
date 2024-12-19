@@ -38,13 +38,19 @@ function render_innerText($innerElement, $slide)
     $borderRadiusRight = esc_attr($innerElement['backgroundBorderRadius']['right'] ?? '0px');
     $borderRadiusBottom = esc_attr($innerElement['backgroundBorderRadius']['bottom'] ?? '0px');
     $borderRadiusLeft = esc_attr($innerElement['backgroundBorderRadius']['left'] ?? '0px');
+    $horizontalPositionInnerText = esc_attr($innerElement['horizontalPositionInnerText'] ?? 0);
+    $verticalPositionInnerText = esc_attr($innerElement['verticalPositionInnerText'] ?? 0);
+    $positionInnerText = esc_attr($innerElement['positionInnerText'] ?? 'static');
     $borderRadius = "$borderRadiusTop $borderRadiusRight $borderRadiusBottom $borderRadiusLeft";
     $zIndexTitle = esc_attr($innerElement['zIndexTitle'] ?? 1);
+    $widthCursor = esc_attr($innerElement['widthCursor'] ?? '4px');
     $blendMode = esc_attr($innerElement['blendMode'] ?? 'normal');
     $isBold = isset($innerElement['fontStyle']['fontWeight']) && $innerElement['fontStyle']['fontWeight'] === "bold" ? "bold" : (isset($innerElement['fontWeight']) ? esc_attr($innerElement['fontWeight']) : "normal");
     $stylesTitle = 'font-size: clamp(' . $fontSizeMobile . 'px,' . $fontSizeTablet . 'vw, ' . $fontSize . 'px); '
         . 'color: ' . $color . '; '
-        . '--color-hover: ' . $colorHover . '; '
+        . '--color-hover-inner: ' . $colorHover . '; '
+        . '--color-cursor-inner: ' . $color . '; '
+        . '--cursor-width-inner: ' . $widthCursor . 'px; '
         . 'background-color: ' . $backgroundColor . '; '
         . 'text-align: ' . $textAlign . '; '
         . 'letter-spacing: ' . $letterSpacing . 'px; '
@@ -62,6 +68,9 @@ function render_innerText($innerElement, $slide)
         . 'text-orientation: ' . $textOrientation . ';'
         . 'transform: rotate(' . $rotate . 'deg);'
         . 'mix-blend-mode: ' . $blendMode . ';'
+        . 'left: ' . $horizontalPositionInnerText . 'px;'
+        . 'top: ' . $verticalPositionInnerText . 'px;'
+        . 'position: ' . $positionInnerText . ';'
         . 'z-index: ' . $zIndexTitle . ';'
         . 'border-radius: ' . $borderRadius . ';';
     if (!empty($innerElement['enableTextShadow'])) {
@@ -99,6 +108,10 @@ function render_innerText($innerElement, $slide)
     $desktopClass = $enableDesktop ? 'desktop-title-div-visible' : 'desktop-title-div-hidden';
     $tabletClass = $enableTablet ? 'tablet-title-div-visible' : 'tablet-title-div-hidden';
     $mobileClass = $enableMobile ? 'mobile-title-div-visible' : 'mobile-title-div-hidden';
+    $textTypeWriterOne = esc_attr($innerElement['textTypeWriterOne'] ?? '');
+    $textTypeWriterTwo = esc_attr($innerElement['textTypeWriterTwo'] ?? '');
+    $textTypeWriterThree = esc_attr($innerElement['textTypeWriterThree'] ?? '');
+    $textTypeWriterFour = esc_attr($innerElement['textTypeWriterFour'] ?? '');
 ?>
     <?php
     $widthTitle = $innerElement['widthTitleBlock'] ?? '100%';
@@ -183,10 +196,8 @@ function render_innerText($innerElement, $slide)
             data-skew-y-from="<?php echo esc_attr($innerElement['skewYFrom'] ?? 0); ?>"
             data-skew-y-to="<?php echo esc_attr($innerElement['skewYTo'] ?? 1); ?>"
             data-scale-custom-effect-in="<?php echo esc_attr($innerElement['scaleType'] ?? 'scale'); ?>"
-            data-text-color="<?php echo esc_attr($innerElement['textColor'] ?? ''); ?>"
             <?php endif;
             if ($innerElement['effectHover'] !== 'none') : ?>
-            data-text-color-hover="<?php echo esc_attr($innerElement['textColorHover'] ?? ''); ?>"
             data-effect-hover="<?php echo esc_attr($innerElement['effectHover'] ?? ''); ?>"
             data-scale-hover="<?php echo esc_attr($innerElement['scaleHover'] ?? 1); ?>"
             data-opacity-hover="<?php echo esc_attr($innerElement['opacityHover'] ?? 1); ?>"
@@ -205,6 +216,16 @@ function render_innerText($innerElement, $slide)
             <?php echo $link_start; ?>
             <?php echo $innerElement['content']; ?>
             <?php echo $link_end; ?>
+            <?php if ($innerElement['enableTypeWriter']) : ?>
+                <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($innerElement['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($innerElement['speedCursor']); ?>" data-type='[
+                        "<?php echo $textTypeWriterOne; ?>", 
+                        "<?php echo $textTypeWriterTwo; ?>", 
+                        "<?php echo $textTypeWriterThree; ?>", 
+                        "<?php echo $textTypeWriterFour; ?>"
+                    ]'>
+                </span>
+                <span class="wrap"></span>
+            <?php endif; ?>
         </<?php echo esc_attr($tag); ?>>
     </div>
 <?php } ?>

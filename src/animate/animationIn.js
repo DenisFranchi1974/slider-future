@@ -121,34 +121,6 @@ const getAnimationProps = (props, target) => {
   };
 };
 
-// In animationIn.js
-export const animateBar = (barRef, props={}) => {
- 
-  const {
-    duration = 500, // Imposta un valore di default se non è fornito
-    heightFrom =  '10px', // Altri valori dinamici se necessario
-    heightTo =  '25px',
-    easing = 'easeInQuint',
-    loop = true,
-  } = props;
-
-  if (barRef && barRef.current) { // Controlla che barRef e barRef.current siano definiti
-     // Converti il valore di loop in un numero
-  const loopCount = (typeof loop === 'string' && loop.toLowerCase() === 'true') ? Infinity : Number(loop);
-    anime({
-      targets: barRef.current,
-      height: [heightFrom, heightTo], // Usa valori dinamici per l'altezza
-      easing: easing,
-      opacity: 1,
-      duration: duration,
-      direction: 'alternate',
-      loop: loopCount,
-    });
-  } else {
-    console.error('barRef is not defined');
-  }
-};
-
 // Effect Block
 const blockTransition = (element, direction, animationProps = {}) => {
   
@@ -166,7 +138,7 @@ const blockTransition = (element, direction, animationProps = {}) => {
   element.style.position = "relative"; // Assicura che l'elemento sia relativo
   element.appendChild(block);
 
-  const container = element.closest(".content-title-slide");
+  const container = element.closest(".title-slide,.title-slide-div");
   if (container) {
     container.style.opacity = "1"; // Rendi il contenuto visibile
   }
@@ -423,9 +395,12 @@ export const customEffectIn = (target, props = {}) => {
   anime(animationTargets);
 };
 
-// Definisci gli effetti di animazione
-const getAnimationEffect = (effectName, container,  props = {}) => {
 
+// Definisci gli effetti di animazione
+const getAnimationEffect = (effectName,container,  props = {}) => {
+
+  container.style.opacity = 1; // Imposta l'opacità a 0 per l'animazione di ingresso
+ 
   const animationProps = getAnimationProps(props); // Usa getAnimationProps per ottenere le proprietà comuni
 
   switch (effectName) {
@@ -467,6 +442,7 @@ const getAnimationEffect = (effectName, container,  props = {}) => {
               rotateX: [animationProps.rotateXFrom, animationProps.rotateXTo],
               rotateY: [animationProps.rotateYFrom, animationProps.rotateYTo],
             };
+
             case 'skewSplit':
               return {
                 opacity: [animationProps.opacityFrom, animationProps.opacityTo],
@@ -544,11 +520,15 @@ const splitTextContent = (text, lettersRef) => {
     span.textContent = char === ' ' ? '\u00A0' : char; // Usa uno spazio non interrotto per gli spazi
     lettersRef.current[idx] = span; // Assegna il ref per l'animazione successiva
     return span;
+
   });
+ 
 };
 
   const animationProps = getAnimationProps(props);
+
   const lettersRef = { current: [] }; // Crea un ref per contenere le lettere splittate
+
 
   // Converti il valore di loop in un numero
   const loopCount = (typeof animationProps.loop === 'string' && animationProps.loop.toLowerCase() === 'true') ? Infinity : Number(animationProps.loop);
@@ -573,7 +553,6 @@ const splitTextContent = (text, lettersRef) => {
 
   // Ottieni l'effetto in base alla stringa dal selettore
   const animationEffect = getAnimationEffect(animationProps.textSplitEffect,container,props);
-
   // Creare una timeline per l'animazione
   anime.timeline({
     loop: loopCount,
@@ -589,7 +568,10 @@ const splitTextContent = (text, lettersRef) => {
     easing: animationProps.easing || 'linear', // Applica l'easing
     duration: animationProps.duration, // Durata dell'animazione
     delay: anime.stagger(animationProps.stagger ?? 200), // Stagger tra le lettere
+    
   });
+
+ 
 };
 
 // Definisci gli effetti hover

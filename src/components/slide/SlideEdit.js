@@ -72,6 +72,7 @@ import TextureIcon from '@mui/icons-material/Texture';
 import FlipIcon from '@mui/icons-material/Flip';
 import ScreenRotationAltIcon from '@mui/icons-material/ScreenRotationAlt';
 import MultipleStopIcon from '@mui/icons-material/MultipleStop';
+import { speed } from "animejs";
 
 
 const SlideEdit = ({
@@ -339,6 +340,9 @@ const SlideEdit = ({
       backgroundVerticalPadding: currentSettings.backgroundVerticalPadding,
       backgroundHorizontalPadding: currentSettings.backgroundHorizontalPadding,
       filter: "none",
+      divider: "none",
+      positionDivider:"top",
+      invertDivider: false,
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -747,6 +751,14 @@ const SlideEdit = ({
     effectHover: "none",
     widthTitle: "auto",
     borderStyle: "none",
+    enableTypeWriter: false,
+    textTypeWriterOne: "Hello",
+    textTypeWriterTwo: "World",
+    textTypeWriterThree: "!",
+    textTypeWriterFour: "!",
+    widthCursor:4,
+    breakCursor: 2000,
+    speedCursor: 200,
   };
   
   const addSlideTitle = (slideId) => {
@@ -1694,6 +1706,7 @@ const id = open ? 'custom-popover' : undefined;
                       <>
                        <WidgetsIcon />
                         {__("Advanced Mode", "cocoblocks")}
+                        <span className="beta-mode">{__('Beta','cocoblocks')}</span>
                       </>
                     }
                     checked={slide.developerMode}
@@ -1823,7 +1836,7 @@ const id = open ? 'custom-popover' : undefined;
                     showTooltip={true}
                     tooltipText={__("Nested blocks will fill the width of this container. Toggle to constrain.", "cocoblocks")}
                     tooltipTop = {'11px'}
-                    tooltipLeft = {'40%'}
+                    tooltipLeft = {'60%'}
                   />
               {slide.enableContentWidth && (
                 <>
@@ -2254,7 +2267,7 @@ const id = open ? 'custom-popover' : undefined;
                         {__("Position", "cocoblocks")}
                       </>
                     }
-                    value={slide.positionDivider || 'none'}
+                    value={slide.positionDivider || 'divider-top'}
                     onChange={(value) =>
                       updateSlidePositionDivider(slide.id, value)
                     }

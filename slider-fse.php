@@ -33,7 +33,7 @@ if (!function_exists('is_plugin_active')) {
     include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 }
 
-function cocoblocks_get_content($content_type = 'post', $include_categories = array(), $exclude_categories = array(), $order = 'ASC', $posts_per_page = 5, $exclude_post_id = null)
+function cocoblocks_get_content($content_type = 'post', $include_categories = array(), $exclude_categories = array(), $order = 'ASC', $posts_per_page = 5, $exclude_post_id = null, $specific_posts = array(), $latest_posts = false)
 {
     // Controlla se WooCommerce è attivo quando viene richiesto il tipo di contenuto 'product'
     if ($content_type === 'product' && !is_plugin_active('woocommerce/woocommerce.php')) {
@@ -60,14 +60,25 @@ function cocoblocks_get_content($content_type = 'post', $include_categories = ar
         'update_post_term_cache' => false, // Evita di caricare i termini inutilmente
     );
 
-    // Aggiungi il filtro per includere categorie se specificato
-    if (!empty($include_categories)) {
-        $args['category__in'] = array_map('intval', $include_categories);
-    }
+    // Se latest_posts è true, ignora gli altri filtri e recupera solo gli ultimi post
+    if ($latest_posts) {
+        $args['orderby'] = 'date';
+        $args['order'] = $order;
+    } else {
+        // Includi post specifici se specificato
+        if (!empty($specific_posts)) {
+            $args['post__in'] = array_map('intval', $specific_posts);
+        } else {
+            // Aggiungi il filtro per includere categorie se specificato
+            if (!empty($include_categories)) {
+                $args['category__in'] = array_map('intval', $include_categories);
+            }
 
-    // Aggiungi il filtro per escludere categorie se specificato
-    if (!empty($exclude_categories)) {
-        $args['category__not_in'] = array_map('intval', $exclude_categories);
+            // Aggiungi il filtro per escludere categorie se specificato
+            if (!empty($exclude_categories)) {
+                $args['category__not_in'] = array_map('intval', $exclude_categories);
+            }
+        }
     }
 
     // Escludi il post corrente se specificato
@@ -83,7 +94,6 @@ function cocoblocks_get_content($content_type = 'post', $include_categories = ar
     }
 
     $post_data = array();
-
     foreach ($posts as $post) {
         // Recupera l'autore
         $author_name = get_the_author_meta('display_name', $post->post_author);
@@ -142,30 +152,21 @@ function cocoblocks_register_rest_routes()
             $exclude_categories = $request->get_param('exclude_categories');
             $order = $request->get_param('order');
             $posts_per_page = $request->get_param('posts_per_page');
-            $include_categories = !empty($include_categories) ? explode(',', $include_categories) : array();
-            $exclude_categories = !empty($exclude_categories) ? explode(',', $exclude_categories) : array();
-            return cocoblocks_get_content('post', $include_categories, $exclude_categories, $order, $posts_per_page);
-        },
-        'permission_callback' => '__return_true',
-    ));
-
-    register_rest_route('cocoblocks/v1', '/get-posts/', array(
-        'methods' => 'GET',
-        'callback' => function (WP_REST_Request $request) {
-            $include_categories = $request->get_param('include_categories');
-            $exclude_categories = $request->get_param('exclude_categories');
-            $order = $request->get_param('order');
-            $posts_per_page = $request->get_param('posts_per_page');
             $exclude_post_id = $request->get_param('exclude_post_id'); // Recupera il parametro
+            $specific_posts = $request->get_param('specific_posts'); // Recupera il parametro
+            $latest_posts = $request->get_param('latest_posts') === 'true';
             $include_categories = !empty($include_categories) ? explode(',', $include_categories) : array();
             $exclude_categories = !empty($exclude_categories) ? explode(',', $exclude_categories) : array();
-            return cocoblocks_get_content('post', $include_categories, $exclude_categories, $order, $posts_per_page, $exclude_post_id);
+            $specific_posts = !empty($specific_posts) ? explode(',', $specific_posts) : array();
+
+            return cocoblocks_get_content('post', $include_categories, $exclude_categories, $order, $posts_per_page, $exclude_post_id, $specific_posts, $latest_posts);
         },
         'permission_callback' => '__return_true',
     ));
 }
 
 add_action('rest_api_init', 'cocoblocks_register_rest_routes');
+
 
 // Registra l'endpoint REST API per il caricamento delle immagini
 function register_custom_image_upload_endpoint()
@@ -242,7 +243,7 @@ function register_slider_settings_page()
 {
     add_menu_page(
         __('Slider Settings', 'your-text-domain'),    // Titolo della pagina
-        __('Slider', 'your-text-domain'),            // Testo del menu
+        __('Slider Future', 'your-text-domain'),            // Testo del menu
         'manage_options',                            // Capabilities richieste
         'slider-settings',                           // Slug della pagina
         'render_slider_settings_page',               // Callback per il rendering

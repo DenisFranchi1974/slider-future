@@ -6,9 +6,100 @@ import './editor-text.scss';
 const TextRender = ({ element, index, onPlay, className, onClick  }) => {
 
   const textRef = useRef(null); // Ref per il contenitore del testo
-  //const barRef = useRef(null); // Ref per il div che vuoi animare
+  const typewriteRef = useRef(null);
+
   const [hasPlayed, setHasPlayed] = useState(false); // Stato per tracciare se l'animazione è stata attivata
 
+  const [typewriterTexts, setTypewriterTexts] = useState([
+    element.textTypeWriterOne,
+    element.textTypeWriterTwo,
+    element.textTypeWriterThree,
+    element.textTypeWriterFour
+  ]);
+
+  useEffect(() => {
+    setTypewriterTexts([
+      element.textTypeWriterOne,
+      element.textTypeWriterTwo,
+      element.textTypeWriterThree,
+      element.textTypeWriterFour
+    ]);
+  }, [
+    element.textTypeWriterOne,
+    element.textTypeWriterTwo,
+    element.textTypeWriterThree,
+    element.textTypeWriterFour
+  ]);
+
+  useEffect(() => {
+    if (element.enableTypeWriter === true) {
+      class TxtType {
+        constructor(el, toRotate, period) {
+          // Rimuove i testi vuoti o assegna un array vuoto se `toRotate` non è valido
+          this.toRotate = Array.isArray(toRotate)
+            ? toRotate.filter(txt => txt.trim() !== "")
+            : [];
+          this.el = el;
+          this.loopNum = 0;
+          this.period = element.breakCursor || 2000;
+          this.txt = "";
+          this.isDeleting = false;
+          this.tick();
+        }
+        tick() {
+          const i = this.loopNum % this.toRotate.length;
+          const fullTxt = this.toRotate[i];
+  
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+  
+          this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
+  
+          let delta = element.speedCursor - Math.random() * 100;
+  
+          if (this.isDeleting) {
+            delta /= 2;
+          }
+  
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+  
+          setTimeout(() => this.tick(), delta);
+        }
+      }
+  
+      // Avvia l'effetto macchina da scrivere
+      if (typewriteRef.current) {
+        const toRotateAttr = typewriteRef.current.getAttribute("data-type");
+        const period = typewriteRef.current.getAttribute("data-period");
+  
+        // Controlla che `toRotateAttr` sia una stringa valida JSON
+        let toRotate = [];
+        try {
+          toRotate = JSON.parse(toRotateAttr) || [];
+        } catch (error) {
+          console.warn("data-type attribute is not valid JSON:", error);
+        }
+  
+        if (Array.isArray(toRotate) && toRotate.length > 0) {
+          new TxtType(typewriteRef.current, toRotate, period);
+        }
+      }
+    }
+  }, [element.enableTypeWriter]);
+  
+  
+
+  
   // Funzione per attivare l'animazione
   const playAnimation = () => {
     const effectIn = animationsIn[element.effectIn];
@@ -90,6 +181,8 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
   const stylesTitle = {
     fontSize: 'clamp(' + element.fontSizeMobile + 'px,' + element.fontSizeTablet + 'vw, ' + element.fontSize + 'px)',
     color: element.textColor,
+    '--color-cursor': element.textColor,
+    '--cursor-width': element.widthCursor + "px",
     '--color-hover': element.textColorHover,
     backgroundColor: element.backgroundColor,
     textAlign: element.textAlign,
@@ -165,9 +258,18 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
         })} // Passa element.duration
       >
         {element.text}
-      </Tag>
       
-     {/* <div ref={barRef} style={{ width: '100%', height: '0px', backgroundColor: 'black' }}></div>*/}
+        {element.enableTypeWriter && (
+  <>
+          <span
+            ref={typewriteRef}
+            data-period="2000"
+            data-type={JSON.stringify(typewriterTexts)}
+          ></span>
+          <span className="wrap"></span>
+        </>
+      )}
+      </Tag>
     </div>
   );
 };

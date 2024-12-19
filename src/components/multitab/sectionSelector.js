@@ -19,11 +19,10 @@ const SectionSelector = ({ onSectionChange }) => {
   };
 
   return (
+    <div className="content-section-selector">
     <ButtonGroup
       className="section-selector"
       style={{
-        marginLeft: "-16px",
-        marginRight: "-16px",
         marginBottom: "18px",
       }}
     >
@@ -96,6 +95,7 @@ const SectionSelector = ({ onSectionChange }) => {
       >
       </Button>
     </ButtonGroup>
+    </div>
   );
 };
 
