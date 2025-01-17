@@ -190,7 +190,7 @@ const ButtonRender = ({ element, selectedIcon, onPlay}) => {
    const buttonContentStyle3 = {
     width:
           element.widthButton === "custom"
-            ? `${element.widthCustomButton}%`
+            ? `${element.widthCustomButton}px`
             : element.widthButton,
     transform:'rotate('+element.rotateButton+'deg)',
     margin: `${element.marginButton?.top} ${element.marginButton?.right} ${element.marginButton?.bottom} ${element.marginButton?.left}`,

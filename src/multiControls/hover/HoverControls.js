@@ -277,14 +277,14 @@ const CustomHoverControls = ({
           marginTop: "-18px",
         }}
       >
-        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
       </div>
       <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
             label={
               <>
                 <GrainIcon />
-                {__("Effects", "cocoblocks")}
+                {__("Effects", "slider-future")}
               </>
             }
             value={valueEffectHover}
@@ -316,7 +316,7 @@ const CustomHoverControls = ({
               <Icon icon={buttonIcon} />
             </span>
           )}
-          <span>{buttonTitle || __('Set Color', 'cocoblocks')}</span>
+          <span>{buttonTitle || __('Set Color', 'slider-future')}</span>
         </div>
         <div 
           className="color-indicator" 
@@ -348,7 +348,7 @@ const CustomHoverControls = ({
           label={
             <>
               <OpacityIcon />
-              {__("Opacity", "cocoblocks")}
+              {__("Opacity", "slider-future")}
             </>
           }
           value={valueOpacityHover ?? 1}
@@ -362,7 +362,7 @@ const CustomHoverControls = ({
           label={
             <>
               <DeblurIcon />
-              {__("Blur", "cocoblocks")}
+              {__("Blur", "slider-future")}
             </>
           }
           value={valueBlurHover ?? 0}
@@ -378,7 +378,7 @@ const CustomHoverControls = ({
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X", "cocoblocks")}
+              {__("Translate X", "slider-future")}
             </>
           }
           value={valueTranslateXHover ?? 100}
@@ -392,7 +392,7 @@ const CustomHoverControls = ({
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y", "cocoblocks")}
+               {__("Translate Y", "slider-future")}
             </>
           }
           value={valueTranslateYHover ?? 0}
@@ -409,7 +409,7 @@ const CustomHoverControls = ({
             label={
               <>
                 <LinearScaleIcon />
-                {__("Choose the scale", "cocoblocks")}
+                {__("Choose the scale", "slider-future")}
               </>
             }
             value={valueScaleTypeHover ?? 'scale'}
@@ -424,7 +424,7 @@ const CustomHoverControls = ({
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale", "cocoblocks")}
+                {__("Scale", "slider-future")}
             </>
           }
           value={valueScaleHover ?? 1}
@@ -442,7 +442,7 @@ const CustomHoverControls = ({
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate", "cocoblocks")}
+                {__("Rotate", "slider-future")}
             </>
           }
           value={valueRotateHover ?? 0}
@@ -456,7 +456,7 @@ const CustomHoverControls = ({
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X", "cocoblocks")}
+                {__("Rotate X", "slider-future")}
             </>
           }
           value={valueRotateXHover ?? 0}
@@ -470,7 +470,7 @@ const CustomHoverControls = ({
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y", "cocoblocks")}
+               {__("Rotate Y", "slider-future")}
             </>
           }
           value={valueRotateYHover ?? 0}
@@ -488,7 +488,7 @@ const CustomHoverControls = ({
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X", "cocoblocks")}
+                {__("Skew X", "slider-future")}
             </>
           }
           value={valueSkewXHover ?? 0}
@@ -502,7 +502,7 @@ const CustomHoverControls = ({
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y", "cocoblocks")}
+                 {__("Skew Y", "slider-future")}
             </>
           }
           value={valueSkewYHover ?? 0}
@@ -518,7 +518,7 @@ const CustomHoverControls = ({
           label={
             <>
                  <HourglassBottomIcon />
-                 {__("Duration", "cocoblocks")}
+                 {__("Duration", "slider-future")}
             </>
           }
           value={valueDurationHover ?? 800}
@@ -532,7 +532,7 @@ const CustomHoverControls = ({
             label={
               <>
                 <SwapCallsIcon />
-                {__("Easing", "cocoblocks")}
+                {__("Easing", "slider-future")}
               </>
             }
             value={valueEasingHover ?? 'linear'}

@@ -123,7 +123,7 @@ function render_innerIcon($innerElement, $slide)
     }
     $stylesDiv = '';
     if (isset($innerElement['width'])) {
-        $stylesDiv .= "width: " . ($innerElement['width'] === 'custom' ? esc_attr($innerElement['widthCustom']) . "%" : esc_attr($innerElement['width'])) . "; ";
+        $stylesDiv .= "width: " . ($innerElement['width'] === 'custom' ? esc_attr($innerElement['widthCustom']) . "px" : esc_attr($innerElement['width'])) . "; ";
     }
     if (isset($innerElement['align'])) {
         $inline_style .= "justify-content: " . esc_attr($innerElement['align']) . "; ";

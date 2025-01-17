@@ -74,14 +74,14 @@ const CustomVisibilityControls = ({
             }}
         >
             <h2 className="title-custom-panel">
-            {__("Visibility", "cocoblocks")}
+            {__("Visibility", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
         <CustomToggleControl
             label={<>
                 <PersonalVideoIcon />
-                {__("Desktop", "cocoblocks")}
+                {__("Desktop", "slider-future")}
               </>}
             checked={valueDesktop ?? true}
             onChange={handleChangeDesktop}
@@ -90,7 +90,7 @@ const CustomVisibilityControls = ({
         <CustomToggleControl
             label={<>
                 <TabletMacIcon />
-                {__("Tablet", "cocoblocks")}
+                {__("Tablet", "slider-future")}
               </>}
             checked={valueTablet ?? true}
             onChange={handleChangeTablet}
@@ -99,7 +99,7 @@ const CustomVisibilityControls = ({
         <CustomToggleControl
             label={<>
                 <SmartphoneIcon />
-                {__("Mobile", "cocoblocks")}
+                {__("Mobile", "slider-future")}
               </>}
             checked={valueMobile ?? true}
             onChange={handleChangeMobile}

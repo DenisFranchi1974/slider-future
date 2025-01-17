@@ -13,7 +13,6 @@ import InnerTextEdit from "../innertext/InnerTextEdit";
 import InnerImageEdit from "../innerimage/InnerImageEdit";
 import SectionSelector from "../multitab/sectionSelector";
 import CustomTextControl from "../../controls/text/TextControl";
-import AlignmentControl from "../align/aligncontrol";
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomActionControls from "../../multiControls/action";
 import CustomVisibilityControls from "../../multiControls/visibility";
@@ -34,7 +33,6 @@ import PaletteIcon from '@mui/icons-material/Palette';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import SettingsEthernetOutlinedIcon from '@mui/icons-material/SettingsEthernetOutlined';
 import WrapTextOutlinedIcon from '@mui/icons-material/WrapTextOutlined';
-import AlignHorizontalLeftOutlinedIcon from '@mui/icons-material/AlignHorizontalLeftOutlined';
 import WidthWideOutlinedIcon from '@mui/icons-material/WidthWideOutlined';
 import HeightOutlinedIcon from '@mui/icons-material/HeightOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
@@ -54,6 +52,10 @@ import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import ViewColumnIcon from '@mui/icons-material/ViewColumn';
+import AlignHorizontalCenterIcon from '@mui/icons-material/AlignHorizontalCenter';
+import AlignVerticalCenterIcon from '@mui/icons-material/AlignVerticalCenter';
+import AppsIcon from '@mui/icons-material/Apps';
 
 const GroupEdit = ({
   slide,
@@ -307,7 +309,7 @@ const GroupEdit = ({
                       ...(element.innerElements || []),
                       {
                         type: "text", 
-                        content: __("Text Inner Group", "cocoblocks"),
+                        content: __("Text Inner Group", "slider-future"),
                         fontSize: 24,
                         fontSizeTablet: 16,
                         fontSizeMobile: 16,
@@ -619,7 +621,7 @@ const GroupEdit = ({
                       ...(element.innerElements || []),
                       {
                         type: 'button',
-                button:__(' Click Here', 'cocoblocks'),
+                button:__(' Click Here', 'slider-future'),
                 buttonType: buttonType,
                 ...defaultValues[buttonType], 
                 enableDesktopButton: true,
@@ -755,17 +757,17 @@ const GroupEdit = ({
         <div className="title-block-added">
           <div className="title-element">
             <AutoAwesomeMosaicIcon />
-            <h2>{element.nameGroup ? truncateText(element.nameGroup, 10) : __("Group", "slider")}</h2>
+            <h2>{element.nameGroup ? truncateText(element.nameGroup, 10) : __("Group", "slider-future")}</h2>
           </div>
           <div className="title-element">
           <Button
               onClick={() => removeSlideDiv(slide.id, elementIndex)}
               isDestructive
               icon={<DeleteOutlineIcon />}
-              label={__("Remove group", "cocoblocks")}
+              label={__("Remove group", "slider-future")}
               className="button-remove-element"
             />
-          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider-future') : __('Open Controls','slider-future')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
               <KeyboardArrowUpIcon/>
@@ -789,7 +791,7 @@ const GroupEdit = ({
               }}
             >
               <h2 className="title-custom-panel">
-                {__("Content", "cocoblocks")}
+                {__("Content", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -797,7 +799,7 @@ const GroupEdit = ({
                  label={
                   <>
                     <LibraryAddOutlinedIcon />
-                    {__("Add name group", "cocoblocks")}
+                    {__("Add name group", "slider-future")}
                   </>
                 }
                   value={element.nameGroup}
@@ -808,8 +810,8 @@ const GroupEdit = ({
                   elementIndex={elementIndex}
                   elementType="div"
                   showTooltip={true}
-                  tooltipText={__("Useful if you have many groups inside the slide!", "cocoblocks")}
-                  placeholder={__("Add name group...", "cocoblocks")}
+                  tooltipText={__("Useful if you have many groups inside the slide!", "slider-future")}
+                  placeholder={__("Add name group...", "slider-future")}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'nameGroup')
                   }
@@ -821,19 +823,19 @@ const GroupEdit = ({
             >
               <Button
                 onClick={() => addSlideTitleDiv(slide.id, elementIndex)}
-                label={__("Add inner text", "slide")}
+                label={__("Add inner text", "slider-future")}
               >
                 <PostAddOutlinedIcon />
               </Button>
               <Button
                 onClick={() => addSlideImageDiv(slide.id, elementIndex)} // Assicurati di passare elementIndex o divIndex
-                label={__("Add inner image", "slide")}
+                label={__("Add inner image", "slider-future")}
               >
                 <AddPhotoAlternateOutlinedIcon />
               </Button>
               <Button
                 onClick={() => openModalButton(slide.id, elementIndex)} // Passa slide.id e elementIndex
-                label={__("Add inner button", "slide")}
+                label={__("Add inner button", "slider-future")}
               >
                 <SmartButtonOutlinedIcon />
               </Button>
@@ -847,7 +849,7 @@ const GroupEdit = ({
             )}
              <Button
                 onClick={() => addSlideIconDiv(slide.id, elementIndex)}
-                label={__("Add inner icon", "slide")}
+                label={__("Add inner icon", "slider-future")}
               >
                  <WbCloudyOutlinedIcon />
               </Button>
@@ -863,14 +865,14 @@ const GroupEdit = ({
               }}
             >
               <h2 className="title-custom-panel">
-                {__("Background", "cocoblocks")}
+                {__("Background", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
             <CustomColorOptionsPanel
                   colorNormal={element.backgroundColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'div', 'backgroundColor')}
-                  buttonTitle={__("Background Color", "cocoblocks")}
+                  buttonTitle={__("Background Color", "slider-future")}
                   buttonIcon={<PaletteIcon style={{
                     marginBottom: "-5px",
                     width: "20px",
@@ -888,7 +890,7 @@ const GroupEdit = ({
             </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Layout", "cocoblocks")}
+                {__("Layout", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -896,7 +898,117 @@ const GroupEdit = ({
               label={
                 <>
                   <DashboardOutlinedIcon />
-                  {__("Content direction", "cocoblocks")}
+                  {__("Display", "slider-future")}
+                </>
+              }
+              value={element.displayDiv}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'displayDiv')
+              }
+              selectOptions={[
+                {
+                  label: __("Flex", "slider-future"),
+                  value: "flex",
+                },
+                {
+                  label: __("Grid", "slider-future"),
+                  value: "grid",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+             {element.displayDiv === "grid" && (
+              <>
+              <CustomSelectControl
+              label={
+                <>
+                  <AppsIcon />
+                  {__("Grid item position", "slider-future")}
+                </>
+              }
+              value={element.itemGridPositionDiv}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'itemGridPositionDiv')
+              }
+              selectOptions={[
+                {
+                  label: __("Auto", "slider-future"),
+                  value: "auto",
+                },
+                {
+                  label: __("Manual", "slider-future"),
+                  value: "manual",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+            {element.itemGridPositionDiv === "auto" && (
+                <CustomRangeControl
+                label={
+                  <>
+                    <SettingsEthernetOutlinedIcon />
+                    {__("Minimum column width", "slider-future")}
+                  </>
+                }
+                value={element.itemGridWidthDiv ?? 150}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={0}
+                max={600}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="div"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'itemGridWidthDiv')
+                }
+                showTooltip={false} // Mostra il tooltip
+              />
+            )}
+             {element.itemGridPositionDiv === "manual" && (
+                <CustomRangeControl
+                label={
+                  <>
+                    <ViewColumnIcon />
+                    {__("Columns", "slider-future")}
+                  </>
+                }
+                value={element.itemGridColumnDiv ?? 5}
+                slides={slides}
+                setAttributes={setAttributes}
+                min={1}
+                max={16}
+                step={1}
+                updateType="primary"
+                slideId={slide.id}
+                elementIndex={elementIndex}
+                elementType="div"
+                updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'itemGridColumnDiv')
+                }
+                showTooltip={false} // Mostra il tooltip
+              />
+            )}
+            </>
+            )}
+            {element.displayDiv === "flex" && (
+              <>
+            <CustomSelectControl
+              label={
+                <>
+                  <ViewColumnIcon />
+                  {__("Content direction", "slider-future")}
                 </>
               }
               value={element.layoutDiv}
@@ -911,20 +1023,202 @@ const GroupEdit = ({
               }
               selectOptions={[
                 {
-                  label: __("Column", "slider"),
-                  value: "vertical",
+                  label: __("Column", "slider-future"),
+                  value: "column",
                 },
                 {
-                  label: __("Row", "slider"),
-                  value: "horizontal",
+                  label: __("Row", "slider-future"),
+                  value: "row",
                 },
               ]} // Passa le opzioni dinamiche
             />
+            {element.layoutDiv === "row" && (
+              <>
+              <CustomSelectControl
+              label={
+                <>
+                  <AlignHorizontalCenterIcon />
+                  {__("Justification", "slider-future")}
+                </>
+              }
+              value={element.layoutJustifyDiv}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'layoutJustifyDiv')
+              }
+              selectOptions={[
+                {
+                  label: __("Left", "slider-future"),
+                  value: "flex-start",
+                },
+                {
+                  label: __("Center", "slider-future"),
+                  value: "center",
+                },
+                {
+                  label: __("Right", "slider-future"),
+                  value: "flex-end",
+                },
+                {
+                  label: __("Space between", "slider-future"),
+                  value: "space-between",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+              <CustomSelectControl
+              label={
+                <>
+                  <AlignVerticalCenterIcon />
+                  {__("Vertical alignment", "slider-future")}
+                </>
+              }
+              value={element.layoutVerticalAlignDivRow}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'layoutVerticalAlignDivRow')
+              }
+              selectOptions={[
+                {
+                  label: __("Top", "slider-future"),
+                  value: "flex-start",
+                },
+                {
+                  label: __("Middle", "slider-future"),
+                  value: "center",
+                },
+                {
+                  label: __("Bottom", "slider-future"),
+                  value: "flex-end",
+                },
+                {
+                  label: __("Stretch to fill", "slider-future"),
+                  value: "stretch",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+            </>
+            )}
+            {element.layoutDiv === "column" && (
+              <>
+            <CustomSelectControl
+              label={
+                <>
+                  <AlignHorizontalCenterIcon />
+                  {__("Justification", "slider-future")}
+                </>
+              }
+              value={element.layoutJustifyDivColumn}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'layoutJustifyDivColumn')
+              }
+              selectOptions={[
+                {
+                  label: __("Left", "slider-future"),
+                  value: "flex-start",
+                },
+                {
+                  label: __("Center", "slider-future"),
+                  value: "center",
+                },
+                {
+                  label: __("Right", "slider-future"),
+                  value: "flex-end",
+                },
+                {
+                  label: __("Stretch", "slider-future"),
+                  value: "stretch",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+             <CustomSelectControl
+              label={
+                <>
+                  <AlignVerticalCenterIcon />
+                  {__("Vertical alignment", "slider-future")}
+                </>
+              }
+              value={element.layoutVerticalAlignDivColumn}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'layoutVerticalAlignDivColumn')
+              }
+              selectOptions={[
+                {
+                  label: __("Top", "slider-future"),
+                  value: "flex-start",
+                },
+                {
+                  label: __("Middle", "slider-future"),
+                  value: "center",
+                },
+                {
+                  label: __("Bottom", "slider-future"),
+                  value: "flex-end",
+                },
+                {
+                  label: __("Space between", "slider-future"),
+                  value: "space-between",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+            </>
+            )}
+             <CustomSelectControl
+              label={
+                <>
+                  <WrapTextOutlinedIcon />
+                  {__("Flex wrap", "slider-future")}
+                </>
+              }
+              value={element.layoutWrap}
+              slides={slides}
+              setAttributes={setAttributes}
+              updateType="primary"
+              slideId={slide.id}
+              elementIndex={elementIndex}
+              elementType="div"
+              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
+                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'layoutWrap')
+              }
+              selectOptions={[
+                {
+                  label: __("Wrap", "slider-future"),
+                  value: "wrap",
+                },
+                {
+                  label: __("No Wrap", "slider-future"),
+                  value: "nowrap",
+                },
+              ]} // Passa le opzioni dinamiche
+            />
+            </>
+            )}
             <CustomRangeControl
               label={
                 <>
                   <SettingsEthernetOutlinedIcon />
-                  {__("Gap between items", "cocoblocks")}
+                  {__("Gap between items", "slider-future")}
                 </>
               }
               value={element.gapItemsDiv}
@@ -942,76 +1236,11 @@ const GroupEdit = ({
               }
               showTooltip={false} // Mostra il tooltip
             />
-              <div className="custom-select">
-                <AlignmentControl
-                  value={element.positionDiv}
-                  onChange={(newPositionDiv) =>
-                    updateSlidePositionDiv(
-                      slide.id,
-                      elementIndex,
-                      newPositionDiv
-                    )
-                  }
-                />
-              </div>
-              <CustomSelectControl
-              label={
-                <>
-                  <WrapTextOutlinedIcon />
-                  {__("Flex wrap", "cocoblocks")}
-                </>
-              }
-              value={element.layoutWrap}
-              slides={slides}
-              setAttributes={setAttributes}
-              updateType="primary"
-              slideId={slide.id}
-              elementIndex={elementIndex}
-              elementType="div"
-              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'layoutWrap')
-              }
-              selectOptions={[
-                {
-                  label: __("Wrap", "slider"),
-                  value: "wrap",
-                },
-                {
-                  label: __("No Wrap", "slider"),
-                  value: "nowrap",
-                },
-              ]} // Passa le opzioni dinamiche
-            />
-              {element.layoutWrap === "wrap" && (
-                 <CustomSelectControl
-                 label={
-                   <>
-                     <AlignHorizontalLeftOutlinedIcon />
-                     {__("Justify in responsive", "cocoblocks")}
-                   </>
-                 }
-                 value={element.justifyContentResponsiveDiv}
-                 slides={slides}
-                 setAttributes={setAttributes}
-                 updateType="primary"
-                 slideId={slide.id}
-                 elementIndex={elementIndex}
-                 elementType="div"
-                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'justifyContentResponsiveDiv')
-                 }
-                 selectOptions={[
-                  { label: "Left", value: "left" },
-                  { label: "Center", value: "center" },
-                  { label: "Right", value: "right" },
-                ]} // Passa le opzioni dinamiche
-               />
-              )}
                  <CustomSelectControl
                  label={
                    <>
                      <WidthWideOutlinedIcon />
-                     {__("Content width", "cocoblocks")}
+                     {__("Content width", "slider-future")}
                    </>
                  }
                  value={element.contentWidthDiv}
@@ -1035,7 +1264,7 @@ const GroupEdit = ({
                  label={
                    <>
                      <HeightOutlinedIcon style={{transform:'rotate(90deg)'}} />
-                     {__("Custom width", "cocoblocks")}
+                     {__("Custom width", "slider-future")}
                    </>
                  }
                  value={element.customContentWidthDiv}
@@ -1058,7 +1287,7 @@ const GroupEdit = ({
                  label={
                    <>
                      <WidthWideOutlinedIcon style={{transform:'rotate(90deg)'}} />
-                     {__("Content height", "cocoblocks")}
+                     {__("Content height", "slider-future")}
                    </>
                  }
                  value={element.contentHeightDiv}
@@ -1082,7 +1311,7 @@ const GroupEdit = ({
                 label={
                   <>
                     <HeightOutlinedIcon />
-                    {__("Custom height", "cocoblocks")}
+                    {__("Custom height", "slider-future")}
                   </>
                 }
                 value={element.customContentHeightDiv}
@@ -1105,7 +1334,7 @@ const GroupEdit = ({
                  label={
                    <>
                      <CodeOutlinedIcon />
-                     {__("Element html", "cocoblocks")}
+                     {__("Element html", "slider-future")}
                    </>
                  }
                  value={element.elementDiv}
@@ -1123,7 +1352,7 @@ const GroupEdit = ({
               </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Spacings", "cocoblocks")}
+                {__("Spacings", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1131,7 +1360,7 @@ const GroupEdit = ({
                 label={
                   <>
                     <VerticalAlignTopOutlinedIcon />
-                    {__("Content vertical padding", "cocoblocks")}
+                    {__("Content vertical padding", "slider-future")}
                   </>
                 }
                 value={element.backgroundVerticalPaddingDiv}
@@ -1153,7 +1382,7 @@ const GroupEdit = ({
                 label={
                   <>
                     <StartOutlinedIcon />
-                    {__("Content horizontal padding", "cocoblocks")}
+                    {__("Content horizontal padding", "slider-future")}
                   </>
                 }
                 value={element.backgroundHorizontalPaddingDiv}
@@ -1177,7 +1406,7 @@ const GroupEdit = ({
                   label={
                     <>
                       <MarginIcon/>
-                      {__("Margin", "cocoblocks")}
+                      {__("Margin", "slider-future")}
                     </>
                   }
                   values={element.marginDiv}
@@ -1190,7 +1419,7 @@ const GroupEdit = ({
             </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Border", "cocoblocks")}
+                {__("Border", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1198,7 +1427,7 @@ const GroupEdit = ({
                 label={
                   <>
                     <BorderStyleIcon />
-                    {__("Border style", "cocoblocks")}
+                    {__("Border style", "slider-future")}
                   </>
                 }
                 value={element.borderStyleDiv}
@@ -1218,7 +1447,7 @@ const GroupEdit = ({
                  <CustomColorOptionsPanel
                   colorNormal={element.backgroundBorderColorDiv }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'div', 'backgroundBorderColorDiv')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1235,7 +1464,7 @@ const GroupEdit = ({
                   label={
                     <>
                       <BorderLeftIcon />
-                      {__("Border width", "cocoblocks")}
+                      {__("Border width", "slider-future")}
                     </>
                   }
                   values={element.backgroundBorderSizeDiv}
@@ -1251,7 +1480,7 @@ const GroupEdit = ({
                   label={
                     <>
                       <BorderInnerIcon />
-                      {__("Border radius", "cocoblocks")}
+                      {__("Border radius", "slider-future")}
                     </>
                   }
                   values={element.backgroundBorderRadiusDiv}
@@ -1275,7 +1504,7 @@ const GroupEdit = ({
               }}
             >
               <h2 className="title-custom-panel">
-                {__("Basic Transforms", "cocoblocks")}
+                {__("Basic Transforms", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1283,7 +1512,7 @@ const GroupEdit = ({
                 label={
                   <>
                     <RotateRightIcon />
-                    {__("Rotate", "cocoblocks")}
+                    {__("Rotate", "slider-future")}
                   </>
                 }
                 value={element.rotateDiv || 0}
@@ -1304,7 +1533,7 @@ const GroupEdit = ({
             </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Transparency Setting", "cocoblocks")}
+                {__("Transparency Setting", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1312,7 +1541,7 @@ const GroupEdit = ({
               label={
                 <>
                   <OpacityIcon />
-                  {__("Opacity", "cocoblocks")}
+                  {__("Opacity", "slider-future")}
                 </>
               }
               value={element.opacityDiv || 1}
@@ -1332,7 +1561,7 @@ const GroupEdit = ({
             </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("LEVEL", "cocoblocks")}
+              {__("LEVEL", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1340,7 +1569,7 @@ const GroupEdit = ({
               label={
                 <>
                   <LayersClearIcon />
-                  {__("Z-index", "cocoblocks")}
+                  {__("Z-index", "slider-future")}
                 </>
               }
               value={element.zIndexDiv || 1}
@@ -1362,7 +1591,7 @@ const GroupEdit = ({
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1469,7 +1698,7 @@ const GroupEdit = ({
            valueEffectHover={element.effectHover}
            colorNormal={element.backgroundColorImageHover } 
            setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'div', 'backgroundColorHover')}
-           buttonTitle={__("Background Color", "cocoblocks")}    
+           buttonTitle={__("Background Color", "slider-future")}    
            buttonIcon={ <PaletteIcon style={{marginBottom:'-3px'}} />}  
            valueOpacityHover={element.opacityHover}
             valueBlurHover={element.filterHover}
@@ -1561,7 +1790,7 @@ const GroupEdit = ({
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1588,22 +1817,22 @@ const GroupEdit = ({
       return (
         <div key={innerIndex}>
            <div className={"button-move-element-div"}>
-                  <Tooltip text={__("Move before", "cocoblocks")}>
+                  <Tooltip text={__("Move before", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
                       size="small"
                       disabled={innerIndex === 0 || isSingleInnerElement}
-                      label={__("Move before", "cocoblocks")}
+                      label={__("Move before", "slider-future")}
                     >
                       ↑
                     </Button>
                   </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
+                  <Tooltip text={__("Move after", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
                       size="small"
                       disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
-                      label={__("Move after", "cocoblocks")}
+                      label={__("Move after", "slider-future")}
                     >
                       ↓
                     </Button>
@@ -1639,22 +1868,22 @@ const GroupEdit = ({
               return (
             <div key={imageIndex}>
                <div className={"button-move-element-div"}>
-                  <Tooltip text={__("Move before", "cocoblocks")}>
+                  <Tooltip text={__("Move before", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, imageIndex, slides, setAttributes)}
                       size="small"
                       disabled={imageIndex === 0 || isSingleInnerElement}
-                      label={__("Move before", "cocoblocks")}
+                      label={__("Move before", "slider-future")}
                     >
                       ↑
                     </Button>
                   </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
+                  <Tooltip text={__("Move after", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, imageIndex, slides, setAttributes)}
                       size="small"
                       disabled={imageIndex === element.innerElements.length - 1 || isSingleInnerElement}
-                      label={__("Move after", "cocoblocks")}
+                      label={__("Move after", "slider-future")}
                     >
                       ↓
                     </Button>
@@ -1685,22 +1914,22 @@ const GroupEdit = ({
               return (
             <div key={innerIndex}>
                <div className={"button-move-element-div"}>
-                  <Tooltip text={__("Move before", "cocoblocks")}>
+                  <Tooltip text={__("Move before", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
                       size="small"
                       disabled={innerIndex === 0 || isSingleInnerElement}
-                      label={__("Move before", "cocoblocks")}
+                      label={__("Move before", "slider-future")}
                     >
                       ↑
                     </Button>
                   </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
+                  <Tooltip text={__("Move after", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
                       size="small"
                       disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
-                      label={__("Move after", "cocoblocks")}
+                      label={__("Move after", "slider-future")}
                     >
                       ↓
                     </Button>
@@ -1732,22 +1961,22 @@ const GroupEdit = ({
               return (
             <div key={innerIndex}>
                <div className={"button-move-element-div"}>
-                  <Tooltip text={__("Move before", "cocoblocks")}>
+                  <Tooltip text={__("Move before", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementUp(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
                       size="small"
                       disabled={innerIndex === 0 || isSingleInnerElement}
-                      label={__("Move before", "cocoblocks")}
+                      label={__("Move before", "slider-future")}
                     >
                       ↑
                     </Button>
                   </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
+                  <Tooltip text={__("Move after", "slider-future")}>
                     <Button
                       onClick={() => moveInnerElementDown(slides.indexOf(slide), elementIndex, innerIndex, slides, setAttributes)}
                       size="small"
                       disabled={innerIndex === element.innerElements.length - 1 || isSingleInnerElement}
-                      label={__("Move after", "cocoblocks")}
+                      label={__("Move after", "slider-future")}
                     >
                       ↓
                     </Button>

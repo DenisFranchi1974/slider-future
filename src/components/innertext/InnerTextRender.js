@@ -226,7 +226,7 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
                       opacity: textDiv.opacity,
                       width:
                         textDiv.widthTitleBlock === "custom"
-                          ? `${textDiv.widthCustomTitleBlock}%`
+                          ? `${textDiv.widthCustomTitleBlock}px`
                           : textDiv.widthTitleBlock,
                     }}
                     className={

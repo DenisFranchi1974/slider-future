@@ -64,7 +64,7 @@ const NavigationButtons = ({
         )}
         {navigationIcons === "text" && (
           <span style={{ color: navColor, fontSize: sizeNav + "px" }}>
-            {__("Next", "cocoblocks")}
+            {__("Next", "slider-future")}
           </span>
         )}
       </div>
@@ -95,7 +95,7 @@ const NavigationButtons = ({
         )}
         {navigationIcons === "text" && (
           <span style={{ color: navColor, fontSize: sizeNav + "px" }}>
-            {__("Prev", "cocoblocks")}
+            {__("Prev", "slider-future")}
           </span>
         )}
       </div>

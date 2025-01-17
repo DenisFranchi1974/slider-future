@@ -95,10 +95,27 @@ const GroupRender = ({ element, index, onPlay,handlePlayInnerText,playAnimationI
 
   const stylesDiv = {
     backgroundColor: element.backgroundColor || "transparent",
-    display: "flex",
-    flexWrap: element.layoutWrap,
-    '--justify-content-responsive-div': element.justifyContentResponsiveDiv || 'center',
-    flexDirection: element.layoutDiv === "horizontal" ? "row" : "column",
+    display: element.displayDiv || "flex",
+    ...(element.displayDiv === "flex" && {
+      flexWrap: element.layoutWrap,
+      flexDirection: element.layoutDiv || "row",
+    ...(element.layoutDiv === "row" && {
+    justifyContent: element.layoutJustifyDiv || "center",
+    alignItems: element.layoutVerticalAlignDivRow || "center",
+    }),
+    ...(element.layoutDiv === "column" && {
+    justifyContent: element.layoutVerticalAlignDivColumn || "center",
+    alignItems: element.layoutJustifyDivColumn || "center",
+    }),
+    }),
+    ...(element.displayDiv === "grid" && {
+      ...(element.itemGridPositionDiv === "auto" && {
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min('+ element.itemGridWidthDiv +'px, 100%), 1fr))',
+      }),
+      ...(element.itemGridPositionDiv === "manual" && {
+        gridTemplateColumns: 'repeat(' + element.itemGridColumnDiv + ', minmax(0, 1fr))',
+    }),
+    }),
     rotate: element.rotateDiv + "deg",
     position: "relative",
     visibility: "visible",
@@ -136,11 +153,7 @@ const GroupRender = ({ element, index, onPlay,handlePlayInnerText,playAnimationI
     >
       <DivBlock
         className={
-          "div-slide " +
-          element.positionDiv +
-          " " +
-          element.layoutDiv +
-          "-layout " 
+          "div-slide " 
         }
         key={index}
         style={stylesDiv}

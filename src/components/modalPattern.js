@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button } from "@wordpress/components";
 import { useSelect, dispatch, select } from "@wordpress/data";
 import { BlockPreview } from "@wordpress/block-editor";
@@ -8,7 +8,7 @@ const TextPatternSelectionModal = ({ onClose }) => {
   const patterns = useSelect((select) => select("core").getBlockPatterns(), []);
 
   if (!patterns) {
-    return <p>{__("Loading patterns...", "text-domain")}</p>;
+    return <p>{__("Loading patterns...", "slider-future")}</p>;
   }
 
   // Filtra i pattern per la categoria "text"
@@ -36,7 +36,7 @@ const TextPatternSelectionModal = ({ onClose }) => {
   return (
     <Modal
       onRequestClose={onClose}
-      title={__("Select a Slider Pattern", "text-domain")}
+      title={__("Select a Slider Pattern", "slider-future")}
       isFullScreen={true}
       className="slider-pattern-selection-modal"
     >
@@ -50,13 +50,13 @@ const TextPatternSelectionModal = ({ onClose }) => {
                 blocks={wp.blocks.parse(pattern.content)}
               />
               <Button isPrimary onClick={() => handleSelect(pattern)}>
-                {__("Select", "text-domain")}
+                {__("Select", "slider-future")}
               </Button>
             </div>
           ))
         ) : (
           <p>
-            {__("No patterns found in the 'text' category.", "text-domain")}
+            {__("No patterns found in the 'text' category.", "slider-future")}
           </p>
         )}
       </div>

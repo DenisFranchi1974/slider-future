@@ -1,17 +1,20 @@
 const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // Importa il plugin
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin'); // Importa il plugin di compressione
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
     ...defaultConfig,
+    //mode: 'production',
     entry: {
         index: path.resolve(__dirname, 'src/index.js'),
         settings: path.resolve(__dirname, 'src/settings.js'),
-        view: path.resolve(__dirname, 'src/view.js')  // Aggiungi questa r
+        view: path.resolve(__dirname, 'src/view.js')
     },
     plugins: [
         ...defaultConfig.plugins,
+      // new BundleAnalyzerPlugin(),
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, 'src/render/element/button.php'), to: path.resolve(__dirname, 'build/render/element') },
@@ -34,6 +37,13 @@ module.exports = {
                 { from: path.resolve(__dirname, 'src/render/post/post-tags.php'), to: path.resolve(__dirname, 'build/render/post') },
                 { from: path.resolve(__dirname, 'src/render.php'), to: path.resolve(__dirname, 'build') }
             ]
+        }),
+        new CompressionPlugin({
+            filename: '[path][base].gz',
+            algorithm: 'gzip',
+            test: /\.(js|css|html|svg)$/,
+            threshold: 10240,
+            minRatio: 0.8,
         })
     ]
 };

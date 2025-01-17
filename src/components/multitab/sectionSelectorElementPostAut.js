@@ -30,7 +30,7 @@ const SectionSelectorElementPostAut = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("style")}
       >
         <ColorLensIcon />
-        {__("Style", "cocoblocks")}
+        {__("Style", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -38,7 +38,7 @@ const SectionSelectorElementPostAut = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("adv-style")}
       >
         <TuneIcon />
-        {__("Adv.Style", "cocoblocks")}
+        {__("Adv.Style", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -46,7 +46,7 @@ const SectionSelectorElementPostAut = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("animation")}
       >
         <SlowMotionVideoIcon />
-        {__("Animation", "cocoblocks")}
+        {__("Animation", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -54,7 +54,7 @@ const SectionSelectorElementPostAut = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("hover")}
       >
         <MouseIcon />
-        {__("Hover", "cocoblocks")}
+        {__("Hover", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -62,7 +62,7 @@ const SectionSelectorElementPostAut = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("visibility")}
       >
         <DevicesOtherIcon />
-        {__("Visibility", "cocoblocks")}
+        {__("Visibility", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -70,7 +70,7 @@ const SectionSelectorElementPostAut = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("hide-title-editor")}
       >
          <VisibilityOffIcon />
-        {__("Hide in editor", "cocoblocks")}
+        {__("Hide in editor", "slider-future")}
       </Button>
     </ButtonGroup>
     </div>

@@ -36,7 +36,7 @@ const CustomRangeControl = ({
             maxWidth: "300px",
             borderRadius: "4px",
             }}
-            text={tooltipText || __("Default tooltip text", "cocoblocks")} // Testo di fallback
+            text={tooltipText || __("Default tooltip text", "slider-future")} // Testo di fallback
         >
             <InfoIcon  className="tooltip-icon" style={{top: tooltipTop, left: tooltipLeft}} />
         </Tooltip>

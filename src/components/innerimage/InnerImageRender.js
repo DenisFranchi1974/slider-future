@@ -95,6 +95,7 @@ const InnerImageRender = ({ imageDiv, imageIndex, onPlay}) => {
       borderRadius: `${imageDiv.backgroundBorderRadiusImage?.top} ${imageDiv.backgroundBorderRadiusImage?.right} ${imageDiv.backgroundBorderRadiusImage?.bottom} ${imageDiv.backgroundBorderRadiusImage?.left}`,
       padding: `${imageDiv.paddingImage?.top} ${imageDiv.paddingImage?.right} ${imageDiv.paddingImage?.bottom} ${imageDiv.paddingImage?.left}`,
       backgroundColor: imageDiv.backgroundColorImage,
+      maxWidth: '100%',
       margin: `${imageDiv.marginImage?.top} ${imageDiv.marginImage?.right} ${imageDiv.marginImage?.bottom} ${imageDiv.marginImage?.left}`,
       "--spike-width-inner": imageDiv.spikeLeftWidth + "%" || "0",
       "--spike-width-right-inner": imageDiv.spikeRightWidth + "%" || "0",

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, TextControl } from '@wordpress/components';
 import materialIcons from './materialIcons';
+import { __ } from "@wordpress/i18n";
 
 const categories = {
 
@@ -405,12 +406,12 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
       </div>
       <div className="icon-modal-container">
         <div className="icon-modal-sidebar">
-          <h3>Categories</h3>
+          <h3>{__('Categories','slider-future')}</h3>
           <Button
             isPrimary={selectedCategory === 'all'}
             onClick={() => setSelectedCategory('all')}
           >
-            All
+           {__('All','slider-future')}
           </Button>
           {Object.keys(categories).map((category) => (
             <Button
@@ -431,7 +432,7 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
               </Button>
             ))
           ) : (
-            <p>No icons found</p>
+            <p>{__('No icons found','slider-future')}</p>
           )}
         </div>
       </div>

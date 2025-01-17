@@ -371,10 +371,10 @@ const TextEdit = ({
             isDestructive
             onClick={() => removeSlideTitle(slide.id, elementIndex)}
             className="button-remove-element"
-            label={__("Remove Text", "cocoblocks")}
+            label={__("Remove Text", "slider-future")}
             icon={<DeleteOutlineIcon />}
           ></Button>
-        <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+        <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider-future') : __('Open Controls','slider-future')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
              <KeyboardArrowUpIcon/>
@@ -399,7 +399,7 @@ const TextEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Content", "cocoblocks")}
+              {__("Content", "slider-future")}
             </h2>
           </div>
 
@@ -412,7 +412,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                placeholder={__("Add text content...", "cocoblocks")}
+                placeholder={__("Add text content...", "slider-future")}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'text')
                 }
@@ -421,7 +421,7 @@ const TextEdit = ({
               label={
                 <>
                   <AdfScannerIcon/>
-                  {__("Typewriter Effect", "cocoblocks")}
+                  {__("Typewriter Effect", "slider-future")}
                 </>
               }
               value={element.enableTypeWriter || false}
@@ -431,7 +431,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                tooltipText= {__("Enable the typewriter effect. To see the changes in the texts, you need to enable and disable it!", "cocoblocks")}
+                tooltipText= {__("Enable the typewriter effect. To see the changes in the texts, you need to enable and disable it!", "slider-future")}
                 showTooltip = {true}
                 tooltipTop={"10px"}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
@@ -448,7 +448,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                placeholder={__("Add text typewriter one...", "cocoblocks")}
+                placeholder={__("Add text typewriter one...", "slider-future")}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterOne')
                 }
@@ -461,7 +461,7 @@ const TextEdit = ({
               slideId={slide.id}
               elementIndex={elementIndex}
               elementType="title"
-              placeholder={__("Add text typewriter two...", "cocoblocks")}
+              placeholder={__("Add text typewriter two...", "slider-future")}
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterTwo')
               }
@@ -474,7 +474,7 @@ const TextEdit = ({
               slideId={slide.id}
               elementIndex={elementIndex}
               elementType="title"
-              placeholder={__("Add text typewriter three...", "cocoblocks")}
+              placeholder={__("Add text typewriter three...", "slider-future")}
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterThree')
               }
@@ -487,7 +487,7 @@ const TextEdit = ({
               slideId={slide.id}
               elementIndex={elementIndex}
               elementType="title"
-              placeholder={__("Add text typewriter four...", "cocoblocks")}
+              placeholder={__("Add text typewriter four...", "slider-future")}
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterFour')
               }
@@ -496,7 +496,7 @@ const TextEdit = ({
                 label={
                   <>
                     <LineWeightIcon style={{transform:'rotate(90deg)'}} />
-                    {__("Cursor thickness", "cocoblocks")}
+                    {__("Cursor thickness", "slider-future")}
                   </>
                 }
                 value={element.widthCursor ?? 4}
@@ -517,7 +517,7 @@ const TextEdit = ({
                 label={
                   <>
                     <PauseCircleOutlineIcon />
-                    {__("Pause", "cocoblocks")}
+                    {__("Pause", "slider-future")}
                   </>
                 }
                 value={element.breakCursor ?? 2000}
@@ -530,7 +530,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                tooltipText= {__("1000 = 1s. To see the changes you have to disable and enable the typewriter effect!", "cocoblocks")}
+                tooltipText= {__("1000 = 1s. To see the changes you have to disable and enable the typewriter effect!", "slider-future")}
                 showTooltip = {true}
                 tooltipTop={"10px"}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
@@ -541,7 +541,7 @@ const TextEdit = ({
                 label={
                   <>
                     <SpeedIcon />
-                    {__("Speed", "cocoblocks")}
+                    {__("Speed", "slider-future")}
                   </>
                 }
                 value={element.speedCursor ?? 200}
@@ -554,7 +554,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                tooltipText= {__("To see the changes you have to disable and enable the typewriter effect!", "cocoblocks")}
+                tooltipText= {__("To see the changes you have to disable and enable the typewriter effect!", "slider-future")}
                 showTooltip = {true}
                 tooltipTop={"10px"}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
@@ -567,7 +567,7 @@ const TextEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Width content", "cocoblocks")}
+                    {__("Width content", "slider-future")}
                   </>
                 }
                 value={element.widthTitle || "auto"}
@@ -593,7 +593,7 @@ const TextEdit = ({
               >
                 {__(
                   "Attention: Side transition effects will not work with this setting!",
-                  "cocoblocks"
+                  "slider-future"
                 )}
               </p>
             )}
@@ -603,14 +603,14 @@ const TextEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Custom Width (%)", "cocoblocks")}
+                    {__("Custom Width (px)", "slider-future")}
                   </>
                 }
                 value={element.widthCustomTitle ?? 100}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={1}
-                max={100}
+                max={1000}
                 step={1}
                 updateType="primary"
                 slideId={slide.id}
@@ -638,7 +638,7 @@ const TextEdit = ({
                 label={
                   <>
                     <FormatTextdirectionLToRIcon />
-                    {__("Element html", "cocoblocks")}
+                    {__("Element html", "slider-future")}
                   </>
                 }
                 value={element.elementTitle || "h3"}
@@ -664,14 +664,14 @@ const TextEdit = ({
               marginTop: "-18px",
             }}
           >
-            <h2 className="title-custom-panel">{__("Font", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Font", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
              <CustomRangeControl
                 label={
                   <>
                     <TextFieldsIcon/>
-                    {__("Min", "cocoblocks")}
+                    {__("Min", "slider-future")}
                   </>
                 }
                 value={element.fontSizeMobile || 16}
@@ -684,7 +684,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "cocoblocks")}
+                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "slider-future")}
                 showTooltip = {true}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeMobile')
@@ -694,7 +694,7 @@ const TextEdit = ({
                 label={
                   <>
                     <TuneIcon />
-                    {__("Mid", "cocoblocks")}
+                    {__("Mid", "slider-future")}
                   </>
                 }
                 value={element.fontSizeTablet || 16}
@@ -707,7 +707,7 @@ const TextEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="title"
-                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "cocoblocks")}
+                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "slider-future")}
                 showTooltip = {true}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeTablet')
@@ -717,7 +717,7 @@ const TextEdit = ({
                   label={
                     <>
                       <FullscreenIcon />
-                      {__("Max", "cocoblocks")}
+                      {__("Max", "slider-future")}
                     </>
                   }
                   value={element.fontSize || 22}
@@ -730,7 +730,7 @@ const TextEdit = ({
                   slideId={slide.id}
                   elementIndex={elementIndex}
                   elementType="title"
-                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "cocoblocks")}
+                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "slider-future")}
                   showTooltip = {true}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSize')
@@ -749,7 +749,7 @@ const TextEdit = ({
                 label={
                   <>
                     <FontDownloadIcon />
-                    {__("Font family", "cocoblocks")}
+                    {__("Font family", "slider-future")}
                   </>
                 }
                 value={element.fontFamily || "Arial, sans-serif"}
@@ -768,7 +768,7 @@ const TextEdit = ({
                 label={
                   <>
                     <FitnessCenterIcon />
-                    {__("Font weight", "cocoblocks")}
+                    {__("Font weight", "slider-future")}
                   </>
                 }
                 value={element.fontWeight || "400"}
@@ -787,7 +787,7 @@ const TextEdit = ({
                   label={
                     <>
                       <HeightIcon />
-                      {__("Line height", "cocoblocks")}
+                      {__("Line height", "slider-future")}
                     </>
                   }
                   value={element.lineHeight || 1.5}
@@ -808,7 +808,7 @@ const TextEdit = ({
                   label={
                     <>
                       <FormatLineSpacingIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Letter spacing", "cocoblocks")}
+                      {__("Letter spacing", "slider-future")}
                     </>
                   }
                   value={element.letterSpacing || 0}
@@ -835,13 +835,13 @@ const TextEdit = ({
             >
               {__(
                 "Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!",
-                "cocoblocks"
+                "slider-future"
               )}
             </p>
             <CustomColorOptionsPanel
                   colorNormal={element.textColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'textColor')}
-                  buttonTitle={__("Text Color", "cocoblocks")}
+                  buttonTitle={__("Text Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -855,7 +855,7 @@ const TextEdit = ({
                  <CustomColorOptionsPanel
                   colorNormal={element.backgroundColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'backgroundColor')}
-                  buttonTitle={__("Background Color", "cocoblocks")}
+                  buttonTitle={__("Background Color", "slider-future")}
                   buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -869,7 +869,7 @@ const TextEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -879,7 +879,7 @@ const TextEdit = ({
                 label={
                   <>
                     <PaddingIcon />
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={element.paddingTitle}
@@ -895,7 +895,7 @@ const TextEdit = ({
                 label={
                   <>
                     <MarginIcon />
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={element.marginTitle}
@@ -907,7 +907,7 @@ const TextEdit = ({
             </div>
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div
             className="content-section-panel"
@@ -917,7 +917,7 @@ const TextEdit = ({
                 label={
                   <>
                     <BorderStyleIcon />
-                    {__("Border style", "cocoblocks")}
+                    {__("Border style", "slider-future")}
                   </>
                 }
                 value={element.borderStyle }
@@ -937,7 +937,7 @@ const TextEdit = ({
               <CustomColorOptionsPanel
                   colorNormal={element.backgroundBorderColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'backgroundBorderColor')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -954,7 +954,7 @@ const TextEdit = ({
                 label={
                   <>
                     <MarginIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                   </>
                 }
                 values={element.backgroundBorderSize}
@@ -972,7 +972,7 @@ const TextEdit = ({
                 label={
                   <>
                     <BorderInnerIcon />
-                    {__("Border radius", "cocoblocks")}
+                    {__("Border radius", "slider-future")}
                   </>
                 }
                 values={element.backgroundBorderRadius}
@@ -994,7 +994,7 @@ const TextEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1002,7 +1002,7 @@ const TextEdit = ({
                 label={
                   <>
                     <RotateRightIcon />
-                    {__("Rotate", "cocoblocks")}
+                    {__("Rotate", "slider-future")}
                   </>
                 }
                 value={element.rotate || 0}
@@ -1023,7 +1023,7 @@ const TextEdit = ({
                 label={
                   <>
                     <FormatTextdirectionLToRIcon />
-                    {__("Writing mode", "cocoblocks")}
+                    {__("Writing mode", "slider-future")}
                   </>
                 }
                 value={element.textWriteMode || "initial"}
@@ -1042,7 +1042,7 @@ const TextEdit = ({
                 label={
                   <>
                     <DirectionsIcon />
-                    {__("Orientation", "cocoblocks")}
+                    {__("Orientation", "slider-future")}
                   </>
                 }
                 value={element.textOrientation || "initial"}
@@ -1063,7 +1063,7 @@ const TextEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Transparency Setting", "cocoblocks")}
+              {__("Transparency Setting", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1071,7 +1071,7 @@ const TextEdit = ({
               label={
                 <>
                   <OpacityIcon />
-                  {__("Opacity", "cocoblocks")}
+                  {__("Opacity", "slider-future")}
                 </>
               }
               value={element.opacity ?? 1}
@@ -1091,7 +1091,7 @@ const TextEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("LEVEL", "cocoblocks")}
+              {__("LEVEL", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1099,7 +1099,7 @@ const TextEdit = ({
               label={
                 <>
                   <LayersClearIcon />
-                  {__("Z-index", "cocoblocks")}
+                  {__("Z-index", "slider-future")}
                 </>
               }
               value={element.zIndexTitle || 1}
@@ -1121,7 +1121,7 @@ const TextEdit = ({
             className="content-title-custom-panel intermedy"
           >
             <h2 className="title-custom-panel">
-              {__("Text Shadow", "cocoblocks")}
+              {__("Text Shadow", "slider-future")}
             </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1151,7 +1151,7 @@ const TextEdit = ({
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1184,7 +1184,7 @@ const TextEdit = ({
             className="content-title-custom-panel intermedy"
           >
             <h2 className="title-custom-panel">
-              {__("Text Stroke", "cocoblocks")}
+              {__("Text Stroke", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1213,7 +1213,7 @@ const TextEdit = ({
             className="content-title-custom-panel intermedy"
           >
             <h2 className="title-custom-panel">
-              {__("Blend Mode", "cocoblocks")}
+              {__("Blend Mode", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1221,7 +1221,7 @@ const TextEdit = ({
                 label={
                   <>
                     <FilterTiltShiftIcon />
-                    {__("Effect", "cocoblocks")}
+                    {__("Effect", "slider-future")}
                   </>
                 }
                 value={element.blendMode || "normal"}
@@ -1245,7 +1245,7 @@ const TextEdit = ({
            valueEffect={element.effectIn}
            colorNormal={element.colorBlockEffect } 
            setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'colorBlockEffect')}
-           buttonTitle={__("Background Color", "cocoblocks")}    
+           buttonTitle={__("Background Color", "slider-future")}    
            buttonIcon={ <ColorLensIcon style={{marginBottom:'-5px'}} />}  
            valueOpacityFrom={element.opacityFrom}
             valueOpacityTo={element.opacityTo}
@@ -1332,14 +1332,14 @@ const TextEdit = ({
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Style", "cocoblocks")}
+            {__("Style", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0",marginBottom:'36px' }}>
           <CustomColorOptionsPanel
                   colorNormal={element.textColorHover}
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'title', 'textColorHover}')}
-                  buttonTitle={__("Text Color", "cocoblocks")}
+                  buttonTitle={__("Text Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1443,7 +1443,7 @@ const TextEdit = ({
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

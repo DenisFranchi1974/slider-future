@@ -95,9 +95,8 @@ const TabNavigation = () => {
                         </IconButton>
                         <div>
                             <h3>Changelog</h3>
-                            <p>Version 1.0.0 - Initial release</p>
-                            <p>Version 1.1.0 - Added new features</p>
-                            <p>Version 1.2.0 - Bug fixes and improvements</p>
+                            <p>Version 1.0.0 - Initial release Beta</p>
+                            
                         </div>
                     </Box>
                 </Drawer>

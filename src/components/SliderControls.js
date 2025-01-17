@@ -81,6 +81,10 @@ const SliderControls = ({ attributes, setAttributes }) => {
     backgroundBorderRadius,
     backgroundVerticalPadding,
     backgroundHorizontalPadding,
+    backgroundHorizontalPaddingTablet,
+    backgroundVerticalPaddingTablet,
+    backgroundHorizontalPaddingMobile,
+    backgroundVerticalPaddingMobile,
     backgroundColor,
     backgroundImage,
     focalPoint,
@@ -202,8 +206,8 @@ const handleMobileClickHeight = () => {
     if (attributes.contentType !== "custom") {
       const apiUrl =
         attributes.contentType === "woocommerce-based"
-          ? `${window.wpApiSettings.root}cocoblocks/v1/get-products/`
-          : `${window.wpApiSettings.root}cocoblocks/v1/get-posts/`;
+          ? `${window.wpApiSettings.root}slider-future/v1/get-products/`
+          : `${window.wpApiSettings.root}slider-future/v1/get-posts/`;
 
       console.log("Fetching from API:", apiUrl);
 
@@ -304,7 +308,7 @@ const handleMobileClickHeight = () => {
         <>
           <div className="content-title-custom-panel" style={{justifyContent:'space-between'}}>
             <h2 className="title-custom-panel">
-              {__("Layout Area", "cocoblocks")}
+              {__("Layout Area", "slider-future")}
             </h2>
             <ButtonGroup className="device-switcher-slider">
                 <Button
@@ -336,7 +340,7 @@ const handleMobileClickHeight = () => {
                 </>
               </ButtonGroup>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             {device === "desktop" && (
               <>
             <div className="content-section-panel">
@@ -347,7 +351,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <ViewColumnIcon />
-                              {__("Slides per view", "cocoblocks")}
+                              {__("Slides per view", "slider-future")}
                               </>
                           }
                           value={perViewSlider}
@@ -355,7 +359,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "cocoblocks")}
+                          tooltipText={__("Number of slides per view in Desktop (1024px). Slides visible at the same time on slider's container.", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ perViewSlider: val });
                           }}
@@ -367,7 +371,7 @@ const handleMobileClickHeight = () => {
                 >
                   {__(
                     "The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               )}
@@ -375,7 +379,7 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                       <SettingsEthernetIcon />
-                        {__("Space Between Slides", "cocoblocks")}
+                        {__("Space Between Slides", "slider-future")}
                       </>
                     }
                     value={spaceBetween}
@@ -388,7 +392,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <CalendarViewWeekIcon />
-                              {__("Slides per group", "cocoblocks")}
+                              {__("Slides per group", "slider-future")}
                               </>
                           }
                           value={slidesPerGroupDesktop}
@@ -396,7 +400,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("The number of slides that should be grouped together for navigation.(Desktop)", "cocoblocks")}
+                          tooltipText={__("The number of slides that should be grouped together for navigation.(Desktop)", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ slidesPerGroupDesktop: val });
                           }}
@@ -405,7 +409,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <ViewModuleIcon />
-                              {__("Slides rows", "cocoblocks")}
+                              {__("Slides rows", "slider-future")}
                               </>
                           }
                           value={slidesPerRow}
@@ -413,7 +417,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("Number of slider rows, for multirow layout.", "cocoblocks")}
+                          tooltipText={__("Number of slider rows, for multirow layout.", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ slidesPerRow: val });
                           }}
@@ -422,7 +426,7 @@ const handleMobileClickHeight = () => {
                 <p className="notice components-base-control__help">
                   {__(
                     'Please note that this choice influences how the slider is displayed in responsive mode. Specifically, it may impact the functionality of "per view" controls on responsive devices. Due to the nature of the row layout, some responsive "per view" settings may not have the expected effect. It\'s recommended to test your slider across different screen sizes to ensure the desired display and functionality.',
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               )}
@@ -434,7 +438,7 @@ const handleMobileClickHeight = () => {
                 >
                   {__(
                     "Grid mode with more than 1 row is not compatible with loop mode.Please disable loop mode or set Slides per Row to 1.",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </Notice>
               )}
@@ -452,7 +456,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <ViewColumnIcon />
-                              {__("Slides per view", "cocoblocks")}
+                              {__("Slides per view", "slider-future")}
                               </>
                           }
                           value={perViewSliderTablet}
@@ -460,7 +464,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "cocoblocks")}
+                          tooltipText={__("Number of slides per view in Tablet (768px). Slides visible at the same time on slider's container.", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ perViewSliderTablet: val });
                           }}
@@ -469,7 +473,7 @@ const handleMobileClickHeight = () => {
                 <p className="notice components-base-control__help">
                   {__(
                     "The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               )}
@@ -477,7 +481,7 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                       <SettingsEthernetIcon />
-                        {__("Space Between Slides", "cocoblocks")}
+                        {__("Space Between Slides", "slider-future")}
                       </>
                     }
                     value={spaceBetweenTablet}
@@ -490,7 +494,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <CalendarViewWeekIcon />
-                              {__("Slides per group", "cocoblocks")}
+                              {__("Slides per group", "slider-future")}
                               </>
                           }
                           value={slidesPerGroupTablet}
@@ -498,7 +502,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("The number of slides that should be grouped together for navigation.(Tablet)", "cocoblocks")}
+                          tooltipText={__("The number of slides that should be grouped together for navigation.(Tablet)", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ slidesPerGroupTablet: val });
                           }}
@@ -517,7 +521,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <ViewColumnIcon />
-                              {__("Slides per view", "cocoblocks")}
+                              {__("Slides per view", "slider-future")}
                               </>
                           }
                           value={perViewSliderMobile}
@@ -525,7 +529,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "cocoblocks")}
+                          tooltipText={__("Number of slides per view in Mobile (640px). Slides visible at the same time on slider's container.", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ perViewSliderMobile: val });
                           }}
@@ -534,7 +538,7 @@ const handleMobileClickHeight = () => {
                 <p className="notice components-base-control__help">
                   {__(
                     "The width of the slides is dynamic and adapts to the content. This is useful when slides have variable widths or when you want slides to dynamically adapt to available space.",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               )}
@@ -542,7 +546,7 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                       <SettingsEthernetIcon />
-                        {__("Space Between Slides", "cocoblocks")}
+                        {__("Space Between Slides", "slider-future")}
                       </>
                     }
                     value={spaceBetweenMobile}
@@ -555,7 +559,7 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <CalendarViewWeekIcon />
-                              {__("Slides per group", "cocoblocks")}
+                              {__("Slides per group", "slider-future")}
                               </>
                           }
                           value={slidesPerGroupMobile}
@@ -563,7 +567,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("The number of slides that should be grouped together for navigation.(Mobile)", "cocoblocks")}
+                          tooltipText={__("The number of slides that should be grouped together for navigation.(Mobile)", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ slidesPerGroupMobile: val });
                           }}
@@ -573,7 +577,7 @@ const handleMobileClickHeight = () => {
             )}
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Layout Size", "cocoblocks")}
+                {__("Layout Size", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel">
@@ -581,13 +585,13 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                        <HeightIcon />
-                        {__("Auto height", "cocoblocks")}
+                        {__("Auto height", "slider-future")}
                       </>
                     }
                     checked={autoHeight}
                     onChange={(value) => setAttributes({ autoHeight: value })}
                     showTooltip={true}
-                    tooltipText={__("Enable and slider wrapper will adapt its height to the height of the currently active slide", "cocoblocks")}
+                    tooltipText={__("Enable and slider wrapper will adapt its height to the height of the currently active slide", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'40%'}
                   />
@@ -627,7 +631,7 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                         <PersonalVideoIcon/>
-                        {__("Custom Height", "cocoblocks")}
+                        {__("Custom Height", "slider-future")}
                       </>
                     }
                     value={slideHeight}
@@ -642,7 +646,7 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                          <TabletMacIcon />
-                        {__("Custom Height", "cocoblocks")}
+                        {__("Custom Height", "slider-future")}
                       </>
                     }
                     value={slideHeightTablet}
@@ -657,7 +661,7 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                          <SmartphoneIcon />
-                        {__("Custom Height", "cocoblocks")}
+                        {__("Custom Height", "slider-future")}
                       </>
                     }
                     value={slideHeightMobile}
@@ -672,7 +676,7 @@ const handleMobileClickHeight = () => {
             </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Advanced Settings", "cocoblocks")}
+                {__("Advanced Settings", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel">
@@ -680,13 +684,13 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                        <CompressIcon sx={{transform:'rotate(90deg)'}} />
-                        {__("Centered slides", "cocoblocks")}
+                        {__("Centered slides", "slider-future")}
                       </>
                     }
                     checked={centeredSlides}
                     onChange={(value) => setAttributes({centeredSlides: value })}
                     showTooltip={true}
-                    tooltipText={__("If enabled, then active slide will be centered, not always on the left side.", "cocoblocks")}
+                    tooltipText={__("If enabled, then active slide will be centered, not always on the left side.", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'60%'}
                   />
@@ -699,16 +703,16 @@ const handleMobileClickHeight = () => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("General", "cocoblocks")}
+              {__("General", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
             <CustomSelectControl
                           label={
                             <>
                               <LinearScaleIcon />
-                              {__("Initial slide", "cocoblocks")}
+                              {__("Initial slide", "slider-future")}
                               </>
                           }
                           value={initialSlide}
@@ -716,7 +720,7 @@ const handleMobileClickHeight = () => {
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
-                          tooltipText={__("Index number of initial slide.(Starts from 0)", "cocoblocks")}
+                          tooltipText={__("Index number of initial slide.(Starts from 0)", "slider-future")}
                           onChange={(val) => {
                             setAttributes({ initialSlide: val });
                           }}
@@ -728,13 +732,13 @@ const handleMobileClickHeight = () => {
                     label={
                       <>
                        <VibrationIcon />
-                        {__("Free mode", "cocoblocks")}
+                        {__("Free mode", "slider-future")}
                       </>
                     }
                     checked={freeMode}
                     onChange={(value) => setAttributes({freeMode: value })}
                     showTooltip={true}
-                    tooltipText={__("Doesn't work in the editor!", "cocoblocks")}
+                    tooltipText={__("Doesn't work in the editor!", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'40%'}
                   />
@@ -742,65 +746,65 @@ const handleMobileClickHeight = () => {
                 <>
                   <div className="content-section-panel">
                   <CustomToggleControl
-                    label={__("Sticky", "cocoblocks")}
+                    label={__("Sticky", "slider-future")}
                     checked={stickyFreeMode}
                     onChange={(value) => setAttributes({stickyFreeMode: value })}
                     showTooltip={true}
-                    tooltipText={__("Enables Snap to slides positions in free mode", "cocoblocks")}
+                    tooltipText={__("Enables Snap to slides positions in free mode", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'40%'}
                   />
                    <CustomToggleControl
-                    label={__("Momentum", "cocoblocks")}
+                    label={__("Momentum", "slider-future")}
                     checked={momentumFreeMode}
                     onChange={(value) => setAttributes({momentumFreeMode: value })}
                     showTooltip={true}
-                    tooltipText={__("If enabled, then slide will keep moving for a while you release it after", "cocoblocks")}
+                    tooltipText={__("If enabled, then slide will keep moving for a while you release it after", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'40%'}
                   />
                     <CustomToggleControl
-                    label={__("Momentum bounce", "cocoblocks")}
+                    label={__("Momentum bounce", "slider-future")}
                     checked={momentumBounceFreeMode}
                     onChange={(value) => setAttributes({momentumBounceFreeMode: value })}
                     showTooltip={true}
-                    tooltipText={__("Enables momentum bounce in free mode", "cocoblocks")}
+                    tooltipText={__("Enables momentum bounce in free mode", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'60%'}
                   />
                    <CustomRangeControl
-                    label={__("Momentum bounce ratio", "cocoblocks")}
+                    label={__("Momentum bounce ratio", "slider-future")}
                     value={momentumBounceRatioFreeMode}
                     onChange={(val) => setAttributes({momentumBounceRatioFreeMode: val })}
                     min={0.1}
                     max={3}
                     step={0.1}
                     showTooltip={true}
-                    tooltipText={__("Higher value produces larger momentum bounce effect", "cocoblocks")}
+                    tooltipText={__("Higher value produces larger momentum bounce effect", "slider-future")}
                     tooltipTop = {'2px'}
                     tooltipLeft = {'64%'}
                   />
                    <CustomRangeControl
-                    label={__("Momentum ratio", "cocoblocks")}
+                    label={__("Momentum ratio", "slider-future")}
                     value={momentumRatioFreeMode}
                     onChange={(val) => setAttributes({momentumRatioFreeMode: val })}
                     min={0.1}
                     max={3}
                     step={0.1}
                     showTooltip={true}
-                    tooltipText={__("Higher value produces larger momentum distance after you release sldier", "cocoblocks")}
+                    tooltipText={__("Higher value produces larger momentum distance after you release sldier", "slider-future")}
                     tooltipTop = {'2px'}
                     tooltipLeft = {'50%'}
                   />
                   <CustomRangeControl
-                    label={__("Momentum velocity ratio", "cocoblocks")}
+                    label={__("Momentum velocity ratio", "slider-future")}
                     value={momentumVelocityRatioFreeMode}
                     onChange={(val) => setAttributes({momentumVelocityRatioFreeMode: val })}
                     min={0.1}
                     max={3}
                     step={0.1}
                     showTooltip={true}
-                    tooltipText={__("Higher value produces larger momentum velocity after you release sldier", "cocoblocks")}
+                    tooltipText={__("Higher value produces larger momentum velocity after you release sldier", "slider-future")}
                     tooltipTop = {'2px'}
                     tooltipLeft = {'64%'}
                   />
@@ -816,10 +820,10 @@ const handleMobileClickHeight = () => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
+              {__("Background", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
           <div className="content-section-panel">
           <TabPanel
       className="background-selector"
@@ -829,12 +833,12 @@ const handleMobileClickHeight = () => {
       tabs={[
         {
           name: 'color',
-          title: <span>{__("Color", "your-text-domain")}</span>,
+          title: <span>{__("Color", "slider-future")}</span>,
           className: 'tab-color',
         },
         {
           name: 'image',
-          title: <span>{__("Image", "your-text-domain")}</span>,
+          title: <span>{__("Image", "slider-future")}</span>,
           className: 'tab-image',
         },
       ]}
@@ -849,7 +853,7 @@ const handleMobileClickHeight = () => {
             <ColorOptionsPanel
               colorNormal={backgroundColor}
               setColorNormal={(color) => setAttributes({ backgroundColor: color })}
-              buttonTitle={__("Background Color", "cocoblocks")}
+              buttonTitle={__("Background Color", "slider-future")}
               buttonIcon={
                 <PaletteIcon style={{
                   marginBottom: "-5px",
@@ -898,7 +902,7 @@ const handleMobileClickHeight = () => {
                                             <PhotoSizeSelectActualIcon style={{width:'18px'}} />
                                             {__(
                                               "Media Library",
-                                              "cocoblocks"
+                                              "slider-future"
                                             )}
                                           </div>
                                           <span
@@ -933,7 +937,7 @@ const handleMobileClickHeight = () => {
                                           }}
                                         >
                                           <PhotoLibraryIcon style={{width:'18px'}} />
-                                          {__("Object Library", "cocoblocks")}
+                                          {__("Object Library", "slider-future")}
                                         </div>
                                         <span
                                           className="dashicons dashicons-arrow-down-alt2"
@@ -970,14 +974,14 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <FitScreenIcon />
-                              {__("Image fit", "cocoblocks")}
+                              {__("Image fit", "slider-future")}
                             </>
                           }
                           value={fitImage}
                           options={[
-                            { label: __("Cover", "slider"), value: "cover" },
-                            { label: __("Auto", "slider"), value: "auto" },
-                            { label: __("Contain", "slider"), value: "contain" },
+                            { label: __("Cover", "slider-future"), value: "cover" },
+                            { label: __("Auto", "slider-future"), value: "auto" },
+                            { label: __("Contain", "slider-future"), value: "contain" },
                           ]}
                           onChange={(val) => setAttributes({fitImage: val })}
                         />
@@ -994,7 +998,7 @@ const handleMobileClickHeight = () => {
                         icon={<ChangeCircleOutlinedIcon />}
                         label={__(
                           "Change Image form Media Library",
-                          "cocoblocks"
+                          "slider-future"
                         )}
                         >
                         </Button>
@@ -1008,7 +1012,7 @@ const handleMobileClickHeight = () => {
                           }}
                           className="button-replace"
                           icon={<ChangeCircleOutlinedIcon />}
-                          label={__("Change Image from Object Library", "cocoblocks")}
+                          label={__("Change Image from Object Library", "slider-future")}
                         />
                      </>
                     )}
@@ -1022,7 +1026,7 @@ const handleMobileClickHeight = () => {
                 isDestructive
                  className="button-delete"
                  icon={<DeleteOutlineIcon />}
-                 label={__("Delete Image", "wp-kube")}
+                 label={__("Delete Image", "slider-future")}
                 >
               </Button>
             )}
@@ -1042,17 +1046,17 @@ const handleMobileClickHeight = () => {
                           label={
                             <>
                               <VisibilityOffIcon />
-                              {__("Overflow", "cocoblocks")}
+                              {__("Overflow", "slider-future")}
                               </>
                           }
                           value={overflow}
                           options={[
                             {
-                              label: __("Visible", "cocoblock"),
+                              label: __("Visible", "slider-future"),
                               value: "visible",
                             },
                             {
-                              label: __("Hidden", "slider"),
+                              label: __("Hidden", "slider-future"),
                               value: "hidden",
                             },
                           ]}
@@ -1063,7 +1067,7 @@ const handleMobileClickHeight = () => {
             </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Border", "cocoblocks")}
+                {__("Border", "slider-future")}
               </h2>
             </div>
             <div
@@ -1076,14 +1080,14 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ backgroundBorderColor: color })
                   }
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={
                     <BorderColorIcon/>
                   }
                 />
               </div>
               <CustomRangeControl
-                    label={<> <MarginIcon />{__("Border width", "cocoblocks")}</>}
+                    label={<> <MarginIcon />{__("Border width", "slider-future")}</>}
                     value={backgroundBorderSize}
                     onChange={(val) => setAttributes({backgroundBorderSize: val })}
                     min={0}
@@ -1091,7 +1095,7 @@ const handleMobileClickHeight = () => {
                     step={1}
                   />
                    <CustomRangeControl
-                    label={<>  <BorderInnerIcon />{__("Border radius", "cocoblocks")}</>}
+                    label={<>  <BorderInnerIcon />{__("Border radius", "slider-future")}</>}
                     value={backgroundBorderRadius}
                     onChange={(val) => setAttributes({backgroundBorderRadius: val })}
                     min={0}
@@ -1101,12 +1105,43 @@ const handleMobileClickHeight = () => {
             </div>
             <div className="content-title-custom-panel intermedy">
               <h2 className="title-custom-panel">
-                {__("Spacing", "cocoblocks")}
+                {__("Spacing", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
+            <ButtonGroup className="device-switcher-slider" style={{marginBottom:'6px',paddingTop:'12px',marginRight:'0'}}>
+                <Button
+                  size="small"
+                  isPressed={device === "desktop"}
+                  onClick={handleDesktopClick}
+                  className={device !== "desktop" ? "inactive" : ""}
+                >
+                  <PersonalVideoIcon/>
+                </Button>
+
+                <>
+                  <Button
+                    size="small"
+                    isPressed={device === "tablet"}
+                    onClick={handleTabletClick}
+                    className={device !== "tablet" ? "inactive" : ""}
+                  >
+                   <TabletMacIcon />
+                  </Button>
+                  <Button
+                    size="small"
+                    isPressed={device === "mobile"}
+                    onClick={handleMobileClick}
+                    className={device !== "mobile" ? "inactive" : ""}
+                  >
+                     <SmartphoneIcon />
+                  </Button>
+                </>
+              </ButtonGroup>
+              {device === "desktop" && (
+                <>
             <CustomRangeControl
-                    label={<> <VerticalAlignTopIcon />{__("Content vertical padding", "cocoblocks")}</>}
+                    label={<> <VerticalAlignTopIcon />{__("Vertical padding", "slider-future")}</>}
                     value={backgroundVerticalPadding}
                     onChange={(val) => setAttributes({backgroundVerticalPadding: val })}
                     min={0}
@@ -1116,21 +1151,67 @@ const handleMobileClickHeight = () => {
            <CustomRangeControl
                     label={<> <VerticalAlignTopIcon  style={{
                       transform: "rotate(90deg)",
-                    }} />{__("Content horizontal padding", "cocoblocks")}</>}
+                    }} />{__("Horizontal padding", "slider-future")}</>}
                     value={backgroundHorizontalPadding}
                     onChange={(val) => setAttributes({backgroundHorizontalPadding: val })}
                     min={0}
                     max={256}
                     step={1}
                   />
-                {backgroundHorizontalPadding > 0 && (
+                  </>
+              )}
+               {device === "tablet" && (
+                <>
+            <CustomRangeControl
+                    label={<> <VerticalAlignTopIcon />{__("Vertical padding Tablet", "slider-future")}</>}
+                    value={backgroundVerticalPaddingTablet}
+                    onChange={(val) => setAttributes({backgroundVerticalPaddingTablet: val })}
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+           <CustomRangeControl
+                    label={<> <VerticalAlignTopIcon  style={{
+                      transform: "rotate(90deg)",
+                    }} />{__("Horizontal padding Tablet", "slider-future")}</>}
+                    value={backgroundHorizontalPaddingTablet}
+                    onChange={(val) => setAttributes({backgroundHorizontalPaddingTablet: val })}
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+                  </>
+              )}
+               {device === "mobile" && (
+                <>
+            <CustomRangeControl
+                    label={<> <VerticalAlignTopIcon />{__("Vertical padding Mobile", "slider-future")}</>}
+                    value={backgroundVerticalPaddingMobile}
+                    onChange={(val) => setAttributes({backgroundVerticalPaddingMobile: val })}
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+           <CustomRangeControl
+                    label={<> <VerticalAlignTopIcon  style={{
+                      transform: "rotate(90deg)",
+                    }} />{__("Horizontal padding Mobile", "slider-future")}</>}
+                    value={backgroundHorizontalPaddingMobile}
+                    onChange={(val) => setAttributes({backgroundHorizontalPaddingMobile: val })}
+                    min={0}
+                    max={256}
+                    step={1}
+                  />
+                  </>
+              )}
+                {(backgroundHorizontalPadding > 0 || backgroundHorizontalPaddingTablet > 0 || backgroundHorizontalPaddingMobile > 0) && (
                   <p
                     className="notice components-base-control__help"
                     style={{ margin: "0" }}
                   >
                     {__(
                       'Warning: if you set space here you also need to adjust "Space between slides"!',
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 )}
@@ -1138,7 +1219,7 @@ const handleMobileClickHeight = () => {
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
             <CustomRangeControl
-                    label={<> <VerticalAlignTopIcon />{__("Margin Top", "cocoblocks")}</>}
+                    label={<> <VerticalAlignTopIcon />{__("Margin Top", "slider-future")}</>}
                     value={sliderMarginTop}
                     onChange={(val) => setAttributes({sliderMarginTop: val })}
                     min={-200}
@@ -1151,7 +1232,7 @@ const handleMobileClickHeight = () => {
                       <VerticalAlignTopIcon style={{
                       transform: "rotate(180deg)",
                     }} />
-                      {__("Margin Bottom", "cocoblocks")}
+                      {__("Margin Bottom", "slider-future")}
                     </>
                   }
                   value={sliderMarginBottom}
@@ -1172,27 +1253,27 @@ const handleMobileClickHeight = () => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Content", "cocoblocks")}
+              {__("Content", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
             <CustomSelectControl
                           label={
                             <>
                               <CommentIcon />
-                              {__("Content Type", "cocoblocks")}
+                              {__("Content Type", "slider-future")}
                               </>
                           }
                           value={attributes.contentType}
                           options={[
-                            { label: __("Custom", "cocoblocks"), value: "custom" },
+                            { label: __("Custom", "slider-future"), value: "custom" },
                             {
-                              label: __("Post Based", "cocoblocks"),
+                              label: __("Post Based", "slider-future"),
                               value: "post-based",
                             },
                             {
-                              label: __("WooComemrce", "cocoblocks"),
+                              label: __("WooComemrce", "slider-future"),
                               value: "woocommerce-based",
                             },
                           ]}
@@ -1211,7 +1292,7 @@ const handleMobileClickHeight = () => {
                   >
                     {__(
                       "No further source settings needed. Content is created manually.",
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 
@@ -1225,10 +1306,10 @@ const handleMobileClickHeight = () => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Global color skin", "cocoblocks")}
+              {__("Global color skin", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
               <div className="custom-select color">
                 <ColorOptionsPanel
@@ -1236,7 +1317,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ backgroundColorSlideDefault: color })
                   }
-                  buttonTitle={__("Background Color Slide", "cocoblocks")}
+                  buttonTitle={__("Background Color Slide", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1248,7 +1329,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ backgroundColorBlockDefault: color })
                   }
-                  buttonTitle={__("Background Color Block", "cocoblocks")}
+                  buttonTitle={__("Background Color Block", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1260,7 +1341,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ textColorDefault: color })
                   }
-                  buttonTitle={__("Text Color", "cocoblocks")}
+                  buttonTitle={__("Text Color", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1272,7 +1353,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ innerTextColorDefault: color })
                   }
-                  buttonTitle={__("Inner Text Color", "cocoblocks")}
+                  buttonTitle={__("Inner Text Color", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1286,33 +1367,33 @@ const handleMobileClickHeight = () => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Mouse Effect", "cocoblocks")}
+              {__("Mouse Effect", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomSelectControl
                   label={
                     <>
                      <MouseIcon />
-                      {__("Choose the effect", "cocoblocks")}
+                      {__("Choose the effect", "slider-future")}
                     </>
                   }
                   value={mouseEffect}
                   onChange={(value) => setAttributes({ mouseEffect: value })}
                   options={[
-                    { label: __("None", "cocoblocks"), value: "none" },
-                    { label: __("Particle", "cocoblocks"), value: "particle" },
+                    { label: __("None", "slider-future"), value: "none" },
+                    { label: __("Particle", "slider-future"), value: "particle" },
                     {
-                      label: __("Smoke", "cocoblocks"),
+                      label: __("Smoke", "slider-future"),
                       value: "smoke",
                     },
                     {
-                      label: __("Parallax", "cocoblocks"),
+                      label: __("Parallax", "slider-future"),
                       value: "parallax",
                     },
                     {
-                      label: __("Liquid", "cocoblocks"),
+                      label: __("Liquid", "slider-future"),
                       value: "liquid",
                     },
                   ]}
@@ -1327,7 +1408,7 @@ const handleMobileClickHeight = () => {
                   >
                     {__(
                       "This effect is only visible in the frontend!",
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 )}
@@ -1339,7 +1420,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ colorEffectStart: color })
                   }
-                  buttonTitle={__("Color Effect Start", "cocoblocks")}
+                  buttonTitle={__("Color Effect Start", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1355,7 +1436,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ colorEffectMiddle: color })
                   }
-                  buttonTitle={__("Color Effect Middle", "cocoblocks")}
+                  buttonTitle={__("Color Effect Middle", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1367,7 +1448,7 @@ const handleMobileClickHeight = () => {
                   setColorNormal={(color) =>
                     setAttributes({ colorEffectEnd: color })
                   }
-                  buttonTitle={__("Color Effect End", "cocoblocks")}
+                  buttonTitle={__("Color Effect End", "slider-future")}
                   buttonIcon={
                     <ColorizeIcon/>
                   }
@@ -1381,7 +1462,7 @@ const handleMobileClickHeight = () => {
                   label={
                     <>
                       <ZoomOutMapIcon />
-                      {__("Liquid size", "cocoblocks")}
+                      {__("Liquid size", "slider-future")}
                     </>
                   }
                   value={rangeVapore}
@@ -1394,7 +1475,7 @@ const handleMobileClickHeight = () => {
                   max={2500}
                   step={10}
                   showTooltip={true}
-                  tooltipText={__("Set a smaller number to make bigger liquid!", "cocoblocks")}
+                  tooltipText={__("Set a smaller number to make bigger liquid!", "slider-future")}
                   tooltipTop = {'3px'}
                   tooltipLeft = {'50%'}
                 />
@@ -1402,7 +1483,7 @@ const handleMobileClickHeight = () => {
                   label={
                     <>
                      <ColorizeIcon/>
-                      {__("Adjust Hue (H)", "cocoblocks")}
+                      {__("Adjust Hue (H)", "slider-future")}
                     </>
                   }
                   value={firstColorLiquid}
@@ -1419,7 +1500,7 @@ const handleMobileClickHeight = () => {
                   label={
                     <>
                       <WbSunnyIcon />
-                      {__("Adjust Saturation (S)", "cocoblocks")}
+                      {__("Adjust Saturation (S)", "slider-future")}
                     </>
                   }
                   value={secondColorLiquid}
@@ -1436,7 +1517,7 @@ const handleMobileClickHeight = () => {
                   label={
                     <>
                       <TonalityIcon />
-                      {__("Adjust Value (V)", "cocoblocks")}
+                      {__("Adjust Value (V)", "slider-future")}
                     </>
                   }
                   value={thirdColorLiquid}
@@ -1458,7 +1539,7 @@ const handleMobileClickHeight = () => {
                   >
                     {__(
                       "Due to the nature of the liquid effect, we use HSV (Hue, Saturation, Value) color model to provide more precise control over the colors. Please use the sliders to adjust the hue, saturation, and value for the effect.",
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                   <div className="custom-select" style={{paddingBottom:'12px'}}>
@@ -1473,62 +1554,62 @@ const handleMobileClickHeight = () => {
   <thead className="thead-hsv">
     <tr>
       <th style={{  padding: "5px" }}>
-        {__("Hue", "cocoblocks")}
+        {__("Hue", "slider-future")}
       </th>
       <th style={{  padding: "5px" }}>
-        {__("Sat.", "cocoblocks")}
+        {__("Sat.", "slider-future")}
       </th>
       <th style={{ padding: "5px" }}>
-        {__("Value", "cocoblocks")}
+        {__("Value", "slider-future")}
       </th>
       <th style={{  padding: "5px" }}>
-        {__("Color", "cocoblocks")}
+        {__("Color", "slider-future")}
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("0", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none' }}>  {__("Red", "cocoblocks")}<div style={{backgroundColor: "hsl(0, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("0", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>  {__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none' }}>  {__("Red", "slider-future")}<div style={{backgroundColor: "hsl(0, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.083", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Orange", "cocoblocks")}<div style={{backgroundColor: "hsl(30, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.083", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Orange", "slider-future")}<div style={{backgroundColor: "hsl(30, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
    
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.17", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px" ,borderLeft:'none',borderTopColor:'transparent'}}>  {__("Yellow", "cocoblocks")}<div style={{backgroundColor: "hsl(60, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.17", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px" ,borderLeft:'none',borderTopColor:'transparent'}}>  {__("Yellow", "slider-future")}<div style={{backgroundColor: "hsl(60, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.33", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Green", "cocoblocks")}<div style={{backgroundColor: "hsl(120, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.33", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Green", "slider-future")}<div style={{backgroundColor: "hsl(120, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.5", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Cyan", "cocoblocks")}<div style={{backgroundColor: "hsl(180, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.5", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Cyan", "slider-future")}<div style={{backgroundColor: "hsl(180, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.67", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Blue", "cocoblocks")}<div style={{backgroundColor: "hsl(240, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.67", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent' }}>  {__("Blue", "slider-future")}<div style={{backgroundColor: "hsl(240, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
     <tr className="last-border-table-hsv">
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.83", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "cocoblocks")}</td>
-      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent'}}>  {__("Magenta", "cocoblocks")}<div style={{backgroundColor: "hsl(300, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("0.83", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px" }}>{__("1", "slider-future")}</td>
+      <td style={{ border: "1px solid var(--light-color)", padding: "5px", display: "flex", alignItems:"center",justifyContent:"space-between",gap:"3px",borderLeft:'none',borderTopColor:'transparent'}}>  {__("Magenta", "slider-future")}<div style={{backgroundColor: "hsl(300, 100%, 50%)",width:'15px',height:'15px',borderRadius:'50%'}}></div></td>
     </tr>
   </tbody>
 </table>
@@ -1542,72 +1623,72 @@ const handleMobileClickHeight = () => {
               <div className="content-title-checkbox">
               <AnimationIcon />
                 <h2>
-                  {__("Select elements to apply effect", "cocoblocks")}
+                  {__("Select elements to apply effect", "slider-future")}
                   </h2>
               </div>
                               <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('Select all','cocoblock')}
+                    label={__('Select all',"slider-future")}
                     checked={imgSelected && h3Selected && h4Selected && buttonSelected && spanSelected && pSelected}
                     onChange={handleSelectAllChange}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('Image','cocoblock')}
+                    label={__('Image',"slider-future")}
                     checked={imgSelected}
                     onChange={(isChecked) => setAttributes({ imgSelected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('H1','cocoblock')}
+                    label={__('H1',"slider-future")}
                     checked={h1Selected}
                     onChange={(isChecked) => setAttributes({ h1Selected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('H2','cocoblock')}
+                    label={__('H2',"slider-future")}
                     checked={h2Selected}
                     onChange={(isChecked) => setAttributes({ h2Selected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('H3','cocoblock')}
+                    label={__('H3',"slider-future")}
                     checked={h3Selected}
                     onChange={(isChecked) => setAttributes({ h3Selected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('H4','cocoblock')}
+                    label={__('H4',"slider-future")}
                     checked={h4Selected}
                     onChange={(isChecked) => setAttributes({ h4Selected: isChecked })}
                 />
                   <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('H5','cocoblock')}
+                    label={__('H5',"slider-future")}
                     checked={h5Selected}
                     onChange={(isChecked) => setAttributes({ h5Selected: isChecked })}
                 />
                   <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('H6','cocoblock')}
+                    label={__('H6',"slider-future")}
                     checked={h6Selected}
                     onChange={(isChecked) => setAttributes({ h6Selected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('Button','cocoblock')}
+                    label={__('Button',"slider-future")}
                     checked={buttonSelected}
                     onChange={(isChecked) => setAttributes({ buttonSelected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('Span','cocoblock')}
+                    label={__('Span',"slider-future")}
                     checked={spanSelected}
                     onChange={(isChecked) => setAttributes({ spanSelected: isChecked })}
                 />
                 <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={__('Paragraph','cocoblock')}
+                    label={__('Paragraph',"slider-future")}
                     checked={pSelected}
                     onChange={(isChecked) => setAttributes({ pSelected: isChecked })}
                 />
@@ -1618,7 +1699,7 @@ const handleMobileClickHeight = () => {
                   label={
                     <>
                      <HourglassBottomIcon />
-                      {__("Motion Transition", "cocoblocks")}
+                      {__("Motion Transition", "slider-future")}
                     </>
                   }
                   value={transitionParalaxMouse}

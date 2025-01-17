@@ -22,8 +22,18 @@
     --dark-intermedy:#3f444a;
     --ruler-color: #ff000077; 
   }
-  
 
+  .slider-settings{
+        button{
+            color: var(--primary-color)!important;
+        }
+        .components-button.is-primary{
+            background-color: var(--white-color)!important;
+            border: 1px solid var(--primary-color)!important;
+            border-radius: 25px!important;
+        }
+  }
+  
 .wrap-admin-slider{
     background-color: var(--background-color);
     padding: 24px;
@@ -31,4 +41,18 @@
     h1{
         color: var(--light-color);
     }
+}
+
+.MuiTab-textColorPrimary  {
+    color: var(--white-color)!important;
+}
+
+.MuiTabs-scroller.MuiTabs-fixed.css-s2t35c-MuiTabs-scroller{
+    margin-top: 50px;
+}
+
+.logo-dashboard{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }

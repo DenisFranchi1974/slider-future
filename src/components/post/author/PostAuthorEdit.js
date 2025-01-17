@@ -154,8 +154,8 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
   const [activeSectionImage, setActiveSectionImage] = useState("style");
   return (
     <PanelBody
-        className="cocoblocks-panel panel-slide"
-        title={__("Author", "cocoblocks")}
+        className="slider-future-panel panel-slide"
+        title={__("Author", "slider-future")}
         initialOpen={false}
     >
         <SectionSelectorElementPostAut onSectionChange={setActiveSectionImage} />
@@ -168,7 +168,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
+              {__("Background", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -180,7 +180,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             </div>
             <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Font", "cocoblocks")}
+                  {__("Font", "slider-future")}
                 </h2>
               </div>
               <div className="content-section-panel" style={{ padding: "0" }}>
@@ -188,7 +188,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <TextFieldsIcon/>
-                {__("Min", "cocoblocks")}
+                {__("Min", "slider-future")}
             </>
           }
           value={authorPostFontSizeMobile}
@@ -196,14 +196,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           min={4}
           max={100}
           step={1}
-          tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "cocoblocks")}
+          tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "slider-future")}
           showTooltip = {true}
         />
         <CustomRangeControl
           label={
             <>
                 <TuneIcon />
-                {__("Mid", "cocoblocks")}
+                {__("Mid", "slider-future")}
             </>
           }
           value={authorPostFontSizeTablet}
@@ -211,7 +211,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           min={4}
           max={200}
           step={.5}
-          tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "cocoblocks")}
+          tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "slider-future")}
           showTooltip = {true}
         />
               
@@ -219,14 +219,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                    <FullscreenIcon />
-                {__("Max", "cocoblocks")}
+                {__("Max", "slider-future")}
             </>
           }
           value={authorPostFontSize}
           onChange={(val) => setAttributes({authorPostFontSize: val })}
           min={4}
           max={500}
-          tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "cocoblocks")}
+          tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "slider-future")}
           showTooltip = {true}
         />
               
@@ -247,7 +247,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
      label={
          <>
            <FontDownloadIcon />
-           {__("Font family", "cocoblocks")}
+           {__("Font family", "slider-future")}
          </>
      }
      value={authorPostFontFamily}
@@ -258,7 +258,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
      label={
          <>
            <FitnessCenterIcon />
-           {__("Font weight", "cocoblocks")}
+           {__("Font weight", "slider-future")}
          </>
      }
      value={authorPostFontWeight}
@@ -269,7 +269,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                    <HeightIcon />
-                   {__("Line height", "cocoblocks")}
+                   {__("Line height", "slider-future")}
             </>
           }
           value={authorPostLineHeight}
@@ -282,7 +282,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                   <FormatLineSpacingIcon style={{transform:'rotate(90deg)'}} />
-                  {__("Letter spacing", "cocoblocks")}
+                  {__("Letter spacing", "slider-future")}
             </>
           }
           value={authorPostLetterSpacing}
@@ -301,14 +301,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             >
               {__(
                 "Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!",
-                "cocoblocks"
+                "slider-future"
               )}
             </p>
             <div className="custom-select color">
             <ColorOptionsPanel
             colorNormal={authorPostColorIn}
             setColorNormal={(color) => setAttributes({ authorPostColorIn: color })}
-            buttonTitle={__("Color", "cocoblocks")}
+            buttonTitle={__("Color", "slider-future")}
             buttonIcon={
                 <FormatColorTextIcon />
             }
@@ -318,7 +318,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             <ColorOptionsPanel
             colorNormal={authorPostColor}
             setColorNormal={(color) => setAttributes({ authorPostColor: color })}
-            buttonTitle={__("Background Color", "cocoblocks")}
+            buttonTitle={__("Background Color", "slider-future")}
             buttonIcon={
                 <ColorLensIcon />
             }
@@ -327,7 +327,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                 </div>
                 <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -336,7 +336,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                 label={
                   <>
                     <PaddingIcon/>
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={authorPostPadding }
@@ -355,7 +355,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                 label={
                   <>
                     <MarginIcon/>
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={authorPostMargin}
@@ -370,14 +370,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             </div>
             </div>
             <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
             label={
                 <>
                    <BorderStyleIcon />
-                   {__("Border style", "cocoblocks")}
+                   {__("Border style", "slider-future")}
                 </>
             }
             value={authorPostBorderStyle}
@@ -390,7 +390,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                 <ColorOptionsPanel
             colorNormal={authorPostBorderColor}
             setColorNormal={(color) => setAttributes({ authorPostBorderColor: color })}
-            buttonTitle={__("Border Color", "cocoblocks")}
+            buttonTitle={__("Border Color", "slider-future")}
             buttonIcon={
                 <BorderColorIcon/>
             }
@@ -402,7 +402,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                  label={
                    <>
                     <BorderLeftIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                    </>
                  }
                  values={authorPostBorderSize}
@@ -423,7 +423,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                  label={
                    <>
                      <BorderInnerIcon />
-                     {__("Border Radius", "cocoblocks")}
+                     {__("Border Radius", "slider-future")}
                    </>
                  }
                  values={authorPostBorderRadius}
@@ -448,7 +448,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -456,7 +456,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                     label={
                       <>
                        <RotateRightIcon />
-                       {__("Rotate", "cocoblocks")}
+                       {__("Rotate", "slider-future")}
                       </>
                     }
                     value={authorPostRotate}
@@ -468,7 +468,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("TRANSPARENCY SETTING", "cocoblocks")}
+              {__("TRANSPARENCY SETTING", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -476,7 +476,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                         label={
                         <>
                          <OpacityIcon />
-                         {__("Opacity", "cocoblocks")}
+                         {__("Opacity", "slider-future")}
                         </>
                         }
                         value={authorPostOpacity}
@@ -490,7 +490,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -498,7 +498,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             label={
                 <>
                <FitbitIcon />
-                {__("Effect", "cocoblocks")}
+                {__("Effect", "slider-future")}
                 </>
             }
             checked={authorPostBoxShadow}
@@ -510,7 +510,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                   <ColorOptionsPanel
                     colorNormal={authorPostBoxShadowColor}
                     setColorNormal={(color) => setAttributes({ authorPostBoxShadowColor: color })}
-                    buttonTitle={__("Shadow Color", "cocoblocks")}
+                    buttonTitle={__("Shadow Color", "slider-future")}
                     buttonIcon={
                         <ColorLensIcon />
                     }
@@ -520,7 +520,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                     label={
                       <>
                         <SwapHorizIcon />
-                        {__("Offset X", "cocoblocks")}
+                        {__("Offset X", "slider-future")}
                       </>
                     }
                     value={authorPostBoxShadowHOffset}
@@ -533,7 +533,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                     label={
                       <>
                         <SwapVertIcon />
-                        {__("Offset Y", "cocoblocks")}
+                        {__("Offset Y", "slider-future")}
                       </>
                     }
                     value={authorPostBoxShadowVOffset}
@@ -546,7 +546,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                     label={
                       <>
                        <BlurOnIcon />
-                        {__("Blur", "cocoblocks")}
+                        {__("Blur", "slider-future")}
                       </>
                     }
                     value={authorPostBoxShadowBlur}
@@ -559,7 +559,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                     label={
                       <>
                        <ExpandIcon />
-                        {__("Spread", "cocoblocks")}
+                        {__("Spread", "slider-future")}
                       </>
                     }
                     value={authorPostBoxShadowSpread}
@@ -583,10 +583,10 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           gap: "30px",
         }}
       >
-        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
         {(authorPostEffect !== 'none') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
-            <Tooltip text={__('Play','cocoblock')}>
+            <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimationPostAuthor} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
           </div>
@@ -597,7 +597,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             label={
                 <>
                    <GrainIcon />
-                   {__("Effect", "cocoblocks")}
+                   {__("Effect", "slider-future")}
                 </>
             }
             value={authorPostEffect}
@@ -610,7 +610,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             label={
                 <>
                  <ScatterPlotIcon />
-                 {__("Effect Split", "cocoblocks")}
+                 {__("Effect Split", "slider-future")}
                 </>
             }
             value={authorPostEffectSplit}
@@ -621,7 +621,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <HourglassBottomIcon />
-                {__("Stagger", "cocoblocks")}
+                {__("Stagger", "slider-future")}
             </>
           }
           value={authorPostStagger}
@@ -638,7 +638,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <OpacityIcon />
-              {__("Opacity From", "cocoblocks")}
+              {__("Opacity From", "slider-future")}
             </>
           }
           value={authorPostOpacityFrom }
@@ -651,7 +651,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <OpacityIcon />
-              {__("Opacity To", "cocoblocks")}
+              {__("Opacity To", "slider-future")}
             </>
           }
           value={authorPostOpacityTo }
@@ -664,7 +664,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <DeblurIcon />
-              {__("Blur From", "cocoblocks")}
+              {__("Blur From", "slider-future")}
             </>
           }
           value={authorPostBlurFrom}
@@ -677,7 +677,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <DeblurIcon />
-              {__("Blur To", "cocoblocks")}
+              {__("Blur To", "slider-future")}
             </>
           }
           value={authorPostBlurTo}
@@ -694,7 +694,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X From", "cocoblocks")}
+              {__("Translate X From", "slider-future")}
             </>
           }
           value={authorPostTranslateXFrom}
@@ -707,7 +707,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X To", "cocoblocks")}
+              {__("Translate X To", "slider-future")}
             </>
           }
           value={authorPostTranslateXTo}
@@ -720,7 +720,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y From", "cocoblocks")}
+               {__("Translate Y From", "slider-future")}
             </>
           }
           value={authorPostTranslateYFrom}
@@ -733,7 +733,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y To", "cocoblocks")}
+               {__("Translate Y To", "slider-future")}
             </>
           }
           value={authorPostTranslateYTo}
@@ -749,7 +749,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
      label={
          <>
            <LinearScaleIcon />
-            {__("Choose the scale", "cocoblocks")}
+            {__("Choose the scale", "slider-future")}
          </>
      }
      value={authorPostScaleType}
@@ -763,7 +763,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale From", "cocoblocks")}
+                {__("Scale From", "slider-future")}
             </>
           }
           value={authorPostScaleFrom}
@@ -776,7 +776,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale To", "cocoblocks")}
+                {__("Scale To", "slider-future")}
             </>
           }
           value={authorPostScaleTo}
@@ -794,7 +794,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate From", "cocoblocks")}
+                {__("Rotate From", "slider-future")}
             </>
           }
           value={authorPostRotateFrom}
@@ -807,7 +807,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate To", "cocoblocks")}
+                {__("Rotate To", "slider-future")}
             </>
           }
           value={authorPostRotateTo}
@@ -820,7 +820,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X From", "cocoblocks")}
+                {__("Rotate X From", "slider-future")}
             </>
           }
           value={authorPostRotateXFrom}
@@ -833,7 +833,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X To", "cocoblocks")}
+                {__("Rotate X To", "slider-future")}
             </>
           }
           value={authorPostRotateXTo}
@@ -846,7 +846,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y From", "cocoblocks")}
+               {__("Rotate Y From", "slider-future")}
             </>
           }
           value={authorPostRotateYFrom}
@@ -859,7 +859,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y To", "cocoblocks")}
+               {__("Rotate Y To", "slider-future")}
             </>
           }
           value={authorPostRotateYTo}
@@ -877,7 +877,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X From", "cocoblocks")}
+                {__("Skew X From", "slider-future")}
             </>
           }
           value={authorPostSkewXFrom}
@@ -890,7 +890,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X To", "cocoblocks")}
+                {__("Skew X To", "slider-future")}
             </>
           }
           value={authorPostSkewXTo}
@@ -903,7 +903,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y From", "cocoblocks")}
+                 {__("Skew Y From", "slider-future")}
             </>
           }
           value={authorPostSkewYFrom}
@@ -916,7 +916,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y To", "cocoblocks")}
+                 {__("Skew Y To", "slider-future")}
             </>
           }
           value={authorPostSkewYTo}
@@ -933,7 +933,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                   label={
                       <>
                        <OpenInBrowserIcon />
-                       {__("Block Direction", "cocoblocks")}
+                       {__("Block Direction", "slider-future")}
                       </>
                   }
                   value={authorPostDirectionBlock}
@@ -944,7 +944,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
         <ColorOptionsPanel
             colorNormal={authorPostBlockColor}
             setColorNormal={(color) => setAttributes({ authorPostBlockColor: color })}
-            buttonTitle={__("Block Color", "cocoblocks")}
+            buttonTitle={__("Block Color", "slider-future")}
             buttonIcon={
                 <ColorLensIcon />
             }
@@ -956,7 +956,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                  <HourglassBottomIcon />
-                 {__("Duration", "cocoblocks")}
+                 {__("Duration", "slider-future")}
             </>
           }
           value={authorPostDuration}
@@ -969,7 +969,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                   <HistoryToggleOffIcon />
-                  {__("Delay", "cocoblocks")}
+                  {__("Delay", "slider-future")}
             </>
           }
           value={authorPostDelay}
@@ -982,7 +982,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                   <HistoryToggleOffIcon />
-                  {__("End Delay", "cocoblocks")}
+                  {__("End Delay", "slider-future")}
             </>
           }
           value={authorPostEndDelay}
@@ -995,7 +995,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
      label={
          <>
           <SwapCallsIcon />
-            {__("Easing", "cocoblocks")}
+            {__("Easing", "slider-future")}
          </>
      }
      value={authorPostEasing}
@@ -1006,7 +1006,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
      label={
          <>
           <SyncAltIcon />
-            {__("Direction", "cocoblocks")}
+            {__("Direction", "slider-future")}
          </>
      }
      value={authorPostDirection}
@@ -1017,7 +1017,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
      label={
          <>
           <LoopIcon />
-            {__("Loop", "cocoblocks")}
+            {__("Loop", "slider-future")}
          </>
      }
      value={authorPostLoop}
@@ -1035,7 +1035,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                marginBottom: "6px",
              }}
            >
-                {__('The loop must complete the set cycle before it can be changed.','cocoblock')}
+                {__('The loop must complete the set cycle before it can be changed.',"slider-future")}
               </p>
             )}
 
@@ -1049,14 +1049,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
                marginBottom: "6px",
              }}
            >
-                {__('The loop is limited to 5 repetitions in the editor for performance reasons.','cocoblock')}
+                {__('The loop is limited to 5 repetitions in the editor for performance reasons.',"slider-future")}
               </p>
             )}
             </div>
    
             {(authorPostEffect!== 'none' ) && (
           <div className="button-reply-effect">
-            <Tooltip text={__('Play','cocoblock')}>
+            <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimationPostAuthor}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
           </div>
@@ -1075,14 +1075,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           marginTop: "-18px",
         }}
       >
-        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
       </div>
       <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
             label={
               <>
                 <GrainIcon />
-                {__("Effects", "cocoblocks")}
+                {__("Effects", "slider-future")}
               </>
             }
             value={authorPostEffectHover}
@@ -1095,7 +1095,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <OpacityIcon />
-              {__("Opacity", "cocoblocks")}
+              {__("Opacity", "slider-future")}
             </>
           }
           value={authorPostOpacityHover ?? 1}
@@ -1108,7 +1108,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <DeblurIcon />
-              {__("Blur", "cocoblocks")}
+              {__("Blur", "slider-future")}
             </>
           }
           value={authorPostBlurHover ?? 0}
@@ -1123,7 +1123,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X", "cocoblocks")}
+              {__("Translate X", "slider-future")}
             </>
           }
           value={authorPostTranslateXHover ?? 100}
@@ -1136,7 +1136,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y", "cocoblocks")}
+               {__("Translate Y", "slider-future")}
             </>
           }
           value={authorPostTranslateYHover ?? 0}
@@ -1152,7 +1152,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             label={
               <>
                 <LinearScaleIcon />
-                {__("Choose the scale", "cocoblocks")}
+                {__("Choose the scale", "slider-future")}
               </>
             }
             value={authorPostScaleTypeHover ?? 'scale'}
@@ -1166,7 +1166,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale", "cocoblocks")}
+                {__("Scale", "slider-future")}
             </>
           }
           value={authorPostScaleHover ?? 1}
@@ -1183,7 +1183,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate", "cocoblocks")}
+                {__("Rotate", "slider-future")}
             </>
           }
           value={authorPostRotateHover ?? 0}
@@ -1196,7 +1196,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X", "cocoblocks")}
+                {__("Rotate X", "slider-future")}
             </>
           }
           value={authorPostRotateXHover ?? 0}
@@ -1209,7 +1209,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y", "cocoblocks")}
+               {__("Rotate Y", "slider-future")}
             </>
           }
           value={authorPostRotateYHover ?? 0}
@@ -1226,7 +1226,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X", "cocoblocks")}
+                {__("Skew X", "slider-future")}
             </>
           }
           value={authorPostSkewXHover ?? 0}
@@ -1239,7 +1239,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y", "cocoblocks")}
+                 {__("Skew Y", "slider-future")}
             </>
           }
           value={authorPostSkewYHover ?? 0}
@@ -1254,7 +1254,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           label={
             <>
                  <HourglassBottomIcon />
-                 {__("Duration", "cocoblocks")}
+                 {__("Duration", "slider-future")}
             </>
           }
           value={authorPostDurationHover ?? 800}
@@ -1267,7 +1267,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             label={
               <>
                 <SwapCallsIcon />
-                {__("Easing", "cocoblocks")}
+                {__("Easing", "slider-future")}
               </>
             }
             value={authorPostEasingHover ?? 'linear'}
@@ -1289,14 +1289,14 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
             }}
         >
             <h2 className="title-custom-panel">
-            {__("Visibility", "cocoblocks")}
+            {__("Visibility", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
         <CustomToggleControl
             label={<>
                 <PersonalVideoIcon />
-                {__("Desktop", "cocoblocks")}
+                {__("Desktop", "slider-future")}
               </>}
             checked={authorPostDesktop}
             onChange={(val) => setAttributes({authorPostDesktop: val })}
@@ -1304,7 +1304,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
         <CustomToggleControl
             label={<>
                 <TabletMacIcon />
-                {__("Tablet", "cocoblocks")}
+                {__("Tablet", "slider-future")}
               </>}
             checked={authorPostTablet}
             onChange={(val) => setAttributes({authorPostTablet: val })}
@@ -1312,7 +1312,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
         <CustomToggleControl
             label={<>
                 <SmartphoneIcon />
-                {__("Mobile", "cocoblocks")}
+                {__("Mobile", "slider-future")}
               </>}
             checked={authorPostMobile}
             onChange={(val) => setAttributes({authorPostMobile: val })}
@@ -1329,7 +1329,7 @@ const PostAuthorEdit = ({ setAttributes, attributes, onPlayAnimationPostAuthor})
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

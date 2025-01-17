@@ -48,7 +48,7 @@ const CustomStrokeControl = ({
           label={
             <>
               <FitbitIcon />
-              {__("Effect", "cocoblocks")}
+              {__("Effect", "slider-future")}
             </>
           }
           checked={valueEnableStroke}
@@ -62,7 +62,7 @@ const CustomStrokeControl = ({
       <ColorOptionsPanel
           colorNormal={valueRangeStrokeColor}
           setColorNormal={handleChangeColorStroke}
-          buttonTitle={__("Set Color", "cocoblocks")}
+          buttonTitle={__("Set Color", "slider-future")}
           buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
         />
      </div>
@@ -71,7 +71,7 @@ const CustomStrokeControl = ({
           label={
             <>
               <BorderRightIcon />
-              {__("Size", "cocoblocks")}
+              {__("Size", "slider-future")}
             </>
           }
           value={valueRangeStroke}

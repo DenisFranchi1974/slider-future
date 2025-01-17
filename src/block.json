@@ -1,18 +1,18 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "slider-builder/slider",
+	"name": "slider-future/slider",
 	"version": "0.1.0",
 	"title": "Slider Future",
 	"category": "widgets",
 	"icon": "images-alt2",
-	"description": "Responsive, customizable slider for dynamic and engaging web displays.",
+	"description": "The ultimate Gutenberg block for creating beautifully designed and animated web content.",
 	"example": {},
 	"supports": {
 		"html": false,
 		"align": ["wide", "full"]
 	},
-	"textdomain": "slider",
+	"textdomain": "slider-future",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
@@ -73,7 +73,7 @@
 		},
 		"effect":{
 			"type":"string",
-			"default":"slide"
+			"default":"slider-future"
 		},
 		"device": {
 			"type": "string",
@@ -532,6 +532,22 @@
 			"default":0
 		},
 		"backgroundHorizontalPadding":{
+			"type":"number",
+			"default":0  
+		},
+		"backgroundVerticalPaddingTablet":{
+			"type":"number",
+			"default":0
+		},
+		"backgroundHorizontalPaddingTablet":{
+			"type":"number",
+			"default":0  
+		},
+		"backgroundVerticalPaddingMobile":{
+			"type":"number",
+			"default":0
+		},
+		"backgroundHorizontalPaddingMobile":{
 			"type":"number",
 			"default":0  
 		},

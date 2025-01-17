@@ -67,7 +67,7 @@ const CustomShadowControl = ({
           label={
             <>
               <FitbitIcon />
-              {__("Effect", "cocoblocks")}
+              {__("Effect", "slider-future")}
             </>
           }
           checked={valueEnableShadow}
@@ -81,7 +81,7 @@ const CustomShadowControl = ({
       <ColorOptionsPanel
           colorNormal={valueRangeShadowColor}
           setColorNormal={handleChangeRangeShadowColor}
-          buttonTitle={__("Set Color", "cocoblocks")}
+          buttonTitle={__("Set Color", "slider-future")}
           buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
         />
      </div>
@@ -90,7 +90,7 @@ const CustomShadowControl = ({
           label={
             <>
               <SwapHorizIcon />
-              {__("Offset X", "cocoblocks")}
+              {__("Offset X", "slider-future")}
             </>
           }
           value={valueRangeShadowX}
@@ -105,7 +105,7 @@ const CustomShadowControl = ({
           label={
             <>
               <SwapVertIcon />
-              {__("Offset Y", "cocoblocks")}
+              {__("Offset Y", "slider-future")}
             </>
           }
           value={valueRangeShadowY}
@@ -121,7 +121,7 @@ const CustomShadowControl = ({
           label={
             <>
               <BlurOnIcon />
-              {__("Blur", "cocoblocks")}
+              {__("Blur", "slider-future")}
             </>
           }
           value={valueRangeShadowBlur}
@@ -138,7 +138,7 @@ const CustomShadowControl = ({
           label={
             <>
               <ExpandIcon />
-              {__("Spread", "cocoblocks")}
+              {__("Spread", "slider-future")}
             </>
           }
           value={valueRangeShadowSpread}

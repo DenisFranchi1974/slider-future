@@ -30,7 +30,7 @@ const ColorOptionsPanel = ({ colorNormal, setColorNormal, buttonTitle, buttonIco
                             <Icon icon={buttonIcon} />
                         </span>
                     )}
-                    <span>{buttonTitle || __('Set Color', 'cocoblocks')}</span>
+                    <span>{buttonTitle || __('Set Color', 'slider-future')}</span>
                 </div>
                 <div 
                     className="color-indicator" 

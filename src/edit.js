@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { TabPanel, Button, Tooltip} from "@wordpress/components";
+import { TabPanel, Button, Tooltip, Notice} from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -43,7 +43,6 @@ import ArticleIcon from "@mui/icons-material/Article";
 import SlowMotionVideoIcon from "@mui/icons-material/SlowMotionVideo";
 import ButtonRender from "./components/button/ButtonRender";
 import apiFetch from "@wordpress/api-fetch";
-import PatternSelectionModal from "./components/modalPattern";
 import SliderTemplateModal from "./components/modalTemplate";
 import StyleIcon from '@mui/icons-material/Style';
 import PostImageRender from "./components/post/image/PostImageRender";
@@ -185,6 +184,10 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     backgroundBorderRadius,
     backgroundVerticalPadding,
     backgroundHorizontalPadding,
+    backgroundHorizontalPaddingTablet,
+    backgroundVerticalPaddingTablet,
+    backgroundHorizontalPaddingMobile,
+    backgroundVerticalPaddingMobile,
     backgroundColor,
     backgroundImage,
     focalPoint,
@@ -259,15 +262,15 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     // Funzione per rimuovere le classi personalizzate
     const removeCustomClasses = () => {
       const panels = document.querySelectorAll(
-        ".cocoblocks-custom-advanced-panel"
+        ".slider-future-custom-advanced-panel"
       );
       panels.forEach((panel) => {
-        panel.classList.remove("cocoblocks-custom-advanced-panel");
+        panel.classList.remove("slider-future-custom-advanced-panel");
       });
 
-      const cards = document.querySelectorAll(".cocoblocks-custom-block-card");
+      const cards = document.querySelectorAll(".slider-future-custom-block-card");
       cards.forEach((card) => {
-        card.classList.remove("cocoblocks-custom-block-card");
+        card.classList.remove("slider-future-custom-block-card");
       });
     };
 
@@ -280,8 +283,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
         const parentPanel = panel.closest(".components-panel__body");
         if (parentPanel) {
           const block = select("core/block-editor").getSelectedBlock();
-          if (block && block.name === "slider-builder/slider") {
-            parentPanel.classList.add("cocoblocks-custom-advanced-panel");
+          if (block && block.name === "slider-future/slider") {
+            parentPanel.classList.add("slider-future-custom-advanced-panel");
           }
         }
       });
@@ -292,8 +295,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       const blockCards = document.querySelectorAll(".block-editor-block-card");
       blockCards.forEach((card) => {
         const block = select("core/block-editor").getSelectedBlock();
-        if (block && block.name === "slider-builder/slider") {
-          card.classList.add("cocoblocks-custom-block-card");
+        if (block && block.name === "slider-future/slider") {
+          card.classList.add("slider-future-custom-block-card");
         }
       });
     };
@@ -326,7 +329,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     const handleTabClick = (event) => {
       const tabId = event.currentTarget.id;
       const advancedPanel = document.querySelector(
-        ".cocoblocks-custom-advanced-panel"
+        ".slider-future-custom-advanced-panel"
       );
 
       // Lista dei tab che devono nascondere il pannello avanzato
@@ -388,7 +391,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
   useEffect(() => {
     // Identificatore specifico del blocco, ad esempio un data-attribute
     const blockContainer = document.querySelector(
-      '[data-type="slider-builder/slider"]'
+      '[data-type="slider-future/slider"]'
     );
 
     if (!blockContainer) return; // Se il blocco non è presente, interrompi
@@ -445,7 +448,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   useEffect(() => {
-    const swiperContainer = document.querySelector(".slider-builder");
+    const swiperContainer = document.querySelector(".slider-future");
     if (swiperContainer && swiperContainer.swiper) {
       swiperContainer.swiper.params.navigation.prevEl = prevRef.current;
       swiperContainer.swiper.params.navigation.nextEl = nextRef.current;
@@ -466,6 +469,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
   const swiperButtonPrevClasses = `swiper-button-prev ${
     !navigationTablet ? "nav-tablet" : ""
   } ${!navigationMobile ? "nav-mobile" : ""}`;
+
+
 
   // Pagination end other
   const stylesPagination = {
@@ -511,6 +516,9 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     '--slide-height-mobile': autoHeight ? "auto" : `${slideHeightMobile}px`,
     marginTop: `${sliderMarginTop}px`,
     marginBottom: `${sliderMarginBottom}px`,
+    padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
+    '--padding-tablet': `${backgroundVerticalPaddingTablet}px ${backgroundHorizontalPaddingTablet}px`,
+    '--padding-mobile': `${backgroundVerticalPaddingMobile}px ${backgroundHorizontalPaddingMobile}px`,
   };
 
   // Autoplay
@@ -687,7 +695,7 @@ useEffect(() => {
 
   const fetchPosts = debounce(() => {
       apiFetch({
-          path: `/cocoblocks/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}&exclude_post_id=${excludePostIdParam}&specific_posts=${specificPostsParam}&latest_posts=${latestPostsParam}`,
+          path: `/slider_future/v1/get-posts?include_categories=${includeCategoriesParam}&exclude_categories=${excludeCategoriesParam}&order=${order}&posts_per_page=${postsToShow}&exclude_post_id=${excludePostIdParam}&specific_posts=${specificPostsParam}&latest_posts=${latestPostsParam}`,
       })
           .then((data) => {
               console.log('Data ricevuti:', data);
@@ -929,16 +937,35 @@ useEffect(() => {
     });
   }, []);
 
+  const BetaBanner = () => (
+    <Notice
+      status="error"
+      isDismissible={false}
+      style={{
+        backgroundColor: "red",
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+        padding: "10px",
+        fontSize: "14px"
+      }}
+    >
+     ⚠️ This is a BETA version of the plugin – All PRO features are temporarily unlocked.  
+     This version is intended for testing purposes only and should not be used in production environments. ⚠️
+    </Notice>
+  );
+
   
   // Modal pattern
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
+    <BetaBanner />
       <InspectorControls>
         <div className="button-pattern-slider">
           <Button variant="secondary" onClick={() => setIsModalOpen(true)}>
-            <StyleIcon />{__("New Module for Template", "text-domain")}
+            <StyleIcon />{__("New Module for Template", "slider-future")}
           </Button>
         </div>
         {isModalOpen && (
@@ -1013,7 +1040,7 @@ useEffect(() => {
                     >
                       <Tooltip
                         placement="top"
-                        text={__("Play All Animations", "cocoblock")}
+                        text={__("Play All Animations", "slider-future")}
                       >
                         <Button
                           onClick={handlePlayAll}
@@ -1142,7 +1169,7 @@ useEffect(() => {
           }}
           autoplay={autoplayConfig}
           onAutoplayTimeLeft={autoplayProgress ? onAutoplayTimeLeft : undefined}
-          className={`slider-builder ${
+          className={`slider-future ${
             enableGrid ? "editor-grid" : ""
           } ${filter}`}
           dir={languageSlider}
@@ -1622,10 +1649,7 @@ useEffect(() => {
                           ? ""
                           : slide.position +
                             " " +
-                            overflow +
-                            " " +
-                            slide.layout +
-                            "-layout")
+                            overflow )
                       }
                       style={{
                         // Gestione dello spazio e altre proprietà
@@ -1637,19 +1661,14 @@ useEffect(() => {
                         borderStyle: slide.borderStyleSlide,
                         borderWidth: slide.backgroundBorderSize + "px",
                         borderColor: slide.backgroundBorderColor,
-                        display: slide.layoutDisplay,
                         margin: "0 auto",
-                        padding: `${backgroundVerticalPadding}px ${backgroundHorizontalPadding}px`,
                         ...(slide.developerMode
                           ? {}
                           : {
-                              display: "flex",
-                              flexDirection:
-                                slide.layout === "horizontal"
-                                  ? "row"
-                                  : "column",
+                             // display:  slide.layoutDisplay,
+                            //  flexDirection:slide.layout,
                               textAlign: "center",
-                              gap: slide.gapItems + "px",
+                          //    gap: slide.gapItems + "px",
                               paddingTop:
                                 slide.backgroundVerticalPadding + "px",
                               paddingBottom:
@@ -1661,7 +1680,7 @@ useEffect(() => {
                               maxWidth: slide.enableContentWidth
                                 ? `${slide.contentWidth}px`
                                 : false,
-                              flexWrap: slide.layoutWrap,
+                             //flexWrap: slide.layoutWrap,
                             }),
                       }}
                     >
@@ -1696,7 +1715,7 @@ useEffect(() => {
                           "content-inner-for-slide " +
                           (slide.developerMode
                             ? ""
-                            : slide.position + " " + slide.layout + "-layout")
+                            : slide.position )
                         }
                         style={
                           slide.developerMode
@@ -1705,10 +1724,27 @@ useEffect(() => {
                                 alignItems: slide.layoutAlignItems,
                                 display: slide.layoutDisplay,
                                 width: "100%",
-                                flexWrap: slide.layoutWrap,
-                                "--justify-content-responsive-slide":
-                                  slide.layoutAlignResponsive,
                                 gap: slide.gapItems + "px",
+                                ...(slide.layoutDisplay === "flex" && {
+                                  flexWrap: slide.layoutWrap,
+                                  flexDirection: slide.layout || "row",
+                                ...(slide.layout === "row" && {
+                                justifyContent: slide.layoutJustify || "center",
+                                alignItems: slide.layoutVerticalAlignRow || "center",
+                                }),
+                                ...(slide.layout === "column" && {
+                                justifyContent: slide.layoutVerticalAlignColumn || "center",
+                                alignItems: slide.layoutJustifyColumn || "center",
+                                }),
+                                }),
+                                ...(slide.layoutDisplay === "grid" && {
+                                  ...(slide.itemGridPosition === "auto" && {
+                                      gridTemplateColumns: 'repeat(auto-fill, minmax(min('+ slide.itemGridWidth +'px, 100%), 1fr))',
+                                  }),
+                                  ...(slide.itemGridPosition === "manual" && {
+                                    gridTemplateColumns: 'repeat(' + slide.itemGridColumn + ', minmax(0, 1fr))',
+                                }),
+                                }),
                               }
                         }
                       >

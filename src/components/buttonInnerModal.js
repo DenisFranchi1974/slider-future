@@ -140,7 +140,7 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
 
   const defaultValuesButton = {
     type3: {
-      button:__(' Click Here', 'cocoblocks'),
+      button:__(' Click Here', 'slider-future'),
       buttonColor: '#FFFFFF',
       backgroundBorderColorButton: '#FFFFFF',
       borderStyleButton: 'solid',
@@ -313,7 +313,7 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
   };
 
   return (
-    <Modal title={__('Select Button Type','cocoblock')} onRequestClose={onClose} className="modal-button">
+    <Modal title={__('Select Button Type',"slider-future")} onRequestClose={onClose} className="modal-button">
       <div className="content-button-modal">
         <Button onClick={() => setSelectedType("type1")} className={selectedType === "type1" ? "selected" : ""}>
           <span className="scroll-btn-inner" style={getButtonStyle("type1")}>
@@ -336,47 +336,47 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
         <Button onClick={() => setSelectedType("type3")}  className={selectedType === "type3" ? "selected" : ""}>
         <div className={'content-button-slide-inner button-slider-inner'} >
           <a href="#" style={getButtonStyleButton("type3")}>
-              {__('Click Here', 'cocoblocks')}
+              {__('Click Here', 'slider-future')}
           </a>
         </div>
         </Button>
         <Button onClick={() => setSelectedType("type4")}  className={selectedType === "type4" ? "selected" : ""}>
         <div className={'content-button-slide-inner button-slider-inner'} >
           <a href="#" style={getButtonStyleButton("type4")}>
-              {__('Click Here', 'cocoblocks')}
+              {__('Click Here', 'slider-future')}
           </a>
         </div>
         </Button>
         <Button onClick={() => setSelectedType("type5")}  className={selectedType === "type5" ? "selected" : ""}>
         <div className={'content-button-slide-inner button-slider-inner'} >
           <a href="#" style={getButtonStyleButton("type5")}>
-              {__('Click Here', 'cocoblocks')}
+              {__('Click Here', 'slider-future')}
           </a>
         </div>
         </Button>
         <Button onClick={() => setSelectedType("type6")}  className={selectedType === "type6" ? "selected" : ""}>
         <div className={'content-button-slide-inner button-slider-inner'} >
           <a href="#" style={getButtonStyleButton("type6")}>
-              {__('Click Here', 'cocoblocks')}
+              {__('Click Here', 'slider-future')}
           </a>
         </div>
         </Button>
         <Button onClick={() => setSelectedType("type7")}  className={selectedType === "type7" ? "selected" : ""}>
         <div className={'content-button-slide-inner button-slider-inner'} >
           <a href="#" style={getButtonStyleButton("type7")}>
-              {__('Click Here', 'cocoblocks')}
+              {__('Click Here', 'slider-future')}
           </a>
         </div>
         </Button>
         <Button onClick={() => setSelectedType("type8")}  className={selectedType === "type8" ? "selected" : ""}>
         <div className={'content-button-slide-inner button-slider-inner'} >
           <a href="#" style={getButtonStyleButton("type8")}>
-              {__('Click Here', 'cocoblocks')}
+              {__('Click Here', 'slider-future')}
           </a>
         </div>
         </Button>
       </div>
-      <Button onClick={handleSelect}  className={`button-select ${selectedType ? "selected" : ""}`}>{__('Select','cocoblock')}</Button>
+      <Button onClick={handleSelect}  className={`button-select ${selectedType ? "selected" : ""}`}>{__('Select',"slider-future")}</Button>
     </Modal>
   );
 };

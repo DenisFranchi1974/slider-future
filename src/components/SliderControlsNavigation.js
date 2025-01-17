@@ -196,10 +196,10 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Progress", "cocoblocks")}
+              {__("Progress", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomToggleControl
                   label={
@@ -216,7 +216,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           transform="translate(.647 .124)"
                         ></path>
                       </svg>
-                      {__("Scrollbar", "cocoblocks")}
+                      {__("Scrollbar", "slider-future")}
                     </>
                   }
                   checked={scrollbar}
@@ -226,7 +226,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                 <>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Track color", "cocoblocks")}
+                      buttonTitle={__("Track color", "slider-future")}
                       colorNormal={scrollBarColor}
                       setColorNormal={(color) =>
                         setAttributes({ scrollBarColor: color })
@@ -235,7 +235,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Thumb color", "cocoblocks")}
+                      buttonTitle={__("Thumb color", "slider-future")}
                       colorNormal={thumbColor}
                       setColorNormal={(color) =>
                         setAttributes({ thumbColor: color })
@@ -243,52 +243,52 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     />
                   </div>
                     <CustomSelectControl
-                      label={__("Position", "cocoblocks")}
+                      label={__("Position", "slider-future")}
                       value={positionScrollbar}
                       onChange={(val) => {
                         setAttributes({ positionScrollbar: val });
                       }}
                       options={[
                         {
-                          label: __("Top", "cocoblocks"),
+                          label: __("Top", "slider-future"),
                           value: "top",
                         },
                         {
-                          label: __("Bottom", "cocoblocks"),
+                          label: __("Bottom", "slider-future"),
                           value: "bottom",
                         },
                       ]}
                     />
                     <CustomToggleControl
-                      label={__("Draggable", "cocoblocks")}
+                      label={__("Draggable", "slider-future")}
                       checked={dragScrollbar}
                       onChange={(value) =>
                         setAttributes({ dragScrollbar: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Makes scrollbar draggable that allowyou to control slider position", "cocoblocks")}
+                      tooltipText={__("Makes scrollbar draggable that allowyou to control slider position", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'40%'}
                     />
                     <CustomToggleControl
-                      label={__("Hide after interaction", "cocoblocks")}
+                      label={__("Hide after interaction", "slider-future")}
                       checked={hideScrollbar}
                       onChange={(value) =>
                         setAttributes({ hideScrollbar: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Hide scrollbar automatically after user interaction", "cocoblocks")}
+                      tooltipText={__("Hide scrollbar automatically after user interaction", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
                     <CustomToggleControl
-                      label={__("Snap on release", "cocoblocks")}
+                      label={__("Snap on release", "slider-future")}
                       checked={releaseScrollbar}
                       onChange={(value) =>
                         setAttributes({ releaseScrollbar: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Snap slider position to slides when you release scrollbar", "cocoblocks")}
+                      tooltipText={__("Snap slider position to slides when you release scrollbar", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'50%'}
                     />
@@ -328,13 +328,13 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       >
                         <path d="M380-300v-360l280 180-280 180ZM480-40q-108 0-202.5-49.5T120-228v108H40v-240h240v80h-98q51 75 129.5 117.5T480-120q115 0 208.5-66T820-361l78 18q-45 136-160 219.5T480-40ZM42-520q7-67 32-128.5T143-762l57 57q-32 41-52 87.5T123-520H42Zm214-241-57-57q53-44 114-69.5T440-918v80q-51 5-97 25t-87 52Zm449 0q-41-32-87.5-52T520-838v-80q67 6 128.5 31T762-818l-57 57Zm133 241q-5-51-25-97.5T761-705l57-57q44 52 69 113.5T918-520h-80Z" />
                       </svg>
-                      {__("Autoplay", "cocoblocks")}
+                      {__("Autoplay", "slider-future")}
                     </>
                   }
                   checked={autoplay}
                   onChange={(value) => setAttributes({ autoplay: value })}
                   showTooltip={true}
-                  tooltipText={__("Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.", "cocoblocks")}
+                  tooltipText={__("Will automatically advance the slides. Note: this is intentionally disabled in the editor, but will affect the front end.", "slider-future")}
                   tooltipTop = {'11px'}
                   tooltipLeft = {'50%'}
                 />
@@ -372,56 +372,56 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         },
                       ]}
                       showTooltip={true}
-                      tooltipText={__("Sets the delay time in milliseconds between each slide transition.", "cocoblocks")}
+                      tooltipText={__("Sets the delay time in milliseconds between each slide transition.", "slider-future")}
                       tooltipTop = {'2px'}
                       tooltipLeft = {'50%'}
                     />
                     <CustomToggleControl
-                      label={__("Disable on interaction", "cocoblocks")}
+                      label={__("Disable on interaction", "slider-future")}
                       checked={disableOnInteraction}
                       onChange={(value) =>
                         setAttributes({ disableOnInteraction: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction", "cocoblocks")}
+                      tooltipText={__("Disabled and autoplay will not be disabled after user interactions (swipes), it will be restarted every time after interaction", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'65%'}
                     />
                     <CustomToggleControl
-                      label={__("Pause on pointer enter", "cocoblocks")}
+                      label={__("Pause on pointer enter", "slider-future")}
                       checked={pauseOnMouseEnter}
                       onChange={(value) =>
                         setAttributes({ pauseOnMouseEnter: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("When enabled autoplay will be paused on mouse enter over Swiper container. If 'Disabled on interaction' is also enabled, it will stop autoplay instead of pause", "cocoblocks")}
+                      tooltipText={__("When enabled autoplay will be paused on mouse enter over Swiper container. If 'Disabled on interaction' is also enabled, it will stop autoplay instead of pause", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'65%'}
                     />
                     <CustomToggleControl
-                      label={__("Reverse direction", "cocoblocks")}
+                      label={__("Reverse direction", "slider-future")}
                       checked={reverseDirection}
                       onChange={(value) =>
                         setAttributes({ reverseDirection: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Enables autoplay in reverse direction", "cocoblocks")}
+                      tooltipText={__("Enables autoplay in reverse direction", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
                     <CustomToggleControl
-                      label={__("Stop on last slide", "cocoblocks")}
+                      label={__("Stop on last slide", "slider-future")}
                       checked={stopOnLastSlide}
                       onChange={(value) =>
                         setAttributes({ stopOnLastSlide: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)", "cocoblocks")}
+                      tooltipText={__("When enabled autoplay will be stopped when it reaches last slide (has no effect in loop mode)", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
                     <CustomToggleControl
-                      label={__("Autoplay progress", "cocoblocks")}
+                      label={__("Autoplay progress", "slider-future")}
                       checked={autoplayProgress}
                       onChange={(value) =>
                         setAttributes({ autoplayProgress: value })
@@ -431,7 +431,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     <>
                       <div className="custom-select color">
                         <ColorOptionsPanel
-                          buttonTitle={__("Color", "cocoblocks")}
+                          buttonTitle={__("Color", "slider-future")}
                           colorNormal={autoplayProgressColor}
                           setColorNormal={(color) =>
                             setAttributes({ autoplayProgressColor: color })
@@ -459,21 +459,21 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
       {activeSectionNavigation === "arrow" && (
         <>
           <div className="content-title-custom-panel">
-            <h2 className="title-custom-panel">{__("Arrow", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Arrow", "slider-future")}</h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomToggleControl
                   label={
                     <>
                       <SwitchLeftIcon />
-                      {__("Navigation", "cocoblocks")}
+                      {__("Navigation", "slider-future")}
                     </>
                   }
                   checked={navigation}
                   onChange={(value) => setAttributes({ navigation: value })}
                   showTooltip={true}
-                  tooltipText={__("Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!", "cocoblocks")}
+                  tooltipText={__("Will display arrows so user can navigate forward/backward. If you disable and re-enable it, if the Slider does not work it will allow you to change the navigation type with the control below!", "slider-future")}
                   tooltipTop = {'11px'}
                   tooltipLeft = {'60%'}
                 />
@@ -488,12 +488,12 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   >
                     {__(
                       "Warning: In order for the carousel navigation to work in the editor, you need to change the carousel type below! Just move it once and choose the type you want!",
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                   <div className="custom-select select-control-label-right">
                     <CustomSelectControl
-                      label={__("Type", "cocoblocks")}
+                      label={__("Type", "slider-future")}
                       value={navigationIcons}
                       onChange={(val) => {
                         setAttributes({ navigationIcons: val });
@@ -503,7 +503,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Color", "cocoblocks")}
+                      buttonTitle={__("Color", "slider-future")}
                       colorNormal={navColor}
                       setColorNormal={(color) =>
                         setAttributes({ navColor: color })
@@ -512,7 +512,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Color Hover", "cocoblocks")}
+                      buttonTitle={__("Color Hover", "slider-future")}
                       colorNormal={navColorHover}
                       setColorNormal={(color) =>
                         setAttributes({ navColorHover: color })
@@ -521,7 +521,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Background Color", "cocoblocks")}
+                      buttonTitle={__("Background Color", "slider-future")}
                       colorNormal={navBackgroundColor}
                       setColorNormal={(color) =>
                         setAttributes({ navBackgroundColor: color })
@@ -530,7 +530,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Background Color Hover", "cocoblocks")}
+                      buttonTitle={__("Background Color Hover", "slider-future")}
                       colorNormal={navBackgroundColorHover}
                       setColorNormal={(color) =>
                         setAttributes({ navBackgroundColorHover: color })
@@ -539,7 +539,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Border Color", "cocoblocks")}
+                      buttonTitle={__("Border Color", "slider-future")}
                       colorNormal={navBorderColor}
                       setColorNormal={(color) =>
                         setAttributes({ navBorderColor: color })
@@ -548,7 +548,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Border Color Hover", "cocoblocks")}
+                      buttonTitle={__("Border Color Hover", "slider-future")}
                       colorNormal={navBorderColorHover}
                       setColorNormal={(color) =>
                         setAttributes({ navBorderColorHover: color })
@@ -622,13 +622,13 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       step={1}
                     />
                     <CustomToggleControl
-                      label={__("Hide on click", "cocoblocks")}
+                      label={__("Hide on click", "slider-future")}
                       checked={hideNavigation}
                       onChange={(value) =>
                         setAttributes({ hideNavigation: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Toggle navigation buttons visibility after click on Slider's container.It is intentionally disabled in the editor!", "cocoblocks")}
+                      tooltipText={__("Toggle navigation buttons visibility after click on Slider's container.It is intentionally disabled in the editor!", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
@@ -636,7 +636,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       label={
                         <>
                            <TabletMacIcon sx={{ fontSize: 16 }} />
-                          {__("Enable in Tablet", "cocoblocks")}
+                          {__("Enable in Tablet", "slider-future")}
                         </>
                       }
                       checked={navigationTablet}
@@ -648,7 +648,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       label={
                         <>
                            <SmartphoneIcon sx={{ fontSize: 16 }} />
-                          {__("Enable in Mobile", "cocoblocks")}
+                          {__("Enable in Mobile", "slider-future")}
                         </>
                       }
                       checked={navigationMobile}
@@ -658,7 +658,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     />
                   <Button onClick={resetAllAttributes} className="button-reset">
                     <RestartAltIcon />
-                    {__("Reset Navigation", "cocoblocks")}
+                    {__("Reset Navigation", "slider-future")}
                   </Button>
                 </>
               )}
@@ -670,16 +670,16 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Bullets", "cocoblocks")}
+              {__("Bullets", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomToggleControl
                   label={
                     <>
                       <MoreHorizIcon />
-                      {__("Pagination", "cocoblocks")}
+                      {__("Pagination", "slider-future")}
                     </>
                   }
                   checked={paginationEnable}
@@ -690,29 +690,29 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
               {paginationEnable == true && (
                 <>
                     <CustomSelectControl
-                      label={__("Type", "cocoblocks")}
+                      label={__("Type", "slider-future")}
                       value={typePagination}
                       onChange={(val) => {
                         setAttributes({ typePagination: val });
                       }}
                       options={[
                         {
-                          label: __("Bullets", "cocoblocks"),
+                          label: __("Bullets", "slider-future"),
                           value: "bullets",
                         },
                         {
-                          label: __("Fraction", "cocoblocks"),
+                          label: __("Fraction", "slider-future"),
                           value: "fraction",
                         },
                         {
-                          label: __("Progressbar", "cocoblocks"),
+                          label: __("Progressbar", "slider-future"),
                           value: "progressbar",
                         },
                       ]}
                     />
                   <div className="custom-select color">
                     <ColorOptionsPanel
-                      buttonTitle={__("Color", "cocoblocks")}
+                      buttonTitle={__("Color", "slider-future")}
                       colorNormal={bulletColor}
                       setColorNormal={(color) =>
                         setAttributes({ bulletColor: color })
@@ -723,7 +723,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     typePagination == "progressbar") && (
                     <div className="custom-select color">
                       <ColorOptionsPanel
-                        buttonTitle={__("Color Inactivity", "cocoblocks")}
+                        buttonTitle={__("Color Inactivity", "slider-future")}
                         colorNormal={bulletInactivityColor}
                         setColorNormal={(color) =>
                           setAttributes({ bulletInactivityColor: color })
@@ -733,31 +733,31 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   )}
                   {typePagination !== "progressbar" && (
                       <CustomSelectControl
-                        label={__("Position", "cocoblocks")}
+                        label={__("Position", "slider-future")}
                         value={positionPagination}
                         onChange={(val) => {
                           setAttributes({ positionPagination: val });
                         }}
                         options={[
                           {
-                            label: __("Top", "cocoblocks"),
+                            label: __("Top", "slider-future"),
                             value: "top",
                           },
                           {
-                            label: __("Bottom", "cocoblocks"),
+                            label: __("Bottom", "slider-future"),
                             value: "bottom",
                           },
                         ]}
                       />
                   )}
                     <CustomToggleControl
-                      label={__("Hide on click", "cocoblocks")}
+                      label={__("Hide on click", "slider-future")}
                       checked={hidePagination}
                       onChange={(value) =>
                         setAttributes({ hidePagination: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Toggle (hide/show) pagination container visibility after click on Slider's container.It is intentionally disabled in the editor!", "cocoblocks")}
+                      tooltipText={__("Toggle (hide/show) pagination container visibility after click on Slider's container.It is intentionally disabled in the editor!", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
@@ -786,13 +786,13 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           step={1}
                         />
                         <CustomToggleControl
-                          label={__("Progressbar opposite", "cocoblocks")}
+                          label={__("Progressbar opposite", "slider-future")}
                           checked={progressbarOpposite}
                           onChange={(value) =>
                             setAttributes({ progressbarOpposite: value })
                           }
                           showTooltip={true}
-                          tooltipText={__("Makes pagination progressbar opposite to Swiper's direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction", "cocoblocks")}
+                          tooltipText={__("Makes pagination progressbar opposite to Swiper's direction parameter, means vertical progressbar for horizontal Swiper direction and horizontal progressbar for vertical Swiper direction", "slider-future")}
                           tooltipTop = {'11px'}
                           tooltipLeft = {'60%'}
                         />
@@ -801,24 +801,24 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   {typePagination == "bullets" && (
                     <>
                         <CustomToggleControl
-                          label={__("Clickable", "cocoblocks")}
+                          label={__("Clickable", "slider-future")}
                           checked={clickPagination}
                           onChange={(value) =>
                             setAttributes({ clickPagination: value })
                           }
                           showTooltip={true}
-                          tooltipText={__("If enable then clicking on pagination button will cause transition to appropriate slide. Only for 'bullets' pagination type", "cocoblocks")}
+                          tooltipText={__("If enable then clicking on pagination button will cause transition to appropriate slide. Only for 'bullets' pagination type", "slider-future")}
                           tooltipTop = {'11px'}
                           tooltipLeft = {'60%'}
                         />
                         <CustomToggleControl
-                          label={__("Dynamic bullets", "cocoblocks")}
+                          label={__("Dynamic bullets", "slider-future")}
                           checked={dynamicPagination}
                           onChange={(value) =>
                             setAttributes({ dynamicPagination: value })
                           }
                           showTooltip={true}
-                          tooltipText={__("Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time", "cocoblocks")}
+                          tooltipText={__("Good to enable if you use bullets pagination whit a lot of slides. So it will keep only few bullets visible at the same time", "slider-future")}
                           tooltipTop = {'11px'}
                           tooltipLeft = {'60%'}
                         />
@@ -921,7 +921,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                     className="button-reset"
                   >
                     <RestartAltIcon />
-                    {__("Reset Pagination", "cocoblocks")}
+                    {__("Reset Pagination", "slider-future")}
                   </Button>
                 </>
               )}
@@ -933,44 +933,44 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Keyboard", "cocoblocks")}
+              {__("Keyboard", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomToggleControl
                   label={
                     <>
                       <KeyboardIcon />
-                      {__("Keyboard control", "cocoblocks")}
+                      {__("Keyboard control", "slider-future")}
                     </>
                   }
                   checked={keyboard}
                   onChange={(value) => setAttributes({ keyboard: value })}
                   showTooltip={true}
-                  tooltipText={__("Enable keyboard control. Doesn't work in the editor!", "cocoblocks")}
+                  tooltipText={__("Enable keyboard control. Doesn't work in the editor!", "slider-future")}
                   tooltipTop = {'11px'}
                   tooltipLeft = {'60%'}
                 />
               {keyboard == true && (
                 <>
                     <CustomToggleControl
-                      label={__("Only in viewport", "cocoblocks")}
+                      label={__("Only in viewport", "slider-future")}
                       checked={viewPortKeyboard}
                       onChange={(value) =>
                         setAttributes({ viewPortKeyboard: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("When enabled it will control sliders that are currently in viewport", "cocoblocks")}
+                      tooltipText={__("When enabled it will control sliders that are currently in viewport", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
                     <CustomToggleControl
-                      label={__("Page Up/Down keys", "cocoblocks")}
+                      label={__("Page Up/Down keys", "slider-future")}
                       checked={upKeyboard}
                       onChange={(value) => setAttributes({ upKeyboard: value })}
                       showTooltip={true}
-                      tooltipText={__("When enabled it will enabled keyword navigation by Page Up and Page Down keys", "cocoblocks")}
+                      tooltipText={__("When enabled it will enabled keyword navigation by Page Up and Page Down keys", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
@@ -983,54 +983,54 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
       {activeSectionNavigation === "mouse" && (
         <>
           <div className="content-title-custom-panel">
-            <h2 className="title-custom-panel">{__("Mouse", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Mouse", "slider-future")}</h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomToggleControl
                   label={
                     <>
                       <MouseIcon />
-                      {__("Mousewheel control", "cocoblocks")}
+                      {__("Mousewheel control", "slider-future")}
                     </>
                   }
                   checked={mousewheel}
                   onChange={(value) => setAttributes({ mousewheel: value })}
                   showTooltip={true}
-                      tooltipText={__("Enable or disable mouse wheel control for swiping.", "cocoblocks")}
+                      tooltipText={__("Enable or disable mouse wheel control for swiping.", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'65%'}
                 />
               {mousewheel == true && (
                 <>
                     <CustomToggleControl
-                      label={__("Force to axis", "cocoblocks")}
+                      label={__("Force to axis", "slider-future")}
                       checked={forceToAxis}
                       onChange={(value) =>
                         setAttributes({ forceToAxis: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.", "cocoblocks")}
+                      tooltipText={__("Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
                     <CustomToggleControl
-                      label={__("Invert scrolling", "cocoblocks")}
+                      label={__("Invert scrolling", "slider-future")}
                       checked={invert}
                       onChange={(value) => setAttributes({ invert: value })}
                       showTooltip={true}
-                      tooltipText={__("Set to true to invert sliding direction", "cocoblocks")}
+                      tooltipText={__("Set to true to invert sliding direction", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
                     <CustomToggleControl
-                      label={__("Release on edges", "cocoblocks")}
+                      label={__("Release on edges", "slider-future")}
                       checked={releaseOnEdges}
                       onChange={(value) =>
                         setAttributes({ releaseOnEdges: value })
                       }
                       showTooltip={true}
-                      tooltipText={__("Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)", "cocoblocks")}
+                      tooltipText={__("Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
@@ -1044,7 +1044,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={3}
                       step={0.1}
                       showTooltip={true}
-                      tooltipText={__("Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity", "cocoblocks")}
+                      tooltipText={__("Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity", "slider-future")}
                       tooltipTop = {'3px'}
                       tooltipLeft = {'60%'}
                     />
@@ -1057,21 +1057,21 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
       {activeSectionNavigation === "grap" && (
         <>
           <div className="content-title-custom-panel">
-            <h2 className="title-custom-panel">{__("Grab", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Grab", "slider-future")}</h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomToggleControl
                   label={
                     <>
                       <SwipeIcon />
-                      {__("Grab Cursor", "cocoblocks")}
+                      {__("Grab Cursor", "slider-future")}
                     </>
                   }
                   checked={grabCursor}
                   onChange={(value) => setAttributes({ grabCursor: value })}
                   showTooltip={true}
-                  tooltipText={__("Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!", "cocoblocks")}
+                  tooltipText={__("Activates a hand cursor that allows users to click and drag to navigate through slides, providing a more intuitive and interactive experience. It is intentionally disabled in the editor!", "slider-future")}
                   tooltipTop = {'11px'}
                   tooltipLeft = {'60%'}
                 />

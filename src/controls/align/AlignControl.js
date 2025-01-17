@@ -27,9 +27,9 @@ const CustomAlignControl = ({
   }, [value]);
 
   const positionOptions = [
-    { value: 'left', label: __('Left', 'cocoblocks'), icon: <FormatAlignLeftIcon/> },
-    { value: 'center', label: __('Center', 'cocoblocks'), icon: <FormatAlignCenterIcon/> },
-    { value: 'right', label: __('Right', 'cocoblocks'), icon: <FormatAlignRightIcon/> },
+    { value: 'left', label: __('Left', 'slider-future'), icon: <FormatAlignLeftIcon/> },
+    { value: 'center', label: __('Center', 'slider-future'), icon: <FormatAlignCenterIcon/> },
+    { value: 'right', label: __('Right', 'slider-future'), icon: <FormatAlignRightIcon/> },
   ];
 
   const selectedIcon = positionOptions.find(option => option.value === selectedPosition)?.icon;
@@ -45,7 +45,7 @@ const CustomAlignControl = ({
         {...restProps}
       >
         <div className='postion-slide__label'>
-          <h2>{label || __('Align', 'cocoblocks')}</h2>
+          <h2>{label || __('Align', 'slider-future')}</h2>
           <Icon icon={selectedIcon || "editor-alignleft"} style={{ right: '-50px' }} />
           <span className="ico-align-content dashicons dashicons-arrow-down-alt2"></span>
         </div>
@@ -80,7 +80,7 @@ const CustomAlignControl = ({
             maxWidth: "300px",
             borderRadius: "4px",
           }}
-          text={tooltipText || __("Default tooltip text", "cocoblocks")} // Testo di fallback
+          text={tooltipText || __("Default tooltip text", "slider-future")} // Testo di fallback
         >
           <InfoIcon className="tooltip-icon" style={{ top: '3px' }} />
         </Tooltip>

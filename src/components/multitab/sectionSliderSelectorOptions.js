@@ -27,7 +27,7 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeOptions("animation")}
       >
         < MovieFilterIcon />
-        {__("Animation", "cocoblocks")}
+        {__("Animation", "slider-future")}
       </Button>
 
       <Button
@@ -38,7 +38,7 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeOptions("filter")}
       >
         <BlurOnIcon />
-        {__("Filters", "cocoblocks")}
+        {__("Filters", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -48,7 +48,7 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeOptions("loop")}
       >
         <RepeatOneIcon />
-        {__("Loop Layers", "cocoblocks")}
+        {__("Loop Layers", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -58,7 +58,7 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeOptions("language")}
       >
         <LanguageIcon />
-        {__("Language", "cocoblocks")}
+        {__("Language", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -68,7 +68,7 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeOptions("direction")}
       >
         <OpenWithIcon />
-        {__("Direction", "cocoblocks")}
+        {__("Direction", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -78,7 +78,7 @@ const SectionSliderSelectorOptions = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeOptions("design")}
       >
         <DesignServicesIcon />
-        {__("Design Tools", "cocoblocks")}
+        {__("Design Tools", "slider-future")}
       </Button>
     </ButtonGroup>
   );

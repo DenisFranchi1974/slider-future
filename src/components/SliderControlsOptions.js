@@ -1,9 +1,7 @@
 import {
-  SelectControl,
   Icon,
   Tooltip,
   Notice,
-  RangeControl,
   Button,
   ToggleControl,
   Modal,
@@ -268,31 +266,31 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Animation", "cocoblocks")}
+              {__("Animation", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomSelectControl
                   label={
                     <>
                       <AutoAwesomeIcon />
-                      {__("Effect", "cocoblocks")}
+                      {__("Effect", "slider-future")}
                     </>
                   }
                   value={effect}
                   onChange={(val) => setAttributes({ effect: val })}
                   options={[
-                    { label: __("Slide", "cocoblocks"), value: "slide" },
-                    { label: __("Fade", "cocoblocks"), value: "fade" },
-                    { label: __("Cube", "cocoblocks"), value: "cube" },
-                    { label: __("Flip", "cocoblocks"), value: "flip" },
+                    { label: __("Slider", "slider-future"), value: "slider-future" },
+                    { label: __("Fade", "slider-future"), value: "fade" },
+                    { label: __("Cube", "slider-future"), value: "cube" },
+                    { label: __("Flip", "slider-future"), value: "flip" },
                     {
-                      label: __("Coverflow", "cocoblocks"),
+                      label: __("Coverflow", "slider-future"),
                       value: "coverflow",
                     },
-                    { label: __("Cards", "cocoblocks"), value: "cards" },
-                    { label: __("Creative", "cocoblocks"), value: "creative" },
+                    { label: __("Cards", "slider-future"), value: "cards" },
+                    { label: __("Creative", "slider-future"), value: "creative" },
                   ]}
                 />
               {effect == "flip" && (
@@ -303,7 +301,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   >
                     {__(
                       'Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!',
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 </>
@@ -311,16 +309,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               {effect == "cube" && (
                 <>
                     <CustomToggleControl
-                      label={__("Shadow", "cocoblocks")}
+                      label={__("Shadow", "slider-future")}
                       checked={shadow}
                       onChange={(value) => setAttributes({ shadow: value })}
                       showTooltip={true}
                       tooltipTop = {'10px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.", "cocoblocks")}
+                      tooltipText={__("An overall shadow that appears behind the cube is added. This shadow gives an overall depth to the cube animation, making it more three-dimensional. The shadow is static relative to the cube and does not change with each slide.", "slider-future")}
                     />
                     <CustomToggleControl
-                      label={__("Slideshadow", "cocoblocks")}
+                      label={__("Slideshadow", "slider-future")}
                       checked={slideShadows}
                       onChange={(value) =>
                         setAttributes({ slideShadows: value })
@@ -328,12 +326,12 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'10px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.", "cocoblocks")}
+                      tooltipText={__("Every single slide will have a shadow cast on it. These shadows change dynamically as the slides rotate, giving a more detailed and realistic depth effect to transitions between slides. The shadows of the slides make the movement and rotation of the individual faces of the cube visible.", "slider-future")}
                     />
                   {(shadow || slideShadows) && (
                     <>
                         <CustomRangeControl
-                          label={__("Shadow offset (px)", "cocoblocks")}
+                          label={__("Shadow offset (px)", "slider-future")}
                           value={shadowOffset}
                           onChange={(val) =>
                             setAttributes({ shadowOffset: val })
@@ -343,7 +341,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                           step={1}
                         />
                         <CustomRangeControl
-                          label={__("Shadow scale (ratio)", "cocoblocks")}
+                          label={__("Shadow scale (ratio)", "slider-future")}
                           value={shadowScale}
                           onChange={(val) =>
                             setAttributes({ shadowScale: val })
@@ -359,7 +357,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               {effect == "coverflow" && (
                 <>
                     <CustomToggleControl
-                      label={__("Slideshadow", "cocoblocks")}
+                      label={__("Slideshadow", "slider-future")}
                       checked={slideShadows}
                       onChange={(value) =>
                         setAttributes({ slideShadows: value })
@@ -367,10 +365,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'10px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Enables slides shadows.", "cocoblocks")}
+                      tooltipText={__("Enables slides shadows.", "slider-future")}
                     />
                     <CustomRangeControl
-                      label={__("Depth", "cocoblocks")}
+                      label={__("Depth", "slider-future")}
                       value={depth}
                       onChange={(val) => setAttributes({ depth: val })}
                       min={0}
@@ -379,10 +377,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'3px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Depth offset in px(slides translate in Z axis)", "cocoblocks")}
+                      tooltipText={__("Depth offset in px(slides translate in Z axis)", "slider-future")}
                     />
                     <CustomRangeControl
-                      label={__("Rotate", "cocoblocks")}
+                      label={__("Rotate", "slider-future")}
                       value={rotate}
                       onChange={(val) => setAttributes({ rotate: val })}
                       min={0}
@@ -391,10 +389,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'3px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Slide rotate in degrees", "cocoblocks")}
+                      tooltipText={__("Slide rotate in degrees", "slider-future")}
                     />
                     <CustomRangeControl
-                      label={__("Stretch", "cocoblocks")}
+                      label={__("Stretch", "slider-future")}
                       value={stretch}
                       onChange={(val) => setAttributes({ stretch: val })}
                       min={-100}
@@ -403,10 +401,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'3px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Stretch space between slides (in px)", "cocoblocks")}
+                      tooltipText={__("Stretch space between slides (in px)", "slider-future")}
                     />
                     <CustomRangeControl
-                      label={__("Effect multiplier", "cocoblocks")}
+                      label={__("Effect multiplier", "slider-future")}
                       value={modifier}
                       onChange={(val) => setAttributes({ modifier: val })}
                       min={0}
@@ -418,7 +416,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               {effect == "cards" && (
                 <>
                     <CustomToggleControl
-                      label={__("Slideshadow", "cocoblocks")}
+                      label={__("Slideshadow", "slider-future")}
                       checked={slideShadows}
                       onChange={(value) =>
                         setAttributes({ slideShadows: value })
@@ -426,10 +424,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'10px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Enables slides shadows.", "cocoblocks")}
+                      tooltipText={__("Enables slides shadows.", "slider-future")}
                     />
                     <CustomToggleControl
-                      label={__("Rotate", "cocoblocks")}
+                      label={__("Rotate", "slider-future")}
                       checked={rotateCards}
                       onChange={(value) =>
                         setAttributes({ rotateCards: value })
@@ -437,13 +435,13 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       showTooltip={true}
                       tooltipTop = {'10px'}
                       tooltipLeft = {'50%'}
-                      tooltipText={__("Enables cards rotation", "cocoblocks")}
+                      tooltipText={__("Enables cards rotation", "slider-future")}
                     />
                 </>
               )}
               {effect == "creative" && (
                 <Button onClick={openModal} className="button-creative">
-                  {__("Creative effect configuration", "cocoblocks")}
+                  {__("Creative effect configuration", "slider-future")}
                  <NavigateNextIcon />
                 </Button>
               )}
@@ -451,7 +449,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                 <div className="custom-select">
                   <ToggleControl
                      __nextHasNoMarginBottom
-                    label={__("Crossfade", "cocoblocks")}
+                    label={__("Crossfade", "slider-future")}
                     checked={crossFade}
                     onChange={(value) => setAttributes({ crossFade: value })}
                   />
@@ -465,7 +463,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       }}
                       text={__(
                         "The current slide fades out while the new slide appears simultaneously.",
-                        "cocoblocks"
+                        "slider-future"
                       )}
                     >
                       <Icon icon={info} className="tooltip-icon" />
@@ -481,7 +479,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       }}
                       text={__(
                         "The current slide completely disappears before the new slide starts to appear.",
-                        "cocoblocks"
+                        "slider-future"
                       )}
                     >
                       <Icon icon={info} className="tooltip-icon" />
@@ -493,7 +491,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   label={
                     <>
                        <HourglassBottomIcon />
-                      {__("Transition duration", "cocoblocks")}
+                      {__("Transition duration", "slider-future")}
                     </>
                   }
                   value={speed}
@@ -503,7 +501,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   showTooltip={true}
                   tooltipTop = {'2px'}
                   tooltipLeft = {'60%'}
-                  tooltipText={__("Duration of transition between slides (in ms).", "cocoblocks")}
+                  tooltipText={__("Duration of transition between slides (in ms).", "slider-future")}
                 />
             </div>
           </div>
@@ -513,16 +511,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Filters", "cocoblocks")}
+              {__("Filters", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomSelectControl
                   label={
                     <>
                       <BlurOnIcon />
-                      {__("Bg Filter", "cocoblocks")}
+                      {__("Bg Filter", "slider-future")}
                     </>
                   }
                   value={filter}
@@ -539,7 +537,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       setColorNormal={(color) =>
                         setAttributes({ colorOneEffect: color })
                       }
-                      buttonTitle={__("First Color", "cocoblocks")}
+                      buttonTitle={__("First Color", "slider-future")}
                       buttonIcon={
                         <ContrastIcon />
                       }
@@ -551,7 +549,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       setColorNormal={(color) =>
                         setAttributes({ colorTwoEffect: color })
                       }
-                      buttonTitle={__("Second Color", "cocoblocks")}
+                      buttonTitle={__("Second Color", "slider-future")}
                       buttonIcon={
                         <ContrastIcon />
                       }
@@ -564,7 +562,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                         setColorNormal={(color) =>
                           setAttributes({ colorThreeEffect: color })
                         }
-                        buttonTitle={__("Third Color", "cocoblocks")}
+                        buttonTitle={__("Third Color", "slider-future")}
                         buttonIcon={
                           <ContrastIcon />
                         }
@@ -573,7 +571,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   )}
                   <Button onClick={resetEffect} className="button-reset">
                   <RestartAltIcon />
-                    {__("Reset Effect Color", "cocoblocks")}
+                    {__("Reset Effect Color", "slider-future")}
                   </Button>
                 </>
               )}
@@ -585,16 +583,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Loop Layers", "cocoblocks")}
+              {__("Loop Layers", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomSelectControl
                   label={
                     <>
                       <RepeatIcon />
-                      {__("Loop Mode", "cocoblocks")}
+                      {__("Loop Mode", "slider-future")}
                     </>
                   }
                   value={loopMode}
@@ -603,28 +601,28 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   }}
                   options={[
                     {
-                      label: __("Disable", "cocoblocks"),
+                      label: __("Disable", "slider-future"),
                       value: "disable",
                     },
                     {
-                      label: __("Enable", "cocoblocks"),
+                      label: __("Enable", "slider-future"),
                       value: "enable",
                     },
                     {
-                      label: __("Rewind", "cocoblocks"),
+                      label: __("Rewind", "slider-future"),
                       value: "rewind",
                     },
                   ]}
                   showTooltip={true}
                   tooltipTop = {'10px'}
                   tooltipLeft = {'45%'}
-                  tooltipText={__("Enables continuous loop mode", "cocoblocks")}
+                  tooltipText={__("Enables continuous loop mode", "slider-future")}
                 />
               {showLoopNotice && (
                 <Notice status="warning" isDismissible={false}>
                   {__(
                     'Loop mode is not compatible with grid.fill = "row".  ',
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </Notice>
               )}
@@ -636,23 +634,23 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Language", "cocoblocks")}
+              {__("Language", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomSelectControl
                   label={
                     <>
                       <LanguageIcon />
-                      {__("Language direction", "cocoblocks")}
+                      {__("Language direction", "slider-future")}
                     </>
                   }
                   value={languageSlider}
                   onChange={(val) => setAttributes({ languageSlider: val })}
                   options={[
-                    { label: __("LTR", "slide"), value: "ltr" },
-                    { label: __("RTL", "cocoblocks"), value: "rtl" },
+                    { label: __("LTR", "slider-future"), value: "ltr" },
+                    { label: __("RTL", "slider-future"), value: "rtl" },
                   ]}
                 />
             </div>
@@ -663,30 +661,30 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Direction", "cocoblocks")}
+              {__("Direction", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                 <CustomSelectControl
                   label={
                     <>
                       <OpenWithIcon />
-                      {__("Slider direction", "cocoblocks")}
+                      {__("Slider direction", "slider-future")}
                     </>
                   }
                   value={directionSlider}
                   onChange={(val) => setAttributes({ directionSlider: val })}
                   options={[
-                    { label: __("Horizontal", "slide"), value: "horizontal" },
-                    { label: __("Vertical", "cocoblocks"), value: "vertical" },
+                    { label: __("Horizontal", "slider-future"), value: "horizontal" },
+                    { label: __("Vertical", "slider-future"), value: "vertical" },
                   ]}
                 />
               {directionSlider === "vertical" && (
                 <p className="notice components-base-control__help">
                   {__(
                     "You have to adjust a maximum height of the Slider!",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               )}
@@ -698,16 +696,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
         <>
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Design tools", "cocoblocks")}
+              {__("Design tools", "slider-future")}
             </h2>
           </div>
-          <div className="cocoblocks-panel content-section-custom-panel">
+          <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
                   <CustomToggleControl
                     label={
                       <>
                       <ArchitectureIcon />
-                        {__("Enable rulers", "cocoblocks")}
+                        {__("Enable rulers", "slider-future")}
                       </>
                     }
                     checked={enableRuler}
@@ -715,7 +713,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   />
                 {enableRuler && (
                     <CustomRangeControl
-                      label={__("Opacity", "cocoblocks")}
+                      label={__("Opacity", "slider-future")}
                       value={opacityRuler}
                       onChange={(val) => setAttributes({ opacityRuler: val })}
                       min={.1}
@@ -727,7 +725,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     label={
                       <>
                       <Grid4x4Icon />
-                        {__("Enable grid", "cocoblocks")}
+                        {__("Enable grid", "slider-future")}
                       </>
                     }
                     checked={enableGrid}
@@ -736,7 +734,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                 {enableGrid && (
                 <>
                     <CustomRangeControl
-                      label={__("Opacity", "cocoblocks")}
+                      label={__("Opacity", "slider-future")}
                       value={opacityGrid}
                       onChange={(val) => setAttributes({ opacityGrid: val })}
                       min={.1}
@@ -749,7 +747,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                         setColorNormal={(color) =>
                           setAttributes({ colorGrid: color })
                         }
-                        buttonTitle={__("Color", "cocoblocks")}
+                        buttonTitle={__("Color", "slider-future")}
                         buttonIcon={
                           <OpacityIcon />
                         }
@@ -765,16 +763,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
       {/* Modal Creative Effect */}
       {isOpen && (
         <Modal
-          title={__("Creative effect configuration", "cocoblocks")}
+          title={__("Creative effect configuration", "slider-future")}
           onRequestClose={closeModal}
-          className="cocoblocks-modal"
+          className="slider-future-modal"
         >
           <div className="modal-content">
             <div className="row">
               <div className="column left">
                 <div className="preview-slider">
                   {/* Anteprima Slider */}
-                  <p>{__("PREVIEW", "cocoblocks")}</p>
+                  <p>{__("PREVIEW", "slider-future")}</p>
                   <Swiper
                     key={key}
                     autoplay={{
@@ -809,33 +807,33 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     }}
                     modules={[EffectCreative, Autoplay]}
                   >
-                    <SwiperSlide>{__("Slide 1", "cocoblocks")}</SwiperSlide>
-                    <SwiperSlide>{__("Slide 2", "cocoblocks")}</SwiperSlide>
-                    <SwiperSlide>{__("Slide 3", "cocoblocks")}</SwiperSlide>
+                    <SwiperSlide style={{height:'160px'}}>{__("Slide 1", "slider-future")}</SwiperSlide>
+                    <SwiperSlide style={{height:'160px'}}>{__("Slide 2", "slider-future")}</SwiperSlide>
+                    <SwiperSlide style={{height:'160px'}}>{__("Slide 3", "slider-future")}</SwiperSlide>
                   </Swiper>
                 </div>
               </div>
               <div className="column right">
                 {/* Preset Buttons */}
-                <p>{__("PRESETS", "cocoblocks")}</p>
+                <p>{__("PRESETS", "slider-future")}</p>
                 <div className="content-preset">
                   <Button variant="primary" onClick={applyPreset1}>
-                    {__("Preset 1", "cocoblocks")}
+                    {__("Preset 1", "slider-future")}
                   </Button>
                   <Button variant="primary" onClick={applyPreset2}>
-                    {__("Preset 2", "cocoblocks")}
+                    {__("Preset 2", "slider-future")}
                   </Button>
                   <Button variant="primary" onClick={applyPreset3}>
-                    {__("Preset 3", "cocoblocks")}
+                    {__("Preset 3", "slider-future")}
                   </Button>
                   <Button variant="primary" onClick={applyPreset4}>
-                    {__("Preset 4", "cocoblocks")}
+                    {__("Preset 4", "slider-future")}
                   </Button>
                   <Button variant="primary" onClick={applyPreset5}>
-                    {__("Preset 5", "cocoblocks")}
+                    {__("Preset 5", "slider-future")}
                   </Button>
                   <Button variant="primary" onClick={applyPreset6}>
-                    {__("Preset 6", "cocoblocks")}
+                    {__("Preset 6", "slider-future")}
                   </Button>
                 </div>
               </div>
@@ -843,14 +841,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             <div className="row">
               <div className="column left">
                 {/* Previous Slide Controls */}
-                <p>{__("PREVIOUS SLIDE", "cocoblocks")}</p>
+                <p>{__("PREVIOUS SLIDE", "slider-future")}</p>
                 <div className="content-select-modal">
                 <div className="custom-select select-modal">
                     <CustomRangeControl
                       label={
                         <>
                           <ImportExportIcon style={{transform:'rotate(90deg)'}} />
-                          {__("Translate X (%)", "cocoblocks")}
+                          {__("Translate X (%)", "slider-future")}
                         </>
                       }
                       value={translateX}
@@ -865,7 +863,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                           <ImportExportIcon />
-                          {__("Translate Y (%)", "cocoblocks")}
+                          {__("Translate Y (%)", "slider-future")}
                         </>
                       }
                       value={translateY}
@@ -880,7 +878,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                             <ImportExportIcon style={{transform:'rotate(45deg)'}} />
-                          {__("Translate Z (px)", "cocoblocks")}
+                          {__("Translate Z (px)", "slider-future")}
                         </>
                       }
                       value={translateZ}
@@ -897,7 +895,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                            <ThreeSixtyIcon style={{transform:'rotate(-90deg)'}} />
-                          {__("Rotate X (deg)", "cocoblocks")}
+                          {__("Rotate X (deg)", "slider-future")}
                         </>
                       }
                       value={rotateX}
@@ -912,7 +910,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                           <ThreeSixtyIcon />
-                          {__("Rotate Y (deg)", "cocoblocks")}
+                          {__("Rotate Y (deg)", "slider-future")}
                         </>
                       }
                       value={rotateY}
@@ -927,7 +925,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                           <AutorenewIcon />
-                          {__("Rotate Z (deg)", "cocoblocks")}
+                          {__("Rotate Z (deg)", "slider-future")}
                         </>
                       }
                       value={rotateZ}
@@ -941,7 +939,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                 <div className="content-select-modal">
                   <div className="custom-select select-modal">
                     <CustomRangeControl
-                      label={<><AspectRatioIcon />{__("Scale", "cocoblocks")}</>}
+                      label={<><AspectRatioIcon />{__("Scale", "slider-future")}</>}
                       value={scale}
                       onChange={(val) => setAttributes({ scale: val })}
                       min={0}
@@ -951,7 +949,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select select-modal">
                     <CustomRangeControl
-                      label={<><OpacityIcon />{__("Opacity", "cocoblocks")}</>}
+                      label={<><OpacityIcon />{__("Opacity", "slider-future")}</>}
                       value={opacity}
                       onChange={(val) => setAttributes({ opacity: val })}
                       min={0.1}
@@ -963,14 +961,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               </div>
               <div className="column right">
                 {/* Next Slide Controls */}
-                <p>{__("NEXT SLIDE", "cocoblocks")}</p>
+                <p>{__("NEXT SLIDE", "slider-future")}</p>
                 <div className="content-select-modal">
                   <div className="custom-select select-modal">
                     <CustomRangeControl
                       label={
                         <>
                             <ImportExportIcon style={{transform:'rotate(90deg)'}} />
-                          {__("Translate X (%)", "cocoblocks")}
+                          {__("Translate X (%)", "slider-future")}
                         </>
                       }
                       value={nextTranslateX}
@@ -985,7 +983,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                             <ImportExportIcon />
-                          {__("Translate Y (%)", "cocoblocks")}
+                          {__("Translate Y (%)", "slider-future")}
                         </>
                       }
                       value={nextTranslateY}
@@ -1000,7 +998,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                            <ImportExportIcon style={{transform:'rotate(45deg)'}} />
-                          {__("Translate Z (px)", "cocoblocks")}
+                          {__("Translate Z (px)", "slider-future")}
                         </>
                       }
                       value={nextTranslateZ}
@@ -1017,7 +1015,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                            <ThreeSixtyIcon style={{transform:'rotate(-90deg)'}} />
-                          {__("Rotate X (deg)", "cocoblocks")}
+                          {__("Rotate X (deg)", "slider-future")}
                         </>
                       }
                       value={nextRotateX}
@@ -1032,7 +1030,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                            <ThreeSixtyIcon />
-                          {__("Rotate Y (deg)", "cocoblocks")}
+                          {__("Rotate Y (deg)", "slider-future")}
                         </>
                       }
                       value={nextRotateY}
@@ -1047,7 +1045,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label={
                         <>
                           <AutorenewIcon />
-                          {__("Rotate Z (deg)", "cocoblocks")}
+                          {__("Rotate Z (deg)", "slider-future")}
                         </>
                       }
                       value={nextRotateZ}
@@ -1061,7 +1059,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                 <div className="content-select-modal">
                   <div className="custom-select select-modal">
                     <CustomRangeControl
-                       label={<><AspectRatioIcon />{__("Scale", "cocoblocks")}</>}
+                       label={<><AspectRatioIcon />{__("Scale", "slider-future")}</>}
                       value={nextScale}
                       onChange={(val) => setAttributes({ nextScale: val })}
                       min={0}
@@ -1071,7 +1069,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   </div>
                   <div className="custom-select select-modal">
                     <CustomRangeControl
-                      label={<><OpacityIcon />{__("Opacity", "cocoblocks")}</>}
+                      label={<><OpacityIcon />{__("Opacity", "slider-future")}</>}
                       value={nextOpacity}
                       onChange={(val) => setAttributes({ nextOpacity: val })}
                       min={0.1}
@@ -1085,7 +1083,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
           </div>
           <div className="border-bottmo-modal"></div>
           <Button className="button-save-modal" onClick={closeModal}>
-            {__("Save", "cocoblocks")}
+            {__("Save", "slider-future")}
           </Button>
         </Modal>
       )}

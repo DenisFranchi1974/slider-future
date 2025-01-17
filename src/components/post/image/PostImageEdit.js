@@ -138,8 +138,8 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
   const [activeSectionImage, setActiveSectionImage] = useState("style");
   return (
     <PanelBody
-        className="cocoblocks-panel panel-slide"
-        title={__("Featured Image", "cocoblocks")}
+        className="slider-future-panel panel-slide"
+        title={__("Featured Image", "slider-future")}
         initialOpen={false}
     >
         <SectionSelectorElementPost onSectionChange={setActiveSectionImage} />
@@ -152,7 +152,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
+              {__("Background", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -160,18 +160,18 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
                 <>
                 <FitScreenIcon />
-                {__("Image fit", "cocoblocks")}
+                {__("Image fit", "slider-future")}
                 </>
             }
             value={imagePostSize || 'cover'}
             onChange={(val) => setAttributes({imagePostSize: val })}
             options={[  
                 {
-                label: __("Cover", "cocoblocks"),
+                label: __("Cover", "slider-future"),
                 value: "cover",
                 },
                 {
-                label: __("Contain", "cocoblocks"),
+                label: __("Contain", "slider-future"),
                 value: "contain",
                 },
             ]}
@@ -181,7 +181,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             <ColorOptionsPanel
             colorNormal={imagePostColor}
             setColorNormal={(color) => setAttributes({ imagePostColor: color })}
-            buttonTitle={__("Background Color", "cocoblocks")}
+            buttonTitle={__("Background Color", "slider-future")}
             buttonIcon={
                 <ColorLensIcon />
             }
@@ -196,7 +196,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             </div>
             <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Width & Height", "cocoblocks")}
+                  {__("Width & Height", "slider-future")}
                 </h2>
               </div>
               <div className="content-section-panel" style={{ padding: "0" }}>
@@ -204,18 +204,18 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
                 <>
                  <HeightIcon style={{transform:'rotate(90deg)'}} />
-                {__("Width", "cocoblocks")}
+                {__("Width", "slider-future")}
                 </>
             }
             value={imagePostWidth}
             onChange={(val) => setAttributes({imagePostWidth: val })}
             options={[  
                 {
-                    label: __("Relative", "cocoblocks"),
+                    label: __("Relative", "slider-future"),
                     value: "relative",
                   },
                   {
-                    label: __("Fixed", "cocoblocks"),
+                    label: __("Fixed", "slider-future"),
                     value: "fixed",
                   },
             ]}
@@ -224,7 +224,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                <CustomRangeControl
                     label={
                       <>
-                        {__("Custom width (px)", "cocoblocks")}
+                        {__("Custom width (px)", "slider-future")}
                       </>
                     }
                     value={imagePostWidthPx}
@@ -238,7 +238,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 <CustomRangeControl
                     label={
                       <>
-                        {__("CustomWidth (%)", "cocoblocks")}
+                        {__("CustomWidth (%)", "slider-future")}
                       </>
                     }
                     value={imagePostWidthPercent}
@@ -253,18 +253,18 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
                 <>
                  <HeightIcon />
-                {__("Height", "cocoblocks")}
+                {__("Height", "slider-future")}
                 </>
             }
             value={imagePostHeight}
             onChange={(val) => setAttributes({imagePostHeight: val })}
             options={[  
                 {
-                    label: __("Relative", "cocoblocks"),
+                    label: __("Relative", "slider-future"),
                     value: "relative",
                   },
                   {
-                    label: __("Fixed", "cocoblocks"),
+                    label: __("Fixed", "slider-future"),
                     value: "fixed",
                   },
             ]}
@@ -273,7 +273,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                <CustomRangeControl
                     label={
                       <>
-                        {__("Custom width (px)", "cocoblocks")}
+                        {__("Custom width (px)", "slider-future")}
                       </>
                     }
                     value={imagePostHeightPx}
@@ -287,7 +287,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 <CustomRangeControl
                     label={
                       <>
-                        {__("CustomWidth (%)", "cocoblocks")}
+                        {__("CustomWidth (%)", "slider-future")}
                       </>
                     }
                     value={imagePostHeightPercent}
@@ -304,14 +304,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                   >
                     {__(
                       'The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.',
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 )}
                 </div>
                 <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -320,7 +320,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 label={
                   <>
                     <PaddingIcon/>
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={imagePostPadding }
@@ -339,7 +339,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 label={
                   <>
                     <MarginIcon/>
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={imagePostMargin}
@@ -354,14 +354,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             </div>
             </div>
             <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
             label={
                 <>
                    <BorderStyleIcon />
-                   {__("Border style", "cocoblocks")}
+                   {__("Border style", "slider-future")}
                 </>
             }
             value={imagePostBorderStyle}
@@ -374,7 +374,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 <ColorOptionsPanel
             colorNormal={imagePostBorderColor}
             setColorNormal={(color) => setAttributes({ imagePostBorderColor: color })}
-            buttonTitle={__("Border Color", "cocoblocks")}
+            buttonTitle={__("Border Color", "slider-future")}
             buttonIcon={
                 <BorderColorIcon/>
             }
@@ -386,7 +386,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                  label={
                    <>
                     <BorderLeftIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                    </>
                  }
                  values={imagePostBorderSize}
@@ -407,7 +407,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                  label={
                    <>
                      <BorderInnerIcon />
-                     {__("Border Radius", "cocoblocks")}
+                     {__("Border Radius", "slider-future")}
                    </>
                  }
                  values={imagePostBorderRadius}
@@ -432,7 +432,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -440,7 +440,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                     label={
                       <>
                        <RotateRightIcon />
-                       {__("Rotate", "cocoblocks")}
+                       {__("Rotate", "slider-future")}
                       </>
                     }
                     value={imagePostRotate}
@@ -452,7 +452,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("TRANSPARENCY SETTING", "cocoblocks")}
+              {__("TRANSPARENCY SETTING", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -460,7 +460,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                         label={
                         <>
                          <OpacityIcon />
-                         {__("Opacity", "cocoblocks")}
+                         {__("Opacity", "slider-future")}
                         </>
                         }
                         value={imagePostOpacity}
@@ -474,7 +474,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -482,7 +482,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
                 <>
                <FitbitIcon />
-                {__("Effect", "cocoblocks")}
+                {__("Effect", "slider-future")}
                 </>
             }
             checked={imagePostBoxShadow}
@@ -494,7 +494,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                   <ColorOptionsPanel
                     colorNormal={imagePostBoxShadowColor}
                     setColorNormal={(color) => setAttributes({ imagePostBoxShadowColor: color })}
-                    buttonTitle={__("Shadow Color", "cocoblocks")}
+                    buttonTitle={__("Shadow Color", "slider-future")}
                     buttonIcon={
                         <ColorLensIcon />
                     }
@@ -504,7 +504,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                     label={
                       <>
                         <SwapHorizIcon />
-                        {__("Offset X", "cocoblocks")}
+                        {__("Offset X", "slider-future")}
                       </>
                     }
                     value={imagePostBoxShadowHOffset}
@@ -517,7 +517,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                     label={
                       <>
                         <SwapVertIcon />
-                        {__("Offset Y", "cocoblocks")}
+                        {__("Offset Y", "slider-future")}
                       </>
                     }
                     value={imagePostBoxShadowVOffset}
@@ -530,7 +530,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                     label={
                       <>
                        <BlurOnIcon />
-                        {__("Blur", "cocoblocks")}
+                        {__("Blur", "slider-future")}
                       </>
                     }
                     value={imagePostBoxShadowBlur}
@@ -543,7 +543,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                     label={
                       <>
                        <ExpandIcon />
-                        {__("Spread", "cocoblocks")}
+                        {__("Spread", "slider-future")}
                       </>
                     }
                     value={imagePostBoxShadowSpread}
@@ -567,10 +567,10 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           gap: "30px",
         }}
       >
-        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
         {(imagePostEffect !== 'none') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
-            <Tooltip text={__('Play','cocoblock')}>
+            <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimation} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
           </div>
@@ -581,7 +581,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
                 <>
                    <GrainIcon />
-                   {__("Effect", "cocoblocks")}
+                   {__("Effect", "slider-future")}
                 </>
             }
             value={imagePostEffect}
@@ -594,7 +594,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <OpacityIcon />
-              {__("Opacity From", "cocoblocks")}
+              {__("Opacity From", "slider-future")}
             </>
           }
           value={imagePostOpacityFrom }
@@ -607,7 +607,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <OpacityIcon />
-              {__("Opacity To", "cocoblocks")}
+              {__("Opacity To", "slider-future")}
             </>
           }
           value={imagePostOpacityTo }
@@ -620,7 +620,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <DeblurIcon />
-              {__("Blur From", "cocoblocks")}
+              {__("Blur From", "slider-future")}
             </>
           }
           value={imagePostBlurFrom}
@@ -633,7 +633,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <DeblurIcon />
-              {__("Blur To", "cocoblocks")}
+              {__("Blur To", "slider-future")}
             </>
           }
           value={imagePostBlurTo}
@@ -648,7 +648,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X From", "cocoblocks")}
+              {__("Translate X From", "slider-future")}
             </>
           }
           value={imagePostTranslateXFrom}
@@ -661,7 +661,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X To", "cocoblocks")}
+              {__("Translate X To", "slider-future")}
             </>
           }
           value={imagePostTranslateXTo}
@@ -674,7 +674,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y From", "cocoblocks")}
+               {__("Translate Y From", "slider-future")}
             </>
           }
           value={imagePostTranslateYFrom}
@@ -687,7 +687,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y To", "cocoblocks")}
+               {__("Translate Y To", "slider-future")}
             </>
           }
           value={imagePostTranslateYTo}
@@ -703,7 +703,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
      label={
          <>
            <LinearScaleIcon />
-            {__("Choose the scale", "cocoblocks")}
+            {__("Choose the scale", "slider-future")}
          </>
      }
      value={imagePostScaleType}
@@ -717,7 +717,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale From", "cocoblocks")}
+                {__("Scale From", "slider-future")}
             </>
           }
           value={imagePostScaleFrom}
@@ -730,7 +730,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale To", "cocoblocks")}
+                {__("Scale To", "slider-future")}
             </>
           }
           value={imagePostScaleTo}
@@ -747,7 +747,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate From", "cocoblocks")}
+                {__("Rotate From", "slider-future")}
             </>
           }
           value={imagePostRotateFrom}
@@ -760,7 +760,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate To", "cocoblocks")}
+                {__("Rotate To", "slider-future")}
             </>
           }
           value={imagePostRotateTo}
@@ -773,7 +773,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X From", "cocoblocks")}
+                {__("Rotate X From", "slider-future")}
             </>
           }
           value={imagePostRotateXFrom}
@@ -786,7 +786,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X To", "cocoblocks")}
+                {__("Rotate X To", "slider-future")}
             </>
           }
           value={imagePostRotateXTo}
@@ -799,7 +799,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y From", "cocoblocks")}
+               {__("Rotate Y From", "slider-future")}
             </>
           }
           value={imagePostRotateYFrom}
@@ -812,7 +812,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y To", "cocoblocks")}
+               {__("Rotate Y To", "slider-future")}
             </>
           }
           value={imagePostRotateYTo}
@@ -829,7 +829,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X From", "cocoblocks")}
+                {__("Skew X From", "slider-future")}
             </>
           }
           value={imagePostSkewXFrom}
@@ -842,7 +842,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X To", "cocoblocks")}
+                {__("Skew X To", "slider-future")}
             </>
           }
           value={imagePostSkewXTo}
@@ -855,7 +855,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y From", "cocoblocks")}
+                 {__("Skew Y From", "slider-future")}
             </>
           }
           value={imagePostSkewYFrom}
@@ -868,7 +868,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y To", "cocoblocks")}
+                 {__("Skew Y To", "slider-future")}
             </>
           }
           value={imagePostSkewYTo}
@@ -883,7 +883,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                  <HourglassBottomIcon />
-                 {__("Duration", "cocoblocks")}
+                 {__("Duration", "slider-future")}
             </>
           }
           value={imagePostDuration}
@@ -896,7 +896,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                   <HistoryToggleOffIcon />
-                  {__("Delay", "cocoblocks")}
+                  {__("Delay", "slider-future")}
             </>
           }
           value={imagePostDelay}
@@ -909,7 +909,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                   <HistoryToggleOffIcon />
-                  {__("End Delay", "cocoblocks")}
+                  {__("End Delay", "slider-future")}
             </>
           }
           value={imagePostEndDelay}
@@ -922,7 +922,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
      label={
          <>
           <SwapCallsIcon />
-            {__("Easing", "cocoblocks")}
+            {__("Easing", "slider-future")}
          </>
      }
      value={imagePostEasing}
@@ -933,7 +933,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
      label={
          <>
           <SyncAltIcon />
-            {__("Direction", "cocoblocks")}
+            {__("Direction", "slider-future")}
          </>
      }
      value={imagePostDirection}
@@ -944,7 +944,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
      label={
          <>
           <LoopIcon />
-            {__("Loop", "cocoblocks")}
+            {__("Loop", "slider-future")}
          </>
      }
      value={imagePostLoop}
@@ -962,7 +962,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                marginBottom: "6px",
              }}
            >
-                {__('The loop must complete the set cycle before it can be changed.','cocoblock')}
+                {__('The loop must complete the set cycle before it can be changed.',"slider-future")}
               </p>
             )}
 
@@ -976,14 +976,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                marginBottom: "6px",
              }}
            >
-                {__('The loop is limited to 5 repetitions in the editor for performance reasons.','cocoblock')}
+                {__('The loop is limited to 5 repetitions in the editor for performance reasons.',"slider-future")}
               </p>
             )}
             </div>
    
             {(imagePostEffect!== 'none' ) && (
           <div className="button-reply-effect">
-            <Tooltip text={__('Play','cocoblock')}>
+            <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimation}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
           </div>
@@ -1002,14 +1002,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           marginTop: "-18px",
         }}
       >
-        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
       </div>
       <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
             label={
               <>
                 <GrainIcon />
-                {__("Effects", "cocoblocks")}
+                {__("Effects", "slider-future")}
               </>
             }
             value={imagePostEffectHover}
@@ -1022,7 +1022,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <OpacityIcon />
-              {__("Opacity", "cocoblocks")}
+              {__("Opacity", "slider-future")}
             </>
           }
           value={imagePostOpacityHover ?? 1}
@@ -1035,7 +1035,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <DeblurIcon />
-              {__("Blur", "cocoblocks")}
+              {__("Blur", "slider-future")}
             </>
           }
           value={imagePostBlurHover ?? 0}
@@ -1050,7 +1050,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X", "cocoblocks")}
+              {__("Translate X", "slider-future")}
             </>
           }
           value={imagePostTranslateXHover ?? 100}
@@ -1063,7 +1063,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y", "cocoblocks")}
+               {__("Translate Y", "slider-future")}
             </>
           }
           value={imagePostTranslateYHover ?? 0}
@@ -1079,7 +1079,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
               <>
                 <LinearScaleIcon />
-                {__("Choose the scale", "cocoblocks")}
+                {__("Choose the scale", "slider-future")}
               </>
             }
             value={imagePostScaleTypeHover ?? 'scale'}
@@ -1093,7 +1093,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale", "cocoblocks")}
+                {__("Scale", "slider-future")}
             </>
           }
           value={imagePostScaleHover ?? 1}
@@ -1110,7 +1110,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate", "cocoblocks")}
+                {__("Rotate", "slider-future")}
             </>
           }
           value={imagePostRotateHover ?? 0}
@@ -1123,7 +1123,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X", "cocoblocks")}
+                {__("Rotate X", "slider-future")}
             </>
           }
           value={imagePostRotateXHover ?? 0}
@@ -1136,7 +1136,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y", "cocoblocks")}
+               {__("Rotate Y", "slider-future")}
             </>
           }
           value={imagePostRotateYHover ?? 0}
@@ -1153,7 +1153,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X", "cocoblocks")}
+                {__("Skew X", "slider-future")}
             </>
           }
           value={imagePostSkewXHover ?? 0}
@@ -1166,7 +1166,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y", "cocoblocks")}
+                 {__("Skew Y", "slider-future")}
             </>
           }
           value={imagePostSkewYHover ?? 0}
@@ -1181,7 +1181,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
                  <HourglassBottomIcon />
-                 {__("Duration", "cocoblocks")}
+                 {__("Duration", "slider-future")}
             </>
           }
           value={imagePostDurationHover ?? 800}
@@ -1194,7 +1194,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             label={
               <>
                 <SwapCallsIcon />
-                {__("Easing", "cocoblocks")}
+                {__("Easing", "slider-future")}
               </>
             }
             value={imagePostEasingHover ?? 'linear'}
@@ -1216,7 +1216,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
               }}
             >
               <h2 className="title-custom-panel">
-                {__("Actions", "cocoblocks")}
+                {__("Actions", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1225,7 +1225,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           label={
             <>
               <TouchAppIcon />
-              {__("Link actions", "cocoblocks")}
+              {__("Link actions", "slider-future")}
             </>
           }
           value={imagePostLink}
@@ -1240,7 +1240,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
               label={
                 <>
                   <OpenInNewIcon />
-                  {__("Target", "cocoblocks")}
+                  {__("Target", "slider-future")}
                 </>
               }
               value={imagePostTarget}
@@ -1265,14 +1265,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             }}
         >
             <h2 className="title-custom-panel">
-            {__("Visibility", "cocoblocks")}
+            {__("Visibility", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
         <CustomToggleControl
             label={<>
                 <PersonalVideoIcon />
-                {__("Desktop", "cocoblocks")}
+                {__("Desktop", "slider-future")}
               </>}
             checked={imagePostDesktop}
             onChange={(val) => setAttributes({imagePostDesktop: val })}
@@ -1280,7 +1280,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
         <CustomToggleControl
             label={<>
                 <TabletMacIcon />
-                {__("Tablet", "cocoblocks")}
+                {__("Tablet", "slider-future")}
               </>}
             checked={imagePostTablet}
             onChange={(val) => setAttributes({imagePostTablet: val })}
@@ -1288,7 +1288,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
         <CustomToggleControl
             label={<>
                 <SmartphoneIcon />
-                {__("Mobile", "cocoblocks")}
+                {__("Mobile", "slider-future")}
               </>}
             checked={imagePostMobile}
             onChange={(val) => setAttributes({imagePostMobile: val })}
@@ -1305,7 +1305,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

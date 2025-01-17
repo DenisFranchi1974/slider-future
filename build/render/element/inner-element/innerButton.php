@@ -285,7 +285,7 @@ function render_innerButton($innerElement)
     }
     $buttonContentStyle3 = "
         width: " . (isset($innerElement['widthButton']) && $innerElement['widthButton'] === 'custom'
-        ? esc_attr($innerElement['widthCustomButton']) . '%'
+        ? esc_attr($innerElement['widthCustomButton']) . 'px'
         : esc_attr($innerElement['widthButton'])) . ";
         transform: rotate(" . (isset($innerElement['rotateButton']) ? esc_attr($innerElement['rotateButton']) : '0') . "deg);
         z-index: " . (isset($innerElement['zIndexButton']) ? esc_attr($innerElement['zIndexButton']) : '1') . ";

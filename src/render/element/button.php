@@ -285,7 +285,7 @@ function render_button($element, $slide)
     }
     $buttonContentStyle3 = "
         width: " . (isset($element['widthButton']) && $element['widthButton'] === 'custom'
-        ? esc_attr($element['widthCustomButton']) . '%'
+        ? esc_attr($element['widthCustomButton']) . 'px'
         : esc_attr($element['widthButton'])) . ";
         transform: rotate(" . (isset($element['rotateButton']) ? esc_attr($element['rotateButton']) : '0') . "deg);
         z-index: " . (isset($element['zIndexButton']) ? esc_attr($element['zIndexButton']) : '1') . ";

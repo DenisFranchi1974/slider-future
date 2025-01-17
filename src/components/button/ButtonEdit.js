@@ -452,17 +452,17 @@ const ButtonEdit = ({
       <div className="title-block-added">
         <div className="title-element">
         <SmartButtonIcon />
-          <h2>{__("Button", "cocoblocks")}</h2>
+          <h2>{__("Button", "slider-future")}</h2>
         </div>
         <div className="title-element">
         <Button
             isDestructive
             onClick={() => removeSlideButton(slide.id, elementIndex)}
             className="button-remove-element"
-            label={__("Remove Button", "cocoblocks")}
+            label={__("Remove Button", "slider-future")}
             icon={<DeleteOutlineIcon />}
           ></Button>
-           <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+           <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider-future') : __('Open Controls','slider-future')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
              <KeyboardArrowUpIcon/>
@@ -486,7 +486,7 @@ const ButtonEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Content", "cocoblocks")}
+              {__("Content", "slider-future")}
             </h2>
           </div>
 
@@ -500,7 +500,7 @@ const ButtonEdit = ({
              slideId={slide.id}
              elementIndex={elementIndex}
              elementType="button"
-             placeholder={__("Add text button...", "cocoblocks")}
+             placeholder={__("Add text button...", "slider-future")}
              updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'button')
              }
@@ -513,7 +513,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Width (px)", "cocoblocks")}
+                    {__("Width (px)", "slider-future")}
                   </>
                 }
                 value={element.widthCustomButton ?? 100}
@@ -534,7 +534,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Width (px)", "cocoblocks")}
+                    {__("Width (px)", "slider-future")}
                   </>
                 }
                 value={element.heightCustomButton ?? 100}
@@ -559,7 +559,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Width content", "cocoblocks")}
+                    {__("Width content", "slider-future")}
                   </>
                 }
                 value={element.widthButton || "auto"}
@@ -574,15 +574,15 @@ const ButtonEdit = ({
                 }
                 selectOptions={[
                   {
-                    label: __("Auto", "cocoblocks"),
+                    label: __("Auto", "slider-future"),
                     value: "auto",
                   },
                   {
-                    label: __("100%", "cocoblocks"),
+                    label: __("100%", "slider-future"),
                     value: "100%",
                   },
                   {
-                    label: __("Custom", "cocoblocks"),
+                    label: __("Custom", "slider-future"),
                     value: "custom",
                   },
                 ]} // Passa le opzioni dinamiche
@@ -598,7 +598,7 @@ const ButtonEdit = ({
               >
                 {__(
                   "Attention: Side transition effects will not work with this setting!",
-                  "cocoblocks"
+                  "slider-future"
                 )}
               </p>
             )}
@@ -608,14 +608,14 @@ const ButtonEdit = ({
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Custom Width (%)", "cocoblocks")}
+                    {__("Custom Width (px)", "slider-future")}
                   </>
                 }
                 value={element.widthCustomButton || 100}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={1}
-                max={100}
+                max={1000}
                 step={1}
                 updateType="primary"
                 slideId={slide.id}
@@ -643,7 +643,7 @@ const ButtonEdit = ({
               <div className="add-icon-button-select">
                 <div className="title-add-icon-button">
                 <CloudIcon />
-                <h2>{__('Add Icon','cocoblock')}</h2>
+                <h2>{__('Add Icon',"slider-future")}</h2>
                 </div>
                 <div className="add-icon-button">
                 {element.icon && (
@@ -651,7 +651,7 @@ const ButtonEdit = ({
             isDestructive
             onClick={() => removeSlideButtonIcon(slide.id, elementIndex)}
             className="button-remove-element"
-            label={__("Remove Icon", "cocoblocks")}
+            label={__("Remove Icon", "slider-future")}
             icon={<DeleteOutlineIcon />}
           ></Button>
                 )}
@@ -676,7 +676,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <MultipleStopIcon />
-                    {__("Icon position", "cocoblocks")}
+                    {__("Icon position", "slider-future")}
                   </>
                 }
                 value={element.icoPositionButton || "before"}
@@ -691,11 +691,11 @@ const ButtonEdit = ({
                 }
                 selectOptions={[
                   {
-                    label: __("Before", "cocoblocks"),
+                    label: __("Before", "slider-future"),
                     value: "before",
                   },
                   {
-                    label: __("After", "cocoblocks"),
+                    label: __("After", "slider-future"),
                     value: "after",
                   },
                 ]} // Passa le opzioni dinamiche
@@ -704,7 +704,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <VerticalAlignCenterIcon />
-                    {__("Icon align", "cocoblocks")}
+                    {__("Icon align", "slider-future")}
                   </>
                 }
                 value={element.icoAligItemButton || "before"}
@@ -719,19 +719,19 @@ const ButtonEdit = ({
                 }
                 selectOptions={[
                   {
-                    label: __("Baseline", "cocoblocks"),
+                    label: __("Baseline", "slider-future"),
                     value: "baseline",
                   },
                   {
-                    label: __("Center", "cocoblocks"),
+                    label: __("Center", "slider-future"),
                     value: "center",
                   },
                   {
-                    label: __("End", "cocoblocks"),
+                    label: __("End", "slider-future"),
                     value: "end",
                   },
                   {
-                    label: __("Start", "cocoblocks"),
+                    label: __("Start", "slider-future"),
                     value: "flex-start",
                   },
                 ]} // Passa le opzioni dinamiche
@@ -740,7 +740,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <SpaceBarIcon />
-                    {__("Gap", "cocoblocks")}
+                    {__("Gap", "slider-future")}
                   </>
                 }
                 value={element.gapIcon ?? 5}
@@ -772,7 +772,7 @@ const ButtonEdit = ({
               marginTop: "-18px",
             }}
           >
-            <h2 className="title-custom-panel">{__("Font", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Font", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
@@ -781,7 +781,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <TextFieldsIcon/>
-                    {__("Min", "cocoblocks")}
+                    {__("Min", "slider-future")}
                   </>
                 }
                 value={element.fontSizeButtonMobile || 16}
@@ -794,7 +794,7 @@ const ButtonEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="button"
-                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "cocoblocks")}
+                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "slider-future")}
                 showTooltip = {true}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeButtonMobile')
@@ -804,7 +804,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <TuneIcon />
-                    {__("Mid", "cocoblocks")}
+                    {__("Mid", "slider-future")}
                   </>
                 }
                 value={element.fontSizeButtonTablet || 16}
@@ -817,7 +817,7 @@ const ButtonEdit = ({
                 slideId={slide.id}
                 elementIndex={elementIndex}
                 elementType="button"
-                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "cocoblocks")}
+                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "slider-future")}
                 showTooltip = {true}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeButtonTablet')
@@ -827,7 +827,7 @@ const ButtonEdit = ({
                   label={
                     <>
                       <FullscreenIcon />
-                      {__("Max", "cocoblocks")}
+                      {__("Max", "slider-future")}
                     </>
                   }
                   value={element.fontSizeButton || 22}
@@ -840,7 +840,7 @@ const ButtonEdit = ({
                   slideId={slide.id}
                   elementIndex={elementIndex}
                   elementType="button"
-                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "cocoblocks")}
+                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "slider-future")}
                   showTooltip = {true}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeButton')
@@ -858,7 +858,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <FontDownloadIcon />
-                    {__("Font family", "cocoblocks")}
+                    {__("Font family", "slider-future")}
                   </>
                 }
                 value={element.fontFamilyButton || "Arial, sans-serif"}
@@ -877,7 +877,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <FitnessCenterIcon />
-                    {__("Font weight", "cocoblocks")}
+                    {__("Font weight", "slider-future")}
                   </>
                 }
                 value={element.fontWeightButton || "400"}
@@ -896,7 +896,7 @@ const ButtonEdit = ({
                   label={
                     <>
                       <HeightIcon />
-                      {__("Line height", "cocoblocks")}
+                      {__("Line height", "slider-future")}
                     </>
                   }
                   value={element.lineHeightButton || 1.5}
@@ -917,7 +917,7 @@ const ButtonEdit = ({
                   label={
                     <>
                       <FormatLineSpacingIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Letter spacing", "cocoblocks")}
+                      {__("Letter spacing", "slider-future")}
                     </>
                   }
                   value={element.letterSpacingButton || 0}
@@ -944,7 +944,7 @@ const ButtonEdit = ({
             >
               {__(
                 "Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!",
-                "cocoblocks"
+                "slider-future"
               )}
             </p>
           </>
@@ -952,7 +952,7 @@ const ButtonEdit = ({
            <CustomColorOptionsPanel
                   colorNormal={element.buttonColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'buttonColor')}
-                  buttonTitle={__("Color", "cocoblocks")}
+                  buttonTitle={__("Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -966,7 +966,7 @@ const ButtonEdit = ({
                  <CustomColorOptionsPanel
                   colorNormal={element.buttonBackgroundColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'buttonBackgroundColor')}
-                  buttonTitle={__("Background Color", "cocoblocks")}
+                  buttonTitle={__("Background Color", "slider-future")}
                   buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -980,7 +980,7 @@ const ButtonEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -991,7 +991,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <PaddingIcon />
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={element.paddingButton}
@@ -1008,7 +1008,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <MarginIcon />
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={element.marginButton}
@@ -1020,7 +1020,7 @@ const ButtonEdit = ({
             </div>
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div
             className="content-section-panel"
@@ -1030,7 +1030,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <BorderStyleIcon />
-                    {__("Border style", "cocoblocks")}
+                    {__("Border style", "slider-future")}
                   </>
                 }
                 value={element.borderStyleButton }
@@ -1050,7 +1050,7 @@ const ButtonEdit = ({
                 <CustomColorOptionsPanel
                   colorNormal={element.backgroundBorderColorButton }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'backgroundBorderColorButton')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1067,7 +1067,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <MarginIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                   </>
                 }
                 values={element.backgroundBorderSizeButton}
@@ -1086,7 +1086,7 @@ const ButtonEdit = ({
                 label={
                   <>
                       <BorderInnerIcon />
-                    {__("Border radius", "cocoblocks")}
+                    {__("Border radius", "slider-future")}
                   </>
                 }
                 values={element.borderRadiusButton}
@@ -1103,7 +1103,7 @@ const ButtonEdit = ({
                   label={
                     <>
                       <BorderInnerIcon />
-                      {__("Border radius", "cocoblocks")}
+                      {__("Border radius", "slider-future")}
                     </>
                   }
                   value={element.backgroundBorderRadiusButton ?? 0}
@@ -1128,7 +1128,7 @@ const ButtonEdit = ({
             {element.icon && (
               <>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Font Icon", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Font Icon", "slider-future")}</h2>
           </div>
           <div
             className="content-section-panel"
@@ -1138,7 +1138,7 @@ const ButtonEdit = ({
                   label={
                     <>
                       <FormatSizeIcon />
-                      {__("Size", "cocoblocks")}
+                      {__("Size", "slider-future")}
                     </>
                   }
                   value={element.sizeIcon ?? 22}
@@ -1159,7 +1159,7 @@ const ButtonEdit = ({
                 <CustomColorOptionsPanel
                   colorNormal={element.iconColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'iconColor')}
-                  buttonTitle={__("Color", "cocoblocks")}
+                  buttonTitle={__("Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1186,7 +1186,7 @@ const ButtonEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1194,7 +1194,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <RotateRightIcon />
-                    {__("Rotate", "cocoblocks")}
+                    {__("Rotate", "slider-future")}
                   </>
                 }
                 value={element.rotateButton || 0}
@@ -1214,7 +1214,7 @@ const ButtonEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Transparency Setting", "cocoblocks")}
+              {__("Transparency Setting", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1222,7 +1222,7 @@ const ButtonEdit = ({
               label={
                 <>
                   <OpacityIcon />
-                  {__("Opacity", "cocoblocks")}
+                  {__("Opacity", "slider-future")}
                 </>
               }
               value={element.opacityButton ?? 1}
@@ -1242,7 +1242,7 @@ const ButtonEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("LEVEL", "cocoblocks")}
+              {__("LEVEL", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1250,7 +1250,7 @@ const ButtonEdit = ({
               label={
                 <>
                   <LayersClearIcon />
-                  {__("Z-index", "cocoblocks")}
+                  {__("Z-index", "slider-future")}
                 </>
               }
               value={element.zIndexButton || 1}
@@ -1272,7 +1272,7 @@ const ButtonEdit = ({
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1306,7 +1306,7 @@ const ButtonEdit = ({
             {element.icon && (
               <>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Basic Transforms Icon", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Basic Transforms Icon", "slider-future")}</h2>
           </div>
           <div
             className="content-section-panel"
@@ -1316,7 +1316,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <RotateRightIcon />
-                    {__("Rotate", "cocoblocks")}
+                    {__("Rotate", "slider-future")}
                   </>
                 }
                 value={element.rotateIcon || 0}
@@ -1418,7 +1418,7 @@ const ButtonEdit = ({
               <>
             <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Animations Icon", "cocoblocks")}
+              {__("Animations Icon", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1426,7 +1426,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <GrainIcon /> 
-                    {__("Effects", "cocoblocks")}
+                    {__("Effects", "slider-future")}
                   </>
                 }
                 value={element.iconAnimation }
@@ -1446,7 +1446,7 @@ const ButtonEdit = ({
                 label={
                   <>
                      <HourglassBottomIcon />
-                    {__("Duration", "cocoblocks")}
+                    {__("Duration", "slider-future")}
                   </>
                 }
                 value={element.iconAnimationDuration ?? 0}
@@ -1516,12 +1516,12 @@ const ButtonEdit = ({
           <div
         className="content-title-custom-panel intermedy"
       >
-        <h2 className="title-custom-panel">{__("Style", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Style", "slider-future")}</h2>
       </div>
                 <CustomColorOptionsPanel
                   colorNormal={element.buttonColorHover }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'buttonColorHover')}
-                  buttonTitle={__("Color", "cocoblocks")}
+                  buttonTitle={__("Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1535,7 +1535,7 @@ const ButtonEdit = ({
                  <CustomColorOptionsPanel
                   colorNormal={element.buttonBackgroundColorHover }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'buttonBackgroundColorHover')}
-                  buttonTitle={__("Background Color", "cocoblocks")}
+                  buttonTitle={__("Background Color", "slider-future")}
                   buttonIcon={<PaletteIcon style={{
                     marginBottom: "-5px",
                     width: "20px",
@@ -1554,7 +1554,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <BorderStyleIcon />
-                    {__("Border style", "cocoblocks")}
+                    {__("Border style", "slider-future")}
                   </>
                 }
                 value={element.borderStyleHover }
@@ -1574,7 +1574,7 @@ const ButtonEdit = ({
                 <CustomColorOptionsPanel
                   colorNormal={element.backgroundBorderColorHover }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'backgroundBorderColorHover')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1591,7 +1591,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <MarginIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                   </>
                 }
                 values={element.backgroundBorderSizeHover}
@@ -1608,13 +1608,13 @@ const ButtonEdit = ({
             {element.icon && (
               <>
             <div className="content-title-custom-panel intermedy">
-        <h2 className="title-custom-panel">{__("Style Icon", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Style Icon", "slider-future")}</h2>
       </div>
       <div className="content-section-panel" style={{ padding: "0" }}>
       <CustomColorOptionsPanel
                   colorNormal={element.iconColorHover }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'button', 'iconColorHover')}
-                  buttonTitle={__("Color", "cocoblocks")}
+                  buttonTitle={__("Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1627,14 +1627,14 @@ const ButtonEdit = ({
                 />
       </div>
       <div className="content-title-custom-panel intermedy">
-        <h2 className="title-custom-panel">{__("Animations Icon", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations Icon", "slider-future")}</h2>
       </div>
       <div className="content-section-panel" style={{ padding: "0" }}>
       <CustomRangeControl
                 label={
                   <>
                     <RotateRightIcon />
-                    {__("Rotate", "cocoblocks")}
+                    {__("Rotate", "slider-future")}
                   </>
                 }
                 value={element.rotateIconHover ?? 0}
@@ -1655,7 +1655,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <GrainIcon /> 
-                    {__("Effects", "cocoblocks")}
+                    {__("Effects", "slider-future")}
                   </>
                 }
                 value={element.animationHoverIcon }
@@ -1674,7 +1674,7 @@ const ButtonEdit = ({
                 label={
                   <>
                      <HourglassBottomIcon />
-                    {__("Duration", "cocoblocks")}
+                    {__("Duration", "slider-future")}
                   </>
                 }
                 value={element.durationEffectHoverIcon ?? 0}
@@ -1699,7 +1699,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <SyncAltIcon />
-                    {__("Translate", "cocoblocks")}
+                    {__("Translate", "slider-future")}
                   </>
                 }
                 value={element.translateEffectHoverIcon ?? 0}
@@ -1725,7 +1725,7 @@ const ButtonEdit = ({
                 label={
                   <>
                     <VisibilityIcon /> 
-                    {__("Show icon", "cocoblocks")}
+                    {__("Show icon", "slider-future")}
                   </>
                 }
                 value={element.iconShowHover }
@@ -1740,11 +1740,11 @@ const ButtonEdit = ({
                 }
                 selectOptions={[
                   {
-                    label: __("Always", "cocoblocks"),
+                    label: __("Always", "slider-future"),
                     value: "icon-show-always",
                   },
                   {
-                    label: __("In Hover", "cocoblocks"),
+                    label: __("In Hover", "slider-future"),
                     value: "icon-show-hover",
                   },
                 ]} 
@@ -1754,7 +1754,7 @@ const ButtonEdit = ({
            label={
              <>
                <VisibilityOffIcon /> 
-               {__("Hide option", "cocoblocks")}
+               {__("Hide option", "slider-future")}
              </>
            }
            value={element.iconHideShowHover }
@@ -1769,11 +1769,11 @@ const ButtonEdit = ({
            }
            selectOptions={[
             {
-              label: __("Opaciy", "cocoblocks"),
+              label: __("Opaciy", "slider-future"),
               value: "icon-hide-opacity",
             },
             {
-              label: __("Display none", "cocoblocks"),
+              label: __("Display none", "slider-future"),
               value: "icon-hide-display-none",
             },
           ]} 
@@ -1839,7 +1839,7 @@ const ButtonEdit = ({
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

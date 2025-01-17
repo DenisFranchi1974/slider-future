@@ -306,10 +306,10 @@ const CustomEffectControls = ({
           gap: "30px",
         }}
       >
-        <h2 className="title-custom-panel">{__("Animations", "cocoblocks")}</h2>
+        <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
         {(valueEffect !== 'none') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
-            <Tooltip text={__('Play','cocoblock')}>
+            <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onAnimated} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
           </div>
@@ -320,7 +320,7 @@ const CustomEffectControls = ({
       <ThemeProvider theme={theme}>
     <div className="custom-select select-control-label-right select-material">
         <InputLabel> <GrainIcon />
-        {__("Effects", "cocoblocks")}</InputLabel>
+        {__("Effects", "slider-future")}</InputLabel>
         <Select
           value={valueEffect}
           onChange={handleChangeEffect}
@@ -347,7 +347,7 @@ const CustomEffectControls = ({
               <ThemeProvider theme={theme}>
     <div className="custom-select select-control-label-right select-material">
         <InputLabel> <ScatterPlotIcon />
-        {__("Effect Split", "cocoblocks")}</InputLabel>
+        {__("Effect Split", "slider-future")}</InputLabel>
         <Select
           value={valueEffectSplit}
           onChange={handleChangeEffectSplit}
@@ -373,7 +373,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <HourglassBottomIcon />
-                {__("Stagger", "cocoblocks")}
+                {__("Stagger", "slider-future")}
             </>
           }
           value={valueStagger ?? 80}
@@ -391,7 +391,7 @@ const CustomEffectControls = ({
           label={
             <>
               <OpacityIcon />
-              {__("Opacity From", "cocoblocks")}
+              {__("Opacity From", "slider-future")}
             </>
           }
           value={valueOpacityFrom ?? 0}
@@ -405,7 +405,7 @@ const CustomEffectControls = ({
           label={
             <>
               <OpacityIcon />
-              {__("Opacity To", "cocoblocks")}
+              {__("Opacity To", "slider-future")}
             </>
           }
           value={valueOpacityTo ?? 1}
@@ -419,7 +419,7 @@ const CustomEffectControls = ({
           label={
             <>
               <DeblurIcon />
-              {__("Blur From", "cocoblocks")}
+              {__("Blur From", "slider-future")}
             </>
           }
           value={valueBlurFrom ?? 0}
@@ -433,7 +433,7 @@ const CustomEffectControls = ({
           label={
             <>
               <DeblurIcon />
-              {__("Blur To", "cocoblocks")}
+              {__("Blur To", "slider-future")}
             </>
           }
           value={valueBlurTo ?? 0}
@@ -451,7 +451,7 @@ const CustomEffectControls = ({
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X From", "cocoblocks")}
+              {__("Translate X From", "slider-future")}
             </>
           }
           value={valueTranslateXFrom ?? 100}
@@ -465,7 +465,7 @@ const CustomEffectControls = ({
           label={
             <>
               <SyncAltIcon />
-              {__("Translate X To", "cocoblocks")}
+              {__("Translate X To", "slider-future")}
             </>
           }
           value={valueTranslateXTo ?? 0}
@@ -479,7 +479,7 @@ const CustomEffectControls = ({
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y From", "cocoblocks")}
+               {__("Translate Y From", "slider-future")}
             </>
           }
           value={valueTranslateYFrom ?? 0}
@@ -493,7 +493,7 @@ const CustomEffectControls = ({
           label={
             <>
                <SyncAltIcon style={{transform:'rotate(90deg)'}} />
-               {__("Translate Y To", "cocoblocks")}
+               {__("Translate Y To", "slider-future")}
             </>
           }
           value={valueTranslateYTo ?? 0}
@@ -509,7 +509,7 @@ const CustomEffectControls = ({
        <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
            <InputLabel>  <LinearScaleIcon />
-           {__("Choose the scale", "cocoblocks")}</InputLabel>
+           {__("Choose the scale", "slider-future")}</InputLabel>
            <Select
              value={valueScaleType ?? 'scale'}
              onChange={handleChangeScaleType}
@@ -538,7 +538,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale From", "cocoblocks")}
+                {__("Scale From", "slider-future")}
             </>
           }
           value={valueScaleFrom ?? 0}
@@ -552,7 +552,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <ZoomOutMapIcon />
-                {__("Scale To", "cocoblocks")}
+                {__("Scale To", "slider-future")}
             </>
           }
           value={valueScaleTo ?? 1}
@@ -571,7 +571,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate From", "cocoblocks")}
+                {__("Rotate From", "slider-future")}
             </>
           }
           value={valueRotateFrom ?? 0}
@@ -585,7 +585,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <RefreshIcon />
-                {__("Rotate To", "cocoblocks")}
+                {__("Rotate To", "slider-future")}
             </>
           }
           value={valueRotateTo ?? 0}
@@ -599,7 +599,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X From", "cocoblocks")}
+                {__("Rotate X From", "slider-future")}
             </>
           }
           value={valueRotateXFrom ?? 0}
@@ -613,7 +613,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <ThreeSixtyIcon />
-                {__("Rotate X To", "cocoblocks")}
+                {__("Rotate X To", "slider-future")}
             </>
           }
           value={valueRotateXTo ?? 0}
@@ -627,7 +627,7 @@ const CustomEffectControls = ({
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y From", "cocoblocks")}
+               {__("Rotate Y From", "slider-future")}
             </>
           }
           value={valueRotateYFrom ?? 0}
@@ -641,7 +641,7 @@ const CustomEffectControls = ({
           label={
             <>
                <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-               {__("Rotate Y To", "cocoblocks")}
+               {__("Rotate Y To", "slider-future")}
             </>
           }
           value={valueRotateYTo ?? 0}
@@ -660,7 +660,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X From", "cocoblocks")}
+                {__("Skew X From", "slider-future")}
             </>
           }
           value={valueSkewXFrom ?? 0}
@@ -674,7 +674,7 @@ const CustomEffectControls = ({
           label={
             <>
                 <RefreshIcon />
-                {__("Skew X To", "cocoblocks")}
+                {__("Skew X To", "slider-future")}
             </>
           }
           value={valueSkewXTo ?? 0}
@@ -688,7 +688,7 @@ const CustomEffectControls = ({
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y From", "cocoblocks")}
+                 {__("Skew Y From", "slider-future")}
             </>
           }
           value={valueSkewYFrom ?? 0}
@@ -702,7 +702,7 @@ const CustomEffectControls = ({
           label={
             <>
                  <RefreshIcon />
-                 {__("Skew Y To", "cocoblocks")}
+                 {__("Skew Y To", "slider-future")}
             </>
           }
           value={valueSkewYTo ?? 0}
@@ -719,7 +719,7 @@ const CustomEffectControls = ({
                <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
            <InputLabel>  <OpenInBrowserIcon />
-           {__("Block Direction", "cocoblocks")}</InputLabel>
+           {__("Block Direction", "slider-future")}</InputLabel>
            <Select
              value={valueDirectionBlock ?? 'normal'}
              onChange={handleChangeDirectionBlock}
@@ -761,7 +761,7 @@ const CustomEffectControls = ({
               <Icon icon={buttonIcon} />
             </span>
           )}
-          <span>{buttonTitle || __('Block Color', 'cocoblocks')}</span>
+          <span>{buttonTitle || __('Block Color', 'slider-future')}</span>
         </div>
         <div 
           className="color-indicator" 
@@ -793,7 +793,7 @@ const CustomEffectControls = ({
           label={
             <>
                  <HourglassBottomIcon />
-                 {__("Duration", "cocoblocks")}
+                 {__("Duration", "slider-future")}
             </>
           }
           value={valueDuration ?? 800}
@@ -807,34 +807,34 @@ const CustomEffectControls = ({
           label={
             <>
                   <HistoryToggleOffIcon />
-                  {__("Delay", "cocoblocks")}
+                  {__("Delay", "slider-future")}
             </>
           }
           value={valueDelay ?? 0}
           onChange={handleChangeDelay}
           min={0}
           max={5000}
-          step={100}
+          step={200}
           {...restProps}
         />
         <CustomRangeControl
           label={
             <>
                   <HistoryToggleOffIcon />
-                  {__("End Delay", "cocoblocks")}
+                  {__("End Delay", "slider-future")}
             </>
           }
           value={valueEndDelay ?? 0}
           onChange={handleChangeEndDelay}
           min={0}
           max={5000}
-          step={100}
+          step={200}
           {...restProps}
         />
      <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
            <InputLabel>   <SwapCallsIcon />
-           {__("Easing", "cocoblocks")}</InputLabel>
+           {__("Easing", "slider-future")}</InputLabel>
            <Select
              value={valueEasing ?? 'linear'}
              onChange={handleChangeEasing}
@@ -859,7 +859,7 @@ const CustomEffectControls = ({
        <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
            <InputLabel>   <SyncAltIcon />
-           {__("Direction", "cocoblocks")}</InputLabel>
+           {__("Direction", "slider-future")}</InputLabel>
            <Select
              value={valueDirection ?? 'normal'}
              onChange={handleChangeDirection}
@@ -884,7 +884,7 @@ const CustomEffectControls = ({
        <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
            <InputLabel>    <LoopIcon />
-           {__("Loop", "cocoblocks")}</InputLabel>
+           {__("Loop", "slider-future")}</InputLabel>
            <Select
              value={valueLoop ?? '1'}
              onChange={handleChangeLoop}
@@ -917,7 +917,7 @@ const CustomEffectControls = ({
                marginBottom: "6px",
              }}
            >
-                {__('The loop must complete the set cycle before it can be changed.','cocoblock')}
+                {__('The loop must complete the set cycle before it can be changed.',"slider-future")}
               </p>
             )}
 
@@ -931,7 +931,7 @@ const CustomEffectControls = ({
                marginBottom: "6px",
              }}
            >
-                {__('The loop is limited to 5 repetitions in the editor for performance reasons.','cocoblock')}
+                {__('The loop is limited to 5 repetitions in the editor for performance reasons.',"slider-future")}
               </p>
             )}
             </div>
@@ -939,7 +939,7 @@ const CustomEffectControls = ({
     )}
     {(valueEffect!== 'none' ) && (
           <div className="button-reply-effect">
-            <Tooltip text={__('Play','cocoblock')}>
+            <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onAnimated}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
           </div>

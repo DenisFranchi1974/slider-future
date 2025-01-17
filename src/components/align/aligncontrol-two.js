@@ -18,10 +18,10 @@ const AlignmentControlTwo = ({ value, onChange }) => {
   }, [value]);
   
   const positionOptions = [
-    { value: 'top-left', label: __('Top Left', 'cocoblocks'), icon: justifyLeft},
-    { value: 'top-right', label: __('Top Right', 'cocoblocks'), icon:justifyRight },
-    { value: 'bottom-left', label: __('Bottom Left', 'cocoblocks'), icon: justifyLeft},
-    { value: 'bottom-right', label: __('Bottom Right', 'cocoblocks'), icon: justifyRight},
+    { value: 'top-left', label: __('Top Left', 'slider-future'), icon: justifyLeft},
+    { value: 'top-right', label: __('Top Right', 'slider-future'), icon:justifyRight },
+    { value: 'bottom-left', label: __('Bottom Left', 'slider-future'), icon: justifyLeft},
+    { value: 'bottom-right', label: __('Bottom Right', 'slider-future'), icon: justifyRight},
   ];
   
   const selectedIcon = positionOptions.find(option => option.value === selectedPosition)?.icon;
@@ -33,7 +33,7 @@ const AlignmentControlTwo = ({ value, onChange }) => {
         aria-expanded={isPopoverOpen}
         aria-haspopup="true"
       >
-        <div className='postion-slide__label'> <h2>{__('Position', 'cocoblocks')}</h2><div className='group-icon-position'><Icon icon={selectedIcon || "screenoptions"} /><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div></div>
+        <div className='postion-slide__label'> <h2>{__('Position', 'slider-future')}</h2><div className='group-icon-position'><Icon icon={selectedIcon || "screenoptions"} /><span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span></div></div>
       </Button>
       {isPopoverOpen && (
         <Popover

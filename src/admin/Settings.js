@@ -42,7 +42,7 @@ const Settings = ({ setPrimaryColor }) => {
                 data: settings
             });
             if (response) {
-                setAlert({ open: true, severity: 'success', message: __('Settings saved successfully!', 'your-text-domain') });
+                setAlert({ open: true, severity: 'success', message: __('Settings saved successfully!', 'slider-future') });
                 // Applica il colore primario salvato
                 document.documentElement.style.setProperty('--primary-color', settings.primaryColor);
                 setPrimaryColor(settings.primaryColor);
@@ -51,19 +51,20 @@ const Settings = ({ setPrimaryColor }) => {
             }
         } catch (error) {
             console.error('Error:', error);
-            setAlert({ open: true, severity: 'error', message: __('Error saving settings', 'your-text-domain') });
+            setAlert({ open: true, severity: 'error', message: __('Error saving settings', 'slider-future') });
         }
     };
 
     return (
-        <Panel>
-            <PanelBody title={__('General Settings', 'your-text-domain')} initialOpen={true}>
-                <PanelRow>
+        <Panel className='slider-settings'>
+            <PanelBody title={__('General Settings', 'slider-future')} initialOpen={true}>
+                    {/* 
+                     <PanelRow>
                     <CustomToggleControl
                         label={
                             <>
                                 <WidgetsIcon />
-                                {__("Autoplay", "cocoblocks")}
+                                {__("Autoplay", "slider-future")}
                             </>
                         }
                         checked={settings.autoplay}
@@ -72,13 +73,16 @@ const Settings = ({ setPrimaryColor }) => {
                 </PanelRow>
                 <PanelRow>
                     <TextControl
-                        label={__('Speed (ms)', 'your-text-domain')}
+                        label={__('Speed (ms)', 'slider-future')}
                         value={settings.speed}
                         onChange={(value) => setSettings({...settings, speed: parseInt(value)})}
                         type="number"
                     />
                 </PanelRow>
+                */}
+                <p style={{color:'#000'}}>{__('Primary Color','slider-future')}</p>
                 <PanelRow>
+                    
                     <ColorPicker
                         color={settings.primaryColor}
                         onChangeComplete={(value) => {
@@ -92,7 +96,7 @@ const Settings = ({ setPrimaryColor }) => {
                     isPrimary
                     onClick={saveSettings}
                 >
-                    {__('Save Settings', 'your-text-domain')}
+                    {__('Save Settings', 'slider-future')}
                 </Button>
             </PanelBody>
             <Snackbar open={alert.open} autoHideDuration={6000} onClose={() => setAlert({ ...alert, open: false })}  anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>

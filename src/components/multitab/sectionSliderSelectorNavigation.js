@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, ButtonGroup, Icon } from "@wordpress/components";
+import { Button, ButtonGroup } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
@@ -27,7 +27,7 @@ const SectionSliderSelectorNavigation = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeNavigation("progress")}
       >
         <DonutLargeIcon />
-        {__("Progress", "cocoblocks")}
+        {__("Progress", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -37,7 +37,7 @@ const SectionSliderSelectorNavigation = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeNavigation("arrow")}
       >
         <SwapVertIcon style={{transform:'rotate(90deg)'}} />
-        {__("Arrow", "cocoblocks")}
+        {__("Arrow", "slider-future")}
       </Button>
 
       <Button
@@ -48,7 +48,7 @@ const SectionSliderSelectorNavigation = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeNavigation("bullet")}
       >
         <MoreHorizIcon />
-        {__("Bullets", "cocoblocks")}
+        {__("Bullets", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -58,7 +58,7 @@ const SectionSliderSelectorNavigation = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeNavigation("keyboard")}
       >
         <KeyboardIcon />
-        {__("Keyboard", "cocoblocks")}
+        {__("Keyboard", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -68,7 +68,7 @@ const SectionSliderSelectorNavigation = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeNavigation("mouse")}
       >
         <MouseIcon />
-        {__("Mouse", "cocoblocks")}
+        {__("Mouse", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -78,7 +78,7 @@ const SectionSliderSelectorNavigation = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeNavigation("grap")}
       >
         <SwipeIcon />
-        {__("Grab", "cocoblocks")}
+        {__("Grab", "slider-future")}
       </Button>
     </ButtonGroup>
   );

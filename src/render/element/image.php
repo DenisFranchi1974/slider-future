@@ -46,6 +46,7 @@ function render_image($element, $slide)
                                     border-radius: " . $borderRadius . ";
                                     padding: " . $padding . ";
                                     background-color: " . $backgroundColorImage . ";
+                                    max-width: 100%;
                                     --spike-width:" . $spikeLeftWidth . "%;
                                     --spike-width-right: " . $spikeRightWidth . "%;
                                     --color-hover-image: " . $imageColorHover . ";
@@ -91,6 +92,9 @@ function render_image($element, $slide)
     $imageAlign = esc_attr($element['imageAlign'] ?? 'center');
     $opacityImage = esc_attr($element['opacityImage'] ?? 1);
     $rotateImage = esc_attr($element['rotateImage'] ?? 0);
+    $rotateImageX = esc_attr($element['rotateImageX'] ?? 0);
+    $rotateImageY = esc_attr($element['rotateImageY'] ?? 0);
+    $perspectiveImage = esc_attr($element['perspectiveImage'] ?? 0);
     $zIndexImage = esc_attr($element['zIndexImage'] ?? 1);
 ?>
     <?php if ($slide['developerMode']) : ?>
@@ -110,7 +114,7 @@ function render_image($element, $slide)
             <?php endif;
 
             ?>
-            style="transform:rotate(<?php echo $rotateImage; ?>deg);
+            style="transform:perspective(<?php echo $perspectiveImage; ?>px) rotateX(<?php echo $rotateImageX; ?>deg) rotateY(<?php echo $rotateImageY; ?>deg) rotate(<?php echo $rotateImage; ?>deg);
                                 opacity:<?php echo $opacityImage; ?>; 
                                 z-index:<?php echo $zIndexImage; ?>;
                                 --background-color-image-hover: <?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>;

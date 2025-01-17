@@ -143,7 +143,7 @@ const [categories, setCategories] = useState([]);
   return (
     <>
     <div
-          className="cocoblocks-panel panel-slide"
+          className="slider-future-panel panel-slide"
         >
       <div className="content-subdescription-section-slider">
         <h2>{__("Posts Content")}</h2>
@@ -155,7 +155,7 @@ const [categories, setCategories] = useState([]);
             className="content-title-custom-panel"
           >
             <h2 className="title-custom-panel">
-              {__("Content", "cocoblocks")}
+              {__("Content", "slider-future")}
             </h2>
           </div>
           <div className="content-section-post">
@@ -164,31 +164,31 @@ const [categories, setCategories] = useState([]);
               <span style={{color:'var(--light-color)',textTransform:'capitalize'}}>{element}</span>
 
               <div className={"button-move-element-post"}>
-              <Tooltip text={__("Move before", "cocoblocks")}>
+              <Tooltip text={__("Move before", "slider-future")}>
                     <Button
                       onClick={() => moveElement(index, index - 1)}
                       size="small"
                       disabled={index === 0}
-                      label={__("Move before", "cocoblocks")}
+                      label={__("Move before", "slider-future")}
                     >
                       ↑
                     </Button>
                   </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
+                  <Tooltip text={__("Move after", "slider-future")}>
                     <Button
                        onClick={() => moveElement(index, index + 1)}
                       size="small"
                       disabled={index === postElementsOrder.length - 1}
-                      label={__("Move after", "cocoblocks")}
+                      label={__("Move after", "slider-future")}
                     >
                       ↓
                     </Button>
                   </Tooltip>
-                  <Tooltip text={visibleElements[element] ? __("Hide", "cocoblocks") : __("Show", "cocoblocks")}>
+                  <Tooltip text={visibleElements[element] ? __("Hide", "slider-future") : __("Show", "slider-future")}>
               <Button
                 onClick={() => toggleVisibility(element)}
                 size="small"
-                label={visibleElements[element] ? __("Hide", "cocoblocks") : __("Show", "cocoblocks")}
+                label={visibleElements[element] ? __("Hide", "slider-future") : __("Show", "slider-future")}
               >
                 {visibleElements[element] ? <VisibilityIcon /> : <VisibilityOffIcon />}
               </Button>
@@ -204,7 +204,7 @@ const [categories, setCategories] = useState([]);
          <div className="custom-block-added">
          <div className="content-title-custom-panel">
                 <h2 className="title-custom-panel">
-                  {__("Layout", "cocoblocks")}
+                  {__("Layout", "slider-future")}
                 </h2>
               </div>
               
@@ -213,17 +213,17 @@ const [categories, setCategories] = useState([]);
               label={
                 <>
                   <ViewQuiltIcon />
-                  {__("Content direction", "cocoblocks")}
+                  {__("Content direction", "slider-future")}
                 </>
               }
               value={layoutPost}
               options={[
                 {
-                  label: __("Column", "slider"),
+                  label: __("Column", "slider-future"),
                   value: "vertical-layout",
                 },
                 {
-                  label: __("Row", "slider"),
+                  label: __("Row", "slider-future"),
                   value: "horizontal-layout",
                 },
               ]}
@@ -233,7 +233,7 @@ const [categories, setCategories] = useState([]);
               label={
                 <>
                    <SettingsEthernetIcon/>
-                  {__("Gap between items", "cocoblocks")}
+                  {__("Gap between items", "slider-future")}
                 </>
               }
               value={gapItemsPost}
@@ -252,13 +252,13 @@ const [categories, setCategories] = useState([]);
               label={
                 <>
                    <WidthNormalIcon />
-                  {__("Use content width", "cocoblocks")}
+                  {__("Use content width", "slider-future")}
                 </>
               }
               checked={enableContentWidthPost}
               onChange={(val) => setAttributes({ enableContentWidthPost: val })}
               showTooltip={true}
-              tooltipText={__("Nested blocks will fill the width of this container. Toggle to constrain.", "cocoblocks")}
+              tooltipText={__("Nested blocks will fill the width of this container. Toggle to constrain.", "slider-future")}
               tooltipTop = {'11px'}
               tooltipLeft = {'60%'}
             />
@@ -268,7 +268,7 @@ const [categories, setCategories] = useState([]);
                   label={
                     <>
                       <SettingsEthernetIcon/>
-                      {__("Content width", "cocoblocks")}
+                      {__("Content width", "slider-future")}
                     </>
                   }
                   value={contentWidthPost}
@@ -283,17 +283,17 @@ const [categories, setCategories] = useState([]);
               label={
                 <>
                   <WrapTextIcon />
-                  {__("Flex wrap", "cocoblocks")}
+                  {__("Flex wrap", "slider-future")}
                 </>
               }
               value={layoutWrapPost}
               options={[
                 {
-                  label: __("Wrap", "slider"),
+                  label: __("Wrap", "slider-future"),
                   value: "wrap",
                 },
                 {
-                  label: __("No Wrap", "slider"),
+                  label: __("No Wrap", "slider-future"),
                   value: "nowrap",
                 },
               ]}
@@ -308,7 +308,7 @@ const [categories, setCategories] = useState([]);
 
           <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
+              {__("Background", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
@@ -316,7 +316,7 @@ const [categories, setCategories] = useState([]);
                       label={
                         <>
                         <ImageIcon />
-                          {__("Featured Image", "cocoblocks")}
+                          {__("Featured Image", "slider-future")}
                         </>
                       }
                       checked={imageBgPost || false}
@@ -328,22 +328,22 @@ const [categories, setCategories] = useState([]);
                     label={
                       <>
                         <FitScreenIcon />
-                        {__("Image fit", "cocoblocks")}
+                        {__("Image fit", "slider-future")}
                       </>
                     }
                     value={imageBgPostSize || 'cover'}
                     onChange={(val) => setAttributes({imageBgPostSize: val })}
                     options={[  
                       {
-                        label: __("Cover", "cocoblocks"),
+                        label: __("Cover", "slider-future"),
                         value: "cover",
                       },
                       {
-                        label: __("Contain", "cocoblocks"),
+                        label: __("Contain", "slider-future"),
                         value: "contain",
                       },
                       {
-                        label: __("Auto", "cocoblocks"),
+                        label: __("Auto", "slider-future"),
                         value: "auto",
                       },
                     ]}
@@ -352,24 +352,24 @@ const [categories, setCategories] = useState([]);
                     label={
                       <>
                         <RepeatIcon />
-                        {__("Image repeat", "cocoblocks")}
+                        {__("Image repeat", "slider-future")}
                       </>
                     }
                     value={imageBgPostRepeat || 'no-repeat'}
                     onChange={(val) => setAttributes({imageBgPostRepeat: val })}
                     options={[  
                       {
-                        label: __("Repeat", "cocoblocks"),
+                        label: __("Repeat", "slider-future"),
                         value: "repeat",
                       },
                       {
-                        label: __("No Repeat", "cocoblocks"),
+                        label: __("No Repeat", "slider-future"),
                         value: "no-repeat",
                       },
                     ]}
                   />
                    <CustomRangeControl
-                    label={<> <SettingsOverscanIcon  />{__("Image position X", "cocoblocks")}</>}
+                    label={<> <SettingsOverscanIcon  />{__("Image position X", "slider-future")}</>}
                     value={imageBgPostPositionX || 0}
                     onChange={(val) => setAttributes({imageBgPostPositionX: val })}
                     min={-200}
@@ -377,7 +377,7 @@ const [categories, setCategories] = useState([]);
                     step={1}
                   />
                     <CustomRangeControl
-                    label={<> <SettingsOverscanIcon  />{__("Image position Y", "cocoblocks")}</>}
+                    label={<> <SettingsOverscanIcon  />{__("Image position Y", "slider-future")}</>}
                     value={imageBgPostPositionY || 0}
                     onChange={(val) => setAttributes({imageBgPostPositionY: val })}
                     min={-200}
@@ -389,13 +389,13 @@ const [categories, setCategories] = useState([]);
 </div>
          <div className="content-title-custom-panel">
                 <h2 className="title-custom-panel">
-                  {__("Spacing", "cocoblocks")}
+                  {__("Spacing", "slider-future")}
                 </h2>
               </div>
               
           <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
             <CustomRangeControl
-                    label={<> <VerticalAlignTopIcon />{__("Content vertical padding", "cocoblocks")}</>}
+                    label={<> <VerticalAlignTopIcon />{__("Content vertical padding", "slider-future")}</>}
                     value={backgroundVerticalPaddingPost}
                     onChange={(val) => setAttributes({backgroundVerticalPaddingPost: val })}
                     min={0}
@@ -405,7 +405,7 @@ const [categories, setCategories] = useState([]);
            <CustomRangeControl
                     label={<> <VerticalAlignTopIcon  style={{
                       transform: "rotate(90deg)",
-                    }} />{__("Content horizontal padding", "cocoblocks")}</>}
+                    }} />{__("Content horizontal padding", "slider-future")}</>}
                     value={backgroundHorizontalPaddingPost}
                     onChange={(val) => setAttributes({backgroundHorizontalPaddingPost: val })}
                     min={0}
@@ -420,7 +420,7 @@ const [categories, setCategories] = useState([]);
               <div className="custom-block-added">
      <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Effect", "cocoblocks")}
+              {__("Effect", "slider-future")}
             </h2>
           </div>
       <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
@@ -428,7 +428,7 @@ const [categories, setCategories] = useState([]);
                     label={
                       <>
                       <TextureIcon />
-                        {__("Divider", "cocoblocks")}
+                        {__("Divider", "slider-future")}
                       </>
                     }
                     value={divider || 'none'}
@@ -441,7 +441,7 @@ const [categories, setCategories] = useState([]);
                     label={
                       <>
                         <SettingsEthernetIcon style={{transform:'rotate(90deg'}} />
-                        {__("Height", "cocoblocks")}
+                        {__("Height", "slider-future")}
                       </>
                     }
                     value={heightDivider || 200}
@@ -454,7 +454,7 @@ const [categories, setCategories] = useState([]);
                     label={
                       <>
                         <SettingsEthernetIcon />
-                        {__("Width", "cocoblocks")}
+                        {__("Width", "slider-future")}
                       </>
                     }
                     value={widthDivider || 100}
@@ -467,7 +467,7 @@ const [categories, setCategories] = useState([]);
                       <ColorOptionsPanel
                         colorNormal={colorDivider}
                         setColorNormal={(color) => setAttributes({ colorDivider: color })}
-                        buttonTitle={__("Color", "cocoblocks")}
+                        buttonTitle={__("Color", "slider-future")}
                         buttonIcon={
                           <ColorLensIcon />
                         }
@@ -478,7 +478,7 @@ const [categories, setCategories] = useState([]);
                       label={
                         <>
                         <FlipIcon/>
-                          {__("Flip", "cocoblocks")}
+                          {__("Flip", "slider-future")}
                         </>
                       }
                       checked={flipDivider || false}
@@ -490,7 +490,7 @@ const [categories, setCategories] = useState([]);
                       label={
                         <>
                         <ScreenRotationAltIcon/>
-                          {__("Invert", "cocoblocks")}
+                          {__("Invert", "slider-future")}
                         </>
                       }
                       checked={invertDivider || false}
@@ -501,18 +501,18 @@ const [categories, setCategories] = useState([]);
                     label={
                       <>
                       <MultipleStopIcon style={{transform:'rotate(90deg)'}} />
-                        {__("Position", "cocoblocks")}
+                        {__("Position", "slider-future")}
                       </>
                     }
                     value={positionDivider || 'divider-top'}
                     onChange={(val) => setAttributes({positionDivider: val })}
                     options={[
                       {
-                        label: __("Top", "cocoblocks"),
+                        label: __("Top", "slider-future"),
                         value: "divider-top",
                       },
                       {
-                        label: __("Bottom", "cocoblocks"),
+                        label: __("Bottom", "slider-future"),
                         value: "divider-bottom",
                       },
                     ]}
@@ -527,14 +527,14 @@ const [categories, setCategories] = useState([]);
                    <div className="custom-block-added">
      <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Query", "cocoblocks")}
+              {__("Query", "slider-future")}
             </h2>
           </div>
       <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
           <div className="custom-select checkbox" style={{paddingTop:'12px',paddingBottom:'10px'}}>
            <CheckboxControl
                     __nextHasNoMarginBottom
-                    label={<><DynamicFeedIcon />{__('Show Latest Posts','cocoblock')}</>}
+                    label={<><DynamicFeedIcon />{__('Show Latest Posts',"slider-future")}</>}
                     checked={latestPosts}
                     onChange={handleLatestPostsChange}
                 />
@@ -543,7 +543,7 @@ const [categories, setCategories] = useState([]);
                   <>
            <div className="custom-select select-control-label-right select-material transform-none">
         <TextField
-          label={<><CategoryIcon />{__("Include Categories", "cocoblocks")}</>}
+          label={<><CategoryIcon />{__("Include Categories", "slider-future")}</>}
           select
           value={includeCategories}
           onChange={handleIncludeCategoriesChange}
@@ -572,7 +572,7 @@ const [categories, setCategories] = useState([]);
 
       <div className="custom-select select-control-label-right select-material transform-none">
       <TextField
-        label={<><FlagIcon />{__("Specific Posts", "cocoblocks")}</>}
+        label={<><FlagIcon />{__("Specific Posts", "slider-future")}</>}
         select
         value={specificPosts}
         onChange={handleSpecificPostsChange}
@@ -601,16 +601,16 @@ const [categories, setCategories] = useState([]);
       </>
                 )}
       <CustomSelectControl
-            label={<><SortByAlphaIcon />{__("Order", "cocoblocks")}</>}
+            label={<><SortByAlphaIcon />{__("Order", "slider-future")}</>}
             value={order}
             options={[
-              { label: __("Ascending", "cocoblocks"), value: "ASC" },
-              { label: __("Descending", "cocoblocks"), value: "DESC" },
+              { label: __("Ascending", "slider-future"), value: "ASC" },
+              { label: __("Descending", "slider-future"), value: "DESC" },
             ]}
             onChange={(value) => setAttributes({ order: value })}
           />
            <CustomRangeControl
-            label={<><ThirtyFpsSelectIcon />{__("Number of Posts", "cocoblocks")}</>}
+            label={<><ThirtyFpsSelectIcon />{__("Number of Posts", "slider-future")}</>}
             value={postsToShow}
             onChange={(value) => setAttributes({ postsToShow: value })}
             min={1}
@@ -625,7 +625,7 @@ const [categories, setCategories] = useState([]);
     <div className="custom-block-added" style={{marginBottom:'32px'}}>
        <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
-              {__("Element", "cocoblocks")}
+              {__("Element", "slider-future")}
             </h2>
           </div>
        {visibleElements['image'] && (

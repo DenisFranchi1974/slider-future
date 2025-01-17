@@ -120,7 +120,7 @@ function render_innerText($innerElement, $slide)
     ?>
 
     <div
-        style="width: <?php echo esc_attr($widthTitle) === 'custom' ? esc_attr($widthCustomTitle) . '%' : esc_attr($widthTitle); ?>; opacity: <?php echo esc_attr($opacity); ?>"
+        style="width: <?php echo esc_attr($widthTitle) === 'custom' ? esc_attr($widthCustomTitle) . 'px' : esc_attr($widthTitle); ?>; opacity: <?php echo esc_attr($opacity); ?>"
         class="content-title-div <?php echo esc_attr($desktopClass); ?> <?php echo esc_attr($tabletClass); ?> <?php echo esc_attr($mobileClass); ?>">
         <<?php echo esc_attr($tag); ?>
             class="title-slide-div"

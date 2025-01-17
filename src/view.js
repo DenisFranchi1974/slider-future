@@ -80,10 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+    
+      const elementsToAnimate = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.content-icon,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.content-icon-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateElement(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0
+    });
+
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
+    
+
     // Funzione per animare un elemento
     function animateElement() {
      
-      const elementsToAnimate = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.content-icon,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.content-icon-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
       elementsToAnimate.forEach(element => {
       const effectIn = element.getAttribute('data-effect-in');
       const duration = parseInt(element.getAttribute('data-duration')) ?? 800;
@@ -188,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
     // Controlla se animationsIn[effectIn] è definito
     if (typeof animationsIn[effectIn] === 'function') {
-     // element.style.opacity = 0; 
+      element.style.opacity = 0; 
       setTimeout(() => {
         animationsIn[effectIn](element, animationProps);
       }, delay);
@@ -220,7 +238,6 @@ elements.forEach(element => {
       easingHover: element.getAttribute('data-easing-hover'), 
     }));
 });
-
 
     // Inizializza Swiper per ogni elemento
     swiperElements.forEach(swiperElement => {
@@ -334,7 +351,7 @@ elements.forEach(element => {
                     pageUpDown: swiperConfig.upKeyboard,
                 },
                 breakpoints: {
-                    640: {
+                    300: {
                         slidesPerView: swiperConfig.perViewSliderMobile,
                         spaceBetween: swiperConfig.spaceBetweenMobile,
                         slidesPerGroup: swiperConfig.slidesPerGroupMobile,
@@ -372,7 +389,7 @@ elements.forEach(element => {
                                anime.remove(element);
                                 // Resetta gli stili
                               element.style.transform = "none";
-                                element.style.opacity = 0;
+                              element.style.opacity = 0;
                             });
                         }
                     });
@@ -506,7 +523,6 @@ function createSmokeTrail(e, slide) {
         smoke.remove();
     }, duration * 1000);
 }
-
 
 // Funzione per creare effetto parallax
 function applyParallaxEffect(slide) {
@@ -1855,8 +1871,6 @@ function applyLiquidEffect(slide) {
       density.swap();
     }
     
-    
-    
     function resizeCanvas() {
       if (
         canvas.width != canvas.clientWidth ||
@@ -1867,7 +1881,6 @@ function applyLiquidEffect(slide) {
         initFramebuffers();
       }
     }
-    
     
     // Imposta pointers[0].down su true all'inizio
     pointers[0].down = true;
@@ -1951,8 +1964,6 @@ function applyLiquidEffect(slide) {
     
 }
 
-
-
 /* Position */
 function getDeviceType() {
     const width = window.innerWidth;
@@ -1972,7 +1983,6 @@ function getDeviceType() {
     const buttonElements = document.querySelectorAll('.content-button-absolute');
     const iconElements = document.querySelectorAll('.content-content-icon-absolute');
     const iconInnerElements = document.querySelectorAll('.content-content-icon-inner-absolute');
-
 
     const updatePosition = (element) => {
       let x = 0, y = 0;
@@ -1995,7 +2005,6 @@ function getDeviceType() {
     buttonElements.forEach(updatePosition);
     iconElements.forEach(updatePosition);
     iconInnerElements.forEach(updatePosition);
-
 
   }
   window.addEventListener('resize', updateElementPositions);
@@ -2124,6 +2133,3 @@ window.onload = function() {
 if (document.querySelector('.typewrite')) {
 typeWritEffect();
 }
-
-
-

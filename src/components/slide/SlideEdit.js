@@ -20,7 +20,6 @@ import GroupEdit from "../group/GroupEdit";
 import IconEdit from "../icon/IconEdit";
 import ColorOptionsPanel from "../colorPanel";
 import ColorOptionsPanelGradient from "../colorPanelGradient";
-import AlignmentControl from "../align/aligncontrol";
 import ImageSelectionModal from "../ImageSelectionModal";
 import ButtonTypeSelectionModal from "../buttonModal";
 import ButtonEdit from "../button/ButtonEdit";
@@ -49,7 +48,6 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
 import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
 import WidthNormalIcon from '@mui/icons-material/WidthNormal';
-import AlignVerticalTopIcon from '@mui/icons-material/AlignVerticalTop';
 import WrapTextIcon from '@mui/icons-material/WrapText';
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 import BorderStyleIcon from '@mui/icons-material/BorderStyle';
@@ -72,8 +70,11 @@ import TextureIcon from '@mui/icons-material/Texture';
 import FlipIcon from '@mui/icons-material/Flip';
 import ScreenRotationAltIcon from '@mui/icons-material/ScreenRotationAlt';
 import MultipleStopIcon from '@mui/icons-material/MultipleStop';
-import { speed } from "animejs";
-
+import ViewColumnIcon from '@mui/icons-material/ViewColumn';
+import AlignHorizontalCenterIcon from '@mui/icons-material/AlignHorizontalCenter';
+import AlignVerticalCenterIcon from '@mui/icons-material/AlignVerticalCenter';
+import AppsIcon from '@mui/icons-material/Apps';
+import SettingsEthernetOutlinedIcon from '@mui/icons-material/SettingsEthernetOutlined';
 
 const SlideEdit = ({
   slides,
@@ -282,7 +283,7 @@ const SlideEdit = ({
 
   // Stato per memorizzare le impostazioni correnti
   const [currentSettings, setCurrentSettings] = useState({
-    layout: "vertical",
+    layout: "row",
     gapItems: 5,
     position: "center",
     borderStyleSlide: "none",
@@ -324,14 +325,13 @@ const SlideEdit = ({
     const newSlide = {
       id: slides.length + 1,
       elements: [], // Inizializza elements come un array vuoto
-      layout: "vertical",
+      layout: "row",
       position: "center-center",
       backgroundType: "color",
       backgroundColor: backgroundColorSlideDefault,
       developerMode: false,
       layoutAlignItems: "center",
       layoutAlignResponsive: "center",
-      layoutDisplay: "flex",
       link: "none",
       borderStyleSlide: currentSettings.borderStyleSlide,
       backgroundBorderColor: currentSettings.backgroundBorderColor,
@@ -343,6 +343,15 @@ const SlideEdit = ({
       divider: "none",
       positionDivider:"top",
       invertDivider: false,
+      display: "flex",
+      itemGridPosition: "auto",
+      itemGridWidth: 150,
+      itemGridColumn: 5,
+      layoutJustify: "center",
+      layoutVerticalAlignRow: "center",
+      layoutJustifyColumn: "center",
+      layoutVerticalAlignColumn: "center",
+      layoutDisplay: "flex",
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -518,14 +527,7 @@ const SlideEdit = ({
     );
     setAttributes({ slides: updatedSlides });
   };
-  
-  // Update Position
-  const updateSlidePosition = (slideId, newPosition) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId ? { ...slide, position: newPosition } : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
+
 
   // Update Filter
   const updateSlideFilter = (slideId, value) => {
@@ -607,13 +609,6 @@ const SlideEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
-  // Update align items
-  const updateSlideLayoutAlignItems = (slideId, value) => {
-    const updatedSlides = slides.map((slide) =>
-      slide.id === slideId ? { ...slide, layoutAlignItems: value } : slide
-    );
-    setAttributes({ slides: updatedSlides });
-  };
   // Update Border Color
   const updateSlideBackgroundBorderColor = (id, color) => {
     const updatedSlides = slides.map((slide) =>
@@ -646,14 +641,6 @@ const SlideEdit = ({
     setAttributes({ slides: updatedSlides });
   };
 
-    // Update align layout responsive
-    const updateSlideLayoutAlignResponsive = (id, value) => {
-      const updatedSlides = slides.map((slide) =>
-        slide.id === id ? { ...slide, layoutAlignResponsive: value } : slide
-      );
-      setAttributes({ slides: updatedSlides });
-    };
-
      // Update display
      const updateSlideLayoutDisplay = (id, value) => {
       const updatedSlides = slides.map((slide) =>
@@ -661,6 +648,60 @@ const SlideEdit = ({
       );
       setAttributes({ slides: updatedSlides });
     };
+
+     // Update grid display
+     const updateSlideItemGridPosition = (id, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === id ? { ...slide, itemGridPosition: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Update grid width display
+    const updateSlideItemGridWidth = (id, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === id ? { ...slide, itemGridWidth: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+
+    // Update grid column display
+    const updateSlideItemGridColumn = (id, value) => {
+      const updatedSlides = slides.map((slide) =>
+        slide.id === id ? { ...slide, itemGridColumn: value } : slide
+      );
+      setAttributes({ slides: updatedSlides });
+    };
+      // Update justyfy display
+      const updateSlideLayoutJustify = (id, value) => {
+        const updatedSlides = slides.map((slide) =>
+          slide.id === id ? { ...slide, layoutJustify: value } : slide
+        );
+        setAttributes({ slides: updatedSlides });
+      };
+
+        // Update vertical align
+        const updateSlideLayoutVerticalAlignRow = (id, value) => {
+          const updatedSlides = slides.map((slide) =>
+            slide.id === id ? { ...slide, layoutVerticalAlignRow: value } : slide
+          );
+          setAttributes({ slides: updatedSlides });
+        };
+
+          // Update justyfy column
+          const updateSlideLayoutJustifyColumn = (id, value) => {
+            const updatedSlides = slides.map((slide) =>
+              slide.id === id ? { ...slide, layoutJustifyColumn: value } : slide
+            );
+            setAttributes({ slides: updatedSlides });
+          };
+           // Update justyfy column
+           const updateSlideLayoutVerticalAlignColumn = (id, value) => {
+            const updatedSlides = slides.map((slide) =>
+              slide.id === id ? { ...slide, layoutVerticalAlignColumn: value } : slide
+            );
+            setAttributes({ slides: updatedSlides });
+          };
   
    // Update Effect Color two
    const updateColorTwoEffect = (id, color) => {
@@ -741,7 +782,7 @@ const SlideEdit = ({
     desktop: { x: 0, y: 0 },
     tablet: { x: 0, y: 0 },
     mobile: { x: 0, y: 0 },
-    text: __("Text Slide", "cocoblocks"),
+    text: __("Text Slide", "slider-future"),
     fontSize: 24,
     fontSizeTablet: 16,
     fontSizeMobile: 16,
@@ -830,7 +871,7 @@ const SlideEdit = ({
                 tablet: { x: 0, y: 0 },
                 mobile: { x: 0, y: 0 },
                 content: "",
-                layoutDiv: "vertical",
+                layoutDiv: "row",
                 gapItemsDiv: 5,
                 positionDiv: "center-center",
                 contentWidthDiv: "auto",
@@ -846,10 +887,17 @@ const SlideEdit = ({
                 enableTablet: true,
                 enableMobile: true,
                 layoutWrap: "wrap",
-                justifyContentResponsiveDiv: "center",
                 textLink: "none",
                 effectIn: "none",
                 effectHover: "none",
+                displayDiv: "flex",
+                itemGridPositionDiv: "auto",
+                itemGridWidthDiv: 150,
+                itemGridColumnDiv: 5,
+                layoutJustifyDiv: "center",
+                layoutVerticalAlignDivRow: "center",
+                layoutJustifyDivColumn: "center",
+                layoutVerticalAlignDivColumn: "center",
               },
             ],
           }
@@ -1094,7 +1142,7 @@ const SlideEdit = ({
               ...(slide.elements || []),
               {
                 type: 'button',
-                button:__(' Click Here', 'cocoblocks'),
+                button:__(' Click Here', 'slider-future'),
                 buttonType: buttonType,
                 desktop: { x: 0, y: 0 },
                 tablet: { x: 0, y: 0 },
@@ -1198,15 +1246,15 @@ const id = open ? 'custom-popover' : undefined;
   return (
     <>
       <div className="content-subdescription-section-slider" style={{borderBottom: '2px solid var(--label-color)'}}>
-        <h2>{__("Custom Content")}</h2>
+        <h2>{__("Custom Content","slider-future")}</h2>
       </div>
       {slides.map((slide, index) => (
         <PanelBody
           key={index}
-          className="cocoblocks-panel panel-slide"
+          className="slider-future-panel panel-slide"
           title={
             <>
-              {renderCircle(slide.id)} {__("Slide", "cocoblocks")} {index + 1}
+              {renderCircle(slide.id)} {__("Slide", "slider-future")} {index + 1}
               <div
                 onClick={(event) => {
                   event.stopPropagation();
@@ -1236,11 +1284,11 @@ const id = open ? 'custom-popover' : undefined;
       >
         <MenuItem  style={{ fontSize: '13px'}} onClick={() => { removeSlide(slide.id); handleClose(); }}>
           <DeleteOutlineIcon  style={{ fontSize: '14px',marginRight:'8px'}} />
-          {__("Delete", "slider")}
+          {__("Delete", "slider-future")}
         </MenuItem>
         <MenuItem  style={{ fontSize: '13px'}} onClick={()  => { cloneSlide(slide); handleClose(); }}>
           <FileCopyIcon  style={{ fontSize: '14px', marginRight:'8px'}} />
-          {__("Clone", "slider")}
+          {__("Clone", "slider-future")}
         </MenuItem>
       </Popover>
               </div>
@@ -1254,7 +1302,7 @@ const id = open ? 'custom-popover' : undefined;
             <>
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Background", "cocoblocks")}
+                  {__("Background", "slider-future")}
                 </h2>
               </div>
               <div
@@ -1273,21 +1321,21 @@ const id = open ? 'custom-popover' : undefined;
                       tabs={[
                         {
                           name: "color",
-                          title: <span>{__("Color", "your-text-domain")}</span>,
+                          title: <span>{__("Color", "slider-future")}</span>,
                         },
                         {
                           name: "gradient",
                           title: (
-                            <span>{__("Gradient", "your-text-domain")}</span>
+                            <span>{__("Gradient", "slider-future")}</span>
                           ),
                         },
                         {
                           name: "image",
-                          title: <span>{__("Image", "your-text-domain")}</span>,
+                          title: <span>{__("Image", "slider-future")}</span>,
                         },
                         {
                           name: "video",
-                          title: <span>{__("Video", "your-text-domain")}</span>,
+                          title: <span>{__("Video", "slider-future")}</span>,
                         },
                       ]}
                     >
@@ -1312,7 +1360,7 @@ const id = open ? 'custom-popover' : undefined;
                                 label={
                                   <>
                                  <BlurOnIcon/>
-                                    {__("Radial Effect", "cocoblocks")}
+                                    {__("Radial Effect", "slider-future")}
                                   </>
                                 }
                                 checked={slide.enableRadialEffect || false}
@@ -1353,7 +1401,7 @@ const id = open ? 'custom-popover' : undefined;
                               label={
                                 <>
                                   <ViewCompactIcon/>
-                                  {__("Size", "cocoblocks")}
+                                  {__("Size", "slider-future")}
                                 </>
                               }
                               value={slide.rangeEffectRadial||1}
@@ -1430,7 +1478,7 @@ const id = open ? 'custom-popover' : undefined;
                                             <PhotoSizeSelectActualIcon style={{width:'18px'}}/>
                                             {__(
                                               "Media Library",
-                                              "cocoblocks"
+                                              "slider-future"
                                             )}
                                           </div>
                                           <span
@@ -1464,7 +1512,7 @@ const id = open ? 'custom-popover' : undefined;
                                           }}
                                         >
                                           <PhotoLibraryIcon style={{width:'18px'}}/>
-                                          {__("Object Library", "cocoblocks")}
+                                          {__("Object Library", "slider-future")}
                                         </div>
                                         <span
                                           className="dashicons dashicons-arrow-down-alt2"
@@ -1511,14 +1559,14 @@ const id = open ? 'custom-popover' : undefined;
                                             label={
                                               <>
                                                 <FitScreenIcon />
-                                                {__("Image fit", "cocoblocks")}
+                                                {__("Image fit", "slider-future")}
                                               </>
                                             }
                                             value={slide.fit}
                                             options={[
-                                              { label: __("Cover", "slider"), value: "cover" },
-                                              { label: __("Auto", "slider"), value: "auto" },
-                                              { label: __("Contain", "slider"), value: "contain" },
+                                              { label: __("Cover", "slider-future"), value: "cover" },
+                                              { label: __("Auto", "slider-future"), value: "auto" },
+                                              { label: __("Contain", "slider-future"), value: "contain" },
                                             ]}
                                             onChange={(newFit) => updateSlideFit(slide.id, newFit)}
                                           />
@@ -1535,7 +1583,7 @@ const id = open ? 'custom-popover' : undefined;
                                             icon={<ChangeCircleOutlinedIcon />}
                                             label={__(
                                               "Change Image form Media Library",
-                                              "cocoblocks"
+                                              "slider-future"
                                             )}
                                           ></Button>
                                           <Button
@@ -1547,7 +1595,7 @@ const id = open ? 'custom-popover' : undefined;
                                             }}
                                             className="button-replace"
                                             icon={<ChangeCircleOutlinedIcon />}
-                                            label={__("Change Image from Object Library", "cocoblocks")}
+                                            label={__("Change Image from Object Library", "slider-future")}
                                           />
                                         </>
                                       )}
@@ -1563,7 +1611,7 @@ const id = open ? 'custom-popover' : undefined;
                                   }
                                   isDestructive
                                   icon={<DeleteOutlineIcon />}
-                                  label={__("Delete Image", "wp-kube")}
+                                  label={__("Delete Image", "slider-future")}
                                 ></Button>
                               )}
                             {isModalOpen && (
@@ -1614,7 +1662,7 @@ const id = open ? 'custom-popover' : undefined;
                                             <SmartDisplayIcon/>
                                             {__(
                                               "Select Background Video",
-                                              "cocoblocks"
+                                              "slider-future"
                                             )}
                                           </div>
                                           <span
@@ -1665,7 +1713,7 @@ const id = open ? 'custom-popover' : undefined;
                                             icon={<ChangeCircleOutlinedIcon />}
                                             label={__(
                                               "Change Background Video",
-                                              "cocoblocks"
+                                              "slider-future"
                                             )}
                                           ></Button>
                                         </>
@@ -1682,7 +1730,7 @@ const id = open ? 'custom-popover' : undefined;
                                   }
                                   isDestructive
                                   icon={<DeleteOutlineIcon />}
-                                  label={__("Delete Video", "wp-kube")}
+                                  label={__("Delete Video", "slider-future")}
                                 ></Button>
                               )}
                             </div>
@@ -1698,15 +1746,15 @@ const id = open ? 'custom-popover' : undefined;
             <>
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Layout", "cocoblocks")}
+                  {__("Layout", "slider-future")}
                 </h2>
                   <CustomToggleControl
                     customClassToggle={"drag-mode"}
                     label={
                       <>
                        <WidgetsIcon />
-                        {__("Advanced Mode", "cocoblocks")}
-                        <span className="beta-mode">{__('Beta','cocoblocks')}</span>
+                        {__("Advanced Mode", "slider-future")}
+                        <span className="beta-mode">{__('Beta','slider-future')}</span>
                       </>
                     }
                     checked={slide.developerMode}
@@ -1730,9 +1778,9 @@ const id = open ? 'custom-popover' : undefined;
               >
                 {__(
     "Warning: Enabling this mode activates the drag-and-drop functionality for elements within the slide using absolute positioning. You can place them wherever you like. Each element can be positioned for desktop, tablet, and mobile responsive views. Please proceed with caution! ",
-    "cocoblocks"
+    "slider-future"
 )}
-<strong>{__("The menu item cannot be dragged!", "cocoblocks")}</strong>
+<strong>{__("The menu item cannot be dragged!", "slider-future")}</strong>
 
               </p>
               <div className="custom-select">
@@ -1745,65 +1793,273 @@ const id = open ? 'custom-popover' : undefined;
             )}
                {!slide.developerMode && (
                 <>
-                  <CustomSelectControl
+             <CustomSelectControl
                     label={
                       <>
                         <ViewQuiltIcon />
-                        {__("Display", "cocoblocks")}
+                        {__("Display", "slider-future")}
                       </>
                     }
                     value={slide.layoutDisplay}
                     options={[
                       {
-                        label: __("Flex", "slider"),
+                        label: __("Flex", "slider-future"),
                         value: "flex",
                       },
                       {
-                        label: __("Block", "slider"),
-                        value: "block",
-                      },
-                      {
-                        label: __("Inline Block", "slider"),
-                        value: "inline-block",
-                      },
-                      {
-                        label: __("Inline", "slider"),
-                        value: "inline",
+                        label: __("Grid", "slider-future"),
+                        value: "grid",
                       },
                     ]}
                     onChange={(value) =>
                       updateSlideLayoutDisplay(slide.id, value)
                     }
                   />
-                {slide.layoutDisplay === "flex" && (
-                  <>
-                  <CustomSelectControl
+             {slide.layoutDisplay === "grid" && (
+              <>
+               <CustomSelectControl
+                    label={
+                      <>
+                        <AppsIcon />
+                        {__("Grid item position", "slider-future")}
+                      </>
+                    }
+                    value={slide.itemGridPosition}
+                    options={[
+                      {
+                        label: __("Auto", "slider-future"),
+                        value: "auto",
+                      },
+                      {
+                        label: __("Manual", "slider-future"),
+                        value: "manual",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideItemGridPosition(slide.id, value)
+                    }
+                  />
+            {slide.itemGridPosition === "auto" && (
+               <CustomRangeControl
+               label={
+                 <>
+                   <SettingsEthernetOutlinedIcon />
+                   {__("Minimum column width", "slider-future")}
+                 </>
+               }
+               value={slide.itemGridWidth ?? 150}
+               onChange={(value) =>
+                 updateSlideItemGridWidth(
+                   slide.id,
+                   value
+                 )
+               }
+               min={0}
+                max={600}
+                step={1}
+             />
+            )}
+             {slide.itemGridPosition === "manual" && (
+               <CustomRangeControl
+               label={
+                 <>
+                   <ViewColumnIcon />
+                   {__("Columns", "slider-future")}
+                 </>
+               }
+               value={slide.itemGridColumn ?? 5}
+               onChange={(value) =>
+                 updateSlideItemGridColumn(
+                   slide.id,
+                   value
+                 )
+               }
+               min={1}
+               max={16}
+               step={1}
+             />
+            )}
+            </>
+            )}
+            {slide.layoutDisplay === "flex" && (
+              <>
+            <CustomSelectControl
                     label={
                       <>
                         <ViewQuiltIcon />
-                        {__("Content direction", "cocoblocks")}
+                        {__("Content direction", "slider-future")}
                       </>
                     }
                     value={slide.layout}
                     options={[
                       {
-                        label: __("Column", "slider"),
-                        value: "vertical",
+                        label: __("Column", "slider-future"),
+                        value: "column",
                       },
                       {
-                        label: __("Row", "slider"),
-                        value: "horizontal",
+                        label: __("Row", "slider-future"),
+                        value: "row",
                       },
                     ]}
                     onChange={(newLayout) =>
                       updateSlideLayout(slide.id, newLayout)
                     }
                   />
-                  <CustomRangeControl
+            {slide.layout === "row" && (
+              <>
+               <CustomSelectControl
+                    label={
+                      <>
+                        <AlignHorizontalCenterIcon />
+                        {__("Justification", "slider-future")}
+                      </>
+                    }
+                    value={slide.layoutJustify}
+                    options={[
+                      {
+                        label: __("Left", "slider-future"),
+                        value: "flex-start",
+                      },
+                      {
+                        label: __("Center", "slider-future"),
+                        value: "center",
+                      },
+                      {
+                        label: __("Right", "slider-future"),
+                        value: "flex-end",
+                      },
+                      {
+                        label: __("Space between", "slider-future"),
+                        value: "space-between",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutJustify(slide.id, value)
+                    }
+                  />
+                   <CustomSelectControl
+                    label={
+                      <>
+                         <AlignVerticalCenterIcon />
+                         {__("Vertical alignment", "slider-future")}
+                      </>
+                    }
+                    value={slide.layoutVerticalAlignRow}
+                    options={[
+                      {
+                        label: __("Top", "slider-future"),
+                        value: "flex-start",
+                      },
+                      {
+                        label: __("Middle", "slider-future"),
+                        value: "center",
+                      },
+                      {
+                        label: __("Bottom", "slider-future"),
+                        value: "flex-end",
+                      },
+                      {
+                        label: __("Stretch to fill", "slider-future"),
+                        value: "stretch",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutVerticalAlignRow(slide.id, value)
+                    }
+                  />
+            </>
+            )}
+            {slide.layout === "column" && (
+              <>
+               <CustomSelectControl
+                    label={
+                      <>
+                        <AlignHorizontalCenterIcon />
+                        {__("Justification", "slider-future")}
+                      </>
+                    }
+                    value={slide.layoutJustifyColumn}
+                    options={[
+                      {
+                        label: __("Left", "slider-future"),
+                        value: "flex-start",
+                      },
+                      {
+                        label: __("Center", "slider-future"),
+                        value: "center",
+                      },
+                      {
+                        label: __("Right", "slider-future"),
+                        value: "flex-end",
+                      },
+                      {
+                        label: __("Stretch", "slider-future"),
+                        value: "stretch",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutJustifyColumn(slide.id, value)
+                    }
+                  />
+                   <CustomSelectControl
+                    label={
+                      <>
+                         <AlignVerticalCenterIcon />
+                         {__("Vertical alignment", "slider-future")}
+                      </>
+                    }
+                    value={slide.layoutVerticalAlignColumn}
+                    options={[
+                      {
+                        label: __("Top", "slider-future"),
+                        value: "flex-start",
+                      },
+                      {
+                        label: __("Middle", "slider-future"),
+                        value: "center",
+                      },
+                      {
+                        label: __("Bottom", "slider-future"),
+                        value: "flex-end",
+                      },
+                      {
+                        label: __("Space between", "slider-future"),
+                        value: "space-between",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutVerticalAlignColumn(slide.id, value)
+                    }
+                  />
+            </>
+            )}
+  <CustomSelectControl
+                    label={
+                      <>
+                        <WrapTextIcon />
+                        {__("Flex wrap", "slider-future")}
+                      </>
+                    }
+                    value={slide.layoutWrap}
+                    options={[
+                      {
+                        label: __("Wrap", "slider-future"),
+                        value: "wrap",
+                      },
+                      {
+                        label: __("No Wrap", "slider-future"),
+                        value: "nowrap",
+                      },
+                    ]}
+                    onChange={(value) =>
+                      updateSlideLayoutWrap(slide.id, value)
+                    }
+                  />
+<CustomRangeControl
                     label={
                       <>
                         <SettingsEthernetIcon/>
-                        {__("Gap between items", "cocoblocks")}
+                        {__("Gap between items", "slider-future")}
                       </>
                     }
                     value={slide.gapItems || 0}
@@ -1814,27 +2070,19 @@ const id = open ? 'custom-popover' : undefined;
                     max={256}
                     step={1}
                   />
-                <div className="custom-select">
-                  <AlignmentControl
-                    value={slide.position}
-                    onChange={(newPosition) =>
-                      updateSlidePosition(slide.id, newPosition)
-                    }
-                  />
-                </div>
-                </>
-                )}
+              </>
+            )}
                   <CustomToggleControl
                     label={
                       <>
                        <WidthNormalIcon />
-                        {__("Use content width", "cocoblocks")}
+                        {__("Use content width", "slider-future")}
                       </>
                     }
                     checked={slide.enableContentWidth || false}
                     onChange={(value) =>  updateSlideEnableContentWidth(slide.id, value)}
                     showTooltip={true}
-                    tooltipText={__("Nested blocks will fill the width of this container. Toggle to constrain.", "cocoblocks")}
+                    tooltipText={__("Nested blocks will fill the width of this container. Toggle to constrain.", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'60%'}
                   />
@@ -1844,7 +2092,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                         <SettingsEthernetIcon/>
-                        {__("Content width", "cocoblocks")}
+                        {__("Content width", "slider-future")}
                       </>
                     }
                     value={slide.contentWidth || 900}
@@ -1857,88 +2105,6 @@ const id = open ? 'custom-popover' : undefined;
                   />
                 </>
               )}
-                {slide.layoutDisplay === "flex" && (
-                  <>
-                  {slide.layout === "vertical" && (
-                    <>
-                    <CustomSelectControl
-                    label={
-                      <>
-                        <AlignVerticalTopIcon />
-                        {__("Align items", "cocoblocks")}
-                      </>
-                    }
-                    value={slide.layoutAlignItems}
-                    options={[
-                      {
-                        label: __("Flex start", "slider"),
-                        value: "flex-start",
-                      },
-                      {
-                        label: __("Center", "slider"),
-                        value: "center",
-                      },
-                      {
-                        label: __("Flex end", "slider"),
-                        value: "flex-end",
-                      },
-                    ]}
-                    onChange={(value) =>
-                      updateSlideLayoutAlignItems(slide.id, value)
-                    }
-                  />
-                </>
-                )}
-                 <CustomSelectControl
-                    label={
-                      <>
-                        <AlignVerticalTopIcon />
-                        {__("Justify in responsive", "cocoblocks")}
-                      </>
-                    }
-                    value={slide.layoutAlignResponsive}
-                    options={[
-                      {
-                        label: __("Left", "slider"),
-                        value: "left",
-                      },
-                      {
-                        label: __("Center", "slider"),
-                        value: "center",
-                      },
-                      {
-                        label: __("Right", "slider"),
-                        value: "right",
-                      },
-                    ]}
-                    onChange={(value) =>
-                      updateSlideLayoutAlignResponsive(slide.id, value)
-                    }
-                  />
-                   <CustomSelectControl
-                    label={
-                      <>
-                        <WrapTextIcon />
-                        {__("Flex wrap", "cocoblocks")}
-                      </>
-                    }
-                    value={slide.layoutWrap || "wrap"}
-                    options={[
-                      {
-                        label: __("Wrap", "slider"),
-                        value: "wrap",
-                      },
-                      {
-                        label: __("No Wrap", "slider"),
-                        value: "nowrap",
-                      },
-                    ]}
-                    onChange={(value) =>
-                      updateSlideLayoutWrap(slide.id, value)
-                    }
-                  />
-                </>
-                )}
                 </>
                )}
               </div>
@@ -1950,7 +2116,7 @@ const id = open ? 'custom-popover' : undefined;
             <>
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Spacing", "cocoblocks")}
+                  {__("Spacing", "slider-future")}
                 </h2>
               </div>
               <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1958,7 +2124,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                         <VerticalAlignTopIcon/>
-                        {__("Content vertical padding", "cocoblocks")}
+                        {__("Content vertical padding", "slider-future")}
                       </>
                     }
                     value={slide.backgroundVerticalPadding || 0}
@@ -1978,7 +2144,7 @@ const id = open ? 'custom-popover' : undefined;
                         <VerticalAlignTopIcon  style={{
                             transform: "rotate(90deg)",
                           }}/>
-                        {__("Content horizontal padding", "cocoblocks")}
+                        {__("Content horizontal padding", "slider-future")}
                       </>
                     }
                     value={slide.backgroundHorizontalPadding || 0}
@@ -1997,7 +2163,7 @@ const id = open ? 'custom-popover' : undefined;
           )}
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Border", "cocoblocks")}
+                  {__("Border", "slider-future")}
                 </h2>
               </div>
               <div
@@ -2008,7 +2174,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                       <BorderStyleIcon />
-                        {__("Border style", "cocoblocks")}
+                        {__("Border style", "slider-future")}
                       </>
                     }
                     value={slide.borderStyleSlide || "none"}
@@ -2025,7 +2191,7 @@ const id = open ? 'custom-popover' : undefined;
                         setColorNormal={(color) =>
                           updateSlideBackgroundBorderColor(slide.id, color)
                         }
-                        buttonTitle={__("Border Color", "cocoblocks")}
+                        buttonTitle={__("Border Color", "slider-future")}
                         buttonIcon={
                           <BorderColorIcon/>
                         }
@@ -2035,7 +2201,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                          <MarginIcon />
-                        {__("Border width", "cocoblocks")}
+                        {__("Border width", "slider-future")}
                       </>
                     }
                     value={slide.backgroundBorderSize || 0}
@@ -2050,7 +2216,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                          <BorderInnerIcon />
-                        {__("Border radius", "cocoblocks")}
+                        {__("Border radius", "slider-future")}
                       </>
                     }
                     value={slide.backgroundBorderRadius || 0}
@@ -2071,10 +2237,10 @@ const id = open ? 'custom-popover' : undefined;
               <div className="custom-select">
                   <div className="button-apply-style">
                     <p>
-                      {__("Apply Styles and Layout to Existing and New Slides!", "cocoblocks")}
+                      {__("Apply Styles and Layout to Existing and New Slides!", "slider-future")}
                     </p>
                     <button onClick={() => openConfirmationDialog(slide)}>
-                      {__("Apply", "cocoblocks")}
+                      {__("Apply", "slider-future")}
                     </button>
                   </div>
                   {/* Dialogo di conferma */}
@@ -2086,15 +2252,15 @@ const id = open ? 'custom-popover' : undefined;
                       >
                         {__(
                           "Are you sure you want to apply Styles and Layout to Existing and New Slides?",
-                          "slider-builder"
+                          "slider-future"
                         )}
                       </p>
                       <div className="confirmation-buttons">
                         <button onClick={cancelApplySettings}>
-                          {__("Cancel", "slider-builder")}
+                          {__("Cancel", "slider-future")}
                         </button>
                         <button onClick={confirmApplySettings}>
-                          {__("Confirm", "slider-builder")}
+                          {__("Confirm", "slider-future")}
                         </button>
                       </div>
                     </div>
@@ -2108,7 +2274,7 @@ const id = open ? 'custom-popover' : undefined;
         <>
          <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Filters", "cocoblocks")}
+              {__("Filters", "slider-future")}
             </h2>
           </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -2116,7 +2282,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                       <BlurOnIcon />
-                        {__("Bg Filter", "cocoblocks")}
+                        {__("Bg Filter", "slider-future")}
                       </>
                     }
                     value={slide.filter || 'none'}
@@ -2134,7 +2300,7 @@ const id = open ? 'custom-popover' : undefined;
                       setColorNormal={(color) =>
                         updateColorOneEffect(slide.id, color)
                       }
-                      buttonTitle={__("First Color", "cocoblocks")}
+                      buttonTitle={__("First Color", "slider-future")}
                       buttonIcon={
                         <ColorLensIcon />
                       }
@@ -2148,7 +2314,7 @@ const id = open ? 'custom-popover' : undefined;
                       setColorNormal={(color) =>
                         updateColorTwoEffect(slide.id, color)
                       }
-                      buttonTitle={__("Second Color", "cocoblocks")}
+                      buttonTitle={__("Second Color", "slider-future")}
                       buttonIcon={
                         <ColorLensIcon />
                       }
@@ -2162,7 +2328,7 @@ const id = open ? 'custom-popover' : undefined;
                         setColorNormal={(color) =>
                           updateColorThreeEffect(slide.id, color)
                         }
-                        buttonTitle={__("Third Color", "cocoblocks")}
+                        buttonTitle={__("Third Color", "slider-future")}
                         buttonIcon={
                           <ColorLensIcon />
                         }
@@ -2171,7 +2337,7 @@ const id = open ? 'custom-popover' : undefined;
                   )}
                     <Button onClick={() => resetEffect(slide.id)} className="button-reset">
                     <RestartAltIcon />
-                    {__("Reset Effect Color", "cocoblocks")}
+                    {__("Reset Effect Color", "slider-future")}
                   </Button>
                </>
             )}
@@ -2179,7 +2345,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                       <TextureIcon />
-                        {__("Divider", "cocoblocks")}
+                        {__("Divider", "slider-future")}
                       </>
                     }
                     value={slide.divider || 'none'}
@@ -2194,7 +2360,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                         <SettingsEthernetIcon style={{transform:'rotate(90deg'}} />
-                        {__("Height", "cocoblocks")}
+                        {__("Height", "slider-future")}
                       </>
                     }
                     value={slide.heightDivider || 200}
@@ -2209,7 +2375,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                         <SettingsEthernetIcon />
-                        {__("Width", "cocoblocks")}
+                        {__("Width", "slider-future")}
                       </>
                     }
                     value={slide.widthDivider || 100}
@@ -2226,7 +2392,7 @@ const id = open ? 'custom-popover' : undefined;
                         setColorNormal={(color) =>
                           updateColorDivider(slide.id, color)
                         }
-                        buttonTitle={__("Color", "cocoblocks")}
+                        buttonTitle={__("Color", "slider-future")}
                         buttonIcon={
                           <ColorLensIcon />
                         }
@@ -2237,7 +2403,7 @@ const id = open ? 'custom-popover' : undefined;
                       label={
                         <>
                         <FlipIcon/>
-                          {__("Flip", "cocoblocks")}
+                          {__("Flip", "slider-future")}
                         </>
                       }
                       checked={slide.flipDivider || false}
@@ -2251,7 +2417,7 @@ const id = open ? 'custom-popover' : undefined;
                       label={
                         <>
                         <ScreenRotationAltIcon/>
-                          {__("Invert", "cocoblocks")}
+                          {__("Invert", "slider-future")}
                         </>
                       }
                       checked={slide.invertDivider || false}
@@ -2264,7 +2430,7 @@ const id = open ? 'custom-popover' : undefined;
                     label={
                       <>
                       <MultipleStopIcon style={{transform:'rotate(90deg)'}} />
-                        {__("Position", "cocoblocks")}
+                        {__("Position", "slider-future")}
                       </>
                     }
                     value={slide.positionDivider || 'divider-top'}
@@ -2273,11 +2439,11 @@ const id = open ? 'custom-popover' : undefined;
                     }
                     options={[
                       {
-                        label: __("Top", "cocoblocks"),
+                        label: __("Top", "slider-future"),
                         value: "divider-top",
                       },
                       {
-                        label: __("Bottom", "cocoblocks"),
+                        label: __("Bottom", "slider-future"),
                         value: "divider-bottom",
                       },
                     ]}
@@ -2293,7 +2459,7 @@ const id = open ? 'custom-popover' : undefined;
               className="content-title-custom-panel intermedy"
             >
               <h2 className="title-custom-panel">
-                {__("Actions", "cocoblocks")}
+                {__("Actions", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -2301,7 +2467,7 @@ const id = open ? 'custom-popover' : undefined;
           label={
             <>
               <TouchAppIcon />
-              {__("Link actions", "cocoblocks")}
+              {__("Link actions", "slider-future")}
             </>
           }
           value={slide.link || "none"}
@@ -2309,10 +2475,10 @@ const id = open ? 'custom-popover' : undefined;
             updateLink(slide.id, value)
           }
           options={[
-            { label: "None", value: "none" },
-            { label: "Link", value: "link" },
-            { label: "Scroll Below Slider", value: "scroll-below" },
-            { label: "Scroll to ID Element", value: "scroll-to-id" },
+            { label:__("None",'slider-future'), value: "none" },
+            { label: __("Link",'slider-future'), value: "link" },
+            { label: __("Scroll Below Slider",'slider-future'), value: "scroll-below" },
+            { label: __("Scroll to ID Element",'slider-future'), value: "scroll-to-id" },
           ]}
         />
       {slide.link === "link" && (
@@ -2324,20 +2490,20 @@ const id = open ? 'custom-popover' : undefined;
               label={
                 <>
                   <InsertLinkIcon />
-                  {__("Enter Url", "cocoblocks")}
+                  {__("Enter Url", "slider-future")}
                 </>
               }
               onChange={(value) =>
                 updateUrl(slide.id, value)
               }
-              placeholder={__("Enter url...", "cocoblocks")}
+              placeholder={__("Enter url...", "slider-future")}
             />
           </div>
             <CustomSelectControl
               label={
                 <>
                   <OpenInNewIcon />
-                  {__("Target", "cocoblocks")}
+                  {__("Target", "slider-future")}
                 </>
               }
               value={slide.target || "_self"}
@@ -2345,15 +2511,15 @@ const id = open ? 'custom-popover' : undefined;
                 updateTarget(slide.id, value)
               }
               options={[
-                { label: "Same Window", value: "_self" },
-                { label: "New Window", value: "_blank" },
+                { label: __("Same Window",'slider-future'), value: "_self" },
+                { label: __("New Window",'slider-future'), value: "_blank" },
               ]}
             />
             <CustomSelectControl
               label={
                 <>
                   <DatasetLinkedIcon />
-                  {__("Link Behavior", "cocoblocks")}
+                  {__("Link Behavior", "slider-future")}
                 </>
               }
               value={slide.rel || "follow"}
@@ -2361,8 +2527,8 @@ const id = open ? 'custom-popover' : undefined;
                 updateRel(slide.id, value)
               }
               options={[
-                { label: "Follow Link", value: "follow" },
-                { label: "No Follow", value: "nofollow" },
+                { label: __("Follow Link",'slider-future'), value: "follow" },
+                { label: __("No Follow",'slider-future'), value: "nofollow" },
               ]}
             />
         </>
@@ -2375,13 +2541,13 @@ const id = open ? 'custom-popover' : undefined;
             label={
               <>
                 <PhishingIcon />
-                {__("Enter ID", "cocoblocks")}
+                {__("Enter ID", "slider-future")}
               </>
             }
             onChange={(value) =>
               updateScrollId(slide.id, value)
             }
-            placeholder={__("Enter id...", "cocoblocks")}
+            placeholder={__("Enter id...", "slider-future")}
           />
         </div>
       )}
@@ -2399,22 +2565,22 @@ const id = open ? 'custom-popover' : undefined;
                 }}
               >{!slide.developerMode && (
                 <div className="button-move">
-                  <Tooltip text={__("Move before", "cocoblocks")}>
+                  <Tooltip text={__("Move before", "slider-future")}>
                     <Button
                       onClick={() => moveElementUp(slide.id, elementIndex)}
                       size="small"
                       disabled={elementIndex === 0}
-                      label={__("Move before", "cocoblocks")}
+                      label={__("Move before", "slider-future")}
                     >
                       ↑
                     </Button>
                   </Tooltip>
-                  <Tooltip text={__("Move after", "cocoblocks")}>
+                  <Tooltip text={__("Move after", "slider-future")}>
                     <Button
                       onClick={() => moveElementDown(slide.id, elementIndex)}
                       size="small"
                       disabled={elementIndex === slide.elements.length - 1}
-                      label={__("Move after", "cocoblocks")}
+                      label={__("Move after", "slider-future")}
                     >
                       ↓
                     </Button>
@@ -2523,13 +2689,13 @@ const id = open ? 'custom-popover' : undefined;
           <div className="button-add-element">
             <Button
               onClick={() => addSlideTitle(slide.id)}
-              label={__("Add text", "slide")}
+              label={__("Add text", "slider-future")}
             >
                <PostAddOutlinedIcon />
             </Button>
             <Button
               onClick={() => addSlideImage(slide.id)}
-              label={__("Add image", "slide")}
+              label={__("Add image", "slider-future")}
             >
                <AddPhotoAlternateOutlinedIcon />
             </Button>
@@ -2545,13 +2711,13 @@ const id = open ? 'custom-popover' : undefined;
             )}
             <Button
               onClick={() => addSlideIcon(slide.id)}
-              label={__("Add Icon", "slide")}
+              label={__("Add Icon", "slider-future")}
             >
               <WbCloudyOutlinedIcon />
             </Button>
             <Button
               onClick={() => addSlideDiv(slide.id)}
-              label={__("Add group", "slide")}
+              label={__("Add group", "slider-future")}
             >
               <AddCardIcon />
             </Button>
@@ -2561,7 +2727,7 @@ const id = open ? 'custom-popover' : undefined;
       <div id="controls" className="button-add-slide">
         <div className="content-button-slide">
           <AddCircleIcon />
-          <button onClick={addSlide}>{__("Add Slide", "slider")}</button>
+          <button onClick={addSlide}>{__("Add Slide", "slider-future")}</button>
          
         </div>
       </div>

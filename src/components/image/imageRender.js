@@ -91,6 +91,7 @@ const ImageRender = ({ element, index, onPlay  }) => {
       borderRadius: `${element.backgroundBorderRadiusImage?.top} ${element.backgroundBorderRadiusImage?.right} ${element.backgroundBorderRadiusImage?.bottom} ${element.backgroundBorderRadiusImage?.left}`,
       padding: `${element.paddingImage?.top} ${element.paddingImage?.right} ${element.paddingImage?.bottom} ${element.paddingImage?.left}`,
       backgroundColor: element.backgroundColorImage,
+      maxWidth: '100%',
       ...(element.enableBoxShadowImage && {
         boxShadow: `${element.boxShadowXImage}px ${element.boxShadowYImage}px ${element.boxShadowBlurImage}px ${element.boxShadowSpreadImage}px ${element.colorShadowImage}`,
       }),

@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Tooltip  } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
-import TabletMacIcon from '@mui/icons-material/TabletMac';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
-import ControlCameraIcon from '@mui/icons-material/ControlCamera';
+const PersonalVideoIcon = lazy(() => import('@mui/icons-material/PersonalVideo'));
+const TabletMacIcon = lazy(() => import('@mui/icons-material/TabletMac'));
+const SmartphoneIcon = lazy(() => import('@mui/icons-material/Smartphone'));
+const ControlCameraIcon = lazy(() => import('@mui/icons-material/ControlCamera'));
 const DeviceSelector = ({ selectedDevice, onDeviceChange }) => {
   return (
     <div className="button-button-group-responsive">
         <div className="button-group-button-title">
-        <ControlCameraIcon style={{fill:'var(--light-color)'}}/>
-        <h2>{__('Position','slider')}</h2>
+        <Suspense fallback={<div>{__('Loading...','slider-future')}</div>}>
+          <ControlCameraIcon style={{ fill: 'var(--light-color)' }} />
+        </Suspense>
+        <h2>{__('Position','slider-future')}</h2>
         </div>
         <div className="button-group-button">
-    <Tooltip placement="top" text={__('Desktop','slider')}>
+    <Tooltip placement="top" text={__('Desktop','slider-future')}>
     <button onClick={() => onDeviceChange("desktop")} className={selectedDevice === 'desktop' ? 'active' : ''}>
-    <PersonalVideoIcon />
+    <Suspense fallback={<div>{__('Loading...','slider-future')}</div>}>
+              <PersonalVideoIcon />
+            </Suspense>
     </button>
     </Tooltip>
-    <Tooltip placement="top" text={__('Tablet','slider')}>
+    <Tooltip placement="top" text={__('Tablet','slider-future')}>
     <button onClick={() => onDeviceChange("tablet")} className={selectedDevice === 'tablet' ? 'active' : ''}>
-    <TabletMacIcon />
+    <Suspense fallback={<div>{__('Loading...','slider-future')}</div>}>
+              <TabletMacIcon />
+            </Suspense>
     </button>
     </Tooltip>
-    <Tooltip placement="top" text={__('Mobile','slider')}>
+    <Tooltip placement="top" text={__('Mobile','slider-future')}>
     <button onClick={() => onDeviceChange("mobile")} className={selectedDevice === 'mobile' ? 'active' : ''}>
-    <SmartphoneIcon />
+    <Suspense fallback={<div>{__('Loading...','slider-future')}</div>}>
+              <SmartphoneIcon />
+            </Suspense>
     </button>
     </Tooltip>
     </div>

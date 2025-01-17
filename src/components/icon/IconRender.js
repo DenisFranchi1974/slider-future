@@ -120,7 +120,7 @@ const IconRender = ({ element, index, onPlay }) => {
       style={{
         width:
           element.width === "custom"
-            ? `${element.widthCustom}%`
+            ? `${element.widthCustom}px`
             : element.width,
         justifyContent: element.align,
           display:'flex'

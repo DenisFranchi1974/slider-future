@@ -204,6 +204,10 @@ $fitImage = $attributes['fitImage'] ?? 'cover';
 $focalPoint = $attributes['focalPoint'] ?? ['x' => 0.5, 'y' => 0.5];
 $backgroundHorizontalPadding = $attributes['backgroundHorizontalPadding'] ?? null;
 $backgroundVerticalPadding = $attributes['backgroundVerticalPadding'] ?? null;
+$backgroundHorizontalPaddingTablet = $attributes['backgroundHorizontalPaddingTablet'] ?? null;
+$backgroundVerticalPaddingTablet = $attributes['backgroundVerticalPaddingTablet'] ?? null;
+$backgroundHorizontalPaddingMobile = $attributes['backgroundHorizontalPaddingMobile'] ?? null;
+$backgroundVerticalPaddingMobile = $attributes['backgroundVerticalPaddingMobile'] ?? null;
 $includeCategories = $attributes['includeCategories'] ?? null;
 $excludeCategories = $attributes['excludeCategories'] ?? null;
 $order = $attributes['order'] ?? null;
@@ -231,6 +235,7 @@ $imageBgPostSize = $attributes['imageBgPostSize'] ?? 'cover';
 $imageBgPostRepeat = $attributes['imageBgPostRepeat'] ?? 'no-repeat';
 $imageBgPostPositionX = $attributes['imageBgPostPositionX'] ?? 0;
 $imageBgPostPositionY = $attributes['imageBgPostPositionY'] ?? 0;
+$backgroundBorderRadius = $attributes['backgroundBorderRadius'] ?? 0;
 
 
 $swiper_attr = array(
@@ -385,6 +390,10 @@ $swiper_attr = array(
     'focalPoint' => $focalPoint,
     'backgroundHorizontalPadding' => $backgroundHorizontalPadding,
     'backgroundVerticalPadding' => $backgroundVerticalPadding,
+    'backgroundHorizontalPaddingTablet' => $backgroundHorizontalPaddingTablet,
+    'backgroundVerticalPaddingTablet' => $backgroundVerticalPaddingTablet,
+    'backgroundHorizontalPaddingMobile' => $backgroundHorizontalPaddingMobile,
+    'backgroundVerticalPaddingMobile' => $backgroundVerticalPaddingMobile,
     'includeCategories' => $includeCategories,
     'excludeCategories' => $excludeCategories,
     'order' => $order,
@@ -409,6 +418,7 @@ $swiper_attr = array(
     'imageBgPostRepeat' => $imageBgPostRepeat,
     'imageBgPostPositionX' => $imageBgPostPositionX,
     'imageBgPostPositionY' => $imageBgPostPositionY,
+    'backgroundBorderRadius' => $backgroundBorderRadius,
 
 );
 
@@ -417,6 +427,10 @@ $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
 $stylesSlider =
     'margin-top: ' . esc_attr($sliderMarginTop) . 'px; ' .
     'margin-bottom: ' . esc_attr($sliderMarginBottom) . 'px; ' .
+    'border-radius: ' . esc_attr($backgroundBorderRadius) . 'px; ' .
+    'padding: ' . esc_attr($backgroundVerticalPadding) . 'px ' . esc_attr($backgroundHorizontalPadding) . 'px; ' .
+    '--padding-tablet:' . esc_attr($backgroundVerticalPaddingTablet) . 'px ' . esc_attr($backgroundHorizontalPaddingTablet) . 'px; ' .
+    '--padding-mobile:' . esc_attr($backgroundVerticalPaddingMobile) . 'px ' . esc_attr($backgroundHorizontalPaddingMobile) . 'px; ' .
     ($autoHeight ? 'height: auto; ' : 'height: ' . esc_attr($slideHeight) . 'px; --slide-height-tablet: ' . esc_attr($slideHeightTablet) . 'px; --slide-height-mobile: ' . esc_attr($slideHeightMobile) . 'px; ');
 if ($filter !== 'none') {
     $colorOneEffect = $attributes['colorOneEffect'] ?? '';
@@ -437,7 +451,7 @@ if ($backgroundImage) {
 
 $wrapper_attributes = get_block_wrapper_attributes(
     array(
-        'class' => 'swiper ' . $slider_unique_class . ' slider-builder swiper-container ' . $filter,
+        'class' => 'swiper ' . $slider_unique_class . ' slider-future swiper-container ' . $filter,
         'style' => $stylesSlider,
     )
 );
@@ -454,7 +468,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
         $specific_posts = !empty($attributes['specificPosts']) ? $attributes['specificPosts'] : [];
         $latest_posts = !empty($attributes['latestPosts']) ? $attributes['latestPosts'] : false;
         // Recupera i post filtrati
-        $posts = cocoblocks_get_content('post', $include_categories, $exclude_categories, $order, $postsToShow, $exclude_post_id, $specific_posts, $latest_posts);
+        $posts = slider_future_get_content('post', $include_categories, $exclude_categories, $order, $postsToShow, $exclude_post_id, $specific_posts, $latest_posts);
         if ($attributes['contentType'] === 'post-based' && !empty($posts) && is_array($posts)) : ?>
             <?php foreach ($posts as $post) : ?>
                 <div class="swiper-slide">
@@ -636,7 +650,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <p><?php echo esc_html($product['excerpt']); ?></p>
                     <?php endif; ?>
                     <?php if (!empty($product['link'])) : ?>
-                        <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'cocoblocks'); ?></a>
+                        <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'slider-future'); ?></a>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
@@ -856,7 +870,35 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <?php if ($developerMode): ?>
                             <div class="content-inner-for-slide">
                             <?php else: ?>
-                                <div class="content-inner-for-slide <?php echo esc_attr($slide['position']) ?> <?php echo esc_attr($slide['layout']) ?>-layout" style="width:100%;display:<?php echo esc_attr($slide['layoutDisplay']) ?>;align-items:<?php echo esc_attr($slide['layoutAlignItems']) ?>;flex-wrap:<?php echo $layoutWrap; ?>;--justify-content-responsive-slide:<?php echo esc_attr($slide['layoutAlignResponsive']) ?>;gap:<?php echo $gapItems; ?>px;">
+                                <?php
+                                $inline_style = 'width:100%;
+                                    display:' . esc_attr($slide['layoutDisplay']) . ';
+                                    align-items:' . esc_attr($slide['layoutAlignItems']) . ';
+                                    flex-wrap:' . $layoutWrap . ';
+                                    gap:' . $gapItems . 'px;';
+                                if ($slide['layoutDisplay'] === 'flex') {
+                                    $inline_style .= 'flex-direction: ' . esc_attr($slide['layout']) . ';';
+                                    $inline_style .= 'flex-wrap: ' . esc_attr($slide['layoutWrap'] ?? "wrap") . ';';
+                                    if ($slide['layout'] === 'row') {
+                                        $inline_style .= 'justify-content: ' . esc_attr($slide['layoutJustify'] ?? 'center') . ';';
+                                        $inline_style .= 'align-items: ' . esc_attr($slide['layoutVerticalAlignRow'] ?? 'center') . ';';
+                                    }
+
+                                    if ($slide['layout'] === 'column') {
+                                        $inline_style .= 'justify-content: ' . esc_attr($slide['layoutVerticalAlignColumn'] ?? 'center') . ';';
+                                        $inline_style .= 'align-items: ' . esc_attr($slide['layoutJustifyColumn'] ?? 'center') . ';';
+                                    }
+                                }
+                                if ($slide['layoutDisplay'] === 'grid') {
+                                    if ($slide['itemGridPosition'] === 'auto') {
+                                        $inline_style .= 'grid-template-columns: repeat(auto-fill, minmax(min(' . esc_attr($slide['itemGridWidth'] ?? 150) . 'px, 100%), 1fr));';
+                                    }
+                                    if ($slide['itemGridPosition'] === 'manual') {
+                                        $inline_style .= 'grid-template-columns: repeat(' . esc_attr($slide['itemGridColumn'] ?? 5) . ', minmax(0, 1fr));';
+                                    }
+                                }
+                                ?>
+                                <div class="content-inner-for-slide" style="<?php echo $inline_style; ?>">
                                 <?php endif; ?>
                                 <?php if ($mouseEffect === 'liquid') : ?>
                                     <script>
@@ -918,7 +960,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <svg viewBox="0 0 48 48" class="progress-circle">
                             <circle cx="24" cy="24" r="20"></circle>
                         </svg>
-                        <span class="progress-content"><?php echo esc_html__('0s', 'slider-builder') ?></span>
+                        <span class="progress-content"><?php echo esc_html__('0s', 'slider-future') ?></span>
                     </div>
                 <?php endif; ?>
                 <style>

@@ -24,7 +24,7 @@ const SectionSliderSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("layout")}
       >
         <DevicesIcon />
-        {__("Layout", "cocoblocks")}
+        {__("Layout", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -32,7 +32,7 @@ const SectionSliderSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("general")}
       >
         <BuildIcon />
-        {__("General", "cocoblocks")}
+        {__("General", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -41,7 +41,7 @@ const SectionSliderSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("style")}
       >
         <ColorLensIcon />
-        {__("Style", "cocoblocks")}
+        {__("Style", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -49,7 +49,7 @@ const SectionSliderSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("content")}
       >
         <InsertCommentIcon />
-        {__("Content", "cocoblocks")}
+        {__("Content", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -57,7 +57,7 @@ const SectionSliderSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("skin")}
       >
         <FormatPaintIcon />
-        {__("Skin", "cocoblocks")}
+        {__("Skin", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -65,7 +65,7 @@ const SectionSliderSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("mouse-effect")}
       >
       <GrainIcon />
-        {__("Mouse Effect", "cocoblocks")}
+        {__("Mouse Effect", "slider-future")}
       </Button>
     </ButtonGroup>
   );

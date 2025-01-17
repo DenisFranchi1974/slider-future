@@ -31,6 +31,7 @@ function render_innerImage($innerElement, $slide)
                 --spike-width-inner:" . esc_attr($innerElement['spikeLeftWidth'] ?? 0) . "%;
                 --spike-width-right-inner: " . esc_attr($innerElement['spikeRightWidth'] ?? 0) . "%;
                 z-index: " . esc_attr($innerElement['zIndexImage'] ?? 1) . ";
+                max-width: 100%;
                 ";
     if (!empty($innerElement['enableBoxShadowImage'])) {
         $boxShadowXImage = esc_attr($innerElement['boxShadowXImage'] ?? 0);
@@ -64,6 +65,10 @@ function render_innerImage($innerElement, $slide)
     $onclick = '';
     $linkTargetImage = '_self'; // Default
     $rel_div = 'follow'; // Default
+    $rotateImage = esc_attr($innerElement['rotateImage'] ?? 0);
+    $rotateImageX = esc_attr($innerElement['rotateImageX'] ?? 0);
+    $rotateImageY = esc_attr($innerElement['rotateImageY'] ?? 0);
+    $perspectiveImage = esc_attr($innerElement['perspectiveImage'] ?? 0);
 
     if ($innerElement['imageLink'] !== 'none') {
         // Prepara l'attributo onclick se textLink è diverso da 'none'
@@ -88,7 +93,7 @@ function render_innerImage($innerElement, $slide)
         <?php if ($innerElement['imageLink'] !== 'none') : ?>
         onclick="<?php echo $onclick; ?>"
         <?php endif; ?>
-        style="transform: rotate(<?php echo esc_attr($innerElement['rotateImage'] ?? 0); ?>deg); 
+        style="transform:perspective(<?php echo $perspectiveImage; ?>px) rotateX(<?php echo $rotateImageX; ?>deg) rotateY(<?php echo $rotateImageY; ?>deg) rotate(<?php echo $rotateImage; ?>deg);
                                                opacity: <?php echo esc_attr($innerElement['opacityImage'] ?? 1) ?>;
                                                width:<?php echo esc_attr($innerElement['widthImageContent']) ?>;
                                                 --background-color-image-inner-hover: <?php echo esc_attr($innerElement['backgroundColorImageHover'] ?? ''); ?>;

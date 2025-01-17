@@ -19,9 +19,9 @@ const AlignmentControlThree = ({ value, onChange }) => {
   }, [value]);
   
   const positionOptions = [
-    { value: 'left', label: __('Left', 'cocoblocks'), icon: alignLeft},
-    { value: 'center', label: __('Center', 'cocoblocks'), icon: alignCenter},
-    { value: 'right', label: __('Right', 'cocoblocks'), icon: alignRight},
+    { value: 'left', label: __('Left', 'slider-future'), icon: alignLeft},
+    { value: 'center', label: __('Center', 'slider-future'), icon: alignCenter},
+    { value: 'right', label: __('Right', 'slider-future'), icon: alignRight},
   ];
   
   const selectedIcon = positionOptions.find(option => option.value === selectedPosition)?.icon;
@@ -35,7 +35,7 @@ const AlignmentControlThree = ({ value, onChange }) => {
         icon={<FormatAlignLeftIcon />} // Mostra l'icona selezionata o un'icona di default
       >
         <div className='postion-slide__label'> 
-          <h2>{__('Text align', 'cocoblocks')}</h2>
+          <h2>{__('Text align', 'slider-future')}</h2>
           <Icon icon={selectedIcon || "editor-alignleft"} style={{right:'-50px'}}/>
           <span class="ico-align-content dashicons dashicons-arrow-down-alt2"></span>
           </div>

@@ -30,7 +30,7 @@ const ColorOptionsPanelGradient = ({ buttonTitle, buttonIcon, gradient, setGradi
                             <Icon icon={buttonIcon} />
                         </span>
                     )}
-                    <span>{buttonTitle || __('Set Gradient Color', 'cocoblocks')}</span>
+                    <span>{buttonTitle || __('Set Gradient Color', 'slider-future')}</span>
                 </div>
                 <div 
                     className="color-indicator" 

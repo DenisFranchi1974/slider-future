@@ -29,7 +29,7 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeSlide("background")}
       >
         <WallpaperIcon />
-        {__("Background", "cocoblocks")}
+        {__("Background", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -37,7 +37,7 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeSlide("layout")}
       >
         <ViewQuiltIcon />
-        {__("Layout", "cocoblocks")}
+        {__("Layout", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -45,7 +45,7 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeSlide("style")}
       >
         <ColorLensIcon />
-        {__("Style", "cocoblocks")}
+        {__("Style", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -53,7 +53,7 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeSlide("filter")}
       >
         <BlurOnIcon />
-        {__("Filters", "cocoblocks")}
+        {__("Filters", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -61,7 +61,7 @@ const SectionSelectorSlide = ({ onSectionChange }) => {
         onClick={() => handleSectionChangeSlide("actions")}
       >
         <TouchAppIcon />
-        {__("Actions", "cocoblocks")}
+        {__("Actions", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"

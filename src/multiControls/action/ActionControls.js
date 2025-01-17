@@ -109,7 +109,7 @@ const CustomActionControls = ({
               }}
             >
               <h2 className="title-custom-panel">
-                {__("Actions", "cocoblocks")}
+                {__("Actions", "slider-future")}
               </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -117,7 +117,7 @@ const CustomActionControls = ({
           label={
             <>
               <TouchAppIcon />
-              {__("Link actions", "cocoblocks")}
+              {__("Link actions", "slider-future")}
             </>
           }
           value={valueSelectLink}
@@ -139,11 +139,11 @@ const CustomActionControls = ({
               label={
                 <>
                   <InsertLinkIcon />
-                  {__("Enter Url", "cocoblocks")}
+                  {__("Enter Url", "slider-future")}
                 </>
               }
               onChange={handleChangeUrl}
-              placeholder={__("Enter url...", "cocoblocks")}
+              placeholder={__("Enter url...", "slider-future")}
               {...restProps}
             />
           </div>
@@ -151,7 +151,7 @@ const CustomActionControls = ({
               label={
                 <>
                   <OpenInNewIcon />
-                  {__("Target", "cocoblocks")}
+                  {__("Target", "slider-future")}
                 </>
               }
               value={valueSelectTarget}
@@ -166,7 +166,7 @@ const CustomActionControls = ({
               label={
                 <>
                   <DatasetLinkedIcon />
-                  {__("Link Behavior", "cocoblocks")}
+                  {__("Link Behavior", "slider-future")}
                 </>
               }
               value={valueSelectRel}
@@ -187,11 +187,11 @@ const CustomActionControls = ({
             label={
               <>
                 <PhishingIcon />
-                {__("Enter ID", "cocoblocks")}
+                {__("Enter ID", "slider-future")}
               </>
             }
             onChange={handleChangeScrollId}
-            placeholder={__("Enter id...", "cocoblocks")}
+            placeholder={__("Enter id...", "slider-future")}
             {...restProps}
           />
         </div>

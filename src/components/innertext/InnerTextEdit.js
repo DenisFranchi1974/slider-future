@@ -5,7 +5,7 @@ import {
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import FontStyle from "../font-style";
 import SectionSelector from "../multitab/sectionSelector";
 import CustomRangeControl from "../../controls/range"
@@ -357,10 +357,10 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               removeSlideTitleBlock(slide.id, elementIndex, textIndex)
             }
             className="button-remove-element"
-            label={__("Remove Inner Text", "cocoblocks")}
+            label={__("Remove Inner Text", "slider-future")}
             icon={<DeleteOutlineIcon />}
           ></Button>
-          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider-future') : __('Open Controls','slider-future')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
               <KeyboardArrowUpIcon/>
@@ -384,7 +384,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Content", "cocoblocks")}
+              {__("Content", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -397,7 +397,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                placeholder={__("Add text content...", "cocoblocks")}
+                placeholder={__("Add text content...", "slider-future")}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'content')
                 }
@@ -406,7 +406,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               label={
                 <>
                   <AdfScannerIcon/>
-                  {__("Typewriter Effect", "cocoblocks")}
+                  {__("Typewriter Effect", "slider-future")}
                 </>
               }
                 value={textDiv.enableTypeWriter || false}
@@ -417,7 +417,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                tooltipText= {__("Enable the typewriter effect. To see the changes in the texts, you need to enable and disable it!", "cocoblocks")}
+                tooltipText= {__("Enable the typewriter effect. To see the changes in the texts, you need to enable and disable it!", "slider-future")}
                 showTooltip = {true}
                 tooltipTop={"10px"}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
@@ -435,7 +435,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                placeholder={__("Add text typewriter one...", "cocoblocks")}
+                placeholder={__("Add text typewriter one...", "slider-future")}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterOne')
                 }
@@ -449,7 +449,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               elementIndex={elementIndex}
               innerIndex={textIndex}
               elementType="text"
-              placeholder={__("Add text typewriter two...", "cocoblocks")}
+              placeholder={__("Add text typewriter two...", "slider-future")}
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterTwo')
               }
@@ -463,7 +463,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               elementIndex={elementIndex}
               innerIndex={textIndex}
               elementType="text"
-              placeholder={__("Add text typewriter three...", "cocoblocks")}
+              placeholder={__("Add text typewriter three...", "slider-future")}
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterThree')
               }
@@ -477,7 +477,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               elementIndex={elementIndex}
               innerIndex={textIndex}
               elementType="text"
-              placeholder={__("Add text typewriter four...", "cocoblocks")}
+              placeholder={__("Add text typewriter four...", "slider-future")}
               updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'textTypeWriterFour')
               }
@@ -486,7 +486,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <LineWeightIcon style={{transform:'rotate(90deg)'}} />
-                    {__("Cursor thickness", "cocoblocks")}
+                    {__("Cursor thickness", "slider-future")}
                   </>
                 }
                 value={textDiv.widthCursor ?? 4}
@@ -508,7 +508,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <PauseCircleOutlineIcon />
-                    {__("Pause", "cocoblocks")}
+                    {__("Pause", "slider-future")}
                   </>
                 }
                 value={textDiv.breakCursor ?? 2000}
@@ -522,7 +522,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                tooltipText= {__("1000 = 1s. To see the changes you have to disable and enable the typewriter effect!", "cocoblocks")}
+                tooltipText= {__("1000 = 1s. To see the changes you have to disable and enable the typewriter effect!", "slider-future")}
                 showTooltip = {true}
                 tooltipTop={"10px"}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
@@ -533,7 +533,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <SpeedIcon />
-                    {__("Speed", "cocoblocks")}
+                    {__("Speed", "slider-future")}
                   </>
                 }
                 value={textDiv.speedCursor ?? 200}
@@ -547,7 +547,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                tooltipText= {__("To see the changes you have to disable and enable the typewriter effect!", "cocoblocks")}
+                tooltipText= {__("To see the changes you have to disable and enable the typewriter effect!", "slider-future")}
                 showTooltip = {true}
                 tooltipTop={"10px"}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
@@ -560,7 +560,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Width content", "cocoblocks")}
+                    {__("Width content", "slider-future")}
                   </>
                 }
                 value={textDiv.widthTitleBlock || "auto"}
@@ -587,7 +587,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               >
                 {__(
                   "Attention: Side transition effects will not work with this setting!",
-                  "cocoblocks"
+                  "slider-future"
                 )}
               </p>
             )}
@@ -597,14 +597,14 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <WidthWideIcon />
-                    {__("Custom Width (%)", "cocoblocks")}
+                    {__("Custom Width (px)", "slider-future")}
                   </>
                 }
                 value={textDiv.widthCustomTitleBlock ?? 100}
                 slides={slides}
                 setAttributes={setAttributes}
                 min={1}
-                max={100}
+                max={1000}
                 step={1}
                 updateType="secondary"
                 slideId={slide.id}
@@ -634,7 +634,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <FormatTextdirectionLToRIcon />
-                    {__("Element html", "cocoblocks")}
+                    {__("Element html", "slider-future")}
                   </>
                 }
                 value={textDiv.elementTitle || "h3"}
@@ -661,14 +661,14 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               marginTop: "-18px",
             }}
           >
-            <h2 className="title-custom-panel">{__("Font", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Font", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomRangeControl
                 label={
                   <>
                     <TextFieldsIcon/>
-                    {__("Min", "cocoblocks")}
+                    {__("Min", "slider-future")}
                   </>
                 }
                 value={textDiv.fontSizeMobile || 16}
@@ -682,7 +682,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "cocoblocks")}
+                tooltipText= {__("Sets the minimum text size for small screens (e.g., mobile devices). The text won’t go below this value.", "slider-future")}
                 showTooltip = {true}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeMobile')
@@ -692,7 +692,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <TuneIcon />
-                    {__("Mid", "cocoblocks")}
+                    {__("Mid", "slider-future")}
                   </>
                 }
                 value={textDiv.fontSizeTablet || 16}
@@ -706,7 +706,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 elementIndex={elementIndex}
                 innerIndex={textIndex}
                 elementType="text"
-                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "cocoblocks")}
+                tooltipText= {__("Defines the fluid text size, measured in viewport width (vw), that adapts to screen width. This is ideal for medium-sized screens, like tablets, creating a smooth transition between the minimum and maximum sizes.", "slider-future")}
                 showTooltip = {true}
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSizeTablet')
@@ -716,7 +716,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   label={
                     <>
                       <FullscreenIcon />
-                      {__("Max", "cocoblocks")}
+                      {__("Max", "slider-future")}
                     </>
                   }
                   value={textDiv.fontSize || 22}
@@ -730,7 +730,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   elementIndex={elementIndex}
                   innerIndex={textIndex}
                   elementType="text"
-                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "cocoblocks")}
+                  tooltipText= {__("Sets the maximum text size for large screens (e.g., desktop monitors). The text won’t exceed this value.", "slider-future")}
                   showTooltip = {true}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontSize')
@@ -754,7 +754,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <FontDownloadIcon />
-                    {__("Font family", "cocoblocks")}
+                    {__("Font family", "slider-future")}
                   </>
                 }
                 value={textDiv.fontFamilyTitleBlock|| "Arial, sans-serif"}
@@ -774,7 +774,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <FitnessCenterIcon />
-                    {__("Font weight", "cocoblocks")}
+                    {__("Font weight", "slider-future")}
                   </>
                 }
                 value={textDiv.fontWeightTitleBlock || "400"}
@@ -794,7 +794,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   label={
                     <>
                       <HeightIcon />
-                      {__("Line height", "cocoblocks")}
+                      {__("Line height", "slider-future")}
                     </>
                   }
                   value={textDiv.lineHeight || 1.5}
@@ -816,7 +816,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   label={
                     <>
                       <FormatLineSpacingIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Letter spacing", "cocoblocks")}
+                      {__("Letter spacing", "slider-future")}
                     </>
                   }
                   value={textDiv.letterSpacingTitleBlock || 0}
@@ -844,13 +844,13 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             >
               {__(
                 "Attention: Not all browsers may support every listed font family, and not all font families support the full range of font weights!",
-                "cocoblocks"
+                "slider-future"
               )}
             </p>
             <CustomColorOptionsPanel
                   colorNormal={textDiv.textColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'text', 'textColor')}
-                  buttonTitle={__("Text Color", "cocoblocks")}
+                  buttonTitle={__("Text Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -865,7 +865,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                  <CustomColorOptionsPanel
                   colorNormal={textDiv.backgroundColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'text', 'backgroundColor')}
-                  buttonTitle={__("Background Color", "cocoblocks")}
+                  buttonTitle={__("Background Color", "slider-future")}
                   buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -880,7 +880,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Position", "cocoblocks")}
+              {__("Position", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -888,7 +888,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <ControlCameraIcon />
-                    {__("Select position", "cocoblocks")}
+                    {__("Select position", "slider-future")}
                   </>
                 }
                 value={textDiv.positionInnerText|| "Arial, sans-serif"}
@@ -904,11 +904,11 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 }
                 selectOptions={[
                     {
-                      label: __("Default", "cocoblocks"),
+                      label: __("Default", "slider-future"),
                       value: "static",
                     },
                     {
-                      label: __("Relative", "cocoblocks"),
+                      label: __("Relative", "slider-future"),
                       value: "relative",
                     },
                   ]}
@@ -916,7 +916,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -926,7 +926,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                       <PaddingIcon />
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={textDiv.paddingTitleBlock}
@@ -947,7 +947,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   label={
                     <>
                       <SwapVertIcon  />
-                      {__("Vertical Position", "cocoblocks")}
+                      {__("Vertical Position", "slider-future")}
                     </>
                   }
                   value={textDiv.verticalPositionInnerText || 0}
@@ -969,7 +969,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   label={
                     <>
                       <SwapVertIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Horizontal Position", "cocoblocks")}
+                      {__("Horizontal Position", "slider-future")}
                     </>
                   }
                   value={textDiv.horizontalPositionInnerText || 0}
@@ -996,7 +996,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <MarginIcon />
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={textDiv.marginTitle}
@@ -1014,7 +1014,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             )}
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div
             className="content-section-panel"
@@ -1024,7 +1024,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <BorderStyleIcon />
-                    {__("Border style", "cocoblocks")}
+                    {__("Border style", "slider-future")}
                   </>
                 }
                 value={textDiv.borderStyle }
@@ -1045,7 +1045,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 <CustomColorOptionsPanel
                   colorNormal={textDiv.backgroundBorderColor }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'text', 'backgroundBorderColor')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1063,7 +1063,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <MarginIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                   </>
                 }
                 values={textDiv.backgroundBorderSize}
@@ -1083,7 +1083,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <BorderInnerIcon />
-                    {__("Border radius", "cocoblocks")}
+                    {__("Border radius", "slider-future")}
                   </>
                 }
                 values={textDiv.backgroundBorderRadius}
@@ -1107,7 +1107,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1115,7 +1115,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             label={
               <>
                 <RotateRightIcon />
-                {__("Rotate", "cocoblocks")}
+                {__("Rotate", "slider-future")}
               </>
             }
             value={textDiv.rotate}
@@ -1137,7 +1137,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <FormatTextdirectionLToRIcon />
-                    {__("Writing mode", "cocoblocks")}
+                    {__("Writing mode", "slider-future")}
                   </>
                 }
                 value={textDiv.textWriteMode || "initial"}
@@ -1157,7 +1157,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <DirectionsIcon />
-                    {__("Orientation", "cocoblocks")}
+                    {__("Orientation", "slider-future")}
                   </>
                 }
                 value={textDiv.textOrientation || "initial"}
@@ -1179,7 +1179,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Transparency Setting", "cocoblocks")}
+              {__("Transparency Setting", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1187,7 +1187,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               label={
                 <>
                   <OpacityIcon />
-                  {__("Opacity", "cocoblocks")}
+                  {__("Opacity", "slider-future")}
                 </>
               }
               value={textDiv.opacity ?? 1}
@@ -1208,7 +1208,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("LEVEL", "cocoblocks")}
+              {__("LEVEL", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1216,7 +1216,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               label={
                 <>
                   <LayersClearIcon />
-                  {__("Z-index", "cocoblocks")}
+                  {__("Z-index", "slider-future")}
                 </>
               }
               value={textDiv.zIndexTitle || 1}
@@ -1239,7 +1239,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             className="content-title-custom-panel intermedy"
           >
             <h2 className="title-custom-panel">
-              {__("Text Shadow", "cocoblocks")}
+              {__("Text Shadow", "slider-future")}
             </h2>
             </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1270,7 +1270,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1304,7 +1304,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             className="content-title-custom-panel intermedy"
           >
             <h2 className="title-custom-panel">
-              {__("Text Stroke", "cocoblocks")}
+              {__("Text Stroke", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1334,7 +1334,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             className="content-title-custom-panel intermedy"
           >
             <h2 className="title-custom-panel">
-              {__("Blend Mode", "cocoblocks")}
+              {__("Blend Mode", "slider-future")}
             </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1342,7 +1342,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 label={
                   <>
                     <FilterTiltShiftIcon />
-                    {__("Effect", "cocoblocks")}
+                    {__("Effect", "slider-future")}
                   </>
                 }
                 value={textDiv.blendMode || "normal"}
@@ -1366,7 +1366,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
         valueEffect={textDiv.effectIn}
         colorNormal={textDiv.colorBlockEffect } 
         setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'text', 'colorBlockEffect')}
-        buttonTitle={__("Background Color", "cocoblocks")}    
+        buttonTitle={__("Background Color", "slider-future")}    
         buttonIcon={ <ColorLensIcon style={{marginBottom:'-5px'}} />}  
         valueOpacityFrom={textDiv.opacityFrom}
          valueOpacityTo={textDiv.opacityTo}
@@ -1453,14 +1453,14 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Style", "cocoblocks")}
+            {__("Style", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0",marginBottom:'36px' }}>
           <CustomColorOptionsPanel
                   colorNormal={textDiv.textColorHover}
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'text', 'secondary', 'textColorHover}')}
-                  buttonTitle={__("Text Color", "cocoblocks")}
+                  buttonTitle={__("Text Color", "slider-future")}
                   buttonIcon={<FormatColorTextIcon style={{marginBottom:'-4px'}} />}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1568,7 +1568,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

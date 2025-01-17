@@ -223,7 +223,7 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
         opacity: element.opacity,
         width:
           element.widthTitle === "custom"
-            ? `${element.widthCustomTitle}%`
+            ? `${element.widthCustomTitle}px`
             : element.widthTitle,
       }}
       className={"content-title-slide " + element.hideTitle + " " + className}

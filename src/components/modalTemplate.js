@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "@wordpress/components";
-import { useSelect, dispatch, select } from "@wordpress/data";
-import { BlockPreview } from "@wordpress/block-editor";
+import { dispatch, select } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
@@ -11,12 +10,12 @@ const SliderTemplateModal = ({ onClose }) => {
   const templates = [
     {
       id: 1,
-      title: "Template 1",
+      title: "Style and Fashion",
       span: "PRO",
       category: "Pro",
-      previewImage: "https://franchiwebdesign.com/wp-content/uploads/2024/12/slider-layer-2.webp",
-      demoLink: "https://franchiwebdesign.com/",
-      jsonLink: "https://franchiwebdesign.com/template/fascino.json",
+      previewImage: "https://franchiwebdesign.com/wp-content/uploads/2025/01/template-1.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/style-and-fashion/",
+      jsonLink: "https://franchiwebdesign.com/template/style-and-fashion.json",
       class:"pro"
     },
     {
@@ -54,7 +53,7 @@ const SliderTemplateModal = ({ onClose }) => {
       onClose();
     } catch (error) {
       console.error("Errore durante l'importazione del template:", error);
-      alert(__("Errore durante l'importazione del template.", "text-domain"));
+      alert(__("Errore durante l'importazione del template.", "slider-future"));
     }
   };
 
@@ -63,14 +62,14 @@ const SliderTemplateModal = ({ onClose }) => {
   return (
     <Modal
       onRequestClose={onClose}
-      title={__("Explore Module Template", "text-domain")}
+      title={__("Explore Module Template", "slider-future")}
       isFullScreen={true}
       className="modal-image-slider"
     >
       <div className="modal-body">
         <div className="category-navigator">
           <div className="logo-modal">
-            <h2>{__("SF", "cocoblock")}</h2>
+            <h2>{__("SF", "slider-future")}</h2>
           </div>
          
           {["All", "Free", "Pro"].map((category) => (
@@ -116,13 +115,13 @@ const SliderTemplateModal = ({ onClose }) => {
                     isPrimary
                     onClick={() => handleImport(template.jsonLink)}
                   >
-                    {__("Import", "text-domain")}
+                    {__("Import", "slider-future")}
                   </Button>
                 </div>
               </div>
             ))
           ) : (
-            <p>{__("No templates available.", "text-domain")}</p>
+            <p>{__("No templates available.", "slider-future")}</p>
           )}
           <div className="copy-right-modal">
             <Button
@@ -136,14 +135,14 @@ const SliderTemplateModal = ({ onClose }) => {
                 padding: 0,
               }}
             >
-              {__("© Copyright & License Info", "cocoblocks")}
+              {__("© Copyright & License Info", "slider-future")}
             </Button>
           </div>
         </div>
       </div>
       {isLicenseModalOpen && (
         <Modal
-          title={__("Copyright & Licensing - Slider Future Library", "text-domain")}
+          title={__("Copyright & Licensing - Slider Future Library", "slider-future")}
           onRequestClose={() => setIsLicenseModalOpen(false)}
           className="license-modal"
         >
@@ -151,7 +150,7 @@ const SliderTemplateModal = ({ onClose }) => {
             <p>
               {__(
                 "Here you will find all the licenses for images and objects in detail.",
-                "text-domain"
+                "slider-future"
               )}
             </p>
             <Button
@@ -159,7 +158,7 @@ const SliderTemplateModal = ({ onClose }) => {
               onClick={() => setIsLicenseModalOpen(false)}
               className="button-close-modal-license"
             >
-              {__("Close", "text-domain")}
+              {__("Close", "slider-future")}
             </Button>
           </div>
         </Modal>

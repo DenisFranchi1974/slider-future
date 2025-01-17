@@ -375,17 +375,17 @@ const ImageEdit = ({
         ) : (
           <ImageIcon />
         )}
-          <h2>{__("Image", "slider")}</h2>
+          <h2>{__("Image", "slider-future")}</h2>
         </div>
         <div className="title-element">
         <Button
             onClick={() => removeSlideImage(slide.id, elementIndex)}
             isDestructive
             icon={<DeleteOutlineIcon />}
-            label={__("Remove Image", "cocoblocks")}
+            label={__("Remove Image", "slider-future")}
             className="button-remove-element"
           />
-          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider-future') : __('Open Controls','slider-future')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
             <KeyboardArrowUpIcon/>
@@ -411,7 +411,7 @@ const ImageEdit = ({
                 }}
               >
                 <h2 className="title-custom-panel">
-                  {__("Content", "cocoblocks")}
+                  {__("Content", "slider-future")}
                 </h2>
               </div>
               <MediaUploadCheck>
@@ -452,7 +452,7 @@ const ImageEdit = ({
                                 }}
                               >
                                 <PhotoSizeSelectActualIcon/>
-                                {__("Media Library", "cocoblocks")}
+                                {__("Media Library", "slider-future")}
                               </div>
                               <span
                                 className="dashicons dashicons-arrow-down-alt2"
@@ -479,7 +479,7 @@ const ImageEdit = ({
                               src={element.url}
                               alt={
                                 element.alt ||
-                                __("Uploaded Image", "cocoblocks")
+                                __("Uploaded Image", "slider-future")
                               }
                               style={{
                                 width: "100%",
@@ -498,7 +498,7 @@ const ImageEdit = ({
                             icon={<ChangeCircleOutlinedIcon />}
                             label={__(
                               "Change Image form Media Library",
-                              "cocoblocks"
+                              "slider-future"
                             )}
                           />
                           <Button
@@ -512,7 +512,7 @@ const ImageEdit = ({
                             icon={<ChangeCircleOutlinedIcon />}
                             label={__(
                               "Change Image from Object Library",
-                              "cocoblocks"
+                              "slider-future"
                             )}
                           />
                         </>
@@ -549,7 +549,7 @@ const ImageEdit = ({
                     }}
                   >
                      <PhotoLibraryIcon/>
-                    {__("Object Library", "cocoblocks")}
+                    {__("Object Library", "slider-future")}
                   </div>
                   <span
                     className="dashicons dashicons-arrow-down-alt2"
@@ -581,7 +581,7 @@ const ImageEdit = ({
                   slideId={slide.id}
                   elementIndex={elementIndex}
                   elementType="image"
-                  placeholder={__("Add alt text...", "cocoblocks")}
+                  placeholder={__("Add alt text...", "slider-future")}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'alt')
                   }
@@ -590,7 +590,7 @@ const ImageEdit = ({
                   label={
                     <>
                       <WidthWideIcon />
-                      {__("Width content", "cocoblocks")}
+                      {__("Width content", "slider-future")}
                     </>
                   }
                   value={element.widthImageContent}
@@ -605,11 +605,11 @@ const ImageEdit = ({
                   }
                   selectOptions={[
                     {
-                      label: __("Auto", "cocoblocks"),
+                      label: __("Auto", "slider-future"),
                       value: "auto",
                     },
                     {
-                      label: __("100%", "cocoblocks"),
+                      label: __("100%", "slider-future"),
                       value: "100%",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -640,7 +640,7 @@ const ImageEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
+              {__("Background", "slider-future")}
             </h2>
           </div>
           {element.url && (
@@ -650,7 +650,7 @@ const ImageEdit = ({
                   label={
                     <>
                       <FitScreenIcon />
-                      {__("Image fit", "cocoblocks")}
+                      {__("Image fit", "slider-future")}
                     </>
                   }
                   value={element.fit}
@@ -665,11 +665,11 @@ const ImageEdit = ({
                   }
                   selectOptions={[
                     {
-                      label: __("Cover", "slider"),
+                      label: __("Cover", "slider-future"),
                       value: "cover",
                     },
                     {
-                      label: __("Contain", "slider"),
+                      label: __("Contain", "slider-future"),
                       value: "contain",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -678,7 +678,7 @@ const ImageEdit = ({
                      <CustomColorOptionsPanel
                         colorNormal={element.backgroundColorImage }
                         setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'image', 'backgroundColorImage')}
-                        buttonTitle={__("Background Color", "cocoblocks")}
+                        buttonTitle={__("Background Color", "slider-future")}
                         buttonIcon={<PaletteIcon style={{
                           marginBottom: "-5px",
                           width: "20px",
@@ -697,7 +697,7 @@ const ImageEdit = ({
               </div>
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Width & Height", "cocoblocks")}
+                  {__("Width & Height", "slider-future")}
                 </h2>
               </div>
               <div className="content-section-panel" style={{ padding: "0" }}>
@@ -705,7 +705,7 @@ const ImageEdit = ({
                   label={
                     <>
                       <HeightIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Width", "cocoblocks")}
+                      {__("Width", "slider-future")}
                     </>
                   }
                   value={element.widthImage}
@@ -720,15 +720,15 @@ const ImageEdit = ({
                   }
                   selectOptions={[
                     {
-                      label: __("Auto", "slide"),
+                      label: __("Auto", "slider-future"),
                       value: "auto",
                     },
                     {
-                      label: __("Relative", "cocoblocks"),
+                      label: __("Relative", "slider-future"),
                       value: "relative",
                     },
                     {
-                      label: __("Fixed", "cocoblocks"),
+                      label: __("Fixed", "slider-future"),
                       value: "fixed",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -737,7 +737,7 @@ const ImageEdit = ({
                   <CustomRangeControl
                   label={
                     <>
-                      {__("Custom width (%)", "cocoblocks")}
+                      {__("Custom width (%)", "slider-future")}
                     </>
                   }
                   value={element.customWidthImage}
@@ -759,7 +759,7 @@ const ImageEdit = ({
                   <CustomRangeControl
                   label={
                     <>
-                      {__("Custom width (px)", "cocoblocks")}
+                      {__("Custom width (px)", "slider-future")}
                     </>
                   }
                   value={element.customWidthImagePx}
@@ -781,7 +781,7 @@ const ImageEdit = ({
                   label={
                     <>
                       <HeightIcon />
-                      {__("Height", "cocoblocks")}
+                      {__("Height", "slider-future")}
                     </>
                   }
                   value={element.heightImage}
@@ -796,15 +796,15 @@ const ImageEdit = ({
                   }
                   selectOptions={[
                     {
-                      label: __("Auto", "slide"),
+                      label: __("Auto", "slider-future"),
                       value: "auto",
                     },
                     {
-                      label: __("Relative", "cocoblocks"),
+                      label: __("Relative", "slider-future"),
                       value: "relative",
                     },
                     {
-                      label: __("Fixed", "cocoblocks"),
+                      label: __("Fixed", "slider-future"),
                       value: "fixed",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -813,7 +813,7 @@ const ImageEdit = ({
                    <CustomRangeControl
                    label={
                      <>
-                       {__("Custom height (%)", "cocoblocks")}
+                       {__("Custom height (%)", "slider-future")}
                      </>
                    }
                    value={element.customHeightImage}
@@ -835,7 +835,7 @@ const ImageEdit = ({
                   <CustomRangeControl
                   label={
                     <>
-                      {__("Custom height (px)", "cocoblocks")}
+                      {__("Custom height (px)", "slider-future")}
                     </>
                   }
                   value={element.customHeightImagePx}
@@ -860,7 +860,7 @@ const ImageEdit = ({
                   >
                     {__(
                       'The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.',
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 )}
@@ -869,7 +869,7 @@ const ImageEdit = ({
           )}
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -879,7 +879,7 @@ const ImageEdit = ({
                 label={
                   <>
                     <PaddingIcon/>
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={element.paddingImage|| { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -895,7 +895,7 @@ const ImageEdit = ({
                 label={
                   <>
                     <MarginIcon/>
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={element.marginImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -907,14 +907,14 @@ const ImageEdit = ({
             </div>
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
                   label={
                     <>
                       
-                      {__("Border style", "cocoblocks")}
+                      {__("Border style", "slider-future")}
                     </>
                   }
                   value={element.borderStyleImage}
@@ -934,7 +934,7 @@ const ImageEdit = ({
                 <CustomColorOptionsPanel
                   colorNormal={element.backgroundBorderColorImage }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'image', 'backgroundBorderColorImage')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -951,7 +951,7 @@ const ImageEdit = ({
                 label={
                   <>
                     <BorderLeftIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                   </>
                 }
                 values={element.backgroundBorderSizeImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -970,7 +970,7 @@ const ImageEdit = ({
                 label={
                   <>
                     <BorderInnerIcon />
-                    {__("Border radius", "cocoblocks")}
+                    {__("Border radius", "slider-future")}
                   </>
                 }
                 values={element.backgroundBorderRadiusImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -992,7 +992,7 @@ const ImageEdit = ({
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1000,7 +1000,7 @@ const ImageEdit = ({
                   label={
                     <>
                       <RefreshIcon />
-                      {__("Rotate", "cocoblocks")}
+                      {__("Rotate", "slider-future")}
                     </>
                   }
                   value={element.rotateImage || 0}
@@ -1021,7 +1021,7 @@ const ImageEdit = ({
                   label={
                     <>
                       <ThreeSixtyIcon />
-                      {__("Rotate X", "cocoblocks")}
+                      {__("Rotate X", "slider-future")}
                     </>
                   }
                   value={element.rotateImageX || 0}
@@ -1042,7 +1042,7 @@ const ImageEdit = ({
                   label={
                     <>
                      <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Rotate Y", "cocoblocks")}
+                      {__("Rotate Y", "slider-future")}
                     </>
                   }
                   value={element.rotateImageY || 0}
@@ -1063,7 +1063,7 @@ const ImageEdit = ({
                   label={
                     <>
                      <WifiProtectedSetupIcon />
-                      {__("Perspective", "cocoblocks")}
+                      {__("Perspective", "slider-future")}
                     </>
                   }
                   value={element.perspectiveImage || 1000}
@@ -1083,7 +1083,7 @@ const ImageEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("TRANSPARENCY SETTING", "cocoblocks")}
+              {__("TRANSPARENCY SETTING", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1091,7 +1091,7 @@ const ImageEdit = ({
                   label={
                     <>
                      <OpacityIcon />
-                      {__("Opacity", "cocoblocks")}
+                      {__("Opacity", "slider-future")}
                     </>
                   }
                   value={element.opacityImage || 1}
@@ -1111,7 +1111,7 @@ const ImageEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("LEVEL", "cocoblocks")}
+              {__("LEVEL", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1119,7 +1119,7 @@ const ImageEdit = ({
                   label={
                     <>
                      <LayersClearIcon />
-                      {__("Z-index", "cocoblocks")}
+                      {__("Z-index", "slider-future")}
                     </>
                   }
                   value={element.zIndexImage || 1}
@@ -1141,7 +1141,7 @@ const ImageEdit = ({
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1247,7 +1247,7 @@ const ImageEdit = ({
 
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Blob Mask", "cocoblocks")}
+              {__("Blob Mask", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1255,7 +1255,7 @@ const ImageEdit = ({
               label={
                 <>
                   <CloudIcon />
-                  {__("Blob Mask", "cocoblocks")}
+                  {__("Blob Mask", "slider-future")}
                 </>
               }
               value={element.blobMask || 'none'}
@@ -1275,7 +1275,7 @@ const ImageEdit = ({
                 <p className="notice components-base-control__help">
                   {__(
                     "Warning: The box shadow will not work with this effect active!",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               </>
@@ -1283,7 +1283,7 @@ const ImageEdit = ({
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spike Masks", "cocoblocks")}
+              {__("Spike Masks", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1291,7 +1291,7 @@ const ImageEdit = ({
               label={
                 <>
                   <PhotoSizeSelectSmallIcon />
-                  {__("Left Spike", "cocoblocks")}
+                  {__("Left Spike", "slider-future")}
                 </>
               }
               value={element.spikeMask }
@@ -1311,7 +1311,7 @@ const ImageEdit = ({
               label={
                 <>
                   <HideImageIcon />
-                  {__("Spike Width", "cocoblocks")}
+                  {__("Spike Width", "slider-future")}
                 </>
               }
               value={element.spikeLeftWidth}
@@ -1334,7 +1334,7 @@ const ImageEdit = ({
               label={
                 <>
                   <PhotoSizeSelectSmallIcon />
-                  {__("Right Spike", "cocoblocks")}
+                  {__("Right Spike", "slider-future")}
                 </>
               }
               value={element.spikeMaskRight }
@@ -1354,7 +1354,7 @@ const ImageEdit = ({
               label={
                 <>
                   <HideImageIcon />
-                  {__("Spike Width", "cocoblocks")}
+                  {__("Spike Width", "slider-future")}
                 </>
               }
               value={element.spikeRightWidth}
@@ -1379,21 +1379,21 @@ const ImageEdit = ({
                 <p className="notice components-base-control__help">
                   {__(
                     "Attention: Single Spikes do not work on both sides together! Warning: The box shadow will not work with this effect active!",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               </>
             )}
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Filter", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Filter", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
               label={
                 <>
                   <PhotoFilterIcon />
-                  {__("Image Effects", "cocoblocks")}
+                  {__("Image Effects", "slider-future")}
                 </>
               }
               value={element.imageFilter }
@@ -1416,7 +1416,7 @@ const ImageEdit = ({
            valueEffectHover={element.effectHover}
            colorNormal={element.backgroundColorImageHover } 
            setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'primary', 'image', 'backgroundColorImageHover')}
-           buttonTitle={__("Background Color", "cocoblocks")}    
+           buttonTitle={__("Background Color", "slider-future")}    
            buttonIcon={ <FormatColorTextIcon style={{marginBottom:'-3px'}} />}
            valueOpacityHover={element.opacityHover}
             valueBlurHover={element.filterHover}
@@ -1508,7 +1508,7 @@ const ImageEdit = ({
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

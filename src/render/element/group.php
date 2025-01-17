@@ -50,12 +50,10 @@ function render_group($element, $slide)
                 <?php if ($element['textLink'] !== 'none') : ?>
                 onclick="<?php echo $onclick; ?>"
                 <?php endif; ?>
-                class="div-slide <?php echo esc_attr($element['positionDiv'] . ' ' . $element['layoutDiv'] . '-layout ' . $desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv); ?>"
+                class="div-slide <?php echo esc_attr($desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv); ?>"
                 <?php
                 $inline_style = 'background-color: ' . esc_attr($element['backgroundColor'] ?? 'transparent') . ';'
-                    . 'flex-direction: ' . ($element['layoutDiv'] === 'horizontal' ? 'row' : 'column') . ';'
-                    . 'flex-wrap: ' . esc_attr($element['layoutWrap']) . ';'
-                    . 'text-align: center;'
+                    . 'display: ' . esc_attr($element['displayDiv'] ?? 'flex') . ';'
                     . 'position: relative;'
                     . ($element['textLink'] !== 'none' ? 'cursor: pointer;' : '')
                     . 'visibility: visible;'
@@ -82,6 +80,27 @@ function render_group($element, $slide)
                         . $boxShadowBlur . 'px '
                         . $boxShadowSpread . 'px '
                         . $colorShadow . ';';
+                }
+                if ($element['displayDiv'] === 'flex') {
+                    $inline_style .= 'flex-direction: ' . esc_attr($element['layoutDiv']) . ';';
+                    $inline_style .= 'flex-wrap: ' . esc_attr($element['layoutWrap']) . ';';
+                    if ($element['layoutDiv'] === 'row') {
+                        $inline_style .= 'justify-content: ' . esc_attr($element['layoutJustifyDiv'] ?? 'center') . ';';
+                        $inline_style .= 'align-items: ' . esc_attr($element['layoutVerticalAlignDivRow'] ?? 'center') . ';';
+                    }
+
+                    if ($element['layoutDiv'] === 'column') {
+                        $inline_style .= 'justify-content: ' . esc_attr($element['layoutVerticalAlignDivColumn'] ?? 'center') . ';';
+                        $inline_style .= 'align-items: ' . esc_attr($element['layoutJustifyDivColumn'] ?? 'center') . ';';
+                    }
+                }
+                if ($element['displayDiv'] === 'grid') {
+                    if ($element['itemGridPositionDiv'] === 'auto') {
+                        $inline_style .= 'grid-template-columns: repeat(auto-fill, minmax(min(' . esc_attr($element['itemGridWidthDiv'] ?? 150) . 'px, 100%), 1fr));';
+                    }
+                    if ($element['itemGridPositionDiv'] === 'manual') {
+                        $inline_style .= 'grid-template-columns: repeat(' . esc_attr($element['itemGridColumnDiv'] ?? 5) . ', minmax(0, 1fr));';
+                    }
                 }
 
                 $inline_style .= 'transform: rotate(' . esc_attr($element['rotateDiv'] ?? 0) . 'deg);';

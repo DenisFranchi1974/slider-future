@@ -386,7 +386,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
         ) : (
             <ImageIcon />
         )}
-          <h2>{__("Image", "slider")}</h2>
+          <h2>{__("Image", "slider-future")}</h2>
         </div>
         <div className="title-element">
           <Button
@@ -395,10 +395,10 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
             }
             isDestructive
             icon={<DeleteOutlineIcon />}
-            label={__("Remove Image", "cocoblocks")}
+            label={__("Remove Image", "slider-future")}
             className="button-remove-element"
           />
-          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider') : __('Open Controls','slider')}>
+          <Tooltip  placement="top" text={isOpen ? __('Close Controls','slider-future') : __('Open Controls','slider-future')}>
         <button onClick={handleToggle} className="button-open-control-element">
           {isOpen ? (
              <KeyboardArrowUpIcon/>
@@ -424,7 +424,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 }}
               >
                 <h2 className="title-custom-panel">
-                  {__("Content", "cocoblocks")}
+                  {__("Content", "slider-future")}
                 </h2>
               </div>
               <MediaUploadCheck>
@@ -466,7 +466,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                                 }}
                               >
                                 <PhotoSizeSelectActualIcon/>
-                                {__("Media Library", "cocoblocks")}
+                                {__("Media Library", "slider-future")}
                               </div>
                               <span
                                 className="dashicons dashicons-arrow-down-alt2"
@@ -493,7 +493,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                               src={imageDiv.imageUrl}
                               alt={
                                 imageDiv.alt ||
-                                __("Uploaded Image", "cocoblocks")
+                                __("Uploaded Image", "slider-future")
                               }
                               style={{
                                 width: "100%",
@@ -512,7 +512,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                             icon={<ChangeCircleOutlinedIcon />}
                             label={__(
                               "Change Image form Media Library",
-                              "cocoblocks"
+                              "slider-future"
                             )}
                           />
                           <Button
@@ -526,7 +526,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                             icon={<ChangeCircleOutlinedIcon />}
                             label={__(
                               "Change Image from Object Library",
-                              "cocoblocks"
+                              "slider-future"
                             )}
                           />
                         </>
@@ -563,7 +563,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                     }}
                   >
                    <PhotoLibraryIcon/>
-                    {__("Object Library", "cocoblocks")}
+                    {__("Object Library", "slider-future")}
                   </div>
                   <span
                     className="dashicons dashicons-arrow-down-alt2"
@@ -596,7 +596,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   elementIndex={elementIndex}
                   innerIndex={imageIndex}
                   elementType="image"
-                  placeholder={__("Add alt text...", "cocoblocks")}
+                  placeholder={__("Add alt text...", "slider-future")}
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'alt')
                   }
@@ -605,7 +605,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                       <WidthWideIcon />
-                      {__("Width content", "cocoblocks")}
+                      {__("Width content", "slider-future")}
                     </>
                   }
                   value={imageDiv.widthImageContent}
@@ -621,11 +621,11 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   }
                   selectOptions={[
                     {
-                      label: __("Auto", "cocoblocks"),
+                      label: __("Auto", "slider-future"),
                       value: "auto",
                     },
                     {
-                      label: __("100%", "cocoblocks"),
+                      label: __("100%", "slider-future"),
                       value: "100%",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -657,7 +657,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Background", "cocoblocks")}
+              {__("Background", "slider-future")}
             </h2>
           </div>
           {imageDiv.imageUrl && (
@@ -667,7 +667,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                       <FitScreenIcon />
-                      {__("Image fit", "cocoblocks")}
+                      {__("Image fit", "slider-future")}
                     </>
                   }
                   value={imageDiv.fit}
@@ -683,11 +683,11 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   }
                   selectOptions={[
                     {
-                      label: __("Cover", "slider"),
+                      label: __("Cover", "slider-future"),
                       value: "cover",
                     },
                     {
-                      label: __("Contain", "slider"),
+                      label: __("Contain", "slider-future"),
                       value: "contain",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -696,7 +696,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                      <CustomColorOptionsPanel
                      colorNormal={imageDiv.backgroundColorImage }
                      setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'image', 'backgroundColorImage')}
-                     buttonTitle={__("Background Color", "cocoblocks")}
+                     buttonTitle={__("Background Color", "slider-future")}
                      buttonIcon={<PaletteIcon style={{
                        marginBottom: "-5px",
                        width: "20px",
@@ -716,7 +716,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
               </div>
               <div className="content-title-custom-panel intermedy">
                 <h2 className="title-custom-panel">
-                  {__("Width & Height", "cocoblocks")}
+                  {__("Width & Height", "slider-future")}
                 </h2>
               </div>
               <div className="content-section-panel" style={{ padding: "0" }}>
@@ -724,7 +724,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                       <HeightIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Width", "cocoblocks")}
+                      {__("Width", "slider-future")}
                     </>
                   }
                   value={imageDiv.widthImage}
@@ -740,15 +740,15 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   }
                   selectOptions={[
                     {
-                      label: __("Auto", "slide"),
+                      label: __("Auto", "slider-future"),
                       value: "auto",
                     },
                     {
-                      label: __("Relative", "cocoblocks"),
+                      label: __("Relative", "slider-future"),
                       value: "relative",
                     },
                     {
-                      label: __("Fixed", "cocoblocks"),
+                      label: __("Fixed", "slider-future"),
                       value: "fixed",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -757,7 +757,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                      <CustomRangeControl
                      label={
                        <>
-                         {__("Custom width (%)", "cocoblocks")}
+                         {__("Custom width (%)", "slider-future")}
                        </>
                      }
                      value={imageDiv.customWidthImage}
@@ -780,7 +780,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                     <CustomRangeControl
                     label={
                       <>
-                        {__("Custom width (px)", "cocoblocks")}
+                        {__("Custom width (px)", "slider-future")}
                       </>
                     }
                     value={imageDiv.customWidthImagePx}
@@ -803,7 +803,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                       <HeightIcon />
-                      {__("Height", "cocoblocks")}
+                      {__("Height", "slider-future")}
                     </>
                   }
                   value={imageDiv.heightImage}
@@ -819,15 +819,15 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   }
                   selectOptions={[
                     {
-                      label: __("Auto", "slide"),
+                      label: __("Auto", "slider-future"),
                       value: "auto",
                     },
                     {
-                      label: __("Relative", "cocoblocks"),
+                      label: __("Relative", "slider-future"),
                       value: "relative",
                     },
                     {
-                      label: __("Fixed", "cocoblocks"),
+                      label: __("Fixed", "slider-future"),
                       value: "fixed",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -836,7 +836,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                    <CustomRangeControl
                    label={
                      <>
-                       {__("Custom height (%)", "cocoblocks")}
+                       {__("Custom height (%)", "slider-future")}
                      </>
                    }
                    value={imageDiv.customHeightImage}
@@ -859,7 +859,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                    <CustomRangeControl
                    label={
                      <>
-                       {__("Custom height (px)", "cocoblocks")}
+                       {__("Custom height (px)", "slider-future")}
                      </>
                    }
                    value={imageDiv.customHeightImagePx}
@@ -885,7 +885,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   >
                     {__(
                       'The border may not adhere tightly to the image when using "Contain" for object-fit due to potential extra space around the image.',
-                      "cocoblocks"
+                      "slider-future"
                     )}
                   </p>
                 )}
@@ -894,7 +894,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           )}
            <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Position", "cocoblocks")}
+              {__("Position", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -902,7 +902,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                       <ControlCameraIcon />
-                      {__("Select Position", "cocoblocks")}
+                      {__("Select Position", "slider-future")}
                     </>
                   }
                   value={imageDiv.positionInnerImage}
@@ -918,11 +918,11 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   }
                   selectOptions={[
                     {
-                      label: __("Default", "cocoblocks"),
+                      label: __("Default", "slider-future"),
                       value: "static",
                     },
                     {
-                      label: __("Relative", "cocoblocks"),
+                      label: __("Relative", "slider-future"),
                       value: "relative",
                     },
                   ]} // Passa le opzioni dinamiche
@@ -930,7 +930,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spacings", "cocoblocks")}
+              {__("Spacings", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -940,7 +940,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 label={
                   <>
                     <PaddingIcon/>
-                    {__("Padding", "cocoblocks")}
+                    {__("Padding", "slider-future")}
                   </>
                 }
                 values={imageDiv.paddingImage|| { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -956,7 +956,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                    label={
                      <>
                       <SwapVertIcon  />
-                       {__("Vertical Position", "cocoblocks")}
+                       {__("Vertical Position", "slider-future")}
                      </>
                    }
                    value={imageDiv.verticalPositionInnerImage}
@@ -978,7 +978,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                    label={
                      <>
                        <SwapVertIcon style={{transform:'rotate(90deg)'}} />
-                       {__("Horizontal Position", "cocoblocks")}
+                       {__("Horizontal Position", "slider-future")}
                      </>
                    }
                    value={imageDiv.horizontalPositionInnerImage}
@@ -1005,7 +1005,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 label={
                   <>
                     <MarginIcon/>
-                    {__("Margin", "cocoblocks")}
+                    {__("Margin", "slider-future")}
                   </>
                 }
                 values={imageDiv.marginImage}
@@ -1023,14 +1023,14 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           )}
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Border", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Border", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
                   label={
                     <>
                          <BorderStyleIcon />
-                      {__("Border style", "cocoblocks")}
+                      {__("Border style", "slider-future")}
                     </>
                   }
                   value={imageDiv.borderStyleImage}
@@ -1051,7 +1051,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                <CustomColorOptionsPanel
                   colorNormal={imageDiv.backgroundBorderColorImage }
                   setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'image', 'backgroundBorderColorImage')}
-                  buttonTitle={__("Border Color", "cocoblocks")}
+                  buttonTitle={__("Border Color", "slider-future")}
                   buttonIcon={<BorderColorIcon/>}
                   slides={slides}
                   setAttributes={setAttributes}
@@ -1069,7 +1069,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 label={
                   <>
                     <BorderLeftIcon />
-                    {__("Border width", "cocoblocks")}
+                    {__("Border width", "slider-future")}
                   </>
                 }
                 values={imageDiv.backgroundBorderSizeImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -1087,7 +1087,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 label={
                   <>
                     <BorderInnerIcon />
-                    {__("Border radius", "cocoblocks")}
+                    {__("Border radius", "slider-future")}
                   </>
                 }
                 values={imageDiv.backgroundBorderRadiusImage || { 0: "0", 1: "0", 2: "0", 3: "0" }}
@@ -1109,7 +1109,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
             }}
           >
             <h2 className="title-custom-panel">
-              {__("Basic Transforms", "cocoblocks")}
+              {__("Basic Transforms", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1117,7 +1117,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                      <RefreshIcon />
-                      {__("Rotate", "cocoblocks")}
+                      {__("Rotate", "slider-future")}
                     </>
                   }
                   value={imageDiv.rotateImage || 0}
@@ -1139,7 +1139,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                       <ThreeSixtyIcon />
-                      {__("Rotate X", "cocoblocks")}
+                      {__("Rotate X", "slider-future")}
                     </>
                   }
                   value={imageDiv.rotateImageX || 0}
@@ -1161,7 +1161,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                      <ThreeSixtyIcon style={{transform:'rotate(90deg)'}} />
-                      {__("Rotate Y", "cocoblocks")}
+                      {__("Rotate Y", "slider-future")}
                     </>
                   }
                   value={imageDiv.rotateImageY || 0}
@@ -1183,7 +1183,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                      <WifiProtectedSetupIcon />
-                      {__("Perspective", "cocoblocks")}
+                      {__("Perspective", "slider-future")}
                     </>
                   }
                   value={imageDiv.perspectiveImage || 1000}
@@ -1204,7 +1204,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("TRANSPARENCY SETTING", "cocoblocks")}
+              {__("TRANSPARENCY SETTING", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1212,7 +1212,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                      <OpacityIcon />
-                      {__("Opacity", "cocoblocks")}
+                      {__("Opacity", "slider-future")}
                     </>
                   }
                   value={imageDiv.opacityImage || 1}
@@ -1233,7 +1233,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("LEVEL", "cocoblocks")}
+              {__("LEVEL", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1241,7 +1241,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   label={
                     <>
                      <LayersClearIcon />
-                      {__("Z-index", "cocoblocks")}
+                      {__("Z-index", "slider-future")}
                     </>
                   }
                   value={imageDiv.zIndexImage || 1}
@@ -1264,7 +1264,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 className="content-title-custom-panel intermedy"
               >
                 <h2 className="title-custom-panel">
-                  {__("Box Shadow", "cocoblocks")}
+                  {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1371,7 +1371,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
          />
         <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Blob Mask", "cocoblocks")}
+              {__("Blob Mask", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1379,7 +1379,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
               label={
                 <>
                   <CloudIcon />
-                  {__("Blob Mask", "cocoblocks")}
+                  {__("Blob Mask", "slider-future")}
                 </>
               }
               value={imageDiv.blobMask || 'none'}
@@ -1400,7 +1400,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 <p className="notice components-base-control__help">
                   {__(
                     "Warning: The box shadow will not work with this effect active!",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               </>
@@ -1408,7 +1408,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
-              {__("Spike Masks", "cocoblocks")}
+              {__("Spike Masks", "slider-future")}
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
@@ -1416,7 +1416,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
               label={
                 <>
                   <PhotoSizeSelectSmallIcon />
-                  {__("Left Spike", "cocoblocks")}
+                  {__("Left Spike", "slider-future")}
                 </>
               }
               value={imageDiv.spikeMask }
@@ -1437,7 +1437,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                label={
                  <>
                    <HideImageIcon />
-                   {__("Spike Width", "cocoblocks")}
+                   {__("Spike Width", "slider-future")}
                  </>
                }
                value={imageDiv.spikeLeftWidth}
@@ -1461,7 +1461,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
               label={
                 <>
                   <PhotoSizeSelectSmallIcon />
-                  {__("Right Spike", "cocoblocks")}
+                  {__("Right Spike", "slider-future")}
                 </>
               }
               value={imageDiv.spikeMaskRight }
@@ -1482,7 +1482,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
               label={
                 <>
                   <HideImageIcon />
-                  {__("Spike Width", "cocoblocks")}
+                  {__("Spike Width", "slider-future")}
                 </>
               }
               value={imageDiv.spikeRightWidth}
@@ -1508,21 +1508,21 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 <p className="notice components-base-control__help">
                   {__(
                     "Attention: Single Spikes do not work on both sides together! Warning: The box shadow will not work with this effect active!",
-                    "cocoblocks"
+                    "slider-future"
                   )}
                 </p>
               </>
             )}
           </div>
           <div className="content-title-custom-panel intermedy">
-            <h2 className="title-custom-panel">{__("Filter", "cocoblocks")}</h2>
+            <h2 className="title-custom-panel">{__("Filter", "slider-future")}</h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
               label={
                 <>
                   <PhotoFilterIcon />
-                  {__("Image Effects", "cocoblocks")}
+                  {__("Image Effects", "slider-future")}
                 </>
               }
               value={imageDiv.imageFilter }
@@ -1546,7 +1546,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
          valueEffectHover={imageDiv.effectHover}
          colorNormal={imageDiv.backgroundColorImageHover } 
          setColorNormal={(color) => updateElement(slides, setAttributes, slide.id, elementIndex, null, color, 'secondary', 'image', 'backgroundColorImageHover')}
-         buttonTitle={__("Background Color", "cocoblocks")}    
+         buttonTitle={__("Background Color", "slider-future")}    
          buttonIcon={ <FormatColorTextIcon style={{marginBottom:'-3px'}} />}
          valueOpacityHover={imageDiv.opacityHover}
           valueBlurHover={imageDiv.filterHover}
@@ -1641,7 +1641,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           }}
         >
           <h2 className="title-custom-panel">
-            {__("Hide in editor", "cocoblocks")}
+            {__("Hide in editor", "slider-future")}
           </h2>
         </div>
         <div className="content-section-panel" style={{ padding: "0" }}>

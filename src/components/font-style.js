@@ -17,19 +17,19 @@ const FontStyle = ({ value, onChange }) => {
     {
       type: "fontWeight",
       value: "bold",
-      label: __("Bold", "cocoblocks"),
+      label: __("Bold", "slider-future"),
       icon: formatBold,
     },
     {
       type: "fontStyle",
       value: "italic", 
-      label: __("Italic", "cocoblocks"),
+      label: __("Italic", "slider-future"),
       icon: formatItalic,
     },
     {
       type: "textDecoration",
       value: "underline",
-      label: __("Underline", "cocoblocks"),
+      label: __("Underline", "slider-future"),
       icon: formatUnderline,
     },
   ];
@@ -65,7 +65,7 @@ const FontStyle = ({ value, onChange }) => {
         } // Mostra un'icona di default se nessuna icona è selezionata
       >
         <div className="postion-slide__label">
-          <h2>{__("Font style", "cocoblocks")}</h2>
+          <h2>{__("Font style", "slider-future")}</h2>
           <div
             className="postion-slide__label-icons"
             style={{ marginRight: iconMargin }}

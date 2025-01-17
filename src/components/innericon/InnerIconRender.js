@@ -124,7 +124,7 @@ const InnerIconRender = ({ iconDiv, iconIndex, element, index, onPlay }) => {
       style={{
         width:
           iconDiv.width === "custom"
-            ? `${iconDiv.widthCustom}%`
+            ? `${iconDiv.widthCustom}px`
             : iconDiv.width,
         justifyContent: iconDiv.align,
           display:'flex'

@@ -126,7 +126,7 @@ function render_icon($element, $slide)
     }
     $stylesDiv = '';
     if (isset($element['width'])) {
-        $stylesDiv .= "width: " . ($element['width'] === 'custom' ? esc_attr($element['widthCustom']) . "%" : esc_attr($element['width'])) . "; ";
+        $stylesDiv .= "width: " . ($element['width'] === 'custom' ? esc_attr($element['widthCustom']) . "px" : esc_attr($element['width'])) . "; ";
     }
     $classNamesDiv = "content-icon ";
     $classNamesIcon = "slide-icon " . esc_attr($element['icon']) . " " . esc_attr($element['iconAnimation']) . " " . esc_attr($element['animationHover']);

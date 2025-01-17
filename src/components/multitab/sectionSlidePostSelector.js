@@ -24,7 +24,7 @@ const SectionSlidePostSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("content")}
       >
           <InsertCommentIcon />
-        {__("Content", "cocoblocks")}
+        {__("Content", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -32,7 +32,7 @@ const SectionSlidePostSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("layout")}
       >
          <DevicesIcon />
-        {__("Layout", "cocoblocks")}
+        {__("Layout", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -41,7 +41,7 @@ const SectionSlidePostSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("style")}
       >
         <ColorLensIcon />
-        {__("Style", "cocoblocks")}
+        {__("Style", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -49,7 +49,7 @@ const SectionSlidePostSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("effect")}
       >
        <BlurOnIcon />
-        {__("Effect", "cocoblocks")}
+        {__("Effect", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -57,7 +57,7 @@ const SectionSlidePostSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("query")}
       >
         <SavedSearchIcon />
-        {__("Query", "cocoblocks")}
+        {__("Query", "slider-future")}
       </Button>
       <Button
         className="section-selector-button"
@@ -65,7 +65,7 @@ const SectionSlidePostSelector = ({ onSectionChange }) => {
         onClick={() => handleSectionChange("element")}
       >
         <ArtTrackIcon />
-        {__("Element", "cocoblocks")}
+        {__("Element", "slider-future")}
       </Button>
     </ButtonGroup>
   );

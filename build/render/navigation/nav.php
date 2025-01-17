@@ -32,7 +32,7 @@ function render_nav($navigationIcons, $navigationTablet, $navigationMobile, $siz
             </svg>
         <?php elseif ($navigationIcons === 'text') : ?>
             <span style="color: <?php echo esc_attr($navColor); ?>; font-size: <?php echo esc_attr($sizeNav . 'px'); ?>;">
-                <?php echo esc_html(__('Next', 'cocoblocks')); ?>
+                <?php echo esc_html(__('Next', 'slider-future')); ?>
             </span>
         <?php endif; ?>
     </div>
@@ -66,7 +66,7 @@ function render_nav($navigationIcons, $navigationTablet, $navigationMobile, $siz
             </svg>
         <?php elseif ($navigationIcons === 'text') : ?>
             <span style="color: <?php echo esc_attr($navColor); ?>; font-size: <?php echo esc_attr($sizeNav . 'px'); ?>;">
-                <?php echo esc_html(__('Prev', 'cocoblocks')); ?>
+                <?php echo esc_html(__('Prev', 'slider-future')); ?>
             </span>
         <?php endif; ?>
     </div>
