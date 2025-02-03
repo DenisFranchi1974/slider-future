@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { __ } from '@wordpress/i18n';
 import { PanelBody,   __experimentalBoxControl as BoxControl,Tooltip, Button } from '@wordpress/components';
 import SectionSelectorElementPost from "../../multitab/sectionSelectorElementPost";
@@ -15,9 +15,11 @@ import MarginIcon from '@mui/icons-material/Margin';
 import {borderStyleOptions} from '../../../assets/options';
 import {selectOptionsEffectElement} from '../../../assets/options';
 import {selectOptionsEase} from '../../../assets/options';
+import {selectOptionsEaseFree} from '../../../assets/options';
 import {selectOptionsDirection} from '../../../assets/options';
 import {selectOptionsRepeat} from '../../../assets/options';
 import {selectOptionsEffectHover} from '../../../assets/options';
+import {selectOptionsEffectHoverFree} from '../../../assets/options';
 import {selectOptionsScaleIn} from '../../../assets/options';
 import BorderStyleIcon from '@mui/icons-material/BorderStyle';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
@@ -49,6 +51,8 @@ import TabletMacIcon from '@mui/icons-material/TabletMac';
 import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import ProTooltip from '../../ProTooltip';
+import ProNotice from '../../ProNotice';
 
 const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
 
@@ -134,6 +138,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
     setHideImage(newState);
     setAttributes({ hideImage: newState });
   };
+
+   const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
       // Section Image
   const [activeSectionImage, setActiveSectionImage] = useState("style");
   return (
@@ -238,7 +250,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 <CustomRangeControl
                     label={
                       <>
-                        {__("CustomWidth (%)", "slider-future")}
+                        {__("Custom width (%)", "slider-future")}
                       </>
                     }
                     value={imagePostWidthPercent}
@@ -269,11 +281,11 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                   },
             ]}
             />
-            {imagePostWidth === "fixed" && (
+            {imagePostHeight === "fixed" && (
                <CustomRangeControl
                     label={
                       <>
-                        {__("Custom width (px)", "slider-future")}
+                        {__("Custom height (px)", "slider-future")}
                       </>
                     }
                     value={imagePostHeightPx}
@@ -283,11 +295,11 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                     step={1}
                   />
             )}
-            {imagePostWidth === "relative" && (
+            {imagePostHeight === "relative" && (
                 <CustomRangeControl
                     label={
                       <>
-                        {__("CustomWidth (%)", "slider-future")}
+                        {__("Custom height (%)", "slider-future")}
                       </>
                     }
                     value={imagePostHeightPercent}
@@ -478,6 +490,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{position:'relative' }}>
         <CustomToggleControl
             label={
                 <>
@@ -487,7 +500,15 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             }
             checked={imagePostBoxShadow}
             onChange={(val) => setAttributes({imagePostBoxShadow: val })}
-            />
+            disabled= {isProFeature}
+          />
+           {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'45px'}
+                        />
+                     )}
+                     </div>
             {imagePostBoxShadow && (
             <>
              <div className="custom-select color">
@@ -568,7 +589,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
         }}
       >
         <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
-        {(imagePostEffect !== 'none') && (
+        {(imagePostEffect !== 'none' && imagePostEffect !== 'animation-pro') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
             <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimation} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
@@ -588,7 +609,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             onChange={(val) => setAttributes({imagePostEffect: val })}
             options={selectOptionsEffectElement}
             />
-            {imagePostEffect !== 'none' && (
+            {(imagePostEffect !== 'none' && imagePostEffect !== 'animation-pro') && (
               <>
              <CustomRangeControl
           label={
@@ -769,6 +790,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           max={360}
           step={1}
         />
+         <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -781,7 +803,16 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           min={-360}
           max={360}
           step={1}
+          disabled={isProFeature}
         />
+         {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+                  </div>
+                  <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -794,7 +825,16 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+        </div>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -807,7 +847,16 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
+                    <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -820,7 +869,15 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
      </>
     )}
     {['skewInX','customEffectIn'].includes(imagePostEffect) && (
@@ -927,8 +984,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
      }
      value={imagePostEasing}
      onChange={(val) => setAttributes({imagePostEasing: val })}
-     options={selectOptionsEase}
+       options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
      />
+      {imagePostEasing === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
     <CustomSelectControl
      label={
          <>
@@ -991,6 +1054,9 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           </>
         )}
           </div>
+          {imagePostEffect === "animation-pro" && (
+          <ProNotice />
+    )}
           </>
         )}
 
@@ -1014,9 +1080,15 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             }
             value={imagePostEffectHover}
             onChange={(val) => setAttributes({imagePostEffectHover: val })}
-            options={selectOptionsEffectHover}
+             options={isProFeature ? selectOptionsEffectHover : selectOptionsEffectHoverFree}
           />
-        {imagePostEffectHover !== "none" && (
+          {imagePostEffectHover === "animation-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+          )}
+        {(imagePostEffectHover !== 'none' && imagePostEffectHover !== 'animation-pro') && (
         <>
         <CustomRangeControl
           label={
@@ -1119,6 +1191,7 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           max={360}
           step={1}
         />
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
         <CustomRangeControl
           label={
             <>
@@ -1131,7 +1204,16 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
+                    <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
         <CustomRangeControl
           label={
             <>
@@ -1144,7 +1226,15 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
      </>
     )}
     {['skewHover','customHover'].includes(imagePostEffectHover) && (
@@ -1199,8 +1289,14 @@ const PostImageEdit = ({ setAttributes, attributes, onPlayAnimation}) => {
             }
             value={imagePostEasingHover ?? 'linear'}
             onChange={(val) => setAttributes({imagePostEasingHover: val })}
-            options={selectOptionsEase}
+              options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
           />
+           {imagePostEasingHover === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
       </>
     )}
       </div>

@@ -101,9 +101,6 @@ const IconRender = ({ element, index, onPlay }) => {
     "--border-width-hover-icon": `${element.backgroundBorderSizeHover?.top} ${element.backgroundBorderSizeHover?.right} ${element.backgroundBorderSizeHover?.bottom} ${element.backgroundBorderSizeHover?.left}`,
     opacity: element.opacity,
     zIndex: element.zIndexIcon,
-    ...(element.enableBoxShadow && {
-      boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`,
-      }),
     position:"relative",
     transform: `rotate(${element.rotate}deg)`,
     "--rotate-hover-icon": element.rotateHover + "deg" || "0",
@@ -123,7 +120,10 @@ const IconRender = ({ element, index, onPlay }) => {
             ? `${element.widthCustom}px`
             : element.width,
         justifyContent: element.align,
-          display:'flex'
+          display:'flex',
+          ...(element.enableBoxShadow && {
+            boxShadow: `${element.boxShadowX}px ${element.boxShadowY}px ${element.boxShadowBlur}px ${element.boxShadowSpread}px ${element.colorBoxShadow}`,
+            }),
       }}
       className={
         "content-icon " + element.hideTitle

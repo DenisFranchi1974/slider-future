@@ -4,7 +4,7 @@ import {
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
 import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomSelectControl from "../../controls/select/SelectControl";
@@ -22,6 +22,7 @@ import CustomEffectControls from "../../multiControls/effect";
 import {elementHtmlOptions} from '../../assets/options';
 import {borderStyleOptions} from '../../assets/options';
 import { selectOptionsEffectElement } from '../../assets/options';
+import { selectOptionsEffectElementFree } from "../../assets/options";
 import ButtonTypeInnerSelectionModal from "../buttonInnerModal";
 import InnerIconEdit from "../innericon/InnerIconEdit";
 import LibraryAddOutlinedIcon from '@mui/icons-material/LibraryAddOutlined';
@@ -56,6 +57,7 @@ import ViewColumnIcon from '@mui/icons-material/ViewColumn';
 import AlignHorizontalCenterIcon from '@mui/icons-material/AlignHorizontalCenter';
 import AlignVerticalCenterIcon from '@mui/icons-material/AlignVerticalCenter';
 import AppsIcon from '@mui/icons-material/Apps';
+import ProNotice from '../ProNotice';
 
 const GroupEdit = ({
   slide,
@@ -311,6 +313,7 @@ const GroupEdit = ({
                         type: "text", 
                         content: __("Text Inner Group", "slider-future"),
                         fontSize: 24,
+                        fontFamily: "inherit",
                         fontSizeTablet: 16,
                         fontSizeMobile: 16,
                         textColor: textColorDefault,
@@ -370,6 +373,10 @@ const GroupEdit = ({
                         spikeMaskRight: 'none',
                         effectIn: "none",
                         effectHover: "none",
+                        rotateImage: 0,
+                        rotateImageX: 0,
+                        rotateImageY: 0,
+                        perspectiveImage: 1000,
                       },
                     ],
                   }
@@ -629,7 +636,7 @@ const GroupEdit = ({
                 enableMobileButton: true,
                 buttonLink: "none",
                 widthButton:"auto",
-                fontFamilyButton: "Arial",
+                fontFamilyButton: "inherit",
                 fontSizeButton: 16,
                 fontSizeButtonTablet: 16,
                 fontSizeButtonMobile: 16,
@@ -748,6 +755,14 @@ const GroupEdit = ({
     addSlideButtonDiv(slideId, elementIndex, type); // Passa slideId, elementIndex e il tipo selezionato
     closeModalButton();
   };
+
+    const [isProFeature, setIsProFeature] = useState(true);
+      
+        useEffect(() => {
+            if (typeof window.isProFeature !== 'undefined') {
+                setIsProFeature(window.isProFeature);
+            }
+        }, []);
 
   return (
     <>
@@ -1623,6 +1638,7 @@ const GroupEdit = ({
           </>
         )}
         {activeSectionBlock === "animation" && (
+          <>
 <CustomEffectControls
            valueEffect={element.effectIn}
            valueOpacityFrom={element.opacityFrom}
@@ -1653,7 +1669,7 @@ const GroupEdit = ({
               valueDelay={element.delay}
               valueEndDelay={element.endDelay }
               onAnimated={onAnimatedGroup}
-              selectOptions={selectOptionsEffectElement}
+              selectOptions={isProFeature ? selectOptionsEffectElement : selectOptionsEffectElementFree}
            slides={slides}
            setAttributes={setAttributes}
            updateType="primary"
@@ -1692,8 +1708,13 @@ const GroupEdit = ({
             delayProperty="delay"
             endDelayProperty="endDelay"
          />
+         {element.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
+    </>
       )}
         {activeSectionBlock === "hover" && (
+          <>
            <CustomHoverControls
            valueEffectHover={element.effectHover}
            colorNormal={element.backgroundColorImageHover } 
@@ -1738,6 +1759,10 @@ const GroupEdit = ({
             durationHoverProperty="durationHover"
             easingHoverProperty="easingHover"
          />
+         {element.effectHover === "animation-pro" && (
+          <ProNotice />
+    )}
+    </>
         )}
         {activeSectionBlock === "actions" && (
           <CustomActionControls

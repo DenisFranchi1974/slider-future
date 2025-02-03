@@ -33,6 +33,8 @@ import ImportExportIcon from '@mui/icons-material/ImportExport';
 import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import ProTooltip from './ProTooltip';
+import ProNotice from './ProNotice';
 
 const SliderControlsOptions = ({ attributes, setAttributes }) => {
   const {
@@ -239,6 +241,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
     });
   };
 
+  const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
+
   const key = `${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}`;
 
   // Section slider
@@ -283,16 +293,26 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   options={[
                     { label: __("Slider", "slider-future"), value: "slider-future" },
                     { label: __("Fade", "slider-future"), value: "fade" },
-                    { label: __("Cube", "slider-future"), value: "cube" },
+                    !isProFeature
+                    ? { label: __("Cube", "slider-future"), value: "cube" }
+                    : { label: __("Cube (Pro)", "slider-future"), value: "cube-pro" },
                     { label: __("Flip", "slider-future"), value: "flip" },
                     {
                       label: __("Coverflow", "slider-future"),
                       value: "coverflow",
                     },
-                    { label: __("Cards", "slider-future"), value: "cards" },
+                    !isProFeature
+                    ? { label: __("Cards", "slider-future"), value: "cards" }
+                    : { label: __("Cards (Pro)", "slider-future"), value: "cards-pro" },
                     { label: __("Creative", "slider-future"), value: "creative" },
                   ]}
                 />
+                {effect === "cube-pro" && (
+                      <ProNotice />
+                )}
+                {effect === "cards-pro" && (
+                     <ProNotice />
+                )}
               {effect == "flip" && (
                 <>
                   <p
@@ -300,7 +320,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     style={{ borderRadius: "0" }}
                   >
                     {__(
-                      'Warning: Make sure you have set "Space Between" to 0 for this effect to work properly!',
+                      'Warning: Make sure you have set "Space Between" to 0, and that there are no borders or border-radius applied, for this effect to work properly!',
                       "slider-future"
                     )}
                   </p>
@@ -356,6 +376,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               )}
               {effect == "coverflow" && (
                 <>
+                 <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomToggleControl
                       label={__("Slideshadow", "slider-future")}
                       checked={slideShadows}
@@ -366,7 +387,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       tooltipTop = {'10px'}
                       tooltipLeft = {'50%'}
                       tooltipText={__("Enables slides shadows.", "slider-future")}
+                      disabled= {isProFeature}
                     />
+                    {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'38px'}
+                        />
+                     )}
+                    </div>
+                    <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomRangeControl
                       label={__("Depth", "slider-future")}
                       value={depth}
@@ -378,7 +408,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       tooltipTop = {'3px'}
                       tooltipLeft = {'50%'}
                       tooltipText={__("Depth offset in px(slides translate in Z axis)", "slider-future")}
+                      disabled= {isProFeature}
                     />
+                      {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                       </div>
+                       <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomRangeControl
                       label={__("Rotate", "slider-future")}
                       value={rotate}
@@ -390,7 +429,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       tooltipTop = {'3px'}
                       tooltipLeft = {'50%'}
                       tooltipText={__("Slide rotate in degrees", "slider-future")}
+                      disabled= {isProFeature}
                     />
+                     {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                     </div>
+                      <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomRangeControl
                       label={__("Stretch", "slider-future")}
                       value={stretch}
@@ -402,7 +450,16 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       tooltipTop = {'3px'}
                       tooltipLeft = {'50%'}
                       tooltipText={__("Stretch space between slides (in px)", "slider-future")}
+                      disabled= {isProFeature}
                     />
+                     {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                     </div>
+                      <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomRangeControl
                       label={__("Effect multiplier", "slider-future")}
                       value={modifier}
@@ -410,7 +467,15 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={0}
                       max={3}
                       step={0.1}
+                      disabled= {isProFeature}
                     />
+                     {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                     </div>
                 </>
               )}
               {effect == "cards" && (
@@ -446,13 +511,20 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                 </Button>
               )}
               {effect == "fade" && (
-                <div className="custom-select">
-                  <ToggleControl
+                <div className={`custom-select ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
+                  <CustomToggleControl
                      __nextHasNoMarginBottom
                     label={__("Crossfade", "slider-future")}
                     checked={crossFade}
                     onChange={(value) => setAttributes({ crossFade: value })}
+                    disabled= {isProFeature}
                   />
+                  {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'20px'}
+                    tooltipProRight={'50px'}
+                    />
+                  )}
                   {crossFade == true && (
                     <Tooltip
                       placement="top"
@@ -487,6 +559,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   )}
                 </div>
               )}
+                {effect !== "cube-pro" && effect !== "cards-pro" && (
                 <CustomRangeControl
                   label={
                     <>
@@ -503,6 +576,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   tooltipLeft = {'60%'}
                   tooltipText={__("Duration of transition between slides (in ms).", "slider-future")}
                 />
+                )}
             </div>
           </div>
         </>
@@ -515,7 +589,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             </h2>
           </div>
           <div className="slider-future-panel content-section-custom-panel">
-            <div className="content-section-panel">
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomSelectControl
                   label={
                     <>
@@ -528,7 +602,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     setAttributes({ filter: val });
                   }}
                   options={optionsFilterSlider}
+                  disabled= {isProFeature}
                 />
+                 {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'92px'}
+                        />
+                     )}
               {showColors && (
                 <>
                   <div className="custom-select color">
@@ -608,16 +689,18 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       label: __("Enable", "slider-future"),
                       value: "enable",
                     },
-                    {
-                      label: __("Rewind", "slider-future"),
-                      value: "rewind",
-                    },
+                    !isProFeature
+                    ? { label: __("Rewind", "slider-future"), value: "rewind" }
+                    : { label: __("Rewind (Pro)", "slider-future"), value: "rewind-pro" },
                   ]}
                   showTooltip={true}
                   tooltipTop = {'10px'}
                   tooltipLeft = {'45%'}
                   tooltipText={__("Enables continuous loop mode", "slider-future")}
                 />
+                 {loopMode === "rewind-pro" && (
+                      <ProNotice />
+                )}
               {showLoopNotice && (
                 <Notice status="warning" isDismissible={false}>
                   {__(
@@ -638,7 +721,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             </h2>
           </div>
           <div className="slider-future-panel content-section-custom-panel">
-            <div className="content-section-panel">
+          <div className={`content-section-panel" ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomSelectControl
                   label={
                     <>
@@ -652,7 +735,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     { label: __("LTR", "slider-future"), value: "ltr" },
                     { label: __("RTL", "slider-future"), value: "rtl" },
                   ]}
+                  disabled= {isProFeature}
                 />
+                 {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'92px'}
+                        />
+                     )}
             </div>
           </div>
         </>
@@ -665,7 +755,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
             </h2>
           </div>
           <div className="slider-future-panel content-section-custom-panel">
-            <div className="content-section-panel">
+          <div className={`content-section-panel" ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomSelectControl
                   label={
                     <>
@@ -679,7 +769,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     { label: __("Horizontal", "slider-future"), value: "horizontal" },
                     { label: __("Vertical", "slider-future"), value: "vertical" },
                   ]}
+                  disabled= {isProFeature}
                 />
+                {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'110px'}
+                        />
+                     )}
               {directionSlider === "vertical" && (
                 <p className="notice components-base-control__help">
                   {__(
@@ -701,6 +798,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
           </div>
           <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
+            <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <CustomToggleControl
                     label={
                       <>
@@ -710,7 +808,15 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     }
                     checked={enableRuler}
                     onChange={(val) => setAttributes({ enableRuler: val })}
+                    disabled= {isProFeature}
                   />
+                   {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'14px'}
+                    tooltipProRight={'38px'}
+                    />
+                  )}
+                  </div>
                 {enableRuler && (
                     <CustomRangeControl
                       label={__("Opacity", "slider-future")}
@@ -721,6 +827,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       step={0.1}
                     />
                 )}
+                <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <CustomToggleControl
                     label={
                       <>
@@ -730,7 +837,15 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                     }
                     checked={enableGrid}
                     onChange={(val) => setAttributes({ enableGrid: val })}
+                    disabled= {isProFeature}
                   />
+                   {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'14px'}
+                    tooltipProRight={'38px'}
+                    />
+                  )}
+                  </div>
                 {enableGrid && (
                 <>
                     <CustomRangeControl
@@ -829,10 +944,10 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                   <Button variant="primary" onClick={applyPreset4}>
                     {__("Preset 4", "slider-future")}
                   </Button>
-                  <Button variant="primary" onClick={applyPreset5}>
+                  <Button variant="primary" onClick={applyPreset5} disabled={isProFeature}>
                     {__("Preset 5", "slider-future")}
                   </Button>
-                  <Button variant="primary" onClick={applyPreset6}>
+                  <Button variant="primary" onClick={applyPreset6} disabled={isProFeature}>
                     {__("Preset 6", "slider-future")}
                   </Button>
                 </div>
@@ -842,8 +957,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               <div className="column left">
                 {/* Previous Slide Controls */}
                 <p>{__("PREVIOUS SLIDE", "slider-future")}</p>
-                <div className="content-select-modal">
+                <div className={`content-select-modal ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <div className="custom-select select-modal">
+                {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
                     <CustomRangeControl
                       label={
                         <>
@@ -856,6 +977,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-200}
                       max={200}
                       step={1}
+                      disabled={isProFeature}
                     />
                     </div>
                     <div className="custom-select select-modal">
@@ -871,6 +993,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-200}
                       max={200}
                       step={1}
+                      disabled={isProFeature}
                     />
                     </div>
                     <div className="custom-select select-modal">
@@ -886,11 +1009,18 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-1000}
                       max={1000}
                       step={1}
+                      disabled={isProFeature}
                     />
                     </div>
                 </div>
-                <div className="content-select-modal">
+                <div className={`content-select-modal ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <div className="custom-select select-modal">
+                {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
                     <CustomRangeControl
                       label={
                         <>
@@ -903,6 +1033,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-180}
                       max={180}
                       step={1}
+                      disabled={isProFeature}
                     />
                     </div>
                   <div className="custom-select select-modal">
@@ -918,6 +1049,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-180}
                       max={180}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -933,11 +1065,18 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-180}
                       max={180}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                 </div>
-                <div className="content-select-modal">
+                <div className={`content-select-modal ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <div className="custom-select select-modal">
+                  {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
                     <CustomRangeControl
                       label={<><AspectRatioIcon />{__("Scale", "slider-future")}</>}
                       value={scale}
@@ -945,6 +1084,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={0}
                       max={2}
                       step={0.1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -955,6 +1095,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={0.1}
                       max={1}
                       step={0.1}
+                      disabled={isProFeature}
                     />
                   </div>
                 </div>
@@ -962,8 +1103,14 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
               <div className="column right">
                 {/* Next Slide Controls */}
                 <p>{__("NEXT SLIDE", "slider-future")}</p>
-                <div className="content-select-modal">
+                <div className={`content-select-modal ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <div className="custom-select select-modal">
+                  {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
                     <CustomRangeControl
                       label={
                         <>
@@ -976,6 +1123,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-200}
                       max={200}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -991,6 +1139,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-200}
                       max={200}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -1006,11 +1155,18 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-1000}
                       max={1000}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                 </div>
-                <div className="content-select-modal">
+                <div className={`content-select-modal ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <div className="custom-select select-modal">
+                  {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
                     <CustomRangeControl
                       label={
                         <>
@@ -1023,6 +1179,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-180}
                       max={180}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -1038,6 +1195,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-180}
                       max={180}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -1053,11 +1211,18 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={-180}
                       max={180}
                       step={1}
+                      disabled={isProFeature}
                     />
                   </div>
                 </div>
-                <div className="content-select-modal">
+                <div className={`content-select-modal ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <div className="custom-select select-modal">
+                  {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
                     <CustomRangeControl
                        label={<><AspectRatioIcon />{__("Scale", "slider-future")}</>}
                       value={nextScale}
@@ -1065,6 +1230,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={0}
                       max={2}
                       step={0.1}
+                      disabled={isProFeature}
                     />
                   </div>
                   <div className="custom-select select-modal">
@@ -1075,6 +1241,7 @@ const SliderControlsOptions = ({ attributes, setAttributes }) => {
                       min={0.1}
                       max={1}
                       step={0.1}
+                      disabled={isProFeature}
                     />
                   </div>
                 </div>

@@ -7,13 +7,11 @@ import TabNavigation from './admin/TabNavigation';
 const SliderSettings = () => {
     return (
         <div className="wrap wrap-admin-slider">
-            <div className='logo-dashboard'><span class="dashicons dashicons-images-alt2"></span><h1>{__('SliderFuture', 'slider-future')}</h1></div>
             <TabNavigation />
         </div>
     );
 };
 
-// Renderizza l'app quando il DOM è pronto
 window.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('slider-settings-container');
     if (container) {

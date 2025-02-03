@@ -26,6 +26,7 @@ import ButtonEdit from "../button/ButtonEdit";
 import DeviceSelector from "../../assets/devicesSelector";
 import {borderStyleOptions} from '../../assets/options';
 import {filterBackgroundOptions} from '../../assets/options';
+import { filterBackgroundOptionsFree } from "../../assets/options";
 import {dividerBackgroundOptions} from '../../assets/options';
 import CustomSelectControl  from "../../controls/select/CustomSelectControl";
 import CustomToggleControl  from "../../controls/toggle/CustomToggleControl";
@@ -75,6 +76,9 @@ import AlignHorizontalCenterIcon from '@mui/icons-material/AlignHorizontalCenter
 import AlignVerticalCenterIcon from '@mui/icons-material/AlignVerticalCenter';
 import AppsIcon from '@mui/icons-material/Apps';
 import SettingsEthernetOutlinedIcon from '@mui/icons-material/SettingsEthernetOutlined';
+import ProTooltip from "../ProTooltip";
+import RepeatIcon from '@mui/icons-material/Repeat';
+import ProNotice from '../ProNotice';
 
 const SlideEdit = ({
   slides,
@@ -160,6 +164,8 @@ const SlideEdit = ({
   // Panel Slide
   const [selectedPanel, setSelectedPanel] = useState(null);
   const [primaryColor, setPrimaryColor] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState("");
+
   //const swiperRef = useRef(null); // Riferimento a Swiper
 
   
@@ -167,7 +173,10 @@ const SlideEdit = ({
     // Recupera il valore della variabile CSS --primary-color
     const root = document.querySelector(":root");
     const color = getComputedStyle(root).getPropertyValue("--primary-color");
+    const colorBackground = getComputedStyle(root).getPropertyValue("--background-color");
+
     setPrimaryColor(color.trim());
+    setBackgroundColor(colorBackground.trim());
   }, []);
 
   // Stato per tracciare quale pannello è aperto
@@ -339,6 +348,7 @@ const SlideEdit = ({
       backgroundBorderRadius: currentSettings.backgroundBorderRadius,
       backgroundVerticalPadding: currentSettings.backgroundVerticalPadding,
       backgroundHorizontalPadding: currentSettings.backgroundHorizontalPadding,
+      backgroundRepeat: "no-repeat",
       filter: "none",
       divider: "none",
       positionDivider:"top",
@@ -352,6 +362,7 @@ const SlideEdit = ({
       layoutJustifyColumn: "center",
       layoutVerticalAlignColumn: "center",
       layoutDisplay: "flex",
+      layoutWrap: "wrap",
     };
     const updatedSlides = [...slides, newSlide];
     setAttributes({ slides: updatedSlides });
@@ -453,6 +464,14 @@ const SlideEdit = ({
   const updateSlideFit = (slideId, newFit) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId ? { ...slide, fit: newFit } : slide
+    );
+    setAttributes({ slides: updatedSlides });
+  };
+
+   // Update Repeat Image
+   const updateSlideRepeat = (slideId, newValue) => {
+    const updatedSlides = slides.map((slide) =>
+      slide.id === slideId ? { ...slide, repeat: newValue } : slide
     );
     setAttributes({ slides: updatedSlides });
   };
@@ -785,6 +804,7 @@ const SlideEdit = ({
     text: __("Text Slide", "slider-future"),
     fontSize: 24,
     fontSizeTablet: 16,
+    fontFamily: "inherit",
     fontSizeMobile: 16,
     textColor: textColorDefault,
     textLink: "none",
@@ -848,6 +868,10 @@ const SlideEdit = ({
                 spikeMaskRight: 'none',
                 effectIn: "none",
                 effectHover: "none",
+                rotateImage: 0,
+                rotateImageX: 0,
+                rotateImageY: 0,
+                perspectiveImage: 1000,
               },
             ],
           }
@@ -1153,7 +1177,7 @@ const SlideEdit = ({
                 enableMobileButton: true,
                 buttonLink: "none",
                 widthButton:"auto",
-                fontFamilyButton: "Arial",
+                fontFamilyButton: "inherit",
                 fontSizeButton: 16,
                 fontSizeButtonTablet: 16,
                 fontSizeButtonMobile: 16,
@@ -1243,6 +1267,14 @@ const handleClose = () => {
 const open = Boolean(anchorEl);
 const id = open ? 'custom-popover' : undefined;
 
+ const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
+
   return (
     <>
       <div className="content-subdescription-section-slider" style={{borderBottom: '2px solid var(--label-color)'}}>
@@ -1309,7 +1341,13 @@ const id = open ? 'custom-popover' : undefined;
                 className="content_slide"
                 style={{ paddingTop: "0", paddingBottom: "0" }}
               >
-                <div className="content-section-panel" style={{ padding: "0" }}>
+                <div className="content-section-panel hover-pro-video" style={{ padding: "0",position:'relative' }}>
+                {isProFeature && (
+                  <ProTooltip 
+                  tooltipProTop={'4px'}
+                  tooltipProRight={'-2px'}
+                  />
+                  )}
                     <TabPanel
                       className="background-selector"
                       activeClass="active-tab"
@@ -1336,6 +1374,8 @@ const id = open ? 'custom-popover' : undefined;
                         {
                           name: "video",
                           title: <span>{__("Video", "slider-future")}</span>,
+                        className: `tab-video ${isProFeature ? 'no-color' : ''}`,
+                          disabled:isProFeature, 
                         },
                       ]}
                     >
@@ -1356,6 +1396,7 @@ const id = open ? 'custom-popover' : undefined;
                                 }
                               />
                             </div>
+                            <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                               <CustomToggleControl
                                 label={
                                   <>
@@ -1367,7 +1408,15 @@ const id = open ? 'custom-popover' : undefined;
                                 onChange={(value) =>
                                   updateEnableRadialEffect(slide.id, value)
                                 }
+                                disabled={isProFeature}
                               />
+                                {isProFeature && (
+                                <ProTooltip
+                                tooltipProTop={'14px'}
+                                  tooltipProRight={'38px'}
+                                  />
+                                )}
+                                </div>
                             {slide.enableRadialEffect && (
                               <>
                             <div
@@ -1570,6 +1619,20 @@ const id = open ? 'custom-popover' : undefined;
                                             ]}
                                             onChange={(newFit) => updateSlideFit(slide.id, newFit)}
                                           />
+                                           <CustomSelectControl
+                                            label={
+                                              <>
+                                                <RepeatIcon />
+                                                {__("Background Repeat", "slider-future")}
+                                              </>
+                                            }
+                                            value={slide.repeat}
+                                            options={[
+                                              { label: __("Repeat", "slider-future"), value: "repeat" },
+                                              { label: __("No Repeat", "slider-future"), value: "no-repeat" },
+                                            ]}
+                                            onChange={(newValue) => updateSlideRepeat(slide.id, newValue)}
+                                          />
                                           <Button
                                             onClick={open}
                                             style={{
@@ -1748,20 +1811,29 @@ const id = open ? 'custom-popover' : undefined;
                 <h2 className="title-custom-panel">
                   {__("Layout", "slider-future")}
                 </h2>
+                <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <CustomToggleControl
                     customClassToggle={"drag-mode"}
                     label={
                       <>
                        <WidgetsIcon />
-                        {__("Advanced Mode", "slider-future")}
-                        <span className="beta-mode">{__('Beta','slider-future')}</span>
+                        {__("Canvas Mode", "slider-future")}
+                        {!isProFeature && (<span className="beta-mode">{__('Beta','slider-future')}</span>)}
                       </>
                     }
                     checked={slide.developerMode}
                     onChange={(value) =>
                       updateDeveloperMode(slide.id, value)
                     }
+                    disabled={isProFeature}
                   />
+                   {isProFeature && (
+                   <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'52px'}
+                          />
+                        )}
+                        </div>
               </div>
               <div
                 className="content-section-panel"
@@ -2278,6 +2350,7 @@ const id = open ? 'custom-popover' : undefined;
             </h2>
           </div>
             <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
             <CustomSelectControl
                     label={
                       <>
@@ -2289,8 +2362,15 @@ const id = open ? 'custom-popover' : undefined;
                     onChange={(value) =>
                       updateSlideFilter(slide.id, value)
                     }
-                    options={filterBackgroundOptions}
+                    options={isProFeature ? filterBackgroundOptions : filterBackgroundOptionsFree}
                   />
+                   {slide.filter=== "more-pro-filter" && (
+                      <ProNotice 
+                        radiusOneProNotice = '0'
+                        radiusTwoProNotice = '0'
+                      />
+                    )}
+                        </div>
             {slide.filter !== "none" && (
               <>
                {filtersWithColorOptionsOne.includes(slide.filter) && (
@@ -2341,6 +2421,7 @@ const id = open ? 'custom-popover' : undefined;
                   </Button>
                </>
             )}
+             <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomSelectControl
                     label={
                       <>
@@ -2353,7 +2434,15 @@ const id = open ? 'custom-popover' : undefined;
                       updateSlideDivider(slide.id, value)
                     }
                     options={dividerBackgroundOptions}
+                    disabled={isProFeature}
                   />
+                   {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'92px'}
+                          />
+                        )}
+                  </div>
                     {slide.divider !== "none" && (
                       <>
                    <CustomRangeControl

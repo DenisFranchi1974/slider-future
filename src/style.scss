@@ -28,12 +28,9 @@
   text-decoration: none;
 }
 
-
-
 /* Base Styling for content-slide-slider */
 .content-slide-slider {
   width: 100%;
-  /*box-sizing: border-box;*/
 }
 
 @media (max-width: 1024px) {
@@ -47,7 +44,6 @@
      padding: var(--padding-mobile)!important;
   }
 }
-
 
 /* Flex Direction for Layouts */
 .content-slide-slider.vertical-layout {
@@ -280,7 +276,6 @@
     var(--wp--preset--color--primary)
   );
   --swiper-navigation-size: var(--size-nav);
-  --swiper-navigation-top-offset: var(--offset-top-nav);
   --swiper-navigation-sides-offset: var(--offset-sides-nav);
   --swiper-pagination-bullet-vertical-gap: 0.25rem;
   --swiper-scrollbar-left: auto;
@@ -390,7 +385,6 @@
   stroke-dasharray: 126;
   transform: rotate(-90deg);
 }
-
 
 /* Filter */
 /* Filtro 0: Classico */
@@ -552,8 +546,6 @@
   z-index: 2;
 }
 
-
-
 /* Shadow */
 .hover-effect-3- {
   transition: box-shadow var(--transition-hover) ease, filter var(--transition-hover) ease;
@@ -586,7 +578,7 @@
   transition: filter var(--transition-hover) ease;
 }
 .hover-effect-6:hover {
-  filter: blur(2px); /* Applica una sfocatura leggera */
+  filter: blur(2px); 
 }
 
 /* Hover Light Effect */
@@ -737,8 +729,8 @@
   transition: box-shadow var(--transition-hover-title-div) ease, filter var(--transition-hover-title-div) ease;
 }
 .hover-effect-3-title-div-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-title-div)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 2px 4px var(--color-effect-hover-title-div)!important; 
+  filter: brightness(1.2);
 }
 
 /* Shadow */
@@ -746,8 +738,8 @@
   transition: box-shadow var(--transition-hover-title-div) ease, filter var(--transition-hover-title-div) ease;
 }
 .hover-effect-3-title-div:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-title-div)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-title-div)!important; 
+  filter: brightness(1.2); 
 }
 
 /* Ombra */
@@ -755,8 +747,8 @@
   transition: box-shadow var(--transition-hover-title-div) ease, filter var(--transition-hover-title-div) ease;
 }
 .hover-effect-4-title-div:hover {
-  box-shadow: 0px 8px 16px var(--color-effect-hover-title-div)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0px 8px 16px var(--color-effect-hover-title-div)!important; 
+  filter: brightness(1.2); 
 }
 
 /* Sfocatura */
@@ -764,7 +756,7 @@
   transition: filter var(--transition-hover-title-div) ease;
 }
 .hover-effect-6-title-div:hover {
-  filter: blur(2px); /* Applica una sfocatura leggera */
+  filter: blur(2px); 
 }
 
 /* Hover Light Effect */
@@ -804,7 +796,7 @@
   transition: transform var(--transition-hover-image) ease;
 }
 .hover-effect-2-image:hover {
-  transform: translateY(var(--translate-hover-image))!important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-image))!important; 
 }
 
 /* Translate X */
@@ -812,7 +804,7 @@
   transition: transform var(--transition-hover-image) ease;
 }
 .hover-effect-5-image:hover {
-  transform: translateX(var(--translate-hover-image))!important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-image))!important; 
 }
 
 /* Shadow */
@@ -820,8 +812,8 @@
   transition: box-shadow var(--transition-hover-image) ease, filter var(--transition-hover-image) ease;
 }
 .hover-effect-3-image-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-image)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 2px 4px var(--color-effect-hover-image)!important; 
+  filter: brightness(1.2); 
 }
 
 /* Shadow */
@@ -829,12 +821,11 @@
   transition: box-shadow var(--transition-hover-image) ease, filter var(--transition-hover-image) ease;
 }
 .hover-effect-3-image:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-image)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-image)!important; 
+  filter: brightness(1.2); 
 }
 
 /* Hover Effect image inner */
-
 
 /* Scale */
 .hover-effect-1-image-inner{
@@ -848,7 +839,7 @@
   transition: transform var(--transition-hover-image-inner) ease;
 }
 .hover-effect-2-image-inner:hover {
-  transform: translateY(var(--translate-hover-image-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-image-inner))!important;
 }
 
 /* Translate X */
@@ -856,7 +847,7 @@
   transition: transform var(--transition-hover-image-inner) ease;
 }
 .hover-effect-5-image-inner:hover {
-  transform: translateX(var(--translate-hover-image-inner))!important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-image-inner))!important; 
 }
 
 /* Shadow */
@@ -864,8 +855,8 @@
   transition: box-shadow var(--transition-hover-image-inner) ease, filter var(--transition-hover-image-inner) ease;
 }
 .hover-effect-3-image-inner-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-image-inner)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 2px 4px var(--color-effect-hover-image-inner)!important; 
+  filter: brightness(1.2); 
 }
 
 /* Shadow */
@@ -873,8 +864,8 @@
   transition: box-shadow var(--transition-hover-image-inner) ease, filter var(--transition-hover-image-inner) ease;
 }
 .hover-effect-3-image-inner:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-image-inner)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-image-inner)!important; 
+  filter: brightness(1.2);
 }
 
 
@@ -883,8 +874,8 @@
   transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
 }
 .hover-effect-3-div:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-div)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.4); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-div)!important; 
+  filter: brightness(1.4); 
 }
 
 /* Shadow */
@@ -892,8 +883,8 @@
   transition: box-shadow var(--transition-hover-div) ease, filter var(--transition-hover-div) ease;
 }
 .hover-effect-4-div:hover {
-  box-shadow: 0 8px 16px var(--color-effect-hover-div)!important; /* Aggiunge un'ombra */
-  filter: brightness(1.8); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 8px 16px var(--color-effect-hover-div)!important; 
+  filter: brightness(1.8); 
 }
 
 /* Effect Icon Button */
@@ -941,7 +932,6 @@
 .content-button-slide-inner:hover .content-icon-button-inner.hover-effect-5-icon-button-inner {
   transform: translateX(var(--translate-hover-icon-button-inner))!important; 
 }
-
 
 /* Slide content */
 .content-inner-for-slide.vertical-layout {
@@ -1020,7 +1010,6 @@
     display: none;
   }
 }
-
 
 /* Responsive Icon */
 
@@ -1207,7 +1196,6 @@
   }
 }
 
-
 /* Responsive inner button */
 
 /* Stili di base per nascondere gli elementi */
@@ -1355,7 +1343,6 @@
     display: none;
   }
 }
-
 
 /* Responsive post image */
 
@@ -1652,7 +1639,6 @@
     display: none;
   }
 }
-
 
 /* Spike effect image inner */
 
@@ -2328,7 +2314,6 @@
   border-color:var(--border-color-button-hover)!important;
 }
 
-
 /* Button Inner */
 .scroll-btn-inner {
   border: none;
@@ -2469,7 +2454,6 @@
   transition: opacity var(--delay-hide-seconds-title-block) ease-in-out;
 }
 
-
 /* Effetto nascondi l'elemento button */
 .content-button-slide.hidden {
   opacity: 0 !important;
@@ -2488,8 +2472,6 @@
   transition: opacity var(--delay-hide-seconds-icon-inner) ease-in-out;
 }
 
-
-
 /* Effetto nascondi l'elemento inner button */
 .content-button-slide-inner.hidden {
   opacity: 0 !important;
@@ -2501,9 +2483,6 @@
   opacity: 0 !important;
   transition: opacity var(--delay-hide-seconds-div) ease-in-out;
 }
-
-
-
 
 /* Icon Button */
 .button-slider:hover .content-icon-button{
@@ -2517,7 +2496,6 @@
 .content-button-slide:hover .content-icon-button svg{
   fill: var(--color-icon-button-hover)!important;
 }
-
 
 .content-button-slide.icon-show-hover.icon-hide-opacity svg{
   opacity: 0!important;
@@ -2549,7 +2527,6 @@
   fill: var(--color-icon-button-inner-hover)!important;
 }
 
-
 .content-button-slide-inner.icon-show-hover.icon-hide-opacity svg{
   opacity: 0!important;
 }
@@ -2565,7 +2542,6 @@
 .content-button-slide-inner.icon-show-hover.icon-hide-display-none:hover svg{
   display: block;
 }
-
 
 /*---------------------------------------------------------------------
                         Mouse Effect
@@ -2629,18 +2605,11 @@
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 999999;
+  z-index: 9;
 }
-
-
-
-
-
 
 /* Post content */
 .content-slide-post{
-  width: 100%;
-  height: 100%;
   display: flex;
 }
 
@@ -2648,8 +2617,14 @@
 .content-slide-post.vertical-layout {
   flex-direction: column;
 }
-.content-slide-post.horizontal-layout {
+.content-slide-post.horizontal-layout {  
   flex-direction: row;
+}
+
+.max-content-post{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }
 
 /* Top Positioning */
@@ -2753,12 +2728,6 @@
   align-items: flex-end;
   justify-content: space-between;
 }
-
-
-
-
-
-
 
 /* Filter slide */
 /* Filtro 0: Classico */
@@ -2921,7 +2890,6 @@
   z-index: 2;
 }
 
-
 /* Filtro blocco per titolo */
 .block-transition {
   z-index: 9999;
@@ -2932,7 +2900,6 @@
 .no-pointer-events{
   pointer-events: none;
 }
-
 
 /* Divider */
 .divider-container{
@@ -2972,7 +2939,6 @@
       height: var(--slide-height-mobile)!important;
   }
 }
-
 
 /* Post image */
 .featured-image-post img{
@@ -3044,10 +3010,7 @@
   border-right: var(--cursor-width-inner) solid var(--color-cursor-inner); 
 }
 
-
-
 /* Da controllare per overflow */
-
 
   .swiper-slide{
     overflow: hidden!important;
@@ -3062,16 +3025,103 @@
     color:var(--color-hover-inner)!important;
   }
   
-
-
   /* Da VEDERE SE METTERE NEI singli slide per i post quando c'è il filtro*/
 
   .swiper-wrapper{
     z-index: 9;
   }
 
-
   .swiper-autoheight .swiper-wrapper{
     height: auto!important;
   }
    
+/* Navigation */
+
+.slider-future-nav.top-left{
+  justify-content: flex-start;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.top-center{
+  justify-content: center;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.top-right{
+  justify-content: flex-end;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.top-space-between{
+  justify-content: space-between;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.bottom-left{
+  justify-content: flex-start;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.bottom-center{
+  justify-content: center;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.bottom-right{
+  justify-content: flex-end;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+.slider-future-nav.bottom-space-between{
+  justify-content: space-between;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.top-left .swiper-button-next,.slider-future-nav.top-left .swiper-button-prev,
+.slider-future-nav.top-center .swiper-button-next,.slider-future-nav.top-center .swiper-button-prev,
+.slider-future-nav.top-right .swiper-button-next,.slider-future-nav.top-right .swiper-button-prev,
+.slider-future-nav.top-space-between .swiper-button-next,.slider-future-nav.top-space-between .swiper-button-prev,
+.slider-future-nav.bottom-left .swiper-button-next,.slider-future-nav.bottom-left .swiper-button-prev,
+.slider-future-nav.bottom-center .swiper-button-next,.slider-future-nav.bottom-center .swiper-button-prev,
+.slider-future-nav.bottom-right .swiper-button-next,.slider-future-nav.bottom-right .swiper-button-prev,
+.slider-future-nav.bottom-space-between .swiper-button-next,.slider-future-nav.bottom-space-between .swiper-button-prev{
+  bottom: auto;
+  left: auto;
+  margin: 0!important;
+  position: relative;
+  right: auto;
+  top: auto;
+}

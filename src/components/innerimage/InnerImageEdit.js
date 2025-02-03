@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect} from "react";
 import {
   Button,
   Tooltip,
@@ -18,6 +18,7 @@ import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomEffectControls from "../../multiControls/effect";
 import CustomHoverControls from "../../multiControls/hover";
 import { selectOptionsEffectElement } from "../../assets/options";
+import { selectOptionsEffectElementFree } from "../../assets/options";
 import {spikeOptionsInner} from '../../assets/options';
 import {blobOptions} from '../../assets/options';
 import {filterImageOptions} from '../../assets/options';
@@ -55,6 +56,8 @@ import SwapVertIcon from '@mui/icons-material/SwapVert';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
 import WifiProtectedSetupIcon from '@mui/icons-material/WifiProtectedSetup';
+import ProTooltip from '../ProTooltip';
+import ProNotice from '../ProNotice';
 
 const InnerImageEdit= ({
   slide,
@@ -374,6 +377,14 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
    const handleToggle = () => {
      setIsOpen((prevIsOpen) => !prevIsOpen);
    };
+
+    const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
 
   return (
     <div className="custom-block-added">
@@ -1135,6 +1146,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImage')
                   }
                 />
+                 <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                  <CustomRangeControl
                   label={
                     <>
@@ -1156,7 +1168,16 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageX')
                   }
-                />
+                  disabled= {isProFeature}
+                  />
+                   {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'6px'}
+                          tooltipProRight={'75px'}
+                          />
+                       )}
+                       </div>
+                       <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                  <CustomRangeControl
                   label={
                     <>
@@ -1178,7 +1199,16 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageY')
                   }
-                />
+                  disabled= {isProFeature}
+                  />
+                  {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'6px'}
+                          tooltipProRight={'75px'}
+                          />
+                       )}
+                       </div>
+                       <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                    <CustomRangeControl
                   label={
                     <>
@@ -1200,7 +1230,15 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'perspectiveImage')
                   }
-                />
+                  disabled= {isProFeature}
+                  />
+                  {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'6px'}
+                          tooltipProRight={'75px'}
+                          />
+                       )}
+                       </div>
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
@@ -1267,7 +1305,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                   {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`}  style={{ padding: "0",position:'relative' }}>
           <CustomShadowControl
             valueEnableShadow={imageDiv.enableBoxShadowImage}
             valueRangeShadowX={imageDiv.boxShadowXImage || 0}
@@ -1292,7 +1330,14 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
             rangePropertyBlur="boxShadowBlurImage"
             rangePropertySpread="boxShadowSpreadImage"
             rangePropertyColor="colorShadowImage"
+            disabled= {isProFeature}
           />
+           {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'45px'}
+                        />
+                     )}
         </div>
         </>
       )}
@@ -1329,7 +1374,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
               valueDelay={imageDiv.delay}
               valueEndDelay={imageDiv.endDelay }
               onAnimated={handlePlayInnerImage}
-              selectOptions={selectOptionsEffectElement}
+              selectOptions={isProFeature ? selectOptionsEffectElement : selectOptionsEffectElementFree}
            slides={slides}
            setAttributes={setAttributes}
            updateType="secondary"
@@ -1369,6 +1414,9 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
             delayProperty="delay"
             endDelayProperty="endDelay"
          />
+          {imageDiv.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
         <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
               {__("Blob Mask", "slider-future")}
@@ -1412,6 +1460,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
           <CustomSelectControl
               label={
                 <>
@@ -1431,7 +1480,15 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'spikeMask')
               }
               selectOptions={spikeOptionsInner} // Passa le opzioni dinamiche
-            />
+              disabled= {isProFeature}
+              />
+                {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'90px'}
+                          />
+                       )}
+                       </div>
             {imageDiv.spikeMask !== "none" && (
                <CustomRangeControl
                label={
@@ -1457,6 +1514,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                showTooltip={false} // Mostra il tooltip
              />
             )}
+             <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
              <CustomSelectControl
               label={
                 <>
@@ -1476,7 +1534,15 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'spikeMaskRight')
               }
               selectOptions={spikeRightOptionsInner} // Passa le opzioni dinamiche
+              disabled= {isProFeature}
             />
+             {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'90px'}
+                        />
+                     )}
+            </div>
             {imageDiv.spikeMaskRight !== "none" && (
               <CustomRangeControl
               label={
@@ -1517,7 +1583,7 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">{__("Filter", "slider-future")}</h2>
           </div>
-          <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`}  style={{ padding: "0",position:'relative' }}>
           <CustomSelectControl
               label={
                 <>
@@ -1537,11 +1603,19 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'imageFilter')
               }
               selectOptions={filterImageOptions} // Passa le opzioni dinamiche
+              disabled= {isProFeature}
             />
+             {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'90px'}
+                        />
+                     )}
           </div>
         </>
       )}
       {activeSectionImage === "hover" && (
+        <>
          <CustomHoverControls
          valueEffectHover={imageDiv.effectHover}
          colorNormal={imageDiv.backgroundColorImageHover } 
@@ -1587,6 +1661,10 @@ const updatenewBackgroundBorderRadiusImage = (slideId, divIndex, innerIndex, new
           durationHoverProperty="durationHover"
           easingHoverProperty="easingHover"
        />
+       {imageDiv.effectHover === "animation-pro" && (
+        <ProNotice />
+  )}
+  </>
       )}
       {activeSectionImage === "actions" && (
      <CustomActionControls

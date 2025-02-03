@@ -4,7 +4,7 @@ import SectionSlidePostSelector from "../multitab/sectionSlidePostSelector";
 import {
   Tooltip,
   Button,
-  CheckboxControl
+  CheckboxControl, __experimentalBoxControl as BoxControl
 } from "@wordpress/components";
 import AlignmentControl from "../align/aligncontrol";
 import CustomSelectControl  from "../../controls/select/CustomSelectControl";
@@ -23,6 +23,7 @@ import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import TextureIcon from '@mui/icons-material/Texture';
 import {dividerBackgroundOptions} from '../../assets/options';
+import {borderStyleOptions} from '../../assets/options';
 import ColorOptionsPanel from "../colorPanel";
 import ImageIcon from '@mui/icons-material/Image';
 import RepeatIcon from '@mui/icons-material/Repeat';
@@ -42,6 +43,13 @@ import CategoryIcon from '@mui/icons-material/Category';
 import FlagIcon from '@mui/icons-material/Flag';
 import { Chip, TextField, MenuItem } from '@mui/material';
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
+import ProTooltip from '../ProTooltip';
+import PaddingIcon from '@mui/icons-material/Padding';
+import BorderStyleIcon from '@mui/icons-material/BorderStyle';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import BorderLeftIcon from '@mui/icons-material/BorderLeft';
+import BorderInnerIcon from '@mui/icons-material/BorderInner';
+
 
 const PostsEdit = ({ 
   setAttributes, 
@@ -64,6 +72,9 @@ const PostsEdit = ({
     positionPost,
     enableContentWidthPost,
     contentWidthPost,
+    enableContentWidthSlidePost,
+    contentWidthSlidePost,
+    justifyContentSlidePost,
     layoutWrapPost,
     includeCategories = [],
     excludeCategories = [],
@@ -85,7 +96,13 @@ const PostsEdit = ({
     imageBgPostPositionX,
     imageBgPostPositionY,
     specificPosts,
-    latestPosts 
+    latestPosts,
+    backgroundColorContentPost,
+    contentPostPadding,
+    contentPostBorderStyle,
+    contentPostBorderSize,
+    contentPostBorderColor,
+    contentPostBorderRadius,
 
 } = attributes;
 
@@ -139,6 +156,14 @@ const [categories, setCategories] = useState([]);
   // Section slider
   const [activeSectionSlidePost, setActiveSectionSlidePost] =
     useState("content");
+
+     const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
 
   return (
     <>
@@ -299,6 +324,61 @@ const [categories, setCategories] = useState([]);
               ]}
               onChange={(val) => setAttributes({ layoutWrapPost: val })}
             />
+             <CustomToggleControl
+              label={
+                <>
+                   <WidthNormalIcon />
+                  {__("Use content Slide width", "slider-future")}
+                </>
+              }
+              checked={enableContentWidthSlidePost}
+              onChange={(val) => setAttributes({ enableContentWidthSlidePost: val })}
+              showTooltip={true}
+              tooltipText={__("Nested blocks will fill the width of this container. Toggle to constrain.", "slider-future")}
+              tooltipTop = {'11px'}
+              tooltipLeft = {'70%'}
+            />
+          {enableContentWidthSlidePost && (
+            <>
+                <CustomRangeControl
+                  label={
+                    <>
+                      <SettingsEthernetIcon/>
+                      {__("Content Slide width", "slider-future")}
+                    </>
+                  }
+                  value={contentWidthSlidePost}
+                  onChange={(val) => setAttributes({ contentWidthSlidePost: val })}
+                  min={500}
+                  max={3200}
+                  step={1}
+                />
+            </>
+          )}
+           <CustomSelectControl
+              label={
+                <>
+                  <WrapTextIcon />
+                  {__("Justify Content Slide", "slider-future")}
+                </>
+              }
+              value={justifyContentSlidePost}
+              options={[
+                {
+                  label: __("Left", "slider-future"),
+                  value: "left",
+                },
+                {
+                  label: __("Center", "slider-future"),
+                  value: "center",
+                },
+                {
+                  label: __("Right", "slider-future"),
+                  value: "flex-end",
+                },
+              ]}
+              onChange={(val) => setAttributes({ justifyContentSlidePost: val })}
+            />
             </div>
             </div>
             )}
@@ -387,6 +467,18 @@ const [categories, setCategories] = useState([]);
                   </>
                     )}
 </div>
+<div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
+<div className="custom-select color">
+            <ColorOptionsPanel
+            colorNormal={backgroundColorContentPost}
+            setColorNormal={(color) => setAttributes({ backgroundColorContentPost: color })}
+            buttonTitle={__("Background Color", "slider-future")}
+            buttonIcon={
+                <ColorLensIcon />
+            }
+            />
+            </div>
+  </div>
          <div className="content-title-custom-panel">
                 <h2 className="title-custom-panel">
                   {__("Spacing", "slider-future")}
@@ -395,7 +487,7 @@ const [categories, setCategories] = useState([]);
               
           <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
             <CustomRangeControl
-                    label={<> <VerticalAlignTopIcon />{__("Content vertical padding", "slider-future")}</>}
+                    label={<> <VerticalAlignTopIcon />{__("Content vertical", "slider-future")}</>}
                     value={backgroundVerticalPaddingPost}
                     onChange={(val) => setAttributes({backgroundVerticalPaddingPost: val })}
                     min={0}
@@ -405,14 +497,107 @@ const [categories, setCategories] = useState([]);
            <CustomRangeControl
                     label={<> <VerticalAlignTopIcon  style={{
                       transform: "rotate(90deg)",
-                    }} />{__("Content horizontal padding", "slider-future")}</>}
+                    }} />{__("Content horizontal", "slider-future")}</>}
                     value={backgroundHorizontalPaddingPost}
                     onChange={(val) => setAttributes({backgroundHorizontalPaddingPost: val })}
                     min={0}
                     max={256}
                     step={1}
                   />
+                    <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className="custom-select box-control">
+              <BoxControl
+                label={
+                  <>
+                    <PaddingIcon/>
+                    {__("Padding Content", "slider-future")}
+                  </>
+                }
+                values={contentPostPadding }
+                onChange={(val) => setAttributes({contentPostPadding: val })}
+                units={{
+                  px: true,
+                  em: false,
+                  rem: false,
+                  '%': false,
+                }}
+              />
+            </div>
+            </div>
                   </div>
+
+                  <div className="content-title-custom-panel">
+                <h2 className="title-custom-panel">
+                  {__("Border", "slider-future")}
+                </h2>
+              </div>
+              
+          <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
+          <CustomSelectControl
+            label={
+                <>
+                   <BorderStyleIcon />
+                   {__("Border style", "slider-future")}
+                </>
+            }
+            value={contentPostBorderStyle}
+            onChange={(val) => setAttributes({contentPostBorderStyle: val })}
+            options={borderStyleOptions}
+            />
+            {contentPostBorderStyle !== "none" && (
+                <>
+                <div className="custom-select color">
+                <ColorOptionsPanel
+            colorNormal={contentPostBorderColor}
+            setColorNormal={(color) => setAttributes({ contentPostBorderColor: color })}
+            buttonTitle={__("Border Color", "slider-future")}
+            buttonIcon={
+                <BorderColorIcon/>
+            }
+            />
+            </div>
+            <div className="custom-select box-control">
+                 <BoxControl
+                 id="custom-margin-control"
+                 label={
+                   <>
+                    <BorderLeftIcon />
+                    {__("Border width", "slider-future")}
+                   </>
+                 }
+                 values={contentPostBorderSize}
+                 onChange={(val) => setAttributes({contentPostBorderSize: val })}
+                 units={{
+                     px: true,
+                     em: false,
+                     rem: false,
+                     '%': false,
+                   }}
+               />
+               </div>
+            </>
+            )}
+             <div className="custom-select box-control">
+             <BoxControl
+                 id="custom-margin-control"
+                 label={
+                   <>
+                     <BorderInnerIcon />
+                     {__("Border Radius", "slider-future")}
+                   </>
+                 }
+                 values={contentPostBorderRadius}
+                 onChange={(val) => setAttributes({contentPostBorderRadius: val })}
+                 units={{
+                     px: true,
+                     em: false,
+                     rem: false,
+                     '%': false,
+                   }}
+               />
+               </div>
+            </div>
+
                   </div>
                 
               )}
@@ -421,9 +606,10 @@ const [categories, setCategories] = useState([]);
      <div className="content-title-custom-panel">
             <h2 className="title-custom-panel">
               {__("Effect", "slider-future")}
-            </h2>
+            </h2> 
           </div>
       <div className="content-section-panel" style={{ padding: "0", marginLeft:'14px',marginRight:'14px',marginTop:'24px',marginBottom:'32px' }}>
+      <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
       <CustomSelectControl
                     label={
                       <>
@@ -434,7 +620,15 @@ const [categories, setCategories] = useState([]);
                     value={divider || 'none'}
                     onChange={(val) => setAttributes({divider: val })}
                     options={dividerBackgroundOptions}
-                  />
+                    disabled= {isProFeature}
+                    />
+                     {isProFeature && (
+                          <ProTooltip
+                          tooltipProTop={'13px'}
+                            tooltipProRight={'92px'}
+                            />
+                         )}
+                         </div>
                     {divider !== "none" && (
                       <>
                    <CustomRangeControl

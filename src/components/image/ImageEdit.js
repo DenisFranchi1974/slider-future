@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect} from "react";
 import {
   Button,
   Tooltip,
@@ -18,8 +18,9 @@ import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomEffectControls from "../../multiControls/effect";
 import CustomHoverControls from "../../multiControls/hover";
 import { selectOptionsEffectElement } from "../../assets/options";
+import { selectOptionsEffectElementFree } from "../../assets/options";
 import {spikeOptions} from '../../assets/options';
-import {blobOptions} from '../../assets/options';
+import {blobOptions} from '../../assets/options'; 
 import {filterImageOptions} from '../../assets/options';
 import {spikeRightOptions} from '../../assets/options';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
@@ -52,6 +53,8 @@ import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
 import WifiProtectedSetupIcon from '@mui/icons-material/WifiProtectedSetup';
+import ProTooltip from '../ProTooltip';
+import ProNotice from '../ProNotice';
 
 const ImageEdit = ({
   slide,
@@ -363,6 +366,14 @@ const ImageEdit = ({
     const handleToggle = () => {
       setIsOpen((prevIsOpen) => !prevIsOpen);
     };
+
+ const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
   
   return (
     <div className="custom-block-added">
@@ -1017,6 +1028,7 @@ const ImageEdit = ({
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImage')
                   }
                 />
+                  <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                  <CustomRangeControl
                   label={
                     <>
@@ -1037,7 +1049,16 @@ const ImageEdit = ({
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageX')
                   }
+                  disabled= {isProFeature}
                 />
+                 {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                     </div>
+                     <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomRangeControl
                   label={
                     <>
@@ -1058,7 +1079,16 @@ const ImageEdit = ({
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'rotateImageY')
                   }
+                  disabled= {isProFeature}
                 />
+                {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                     </div>
+                     <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                   <CustomRangeControl
                   label={
                     <>
@@ -1079,7 +1109,15 @@ const ImageEdit = ({
                   updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'perspectiveImage')
                   }
+                  disabled= {isProFeature}
                 />
+                {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'6px'}
+                        tooltipProRight={'75px'}
+                        />
+                     )}
+                     </div>
           </div>
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
@@ -1144,7 +1182,7 @@ const ImageEdit = ({
                   {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`}  style={{ padding: "0",position:'relative' }}>
           <CustomShadowControl
             valueEnableShadow={element.enableBoxShadowImage}
             valueRangeShadowX={element.boxShadowXImage || 0}
@@ -1168,7 +1206,14 @@ const ImageEdit = ({
             rangePropertyBlur="boxShadowBlurImage"
             rangePropertySpread="boxShadowSpreadImage"
             rangePropertyColor="colorShadowImage"
+            disabled= {isProFeature}
           />
+           {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'45px'}
+                        />
+                     )}
         </div>
         </>
       )}
@@ -1205,7 +1250,7 @@ const ImageEdit = ({
               valueDelay={element.delay}
               valueEndDelay={element.endDelay }
               onAnimated={onAnimatedImage}
-              selectOptions={selectOptionsEffectElement}
+              selectOptions={isProFeature ? selectOptionsEffectElement : selectOptionsEffectElementFree}
            slides={slides}
            setAttributes={setAttributes}
            updateType="primary"
@@ -1244,6 +1289,9 @@ const ImageEdit = ({
             delayProperty="delay"
             endDelayProperty="endDelay"
          />
+          {element.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
 
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">
@@ -1287,6 +1335,7 @@ const ImageEdit = ({
             </h2>
           </div>
           <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
           <CustomSelectControl
               label={
                 <>
@@ -1305,7 +1354,15 @@ const ImageEdit = ({
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'spikeMask')
               }
               selectOptions={spikeOptions} // Passa le opzioni dinamiche
+              disabled= {isProFeature}
             />
+              {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'90px'}
+                        />
+                     )}
+                     </div>
             {element.spikeMask !== "none" && (
               <CustomRangeControl
               label={
@@ -1330,6 +1387,7 @@ const ImageEdit = ({
               showTooltip={false} // Mostra il tooltip
             />
             )}
+             <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
              <CustomSelectControl
               label={
                 <>
@@ -1348,7 +1406,15 @@ const ImageEdit = ({
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'spikeMaskRight')
               }
               selectOptions={spikeRightOptions} // Passa le opzioni dinamiche
+              disabled= {isProFeature}
             />
+             {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'90px'}
+                        />
+                     )}
+            </div>
             {element.spikeMaskRight !== "none" && (
             <CustomRangeControl
               label={
@@ -1388,7 +1454,7 @@ const ImageEdit = ({
           <div className="content-title-custom-panel intermedy">
             <h2 className="title-custom-panel">{__("Filter", "slider-future")}</h2>
           </div>
-          <div className="content-section-panel" style={{ padding: "0" }}>
+          <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`}  style={{ padding: "0",position:'relative' }}>
           <CustomSelectControl
               label={
                 <>
@@ -1407,11 +1473,19 @@ const ImageEdit = ({
                 updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'imageFilter')
               }
               selectOptions={filterImageOptions} // Passa le opzioni dinamiche
+              disabled= {isProFeature}
             />
+             {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'14px'}
+                        tooltipProRight={'90px'}
+                        />
+                     )}
           </div>
         </>
       )}
       {activeSectionImage === "hover" && (
+        <>
                    <CustomHoverControls
            valueEffectHover={element.effectHover}
            colorNormal={element.backgroundColorImageHover } 
@@ -1456,6 +1530,10 @@ const ImageEdit = ({
             durationHoverProperty="durationHover"
             easingHoverProperty="easingHover"
          />
+         {element.effectHover === "animation-pro" && (
+          <ProNotice />
+    )}
+    </>
       )}
       {activeSectionImage === "actions" && (
           <CustomActionControls

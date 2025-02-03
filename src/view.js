@@ -80,24 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-    
       const elementsToAnimate = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.content-icon,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.content-icon-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateElement(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0
-    });
-
-    elementsToAnimate.forEach(element => {
-        observer.observe(element);
-    });
-    
 
     // Funzione per animare un elemento
     function animateElement() {
@@ -152,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const heightFrom = element.getAttribute('data-height-from' ?? 0);
       const heightTo = element.getAttribute('data-height-to' ?? 0);
     
-     // element.style.opacity = opacityFrom;
       const animationProps = getAnimationProps({
         effectIn,
         duration,
@@ -201,12 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
         durationHover,
         easingHover,
         heightFrom,
-        heightTo
+        heightTo,
     });
  
     // Controlla se animationsIn[effectIn] è definito
     if (typeof animationsIn[effectIn] === 'function') {
-      element.style.opacity = 0; 
       setTimeout(() => {
         animationsIn[effectIn](element, animationProps);
       }, delay);
@@ -241,9 +222,11 @@ elements.forEach(element => {
 
     // Inizializza Swiper per ogni elemento
     swiperElements.forEach(swiperElement => {
+      
         const swiperData = swiperElement.getAttribute('data-swiper');
         if (swiperData) {
             const swiperConfig = JSON.parse(swiperData);
+            
             const loopMode = swiperConfig.loopMode ?? 'disable';
             const slidesPerRow = swiperConfig.slidesPerRow ?? 1;
             const gridEnabled = slidesPerRow > 1;
@@ -367,6 +350,7 @@ elements.forEach(element => {
                         slidesPerGroup: swiperConfig.slidesPerGroupDesktop,
                     },
                 },
+                
                 on: {
                   slideChange: function () {
                     const slides = swiperElement.querySelectorAll('.swiper-slide');
@@ -385,11 +369,12 @@ elements.forEach(element => {
                             });
                         } else {
                             elements.forEach((element) => {
-                                // Rimuovi qualsiasi animazione in corso sull'elemento
-                               anime.remove(element);
-                                // Resetta gli stili
-                              element.style.transform = "none";
-                              element.style.opacity = 0;
+
+                              anime.remove(element);
+                              // Resetta gli stili di base
+                            element.style.transform = "none";
+                            element.style.opacity = 0;
+                              animateElement(element);
                             });
                         }
                     });
@@ -407,15 +392,35 @@ elements.forEach(element => {
                 },
             });
 
-            // Esegui l'animazione sulla prima slide attiva subito dopo l'inizializzazione
-          const initialActiveSlide = swiperElement.querySelector('.swiper-slide-active');
-          if (initialActiveSlide) {
-              const elements = initialActiveSlide.querySelectorAll('[data-effect-in]');
-              elements.forEach(element => {
-                  animateElement(element);
+          // Ripristina tutte le slide
+    const allSlides = swiperElement.querySelectorAll('.swiper-slide');
+    allSlides.forEach((slide) => {
+        const elements = slide.querySelectorAll('[data-effect-in]');
+        elements.forEach((element) => {
+            anime.remove(element); // Ferma eventuali animazioni in corso
+            element.style.transform = "none"; // Resetta trasformazioni
+            element.style.opacity = 0; // Nasconde l'elemento
+        });
+    });
+
+     // Utilizza IntersectionObserver per avviare le animazioni quando la slider entra nella viewport
+     const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+              const elementsToAnimate = activeSlide.querySelectorAll('[data-effect-in]');
+              elementsToAnimate.forEach((element) => {
+                  animateElement(element); // Funzione per avviare l'animazione
               });
-              
+              observer.unobserve(entry.target); // Osserva solo una volta
           }
+      });
+  }, {
+      threshold: 0.2 
+  });
+
+  observer.observe(swiperElement);
+
         }
     });
 });
@@ -483,7 +488,7 @@ function createParticle(e, slide) {
     particle.style.animationDuration = `${duration}s`;
     particle.style.setProperty('--offsetX', `${offsetX}px`);
     particle.style.setProperty('--offsetY', `${offsetY}px`);
-    particle.style.backgroundColor = colorStart; // Applica il colore iniziale
+    particle.style.backgroundColor = colorStart; 
     particle.style.setProperty('--color-start', colorStart);
     particle.style.setProperty('--color-middle', colorMiddle);
     particle.style.setProperty('--color-end', colorEnd);
@@ -527,7 +532,6 @@ function createSmokeTrail(e, slide) {
 // Funzione per creare effetto parallax
 function applyParallaxEffect(slide) {
 
-    // Leggi i valori degli attributi dal DOM
     const selectedElements = {
       imgSelected: slide.getAttribute('data-img-selected') === 'true',
       h1Selected: slide.getAttribute('data-h1-selected') === 'true',
@@ -564,7 +568,7 @@ function applyParallaxEffect(slide) {
     const elements = slide.querySelectorAll(selectors.join(','));
 
     // Recupera il valore della transizione dal data attribute
-    const transitionDuration = parseFloat(slide.getAttribute('data-transition-paralax-mouse')) || 0.5; // Default to 0.5s
+    const transitionDuration = parseFloat(slide.getAttribute('data-transition-paralax-mouse')) || 0.5; 
 
     // Applica la transizione a tutti gli elementi
     elements.forEach(element => {
@@ -579,9 +583,9 @@ function applyParallaxEffect(slide) {
 
   // Genera un offset casuale per ogni elemento
   const elementOffsets = Array.from(elements).map(() => ({
-      offsetX: Math.random() * 2 - 1, // Valore casuale tra -1 e 1
-      offsetY: Math.random() * 2 - 1, // Valore casuale tra -1 e 1
-      intensity: Math.random() * 10 + 5, // Intensità casuale tra 5 e 15
+      offsetX: Math.random() * 2 - 1, 
+      offsetY: Math.random() * 2 - 1, 
+      intensity: Math.random() * 10 + 5, 
   }));
 
   function updateParallax() {
@@ -615,13 +619,10 @@ function applyParallaxEffect(slide) {
   requestAnimationFrame(updateParallax);
 }
 
-
 // Funzione per applicare l'effetto liquid
 function applyLiquidEffect(slide) {
 
-
     "use strict";
-
     const canvas = slide.querySelector("canvas");
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
@@ -676,8 +677,6 @@ function applyLiquidEffect(slide) {
       config.BLOOM = false;
     }
     
-    //startGUI();
-    
     function getWebGLContext(canvas) {
       const params = {
         alpha: true,
@@ -703,7 +702,6 @@ function applyLiquidEffect(slide) {
         halfFloat = gl.getExtension("OES_texture_half_float");
         supportLinearFiltering = gl.getExtension("OES_texture_half_float_linear");
       }
-    
     
       const halfFloatTexType = isWebGL2 ? gl.HALF_FLOAT : halfFloat.HALF_FLOAT_OES;
       let formatRGBA;
@@ -777,7 +775,6 @@ function applyLiquidEffect(slide) {
       if (status != gl.FRAMEBUFFER_COMPLETE) return false;
       return true;
     }
-    
     
     function isMobile() {
       return /Mobi|Android/i.test(navigator.userAgent);
@@ -1887,8 +1884,8 @@ function applyLiquidEffect(slide) {
     
     canvas.addEventListener("mousemove", (e) => {
       pointers[0].moved = true;
-      pointers[0].dx = (e.offsetX - pointers[0].x) * 5; // Regolazione grandezza vapore
-      pointers[0].dy = (e.offsetY - pointers[0].y) * 5; // Regolazione grandezza vapore
+      pointers[0].dx = (e.offsetX - pointers[0].x) * 5; 
+      pointers[0].dy = (e.offsetY - pointers[0].y) * 5; 
       pointers[0].x = e.offsetX;
       pointers[0].y = e.offsetY;
       pointers[0].down = true;
@@ -1899,8 +1896,7 @@ function applyLiquidEffect(slide) {
       const firstColor = slide.getAttribute('data-color-first-liquid');
       const secondColor = slide.getAttribute('data-color-second-liquid');
       const thirdColor = slide.getAttribute('data-color-third-liquid');
-        // Imposta h a 0 per ottenere il rosso
-        let c = HSVtoRGB(firstColor, secondColor, thirdColor); // per regolare il colore <input type="range" id="colorRange" min="0" max="1" step="0.01" value="0.67"> per il primo valore che adesso è a 0, gli altri 2 lasciarl ia 1
+        let c = HSVtoRGB(firstColor, secondColor, thirdColor);
         c.r *= 0.15;
         c.g *= 0.15;
         c.b *= 0.15;
@@ -2022,7 +2018,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const loadGoogleFont = (fontFamily) => {
-    if (!fontFamily) return;
+  if (!fontFamily || fontFamily.toLowerCase() === 'inherit') return;
     // Lista dei font che non devono essere caricati da Google Fonts
     const systemFonts = [
         "Arial",
@@ -2042,7 +2038,6 @@ const loadGoogleFont = (fontFamily) => {
         "Impact",
         "Palatino Linotype",
         "Book Antiqua",
-        // Aggiungi altri font di sistema se necessario
     ];
     // Estrai solo il nome principale del font senza il fallback
     const cleanFontFamily = fontFamily.split(",")[0].trim();
@@ -2073,7 +2068,7 @@ function typeWritEffect (){
 class TxtType {
   constructor(el, toRotate, period) {
     const breakCursor = el.getAttribute('data-break-cursor');
-    this.toRotate = toRotate.filter(text => text.trim() !== "");  // Rimuove i campi vuoti
+    this.toRotate = toRotate.filter(text => text.trim() !== "");  
     this.el = el;
     this.loopNum = 0;
     this.period = breakCursor; 
@@ -2120,7 +2115,6 @@ window.onload = function() {
     var toRotate = elements[i].getAttribute('data-type');
     var period = elements[i].getAttribute('data-period');
     if (toRotate) {
-      // Assicurati che `toRotate` sia un array di stringhe, rimuovendo i vuoti
       var texts = JSON.parse(toRotate).filter(text => text.trim() !== "");
       if (texts.length > 0) {
         new TxtType(elements[i], texts, period);

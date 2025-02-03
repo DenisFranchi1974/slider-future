@@ -11,7 +11,6 @@ import {
   splitText,
 } from './animationIn';
 
-// Funzione per ottenere gli attributi comuni delle animazioni
 export const getAnimationProps = (props) => {
     const {
       duration = 800,
@@ -49,7 +48,6 @@ export const getAnimationProps = (props) => {
       
     } = props;
 
-    // Converti il valore di loop in un numero
     const loopCount = (typeof loop === 'string' && loop.toLowerCase() === 'true') ? Infinity : Number(loop);
   
     return {

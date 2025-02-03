@@ -4,7 +4,7 @@ import {
   CheckboxControl, 
   ButtonGroup,
   TabPanel,
-  FocalPointPicker
+  FocalPointPicker,
 } from "@wordpress/components";
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from "@wordpress/i18n";
@@ -48,6 +48,8 @@ import ImageSelectionModal from "./ImageSelectionModal";
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
+import ProTooltip from './ProTooltip';
+import ProNotice from './ProNotice';
 
 const SliderControls = ({ attributes, setAttributes }) => {
   const {
@@ -200,17 +202,14 @@ const handleMobileClickHeight = () => {
   }, [loopMode, slidesPerRow]);
 
   useEffect(() => {
-    // Resetta la notifica all'inizio quando cambia il contentType
-    setAttributes({ notice: null });
-
     if (attributes.contentType !== "custom") {
       const apiUrl =
         attributes.contentType === "woocommerce-based"
-          ? `${window.wpApiSettings.root}slider-future/v1/get-products/`
-          : `${window.wpApiSettings.root}slider-future/v1/get-posts/`;
-
-      console.log("Fetching from API:", apiUrl);
-
+          ? `${window.wpApiSettings.root}slider_future/v1/get-products/` 
+          : `${window.wpApiSettings.root}slider_future/v1/get-posts/`;
+  
+    
+  
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
@@ -219,22 +218,23 @@ const handleMobileClickHeight = () => {
             setAttributes({ notice: null });
           } else {
             // Mostra un avviso se non ci sono contenuti
-            const message =
-              attributes.contentType === "woocommerce-based"
-                ? "This feature will be available soon; we are working on it!"
-                : "No content found.";
-
-            setAttributes({ notice: message });
+            if (attributes.contentType === "woocommerce-based") {
+              setAttributes({
+                notice: "This feature will be available soon; we are working on it!",
+              });
+            } else {
+              setAttributes({ notice: null });
+            }
           }
         })
         .catch((error) => {
-          console.error("Errore nel recuperare i dati:", error);
-          const message =
-            attributes.contentType === "woocommerce-based"
-              ? "Error retrieving products. Make sure WooCommerce is installed and active."
-              : "Error retrieving posts.";
-
-          setAttributes({ notice: message }); 
+          if (attributes.contentType === "woocommerce-based") {
+            setAttributes({
+              notice: "Error retrieving products. Make sure WooCommerce is installed and active.",
+            });
+          } else {
+            setAttributes({ notice: null });
+          }
         });
     }
   }, [attributes.contentType]);
@@ -292,7 +292,23 @@ const handleMobileClickHeight = () => {
   };
   
 
- 
+  const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
+
+
+  const filteredOptionsPerView = isProFeature
+    ? optionsPerView.slice(0, 5)
+    : optionsPerView;
+
+    const filteredOptionsPerRow = isProFeature
+    ? optionsPerGroup.slice(0, 5)
+    : optionsPerGroup;
+
 
   // Section slider
   const [activeSection, setActiveSectionSlider] = useState("layout");
@@ -355,7 +371,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={perViewSlider}
-                          options={optionsPerView}
+                          options={filteredOptionsPerView}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -396,7 +412,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={slidesPerGroupDesktop}
-                          options={optionsPerGroup}
+                          options={filteredOptionsPerRow}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -413,7 +429,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={slidesPerRow}
-                          options={optionsPerGroup}
+                          options={filteredOptionsPerRow}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -460,7 +476,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={perViewSliderTablet}
-                          options={optionsPerView}
+                          options={filteredOptionsPerView}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -498,7 +514,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={slidesPerGroupTablet}
-                          options={optionsPerGroup}
+                          options={filteredOptionsPerRow}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -525,7 +541,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={perViewSliderMobile}
-                          options={optionsPerView}
+                          options={filteredOptionsPerView}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -563,7 +579,7 @@ const handleMobileClickHeight = () => {
                               </>
                           }
                           value={slidesPerGroupMobile}
-                          options={optionsPerGroup}
+                          options={filteredOptionsPerRow}
                           showTooltip={true}
                           tooltipTop = {'10px'}
                           tooltipLeft = {'50%'}
@@ -679,7 +695,7 @@ const handleMobileClickHeight = () => {
                 {__("Advanced Settings", "slider-future")}
               </h2>
             </div>
-            <div className="content-section-panel">
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
             <CustomToggleControl
                     label={
                       <>
@@ -693,7 +709,14 @@ const handleMobileClickHeight = () => {
                     tooltipText={__("If enabled, then active slide will be centered, not always on the left side.", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'60%'}
+                    disabled= {isProFeature}
                   />
+                  {isProFeature && (
+             <ProTooltip
+             tooltipProTop={'14px'}
+              tooltipProRight={'38px'}
+              />
+            )}
             </div>
           </div>
         </>
@@ -727,7 +750,7 @@ const handleMobileClickHeight = () => {
                         />
             </div>
 
-            <div className="content-section-panel">
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
             <CustomToggleControl
                     label={
                       <>
@@ -741,7 +764,14 @@ const handleMobileClickHeight = () => {
                     tooltipText={__("Doesn't work in the editor!", "slider-future")}
                     tooltipTop = {'11px'}
                     tooltipLeft = {'40%'}
+                    disabled= {isProFeature}
                   />
+                   {isProFeature && (
+             <ProTooltip
+             tooltipProTop={'14px'}
+              tooltipProRight={'38px'}
+              />
+            )}
               {freeMode == true && (
                 <>
                   <div className="content-section-panel">
@@ -824,7 +854,10 @@ const handleMobileClickHeight = () => {
             </h2>
           </div>
           <div className="slider-future-panel content-section-custom-panel">
-          <div className="content-section-panel">
+          <div className="content-section-panel" style={{position:'relative'}}>
+          {isProFeature && (
+             <ProTooltip />
+            )}
           <TabPanel
       className="background-selector"
       activeClass="active-tab"
@@ -838,18 +871,29 @@ const handleMobileClickHeight = () => {
         },
         {
           name: 'image',
-          title: <span>{__("Image", "slider-future")}</span>,
-          className: 'tab-image',
+          title:  ( <span
+            onMouseEnter={() => {
+              const icon = document.querySelector('.tooltip-icon-pro');
+              icon.classList.add('shake');
+            }}
+            onMouseLeave={() => {
+              const icon = document.querySelector('.tooltip-icon-pro');
+              icon.classList.remove('shake');
+            }}
+          >
+            {__("Image", "slider-future")}
+          </span>),
+           className: `tab-image ${isProFeature ? 'no-color' : ''}`,
+          disabled:isProFeature, 
         },
       ]}
     >
+     
       {(tab) => (
         <div>
           {tab.name === 'color' && (
             <>
-             <div
-                              className="custom-select color"
-                            >
+             <div className="custom-select color">
             <ColorOptionsPanel
               colorNormal={backgroundColor}
               setColorNormal={(color) => setAttributes({ backgroundColor: color })}
@@ -1259,44 +1303,49 @@ const handleMobileClickHeight = () => {
           <div className="slider-future-panel content-section-custom-panel">
             <div className="content-section-panel">
             <CustomSelectControl
-                          label={
-                            <>
-                              <CommentIcon />
-                              {__("Content Type", "slider-future")}
-                              </>
-                          }
-                          value={attributes.contentType}
-                          options={[
-                            { label: __("Custom", "slider-future"), value: "custom" },
-                            {
-                              label: __("Post Based", "slider-future"),
-                              value: "post-based",
-                            },
-                            {
-                              label: __("WooComemrce", "slider-future"),
-                              value: "woocommerce-based",
-                            },
-                          ]}
-                          onChange={(value) => setAttributes({ contentType: value })}
-                        />
-                {attributes.notice && (
-                  <div className="notice components-base-control__help" style={{ margin: 0 }}>
-                    <p>{attributes.notice}</p>
-                  </div>
-                )}
-                {attributes.contentType === "custom" && (
-                 
-                  <p
-                    className="notice components-base-control__help"
-                    style={{ margin: 0 }}
-                  >
-                    {__(
-                      "No further source settings needed. Content is created manually.",
-                      "slider-future"
-                    )}
-                  </p>
-                
-                )}
+                label={
+                  <>
+                    <CommentIcon />
+                    {__("Content Type", "slider-future")}
+                  </>
+                }
+                value={attributes.contentType}
+                options={[
+                  { label: __("Custom", "slider-future"), value: "custom" },
+                  {
+                    label: __("Post Based", "slider-future"),
+                    value: "post-based",
+                  },
+                  ...(!isProFeature ? [{
+                    label: __("WooCommerce", "slider-future"),
+                    value: "woocommerce-based",
+                  }] : []),
+                  ...(isProFeature ? [{
+                    label: __("WooCommerce", "slider-future"),
+                    value: "woocommerce-pro",
+                  }] : [])
+                ]}
+                onChange={(value) => setAttributes({ contentType: value })}
+              />
+              {attributes.contentType === "woocommerce-based" && attributes.notice && (
+                <div className="notice components-base-control__help" style={{ margin: 0 }}>
+                  <p>{attributes.notice}</p>
+                </div>
+              )}
+                {attributes.contentType === "woocommerce-pro" && (
+                <ProNotice />
+              )}
+              {attributes.contentType === "custom" && (
+                <p
+                  className="notice components-base-control__help"
+                  style={{ margin: 0 }}
+                >
+                  {__(
+                    "No further source settings needed. Content is created manually.",
+                    "slider-future"
+                  )}
+                </p>
+              )}
               
             </div>
           </div>
@@ -1371,7 +1420,7 @@ const handleMobileClickHeight = () => {
             </h2>
           </div>
           <div className="slider-future-panel content-section-custom-panel">
-            <div className="content-section-panel">
+          <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomSelectControl
                   label={
                     <>
@@ -1397,7 +1446,14 @@ const handleMobileClickHeight = () => {
                       value: "liquid",
                     },
                   ]}
+                  disabled= {isProFeature}
                 />
+                 {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'13px'}
+                        tooltipProRight={'92px'}
+                    />
+                  )}
                 {mouseEffect !== "none" && (
                 <p
                     className="notice components-base-control__help"

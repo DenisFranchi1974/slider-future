@@ -49,7 +49,7 @@ const TextPatternSelectionModal = ({ onClose }) => {
                 viewportWidth={800}
                 blocks={wp.blocks.parse(pattern.content)}
               />
-              <Button isPrimary onClick={() => handleSelect(pattern)}>
+              <Button  variant="primary" onClick={() => handleSelect(pattern)}>
                 {__("Select", "slider-future")}
               </Button>
             </div>

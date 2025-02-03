@@ -408,7 +408,7 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
         <div className="icon-modal-sidebar">
           <h3>{__('Categories','slider-future')}</h3>
           <Button
-            isPrimary={selectedCategory === 'all'}
+             variant={selectedCategory === 'all'}
             onClick={() => setSelectedCategory('all')}
           >
            {__('All','slider-future')}
@@ -416,7 +416,7 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
           {Object.keys(categories).map((category) => (
             <Button
               key={category}
-              isPrimary={selectedCategory === category}
+               variant={selectedCategory === category}
               onClick={() => setSelectedCategory(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}

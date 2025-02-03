@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Button, ColorPicker, Icon, Tooltip } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import {selectOptionsScaleIn} from '../../assets/options';
 import {selectOptionsEase} from '../../assets/options';
+import {selectOptionsEaseFree} from '../../assets/options';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import SwapCallsIcon from '@mui/icons-material/SwapCalls';
@@ -28,6 +29,8 @@ import InputLabel from '@mui/material/InputLabel';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../controls/theme';
 import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
+import ProNotice from '../../components/ProNotice';
+import ProTooltip from '../../components/ProTooltip';
 
 const CustomEffectControls = ({
   valueEffect,
@@ -296,19 +299,28 @@ const CustomEffectControls = ({
     );
   };
 
+ 
+   const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
+
+  const options = isProFeature ? selectOptionsEase : selectOptionsEaseFree;
+
   return (
     <>
       <div
         className="content-title-custom-panel intermedy"
         style={{
           marginTop: "-18px",
-          display: "flex",
-          gap: "30px",
         }}
       >
         <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
-        {(valueEffect !== 'none') && (
-          <div className="button-reply-effect" style={{borderRadius:'50%'}}>
+        {(valueEffect !== "none" && valueEffect !== "animation-pro") && (
+          <div className="button-reply-effect" style={{borderRadius:'50%',position: 'absolute',right: '120px',top: '14px'}}>
             <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onAnimated} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
             </Tooltip>
@@ -385,7 +397,7 @@ const CustomEffectControls = ({
         />
         </>
         )}
-        {valueEffect !== "none" && (
+       {(valueEffect !== "none" && valueEffect !== "animation-pro") && (
         <>
         <CustomRangeControl
           label={
@@ -595,6 +607,7 @@ const CustomEffectControls = ({
           step={1}
           {...restProps}
         />
+         <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -608,7 +621,16 @@ const CustomEffectControls = ({
           max={360}
           step={1}
           {...restProps}
+          disabled={isProFeature}
         />
+         {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+                  </div>
+                  <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -622,7 +644,16 @@ const CustomEffectControls = ({
           max={360}
           step={1}
           {...restProps}
+          disabled={isProFeature}
         />
+         {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+                  </div>
+                  <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -636,7 +667,16 @@ const CustomEffectControls = ({
           max={360}
           step={1}
           {...restProps}
+          disabled={isProFeature}
         />
+         {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+        </div>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -650,7 +690,15 @@ const CustomEffectControls = ({
           max={360}
           step={1}
           {...restProps}
+          disabled={isProFeature}
         />
+         {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+        </div>
      </>
     )}
     {(['skewInX','customEffectIn'].includes(valueEffect) || (valueEffect === 'splitText' && 
@@ -848,13 +896,19 @@ const CustomEffectControls = ({
              }}
              {...restProps}
            >
-           {selectOptionsEase.map(option => (
-             <MenuItem key={option.value} value={option.value}>
-               {option.label}
-             </MenuItem>
-           ))}
+          {options.map(option => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
            </Select>
        </div> 
+       {valueEasing === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
        </ThemeProvider>
        <ThemeProvider theme={theme}>
        <div className="custom-select select-control-label-right select-material">
@@ -937,7 +991,7 @@ const CustomEffectControls = ({
             </div>
       </>
     )}
-    {(valueEffect!== 'none' ) && (
+    {(valueEffect !== "none" && valueEffect !== "animation-pro") && (
           <div className="button-reply-effect">
             <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onAnimated}><SlowMotionVideoIcon/></Button> 

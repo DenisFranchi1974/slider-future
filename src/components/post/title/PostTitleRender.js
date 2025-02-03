@@ -85,6 +85,8 @@ const PostTitleRender = ({ post, attributes, onPlay }) => {
 
   // Funzione per attivare l'animazione
   const playAnimation = () => {
+
+    
     const effectIn = animationsIn[titlePostEffect];
    
     // Converti il valore di loop in un numero
@@ -139,6 +141,9 @@ const PostTitleRender = ({ post, attributes, onPlay }) => {
       
     }
   };
+
+ 
+  
 
   // Questo useEffect ora non avvia più l'animazione automaticamente
   useEffect(() => {

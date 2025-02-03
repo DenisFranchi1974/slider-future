@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import { useState} from "react";
 import FontStyle from "../font-style";
 import SectionSelector from "../multitab/sectionSelector";
 import CustomRangeControl from "../../controls/range"
@@ -22,6 +21,7 @@ import {fontWeightOptions} from '../../assets/options';
 import {writeModeOptions} from '../../assets/options';
 import {borderStyleOptions} from '../../assets/options';
 import { selectOptionsEffectIn } from "../../assets/options";
+import { selectOptionsEffectInFree } from "../../assets/options";
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomToggleControl from "../../controls/toggle";
 import CustomStrokeControl from "../../controls/stroke/StrokeControl";
@@ -62,6 +62,8 @@ import AdfScannerIcon from '@mui/icons-material/AdfScanner';
 import LineWeightIcon from '@mui/icons-material/LineWeight';
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
 import SpeedIcon from '@mui/icons-material/Speed';
+import ProTooltip from '../ProTooltip';
+import ProNotice from '../ProNotice';
 
 const InnerTextEdit = ({
   slide,
@@ -341,6 +343,13 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
       setIsOpen((prevIsOpen) => !prevIsOpen);
     };
 
+     const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
   return (
     <div className="custom-block-added">
       <div className="divider-controls-inner"></div>
@@ -402,6 +411,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'content')
                 }
               />
+                <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomToggleControl
               label={
                 <>
@@ -423,7 +433,15 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableTypeWriter')
                 }
+                disabled= {isProFeature}
             />
+             {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'44px'}
+                        />
+                     )}
+                     </div>
               {(textDiv.enableTypeWriter === true) && (
                 <>
                <CustomTextControl
@@ -757,7 +775,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                     {__("Font family", "slider-future")}
                   </>
                 }
-                value={textDiv.fontFamilyTitleBlock|| "Arial, sans-serif"}
+                value={textDiv.fontFamilyTitleBlock}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="secondary"
@@ -891,7 +909,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                     {__("Select position", "slider-future")}
                   </>
                 }
-                value={textDiv.positionInnerText|| "Arial, sans-serif"}
+                value={textDiv.positionInnerText|| "inherit"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="secondary"
@@ -1242,7 +1260,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               {__("Text Shadow", "slider-future")}
             </h2>
             </div>
-            <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
               <CustomShadowControl
                 valueEnableShadow={textDiv.enableTextShadow}
                 valueRangeShadowX={textDiv.textShadowX || 0}
@@ -1264,7 +1282,14 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 rangePropertyY="textShadowY"
                 rangePropertyBlur="textShadowBlur"
                 rangePropertyColor="colorTextShadow"
-              />
+                disabled={isProFeature}
+                />
+                 {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'13px'}
+                          tooltipProRight={'44px'}
+                          />
+                       )}
           </div>
           <div
                 className="content-title-custom-panel intermedy"
@@ -1273,7 +1298,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
           <CustomShadowControl
             valueEnableShadow={textDiv.enableBoxShadow}
             valueRangeShadowX={textDiv.boxShadowX || 0}
@@ -1298,7 +1323,14 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             rangePropertyBlur="boxShadowBlur"
             rangePropertySpread="boxShadowSpread"
             rangePropertyColor="colorBoxShadow"
-          />
+            disabled={isProFeature}
+            />
+             {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'13px'}
+                          tooltipProRight={'44px'}
+                          />
+                       )}
        </div>
        <div
             className="content-title-custom-panel intermedy"
@@ -1307,7 +1339,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               {__("Text Stroke", "slider-future")}
             </h2>
         </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
         <CustomStrokeControl
             valueEnableStroke={textDiv.enableStroke}
             valueRangeStroke={textDiv.stroke || 0}
@@ -1328,7 +1360,14 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
             enablePropertyStroke="enableStroke"
             rangePropertyStroke="stroke"
             colorPropertyStroke="colorStroke"
-          />
+            disabled={isProFeature}
+            />
+             {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'13px'}
+                          tooltipProRight={'44px'}
+                          />
+                       )}
         </div>
         <div
             className="content-title-custom-panel intermedy"
@@ -1337,7 +1376,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
               {__("Blend Mode", "slider-future")}
             </h2>
         </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
            <CustomSelectControl
                 label={
                   <>
@@ -1357,11 +1396,19 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'blendMode')
                 }
                 selectOptions={blendModeOptions} // Passa le opzioni dinamiche
-              />
+                disabled={isProFeature}
+                />
+                {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'13px'}
+                          tooltipProRight={'92px'}
+                          />
+                       )}
          </div>
         </>
       )}
       {activeSection === "animation" && (
+        <>
         <CustomEffectControls
         valueEffect={textDiv.effectIn}
         colorNormal={textDiv.colorBlockEffect } 
@@ -1399,7 +1446,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
            valueStagger={textDiv.stagger}
            valueDirectionBlock={textDiv.directionBlock}
            onAnimated={handlePlayInnerText}
-           selectOptions={selectOptionsEffectIn}
+           selectOptions={isProFeature ? selectOptionsEffectIn : selectOptionsEffectInFree}
         slides={slides}
         setAttributes={setAttributes}
         updateType="secondary"
@@ -1443,6 +1490,10 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
          staggerProperty="stagger"
          directionBlockProperty="directionBlock"
       />
+        {textDiv.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
+    </>
     )}
       {activeSection === "hover" && (
         <>
@@ -1494,6 +1545,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
         slideId={slide.id}
         elementIndex={elementIndex}
         innerIndex={textIndex}
+        showColorControl = {false}
         elementType="text"
         updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property) =>
           updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, property)
@@ -1513,6 +1565,9 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
          durationHoverProperty="durationHover"
          easingHoverProperty="easingHover"
       />
+       {textDiv.effectHover === "animation-pro" && (
+          <ProNotice />
+    )}
       </>
       )}
       {activeSection === "actions" && (

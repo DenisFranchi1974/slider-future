@@ -30,7 +30,7 @@ function render_text($element, $slide)
     $letterSpacing = esc_attr($element['letterSpacing'] ?? 0);
     $borderStyle = esc_attr($element['borderStyle'] ?? 'none');
     $backgroundBorderColor = esc_attr($element['backgroundBorderColor'] ?? '#000');
-    $fontFamily = esc_attr($element['fontFamily'] ?? 'Arial, sans-serif');
+    $fontFamily = esc_attr($element['fontFamily'] ?? 'inherit');
     $lineHeight = esc_attr($element['lineHeight'] ?? 1.5);
     $textWriteMode = esc_attr($element['textWriteMode'] ?? 'horizontal-tb');
     $textOrientation = esc_attr($element['textOrientation'] ?? 'mixed');
@@ -47,6 +47,7 @@ function render_text($element, $slide)
         . 'color: ' . $color . '; '
         . '--color-hover: ' . $colorHover . '; '
         . '--color-cursor: ' . $color . '; '
+        . 'position: relative; '
         . '--cursor-width: ' . $widthCursor . 'px; '
         . 'background-color: ' . $backgroundColor . '; '
         . 'text-align: ' . $textAlign . '; '

@@ -5,7 +5,6 @@
 	"version": "0.1.0",
 	"title": "Slider Future",
 	"category": "widgets",
-	"icon": "images-alt2",
 	"description": "The ultimate Gutenberg block for creating beautifully designed and animated web content.",
 	"example": {},
 	"supports": {
@@ -125,7 +124,7 @@
 		},
 		"slideShadows":{
 			"type":"boolean",
-			"default":true
+			"default":false
 		},
 		"shadowOffset":{
 			"type":"number",
@@ -477,11 +476,11 @@
 		},
 		"offSetTopNav":{
 			"type":"number",
-			"default": 50
+			"default": 0
 		},
 		"offSetSidesNav":{
 			"type":"number",
-			"default": 10
+			"default": 0
 		},
 		"navigationTablet":{
 			"type":"boolean",
@@ -553,7 +552,7 @@
 		},
 		"backgroundColor":{
 			"type":"string",
-			"default":"#81D1FF"
+			"default":"#E3E3E3"
 		},
 		"backgroundImage": {
 			"type": "string",
@@ -576,7 +575,7 @@
 		},
 		"backgroundColorSlideDefault":{
 			"type":"string",
-			"default":"#81D1FF"
+			"default":"#E3E3E3"
 		},
 		"backgroundColorBlockDefault":{
 			"type":"string",
@@ -737,6 +736,18 @@
 		"contentWidthPost": {
 			"type": "number",
 			"default": 1200
+		},
+		"enableContentWidthSlidePost":{
+			"type": "boolean",
+			"default": false
+		},
+		"contentWidthSlidePost": {
+			"type": "number",
+			"default": 1200
+		},
+		"justifyContentSlidePost": {
+			"type": "string",
+			"default": "left"
 		},
 		"layoutWrapPost": {
 			"type": "string",
@@ -1135,11 +1146,24 @@
 			"type": "string",
 			"default": "FFFFFF00"
 		},
+		"backgroundColorContentPost": {
+			"type": "string",
+			"default": "FFFFFF00"
+		},
 		"titlePostAlign": {
 			"type": "string",
 			"default": "center"
 		},
 		"titlePostPadding": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+			}
+		},
+		"contentPostPadding": {
 			"type": "object",
 			"default": {
 				"top": "0px",
@@ -1175,6 +1199,32 @@
 			"default": "#000000"
 		},
         "titlePostBorderRadius": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+			}
+		},
+		"contentPostBorderStyle": {
+			"type": "string",
+			"default": "none"
+		},
+        "contentPostBorderSize": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+			}
+		},
+	    "contentPostBorderColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+        "contentPostBorderRadius": {
 			"type": "object",
 			"default": {
 				"top": "0px",
@@ -1422,7 +1472,7 @@
 		 },
 		 "titlePostFontFamily": {
 			"type": "string",
-			"default": "Arial, sans-serif"
+			"default": "inherit"
 		 },
 		 "titlePostFontWeight": {
 			"type": "string",
@@ -1747,7 +1797,7 @@
  },
  "excerptPostFontFamily": {
     "type": "string",
-    "default": "Arial, sans-serif"
+    "default": "inherit"
  },
  "excerptPostFontWeight": {
     "type": "string",
@@ -2064,7 +2114,7 @@
  },
  "linkPostFontFamily": {
     "type": "string",
-    "default": "Arial, sans-serif"
+    "default": "inherit"
  },
  "linkPostFontWeight": {
     "type": "string",
@@ -2385,7 +2435,7 @@
  },
  "authorPostFontFamily": {
     "type": "string",
-    "default": "Arial, sans-serif"
+    "default": "inherit"
  },
  "authorPostFontWeight": {
     "type": "string",
@@ -2702,7 +2752,7 @@
  },
  "datePostFontFamily": {
     "type": "string",
-    "default": "Arial, sans-serif"
+    "default": "inherit"
  },
  "datePostFontWeight": {
     "type": "string",
@@ -3019,7 +3069,7 @@
  },
  "categoriesPostFontFamily": {
     "type": "string",
-    "default": "Arial, sans-serif"
+    "default": "inherit"
  },
  "categoriesPostFontWeight": {
     "type": "string",
@@ -3336,7 +3386,7 @@
  },
  "tagsPostFontFamily": {
     "type": "string",
-    "default": "Arial, sans-serif"
+    "default": "inherit"
  },
  "tagsPostFontWeight": {
     "type": "string",
@@ -3369,6 +3419,14 @@
  "tagsPostBlockColor": {
     "type": "string",
     "default": "#000000"
+ },
+ "navigationPosition": {
+	"type": "string",
+	"default": "center-center"
+ },
+ "navigationGap": {
+	"type": "number",
+	"default": 10
  }
 }
 }

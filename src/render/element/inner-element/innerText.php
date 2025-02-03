@@ -29,7 +29,7 @@ function render_innerText($innerElement, $slide)
     $letterSpacing = esc_attr($innerElement['letterSpacing'] ?? 0);
     $borderStyle = esc_attr($innerElement['borderStyle'] ?? 'none');
     $backgroundBorderColor = esc_attr($innerElement['backgroundBorderColor'] ?? '#000');
-    $fontFamily = esc_attr($innerElement['fontFamilyTitleBlock'] ?? 'Arial, sans-serif');
+    $fontFamily = esc_attr($innerElement['fontFamilyTitleBlock'] ?? 'inherit');
     $lineHeight = esc_attr($innerElement['lineHeight'] ?? 1.5);
     $textWriteMode = esc_attr($innerElement['textWriteMode'] ?? 'horizontal-tb');
     $textOrientation = esc_attr($innerElement['textOrientation'] ?? 'mixed');

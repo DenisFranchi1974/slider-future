@@ -25,11 +25,8 @@ const Ruler = ({ width, height, unit, direction, attributes }) => {
         <div className="ruler-horizontal" style={{ width: '100%', height: '10px', position: 'absolute', left: 0, opacity:opacityRuler }}>
           {horizontalMarks.map((mark, index) => (
             <div key={index} style={{ position: 'absolute', left: `${mark}px`, height: '100%' }}>
-              {/* Segmento principale per i numeri */}
               <span style={{ display: 'block', position: 'absolute', bottom: '0px', height: '10px', width: '2px', backgroundColor: 'black' }}></span>
-              {/* Numero associato al segno */}
               <span style={{ display: 'block', position: 'absolute', top: '-1px',left: '3px', fontSize: '9px' }}>{mark}</span>
-              {/* Trattini tra i numeri */}
               {Array.from({ length: 4 }, (_, i) => (
                 <span key={i} style={{ position: 'absolute', top: '0', left: `${(i + 1) * (unit / 5)}px`, height: '5px', width: '1px', backgroundColor: 'gray' }}></span>
               ))}
@@ -41,11 +38,8 @@ const Ruler = ({ width, height, unit, direction, attributes }) => {
         <div className="ruler-vertical" style={{ width: '10px', height: `${height}px`, position: 'absolute', top: '-1px',opacity:'.4',background:'red' }}>
           {verticalMarks.map((mark, index) => (
             <div key={index} style={{ position: 'absolute', top: `${mark}px`, width: '100%' }}>
-              {/* Segmento principale per i numeri */}
               <span style={{ display: 'block', position: 'absolute', right: '0px', width: '10px', height: '2px', backgroundColor: 'black' }}></span>
-              {/* Numero associato al segno */}
               <span style={{ display: 'block', position: 'absolute', writingMode:'vertical-rl', textOrientation:'upright',letterSpacing:'-2px',top:'2px', fontSize: '9px' }}>{mark}</span>
-              {/* Trattini tra i numeri */}
               {Array.from({ length: 4 }, (_, i) => (
                 <span key={i} style={{ position: 'absolute', left: '0', top: `${(i + 1) * (unit / 5)}px`, width: '5px', height: '1px', backgroundColor: 'gray' }}></span>
               ))}

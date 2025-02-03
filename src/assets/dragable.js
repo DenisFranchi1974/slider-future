@@ -7,7 +7,7 @@ const DraggableTest = ({ x, y, onDrag, children, activeDevice, style  }) => {
   const [isDragging, setIsDragging] = useState(false);
 
   const [linePosition, setLinePosition] = useState({ x: null, y: null });
-  const [temporaryZIndex, setTemporaryZIndex] = useState(null); // Stato per lo z-index temporaneo
+  const [temporaryZIndex, setTemporaryZIndex] = useState(null); 
 
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const DraggableTest = ({ x, y, onDrag, children, activeDevice, style  }) => {
   }, [x, y, activeDevice]);
 
   const handleDragStart = () => {
-    setTemporaryZIndex(1000); // Imposta un z-index temporaneo alto all'inizio del drag
+    setTemporaryZIndex(1000); 
   };
 
   const handleDrag = (e, data) => {
@@ -32,13 +32,12 @@ const DraggableTest = ({ x, y, onDrag, children, activeDevice, style  }) => {
     setPopup({ ...popup, visible: false });
     setIsDragging(false);
     setLinePosition({ x: null, y: null });
-    setTemporaryZIndex(null); // Ripristina il z-index originale alla fine del drag
+    setTemporaryZIndex(null); 
   };
 
   return (
     <>
   
-        {/* Linee rosse orizzontale e verticale */}
         {linePosition.x !== null && linePosition.y !== null && (
           <>
             <div

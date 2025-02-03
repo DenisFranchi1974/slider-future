@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900');
+
 :root {
-    --primary-color: #ab0052;
+    --primary-color: #7a079a;
     --secondary-color: #007cba;
     --success-color: #28a745;
     --danger-color: #dc3545;
@@ -21,22 +23,28 @@
     --notice-background: #e7dfe2;
     --dark-intermedy:#3f444a;
     --ruler-color: #ff000077; 
+    --green-color: #008000;
+    --red-color:#ff0000;
   }
 
-  .slider-settings{
-        button{
-            color: var(--primary-color)!important;
-        }
-        .components-button.is-primary{
-            background-color: var(--white-color)!important;
-            border: 1px solid var(--primary-color)!important;
-            border-radius: 25px!important;
-        }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Unbounded", sans-serif;
+}
+
+  #wpwrap{
+    background-color: var(--background-color)!important;
   }
-  
 .wrap-admin-slider{
     background-color: var(--background-color);
-    padding: 24px;
+    padding: 48px;
+    padding-top: 0;
+    margin: 0;
+    margin-left: -20px;
     color: var(--light-color);
     h1{
         color: var(--light-color);
@@ -47,12 +55,246 @@
     color: var(--white-color)!important;
 }
 
-.MuiTabs-scroller.MuiTabs-fixed.css-s2t35c-MuiTabs-scroller{
-    margin-top: 50px;
+.wrap-admin-slider .MuiTabs-root{
+    background-color: var(--dark-color-hover);
+    margin-left: -48px;
+    margin-right: -48px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 48px;
+}
+.MuiTabs-scroller{
+   
+    .MuiTabs-flexContainer{
+        margin-top:48px;
+        svg{
+          width: 18px;
+          height: 18px;
+        }
+    }
 }
 
 .logo-dashboard{
     display: flex;
-    gap: 10px;
+    gap: 64px;
     align-items: center;
+    position: absolute;
+    top: 24px;
+    width: 80%;
+    justify-content: space-between;
+
+    .logo{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .version{
+        font-size: 14px;
+        margin-left: 12px;
+      }
+    } 
+
+    .rating{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 999;
+    }
 }
+
+.content-dashboard{
+    padding-top: 32px;
+    h2{
+        color: var(--white-color);
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 40px;
+        margin:0;
+    }
+    h3{
+        color: var(--light-color);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 25px;
+        margin:0;
+    }
+    .image-go-premium img {
+        max-width: 100%;
+        height: auto;
+    }
+    .image-go-premium{
+        max-width: 600px;
+    }
+    .content-go-premium{
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        justify-content: center;
+        margin-left: -24px;
+        padding-left: 24px;
+        margin-right: -24px;
+        padding-right: 24px;
+        flex-wrap: wrap;
+    }
+    .filter-go-premium{
+        background: radial-gradient(farthest-side at left center, #0a2f9400, rgba(10, 47, 148, 0) 85%), radial-gradient(farthest-side at center, #7a079ab8, rgba(122, 7, 154, 0) 70%), var(--background-color);
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+    .grid-go-premium{
+       display: flex;
+         gap: 32px;
+         margin-bottom: 32px;
+         margin-top: 32px;
+         flex-wrap: wrap;
+    }
+    .card-premium{
+        padding: 24px;
+        background-color: var(--black-color);
+        border-radius: 24px;
+        max-width: 260px;
+    }
+    .card-premium:hover svg{
+        animation:  shake-animation 1s ease-in-out;
+    }
+    .card-premium.card-pro{
+      max-width: 450px;
+      svg{
+        width: 50px;
+        height: 50px;
+      }
+      h5{
+        font-size: 20px;
+      }
+      .mail-pro{
+        color: var(--white-color);
+      }
+    }
+    .title-icon-pro{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        h5{
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        svg{
+            fill: var(--primary-color);
+            margin-bottom: -6px;
+        }
+        a{
+            text-decoration: none;
+            color: var(--white-color);
+        }
+    }
+    .documentation{
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        p{
+            color: var(--white-color);
+            font-size: 14px;
+            margin: 0;
+            max-width: 600px;
+        }
+    }
+}
+
+@keyframes shake-animation {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: rotate(-10deg);
+    }
+    20%, 40%, 60%, 80% {
+      transform: rotate(10deg);
+    }
+  }
+
+  .table-pro{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 48px;
+    td{max-width: 250px;}
+  }
+  .vs-span{
+    color: var(--white-color);
+    background-color: var(--red-color);
+    padding: 7px 12px;
+    border-radius: 100%;
+  }
+
+  .vs-span-three{
+    color: var(--white-color);
+    background-color: var(--red-color);
+    padding: 12px 9px;
+    border-radius: 100%;
+  }
+
+  .vs-span-pro{
+    color: var(--white-color);
+    background-color: var(--green-color);
+    padding: 7px 8px;
+    border-radius: 100%;
+  }
+
+  .vs-span-pro-one{
+    color: var(--white-color);
+    background-color: var(--green-color);
+    padding: 7px 12px;
+    border-radius: 100%;
+  }
+
+  .vs-span-pro-three{
+    color: var(--white-color);
+    background-color: var(--green-color);
+    padding: 12px 9px;
+    border-radius: 100%;
+  }
+
+  .vs-span-pro-four{
+    color: var(--white-color);
+    background-color: var(--green-color);
+    padding: 13px 6px;
+    border-radius: 100%;
+  }
+
+  .help{
+    padding: 24px;
+    background: var(--black-color);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 48px;
+    border-radius: 24px;
+    color: var(--white-color);
+    h4{
+        font-size: 18px;
+    }
+    h5{
+        font-size: 16px;
+    }
+    p{
+        font-size: 14px;
+    }
+    ul{
+        list-style: disc;
+        padding-left: 24px;
+        font-size: 14px;
+    }
+  }
+
+  .paper-settings{
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+  .content-range-admin .components-range-control__wrapper{
+    color: var(--primary-color)!important;
+  }
+  .content-range-admin .components-range-control__thumb-wrapper span, .content-range-admin .components-range-control__thumb-wrapper span::before{
+    background-color: var(--primary-color)!important;
+  }

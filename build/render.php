@@ -53,6 +53,7 @@ $nextOpacity = $attributes['nextOpacity'] ?? null;
 $navigation = $attributes['navigation'] ?? null;
 if ($navigation === true) {
     $navigationIcons = $attributes['navigationIcons'] ?? null;
+    $navigationPosition = $attributes['navigationPosition'] ?? null;
     $navColor = $attributes['navColor'] ?? null;
     $navColorHover = $attributes['navColorHover'] ?? null;
     $navBackgroundColor = $attributes['navBackgroundColor'] ?? null;
@@ -69,6 +70,7 @@ if ($navigation === true) {
     $hideNavigation = $attributes['hideNavigation'] ?? null;
     $navigationTablet = $attributes['navigationTablet'] ?? null;
     $navigationMobile = $attributes['navigationMobile'] ?? null;
+    $navGap = $attributes['navigationGap'] ?? null;
 } else {
     $navigationIcons = null;
     $navColor = null;
@@ -87,6 +89,8 @@ if ($navigation === true) {
     $hideNavigation = null;
     $navigationTablet = null;
     $navigationMobile = null;
+    $navigationPosition = null;
+    $navGap = null;
 };
 $paginationEnable = $attributes['paginationEnable'] ?? null;
 if ($paginationEnable === true) {
@@ -223,6 +227,9 @@ $gapItemsPost = $attributes['gapItemsPost'] ?? 0;
 $layoutWrapPost = $attributes['layoutWrapPost'] ?? 'wrap';
 $contentWidthPost = $attributes['contentWidthPost'] ?? 1200;
 $enableContentWidthPost = $attributes['enableContentWidthPost'] ?? false;
+$contentWidthSlidePost = $attributes['contentWidthSlidePost'] ?? 1200;
+$enableContentWidthSlidePost = $attributes['enableContentWidthSlidePost'] ?? false;
+$justifyContentSlidePost = $attributes['justifyContentSlidePost'] ?? 'left';
 $divider = $attributes['divider'] ?? 'none';
 $heightDivider = $attributes['heightDivider'] ?? 150;
 $widthDivider = $attributes['widthDivider'] ?? 100;
@@ -236,7 +243,15 @@ $imageBgPostRepeat = $attributes['imageBgPostRepeat'] ?? 'no-repeat';
 $imageBgPostPositionX = $attributes['imageBgPostPositionX'] ?? 0;
 $imageBgPostPositionY = $attributes['imageBgPostPositionY'] ?? 0;
 $backgroundBorderRadius = $attributes['backgroundBorderRadius'] ?? 0;
-
+$backgroundColorContentPost = $attributes['backgroundColorContentPost'] ?? null;
+$contentPostPadding = $attributes['contentPostPadding'] ?? 0;
+$contentPostBorderRadius = $attributes['contentPostBorderRadius'] ?? '';
+$contentPostBorderStyle = $attributes['contentPostBorderStyle'] ?? '';
+$contentPostBorderSize = $attributes['contentPostBorderSize'] ?? '';
+$contentPostBorderColor = $attributes['contentPostBorderColor'] ?? '';
+$backgroundBorderSize = $attributes['backgroundBorderSize'] ?? '';
+$backgroundBorderColor = $attributes['backgroundBorderColor'] ?? '';
+$backgroundBorderStyle = $attributes['backgroundBorderStyle'] ?? '';
 
 $swiper_attr = array(
     'directionSlider' => $directionSlider,
@@ -419,6 +434,18 @@ $swiper_attr = array(
     'imageBgPostPositionX' => $imageBgPostPositionX,
     'imageBgPostPositionY' => $imageBgPostPositionY,
     'backgroundBorderRadius' => $backgroundBorderRadius,
+    'backgroundColorContentPost' => $backgroundColorContentPost,
+    'contentPostPadding' => $contentPostPadding,
+    'contentPostBorderRadius' => $contentPostBorderRadius,
+    'contentPostBorderStyle' => $contentPostBorderStyle,
+    'contentPostBorderSize' => $contentPostBorderSize,
+    'contentPostBorderColor' => $contentPostBorderColor,
+    'contentWidthSlidePost' => $contentWidthSlidePost,
+    'enableContentWidthSlidePost' => $enableContentWidthSlidePost,
+    'justifyContentSlidePost' => $justifyContentSlidePost,
+    'backgroundBorderSize' => $backgroundBorderSize,
+    'backgroundBorderColor' => $backgroundBorderColor,
+    'backgroundBorderStyle' => $backgroundBorderStyle,
 
 );
 
@@ -428,6 +455,9 @@ $stylesSlider =
     'margin-top: ' . esc_attr($sliderMarginTop) . 'px; ' .
     'margin-bottom: ' . esc_attr($sliderMarginBottom) . 'px; ' .
     'border-radius: ' . esc_attr($backgroundBorderRadius) . 'px; ' .
+    'border-width: ' . esc_attr($backgroundBorderSize) . 'px; ' .
+    'border-color: ' . esc_attr($backgroundBorderColor) . '; ' .
+    'border-style: ' . esc_attr($backgroundBorderStyle) . '; ' .
     'padding: ' . esc_attr($backgroundVerticalPadding) . 'px ' . esc_attr($backgroundHorizontalPadding) . 'px; ' .
     '--padding-tablet:' . esc_attr($backgroundVerticalPaddingTablet) . 'px ' . esc_attr($backgroundHorizontalPaddingTablet) . 'px; ' .
     '--padding-mobile:' . esc_attr($backgroundVerticalPaddingMobile) . 'px ' . esc_attr($backgroundHorizontalPaddingMobile) . 'px; ' .
@@ -586,53 +616,61 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <?php endif; ?>
                         data-effect="<?php echo esc_attr($mouseEffect) ?>">
                         <?php $maxWidthPost = $attributes['enableContentWidthPost'] ? $attributes['contentWidthPost'] . 'px' : false; ?>
-                        <div class="content-slide-post <?php echo esc_attr($attributes['layoutPost']); ?> <?php echo esc_attr($attributes['positionPost']); ?>"
-                            style="gap:<?php echo esc_attr($attributes['gapItemsPost']); ?>px;flex-wrap:<?php echo esc_attr($attributes['layoutWrapPost']); ?>;max-width:<?php echo esc_attr($maxWidthPost); ?>">
-                            <?php if ($mouseEffect === 'liquid') : ?>
-                                <script>
-                                    window.ga = window.ga || function() {
-                                        (ga.q = ga.q || []).push(arguments)
-                                    };
-                                    ga.l = +new Date;
-                                    ga('create', 'UA-105392568-1', 'auto');
-                                    ga('send', 'pageview');
-                                </script>
-                                <canvas class="banner_canvas" id="canvas_banner"></canvas>
-                                <div class="top-title wow fadeInUp" onmousemove="color_hover(event)"></div>
-                            <?php endif;
-                            include_once __DIR__ . '/render/post/post-image.php';
-                            include_once __DIR__ . '/render/post/post-title.php';
-                            include_once __DIR__ . '/render/post/post-excerpt.php';
-                            include_once __DIR__ . '/render/post/post-link.php';
-                            include_once __DIR__ . '/render/post/post-author.php';
-                            include_once __DIR__ . '/render/post/post-date.php';
-                            include_once __DIR__ . '/render/post/post-categories.php';
-                            include_once __DIR__ . '/render/post/post-tags.php';
-                            ?>
-                            <?php if (!empty($attributes['postElementsOrder'])) : ?>
-                                <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
-                                    <?php if (!empty($attributes['visibleElements'][$element])) : ?>
-                                        <?php if ($element === 'image' && !empty($post['image'])) :
-                                            render_post_image($post, $attributes);
-                                        elseif ($element === 'title' && !empty($post['title'])) :
-                                            render_post_title($post, $attributes);
-                                        elseif ($element === 'excerpt' && !empty($post['excerpt'])) :
-                                            render_post_excerpt($post, $attributes);
-                                        elseif ($element === 'link' && !empty($post['link'])) :
-                                            render_post_link($post, $attributes);
-                                        elseif ($element === 'author' && !empty($post['author'])) :
-                                            render_post_author($post, $attributes);
-                                        elseif ($element === 'date' && !empty($post['date'])) :
-                                            render_post_date($post, $attributes);
-                                        elseif ($element === 'categories' && !empty($post['categories'])) :
-                                            render_post_categories($post, $attributes);
-                                        elseif ($element === 'tags' && !empty($post['tags'])) :
-                                            render_post_tags($post, $attributes);
-                                        endif; ?>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
+                        <?php $maxWidthSlidePost = $attributes['enableContentWidthSlidePost'] ? $attributes['contentWidthSlidePost'] . 'px' : false; ?>
+
+                        <div class="max-content-post" style="max-width:<?php echo esc_attr($maxWidthSlidePost); ?>;justify-content:<?php echo esc_attr($attributes['justifyContentSlidePost']); ?>;">
+                            <div class="content-slide-post <?php echo esc_attr($attributes['layoutPost']); ?> <?php echo esc_attr($attributes['positionPost']); ?>"
+                                style="gap:<?php echo esc_attr($attributes['gapItemsPost']); ?>px;flex-wrap:<?php echo esc_attr($attributes['layoutWrapPost']); ?>;max-width:<?php echo esc_attr($maxWidthPost); ?>;background-color:<?php echo esc_attr($attributes['backgroundColorContentPost']); ?>;
+                            padding-top:<?php echo esc_attr($contentPostPadding['top']); ?>;padding-right:<?php echo esc_attr($contentPostPadding['right']); ?>;padding-bottom:<?php echo esc_attr($contentPostPadding['bottom']); ?>;padding-left:<?php echo esc_attr($contentPostPadding['left']); ?>;
+                            border-top-left-radius:<?php echo esc_attr($contentPostBorderRadius['top']); ?>;border-top-right-radius:<?php echo esc_attr($contentPostBorderRadius['right']); ?>;border-bottom-right-radius:<?php echo esc_attr($contentPostBorderRadius['bottom']); ?>;border-bottom-left-radius:<?php echo esc_attr($contentPostBorderRadius['left']); ?>;
+                            border-style:<?php echo esc_attr($contentPostBorderStyle); ?>;border-color:<?php echo esc_attr($contentPostBorderColor); ?>;
+                            border-width:<?php echo esc_attr($contentPostBorderSize['top']); ?> <?php echo esc_attr($contentPostBorderSize['right']); ?> <?php echo esc_attr($contentPostBorderSize['bottom']); ?> <?php echo esc_attr($contentPostBorderSize['left']); ?> ;">
+                                <?php if ($mouseEffect === 'liquid') : ?>
+                                    <script>
+                                        window.ga = window.ga || function() {
+                                            (ga.q = ga.q || []).push(arguments)
+                                        };
+                                        ga.l = +new Date;
+                                        ga('create', 'UA-105392568-1', 'auto');
+                                        ga('send', 'pageview');
+                                    </script>
+                                    <canvas class="banner_canvas" id="canvas_banner"></canvas>
+                                <?php endif;
+                                include_once __DIR__ . '/render/post/post-image.php';
+                                include_once __DIR__ . '/render/post/post-title.php';
+                                include_once __DIR__ . '/render/post/post-excerpt.php';
+                                include_once __DIR__ . '/render/post/post-link.php';
+                                include_once __DIR__ . '/render/post/post-author.php';
+                                include_once __DIR__ . '/render/post/post-date.php';
+                                include_once __DIR__ . '/render/post/post-categories.php';
+                                include_once __DIR__ . '/render/post/post-tags.php';
+                                ?>
+                                <?php if (!empty($attributes['postElementsOrder'])) : ?>
+                                    <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
+                                        <?php if (!empty($attributes['visibleElements'][$element])) : ?>
+                                            <?php if ($element === 'image' && !empty($post['image'])) :
+                                                render_post_image($post, $attributes);
+                                            elseif ($element === 'title' && !empty($post['title'])) :
+                                                render_post_title($post, $attributes);
+                                            elseif ($element === 'excerpt' && !empty($post['excerpt'])) :
+                                                render_post_excerpt($post, $attributes);
+                                            elseif ($element === 'link' && !empty($post['link'])) :
+                                                render_post_link($post, $attributes);
+                                            elseif ($element === 'author' && !empty($post['author'])) :
+                                                render_post_author($post, $attributes);
+                                            elseif ($element === 'date' && !empty($post['date'])) :
+                                                render_post_date($post, $attributes);
+                                            elseif ($element === 'categories' && !empty($post['categories'])) :
+                                                render_post_categories($post, $attributes);
+                                            elseif ($element === 'tags' && !empty($post['tags'])) :
+                                                render_post_tags($post, $attributes);
+                                            endif; ?>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -659,17 +697,17 @@ $wrapper_attributes = get_block_wrapper_attributes(
             <?php foreach ($slides as $slide) :
                 $layout_class = !empty($slide['layout']) && $slide['layout'] === 'horizontal' ? 'horizontal-layout' : 'vertical-layout';
                 $background_size = !empty($slide['fit']) ? esc_attr($slide['fit']) : 'cover';
+                $background_repeat = !empty($slide['repeat']) ? esc_attr($slide['repeat']) : 'no-repeat';
                 $focal_point = !empty($slide['focalPoint']) ? $slide['focalPoint'] : array('x' => 0.5, 'y' => 0.5);
                 $background_position = sprintf('%s%% %s%%', esc_attr($focal_point['x'] * 100), esc_attr($focal_point['y'] * 100));
             ?>
-                <?php $filter = esc_attr($slide['filter'] ?? "none"); // Custom content rendering starts here 
+                <?php $filter = esc_attr($slide['filter'] ?? "none");
                 // Link 
                 $link_url = '';
                 $onclick = '';
-                $target_div = '_self'; // Default
-                $rel_div = 'follow'; // Default
+                $target_div = '_self';
+                $rel_div = 'follow';
                 if ($slide['link'] !== 'none') {
-                    // Prepara l'attributo onclick se textLink è diverso da 'none'
                     if ($slide['link'] === 'link' && !empty($slide['url'])) {
                         $link_url = esc_url($slide['url']);
                         if (!empty($slide['target'])) {
@@ -693,12 +731,12 @@ $wrapper_attributes = get_block_wrapper_attributes(
                     onclick="<?php echo $onclick; ?>"
                     <?php endif; ?>
                     style="<?php
-                            // Inizializzazione delle variabili di stile
                             $background_style = '';
                             if (!empty($slide['backgroundType'])) {
                                 if ($slide['backgroundType'] === 'image' && !empty($slide['backgroundImage'])) {
                                     $background_style .= 'background-image: url(' . esc_url($slide['backgroundImage']) . '); ';
                                     $background_style .= 'background-size: ' . esc_attr($background_size ?? 'cover') . '; ';
+                                    $background_style .= 'background-repeat: ' . esc_attr($background_repeat ?? 'no-repeat') . '; ';
                                     $background_style .= 'background-position: ' . esc_attr($background_position ?? 'center') . '; ';
                                 } elseif ($slide['backgroundType'] === 'color' && !empty($slide['backgroundColor'])) {
                                     $background_style .= 'background-color: ' . esc_attr($slide['backgroundColor']) . '; ';
@@ -875,6 +913,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                     display:' . esc_attr($slide['layoutDisplay']) . ';
                                     align-items:' . esc_attr($slide['layoutAlignItems']) . ';
                                     flex-wrap:' . $layoutWrap . ';
+                                    height: 100%;
                                     gap:' . $gapItems . 'px;';
                                 if ($slide['layoutDisplay'] === 'flex') {
                                     $inline_style .= 'flex-direction: ' . esc_attr($slide['layout']) . ';';
@@ -910,7 +949,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                         ga('send', 'pageview');
                                     </script>
                                     <canvas class="banner_canvas" id="canvas_banner"></canvas>
-                                    <div class="top-title wow fadeInUp" onmousemove="color_hover(event)"></div>
                                 <?php endif; ?>
                                 <?php if (!empty($slide['backgroundType']) && $slide['backgroundType'] === 'video' && !empty($slide['backgroundVideo'])) : ?>
                                     <video src="<?php echo esc_url($slide['backgroundVideo']); ?>" autoplay muted loop style="width: 100%; object-position: <?php echo esc_attr($background_position) ?>; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; z-index: 0;"></video>
@@ -952,7 +990,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 <div class="swiper-pagination"></div>
                 <?php if ($navigation) :
                     include_once __DIR__ . '/render/navigation/nav.php';
-                    render_nav($navigationIcons, $navigationTablet, $navigationMobile, $sizeNav, $navColor);
+                    render_nav($navigationIcons, $navigationTablet, $navigationMobile, $sizeNav, $navColor, $navigationPosition, $navGap, $offSetTopNav, $offSetSidesNav);
                 endif; ?>
                 <div class="swiper-scrollbar"></div>
                 <?php if ($autoplayProgress) : ?>
@@ -964,7 +1002,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
                     </div>
                 <?php endif; ?>
                 <style>
-                    /* Stili specifici per ciascun slider utilizzando le variabili CSS dinamiche */
                     .<?php echo esc_attr($slider_unique_class); ?> {
                         <?php if ($navigation): ?>--background-color-nav: <?php echo esc_attr($navBackgroundColor); ?>;
                         --border-color-nav: <?php echo esc_attr($navBorderColor); ?>;
@@ -976,7 +1013,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         --border-radius-nav: <?php echo esc_attr($radiusBorderNav); ?>%;
                         --padding-nav: <?php echo esc_attr($paddingNav); ?>px;
                         --padding-nav-left: <?php echo esc_attr($paddingNavLeft); ?>px;
-                        --offset-top-nav: <?php echo esc_attr($offSetTopNav); ?>%;
                         --offset-sides-nav: <?php echo esc_attr($offSetSidesNav); ?>px;
                         <?php endif; ?>--swiper-pagination-bullet-inactive-color: <?php echo esc_attr($bulletInactivityColor); ?>;
                         --swiper-pagination-progressbar-bg-color: <?php echo esc_attr($bulletInactivityColor); ?>;

@@ -2,7 +2,7 @@ import {
   Button,
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import { useState } from "@wordpress/element";
+import { useEffect, useState } from "@wordpress/element";
 import ColorOptionsPanel from "./colorPanel";
 import AlignmentControlTwo from "./align/aligncontrol-two";
 import SectionSliderSelectorNavigation from "./multitab/sectionSliderSelectorNavigation";
@@ -11,6 +11,7 @@ import CustomRangeControl from "../controls/range/CustomRangeControl";
 import CustomToggleControl from "../controls/toggle/CustomToggleControl";
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
 import {optionsNavigation} from "../assets/options";
+import {optionsNavigationPosition} from "../assets/options";
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import TabletMacIcon from '@mui/icons-material/TabletMac';
 import SmartphoneIcon from '@mui/icons-material/Smartphone';
@@ -18,6 +19,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import MouseIcon from '@mui/icons-material/Mouse';
 import SwipeIcon from '@mui/icons-material/Swipe';
+import ProTooltip from './ProTooltip';
 
 const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
   const {
@@ -86,6 +88,8 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
     autoplayProgress,
     autoplayProgressColor,
     autoplayProgressPosition,
+    navigationPosition,
+    navigationGap,
   } = attributes;
 
   // Navigation Default
@@ -180,6 +184,14 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
     });
   };
 
+  const [isProFeature, setIsProFeature] = useState(true);
+ 
+   useEffect(() => {
+       if (typeof window.isProFeature !== 'undefined') {
+           setIsProFeature(window.isProFeature);
+       }
+   }, []);
+
   // Section slider
   const [activeSectionNavigation, setActiveSectionSliderNavigation] =
     useState("progress");
@@ -200,7 +212,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
             </h2>
           </div>
           <div className="slider-future-panel content-section-custom-panel">
-            <div className="content-section-panel">
+          <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                 <CustomToggleControl
                   label={
                     <>
@@ -221,7 +233,14 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   }
                   checked={scrollbar}
                   onChange={(value) => setAttributes({ scrollbar: value })}
+                  disabled={isProFeature}
                 />
+                 {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'14px'}
+                    tooltipProRight={'38px'}
+                    />
+                  )}
               {scrollbar == true && (
                 <>
                   <div className="custom-select color">
@@ -420,13 +439,22 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
                     />
+                    <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomToggleControl
                       label={__("Autoplay progress", "slider-future")}
                       checked={autoplayProgress}
                       onChange={(value) =>
                         setAttributes({ autoplayProgress: value })
                       }
-                    />
+                      disabled={isProFeature}
+                      />
+                       {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
+                        </div>
                   {autoplayProgress == true && (
                     <>
                       <div className="custom-select color">
@@ -601,16 +629,38 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={100}
                       step={1}
                     />
+                      <CustomSelectControl
+                      label={__("Position", "slider-future")}
+                      value={navigationPosition}
+                      onChange={(val) => {
+                        setAttributes({ navigationPosition: val });
+                      }}
+                      options={optionsNavigationPosition}
+                    />
+                    {navigationPosition !== "center-center" && (
+                      <>
+                     <CustomRangeControl
+                      label={__("Gap", "cocobocks")}
+                      value={navigationGap}
+                      onChange={(value) =>
+                        setAttributes({ navigationGap: value })
+                      }
+                      min={0}
+                      max={100}
+                      step={1}
+                    />
                     <CustomRangeControl
-                      label={__("Top Offset (%)", "cocobocks")}
+                      label={__("Vertical Offset", "cocobocks")}
                       value={offSetTopNav}
                       onChange={(value) =>
                         setAttributes({ offSetTopNav: value })
                       }
-                      min={1}
-                      max={95}
+                      min={0}
+                      max={100}
                       step={1}
                     />
+                    </>
+                    )}
                     <CustomRangeControl
                       label={__("Sides Offset (px)", "cocobocks")}
                       value={offSetSidesNav}
@@ -621,6 +671,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       max={100}
                       step={1}
                     />
+                      <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomToggleControl
                       label={__("Hide on click", "slider-future")}
                       checked={hideNavigation}
@@ -631,7 +682,15 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       tooltipText={__("Toggle navigation buttons visibility after click on Slider's container.It is intentionally disabled in the editor!", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
-                    />
+                      disabled={isProFeature}
+                      />
+                       {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
+                        </div>
                     <CustomToggleControl
                       label={
                         <>
@@ -750,6 +809,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                         ]}
                       />
                   )}
+                   <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                     <CustomToggleControl
                       label={__("Hide on click", "slider-future")}
                       checked={hidePagination}
@@ -760,7 +820,15 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                       tooltipText={__("Toggle (hide/show) pagination container visibility after click on Slider's container.It is intentionally disabled in the editor!", "slider-future")}
                       tooltipTop = {'11px'}
                       tooltipLeft = {'60%'}
-                    />
+                      disabled={isProFeature}
+                      />
+                       {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'38px'}
+                          />
+                        )}
+                        </div>
                   {typePagination == "fraction" && (
                       <CustomRangeControl
                         label={__("Font size", "cocobocks")}
@@ -800,6 +868,7 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                   )}
                   {typePagination == "bullets" && (
                     <>
+                      <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                         <CustomToggleControl
                           label={__("Clickable", "slider-future")}
                           checked={clickPagination}
@@ -810,7 +879,15 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
                           tooltipText={__("If enable then clicking on pagination button will cause transition to appropriate slide. Only for 'bullets' pagination type", "slider-future")}
                           tooltipTop = {'11px'}
                           tooltipLeft = {'60%'}
-                        />
+                          disabled={isProFeature}
+                          />
+                           {isProFeature && (
+                            <ProTooltip
+                            tooltipProTop={'14px'}
+                              tooltipProRight={'38px'}
+                              />
+                            )}
+                            </div>
                         <CustomToggleControl
                           label={__("Dynamic bullets", "slider-future")}
                           checked={dynamicPagination}

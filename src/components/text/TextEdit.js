@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
-import { useState} from "react";
 import { __ } from "@wordpress/i18n";
 import CustomColorOptionsPanel from "../../controls/color/ColorOptionsPanel";
 import CustomHoverControls from "../../multiControls/hover";
@@ -19,8 +18,9 @@ import {blendModeOptions} from '../../assets/options';
 import {fontWeightOptions} from '../../assets/options';
 import {writeModeOptions} from '../../assets/options';
 import {borderStyleOptions} from '../../assets/options';
-import { selectOptionsEffectIn } from "../../assets/options";
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
+import { selectOptionsEffectIn } from "../../assets/options";
+import { selectOptionsEffectInFree } from "../../assets/options";
 import CustomStrokeControl from "../../controls/stroke/StrokeControl";
 import CustomAlignControl from "../../controls/align/AlignControl";
 import CustomVisibilityControls from "../../multiControls/visibility/VisibilityControls";
@@ -60,6 +60,8 @@ import AdfScannerIcon from '@mui/icons-material/AdfScanner';
 import LineWeightIcon from '@mui/icons-material/LineWeight';
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
 import SpeedIcon from '@mui/icons-material/Speed';
+import ProTooltip from '../ProTooltip';
+import ProNotice from '../ProNotice';
 
 const TextEdit = ({
   slide,
@@ -357,6 +359,14 @@ const TextEdit = ({
   };
   const truncatedText = truncateText(element.text, 9);
 
+   const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
+
   return (
     <div className={"custom-block-added " + className}>
       <div className="divider-controls"></div>
@@ -417,6 +427,7 @@ const TextEdit = ({
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'text')
                 }
               />
+               <div className={`${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
                <CustomToggleControl
               label={
                 <>
@@ -437,7 +448,15 @@ const TextEdit = ({
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'enableTypeWriter')
                 }
+                disabled= {isProFeature}
             />
+            {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'44px'}
+                        />
+                     )}
+                     </div>
               {(element.enableTypeWriter === true) && (
                 <>
                <CustomTextControl
@@ -752,7 +771,7 @@ const TextEdit = ({
                     {__("Font family", "slider-future")}
                   </>
                 }
-                value={element.fontFamily || "Arial, sans-serif"}
+                value={element.fontFamily}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -1124,7 +1143,7 @@ const TextEdit = ({
               {__("Text Shadow", "slider-future")}
             </h2>
             </div>
-            <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
               <CustomShadowControl
                 valueEnableShadow={element.enableTextShadow}
                 valueRangeShadowX={element.textShadowX || 0}
@@ -1145,7 +1164,14 @@ const TextEdit = ({
                 rangePropertyY="textShadowY"
                 rangePropertyBlur="textShadowBlur"
                 rangePropertyColor="colorTextShadow"
+                disabled={isProFeature}
               />
+               {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'44px'}
+                        />
+                     )}
           </div>
           <div
                 className="content-title-custom-panel intermedy"
@@ -1154,7 +1180,7 @@ const TextEdit = ({
                   {__("Box Shadow", "slider-future")}
                 </h2>
             </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+            <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
           <CustomShadowControl
             valueEnableShadow={element.enableBoxShadow}
             valueRangeShadowX={element.boxShadowX || 0}
@@ -1178,7 +1204,14 @@ const TextEdit = ({
             rangePropertyBlur="boxShadowBlur"
             rangePropertySpread="boxShadowSpread"
             rangePropertyColor="colorBoxShadow"
+            disabled={isProFeature}
           />
+           {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'44px'}
+                        />
+                     )}
        </div>
        <div
             className="content-title-custom-panel intermedy"
@@ -1187,7 +1220,7 @@ const TextEdit = ({
               {__("Text Stroke", "slider-future")}
             </h2>
         </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
         <CustomStrokeControl
             valueEnableStroke={element.enableStroke}
             valueRangeStroke={element.stroke || 0}
@@ -1207,7 +1240,14 @@ const TextEdit = ({
             enablePropertyStroke="enableStroke"
             rangePropertyStroke="stroke"
             colorPropertyStroke="colorStroke"
+            disabled={isProFeature}
           />
+           {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'44px'}
+                        />
+                     )}
         </div>
         <div
             className="content-title-custom-panel intermedy"
@@ -1216,7 +1256,7 @@ const TextEdit = ({
               {__("Blend Mode", "slider-future")}
             </h2>
         </div>
-        <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={`content-section-panel ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative',padding: "0"}}>
            <CustomSelectControl
                 label={
                   <>
@@ -1235,12 +1275,20 @@ const TextEdit = ({
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'blendMode')
                 }
                 selectOptions={blendModeOptions} // Passa le opzioni dinamiche
+                disabled={isProFeature}
               />
+              {isProFeature && (
+                      <ProTooltip
+                      tooltipProTop={'13px'}
+                        tooltipProRight={'92px'}
+                        />
+                     )}
          </div>
           
         </>
       )}
       {activeSection === "animation" && (
+        <>
           <CustomEffectControls
            valueEffect={element.effectIn}
            colorNormal={element.colorBlockEffect } 
@@ -1278,7 +1326,7 @@ const TextEdit = ({
               valueStagger={element.stagger}
               valueDirectionBlock={element.directionBlock}
               onAnimated={onAnimatedText}
-              selectOptions={selectOptionsEffectIn}
+              selectOptions={isProFeature ? selectOptionsEffectIn : selectOptionsEffectInFree}
            slides={slides}
            setAttributes={setAttributes}
            updateType="primary"
@@ -1321,6 +1369,10 @@ const TextEdit = ({
             staggerProperty="stagger"
             directionBlockProperty="directionBlock"
          />
+         {element.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
+    </>
       )}
 
       {activeSection === "hover" && (
@@ -1366,6 +1418,7 @@ const TextEdit = ({
             valueSkewYHover={element.skewYHover}
             valueDurationHover={element.durationHover}  
             valueEasingHover={element.easingHover}
+            showColorControl = {false}
            slides={slides}
            setAttributes={setAttributes}
            updateType="primary"
@@ -1390,6 +1443,9 @@ const TextEdit = ({
             durationHoverProperty="durationHover"
             easingHoverProperty="easingHover"
          />
+           {element.effectHover === "animation-pro" && (
+          <ProNotice />
+    )}
          </>
       )}
       {activeSection === "actions" && (

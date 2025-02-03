@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Button, ColorPicker, Icon} from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import {selectOptionsEffectHover} from '../../assets/options';
+import {selectOptionsEffectHoverFree} from '../../assets/options';
 import {selectOptionsScaleIn} from '../../assets/options';
 import {selectOptionsEase} from '../../assets/options';
+import {selectOptionsEaseFree} from '../../assets/options';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import SwapCallsIcon from '@mui/icons-material/SwapCalls';
@@ -16,6 +18,8 @@ import GrainIcon from '@mui/icons-material/Grain';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import CustomRangeControl  from "../../controls/range/CustomRangeControl"; 
 import CustomSelectControl from "../../controls/select/CustomSelectControl";
+import ProNotice from '../../components/ProNotice';
+import ProTooltip from '../../components/ProTooltip';
 
 const CustomHoverControls = ({
   valueEffectHover,
@@ -33,7 +37,7 @@ const CustomHoverControls = ({
     valueRotateXHover,
     valueRotateYHover,
     valueSkewXHover,
-    valueSkewYHover,
+    valueSkewYHover, 
     valueDurationHover,
     valueEasingHover,
     showColorControl = true, // Mostra o nasconde il controllo del colore
@@ -269,6 +273,14 @@ const CustomHoverControls = ({
         easingHoverProperty
         );
     };
+
+     const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
   return (
     <>
       <div
@@ -289,10 +301,11 @@ const CustomHoverControls = ({
             }
             value={valueEffectHover}
             onChange={handleChangeEffectHover}
-            options={selectOptionsEffectHover}
+            options={isProFeature ? selectOptionsEffectHover : selectOptionsEffectHoverFree}
             {...restProps}
           />
-        {valueEffectHover !== "none" && (
+           {(valueEffectHover !== "none" && valueEffectHover !== "animation-pro") && (
+       
         <>
         {showColorControl && (
           <>
@@ -452,6 +465,7 @@ const CustomHoverControls = ({
           step={1}
           {...restProps}
         />
+         <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -465,7 +479,17 @@ const CustomHoverControls = ({
           max={360}
           step={1}
           {...restProps}
+          disabled={isProFeature}
         />
+        
+        {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+                  </div>
+                    <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -479,7 +503,15 @@ const CustomHoverControls = ({
           max={360}
           step={1}
           {...restProps}
+          disabled={isProFeature}
         />
+        {isProFeature && (
+                  <ProTooltip
+                  tooltipProTop={'6px'}
+                    tooltipProRight={'74px'}
+                    />
+                  )}
+                  </div>
      </>
     )}
     {['skewHover','customHover'].includes(valueEffectHover) && (
@@ -537,9 +569,15 @@ const CustomHoverControls = ({
             }
             value={valueEasingHover ?? 'linear'}
             onChange={handleChangeEasingHover}
-            options={selectOptionsEase}
+            options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
             {...restProps}
           />
+           {valueEasingHover === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
       </>
     )}
       </div>

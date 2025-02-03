@@ -4,7 +4,7 @@ import {
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
 import FontStyle from "../font-style";
 import SectionSelector from "../multitab/sectionSelector";
@@ -49,7 +49,9 @@ import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomEffectControls from "../../multiControls/effect";
 import CustomHoverControls from "../../multiControls/hover";
 import { selectOptionsEffectElement } from "../../assets/options";
+import { selectOptionsEffectElementFree } from "../../assets/options";
 import {iconEffectOptions} from '../../assets/options';
+import {iconEffectOptionsFree} from '../../assets/options';
 import {iconEffectHoverOptions} from '../../assets/options';
 import GrainIcon from '@mui/icons-material/Grain';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
@@ -59,6 +61,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import CustomActionControls from "../../multiControls/action";
 import CustomVisibilityControls from "../../multiControls/visibility"
+import ProNotice from '../ProNotice';
 
 const ButtonEdit = ({
   slide,
@@ -445,6 +448,14 @@ const ButtonEdit = ({
       setSelectedIcon(iconName);
       setIsIconModalOpen(false);
     };
+
+       const [isProFeature, setIsProFeature] = useState(true);
+    
+      useEffect(() => {
+          if (typeof window.isProFeature !== 'undefined') {
+              setIsProFeature(window.isProFeature);
+          }
+      }, []);
   return (
     <div className="custom-block-added">
       <div className="divider-controls"></div>
@@ -861,7 +872,7 @@ const ButtonEdit = ({
                     {__("Font family", "slider-future")}
                   </>
                 }
-                value={element.fontFamilyButton || "Arial, sans-serif"}
+                value={element.fontFamilyButton}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="primary"
@@ -1372,7 +1383,7 @@ const ButtonEdit = ({
               valueDelay={element.delay}
               valueEndDelay={element.endDelay }
               onAnimated={onAnimatedButton}
-              selectOptions={selectOptionsEffectElement}
+              selectOptions={isProFeature ? selectOptionsEffectElement : selectOptionsEffectElementFree}
            slides={slides}
            setAttributes={setAttributes}
            updateType="primary"
@@ -1411,6 +1422,9 @@ const ButtonEdit = ({
             delayProperty="delay"
             endDelayProperty="endDelay"
          />
+            {element.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
 
             {element.buttonType !== 'type1' && element.buttonType !== 'type2' && (
             <>
@@ -1439,7 +1453,7 @@ const ButtonEdit = ({
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'iconAnimation')
                 }
-                selectOptions={iconEffectOptions} 
+                selectOptions={isProFeature ? iconEffectOptions : iconEffectOptionsFree}
               />
             {element.iconAnimation !== "none" && (
                 <CustomRangeControl
@@ -1513,6 +1527,9 @@ const ButtonEdit = ({
             durationHoverProperty="durationHover"
             easingHoverProperty="easingHover"
          />
+          {element.effectHover === "animation-pro" && (
+          <ProNotice />
+    )}
           <div
         className="content-title-custom-panel intermedy"
       >

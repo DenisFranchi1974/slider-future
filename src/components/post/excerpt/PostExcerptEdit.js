@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { __ } from '@wordpress/i18n';
 import { PanelBody,   __experimentalBoxControl as BoxControl,Tooltip, Button } from '@wordpress/components';
 import SectionSelectorElementPost from "../../multitab/sectionSelectorElementPost";
@@ -13,11 +13,13 @@ import PaddingIcon from '@mui/icons-material/Padding';
 import MarginIcon from '@mui/icons-material/Margin';
 import {borderStyleOptions} from '../../../assets/options';
 import {selectOptionsEffectIn} from '../../../assets/options';
-import {selectOptionsEffectElement} from '../../../assets/options';
+import { selectOptionsEffectInFree } from "../../../assets/options";
 import {selectOptionsEase} from '../../../assets/options';
+import { selectOptionsEaseFree } from "../../../assets/options";
 import {selectOptionsDirection} from '../../../assets/options';
 import {selectOptionsRepeat} from '../../../assets/options';
 import {selectOptionsEffectHover} from '../../../assets/options';
+import { selectOptionsEffectHoverFree } from "../../../assets/options";
 import {selectOptionsScaleIn} from '../../../assets/options';
 import {fontOptions} from '../../../assets/options';
 import {fontWeightOptions} from '../../../assets/options';
@@ -63,6 +65,8 @@ import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import ScatterPlotIcon from '@mui/icons-material/ScatterPlot';
+import ProTooltip from '../../ProTooltip';
+import ProNotice from '../../ProNotice';
 
 const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt}) => {
 
@@ -154,6 +158,13 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
     setHideImage(newState);
     setAttributes({ hideExcerpt: newState });
   };
+   const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
       // Section Image
   const [activeSectionImage, setActiveSectionImage] = useState("style");
   return (
@@ -498,6 +509,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{position:'relative' }}>
         <CustomToggleControl
             label={
                 <>
@@ -507,7 +519,15 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
             }
             checked={excerptPostBoxShadow}
             onChange={(val) => setAttributes({excerptPostBoxShadow: val })}
+            disabled= {isProFeature}
             />
+             {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'45px'}
+                          />
+                       )}
+                       </div>
             {excerptPostBoxShadow && (
             <>
              <div className="custom-select color">
@@ -588,7 +608,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
         }}
       >
         <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
-        {(excerptPostEffect !== 'none') && (
+        {(excerptPostEffect !== 'none' && excerptPostEffect !== 'animation-pro') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
             <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimationPostExcerpt} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
@@ -606,7 +626,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
             }
             value={excerptPostEffect}
             onChange={(val) => setAttributes({excerptPostEffect: val })}
-            options={selectOptionsEffectIn}
+            options={isProFeature ? selectOptionsEffectIn : selectOptionsEffectInFree}
             />
             {excerptPostEffect === 'splitText' && (
               <>
@@ -636,7 +656,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
         />
               </>
               )}
-            {excerptPostEffect !== 'none' && (
+           {(excerptPostEffect !== 'none' && excerptPostEffect !== 'animation-pro') && (
               <>
              <CustomRangeControl
           label={
@@ -758,7 +778,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
      }
      value={excerptPostScaleType}
      onChange={(val) => setAttributes({excerptPostScaleType: val })}
-     options={selectOptionsEffectElement}
+     options={selectOptionsScaleIn}
      />
     )}
       {(['scaleIn', 'scaleInX', 'scaleInY','customEffectIn'].includes(excerptPostEffect)  || ['scaleSplit', 'scaleXSplit', 'scaleYSplit','explosion','gather','customSplit'].includes(excerptPostEffectSplit)) && (
@@ -820,6 +840,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           max={360}
           step={1}
         />
+          <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -832,7 +853,16 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+        </div>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -845,7 +875,16 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                     </div>
+                     <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -858,7 +897,16 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
+                    <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -871,7 +919,15 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
      </>
     )}
     {(['skewInX','customEffectIn'].includes(excerptPostEffect) || (excerptPostEffect === 'splitText' && 
@@ -1004,8 +1060,14 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
      }
      value={excerptPostEasing}
      onChange={(val) => setAttributes({excerptPostEasing: val })}
-     options={selectOptionsEase}
+       options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
      />
+     {excerptPostEasing === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
     <CustomSelectControl
      label={
          <>
@@ -1068,6 +1130,9 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           </>
         )}
           </div>
+          {excerptPostEffect === "animation-pro" && (
+          <ProNotice />
+    )}
           </>
         )}
 
@@ -1091,9 +1156,15 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
             }
             value={excerptPostEffectHover}
             onChange={(val) => setAttributes({excerptPostEffectHover: val })}
-            options={selectOptionsEffectHover}
+             options={isProFeature ? selectOptionsEffectHover : selectOptionsEffectHoverFree}
           />
-        {excerptPostEffectHover !== "none" && (
+            {excerptPostEffectHover === "animation-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+          )}
+           {(excerptPostEffectHover !== 'none' && excerptPostEffectHover !== 'animation-pro') && (
         <>
         <CustomRangeControl
           label={
@@ -1196,6 +1267,7 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           max={360}
           step={1}
         />
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
         <CustomRangeControl
           label={
             <>
@@ -1208,7 +1280,16 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
+                    <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
         <CustomRangeControl
           label={
             <>
@@ -1221,7 +1302,15 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
      </>
     )}
     {['skewHover','customHover'].includes(excerptPostEffectHover) && (
@@ -1276,8 +1365,14 @@ const PostExcerptEdit = ({ setAttributes, attributes, onPlayAnimationPostExcerpt
             }
             value={excerptPostEasingHover ?? 'linear'}
             onChange={(val) => setAttributes({excerptPostEasingHover: val })}
-            options={selectOptionsEase}
+              options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
           />
+          {excerptPostEasingHover === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
       </>
     )}
       </div>

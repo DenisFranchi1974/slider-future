@@ -22,6 +22,10 @@ const NavigationButtons = ({
   navigationIcons,
   navColor,
   sizeNav,
+  navigationPosition,
+  navigationGap,
+  navOffSet,
+  offSetSidesNav
 }) => {
   if (!navigation) return null;
 
@@ -31,14 +35,43 @@ const NavigationButtons = ({
         nextEl: nextRef.current,
         prevEl: prevRef.current,
       },
-      // Altre opzioni di configurazione di Swiper
     });
     swiper.update();
   }
 
   return (
     <>
-      {/* Pulsante Avanti */}
+    <div class={"slider-future-nav nav-editor " + navigationPosition} style={{'--nav-gap': navigationGap + 'px','--nav-top':navOffSet + 'px','--nav-left': offSetSidesNav + 'px'}}>
+
+      <div
+        ref={prevRef}
+        className={swiperButtonPrevClasses}
+        style={stylesNavigation}
+      >
+        {navigationIcons === "default" && (
+          <KeyboardArrowLeftIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
+        )}
+        {navigationIcons === "one" && (
+          <WestIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
+        )}
+        {navigationIcons === "two" && (
+          <ArrowRightAltIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor, transform:'rotate(180deg)'}} />
+        )}
+        {navigationIcons === "three" && (
+          <KeyboardDoubleArrowLeftIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
+        )}
+        {navigationIcons === "four" && (
+          <ArrowLeftIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
+        )}
+        {navigationIcons === "five" && (
+          <RemoveIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
+        )}
+        {navigationIcons === "text" && (
+          <span style={{ color: navColor, fontSize: sizeNav + "px" }}>
+            {__("Prev", "slider-future")}
+          </span>
+        )}
+      </div>
       <div
         ref={nextRef}
         className={swiperButtonNextClasses} 
@@ -68,36 +101,6 @@ const NavigationButtons = ({
           </span>
         )}
       </div>
-
-      {/* Pulsante Precedente */}
-      <div
-        ref={prevRef}
-        className={swiperButtonPrevClasses}
-        style={stylesNavigation}
-      >
-        {navigationIcons === "default" && (
-          <KeyboardArrowLeftIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
-        )}
-        {navigationIcons === "one" && (
-          <WestIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
-        )}
-        {navigationIcons === "two" && (
-          <ArrowRightAltIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor, transform:'rotate(180deg)'}} />
-        )}
-        {navigationIcons === "three" && (
-          <KeyboardDoubleArrowLeftIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
-        )}
-        {navigationIcons === "four" && (
-          <ArrowLeftIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
-        )}
-        {navigationIcons === "five" && (
-          <RemoveIcon style={{width:sizeNav + 'px',height: sizeNav + 'px', fill:navColor}} />
-        )}
-        {navigationIcons === "text" && (
-          <span style={{ color: navColor, fontSize: sizeNav + "px" }}>
-            {__("Prev", "slider-future")}
-          </span>
-        )}
       </div>
     </>
   );

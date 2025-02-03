@@ -4,7 +4,7 @@ import {
   Tooltip,
   __experimentalBoxControl as BoxControl,
 } from "@wordpress/components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
 import SectionSelector from "../multitab/sectionSelector";
 import IconModal from "../../icons/IconModal";
@@ -36,7 +36,9 @@ import LayersClearIcon from '@mui/icons-material/LayersClear';
 import CustomShadowControl from "../../controls/shadow/ShadowControl";
 import CustomEffectControls from "../../multiControls/effect";
 import { selectOptionsEffectElement } from "../../assets/options";
+import { selectOptionsEffectElementFree } from "../../assets/options";
 import {iconEffectOptions} from '../../assets/options';
+import {iconEffectOptionsFree} from '../../assets/options';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import AnimationIcon from '@mui/icons-material/Animation';
 import GrainIcon from '@mui/icons-material/Grain';
@@ -47,6 +49,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import DeblurIcon from '@mui/icons-material/Deblur';
+import ProNotice from '../ProNotice';
 
 const IconEdit = ({
   slide,
@@ -392,6 +395,14 @@ const IconEdit = ({
  };
 
  const IconComponent = materialIcons[element.icon];
+
+     const [isProFeature, setIsProFeature] = useState(true);
+       
+         useEffect(() => {
+             if (typeof window.isProFeature !== 'undefined') {
+                 setIsProFeature(window.isProFeature);
+             }
+         }, []);
 
   return (
     <div className="custom-block-added">
@@ -921,7 +932,7 @@ const IconEdit = ({
               valueDelay={element.delay}
               valueEndDelay={element.endDelay }
               onAnimated={onAnimatedIcon}
-              selectOptions={selectOptionsEffectElement}
+               selectOptions={isProFeature ? selectOptionsEffectElement : selectOptionsEffectElementFree}
            slides={slides}
            setAttributes={setAttributes}
            updateType="primary"
@@ -960,6 +971,9 @@ const IconEdit = ({
             delayProperty="delay"
             endDelayProperty="endDelay"
          />
+           {element.effectIn === "animation-pro" && (
+          <ProNotice />
+    )}
           <div className="content-section-panel" style={{ padding: "0" }}>
           <CustomSelectControl
                 label={
@@ -978,9 +992,12 @@ const IconEdit = ({
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'iconAnimation')
                 }
-                selectOptions={iconEffectOptions} 
+               selectOptions={isProFeature ? iconEffectOptions : iconEffectOptionsFree}
               />
-            {element.iconAnimation !== "none" && (
+               {element.iconAnimation === "animation-pro" && (
+          <ProNotice />
+    )}
+            {(element.iconAnimation !== "none" && element.iconAnimation !== "animation-pro") && (
               <>
                 <CustomRangeControl
                 label={
@@ -1125,6 +1142,7 @@ const IconEdit = ({
                 }
               />
         )}
+         {element.animationHover !== 'none' && (
          <CustomRangeControl
                 label={
                   <>
@@ -1146,6 +1164,7 @@ const IconEdit = ({
                   updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'durationEffectHover')
                 }
               />
+        )}
 
       </div>
       <div

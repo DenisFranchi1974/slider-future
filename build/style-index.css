@@ -3,15 +3,15 @@
   \***************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /**
- * Swiper 11.1.4
+ * Swiper 11.2.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
- * Copyright 2014-2024 Vladimir Kharlampidi
+ * Copyright 2014-2025 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: May 30, 2024
+ * Released on: January 10, 2025
  */
 @font-face {
   font-family: "swiper-icons";
@@ -529,18 +529,20 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
-.swiper-cards {
+.swiper.swiper-cards {
   overflow: visible;
 }
+
 .swiper-cards .swiper-slide {
   transform-origin: center bottom;
   backface-visibility: hidden;
   overflow: hidden;
 }
 
-.swiper-cube {
+.swiper.swiper-cube {
   overflow: visible;
 }
+
 .swiper-cube .swiper-slide {
   pointer-events: none;
   backface-visibility: hidden;
@@ -623,9 +625,10 @@ button.swiper-pagination-bullet {
   pointer-events: auto;
 }
 
-.swiper-flip {
+.swiper.swiper-flip {
   overflow: visible;
 }
+
 .swiper-flip .swiper-slide {
   pointer-events: none;
   backface-visibility: hidden;
@@ -1158,7 +1161,6 @@ button.swiper-pagination-bullet {
 /* Base Styling for content-slide-slider */
 .content-slide-slider {
   width: 100%;
-  /*box-sizing: border-box;*/
 }
 
 @media (max-width: 1024px) {
@@ -1446,7 +1448,6 @@ button.swiper-pagination-bullet {
     var(--wp--preset--color--primary)
   );
   --swiper-navigation-size: var(--size-nav);
-  --swiper-navigation-top-offset: var(--offset-top-nav);
   --swiper-navigation-sides-offset: var(--offset-sides-nav);
   --swiper-pagination-bullet-vertical-gap: 0.25rem;
   --swiper-scrollbar-left: auto;
@@ -1766,7 +1767,7 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-6:hover {
-  filter: blur(2px); /* Applica una sfocatura leggera */
+  filter: blur(2px);
 }
 
 /* Hover Light Effect */
@@ -1937,8 +1938,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-title-div-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-title-div) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 2px 4px var(--color-effect-hover-title-div) !important;
+  filter: brightness(1.2);
 }
 
 /* Shadow */
@@ -1947,8 +1948,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-title-div:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-title-div) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-title-div) !important;
+  filter: brightness(1.2);
 }
 
 /* Ombra */
@@ -1957,8 +1958,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-4-title-div:hover {
-  box-shadow: 0px 8px 16px var(--color-effect-hover-title-div) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0px 8px 16px var(--color-effect-hover-title-div) !important;
+  filter: brightness(1.2);
 }
 
 /* Sfocatura */
@@ -1967,7 +1968,7 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-6-title-div:hover {
-  filter: blur(2px); /* Applica una sfocatura leggera */
+  filter: blur(2px);
 }
 
 /* Hover Light Effect */
@@ -2011,7 +2012,7 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-2-image:hover {
-  transform: translateY(var(--translate-hover-image)) !important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-image)) !important;
 }
 
 /* Translate X */
@@ -2020,7 +2021,7 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-5-image:hover {
-  transform: translateX(var(--translate-hover-image)) !important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-image)) !important;
 }
 
 /* Shadow */
@@ -2029,8 +2030,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-image-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-image) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 2px 4px var(--color-effect-hover-image) !important;
+  filter: brightness(1.2);
 }
 
 /* Shadow */
@@ -2039,8 +2040,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-image:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-image) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-image) !important;
+  filter: brightness(1.2);
 }
 
 /* Hover Effect image inner */
@@ -2059,7 +2060,7 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-2-image-inner:hover {
-  transform: translateY(var(--translate-hover-image-inner)) !important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateY(var(--translate-hover-image-inner)) !important;
 }
 
 /* Translate X */
@@ -2068,7 +2069,7 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-5-image-inner:hover {
-  transform: translateX(var(--translate-hover-image-inner)) !important; /* Sposta l'elemento verso l'alto di 10px */
+  transform: translateX(var(--translate-hover-image-inner)) !important;
 }
 
 /* Shadow */
@@ -2077,8 +2078,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-image-inner-:hover {
-  box-shadow: 0 2px 4px var(--color-effect-hover-image-inner) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 2px 4px var(--color-effect-hover-image-inner) !important;
+  filter: brightness(1.2);
 }
 
 /* Shadow */
@@ -2087,8 +2088,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-image-inner:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-image-inner) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.2); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-image-inner) !important;
+  filter: brightness(1.2);
 }
 
 /* Shadow */
@@ -2097,8 +2098,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-3-div:hover {
-  box-shadow: 0 4px 8px var(--color-effect-hover-div) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.4); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 4px 8px var(--color-effect-hover-div) !important;
+  filter: brightness(1.4);
 }
 
 /* Shadow */
@@ -2107,8 +2108,8 @@ button.swiper-pagination-bullet {
 }
 
 .hover-effect-4-div:hover {
-  box-shadow: 0 8px 16px var(--color-effect-hover-div) !important; /* Aggiunge un'ombra */
-  filter: brightness(1.8); /* Aumenta la luminosità dell'elemento */
+  box-shadow: 0 8px 16px var(--color-effect-hover-div) !important;
+  filter: brightness(1.8);
 }
 
 /* Effect Icon Button */
@@ -3323,13 +3324,11 @@ button.swiper-pagination-bullet {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 999999;
+  z-index: 9;
 }
 
 /* Post content */
 .content-slide-post {
-  width: 100%;
-  height: 100%;
   display: flex;
 }
 
@@ -3340,6 +3339,12 @@ button.swiper-pagination-bullet {
 
 .content-slide-post.horizontal-layout {
   flex-direction: row;
+}
+
+.max-content-post {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }
 
 /* Top Positioning */
@@ -3772,6 +3777,103 @@ button.swiper-pagination-bullet {
 
 .swiper-autoheight .swiper-wrapper {
   height: auto !important;
+}
+
+/* Navigation */
+.slider-future-nav.top-left {
+  justify-content: flex-start;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.top-center {
+  justify-content: center;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.top-right {
+  justify-content: flex-end;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.top-space-between {
+  justify-content: space-between;
+  top: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.bottom-left {
+  justify-content: flex-start;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.bottom-center {
+  justify-content: center;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.bottom-right {
+  justify-content: flex-end;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.bottom-space-between {
+  justify-content: space-between;
+  bottom: var(--nav-top);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  left: var(--nav-left);
+  gap: var(--nav-gap);
+}
+
+.slider-future-nav.top-left .swiper-button-next, .slider-future-nav.top-left .swiper-button-prev,
+.slider-future-nav.top-center .swiper-button-next, .slider-future-nav.top-center .swiper-button-prev,
+.slider-future-nav.top-right .swiper-button-next, .slider-future-nav.top-right .swiper-button-prev,
+.slider-future-nav.top-space-between .swiper-button-next, .slider-future-nav.top-space-between .swiper-button-prev,
+.slider-future-nav.bottom-left .swiper-button-next, .slider-future-nav.bottom-left .swiper-button-prev,
+.slider-future-nav.bottom-center .swiper-button-next, .slider-future-nav.bottom-center .swiper-button-prev,
+.slider-future-nav.bottom-right .swiper-button-next, .slider-future-nav.bottom-right .swiper-button-prev,
+.slider-future-nav.bottom-space-between .swiper-button-next, .slider-future-nav.bottom-space-between .swiper-button-prev {
+  bottom: auto;
+  left: auto;
+  margin: 0 !important;
+  position: relative;
+  right: auto;
+  top: auto;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

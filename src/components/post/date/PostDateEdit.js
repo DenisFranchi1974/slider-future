@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { __ } from '@wordpress/i18n';
 import { PanelBody,   __experimentalBoxControl as BoxControl,Tooltip, Button } from '@wordpress/components';
 import SectionSelectorElementPostAut from "../../multitab/sectionSelectorElementPostAut";
@@ -13,11 +13,13 @@ import PaddingIcon from '@mui/icons-material/Padding';
 import MarginIcon from '@mui/icons-material/Margin';
 import {borderStyleOptions} from '../../../assets/options';
 import {selectOptionsEffectIn} from '../../../assets/options';
-import {selectOptionsEffectElement} from '../../../assets/options';
+import { selectOptionsEffectInFree } from "../../../assets/options";
 import {selectOptionsEase} from '../../../assets/options';
+import { selectOptionsEaseFree } from "../../../assets/options";
 import {selectOptionsDirection} from '../../../assets/options';
 import {selectOptionsRepeat} from '../../../assets/options';
 import {selectOptionsEffectHover} from '../../../assets/options';
+import { selectOptionsEffectHoverFree } from "../../../assets/options";
 import {selectOptionsScaleIn} from '../../../assets/options';
 import {fontOptions} from '../../../assets/options';
 import {fontWeightOptions} from '../../../assets/options';
@@ -61,6 +63,8 @@ import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import ScatterPlotIcon from '@mui/icons-material/ScatterPlot';
+import ProTooltip from '../../ProTooltip';
+import ProNotice from '../../ProNotice';
 
 const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => {
 
@@ -150,7 +154,14 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
     setHideImage(newState);
     setAttributes({ hideDate: newState });
   };
-      // Section Image
+   const [isProFeature, setIsProFeature] = useState(true);
+
+  useEffect(() => {
+      if (typeof window.isProFeature !== 'undefined') {
+          setIsProFeature(window.isProFeature);
+      }
+  }, []);
+  // Section Image
   const [activeSectionImage, setActiveSectionImage] = useState("style");
   return (
     <PanelBody
@@ -494,6 +505,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
                 </h2>
             </div>
         <div className="content-section-panel" style={{ padding: "0" }}>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{position:'relative' }}>
         <CustomToggleControl
             label={
                 <>
@@ -503,7 +515,15 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
             }
             checked={datePostBoxShadow}
             onChange={(val) => setAttributes({datePostBoxShadow: val })}
+            disabled= {isProFeature}
             />
+             {isProFeature && (
+                        <ProTooltip
+                        tooltipProTop={'14px'}
+                          tooltipProRight={'45px'}
+                          />
+                       )}
+                       </div>
             {datePostBoxShadow && (
             <>
              <div className="custom-select color">
@@ -584,7 +604,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
         }}
       >
         <h2 className="title-custom-panel">{__("Animations", "slider-future")}</h2>
-        {(datePostEffect !== 'none') && (
+        {(datePostEffect !== 'none' && datePostEffect !== 'animation-pro') && (
           <div className="button-reply-effect" style={{borderRadius:'50%'}}>
             <Tooltip text={__('Play',"slider-future")}>
             <Button onClick={onPlayAnimationPostDate} style={{padding:'5px 8px'}}><SlowMotionVideoIcon/></Button> 
@@ -602,7 +622,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
             }
             value={datePostEffect}
             onChange={(val) => setAttributes({datePostEffect: val })}
-            options={selectOptionsEffectIn}
+            options={isProFeature ? selectOptionsEffectIn : selectOptionsEffectInFree}
             />
             {datePostEffect === 'splitText' && (
               <>
@@ -632,7 +652,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
         />
               </>
               )}
-            {datePostEffect !== 'none' && (
+           {(datePostEffect !== 'none' && datePostEffect !== 'animation-pro') && (
               <>
              <CustomRangeControl
           label={
@@ -754,7 +774,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
      }
      value={datePostScaleType}
      onChange={(val) => setAttributes({datePostScaleType: val })}
-     options={selectOptionsEffectElement}
+     options={selectOptionsScaleIn}
      />
     )}
       {(['scaleIn', 'scaleInX', 'scaleInY','customEffectIn'].includes(datePostEffect)  || ['scaleSplit', 'scaleXSplit', 'scaleYSplit','explosion','gather','customSplit'].includes(datePostEffectSplit)) && (
@@ -816,6 +836,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           max={360}
           step={1}
         />
+          <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -828,7 +849,16 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+        </div>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -841,7 +871,16 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+        </div>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -854,7 +893,16 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+        </div>
+        <div className={` ${isProFeature ? 'hover-pro' : ''}`} style={{position:'relative'}}>
         <CustomRangeControl
           label={
             <>
@@ -867,7 +915,15 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+        </div>
      </>
     )}
     {(['skewInX','customEffectIn'].includes(datePostEffect) || (datePostEffect === 'splitText' && 
@@ -1000,8 +1056,14 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
      }
      value={datePostEasing}
      onChange={(val) => setAttributes({datePostEasing: val })}
-     options={selectOptionsEase}
+       options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
      />
+     {datePostEasing === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
     <CustomSelectControl
      label={
          <>
@@ -1064,6 +1126,9 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           </>
         )}
           </div>
+          {datePostEffect === "animation-pro" && (
+          <ProNotice />
+    )}
           </>
         )}
 
@@ -1087,9 +1152,9 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
             }
             value={datePostEffectHover}
             onChange={(val) => setAttributes({datePostEffectHover: val })}
-            options={selectOptionsEffectHover}
+             options={isProFeature ? selectOptionsEffectHover : selectOptionsEffectHoverFree}
           />
-        {datePostEffectHover !== "none" && (
+           {(datePostEffectHover !== 'none' && datePostEffectHover !== 'animation-pro') && (
         <>
         <CustomRangeControl
           label={
@@ -1192,6 +1257,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           max={360}
           step={1}
         />
+         <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
         <CustomRangeControl
           label={
             <>
@@ -1204,7 +1270,16 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           min={-360}
           max={360}
           step={1}
-        />
+          disabled={isProFeature}
+          />
+           {isProFeature && (
+                    <ProTooltip
+                    tooltipProTop={'6px'}
+                      tooltipProRight={'74px'}
+                      />
+                    )}
+                    </div>
+                    <div className={` ${isProFeature ? 'hover-pro' : ''}`}  style={{ position:'relative' }}>
         <CustomRangeControl
           label={
             <>
@@ -1218,6 +1293,7 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
           max={360}
           step={1}
         />
+        </div>
      </>
     )}
     {['skewHover','customHover'].includes(datePostEffectHover) && (
@@ -1272,8 +1348,14 @@ const PostDateEdit = ({ setAttributes, attributes, onPlayAnimationPostDate}) => 
             }
             value={datePostEasingHover ?? 'linear'}
             onChange={(val) => setAttributes({datePostEasingHover: val })}
-            options={selectOptionsEase}
+              options={isProFeature ? selectOptionsEase : selectOptionsEaseFree}
           />
+           {datePostEasingHover === "more-pro" && (
+      <ProNotice 
+        radiusOneProNotice = '0'
+        radiusTwoProNotice = '0'
+      />
+    )}
       </>
     )}
       </div>

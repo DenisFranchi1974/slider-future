@@ -1,6 +1,5 @@
 import anime from 'animejs';
 
-// Funzione per ottenere gli attributi comuni delle animazioni
 const getAnimationProps = (props, target) => {
   const {
     duration = 800,
@@ -53,10 +52,8 @@ const getAnimationProps = (props, target) => {
   
   } = props;
 
-    // Converti il valore di loop in un numero
     const loopCount = (typeof loop === 'string' && loop.toLowerCase() === 'true') ? Infinity : Number(loop);
 
-    // Aggiungi la classe per disabilitare gli eventi del mouse
     if (target) {
       target.classList.add('no-pointer-events');
     }
@@ -110,7 +107,6 @@ const getAnimationProps = (props, target) => {
     heightFrom,
     heightTo,
     complete: function(anim) {
-      // Rimuovi la classe per riabilitare gli eventi del mouse
       if (target) {
         target.classList.remove('no-pointer-events');
       }
@@ -121,50 +117,48 @@ const getAnimationProps = (props, target) => {
   };
 };
 
-// Effect Block
 const blockTransition = (element, direction, animationProps = {}) => {
   
   const block = document.createElement("div");
   block.className = "block-transition";
   const colorBlock = animationProps.colorBlockEffect || '#000';
-  
-  // Impostazioni iniziali del blocco
+
   block.style.position = "absolute";
   block.style.top = 0;
   block.style.left = 0;
   block.style.width = "100%";
   block.style.height = "100%";
-  block.style.backgroundColor = colorBlock; // Colore del blocco
-  element.style.position = "relative"; // Assicura che l'elemento sia relativo
+  block.style.backgroundColor = colorBlock; 
+  element.style.position = "relative"; 
   element.appendChild(block);
 
   const container = element.closest(".title-slide,.title-slide-div");
   if (container) {
-    container.style.opacity = "1"; // Rendi il contenuto visibile
+    container.style.opacity = "1"; 
   }
 
   let fromVars, toVars, exitVars;
 
   switch (direction) {
     case "left":
-      fromVars = { width: '0%', left: '0%' }; // Inizia da sinistra
-      toVars = { width: '100%', left: '0%' }; // Copre il testo
-      exitVars = { width: '0%', left: '100%' }; // Esce verso destra
+      fromVars = { width: '0%', left: '0%' }; 
+      toVars = { width: '100%', left: '0%' }; 
+      exitVars = { width: '0%', left: '100%' }; 
       break;
     case "right":
-      fromVars = { width: '0%', left: '100%' }; // Inizia da destra
-      toVars = { width: '100%', left: '0%' }; // Copre il testo
-      exitVars = { width: '0%', left: '0%' }; // Esce verso sinistra
+      fromVars = { width: '0%', left: '100%' }; 
+      toVars = { width: '100%', left: '0%' }; 
+      exitVars = { width: '0%', left: '0%' }; 
       break;
     case "top":
-      fromVars = { height: '0%', top: '0%' }; // Inizia dall'alto
-      toVars = { height: '100%', top: '0%' }; // Copre il testo
-      exitVars = { height: '0%', top: '100%' }; // Esce verso il basso
+      fromVars = { height: '0%', top: '0%' }; 
+      toVars = { height: '100%', top: '0%' }; 
+      exitVars = { height: '0%', top: '100%' }; 
       break;
     case "bottom":
-      fromVars = { height: '0%', top: '100%' }; // Inizia dal basso
-      toVars = { height: '100%', top: '0%' }; // Copre il testo
-      exitVars = { height: '0%', top: '0%' }; // Esce verso l'alto
+      fromVars = { height: '0%', top: '100%' }; 
+      toVars = { height: '100%', top: '0%' }; 
+      exitVars = { height: '0%', top: '0%' }; 
       break;
     default:
       fromVars = { width: '0%', left: '0%' };
@@ -174,17 +168,14 @@ const blockTransition = (element, direction, animationProps = {}) => {
 
   const halfDuration = animationProps.duration ? animationProps.duration / 2 : 500;
 
-    // Imposta i valori iniziali
     Object.assign(block.style, fromVars);
 
-  // Primo step: il blocco cresce gradualmente e copre l'elemento
   anime({
     targets: block,
     ...toVars,
     duration: halfDuration,
     easing: animationProps.easing || 'easeInOutQuad',
     complete: () => {
-      // Secondo step: il blocco decresce rivelando il testo
       anime({
         targets: block,
         ...exitVars,
@@ -192,9 +183,9 @@ const blockTransition = (element, direction, animationProps = {}) => {
         easing: animationProps.easing || 'easeInOutQuad',
         delay: animationProps.delay || 0,
         complete: () => {
-          element.removeChild(block); // Rimuovi il blocco al termine
+          element.removeChild(block); 
           if (container) {
-            container.style.opacity = ''; // Ripristina l'opacità
+            container.style.opacity = ''; 
           }
         }
       });
@@ -342,7 +333,6 @@ export const BlockFromIn = (target, props = {}) => {
     targets: target,
     ...animationProps,
   });
-  // Aggiungi il blockTransition dopo l'animazione
   blockTransition(target, directionBlock, animationProps);
 };
 
@@ -368,7 +358,7 @@ export const customEffectIn = (target, props = {}) => {
   const skewXTo = props.skewXTo ?? 0;
   const skewYFrom = props.skewYFrom ?? 0;
   const skewYTo = props.skewYTo ?? 0;
-  const scaleType = props.scaleType ?? 'scale'; // Default to 'scale'
+  const scaleType = props.scaleType ?? 'scale';
   const animationTargets = {
     targets: target,
     translateX: [startXFrom, startXTo],
@@ -383,7 +373,6 @@ export const customEffectIn = (target, props = {}) => {
     skewY: [skewYFrom, skewYTo],
   };
 
-  // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
   if (scaleType === 'scale') {
     animationTargets.scale = [scaleFrom, scaleTo];
   } else if (scaleType === 'scaleX') {
@@ -396,12 +385,11 @@ export const customEffectIn = (target, props = {}) => {
 };
 
 
-// Definisci gli effetti di animazione
 const getAnimationEffect = (effectName,container,  props = {}) => {
 
-  container.style.opacity = 1; // Imposta l'opacità a 0 per l'animazione di ingresso
+  container.style.opacity = 1; 
  
-  const animationProps = getAnimationProps(props); // Usa getAnimationProps per ottenere le proprietà comuni
+  const animationProps = getAnimationProps(props); 
 
   switch (effectName) {
     case 'fadeSplit':
@@ -483,15 +471,13 @@ const getAnimationEffect = (effectName,container,  props = {}) => {
             };
     default:
       return {
-        translateY: [100, 0], // Imposta un effetto di default
+        translateY: [100, 0], 
       };
   }
 };
 
-// Nuovo effetto di animazione per il testo splittato
 export const splitText = (container, props = {}) => {
 
-  // Funzione per splittare il testo
 const splitTextContent = (text, lettersRef) => {
   // Verifica se il testo è vuoto o nullo
   if (!text || text.trim() === '') {
@@ -499,26 +485,23 @@ const splitTextContent = (text, lettersRef) => {
     return [];
   }
 
-  // Verifica se il contenuto è già stato splittato (evita duplicazione)
   if (lettersRef.current.length > 0) {
     console.warn("Il testo è già stato splittato");
     return lettersRef.current;
   }
 
-  // Rimuovi le span esistenti prima di splittare il nuovo testo
   lettersRef.current.forEach(span => {
     if (span.parentNode) {
       span.parentNode.removeChild(span);
     }
   });
-  lettersRef.current = []; // Pulisci l'array di riferimenti
+  lettersRef.current = []; 
 
-  // Splitta il testo e crea gli span per ogni carattere
   return text.split('').map((char, idx) => {
-    const span = document.createElement('span'); // Crea un elemento span per ogni lettera
-    span.className = 'letter'; // Assegna una classe per stile
-    span.textContent = char === ' ' ? '\u00A0' : char; // Usa uno spazio non interrotto per gli spazi
-    lettersRef.current[idx] = span; // Assegna il ref per l'animazione successiva
+    const span = document.createElement('span'); 
+    span.className = 'letter'; 
+    span.textContent = char === ' ' ? '\u00A0' : char; 
+    lettersRef.current[idx] = span; 
     return span;
 
   });
@@ -527,54 +510,44 @@ const splitTextContent = (text, lettersRef) => {
 
   const animationProps = getAnimationProps(props);
 
-  const lettersRef = { current: [] }; // Crea un ref per contenere le lettere splittate
+  const lettersRef = { current: [] }; 
 
-
-  // Converti il valore di loop in un numero
   const loopCount = (typeof animationProps.loop === 'string' && animationProps.loop.toLowerCase() === 'true') ? Infinity : Number(animationProps.loop);
 
-  // Ottieni il testo dal contenitore e splittalo, assicurati che non sia già splittato
-  const text = container.textContent.trim(); // Prendi il testo dal contenitore e rimuovi eventuali spazi esterni
+  const text = container.textContent.trim(); 
   if (!text) {
     console.warn("Contenitore senza testo. Nessuna animazione eseguita.");
     return;
   }
 
-  container.innerHTML = ''; // Pulisci il contenitore
+  container.innerHTML = ''; 
 
-  // Splitta il testo e aggiungi gli span (le lettere splittate) al contenitore
   const letters = splitTextContent(text, lettersRef);
   if (!letters.length) {
     console.warn("Nessuna lettera disponibile per l'animazione.");
     return;
   }
   
-  letters.forEach(letter => container.appendChild(letter)); // Aggiungi ogni lettera (span) nel container
+  letters.forEach(letter => container.appendChild(letter)); 
 
-  // Ottieni l'effetto in base alla stringa dal selettore
   const animationEffect = getAnimationEffect(animationProps.textSplitEffect,container,props);
-  // Creare una timeline per l'animazione
   anime.timeline({
     loop: loopCount,
     direction: animationProps.direction,
   })
   .add({
-    targets: lettersRef.current, // Anima tutte le lettere via ref
-    //scale: [4, 1], // Scala le lettere da 4 a 1
-   // opacity: [0, 1],
-    //rotateX: [360, 0], // Ruota le lettere da
+    targets: lettersRef.current, 
     translateZ:0,
-    ...animationEffect, // Applica l'effetto dinamico
-    easing: animationProps.easing || 'linear', // Applica l'easing
-    duration: animationProps.duration, // Durata dell'animazione
-    delay: anime.stagger(animationProps.stagger ?? 200), // Stagger tra le lettere
+    ...animationEffect, 
+    easing: animationProps.easing || 'linear', 
+    duration: animationProps.duration, 
+    delay: anime.stagger(animationProps.stagger ?? 200), 
     
   });
 
  
 };
 
-// Definisci gli effetti hover
 const hoverEffects = {
   scaleHover: (element, animationProps) => {
     anime({
@@ -650,7 +623,7 @@ const hoverEffects = {
     });
   },
   customHover: (element, animationProps) => {
-    const scaleTypeHover = animationProps.scaleTypeHover || 'scale'; // Default to 'scale'
+    const scaleTypeHover = animationProps.scaleTypeHover || 'scale'; 
   const animationTargetsHover = {
     opacity: animationProps.opacityHover ?? 1,
     filter: 'blur('+animationProps.filterHover+'px)',
@@ -666,7 +639,6 @@ const hoverEffects = {
     duration: animationProps.durationHover || 800,
   };
 
-  // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
   if (scaleTypeHover === 'scale') {
     animationTargetsHover.scale = animationProps.scaleHover;
   } else if (scaleTypeHover === 'scaleX') {
@@ -679,37 +651,34 @@ const hoverEffects = {
   },
 };
 
-// Funzione per gestire l'hover all'entrata
 export const handleMouseEnter = (e, props = {}) => {
   const animationProps = getAnimationProps(props);
   
 
-  anime.remove(e.target); // Rimuove eventuali animazioni in corso
+  anime.remove(e.target); 
 
   if (hoverEffects[animationProps.effectHover]) {
     hoverEffects[animationProps.effectHover](e.target, animationProps);
   }
 };
 
-// Funzione per gestire l'hover all'uscita
 export const handleMouseLeave = (e, props = {}) => {
   const animationProps = getAnimationProps(props);
-  anime.remove(e.target); // Rimuove eventuali animazioni in corso
-  // Ripristina lo stato originale dell'elemento
+  anime.remove(e.target); 
   anime({
     targets: e.target,
-    scale: 1, // Torna alla scala originale
-    scaleX: 1, // Torna alla scala originale
-    scaleY: 1, // Torna alla scala originale
-    rotate: 0, // Torna alla rotazione originale
-    rotateX: 0, // Torna alla rotazione originale
-    rotateY: 0, // Torna alla rotazione originale
-    translateX: 0, // Torna alla posizione originale
-    translateY: 0, // Torna alla posizione originale
-    opacity: 1, // Torna all'opacità originale
-    filter: 'blur(0px)', // Rimuove l'effetto blur
-    skewX: 0, // Torna allo skew originale
-    skewY: 0, // Torna allo skew originale
+    scale: 1, 
+    scaleX: 1, 
+    scaleY: 1, 
+    rotate: 0, 
+    rotateX: 0, 
+    rotateY: 0, 
+    translateX: 0, 
+    translateY: 0, 
+    opacity: 1, 
+    filter: 'blur(0px)', 
+    skewX: 0, 
+    skewY: 0, 
     easing: animationProps.easingHover || 'linear',
     duration: animationProps.durationHover,
   });

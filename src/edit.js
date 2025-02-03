@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { TabPanel, Button, Tooltip, Notice} from "@wordpress/components";
+import { TabPanel, Button, Tooltip} from "@wordpress/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -231,6 +231,9 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     positionPost,
     enableContentWidthPost,
     contentWidthPost,
+    enableContentWidthSlidePost,
+    contentWidthSlidePost,
+    justifyContentSlidePost,
     layoutWrapPost,
     includeCategories = [],
    excludeCategories = [],
@@ -254,12 +257,18 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     imageBgPostPositionX,
     imageBgPostPositionY,
     specificPosts,
-    latestPosts 
+    latestPosts,
+    navigationPosition,
+    navigationGap,
+    backgroundColorContentPost,
+    contentPostPadding,
+    contentPostBorderStyle,
+    contentPostBorderSize,
+    contentPostBorderColor,
+    contentPostBorderRadius,
   } = attributes;
 
-  /* Classi personalizzate per il blocco */
   useEffect(() => {
-    // Funzione per rimuovere le classi personalizzate
     const removeCustomClasses = () => {
       const panels = document.querySelectorAll(
         ".slider-future-custom-advanced-panel"
@@ -274,7 +283,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       });
     };
 
-    // Funzione per aggiungere una classe personalizzata al pannello "Advanced"
     const addCustomClassToAdvancedPanel = () => {
       const advancedPanels = document.querySelectorAll(
         ".block-editor-block-inspector__advanced"
@@ -290,7 +298,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       });
     };
 
-    // Funzione per aggiungere una classe personalizzata al block-editor-block-card
     const addCustomClassToBlockCard = () => {
       const blockCards = document.querySelectorAll(".block-editor-block-card");
       blockCards.forEach((card) => {
@@ -301,12 +308,10 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       });
     };
 
-    // Aggiunge e rimuove le classi all'inizio
     removeCustomClasses();
     addCustomClassToAdvancedPanel();
     addCustomClassToBlockCard();
 
-    // Osserva il DOM per i cambiamenti e gestisce le classi
     const observer = new MutationObserver(() => {
       removeCustomClasses();
       addCustomClassToAdvancedPanel();
@@ -318,13 +323,11 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       subtree: true,
     });
 
-    // Pulisce l'observer quando il componente viene smontato
     return () => {
       observer.disconnect();
     };
   }, []);
 
-  /* Nascondi il pannello Advanced */
   useEffect(() => {
     const handleTabClick = (event) => {
       const tabId = event.currentTarget.id;
@@ -332,7 +335,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
         ".slider-future-custom-advanced-panel"
       );
 
-      // Lista dei tab che devono nascondere il pannello avanzato
       const tabsToHideAdvancedPanel = [
         "tab-panel-0-tab2",
         "tab-panel-0-tab3",
@@ -340,12 +342,10 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       ];
 
       if (tabsToHideAdvancedPanel.includes(tabId)) {
-        // Nascondi il pannello avanzato
         if (advancedPanel) {
           advancedPanel.classList.add("hidden");
         }
       } else {
-        // Mostra il pannello avanzato
         if (advancedPanel) {
           advancedPanel.classList.remove("hidden");
         }
@@ -353,26 +353,21 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     };
 
     const initializeButtonListener = () => {
-      // Trova tutti i bottoni delle schede
       const tabButtons = document.querySelectorAll('[role="tab"]');
       tabButtons.forEach((button) => {
         button.addEventListener("click", handleTabClick);
       });
     };
 
-    // Crea un osservatore per monitorare i cambiamenti nel DOM
     const observer = new MutationObserver(() => {
-      initializeButtonListener(); // Prova a inizializzare l'ascoltatore ogni volta che il DOM cambia
+      initializeButtonListener(); 
     });
 
-    // Inizia ad osservare il corpo del documento
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // Esegui inizializzazione e pulizia
     initializeButtonListener();
 
     return () => {
-      // Pulizia: disattiva l'osservatore e rimuove gli ascoltatori
       observer.disconnect();
       const tabButtons = document.querySelectorAll('[role="tab"]');
       tabButtons.forEach((button) => {
@@ -381,29 +376,23 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     };
   }, []);
 
-  // Tab Panel
-
-  // General Tab
   const onSelect = (tabName) => {};
 
   const blockProps = useBlockProps();
 
   useEffect(() => {
-    // Identificatore specifico del blocco, ad esempio un data-attribute
     const blockContainer = document.querySelector(
       '[data-type="slider-future/slider"]'
     );
 
-    if (!blockContainer) return; // Se il blocco non è presente, interrompi
+    if (!blockContainer) return; 
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        // Cerca i popover solo all'interno del tuo blocco specifico
         const popovers = blockContainer.querySelectorAll(
           ".components-dropdown-menu__popover .components-popover__content"
         );
         popovers.forEach((popover) => {
-          // Aggiungi la tua classe personalizzata solo ai popover del tuo blocco
           if (!popover.classList.contains("slide-popover-class")) {
             popover.classList.add("slide-popover-class");
           }
@@ -411,27 +400,22 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       });
     });
 
-    // Osserva solo il tuo blocco specifico
     observer.observe(blockContainer, {
       childList: true,
       subtree: true,
     });
 
-    // Cleanup
     return () => {
       observer.disconnect();
     };
   }, []);
 
-  // Update Effect
   const key = `${effect}-${languageSlider}-${perViewSlider}-${spaceBetween}-${slidesPerGroupDesktop}-${slidesPerRow}-${perViewSliderTablet}-${spaceBetweenTablet}-${slidesPerGroupTablet}-${perViewSliderMobile}-${spaceBetweenMobile}-${slidesPerGroupMobile}-${loopMode}-${centeredSlides}-${initialSlide}-${autoHeight}-${slideHeight}-${slideHeightTablet}-${slideHeightMobile}-${grabCursor}-${speed}-${crossFade}-${shadow}-${slideShadows}-${shadowOffset}-${shadowScale}-${depth}-${rotate}-${stretch}-${translateX}-${translateY}-${translateZ}-${rotateX}-${rotateY}-${rotateZ}-${scale}-${opacity}-${nextTranslateX}-${nextTranslateY}-${nextTranslateZ}-${nextRotateX}-${nextRotateY}-${nextRotateZ}-${nextScale}-${nextOpacity}-${modifier}-${rotateCards}-${hidePagination}-${clickPagination}-${dynamicPagination}-${dynamicMainPagination}-${typePagination}-${progressbarOpposite}-${autoplay}-${autoplaySpeed}-${disableOnInteraction}-${pauseOnMouseEnter}-${reverseDirection}-${stopOnLastSlide}-${navigation}-${navigationIcons}-${scrollbar}-${dragScrollbar}-${hideScrollbar}-${releaseScrollbar}-${mousewheel}-${forceToAxis}-${invert}-${releaseOnEdges}-${sensitivity}-${backgroundImage}-${focalPoint}-${backgroundColor}-${
     JSON.stringify(includeCategories) + JSON.stringify(excludeCategories)
   }`;
-  // Nessun movimento della slider
   const isGutenbergEditor =
     typeof wp !== "undefined" && wp.data && wp.data.select("core/editor");
 
-  // Navigation
   const stylesNavigation = {
     "--background-color-nav": navBackgroundColor,
     "--border-color-nav": navBorderColor,
@@ -442,7 +426,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     "--border-radius-nav": radiusBorderNav + "%",
     "--padding-nav": paddingNav + "px",
     "--padding-nav-left": paddingNavLeft + "px",
-    "--offset-top-nav": offSetTopNav + "%",
     "--offset-sides-nav": offSetSidesNav + "px",
   };
   const prevRef = useRef(null);
@@ -462,7 +445,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
         nextEl: nextRef.current,
       }
     : false;
-  // Classi dinamiche
   const swiperButtonNextClasses = `swiper-button-next ${
     !navigationTablet ? "nav-tablet" : ""
   } ${!navigationMobile ? "nav-mobile" : ""}`;
@@ -470,9 +452,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     !navigationTablet ? "nav-tablet" : ""
   } ${!navigationMobile ? "nav-mobile" : ""}`;
 
-
-
-  // Pagination end other
   const stylesPagination = {
     "--swiper-pagination-color": bulletColor,
     "--swiper-pagination-fraction-color": bulletColor,
@@ -498,7 +477,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       positionScrollbar === "bottom" ? "4px" : "auto",
     "--swiper-scrollbar-size": heightScrollbar + "px",
     "--swiper-scrollbar-border-radius": radiusScrollbar + "px",
-    /* Autoplay Progress */
     "--swiper-autoplay-progress-color": autoplayProgressColor,
     border: backgroundBorderSize + "px solid " + backgroundBorderColor,
     borderRadius: backgroundBorderRadius + "px",
@@ -521,7 +499,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     '--padding-mobile': `${backgroundVerticalPaddingMobile}px ${backgroundHorizontalPaddingMobile}px`,
   };
 
-  // Autoplay
   const isAutoplayEnabled = autoplay;
   const autoplayConfig = isAutoplayEnabled
     ? {
@@ -532,7 +509,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
         stopOnLastSlide: stopOnLastSlide,
       }
     : false;
-  // Progress Circle
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -540,7 +516,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  // Scrollbar
   const isScrollbarEnabled = scrollbar;
   const scrollbarConfig = isScrollbarEnabled
     ? {
@@ -550,21 +525,17 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       }
     : false;
 
-  // Rif Swiper for circle color panel
   const swiperRef = useRef(null);
-
-  // Definisci lo stato per il dispositivo attivo
+o
   const [activeDevice, setActiveDevice] = useState("desktop");
 
-  // Funzione per cambiare dispositivo
   const handleDeviceChange = (device) => {
     setActiveDevice(device);
     setSelectedDevice(device);
-    updateEditorView(device); // Aggiorna la vista
-    updateElementPositions(device); // Ricalcola le posizioni
+    updateEditorView(device);
+    updateElementPositions(device);
   };
 
-  // Funzione per gestire il drag e aggiornare le posizioni
   const handleDragElement = (slideId, index, x, y) => {
     const updatedSlides = slides.map((slide) =>
       slide.id === slideId
@@ -574,7 +545,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
               i === index
                 ? {
                     ...element,
-                    [activeDevice]: { x, y }, // Salva solo le coordinate per il dispositivo attivo
+                    [activeDevice]: { x, y }, 
                   }
                 : element
             ),
@@ -584,9 +555,8 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     setAttributes({ slides: updatedSlides });
   };
 
-  // Funzione per aggiornare la classe del container in base al dispositivo
   const updateEditorView = (device) => {
-    const container = document.querySelector(".editor-visual-editor"); // Cambia con il selettore giusto
+    const container = document.querySelector(".editor-visual-editor"); 
     if (container) {
       container.classList.remove("desktop-view", "tablet-view", "mobile-view");
       container.classList.add(`${device}-view`);
@@ -605,7 +575,7 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     }));
 
     setAttributes({ slides: updatedSlides });
-    updateElementPositions(activeDevice); // Inizializza le posizioni
+    updateElementPositions(activeDevice); 
   }, [activeDevice]);
 
   const updateElementPositions = (device) => {
@@ -617,8 +587,6 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
       elements.forEach((element) => {
         let x = 0,
           y = 0;
-
-        // Leggi le coordinate corrette in base al tipo di dispositivo
         if (device === "mobile") {
           x = parseFloat(element.getAttribute("data-mobile-x")) || 0;
           y = parseFloat(element.getAttribute("data-mobile-y")) || 0;
@@ -629,16 +597,11 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
           x = parseFloat(element.getAttribute("data-desktop-x")) || 0;
           y = parseFloat(element.getAttribute("data-desktop-y")) || 0;
         }
-
-        console.log(`Applying position for ${device}: x=${x}, y=${y}`);
-
-        // Applica la posizione
         element.style.transform = `translate(${x}px, ${y}px)`;
       });
     }
   };
 
-  // Chiama questa funzione ogni volta che cambia il dispositivo o ridimensioni l'iframe
   window.addEventListener("resize", () => {
     const device = getDeviceType();
     setActiveDevice(device);
@@ -659,12 +622,9 @@ export default function Edit({ attributes, setAttributes, slide, element }) {
     }
   };
 
-  // Stato per tracciare il dispositivo selezionato
   const [selectedDevice, setSelectedDevice] = useState("desktop");
-  const [selectedIcon, setSelectedIcon] = useState(null); // Stato locale per l'icona selezionata
+  const [selectedIcon, setSelectedIcon] = useState(null); 
 
-
-// Cache per i risultati delle chiamate API
 const apiCache = {};
 
 const debounce = (func, delay) => {
@@ -683,7 +643,6 @@ useEffect(() => {
   const excludePostIdParam = postId ? postId : '';
   const cacheKey = `${includeCategoriesParam}-${excludeCategoriesParam}-${order}-${postsToShow}-${excludePostIdParam}-${specificPostsParam}-${latestPostsParam}`;
 
-   // Invalida la cache quando latestPosts cambia
    if (latestPosts) {
     delete apiCache[cacheKey];
   }
@@ -710,18 +669,26 @@ useEffect(() => {
   fetchPosts();
 }, [includeCategories, excludeCategories, order, postsToShow, postId, specificPosts, latestPosts]);
 
-
-  // Style content posts
   const stylesContentPosts = {
     gap: `${gapItemsPost}px`,
     flexWrap: layoutWrapPost,
+    backgroundColor: backgroundColorContentPost,
+    paddingTop: contentPostPadding.top,
+    paddingBottom: contentPostPadding.bottom,
+    paddingLeft: contentPostPadding.left,
+    paddingRight: contentPostPadding.right,
+    borderTopLeftRadius: contentPostBorderRadius.top,
+    borderTopRightRadius: contentPostBorderRadius.right,
+    borderBottomRightRadius: contentPostBorderRadius.bottom,
+    borderBottomLeftRadius: contentPostBorderRadius.left,
+    borderStyle: contentPostBorderStyle,
+    borderWidth: `${contentPostBorderSize?.top} ${contentPostBorderSize?.right} ${contentPostBorderSize?.bottom} ${contentPostBorderSize?.left}`,
+    borderColor: contentPostBorderColor,
     maxWidth: enableContentWidthPost
     ? `${contentWidthPost}px`
     : false,
   };
 
-  // Animazioni
-  // All
   const playAnimations = [];
   const handlePlayAll = () => {
     playAnimations.forEach((playAnimation) => {
@@ -731,7 +698,6 @@ useEffect(() => {
     });
   };
 
-  // Text
   const playAnimationText = [];
   const handlePlayText = () => {
     playAnimationText.forEach((playAnimation) => {
@@ -740,7 +706,7 @@ useEffect(() => {
       }
     });
   };
-  // Image
+
   const playAnimationImg = [];
   const handlePlayImage = () => {
     playAnimationImg.forEach((playAnimation) => {
@@ -750,7 +716,6 @@ useEffect(() => {
     });
   };
 
-  // Group
   const playAnimationGroup = [];
   const handlePlayGroup = () => {
     playAnimationGroup.forEach((playAnimation) => {
@@ -760,7 +725,6 @@ useEffect(() => {
     });
   };
 
-  // Button
   const playAnimationButton = [];
   const handlePlayButton = () => {
     playAnimationButton.forEach((playAnimation) => {
@@ -770,7 +734,6 @@ useEffect(() => {
     });
   };
 
-  // Icon
   const playAnimationIcon = [];
   const handlePlayIcon = () => {
     playAnimationIcon.forEach((playAnimation) => {
@@ -780,7 +743,6 @@ useEffect(() => {
     });
   };
 
-  // Inner Text
   const playAnimationInnerText = [];
   const handlePlayInnerText = () => {
     playAnimationInnerText.forEach((playAnimation) => {
@@ -790,7 +752,6 @@ useEffect(() => {
     });
   };
 
-  // Inner Image
   const playAnimationInnerImage = [];
   const handlePlayInnerImage = () => {
     playAnimationInnerImage.forEach((playAnimation) => {
@@ -800,7 +761,6 @@ useEffect(() => {
     });
   };
 
-  // Inner Button
   const playAnimationInnerButton = [];
   const handlePlayInnerButton = () => {
     playAnimationInnerButton.forEach((playAnimation) => {
@@ -810,7 +770,6 @@ useEffect(() => {
     });
   };
 
-  // Inner Icon
   const playAnimationInnerIcon = [];
   const handlePlayInnerIcon = () => {
     playAnimationInnerIcon.forEach((playAnimation) => {
@@ -820,72 +779,62 @@ useEffect(() => {
     });
   };
 
-  // Post Image
   const playAnimationRef = useRef(null);
   const handlePlayAnimation = () => {
     if (playAnimationRef.current) {
-      playAnimationRef.current(); // Attiva l'animazione
+      playAnimationRef.current(); 
     }
   };
 
-  // Post Title
   const playAnimationRefPostTitle = useRef(null);
   const handlePlayAnimationPostTitle = () => {
     if (playAnimationRefPostTitle.current) {
-      playAnimationRefPostTitle.current(); // Attiva l'animazione
+      playAnimationRefPostTitle.current(); 
     }
   };
 
-  // Post Excerpt
   const playAnimationRefPostExcerpt = useRef(null);
   const handlePlayAnimationPostExcerpt = () => {
     if (playAnimationRefPostExcerpt.current) {
-      playAnimationRefPostExcerpt.current(); // Attiva l'animazione
+      playAnimationRefPostExcerpt.current(); 
     }
   };
 
-  // Post Link
   const playAnimationRefPostLink = useRef(null);
   const handlePlayAnimationPostLink = () => {
     if (playAnimationRefPostLink.current) {
-      playAnimationRefPostLink.current(); // Attiva l'animazione
+      playAnimationRefPostLink.current(); 
     }
   };
 
-  // Post Author
   const playAnimationRefPostAuthor = useRef(null);
   const handlePlayAnimationPostAuthor = () => {
     if (playAnimationRefPostAuthor.current) {
-      playAnimationRefPostAuthor.current(); // Attiva l'animazione
+      playAnimationRefPostAuthor.current(); 
     }
   };
 
-  // Post Date
   const playAnimationRefPostDate = useRef(null);
   const handlePlayAnimationPostDate = () => {
     if (playAnimationRefPostDate.current) {
-      playAnimationRefPostDate.current(); // Attiva l'animazione
+      playAnimationRefPostDate.current(); 
     }
   };
 
-  // Post Categories
   const playAnimationRefPostCategories = useRef(null);
   const handlePlayAnimationPostCategories = () => {
     if (playAnimationRefPostCategories.current) {
-      playAnimationRefPostCategories.current(); // Attiva l'animazione
+      playAnimationRefPostCategories.current(); 
     }
   };
 
-  // Post Tags
   const playAnimationRefPostTags = useRef(null);
   const handlePlayAnimationPostTags = () => {
     if (playAnimationRefPostTags.current) {
-      playAnimationRefPostTags.current(); // Attiva l'animazione
+      playAnimationRefPostTags.current(); 
     }
   };
 
-
-  // Funzione per verificare la presenza di animazioni
   const hasAnimations = (slides) => {
     return slides.some(
       (slide) =>
@@ -919,49 +868,71 @@ useEffect(() => {
     setSelectedElement(index);
   };
 
-  /* Imostazion idella pagina admin */
   const [settings, setSettings] = useState({
     autoplay: true,
-    primaryColor: "#ab0052",
+    primaryColor: "#7A079A",
+    backgroundColor: "#18191c",
+    labelColor: '#535960',
+    whiteColor: '#ffffff',
+    blackColor: '#000000',
+    darkColor: '#21242b',
+    darkColorHover:'#2e323c',
+    darkButton:  '#3c4556',
+    lightColor:  '#c5c6d0',
+    lightColorHover: '#d9dae1',
   });
 
   useEffect(() => {
-    // Recupera le impostazioni salvate
     apiFetch({ path: "/wp/v2/slider-settings" }).then((data) => {
       setSettings(data);
-      // Applica il colore primario salvato
       document.documentElement.style.setProperty(
         "--primary-color",
-        data.primaryColor
+        data.primaryColor,
       );
+      document.documentElement.style.setProperty(
+        "--background-color",
+        data.backgroundColor,
+      );
+      document.documentElement.style.setProperty(
+        "--label-color",
+        data.labelColor,
+      );
+      document.documentElement.style.setProperty(
+        "--white-color",
+        data.whiteColor,
+      );
+      document.documentElement.style.setProperty(
+        "--black-color",
+        data.blackColor,
+      );
+      document.documentElement.style.setProperty(
+        "--dark-color",
+        data.darkColor,
+      );
+      document.documentElement.style.setProperty(
+        "--dark-color-hover",
+        data.darkColorHover,
+      );
+      document.documentElement.style.setProperty(
+        "--dark-button",
+        data.darkButton,
+      );
+      document.documentElement.style.setProperty(
+        "--light-color",
+        data.lightColor,
+      );
+      document.documentElement.style.setProperty(
+        "--light-color-hover",
+        data.lightColorHover,
+      );
+      
     });
   }, []);
 
-  const BetaBanner = () => (
-    <Notice
-      status="error"
-      isDismissible={false}
-      style={{
-        backgroundColor: "red",
-        color: "white",
-        fontWeight: "bold",
-        textAlign: "center",
-        padding: "10px",
-        fontSize: "14px"
-      }}
-    >
-     ⚠️ This is a BETA version of the plugin – All PRO features are temporarily unlocked.  
-     This version is intended for testing purposes only and should not be used in production environments. ⚠️
-    </Notice>
-  );
-
-  
-  // Modal pattern
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-    <BetaBanner />
       <InspectorControls>
         <div className="button-pattern-slider">
           <Button variant="secondary" onClick={() => setIsModalOpen(true)}>
@@ -1009,28 +980,24 @@ useEffect(() => {
         >
           {(tab) => (
             <>
-              {/*TAB 1*/}
               <div className={"tab-1 " + tab.name}>
                 <SliderControls
                   attributes={attributes}
                   setAttributes={setAttributes}
                 />
               </div>
-              {/*TAB 3*/}
               <div className={"tab-3 " + tab.name}>
                 <SliderControlsNavigation
                   attributes={attributes}
                   setAttributes={setAttributes}
                 />
               </div>
-              {/*TAB 4*/}
               <div className={"tab-4 " + tab.name}>
                 <SliderControlsOptions
                   attributes={attributes}
                   setAttributes={setAttributes}
                 />
               </div>
-              {/*TAB 2*/}
               {attributes.contentType === "custom" && (
                 <div className={"tab-2 " + tab.name}>
                   {hasAnimations(slides) && (
@@ -1080,7 +1047,6 @@ useEffect(() => {
                   />
                 </div>
               )}
-              {/*TAB 5*/}
               {attributes.contentType === "post-based" && (
                 <div className={"tab-5 " + tab.name}>
                   <PostsEdit
@@ -1100,6 +1066,7 @@ useEffect(() => {
             </>
           )}
         </TabPanel>
+       
       </InspectorControls>
 
       <div {...blockProps}>
@@ -1110,15 +1077,15 @@ useEffect(() => {
               {enableRuler && (
                 <div className="editor-container">
                   <Ruler
-                    height={10} // Altezza del righello orizzontale
-                    unit={100} // Unità di misura (ad esempio, pixel)
-                    direction="horizontal" // Imposta il righello come orizzontale
+                    height={10} 
+                    unit={100} 
+                    direction="horizontal" 
                     attributes={attributes}
                   />
                   <Ruler
-                    width={10} // Larghezza del righello verticale
-                    unit={100} // Unità di misura
-                    direction="vertical" // Imposta il righello come verticale
+                    width={10} 
+                    unit={100} 
+                    direction="vertical" 
                     attributes={attributes}
                   />
                 </div>
@@ -1256,6 +1223,7 @@ useEffect(() => {
               slidesPerView: perViewSlider,
               spaceBetween: spaceBetween,
               slidesPerGroup: slidesPerGroupDesktop,
+              
             },
           }}
           style={stylesPagination}
@@ -1310,9 +1278,9 @@ useEffect(() => {
                           {divider === "divider-wawes" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
-                              : // Path per quando invertDivider è false
+                              : 
                               "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                             }
                             class="shape-fill"></path>
@@ -1320,9 +1288,9 @@ useEffect(() => {
                           {divider === "divider-curve" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                             "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" 
-                            : // Path per quando invertDivider è false
+                            : 
                             "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
                             }
                             class="shape-fill"></path>
@@ -1330,9 +1298,9 @@ useEffect(() => {
                           {divider === "divider-curve-asymmetrical" && (
                          <path data-v-6da3ec0c="" d={
                           invertDivider
-                          ? // Path per quando invertDivider è true
+                          ? 
                           "M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
-                          : // Path per quando invertDivider è false
+                          : 
                           "M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z"
                           }
                           class="shape-fill"></path>
@@ -1340,9 +1308,9 @@ useEffect(() => {
                           {divider === "divider-triangle" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                               ? // Path per quando invertDivider è true
+                               ? 
                               "M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
-                              : // Path per quando invertDivider è false
+                              : 
                              "M1200 0L0 0 598.97 114.72 1200 0z"
                             }
                               class="shape-fill"></path>
@@ -1350,9 +1318,9 @@ useEffect(() => {
                           {divider === "divider-triangle-asymmetrical" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
-                              : // Path per quando invertDivider è false
+                              : 
                               "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
                             }
                             class="shape-fill" ></path>
@@ -1363,9 +1331,9 @@ useEffect(() => {
                           {divider === "divider-arrow" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z"
-                              : // Path per quando invertDivider è false
+                              : 
                               "M649.97 0L550.03 0 599.91 54.12 649.97 0z"
                             }
                             class="shape-fill"></path>
@@ -1373,9 +1341,9 @@ useEffect(() => {
                           {divider === "divider-split" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M600,16.8c0-8.11-8.88-13.2-19.92-13.2H0V120H1200V3.6H619.92C608.88,3.6,600,8.66,600,16.8Z"
-                              : // Path per quando invertDivider è false
+                              : 
                               "M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"
                             }
                             class="shape-fill" ></path>
@@ -1383,9 +1351,9 @@ useEffect(() => {
                           {divider === "divider-book" && (
                             <path data-v-6da3ec0c="" d={
                               invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z"
-                              : // Path per quando invertDivider è false
+                              : 
                                "M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z"
                             }
                                class="shape-fill" ></path>
@@ -1403,6 +1371,9 @@ useEffect(() => {
                         backgroundPositionY: imageBgPostPositionY + 'px',
                         }),
                       }}>
+                    <div className="max-content-post" style={{ maxWidth: enableContentWidthSlidePost
+                        ? `${contentWidthSlidePost}px`
+                        : false,justifyContent: justifyContentSlidePost}}>
                     <div
                       className={"content-slide-post " + layoutPost + " " + positionPost}
                       style={stylesContentPosts}
@@ -1448,6 +1419,7 @@ useEffect(() => {
                       })}
                     </div>
                     </div>
+                    </div>
                 </SwiperSlide>
               ))
             : null}
@@ -1476,7 +1448,6 @@ useEffect(() => {
                   className={`swiper-slide ${slide.filter} ${slide.developerMode ? 'dev-mode-nooverflows' : ''}`}
 
                     style={{
-                      // Gestione dell'immagine di sfondo
                       ...(slide.backgroundType === "image" &&
                       slide.backgroundImage
                         ? {
@@ -1490,14 +1461,12 @@ useEffect(() => {
                           }
                         : {}),
 
-                      // Gestione del colore di sfondo
                       ...(slide.backgroundType === "color"
                         ? {
                             backgroundColor: slide.backgroundColor,
                           }
                         : {}),
 
-                      // Gestione del gradiente di sfondo
                       ...(slide.backgroundType === "gradient"
                         ? {
                             background: slide.backgroundGradient,
@@ -1506,13 +1475,13 @@ useEffect(() => {
                       "--color-one-effect-slide": slide.colorOneEffect,
                       "--color-two-effect-slide": slide.colorTwoEffect,
                       "--color-three-effect-slide": slide.colorThreeEffect,
-                      // Effetto radiale
                       ...(slide.enableRadialEffect
                         ? {
                             backgroundImage: `radial-gradient(circle, ${slide.effectRadialColorOne} 0.6px, ${slide.effectRadialColorTwo} 0)`,
                             backgroundSize: `${slide.rangeEffectRadial}px ${slide.rangeEffectRadial}px`,
                           }
                         : {}),
+                        backgroundRepeat: slide.repeat,
                     }}
                   >
                     {slide.divider !== "none" && (
@@ -1559,9 +1528,9 @@ useEffect(() => {
                           {slide.divider === "divider-wawes" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
-                              : // Path per quando invertDivider è false
+                              : 
                               "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                             }
                             class="shape-fill"></path>
@@ -1569,9 +1538,9 @@ useEffect(() => {
                           {slide.divider === "divider-curve" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                             "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" 
-                            : // Path per quando invertDivider è false
+                            : 
                             "M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
                             }
                             class="shape-fill"></path>
@@ -1579,9 +1548,9 @@ useEffect(() => {
                           {slide.divider === "divider-curve-asymmetrical" && (
                          <path data-v-6da3ec0c="" d={
                           slide.invertDivider
-                          ? // Path per quando invertDivider è true
+                          ? 
                           "M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z"
-                          : // Path per quando invertDivider è false
+                          : 
                           "M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z"
                           }
                           class="shape-fill"></path>
@@ -1589,9 +1558,9 @@ useEffect(() => {
                           {slide.divider === "divider-triangle" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                               ? // Path per quando invertDivider è true
+                               ? 
                               "M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
-                              : // Path per quando invertDivider è false
+                              : 
                              "M1200 0L0 0 598.97 114.72 1200 0z"
                             }
                               class="shape-fill"></path>
@@ -1599,9 +1568,9 @@ useEffect(() => {
                           {slide.divider === "divider-triangle-asymmetrical" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
-                              : // Path per quando invertDivider è false
+                              : 
                               "M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
                             }
                             class="shape-fill" ></path>
@@ -1612,9 +1581,9 @@ useEffect(() => {
                           {slide.divider === "divider-arrow" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z"
-                              : // Path per quando invertDivider è false
+                              : 
                               "M649.97 0L550.03 0 599.91 54.12 649.97 0z"
                             }
                             class="shape-fill"></path>
@@ -1622,9 +1591,9 @@ useEffect(() => {
                           {slide.divider === "divider-split" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M600,16.8c0-8.11-8.88-13.2-19.92-13.2H0V120H1200V3.6H619.92C608.88,3.6,600,8.66,600,16.8Z"
-                              : // Path per quando invertDivider è false
+                              : 
                               "M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"
                             }
                             class="shape-fill" ></path>
@@ -1632,9 +1601,9 @@ useEffect(() => {
                           {slide.divider === "divider-book" && (
                             <path data-v-6da3ec0c="" d={
                               slide.invertDivider
-                              ? // Path per quando invertDivider è true
+                              ? 
                               "M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z"
-                              : // Path per quando invertDivider è false
+                              : 
                                "M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z"
                             }
                                class="shape-fill" ></path>
@@ -1652,7 +1621,6 @@ useEffect(() => {
                             overflow )
                       }
                       style={{
-                        // Gestione dello spazio e altre proprietà
                         height: autoHeight ? "auto" : `${slideHeight}px`,
                         width: "100%",
                         position: "relative",
@@ -1665,10 +1633,7 @@ useEffect(() => {
                         ...(slide.developerMode
                           ? {}
                           : {
-                             // display:  slide.layoutDisplay,
-                            //  flexDirection:slide.layout,
                               textAlign: "center",
-                          //    gap: slide.gapItems + "px",
                               paddingTop:
                                 slide.backgroundVerticalPadding + "px",
                               paddingBottom:
@@ -1680,7 +1645,6 @@ useEffect(() => {
                               maxWidth: slide.enableContentWidth
                                 ? `${slide.contentWidth}px`
                                 : false,
-                             //flexWrap: slide.layoutWrap,
                             }),
                       }}
                     >
@@ -1724,6 +1688,7 @@ useEffect(() => {
                                 alignItems: slide.layoutAlignItems,
                                 display: slide.layoutDisplay,
                                 width: "100%",
+                                height: "100%",
                                 gap: slide.gapItems + "px",
                                 ...(slide.layoutDisplay === "flex" && {
                                   flexWrap: slide.layoutWrap,
@@ -2000,6 +1965,10 @@ useEffect(() => {
           navigationIcons={navigationIcons}
           navColor={navColor}
           sizeNav={sizeNav}
+          navigationPosition={navigationPosition}
+          navigationGap={navigationGap}
+          navOffSet={offSetTopNav}
+          offSetSidesNav={offSetSidesNav}
         />
       </div>
     </>

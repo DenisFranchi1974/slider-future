@@ -3,10 +3,15 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import './style.scss';
 import Edit from './edit';
 import metadata from './block.json';
+import { createElement } from '@wordpress/element';
 
-registerBlockType( metadata.name, {
-	
-	edit: Edit,
+const customIcon = createElement('span', {
+    className: 'dashicons dashicons-images-alt2',
+    style: { color: '#7a079a', width: '24px',height:'24px', fontSize:'24px' } 
+});
 
-	save: () => <InnerBlocks.Content />
-} );
+registerBlockType(metadata.name, {
+    icon: customIcon, 
+    edit: Edit,
+    save: () => <InnerBlocks.Content />
+});

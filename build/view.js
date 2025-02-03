@@ -17232,8 +17232,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
 
-
-// Funzione per ottenere gli attributi comuni delle animazioni
 const getAnimationProps = (props, target) => {
   const {
     duration = 800,
@@ -17284,11 +17282,7 @@ const getAnimationProps = (props, target) => {
     heightFrom: heightFrom,
     heightTo: heightTo
   } = props;
-
-  // Converti il valore di loop in un numero
   const loopCount = typeof loop === 'string' && loop.toLowerCase() === 'true' ? Infinity : Number(loop);
-
-  // Aggiungi la classe per disabilitare gli eventi del mouse
   if (target) {
     target.classList.add('no-pointer-events');
   }
@@ -17341,7 +17335,6 @@ const getAnimationProps = (props, target) => {
     heightFrom,
     heightTo,
     complete: function (anim) {
-      // Rimuovi la classe per riabilitare gli eventi del mouse
       if (target) {
         target.classList.remove('no-pointer-events');
       }
@@ -17351,25 +17344,21 @@ const getAnimationProps = (props, target) => {
     }
   };
 };
-
-// Effect Block
 const blockTransition = (element, direction, animationProps = {}) => {
   const block = document.createElement("div");
   block.className = "block-transition";
   const colorBlock = animationProps.colorBlockEffect || '#000';
-
-  // Impostazioni iniziali del blocco
   block.style.position = "absolute";
   block.style.top = 0;
   block.style.left = 0;
   block.style.width = "100%";
   block.style.height = "100%";
-  block.style.backgroundColor = colorBlock; // Colore del blocco
-  element.style.position = "relative"; // Assicura che l'elemento sia relativo
+  block.style.backgroundColor = colorBlock;
+  element.style.position = "relative";
   element.appendChild(block);
   const container = element.closest(".title-slide,.title-slide-div");
   if (container) {
-    container.style.opacity = "1"; // Rendi il contenuto visibile
+    container.style.opacity = "1";
   }
   let fromVars, toVars, exitVars;
   switch (direction) {
@@ -17377,57 +17366,57 @@ const blockTransition = (element, direction, animationProps = {}) => {
       fromVars = {
         width: '0%',
         left: '0%'
-      }; // Inizia da sinistra
+      };
       toVars = {
         width: '100%',
         left: '0%'
-      }; // Copre il testo
+      };
       exitVars = {
         width: '0%',
         left: '100%'
-      }; // Esce verso destra
+      };
       break;
     case "right":
       fromVars = {
         width: '0%',
         left: '100%'
-      }; // Inizia da destra
+      };
       toVars = {
         width: '100%',
         left: '0%'
-      }; // Copre il testo
+      };
       exitVars = {
         width: '0%',
         left: '0%'
-      }; // Esce verso sinistra
+      };
       break;
     case "top":
       fromVars = {
         height: '0%',
         top: '0%'
-      }; // Inizia dall'alto
+      };
       toVars = {
         height: '100%',
         top: '0%'
-      }; // Copre il testo
+      };
       exitVars = {
         height: '0%',
         top: '100%'
-      }; // Esce verso il basso
+      };
       break;
     case "bottom":
       fromVars = {
         height: '0%',
         top: '100%'
-      }; // Inizia dal basso
+      };
       toVars = {
         height: '100%',
         top: '0%'
-      }; // Copre il testo
+      };
       exitVars = {
         height: '0%',
         top: '0%'
-      }; // Esce verso l'alto
+      };
       break;
     default:
       fromVars = {
@@ -17444,18 +17433,13 @@ const blockTransition = (element, direction, animationProps = {}) => {
       };
   }
   const halfDuration = animationProps.duration ? animationProps.duration / 2 : 500;
-
-  // Imposta i valori iniziali
   Object.assign(block.style, fromVars);
-
-  // Primo step: il blocco cresce gradualmente e copre l'elemento
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: block,
     ...toVars,
     duration: halfDuration,
     easing: animationProps.easing || 'easeInOutQuad',
     complete: () => {
-      // Secondo step: il blocco decresce rivelando il testo
       (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
         targets: block,
         ...exitVars,
@@ -17463,9 +17447,9 @@ const blockTransition = (element, direction, animationProps = {}) => {
         easing: animationProps.easing || 'easeInOutQuad',
         delay: animationProps.delay || 0,
         complete: () => {
-          element.removeChild(block); // Rimuovi il blocco al termine
+          element.removeChild(block);
           if (container) {
-            container.style.opacity = ''; // Ripristina l'opacità
+            container.style.opacity = '';
           }
         }
       });
@@ -17608,7 +17592,6 @@ const BlockFromIn = (target, props = {}) => {
     targets: target,
     ...animationProps
   });
-  // Aggiungi il blockTransition dopo l'animazione
   blockTransition(target, directionBlock, animationProps);
 };
 const customEffectIn = (target, props = {}) => {
@@ -17634,7 +17617,7 @@ const customEffectIn = (target, props = {}) => {
   const skewXTo = (_props$skewXTo2 = props.skewXTo) !== null && _props$skewXTo2 !== void 0 ? _props$skewXTo2 : 0;
   const skewYFrom = (_props$skewYFrom2 = props.skewYFrom) !== null && _props$skewYFrom2 !== void 0 ? _props$skewYFrom2 : 0;
   const skewYTo = (_props$skewYTo2 = props.skewYTo) !== null && _props$skewYTo2 !== void 0 ? _props$skewYTo2 : 0;
-  const scaleType = (_props$scaleType = props.scaleType) !== null && _props$scaleType !== void 0 ? _props$scaleType : 'scale'; // Default to 'scale'
+  const scaleType = (_props$scaleType = props.scaleType) !== null && _props$scaleType !== void 0 ? _props$scaleType : 'scale';
   const animationTargets = {
     targets: target,
     translateX: [startXFrom, startXTo],
@@ -17648,8 +17631,6 @@ const customEffectIn = (target, props = {}) => {
     skewX: [skewXFrom, skewXTo],
     skewY: [skewYFrom, skewYTo]
   };
-
-  // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
   if (scaleType === 'scale') {
     animationTargets.scale = [scaleFrom, scaleTo];
   } else if (scaleType === 'scaleX') {
@@ -17659,13 +17640,9 @@ const customEffectIn = (target, props = {}) => {
   }
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])(animationTargets);
 };
-
-// Definisci gli effetti di animazione
 const getAnimationEffect = (effectName, container, props = {}) => {
-  container.style.opacity = 1; // Imposta l'opacità a 0 per l'animazione di ingresso
-
-  const animationProps = getAnimationProps(props); // Usa getAnimationProps per ottenere le proprietà comuni
-
+  container.style.opacity = 1;
+  const animationProps = getAnimationProps(props);
   switch (effectName) {
     case 'fadeSplit':
       return {
@@ -17751,93 +17728,66 @@ const getAnimationEffect = (effectName, container, props = {}) => {
       };
     default:
       return {
-        translateY: [100, 0] // Imposta un effetto di default
+        translateY: [100, 0]
       };
   }
 };
-
-// Nuovo effetto di animazione per il testo splittato
 const splitText = (container, props = {}) => {
   var _animationProps$stagg;
-  // Funzione per splittare il testo
   const splitTextContent = (text, lettersRef) => {
     // Verifica se il testo è vuoto o nullo
     if (!text || text.trim() === '') {
       console.warn("Nessun testo da splittare");
       return [];
     }
-
-    // Verifica se il contenuto è già stato splittato (evita duplicazione)
     if (lettersRef.current.length > 0) {
       console.warn("Il testo è già stato splittato");
       return lettersRef.current;
     }
-
-    // Rimuovi le span esistenti prima di splittare il nuovo testo
     lettersRef.current.forEach(span => {
       if (span.parentNode) {
         span.parentNode.removeChild(span);
       }
     });
-    lettersRef.current = []; // Pulisci l'array di riferimenti
-
-    // Splitta il testo e crea gli span per ogni carattere
+    lettersRef.current = [];
     return text.split('').map((char, idx) => {
-      const span = document.createElement('span'); // Crea un elemento span per ogni lettera
-      span.className = 'letter'; // Assegna una classe per stile
-      span.textContent = char === ' ' ? '\u00A0' : char; // Usa uno spazio non interrotto per gli spazi
-      lettersRef.current[idx] = span; // Assegna il ref per l'animazione successiva
+      const span = document.createElement('span');
+      span.className = 'letter';
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      lettersRef.current[idx] = span;
       return span;
     });
   };
   const animationProps = getAnimationProps(props);
   const lettersRef = {
     current: []
-  }; // Crea un ref per contenere le lettere splittate
-
-  // Converti il valore di loop in un numero
+  };
   const loopCount = typeof animationProps.loop === 'string' && animationProps.loop.toLowerCase() === 'true' ? Infinity : Number(animationProps.loop);
-
-  // Ottieni il testo dal contenitore e splittalo, assicurati che non sia già splittato
-  const text = container.textContent.trim(); // Prendi il testo dal contenitore e rimuovi eventuali spazi esterni
+  const text = container.textContent.trim();
   if (!text) {
     console.warn("Contenitore senza testo. Nessuna animazione eseguita.");
     return;
   }
-  container.innerHTML = ''; // Pulisci il contenitore
-
-  // Splitta il testo e aggiungi gli span (le lettere splittate) al contenitore
+  container.innerHTML = '';
   const letters = splitTextContent(text, lettersRef);
   if (!letters.length) {
     console.warn("Nessuna lettera disponibile per l'animazione.");
     return;
   }
-  letters.forEach(letter => container.appendChild(letter)); // Aggiungi ogni lettera (span) nel container
-
-  // Ottieni l'effetto in base alla stringa dal selettore
+  letters.forEach(letter => container.appendChild(letter));
   const animationEffect = getAnimationEffect(animationProps.textSplitEffect, container, props);
-  // Creare una timeline per l'animazione
   animejs__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
     loop: loopCount,
     direction: animationProps.direction
   }).add({
     targets: lettersRef.current,
-    // Anima tutte le lettere via ref
-    //scale: [4, 1], // Scala le lettere da 4 a 1
-    // opacity: [0, 1],
-    //rotateX: [360, 0], // Ruota le lettere da
     translateZ: 0,
     ...animationEffect,
-    // Applica l'effetto dinamico
     easing: animationProps.easing || 'linear',
-    // Applica l'easing
     duration: animationProps.duration,
-    // Durata dell'animazione
-    delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger((_animationProps$stagg = animationProps.stagger) !== null && _animationProps$stagg !== void 0 ? _animationProps$stagg : 200) // Stagger tra le lettere
+    delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger((_animationProps$stagg = animationProps.stagger) !== null && _animationProps$stagg !== void 0 ? _animationProps$stagg : 200)
   });
 };
-
-// Definisci gli effetti hover
 const hoverEffects = {
   scaleHover: (element, animationProps) => {
     var _animationProps$opaci, _animationProps$scale, _animationProps$easin, _animationProps$durat;
@@ -17921,7 +17871,7 @@ const hoverEffects = {
   },
   customHover: (element, animationProps) => {
     var _animationProps$opaci7, _animationProps$rotat4, _animationProps$rotat5, _animationProps$rotat6, _animationProps$start3, _animationProps$start4, _animationProps$skewX2, _animationProps$skewY2;
-    const scaleTypeHover = animationProps.scaleTypeHover || 'scale'; // Default to 'scale'
+    const scaleTypeHover = animationProps.scaleTypeHover || 'scale';
     const animationTargetsHover = {
       opacity: (_animationProps$opaci7 = animationProps.opacityHover) !== null && _animationProps$opaci7 !== void 0 ? _animationProps$opaci7 : 1,
       filter: 'blur(' + animationProps.filterHover + 'px)',
@@ -17936,8 +17886,6 @@ const hoverEffects = {
       easing: animationProps.easingHover || 'linear',
       duration: animationProps.durationHover || 800
     };
-
-    // Aggiungi la logica per scegliere tra scale, scaleX e scaleY
     if (scaleTypeHover === 'scale') {
       animationTargetsHover.scale = animationProps.scaleHover;
     } else if (scaleTypeHover === 'scaleX') {
@@ -17948,48 +17896,30 @@ const hoverEffects = {
     (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])(animationTargetsHover);
   }
 };
-
-// Funzione per gestire l'hover all'entrata
 const handleMouseEnter = (e, props = {}) => {
   const animationProps = getAnimationProps(props);
-  animejs__WEBPACK_IMPORTED_MODULE_0__["default"].remove(e.target); // Rimuove eventuali animazioni in corso
-
+  animejs__WEBPACK_IMPORTED_MODULE_0__["default"].remove(e.target);
   if (hoverEffects[animationProps.effectHover]) {
     hoverEffects[animationProps.effectHover](e.target, animationProps);
   }
 };
-
-// Funzione per gestire l'hover all'uscita
 const handleMouseLeave = (e, props = {}) => {
   const animationProps = getAnimationProps(props);
-  animejs__WEBPACK_IMPORTED_MODULE_0__["default"].remove(e.target); // Rimuove eventuali animazioni in corso
-  // Ripristina lo stato originale dell'elemento
+  animejs__WEBPACK_IMPORTED_MODULE_0__["default"].remove(e.target);
   (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
     targets: e.target,
     scale: 1,
-    // Torna alla scala originale
     scaleX: 1,
-    // Torna alla scala originale
     scaleY: 1,
-    // Torna alla scala originale
     rotate: 0,
-    // Torna alla rotazione originale
     rotateX: 0,
-    // Torna alla rotazione originale
     rotateY: 0,
-    // Torna alla rotazione originale
     translateX: 0,
-    // Torna alla posizione originale
     translateY: 0,
-    // Torna alla posizione originale
     opacity: 1,
-    // Torna all'opacità originale
     filter: 'blur(0px)',
-    // Rimuove l'effetto blur
     skewX: 0,
-    // Torna allo skew originale
     skewY: 0,
-    // Torna allo skew originale
     easing: animationProps.easingHover || 'linear',
     duration: animationProps.durationHover
   });
@@ -18011,8 +17941,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _animationIn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animationIn */ "./src/animate/animationIn.js");
 
-
-// Funzione per ottenere gli attributi comuni delle animazioni
 const getAnimationProps = props => {
   const {
     duration = 800,
@@ -18048,8 +17976,6 @@ const getAnimationProps = props => {
     filterTo: filterTo,
     scaleType: scaleType
   } = props;
-
-  // Converti il valore di loop in un numero
   const loopCount = typeof loop === 'string' && loop.toLowerCase() === 'true' ? Infinity : Number(loop);
   return {
     duration,
@@ -23256,9 +23182,11 @@ function A11y(_ref) {
       slideLabelMessage: '{{index}} / {{slidesLength}}',
       containerMessage: null,
       containerRoleDescriptionMessage: null,
+      containerRole: null,
       itemRoleDescriptionMessage: null,
       slideRole: 'group',
-      id: null
+      id: null,
+      scrollOnFocus: true
     }
   });
   swiper.a11y = {
@@ -23454,7 +23382,7 @@ function A11y(_ref) {
     visibilityChangedTimestamp = new Date().getTime();
   };
   const handleFocus = e => {
-    if (swiper.a11y.clicked) return;
+    if (swiper.a11y.clicked || !swiper.params.a11y.scrollOnFocus) return;
     if (new Date().getTime() - visibilityChangedTimestamp < 100) return;
     const slideEl = e.target.closest(`.${swiper.params.slideClass}, swiper-slide`);
     if (!slideEl || !swiper.slides.includes(slideEl)) return;
@@ -23506,6 +23434,9 @@ function A11y(_ref) {
     }
     if (params.containerMessage) {
       addElLabel(containerEl, params.containerMessage);
+    }
+    if (params.containerRole) {
+      addElRole(containerEl, params.containerRole);
     }
 
     // Wrapper
@@ -23691,7 +23622,7 @@ function Autoplay(_ref) {
   const getSlideDelay = () => {
     let activeSlideEl;
     if (swiper.virtual && swiper.params.virtual.enabled) {
-      activeSlideEl = swiper.slides.filter(slideEl => slideEl.classList.contains('swiper-slide-active'))[0];
+      activeSlideEl = swiper.slides.find(slideEl => slideEl.classList.contains('swiper-slide-active'));
     } else {
       activeSlideEl = swiper.slides[swiper.activeIndex];
     }
@@ -24091,17 +24022,21 @@ function Controller(_ref) {
     if (typeof window !== 'undefined' && (
     // eslint-disable-line
     typeof swiper.params.controller.control === 'string' || swiper.params.controller.control instanceof HTMLElement)) {
-      const controlElement = document.querySelector(swiper.params.controller.control);
-      if (controlElement && controlElement.swiper) {
-        swiper.controller.control = controlElement.swiper;
-      } else if (controlElement) {
-        const onControllerSwiper = e => {
-          swiper.controller.control = e.detail[0];
-          swiper.update();
-          controlElement.removeEventListener('init', onControllerSwiper);
-        };
-        controlElement.addEventListener('init', onControllerSwiper);
-      }
+      const controlElements = typeof swiper.params.controller.control === 'string' ? [...document.querySelectorAll(swiper.params.controller.control)] : [swiper.params.controller.control];
+      controlElements.forEach(controlElement => {
+        if (!swiper.controller.control) swiper.controller.control = [];
+        if (controlElement && controlElement.swiper) {
+          swiper.controller.control.push(controlElement.swiper);
+        } else if (controlElement) {
+          const eventName = `${swiper.params.eventsPrefix}init`;
+          const onControllerSwiper = e => {
+            swiper.controller.control.push(e.detail[0]);
+            swiper.update();
+            controlElement.removeEventListener(eventName, onControllerSwiper);
+          };
+          controlElement.addEventListener(eventName, onControllerSwiper);
+        }
+      });
       return;
     }
     swiper.controller.control = swiper.params.controller.control;
@@ -24328,6 +24263,7 @@ function EffectCoverflow(_ref) {
     const center = isHorizontal ? -transform + swiperWidth / 2 : -transform + swiperHeight / 2;
     const rotate = isHorizontal ? params.rotate : -params.rotate;
     const translate = params.depth;
+    const r = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.o)(swiper);
     // Each slide offset from center
     for (let i = 0, length = slides.length; i < length; i += 1) {
       const slideEl = slides[i];
@@ -24355,15 +24291,7 @@ function EffectCoverflow(_ref) {
       if (Math.abs(rotateY) < 0.001) rotateY = 0;
       if (Math.abs(rotateX) < 0.001) rotateX = 0;
       if (Math.abs(scale) < 0.001) scale = 0;
-      if (swiper.browser && swiper.browser.need3dFix) {
-        if (Math.abs(rotateY) / 90 % 2 === 1) {
-          rotateY += 0.001;
-        }
-        if (Math.abs(rotateX) / 90 % 2 === 1) {
-          rotateX += 0.001;
-        }
-      }
-      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${r(rotateX)}deg) rotateY(${r(rotateY)}deg) scale(${scale})`;
       const targetEl = (0,_shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__.e)(params, slideEl);
       targetEl.style.transform = slideTransform;
       slideEl.style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
@@ -24472,6 +24400,7 @@ function EffectCreative(_ref) {
       progressMultiplier: multiplier
     } = params;
     const isCenteredSlides = swiper.params.centeredSlides;
+    const rotateFix = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__.o)(swiper);
     if (isCenteredSlides) {
       const margin = slidesSizesGrid[0] / 2 - swiper.params.slidesOffsetBefore || 0;
       wrapperEl.style.transform = `translateX(calc(50% - ${margin}px))`;
@@ -24512,14 +24441,11 @@ function EffectCreative(_ref) {
       // set rotates
       r.forEach((value, index) => {
         let val = data.rotate[index] * Math.abs(progress * multiplier);
-        if (swiper.browser && swiper.browser.need3dFix && Math.abs(val) / 90 % 2 === 1) {
-          val += 0.001;
-        }
         r[index] = val;
       });
       slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
       const translateString = t.join(', ');
-      const rotateString = `rotateX(${r[0]}deg) rotateY(${r[1]}deg) rotateZ(${r[2]}deg)`;
+      const rotateString = `rotateX(${rotateFix(r[0])}deg) rotateY(${rotateFix(r[1])}deg) rotateZ(${rotateFix(r[2])}deg)`;
       const scaleString = originalProgress < 0 ? `scale(${1 + (1 - data.scale) * originalProgress * multiplier})` : `scale(${1 - (1 - data.scale) * originalProgress * multiplier})`;
       const opacityString = originalProgress < 0 ? 1 + (1 - data.opacity) * originalProgress * multiplier : 1 - (1 - data.opacity) * originalProgress * multiplier;
       const transform = `translate3d(${translateString}) ${rotateString} ${scaleString}`;
@@ -24640,6 +24566,7 @@ function EffectCube(_ref) {
       size: swiperSize,
       browser
     } = swiper;
+    const r = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(swiper);
     const params = swiper.params.cubeEffect;
     const isHorizontal = swiper.isHorizontal();
     const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
@@ -24697,13 +24624,10 @@ function EffectCube(_ref) {
         ty = tx;
         tx = 0;
       }
-      const transform = `rotateX(${isHorizontal ? 0 : -slideAngle}deg) rotateY(${isHorizontal ? slideAngle : 0}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`;
+      const transform = `rotateX(${r(isHorizontal ? 0 : -slideAngle)}deg) rotateY(${r(isHorizontal ? slideAngle : 0)}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`;
       if (progress <= 1 && progress > -1) {
         wrapperRotate = slideIndex * 90 + progress * 90;
         if (rtl) wrapperRotate = -slideIndex * 90 - progress * 90;
-        if (swiper.browser && swiper.browser.need3dFix && Math.abs(wrapperRotate) / 90 % 2 === 1) {
-          wrapperRotate += 0.001;
-        }
       }
       slideEl.style.transform = transform;
       if (params.slideShadows) {
@@ -24725,7 +24649,7 @@ function EffectCube(_ref) {
       }
     }
     const zFactor = (browser.isSafari || browser.isWebView) && browser.needPerspectiveFix ? -swiperSize / 2 : 0;
-    wrapperEl.style.transform = `translate3d(0px,0,${zFactor}px) rotateX(${swiper.isHorizontal() ? 0 : wrapperRotate}deg) rotateY(${swiper.isHorizontal() ? -wrapperRotate : 0}deg)`;
+    wrapperEl.style.transform = `translate3d(0px,0,${zFactor}px) rotateX(${r(swiper.isHorizontal() ? 0 : wrapperRotate)}deg) rotateY(${r(swiper.isHorizontal() ? -wrapperRotate : 0)}deg)`;
     wrapperEl.style.setProperty('--swiper-cube-translate-z', `${zFactor}px`);
   };
   const setTransition = duration => {
@@ -24918,6 +24842,7 @@ function EffectFlip(_ref) {
       rtlTranslate: rtl
     } = swiper;
     const params = swiper.params.flipEffect;
+    const rotateFix = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__.o)(swiper);
     for (let i = 0; i < slides.length; i += 1) {
       const slideEl = slides[i];
       let progress = slideEl.progress;
@@ -24938,19 +24863,11 @@ function EffectFlip(_ref) {
       } else if (rtl) {
         rotateY = -rotateY;
       }
-      if (swiper.browser && swiper.browser.need3dFix) {
-        if (Math.abs(rotateY) / 90 % 2 === 1) {
-          rotateY += 0.001;
-        }
-        if (Math.abs(rotateX) / 90 % 2 === 1) {
-          rotateX += 0.001;
-        }
-      }
       slideEl.style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
       if (params.slideShadows) {
         createSlideShadows(slideEl, progress);
       }
-      const transform = `translate3d(${tx}px, ${ty}px, 0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      const transform = `translate3d(${tx}px, ${ty}px, 0px) rotateX(${rotateFix(rotateX)}deg) rotateY(${rotateFix(rotateY)}deg)`;
       const targetEl = (0,_shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__.e)(params, slideEl);
       targetEl.style.transform = transform;
     }
@@ -25449,7 +25366,7 @@ function HashNavigation(_ref) {
       watchState: false,
       getSlideIndex(_s, hash) {
         if (swiper.virtual && swiper.params.virtual.enabled) {
-          const slideWithHash = swiper.slides.filter(slideEl => slideEl.getAttribute('data-hash') === hash)[0];
+          const slideWithHash = swiper.slides.find(slideEl => slideEl.getAttribute('data-hash') === hash);
           if (!slideWithHash) return 0;
           const index = parseInt(slideWithHash.getAttribute('data-swiper-slide-index'), 10);
           return index;
@@ -26433,6 +26350,7 @@ function Mousewheel(_ref) {
             lastEventBeforeSnap = newEvent;
             recentWheelEvents.splice(0);
             timeout = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.n)(() => {
+              if (swiper.destroyed || !swiper.params) return;
               swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
             }, 0); // no delay; move on next tick
           }
@@ -26442,6 +26360,7 @@ function Mousewheel(_ref) {
             // we'll consider a scroll "complete" when there haven't been any wheel events
             // for 500ms.
             timeout = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.n)(() => {
+              if (swiper.destroyed || !swiper.params) return;
               const snapToThreshold = 0.5;
               lastEventBeforeSnap = newEvent;
               recentWheelEvents.splice(0);
@@ -26454,7 +26373,7 @@ function Mousewheel(_ref) {
         if (!ignoreWheelEvents) emit('scroll', e);
 
         // Stop autoplay
-        if (swiper.params.autoplay && swiper.params.autoplayDisableOnInteraction) swiper.autoplay.stop();
+        if (swiper.params.autoplay && swiper.params.autoplay.disableOnInteraction) swiper.autoplay.stop();
         // Return page scroll on edge positions
         if (params.releaseOnEdges && (position === swiper.minTranslate() || position === swiper.maxTranslate())) {
           return true;
@@ -26557,7 +26476,7 @@ function Navigation(_ref) {
   function getEl(el) {
     let res;
     if (el && typeof el === 'string' && swiper.isElement) {
-      res = swiper.el.querySelector(el);
+      res = swiper.el.querySelector(el) || swiper.hostEl.querySelector(el);
       if (res) return res;
     }
     if (el) {
@@ -26814,6 +26733,16 @@ function Pagination(_ref) {
       }
     }
   }
+  function getMoveDirection(prevIndex, nextIndex, length) {
+    prevIndex = prevIndex % length;
+    nextIndex = nextIndex % length;
+    if (nextIndex === prevIndex + 1) {
+      return 'next';
+    } else if (nextIndex === prevIndex - 1) {
+      return 'previous';
+    }
+    return;
+  }
   function onBulletClick(e) {
     const bulletEl = e.target.closest((0,_shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__.c)(swiper.params.pagination.bulletClass));
     if (!bulletEl) {
@@ -26823,7 +26752,14 @@ function Pagination(_ref) {
     const index = (0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.h)(bulletEl) * swiper.params.slidesPerGroup;
     if (swiper.params.loop) {
       if (swiper.realIndex === index) return;
-      swiper.slideToLoop(index);
+      const moveDirection = getMoveDirection(swiper.realIndex, index, swiper.slides.length);
+      if (moveDirection === 'next') {
+        swiper.slideNext();
+      } else if (moveDirection === 'previous') {
+        swiper.slidePrev();
+      } else {
+        swiper.slideToLoop(index);
+      }
     } else {
       swiper.slideTo(index);
     }
@@ -27039,10 +26975,10 @@ function Pagination(_ref) {
       el = [...swiper.el.querySelectorAll(params.el)];
       // check if it belongs to another nested Swiper
       if (el.length > 1) {
-        el = el.filter(subEl => {
+        el = el.find(subEl => {
           if ((0,_shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__.a)(subEl, '.swiper')[0] !== swiper.el) return false;
           return true;
-        })[0];
+        });
       }
     }
     if (Array.isArray(el) && el.length === 1) el = el[0];
@@ -27841,7 +27777,7 @@ function Thumb(_ref) {
       let newThumbsIndex;
       let direction;
       if (thumbsSwiper.params.loop) {
-        const newThumbsSlide = thumbsSwiper.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') === `${swiper.realIndex}`)[0];
+        const newThumbsSlide = thumbsSwiper.slides.find(slideEl => slideEl.getAttribute('data-swiper-slide-index') === `${swiper.realIndex}`);
         newThumbsIndex = thumbsSwiper.slides.indexOf(newThumbsSlide);
         direction = swiper.activeIndex > swiper.previousIndex ? 'next' : 'prev';
       } else {
@@ -27877,15 +27813,16 @@ function Thumb(_ref) {
           init();
           update(true);
         } else if (thumbsElement) {
+          const eventName = `${swiper.params.eventsPrefix}init`;
           const onThumbsSwiper = e => {
             thumbs.swiper = e.detail[0];
-            thumbsElement.removeEventListener('init', onThumbsSwiper);
+            thumbsElement.removeEventListener(eventName, onThumbsSwiper);
             init();
             update(true);
             thumbs.swiper.update();
             swiper.update();
           };
-          thumbsElement.addEventListener('init', onThumbsSwiper);
+          thumbsElement.addEventListener(eventName, onThumbsSwiper);
         }
         return thumbsElement;
       };
@@ -28324,6 +28261,7 @@ function Zoom(_ref) {
       limitToOriginalSize: false,
       maxRatio: 3,
       minRatio: 1,
+      panOnMouseMove: false,
       toggle: true,
       containerClass: 'swiper-zoom-container',
       zoomedSlideClass: 'swiper-slide-zoomed'
@@ -28334,6 +28272,12 @@ function Zoom(_ref) {
   };
   let currentScale = 1;
   let isScaling = false;
+  let isPanningWithMouse = false;
+  let mousePanStart = {
+    x: 0,
+    y: 0
+  };
+  const mousePanSensitivity = -3; // Negative to invert pan direction
   let fakeGestureTouched;
   let fakeGestureMoved;
   const evCache = [];
@@ -28528,6 +28472,7 @@ function Zoom(_ref) {
     clearTimeout(allowTouchMoveTimeout);
     swiper.touchEventsData.preventTouchMoveFromPointerMove = true;
     allowTouchMoveTimeout = setTimeout(() => {
+      if (swiper.destroyed) return;
       allowTouchMove();
     });
   }
@@ -28542,6 +28487,8 @@ function Zoom(_ref) {
     image.touchesStart.y = event.pageY;
   }
   function onTouchMove(e) {
+    const isMouseEvent = e.pointerType === 'mouse';
+    const isMousePan = isMouseEvent && swiper.params.zoom.panOnMouseMove;
     if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) {
       return;
     }
@@ -28550,6 +28497,11 @@ function Zoom(_ref) {
       return;
     }
     if (!image.isTouched || !gesture.slideEl) {
+      if (isMousePan) onMouseMove(e);
+      return;
+    }
+    if (isMousePan) {
+      onMouseMove(e);
       return;
     }
     if (!image.isMoved) {
@@ -28627,6 +28579,7 @@ function Zoom(_ref) {
   }
   function onTouchEnd() {
     const zoom = swiper.zoom;
+    evCache.length = 0;
     if (!gesture.imageEl) return;
     if (!image.isTouched || !image.isMoved) {
       image.isTouched = false;
@@ -28678,6 +28631,43 @@ function Zoom(_ref) {
       gesture.originX = 0;
       gesture.originY = 0;
     }
+  }
+  function onMouseMove(e) {
+    // Only pan if zoomed in and mouse panning is enabled
+    if (currentScale <= 1 || !gesture.imageWrapEl) return;
+    if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
+    const currentTransform = window.getComputedStyle(gesture.imageWrapEl).transform;
+    const matrix = new window.DOMMatrix(currentTransform);
+    if (!isPanningWithMouse) {
+      isPanningWithMouse = true;
+      mousePanStart.x = e.clientX;
+      mousePanStart.y = e.clientY;
+      image.startX = matrix.e;
+      image.startY = matrix.f;
+      image.width = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
+      image.height = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
+      gesture.slideWidth = gesture.slideEl.offsetWidth;
+      gesture.slideHeight = gesture.slideEl.offsetHeight;
+      return;
+    }
+    const deltaX = (e.clientX - mousePanStart.x) * mousePanSensitivity;
+    const deltaY = (e.clientY - mousePanStart.y) * mousePanSensitivity;
+    const scaledWidth = image.width * currentScale;
+    const scaledHeight = image.height * currentScale;
+    const slideWidth = gesture.slideWidth;
+    const slideHeight = gesture.slideHeight;
+    const minX = Math.min(slideWidth / 2 - scaledWidth / 2, 0);
+    const maxX = -minX;
+    const minY = Math.min(slideHeight / 2 - scaledHeight / 2, 0);
+    const maxY = -minY;
+    const newX = Math.max(Math.min(image.startX + deltaX, maxX), minX);
+    const newY = Math.max(Math.min(image.startY + deltaY, maxY), minY);
+    gesture.imageWrapEl.style.transitionDuration = '0ms';
+    gesture.imageWrapEl.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
+    mousePanStart.x = e.clientX;
+    mousePanStart.y = e.clientY;
+    image.startX = newX;
+    image.startY = newY;
   }
   function zoomIn(e) {
     const zoom = swiper.zoom;
@@ -28739,6 +28729,8 @@ function Zoom(_ref) {
     if (currentScale === 1 && forceZoomRatio) {
       touchX = undefined;
       touchY = undefined;
+      image.touchesStart.x = undefined;
+      image.touchesStart.y = undefined;
     }
     const maxRatio = getMaxRatio();
     zoom.scale = forceZoomRatio || maxRatio;
@@ -28812,6 +28804,8 @@ function Zoom(_ref) {
     }
     zoom.scale = 1;
     currentScale = 1;
+    image.touchesStart.x = undefined;
+    image.touchesStart.y = undefined;
     gesture.imageWrapEl.style.transitionDuration = '300ms';
     gesture.imageWrapEl.style.transform = 'translate3d(0,0,0)';
     gesture.imageEl.style.transitionDuration = '300ms';
@@ -28820,6 +28814,17 @@ function Zoom(_ref) {
     gesture.slideEl = undefined;
     gesture.originX = 0;
     gesture.originY = 0;
+    if (swiper.params.zoom.panOnMouseMove) {
+      mousePanStart = {
+        x: 0,
+        y: 0
+      };
+      if (isPanningWithMouse) {
+        isPanningWithMouse = false;
+        image.startX = 0;
+        image.startY = 0;
+      }
+    }
   }
 
   // Toggle Zoom
@@ -29151,7 +29156,7 @@ function effectVirtualTransitionEnd(_ref) {
   const getSlide = el => {
     if (!el.parentElement) {
       // assume shadow root
-      const slide = swiper.slides.filter(slideEl => slideEl.shadowRoot && slideEl.shadowRoot === el.parentNode)[0];
+      const slide = swiper.slides.find(slideEl => slideEl.shadowRoot && slideEl.shadowRoot === el.parentNode);
       return slide;
     }
     return el.parentElement;
@@ -29571,7 +29576,7 @@ function Observer(_ref) {
     });
     observer.observe(target, {
       attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
-      childList: typeof options.childList === 'undefined' ? true : options.childList,
+      childList: swiper.isElement || (typeof options.childList === 'undefined' ? true : options).childList,
       characterData: typeof options.characterData === 'undefined' ? true : options.characterData
     });
     observers.push(observer);
@@ -29734,8 +29739,8 @@ function updateSize() {
   }
 
   // Subtract paddings
-  width = width - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(el, 'padding-left') || 0, 10) - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(el, 'padding-right') || 0, 10);
-  height = height - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(el, 'padding-top') || 0, 10) - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(el, 'padding-bottom') || 0, 10);
+  width = width - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(el, 'padding-left') || 0, 10) - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(el, 'padding-right') || 0, 10);
+  height = height - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(el, 'padding-top') || 0, 10) - parseInt((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(el, 'padding-bottom') || 0, 10);
   if (Number.isNaN(width)) width = 0;
   if (Number.isNaN(height)) height = 0;
   Object.assign(swiper, {
@@ -29824,7 +29829,7 @@ function updateSlides() {
     if (gridEnabled) {
       swiper.grid.updateSlide(i, slide, slides);
     }
-    if (slides[i] && (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(slide, 'display') === 'none') continue; // eslint-disable-line
+    if (slides[i] && (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(slide, 'display') === 'none') continue; // eslint-disable-line
 
     if (params.slidesPerView === 'auto') {
       if (shouldResetSlideSize) {
@@ -29957,7 +29962,7 @@ function updateSlides() {
       allSlidesSize += slideSizeValue + (spaceBetween || 0);
     });
     allSlidesSize -= spaceBetween;
-    const maxSnap = allSlidesSize - swiperSize;
+    const maxSnap = allSlidesSize > swiperSize ? allSlidesSize - swiperSize : 0;
     snapGrid = snapGrid.map(snap => {
       if (snap <= 0) return -offsetBefore;
       if (snap > maxSnap) return maxSnap + offsetAfter;
@@ -30226,9 +30231,9 @@ function updateSlidesClasses() {
     }
   } else {
     if (gridEnabled) {
-      activeSlide = slides.filter(slideEl => slideEl.column === activeIndex)[0];
-      nextSlide = slides.filter(slideEl => slideEl.column === activeIndex + 1)[0];
-      prevSlide = slides.filter(slideEl => slideEl.column === activeIndex - 1)[0];
+      activeSlide = slides.find(slideEl => slideEl.column === activeIndex);
+      nextSlide = slides.find(slideEl => slideEl.column === activeIndex + 1);
+      prevSlide = slides.find(slideEl => slideEl.column === activeIndex - 1);
     } else {
       activeSlide = slides[activeIndex];
     }
@@ -30236,13 +30241,13 @@ function updateSlidesClasses() {
   if (activeSlide) {
     if (!gridEnabled) {
       // Next Slide
-      nextSlide = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+      nextSlide = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.q)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
       if (params.loop && !nextSlide) {
         nextSlide = slides[0];
       }
 
       // Prev Slide
-      prevSlide = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.q)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+      prevSlide = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.r)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
       if (params.loop && !prevSlide === 0) {
         prevSlide = slides[slides.length - 1];
       }
@@ -30393,7 +30398,7 @@ function updateActiveIndex(newActiveIndex) {
   if (swiper.virtual && params.virtual.enabled && params.loop) {
     realIndex = getVirtualRealIndex(activeIndex);
   } else if (gridEnabled) {
-    const firstSlideInColumn = swiper.slides.filter(slideEl => slideEl.column === activeIndex)[0];
+    const firstSlideInColumn = swiper.slides.find(slideEl => slideEl.column === activeIndex);
     let activeSlideIndex = parseInt(firstSlideInColumn.getAttribute('data-swiper-slide-index'), 10);
     if (Number.isNaN(activeSlideIndex)) {
       activeSlideIndex = Math.max(swiper.slides.indexOf(firstSlideInColumn), 0);
@@ -30593,7 +30598,7 @@ function translateTo(translate, speed, runCallbacks, translateBounds, internal) 
       wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = -newTranslate;
     } else {
       if (!swiper.support.smoothScroll) {
-        (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.r)({
+        (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.t)({
           swiper,
           targetPosition: -newTranslate,
           side: isH ? 'left' : 'top'
@@ -30804,8 +30809,11 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
   let direction;
   if (slideIndex > activeIndex) direction = 'next';else if (slideIndex < activeIndex) direction = 'prev';else direction = 'reset';
 
+  // initial virtual
+  const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+  const isInitialVirtual = isVirtual && initial;
   // Update Index
-  if (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate) {
+  if (!isInitialVirtual && (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate)) {
     swiper.updateActiveIndex(slideIndex);
     // Update Height
     if (params.autoHeight) {
@@ -30825,7 +30833,6 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
     const isH = swiper.isHorizontal();
     const t = rtl ? translate : -translate;
     if (speed === 0) {
-      const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
       if (isVirtual) {
         swiper.wrapperEl.style.scrollSnapType = 'none';
         swiper._immediateVirtual = true;
@@ -30846,7 +30853,7 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
       }
     } else {
       if (!swiper.support.smoothScroll) {
-        (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.r)({
+        (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.t)({
           swiper,
           targetPosition: t,
           side: isH ? 'left' : 'top'
@@ -30911,7 +30918,7 @@ function slideToLoop(index, speed, runCallbacks, internal) {
       let targetSlideIndex;
       if (gridEnabled) {
         const slideIndex = newIndex * swiper.params.grid.rows;
-        targetSlideIndex = swiper.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === slideIndex)[0].column;
+        targetSlideIndex = swiper.slides.find(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === slideIndex).column;
       } else {
         targetSlideIndex = swiper.getSlideIndexByData(newIndex);
       }
@@ -30946,7 +30953,7 @@ function slideToLoop(index, speed, runCallbacks, internal) {
       }
       if (gridEnabled) {
         const slideIndex = newIndex * swiper.params.grid.rows;
-        newIndex = swiper.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === slideIndex)[0].column;
+        newIndex = swiper.slides.find(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === slideIndex).column;
       } else {
         newIndex = swiper.getSlideIndexByData(newIndex);
       }
@@ -31197,7 +31204,7 @@ function loopCreate(slideRealIndex) {
       swiper.recalcSlides();
       swiper.updateSlides();
     } else {
-      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.t)('Swiper Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)');
+      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)('Swiper Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)');
     }
     initSlides();
   } else if (shouldFillGrid) {
@@ -31207,7 +31214,7 @@ function loopCreate(slideRealIndex) {
       swiper.recalcSlides();
       swiper.updateSlides();
     } else {
-      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.t)('Swiper Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)');
+      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)('Swiper Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)');
     }
     initSlides();
   } else {
@@ -31277,15 +31284,15 @@ function loopFix(_temp) {
   swiper.loopedSlides = loopedSlides;
   const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
   if (slides.length < slidesPerView + loopedSlides) {
-    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.t)('Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters');
+    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)('Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters');
   } else if (gridEnabled && params.grid.fill === 'row') {
-    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.t)('Swiper Loop Warning: Loop mode is not compatible with grid.fill = `row`');
+    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)('Swiper Loop Warning: Loop mode is not compatible with grid.fill = `row`');
   }
   const prependSlidesIndexes = [];
   const appendSlidesIndexes = [];
   let activeIndex = swiper.activeIndex;
   if (typeof activeSlideIndex === 'undefined') {
-    activeSlideIndex = swiper.getSlideIndex(slides.filter(el => el.classList.contains(params.slideActiveClass))[0]);
+    activeSlideIndex = swiper.getSlideIndex(slides.find(el => el.classList.contains(params.slideActiveClass)));
   } else {
     activeIndex = activeSlideIndex;
   }
@@ -31556,7 +31563,7 @@ function onTouchStart(event) {
   }
   let targetEl = e.target;
   if (params.touchEventsTarget === 'wrapper') {
-    if (!swiper.wrapperEl.contains(targetEl)) return;
+    if (!(0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.v)(targetEl, swiper.wrapperEl)) return;
   }
   if ('which' in e && e.which === 3) return;
   if ('button' in e && e.button > 0) return;
@@ -31611,7 +31618,7 @@ function onTouchStart(event) {
       data.isTouched = false;
     }
   }
-  if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== targetEl) {
+  if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== targetEl && (e.pointerType === 'mouse' || e.pointerType !== 'mouse' && !targetEl.matches(data.focusableElements))) {
     document.activeElement.blur();
   }
   const shouldPreventDefault = preventDefault && swiper.allowTouchMove && params.touchStartPreventDefault;
@@ -31645,7 +31652,7 @@ function onTouchMove(event) {
   }
   let targetTouch;
   if (e.type === 'touchmove') {
-    targetTouch = [...e.changedTouches].filter(t => t.identifier === data.touchId)[0];
+    targetTouch = [...e.changedTouches].find(t => t.identifier === data.touchId);
     if (!targetTouch || targetTouch.identifier !== data.touchId) return;
   } else {
     targetTouch = e;
@@ -31689,6 +31696,9 @@ function onTouchMove(event) {
     } else if (pageX < touches.startX && swiper.translate <= swiper.maxTranslate() || pageX > touches.startX && swiper.translate >= swiper.minTranslate()) {
       return;
     }
+  }
+  if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== e.target && e.pointerType !== 'mouse') {
+    document.activeElement.blur();
   }
   if (document.activeElement) {
     if (e.target === document.activeElement && e.target.matches(data.focusableElements)) {
@@ -31806,7 +31816,7 @@ function onTouchMove(event) {
     resistanceRatio = 0;
   }
   if (diff > 0) {
-    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] : swiper.minTranslate())) {
+    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] - (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.activeIndex + 1] + swiper.params.spaceBetween : 0) - swiper.params.spaceBetween : swiper.minTranslate())) {
       swiper.loopFix({
         direction: 'prev',
         setTranslate: true,
@@ -31820,7 +31830,7 @@ function onTouchMove(event) {
       }
     }
   } else if (diff < 0) {
-    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] : swiper.maxTranslate())) {
+    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween + (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween : 0) : swiper.maxTranslate())) {
       swiper.loopFix({
         direction: 'next',
         setTranslate: true,
@@ -31893,7 +31903,7 @@ function onTouchEnd(event) {
     if (e.pointerId !== data.pointerId) return;
     targetTouch = e;
   } else {
-    targetTouch = [...e.changedTouches].filter(t => t.identifier === data.touchId)[0];
+    targetTouch = [...e.changedTouches].find(t => t.identifier === data.touchId);
     if (!targetTouch || targetTouch.identifier !== data.touchId) return;
   }
   if (['pointercancel', 'pointerout', 'pointerleave', 'contextmenu'].includes(e.type)) {
@@ -32267,9 +32277,12 @@ function setBreakpoint() {
   } = swiper;
   const breakpoints = params.breakpoints;
   if (!breakpoints || breakpoints && Object.keys(breakpoints).length === 0) return;
+  const document = (0,_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__.g)();
 
-  // Get breakpoint for window width and update parameters
-  const breakpoint = swiper.getBreakpoint(breakpoints, swiper.params.breakpointsBase, swiper.el);
+  // Get breakpoint for window/container width and update parameters
+  const breakpointsBase = params.breakpointsBase === 'window' || !params.breakpointsBase ? params.breakpointsBase : 'container';
+  const breakpointContainer = ['window', 'container'].includes(params.breakpointsBase) || !params.breakpointsBase ? swiper.el : document.querySelector(params.breakpointsBase);
+  const breakpoint = swiper.getBreakpoint(breakpoints, breakpointsBase, breakpointContainer);
   if (!breakpoint || swiper.currentBreakpoint === breakpoint) return;
   const breakpointOnlyParams = breakpoint in breakpoints ? breakpoints[breakpoint] : undefined;
   const breakpointParams = breakpointOnlyParams || swiper.originalParams;
@@ -32312,7 +32325,7 @@ function setBreakpoint() {
   if (directionChanged && initialized) {
     swiper.changeDirection();
   }
-  (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)(swiper.params, breakpointParams);
+  (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)(swiper.params, breakpointParams);
   const isEnabled = swiper.params.enabled;
   const hasLoop = swiper.params.loop;
   Object.assign(swiper, {
@@ -32617,7 +32630,7 @@ function moduleExtendParams(params, allModulesParams) {
     const moduleParamName = Object.keys(obj)[0];
     const moduleParams = obj[moduleParamName];
     if (typeof moduleParams !== 'object' || moduleParams === null) {
-      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)(allModulesParams, obj);
+      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)(allModulesParams, obj);
       return;
     }
     if (params[moduleParamName] === true) {
@@ -32632,7 +32645,7 @@ function moduleExtendParams(params, allModulesParams) {
       params[moduleParamName].auto = true;
     }
     if (!(moduleParamName in params && 'enabled' in moduleParams)) {
-      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)(allModulesParams, obj);
+      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)(allModulesParams, obj);
       return;
     }
     if (typeof params[moduleParamName] === 'object' && !('enabled' in params[moduleParamName])) {
@@ -32641,7 +32654,7 @@ function moduleExtendParams(params, allModulesParams) {
     if (!params[moduleParamName]) params[moduleParamName] = {
       enabled: false
     };
-    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)(allModulesParams, obj);
+    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)(allModulesParams, obj);
   };
 }
 
@@ -32673,13 +32686,13 @@ class Swiper {
       [el, params] = args;
     }
     if (!params) params = {};
-    params = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)({}, params);
+    params = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)({}, params);
     if (el && !params.el) params.el = el;
     const document = (0,_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__.g)();
     if (params.el && typeof params.el === 'string' && document.querySelectorAll(params.el).length > 1) {
       const swipers = [];
       document.querySelectorAll(params.el).forEach(containerEl => {
-        const newParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)({}, params, {
+        const newParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)({}, params, {
           el: containerEl
         });
         swipers.push(new Swiper(newParams));
@@ -32716,12 +32729,12 @@ class Swiper {
     });
 
     // Extend defaults with modules params
-    const swiperParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)({}, defaults, allModulesParams);
+    const swiperParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)({}, defaults, allModulesParams);
 
     // Extend defaults with passed params
-    swiper.params = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)({}, swiperParams, extendedDefaults, params);
-    swiper.originalParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)({}, swiper.params);
-    swiper.passedParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)({}, params);
+    swiper.params = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)({}, swiperParams, extendedDefaults, params);
+    swiper.originalParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)({}, swiper.params);
+    swiper.passedParams = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)({}, params);
 
     // add event listeners
     if (swiper.params && swiper.params.on) {
@@ -32845,7 +32858,7 @@ class Swiper {
     return (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.h)(slideEl) - firstSlideIndex;
   }
   getSlideIndexByData(index) {
-    return this.getSlideIndex(this.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === index)[0]);
+    return this.getSlideIndex(this.slides.find(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === index));
   }
   recalcSlides() {
     const swiper = this;
@@ -33102,9 +33115,9 @@ class Swiper {
       hostEl: swiper.isElement ? el.parentNode.host : el,
       mounted: true,
       // RTL
-      rtl: el.dir.toLowerCase() === 'rtl' || (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(el, 'direction') === 'rtl',
-      rtlTranslate: swiper.params.direction === 'horizontal' && (el.dir.toLowerCase() === 'rtl' || (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(el, 'direction') === 'rtl'),
-      wrongRTL: (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.o)(wrapperEl, 'display') === '-webkit-box'
+      rtl: el.dir.toLowerCase() === 'rtl' || (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(el, 'direction') === 'rtl',
+      rtlTranslate: swiper.params.direction === 'horizontal' && (el.dir.toLowerCase() === 'rtl' || (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(el, 'direction') === 'rtl'),
+      wrongRTL: (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.p)(wrapperEl, 'display') === '-webkit-box'
     });
     return true;
   }
@@ -33232,13 +33245,13 @@ class Swiper {
       if (swiper.el && typeof swiper.el !== 'string') {
         swiper.el.swiper = null;
       }
-      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.v)(swiper);
+      (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.x)(swiper);
     }
     swiper.destroyed = true;
     return null;
   }
   static extendDefaults(newDefaults) {
-    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.u)(extendedDefaults, newDefaults);
+    (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.w)(extendedDefaults, newDefaults);
   }
   static get extendedDefaults() {
     return extendedDefaults;
@@ -33297,14 +33310,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   l: () => (/* binding */ isObject),
 /* harmony export */   m: () => (/* binding */ makeElementsArray),
 /* harmony export */   n: () => (/* binding */ nextTick),
-/* harmony export */   o: () => (/* binding */ elementStyle),
-/* harmony export */   p: () => (/* binding */ elementNextAll),
-/* harmony export */   q: () => (/* binding */ elementPrevAll),
-/* harmony export */   r: () => (/* binding */ animateCSSModeScroll),
+/* harmony export */   o: () => (/* binding */ getRotateFix),
+/* harmony export */   p: () => (/* binding */ elementStyle),
+/* harmony export */   q: () => (/* binding */ elementNextAll),
+/* harmony export */   r: () => (/* binding */ elementPrevAll),
 /* harmony export */   s: () => (/* binding */ setCSSProperty),
-/* harmony export */   t: () => (/* binding */ showWarning),
-/* harmony export */   u: () => (/* binding */ extend),
-/* harmony export */   v: () => (/* binding */ deleteProps)
+/* harmony export */   t: () => (/* binding */ animateCSSModeScroll),
+/* harmony export */   u: () => (/* binding */ showWarning),
+/* harmony export */   v: () => (/* binding */ elementIsChildOf),
+/* harmony export */   w: () => (/* binding */ extend),
+/* harmony export */   x: () => (/* binding */ deleteProps)
 /* harmony export */ });
 /* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ssr-window.esm.mjs */ "./node_modules/swiper/shared/ssr-window.esm.mjs");
 
@@ -33493,7 +33508,38 @@ function elementChildren(element, selector) {
   if (selector === void 0) {
     selector = '';
   }
-  return [...element.children].filter(el => el.matches(selector));
+  const window = (0,_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__.a)();
+  const children = [...element.children];
+  if (window.HTMLSlotElement && element instanceof HTMLSlotElement) {
+    children.push(...element.assignedElements());
+  }
+  if (!selector) {
+    return children;
+  }
+  return children.filter(el => el.matches(selector));
+}
+function elementIsChildOfSlot(el, slot) {
+  // Breadth-first search through all parent's children and assigned elements
+  const elementsQueue = [slot];
+  while (elementsQueue.length > 0) {
+    const elementToCheck = elementsQueue.shift();
+    if (el === elementToCheck) {
+      return true;
+    }
+    elementsQueue.push(...elementToCheck.children, ...(elementToCheck.shadowRoot?.children || []), ...(elementToCheck.assignedElements?.() || []));
+  }
+}
+function elementIsChildOf(el, parent) {
+  const window = (0,_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__.a)();
+  let isChild = parent.contains(el);
+  if (!isChild && window.HTMLSlotElement && parent instanceof HTMLSlotElement) {
+    const children = [...parent.assignedElements()];
+    isChild = children.includes(el);
+    if (!isChild) {
+      isChild = elementIsChildOfSlot(el, parent);
+    }
+  }
+  return isChild;
 }
 function showWarning(text) {
   try {
@@ -33597,6 +33643,14 @@ function elementOuterSize(el, size, includeMargins) {
 function makeElementsArray(el) {
   return (Array.isArray(el) ? el : [el]).filter(e => !!e);
 }
+function getRotateFix(swiper) {
+  return v => {
+    if (Math.abs(v) > 0 && swiper.browser && swiper.browser.need3dFix && Math.abs(v) % 90 === 0) {
+      return v + 0.001;
+    }
+    return v;
+  };
+}
 
 
 
@@ -33617,15 +33671,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper 11.1.4
+ * Swiper 11.2.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
- * Copyright 2014-2024 Vladimir Kharlampidi
+ * Copyright 2014-2025 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: May 30, 2024
+ * Released on: January 10, 2025
  */
 
 
@@ -33830,19 +33884,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   const elementsToAnimate = document.querySelectorAll('.title-slide,.image-first-slide,.div-slide,.button-slider,.content-button-slide,.content-icon,.title-slide-div,.img-inner,.button-slider-inner,.content-button-slide-inner,.content-icon-inner,.featured-image-post img,.title-post,.excerpt-post,.link-post,.author-post,.date-post,.categories-post,.tags-post');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateElement(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0
-  });
-  elementsToAnimate.forEach(element => {
-    observer.observe(element);
-  });
 
   // Funzione per animare un elemento
   function animateElement() {
@@ -33896,8 +33937,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const easingHover = element.getAttribute((_dataEasingHover = 'data-easing-hover') !== null && _dataEasingHover !== void 0 ? _dataEasingHover : 'linear');
       const heightFrom = element.getAttribute((_dataHeightFrom = 'data-height-from') !== null && _dataHeightFrom !== void 0 ? _dataHeightFrom : 0);
       const heightTo = element.getAttribute((_dataHeightTo = 'data-height-to') !== null && _dataHeightTo !== void 0 ? _dataHeightTo : 0);
-
-      // element.style.opacity = opacityFrom;
       const animationProps = (0,_animate__WEBPACK_IMPORTED_MODULE_4__.getAnimationProps)({
         effectIn,
         duration,
@@ -33951,7 +33990,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Controlla se animationsIn[effectIn] è definito
       if (typeof _animate__WEBPACK_IMPORTED_MODULE_4__.animationsIn[effectIn] === 'function') {
-        element.style.opacity = 0;
         setTimeout(() => {
           _animate__WEBPACK_IMPORTED_MODULE_4__.animationsIn[effectIn](element, animationProps);
         }, delay);
@@ -34133,11 +34171,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
               } else {
                 elements.forEach(element => {
-                  // Rimuovi qualsiasi animazione in corso sull'elemento
                   animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_5__["default"].remove(element);
-                  // Resetta gli stili
+                  // Resetta gli stili di base
                   element.style.transform = "none";
                   element.style.opacity = 0;
+                  animateElement(element);
                 });
               }
             });
@@ -34155,14 +34193,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Esegui l'animazione sulla prima slide attiva subito dopo l'inizializzazione
-      const initialActiveSlide = swiperElement.querySelector('.swiper-slide-active');
-      if (initialActiveSlide) {
-        const elements = initialActiveSlide.querySelectorAll('[data-effect-in]');
+      // Ripristina tutte le slide
+      const allSlides = swiperElement.querySelectorAll('.swiper-slide');
+      allSlides.forEach(slide => {
+        const elements = slide.querySelectorAll('[data-effect-in]');
         elements.forEach(element => {
-          animateElement(element);
+          animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_5__["default"].remove(element); // Ferma eventuali animazioni in corso
+          element.style.transform = "none"; // Resetta trasformazioni
+          element.style.opacity = 0; // Nasconde l'elemento
         });
-      }
+      });
+
+      // Utilizza IntersectionObserver per avviare le animazioni quando la slider entra nella viewport
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+            const elementsToAnimate = activeSlide.querySelectorAll('[data-effect-in]');
+            elementsToAnimate.forEach(element => {
+              animateElement(element); // Funzione per avviare l'animazione
+            });
+            observer.unobserve(entry.target); // Osserva solo una volta
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+      observer.observe(swiperElement);
     }
   });
 });
@@ -34223,7 +34280,7 @@ function createParticle(e, slide) {
   particle.style.animationDuration = `${duration}s`;
   particle.style.setProperty('--offsetX', `${offsetX}px`);
   particle.style.setProperty('--offsetY', `${offsetY}px`);
-  particle.style.backgroundColor = colorStart; // Applica il colore iniziale
+  particle.style.backgroundColor = colorStart;
   particle.style.setProperty('--color-start', colorStart);
   particle.style.setProperty('--color-middle', colorMiddle);
   particle.style.setProperty('--color-end', colorEnd);
@@ -34260,7 +34317,6 @@ function createSmokeTrail(e, slide) {
 
 // Funzione per creare effetto parallax
 function applyParallaxEffect(slide) {
-  // Leggi i valori degli attributi dal DOM
   const selectedElements = {
     imgSelected: slide.getAttribute('data-img-selected') === 'true',
     h1Selected: slide.getAttribute('data-h1-selected') === 'true',
@@ -34297,7 +34353,7 @@ function applyParallaxEffect(slide) {
   const elements = slide.querySelectorAll(selectors.join(','));
 
   // Recupera il valore della transizione dal data attribute
-  const transitionDuration = parseFloat(slide.getAttribute('data-transition-paralax-mouse')) || 0.5; // Default to 0.5s
+  const transitionDuration = parseFloat(slide.getAttribute('data-transition-paralax-mouse')) || 0.5;
 
   // Applica la transizione a tutti gli elementi
   elements.forEach(element => {
@@ -34314,10 +34370,8 @@ function applyParallaxEffect(slide) {
   // Genera un offset casuale per ogni elemento
   const elementOffsets = Array.from(elements).map(() => ({
     offsetX: Math.random() * 2 - 1,
-    // Valore casuale tra -1 e 1
     offsetY: Math.random() * 2 - 1,
-    // Valore casuale tra -1 e 1
-    intensity: Math.random() * 10 + 5 // Intensità casuale tra 5 e 15
+    intensity: Math.random() * 10 + 5
   }));
   function updateParallax() {
     // Interpolazione per rendere il movimento più fluido
@@ -34402,9 +34456,6 @@ function applyLiquidEffect(slide) {
     config.SHADING = false;
     config.BLOOM = false;
   }
-
-  //startGUI();
-
   function getWebGLContext(canvas) {
     const params = {
       alpha: true,
@@ -35253,8 +35304,8 @@ function applyLiquidEffect(slide) {
   pointers[0].down = true;
   canvas.addEventListener("mousemove", e => {
     pointers[0].moved = true;
-    pointers[0].dx = (e.offsetX - pointers[0].x) * 5; // Regolazione grandezza vapore
-    pointers[0].dy = (e.offsetY - pointers[0].y) * 5; // Regolazione grandezza vapore
+    pointers[0].dx = (e.offsetX - pointers[0].x) * 5;
+    pointers[0].dy = (e.offsetY - pointers[0].y) * 5;
     pointers[0].x = e.offsetX;
     pointers[0].y = e.offsetY;
     pointers[0].down = true;
@@ -35264,8 +35315,7 @@ function applyLiquidEffect(slide) {
     const firstColor = slide.getAttribute('data-color-first-liquid');
     const secondColor = slide.getAttribute('data-color-second-liquid');
     const thirdColor = slide.getAttribute('data-color-third-liquid');
-    // Imposta h a 0 per ottenere il rosso
-    let c = HSVtoRGB(firstColor, secondColor, thirdColor); // per regolare il colore <input type="range" id="colorRange" min="0" max="1" step="0.01" value="0.67"> per il primo valore che adesso è a 0, gli altri 2 lasciarl ia 1
+    let c = HSVtoRGB(firstColor, secondColor, thirdColor);
     c.r *= 0.15;
     c.g *= 0.15;
     c.b *= 0.15;
@@ -35374,11 +35424,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 const loadGoogleFont = fontFamily => {
-  if (!fontFamily) return;
+  if (!fontFamily || fontFamily.toLowerCase() === 'inherit') return;
   // Lista dei font che non devono essere caricati da Google Fonts
-  const systemFonts = ["Arial", "Helvetica", "Georgia", "Times New Roman", "Verdana", "Tahoma", "Trebuchet MS", "Gill Sans", "Courier New", "Lucida Console", "Consolas", "Monaco", "Comic Sans MS", "Brush Script MT", "Impact", "Palatino Linotype", "Book Antiqua"
-  // Aggiungi altri font di sistema se necessario
-  ];
+  const systemFonts = ["Arial", "Helvetica", "Georgia", "Times New Roman", "Verdana", "Tahoma", "Trebuchet MS", "Gill Sans", "Courier New", "Lucida Console", "Consolas", "Monaco", "Comic Sans MS", "Brush Script MT", "Impact", "Palatino Linotype", "Book Antiqua"];
   // Estrai solo il nome principale del font senza il fallback
   const cleanFontFamily = fontFamily.split(",")[0].trim();
   // Se il font è un font di sistema, non tentare di caricarlo tramite Google Fonts
@@ -35403,7 +35451,7 @@ function typeWritEffect() {
   class TxtType {
     constructor(el, toRotate, period) {
       const breakCursor = el.getAttribute('data-break-cursor');
-      this.toRotate = toRotate.filter(text => text.trim() !== ""); // Rimuove i campi vuoti
+      this.toRotate = toRotate.filter(text => text.trim() !== "");
       this.el = el;
       this.loopNum = 0;
       this.period = breakCursor;
@@ -35445,7 +35493,6 @@ function typeWritEffect() {
       var toRotate = elements[i].getAttribute('data-type');
       var period = elements[i].getAttribute('data-period');
       if (toRotate) {
-        // Assicurati che `toRotate` sia un array di stringhe, rimuovendo i vuoti
         var texts = JSON.parse(toRotate).filter(text => text.trim() !== "");
         if (texts.length > 0) {
           new TxtType(elements[i], texts, period);
