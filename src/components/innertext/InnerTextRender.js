@@ -184,7 +184,7 @@ const InnerTextRender = ({ textDiv, textIndex, onPlay }) => {
           textAlign: textDiv.textAlign || "left",
           letterSpacing: textDiv.letterSpacingTitleBlock + "px",
           fontStyle: textDiv.fontStyle?.fontStyle || "normal",
-          fontWeight: isBold ? "bold" : textDiv.fontWeightTitleBlock || "normal",
+          fontWeight: isBold ? "bold" : textDiv.fontWeight || "normal",
           textDecoration: textDiv.fontStyle?.textDecoration || "none",
           lineHeight: textDiv.lineHeight ? `${textDiv.lineHeight}` : "1.5",
           fontFamily: textDiv.fontFamilyTitleBlock || "inherit", // Inherit se non specificato

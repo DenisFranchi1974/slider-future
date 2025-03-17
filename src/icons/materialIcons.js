@@ -49,6 +49,32 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import StarsIcon from '@mui/icons-material/Stars';
 
+import RotateRightIcon from '@mui/icons-material/RotateRight'; 
+import WidthWideIcon from '@mui/icons-material/WidthWide';
+import HeightIcon from '@mui/icons-material/Height';
+import FormatLineSpacingIcon from '@mui/icons-material/FormatLineSpacing';
+import FormatTextdirectionLToRIcon from '@mui/icons-material/FormatTextdirectionLToR';
+import FontDownloadIcon from '@mui/icons-material/FontDownload';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import PaddingIcon from '@mui/icons-material/Padding';
+import MarginIcon from '@mui/icons-material/Margin';
+import DirectionsIcon from '@mui/icons-material/Directions';
+import OpacityIcon from '@mui/icons-material/Opacity';
+import LayersClearIcon from '@mui/icons-material/LayersClear';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
+import BorderStyleIcon from '@mui/icons-material/BorderStyle';
+import BorderInnerIcon from '@mui/icons-material/BorderInner';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
+import TuneIcon from '@mui/icons-material/Tune';
+import AdfScannerIcon from '@mui/icons-material/AdfScanner';
+import LineWeightIcon from '@mui/icons-material/LineWeight';
+import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
+import SpeedIcon from '@mui/icons-material/Speed';
+
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -650,6 +676,33 @@ const materialIcons = {
   AdbIcon : AdbIcon,
   AndroidIcon : AndroidIcon,
   DetailsIcon : DetailsIcon,
+
+  RotateRight: RotateRightIcon,
+  WidthWide: WidthWideIcon,
+  Height: HeightIcon,
+  FormatLineSpacing: FormatLineSpacingIcon,
+  FormatTextdirectionLToR: FormatTextdirectionLToRIcon,
+  FontDownload: FontDownloadIcon,
+  FitnessCenter: FitnessCenterIcon,
+  Padding: PaddingIcon,
+  Margin: MarginIcon,
+  Directions: DirectionsIcon,
+  Opacity: OpacityIcon,
+  LayersClear: LayersClearIcon,
+  Visibility: VisibilityIcon,
+  VisibilityOff: VisibilityOffIcon,
+  FormatColorText: FormatColorTextIcon,
+  BorderStyle: BorderStyleIcon,
+  BorderInner: BorderInnerIcon,
+  ColorLens: ColorLensIcon,
+  DeleteOutline: DeleteOutlineIcon,
+  TextFields: TextFieldsIcon,
+  Tune: TuneIcon,
+  AdfScanner: AdfScannerIcon,
+  LineWeight: LineWeightIcon,
+  PauseCircleOutline: PauseCircleOutlineIcon,
+  Speed: SpeedIcon,
+  
 
 };
 

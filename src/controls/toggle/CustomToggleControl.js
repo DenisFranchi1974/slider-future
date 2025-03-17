@@ -9,11 +9,11 @@ const CustomToggleControl = ({
   options, 
   checked,      
   onChange, 
-  customClassToggle = '', // Classe personalizzata per il controllo (Facoltativo)
-  tooltipText,  // Testo per il tooltip
-  showTooltip = false, // Mostra o nasconde il tooltip (Facoltativo) 
-  tooltipTop = '3px',  // Posizione 'top' del tooltip (di default 5px)
-  tooltipLeft = '35%', // Posizione 'left' del tooltip (di default 35%)    
+  customClassToggle = '', 
+  tooltipText,  
+  showTooltip = false, 
+  tooltipTop = '3px',  
+  tooltipLeft = '35%', 
   ...restProps    
 }) => {
   return (
@@ -33,7 +33,7 @@ const CustomToggleControl = ({
             maxWidth: "300px",
             borderRadius: "4px",
             }}
-            text={tooltipText || __("Default tooltip text", "slider-future")} // Testo di fallback
+            text={tooltipText || __("Default tooltip text", "slider-future")} 
         >
             <InfoIcon  className="tooltip-icon" style={{top: tooltipTop, left: tooltipLeft}} />
         </Tooltip>

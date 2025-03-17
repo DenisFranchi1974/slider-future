@@ -23,10 +23,10 @@ import ProTooltip from '../../components/ProTooltip';
 
 const CustomHoverControls = ({
   valueEffectHover,
-  colorNormal,       // Colore corrente
-  setColorNormal,    // Funzione per aggiornare il colore
-  buttonTitle,       // Titolo del pulsante
-  buttonIcon,        // Icona del pulsante
+  colorNormal,       
+  setColorNormal,    
+  buttonTitle,      
+  buttonIcon,       
   valueOpacityHover,
   valueBlurHover,
     valueTranslateXHover,
@@ -40,15 +40,15 @@ const CustomHoverControls = ({
     valueSkewYHover, 
     valueDurationHover,
     valueEasingHover,
-    showColorControl = true, // Mostra o nasconde il controllo del colore
-  slides, // Stato delle slide
-  setAttributes, // Funzione per aggiornare lo stato delle slide
-  updateType, // Tipo di elemento (primario o secondario)
-  slideId, // ID della slide
-  elementIndex, // Indice dell'elemento primario (se primario)
-  innerIndex, // Indice dell'elemento secondario (se secondario)
-  elementType, // Tipo di elemento (ad es. "title", "button", ecc.)
-  updateElement, // Funzione di aggiornamento passata come prop
+    showColorControl = true, 
+  slides, 
+  setAttributes, 
+  updateType, 
+  slideId, 
+  elementIndex, 
+  innerIndex, 
+  elementType, 
+  updateElement,
   effectHoverProperty,
   colorHoverProperty,
   opacityHoverProperty,
@@ -64,7 +64,7 @@ const CustomHoverControls = ({
     skewYHoverProperty,
     durationHoverProperty,
     easingHoverProperty,
-  ...restProps // Altri eventuali props da passare
+  ...restProps 
 }) => {
   // Funzione effect
   const handleChangeEffectHover = (newValue) => {
@@ -80,7 +80,7 @@ const CustomHoverControls = ({
       effectHoverProperty
     );
   };
-  // Functions color
+ 
   const [colorPaletteOpen, setColorPaletteOpen] = useState(false);
 
   const toggleColorPalette = () => {
@@ -91,7 +91,7 @@ const CustomHoverControls = ({
     setColorNormal(color.hex);
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, color.hex, updateType, elementType, colorHoverProperty);
   };
-    // Funzione opacity
+    
     const handleChangeOpacityHover = (newValue) => {
         updateElement(
         slides,
@@ -105,7 +105,7 @@ const CustomHoverControls = ({
         opacityHoverProperty
         );
     };
-    // Funzione blur
+   
     const handleChangeBlurHover = (newValue) => {
         updateElement(
         slides,
@@ -119,7 +119,7 @@ const CustomHoverControls = ({
         blurHoverProperty
         );
     };
-    // Funzione translateX
+    
     const handleChangeTranslateXHover = (newValue) => {
         updateElement(
         slides,
@@ -133,7 +133,7 @@ const CustomHoverControls = ({
         translateXHoverProperty
         );
     };
-    // Funzione translateY
+    
     const handleChangeTranslateYHover = (newValue) => {
         updateElement(
         slides,
@@ -147,7 +147,7 @@ const CustomHoverControls = ({
         translateYHoverProperty
         );
     };
-    // Funzione scaleType
+    
     const handleChangeScaleTypeHover = (newValue) => {
         updateElement(
         slides,
@@ -161,7 +161,7 @@ const CustomHoverControls = ({
         scaleTypeHoverProperty
         );
     }
-    // Funzione scale
+    
     const handleChangeScaleHover = (newValue) => {
         updateElement(
         slides,
@@ -175,7 +175,7 @@ const CustomHoverControls = ({
         scaleHoverProperty
         );
     };
-    // Funzione rotate
+   
     const handleChangeRotateHover = (newValue) => {
         updateElement(
         slides,
@@ -189,7 +189,7 @@ const CustomHoverControls = ({
         rotateHoverProperty
         );
     };
-    // Funzione rotateX
+    
     const handleChangeRotateXHover = (newValue) => {
         updateElement(
         slides,
@@ -203,7 +203,7 @@ const CustomHoverControls = ({
         rotateXHoverProperty
         );
     };
-    // Funzione rotateY
+   
     const handleChangeRotateYHover = (newValue) => {
         updateElement(
         slides,
@@ -217,7 +217,7 @@ const CustomHoverControls = ({
         rotateYHoverProperty
         );
     };
-    // Funzione skewX
+    
     const handleChangeSkewXHover = (newValue) => {
         updateElement(
         slides,
@@ -231,7 +231,7 @@ const CustomHoverControls = ({
         skewXHoverProperty
         );
     };
-    // Funzione skewY
+    
     const handleChangeSkewYHover = (newValue) => {
         updateElement(
         slides,
@@ -245,7 +245,7 @@ const CustomHoverControls = ({
         skewYHoverProperty
         );
     };
-    // Funzione duration
+    
     const handleChangeDurationHover = (newValue) => {
         updateElement(
         slides,
@@ -259,7 +259,7 @@ const CustomHoverControls = ({
         durationHoverProperty
         );
     };
-    // Funzione easing
+    
     const handleChangeEasingHover = (newValue) => {
         updateElement(
         slides,

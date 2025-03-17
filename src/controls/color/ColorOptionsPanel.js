@@ -4,20 +4,20 @@ import { __ } from '@wordpress/i18n';
 import './ColorOptionsPanel.scss';
 
 const CustomColorOptionsPanel = ({
-  colorNormal,       // Colore corrente
-  setColorNormal,    // Funzione per aggiornare il colore
-  buttonTitle,       // Titolo del pulsante
-  buttonIcon,        // Icona del pulsante
-  slides,            // Stato delle slide
-  setAttributes,     // Funzione per aggiornare lo stato delle slide
-  updateType,        // Tipo di elemento (primario o secondario)
-  slideId,           // ID della slide
-  elementIndex,      // Indice dell'elemento primario (se primario)
-  innerIndex,        // Indice dell'elemento secondario (se secondario)
-  elementType,       // Tipo di elemento (ad es. "title", "button", ecc.)
-  updateElement,     // Funzione di aggiornamento passata come prop
-  property,          // Proprietà da aggiornare
-  ...restProps       // Altri eventuali props da passare
+  colorNormal,       
+  setColorNormal,    
+  buttonTitle,       
+  buttonIcon,      
+  slides,            
+  setAttributes,     
+  updateType,        
+  slideId,           
+  elementIndex,     
+  innerIndex,        
+  elementType,       
+  updateElement,    
+  property,         
+  ...restProps    
 }) => {
   const [colorPaletteOpen, setColorPaletteOpen] = useState(false);
 

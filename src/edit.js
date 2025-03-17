@@ -864,9 +864,10 @@ useEffect(() => {
 
   const [selectedElement, setSelectedElement] = useState(null);
 
-  const handleSelect = (index) => {
-    setSelectedElement(index);
+  const handleSelect = (index, type) => {
+    setSelectedElement({ index, type });  // Salviamo un oggetto con index e tipo
   };
+
 
   const [settings, setSettings] = useState({
     autoplay: true,
@@ -930,6 +931,7 @@ useEffect(() => {
   }, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   return (
     <>
@@ -1041,9 +1043,7 @@ useEffect(() => {
                     playAnimationInnerButton={playAnimationInnerButton}
                     handlePlayInnerIcon={handlePlayInnerIcon}
                     playAnimationInnerIcon={playAnimationInnerIcon}
-                    selectedClass={
-                      selectedElement === selectedElement ? "selected" : ""
-                    }
+                    selectedElement={selectedElement}  // Passiamo l'elemento selezionato
                   />
                 </div>
               )}
@@ -1747,12 +1747,6 @@ useEffect(() => {
                                     playAnimations.push(playAnimation);
                                     playAnimationText.push(playAnimation);
                                   }}
-                                  className={
-                                    selectedElement === elementIndex
-                                      ? "selected"
-                                      : ""
-                                  }
-                                  onClick={() => handleSelect(elementIndex)}
                                 />
                               );
                             case "image":

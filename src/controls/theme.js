@@ -7,13 +7,13 @@ const theme = createTheme({
         select: {
           backgroundColor: 'var(--background-color)',
           color: 'var(--light-color)',
-          fontSize: '13px', // Dimensione del font del selettore
+          fontSize: '13px',
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'var(--primary-color)', // Colore del bordo quando il selettore è focalizzato
+            borderColor: 'var(--primary-color)', 
           },
         },
         icon: {
-            color: 'var(--light-color)', // Colore della freccia del selettore
+            color: 'var(--light-color)', 
           },
       },
     },
@@ -30,7 +30,7 @@ const theme = createTheme({
         },
         root: {
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'var(--primary-color)', // Colore del bordo quando il selettore è focalizzato
+              borderColor: 'var(--primary-color)', 
             },
           },
       },
@@ -38,7 +38,7 @@ const theme = createTheme({
     MuiMenu: {
         styleOverrides: {
           paper: {
-            backgroundColor: 'var(--dark-color)', // Colore di sfondo del menu
+            backgroundColor: 'var(--dark-color)', 
           },
         },
       },
@@ -47,14 +47,14 @@ const theme = createTheme({
         root: {
             backgroundColor: 'var(--dark-color)',
             color: 'var(--light-color)',
-            fontSize: '13px', // Dimensione del font degli elementi del menu
+            fontSize: '13px', 
             '&.Mui-selected': {
-              backgroundColor: 'var(--dark-color-hover)', // Colore di sfondo per l'elemento selezionato
-              color: 'var(--light-color)', // Colore del testo per l'elemento selezionato
+              backgroundColor: 'var(--dark-color-hover)', 
+              color: 'var(--light-color)', 
             },
             '&.Mui-selected:hover': {
-              backgroundColor: 'var(--dark-color-hover)', // Colore di sfondo per l'elemento selezionato al passaggio del mouse
-              color: 'var(--light-color)', // Colore del testo per l'elemento selezionato al passaggio del mouse
+              backgroundColor: 'var(--dark-color-hover)', 
+              color: 'var(--light-color)', 
             },
             '&:hover': {
               backgroundColor: 'var(--dark-color-hover)',

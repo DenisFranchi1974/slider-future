@@ -4,7 +4,7 @@ import { animationsIn, getAnimationProps} from '../../animate';
 import {handleMouseEnter, handleMouseLeave} from '../../animate/animationIn'
 import './editor-image.scss';
 
-const ImageRender = ({ element, index, onPlay  }) => {
+const ImageRender = ({ element, index, onPlay, className, onClick   }) => {
 
   const imageRef = useRef(null); // Ref per il contenitore del testo
   //const barRef = useRef(null); // Ref per il div che vuoi animare
@@ -133,8 +133,9 @@ const ImageRender = ({ element, index, onPlay  }) => {
       }}
       className={
         "content-img-first " + element.imageFilter +
-        " " + element.hideImage
+        " " + element.hideImage + " " + className
       }
+      onClick={onClick}
     >
       <img
        ref={imageRef}

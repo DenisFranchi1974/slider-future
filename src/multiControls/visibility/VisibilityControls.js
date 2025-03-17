@@ -9,20 +9,20 @@ const CustomVisibilityControls = ({
   valueDesktop,
     valueTablet,
     valueMobile,
-  slides, // Stato delle slide
-  setAttributes, // Funzione per aggiornare lo stato delle slide
-  updateType, // Tipo di elemento (primario o secondario)
-  slideId, // ID della slide
-  elementIndex, // Indice dell'elemento primario (se primario)
-  innerIndex, // Indice dell'elemento secondario (se secondario)
-  elementType, // Tipo di elemento (ad es. "title", "button", ecc.)
-  updateElement, // Funzione di aggiornamento passata come prop
+  slides, 
+  setAttributes, 
+  updateType, 
+  slideId, 
+  elementIndex,
+  innerIndex,
+  elementType, 
+  updateElement, 
   desktopProperty, 
     tabletProperty,
     mobileProperty,
-  ...restProps // Altri eventuali props da passare
+  ...restProps 
 }) => {
-  // Funzione Desktop
+  
   const handleChangeDesktop = (newValue) => {
     updateElement(
       slides,
@@ -36,7 +36,7 @@ const CustomVisibilityControls = ({
       desktopProperty
     );
   };
-  // Funzione Tablet
+  
     const handleChangeTablet = (newValue) => {
         updateElement(
         slides,
@@ -50,7 +50,7 @@ const CustomVisibilityControls = ({
         tabletProperty
         );
     };
-    // Funzione Mobile
+   
     const handleChangeMobile = (newValue) => {
         updateElement(
         slides,

@@ -795,7 +795,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                     {__("Font weight", "slider-future")}
                   </>
                 }
-                value={textDiv.fontWeightTitleBlock || "400"}
+                value={textDiv.fontWeight || "400"}
                 slides={slides}
                 setAttributes={setAttributes}
                 updateType="secondary"
@@ -804,7 +804,7 @@ const updatenewBackgroundBorderRadius = (slideId, divIndex, innerIndex, newBorde
                 innerIndex={textIndex}
                 elementType="text"
                 updateElement={(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType) =>
-                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontWeightTitleBlock')
+                  updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, 'fontWeight')
                 }
                 selectOptions={fontWeightOptions} 
               />

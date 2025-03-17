@@ -70,14 +70,14 @@ const CustomEffectControls = ({
     valueDirectionBlock,
     onAnimated,
     selectOptions,
-  slides, // Stato delle slide
-  setAttributes, // Funzione per aggiornare lo stato delle slide
-  updateType, // Tipo di elemento (primario o secondario)
-  slideId, // ID della slide
-  elementIndex, // Indice dell'elemento primario (se primario)
-  innerIndex, // Indice dell'elemento secondario (se secondario)
-  elementType, // Tipo di elemento (ad es. "title", "button", ecc.)
-  updateElement, // Funzione di aggiornamento passata come prop
+  slides,
+  setAttributes, 
+  updateType, 
+  slideId, 
+  elementIndex, 
+  innerIndex, 
+  elementType, 
+  updateElement, 
   effectProperty,
   colorProperty,
   opacityPropertyFrom,
@@ -110,11 +110,9 @@ const CustomEffectControls = ({
   effectSplitProperty,
   staggerProperty,
   directionBlockProperty,
-
-
-  ...restProps // Altri eventuali props da passare
+  ...restProps
 }) => {
-  // Funzione effect
+  
   const handleChangeEffect = (event) => {
     const newValue = event.target.value;
     updateElement(
@@ -130,8 +128,6 @@ const CustomEffectControls = ({
     );
   };
 
-
-  // Functions color
   const [colorPaletteOpen, setColorPaletteOpen] = useState(false);
 
   const toggleColorPalette = () => {
@@ -142,119 +138,119 @@ const CustomEffectControls = ({
     setColorNormal(color.hex);
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, color.hex, updateType, elementType, colorProperty);
   };
-  // Funzione opacity from
+
   const handleChangeOpacityFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, opacityPropertyFrom);
   };
-  // Funzione opacity to
+
   const handleChangeOpacityTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, opacityPropertyTo);
   };
-  // Funzione blur from
+  
   const handleChangeBlurFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, blurPropertyFrom);
   };
-  // Funzione blur to
+ 
   const handleChangeBlurTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, blurPropertyTo);
   };
-  // Funzione translate X from
+
   const handleChangeTranslateXFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, translateXFromProperty);
   };
-  // Funzione translate X to
+
   const handleChangeTranslateXTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, translateXToProperty);
   };
-  // Funzione translate Y from
+  
   const handleChangeTranslateYFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, translateYFromProperty);
   }
-  // Funzione translate Y to
+ 
   const handleChangeTranslateYTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, translateYToProperty);
   }
-  // Funzione scale type
+  
   const handleChangeScaleType = (event) => {
     const newValue = event.target.value;
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, scaleTypeProperty);
   }
-  // Funzione scale from
+ 
   const handleChangeScaleFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, scaleFromProperty);
   }
-  // Funzione scale to
+  
   const handleChangeScaleTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, scaleToProperty);
   }
-  // Funzione rotate from
+  
   const handleChangeRotateFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, rotateFromProperty);
   }
-  // Funzione rotate to
+  
   const handleChangeRotateTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, rotateToProperty);
   }
-  // Funzione rotate X from
+ 
   const handleChangeRotateXFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, rotateXFromProperty);
   }
-  // Funzione rotate X to
+  
   const handleChangeRotateXTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, rotateXToProperty);
   }
-  // Funzione rotate Y from
+
   const handleChangeRotateYFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, rotateYFromProperty);
   }
-  // Funzione rotate Y to
+
   const handleChangeRotateYTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, rotateYToProperty);
   }
-  // Funzione skew X from
+ 
   const handleChangeSkewXFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, skewXFromProperty);
   }
-  // Funzione skew X to
+
   const handleChangeSkewXTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, skewXToProperty);
   }
-  // Funzione skew Y from
+ 
   const handleChangeSkewYFrom = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, skewYFromProperty);
   }
-  // Funzione skew Y to
+  
   const handleChangeSkewYTo = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, skewYToProperty);
   }
-  // Funzione duration
+  
   const handleChangeDuration = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, durationProperty);
   }
-  // Funzione easing
+
   const handleChangeEasing = (event) => {
     const newValue = event.target.value;
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, easingProperty);
   }
-  // Funzione direction
+
   const handleChangeDirection = (event) => {
     const newValue = event.target.value;
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, directionProperty);
   }
-  // Funzione loop
+ 
   const handleChangeLoop = (event) => {
     const newValue = event.target.value;
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, loopProperty);
   }
-  // Funzione delay
+
   const handleChangeDelay = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, delayProperty);
   }
-  // Funzione end delay
+
   const handleChangeEndDelay = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType, endDelayProperty);
   }
-  // Funzione effect split
+
   const handleChangeEffectSplit = (event) => {
     const newValue = event.target.value;
     updateElement(
@@ -269,7 +265,7 @@ const CustomEffectControls = ({
       effectSplitProperty
     );
   };
-  // Funzione stagger
+
   const handleChangeStagger = (newValue) => {
     updateElement(
       slides,
@@ -283,7 +279,7 @@ const CustomEffectControls = ({
       staggerProperty
     );
   };
-  // Funzione direction block
+  
   const handleChangeDirectionBlock = (event) => {
     const newValue = event.target.value;
     updateElement(
@@ -299,7 +295,7 @@ const CustomEffectControls = ({
     );
   };
 
- 
+
    const [isProFeature, setIsProFeature] = useState(true);
 
   useEffect(() => {
@@ -337,11 +333,11 @@ const CustomEffectControls = ({
           value={valueEffect}
           onChange={handleChangeEffect}
           sx={{
-            height: '30px', // Altezza del selettore
-            fontSize: '13px', // Dimensione del font del selettore
-            minWidth: '100px', // Larghezza minima del selettore
+            height: '30px', 
+            fontSize: '13px', 
+            minWidth: '100px', 
             '& .MuiSelect-select': {
-              padding: '6px', // Padding interno del selettore
+              padding: '6px', 
             },
           }}
           {...restProps}
@@ -364,11 +360,11 @@ const CustomEffectControls = ({
           value={valueEffectSplit}
           onChange={handleChangeEffectSplit}
           sx={{
-            height: '30px', // Altezza del selettore
-            fontSize: '13px', // Dimensione del font del selettore
-            minWidth: '100px', // Larghezza minima del selettore
+            height: '30px', 
+            fontSize: '13px', 
+            minWidth: '100px', 
             '& .MuiSelect-select': {
-              padding: '6px', // Padding interno del selettore
+              padding: '6px',
             },
           }}
           {...restProps}
@@ -526,11 +522,11 @@ const CustomEffectControls = ({
              value={valueScaleType ?? 'scale'}
              onChange={handleChangeScaleType}
              sx={{
-               height: '30px', // Altezza del selettore
-               fontSize: '13px', // Dimensione del font del selettore
-               minWidth: '100px', // Larghezza minima del selettore
+               height: '30px', 
+               fontSize: '13px', 
+               minWidth: '100px', 
                '& .MuiSelect-select': {
-                 padding: '6px', // Padding interno del selettore
+                 padding: '6px', 
                },
              }}
              {...restProps}
@@ -772,11 +768,11 @@ const CustomEffectControls = ({
              value={valueDirectionBlock ?? 'normal'}
              onChange={handleChangeDirectionBlock}
              sx={{
-               height: '30px', // Altezza del selettore
-               fontSize: '13px', // Dimensione del font del selettore
-               minWidth: '100px', // Larghezza minima del selettore
+               height: '30px', 
+               fontSize: '13px',
+               minWidth: '100px', 
                '& .MuiSelect-select': {
-                 padding: '6px', // Padding interno del selettore
+                 padding: '6px', 
                },
              }}
              {...restProps}
@@ -887,11 +883,11 @@ const CustomEffectControls = ({
              value={valueEasing ?? 'linear'}
              onChange={handleChangeEasing}
              sx={{
-               height: '30px', // Altezza del selettore
-               fontSize: '13px', // Dimensione del font del selettore
-               minWidth: '100px', // Larghezza minima del selettore
+               height: '30px', 
+               fontSize: '13px',
+               minWidth: '100px',
                '& .MuiSelect-select': {
-                 padding: '6px', // Padding interno del selettore
+                 padding: '6px', 
                },
              }}
              {...restProps}
@@ -918,11 +914,11 @@ const CustomEffectControls = ({
              value={valueDirection ?? 'normal'}
              onChange={handleChangeDirection}
              sx={{
-               height: '30px', // Altezza del selettore
-               fontSize: '13px', // Dimensione del font del selettore
-               minWidth: '100px', // Larghezza minima del selettore
+               height: '30px', 
+               fontSize: '13px', 
+               minWidth: '100px',
                '& .MuiSelect-select': {
-                 padding: '6px', // Padding interno del selettore
+                 padding: '6px', 
                },
              }}
              {...restProps}
@@ -943,11 +939,11 @@ const CustomEffectControls = ({
              value={valueLoop ?? '1'}
              onChange={handleChangeLoop}
              sx={{
-               height: '30px', // Altezza del selettore
-               fontSize: '13px', // Dimensione del font del selettore
-               minWidth: '100px', // Larghezza minima del selettore
+               height: '30px',
+               fontSize: '13px', 
+               minWidth: '100px', 
                '& .MuiSelect-select': {
-                 padding: '6px', // Padding interno del selettore
+                 padding: '6px', 
                },
              }}
              {...restProps}
@@ -961,7 +957,7 @@ const CustomEffectControls = ({
        </div> 
        </ThemeProvider>
         <div className="custom-select">
-            {/* Mostra la nota se valueLoop è maggiore di 1 */}
+           
             {(valueLoop > 1 || valueLoop === "true") && (
              <p
              className="notice components-base-control__help"
@@ -975,7 +971,6 @@ const CustomEffectControls = ({
               </p>
             )}
 
-            {/* Mostra la nota se valueLoop è uguale a true */}
             {valueLoop === 'true' && (
              <p
              className="notice components-base-control__help"

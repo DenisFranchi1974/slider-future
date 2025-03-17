@@ -3,10 +3,9 @@ function render_group($element, $slide)
 {
     $link_url = '';
     $onclick = '';
-    $target_div = '_self'; // Default
-    $rel_div = 'follow'; // Default
+    $target_div = '_self';
+    $rel_div = 'follow';
     if ($element['textLink'] !== 'none') {
-        // Prepara l'attributo onclick se textLink è diverso da 'none'
         if ($element['textLink'] === 'link' && !empty($element['linkUrl'])) {
             $link_url = esc_url($element['linkUrl']);
             if (!empty($element['linkTarget'])) {
@@ -23,11 +22,9 @@ function render_group($element, $slide)
             $onclick = "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });";
         }
     }
-    // Aggiungi classi in base alla visibilità per desktop, tablet e mobile
     $desktopClassDiv = $element['enableDesktop'] ? 'desktop-div-visible' : 'desktop-div-hidden';
     $tabletClassDiv = $element['enableTablet'] ? 'tablet-div-visible' : 'tablet-div-hidden';
     $mobileClassDiv = $element['enableMobile'] ? 'mobile-div-visible' : 'mobile-div-hidden';
-    // Element Div
     $TagDiv = !empty($element['elementDiv']) ? $element['elementDiv'] : 'div';
 ?>
     <?php if ($slide['developerMode']) : ?>

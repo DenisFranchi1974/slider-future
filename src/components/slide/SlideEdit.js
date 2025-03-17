@@ -80,6 +80,9 @@ import ProTooltip from "../ProTooltip";
 import RepeatIcon from '@mui/icons-material/Repeat';
 import ProNotice from '../ProNotice';
 
+import placeholderImage from '../../assets/images/placeholder.webp'; // importa l'immagine
+
+
 const SlideEdit = ({
   slides,
   setAttributes,
@@ -103,6 +106,7 @@ const SlideEdit = ({
   playAnimationInnerButton,
   handlePlayInnerIcon,
   playAnimationInnerIcon,
+  selectedElement,
   
 }) => {
   const {
@@ -145,10 +149,10 @@ const SlideEdit = ({
         // Aggiorna la slide con l'immagine appena caricata
         updateSlideBackgroundImage(slides.length, image.url);
       } else {
-        console.error("Errore durante il caricamento dell'immagine.");
+        console.error("Error loading image.");
       }
     } catch (error) {
-      console.error("Errore durante la chiamata all'API:", error);
+      console.error("Error while calling API:", error);
     } finally {
       setIsLoading(false);
       setIsModalOpen(false);
@@ -850,7 +854,7 @@ const SlideEdit = ({
                 desktop: { x: 0, y: 0 },
                 tablet: { x: 0, y: 0 },
                 mobile: { x: 0, y: 0 },
-                url: "",
+                url: placeholderImage,
                 alt: "",
                 fit: "cover",
                 widthImage: "fixed",
@@ -1264,6 +1268,8 @@ const handleClose = () => {
   setAnchorEl(null);
 };
 
+
+
 const open = Boolean(anchorEl);
 const id = open ? 'custom-popover' : undefined;
 
@@ -1274,6 +1280,7 @@ const id = open ? 'custom-popover' : undefined;
           setIsProFeature(window.isProFeature);
       }
   }, []);
+  
 
   return (
     <>
@@ -2676,7 +2683,7 @@ const id = open ? 'custom-popover' : undefined;
                   </Tooltip>
                 </div>
               )}
-                {element.type === "title" && (
+              {element.type === "title" && (
                     <TextEdit
                       slide={slide}
                       slides={slides}
@@ -2722,7 +2729,7 @@ const id = open ? 'custom-popover' : undefined;
                     playAnimations={playAnimations}
                   />
                 )}
-                {element.type === "image" && (
+               {element.type === "image" && (
                   <ImageEdit
                     slide={slide}
                     slides={slides}
@@ -2733,6 +2740,7 @@ const id = open ? 'custom-popover' : undefined;
                     activeSectionImage={activeSectionImage}
                     attributes={attributes}
                     onAnimatedImage={handlePlayImage}
+                    className={selectedClass}
                   />
                 )}
                  {element.type === "button" && (

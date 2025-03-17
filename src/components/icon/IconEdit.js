@@ -2,7 +2,7 @@ import React from "react";
 import {
   Button,
   Tooltip,
-  __experimentalBoxControl as BoxControl,
+  __experimentalBoxControl as BoxControl
 } from "@wordpress/components";
 import { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
@@ -688,7 +688,7 @@ const IconEdit = ({
               />
             </div>
             <div className="custom-select box-control">
-              <BoxControl
+            <BoxControl
                 id="custom-margin-control"
                 label={
                   <>

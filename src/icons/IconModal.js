@@ -383,7 +383,6 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
     setSearchTerm(value.toLowerCase());
   };
 
-  // Filtra le icone in base alla categoria e al termine di ricerca
   const filteredIcons = Object.keys(materialIcons)
     .filter((iconName) =>
       (selectedCategory === 'all' || categories[selectedCategory].includes(iconName)) &&
@@ -441,4 +440,3 @@ const IconModal = ({ isOpen, onClose, onSelectIcon }) => {
 };
 
 export default IconModal;
-

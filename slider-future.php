@@ -2,21 +2,39 @@
 
 /**
  * Plugin Name:       Slider Future
+ * Plugin URI: https://sliderfuture.franchiwebdesign.com/
  * Description:       The ultimate Gutenberg block for creating beautifully designed and animated web content.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           1.0.0
  * Author:            Franchi Web Design
+ * Author URI: https://franchiwebdesign.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       slider-future
+ * Domain Path: /languages
  *
- * @package CreateBlock
+ * @package Slider Future
  */
+
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+/*----------------------------------------------------------------------------------
+    Load Textdomain
+-----------------------------------------------------------------------------------*/
+
+function slider_future_upload_plugin_translation_file()
+{
+    load_plugin_textdomain('slider-future', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}
+add_action('plugins_loaded', 'slider_future_upload_plugin_translation_file');
+
+/*----------------------------------------------------------------------------------
+    Register Block
+-----------------------------------------------------------------------------------*/
 
 function slider_future_init()
 {
@@ -24,6 +42,9 @@ function slider_future_init()
 }
 add_action('init', 'slider_future_init');
 
+/*----------------------------------------------------------------------------------
+    Query Content
+-----------------------------------------------------------------------------------*/
 
 if (!function_exists('is_plugin_active')) {
     include_once(ABSPATH . 'wp-admin/includes/plugin.php');
@@ -148,6 +169,9 @@ function slider_future_register_rest_routes()
 
 add_action('rest_api_init', 'slider_future_register_rest_routes');
 
+/*----------------------------------------------------------------------------------
+    Custom Image Upload Endpoint
+-----------------------------------------------------------------------------------*/
 
 function slider_future_register_custom_image_upload_endpoint()
 {
@@ -211,6 +235,9 @@ function slider_future_handle_image_upload(WP_REST_Request $request)
     ), 200);
 }
 
+/*----------------------------------------------------------------------------------
+    Slider Settings Page
+-----------------------------------------------------------------------------------*/
 
 function slider_future_register_slider_settings_page()
 {

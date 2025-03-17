@@ -192,7 +192,6 @@ const SliderControlsNaqvigation = ({ attributes, setAttributes }) => {
        }
    }, []);
 
-  // Section slider
   const [activeSectionNavigation, setActiveSectionSliderNavigation] =
     useState("progress");
 

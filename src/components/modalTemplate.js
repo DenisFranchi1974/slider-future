@@ -3,12 +3,14 @@ import { Modal, Button } from "@wordpress/components";
 import { dispatch, select } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import InfoIcon from '@mui/icons-material/Info'; // Importa l'icona Info
+import InfoIcon from '@mui/icons-material/Info'; 
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 const SliderTemplateModal = ({ onClose }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isProFeature, setIsProFeature] = useState(true);
-  const [hoveredTemplate, setHoveredTemplate] = useState(null); // Stato per il template su cui si passa il mouse
+  const [hoveredTemplate, setHoveredTemplate] = useState(null);
 
   useEffect(() => {
     if (typeof window.isProFeature !== 'undefined') {
@@ -20,12 +22,12 @@ const SliderTemplateModal = ({ onClose }) => {
     {
       id: 1,
       title: "Style and Fashion",
-      span: "PRO",
-      category: "Pro",
+      span: "FREE",
+      category: "Free",
       previewImage: "https://franchiwebdesign.com/wp-content/uploads/2025/01/template-1.webp",
       demoLink: "https://sliderfuture.franchiwebdesign.com/style-and-fashion/",
       jsonLink: "https://franchiwebdesign.com/template/style-and-fashion.json",
-      class: "pro"
+      class: "free"
     },
     {
       id: 2,
@@ -53,16 +55,134 @@ const SliderTemplateModal = ({ onClose }) => {
       title: "Wanderlust Explorer",
       span: "FREE",
       category: "Free",
-      previewImage: " https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-template-nature-free.webp",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-template-nature-free.webp",
       demoLink: "https://sliderfuture.franchiwebdesign.com/nature-workspaces/",
       jsonLink: "https://franchiwebdesign.com/template/nature-workspaces.json",
       class: "free",
     },
+    {
+      id: 5,
+      title: "Smooth Nature Slideshow",
+      span: "FREE",
+      category: "Free",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-template-nature-fade.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/smooth-nature-slideshow/",
+      jsonLink: "https://franchiwebdesign.com/template/smooth-nature-slideshow.json",
+      class: "free",
+    },
+    {
+      id: 6,
+      title: "Codex Games",
+      span: "FREE",
+      category: "Free",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-template-game.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/codex-games/",
+      jsonLink: "https://franchiwebdesign.com/template/codex-games.json",
+      class: "free",
+    },
+    {
+      id: 7,
+      title: "Codex Games",
+      span: "FREE",
+      category: "Free",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-template-vegan-style.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/vegan-style/",
+      jsonLink: "https://franchiwebdesign.com/template/vegan-style.json",
+      class: "free",
+    },
+    {
+      id: 8,
+      title: "Relax",
+      span: "FREE",
+      category: "Free",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-relax-template-free.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/relax/",
+      jsonLink: "https://franchiwebdesign.com/template/relax.json",
+      class: "free",
+    },
+    {
+      id: 9,
+      title: "Home Designs",
+      span: "FREE",
+      category: "Free",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/02/slider-future-template-home-designs-free.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/home-designs/",
+      jsonLink: "https://franchiwebdesign.com/template/home-designs.json",
+      class: "free",
+    },
+    {
+      id: 10,
+      title: "Tech",
+      span: "FREE",
+      category: "Free",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/03/slider-future-template-tech.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/tech/",
+      jsonLink: "https://franchiwebdesign.com/template/tech.json",
+      class: "free",
+    },
+    {
+      id: 11,
+      title: "Visual & Text Content",
+      span: "FREE",
+      category: "Carousels",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/03/visual-text-content-carousel-template.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/smooth-flow-carousel/#visual",
+      jsonLink: "https://franchiwebdesign.com/template/visual-text-content-carousel.json",
+      class: "free",
+    },
+    {
+      id: 12,
+      title: "Interactive Content",
+      span: "FREE",
+      category: "Carousels",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/03/interactive-slider-carousel-template.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/smooth-flow-carousel/#interactive",
+      jsonLink: "https://franchiwebdesign.com/template/interactive-slider.json",
+      class: "free",
+    },
+    {
+      id: 13,
+      title: "Testimonials",
+      span: "FREE",
+      category: "Carousels",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/03/testimonials-carousel-template.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/smooth-flow-carousel/#testimonials",
+      jsonLink: "https://franchiwebdesign.com/template/testimonials.json",
+      class: "free",
+    },
+    {
+      id: 14,
+      title: "Coverflow Effect",
+      span: "FREE",
+      category: "Carousels",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/03/coverflow-effect-carousel-template.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/smooth-flow-carousel/#coverflow",
+      jsonLink: "https://franchiwebdesign.com/template/coverflow-effect.json",
+      class: "free",
+    },
+    {
+      id: 15,
+      title: "Logos",
+      span: "FREE",
+      category: "Carousels",
+      previewImage: "https://sliderfuture.franchiwebdesign.com/wp-content/uploads/2025/03/logos-carousel-template.webp",
+      demoLink: "https://sliderfuture.franchiwebdesign.com/smooth-flow-carousel/#logos",
+      jsonLink: "https://franchiwebdesign.com/template/logos.json",
+      class: "free",
+    },
   ];
 
-  const filteredTemplates = templates.filter((template) =>
-    selectedCategory === "All" ? true : template.category === selectedCategory
-  );
+  const filteredTemplates = templates.filter((template) => {
+    if (selectedCategory === "All") return true;
+    
+    // Se seleziono "Free", prendo sia quelli con category "Free" sia quelli con span "FREE"
+    if (selectedCategory === "Free") {
+      return template.category === "Free" || template.span === "FREE";
+    }
+  
+    return template.category === selectedCategory;
+  });
+  
 
   const handleImport = async (jsonLink) => {
     try {
@@ -90,8 +210,19 @@ const SliderTemplateModal = ({ onClose }) => {
   const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
 
   const handleBuyNow = () => {
-    window.open("https://sliderfuture.franchiwebdesign.com/", "_blank", "noopener,noreferrer");
+    window.open("https://sliderfuture.franchiwebdesign.com/pricing/", "_blank", "noopener,noreferrer");
   };
+
+  const [currentPage, setCurrentPage] = useState(1);
+const templatesPerPage = 9;
+
+// Calcolo dei template per pagina
+const indexOfLastTemplate = currentPage * templatesPerPage;
+const indexOfFirstTemplate = indexOfLastTemplate - templatesPerPage;
+const currentTemplates = filteredTemplates.slice(indexOfFirstTemplate, indexOfLastTemplate);
+
+const totalPages = Math.ceil(filteredTemplates.length / templatesPerPage);
+
 
   return (
     <Modal
@@ -106,7 +237,7 @@ const SliderTemplateModal = ({ onClose }) => {
             <h2>{__("SF", "slider-future")}</h2>
           </div>
          
-          {["All", "Free", "Pro"].map((category) => (
+          {["All", "Free", "Pro","Carousels"].map((category) => (
             <Button
               key={category}
                variant={selectedCategory === category}
@@ -121,12 +252,12 @@ const SliderTemplateModal = ({ onClose }) => {
         </div>
         <div className="image-selection-modal">
           {filteredTemplates.length > 0 ? (
-            filteredTemplates.map((template) => (
+            currentTemplates.map((template) => (
               <div 
                 key={template.id} 
                 className="image-item"
-                onMouseOver={() => setHoveredTemplate(template.id)} // Imposta il template su cui si passa il mouse
-                onMouseOut={() => setHoveredTemplate(null)} // Resetta lo stato quando il mouse esce
+                onMouseOver={() => setHoveredTemplate(template.id)}
+                onMouseOut={() => setHoveredTemplate(null)} 
               >
                 <div className="image-item-inner">
                   <img
@@ -139,7 +270,7 @@ const SliderTemplateModal = ({ onClose }) => {
                   {template.title}
                   <span className={"version-template " + template.class}>{template.span}</span>
                   {template.query === "query" && (
-                    <InfoIcon className="info-icon" /> // Aggiungi l'icona Info per i template Free
+                    <InfoIcon className="info-icon" /> 
                   )}
                 </h4>
                 <div className="template-buttons">
@@ -178,6 +309,8 @@ const SliderTemplateModal = ({ onClose }) => {
           ) : (
             <p>{__("No templates available.", "slider-future")}</p>
           )}
+
+
           <div className="copy-right-modal">
             <Button
               variant='secondary'
@@ -193,6 +326,28 @@ const SliderTemplateModal = ({ onClose }) => {
               {__("© Copyright & License Info", "slider-future")}
             </Button>
           </div>
+
+          {totalPages > 1 && (
+  <div className="pagination">
+    <Button
+      variant="secondary"
+      onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+      disabled={currentPage === 1}
+    >
+      <KeyboardArrowLeftIcon />
+    </Button>
+    <span className="pagination-info">
+      {currentPage} / {totalPages}
+    </span>
+    <Button
+      variant="secondary"
+      onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+      disabled={currentPage === totalPages}
+    >
+      <KeyboardArrowRightIcon />
+    </Button>
+  </div>
+)}
         </div>
       </div>
       {isLicenseModalOpen && (
@@ -224,3 +379,7 @@ const SliderTemplateModal = ({ onClose }) => {
 };
 
 export default SliderTemplateModal;
+
+
+
+

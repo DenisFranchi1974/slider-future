@@ -6,11 +6,10 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
   const [selectedType, setSelectedType] = useState("");
 
   const handleSelect = () => {
-    onSelect(slideId, elementIndex, selectedType); // Passa solo il tipo
+    onSelect(slideId, elementIndex, selectedType); 
     onClose();
   };
 
-  // Definisci i valori di default per i vari tipi di bottoni
   const defaultValues = {
     type1: {
       buttonColor: '#FFFFFF',
@@ -70,7 +69,6 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
     },
   };
 
-  // Ottieni gli stili per il tipo di bottone selezionato
   const getButtonStyle = (type) => {
     const element = defaultValues[type] || {};
     return {
@@ -98,7 +96,6 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
     };
   };
 
-  // Ottieni gli stili per il tipo di bottone selezionato
   const getButtonStyleButton = (type) => {
     const element = defaultValuesButton[type] || {};
     return {
@@ -110,8 +107,8 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
       fontSize: element.fontSizeButton + 'px',
       '--font-size-button-tablet-inner': element.fontSizeButtonTablet + 'px',
       '--font-size-button-mobile-inner': element.fontSizeButtonMobile + 'px',
-      fontStyle: element.fontStyle?.fontStyle || "normal", // Valore di default
-      textDecoration: element.fontStyle?.textDecoration || "none", // Valore di default
+      fontStyle: element.fontStyle?.fontStyle || "normal", 
+      textDecoration: element.fontStyle?.textDecoration || "none", 
       lineHeight: element.lineHeightButton,
       fontFamily: element.fontFamilyButton,
       letterSpacing: element.letterSpacingButton + 'px',
@@ -308,7 +305,6 @@ const ButtonTypeInnerSelectionModal = ({ slideId, elementIndex, onClose, onSelec
       backgroundBorderSizeHover: 1,
       buttonBackgroundColorHover: "#18191c",
     },
-
 
   };
 

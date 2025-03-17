@@ -72,7 +72,6 @@ function render_post_image($post, $attributes)
     $imagePostLink = $attributes['imagePostLink'] ?? '';
     $imagePostTarget = $attributes['imagePostTarget'] ?? '';
 
-
     $style = "
     object-fit: " . esc_attr($imagePostSize) . ";
     width: " . esc_attr($imagePostWidth === "fixed" ? $imagePostWidthPx . 'px' : $imagePostWidthPercent . '%') . ";

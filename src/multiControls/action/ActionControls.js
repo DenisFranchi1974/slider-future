@@ -14,22 +14,22 @@ const CustomActionControls = ({
   valueSelectTarget,
   valueSelectRel,
   valueScrollId,
-  slides, // Stato delle slide
-  setAttributes, // Funzione per aggiornare lo stato delle slide
-  updateType, // Tipo di elemento (primario o secondario)
-  slideId, // ID della slide
-  elementIndex, // Indice dell'elemento primario (se primario)
-  innerIndex, // Indice dell'elemento secondario (se secondario)
-  elementType, // Tipo di elemento (ad es. "title", "button", ecc.)
-  updateElement, // Funzione di aggiornamento passata come prop
-  linkProperty, // Proprietà da aggiornare per il SelectControl
-  urlProperty, // Proprietà da aggiornare per il TextControl
-  targetProperty, // Proprietà da aggiornare per il SelectControl
-  relProperty, // Proprietà da aggiornare per il SelectControl
-  scrollIdProperty, // Proprietà da aggiornare per il TextControl
-  ...restProps // Altri eventuali props da passare
+  slides, 
+  setAttributes, 
+  updateType, 
+  slideId,
+  elementIndex, 
+  innerIndex, 
+  elementType, 
+  updateElement, 
+  linkProperty, 
+  urlProperty, 
+  targetProperty, 
+  relProperty, 
+  scrollIdProperty, 
+  ...restProps 
 }) => {
-  // Funzione link
+
   const handleChangeSelectLink = (newValue) => {
     updateElement(
       slides,
@@ -43,7 +43,7 @@ const CustomActionControls = ({
       linkProperty
     );
   };
-  // Funzione di gestione del cambio valore
+ 
   const handleChangeUrl = (newValue) => {
     updateElement(
       slides,
@@ -57,7 +57,7 @@ const CustomActionControls = ({
       urlProperty
     );
   };
-  // Funzione target
+
   const handleChangeSelectTarget = (newValue) => {
     updateElement(
       slides,
@@ -71,7 +71,7 @@ const CustomActionControls = ({
       targetProperty
     );
   };
-  // Funzione rel
+  
   const handleChangeSelectRel = (newValue) => {
     updateElement(
       slides,
@@ -85,7 +85,7 @@ const CustomActionControls = ({
       relProperty
     );
   };
-  // Funzione scroll id
+ 
   const handleChangeScrollId = (newValue) => {
     updateElement(
       slides,

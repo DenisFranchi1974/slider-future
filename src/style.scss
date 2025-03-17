@@ -3031,10 +3031,12 @@
     z-index: 9;
   }
 
+  /*
   .swiper-autoheight .swiper-wrapper{
     height: auto!important;
   }
    
+  */
 /* Navigation */
 
 .slider-future-nav.top-left{
@@ -3124,4 +3126,12 @@
   position: relative;
   right: auto;
   top: auto;
+}
+
+/* Responsive Text */
+
+@media (max-width: 767px) {
+  .content-title-div,.content-title-slide{
+    width: auto!important;
+  }
 }

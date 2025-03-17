@@ -97,9 +97,6 @@ const TextRender = ({ element, index, onPlay, className, onClick  }) => {
     }
   }, [element.enableTypeWriter]);
   
-  
-
-  
   // Funzione per attivare l'animazione
   const playAnimation = () => {
     const effectIn = animationsIn[element.effectIn];

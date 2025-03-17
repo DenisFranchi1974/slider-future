@@ -2,7 +2,7 @@ import React from "react";
 import {
   Button,
   Tooltip,
-  __experimentalBoxControl as BoxControl,
+  __experimentalBoxControl as BoxControl,  __experimentalUnitControl as UnitControl 
 } from "@wordpress/components";
 import { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
@@ -50,6 +50,10 @@ import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import DeblurIcon from '@mui/icons-material/Deblur';
 import ProNotice from '../ProNotice';
+import BorderTopIcon from '@mui/icons-material/BorderTop';
+import BorderRightIcon from '@mui/icons-material/BorderRight';
+import BorderBottomIcon from '@mui/icons-material/BorderBottom';
+import BorderLeftIcon from '@mui/icons-material/BorderLeft';
 
 const InnerIconEdit = ({
   slide,
@@ -674,20 +678,63 @@ const InnerIconEdit = ({
               />
             </div>
             <div className="custom-select box-control">
-              <BoxControl
-                id="custom-margin-control"
-                label={
-                  <>
-                    <MarginIcon />
-                    {__("Margin", "slider-future")}
-                  </>
-                }
-                values={iconDiv.margin}
-                units={{}}
-                onChange={(newMargin) =>
-                  updatenewMargin(slide.id, elementIndex,iconIndex, newMargin)
-                }
-              />
+
+            <label>
+        <MarginIcon />
+        {__("Margin", "slider-future")}
+      </label>
+
+      {/* Margine Top */}
+      <UnitControl
+        label={<BorderTopIcon />}
+        value={iconDiv.margin?.top || '0px'}
+        onChange={(newTop) =>
+          updatenewMargin(slide.id, elementIndex, iconIndex, {
+            ...iconDiv.margin,
+            top: newTop,
+          })
+        }
+        units={[]}
+      />
+
+      {/* Margine Right */}
+      <UnitControl
+        label={<BorderRightIcon />}
+        value={iconDiv.margin?.right || '0px'}
+        onChange={(newRight) =>
+          updatenewMargin(slide.id, elementIndex, iconIndex, {
+            ...iconDiv.margin,
+            right: newRight,
+          })
+        }
+        units={[]}
+      />
+
+      {/* Margine Bottom */}
+      <UnitControl
+        label={<BorderBottomIcon />}
+        value={iconDiv.margin?.bottom || '0px'}
+        onChange={(newBottom) =>
+          updatenewMargin(slide.id, elementIndex, iconIndex, {
+            ...iconDiv.margin,
+            bottom: newBottom,
+          })
+        }
+        units={[]}
+      />
+
+      {/* Margine Left */}
+      <UnitControl
+        label={<BorderLeftIcon />}
+        value={iconDiv.margin?.left || '0px'}
+        onChange={(newLeft) =>
+          updatenewMargin(slide.id, elementIndex, iconIndex, {
+            ...iconDiv.margin,
+            left: newLeft,
+          })
+        }
+        units={[]}
+      />
             </div>
           </div>
           <div className="content-title-custom-panel intermedy">

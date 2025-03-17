@@ -63,15 +63,14 @@ function render_innerImage($innerElement, $slide)
     $mobileClassImage = $innerElement['enableMobileImage'] ? 'mobile-image-visible-inner' : 'mobile-image-hidden-inner';
     $link_url = '';
     $onclick = '';
-    $linkTargetImage = '_self'; // Default
-    $rel_div = 'follow'; // Default
+    $linkTargetImage = '_self';
+    $rel_div = 'follow';
     $rotateImage = esc_attr($innerElement['rotateImage'] ?? 0);
     $rotateImageX = esc_attr($innerElement['rotateImageX'] ?? 0);
     $rotateImageY = esc_attr($innerElement['rotateImageY'] ?? 0);
     $perspectiveImage = esc_attr($innerElement['perspectiveImage'] ?? 0);
 
     if ($innerElement['imageLink'] !== 'none') {
-        // Prepara l'attributo onclick se textLink è diverso da 'none'
         if ($innerElement['imageLink'] === 'link' && !empty($innerElement['linkUrlImage'])) {
             $link_url = esc_url($innerElement['linkUrlImage']);
             if (!empty($innerElement['linkTargetImage'])) {

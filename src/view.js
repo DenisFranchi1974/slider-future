@@ -350,7 +350,7 @@ elements.forEach(element => {
                         slidesPerGroup: swiperConfig.slidesPerGroupDesktop,
                     },
                 },
-                
+                resizeObserver: false, 
                 on: {
                   slideChange: function () {
                     const slides = swiperElement.querySelectorAll('.swiper-slide');

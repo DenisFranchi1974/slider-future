@@ -11,32 +11,30 @@ import CustomRangeControl  from "../../controls/range/CustomRangeControl";
 import CustomToggleControl from "../../controls/toggle/CustomToggleControl";
 
 const CustomShadowControl = ({
-  valueEnableShadow, // Valore corrente per l'abilitazione dell'effetto
-  valueRangeShadowX, // Valore corrente per X
-  valueRangeShadowY, // Valore corrente per Y
-  valueRangeShadowBlur, // Valore corrente per Blur
-  valueRangeShadowSpread, // Valore corrente per Spread
-  valueRangeShadowColor, // Valore corrente per il colore
+  valueEnableShadow,
+  valueRangeShadowX, 
+  valueRangeShadowY, 
+  valueRangeShadowBlur, 
+  valueRangeShadowSpread, 
+  valueRangeShadowColor, 
   showSpread = false,
-  slides, // Stato delle slide
-  setAttributes, // Funzione per aggiornare lo stato
-  updateType, // Tipo di elemento (primario o secondario)
-  slideId, // ID della slide
-  elementIndex, // Indice dell'elemento primario
-  innerIndex, // Indice dell'elemento secondario
-  elementType, // Tipo di elemento (es. "title", "button")
-  updateElement, // Funzione per aggiornare i valori
-  enablePropertyShadow, // Proprietà da aggiornare per l'abilitazione
-  rangePropertyX, // Proprietà da aggiornare per Shadow X
-  rangePropertyY, // Proprietà da aggiornare per Shadow Y
-  rangePropertyBlur, // Proprietà da aggiornare per Shadow Blur
-  rangePropertySpread, // Proprietà da aggiornare per Shadow Spread
-  rangePropertyColor, // Proprietà da aggiornare per Shadow Color
-
-  ...restProps // Altri props
+  slides, 
+  setAttributes, 
+  updateType, 
+  slideId, 
+  elementIndex, 
+  innerIndex, 
+  elementType, 
+  updateElement, 
+  enablePropertyShadow, 
+  rangePropertyX, 
+  rangePropertyY,
+  rangePropertyBlur, 
+  rangePropertySpread, 
+  rangePropertyColor,
+  ...restProps 
 }) => {
 
-  // Funzioni di aggiornamento per ciascuna proprietà
   const handleChangeEnableShadow = (newValue) => {
     updateElement(slides, setAttributes, slideId, elementIndex, innerIndex, newValue, updateType, elementType,enablePropertyShadow);
   };
@@ -62,7 +60,6 @@ const CustomShadowControl = ({
 
   return (
     <>
-    {/* Abilita l'effetto */}
       <CustomToggleControl
           label={
             <>
@@ -76,7 +73,6 @@ const CustomShadowControl = ({
       />
     {valueEnableShadow && (
     <>
-     {/* Controllo per il Colore dell'ombra */}
      <div className="custom-select color">
       <ColorOptionsPanel
           colorNormal={valueRangeShadowColor}
@@ -85,7 +81,6 @@ const CustomShadowControl = ({
           buttonIcon={<ColorLensIcon style={{marginBottom:'-5px'}} />}
         />
      </div>
-      {/* Controllo per Shadow X */}
         <CustomRangeControl
           label={
             <>
@@ -100,7 +95,6 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-      {/* Controllo per Shadow Y */}
         <CustomRangeControl
           label={
             <>
@@ -115,7 +109,6 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-      {/* Controllo per Shadow Blur */}
         <CustomRangeControl
         __nextHasNoMarginBottom
           label={
@@ -131,7 +124,6 @@ const CustomShadowControl = ({
           step={1}
           {...restProps}
         />
-       {/* Controllo per Shadow Spread */}
       {showSpread && (
         <CustomRangeControl
         __nextHasNoMarginBottom

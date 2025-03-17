@@ -3775,10 +3775,12 @@ button.swiper-pagination-bullet {
   z-index: 9;
 }
 
-.swiper-autoheight .swiper-wrapper {
-  height: auto !important;
+/*
+.swiper-autoheight .swiper-wrapper{
+  height: auto!important;
 }
 
+*/
 /* Navigation */
 .slider-future-nav.top-left {
   justify-content: flex-start;
@@ -3874,6 +3876,13 @@ button.swiper-pagination-bullet {
   position: relative;
   right: auto;
   top: auto;
+}
+
+/* Responsive Text */
+@media (max-width: 767px) {
+  .content-title-div, .content-title-slide {
+    width: auto !important;
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/

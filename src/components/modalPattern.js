@@ -11,7 +11,6 @@ const TextPatternSelectionModal = ({ onClose }) => {
     return <p>{__("Loading patterns...", "slider-future")}</p>;
   }
 
-  // Filtra i pattern per la categoria "text"
   const textPatterns = patterns.filter(
     (pattern) => pattern.categories && pattern.categories.includes("sf-slider")
   );

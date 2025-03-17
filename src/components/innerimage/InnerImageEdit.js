@@ -133,10 +133,10 @@ const InnerImageEdit= ({
           image.alt
         );
       } else {
-        console.error("Errore durante il caricamento dell'immagine.");
+        console.error("Error loading image.");
       }
     } catch (error) {
-      console.error("Errore durante la chiamata all'API:", error);
+      console.error("Error while calling API:", error);
     } finally {
       setIsLoading(false);
     }

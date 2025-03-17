@@ -6,12 +6,12 @@ import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
 import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
 
 const CustomAlignControl = ({
-  value,          // Valore corrente del controllo
-  onChange,       // Funzione per aggiornare il valore
-  label,          // Etichetta per il controll
-  tooltipText,    // Testo per il tooltip
-  showTooltip = false, // Mostra o nasconde il tooltip (Facoltativo)
-  ...restProps    // Altri eventuali props da passare
+  value,         
+  onChange,      
+  label,         
+  tooltipText,    
+  showTooltip = false, 
+  ...restProps  
 }) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState(null);
@@ -41,7 +41,7 @@ const CustomAlignControl = ({
         onClick={() => setIsPopoverOpen(!isPopoverOpen)}
         aria-expanded={isPopoverOpen}
         aria-haspopup="true"
-        icon={<FormatAlignLeftIcon/>} // Mostra l'icona selezionata o un'icona di default
+        icon={<FormatAlignLeftIcon/>} 
         {...restProps}
       >
         <div className='postion-slide__label'>
@@ -80,7 +80,7 @@ const CustomAlignControl = ({
             maxWidth: "300px",
             borderRadius: "4px",
           }}
-          text={tooltipText || __("Default tooltip text", "slider-future")} // Testo di fallback
+          text={tooltipText || __("Default tooltip text", "slider-future")} 
         >
           <InfoIcon className="tooltip-icon" style={{ top: '3px' }} />
         </Tooltip>
