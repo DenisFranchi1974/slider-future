@@ -4,24 +4,24 @@ Author: Franchi Web Design
 Author URI: https://franchiwebdesign.com/
 Plugin URI: https://sliderfuture.franchiwebdesign.com/
 Donate link: https://www.sandbox.paypal.com/donate/?hosted_button_id=APAP24BKNN6D2
-Tags: slider, gutenberg slider, post carousel, content slider, slider block
+Tags: slider, gutenberg slider, post carousel, content slider, responsive slider
 Requires at least: 6.1
 Tested up to: 6.8
-Stable tag: 1.0.2
+Stable tag: 1.0.5
 Requires PHP: 7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight, responsive Gutenberg slider block to display posts, images, or custom content with smooth animations and carousel options.
+Create responsive, animated Gutenberg sliders and carousels in seconds. Showcase posts, images, and WooCommerce products — no coding required.
 
 == Description ==
 
 https://youtu.be/C0r24aGISgo
 
+
 [Homepage](https://sliderfuture.franchiwebdesign.com/)  |  [Features](https://sliderfuture.franchiwebdesign.com/features/)  |  [Templates](https://sliderfuture.franchiwebdesign.com/templates/)
 
 **Slider Future** is a powerful and easy-to-use Gutenberg block plugin that allows you to create stunning sliders and carousels directly within the WordPress editor. Perfect for showcasing your latest posts, images, or any custom content with smooth animation effects and fully responsive design.
-
 
 #### Seamless Gutenberg Integration
 Create professional sliders and carousels directly within the Gutenberg editor. With no need for external page builders or plugins, you can integrate smoothly into your existing WordPress workflow. Build and manage everything from the same editor without compromising on flexibility or ease of use.
@@ -44,6 +44,10 @@ Add creative flair to your sliders with a variety of advanced animation effects.
 #### Dynamic Carousels & Grids
 Display your posts, products, or any custom content beautifully with dynamic carousels and grid layouts. Easily configure how content is shown, with options for infinite loops, autoplay, and custom navigation to keep your viewers engaged while they explore your content.
 
+Slider Future is ideal for bloggers, photographers, designers, eCommerce stores, and agencies who want fast, modern, and beautiful sliders without installing heavy plugins. Compatible with all modern WordPress themes, Slider Future brings powerful customization options with zero bloat.
+
+Whether you need a post carousel, WooCommerce product slider, or a full-screen hero animation, Slider Future gives you full control from the Gutenberg editor — no third-party builder needed.
+
 
 == Basic Features ==
 
@@ -57,8 +61,7 @@ Display your posts, products, or any custom content beautifully with dynamic car
 * Template
 * Support
 
-
-== Advanced Features ==
+== Advanced Slider & Carousel Features ==
 
 * Slides per view: 10
 * Slides per group: 10	
@@ -107,7 +110,6 @@ Display your posts, products, or any custom content beautifully with dynamic car
 3. Open the WordPress editor and search for the **Slider Future**.
 4. Insert and customize your slider as needed.
 
-
 == Frequently Asked Questions ==
 
 = What is Slider Future? = 
@@ -131,7 +133,6 @@ Yes, all sliders and carousels created with Slider Future are fully responsive a
 = Do I need coding knowledge to use Slider Future? = 
 No, Slider Future is designed to be a no-code solution. You can easily customize and build sliders using the drag-and-drop interface.
 
-
 ## CONTRIBUTE
 
 The full source code is available on **[GitHub Repository](https://github.com/DenisFranchi1974/slider-future)**. Feel free to contribute or report an issue.
@@ -152,6 +153,15 @@ The full source code is available on **[GitHub Repository](https://github.com/De
 
 == Changelog ==
 
+= 1.0.5 =
+Removed debugging code (`ini_set('display_errors', 1); error_reporting(E_ALL);`) that was unintentionally left in the main plugin file. No functional changes. This update ensures a cleaner and more production-ready environment.
+
+= 1.0.4 =
+* Code adjustments to ensure full support for PHP 7+ environments.
+
+= 1.0.3 =
+* Minor changes to readme.txt and updated translation files (.pot)
+
 = 1.0.2 =
 * Changed REST route name to follow naming conventions (added proper prefix to avoid conflicts).
 
@@ -164,13 +174,12 @@ The full source code is available on **[GitHub Repository](https://github.com/De
 * Improved translations handling.
 
 = 1.0.0 =
-* .
+* First stable release of Slider Future
 
 == Upgrade Notice ==
 
-= 1.0.2 =
-This update changes the REST route name to follow proper naming conventions, improving plugin compatibility and avoiding conflicts.
-
+= 1.0.5 =
+Removes leftover debug code. Recommended for all users for cleaner production behavior.
 
 
 == EXTERNAL RESOURCES ==
@@ -181,28 +190,27 @@ The images used in this plugin were obtained from **[Pxhere](https://pxhere.com/
 
 == EXTERNAL SERVICES ==
 
-
 This plugin uses external images hosted on the following domains:
-- https://sliderfuture.franchiwebdesign.com
-- https://franchiwebdesign.com
+
+* **[sliderfuture](https://sliderfuture.franchiwebdesign.com)**
+* **[franchiwebdesign](https://franchiwebdesign.com)**
 
 These images are used to display default slider content on the frontend of the website.
 
 No personal user data is sent to these services. Only standard image requests are made by the browser when the slider is rendered.
 
 Images are hosted and served from Franchi Web Design CDN:
-- Website: https://franchiwebdesign.com
-- Terms of Service: https://franchiwebdesign.com/terms-and-conditions/
-- Privacy Policy: https://franchiwebdesign.com/privacy
+
+* Website: **[franchiwebdesign](https://franchiwebdesign.com)**
+* Terms of Service: **[https://franchiwebdesign.com/terms-and-conditions/](https://franchiwebdesign.com/terms-and-conditions/)**
+* Privacy Policy: **[https://franchiwebdesign.com/privacy](https://franchiwebdesign.com/privacy)**
 
 The images included in this plugin are sourced from royalty-free platforms such as:
-- [Pxhere](https://pxhere.com/)
-- [StockSnap](https://stocksnap.io/)
+
+* **[Pxhere](https://pxhere.com/)**
+* **[StockSnap](https://stocksnap.io/)**
 
 All images are released under the GPL (GNU General Public License), which allows reuse, modification, and redistribution, provided the same license is maintained.
-
-
-
 
 == Credits ==
 

@@ -305,57 +305,11 @@ $swiper_attr = array(
     'nextScale' => $nextScale,
     'nextOpacity' => $nextOpacity,
     'navigation' => $navigation,
-    ...($navigation === true ? [
-        'navigationIcons' => $navigationIcons,
-        'navColor' => $navColor,
-        'navColorHover' => $navColorHover,
-        'navBackgroundColor' => $navBackgroundColor,
-        'navBackgroundColorHover' => $navBackgroundColorHover,
-        'navBorderColor' => $navBorderColor,
-        'navBorderColorHover' => $navBorderColorHover,
-        'sizeNav' => $sizeNav,
-        'paddingNav' => $paddingNav,
-        'paddingNavLeft' => $paddingNavLeft,
-        'sizeBorderNav' => $sizeBorderNav,
-        'radiusBorderNav' => $radiusBorderNav,
-        'offSetTopNav' => $offSetTopNav,
-        'offSetSidesNav' => $offSetSidesNav,
-        'hideNavigation' => $hideNavigation,
-        'navigationTablet' => $navigationTablet,
-        'navigationMobile' => $navigationMobile,
-    ] : []),
+
     'paginationEnable' => $paginationEnable,
-    ...($paginationEnable === true ? [
-        'bulletInactivityColor' => $bulletInactivityColor,
-        'bulletColor' => $bulletColor,
-        'positionPagination' => $positionPagination,
-        'opacityPagination' => $opacityPagination,
-        'opacityInactivePagination' => $opacityInactivePagination,
-        'widthPagination' => $widthPagination,
-        'heightPagination' => $heightPagination,
-        'widthPaginationActive' => $widthPaginationActive,
-        'heightPaginationActive' => $heightPaginationActive,
-        'radiusPagination' => $radiusPagination,
-        'gapPagination' => $gapPagination,
-        'fontSizePagination' => $fontSizePagination,
-        'heightBarPagination' => $heightBarPagination,
-        'typePagination' => $typePagination,
-        'clickPagination' => $clickPagination,
-        'hidePagination' => $hidePagination,
-        'dynamicPagination' => $dynamicPagination,
-        'dynamicMainPagination' => $dynamicMainPagination,
-    ] : []),
+
     'scrollbar' => $scrollbar,
-    ...($scrollbar === true ? [
-        'hideScrollbar' => $hideScrollbar,
-        'dragScrollbar' => $dragScrollbar,
-        'releaseScrollbar' => $releaseScrollbar,
-        'scrollBarColor' => $scrollBarColor,
-        'thumbColor' => $thumbColor,
-        'positionScrollbar' => $positionScrollbar,
-        'heightScrollbar' => $heightScrollbar,
-        'radiusScrollbar' => $radiusScrollbar,
-    ] : []),
+
     'progressbarOpposite' => $progressbarOpposite,
     'autoplay' => $autoplay,
     'autoplaySpeed' => $autoplaySpeed,
@@ -384,21 +338,7 @@ $swiper_attr = array(
     'contentType' => $contentType,
     'overflow' => $overflow,
     'filter' => $filter,
-    ...($filter !== 'none' ? [
-        'colorOneEffect' => $colorOneEffect,
-        'colorTwoEffect' => $colorTwoEffect,
-        'colorThreeEffect' => $colorThreeEffect,
-    ] : []),
-    ...($mouseEffect !== 'none' ? [
-        'colorEffectStart' => $colorEffectStart,
-        'colorEffectEnd' => $colorEffectEnd,
-        'colorEffectMiddle' => $colorEffectMiddle,
-        'firstColorLiquid' => $firstColorLiquid,
-        'rangeVapore' => $rangeVapore,
-        'secondColorLiquid' => $secondColorLiquid,
-        'thirdColorLiquid' => $thirdColorLiquid,
-        'transitionParalaxMouse' => $transitionParalaxMouse,
-    ] : []),
+
     'sliderMarginTop' => $sliderMarginTop,
     'sliderMarginBottom' => $sliderMarginBottom,
     'backgroundColor' => $backgroundColor,
@@ -450,6 +390,83 @@ $swiper_attr = array(
     'backgroundBorderStyle' => $backgroundBorderStyle,
 
 );
+
+if ($navigation === true) {
+    $swiper_attr = array_merge($swiper_attr, [
+        'navigationIcons' => $navigationIcons,
+        'navColor' => $navColor,
+        'navColorHover' => $navColorHover,
+        'navBackgroundColor' => $navBackgroundColor,
+        'navBackgroundColorHover' => $navBackgroundColorHover,
+        'navBorderColor' => $navBorderColor,
+        'navBorderColorHover' => $navBorderColorHover,
+        'sizeNav' => $sizeNav,
+        'paddingNav' => $paddingNav,
+        'paddingNavLeft' => $paddingNavLeft,
+        'sizeBorderNav' => $sizeBorderNav,
+        'radiusBorderNav' => $radiusBorderNav,
+        'offSetTopNav' => $offSetTopNav,
+        'offSetSidesNav' => $offSetSidesNav,
+        'hideNavigation' => $hideNavigation,
+        'navigationTablet' => $navigationTablet,
+        'navigationMobile' => $navigationMobile,
+    ]);
+}
+
+if ($paginationEnable === true) {
+    $swiper_attr = array_merge($swiper_attr, [
+        'bulletInactivityColor' => $bulletInactivityColor,
+        'bulletColor' => $bulletColor,
+        'positionPagination' => $positionPagination,
+        'opacityPagination' => $opacityPagination,
+        'opacityInactivePagination' => $opacityInactivePagination,
+        'widthPagination' => $widthPagination,
+        'heightPagination' => $heightPagination,
+        'widthPaginationActive' => $widthPaginationActive,
+        'heightPaginationActive' => $heightPaginationActive,
+        'radiusPagination' => $radiusPagination,
+        'gapPagination' => $gapPagination,
+        'fontSizePagination' => $fontSizePagination,
+        'heightBarPagination' => $heightBarPagination,
+        'typePagination' => $typePagination,
+        'clickPagination' => $clickPagination,
+        'hidePagination' => $hidePagination,
+        'dynamicPagination' => $dynamicPagination,
+        'dynamicMainPagination' => $dynamicMainPagination,
+    ]);
+}
+
+if ($scrollbar  === true) {
+    $swiper_attr = array_merge($swiper_attr, [
+        'hideScrollbar' => $hideScrollbar,
+        'dragScrollbar' => $dragScrollbar,
+        'releaseScrollbar' => $releaseScrollbar,
+        'scrollBarColor' => $scrollBarColor,
+        'thumbColor' => $thumbColor,
+        'positionScrollbar' => $positionScrollbar,
+        'heightScrollbar' => $heightScrollbar,
+        'radiusScrollbar' => $radiusScrollbar,
+    ]);
+}
+if ($filter !== 'none') {
+    $swiper_attr = array_merge($swiper_attr, [
+        'colorOneEffect' => $colorOneEffect,
+        'colorTwoEffect' => $colorTwoEffect,
+        'colorThreeEffect' => $colorThreeEffect,
+    ]);
+}
+if ($mouseEffect !== 'none') {
+    $swiper_attr = array_merge($swiper_attr, [
+        'colorEffectStart' => $colorEffectStart,
+        'colorEffectEnd' => $colorEffectEnd,
+        'colorEffectMiddle' => $colorEffectMiddle,
+        'firstColorLiquid' => $firstColorLiquid,
+        'rangeVapore' => $rangeVapore,
+        'secondColorLiquid' => $secondColorLiquid,
+        'thirdColorLiquid' => $thirdColorLiquid,
+        'transitionParalaxMouse' => $transitionParalaxMouse,
+    ]);
+}
 
 $swiper_attr_encoded = esc_attr(wp_json_encode($swiper_attr));
 
@@ -1039,7 +1056,6 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         --swiper-scrollbar-size: <?php echo esc_attr($heightScrollbar); ?>px;
                         --swiper-scrollbar-border-radius: <?php echo esc_attr($radiusScrollbar); ?>px;
                         --swiper-autoplay-progress-color: <?php echo esc_attr($autoplayProgressColor); ?>;
-                    }
                 </style>
                 <div class="filter-slider"></div>
     </div>
