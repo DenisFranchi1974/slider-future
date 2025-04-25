@@ -1,5 +1,8 @@
 <?php
-function render_innerIcon($innerElement, $slide)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_innerIcon($innerElement, $slide)
 {
     $desktopClassIcon = $innerElement['enableDesktop'] ? 'desktop-icon-visible' : 'desktop-icon-hidden';
     $tabletClassIcon = $innerElement['enableTablet'] ? 'tablet-icon-visible' : 'tablet-icon-hidden';
@@ -133,7 +136,7 @@ function render_innerIcon($innerElement, $slide)
 ?>
 
     <div <?php if ($innerElement['link'] !== 'none') : ?>
-        onclick="<?php echo esc_js( $onclick ); ?>" <?php endif; ?>
+        onclick="<?php echo esc_js($onclick); ?>" <?php endif; ?>
         style="<?php echo esc_attr($stylesDiv); ?>"
         class="<?php echo esc_attr($classNamesDiv); ?> <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>"
         <?php if ($innerElement['effectIn'] !== 'none') : ?>

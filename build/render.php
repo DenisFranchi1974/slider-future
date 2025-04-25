@@ -1,5 +1,7 @@
 <?php
 
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
 $slider_unique_class = 'slider-' . uniqid();
 
 $directionSlider = $attributes['directionSlider'] ?? null;
@@ -649,21 +651,21 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                     <?php foreach ($attributes['postElementsOrder'] as $element) : ?>
                                         <?php if (!empty($attributes['visibleElements'][$element])) : ?>
                                             <?php if ($element === 'image' && !empty($post['image'])) :
-                                                render_post_image($post, $attributes);
+                                                slider_future_render_post_image($post, $attributes);
                                             elseif ($element === 'title' && !empty($post['title'])) :
-                                                render_post_title($post, $attributes);
+                                                slider_future_render_post_title($post, $attributes);
                                             elseif ($element === 'excerpt' && !empty($post['excerpt'])) :
-                                                render_post_excerpt($post, $attributes);
+                                                slider_future_render_post_excerpt($post, $attributes);
                                             elseif ($element === 'link' && !empty($post['link'])) :
-                                                render_post_link($post, $attributes);
+                                                slider_future_render_post_link($post, $attributes);
                                             elseif ($element === 'author' && !empty($post['author'])) :
-                                                render_post_author($post, $attributes);
+                                                slider_future_render_post_author($post, $attributes);
                                             elseif ($element === 'date' && !empty($post['date'])) :
-                                                render_post_date($post, $attributes);
+                                                slider_future_render_post_date($post, $attributes);
                                             elseif ($element === 'categories' && !empty($post['categories'])) :
-                                                render_post_categories($post, $attributes);
+                                                slider_future_render_post_categories($post, $attributes);
                                             elseif ($element === 'tags' && !empty($post['tags'])) :
-                                                render_post_tags($post, $attributes);
+                                                slider_future_render_post_tags($post, $attributes);
                                             endif; ?>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
@@ -728,7 +730,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 ?>
                 <div class="swiper-slide <?php echo esc_attr($filter); ?>"
                     <?php if ($slide['link'] !== 'none') : ?>
-                    onclick="<?php echo esc_js( $onclick ); ?>"
+                    onclick="<?php echo esc_js($onclick); ?>"
                     <?php endif; ?>
                     style="<?php
                             $background_style = '';
@@ -962,19 +964,19 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                         include_once __DIR__ . '/render/element/icon.php';
                                         include_once __DIR__ . '/render/element/group.php';
                                         if ($element['type'] === 'title') {
-                                            render_text($element, $slide);
+                                            slider_future_render_text($element, $slide);
                                         }
                                         if ($element['type'] === 'image' && !empty($element['url'])) {
-                                            render_image($element, $slide);
+                                            slider_future_render_image($element, $slide);
                                         }
                                         if ($element['type'] === 'button') {
-                                            render_button($element, $slide);
+                                            slider_future_render_button($element, $slide);
                                         }
                                         if ($element['type'] === 'icon') {
-                                            render_icon($element, $slide);
+                                            slider_future_render_icon($element, $slide);
                                         }
                                         if ($element['type'] === 'div') {
-                                            render_group($element, $slide);
+                                            slider_future_render_group($element, $slide);
                                         }
                                         ?>
                                     <?php endforeach; ?>
@@ -990,7 +992,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 <div class="swiper-pagination"></div>
                 <?php if ($navigation) :
                     include_once __DIR__ . '/render/navigation/nav.php';
-                    render_nav($navigationIcons, $navigationTablet, $navigationMobile, $sizeNav, $navColor, $navigationPosition, $navGap, $offSetTopNav, $offSetSidesNav);
+                    slider_future_render_nav($navigationIcons, $navigationTablet, $navigationMobile, $sizeNav, $navColor, $navigationPosition, $navGap, $offSetTopNav, $offSetSidesNav);
                 endif; ?>
                 <div class="swiper-scrollbar"></div>
                 <?php if ($autoplayProgress) : ?>

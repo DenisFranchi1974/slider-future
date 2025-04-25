@@ -1,5 +1,8 @@
 <?php
-function render_post_date($post, $attributes)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_post_date($post, $attributes)
 {
     $datePostAlign = $attributes['datePostAlign'] ?? '';
     $datePostColor = $attributes['datePostColor'] ?? '';

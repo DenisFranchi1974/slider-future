@@ -5,10 +5,10 @@ Author URI: https://franchiwebdesign.com/
 Plugin URI: https://sliderfuture.franchiwebdesign.com/
 Donate link: https://www.sandbox.paypal.com/donate/?hosted_button_id=APAP24BKNN6D2
 Tags: slider, gutenberg slider, post carousel, content slider, slider block
-Requires at least: 6.0
+Requires at least: 6.1
 Tested up to: 6.8
-Stable tag: 1.0.0
-Requires PHP: 7.4
+Stable tag: 1.0.1
+Requires PHP: 7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,7 +134,8 @@ No, Slider Future is designed to be a no-code solution. You can easily customize
 
 ## CONTRIBUTE
 
-The full source code is available on **[GitHub Repository](https://github.com/DenisFranchi1974/cocopopup)**. Feel free to contribute or report an issue.
+The full source code is available on **[GitHub Repository](https://github.com/DenisFranchi1974/slider-future)**. Feel free to contribute or report an issue.
+
 == Screenshots ==
 
 1.  Overview of the Slider plugin dashboard, showcasing settings and options for easy management.
@@ -151,19 +152,52 @@ The full source code is available on **[GitHub Repository](https://github.com/De
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed mismatched PHP version in the main plugin file and readme.txt
+* Corrected "Tested up to" version in the plugin header
+* Added security checks to prevent direct file access
+* Changed function prefixes to avoid conflicts with other plugins
+* Updated external image sources and licensing information
+* Updated translations handling
+
 = 1.0.0 =
-* Release
+* First stable release of Slider Future.
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-First stable release of Slider Future.
+= 1.0.1 =
+This update fixes compatibility issues with PHP version in the plugin file, improves security, and addresses other minor bug fixes.
+
 
 == EXTERNAL RESOURCES ==
 
 #### Images
 
 The images used in this plugin were obtained from **[Pxhere](https://pxhere.com/)**, **[StockSnap](https://stocksnap.io/)** and are released under the GPL (GNU General Public License).
+
+== EXTERNAL SERVICES ==
+
+
+This plugin uses external images hosted on the following domains:
+- https://sliderfuture.franchiwebdesign.com
+- https://franchiwebdesign.com
+
+These images are used to display default slider content on the frontend of the website.
+
+No personal user data is sent to these services. Only standard image requests are made by the browser when the slider is rendered.
+
+Images are hosted and served from Franchi Web Design CDN:
+- Website: https://franchiwebdesign.com
+- Terms of Service: https://franchiwebdesign.com/terms-and-conditions/
+- Privacy Policy: https://franchiwebdesign.com/privacy
+
+The images included in this plugin are sourced from royalty-free platforms such as:
+- [Pxhere](https://pxhere.com/)
+- [StockSnap](https://stocksnap.io/)
+
+All images are released under the GPL (GNU General Public License), which allows reuse, modification, and redistribution, provided the same license is maintained.
+
+
 
 
 == Credits ==

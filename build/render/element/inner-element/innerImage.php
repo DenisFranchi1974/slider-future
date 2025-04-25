@@ -1,5 +1,8 @@
 <?php
-function render_innerImage($innerElement, $slide)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_innerImage($innerElement, $slide)
 {
     $marginTop = esc_attr($innerElement['marginImage']['top'] ?? '0px');
     $marginRight = esc_attr($innerElement['marginImage']['right'] ?? '0px');
@@ -90,9 +93,9 @@ function render_innerImage($innerElement, $slide)
 ?>
     <div
         <?php if ($innerElement['imageLink'] !== 'none') : ?>
-        onclick="<?php echo esc_js( $onclick ); ?>"
+        onclick="<?php echo esc_js($onclick); ?>"
         <?php endif; ?>
-       style="transform:perspective(<?php echo esc_attr( $perspectiveImage ); ?>px) rotateX(<?php echo esc_attr( $rotateImageX ); ?>deg) rotateY(<?php echo esc_attr( $rotateImageY ); ?>deg) rotate(<?php echo esc_attr( $rotateImage ); ?>deg);
+        style="transform:perspective(<?php echo esc_attr($perspectiveImage); ?>px) rotateX(<?php echo esc_attr($rotateImageX); ?>deg) rotateY(<?php echo esc_attr($rotateImageY); ?>deg) rotate(<?php echo esc_attr($rotateImage); ?>deg);
                                                opacity: <?php echo esc_attr($innerElement['opacityImage'] ?? 1) ?>;
                                                width:<?php echo esc_attr($innerElement['widthImageContent']) ?>;
                                                 --background-color-image-inner-hover: <?php echo esc_attr($innerElement['backgroundColorImageHover'] ?? ''); ?>;

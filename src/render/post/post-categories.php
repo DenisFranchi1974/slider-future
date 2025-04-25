@@ -1,6 +1,8 @@
 <?php
 
-function render_post_categories($post, $attributes)
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_post_categories($post, $attributes)
 {
     $categoriesPostAlign = $attributes['categoriesPostAlign'] ?? '';
     $categoriesPostColor = $attributes['categoriesPostColor'] ?? '';

@@ -1,5 +1,8 @@
 <?php
-function render_post_image($post, $attributes)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_post_image($post, $attributes)
 {
     $imagePostAlign = $attributes['imagePostAlign'] ?? '';
     $imagePostSize = $attributes['imagePostSize'] ?? '';
@@ -115,7 +118,7 @@ function render_post_image($post, $attributes)
     <div class="featured-image-post <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?>" style="text-align:<?php echo esc_attr($imagePostAlign); ?>;<?php if ($imagePostLink !== 'none') : ?>cursor: pointer;<?php endif; ?>"
         <?php
         if ($imagePostLink !== 'none') : ?>
-        onclick="<?php echo esc_js( $onclick ); ?>"
+        onclick="<?php echo esc_js($onclick); ?>"
         <?php endif; ?>>
         <img
             src="<?php echo esc_url($post['image']); ?>"

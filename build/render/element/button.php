@@ -1,5 +1,8 @@
 <?php
-function render_button($element, $slide)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_button($element, $slide)
 {
     $desktopClassButton = $element['enableDesktopButton'] ? 'desktop-button-visible' : 'desktop-button-hidden';
     $tabletClassButton = $element['enableTabletButton'] ? 'tablet-button-visible' : 'tablet-button-hidden';
@@ -311,7 +314,7 @@ function render_button($element, $slide)
                 <?php endif; ?>
                 <span
                     <?php if ($element['buttonLink'] !== 'none') : ?>
-                    onclick="<?php echo esc_js( $onclick ); ?>"
+                    onclick="<?php echo esc_js($onclick); ?>"
                     <?php endif; ?>
                     <?php if ($element['effectIn'] !== 'none') : ?>
                     data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
@@ -388,7 +391,7 @@ function render_button($element, $slide)
                 <?php endif; ?>
                 <span
                     <?php if ($element['buttonLink'] !== 'none') : ?>
-                    onclick="<?php echo esc_js( $onclick ); ?>"
+                    onclick="<?php echo esc_js($onclick); ?>"
                     <?php endif; ?>
                     <?php if ($element['effectIn'] !== 'none') : ?>
                     data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
@@ -544,12 +547,12 @@ function render_button($element, $slide)
                         rel="<?php echo esc_attr($rel_div); ?>"
                         <?php if ($element['buttonLink'] === 'scroll-below' || ($element['buttonLink'] === 'scroll-to-id' && !empty($element['scrollToIdButton']))) : ?>
                         onclick="event.preventDefault(); 
-                        <?php 
-                        echo $element['buttonLink'] === 'scroll-below' 
-                            ? "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });" 
-                            : "document.getElementById('" . esc_js($scroll_id) . "').scrollIntoView({ behavior: 'smooth' });"; 
+                        <?php
+                            echo $element['buttonLink'] === 'scroll-below'
+                                ? "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });"
+                                : "document.getElementById('" . esc_js($scroll_id) . "').scrollIntoView({ behavior: 'smooth' });";
                         ?>"
-                    <?php endif; 
+                        <?php endif;
                         $stylesIcon = '';
                         if (!empty($element['rotateIcon'])) {
                             $stylesIcon .= "transform: rotate(" . esc_attr($element['rotateIcon']) . "deg); ";

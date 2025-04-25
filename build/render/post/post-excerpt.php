@@ -1,5 +1,8 @@
 <?php
-function render_post_excerpt($post, $attributes)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_post_excerpt($post, $attributes)
 {
     $excerptPostAlign = $attributes['excerptPostAlign'] ?? '';
     $excerptPostColor = $attributes['excerptPostColor'] ?? '';
@@ -132,7 +135,7 @@ function render_post_excerpt($post, $attributes)
     <div class="content-excerpt-post" style="justify-content:<?php echo esc_attr($excerptPostAlign); ?>;display:flex;<?php if ($excerptPostLink !== 'none') : ?>cursor: pointer;<?php endif; ?>"
         <?php
         if ($excerptPostLink !== 'none') : ?>
-        onclick="<?php echo esc_js( $onclick ); ?>"
+        onclick="<?php echo esc_js($onclick); ?>"
         <?php endif; ?>>
         <p class="excerpt-post <?php echo esc_attr($desktopClassExcerpt); ?> <?php echo esc_attr($tabletClassExcerpt); ?> <?php echo esc_attr($mobileClassExcerpt); ?>"
             data-font-family="<?php echo esc_attr($excerptPostFontFamily); ?>"

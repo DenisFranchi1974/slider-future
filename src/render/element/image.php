@@ -1,5 +1,8 @@
 <?php
-function render_image($element, $slide)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_image($element, $slide)
 {
     $marginTop = esc_attr($element['marginImage']['top'] ?? '0px');
     $marginRight = esc_attr($element['marginImage']['right'] ?? '0px');
@@ -110,7 +113,7 @@ function render_image($element, $slide)
         <div
             <?php
             if ($element['imageLink'] !== 'none') : ?>
-            onclick="<?php echo esc_js( $onclick ); ?>"
+            onclick="<?php echo esc_js($onclick); ?>"
             <?php endif;
 
             ?>

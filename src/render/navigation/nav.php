@@ -1,5 +1,8 @@
 <?php
-function render_nav($navigationIcons, $navigationTablet, $navigationMobile, $sizeNav, $navColor, $navigationPosition, $navGap, $offSetTopNav, $offSetSidesNav)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_nav($navigationIcons, $navigationTablet, $navigationMobile, $sizeNav, $navColor, $navigationPosition, $navGap, $offSetTopNav, $offSetSidesNav)
 {
 ?>
     <div class="slider-future-nav <?php echo esc_attr($navigationPosition ?: 'center-center'); ?>" style="<?php echo esc_attr('--nav-gap: ' . $navGap . 'px;--nav-top: ' . $offSetTopNav . 'px;--nav-left: ' . $offSetSidesNav . 'px;'); ?>">

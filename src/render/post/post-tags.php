@@ -1,6 +1,8 @@
 <?php
 
-function render_post_tags($post, $attributes)
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_post_tags($post, $attributes)
 {
     $tagsPostAlign = $attributes['tagsPostAlign'] ?? '';
     $tagsPostColor = $attributes['tagsPostColor'] ?? '';

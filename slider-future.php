@@ -5,8 +5,9 @@
  * Plugin URI: https://sliderfuture.franchiwebdesign.com/
  * Description: A lightweight, responsive Gutenberg slider block to display posts, images, or custom content with smooth animations and carousel options.
  * Requires at least: 6.1
+ * Tested up to: 6.8
  * Requires PHP: 7.0
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Franchi Web Design
  * Author URI: https://franchiwebdesign.com/
  * License:  GPL-2.0-or-later
@@ -22,15 +23,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/*----------------------------------------------------------------------------------
-    Load Textdomain
------------------------------------------------------------------------------------*/
-
-function slider_future_upload_plugin_translation_file()
-{
-    load_plugin_textdomain('slider-future', false, dirname(plugin_basename(__FILE__)) . '/languages/');
-}
-add_action('plugins_loaded', 'slider_future_upload_plugin_translation_file');
 
 /*----------------------------------------------------------------------------------
     Register Block

@@ -1,5 +1,8 @@
 <?php
-function render_post_link($post, $attributes)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_post_link($post, $attributes)
 {
     $linkPostAlign = $attributes['linkPostAlign'] ?? '';
     $linkPostColor = $attributes['linkPostColor'] ?? '';

@@ -1,5 +1,8 @@
 <?php
-function render_group($element, $slide)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_group($element, $slide)
 {
     $link_url = '';
     $onclick = '';
@@ -45,7 +48,7 @@ function render_group($element, $slide)
                                          width: <?php echo esc_attr($element['contentWidthDiv']) === 'custom' ? esc_attr($element['customContentWidthDiv']) . '%' : esc_attr($element['contentWidthDiv']); ?>;">
             <<?php echo esc_attr($TagDiv); ?>
                 <?php if ($element['textLink'] !== 'none') : ?>
-                onclick="<?php echo esc_js( $onclick ); ?>"
+                onclick="<?php echo esc_js($onclick); ?>"
                 <?php endif; ?>
                 class="div-slide <?php echo esc_attr($desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv); ?>"
                 <?php
@@ -163,13 +166,13 @@ function render_group($element, $slide)
                         include_once __DIR__ . '/inner-element/innerImage.php';
 
                         if ($innerElement['type'] === 'text') :
-                            render_innerText($innerElement, $slide);
+                            slider_future_render_innerText($innerElement, $slide);
                         elseif ($innerElement['type'] === 'button') :
-                            render_innerButton($innerElement);
+                            slider_future_render_innerButton($innerElement);
                         elseif ($innerElement['type'] === 'icon') :
-                            render_innerIcon($innerElement, $slide);
+                            slider_future_render_innerIcon($innerElement, $slide);
                         elseif ($innerElement['type'] === 'image') :
-                            render_innerImage($innerElement, $slide);
+                            slider_future_render_innerImage($innerElement, $slide);
 
                         ?>
 

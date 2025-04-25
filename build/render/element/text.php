@@ -1,5 +1,8 @@
 <?php
-function render_text($element, $slide)
+
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
+
+function slider_future_render_text($element, $slide)
 {
     $fontStyle = esc_attr($element['fontStyle']['fontStyle'] ?? 'normal');
     $fontWeight = esc_attr($element['fontStyle']['fontWeight'] ?? 'normal');
@@ -219,14 +222,14 @@ function render_text($element, $slide)
                 <?php echo esc_attr($element['text']) ?>
                 <?php echo wp_kses_post($link_end); ?>
                 <?php if ($element['enableTypeWriter']) : ?>
-                    <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($element['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($element['speedCursor']); ?>" data-type=<?php 
-        echo esc_js( wp_json_encode( array(
-            $textTypeWriterOne,
-            $textTypeWriterTwo,
-            $textTypeWriterThree,
-            $textTypeWriterFour
-        ) ) ); 
-    ?>'>
+                    <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($element['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($element['speedCursor']); ?>" data-type=<?php
+                                                                                                                                                                                                                    echo esc_js(wp_json_encode(array(
+                                                                                                                                                                                                                        $textTypeWriterOne,
+                                                                                                                                                                                                                        $textTypeWriterTwo,
+                                                                                                                                                                                                                        $textTypeWriterThree,
+                                                                                                                                                                                                                        $textTypeWriterFour
+                                                                                                                                                                                                                    )));
+                                                                                                                                                                                                                    ?>'>
                     </span>
                     <span class="wrap"></span>
                 <?php endif; ?>
