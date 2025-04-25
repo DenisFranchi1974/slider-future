@@ -255,15 +255,17 @@ function slider_future_redirect_to_settings()
 {
     if (get_option('slider_future_do_activation_redirect', false)) {
         delete_option('slider_future_do_activation_redirect');
-        if (!isset($_GET['activate-multi'])) {
-            $nonce = wp_create_nonce('slider_future_redirect_nonce');
-            $redirect_url = add_query_arg('slider_future_nonce', $nonce, admin_url('admin.php?page=slider-settings'));
-            wp_safe_redirect($redirect_url);
+
+        $is_multiactivate = filter_input(INPUT_GET, 'activate-multi') !== null;
+
+        if (!$is_multiactivate) {
+            wp_safe_redirect(admin_url('admin.php?page=slider-settings'));
             exit;
         }
     }
 }
 add_action('admin_init', 'slider_future_redirect_to_settings');
+
 
 
 

@@ -2,20 +2,24 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Slider Future 1.0.0\n"
+"Project-Id-Version: Slider Future 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/slider-future\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-20T20:36:36+00:00\n"
+"POT-Creation-Date: 2025-04-25T10:01:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: slider-future\n"
 
 #. Plugin Name of the plugin
 #: slider-future.php
+#: slider-future.php:238
+#: build/settings.js:30386
+#: src/admin/TabNavigation.js:142
+#: build/settings.js:23938
 msgid "Slider Future"
 msgstr ""
 
@@ -39,80 +43,73 @@ msgstr ""
 msgid "https://franchiwebdesign.com/"
 msgstr ""
 
-#: build/render.php:691
-#: src/render.php:691
+#: build/render.php:693
+#: src/render.php:693
 msgid "View Product"
 msgstr ""
 
-#: build/render.php:1001
-#: src/render.php:1001
+#: build/render.php:1003
+#: src/render.php:1003
 msgid "0s"
 msgstr ""
 
-#: build/render/navigation/nav.php:34
-#: src/render/navigation/nav.php:34
+#: build/render/navigation/nav.php:37
+#: src/render/navigation/nav.php:37
 #: build/index.js:37127
 #: src/assets/NavigationButtons.js:71
 #: build/index.js:25328
 msgid "Prev"
 msgstr ""
 
-#: build/render/navigation/nav.php:66
-#: src/render/navigation/nav.php:66
+#: build/render/navigation/nav.php:69
+#: src/render/navigation/nav.php:69
 #: build/index.js:37172
 #: src/assets/NavigationButtons.js:100
 #: build/index.js:25357
 msgid "Next"
 msgstr ""
 
-#: slider-future.php:57
+#: slider-future.php:49
 msgid "WooCommerce is not active. Please install and activate WooCommerce to use this feature."
 msgstr ""
 
-#: slider-future.php:101
+#: slider-future.php:93
 msgid "No content found."
 msgstr ""
 
-#: slider-future.php:191
+#: slider-future.php:183
 msgid "Invalid image URL."
 msgstr ""
 
-#: slider-future.php:197
+#: slider-future.php:189
 msgid "Error downloading image."
 msgstr ""
 
-#: slider-future.php:203
+#: slider-future.php:195
 msgid "Invalid image."
 msgstr ""
 
-#: slider-future.php:213
+#: slider-future.php:205
 msgid "Error saving image."
 msgstr ""
 
-#: slider-future.php:225
+#: slider-future.php:217
 msgid "Error adding to media library."
 msgstr ""
 
-#: slider-future.php:245
+#: slider-future.php:237
 msgid "Slider Settings"
 msgstr ""
 
-#: slider-future.php:246
-#: build/settings.js:30386
-#: src/admin/TabNavigation.js:142
-#: build/settings.js:23938
-msgid "Slider Future"
-msgstr ""
-
-#: slider-future.php:324
+#: slider-future.php:317
 msgid "Invalid data format"
 msgstr ""
 
-#: slider-future.php:332
+#: slider-future.php:325
 msgid "Settings saved successfully"
 msgstr ""
 
-#: slider-future.php:335
+#: slider-future.php:328
 msgid "Failed to save settings"
 msgstr ""
 
@@ -122,7 +119,7 @@ msgstr ""
 #: build/index.js:37242
 #: build/index.js:38876
 #: build/index.js:38881
-#: build/settings.js:30517
+#: build/settings.js:30523
 #: src/admin/Welcome.js:21
 #: src/assets/devicesSelector.js:12
 #: src/assets/devicesSelector.js:20
@@ -136,7 +133,7 @@ msgstr ""
 #: build/index.js:25401
 #: build/index.js:26699
 #: build/index.js:26700
-#: build/settings.js:24033
+#: build/settings.js:24037
 msgid "Loading..."
 msgstr ""
 
@@ -199,7 +196,7 @@ msgstr ""
 #: build/index.js:60639
 #: build/index.js:62313
 #: build/index.js:64055
-#: build/index.js:74947
+#: build/index.js:74942
 msgid "Desktop"
 msgstr ""
 
@@ -232,7 +229,7 @@ msgstr ""
 #: build/index.js:60647
 #: build/index.js:62321
 #: build/index.js:64063
-#: build/index.js:74956
+#: build/index.js:74951
 msgid "Tablet"
 msgstr ""
 
@@ -265,7 +262,7 @@ msgstr ""
 #: build/index.js:60655
 #: build/index.js:62329
 #: build/index.js:64071
-#: build/index.js:74965
+#: build/index.js:74960
 msgid "Mobile"
 msgstr ""
 
@@ -484,7 +481,7 @@ msgstr ""
 #: build/index.js:60485
 #: build/index.js:62167
 #: build/index.js:63852
-#: build/index.js:74713
+#: build/index.js:74709
 msgid "Scale"
 msgstr ""
 
@@ -706,7 +703,7 @@ msgstr ""
 #: build/index.js:63082
 #: build/index.js:63869
 #: build/index.js:68208
-#: build/index.js:74731
+#: build/index.js:74727
 msgid "Rotate"
 msgstr ""
 
@@ -2137,8 +2134,8 @@ msgstr ""
 #: build/index.js:62109
 #: build/index.js:63181
 #: build/index.js:63794
-#: build/index.js:69526
-#: build/index.js:74651
+#: build/index.js:69525
+#: build/index.js:74647
 msgid "Blur"
 msgstr ""
 
@@ -2275,7 +2272,7 @@ msgstr ""
 #: build/index.js:63102
 #: build/index.js:63781
 #: build/index.js:68277
-#: build/index.js:74637
+#: build/index.js:74633
 msgid "Opacity"
 msgstr ""
 
@@ -2443,7 +2440,7 @@ msgstr ""
 #: build/index.js:60455
 #: build/index.js:62137
 #: build/index.js:63822
-#: build/index.js:74681
+#: build/index.js:74677
 msgid "Translate Y"
 msgstr ""
 
@@ -2482,7 +2479,7 @@ msgstr ""
 #: build/index.js:60442
 #: build/index.js:62124
 #: build/index.js:63809
-#: build/index.js:74667
+#: build/index.js:74663
 msgid "Translate X"
 msgstr ""
 
@@ -3010,7 +3007,7 @@ msgstr ""
 #: build/index.js:27023
 #: build/index.js:27026
 #: build/index.js:27067
-#: build/index.js:72307
+#: build/index.js:72305
 msgid "All"
 msgstr ""
 
@@ -5146,8 +5143,8 @@ msgstr ""
 #: build/index.js:63125
 #: build/index.js:63232
 #: build/index.js:68448
-#: build/index.js:69476
-#: build/index.js:69610
+#: build/index.js:69475
+#: build/index.js:69609
 msgid "Effect"
 msgstr ""
 
@@ -5509,7 +5506,7 @@ msgstr ""
 #: build/index.js:60316
 #: build/index.js:61998
 #: build/index.js:63683
-#: build/index.js:74182
+#: build/index.js:74179
 #: build/settings.js:23231
 msgid "Direction"
 msgstr ""
@@ -6710,7 +6707,7 @@ msgstr ""
 #: build/index.js:33323
 #: build/index.js:42236
 #: build/index.js:65808
-#: build/index.js:69631
+#: build/index.js:69630
 msgid "Size"
 msgstr ""
 
@@ -6967,8 +6964,8 @@ msgstr ""
 #: build/index.js:60395
 #: build/index.js:62077
 #: build/index.js:63762
-#: build/index.js:73601
-#: build/index.js:74572
+#: build/index.js:73598
+#: build/index.js:74568
 msgid "Effects"
 msgstr ""
 
@@ -7048,8 +7045,8 @@ msgstr ""
 #: build/index.js:62265
 #: build/index.js:63627
 #: build/index.js:63958
-#: build/index.js:74110
-#: build/index.js:74826
+#: build/index.js:74107
+#: build/index.js:74822
 msgid "Duration"
 msgstr ""
 
@@ -7299,9 +7296,9 @@ msgstr ""
 #: src/multiControls/hover/HoverControls.js:332
 #: build/index.js:35189
 #: build/index.js:69134
-#: build/index.js:69489
-#: build/index.js:69623
-#: build/index.js:74605
+#: build/index.js:69488
+#: build/index.js:69622
+#: build/index.js:74601
 msgid "Set Color"
 msgstr ""
 
@@ -7846,8 +7843,8 @@ msgstr ""
 #: build/index.js:62070
 #: build/index.js:63218
 #: build/index.js:63755
-#: build/index.js:73587
-#: build/index.js:74565
+#: build/index.js:73584
+#: build/index.js:74561
 msgid "Animations"
 msgstr ""
 
@@ -8084,7 +8081,7 @@ msgstr ""
 #: build/index.js:60516
 #: build/index.js:62198
 #: build/index.js:63883
-#: build/index.js:74746
+#: build/index.js:74742
 msgid "Rotate X"
 msgstr ""
 
@@ -8120,7 +8117,7 @@ msgstr ""
 #: build/index.js:60538
 #: build/index.js:62219
 #: build/index.js:63905
-#: build/index.js:74770
+#: build/index.js:74766
 msgid "Rotate Y"
 msgstr ""
 
@@ -8314,8 +8311,8 @@ msgstr ""
 #: src/controls/text/TextControl.js:35
 #: build/index.js:47223
 #: build/index.js:67609
-#: build/index.js:69680
-#: build/index.js:69735
+#: build/index.js:69679
+#: build/index.js:69734
 msgid "Add text content..."
 msgstr ""
 
@@ -8570,7 +8567,7 @@ msgstr ""
 #: build/index.js:58895
 #: build/index.js:63999
 #: build/index.js:66906
-#: build/index.js:73176
+#: build/index.js:73174
 msgid "Actions"
 msgstr ""
 
@@ -8612,7 +8609,7 @@ msgstr ""
 #: build/index.js:60632
 #: build/index.js:62306
 #: build/index.js:64048
-#: build/index.js:74940
+#: build/index.js:74935
 msgid "Visibility"
 msgstr ""
 
@@ -8909,6 +8906,7 @@ msgstr ""
 #: build/index.js:59788
 #: build/index.js:61470
 #: build/index.js:63155
+#: build/index.js:69496
 msgid "Offset X"
 msgstr ""
 
@@ -8938,7 +8936,7 @@ msgstr ""
 #: build/index.js:59801
 #: build/index.js:61483
 #: build/index.js:63168
-#: build/index.js:69511
+#: build/index.js:69510
 msgid "Offset Y"
 msgstr ""
 
@@ -8968,7 +8966,7 @@ msgstr ""
 #: build/index.js:59827
 #: build/index.js:61509
 #: build/index.js:63194
-#: build/index.js:69542
+#: build/index.js:69541
 msgid "Spread"
 msgstr ""
 
@@ -9024,8 +9022,8 @@ msgstr ""
 #: build/index.js:62048
 #: build/index.js:63221
 #: build/index.js:63733
-#: build/index.js:73590
-#: build/index.js:74261
+#: build/index.js:73587
+#: build/index.js:74258
 msgid "Play"
 msgstr ""
 
@@ -9052,7 +9050,7 @@ msgstr ""
 #: build/index.js:59878
 #: build/index.js:61560
 #: build/index.js:63245
-#: build/index.js:73628
+#: build/index.js:73625
 msgid "Effect Split"
 msgstr ""
 
@@ -9079,7 +9077,7 @@ msgstr ""
 #: build/index.js:59889
 #: build/index.js:61571
 #: build/index.js:63256
-#: build/index.js:73654
+#: build/index.js:73651
 msgid "Stagger"
 msgstr ""
 
@@ -9109,7 +9107,7 @@ msgstr ""
 #: build/index.js:59906
 #: build/index.js:61588
 #: build/index.js:63273
-#: build/index.js:73672
+#: build/index.js:73669
 msgid "Opacity From"
 msgstr ""
 
@@ -9139,7 +9137,7 @@ msgstr ""
 #: build/index.js:59919
 #: build/index.js:61601
 #: build/index.js:63286
-#: build/index.js:73686
+#: build/index.js:73683
 msgid "Opacity To"
 msgstr ""
 
@@ -9169,7 +9167,7 @@ msgstr ""
 #: build/index.js:59932
 #: build/index.js:61614
 #: build/index.js:63299
-#: build/index.js:73700
+#: build/index.js:73697
 msgid "Blur From"
 msgstr ""
 
@@ -9199,7 +9197,7 @@ msgstr ""
 #: build/index.js:59945
 #: build/index.js:61627
 #: build/index.js:63312
-#: build/index.js:73714
+#: build/index.js:73711
 msgid "Blur To"
 msgstr ""
 
@@ -9229,7 +9227,7 @@ msgstr ""
 #: build/index.js:59962
 #: build/index.js:61644
 #: build/index.js:63329
-#: build/index.js:73732
+#: build/index.js:73729
 msgid "Translate X From"
 msgstr ""
 
@@ -9259,7 +9257,7 @@ msgstr ""
 #: build/index.js:59975
 #: build/index.js:61657
 #: build/index.js:63342
-#: build/index.js:73746
+#: build/index.js:73743
 msgid "Translate X To"
 msgstr ""
 
@@ -9289,7 +9287,7 @@ msgstr ""
 #: build/index.js:59988
 #: build/index.js:61670
 #: build/index.js:63355
-#: build/index.js:73760
+#: build/index.js:73757
 msgid "Translate Y From"
 msgstr ""
 
@@ -9319,7 +9317,7 @@ msgstr ""
 #: build/index.js:60001
 #: build/index.js:61683
 #: build/index.js:63368
-#: build/index.js:73774
+#: build/index.js:73771
 msgid "Translate Y To"
 msgstr ""
 
@@ -9375,8 +9373,8 @@ msgstr ""
 #: build/index.js:62153
 #: build/index.js:63384
 #: build/index.js:63838
-#: build/index.js:73790
-#: build/index.js:74698
+#: build/index.js:73787
+#: build/index.js:74694
 msgid "Choose the scale"
 msgstr ""
 
@@ -9406,7 +9404,7 @@ msgstr ""
 #: build/index.js:60031
 #: build/index.js:61713
 #: build/index.js:63398
-#: build/index.js:73819
+#: build/index.js:73816
 msgid "Scale From"
 msgstr ""
 
@@ -9436,7 +9434,7 @@ msgstr ""
 #: build/index.js:60044
 #: build/index.js:61726
 #: build/index.js:63411
-#: build/index.js:73833
+#: build/index.js:73830
 msgid "Scale To"
 msgstr ""
 
@@ -9466,7 +9464,7 @@ msgstr ""
 #: build/index.js:60062
 #: build/index.js:61744
 #: build/index.js:63429
-#: build/index.js:73852
+#: build/index.js:73849
 msgid "Rotate From"
 msgstr ""
 
@@ -9496,7 +9494,7 @@ msgstr ""
 #: build/index.js:60075
 #: build/index.js:61757
 #: build/index.js:63442
-#: build/index.js:73866
+#: build/index.js:73863
 msgid "Rotate To"
 msgstr ""
 
@@ -9526,7 +9524,7 @@ msgstr ""
 #: build/index.js:60089
 #: build/index.js:61771
 #: build/index.js:63456
-#: build/index.js:73881
+#: build/index.js:73878
 msgid "Rotate X From"
 msgstr ""
 
@@ -9556,7 +9554,7 @@ msgstr ""
 #: build/index.js:60111
 #: build/index.js:61793
 #: build/index.js:63478
-#: build/index.js:73904
+#: build/index.js:73901
 msgid "Rotate X To"
 msgstr ""
 
@@ -9586,7 +9584,7 @@ msgstr ""
 #: build/index.js:60133
 #: build/index.js:61815
 #: build/index.js:63500
-#: build/index.js:73927
+#: build/index.js:73924
 msgid "Rotate Y From"
 msgstr ""
 
@@ -9616,7 +9614,7 @@ msgstr ""
 #: build/index.js:60155
 #: build/index.js:61837
 #: build/index.js:63522
-#: build/index.js:73950
+#: build/index.js:73947
 msgid "Rotate Y To"
 msgstr ""
 
@@ -9646,7 +9644,7 @@ msgstr ""
 #: build/index.js:60181
 #: build/index.js:61863
 #: build/index.js:63548
-#: build/index.js:73977
+#: build/index.js:73974
 msgid "Skew X From"
 msgstr ""
 
@@ -9676,7 +9674,7 @@ msgstr ""
 #: build/index.js:60194
 #: build/index.js:61876
 #: build/index.js:63561
-#: build/index.js:73991
+#: build/index.js:73988
 msgid "Skew X To"
 msgstr ""
 
@@ -9706,7 +9704,7 @@ msgstr ""
 #: build/index.js:60207
 #: build/index.js:61889
 #: build/index.js:63574
-#: build/index.js:74005
+#: build/index.js:74002
 msgid "Skew Y From"
 msgstr ""
 
@@ -9736,7 +9734,7 @@ msgstr ""
 #: build/index.js:60220
 #: build/index.js:61902
 #: build/index.js:63587
-#: build/index.js:74019
+#: build/index.js:74016
 msgid "Skew Y To"
 msgstr ""
 
@@ -9763,7 +9761,7 @@ msgstr ""
 #: build/index.js:60237
 #: build/index.js:61919
 #: build/index.js:63604
-#: build/index.js:74036
+#: build/index.js:74033
 msgid "Block Direction"
 msgstr ""
 
@@ -9790,7 +9788,7 @@ msgstr ""
 #: build/index.js:60248
 #: build/index.js:61930
 #: build/index.js:63615
-#: build/index.js:74078
+#: build/index.js:74075
 msgid "Block Color"
 msgstr ""
 
@@ -9820,7 +9818,7 @@ msgstr ""
 #: build/index.js:60273
 #: build/index.js:61955
 #: build/index.js:63640
-#: build/index.js:74124
+#: build/index.js:74121
 msgid "Delay"
 msgstr ""
 
@@ -9850,7 +9848,7 @@ msgstr ""
 #: build/index.js:60286
 #: build/index.js:61968
 #: build/index.js:63653
-#: build/index.js:74138
+#: build/index.js:74135
 msgid "End Delay"
 msgstr ""
 
@@ -9906,8 +9904,8 @@ msgstr ""
 #: build/index.js:62278
 #: build/index.js:63666
 #: build/index.js:63971
-#: build/index.js:74151
-#: build/index.js:74840
+#: build/index.js:74148
+#: build/index.js:74836
 msgid "Easing"
 msgstr ""
 
@@ -9937,7 +9935,7 @@ msgstr ""
 #: build/index.js:60327
 #: build/index.js:62009
 #: build/index.js:63694
-#: build/index.js:74207
+#: build/index.js:74204
 msgid "Loop"
 msgstr ""
 
@@ -9967,7 +9965,7 @@ msgstr ""
 #: build/index.js:60345
 #: build/index.js:62027
 #: build/index.js:63712
-#: build/index.js:74240
+#: build/index.js:74237
 msgid "The loop must complete the set cycle before it can be changed."
 msgstr ""
 
@@ -9997,7 +9995,7 @@ msgstr ""
 #: build/index.js:60359
 #: build/index.js:62041
 #: build/index.js:63726
-#: build/index.js:74253
+#: build/index.js:74250
 msgid "The loop is limited to 5 repetitions in the editor for performance reasons."
 msgstr ""
 
@@ -10027,7 +10025,7 @@ msgstr ""
 #: build/index.js:60563
 #: build/index.js:62237
 #: build/index.js:63930
-#: build/index.js:74796
+#: build/index.js:74792
 msgid "Skew X"
 msgstr ""
 
@@ -10057,7 +10055,7 @@ msgstr ""
 #: build/index.js:60576
 #: build/index.js:62250
 #: build/index.js:63943
-#: build/index.js:74810
+#: build/index.js:74806
 msgid "Skew Y"
 msgstr ""
 
@@ -10066,7 +10064,7 @@ msgstr ""
 #: src/components/post/categories/PostCategoriesEdit.js:170
 #: src/icons/IconModal.js:408
 #: build/index.js:52656
-#: build/index.js:72302
+#: build/index.js:72300
 msgid "Categories"
 msgstr ""
 
@@ -10096,7 +10094,7 @@ msgstr ""
 #: build/index.js:58904
 #: build/index.js:64008
 #: build/index.js:66914
-#: build/index.js:73184
+#: build/index.js:73182
 msgid "Link actions"
 msgstr ""
 
@@ -10114,7 +10112,7 @@ msgstr ""
 #: build/index.js:58919
 #: build/index.js:64023
 #: build/index.js:66950
-#: build/index.js:73218
+#: build/index.js:73216
 msgid "Target"
 msgstr ""
 
@@ -10267,7 +10265,7 @@ msgstr ""
 #: src/components/slide/SlideEdit.js:2589
 #: src/multiControls/action/ActionControls.js:142
 #: build/index.js:66937
-#: build/index.js:73206
+#: build/index.js:73204
 msgid "Enter Url"
 msgstr ""
 
@@ -10276,7 +10274,7 @@ msgstr ""
 #: src/components/slide/SlideEdit.js:2595
 #: src/multiControls/action/ActionControls.js:146
 #: build/index.js:66943
-#: build/index.js:73210
+#: build/index.js:73208
 msgid "Enter url..."
 msgstr ""
 
@@ -10297,7 +10295,7 @@ msgstr ""
 #: src/components/slide/SlideEdit.js:2618
 #: src/multiControls/action/ActionControls.js:169
 #: build/index.js:66966
-#: build/index.js:73233
+#: build/index.js:73231
 msgid "Link Behavior"
 msgstr ""
 
@@ -10318,7 +10316,7 @@ msgstr ""
 #: src/components/slide/SlideEdit.js:2640
 #: src/multiControls/action/ActionControls.js:190
 #: build/index.js:66988
-#: build/index.js:73254
+#: build/index.js:73252
 msgid "Enter ID"
 msgstr ""
 
@@ -10327,7 +10325,7 @@ msgstr ""
 #: src/components/slide/SlideEdit.js:2646
 #: src/multiControls/action/ActionControls.js:194
 #: build/index.js:66994
-#: build/index.js:73258
+#: build/index.js:73256
 msgid "Enter id..."
 msgstr ""
 
@@ -10388,30 +10386,30 @@ msgstr ""
 #: build/index.js:69070
 #: build/index.js:69202
 #: build/index.js:69260
-#: build/index.js:69323
-#: build/index.js:69399
-#: build/index.js:69691
-#: build/index.js:69746
-#: build/index.js:69860
-#: build/index.js:69913
+#: build/index.js:69322
+#: build/index.js:69398
+#: build/index.js:69690
+#: build/index.js:69745
+#: build/index.js:69859
+#: build/index.js:69912
 msgid "Default tooltip text"
 msgstr ""
 
 #: build/index.js:76338
 #: src/edit.js:941
-#: build/index.js:70864
+#: build/index.js:70862
 msgid "New Module for Template"
 msgstr ""
 
 #: build/index.js:76385
 #: src/edit.js:1012
-#: build/index.js:70935
+#: build/index.js:70933
 msgid "Play All Animations"
 msgstr ""
 
 #: build/index.js:77150
 #: src/icons/IconModal.js:434
-#: build/index.js:72328
+#: build/index.js:72326
 msgid "No icons found"
 msgstr ""
 
@@ -10531,22 +10529,22 @@ msgstr ""
 
 #: build/settings.js:29146
 #: build/settings.js:29629
-#: build/settings.js:30603
+#: build/settings.js:30609
 #: src/admin/FreeVsPro.js:45
 #: src/admin/FreeVsPro.js:276
 #: src/admin/Welcome.js:98
 #: build/settings.js:23118
 #: build/settings.js:23349
-#: build/settings.js:24110
+#: build/settings.js:24114
 msgid "Upgrade Now"
 msgstr ""
 
 #: build/settings.js:29160
-#: build/settings.js:30569
+#: build/settings.js:30575
 #: src/admin/FreeVsPro.js:58
 #: src/admin/Welcome.js:68
 #: build/settings.js:23131
-#: build/settings.js:24080
+#: build/settings.js:24084
 msgid "Premium Templates"
 msgstr ""
 
@@ -10919,7 +10917,7 @@ msgstr ""
 #: build/settings.js:30388
 #: src/admin/TabNavigation.js:142
 #: build/settings.js:23938
-msgid "1.0.0"
+msgid "1.0.2"
 msgstr ""
 
 #: build/settings.js:30390
@@ -10970,123 +10968,123 @@ msgstr ""
 msgid "Slider Future Changelog"
 msgstr ""
 
-#: build/settings.js:30522
+#: build/settings.js:30528
 #: src/admin/Welcome.js:28
-#: build/settings.js:24040
+#: build/settings.js:24044
 msgid "Hi %s!"
 msgstr ""
 
-#: build/settings.js:30522
+#: build/settings.js:30528
 #: src/admin/Welcome.js:30
-#: build/settings.js:24042
+#: build/settings.js:24046
 msgid "You are running Slider Future 1.0.2"
 msgstr ""
 
-#: build/settings.js:30522
+#: build/settings.js:30528
 #: src/admin/Welcome.js:33
-#: build/settings.js:24045
+#: build/settings.js:24049
 msgid "You are running Slider Future Pro 1.0.2"
 msgstr ""
 
-#: build/settings.js:30524
+#: build/settings.js:30530
 #: src/admin/Welcome.js:36
-#: build/settings.js:24048
+#: build/settings.js:24052
 msgid "SliderFuture is a Gutenberg-native slider block, designed to seamlessly integrate with WordPress. It's faster, easier to set up, and gives you the power to create stunning visuals directly within the editor. Explore all its features with our detailed documentation."
 msgstr ""
 
-#: build/settings.js:30540
+#: build/settings.js:30546
 #: src/admin/Welcome.js:53
-#: build/settings.js:24065
+#: build/settings.js:24069
 msgid "Read the documentation"
 msgstr ""
 
-#: build/settings.js:30551
+#: build/settings.js:30557
 #: src/admin/Welcome.js:60
-#: build/settings.js:24072
+#: build/settings.js:24076
 msgid "Upgrade to Slider Future Pro"
 msgstr ""
 
-#: build/settings.js:30551
+#: build/settings.js:30557
 #: src/admin/Welcome.js:61
-#: build/settings.js:24073
+#: build/settings.js:24077
 msgid "Unlock all these benefits and get the full Slider Future experience"
 msgstr ""
 
-#: build/settings.js:30561
+#: build/settings.js:30567
 #: src/admin/Welcome.js:64
-#: build/settings.js:24076
+#: build/settings.js:24080
 msgid "Exclusive Featured"
 msgstr ""
 
-#: build/settings.js:30561
+#: build/settings.js:30567
 #: src/admin/Welcome.js:65
-#: build/settings.js:24077
+#: build/settings.js:24081
 msgid "Unlock exclusive and early-access features."
 msgstr ""
 
-#: build/settings.js:30569
+#: build/settings.js:30575
 #: src/admin/Welcome.js:69
-#: build/settings.js:24081
+#: build/settings.js:24085
 msgid "Access more templates to get started with projects."
 msgstr ""
 
-#: build/settings.js:30579
+#: build/settings.js:30585
 #: src/admin/Welcome.js:74
-#: build/settings.js:24086
+#: build/settings.js:24090
 msgid "Advanced Customization"
 msgstr ""
 
-#: build/settings.js:30579
+#: build/settings.js:30585
 #: src/admin/Welcome.js:75
-#: build/settings.js:24087
+#: build/settings.js:24091
 msgid "Unlock powerful tools to customize every aspect of your sliders."
 msgstr ""
 
-#: build/settings.js:30587
+#: build/settings.js:30593
 #: src/admin/Welcome.js:78
-#: build/settings.js:24090
+#: build/settings.js:24094
 msgid "Product Support"
 msgstr ""
 
-#: build/settings.js:30587
+#: build/settings.js:30593
 #: src/admin/Welcome.js:79
-#: build/settings.js:24091
+#: build/settings.js:24095
 msgid "Get direct help from our experienced and friendly Support Team."
 msgstr ""
 
-#: build/settings.js:30605
+#: build/settings.js:30611
 #: src/admin/Welcome.js:104
-#: build/settings.js:24116
+#: build/settings.js:24120
 msgid "Priority Support"
 msgstr ""
 
-#: build/settings.js:30605
+#: build/settings.js:30611
 #: src/admin/Welcome.js:105
-#: build/settings.js:24117
+#: build/settings.js:24121
 msgid "Get dedicated and fast assistance for any issues or questions with our Priority Support service."
 msgstr ""
 
-#: build/settings.js:30611
+#: build/settings.js:30617
 #: src/admin/Welcome.js:108
-#: build/settings.js:24120
+#: build/settings.js:24124
 msgid "H24"
 msgstr ""
 
-#: build/settings.js:30611
+#: build/settings.js:30617
 #: src/admin/Welcome.js:109
-#: build/settings.js:24121
+#: build/settings.js:24125
 msgid "Feel free to reach out for any inquiries or support. You can contact us at:"
 msgstr ""
 
-#: build/settings.js:30613
+#: build/settings.js:30619
 #: src/admin/Welcome.js:110
-#: build/settings.js:24122
+#: build/settings.js:24126
 msgid "support@franchiwebdesign.com"
 msgstr ""
 
-#: build/settings.js:30617
+#: build/settings.js:30623
 #: src/admin/Welcome.js:116
-#: build/settings.js:24128
+#: build/settings.js:24132
 msgid "SliderFuture Go Premium"
 msgstr ""
 
