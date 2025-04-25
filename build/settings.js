@@ -30385,7 +30385,7 @@ const TabNavigation = () => {
     className: "dashicons dashicons-images-alt2"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Slider Future', 'slider-future'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "version"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('1.0.0', 'slider-future')))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('1.0.2', 'slider-future')))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "rating"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Rate New', 'slider-future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: "https://wordpress.org/support/plugin/slider-future/reviews/",
@@ -30468,7 +30468,13 @@ const TabNavigation = () => {
       right: 8,
       top: 50
     }
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Slider Future Changelog', 'slider-future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Version 1.0.0 - Initial release')))))));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__["default"], null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Slider Future Changelog', 'slider-future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    style: {
+      listStyleType: 'disc',
+      paddingLeft: '20px',
+      maxWidth: '220px'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Version 1.0.0 - First stable release of Slider Future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Version 1.0.1 - Fixed mismatched PHP version in the main plugin file and `readme.txt`. Corrected the "Tested up to" version in the plugin header. Added security checks to prevent direct file access. Changed function prefixes to avoid conflicts with other plugins. Updated external image sources and licensing information. Improved translations handling.')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Version 1.0.2 - Changed REST route name to follow naming conventions (added proper prefix to avoid conflicts).'))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TabNavigation);
 
@@ -30519,7 +30525,7 @@ const Welcome = () => {
   const isProFeature = typeof window.isProFeature !== 'undefined' ? window.isProFeature === 'true' : true;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-dashboard"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, sprintf((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hi %s!', 'slider-future'), adminName)), isProFeature && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You are running Slider Future 1.0.0', 'slider-future')), !isProFeature && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You are running Slider Future Pro 1.0.0', 'slider-future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, sprintf((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Hi %s!', 'slider-future'), adminName)), isProFeature && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You are running Slider Future 1.0.2', 'slider-future')), !isProFeature && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('You are running Slider Future Pro 1.0.2', 'slider-future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "documentation"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('SliderFuture is a Gutenberg-native slider block, designed to seamlessly integrate with WordPress. It\'s faster, easier to set up, and gives you the power to create stunning visuals directly within the editor. Explore all its features with our detailed documentation.', 'slider-future')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: "a",

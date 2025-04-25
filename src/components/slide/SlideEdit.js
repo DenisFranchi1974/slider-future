@@ -135,7 +135,7 @@ const SlideEdit = ({
     setIsLoading(true);
     try {
       // Chiamata all'endpoint REST API per caricare l'immagine
-      const response = await fetch("/wp-json/custom-plugin/v1/upload-image/", {
+      const response = await fetch("/wp-json/slider-future/v1/upload-image/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

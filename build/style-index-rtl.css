@@ -859,7 +859,7 @@ button.swiper-pagination-bullet {
 }
 @keyframes fa-flip {
   50% {
-    transform: rotate3d(var«-5150:1», var«5150:-2», var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+    transform: rotate3d(var«-4615:1», var«4615:-2», var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
   }
 }
 @keyframes fa-shake {

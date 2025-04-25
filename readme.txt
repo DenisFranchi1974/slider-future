@@ -7,7 +7,7 @@ Donate link: https://www.sandbox.paypal.com/donate/?hosted_button_id=APAP24BKNN6
 Tags: slider, gutenberg slider, post carousel, content slider, slider block
 Requires at least: 6.1
 Tested up to: 6.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -152,21 +152,25 @@ The full source code is available on **[GitHub Repository](https://github.com/De
 
 == Changelog ==
 
+= 1.0.2 =
+* Changed REST route name to follow naming conventions (added proper prefix to avoid conflicts).
+
 = 1.0.1 =
-* Fixed mismatched PHP version in the main plugin file and readme.txt
-* Corrected "Tested up to" version in the plugin header
-* Added security checks to prevent direct file access
-* Changed function prefixes to avoid conflicts with other plugins
-* Updated external image sources and licensing information
-* Updated translations handling
+* Fixed mismatched PHP version in the main plugin file and `readme.txt`.
+* Corrected the "Tested up to" version in the plugin header.
+* Added security checks to prevent direct file access.
+* Changed function prefixes to avoid conflicts with other plugins.
+* Updated external image sources and licensing information.
+* Improved translations handling.
 
 = 1.0.0 =
-* First stable release of Slider Future.
+* .
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-This update fixes compatibility issues with PHP version in the plugin file, improves security, and addresses other minor bug fixes.
+= 1.0.2 =
+This update changes the REST route name to follow proper naming conventions, improving plugin compatibility and avoiding conflicts.
+
 
 
 == EXTERNAL RESOURCES ==

@@ -27,10 +27,10 @@ const Welcome = () => {
       <div className='content-dashboard'>
       <h2>{sprintf(__('Hi %s!', 'slider-future'), adminName)}</h2>
       {isProFeature && (
-      <h3>{__('You are running Slider Future 1.0.0', 'slider-future')}</h3>
+      <h3>{__('You are running Slider Future 1.0.2', 'slider-future')}</h3>
       )}
        {!isProFeature && (
-      <h3>{__('You are running Slider Future Pro 1.0.0', 'slider-future')}</h3>
+      <h3>{__('You are running Slider Future Pro 1.0.2', 'slider-future')}</h3>
       )}
       <div className='documentation'>
       <p>{__('SliderFuture is a Gutenberg-native slider block, designed to seamlessly integrate with WordPress. It\'s faster, easier to set up, and gives you the power to create stunning visuals directly within the editor. Explore all its features with our detailed documentation.','slider-future')}</p>

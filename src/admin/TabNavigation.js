@@ -139,7 +139,7 @@ const TabNavigation = () => {
             <Box>
                 <div className='logo-dashboard'>
                     <div className='logo'>
-                           <span className="dashicons dashicons-images-alt2"></span><h1>{__('Slider Future', 'slider-future')}<span className="version">{__('1.0.0', 'slider-future')}</span></h1>
+                           <span className="dashicons dashicons-images-alt2"></span><h1>{__('Slider Future', 'slider-future')}<span className="version">{__('1.0.2', 'slider-future')}</span></h1>
                     </div>
                     <div className='rating'>
                         <h4>{__('Rate New','slider-future')}</h4>
@@ -204,7 +204,11 @@ const TabNavigation = () => {
                         </IconButton>
                         <div>
                             <h3>{__('Slider Future Changelog','slider-future')}</h3>
-                            <p>{__('Version 1.0.0 - Initial release')}</p>
+                            <ul style={{ listStyleType: 'disc', paddingLeft: '20px', maxWidth: '220px' }}>
+                            <li>{__('Version 1.0.0 - First stable release of Slider Future')}</li>
+                            <li>{__('Version 1.0.1 - Fixed mismatched PHP version in the main plugin file and `readme.txt`. Corrected the "Tested up to" version in the plugin header. Added security checks to prevent direct file access. Changed function prefixes to avoid conflicts with other plugins. Updated external image sources and licensing information. Improved translations handling.')}</li>
+                            <li>{__('Version 1.0.2 - Changed REST route name to follow naming conventions (added proper prefix to avoid conflicts).')}</li>
+                            </ul>
                         </div>
                     </Box>
                 </Drawer>

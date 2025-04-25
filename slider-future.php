@@ -7,7 +7,7 @@
  * Requires at least: 6.1
  * Tested up to: 6.8
  * Requires PHP: 7.0
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Franchi Web Design
  * Author URI: https://franchiwebdesign.com/
  * License:  GPL-2.0-or-later
@@ -167,7 +167,7 @@ add_action('rest_api_init', 'slider_future_register_rest_routes');
 
 function slider_future_register_custom_image_upload_endpoint()
 {
-    register_rest_route('custom-plugin/v1', '/upload-image/', array(
+    register_rest_route('slider-future/v1', '/upload-image/', array(
         'methods' => 'POST',
         'callback' => 'slider_future_handle_image_upload',
         'permission_callback' => '__return_true',

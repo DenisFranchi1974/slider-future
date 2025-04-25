@@ -10979,13 +10979,13 @@ msgstr ""
 #: build/settings.js:30522
 #: src/admin/Welcome.js:30
 #: build/settings.js:24042
-msgid "You are running Slider Future 1.0.0"
+msgid "You are running Slider Future 1.0.2"
 msgstr ""
 
 #: build/settings.js:30522
 #: src/admin/Welcome.js:33
 #: build/settings.js:24045
-msgid "You are running Slider Future Pro 1.0.0"
+msgid "You are running Slider Future Pro 1.0.2"
 msgstr ""
 
 #: build/settings.js:30524
