@@ -486,7 +486,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
     )
 );
 ?>
-<div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . $swiper_attr_encoded . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>">
+<div <?php echo wp_kses_data($wrapper_attributes) . ' data-swiper="' . esc_attr($swiper_attr_encoded) . '"'; ?> dir="<?php echo esc_attr($languageSlider); ?>">
     <div class="swiper-wrapper">
         <?php
         // Recupera i post inclusi ed esclusi
@@ -688,7 +688,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                         <p><?php echo esc_html($product['excerpt']); ?></p>
                     <?php endif; ?>
                     <?php if (!empty($product['link'])) : ?>
-                        <a href="<?php echo esc_url($product['link']); ?>"><?php echo __('View Product', 'slider-future'); ?></a>
+                        <a href="<?php echo esc_url($product['link']); ?>"><?php echo esc_html__('View Product', 'slider-future'); ?></a>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
@@ -726,9 +726,9 @@ $wrapper_attributes = get_block_wrapper_attributes(
                 }
 
                 ?>
-                <div class="swiper-slide <?php echo $filter; ?>"
+                <div class="swiper-slide <?php echo esc_attr($filter); ?>"
                     <?php if ($slide['link'] !== 'none') : ?>
-                    onclick="<?php echo $onclick; ?>"
+                    onclick="<?php echo esc_js( $onclick ); ?>"
                     <?php endif; ?>
                     style="<?php
                             $background_style = '';
@@ -754,7 +754,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             $background_style .= '--color-two-effect-slide:' . esc_attr($slide['colorTwoEffect'] ?? '#fff') . '; ';
                             $background_style .= '--color-three-effect-slide:' . esc_attr($slide['colorThreeEffect'] ?? '#fff') . '; ';
                             $background_style .= ($slide['link'] !== 'none' ? 'cursor: pointer; ' : '');
-                            echo trim($background_style);
+                            echo esc_attr(trim($background_style));
                             ?>">
                     <?php
                     $divider = isset($slide['divider']) ? $slide['divider'] : 'none';
@@ -887,22 +887,22 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                                                 echo 'width: 100%; ';
                                                                 echo 'position: relative; ';
                                                                 echo 'visibility: visible; ';
-                                                                echo 'border-radius: ' . $backgroundBorderRadius . 'px; ';
-                                                                echo 'border-style: ' . $borderStyleSlide . '; ';
-                                                                echo 'border-width: ' . $backgroundBorderSize . 'px; ';
-                                                                echo 'border-color: ' . $backgroundBorderColor . '; ';
+                                                                echo 'border-radius: ' . esc_attr($backgroundBorderRadius) . 'px; ';
+                                                                echo 'border-style: ' . esc_attr($borderStyleSlide) . '; ';
+                                                                echo 'border-width: ' . esc_attr($backgroundBorderSize) . 'px; ';
+                                                                echo 'border-color: ' . esc_attr($backgroundBorderColor) . '; ';
                                                                 echo 'margin: 0 auto; ';
                                                                 if (!$developerMode) {
                                                                     echo 'display:' . esc_attr($slide['layoutDisplay']) .  '; ';
                                                                     echo 'flex-direction: ' . esc_attr($slide['layout'] === 'horizontal' ? 'row' : 'column') . '; ';
                                                                     echo 'text-align: center; ';
-                                                                    echo 'gap: ' . $gapItems . 'px; ';
-                                                                    echo 'padding-top: ' . $backgroundVerticalPadding . 'px; ';
-                                                                    echo 'padding-bottom: ' . $backgroundVerticalPadding . 'px; ';
-                                                                    echo 'padding-left: ' . $backgroundHorizontalPadding . 'px; ';
-                                                                    echo 'padding-right: ' . $backgroundHorizontalPadding . 'px; ';
+                                                                    echo 'gap: ' . esc_attr($gapItems) . 'px; ';
+                                                                    echo 'padding-top: ' . esc_attr($backgroundVerticalPadding) . 'px; ';
+                                                                    echo 'padding-bottom: ' . esc_attr($backgroundVerticalPadding) . 'px; ';
+                                                                    echo 'padding-left: ' . esc_attr($backgroundHorizontalPadding) . 'px; ';
+                                                                    echo 'padding-right: ' . esc_attr($backgroundHorizontalPadding) . 'px; ';
                                                                     echo 'max-width: ' . esc_attr($maxWidth) . '; ';
-                                                                    echo 'flex-wrap: ' . $layoutWrap . '; ';
+                                                                    echo 'flex-wrap: ' . esc_attr($layoutWrap) . '; ';
                                                                 }
                                                                 ?>">
                         <?php if ($developerMode): ?>
@@ -937,7 +937,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                                     }
                                 }
                                 ?>
-                                <div class="content-inner-for-slide" style="<?php echo $inline_style; ?>">
+                                <div class="content-inner-for-slide" style="<?php echo esc_attr($inline_style); ?>">
                                 <?php endif; ?>
                                 <?php if ($mouseEffect === 'liquid') : ?>
                                     <script>

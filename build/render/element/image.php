@@ -105,27 +105,27 @@ function render_image($element, $slide)
             data-tablet-y="<?php echo esc_attr($element['tablet']['y']); ?>"
             data-mobile-x="<?php echo esc_attr($element['mobile']['x']); ?>"
             data-mobile-y="<?php echo esc_attr($element['mobile']['y']); ?>"
-            style="position: absolute; text-align:<?php echo $imageAlign; ?>; z-index:<?php echo $zIndexImage; ?>">
+            style="position: absolute; text-align:<?php echo esc_attr($imageAlign); ?>; z-index:<?php echo esc_attr($zIndexImage); ?>">
         <?php endif; ?>
         <div
             <?php
             if ($element['imageLink'] !== 'none') : ?>
-            onclick="<?php echo $onclick; ?>"
+            onclick="<?php echo esc_js( $onclick ); ?>"
             <?php endif;
 
             ?>
-            style="transform:perspective(<?php echo $perspectiveImage; ?>px) rotateX(<?php echo $rotateImageX; ?>deg) rotateY(<?php echo $rotateImageY; ?>deg) rotate(<?php echo $rotateImage; ?>deg);
-                                opacity:<?php echo $opacityImage; ?>; 
-                                z-index:<?php echo $zIndexImage; ?>;
+            style="transform:perspective(<?php echo esc_attr($perspectiveImage); ?>px) rotateX(<?php echo esc_attr($rotateImageX); ?>deg) rotateY(<?php echo esc_attr($rotateImageY); ?>deg) rotate(<?php echo esc_attr($rotateImage); ?>deg);
+                                opacity:<?php echo esc_attr($opacityImage); ?>; 
+                                z-index:<?php echo esc_attr($zIndexImage); ?>;
                                 --background-color-image-hover: <?php echo esc_attr($element['backgroundColorImageHover'] ?? ''); ?>;
                                  <?php if ($element['imageLink'] !== 'none') : ?>
                                         cursor: pointer;
                                     <?php endif; ?>
                                 width:<?php echo esc_attr($element['widthImageContent']) ?>;
-                                text-align:<?php echo $imageAlign; ?>;"
+                                text-align:<?php echo esc_attr($imageAlign); ?>;"
             class="content-img-first  <?php echo esc_attr($desktopClassImage); ?> <?php echo esc_attr($tabletClassImage); ?> <?php echo esc_attr($mobileClassImage); ?> <?php echo esc_attr($element['imageFilter']) ?>">
             <img src="<?php echo esc_url($element['url']); ?>" alt="<?php echo esc_attr($element['alt']); ?>" class="image-first-slide image-with-mask <?php echo esc_attr($element['blobMask']) ?> <?php echo esc_attr($element['spikeMask']) ?> <?php echo esc_attr($element['spikeMaskRight']) ?>"
-                style="<?php echo $style; ?>"
+                style="<?php echo esc_attr($style); ?>"
                 <?php if ($element['effectIn'] !== 'none') : ?>
                 data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
                 data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"

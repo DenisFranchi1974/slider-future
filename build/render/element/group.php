@@ -45,7 +45,7 @@ function render_group($element, $slide)
                                          width: <?php echo esc_attr($element['contentWidthDiv']) === 'custom' ? esc_attr($element['customContentWidthDiv']) . '%' : esc_attr($element['contentWidthDiv']); ?>;">
             <<?php echo esc_attr($TagDiv); ?>
                 <?php if ($element['textLink'] !== 'none') : ?>
-                onclick="<?php echo $onclick; ?>"
+                onclick="<?php echo esc_js( $onclick ); ?>"
                 <?php endif; ?>
                 class="div-slide <?php echo esc_attr($desktopClassDiv . ' ' . $tabletClassDiv . ' ' . $mobileClassDiv); ?>"
                 <?php
@@ -102,7 +102,7 @@ function render_group($element, $slide)
 
                 $inline_style .= 'transform: rotate(' . esc_attr($element['rotateDiv'] ?? 0) . 'deg);';
                 ?>
-                style="<?php echo $inline_style; ?>"
+                style="<?php echo esc_attr($inline_style); ?>"
                 <?php if ($element['effectIn'] !== 'none') : ?>
                 data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
                 data-duration="<?php echo esc_attr($element['duration'] ?? 800); ?>"

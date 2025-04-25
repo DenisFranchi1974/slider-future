@@ -133,9 +133,9 @@ function render_innerIcon($innerElement, $slide)
 ?>
 
     <div <?php if ($innerElement['link'] !== 'none') : ?>
-        onclick="<?php echo $onclick; ?>" <?php endif; ?>
-        style="<?php echo $stylesDiv; ?>"
-        class="<?php echo $classNamesDiv; ?> <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>"
+        onclick="<?php echo esc_js( $onclick ); ?>" <?php endif; ?>
+        style="<?php echo esc_attr($stylesDiv); ?>"
+        class="<?php echo esc_attr($classNamesDiv); ?> <?php echo esc_attr($desktopClassIcon); ?> <?php echo esc_attr($tabletClassIcon); ?> <?php echo esc_attr($mobileClassIcon); ?>"
         <?php if ($innerElement['effectIn'] !== 'none') : ?>
         data-effect-in="<?php echo esc_attr($innerElement['effectIn'] ?? ''); ?>"
         data-duration="<?php echo esc_attr($innerElement['duration'] ?? 800); ?>"
@@ -166,8 +166,8 @@ function render_innerIcon($innerElement, $slide)
         data-skew-y-to="<?php echo esc_attr($innerElement['skewYTo'] ?? 0); ?>"
         data-scale-custom-effect-in="<?php echo esc_attr($innerElement['scaleType'] ?? 'scale'); ?>"
         <?php endif; ?>>
-        <div class="element-icon-primary-inner <?php echo $classNamesIcon; ?>"
-            style="<?php echo $inline_style; ?>"
+        <div class="element-icon-primary-inner <?php echo esc_attr($classNamesIcon); ?>"
+            style="<?php echo esc_attr($inline_style); ?>"
             data-icon-primary="<?php echo esc_attr($innerElement['icon']); ?>"
             data-icon-size-primary-min="<?php echo esc_attr($innerElement['fontSizeMobile']); ?>"
             data-icon-size-primary-preferred="<?php echo esc_attr($innerElement['fontSizeTablet']); ?>"

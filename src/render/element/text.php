@@ -215,16 +215,18 @@ function render_text($element, $slide)
                 data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
                 <?php endif; ?>>
                 <?php
-                echo $link_start; ?>
+                echo wp_kses_post($link_start); ?>
                 <?php echo esc_attr($element['text']) ?>
-                <?php echo $link_end; ?>
+                <?php echo wp_kses_post($link_end); ?>
                 <?php if ($element['enableTypeWriter']) : ?>
-                    <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($element['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($element['speedCursor']); ?>" data-type='[
-                        "<?php echo $textTypeWriterOne; ?>", 
-                        "<?php echo $textTypeWriterTwo; ?>", 
-                        "<?php echo $textTypeWriterThree; ?>", 
-                        "<?php echo $textTypeWriterFour; ?>"
-                    ]'>
+                    <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($element['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($element['speedCursor']); ?>" data-type=<?php 
+        echo esc_js( wp_json_encode( array(
+            $textTypeWriterOne,
+            $textTypeWriterTwo,
+            $textTypeWriterThree,
+            $textTypeWriterFour
+        ) ) ); 
+    ?>'>
                     </span>
                     <span class="wrap"></span>
                 <?php endif; ?>

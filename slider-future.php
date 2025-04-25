@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Plugin Name:       Slider Future
+ * Plugin Name: Slider Future
  * Plugin URI: https://sliderfuture.franchiwebdesign.com/
- * Description:       The ultimate Gutenberg block for creating beautifully designed and animated web content.
+ * Description: A lightweight, responsive Gutenberg slider block to display posts, images, or custom content with smooth animations and carousel options.
  * Requires at least: 6.1
- * Requires PHP:      7.0
- * Version:           1.0.0
- * Author:            Franchi Web Design
+ * Requires PHP: 7.0
+ * Version: 1.0.0
+ * Author: Franchi Web Design
  * Author URI: https://franchiwebdesign.com/
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       slider-future
+ * License:  GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: slider-future
  * Domain Path: /languages
  *
  * @package Slider Future
@@ -264,12 +264,15 @@ function slider_future_redirect_to_settings()
     if (get_option('slider_future_do_activation_redirect', false)) {
         delete_option('slider_future_do_activation_redirect');
         if (!isset($_GET['activate-multi'])) {
-            wp_safe_redirect(admin_url('admin.php?page=slider-settings'));
+            $nonce = wp_create_nonce('slider_future_redirect_nonce');
+            $redirect_url = add_query_arg('slider_future_nonce', $nonce, admin_url('admin.php?page=slider-settings'));
+            wp_safe_redirect($redirect_url);
             exit;
         }
     }
 }
 add_action('admin_init', 'slider_future_redirect_to_settings');
+
 
 
 function slider_future_render_slider_settings_page()

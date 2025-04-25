@@ -119,7 +119,7 @@ function render_post_link($post, $attributes)
     <div class="content-link-post" style="justify-content:<?php echo esc_attr($linkPostAlign); ?>;display:flex;cursor: pointer;">
         <a href="<?php echo esc_url($post['link']); ?>" class="link-post <?php echo esc_attr($desktopClassLink); ?> <?php echo esc_attr($tabletClassLink); ?> <?php echo esc_attr($mobileClassLink); ?>"
             data-font-family="<?php echo esc_attr($linkPostFontFamily); ?>"
-            style="<?php echo $style; ?>"
+            style="<?php echo esc_attr($style); ?>"
             <?php if ($linkPostEffect !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($linkPostEffect); ?>"
             data-duration="<?php echo esc_attr($linkPostDuration); ?>"

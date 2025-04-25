@@ -213,16 +213,18 @@ function render_innerText($innerElement, $slide)
             data-duration-hover="<?php echo esc_attr($innerElement['durationHover'] ?? 800); ?>"
             data-easing-hover="<?php echo esc_attr($innerElement['easingHover'] ?? 'linear'); ?>"
             <?php endif; ?>>
-            <?php echo $link_start; ?>
-            <?php echo $innerElement['content']; ?>
-            <?php echo $link_end; ?>
+            <?php echo wp_kses_post( $link_start ); ?>
+            <?php echo wp_kses_post( $innerElement['content'] ); ?>
+            <?php echo wp_kses_post( $link_end ); ?>
             <?php if ($innerElement['enableTypeWriter']) : ?>
-                <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($innerElement['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($innerElement['speedCursor']); ?>" data-type='[
-                        "<?php echo $textTypeWriterOne; ?>", 
-                        "<?php echo $textTypeWriterTwo; ?>", 
-                        "<?php echo $textTypeWriterThree; ?>", 
-                        "<?php echo $textTypeWriterFour; ?>"
-                    ]'>
+                <span class="typewrite" data-period="2000" data-break-cursor="<?php echo esc_attr($innerElement['breakCursor']); ?>" data-speed-cursor="<?php echo esc_attr($innerElement['speedCursor']); ?>"  data-type='<?php 
+        echo esc_js( wp_json_encode( array(
+            $textTypeWriterOne,
+            $textTypeWriterTwo,
+            $textTypeWriterThree,
+            $textTypeWriterFour
+        ) ) ); 
+    ?>'>
                 </span>
                 <span class="wrap"></span>
             <?php endif; ?>

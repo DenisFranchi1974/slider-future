@@ -118,7 +118,7 @@ function render_post_date($post, $attributes)
     <div class="content-date-post" style="justify-content:<?php echo esc_attr($datePostAlign); ?>;display:flex;">
         <p class="date-post <?php echo esc_attr($desktopClassDate); ?> <?php echo esc_attr($tabletClassDate); ?> <?php echo esc_attr($mobileClassDate); ?>"
             data-font-family="<?php echo esc_attr($datePostFontFamily); ?>"
-            style="<?php echo $style; ?>"
+            style="<?php echo esc_attr($style); ?>"
             <?php if ($datePostEffect !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($datePostEffect); ?>"
             data-duration="<?php echo esc_attr($datePostDuration); ?>"

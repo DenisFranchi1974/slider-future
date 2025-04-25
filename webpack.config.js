@@ -38,12 +38,5 @@ module.exports = {
                 { from: path.resolve(__dirname, 'src/render.php'), to: path.resolve(__dirname, 'build') }
             ]
         }),
-        new CompressionPlugin({
-            filename: '[path][base].gz',
-            algorithm: 'gzip',
-            test: /\.(js|css|html|svg)$/,
-            threshold: 10240,
-            minRatio: 0.8,
-        })
     ]
 };

@@ -311,7 +311,7 @@ function render_button($element, $slide)
                 <?php endif; ?>
                 <span
                     <?php if ($element['buttonLink'] !== 'none') : ?>
-                    onclick="<?php echo $onclick; ?>"
+                    onclick="<?php echo esc_js( $onclick ); ?>"
                     <?php endif; ?>
                     <?php if ($element['effectIn'] !== 'none') : ?>
                     data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
@@ -388,7 +388,7 @@ function render_button($element, $slide)
                 <?php endif; ?>
                 <span
                     <?php if ($element['buttonLink'] !== 'none') : ?>
-                    onclick="<?php echo $onclick; ?>"
+                    onclick="<?php echo esc_js( $onclick ); ?>"
                     <?php endif; ?>
                     <?php if ($element['effectIn'] !== 'none') : ?>
                     data-effect-in="<?php echo esc_attr($element['effectIn'] ?? ''); ?>"
@@ -538,13 +538,18 @@ function render_button($element, $slide)
                     data-duration-hover="<?php echo esc_attr($element['durationHover'] ?? 800); ?>"
                     data-easing-hover="<?php echo esc_attr($element['easingHover'] ?? 'linear'); ?>"
                     <?php endif; ?>>
-                    <a class="content-button-slide <?php echo esc_attr($element['iconShowHover'] ?? 'icon-show-always'); ?> <?php echo esc_attr($element['iconHideShowHover'] ?? 'icon-hide-opacity'); ?>" href="<?php echo $link_url; ?>"
+                    <a class="content-button-slide <?php echo esc_attr($element['iconShowHover'] ?? 'icon-show-always'); ?> <?php echo esc_attr($element['iconHideShowHover'] ?? 'icon-hide-opacity'); ?>" href="<?php echo esc_url($link_url); ?>"
                         style="<?php echo esc_attr($buttonStyle3); ?>"
-                        target="<?php echo $linkTargetButton; ?>"
-                        rel="<?php echo $rel_div; ?>"
+                        target="<?php echo esc_attr($linkTargetButton); ?>"
+                        rel="<?php echo esc_attr($rel_div); ?>"
                         <?php if ($element['buttonLink'] === 'scroll-below' || ($element['buttonLink'] === 'scroll-to-id' && !empty($element['scrollToIdButton']))) : ?>
-                        onclick="event.preventDefault(); <?php echo $element['buttonLink'] === 'scroll-below' ? "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });" : "document.getElementById('{$scroll_id}').scrollIntoView({ behavior: 'smooth' });"; ?>"
-                        <?php endif;
+                        onclick="event.preventDefault(); 
+                        <?php 
+                        echo $element['buttonLink'] === 'scroll-below' 
+                            ? "window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });" 
+                            : "document.getElementById('" . esc_js($scroll_id) . "').scrollIntoView({ behavior: 'smooth' });"; 
+                        ?>"
+                    <?php endif; 
                         $stylesIcon = '';
                         if (!empty($element['rotateIcon'])) {
                             $stylesIcon .= "transform: rotate(" . esc_attr($element['rotateIcon']) . "deg); ";

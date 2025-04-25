@@ -118,7 +118,7 @@ function render_post_author($post, $attributes)
     <div class="content-author-post" style="justify-content:<?php echo esc_attr($authorPostAlign); ?>;display:flex;">
         <p class="author-post <?php echo esc_attr($desktopClassAuthor); ?> <?php echo esc_attr($tabletClassAuthor); ?> <?php echo esc_attr($mobileClassAuthor); ?>"
             data-font-family="<?php echo esc_attr($authorPostFontFamily); ?>"
-            style="<?php echo $style; ?>"
+            style="<?php echo esc_attr($style); ?>"
             <?php if ($authorPostEffect !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($authorPostEffect); ?>"
             data-duration="<?php echo esc_attr($authorPostDuration); ?>"

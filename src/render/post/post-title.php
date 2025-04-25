@@ -132,11 +132,11 @@ function render_post_title($post, $attributes)
     <div class="content-title-post" style="justify-content:<?php echo esc_attr($titlePostAlign); ?>;display:flex;<?php if ($titlePostLink !== 'none') : ?>cursor: pointer;<?php endif; ?>"
         <?php
         if ($titlePostLink !== 'none') : ?>
-        onclick="<?php echo $onclick; ?>"
+        onclick="<?php echo esc_js( $onclick ); ?>"
         <?php endif; ?>>
         <h3 class="title-post <?php echo esc_attr($desktopClassTitle); ?> <?php echo esc_attr($tabletClassTitle); ?> <?php echo esc_attr($mobileClassTitle); ?>"
             data-font-family="<?php echo esc_attr($titlePostFontFamily); ?>"
-            style="<?php echo $style; ?>"
+            style="<?php echo esc_attr($style); ?>"
             <?php if ($titlePostEffect !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($titlePostEffect); ?>"
             data-duration="<?php echo esc_attr($titlePostDuration); ?>"

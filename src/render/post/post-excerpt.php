@@ -132,11 +132,11 @@ function render_post_excerpt($post, $attributes)
     <div class="content-excerpt-post" style="justify-content:<?php echo esc_attr($excerptPostAlign); ?>;display:flex;<?php if ($excerptPostLink !== 'none') : ?>cursor: pointer;<?php endif; ?>"
         <?php
         if ($excerptPostLink !== 'none') : ?>
-        onclick="<?php echo $onclick; ?>"
+        onclick="<?php echo esc_js( $onclick ); ?>"
         <?php endif; ?>>
         <p class="excerpt-post <?php echo esc_attr($desktopClassExcerpt); ?> <?php echo esc_attr($tabletClassExcerpt); ?> <?php echo esc_attr($mobileClassExcerpt); ?>"
             data-font-family="<?php echo esc_attr($excerptPostFontFamily); ?>"
-            style="<?php echo $style; ?>"
+            style="<?php echo esc_attr($style); ?>"
             <?php if ($excerptPostEffect !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($excerptPostEffect); ?>"
             data-duration="<?php echo esc_attr($excerptPostDuration); ?>"

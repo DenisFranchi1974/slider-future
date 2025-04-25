@@ -90,9 +90,9 @@ function render_innerImage($innerElement, $slide)
 ?>
     <div
         <?php if ($innerElement['imageLink'] !== 'none') : ?>
-        onclick="<?php echo $onclick; ?>"
+        onclick="<?php echo esc_js( $onclick ); ?>"
         <?php endif; ?>
-        style="transform:perspective(<?php echo $perspectiveImage; ?>px) rotateX(<?php echo $rotateImageX; ?>deg) rotateY(<?php echo $rotateImageY; ?>deg) rotate(<?php echo $rotateImage; ?>deg);
+       style="transform:perspective(<?php echo esc_attr( $perspectiveImage ); ?>px) rotateX(<?php echo esc_attr( $rotateImageX ); ?>deg) rotateY(<?php echo esc_attr( $rotateImageY ); ?>deg) rotate(<?php echo esc_attr( $rotateImage ); ?>deg);
                                                opacity: <?php echo esc_attr($innerElement['opacityImage'] ?? 1) ?>;
                                                width:<?php echo esc_attr($innerElement['widthImageContent']) ?>;
                                                 --background-color-image-inner-hover: <?php echo esc_attr($innerElement['backgroundColorImageHover'] ?? ''); ?>;
@@ -107,7 +107,7 @@ function render_innerImage($innerElement, $slide)
         <img
             src="<?php echo esc_url($innerElement['imageUrl']); ?>"
             alt="<?php echo esc_attr($innerElement['alt']); ?>"
-            style="<?php echo $style ?>"
+            style="<?php echo esc_attr($style); ?>"
             class="img-inner image-with-mask <?php echo esc_attr($innerElement['blobMask']); ?> <?php echo esc_attr($innerElement['spikeMask']) ?> <?php echo esc_attr($innerElement['spikeMaskRight']) ?>"
             <?php if ($innerElement['effectIn'] !== 'none') : ?>
             data-effect-in="<?php echo esc_attr($innerElement['effectIn'] ?? ''); ?>"

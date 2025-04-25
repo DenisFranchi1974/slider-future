@@ -120,7 +120,7 @@ function render_post_categories($post, $attributes)
         <?php foreach ($post['categories'] as $category) : ?>
             <span class="categories-post <?php echo esc_attr($desktopClassCategories); ?> <?php echo esc_attr($tabletClassCategories); ?> <?php echo esc_attr($mobileClassCategories); ?>"
                 data-font-family="<?php echo esc_attr($categoriesPostFontFamily); ?>"
-                style="<?php echo $style; ?>"
+                style="<?php echo esc_attr($style); ?>"
                 <?php if ($categoriesPostEffect !== 'none') : ?>
                 data-effect-in="<?php echo esc_attr($categoriesPostEffect); ?>"
                 data-duration="<?php echo esc_attr($categoriesPostDuration); ?>"

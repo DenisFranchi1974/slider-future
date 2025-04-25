@@ -120,7 +120,7 @@ function render_post_tags($post, $attributes)
         <?php foreach ($post['tags'] as $tag) : ?>
             <span class="tags-post <?php echo esc_attr($desktopClassTags); ?> <?php echo esc_attr($tabletClassTags); ?> <?php echo esc_attr($mobileClassTags); ?>"
                 data-font-family="<?php echo esc_attr($tagsPostFontFamily); ?>"
-                style="<?php echo $style; ?>"
+                style="<?php echo esc_attr($style); ?>"
                 <?php if ($tagsPostEffect !== 'none') : ?>
                 data-effect-in="<?php echo esc_attr($tagsPostEffect); ?>"
                 data-duration="<?php echo esc_attr($tagsPostDuration); ?>"
